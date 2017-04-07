@@ -1,0 +1,151 @@
+---
+- job-group:
+    name: '{project-name}-ci-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci.
+
+    jjb-version: 1.6.2
+
+    jobs:
+      - '{project-name}-jjb-merge'
+      - '{project-name}-jjb-verify'
+
+- job-template:
+    name: '{project-name}-jjb-merge'
+    project-type: freestyle
+
+    node: '{build-node}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    submodule-recursive: true
+
+    jenkins-ssh-credential: lf-infra-jenkins-ssh-credential
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+    #
+    # triggers:
+    #   - gerrit:
+    #       server-name: '{server-name}'
+    #       trigger-on:
+    #         - change-merged-event
+    #         - comment-added-contains-event:
+    #             comment-contains-value: 'remerge'
+    #       projects:
+    #         - project-compare-type: 'ANT'
+    #           project-pattern: 'releng/builder'
+    #           branches:
+    #             - branch-compare-type: 'ANT'
+    #               branch-pattern: '**/{branch}'
+    #           file-paths:
+    #             - compare-type: ANT
+    #               pattern: '**/*.sh'
+    #             - compare-type: ANT
+    #               pattern: '**/*.yaml'
+    #
+    builders:
+      #- opendaylight-infra-jjbini
+      - shell:
+         !include-raw:
+           - shell/jjb-install.sh
+           - shell/jjb-merge-job.sh
+
+    # #
+    # publishers:
+    #   - opendaylight-infra-shiplogs:
+    #       maven-version: 'mvn33'
+
+- job-template:
+    name: '{project-name}-jjb-verify'
+    project-type: freestyle
+
+    node: '{build-node}'
+    concurrent: true
+
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    submodule-recursive: true
+
+    jenkins-ssh-credential: lf-infra-jenkins-ssh-credential
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+      - lf-infra-gerrit-parameters:
+          project: '{project}'
+          branch: '{branch}'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+    #
+    # triggers:
+    #   - gerrit-trigger-patch-submitted:
+    #       server: '{server-name}'
+    #       project: '{project}'
+    #       branch: '{branch}'
+    #       files: 'jjb/**'
+    #
+    builders:
+      #- opendaylight-infra-jjbini
+      - shell:
+          !include-raw:
+            - shell/jjb-install.sh
+            - shell/jjb-verify-job.sh
+            - shell/jjb-check-unicode.sh
+
+      # - verify-gpg-signature
+    #
+    # publishers:
+    #   - opendaylight-infra-shiplogs:
+    #       maven-version: 'mvn33'
