@@ -1,0 +1,142 @@
+---
+- builder:
+    name: create-netrc
+    # Macro to create a ~/.netrc file from a Maven settings.xml
+    # Parameters:
+    #     {server-id} The id of a server as defined in settings.xml
+    builders:
+      - inject:
+          properties-content: 'SERVER_ID={server-id}'
+      - shell: !include-raw-escape: ../shell/create-netrc.sh
+
+- builder:
+    name: gpg-verify-git-signature
+    # Verify gpg signature of the latest commit message in $WORKSPACE
+    #
+    # This command assumes that $WORKSPACE is a git repo.
+    #
+    # TODO: Verify signature after downloading users public key from a locally
+    # created repository instead of the public keymesh. This requires a process
+    # in place to get ODL developers public keys into a local repository without
+    # increasing the job thoughput.
+    builders:
+      - shell: !include-raw: ../shell/gpg-verify-git-signature.sh
+
+- builder:
+    name: lf-infra-ship-logs
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: 'jenkins-log-archives-settings'
+              variable: 'SETTINGS_FILE'
+      - create-netrc:
+          server-id: logs
+      - shell: !include-raw:
+          - ../shell/lftools-install.sh
+          - ../shell/logs-deploy.sh
+      - shell: !include-raw:
+          - ../shell/logs-clear-credentials.sh
+      - description-setter:
+          regexp: '^Build logs: .*'
+
+- parameter:
+    name: lf-infra-parameters
+    parameters:
+      - string:
+          name: PROJECT
+          default: '{project}'
+          description: |
+              Parameter to identify a Gerrit project. This is typically the
+              project repo path as exists in Gerrit.
+              For example: ofextensions/circuitsw
+
+              (Deprecated) Please use GERRIT_PROJECT instead. A future version
+              of global-jjb will remove this variable.
+      - string:
+          name: GERRIT_PROJECT
+          default: '{project}'
+          description: |
+              Parameter to identify Gerrit project. This is typically the
+              project repo path as exists in Gerrit.
+              For example: ofextensions/circuitsw
+
+              Note that Gerrit will override this parameter automatically if a
+              job is triggered by Gerrit.
+      - string:
+          name: GERRIT_BRANCH
+          default: '{branch}'
+          description: |
+              Parameter to identify a Gerrit branch.
+
+              Note that Gerrit will override this parameter automatically if a
+              job is triggered by Gerrit.
+      - string:
+          name: GERRIT_REFSPEC
+          default: ''
+          description: |
+              Parameter to identify a refspec when pulling from Gerrit.
+
+              Note that Gerrit will override this parameter automatically if a
+              job is triggered by Gerrit.
+
+- property:
+    name: lf-infra-properties
+    properties:
+      - build-discarder:
+          # Allow build data to be stored at a length configured by the
+          # downstream project.
+          days-to-keep: '{build-days-to-keep}'
+          # Do not allow artifacts to be stored in Jenkins.
+          artifact-num-to-keep: 0
+
+- publisher:
+    name: lf-infra-publish
+    # lf-infra macro to finish up a build.
+    #
+    # Handles the following:
+    #   - Shipping logs to Nexus logs site repository
+    #   - Cleanup workspace
+    publishers:
+      - postbuildscript:
+          builders:
+            - lf-infra-ship-logs
+          script-only-if-succeeded: false
+          script-only-if-failed: false
+          mark-unstable-if-failed: false
+      - workspace-cleanup:
+          exclude:
+            # Do not clean up *.jenkins-trigger files for jobs that use a
+            # properties file as input for triggering another build.
+            - '**/*.jenkins-trigger'
+          fail-build: false
+
+- scm:
+    name: lf-infra-gerrit-scm
+    scm:
+      - git:
+          credentials-id: '{jenkins-ssh-credential}'
+          url: '$GIT_URL/$GERRIT_PROJECT'
+          refspec: '{refspec}'
+          branches:
+            - 'refs/heads/{branch}'
+          skip-tag: true
+          wipe-workspace: true
+          submodule:
+            recursive: '{submodule-recursive}'
+          choosing-strategy: '{choosing-strategy}'
+
+- wrapper:
+    name: lf-infra-wrappers
+    wrappers:
+      - mask-passwords
+      - timeout:
+          type: absolute
+          timeout: '{build-timeout}'
+          timeout-var: 'BUILD_TIMEOUT'
+          fail: true
+      - timestamps
+      - ssh-agent-credentials:
+          users:
+            - '{jenkins-ssh-credential}'
+      - openstack:
+          single-use: true
