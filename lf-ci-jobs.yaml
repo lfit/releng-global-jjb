@@ -1,0 +1,133 @@
+---
+- job-group:
+    name: '{project-name}-ci-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci.
+
+    jjb-version: 1.6.2
+
+    jobs:
+      - '{project-name}-merge-jjb'
+      - '{project-name}-verify-jjb'
+
+- job-template:
+    name: '{project-name}-merge-jjb'
+    project-type: freestyle
+
+    node: '{build-node}'
+
+    # builder-merge job to run JJB update
+    #
+    # This job's purpose is to update all the JJB
+
+    job-type: merge
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 14
+    #
+    # parameters:
+    #   - opendaylight-infra-parameters:
+    #       os-cloud: '{os-cloud}'
+    #       project: '{project}'
+    #       branch: '{branch}'
+    #       refspec: 'refs/heads/{branch}'
+    #       artifacts: '{archive-artifacts}'
+    #
+    # scm:
+    #   - gerrit-trigger-scm:
+    #       refspec: ''
+    #       choosing-strategy: 'default'
+    #
+    # wrappers:
+    #   - opendaylight-infra-wrappers:
+    #       build-timeout: '{build-timeout}'
+    #
+    # triggers:
+    #   - gerrit:
+    #       server-name: '{server-name}'
+    #       trigger-on:
+    #         - change-merged-event
+    #         - comment-added-contains-event:
+    #             comment-contains-value: 'remerge'
+    #       projects:
+    #         - project-compare-type: 'ANT'
+    #           project-pattern: 'releng/builder'
+    #           branches:
+    #             - branch-compare-type: 'ANT'
+    #               branch-pattern: '**/{branch}'
+    #           file-paths:
+    #             - compare-type: ANT
+    #               pattern: '**/*.sh'
+    #             - compare-type: ANT
+    #               pattern: '**/*.yaml'
+    #
+    builders:
+      #- opendaylight-infra-jjbini
+      - shell:
+         !include-raw:
+           - shell/jjb-install.sh
+           - shell/jjb-{job-type}-job.sh
+
+    # #
+    # publishers:
+    #   - email-notification:
+    #       email-recipients: '{email-recipients}'
+    #       email-prefix: '[releng]'
+    #   - opendaylight-infra-shiplogs:
+    #       maven-version: 'mvn33'
+
+- job-template:
+    name: '{project-name}-verify-jjb'
+    project-type: freestyle
+
+    node: '{build-node}'
+    concurrent: true
+
+    job-type: verify
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 14
+    #
+    # parameters:
+    #   - opendaylight-infra-parameters:
+    #       os-cloud: '{os-cloud}'
+    #       project: '{project}'
+    #       branch: '{branch}'
+    #       refspec: 'refs/heads/{branch}'
+    #       artifacts: '{archive-artifacts}'
+    #
+    # scm:
+    #   - gerrit-trigger-scm:
+    #       refspec: '$GERRIT_REFSPEC'
+    #       choosing-strategy: 'gerrit'
+    #
+    # wrappers:
+    #   - opendaylight-infra-wrappers:
+    #       build-timeout: '{build-timeout}'
+    #
+    # triggers:
+    #   - gerrit-trigger-patch-submitted:
+    #       server: '{server-name}'
+    #       project: '{project}'
+    #       branch: '{branch}'
+    #       files: 'jjb/**'
+    #
+    builders:
+      #- opendaylight-infra-jjbini
+      - shell:
+          !include-raw:
+            - shell/jjb-install.sh
+            - shell/jjb-{job-type}-job.sh
+
+      # - releng-check-unicode
+      # - verify-gpg-signature
+    #
+    # publishers:
+    #   - email-notification:
+    #       email-recipients: '{email-recipients}'
+    #       email-prefix: '[releng]'
+    #   - opendaylight-infra-shiplogs:
+    #       maven-version: 'mvn33'
