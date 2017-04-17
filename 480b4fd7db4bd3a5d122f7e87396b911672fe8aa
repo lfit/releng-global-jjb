@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_7e63fd1a",
+        "filename": "shell/jjb-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-04-17T16:11:02Z",
+      "side": 1,
+      "message": "If you\u0027re telling shellcheck where the source file is, why are you then also disabling the check?",
+      "range": {
+        "startLine": 14,
+        "startChar": 51,
+        "endLine": 14,
+        "endChar": 66
+      },
+      "revId": "480b4fd7db4bd3a5d122f7e87396b911672fe8aa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_5e6839f5",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-04-17T16:11:02Z",
+      "side": 1,
+      "message": "This can be simplified to the following:\n\nfor letter in {a..z}",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "480b4fd7db4bd3a5d122f7e87396b911672fe8aa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_3e6d7505",
+        "filename": "shell/lftools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-04-17T16:11:02Z",
+      "side": 1,
+      "message": "If you\u0027re telling shellcheck where to find the file, why are you then subsequently disabling the check?",
+      "range": {
+        "startLine": 14,
+        "startChar": 56,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "480b4fd7db4bd3a5d122f7e87396b911672fe8aa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
