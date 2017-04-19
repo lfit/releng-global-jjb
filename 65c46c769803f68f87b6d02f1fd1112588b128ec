@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_c9059515",
+        "filename": "README.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2017-04-19T17:20:52Z",
+      "side": 1,
+      "message": "We should note which plugins are required by Jenkins (beyond our baseline of Gerrit and Git) for all of this to work. ex: mask-passwords, timestamps, openstack.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 12
+      },
+      "revId": "65c46c769803f68f87b6d02f1fd1112588b128ec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
