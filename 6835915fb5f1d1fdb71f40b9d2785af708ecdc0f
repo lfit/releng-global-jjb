@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_090cbd41",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2017-04-19T17:17:34Z",
+      "side": 1,
+      "message": "Got it. Thanks for clarifying!",
+      "parentUuid": "9a437d4f_c957d525",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 54
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_a98ff1cb",
         "filename": "shell/create-netrc.sh",
         "patchSetId": 9
@@ -178,6 +202,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_a92b7193",
+        "filename": "shell/lftools-install.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2017-04-19T17:17:34Z",
+      "side": 1,
+      "message": "Ah, I understand now. I was thinking shellcheck was running against the file as part of the job, not locally.",
+      "parentUuid": "9a437d4f_8931cd0d",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_694fc993",
         "filename": "shell/lftools-install.sh",
         "patchSetId": 9
@@ -213,6 +261,30 @@
       "side": 1,
       "message": "lftools has had regular releases for awhile to pypi.\n\nhttps://pypi.python.org/pypi/lftools",
       "parentUuid": "9a437d4f_694fc993",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_691d8973",
+        "filename": "shell/lftools-install.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2017-04-19T17:17:34Z",
+      "side": 1,
+      "message": "Ah yep, I see them now, thanks!",
+      "parentUuid": "9a437d4f_6936a905",
       "range": {
         "startLine": 17,
         "startChar": 0,
