@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_c957d525",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-19T17:11:26Z",
+      "side": 1,
+      "message": "All of our servers currently use GIT_BASE\u003dssh://host:29418/$PROJECT\n\nIt will take time to convert it to $GERRIT_PROJECT because we need to reconfigure jobs. Since this is a first step since we will need action in all the project ci-management repos too.",
+      "parentUuid": "9a437d4f_e973b9e5",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 54
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_a98ff1cb",
         "filename": "shell/create-netrc.sh",
         "patchSetId": 9
@@ -130,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_8931cd0d",
+        "filename": "shell/lftools-install.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-19T17:11:26Z",
+      "side": 1,
+      "message": "It\u0027s not commented out. It\u0027s a shellcheck special syntax to disable some checks on the next line.",
+      "parentUuid": "9a437d4f_894aed81",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 70
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_694fc993",
         "filename": "shell/lftools-install.sh",
         "patchSetId": 9
@@ -153,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_6936a905",
+        "filename": "shell/lftools-install.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-19T17:11:26Z",
+      "side": 1,
+      "message": "lftools has had regular releases for awhile to pypi.\n\nhttps://pypi.python.org/pypi/lftools",
+      "parentUuid": "9a437d4f_694fc993",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_095efd45",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 9
@@ -164,6 +236,30 @@
       "writtenOn": "2017-04-19T17:05:21Z",
       "side": 1,
       "message": "If a project forgets to set LOGS_SERVER, won\u0027t their logs then get shipped off to opendaylight? I think having a clearer default here to inform us this didn\u0027t get set would be better.\n\n${LOGS_SERVER:-\u0027WARNING: Logging Server Not Set\u0027}\n\nOr even just a `-z` test.",
+      "range": {
+        "startLine": 14,
+        "startChar": 28,
+        "endLine": 14,
+        "endChar": 57
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_493be5eb",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-19T17:11:26Z",
+      "side": 1,
+      "message": "Good point.",
+      "parentUuid": "9a437d4f_095efd45",
       "range": {
         "startLine": 14,
         "startChar": 28,
