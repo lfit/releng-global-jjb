@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_e9f4d988",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-19T00:43:19Z",
+      "side": 1,
+      "message": "Nope `files` is not a sub-parameter of branches. It\u0027s a sub-parameter of projects so should be at the same level as branches.",
+      "parentUuid": "9a437d4f_69090995",
+      "range": {
+        "startLine": 101,
+        "startChar": 14,
+        "endLine": 101,
+        "endChar": 36
+      },
+      "revId": "c5527b8bd230c80356aa8fc0a49b1256e2750e4d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_89d30d38",
         "filename": "shell/logs-get-credentials.sh",
         "patchSetId": 7
