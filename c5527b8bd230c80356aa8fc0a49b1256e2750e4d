@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a437d4f_a9eed1b2",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-04-19T00:46:52Z",
+      "side": 1,
+      "message": "set a jjb variable on the top of the file\n\ntimeout 10\n{timeout}",
+      "range": {
+        "startLine": 85,
+        "startChar": 10,
+        "endLine": 85,
+        "endChar": 27
+      },
+      "revId": "c5527b8bd230c80356aa8fc0a49b1256e2750e4d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_69090995",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
