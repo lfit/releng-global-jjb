@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_6487f062",
+        "filename": "README.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-04-19T18:54:55Z",
+      "side": 1,
+      "message": "Missing \u0027Message Injector Plugin\u0027 for the log uploads getting posted back to Gerrit",
+      "revId": "f5b322640879e8b0eca083cac69329c7a174a0f5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
