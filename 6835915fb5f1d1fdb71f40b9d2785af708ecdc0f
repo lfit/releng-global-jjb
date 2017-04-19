@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_496d2504",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-19T15:01:42Z",
+      "side": 1,
+      "message": "This can be an improvement if we create a Jira for it. I like that it goes to ~/.netrc though since it\u0027s easy to find and remove in a later command since I intend to delete this file after it\u0027s done using it.",
+      "parentUuid": "9a437d4f_a98ff1cb",
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_89bc2d6e",
         "filename": "shell/jjb-verify-job.sh",
         "patchSetId": 9
@@ -30,6 +48,30 @@
       "writtenOn": "2017-04-19T13:33:17Z",
       "side": 1,
       "message": "Does this directory get created automatically if it doesn\u0027t exist already?",
+      "range": {
+        "startLine": 13,
+        "startChar": 42,
+        "endLine": 13,
+        "endChar": 62
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_6968e9f5",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-19T15:01:42Z",
+      "side": 1,
+      "message": "Yes, it gets created by jenkins-jobs command. In fact this directory doesn\u0027t exist when this command runs.",
+      "parentUuid": "9a437d4f_89bc2d6e",
       "range": {
         "startLine": 13,
         "startChar": 42,
