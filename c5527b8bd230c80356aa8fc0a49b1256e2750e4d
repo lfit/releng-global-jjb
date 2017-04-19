@@ -120,6 +120,29 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_c948f5ce",
+        "filename": "shell/jjb-check-unicode.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-04-19T01:22:46Z",
+      "side": 1,
+      "message": "Is this script working as expected for ODL, since I recently found a bunch of ctrl^M added to yaml file under jjb/bier/*yaml, potentially edited on some MS editor.",
+      "range": {
+        "startLine": 13,
+        "startChar": 11,
+        "endLine": 13,
+        "endChar": 44
+      },
+      "revId": "c5527b8bd230c80356aa8fc0a49b1256e2750e4d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_89d30d38",
         "filename": "shell/logs-get-credentials.sh",
         "patchSetId": 7
