@@ -269,6 +269,30 @@
       "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_4912c563",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-19T17:15:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a437d4f_493be5eb",
+      "range": {
+        "startLine": 14,
+        "startChar": 28,
+        "endLine": 14,
+        "endChar": 57
+      },
+      "revId": "6835915fb5f1d1fdb71f40b9d2785af708ecdc0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
