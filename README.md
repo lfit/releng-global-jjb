@@ -35,12 +35,44 @@ SILO=releng
 - OpenStack Cloud
 - Timestamps
 
+## Parameters stored in defaults.yaml
+
+There are a few project specific parameters that should be stored in the
+ci-management repo's defaults.yaml file.
+
+**gerrit-server-name**: The name of the Gerrit Server as defined in Gerrit
+Trigger global configuration.
+
+**jenkins-ssh-credential**: The name of the Jenkins Credential to use for ssh
+connections.
+
+defaults.yaml:
+
+```
+- defaults:
+    name: global
+
+    # lf-infra defaults
+    jenkins-ssh-credential: opendaylight-jenkins-ssh
+    gerrit-server-name: OpenDaylight
+```
+
+## Config File Management
+
+### Logs
+
+The logs account requires a Maven Settings file created called
+**jenkins-log-archives-settings** with a server ID of **logs** containing the
+credentials for the logs user in Nexus.
+
 ## Deploying ci-jobs
 
 The CI job group contains multiple jobs that should be deployed in all LF
 Jenkins infra. The minimal configuration needed to deploy the ci-management
 jobs is as follows which deploys the **{project-name}-ci-jobs** job group as
 defined in **lf-ci-jobs.yaml**.
+
+ci-management.yaml:
 
 ```
 - project:
