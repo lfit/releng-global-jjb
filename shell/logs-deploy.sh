@@ -11,14 +11,22 @@
 
 set -x  # Trace commands for this script to make debugging easier.
 
-LOGS_SERVER="${LOGS_SERVER:-WARNING: Logging Server Not Set.}"
-NEXUS_URL="${NEXUS_URL:-$NEXUSPROXY}"
-NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
-BUILD_URL="${BUILD_URL}"
+LOGS_SERVER="${LOGS_SERVER:-None}"
 
-lftools deploy archives "$NEXUS_URL" "$NEXUS_PATH" "$WORKSPACE"
-lftools deploy logs "$NEXUS_URL" "$NEXUS_PATH" "$BUILD_URL"
+if [ "${LOGS_SERVER}" == 'None' ]
+then
+    set +x # Disable trace since we no longer need it
 
-set +x  # Disable trace since we no longer need it.
+    echo "WARNING: Logging server not set"
+else
+    NEXUS_URL="${NEXUS_URL:-$NEXUSPROXY}"
+    NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
+    BUILD_URL="${BUILD_URL}"
 
-echo "Build logs: <a href=\"$LOGS_SERVER/$NEXUS_PATH\">$LOGS_SERVER/$NEXUS_PATH</a>"
+    lftools deploy archives "$NEXUS_URL" "$NEXUS_PATH" "$WORKSPACE"
+    lftools deploy logs "$NEXUS_URL" "$NEXUS_PATH" "$BUILD_URL"
+
+    set +x  # Disable trace since we no longer need it.
+
+    echo "Build logs: <a href=\"$LOGS_SERVER/$NEXUS_PATH\">$LOGS_SERVER/$NEXUS_PATH</a>"
+fi
