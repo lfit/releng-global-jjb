@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_9b26aeb9",
+        "filename": "jjb/github/lf-ci-ghprb.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-04-25T20:33:14Z",
+      "side": 1,
+      "message": "This should just be added to the lf-macros... or the file should be renamed to trigger-macros.yaml and any triggers in the lf-macros should be moved into it.\n\nIf it\u0027s own file, the first line should be\n---\n\nWhich is proper syntax for starting a new yaml document.",
+      "revId": "1bfd064012cb1346ddc27b9f1691c7f2bd453145",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_7b2b0a83",
+        "filename": "jjb/github/lf-ci-ghprb.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-04-25T20:33:14Z",
+      "side": 1,
+      "message": "First, macros don\u0027t take a $ at the start. Second, I see no reason to change this from the default and would recommend against it as it\u0027s extra configuration that has to be done for all jobs that use the trigger when it\u0027s not needed.",
+      "range": {
+        "startLine": 3,
+        "startChar": 26,
+        "endLine": 3,
+        "endChar": 48
+      },
+      "revId": "1bfd064012cb1346ddc27b9f1691c7f2bd453145",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_9b4d8e75",
+        "filename": "jjb/github/lf-ci-ghprb.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-04-25T20:33:14Z",
+      "side": 1,
+      "message": "This should be recheck and preferably \u0027^recheck$\u0027 to force it to be the only comment",
+      "range": {
+        "startLine": 4,
+        "startChar": 21,
+        "endLine": 4,
+        "endChar": 39
+      },
+      "revId": "1bfd064012cb1346ddc27b9f1691c7f2bd453145",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
