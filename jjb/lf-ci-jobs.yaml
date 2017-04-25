@@ -11,6 +11,19 @@
       - '{project-name}-jjb-merge'
       - '{project-name}-jjb-verify'
 
+- job-group:
+    name: '{project-name}-github-ci-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using github.
+
+    jjb-version: 1.6.2
+
+    jobs:
+      - '{project-name}-ghprb-jjb-merge'
+      - '{project-name}-ghprb-jjb-verify'
+
+
 ####################
 # Anchors & Macros #
 ####################
@@ -170,6 +183,128 @@
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
               <<: *lf_jjb_file_paths
+
+    builders:
+      - lf-infra-jjbini
+      - shell: !include-raw-escape:
+          - ../shell/jjb-install.sh
+          - ../shell/jjb-verify-job.sh
+          - ../shell/jjb-check-unicode.sh
+      - gpg-verify-git-signature
+
+    publishers:
+      - lf-infra-publish
+
+
+- job-template:
+    name: '{project-name}-ghprb-jjb-merge'
+    project-type: freestyle
+
+    node: '{build-node}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    submodule-recursive: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+      - lf-infra-jjb-parameters:
+          jjb-version: '{jjb-version}'
+
+    scm:
+      - lf-infra-github-scm:
+          refspec: '{refspec}'
+          branch: ''
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          github-hooks: true
+          permit-all: true
+          auto-close-on-fail: false
+
+    builders:
+      - lf-infra-jjbini
+      - shell: !include-raw-escape:
+          - ../shell/jjb-install.sh
+          - ../shell/jjb-merge-job.sh
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-ghprb-jjb-verify'
+    project-type: freestyle
+
+    node: '{build-node}'
+    concurrent: true
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    submodule-recursive: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+      - lf-infra-jjb-parameters:
+          jjb-version: '{jjb-version}'
+
+    scm:
+      - lf-infra-github-scm:
+          refspec: '{refspec}'
+          branch: ''
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          github-hooks: true
+          permit-all: true
+          auto-close-on-fail: false
 
     builders:
       - lf-infra-jjbini
