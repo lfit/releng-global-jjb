@@ -19,6 +19,47 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_9b746e9d",
+        "filename": "jjb/github/lf-ci-ghprb.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-25T20:41:02Z",
+      "side": 1,
+      "message": "Agreed don\u0027t start a new macro file. We\u0027ll do that if the existing one gets too large.",
+      "parentUuid": "9a437d4f_9b26aeb9",
+      "revId": "1bfd064012cb1346ddc27b9f1691c7f2bd453145",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_bb47324b",
+        "filename": "jjb/github/lf-ci-ghprb.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-25T20:41:02Z",
+      "side": 1,
+      "message": "This is invalid syntax for a macro. Refer to the docs here:\n\nhttps://docs.openstack.org/infra/jenkins-job-builder/definition.html#macro",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 9
+      },
+      "revId": "1bfd064012cb1346ddc27b9f1691c7f2bd453145",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_7b2b0a83",
         "filename": "jjb/github/lf-ci-ghprb.yaml",
         "patchSetId": 1
@@ -58,6 +99,52 @@
         "startChar": 21,
         "endLine": 4,
         "endChar": 39
+      },
+      "revId": "1bfd064012cb1346ddc27b9f1691c7f2bd453145",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_3b5c6225",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-25T20:41:02Z",
+      "side": 1,
+      "message": "Should probably be the exact address for github.com",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 24
+      },
+      "revId": "1bfd064012cb1346ddc27b9f1691c7f2bd453145",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_db4af654",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-04-25T20:41:02Z",
+      "side": 1,
+      "message": "Is this a real variable provided by GitHub trigger or did we make this up?\n\nI\u0027d be interested in seeing the full list of GITHUB_* variables if they exist. Can you provide it as an example in a comment?",
+      "range": {
+        "startLine": 133,
+        "startChar": 26,
+        "endLine": 133,
+        "endChar": 40
       },
       "revId": "1bfd064012cb1346ddc27b9f1691c7f2bd453145",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
