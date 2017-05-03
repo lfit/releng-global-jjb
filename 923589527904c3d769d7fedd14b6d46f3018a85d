@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_4e9f6604",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-03T20:43:30Z",
+      "side": 1,
+      "message": "These need to be put into a separate job-group for github based projects. The current job-group really should be renamed to {project-name}-gerrit-ci-jobs but it can\u0027t be renamed since it\u0027s now being used by ODL",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 41
+      },
+      "revId": "923589527904c3d769d7fedd14b6d46f3018a85d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
