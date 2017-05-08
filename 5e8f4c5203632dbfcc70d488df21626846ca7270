@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_b11cf3c2",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-08T16:55:18Z",
+      "side": 1,
+      "message": "This hardcodes the repo URL. This shouldn\u0027t be done. Instead we should be using $GIT_URL/$PROJECT\n\nAlternatively it could be done as:\n\nhttps://github.com/$ghprbGhRepository\n\nSince $ghprbGhRepository will have the calling org/user and repo name",
+      "revId": "5e8f4c5203632dbfcc70d488df21626846ca7270",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
