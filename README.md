@@ -74,6 +74,13 @@ Trigger global configuration.
 **jenkins-ssh-credential**: The name of the Jenkins Credential to use for ssh
 connections.
 
+If you are using github then there are two more parameters which
+will need to be placed in the defaults.yaml
+
+**github-url**: The url of github. Default is https://github.com
+
+**github-org**: The name of the github organization.
+
 defaults.yaml:
 
 ```
@@ -83,6 +90,8 @@ defaults.yaml:
     # lf-infra defaults
     jenkins-ssh-credential: opendaylight-jenkins-ssh
     gerrit-server-name: OpenDaylight
+    githuborg: https://github.com/lfit
+    org: lfit
 ```
 
 ## Config File Management
