@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_67092d2c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T20:12:14Z",
+      "side": 1,
+      "message": "Since you went to the effort of creating a macro \u0027lf-infra-github-pr\u0027 you should probably just use it instead of laying out the entire trigger again.",
+      "range": {
+        "startLine": 194,
+        "startChar": 8,
+        "endLine": 199,
+        "endChar": 35
+      },
+      "revId": "36bdcb99e45a0bb17af14ea7998738cbcdf677e7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_470e2936",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T20:12:14Z",
+      "side": 1,
+      "message": "Since you went to the effort of creating a macro \u0027lf-infra-github-pr\u0027 you should probably just use it instead of laying out the entire trigger again.",
+      "range": {
+        "startLine": 216,
+        "startChar": 8,
+        "endLine": 221,
+        "endChar": 35
+      },
+      "revId": "36bdcb99e45a0bb17af14ea7998738cbcdf677e7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
