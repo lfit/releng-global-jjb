@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_0c74c6cd",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T17:37:20Z",
+      "side": 1,
+      "message": "This should not be here, must have been something from the rebase as it got replaced by the two \u003c\u003c: *lf_jjb_verify anchors at the top of the job definition",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 188,
+        "endChar": 24
+      },
+      "revId": "09e940fb80662b5b21030a77c7c8221060557dd0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_4c72cee6",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T17:37:20Z",
+      "side": 1,
+      "message": "See the {project-name}-jjb-merge job definition for changes to make to bring it in line with the anchor methodology",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 248,
+        "endChar": 24
+      },
+      "revId": "09e940fb80662b5b21030a77c7c8221060557dd0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_2c778ad6",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T17:37:20Z",
+      "side": 1,
+      "message": "See the {project-name}-jjb-verify job definition for changes to make to bring it in line with the anchor methodology",
+      "range": {
+        "startLine": 252,
+        "startChar": 0,
+        "endLine": 310,
+        "endChar": 24
+      },
+      "revId": "09e940fb80662b5b21030a77c7c8221060557dd0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
