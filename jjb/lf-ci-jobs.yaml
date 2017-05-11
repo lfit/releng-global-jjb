@@ -11,6 +11,19 @@
       - gerrit-jjb-merge
       - gerrit-jjb-verify
 
+- job-group:
+    name: '{project-name}-github-ci-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using github.
+
+    jjb-version: 1.6.2
+
+    jobs:
+      - 'github-jjb-merge'
+      - 'github-jjb-verify'
+
+
 ####################
 # Anchors & Macros #
 ####################
@@ -164,3 +177,83 @@
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
               <<: *lf_jjb_file_paths
+
+- job-template:
+    name: '{project-name}-jjb-merge'
+    id: github-jjb-merge
+    <<: *lf_jjb_verify_merge
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jjb_merge_builders
+
+    ######################
+    # Default parameters #
+    ######################
+
+    github-url: https://github.com
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - github:
+          url: '{github-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '$GIT_URL/$PROJECT'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: true
+          status-context: 'JJB Merge'
+          permit-all: false
+          github-hooks: true
+          auto-close-on-fail: false
+          org-list:
+            - '{github-org}'
+
+- job-template:
+    name: '{project-name}-jjb-verify'
+    id: github-jjb-verify
+    <<: *lf_jjb_verify_merge
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jjb_merge_builders
+
+    ######################
+    # Default parameters #
+    ######################
+
+    github-url: https://github.com
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - github:
+          url: '{github-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '$GIT_URL/$PROJECT'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'JJB Verify'
+          permit-all: true
+          github-hooks: true
+          auto-close-on-fail: false
