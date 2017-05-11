@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_2c254ac2",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T19:21:39Z",
+      "side": 1,
+      "message": "Now that you\u0027ve got anchors in use, you need to delete this section",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 223,
+        "endChar": 38
+      },
+      "revId": "3a3999fdd20d1ed6611479048d83c874236a52f5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_0c2286b9",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T19:21:39Z",
+      "side": 1,
+      "message": "Now that you\u0027ve got anchors in use, you need to delete this section",
+      "range": {
+        "startLine": 233,
+        "startChar": 0,
+        "endLine": 236,
+        "endChar": 60
+      },
+      "revId": "3a3999fdd20d1ed6611479048d83c874236a52f5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_ec2e22a5",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T19:21:39Z",
+      "side": 1,
+      "message": "Now that you\u0027ve got anchors in use, you need to delete this section",
+      "range": {
+        "startLine": 246,
+        "startChar": 0,
+        "endLine": 250,
+        "endChar": 37
+      },
+      "revId": "3a3999fdd20d1ed6611479048d83c874236a52f5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_8c367602",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T19:21:39Z",
+      "side": 1,
+      "message": "Now that you\u0027ve got anchors in use, you need to delete this section",
+      "range": {
+        "startLine": 259,
+        "startChar": 0,
+        "endLine": 285,
+        "endChar": 38
+      },
+      "revId": "3a3999fdd20d1ed6611479048d83c874236a52f5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_6c3b52ec",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T19:21:39Z",
+      "side": 1,
+      "message": "Now that you\u0027ve got anchors in use, you need to delete this section",
+      "range": {
+        "startLine": 294,
+        "startChar": 0,
+        "endLine": 298,
+        "endChar": 60
+      },
+      "revId": "3a3999fdd20d1ed6611479048d83c874236a52f5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_4c408e56",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-11T19:21:39Z",
+      "side": 1,
+      "message": "Now that you\u0027ve got anchors in use, you need to delete this section",
+      "range": {
+        "startLine": 307,
+        "startChar": 0,
+        "endLine": 314,
+        "endChar": 32
+      },
+      "revId": "3a3999fdd20d1ed6611479048d83c874236a52f5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
