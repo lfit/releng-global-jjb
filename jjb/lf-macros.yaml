@@ -78,6 +78,13 @@
 
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
+      - string:
+          name: ghprbAuthorRepoGitUrl
+          default: 'https://github.com/{githuborg}/{project}'
+          description: |
+              Parameter to indentify a Github project.  This is the Github org
+              followed by the repo name.
+              For Example: lfit/itpol
 
 - property:
     name: lf-infra-properties
@@ -125,6 +132,19 @@
             recursive: '{submodule-recursive}'
           choosing-strategy: '{choosing-strategy}'
 
+- scm:
+    name: lf-infra-github-scm
+    scm:
+      - git:
+          credentials-id: '{jenkins-ssh-credential}'
+          url: '$ghprbAuthorRepoGitUrl'
+          refspec: '{refspec}'
+          skip-tag: true
+          wipe-workspace: true
+          submodule:
+            recursive: '{submodule-recursive}'
+          choosing-strategy: '{choosing-strategy}'
+
 - wrapper:
     name: lf-infra-wrappers
     wrappers:
@@ -140,3 +160,13 @@
             - '{jenkins-ssh-credential}'
       - openstack:
           single-use: true
+
+- trigger:
+    name: lf-infra-github-pr
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '{trigger-phrase}'
+          only-trigger-phrase: '{only-trigger-phrase}'
+          permit-all: true
+          github-hooks: true
+          auto-close-on-fail: false
