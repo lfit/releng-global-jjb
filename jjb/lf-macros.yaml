@@ -78,6 +78,11 @@
 
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
+      - string:
+          name: github-url
+          default: https://github.com
+          description: |
+              Url of github.  Default is https://github.com
 
 - property:
     name: lf-infra-properties
@@ -119,6 +124,19 @@
           refspec: '{refspec}'
           branches:
             - 'refs/heads/{branch}'
+          skip-tag: true
+          wipe-workspace: true
+          submodule:
+            recursive: '{submodule-recursive}'
+          choosing-strategy: '{choosing-strategy}'
+
+- scm:
+    name: lf-infra-github-scm
+    scm:
+      - git:
+          credentials-id: '{jenkins-ssh-credential}'
+          url: '$GIT_URL/$PROJECT'
+          refspec: '{refspec}'
           skip-tag: true
           wipe-workspace: true
           submodule:
