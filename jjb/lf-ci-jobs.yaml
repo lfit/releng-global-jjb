@@ -11,6 +11,19 @@
       - '{project-name}-jjb-merge'
       - '{project-name}-jjb-verify'
 
+- job-group:
+    name: '{project-name}-github-ci-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using github.
+
+    jjb-version: 1.6.2
+
+    jobs:
+      - '{project-name}-ghprb-jjb-merge'
+      - '{project-name}-ghprb-jjb-verify'
+
+
 ####################
 # Anchors & Macros #
 ####################
@@ -162,3 +175,89 @@
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
               <<: *lf_jjb_file_paths
+
+    builders:
+      - lf-infra-jjbini
+      - shell: !include-raw-escape:
+          - ../shell/jjb-install.sh
+          - ../shell/jjb-verify-job.sh
+          - ../shell/jjb-check-unicode.sh
+      - gpg-verify-git-signature
+
+
+- job-template:
+    name: '{project-name}-ghprb-jjb-merge'
+    <<: *lf_jjb_verify_merge
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jjb_merge_builders
+
+
+    project-type: freestyle
+
+    node: '{build-node}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    submodule-recursive: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-github-scm:
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          github-hooks: true
+          permit-all: true
+          auto-close-on-fail: false
+
+- job-template:
+    name: '{project-name}-ghprb-jjb-verify'
+    <<: *lf_jjb_verify_merge
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jjb_merge_builders
+
+
+    project-type: freestyle
+
+    node: '{build-node}'
+    concurrent: true
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    submodule-recursive: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-github-scm:
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          github-hooks: true
+          permit-all: true
+          auto-close-on-fail: false
