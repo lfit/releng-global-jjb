@@ -125,6 +125,19 @@
             recursive: '{submodule-recursive}'
           choosing-strategy: '{choosing-strategy}'
 
+- scm:
+    name: lf-infra-github-scm
+    scm:
+      - git:
+          credentials-id: '{jenkins-ssh-credential}'
+          url: '$GIT_URL/$PROJECT'
+          refspec: '{refspec}'
+          skip-tag: true
+          wipe-workspace: true
+          submodule:
+            recursive: '{submodule-recursive}'
+          choosing-strategy: '{choosing-strategy}'
+
 - wrapper:
     name: lf-infra-wrappers
     wrappers:
