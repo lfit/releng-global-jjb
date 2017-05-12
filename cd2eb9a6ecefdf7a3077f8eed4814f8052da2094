@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_8752d111",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-12T16:21:34Z",
+      "side": 1,
+      "message": "Still need some sort of merge trigger",
+      "revId": "cd2eb9a6ecefdf7a3077f8eed4814f8052da2094",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_a74dd574",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-12T16:21:34Z",
+      "side": 1,
+      "message": "Dangling white space",
+      "range": {
+        "startLine": 208,
+        "startChar": 26,
+        "endLine": 208,
+        "endChar": 27
+      },
+      "revId": "cd2eb9a6ecefdf7a3077f8eed4814f8052da2094",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_c730d9ea",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-12T16:21:34Z",
+      "side": 1,
+      "message": "Dangling white space",
+      "range": {
+        "startLine": 133,
+        "startChar": 26,
+        "endLine": 133,
+        "endChar": 27
+      },
+      "revId": "cd2eb9a6ecefdf7a3077f8eed4814f8052da2094",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
