@@ -16,6 +16,29 @@
       "revId": "6b8f151314131bbfbd49659741c95364aa6b985d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_273a05ce",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-12T16:16:12Z",
+      "side": 1,
+      "message": "This should be changed to $GIT_BASE",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 53
+      },
+      "revId": "6b8f151314131bbfbd49659741c95364aa6b985d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
