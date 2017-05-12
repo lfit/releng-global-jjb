@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_a726f5b8",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-12T15:57:11Z",
+      "side": 1,
+      "message": "You\u0027re going to need some sort of trigger for merge jobs.",
+      "revId": "6b8f151314131bbfbd49659741c95364aa6b985d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
