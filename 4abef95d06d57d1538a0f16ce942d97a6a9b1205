@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_e7199d23",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-15T16:39:08Z",
+      "side": 1,
+      "message": "Dangling white space",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 4
+      },
+      "revId": "4abef95d06d57d1538a0f16ce942d97a6a9b1205",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_c71699f1",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-15T16:39:08Z",
+      "side": 1,
+      "message": "Dangling white space",
+      "range": {
+        "startLine": 194,
+        "startChar": 31,
+        "endLine": 194,
+        "endChar": 32
+      },
+      "revId": "4abef95d06d57d1538a0f16ce942d97a6a9b1205",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_a7d39537",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 24
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-15T16:39:08Z",
+      "side": 1,
+      "message": "Without any sort of definition this macro will (or at least should) fail JJB",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 173,
+        "endChar": 7
+      },
+      "revId": "4abef95d06d57d1538a0f16ce942d97a6a9b1205",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
