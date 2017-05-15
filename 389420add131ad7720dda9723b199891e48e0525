@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_47b989e8",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 25
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-15T19:02:41Z",
+      "side": 1,
+      "message": "Dangling whitespace",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 192,
+        "endChar": 4
+      },
+      "revId": "389420add131ad7720dda9723b199891e48e0525",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_27ce8584",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 25
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-15T19:02:41Z",
+      "side": 1,
+      "message": "The lf-infra-github-pr macro does not take an variables presently. As such, the trigger-phrase and only-trigger-phrase portions of this are useless.\n\nIf you modify the macro to take them, then the call to it on line 213 will need to be updated with the bits for reverify",
+      "range": {
+        "startLine": 194,
+        "startChar": 0,
+        "endLine": 196,
+        "endChar": 35
+      },
+      "revId": "389420add131ad7720dda9723b199891e48e0525",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
