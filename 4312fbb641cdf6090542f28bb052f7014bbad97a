@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_07926157",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 27
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-15T19:15:35Z",
+      "side": 1,
+      "message": "May want to consider changing up the macro to accept two more parameters:\n\npermit-all\nwhitelist\n\nSo that the merge jobs can only be triggered by committers instead of by everyone like the verify jobs",
+      "revId": "4312fbb641cdf6090542f28bb052f7014bbad97a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
