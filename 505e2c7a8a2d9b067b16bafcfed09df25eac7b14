@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_67836dcd",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 31
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-16T19:21:02Z",
+      "side": 1,
+      "message": "I don\u0027t think you would want the jenkins account itself to be on the white list. Otherwise there is potential for an infinite loop of jobs. The Gerrit trigger plugin itself explicitly ignores comments that it makes because of this.",
+      "revId": "505e2c7a8a2d9b067b16bafcfed09df25eac7b14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
