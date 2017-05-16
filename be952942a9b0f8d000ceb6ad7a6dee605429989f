@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_c71c59c4",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 30
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-16T19:17:55Z",
+      "side": 1,
+      "message": "Dangling whitespace",
+      "range": {
+        "startLine": 166,
+        "startChar": 36,
+        "endLine": 166,
+        "endChar": 37
+      },
+      "revId": "be952942a9b0f8d000ceb6ad7a6dee605429989f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
