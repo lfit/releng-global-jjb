@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_e2e62b44",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 52
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T20:41:08Z",
+      "side": 1,
+      "message": "I don\u0027t like having ghprb in the name because then every job will have this.\n\nI think we can use ID\u0027s to reuse the same job template name.\n\nhttps://docs.openstack.org/infra/jenkins-job-builder/definition.html#item-id-s",
+      "range": {
+        "startLine": 24,
+        "startChar": 24,
+        "endLine": 24,
+        "endChar": 29
+      },
+      "revId": "2065e2a6eb503f41d04effd45c2beabf29f2e503",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_c2e32732",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 52
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T20:41:08Z",
+      "side": 1,
+      "message": "name: \u0027{project-name}-ghprb-jjb-merge\u0027\n id: \u0027ghprb-jjb-merge\u0027\n\nsee: https://docs.openstack.org/infra/jenkins-job-builder/definition.html#item-id-s",
+      "range": {
+        "startLine": 180,
+        "startChar": 4,
+        "endLine": 180,
+        "endChar": 42
+      },
+      "revId": "2065e2a6eb503f41d04effd45c2beabf29f2e503",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_a2d02354",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 52
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T20:41:08Z",
+      "side": 1,
+      "message": "See the ID comment from above.",
+      "range": {
+        "startLine": 198,
+        "startChar": 4,
+        "endLine": 198,
+        "endChar": 43
+      },
+      "revId": "2065e2a6eb503f41d04effd45c2beabf29f2e503",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_82d51f45",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 52
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T20:41:08Z",
+      "side": 1,
+      "message": "I dislike that this is hardcoded.\n\nShould be something like:\n\n https://github.com/${GH_PROJECT}\n\nor whatever variable is passed in via githubpr plugin during a build.",
+      "range": {
+        "startLine": 205,
+        "startChar": 16,
+        "endLine": 205,
+        "endChar": 62
+      },
+      "revId": "2065e2a6eb503f41d04effd45c2beabf29f2e503",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_62ca3ba3",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 52
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T20:41:08Z",
+      "side": 1,
+      "message": "Instead of the JJB variable {project} reuse the environment variable that is passed in as it makes it more clear where these values come from.\n\n$PROJECT or whatever is being passed in by githubprb",
+      "range": {
+        "startLine": 209,
+        "startChar": 16,
+        "endLine": 209,
+        "endChar": 34
+      },
+      "revId": "2065e2a6eb503f41d04effd45c2beabf29f2e503",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_42cf37b1",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 52
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T20:41:08Z",
+      "side": 1,
+      "message": "$GIT_URL/$GH_PROJECT\n\nWhatever in place env variable the plugin already uses would be ideal.\n\nThe less variables the user of a macro has to pass in the better.",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 21
+      },
+      "revId": "2065e2a6eb503f41d04effd45c2beabf29f2e503",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
