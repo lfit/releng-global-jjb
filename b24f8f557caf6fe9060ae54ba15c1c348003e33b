@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_c268c789",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 53
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-18T21:46:26Z",
+      "side": 1,
+      "message": "I\u0027m not certain we want to hard code edgexfoundary into our global!\n\nMaybe a new var of {githuborg} that would be set in the defaults file?\n\nThen this would end up being \u0027{githuborg}/{project}\u0027",
+      "parentUuid": "9a437d4f_2272f37c",
+      "range": {
+        "startLine": 83,
+        "startChar": 21,
+        "endLine": 83,
+        "endChar": 38
+      },
+      "revId": "b24f8f557caf6fe9060ae54ba15c1c348003e33b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_026fef93",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 53
