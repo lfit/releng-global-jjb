@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_425df7e8",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 53
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T21:40:08Z",
+      "side": 1,
+      "message": "This should be ghprbGhRepository",
+      "range": {
+        "startLine": 82,
+        "startChar": 16,
+        "endLine": 82,
+        "endChar": 30
+      },
+      "revId": "b24f8f557caf6fe9060ae54ba15c1c348003e33b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_2272f37c",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 53
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T21:40:08Z",
+      "side": 1,
+      "message": "With a default value of edgexfoundary/{project}",
+      "range": {
+        "startLine": 83,
+        "startChar": 21,
+        "endLine": 83,
+        "endChar": 38
+      },
+      "revId": "b24f8f557caf6fe9060ae54ba15c1c348003e33b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_026fef93",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 53
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T21:40:08Z",
+      "side": 1,
+      "message": "I think url: \u0027$ghprbAuthorRepoGitUrl\u0027 would be better. and then create a default variable:\n\n ghprbAuthorRepoGitUrl \u003d https://github.com/$ghprbGhRepository",
+      "range": {
+        "startLine": 140,
+        "startChar": 16,
+        "endLine": 140,
+        "endChar": 45
+      },
+      "revId": "b24f8f557caf6fe9060ae54ba15c1c348003e33b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
