@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_223af3cd",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 33
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-18T15:19:22Z",
+      "side": 1,
+      "message": "Merges should only ever operate against the HEAD of the branch they\u0027re being merged on as we expect the code to be merged _before_ we execute our merge job.",
+      "range": {
+        "startLine": 187,
+        "startChar": 20,
+        "endLine": 187,
+        "endChar": 57
+      },
+      "revId": "97a0492a691f3155aa7223df7c9cbb31a9f92556",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
