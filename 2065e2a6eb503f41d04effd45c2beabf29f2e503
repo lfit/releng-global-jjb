@@ -137,6 +137,30 @@
       "revId": "2065e2a6eb503f41d04effd45c2beabf29f2e503",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_a23703b0",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 52
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-18T20:50:30Z",
+      "side": 1,
+      "message": "This can be simplified to:\n\n url: \u0027$ghprbAuthorRepoGitUrl\u0027\n\nSeems like ghprbAuthorRepoGitUrl is a environment variable that the GitHub pull request plugin passes in.\n\nIf we want to allow this job to run via manual trigger though we\u0027ll also have to configure a default:\n\n ghprbAuthorRepoGitUrl \u003d $GIT_URL/$GH_PROJECT",
+      "parentUuid": "9a437d4f_42cf37b1",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 21
+      },
+      "revId": "2065e2a6eb503f41d04effd45c2beabf29f2e503",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
