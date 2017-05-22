@@ -1,0 +1,141 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_e2a98b25",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 73
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-22T18:12:10Z",
+      "side": 1,
+      "message": "white-list should be a passed in var (see comment on the pr macro). For verify it should be an empty list. For merge it should be something that is passed in from the upper level call.",
+      "revId": "d40e784da372afc6eb683609574e6aa7f6b20622",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_62b6bb8c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 73
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-22T18:12:10Z",
+      "side": 1,
+      "message": "I would think this should be {githuborg}/{project} with {githuborg} being something set in the defaults hash.",
+      "range": {
+        "startLine": 187,
+        "startChar": 16,
+        "endLine": 187,
+        "endChar": 31
+      },
+      "revId": "d40e784da372afc6eb683609574e6aa7f6b20622",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_c2a68753",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 73
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-22T18:12:10Z",
+      "side": 1,
+      "message": "There should be a permit-all variable setting passed as false right now since the merges aren\u0027t working the way we presently expect. See the comment on the macro\n\nAdditionally, there should be a white-list that is passed back. See above and in macro comment",
+      "revId": "d40e784da372afc6eb683609574e6aa7f6b20622",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_42bbb772",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 73
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-22T18:12:10Z",
+      "side": 1,
+      "message": "I would think this should be {githuborg}/{project} with {githuborg} being something set in the defaults hash.",
+      "range": {
+        "startLine": 213,
+        "startChar": 16,
+        "endLine": 213,
+        "endChar": 31
+      },
+      "revId": "d40e784da372afc6eb683609574e6aa7f6b20622",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_a2638319",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 73
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-22T18:12:10Z",
+      "side": 1,
+      "message": "There should be a permit-all variable setting passed as true right now since the merges aren\u0027t working the way we presently expect. See the comment on the macro\n\nAdditionally, there should be a white-list that is passed back. See above and in macro comment",
+      "revId": "d40e784da372afc6eb683609574e6aa7f6b20622",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_22b0b38a",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 73
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-22T18:12:10Z",
+      "side": 1,
+      "message": "This should be a variable like {only-trigger-phrase} so that the remerge comments can\u0027t be triggered by anyone since we need to lock this down right now",
+      "range": {
+        "startLine": 164,
+        "startChar": 22,
+        "endLine": 164,
+        "endChar": 26
+      },
+      "revId": "d40e784da372afc6eb683609574e6aa7f6b20622",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_02adaf31",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 73
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-22T18:12:10Z",
+      "side": 1,
+      "message": "The white-list should be passed in since we need to currently lock this down given that merges don\u0027t work as expected right now.",
+      "revId": "d40e784da372afc6eb683609574e6aa7f6b20622",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
