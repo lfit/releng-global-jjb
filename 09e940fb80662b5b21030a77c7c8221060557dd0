@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_2c5e6a46",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-05-23T22:01:14Z",
+      "side": 1,
+      "message": "Do  you mean to make lf-infra-publish an anchor and use it like:\n\u003c\u003c: *lf-infra-publish\n?\n\n\nEDIT LATER: nm I see what you meant.",
+      "parentUuid": "9a437d4f_4c72cee6",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 248,
+        "endChar": 24
+      },
+      "revId": "09e940fb80662b5b21030a77c7c8221060557dd0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_2c778ad6",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 15
