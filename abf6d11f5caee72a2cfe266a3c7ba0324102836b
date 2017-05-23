@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_9dffbe01",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 76
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-23T17:37:42Z",
+      "side": 1,
+      "message": "Change to github-jjb-merge",
+      "range": {
+        "startLine": 23,
+        "startChar": 9,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "abf6d11f5caee72a2cfe266a3c7ba0324102836b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_7d041a15",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 76
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-23T17:37:42Z",
+      "side": 1,
+      "message": "Change to github-jjb-verify",
+      "range": {
+        "startLine": 24,
+        "startChar": 9,
+        "endLine": 24,
+        "endChar": 40
+      },
+      "revId": "abf6d11f5caee72a2cfe266a3c7ba0324102836b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_5d09562b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 76
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-23T17:37:42Z",
+      "side": 1,
+      "message": "Insert after the name the following:\nid: github-jjb-merge\n\nChange the name to {project-name}-jjb-merge\u0027",
+      "revId": "abf6d11f5caee72a2cfe266a3c7ba0324102836b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_3d0e9235",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 76
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-23T17:37:42Z",
+      "side": 1,
+      "message": "Insert after the name the following:\nid: github-jjb-verify\n\nChange the name to {project-name}-jjb-verify",
+      "revId": "abf6d11f5caee72a2cfe266a3c7ba0324102836b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
