@@ -116,6 +116,30 @@
       "revId": "b24f8f557caf6fe9060ae54ba15c1c348003e33b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_22f9d3c8",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 53
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-05-23T22:01:14Z",
+      "side": 1,
+      "message": "the ghprbAuthorRepoGitUrl actually passed the authors fork of the repo, which is not what we want here.  Talked over with Andy and we settled on $GIT_URL/{project}",
+      "parentUuid": "9a437d4f_026fef93",
+      "range": {
+        "startLine": 140,
+        "startChar": 16,
+        "endLine": 140,
+        "endChar": 45
+      },
+      "revId": "b24f8f557caf6fe9060ae54ba15c1c348003e33b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
