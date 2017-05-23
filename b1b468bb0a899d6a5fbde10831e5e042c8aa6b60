@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_dde66644",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 77
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T20:56:34Z",
+      "side": 1,
+      "message": "This needs to be documented. How and where is it defined?\n\nCan we add something into the README.md file?",
+      "range": {
+        "startLine": 188,
+        "startChar": 16,
+        "endLine": 188,
+        "endChar": 27
+      },
+      "revId": "b1b468bb0a899d6a5fbde10831e5e042c8aa6b60",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
