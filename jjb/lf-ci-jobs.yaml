@@ -8,8 +8,8 @@
     jjb-version: 1.6.2
 
     jobs:
-      - '{project-name}-jjb-merge'
-      - '{project-name}-jjb-verify'
+      - gerrit-jjb-merge
+      - gerrit-jjb-verify
 
 ####################
 # Anchors & Macros #
@@ -102,6 +102,7 @@
 
 - job-template:
     name: '{project-name}-jjb-merge'
+    id: gerrit-jjb-merge
     <<: *lf_jjb_verify_merge
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_merge_builders
@@ -131,6 +132,7 @@
 
 - job-template:
     name: '{project-name}-jjb-verify'
+    id: gerrit-jjb-verify
     concurrent: true
     <<: *lf_jjb_verify_merge
     # yamllint disable-line rule:key-duplicates
