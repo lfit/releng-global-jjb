@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_1df98ec8",
+        "filename": "README.md",
+        "patchSetId": 80
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-05-23T22:01:14Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "9a437d4f_5d5836fa",
+      "range": {
+        "startLine": 80,
+        "startChar": 27,
+        "endLine": 80,
+        "endChar": 33
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_bd5162da",
         "filename": "README.md",
         "patchSetId": 80
@@ -117,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_5d0f16e2",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 80
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-05-23T22:01:14Z",
+      "side": 1,
+      "message": "GTI_URL in this instance is set in Jenkins as https://github.com/edgexfoundry",
+      "parentUuid": "9a437d4f_9d5e9ee8",
+      "range": {
+        "startLine": 193,
+        "startChar": 17,
+        "endLine": 193,
+        "endChar": 33
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_fd47ea1b",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 80
@@ -128,6 +176,30 @@
       "writtenOn": "2017-05-23T21:36:15Z",
       "side": 1,
       "message": "github-org\n\n\nI\u0027m confused. Why is this needed in the merge job but not the verify job below?",
+      "range": {
+        "startLine": 209,
+        "startChar": 15,
+        "endLine": 209,
+        "endChar": 20
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_9d057ec4",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 80
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-05-23T22:01:14Z",
+      "side": 1,
+      "message": "We want everyone to be able to trigger the verify job but not the merge job.",
+      "parentUuid": "9a437d4f_fd47ea1b",
       "range": {
         "startLine": 209,
         "startChar": 15,
@@ -174,6 +246,30 @@
       "writtenOn": "2017-05-23T21:36:15Z",
       "side": 1,
       "message": "Don\u0027t need this. Actually makes the variable difficult to modify.\n\nInstead I would define in each job template that uses this parameter:\n\n github-url: https://github.com\n\n(Take a look at the existing templates they set defaults for submodule recursive and branch).",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 59
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_3d1452f4",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 80
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-05-23T22:01:14Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "9a437d4f_7d3c1a94",
       "range": {
         "startLine": 81,
         "startChar": 0,
