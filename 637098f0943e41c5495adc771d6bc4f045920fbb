@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_c22b2793",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 75
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-23T17:22:38Z",
+      "side": 1,
+      "message": "I don\u0027t want to set the refspec, but given that we aren\u0027t currently triggering on an actual merge this should be set to the same as the verify job, otherwise the manually triggered merge will actually run on the wrong repo setup.",
+      "revId": "637098f0943e41c5495adc771d6bc4f045920fbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_e22e2ba5",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 75
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-23T17:22:38Z",
+      "side": 1,
+      "message": "Dangling white space",
+      "range": {
+        "startLine": 232,
+        "startChar": 36,
+        "endLine": 232,
+        "endChar": 37
+      },
+      "revId": "637098f0943e41c5495adc771d6bc4f045920fbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
