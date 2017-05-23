@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_3d5d72ea",
+        "filename": "README.md",
+        "patchSetId": 80
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T21:36:15Z",
+      "side": 1,
+      "message": "GitHub",
+      "range": {
+        "startLine": 77,
+        "startChar": 17,
+        "endLine": 77,
+        "endChar": 23
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_5d5836fa",
+        "filename": "README.md",
+        "patchSetId": 80
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T21:36:15Z",
+      "side": 1,
+      "message": "GitHub",
+      "range": {
+        "startLine": 80,
+        "startChar": 27,
+        "endLine": 80,
+        "endChar": 33
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_dd5426cc",
+        "filename": "README.md",
+        "patchSetId": 80
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T21:36:15Z",
+      "side": 1,
+      "message": "A good standard for declaring defaults in docs is simply:\n\n **github-url**: The URL of GitHub. (default: https://github.com)",
+      "range": {
+        "startLine": 80,
+        "startChar": 35,
+        "endLine": 80,
+        "endChar": 64
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_bd5162da",
+        "filename": "README.md",
+        "patchSetId": 80
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T21:36:15Z",
+      "side": 1,
+      "message": "GitHub",
+      "range": {
+        "startLine": 82,
+        "startChar": 32,
+        "endLine": 82,
+        "endChar": 38
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_9d5e9ee8",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 80
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T21:36:15Z",
+      "side": 1,
+      "message": "Does the GitHub plugin use this? I think it\u0027s also missing ORG if it is.",
+      "range": {
+        "startLine": 193,
+        "startChar": 17,
+        "endLine": 193,
+        "endChar": 33
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_fd47ea1b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 80
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T21:36:15Z",
+      "side": 1,
+      "message": "github-org\n\n\nI\u0027m confused. Why is this needed in the merge job but not the verify job below?",
+      "range": {
+        "startLine": 209,
+        "startChar": 15,
+        "endLine": 209,
+        "endChar": 20
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_7d63fab1",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 80
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T21:36:15Z",
+      "side": 1,
+      "message": "Same question as above.",
+      "range": {
+        "startLine": 224,
+        "startChar": 17,
+        "endLine": 224,
+        "endChar": 33
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_7d3c1a94",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 80
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-23T21:36:15Z",
+      "side": 1,
+      "message": "Don\u0027t need this. Actually makes the variable difficult to modify.\n\nInstead I would define in each job template that uses this parameter:\n\n github-url: https://github.com\n\n(Take a look at the existing templates they set defaults for submodule recursive and branch).",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 59
+      },
+      "revId": "33062c2dabffdead10753d66c2e99b2d1dcd7776",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
