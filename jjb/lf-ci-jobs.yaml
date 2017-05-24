@@ -209,6 +209,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      - github
       - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
