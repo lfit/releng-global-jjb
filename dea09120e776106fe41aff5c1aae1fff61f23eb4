@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_9d8fbe23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-24T17:03:17Z",
+      "side": 1,
+      "message": "As Thanh mentioned in a prior patch, this shoud be moved down one line to be in the footer instead of the body of the commit message. Also, please prefix it with Issue: or JIRA:",
+      "revId": "dea09120e776106fe41aff5c1aae1fff61f23eb4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
