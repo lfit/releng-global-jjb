@@ -209,6 +209,8 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      - github
+      - pollscm
       - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
