@@ -201,7 +201,7 @@
 
     scm:
       - lf-infra-github-scm:
-          url: '{github-url}/{github-org}/{project}'
+          url: 'git@github.com:{github-org}/{project}'
           refspec: ''
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
@@ -245,7 +245,7 @@
 
     scm:
       - lf-infra-github-scm:
-          url: '{github-url}/{github-org}/{project}'
+          url: 'git@github.com:{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
