@@ -201,7 +201,7 @@
 
     scm:
       - lf-infra-github-scm:
-          url: '$GIT_URL/$PROJECT'
+          url: '{github-url}/{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
@@ -209,6 +209,9 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      - github
+      - pollscm:
+          cron: ''
       - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
@@ -242,7 +245,7 @@
 
     scm:
       - lf-infra-github-scm:
-          url: '$GIT_URL/$PROJECT'
+          url: '{github-url}/{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
