@@ -202,7 +202,7 @@
     scm:
       - lf-infra-github-scm:
           url: '{github-url}/{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          refspec: ''
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
