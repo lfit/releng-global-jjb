@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_1da3ce9f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-24T17:08:48Z",
+      "side": 1,
+      "message": "Move this so it\u0027s the line _just_ above the Change-Id so it\u0027s in the footer!",
+      "revId": "8ed6a708fa9781ff24e1837a7449d93526c7e622",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
