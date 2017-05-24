@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_9d88de23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-24T14:17:51Z",
+      "side": 1,
+      "message": "Move this down 1 more. (The last block in a commit message is a footer, a lot of Git tools parse the footer for metadata). Commit messages are like emails.\n\n Subject of commit\n \n Body of message\n can be multiline...\n \n Footer containing sign-offs and other metadata",
+      "revId": "81c6416e822bb8d015e176131ac6382438ac035c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
