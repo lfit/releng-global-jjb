@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_fd85aaad",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-26T20:58:27Z",
+      "side": 1,
+      "message": "You\u0027ve been adding an echo at the start of the other scripts, why not this one?",
+      "revId": "1300e73955cc5a82c21964b955b6bff9e2779554",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
