@@ -10,4 +10,7 @@
 ##############################################################################
 echo "---> jjb-merge-job.sh"
 
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
 jenkins-jobs update --recursive --delete-old --workers 4 jjb/

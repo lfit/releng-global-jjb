@@ -9,6 +9,9 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
 NEXUS_URL="${NEXUS_URL:-$NEXUSPROXY}"
 CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
     -t -m "/x:settings/x:servers/x:server[x:id='${SERVER_ID}']" \
