@@ -1,0 +1,88 @@
+---
+#################
+# Job Templates #
+#################
+
+- job-template:
+    # Python projects typically use tox to run testing.
+    name: '{project-name}-tox-verify-{stream}'
+
+    # Required Variables:
+    #     branch:    git branch (default: master)
+    #     tox-dir:   directory containing the project's tox.ini relative to
+    #                the workspace. Empty works if tox.ini is at project root.
+
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: true
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    submodule-recursive: true
+    tox-dir: ''
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+      - string:
+          name: TOX_DIR
+          default: ''
+          description: |
+              Path to directory containing tox.ini file.
+
+    scm:
+      - lf-infra-gerrit-scm:
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: false
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: recheck$
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+
+    builders:
+      - shell: |
+          virtualenv "$WORKSPACE/.virtualenvs/tox"
+          source "$WORKSPACE/.virtualenvs/tox/bin/activate"
+          pip install --upgrade pip
+          pip install --upgrade tox argparse
+          pip freeze
+          cd "$WORKSPACE/repo/$TOX_DIR"
+          tox
+
+    publishers:
+      - lf-infra-publish
