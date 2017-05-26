@@ -8,6 +8,10 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
+echo "---> logs-deploy.sh"
+
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
 
 set -x  # Trace commands for this script to make debugging easier.
 

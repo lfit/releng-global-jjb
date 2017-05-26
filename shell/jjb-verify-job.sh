@@ -10,6 +10,9 @@
 ##############################################################################
 echo "---> jjb-verify-job.sh"
 
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
 jenkins-jobs -l DEBUG test --recursive -o archives/job-configs jjb/
 
 # Sort job output into sub-directories. On large Jenkins systems that have

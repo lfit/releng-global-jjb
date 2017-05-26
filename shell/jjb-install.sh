@@ -10,6 +10,9 @@
 ##############################################################################
 echo "---> jjb-install.sh"
 
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
 virtualenv "$WORKSPACE/.virtualenvs/jjb"
 # shellcheck source=./.virtualenvs/jjb/bin/activate disable=SC1091
 source "$WORKSPACE/.virtualenvs/jjb/bin/activate"
