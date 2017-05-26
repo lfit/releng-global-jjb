@@ -109,6 +109,23 @@
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
 
+# Useful parameters when working with TOX
+# https://tox.readthedocs.io/
+- parameter:
+    name: lf-infra-tox-parameters
+    parameters:
+      - string:
+          name: TOX_DIR
+          default: '{tox-dir}'
+          description: |
+              Path to directory containing tox.ini file.
+      - string:
+          name: TOX_ENVS
+          default: '{tox-envs}'
+          description: |
+              Tox environments to run build against.
+              Example: docs,py2,py3
+
 # Set an env var for shell scripts to be able to call the dynamically installed
 # maven without having to calculate the path themselves
 - parameter:

@@ -124,17 +124,52 @@ ci-management.yaml:
 
 Required parameters:
 
-**project**: is the project repo as defined in Gerrit.
+**project**: is the project repo as defined in source control.
 **project-name**: is a custom name to call the job in Jenkins.
 **build-node**: is the name of the builder to use when building (Jenkins label).
 
 Optional parameters:
 
 **branch**: is the git branch to build from.
-**git-url**: is used to override the GIT_URL environment variable. Should not
-             be necessary in most cases. Mainly used by LF projects such as
-             global-jjb and lftools.
 **jjb-version**: is the version of JJB to install in the build minion.
+
+## Deploying Python jobs
+
+We provide the following Python jobs templates:
+
+### {project-name}-tox-verify-{stream}
+
+This job can be used to call python-tox to run builds and tests. The most common
+usage of this job is to run the Coala linter against projects.
+
+```
+- project:
+    name: builder
+    jobs:
+        - '{project-name}-tox-verify-{stream}'
+
+    project-name: builder
+    project: releng/builder
+    build-node: centos7-java-builder-2c-4g
+    stream: master
+```
+
+Required parameters:
+
+**project**: is the project repo as defined in source control.
+**project-name**: is a custom name to call the job in Jenkins.
+**build-node**: is the name of the builder to use when building (Jenkins label).
+**stream**: typically `master` or matching whatever branch is being built. This
+            is a useful keywords to map a release codename to a branch. For
+            example OpenDaylight uses this to map stream=carbon to
+            branch=stable/carbon.
+
+Optional parameters:
+
+**branch**: is the git branch to build from.
+**jjb-version**: is the version of JJB to install in the build minion.
+**tox-dir**: directory containing tox.ini file (default: '')
+**tox-envs**: tox environments to run (default: '')
 
 ## Archiving logs in Jobs
 
