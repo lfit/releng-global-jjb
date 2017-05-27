@@ -17,6 +17,9 @@ set -e -o pipefail
 virtualenv "$WORKSPACE/.virtualenvs/jjb"
 # shellcheck source=./.virtualenvs/jjb/bin/activate disable=SC1091
 source "$WORKSPACE/.virtualenvs/jjb/bin/activate"
-pip install --upgrade pip
-pip install --upgrade "jenkins-job-builder==$JJB_VERSION"
-pip freeze
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade pipdeptree
+pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
+
+echo "----> Pip Dependency Tree"
+pipdeptree

@@ -17,6 +17,9 @@ set -e -o pipefail
 virtualenv "$WORKSPACE/.virtualenvs/lftools"
 # shellcheck source=./.virtualenvs/lftools/bin/activate disable=SC1091
 source "$WORKSPACE/.virtualenvs/lftools/bin/activate"
-pip install --upgrade pip
-pip install --upgrade "lftools<1.0.0"
-pip freeze
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade pipdeptree
+pip install --quiet --upgrade "lftools<1.0.0"
+
+echo "----> Pip Dependency Tree"
+pipdeptree
