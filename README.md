@@ -132,3 +132,18 @@ Optional parameters:
 
 **branch**: is the git branch to build from.
 **jjb-version**: is the version of JJB to install in the build minion.
+
+## Archiving logs in Jobs
+
+There are 2 ways supported for archiving log information:
+
+1) Job creates $WORKSPACE/archives directory and places logs there
+
+In this method the entire archives directory will be pushed to the log server
+in the same structure as configured in the archives directory.
+
+2) Via job variable ARCHIVE_ARTIFACTS using globstar patterns.
+
+In this method a job can define a globstar for example ``**/*.log`` which then
+causes the archive script to do a globstar search for that pattern and archives
+any files it finds matching.
