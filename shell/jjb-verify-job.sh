@@ -21,11 +21,10 @@ jenkins-jobs -l DEBUG test --recursive -o archives/job-configs jjb/
 pushd archives/job-configs
 for letter in {a..z}
 do
-    ls "$letter"* > /dev/null 2>&1
-    if [[ "$?" -eq 0 ]]
+    if [[ $(ls "$letter"* > /dev/null 2>&1) -eq 0 ]]
     then
         mkdir "$letter"
-        find . -type f -maxdepth 1 -name "$letter*" -exec mv {} "$letter" \;
+        find . -maxdepth 1 -type f -name "$letter*" -exec mv {} "$letter" \;
     fi
 done
 popd
