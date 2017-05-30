@@ -185,23 +185,17 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_merge_builders
 
-    ######################
-    # Default parameters #
-    ######################
-
-    github-url: https://github.com
-
     #####################
     # Job Configuration #
     #####################
 
     properties:
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: '${{GIT_URL}}{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: 'git@github.com:{github-org}/{project}'
+          url: '${{GIT_CLONE_URL}}{github-org}/{project}'
           refspec: ''
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
@@ -229,23 +223,17 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_merge_builders
 
-    ######################
-    # Default parameters #
-    ######################
-
-    github-url: https://github.com
-
     #####################
     # Job Configuration #
     #####################
 
     properties:
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: '${{GIT_URL}}{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: 'git@github.com:{github-org}/{project}'
+          url: '${{GIT_CLONE_URL}}{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
