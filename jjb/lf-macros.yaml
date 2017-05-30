@@ -78,6 +78,11 @@
 
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
+      - string:
+          name: GITHUB_URL
+          default: 'git@github.com:'
+          description: |
+              Parameter to specify which github url you will clone with.
 
 - property:
     name: lf-infra-properties
