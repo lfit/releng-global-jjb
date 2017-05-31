@@ -107,7 +107,7 @@
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: 10
+          build-timeout: 60
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     publishers:
