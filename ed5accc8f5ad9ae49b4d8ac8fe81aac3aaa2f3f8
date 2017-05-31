@@ -187,6 +187,30 @@
       "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_213c302f",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-31T19:01:24Z",
+      "side": 1,
+      "message": "I think the only reason would be because the EdgeX Jenkins got defined using an https string and that fails when the repos are private. So, yes, GIT_URL could be used for this, though it presently also encodes the GitHub org, that should be easily fixed as I don\u0027t think anything GitHub related is currently using the env var.",
+      "parentUuid": "9a437d4f_613a3838",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 72
+      },
+      "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
