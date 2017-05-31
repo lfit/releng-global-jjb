@@ -211,6 +211,30 @@
       "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_c179e4fd",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-05-31T20:31:08Z",
+      "side": 1,
+      "message": "I think we will need to have 2 \"github url\" parameters so to speak to satisfy the ghprb plugin.  There is the project url that only accepts http...so we can\u0027t pass an ssh clone url into that and have it work.",
+      "parentUuid": "9a437d4f_213c302f",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 72
+      },
+      "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
