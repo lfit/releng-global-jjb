@@ -1,6 +1,6 @@
 ---
 - builder:
-    name: create-netrc
+    name: lf-infra-create-netrc
     # Macro to create a ~/.netrc file from a Maven settings.xml
     # Parameters:
     #     {server-id} The id of a server as defined in settings.xml
@@ -10,7 +10,7 @@
       - shell: !include-raw-escape: ../shell/create-netrc.sh
 
 - builder:
-    name: gpg-verify-git-signature
+    name: lf-infra-gpg-verify-git-signature
     # Verify gpg signature of the latest commit message in $WORKSPACE
     #
     # This command assumes that $WORKSPACE is a git repo.
@@ -29,7 +29,7 @@
           files:
             - file-id: 'jenkins-log-archives-settings'
               variable: 'SETTINGS_FILE'
-      - create-netrc:
+      - lf-infra-create-netrc:
           server-id: logs
       - shell: !include-raw:
           - ../shell/lftools-install.sh

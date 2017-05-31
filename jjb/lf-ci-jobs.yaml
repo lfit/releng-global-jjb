@@ -60,7 +60,7 @@
           - ../shell/jjb-install.sh
           - ../shell/jjb-verify-job.sh
           - ../shell/jjb-check-unicode.sh
-      - gpg-verify-git-signature
+      - lf-infra-gpg-verify-git-signature
 
 - parameter:
     name: lf-infra-jjb-parameters
