@@ -115,6 +115,30 @@
       "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_a1094097",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-05-31T16:35:24Z",
+      "side": 1,
+      "message": "It might make more sense to refer to this as CLONE_BASE or GIT_CLONE_BASE as that\u0027s really what we\u0027re doing here. Yes, we\u0027re doing it for GitHub but it could just as easily be something used by Gerrit.\n\nI would say that in general we\u0027re going to want it to be global, and we can just do it in Jenkins. I can\u0027t currently foresee any reason why we would want to override it",
+      "parentUuid": "9a437d4f_41d174fa",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 72
+      },
+      "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
