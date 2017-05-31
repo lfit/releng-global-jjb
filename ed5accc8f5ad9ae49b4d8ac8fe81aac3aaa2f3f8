@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_01c48c3e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-31T13:36:19Z",
+      "side": 1,
+      "message": "I disagree with the commit message. It was configurable before just using {github-url} JJB variable. All we\u0027re doing here is switching from using JJB variable to an environment variable.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_41ca9450",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-31T13:36:19Z",
+      "side": 1,
+      "message": "example no need for \":\" just continue the sentence...",
+      "range": {
+        "startLine": 9,
+        "startChar": 48,
+        "endLine": 9,
+        "endChar": 54
+      },
+      "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_61b598cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-31T13:36:19Z",
+      "side": 1,
+      "message": "Need a blank line between the footer and the body of a commit message.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 16
+      },
+      "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_21c79047",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-05-31T13:36:19Z",
+      "side": 1,
+      "message": "Would it be better to use a Globally defined Jenkins variable instead of a job level variable like this?\n\nWhat\u0027s the use case here? Do we expect different jobs to use different URLs or would the URL be consistent across the entire Jenkins instance?\n\nIf the later than make it similar to GIT_URL where it\u0027s defined at the Jenkins master global environment variable.",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 85,
+        "endChar": 72
+      },
+      "revId": "ed5accc8f5ad9ae49b4d8ac8fe81aac3aaa2f3f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
