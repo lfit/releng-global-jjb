@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_e447564a",
+        "filename": "README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-05T15:43:13Z",
+      "side": 1,
+      "message": "PLEASE PLEASE PLEASE make sure that we document environment variables!\n\nGIT_CLONE_URL should be documented here too.\n\nIt\u0027s actually a little confusing so might want to add a note to describe how it\u0027s used and why it exists and that it isn\u0027t needed for Gerrit based systems.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 3
+      },
+      "revId": "b47982998d1160f5ddc23ecfbd632599388a2832",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
