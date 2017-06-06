@@ -131,6 +131,9 @@ Required parameters:
 Optional parameters:
 
 **branch**: is the git branch to build from.
+**git-url**: is used to override the GIT_URL environment variable. Should not
+             be necessary in most cases. Mainly used by LF projects such as
+             global-jjb and lftools.
 **jjb-version**: is the version of JJB to install in the build minion.
 
 ## Archiving logs in Jobs
