@@ -1,4 +1,5 @@
 ---
+# BUILDERS
 - builder:
     name: lf-infra-create-netrc
     # Macro to create a ~/.netrc file from a Maven settings.xml
@@ -39,6 +40,35 @@
       - description-setter:
           regexp: '^Build logs: .*'
 
+- builder:
+    name: lf-jacoco-nojava-workaround
+    builders:
+      - shell: 'mkdir -p $WORKSPACE/target/classes $WORKSPACE/jacoco/classes'
+
+# call maven-target builder with a goal of --version to force Jenkins to
+# install the needed maven version
+- builder:
+    name: lf-maven-install
+    builders:
+      - maven-target:
+          maven-version: '{maven-version}'
+          goals: '--version'
+
+# Push a global settings and user settings maven files
+- builder:
+    name: lf-provide-maven-settings
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: '{global-settings-file}'
+              variable: 'GLOBAL_SETTINGS_FILE'
+            - file-id: '{settings-file}'
+              variable: 'SETTINGS_FILE'
+
+
+# PARAMETERS
+# Standard parameters used in the LF CI environments. Gerrit variables are not
+# used by GitHub projects, but defining them isn't harmful
 - parameter:
     name: lf-infra-parameters
     parameters:
@@ -79,6 +109,19 @@
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
 
+# Set an env var for shell scripts to be able to call the dynamically installed
+# maven without having to calculate the path themselves
+- parameter:
+    name: lf-maven-exec
+    parameters:
+      - string:
+          name: MVN
+          # yamllint disable-line rule:line-length
+          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{maven-version}/bin/mvn'
+          description: 'Maven selector to be used by shell scripts'
+
+
+# PROPERTIES
 - property:
     name: lf-infra-properties
     properties:
@@ -89,6 +132,7 @@
           # Do not allow artifacts to be stored in Jenkins.
           artifact-num-to-keep: 0
 
+# PUBLISHERS
 - publisher:
     name: lf-infra-publish
     # lf-infra macro to finish up a build.
@@ -110,6 +154,7 @@
             - '**/*.jenkins-trigger'
           fail-build: false
 
+# SCM
 - scm:
     name: lf-infra-gerrit-scm
     scm:
@@ -138,6 +183,7 @@
             recursive: '{submodule-recursive}'
           choosing-strategy: '{choosing-strategy}'
 
+# WRAPPERS
 - wrapper:
     name: lf-infra-wrappers
     wrappers:
