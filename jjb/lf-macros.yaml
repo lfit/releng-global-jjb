@@ -160,7 +160,7 @@
     scm:
       - git:
           credentials-id: '{jenkins-ssh-credential}'
-          url: '$GIT_URL/$GERRIT_PROJECT'
+          url: '{git-url}'
           refspec: '{refspec}'
           branches:
             - 'refs/heads/{branch}'

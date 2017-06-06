@@ -120,13 +120,24 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_merge_builders
 
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    #####################
+    # Job Configuration #
+    #####################
+
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
           refspec: ''
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       - gerrit:
@@ -151,8 +162,19 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_verify_builders
 
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    #####################
+    # Job Configuration #
+    #####################
+
     scm:
       - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
