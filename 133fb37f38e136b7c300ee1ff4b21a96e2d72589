@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_046c9a9b",
+        "filename": "README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-06T15:17:17Z",
+      "side": 1,
+      "message": "I believe GIT_CLONE_URL is unused in a Gerrit setup so better wording would be:\n\nNote: GIT_CLONE_URL is only used by GitHub projects as the URL used to clone is different than the URL used by the properties configuration for the job.",
+      "range": {
+        "startLine": 20,
+        "startChar": 12,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "133fb37f38e136b7c300ee1ff4b21a96e2d72589",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_e4687689",
+        "filename": "README.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-06T15:17:17Z",
+      "side": 1,
+      "message": "No need to make a separate example here. Just set the GIT_CLONE_URL in the above example to github so that it\u0027s clear it\u0027s generally used for GitHub setups. The note suggested in the above comment is sufficient I think to notify folks that GIT_CLONE_URL is optional.\n\nAlternatively. If we want to make 2 examples then make 2 full examples. One for Gerrit setups and one for GitHub setups as they are the 2 use cases we support at the moment. (Although this might be more painful to manage as we add more options to things).",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 3
+      },
+      "revId": "133fb37f38e136b7c300ee1ff4b21a96e2d72589",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
