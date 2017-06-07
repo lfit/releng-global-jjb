@@ -15,7 +15,7 @@ echo "---> lftools-install.sh"
 set -e -o pipefail
 
 virtualenv --quiet "$WORKSPACE/.virtualenvs/lftools"
-# shellcheck source=./.virtualenvs/lftools/bin/activate disable=SC1091
+# shellcheck disable=SC1073,SC1091 source=./.virtualenvs/lftools/bin/activate
 source "$WORKSPACE/.virtualenvs/lftools/bin/activate"
 PYTHON="$WORKSPACE/.virtualenvs/lftools/bin/python"
 $PYTHON -m pip install --quiet --upgrade pip

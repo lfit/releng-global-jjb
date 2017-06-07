@@ -15,7 +15,7 @@ echo "---> jjb-install.sh"
 set -e -o pipefail
 
 virtualenv "$WORKSPACE/.virtualenvs/jjb"
-# shellcheck source=./.virtualenvs/jjb/bin/activate disable=SC1091
+# shellcheck disable=SC1073,SC1091 source=./.virtualenvs/jjb/bin/activate
 source "$WORKSPACE/.virtualenvs/jjb/bin/activate"
 pip install --quiet --upgrade pip
 pip install --quiet --upgrade pipdeptree
