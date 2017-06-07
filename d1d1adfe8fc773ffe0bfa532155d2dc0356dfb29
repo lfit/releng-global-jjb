@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_24ff9e36",
+        "filename": "README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-07T19:09:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a437d4f_84e88a7d",
+      "range": {
+        "startLine": 159,
+        "startChar": 47,
+        "endLine": 159,
+        "endChar": 53
+      },
+      "revId": "d1d1adfe8fc773ffe0bfa532155d2dc0356dfb29",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_64eda68b",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2017-06-07T19:04:51Z",
       "side": 1,
       "message": "Should be written with gerrit \u0026 github flavors",
+      "revId": "d1d1adfe8fc773ffe0bfa532155d2dc0356dfb29",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_04fc9a3d",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-07T19:09:40Z",
+      "side": 1,
+      "message": "Can we do this in a separate patch?\n\nThis is going to be more effort than I have time right now. I can make a Jira for it.",
+      "parentUuid": "9a437d4f_64eda68b",
       "revId": "d1d1adfe8fc773ffe0bfa532155d2dc0356dfb29",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
