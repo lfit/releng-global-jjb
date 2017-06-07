@@ -41,6 +41,12 @@
           regexp: '^Build logs: .*'
 
 - builder:
+    name: lf-infra-sysstat
+    builders:
+      - shell: !include-raw:
+          - ../shell/sysstat.sh
+
+- builder:
     name: lf-jacoco-nojava-workaround
     builders:
       - shell: 'mkdir -p $WORKSPACE/target/classes $WORKSPACE/jacoco/classes'
@@ -160,6 +166,7 @@
     publishers:
       - postbuildscript:
           builders:
+            - lf-infra-sysstat
             - lf-infra-ship-logs
           script-only-if-succeeded: false
           script-only-if-failed: false
