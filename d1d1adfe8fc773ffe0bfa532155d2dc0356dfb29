@@ -81,6 +81,24 @@
       "revId": "d1d1adfe8fc773ffe0bfa532155d2dc0356dfb29",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_24867eba",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-07T19:14:05Z",
+      "side": 1,
+      "message": "Hmm... ok, but we\u0027re definitely going to need it done.",
+      "parentUuid": "9a437d4f_04fc9a3d",
+      "revId": "d1d1adfe8fc773ffe0bfa532155d2dc0356dfb29",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
