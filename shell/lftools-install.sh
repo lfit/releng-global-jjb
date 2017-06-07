@@ -14,7 +14,7 @@ echo "---> lftools-install.sh"
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-virtualenv "$WORKSPACE/.virtualenvs/lftools"
+virtualenv --quiet "$WORKSPACE/.virtualenvs/lftools"
 # shellcheck source=./.virtualenvs/lftools/bin/activate disable=SC1091
 source "$WORKSPACE/.virtualenvs/lftools/bin/activate"
 PYTHON="$WORKSPACE/.virtualenvs/lftools/bin/python"
