@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_843beaea",
+        "filename": "shell/lftools-sysstat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-07T22:52:09Z",
+      "side": 1,
+      "message": "This isn\u0027t an lftools script so I would just call it sysstat.sh. To be clear lftools should mean something coming out of the lftools project.",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 18
+      },
+      "revId": "2a5569f5f4dcc48a3746d2cabfc7bad3ab935621",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
