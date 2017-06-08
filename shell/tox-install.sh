@@ -14,4 +14,4 @@ $PYTHON -m pip install --quiet --upgrade pipdeptree
 $PYTHON -m pip install --quiet --upgrade tox argparse
 
 echo "----> Pip Dependency Tree"
-pipdeptree
+$PYTHON -m pipdeptree
