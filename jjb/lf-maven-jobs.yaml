@@ -1,0 +1,91 @@
+---
+# This file contains job templates for Maven projects.
+
+#################
+# Job Templates #
+#################
+
+- job-template:
+    name: '{project-name}-maven-release-{stream}'
+
+    # Produces a release candidate by creating a staging repo in Nexus.
+    #
+    # Runs a Maven build and deploys to $WORKSPACE/m2repo directory. This
+    # directory can then be reused later to deploy to Nexus.
+    #
+    # Required parameters:
+    #     settings-file: The name of settings file containing credentials for
+    #                    the project.
+
+    project-type: freestyle
+    node: '{build-node}'
+    jdk: '{java-version}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-timeout: 30
+    git-url: '$GIT_URL/$PROJECT'
+    global-settings-file: global-settings
+    java-version: openjdk8
+    mvn-opts: ''
+    mvn-params: ''
+    mvn-version: mvn33
+    submodule-recursive: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          # Keep around for 30 days in case a release takes long to get approved.
+          build-days-to-keep: 30
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+      - lf-infra-maven-parameters:
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
+          staging-profile-id: '{staging-profile-id}'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{global-settings-file}'
+          settings-file: '{settings-file}'
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+          - ../shell/common-variables.sh
+          - ../shell/maven-patch-release.sh
+          - ../shell/maven-build.sh
+          - ../shell/maven-stage.sh
+      - lf-provide-maven-settings-cleanup
+
+    publishers:
+      # TODO: Make email notification work.
+      # - lf-infra-email-notify:
+      #     email-recipients: '{email-recipients}'
+      #     email-prefix: '[releng]'
+      - lf-infra-publish
