@@ -1,0 +1,3 @@
+# UUID                                                                               	Group Name
+#
+ldap:cn=lfinfra-gerrit-releng-global-jjb-committers,ou=Groups,dc=freestandards,dc=org	ldap/lfinfra-gerrit-releng-global-jjb-committers
