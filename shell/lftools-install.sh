@@ -23,4 +23,4 @@ $PYTHON -m pip install --quiet --upgrade pipdeptree
 $PYTHON -m pip install --quiet --upgrade "lftools<1.0.0"
 
 echo "----> Pip Dependency Tree"
-pipdeptree
+$PYTHON -m pip pipdeptree
