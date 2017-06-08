@@ -1,0 +1,144 @@
+---
+# This file contains job templates for Maven projects.
+
+- job-group:
+    name: '{project-name}-maven-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci.
+
+    jobs:
+      - gerrit-maven-release
+
+- job-group:
+    name: '{project-name}-github-maven-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using github.
+
+    jobs:
+      - github-maven-release
+
+####################
+# Anchors & Macros #
+####################
+- lf_maven_release: &lf_maven_release
+    name: lf-maven-release
+
+    # Produces a release candidate by creating a staging repo in Nexus.
+    #
+    # Runs a Maven build and deploys to $WORKSPACE/m2repo directory. This
+    # directory can then be reused later to deploy to Nexus.
+    #
+    # Required parameters:
+    #     build-node:    The node to run build on.
+    #     jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #                             be configured in defaults.yaml)
+    #     settings-file: The name of settings file containing credentials for
+    #                    the project.
+    #     global-settings-file: The name of the Maven global settings to use for
+    #                           Maven configuration.
+    #     staging-profile-id: Profile ID of the project's Nexus staging profile.
+
+    project-type: freestyle
+    node: '{build-node}'
+    jdk: '{java-version}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-timeout: 30
+    git-url: '$GIT_URL/$PROJECT'
+    global-settings-file: global-settings
+    java-version: openjdk8
+    mvn-opts: ''
+    mvn-params: ''
+    mvn-version: mvn33
+    submodule-recursive: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          # Keep around for 30 days in case a release takes long to get approved.
+          build-days-to-keep: 30
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+      - lf-infra-maven-parameters:
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
+          staging-profile-id: '{staging-profile-id}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{global-settings-file}'
+          settings-file: '{settings-file}'
+      - lf-infra-create-netrc:
+          server-id: opendaylight-staging
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+          - ../shell/common-variables.sh
+          - ../shell/maven-patch-release.sh
+          - ../shell/maven-build.sh
+          - ../shell/maven-stage.sh
+      - lf-provide-maven-settings-cleanup
+
+    publishers:
+      # TODO: Make email notification work.
+      # - lf-infra-email-notify:
+      #     email-recipients: '{email-recipients}'
+      #     email-prefix: '[releng]'
+      - lf-infra-publish
+
+
+#################
+# Job Templates #
+#################
+
+- job-template:
+    name: '{project-name}-maven-release-{stream}'
+    id: gerrit-maven-release
+    <<: *lf_maven_release
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+
+- job-template:
+    name: '{project-name}-maven-release-{stream}'
+    id: github-maven-release
+    <<: *lf_maven_release
+
+    properties:
+      - github:
+          url: '${{GIT_URL}}{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '${{GIT_CLONE_URL}}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
