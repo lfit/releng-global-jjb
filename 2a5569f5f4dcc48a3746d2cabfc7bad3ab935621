@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a437d4f_8741ac0d",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-08T21:08:41Z",
+      "side": 1,
+      "message": "Our macros should be as ascii-betical as possible. Therefore this should be below lf-infra-ship-logs since \u0027sh\u0027 is before \u0027sy\u0027",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 39
+      },
+      "revId": "2a5569f5f4dcc48a3746d2cabfc7bad3ab935621",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_843beaea",
         "filename": "shell/lftools-sysstat.sh",
         "patchSetId": 1
@@ -43,6 +66,46 @@
         "endLine": 11,
         "endChar": 18
       },
+      "revId": "2a5569f5f4dcc48a3746d2cabfc7bad3ab935621",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_2748c02c",
+        "filename": "shell/lftools-sysstat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-08T21:08:41Z",
+      "side": 1,
+      "message": "Later you expressly state we don\u0027t want to fail the job if any of the steps of the script fail and yet you have pipefail enabled which will automatically cause any failure in the script to exit and fail the job.",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "2a5569f5f4dcc48a3746d2cabfc7bad3ab935621",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_6746c825",
+        "filename": "shell/lftools-sysstat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-08T21:08:41Z",
+      "side": 1,
+      "message": "If there is nothing to do for the OS then we should get an exit 0. We don\u0027t want to fail the build, but there is no point continuing with the script as we aren\u0027t handling the distribution.",
       "revId": "2a5569f5f4dcc48a3746d2cabfc7bad3ab935621",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
