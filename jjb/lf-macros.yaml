@@ -1,5 +1,8 @@
 ---
-# BUILDERS
+############
+# BUILDERS #
+############
+
 - builder:
     name: lf-infra-create-netrc
     # Macro to create a ~/.netrc file from a Maven settings.xml
@@ -51,21 +54,21 @@
     builders:
       - shell: 'mkdir -p $WORKSPACE/target/classes $WORKSPACE/jacoco/classes'
 
-# call maven-target builder with a goal of --version to force Jenkins to
-# install the needed maven version
 - builder:
     name: lf-maven-install
+    # call maven-target builder with a goal of --version to force Jenkins to
+    # install the needed maven version
     builders:
       # Create a $HOME/.wgetrc to make the Maven download quiet.
       - shell: 'echo "quiet=on" > "$HOME/.wgetrc"'
       - maven-target:
-          maven-version: '{maven-version}'
+          maven-version: '{mvn-version}'
           goals: '--version'
       - shell: 'rm "$HOME/.wgetrc"'
 
-# Push a global settings and user settings maven files
 - builder:
     name: lf-provide-maven-settings
+    # Push a global settings and user settings maven files
     builders:
       - config-file-provider:
           files:
@@ -73,13 +76,32 @@
               variable: 'GLOBAL_SETTINGS_FILE'
             - file-id: '{settings-file}'
               variable: 'SETTINGS_FILE'
+- builder:
+    name: lf-provide-maven-settings-cleanup
+    # Clear maven settings files after we are done using them
+    builders:
+      - shell: |
+          #!/bin/bash
+          set +e  # DO NOT cause build failure if any of the rm calls fail.
 
+          rm "$GLOBAL_SETTINGS_FILE" "$SETTINGS_FILE"
 
-# PARAMETERS
-# Standard parameters used in the LF CI environments. Gerrit variables are not
-# used by GitHub projects, but defining them isn't harmful
+          # In some cases we use the lf-provide-maven-settings macro to produce
+          # a "$HOME/.netrc" file containing credentials. Remove that file here
+          # too if it exists.
+          rm "$HOME/.netrc"
+
+          # DO NOT fail build if any of the above lines fail.
+          exit 0
+
+##############
+# PARAMETERS #
+##############
+
 - parameter:
     name: lf-infra-parameters
+    # Standard parameters used in the LF CI environments. Gerrit variables are
+    # not used by GitHub projects, but defining them isn't harmful.
     parameters:
       - string:
           name: PROJECT
@@ -88,9 +110,6 @@
               Parameter to identify a Gerrit project. This is typically the
               project repo path as exists in Gerrit.
               For example: ofextensions/circuitsw
-
-              (Deprecated) Please use GERRIT_PROJECT instead. A future version
-              of global-jjb will remove this variable.
       - string:
           name: GERRIT_PROJECT
           default: '{project}'
@@ -118,10 +137,35 @@
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
 
-# Useful parameters when working with TOX
-# https://tox.readthedocs.io/
+- parameter:
+    name: lf-infra-maven-parameters
+    parameters:
+      - string:
+          name: MAVEN_OPTS
+          default: '{mvn-opts}'
+          description: |
+              Maven Java opts. Example: -Xmx1024m -XX:MaxPermSize=256m
+      - string:
+          name: MAVEN_PARAMS
+          default: '{mvn-params}'
+          description: |
+              Maven parameters to pass to the mvn command.
+      - string:
+          name: MVN
+          # Sets an env var for shell scripts to be able to call the dynamically
+          # installed maven without having to calculate the path themselves.
+          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn'
+          description: 'Maven selector to be used by shell scripts'
+      - string:
+          name: STAGING_PROFILE_ID
+          default: '{staging-profile-id}'
+          description: |
+              Nexus staging profile ID.
+
 - parameter:
     name: lf-infra-tox-parameters
+    # Useful parameters when working with TOX
+    # https://tox.readthedocs.io/
     parameters:
       - string:
           name: TOX_DIR
@@ -135,19 +179,10 @@
               Tox environments to run build against.
               Example: docs,py2,py3
 
-# Set an env var for shell scripts to be able to call the dynamically installed
-# maven without having to calculate the path themselves
-- parameter:
-    name: lf-maven-exec
-    parameters:
-      - string:
-          name: MVN
-          # yamllint disable-line rule:line-length
-          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{maven-version}/bin/mvn'
-          description: 'Maven selector to be used by shell scripts'
+##############
+# PROPERTIES #
+##############
 
-
-# PROPERTIES
 - property:
     name: lf-infra-properties
     properties:
@@ -158,7 +193,10 @@
           # Do not allow artifacts to be stored in Jenkins.
           artifact-num-to-keep: 0
 
-# PUBLISHERS
+##############
+# PUBLISHERS #
+##############
+
 - publisher:
     name: lf-infra-publish
     # lf-infra macro to finish up a build.
@@ -181,7 +219,10 @@
             - '**/*.jenkins-trigger'
           fail-build: false
 
-# SCM
+#######
+# SCM #
+#######
+
 - scm:
     name: lf-infra-gerrit-scm
     scm:
@@ -210,7 +251,10 @@
             recursive: '{submodule-recursive}'
           choosing-strategy: '{choosing-strategy}'
 
-# WRAPPERS
+############
+# WRAPPERS #
+############
+
 - wrapper:
     name: lf-infra-wrappers
     wrappers:
