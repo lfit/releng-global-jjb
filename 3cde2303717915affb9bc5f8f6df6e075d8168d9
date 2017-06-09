@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_67b5a8cc",
+        "filename": "README.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-09T16:32:00Z",
+      "side": 1,
+      "message": "Minor nit but I think I\u0027d prefer the colon to not be included here and the templates using this can add the colon if they need it.",
+      "range": {
+        "startLine": 14,
+        "startChar": 28,
+        "endLine": 14,
+        "endChar": 29
+      },
+      "revId": "3cde2303717915affb9bc5f8f6df6e075d8168d9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_87b08cde",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-09T16:32:00Z",
+      "side": 1,
+      "message": "Don\u0027t we still need a forward slash here? Otherwise github-org needs to include a leading forward slash right?",
+      "range": {
+        "startLine": 194,
+        "startChar": 26,
+        "endLine": 194,
+        "endChar": 29
+      },
+      "revId": "3cde2303717915affb9bc5f8f6df6e075d8168d9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
