@@ -11,11 +11,15 @@ For example:
 
 ```
 GIT_URL=ssh://jenkins-$SILO@git.opendaylight.org:29418
+GIT_CLONE_URL=git@github.com:
 JENKINS_HOSTNAME=jenkins092
 LOGS_SERVER=https://logs.opendaylight.org
 NEXUS_URL=https://nexus.opendaylight.org
 SILO=releng
 ```
+Note: **GIT_CLONE_URL** is only used by Github projects as this
+will be different from the URL used the poperties
+configuration.
 
 ## Jenkins Plugin Requirements
 
@@ -74,10 +78,8 @@ Trigger global configuration.
 **jenkins-ssh-credential**: The name of the Jenkins Credential to use for ssh
 connections.
 
-If you are using GitHub then there are two more parameters which
+If you are using GitHub then there is one more parameter which
 will need to be placed in the defaults.yaml
-
-**github-url**: The URL of GitHub. (Default: https://github.com)
 
 **github-org**: The name of the GitHub organization.
 
