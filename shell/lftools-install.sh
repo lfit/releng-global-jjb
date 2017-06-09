@@ -19,8 +19,10 @@ virtualenv --quiet "$WORKSPACE/.virtualenvs/lftools"
 source "$WORKSPACE/.virtualenvs/lftools/bin/activate"
 PYTHON="$WORKSPACE/.virtualenvs/lftools/bin/python"
 $PYTHON -m pip install --quiet --upgrade pip
-$PYTHON -m pip install --quiet --upgrade pipdeptree
 $PYTHON -m pip install --quiet --upgrade "lftools<1.0.0"
 
-echo "----> Pip Dependency Tree"
-$PYTHON -m pipdeptree
+# pipdeptree prints out a lot of information because lftools pulls in many
+# dependencies. Let's only print it if we want to debug.
+# echo "----> Pip Dependency Tree"
+# $PYTHON -m pip install --quiet --upgrade pipdeptree
+# $PYTHON -m pipdeptree
