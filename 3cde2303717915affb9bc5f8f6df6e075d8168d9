@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_07c49c3e",
+        "filename": "README.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-09T17:11:41Z",
+      "side": 1,
+      "message": "The issue with that is that then it absolutely assumes that you\u0027re using SSH clone, whereas if the : is encoded into the Jenkins var it could be either SSH or HTTPS",
+      "parentUuid": "9a437d4f_67b5a8cc",
+      "range": {
+        "startLine": 14,
+        "startChar": 28,
+        "endLine": 14,
+        "endChar": 29
+      },
+      "revId": "3cde2303717915affb9bc5f8f6df6e075d8168d9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_87b08cde",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 8
@@ -36,6 +60,30 @@
       "writtenOn": "2017-06-09T16:32:00Z",
       "side": 1,
       "message": "Don\u0027t we still need a forward slash here? Otherwise github-org needs to include a leading forward slash right?",
+      "range": {
+        "startLine": 194,
+        "startChar": 26,
+        "endLine": 194,
+        "endChar": 29
+      },
+      "revId": "3cde2303717915affb9bc5f8f6df6e075d8168d9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_e7c0782c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-09T17:11:41Z",
+      "side": 1,
+      "message": "Yes it needs to encode the forward slash in the Jenkins var with it this way",
+      "parentUuid": "9a437d4f_87b08cde",
       "range": {
         "startLine": 194,
         "startChar": 26,
