@@ -50,9 +50,12 @@
 - builder:
     name: lf-maven-install
     builders:
+      # Create a $HOME/.wgetrc to make the Maven download quiet.
+      - shell: 'echo "quiet=on" > "$HOME/.wgetrc"'
       - maven-target:
           maven-version: '{maven-version}'
           goals: '--version'
+      - shell: 'rm "$HOME/.wgetrc"'
 
 # Push a global settings and user settings maven files
 - builder:
