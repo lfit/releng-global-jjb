@@ -1,0 +1,7 @@
+Code-Review+2: Thanh Ha <thanh.ha@linuxfoundation.org>
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Submitted-by: Thanh Ha <thanh.ha@linuxfoundation.org>
+Submitted-at: Sat, 10 Jun 2017 06:11:44 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/5139
+Project: releng/global-jjb
+Branch: refs/heads/master
