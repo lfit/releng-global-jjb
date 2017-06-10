@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_477744d5",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-10T07:02:56Z",
+      "side": 1,
+      "message": "Store this in a variable and then reuse it everywhere you need it in the script.\n\n SAR_DIR\u003d\"$WORKSPACE/archives/sar-reports\"",
+      "range": {
+        "startLine": 28,
+        "startChar": 9,
+        "endLine": 28,
+        "endChar": 29
+      },
+      "revId": "19711f27eb70373f887115d58c2534f9d1b4d966",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_277440ce",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-10T07:02:56Z",
+      "side": 1,
+      "message": "$SAR_DIR",
+      "range": {
+        "startLine": 33,
+        "startChar": 50,
+        "endLine": 33,
+        "endChar": 70
+      },
+      "revId": "19711f27eb70373f887115d58c2534f9d1b4d966",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
