@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_87440c75",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-10T07:12:18Z",
+      "side": 1,
+      "message": "Don\u0027t have to fix this but a tip, it\u0027s good practice to list variables like this at the top of the file. It let\u0027s the reader understand what types of input this file accepts.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 41
+      },
+      "revId": "c887df2200ea8a7a58e0aeb538affd0c93a48dfc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
