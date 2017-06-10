@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_87b64c89",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-10T06:45:02Z",
+      "side": 1,
+      "message": "Remove this message. OpenDaylight\u0027s releng/builder is not a dependency for global-jjb. This is a separate project with it\u0027s own separate release cycle. OpenDaylight is a consumer of this project not the other way around.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 47
+      },
+      "revId": "99b2d37a81d92f3e47660755d6805dd35fe3c5f3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
