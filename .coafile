@@ -1,6 +1,3 @@
-[Default]
-ignore = .*/**
-
 [GitCommit]
 bears = GitCommitBear
 ignore_length_regex = Signed-off-by,
@@ -12,12 +9,14 @@ ignore_length_regex = Signed-off-by,
 [YAML]
 bears = YAMLLintBear
 files = **/*.yaml
+ignore = .*/**
 document_start = True
 yamllint_config = yamllint.conf
 
 [ShellCheck]
 bears = ShellCheckBear,SpaceConsistencyBear
 files = **/*.sh
+ignore = .*/**
 shell = bash
 indent_size = 4
 use_spaces = yeah
