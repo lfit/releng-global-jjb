@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-echo "---> lftools-sysstat.sh"
+echo "---> sysstat.sh"
 set +e  # DON'T fail build if script fails.
 
 OS=$(facter operatingsystem)
