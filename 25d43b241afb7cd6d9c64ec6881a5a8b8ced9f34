@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_072ffca2",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2017-06-11T15:14:59Z",
+      "side": 1,
+      "message": "Didn\u0027t know about this config file, cool",
+      "range": {
+        "startLine": 54,
+        "startChar": 41,
+        "endLine": 54,
+        "endChar": 48
+      },
+      "revId": "25d43b241afb7cd6d9c64ec6881a5a8b8ced9f34",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
