@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_4a6869ba",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-11T21:50:32Z",
+      "side": 1,
+      "message": "Maybe have a job-group for Maven jobs here.",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 2,
+        "endChar": 54
+      },
+      "revId": "3f7183c7d45f9f809c3f393ea23236afd8af2a18",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
