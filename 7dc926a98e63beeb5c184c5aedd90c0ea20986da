@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_0ae5c1a7",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2017-06-12T20:33:02Z",
+      "side": 1,
+      "message": "\"of\"?",
+      "range": {
+        "startLine": 84,
+        "startChar": 48,
+        "endLine": 84,
+        "endChar": 56
+      },
+      "revId": "7dc926a98e63beeb5c184c5aedd90c0ea20986da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_eae15d9b",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2017-06-12T20:33:02Z",
+      "side": 1,
+      "message": "a//?",
+      "range": {
+        "startLine": 85,
+        "startChar": 60,
+        "endLine": 85,
+        "endChar": 61
+      },
+      "revId": "7dc926a98e63beeb5c184c5aedd90c0ea20986da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_caee998b",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2017-06-12T20:33:02Z",
+      "side": 1,
+      "message": "GitHub-style",
+      "range": {
+        "startLine": 86,
+        "startChar": 26,
+        "endLine": 86,
+        "endChar": 38
+      },
+      "revId": "7dc926a98e63beeb5c184c5aedd90c0ea20986da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_aaf35572",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2017-06-12T20:33:02Z",
+      "side": 1,
+      "message": "system/system,/",
+      "range": {
+        "startLine": 86,
+        "startChar": 39,
+        "endLine": 86,
+        "endChar": 45
+      },
+      "revId": "7dc926a98e63beeb5c184c5aedd90c0ea20986da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_2ad885ee",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2017-06-12T20:33:02Z",
+      "side": 1,
+      "message": "is/is./",
+      "range": {
+        "startLine": 87,
+        "startChar": 28,
+        "endLine": 87,
+        "endChar": 29
+      },
+      "revId": "7dc926a98e63beeb5c184c5aedd90c0ea20986da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
