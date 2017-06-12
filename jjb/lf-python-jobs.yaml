@@ -1,11 +1,28 @@
 ---
-#################
-# Job Templates #
-#################
+- job-group:
+    name: '{project-name}-python-jobs'
 
-- job-template:
-    # Python projects typically use tox to run testing.
-    name: '{project-name}-tox-verify-{stream}'
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using Gerrit.
+
+    jobs:
+      - gerrit-tox-verify
+
+- job-group:
+    name: '{project-name}-github-python-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using GitHub.
+
+    jobs:
+      - github-tox-verify
+
+####################
+# Anchors & Macros #
+####################
+
+- lf_tox_verify: &lf_tox_verify
+    name: lf-tox-verify
 
     # Required Variables:
     #     branch:    git branch (default: master)
@@ -43,6 +60,34 @@
           tox-dir: '{tox-dir}'
           tox-envs: '{tox-envs}'
 
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - shell: !include-raw-escape:
+          # Workaround issue where the tox run later breaks the lftools virtualenv.
+          # Without running the install first the run in the publisher will fail
+          # due to missing lftools because it gets installed into a tox venv.
+          - ../shell/lftools-install.sh
+      - shell: !include-raw-escape:
+          - ../shell/tox-install.sh
+          - ../shell/tox-run.sh
+
+    publishers:
+      - lf-infra-publish
+
+#################
+# Job Templates #
+#################
+
+- job-template:
+    # Python projects typically use tox to run testing.
+    name: '{project-name}-tox-verify-{stream}'
+    id: gerrit-tox-verify
+    <<: *lf-tox-verify
+
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -51,11 +96,6 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: gerrit
-
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       - gerrit:
@@ -75,15 +115,30 @@
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
 
-    builders:
-      - shell: !include-raw-escape:
-          # Workaround issue where the tox run later breaks the lftools virtualenv.
-          # Without running the install first the run in the publisher will fail
-          # due to missing lftools because it gets installed into a tox venv.
-          - ../shell/lftools-install.sh
-      - shell: !include-raw-escape:
-          - ../shell/tox-install.sh
-          - ../shell/tox-run.sh
+- job-template:
+    # Python projects typically use tox to run testing.
+    name: '{project-name}-tox-verify-{stream}'
+    id: github-tox-verify
+    <<: *lf-tox-verify
 
-    publishers:
-      - lf-infra-publish
+    properties:
+      - github:
+          url: '${{GIT_URL}}{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '${{GIT_CLONE_URL}}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'JJB Verify'
+          permit-all: true
+          github-hooks: true
+          auto-close-on-fail: false
