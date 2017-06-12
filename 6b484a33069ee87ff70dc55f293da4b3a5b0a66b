@@ -45,6 +45,30 @@
       "revId": "6b484a33069ee87ff70dc55f293da4b3a5b0a66b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_aa3c7594",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-06-12T12:22:02Z",
+      "side": 1,
+      "message": "JJB anchors: https://docs.openstack.org/infra/jenkins-job-builder/definition.html?highlight\u003djob%20definition#yaml-anchors-aliases\n\nIf I understand correctly these anchors cannot be used across files, but are pretty useful to make our jjb templates more generic.",
+      "parentUuid": "9a437d4f_0abee1ff",
+      "range": {
+        "startLine": 122,
+        "startChar": 4,
+        "endLine": 122,
+        "endChar": 22
+      },
+      "revId": "6b484a33069ee87ff70dc55f293da4b3a5b0a66b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
