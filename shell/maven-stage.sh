@@ -24,7 +24,7 @@ staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$TMP_FILE
 
 # Store repo info to a file in archives
 mkdir -p "$WORKSPACE/archives"
-echo "$staging_repo" > "$WORSPACE/archives/staging-repo.txt"
+echo "$staging_repo" > "$WORKSPACE/archives/staging-repo.txt"
 
 # Cleanup
 rm "$TMP_FILE"
