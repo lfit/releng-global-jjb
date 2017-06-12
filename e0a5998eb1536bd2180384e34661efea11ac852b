@@ -1,0 +1,7 @@
+Code-Review+2: Thanh Ha <thanh.ha@linuxfoundation.org>
+Verified+1: Thanh Ha <thanh.ha@linuxfoundation.org>
+Submitted-by: Thanh Ha <thanh.ha@linuxfoundation.org>
+Submitted-at: Mon, 12 Jun 2017 19:00:37 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/5179
+Project: releng/global-jjb
+Branch: refs/heads/master
