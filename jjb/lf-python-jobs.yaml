@@ -86,7 +86,7 @@
     # Python projects typically use tox to run testing.
     name: '{project-name}-tox-verify-{stream}'
     id: gerrit-tox-verify
-    <<: *lf-tox-verify
+    <<: *lf_tox_verify
 
     scm:
       - lf-infra-gerrit-scm:
@@ -119,7 +119,7 @@
     # Python projects typically use tox to run testing.
     name: '{project-name}-tox-verify-{stream}'
     id: github-tox-verify
-    <<: *lf-tox-verify
+    <<: *lf_tox_verify
 
     properties:
       - github:
