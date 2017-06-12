@@ -78,8 +78,13 @@ Trigger global configuration.
 **jenkins-ssh-credential**: The name of the Jenkins Credential to use for ssh
 connections.
 
-If you are using GitHub then there is one more parameter which
+If you are using GitHub then there are two more parameters which
 will need to be placed in the defaults.yaml
+
+**git-url**: This should be set to the base URL used for your GitHub. In
+general this should be https://github.com. If you are using a GitHub
+Enterprise, or some other GitHub style system then it should be whatever
+your installation base URL is
 
 **github-org**: The name of the GitHub organization.
 

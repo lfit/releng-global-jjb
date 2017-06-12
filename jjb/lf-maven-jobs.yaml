@@ -132,7 +132,7 @@
 
     properties:
       - github:
-          url: '${{GIT_URL}}{github-org}/{project}'
+          url: '{git-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
