@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_ead71dec",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-12T17:53:23Z",
+      "side": 1,
+      "message": "While it\u0027s called $GERRIT_BRANCH it actually exists in every project include GitHub because it\u0027s part of lf-infra-parameters.\n\nI could duplicate this variable and just call it BRANCH but that would be just a duplication of what\u0027s already there.",
+      "parentUuid": "9a437d4f_6aec4dc8",
+      "range": {
+        "startLine": 26,
+        "startChar": 35,
+        "endLine": 26,
+        "endChar": 48
+      },
+      "revId": "34ab3807fb760dea4fdfc08b1692d49a243759f1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_4ad189fa",
         "filename": "shell/maven-patch-release.sh",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2017-06-12T17:49:00Z",
       "side": 1,
       "message": "This is explicitly a Gerrit variable and makes the script unusable in a GitHub context",
+      "range": {
+        "startLine": 27,
+        "startChar": 65,
+        "endLine": 27,
+        "endChar": 78
+      },
+      "revId": "34ab3807fb760dea4fdfc08b1692d49a243759f1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_4af8697c",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-12T17:53:23Z",
+      "side": 1,
+      "message": "See above.",
+      "parentUuid": "9a437d4f_4ad189fa",
       "range": {
         "startLine": 27,
         "startChar": 65,
