@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_eaa95d7c",
+        "filename": "shell/maven-stage.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-12T16:39:47Z",
+      "side": 1,
+      "message": "We should catch the output and parse the staging repo number and store it in a file somewhere so that it\u0027s easy to find.",
+      "revId": "dfbd9291796163bdb0fd00fd65ae3c65e30b0d88",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
