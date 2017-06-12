@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_2ac1a580",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2017-06-12T12:03:13Z",
+      "side": 1,
+      "message": "\"using Gerrit\"? nbd",
+      "range": {
+        "startLine": 6,
+        "startChar": 22,
+        "endLine": 6,
+        "endChar": 25
+      },
+      "revId": "6b484a33069ee87ff70dc55f293da4b3a5b0a66b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_0abee1ff",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2017-06-12T12:03:13Z",
+      "side": 1,
+      "message": "Is this some sort of inheritance declaration? cool",
+      "range": {
+        "startLine": 122,
+        "startChar": 4,
+        "endLine": 122,
+        "endChar": 22
+      },
+      "revId": "6b484a33069ee87ff70dc55f293da4b3a5b0a66b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
