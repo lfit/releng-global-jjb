@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a437d4f_b59bb6c8",
+        "filename": "shell/check_no_jira_urls.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-13T17:52:25Z",
+      "side": 1,
+      "message": "Can we call this \u0027git_validate_jira_urls.sh\u0027 instead? since it looks like it has to do with git commit message validation.",
+      "parentUuid": "9a437d4f_55736ab1",
+      "revId": "24d01b856c694179a7681e6bfb8198ceb47a32b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a437d4f_9579d295",
         "filename": "shell/check_no_jira_urls.sh",
         "patchSetId": 1
