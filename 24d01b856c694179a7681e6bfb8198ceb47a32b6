@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_55736ab1",
+        "filename": "shell/check_no_jira_urls.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-13T17:51:16Z",
+      "side": 1,
+      "message": "Do we want to `set -eu -o pipefail` this file?",
+      "revId": "24d01b856c694179a7681e6bfb8198ceb47a32b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_9579d295",
+        "filename": "shell/check_no_jira_urls.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-13T17:51:16Z",
+      "side": 1,
+      "message": "License header",
+      "revId": "24d01b856c694179a7681e6bfb8198ceb47a32b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a437d4f_756e6ecb",
+        "filename": "shell/check_no_jira_urls.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-13T17:51:16Z",
+      "side": 1,
+      "message": "This will fail shellcheck should use $() instead.",
+      "range": {
+        "startLine": 3,
+        "startChar": 10,
+        "endLine": 3,
+        "endChar": 12
+      },
+      "revId": "24d01b856c694179a7681e6bfb8198ceb47a32b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
