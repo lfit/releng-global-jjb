@@ -57,6 +57,7 @@
     builders:
       - lf-infra-jjbini
       - shell: !include-raw-escape:
+          - ../shell/jjb_git_filter_jira_urls.sh
           - ../shell/jjb-install.sh
           - ../shell/jjb-verify-job.sh
           - ../shell/jjb-check-unicode.sh
