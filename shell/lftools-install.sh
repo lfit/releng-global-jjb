@@ -14,15 +14,14 @@ echo "---> lftools-install.sh"
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-virtualenv --quiet "$WORKSPACE/.virtualenvs/lftools"
-# shellcheck source=./.virtualenvs/lftools/bin/activate disable=SC1091
-source "$WORKSPACE/.virtualenvs/lftools/bin/activate"
-PYTHON="$WORKSPACE/.virtualenvs/lftools/bin/python"
-$PYTHON -m pip install --quiet --upgrade pip
-$PYTHON -m pip install --quiet --upgrade "lftools<1.0.0"
+virtualenv --quiet "/tmp/v/lftools"
+# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
+source "/tmp/v/lftools/bin/activate"
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade "lftools<1.0.0"
 
 # pipdeptree prints out a lot of information because lftools pulls in many
 # dependencies. Let's only print it if we want to debug.
 # echo "----> Pip Dependency Tree"
-# $PYTHON -m pip install --quiet --upgrade pipdeptree
-# $PYTHON -m pipdeptree
+# pip install --quiet --upgrade pipdeptree
+# pipdeptree

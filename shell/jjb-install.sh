@@ -14,9 +14,9 @@ echo "---> jjb-install.sh"
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-virtualenv "$WORKSPACE/.virtualenvs/jjb"
-# shellcheck source=./.virtualenvs/jjb/bin/activate disable=SC1091
-source "$WORKSPACE/.virtualenvs/jjb/bin/activate"
+virtualenv "/tmp/v/jjb"
+# shellcheck source=/tmp/v/jjb/bin/activate disable=SC1091
+source "/tmp/v/jjb/bin/activate"
 pip install --quiet --upgrade pip
 pip install --quiet --upgrade pipdeptree
 pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
