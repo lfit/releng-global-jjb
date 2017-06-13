@@ -86,6 +86,10 @@ general this should be https://github.com. If you are using GitHub
 Enterprise, or some other GitHub-style system, then it should be
 whatever your installation base URL is.
 
+**git-clone-url**: This is the clone prefix used by GitHub jobs. This
+should be set to either the same thing as **git-url** or the
+'git@github.com:' including the trailing ':'
+
 **github-org**: The name of the GitHub organization.
 
 defaults.yaml:

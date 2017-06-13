@@ -217,7 +217,7 @@
 
     scm:
       - lf-infra-github-scm:
-          url: '${{GIT_CLONE_URL}}{github-org}/{project}'
+          url: '{git-clone-url}{github-org}/{project}'
           refspec: ''
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
@@ -256,7 +256,7 @@
 
     scm:
       - lf-infra-github-scm:
-          url: '${{GIT_CLONE_URL}}{github-org}/{project}'
+          url: '{git-clone-url}{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
