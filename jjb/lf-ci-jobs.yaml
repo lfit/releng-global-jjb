@@ -244,7 +244,7 @@
     concurrent: true
     <<: *lf_jjb_verify_merge
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_jjb_merge_builders
+    <<: *lf_jjb_verify_builders
 
     #####################
     # Job Configuration #
