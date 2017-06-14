@@ -55,6 +55,30 @@
       - shell: 'mkdir -p $WORKSPACE/target/classes $WORKSPACE/jacoco/classes'
 
 - builder:
+    name: lf-infra-deploy-maven-file
+    # Deploy files to a repository.
+    #
+    # The builder requires passing the following parameters
+    # REPO_ID:           Repository ID
+    # GROUP_ID:          Group ID of the repository
+    # UPLOAD_FILES_PATH: Path to directory containing one or more files
+    builders:
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{global-settings-file}'
+          settings-file: '{settings-file}'
+      - inject:
+          properties-content: |
+              REPO_ID={repo-id}
+              GROUP_ID={group-id}
+              UPLOAD_FILES_PATH={files-dir}
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+          - ../shell/deploy-maven-file.sh
+      - lf-provide-maven-settings-cleanup
+
+- builder:
     name: lf-maven-install
     # call maven-target builder with a goal of --version to force Jenkins to
     # install the needed maven version
@@ -76,6 +100,7 @@
               variable: 'GLOBAL_SETTINGS_FILE'
             - file-id: '{settings-file}'
               variable: 'SETTINGS_FILE'
+
 - builder:
     name: lf-provide-maven-settings-cleanup
     # Clear maven settings files after we are done using them
