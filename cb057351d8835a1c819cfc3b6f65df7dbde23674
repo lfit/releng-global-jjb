@@ -46,6 +46,30 @@
       "revId": "cb057351d8835a1c819cfc3b6f65df7dbde23674",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_aef13797",
+        "filename": "shell/jjb_git_filter_jira_urls.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-16T17:29:17Z",
+      "side": 1,
+      "message": "We don\u0027t have any ITS in OpenDaylight. I\u0027m just wondering if we should make the URL configurable because maybe we\u0027ll have a project that hosts it at some other URL.",
+      "parentUuid": "7a288981_4e09b394",
+      "range": {
+        "startLine": 18,
+        "startChar": 68,
+        "endLine": 18,
+        "endChar": 89
+      },
+      "revId": "cb057351d8835a1c819cfc3b6f65df7dbde23674",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
