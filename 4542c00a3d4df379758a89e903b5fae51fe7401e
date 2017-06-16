@@ -22,6 +22,30 @@
       "revId": "4542c00a3d4df379758a89e903b5fae51fe7401e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_8ec0bb2b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-16T15:25:42Z",
+      "side": 1,
+      "message": "I disagree here. The reason the other 3 files are named \"jjb-\" is because they are about validating the jjb in this repo. Hence jjb-install which installs Jenkins Job Builder. Then jjb-verify which runs `jenkins-jobs test` to verify that the job templates are good and finally jjb-check-unicode which runs through all of the yaml files to figure out if there\u0027s unicode in the file.\n\nThe git_validate_jira_urls does not do anything related to JJB. It is checking a git commit message for a string and validating in the case of jira.",
+      "parentUuid": "7a288981_ee7bbf27",
+      "range": {
+        "startLine": 60,
+        "startChar": 21,
+        "endLine": 60,
+        "endChar": 43
+      },
+      "revId": "4542c00a3d4df379758a89e903b5fae51fe7401e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
