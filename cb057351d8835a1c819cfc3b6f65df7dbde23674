@@ -22,6 +22,30 @@
       "revId": "cb057351d8835a1c819cfc3b6f65df7dbde23674",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_4e09b394",
+        "filename": "shell/jjb_git_filter_jira_urls.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-06-16T17:14:15Z",
+      "side": 1,
+      "message": "Thanks for your comment Thanh, I am assuming jira URLs becuase they are the ones that break the its-jira plugin. \n\nDo you guys have a similar behavior when using Bugzilla? if so,  I could add it in the check too...",
+      "parentUuid": "7a288981_4ee2d3d6",
+      "range": {
+        "startLine": 18,
+        "startChar": 68,
+        "endLine": 18,
+        "endChar": 89
+      },
+      "revId": "cb057351d8835a1c819cfc3b6f65df7dbde23674",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
