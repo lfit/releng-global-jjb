@@ -9,6 +9,7 @@
 
     jobs:
       - gerrit-maven-release
+      - gerrit-nexus-clm
 
 - job-group:
     name: '{project-name}-github-maven-jobs'
@@ -18,6 +19,7 @@
 
     jobs:
       - github-maven-release
+      - github-nexus-clm
 
 ####################
 # Anchors & Macros #
@@ -126,6 +128,56 @@
           choosing-strategy: gerrit
 
 - job-template:
+    # Template used for running CLM scans
+    name: '{project-name}-maven-clm-{stream}'
+    id: gerrit-nexus-clm
+
+    project-type: freestyle
+    node: '{build-node}'
+    jdk: '{java-version}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 30
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+          artifacts: '{archive-artifacts}'
+
+    scm:
+      - git-scm:
+          refspec: ''
+          branch: '{branch}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+      - timed: 'H H * * 6'
+
+    builders:
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{global-settings-file}'
+          settings-file: '{settings-file}'
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+          - ../shell/common-variables.sh
+          - ../shell/sonatype-clm.sh
+      - lf-provide-maven-settings-cleanup
+      - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
+      - sonatype-clm:
+          application-name: '{project-name}'
+
+    publishers:
+      - lf-infra-publish:
+
+- job-template:
     name: '{project-name}-maven-release-{stream}'
     id: github-maven-release
     <<: *lf_maven_release
@@ -142,3 +194,55 @@
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+- job-template:
+    # Template used for running CLM scans
+    name: '{project-name}-maven-clm-{stream}'
+    id: github-nexus-clm
+
+    project-type: freestyle
+    node: '{build-node}'
+    jdk: '{java-version}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 30
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+          artifacts: '{archive-artifacts}'
+
+    scm:
+      - git-scm:
+          refspec: ''
+          branch: '{branch}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+      - timed: 'H H * * 6'
+
+    builders:
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{global-settings-file}'
+          settings-file: '{settings-file}'
+      - shell: !include-raw-escape:
+          - ../shell/sonatype-clm.sh
+          - ../shell/lftools-install.sh
+          - ../shell/common-variables.sh
+          - ../shell/sonatype-clm.sh
+      - lf-provide-maven-settings-cleanup
+      - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
+      - sonatype-clm:
+          application-name: '{project-name}'
+
+    publishers:
+      - lf-infra-publish:
+
