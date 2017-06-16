@@ -1,0 +1,66 @@
+---
+# This file contains job templates for Nexus related builds.
+
+- job-group:
+    name: '{project-name}-nexus-jobs'
+
+    # Nexus CLM related job
+    jobs:
+      - nexus-clm-scan
+
+#################
+# Job Templates #
+#################
+
+- job-template:
+    # Template used for running CLM scans
+    # Arguements:
+    #   {name}         - Project Shortname
+    #   {project}      - Fully qualified project name
+    #   {mvn-settings} - Project maven settings file
+    #   {jdk}
+    name: '{project-name}-{stream}-clm'
+    id: nexus-clm-scan
+
+    project-type: freestyle
+    node: '{build-node}'
+    jdk: '{java-version}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 30
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+          artifacts: '{archive-artifacts}'
+
+    scm:
+      - git-scm:
+          refspec: ''
+          branch: '{branch}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+
+    triggers:
+      - timed: 'H H * * 6'
+
+    builders:
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{global-settings-file}'
+          settings-file: '{settings-file}'
+      - shell: !include-raw-escape:
+          - ../shell/sonatype-clm.sh
+      - lf-provide-maven-settings-cleanup
+      - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
+      - sonatype-clm:
+          application-name: '{project-name}'
+
+    publishers:
+      - lf-infra-publish:
