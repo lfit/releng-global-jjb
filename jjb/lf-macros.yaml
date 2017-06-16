@@ -14,6 +14,35 @@
       - shell: !include-raw-escape: ../shell/create-netrc.sh
 
 - builder:
+    name: lf-infra-docker-login
+    # Login into a custom hosted docker registry and / or docker.io
+    #
+    # The Jenkins system should have the following global variables defined
+    #
+    # DOCKER_REGISTRY : Optional
+    #                   The DNS address of the registry (IP or FQDN)
+    #                   ex: nexus3.example.com
+    #
+    # REGISTRY_PORTS  : Required if DOCKER_REGISTRY is set
+    #                   Space separated listing of the registry ports to login
+    #                   to
+    #                   ex: 10001 10002 10003 10004
+    #
+    # DOCKERHUB_EMAIL : Optional
+    #                   If this variable is set then an attempt to login to
+    #                   DockerHub (docker.io) will be also made. It should be
+    #                   set to the email address for the credentials that will
+    #                   get looked up. Only _one_ credential will ever be found
+    #                   in the maven settings file for DockerHub
+    builders:
+      - lf-provide-maven-settings:
+          global-settings-file: '{global-settings-file}'
+          settings-file: '{settings-file}'
+      - shell: !include-raw:
+          - ../shell/docker-login.sh
+      - lf-provide-maven-settings-cleanup
+
+- builder:
     name: lf-infra-gpg-verify-git-signature
     # Verify gpg signature of the latest commit message in $WORKSPACE
     #
