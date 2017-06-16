@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a288981_4ee2d3d6",
+        "filename": "shell/jjb_git_filter_jira_urls.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-16T15:27:58Z",
+      "side": 1,
+      "message": "I\u0027m wondering if this is a good assumption to make?\n\nIs it guaranteed that all jira platforms run at the URL starting with jira.example.org?\n\nShould we be accounting for this?\n\n(Also opendaylight currently doesn\u0027t use Jira, we use bugzilla).",
+      "range": {
+        "startLine": 18,
+        "startChar": 68,
+        "endLine": 18,
+        "endChar": 89
+      },
+      "revId": "cb057351d8835a1c819cfc3b6f65df7dbde23674",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
