@@ -8,6 +8,7 @@
     # for any project ci.
 
     jobs:
+      - gerrit-maven-clm
       - gerrit-maven-release
 
 - job-group:
@@ -17,11 +18,83 @@
     # for any project ci that is using github.
 
     jobs:
+      - gerrit-maven-clm
       - github-maven-release
 
 ####################
 # Anchors & Macros #
 ####################
+
+- lf_maven_clm: &lf_maven_clm
+    name: lf-maven-clm
+
+    # Produces a CLM scan of the code into Nexus IQ Server.
+    #
+    # Required parameters:
+    #     build-node:    The node to run build on.
+    #     jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #                             be configured in defaults.yaml)
+    #     settings-file: The name of settings file containing credentials for
+    #                    the project.
+    #     global-settings-file: The name of the Maven global settings to use for
+    #                           Maven configuration.
+
+    project-type: freestyle
+    node: '{build-node}'
+    jdk: '{java-version}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-timeout: 15
+    git-url: '$GIT_URL/$PROJECT'
+    global-settings-file: global-settings
+    java-version: openjdk8
+    mvn-opts: ''
+    mvn-params: ''
+    mvn-version: mvn33
+    submodule-recursive: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          # Keep around for 30 days for troubleshooting purposes.
+          build-days-to-keep: 30
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+      - lf-infra-maven-parameters
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{global-settings-file}'
+          settings-file: '{settings-file}'
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+          - ../shell/common-variables.sh
+          - ../shell/sonatype-clm.sh
+      - lf-provide-maven-settings-cleanup
+      - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
+      - sonatype-clm:
+          application-name: '{project-name}'
+
+    publishers:
+      - lf-infra-publish
+
 - lf_maven_release: &lf_maven_release
     name: lf-maven-release
 
@@ -112,6 +185,38 @@
 #################
 # Job Templates #
 #################
+
+- job-template:
+    name: '{project-name}-maven-clm-{stream}'
+    id: gerrit-maven-clm
+    <<: *lf_maven_clm
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+
+- job-template:
+    name: '{project-name}-maven-clm-{stream}'
+    id: github-maven-clm
+    <<: *lf_maven_clm
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
 - job-template:
     name: '{project-name}-maven-release-{stream}'
