@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a288981_2e9f8705",
+        "filename": "jjb/lf-nexus-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-19T01:38:12Z",
+      "side": 1,
+      "message": "This is maven related. Please move it to the maven-jobs yaml. We\u0027ll also need to make the template in this file support both GitHub and Gerrit.",
+      "revId": "a7035b2bbf7e201920126f57b6971c0ab54d0f54",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_ce85a3ae",
+        "filename": "jjb/lf-nexus-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-19T01:38:12Z",
+      "side": 1,
+      "message": "{project-name}",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 14
+      },
+      "revId": "a7035b2bbf7e201920126f57b6971c0ab54d0f54",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_ae9257f4",
+        "filename": "jjb/lf-nexus-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-19T01:38:12Z",
+      "side": 1,
+      "message": "{java-version} - The version of Java to build with",
+      "range": {
+        "startLine": 21,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 13
+      },
+      "revId": "a7035b2bbf7e201920126f57b6971c0ab54d0f54",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_0ea4cb55",
+        "filename": "jjb/lf-nexus-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-19T01:38:12Z",
+      "side": 1,
+      "message": "Let\u0027s call this {project-name}-maven-clm-{stream} so that it\u0027s clear that Maven is calling CLM (As opposed to Gradle, Ant, etc...).",
+      "range": {
+        "startLine": 22,
+        "startChar": 11,
+        "endLine": 22,
+        "endChar": 38
+      },
+      "revId": "a7035b2bbf7e201920126f57b6971c0ab54d0f54",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_ee885fc8",
+        "filename": "jjb/lf-nexus-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-19T01:38:12Z",
+      "side": 1,
+      "message": "Also needs `- lf-infra-maven-parameters` I think... And configure staging-profile-id as blank by default so that it\u0027s not required for this job.",
+      "revId": "a7035b2bbf7e201920126f57b6971c0ab54d0f54",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
