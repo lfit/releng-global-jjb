@@ -70,6 +70,30 @@
       "revId": "cb057351d8835a1c819cfc3b6f65df7dbde23674",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a288981_512b9682",
+        "filename": "shell/jjb_git_filter_jira_urls.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2017-06-19T18:28:41Z",
+      "side": 1,
+      "message": "I think we can add this JIRA URL search for now since it just looks really bad in the commit message when its-jira tries to process it.\nIf we find more broken URLs, we can add them here as we find them.",
+      "parentUuid": "7a288981_aef13797",
+      "range": {
+        "startLine": 18,
+        "startChar": 68,
+        "endLine": 18,
+        "endChar": 89
+      },
+      "revId": "cb057351d8835a1c819cfc3b6f65df7dbde23674",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
