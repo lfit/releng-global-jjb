@@ -1,0 +1,73 @@
+- defaults:
+    name: global
+
+    # General
+    jenkins-ssh-credential: test-credential
+
+    # Gerrit Infra
+    gerrit-server-name: test-server
+
+    # GitHub Infra
+    git-url: https://github.com
+    git-clone-url: 'git@github.com:'
+    github-org: example-org
+
+    # Common test config
+    project: releng/ciman
+    stream: latest
+    build-node: build-vm
+
+################
+# GERRIT TESTS #
+################
+
+- project:
+    name: gerrit-ci-jobs
+    jobs:
+        - "{project-name}-ci-jobs"
+
+    project-name: gerrit-ciman
+
+- project:
+    name: gerrit-maven-jobs
+    jobs:
+        - gerrit-maven-release
+
+    project-name: gerrit-maven
+    staging-profile-id: uuddlrlrba
+    settings-file: gerrit-maven-project-settings
+
+- project:
+    name: gerrit-python-jobs
+    jobs:
+        - "{project-name}-python-jobs"
+
+    project-name: gerrit-python
+
+################
+# GITHUB TESTS #
+################
+
+- project:
+    name: github-ci-jobs
+    jobs:
+        - "{project-name}-github-ci-jobs"
+
+    project-name: github-ciman
+
+- project:
+    name: github-maven-jobs
+    jobs:
+        - github-maven-release
+
+    project-name: github-maven
+    staging-profile-id: uuddlrlrba
+    settings-file: aproject-settings
+
+- project:
+    name: github-python-jobs
+    jobs:
+        - "{project-name}-github-python-jobs"
+
+    project-name: github-python
+

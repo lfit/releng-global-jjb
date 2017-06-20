@@ -24,3 +24,7 @@ target/
 .tox/
 __pycache__/
 *.pyc
+
+# global-jjb
+jjb/test.yaml
+archives/
