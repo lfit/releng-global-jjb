@@ -1,0 +1,89 @@
+- defaults:
+    name: global
+
+    # General
+    jenkins-ssh-credential: test-credential
+
+    # Gerrit Infra
+    gerrit-server-name: test-server
+
+    # GitHub Infra
+    git-url: https://github.com
+    git-clone-url: 'git@github.com:'
+    github-org: example-org
+
+################
+# GERRIT TESTS #
+################
+
+- project:
+    name: gerrit-ci-jobs
+    jobs:
+        - "{project-name}-ci-jobs"
+
+    project: releng/builder
+    project-name: builder
+    stream: master
+    branch: master
+    build-node: centos7-java-builder-2c-4g
+
+- project:
+    name: gerrit-maven-project
+    jobs:
+        - gerrit-maven-release
+
+    project-name: gerrit-maven-project
+    project: gerit-maven-project
+    build-node: centos7-java-builder-2c-8g
+    stream: master
+    staging-profile-id: uuddlrlrba
+    settings-file: gerrit-maven-project-settings
+
+- project:
+    name: gerrit-python-jobs
+    jobs:
+        - "{project-name}-python-jobs"
+
+    project: releng/builder
+    project-name: builder
+    stream: master
+    branch: master
+    build-node: centos7-java-builder-2c-4g
+
+################
+# GITHUB TESTS #
+################
+
+- project:
+    name: github-ci-jobs
+    jobs:
+        - "{project-name}-github-ci-jobs"
+
+    project: ci-management
+    project-name: ci-management
+    stream: master
+    branch: master
+    build-node: a-build-node
+
+- project:
+    name: github-maven-project
+    jobs:
+        - github-maven-release
+
+    project-name: github-maven-project
+    project: github-maven-project
+    build-node: maven-build-node
+    stream: master
+    staging-profile-id: uuddlrlrba
+    settings-file: aproject-settings
+
+- project:
+    name: github-python-jobs
+    jobs:
+        - "{project-name}-github-python-jobs"
+
+    project: ci-management
+    project-name: ci-management
+    stream: master
+    branch: master
+    build-node: python-build-node
