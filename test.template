@@ -1,0 +1,105 @@
+################
+# GERRIT TESTS #
+################
+
+- project:
+    name: gerrit-ci-jobs
+    jobs:
+        - "{project-name}-ci-jobs"
+
+    project: 'releng/builder'
+    project-name: builder
+    stream: master
+    branch: master
+    build-node: centos7-java-builder-2c-4g
+
+    # These would normally be configured in defaults.yaml
+    jenkins-ssh-credential: a-credential
+    gerrit-server-name: test-server
+
+- project:
+    name: gerrit-maven-project
+    jobs:
+        - gerrit-maven-release
+
+    project-name: gerrit-maven-project
+    project: gerit-maven-project
+    build-node: centos7-java-builder-2c-8g
+    stream: master
+    staging-profile-id: uuddlrlrba
+    settings-file: gerrit-maven-project-settings
+
+    # These would normally be configured in defaults.yaml
+    jenkins-ssh-credential: gerrit-maven-project-credential
+
+- project:
+    name: gerrit-python-jobs
+    jobs:
+        - "{project-name}-python-jobs"
+
+    project: 'releng/builder'
+    project-name: builder
+    stream: master
+    branch: master
+    build-node: centos7-java-builder-2c-4g
+
+    # These would normally be configured in defaults.yaml
+    jenkins-ssh-credential: gerrit-maven-project-credential
+    gerrit-server-name: test-server
+
+################
+# GITHUB TESTS #
+################
+
+- project:
+    name: github-ci-jobs
+    jobs:
+        - "{project-name}-github-ci-jobs"
+
+    project: ci-management
+    project-name: ci-management
+    stream: master
+    branch: master
+    build-node: a-build-node
+
+    # These would normally be configured in defaults.yaml
+    jenkins-ssh-credential: a-credential
+    git-url: https://github.com
+    git-clone-url: 'git@github.com:'
+    github-org: example-org
+
+- project:
+    name: github-maven-project
+    jobs:
+        - github-maven-release
+
+    project-name: github-maven-project
+    project: github-maven-project
+    build-node: maven-build-node
+    stream: master
+    staging-profile-id: uuddlrlrba
+    settings-file: aproject-settings
+
+    # These would normally be configured in defaults.yaml
+    jenkins-ssh-credential: a-credential
+    git-url: https://github.com
+    git-clone-url: 'git@github.com:'
+    github-org: example-org
+
+
+- project:
+    name: github-python-jobs
+    jobs:
+        - "{project-name}-github-python-jobs"
+
+    project: ci-management
+    project-name: ci-management
+    stream: master
+    branch: master
+    build-node: python-build-node
+
+    # These would normally be configured in defaults.yaml
+    jenkins-ssh-credential: a-credential
+    git-url: https://github.com
+    git-clone-url: 'git@github.com:'
+    github-org: example-org
