@@ -13,7 +13,17 @@ echo "---> jjb-verify-job.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+# If project is global-jjb then prepare custom tests
+if [ "$PROJECT" == "global-jjb" ]; then
+    cp test.template jjb/test.yaml
+fi
+
 jenkins-jobs -l DEBUG test --recursive -o archives/job-configs jjb/
+
+# Cleanup custom global-jjb test yaml
+if [ "$PROJECT" == "global-jjb" ]; then
+    rm jjb/test.yaml
+fi
 
 # Sort job output into sub-directories. On large Jenkins systems that have
 # many jobs archiving so many files into the same directory makes NGINX return

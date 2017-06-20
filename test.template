@@ -1,0 +1,12 @@
+- project:
+    name: maven-project
+    jobs:
+        - gerrit-maven-release
+
+    project-name: aproject
+    project: aproject
+    build-node: a-build-node
+    jenkins-ssh-credential: a-credential
+    stream: master
+    staging-profile-id: uuddlrlrba
+    settings-file: aproject-settings
