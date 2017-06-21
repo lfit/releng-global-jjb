@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2585a7_6d26b5bc",
+        "filename": "test.template",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-21T14:51:07Z",
+      "side": 1,
+      "message": "Would it be apropos to just add a defaults section at the top of the test file for all the vars that would normally be defined as a JJB wide default?\n\nIf not that, then maybe a couple of anchors so we can just suck in a lot of the basics instead of replicating them in every project definition.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 35
+      },
+      "revId": "a8eb1b439b2412c4b705c4d53be07dbc3a5b6b04",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
