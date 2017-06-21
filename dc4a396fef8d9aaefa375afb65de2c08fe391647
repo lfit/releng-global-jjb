@@ -1,0 +1,176 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2585a7_adb81d2b",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T16:20:35Z",
+      "side": 1,
+      "message": "Can we provide some documentation on this macro via some docstrings here?",
+      "range": {
+        "startLine": 58,
+        "startChar": 4,
+        "endLine": 58,
+        "endChar": 36
+      },
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_8d5e8111",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T16:20:35Z",
+      "side": 1,
+      "message": "Only need 1 inject here to cover all 3 parameters.",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 61
+      },
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_0daa91d4",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T16:20:35Z",
+      "side": 1,
+      "message": "No need to create a temp file and then copy it to archives. Just create it directly in archives.\n\n DEPLOY_LOG\u003d\"$WORKSPACE/archives/deploy-maven-file.log\"\n mkdir -p \"$WORKSPACE/archives\"",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 20
+      },
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_6d9b55ca",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T16:20:35Z",
+      "side": 1,
+      "message": "NEXUS_URL is a mandatory variable provided by Jenkins Master for projects using global JJB. We don\u0027t need to redefine it here.",
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_4da099f4",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T16:20:35Z",
+      "side": 1,
+      "message": "According to the macro defined UPLOAD_FILES_PATH is a mandatory variable that\u0027s passed in by the macro already. No need to redefine it here.",
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_2da54d04",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T16:20:35Z",
+      "side": 1,
+      "message": "Does this work?\n\nI think it would get passed into shell as \"-b /path/to/maven\" 1 parameter, rather than 2 parameters.",
+      "range": {
+        "startLine": 34,
+        "startChar": 30,
+        "endLine": 34,
+        "endChar": 39
+      },
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_edae25e7",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T16:20:35Z",
+      "side": 1,
+      "message": "$DEPLOY_LOG",
+      "range": {
+        "startLine": 35,
+        "startChar": 52,
+        "endLine": 35,
+        "endChar": 61
+      },
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_cdab69d5",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T16:20:35Z",
+      "side": 1,
+      "message": "Assuming the project provided these files (and we didn\u0027t make them) we shouldn\u0027t be deleting it on them in case they need it in scripts after the macro. Let the job definition clean up on their own.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 27
+      },
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
