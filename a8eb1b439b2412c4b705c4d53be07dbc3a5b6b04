@@ -22,6 +22,30 @@
       "revId": "a8eb1b439b2412c4b705c4d53be07dbc3a5b6b04",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_2d20ad9a",
+        "filename": "test.template",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-21T14:52:16Z",
+      "side": 1,
+      "message": "That\u0027s a good idea. We can accomplish that with defaults.",
+      "parentUuid": "5a2585a7_6d26b5bc",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 35
+      },
+      "revId": "a8eb1b439b2412c4b705c4d53be07dbc3a5b6b04",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
