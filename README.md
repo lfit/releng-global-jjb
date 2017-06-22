@@ -196,3 +196,13 @@ in the same structure as configured in the archives directory.
 In this method a job can define a globstar for example ``**/*.log`` which then
 causes the archive script to do a globstar search for that pattern and archives
 any files it finds matching.
+
+## Appendix
+
+### ShellCheck
+
+If ShellCheck is being used to lint global-jjb or any projects that include
+global-jjb as part of their project (common with ci-management repos) then
+a minimum version of ShellCheck 0.4.x is required as the shell scripts in
+this repo uses annotations that were introduced in 0.4..
+
