@@ -260,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "5a2585a7_8dd7a1ed",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-23T14:55:59Z",
+      "side": 1,
+      "message": "I mean wouldn\u0027t \"-b $MVN\" get passed into bash as a string literal of \"-b /path/to/maven\" instead of what bash would expect of 2 separate parameters \"-b\" \"/path/to/maven\"?\n\nIf you say it works we can leave it but I\u0027m not sure it will get passed in correctly.",
+      "parentUuid": "5a2585a7_2db0addc",
+      "range": {
+        "startLine": 34,
+        "startChar": 30,
+        "endLine": 34,
+        "endChar": 39
+      },
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2585a7_edae25e7",
         "filename": "shell/deploy-maven-file.sh",
         "patchSetId": 21
