@@ -22,6 +22,30 @@
       "revId": "41f62dcaff4b7fa3a3a71aea7a3127c549894f6a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_ed3e2529",
+        "filename": "test.template",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-23T15:38:51Z",
+      "side": 1,
+      "message": "I think that makes sense. Especially for things like build-node, stream, branch, and maybe project where we expect almost all of the jobs to have them anyway.\n\nThe only one that has to be unique is project-name as JJB will fail if we try to set the same job names (due to github and gerrit templates expanding to the same job)",
+      "parentUuid": "5a2585a7_6d2b55ec",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 42
+      },
+      "revId": "41f62dcaff4b7fa3a3a71aea7a3127c549894f6a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
