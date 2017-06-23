@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2585a7_6d2b55ec",
+        "filename": "test.template",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-23T15:30:00Z",
+      "side": 1,
+      "message": "I\u0027m sort of leaning towards us setting all variables that aren\u0027t required to be uniq in a project definition as defaults so that when we add a new test it\u0027s mostly just just having to define name, jobs and the two project vars.\n\nSince this is just a test / validation that our templates are working this seems like the most expedient thing to do. Unless you think we should be giving more \u0027real world\u0027 examples of making our calls.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 42
+      },
+      "revId": "41f62dcaff4b7fa3a3a71aea7a3127c549894f6a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
