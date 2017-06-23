@@ -264,6 +264,7 @@
           wipe-workspace: true
           submodule:
             recursive: '{submodule-recursive}'
+            disable: '{submodule-disable}'
           choosing-strategy: '{choosing-strategy}'
 
 - scm:
@@ -277,6 +278,7 @@
           wipe-workspace: true
           submodule:
             recursive: '{submodule-recursive}'
+            disable: '{submodule-disable}'
           choosing-strategy: '{choosing-strategy}'
 
 ############

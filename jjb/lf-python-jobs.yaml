@@ -41,6 +41,7 @@
     build-timeout: 10
     git-url: '$GIT_URL/$GERRIT_PROJECT'
     submodule-recursive: true
+    submodule-disable: false
     tox-dir: ''
     tox-envs: ''
 
@@ -94,6 +95,7 @@
           git-url: '{git-url}'
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: gerrit
 
@@ -130,6 +132,7 @@
           url: '{git-clone-url}{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'

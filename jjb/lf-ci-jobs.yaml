@@ -89,6 +89,7 @@
 
     branch: master
     submodule-recursive: true
+    submodule-disable: false
 
     #####################
     # Job Configuration #
@@ -136,6 +137,7 @@
           git-url: '{git-url}'
           refspec: ''
           branch: '{branch}'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -178,6 +180,7 @@
           git-url: '{git-url}'
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: gerrit
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -221,6 +224,7 @@
           url: '{git-clone-url}{github-org}/{project}'
           refspec: ''
           branch: '{branch}'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -260,6 +264,7 @@
           url: '{git-clone-url}{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'

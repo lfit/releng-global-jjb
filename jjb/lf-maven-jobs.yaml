@@ -57,6 +57,7 @@
     mvn-params: ''
     mvn-version: mvn33
     submodule-recursive: true
+    submodule-disable: false
 
     #####################
     # Job Configuration #
@@ -122,6 +123,7 @@
           git-url: '{git-url}'
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: gerrit
 
@@ -139,6 +141,7 @@
           url: '{git-clone-url}{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
