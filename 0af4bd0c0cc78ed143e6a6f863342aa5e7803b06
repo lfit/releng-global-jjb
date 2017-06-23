@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2585a7_8d732115",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-23T18:18:41Z",
+      "side": 1,
+      "message": "This should be maven, not nexus",
+      "range": {
+        "startLine": 12,
+        "startChar": 15,
+        "endLine": 12,
+        "endChar": 20
+      },
+      "revId": "0af4bd0c0cc78ed143e6a6f863342aa5e7803b06",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_6d60f535",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-23T18:18:41Z",
+      "side": 1,
+      "message": "This should be maven, not nexus",
+      "range": {
+        "startLine": 22,
+        "startChar": 15,
+        "endLine": 22,
+        "endChar": 20
+      },
+      "revId": "0af4bd0c0cc78ed143e6a6f863342aa5e7803b06",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_cd692927",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-23T18:18:41Z",
+      "side": 1,
+      "message": "We should be putting things in ascii-betical order. This means that {project-name}-maven-clm-{stream} should come before {project-name}-maven-release-{stream}",
+      "revId": "0af4bd0c0cc78ed143e6a6f863342aa5e7803b06",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_ad76dd04",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-23T18:18:41Z",
+      "side": 1,
+      "message": "This should be maven, not nexus",
+      "range": {
+        "startLine": 133,
+        "startChar": 15,
+        "endLine": 133,
+        "endChar": 20
+      },
+      "revId": "0af4bd0c0cc78ed143e6a6f863342aa5e7803b06",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_4d653944",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-23T18:18:41Z",
+      "side": 1,
+      "message": "This should be done as an anchor pattern. The scm section should really be the only part that is custom to either gerrit or github.\n\nBonus points for generalizing the common parts of this that current lf_maven_release anchor has and fixing that anchor as well, as a follow on patch, not part of the same one.",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 25
+      },
+      "revId": "0af4bd0c0cc78ed143e6a6f863342aa5e7803b06",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_2d5aed83",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-06-23T18:18:41Z",
+      "side": 1,
+      "message": "See notes on the above gerrit section, similar apply to the github section",
+      "revId": "0af4bd0c0cc78ed143e6a6f863342aa5e7803b06",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
