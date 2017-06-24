@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2585a7_4df3f973",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-24T03:09:47Z",
+      "side": 1,
+      "message": "We like to list things in alphabetical order.",
+      "revId": "21cabe1411959bac7f0cba584c858dae034ed132",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_2de8ad7b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-24T03:09:47Z",
+      "side": 1,
+      "message": "Alphabetical order.",
+      "revId": "21cabe1411959bac7f0cba584c858dae034ed132",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_ed01853a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-24T03:09:47Z",
+      "side": 1,
+      "message": "Using build duration listed here:\nhttps://jenkins.opendaylight.org/releng/view/CLM/\n\nIt seems like most projects complete building within ~6 minutes. I think setting a build timeout of 15 minutes is probably fair here and then projects that need more can bump it.",
+      "range": {
+        "startLine": 51,
+        "startChar": 19,
+        "endLine": 51,
+        "endChar": 21
+      },
+      "revId": "21cabe1411959bac7f0cba584c858dae034ed132",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_0dedf18b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-24T03:09:47Z",
+      "side": 1,
+      "message": "Can we default to openjdk8? (7 is EOL)",
+      "range": {
+        "startLine": 54,
+        "startChar": 18,
+        "endLine": 54,
+        "endChar": 26
+      },
+      "revId": "21cabe1411959bac7f0cba584c858dae034ed132",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_cdfec938",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-24T03:09:47Z",
+      "side": 1,
+      "message": "This is a statement that doesn\u0027t apply for the CLM jobs. Although 30 days is a good number for this job type.\n\nI\u0027d probably just mention something along the lines of keeping 30 days of CLM data in Jenkins for troubleshooting.",
+      "range": {
+        "startLine": 66,
+        "startChar": 36,
+        "endLine": 66,
+        "endChar": 81
+      },
+      "revId": "21cabe1411959bac7f0cba584c858dae034ed132",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_adfb7d46",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-24T03:09:47Z",
+      "side": 1,
+      "message": "Choosing strategy should be default here. The only time it should be gerrit is if Gerrit Trigger is configured which it is not in this job.\n\n(I know it was copied from the release job which has it incorrect too, we should probably fix the release job one in a separate patch.)",
+      "range": {
+        "startLine": 199,
+        "startChar": 29,
+        "endLine": 199,
+        "endChar": 35
+      },
+      "revId": "21cabe1411959bac7f0cba584c858dae034ed132",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
