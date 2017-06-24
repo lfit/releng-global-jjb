@@ -284,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "5a2585a7_cdd7e9be",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-06-24T00:40:13Z",
+      "side": 1,
+      "message": "Fixed!",
+      "parentUuid": "5a2585a7_8dd7a1ed",
+      "range": {
+        "startLine": 34,
+        "startChar": 30,
+        "endLine": 34,
+        "endChar": 39
+      },
+      "revId": "dc4a396fef8d9aaefa375afb65de2c08fe391647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2585a7_edae25e7",
         "filename": "shell/deploy-maven-file.sh",
         "patchSetId": 21
