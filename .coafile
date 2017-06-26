@@ -6,6 +6,14 @@ ignore_length_regex = Signed-off-by,
     http://,
     https://
 
+[Groovy]
+bears = SpaceConsistencyBear
+files = **/*.groovy
+ignore = .git/**,
+    .tox/**
+indent_size = 4
+use_spaces = true
+
 [YAML]
 bears = YAMLLintBear
 files = **/*.yaml
