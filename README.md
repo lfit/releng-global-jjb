@@ -1,9 +1,9 @@
 # Global JJB
 
-The purpose of this repository is store generically define reusable JJB
-templates that can be deployed across LF projects.
+The purpose of this repository is store generically defined, reusable JJB
+templates, deployable across LF projects.
 
-The following variables are necessary to be defined in the Jenkins server as
+Define the following variables in the Jenkins server as
 global environment variables as scripts in this repo expect these variables to
 be available.
 
@@ -18,7 +18,7 @@ NEXUS_URL=https://nexus.opendaylight.org
 SILO=releng
 ```
 
-Note: **GIT_CLONE_URL** is only used by Github projects as this
+Note: Use **GIT_CLONE_URL** for GitHub projects as this
 will be different from the URL used the poperties
 configuration.
 
@@ -42,16 +42,16 @@ configuration.
 
 ## Installing global-jjb
 
-global-jjb should be deployed in the ci-management repository's jjb directory as
-a submodule. global-jjb is versioned and tagged in Gerrit so installing,
-upgrading, and rolling back changes should be simple via the Gerrit tag system.
+Deploy global-jjb in the ci-management repository's jjb directory as
+a submodule. Installing, upgrading, and rolling back changes is simple via the
+versioned git tags.
 
 ```
     # Choose a global-jjb version to install
     GLOBAL_JJB_VERSION=v0.1.0
 
     # Add the new submodule to ci-management's jjb directory.
-    # Note: Only needs to be performed once per ci-management repo.
+    # Note: Perform once per ci-management repo.
     cd jjb/
     git submodule add https://gerrit.linuxfoundation.org/infra/releng/global-jjb
 
@@ -70,8 +70,8 @@ upgrading, and rolling back changes should be simple via the Gerrit tag system.
 
 ## Parameters stored in defaults.yaml
 
-There are a few project specific parameters that should be stored in the
-ci-management repo's defaults.yaml file.
+Configure the following parameters in the ci-management repo's defaults.yaml
+file.
 
 **gerrit-server-name**: The name of the Gerrit Server as defined in Gerrit
 Trigger global configuration.
@@ -79,16 +79,15 @@ Trigger global configuration.
 **jenkins-ssh-credential**: The name of the Jenkins Credential to use for ssh
 connections.
 
-If you are using GitHub then there are two more parameters which
-will need to be placed in the defaults.yaml
+If you are using GitHub then configure the following parameters in defaults.yaml
 
-**git-url**: This should be set to the base URL of your GitHub. In
+**git-url**: Set this to the base URL of your GitHub repo. In
 general this should be <https://github.com>. If you are using GitHub
 Enterprise, or some other GitHub-style system, then it should be
 whatever your installation base URL is.
 
-**git-clone-url**: This is the clone prefix used by GitHub jobs. This
-should be set to either the same thing as **git-url** or the
+**git-clone-url**: This is the clone prefix used by GitHub jobs. Set this to
+either the same thing as **git-url** or the
 'git@github.com:' including the trailing ':'
 
 **github-org**: The name of the GitHub organization.
@@ -115,7 +114,7 @@ credentials for the logs user in Nexus.
 
 ## Deploying ci-jobs
 
-The CI job group contains multiple jobs that should be deployed in all LF
+The CI job group contains jobs that should deploy in all LF
 Jenkins infra. The minimal configuration needed to deploy the ci-management
 jobs is as follows which deploys the **{project-name}-ci-jobs** job group as
 defined in **lf-ci-jobs.yaml**.
@@ -151,7 +150,7 @@ We provide the following Python jobs templates:
 
 ### {project-name}-tox-verify-{stream}
 
-This job can be used to call python-tox to run builds and tests. The most common
+Use this job to call python-tox to run builds and tests. The most common
 usage of this job is to run the Coala linter against projects.
 
 ```
@@ -171,7 +170,7 @@ Required parameters:
 **project**: is the project repo as defined in source control.
 **project-name**: is a custom name to call the job in Jenkins.
 **build-node**: is the name of the builder to use when building (Jenkins label).
-**stream**: typically `master` or matching whatever branch is being built. This
+**stream**: typically `master` or matching the build branch. This
             is a useful keywords to map a release codename to a branch. For
             example OpenDaylight uses this to map stream=carbon to
             branch=stable/carbon.
@@ -189,7 +188,7 @@ There are 2 ways supported for archiving log information:
 
 1) Job creates $WORKSPACE/archives directory and places logs there
 
-In this method the entire archives directory will be pushed to the log server
+This method pushes the entire archives directory to the log server
 in the same structure as configured in the archives directory.
 
 2) Via job variable ARCHIVE_ARTIFACTS using globstar patterns.
@@ -202,7 +201,7 @@ any files it finds matching.
 
 ### ShellCheck
 
-If ShellCheck is being used to lint global-jjb or any projects that include
+When using ShellCheck to lint global-jjb or any projects that include
 global-jjb as part of their project (common with ci-management repos) then
-a minimum version of ShellCheck 0.4.x is required as the shell scripts in
-this repo uses annotations that were introduced in 0.4..
+we require version 0.4.x of ShellCheck installed on the build vms. This version
+introduces annotations used by shell scripts in this repo.

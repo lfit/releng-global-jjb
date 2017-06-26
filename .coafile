@@ -15,7 +15,7 @@ indent_size = 4
 use_spaces = true
 
 [MarkDown]
-bears = MarkdownBear,SpaceConsistencyBear
+bears = MarkdownBear,SpaceConsistencyBear,WriteGoodLintBear
 files = **/*.md, **/*.markdown
 ignore = .git/**,
     .tox/**
