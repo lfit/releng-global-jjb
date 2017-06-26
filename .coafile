@@ -14,6 +14,13 @@ ignore = .git/**,
 indent_size = 4
 use_spaces = true
 
+[MarkDown]
+bears = MarkdownBear,SpaceConsistencyBear
+files = **/*.md, **/*.markdown
+ignore = .git/**,
+    .tox/**
+use_spaces = true
+
 [ShellCheck]
 bears = ShellCheckBear,SpaceConsistencyBear
 files = **/*.sh

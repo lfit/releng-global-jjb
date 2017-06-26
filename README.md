@@ -17,6 +17,7 @@ LOGS_SERVER=https://logs.opendaylight.org
 NEXUS_URL=https://nexus.opendaylight.org
 SILO=releng
 ```
+
 Note: **GIT_CLONE_URL** is only used by Github projects as this
 will be different from the URL used the poperties
 configuration.
@@ -82,7 +83,7 @@ If you are using GitHub then there are two more parameters which
 will need to be placed in the defaults.yaml
 
 **git-url**: This should be set to the base URL of your GitHub. In
-general this should be https://github.com. If you are using GitHub
+general this should be <https://github.com>. If you are using GitHub
 Enterprise, or some other GitHub-style system, then it should be
 whatever your installation base URL is.
 
@@ -193,7 +194,7 @@ in the same structure as configured in the archives directory.
 
 2) Via job variable ARCHIVE_ARTIFACTS using globstar patterns.
 
-In this method a job can define a globstar for example ``**/*.log`` which then
+In this method a job can define a globstar for example `**/*.log` which then
 causes the archive script to do a globstar search for that pattern and archives
 any files it finds matching.
 
@@ -205,4 +206,3 @@ If ShellCheck is being used to lint global-jjb or any projects that include
 global-jjb as part of their project (common with ci-management repos) then
 a minimum version of ShellCheck 0.4.x is required as the shell scripts in
 this repo uses annotations that were introduced in 0.4..
-
