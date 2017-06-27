@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2585a7_b0b8762b",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-27T15:49:49Z",
+      "side": 1,
+      "message": "typo: don\u0027t\n\nHowever I think in documentation it\u0027s more clear to avoid using contractions and just spell out \"Do not\".",
+      "range": {
+        "startLine": 19,
+        "startChar": 10,
+        "endLine": 19,
+        "endChar": 14
+      },
+      "revId": "8ec4cbe3b24fcda4eac98be1101db78e195cd747",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
