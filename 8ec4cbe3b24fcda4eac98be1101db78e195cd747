@@ -22,6 +22,23 @@
       "revId": "8ec4cbe3b24fcda4eac98be1101db78e195cd747",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_8b478d4b",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-27T18:59:44Z",
+      "side": 1,
+      "message": "Do we want to disable it for CentOS and RedHat systems too if it\u0027s not available?",
+      "revId": "8ec4cbe3b24fcda4eac98be1101db78e195cd747",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
