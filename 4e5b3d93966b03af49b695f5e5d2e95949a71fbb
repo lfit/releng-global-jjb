@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2585a7_10aaaad4",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-27T15:47:31Z",
+      "side": 1,
+      "message": "Have we tested this?\n\nI do not think this works. My understanding is properties-content is a text field and is not a comma separated list of key\u003dvalue stores. I believe the correct syntax here is:\n\n properties-content: |\n     REPO_ID\u003d{repo-id}\n     GROUP_ID\u003d{group-id}\n     UPLOAD_FILES_PATH\u003d{files-dir}",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 45
+      },
+      "revId": "4e5b3d93966b03af49b695f5e5d2e95949a71fbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2585a7_f0aefee6",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-06-27T15:47:31Z",
+      "side": 1,
+      "message": "Don\u0027t need to change this but another way to rewrite this loop (as to not have to overwrite the IFS in case later scripts need it) is to do:\n\n files\u003d($(filed ...))\n for file in ${files[@]}; do\n     ...\n done",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 53
+      },
+      "revId": "4e5b3d93966b03af49b695f5e5d2e95949a71fbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
