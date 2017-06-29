@@ -87,6 +87,7 @@
     # Default parameters #
     ######################
 
+    stream: master
     branch: master
     submodule-recursive: true
 
@@ -102,6 +103,7 @@
     parameters:
       - lf-infra-parameters:
           project: '{project}'
+          stream: '{stream}'
           branch: '{branch}'
       - lf-infra-jjb-parameters:
           jjb-version: '{jjb-version}'

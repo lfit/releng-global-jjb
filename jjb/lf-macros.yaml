@@ -164,6 +164,13 @@
               project repo path as exists in Gerrit.
               For example: ofextensions/circuitsw
       - string:
+          name: STREAM
+          default: '{stream}'
+          description: |
+              Stream is often set to the same name as 'branch' but can
+              sometimes be used as a name representing a project's release code
+              name.
+      - string:
           name: GERRIT_PROJECT
           default: '{project}'
           description: |
