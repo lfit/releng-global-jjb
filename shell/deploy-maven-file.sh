@@ -24,7 +24,6 @@ DEPLOY_LOG="$WORKSPACE/archives/deploy-maven-file.log"
 mkdir -p "$WORKSPACE/archives"
 
 NEXUS_REPO_URL="${NEXUS_URL}/$REPO_ID"
-mkdir -p "$UPLOAD_FILES_PATH"
 
 while IFS="" read -r file
 do
@@ -33,4 +32,4 @@ do
                               "$file" \
                               -b "$MVN" \
                               -g "$GROUP_ID" | tee "$DEPLOY_LOG"
-done < <(find "$UPLOAD_FILES_PATH" -type d -name "*")
+done < <(find "$UPLOAD_FILES_PATH" -type f -name "*")
