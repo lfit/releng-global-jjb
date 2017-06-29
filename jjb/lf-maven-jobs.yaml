@@ -123,7 +123,7 @@
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
-          choosing-strategy: gerrit
+          choosing-strategy: default
 
 - job-template:
     name: '{project-name}-maven-release-{stream}'
