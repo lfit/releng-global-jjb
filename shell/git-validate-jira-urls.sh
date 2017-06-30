@@ -15,7 +15,7 @@
 set -e -o pipefail
 set +u
 
-JIRA_LINK=$(git rev-list --format=%B --max-count=1 HEAD | grep -io 'http[s]*://jira\..*')
+JIRA_LINK=$(git rev-list --format=%B --max-count=1 HEAD | grep -io 'http[s]*://jira\..*' || true)
 if [[ ! -z "$JIRA_LINK" ]]
 then
   echo 'Remove JIRA URLs from commit message'
