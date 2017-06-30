@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_2b9f7905",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2017-06-30T00:14:32Z",
+      "side": 1,
+      "message": "according to the -verify I think we also have to have a \ndefault set for {stream}",
+      "range": {
+        "startLine": 168,
+        "startChar": 19,
+        "endLine": 168,
+        "endChar": 29
+      },
+      "revId": "627f4c409e2752d68e5c73a8bb54d7e71d0942c3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
