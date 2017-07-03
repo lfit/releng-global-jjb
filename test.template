@@ -17,6 +17,9 @@
     stream: latest
     build-node: build-vm
 
+    # cloud config
+    os-cloud: test-cloud
+
 ################
 # GERRIT TESTS #
 ################
@@ -70,4 +73,3 @@
         - "{project-name}-github-python-jobs"
 
     project-name: github-python
-
