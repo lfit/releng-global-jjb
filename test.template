@@ -17,6 +17,7 @@
     stream: latest
     build-node: build-vm
 
+
 ################
 # GERRIT TESTS #
 ################
@@ -27,6 +28,14 @@
         - "{project-name}-ci-jobs"
 
     project-name: gerrit-ciman
+    os-cloud: test-cloud
+    platforms:
+      - platform1
+      - platform2
+
+    templates:
+      - template1
+      - template2
 
 - project:
     name: gerrit-maven-jobs
@@ -70,4 +79,3 @@
         - "{project-name}-github-python-jobs"
 
     project-name: github-python
-
