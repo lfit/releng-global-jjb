@@ -44,6 +44,21 @@
     settings-file: gerrit-maven-project-settings
 
 - project:
+    name: gerrit-packer-jobs
+    jobs:
+        - "{project-name}-packer-jobs"
+
+    project-name: gerrit-ciman
+    os-cloud-file-id: os-cloud-id
+    platforms:
+      - centos
+      - ubuntu1604
+
+    templates:
+      - java-builder
+      - mininet
+
+- project:
     name: gerrit-python-jobs
     jobs:
         - "{project-name}-python-jobs"
@@ -71,9 +86,23 @@
     settings-file: aproject-settings
 
 - project:
+    name: github-packer-jobs
+    jobs:
+        - "{project-name}-github-packer-jobs"
+
+    project-name: github-ciman
+    os-cloud-file-id: os-cloud-id
+    platforms:
+      - centos
+      - ubuntu1604
+
+    templates:
+      - java-builder
+      - mininet
+
+- project:
     name: github-python-jobs
     jobs:
         - "{project-name}-github-python-jobs"
 
     project-name: github-python
-
