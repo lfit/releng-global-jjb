@@ -20,8 +20,36 @@
     jjb-version: 1.6.2
 
     jobs:
-      - 'github-jjb-merge'
-      - 'github-jjb-verify'
+      - github-jjb-merge
+      - github-jjb-verify
+
+
+- job-group:
+    name: '{project-name}-packer-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using packer.
+
+    jjb-version: 1.6.2
+    packer-version: 1.0.2
+
+    jobs:
+      - gerrit-packer-merge
+      - gerrit-packer-verify
+
+
+- job-group:
+    name: '{project-name}-github-packer-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using packer.
+
+    jjb-version: 1.6.2
+    packer-version: 1.0.2
+
+    jobs:
+      - github-packer-merge
+      - github-packer-verify
 
 
 ####################
@@ -43,6 +71,14 @@
         pattern: '**/*.sh'
       - compare-type: ANT
         pattern: '**/*.yaml'
+
+- lf_packer_file_paths: &lf_packer_file_paths
+    name: lf-packer-file-paths
+    file-paths:
+      - compare-type: ANT
+        pattern: 'packer/**/*.sh'
+      - compare-type: ANT
+        pattern: 'packer/**/*.json'
 
 - lf_jjb_merge_builders: &lf_jjb_merge_builders
     name: lf-jjb-merge-builders
@@ -70,6 +106,15 @@
           name: JJB_VERSION
           default: '{jjb-version}'
           description: Jenkins Job Builder version to download and install.
+
+- parameter:
+    name: lf-infra-packer-parameters
+    parameters:
+      - string:
+          name: PACKER_VERSION
+          default: '{packer-version}'
+          description: Packer version to download and install.
+
 
 #################
 # Job Templates #
@@ -274,3 +319,251 @@
           permit-all: true
           github-hooks: true
           auto-close-on-fail: false
+
+- job-template:
+    name: '{project-name}-packer-merge-{platforms}-{templates}'
+    id: gerrit-packer-merge
+    concurrent: true
+    <<: *lf_jjb_verify_merge
+
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    parameters:
+      - lf-infra-jjb-parameters:
+          jjb-version: '{jjb-version}'
+      - lf-infra-parameters:
+          project: '{project}'
+          stream: '{stream}'
+          branch: '{branch}'
+      - lf-infra-packer-parameters:
+          packer-version: '{packer-version}'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: remerge$
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              <<: *lf_packer_file_paths
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 60
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-infra-packer-validate:
+          os-cloud-file-id: '{os-cloud-file-id}'
+          packer-version: '{packer-version}'
+      - lf-infra-packer-build:
+          platform: '{platforms}'
+          template: '{templates}'
+          os-cloud-file-id: '{os-cloud-file-id}'
+          packer-version: '{packer-version}'
+
+- job-template:
+    name: '{project-name}-packer-verify'
+    id: gerrit-packer-verify
+    concurrent: true
+    <<: *lf_jjb_verify_merge
+
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    parameters:
+      - lf-infra-jjb-parameters:
+          jjb-version: '{jjb-version}'
+      - lf-infra-parameters:
+          project: '{project}'
+          stream: '{stream}'
+          branch: '{branch}'
+      - lf-infra-packer-parameters:
+          packer-version: '{packer-version}'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: false
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: recheck$
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              <<: *lf_packer_file_paths
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-infra-packer-validate:
+          os-cloud-file-id: '{os-cloud-file-id}'
+          packer-version: '{packer-version}'
+
+- job-template:
+    name: '{project-name}-packer-merge-{platforms}-{templates}'
+    id: github-packer-merge
+    concurrent: true
+    <<: *lf_jjb_verify_merge
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    parameters:
+      - lf-infra-jjb-parameters:
+          jjb-version: '{jjb-version}'
+      - lf-infra-parameters:
+          project: '{project}'
+          stream: '{stream}'
+          branch: '{branch}'
+      - lf-infra-packer-parameters:
+          packer-version: '{packer-version}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github
+      - pollscm:
+          cron: ''
+      - github-pull-request:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: true
+          status-context: 'JJB Merge'
+          permit-all: false
+          github-hooks: true
+          auto-close-on-fail: false
+          org-list:
+            - '{github-org}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 60
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-infra-packer-validate:
+          os-cloud-file-id: '{os-cloud-file-id}'
+          packer-version: '{packer-version}'
+      - lf-infra-packer-build:
+          platform: '{platforms}'
+          template: '{templates}'
+          os-cloud-file-id: '{os-cloud-file-id}'
+          packer-version: '{packer-version}'
+
+- job-template:
+    name: '{project-name}-packer-verify'
+    id: github-packer-verify
+    concurrent: true
+    <<: *lf_jjb_verify_merge
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    parameters:
+      - lf-infra-jjb-parameters:
+          jjb-version: '{jjb-version}'
+      - lf-infra-parameters:
+          project: '{project}'
+          stream: '{stream}'
+          branch: '{branch}'
+      - lf-infra-packer-parameters:
+          packer-version: '{packer-version}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github
+      - pollscm:
+          cron: ''
+      - github-pull-request:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: true
+          status-context: 'JJB Merge'
+          permit-all: false
+          github-hooks: true
+          auto-close-on-fail: false
+          org-list:
+            - '{github-org}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-infra-packer-validate:
+          os-cloud-file-id: '{os-cloud-file-id}'
+          packer-version: '{packer-version}'
