@@ -163,6 +163,64 @@ Optional parameters:
 **branch**: is the git branch to build from.
 **jjb-version**: is the version of JJB to install in the build minion.
 
+## Deploying packer-jobs
+
+The packer job group contains jobs to build custom minion images. The minimal
+configuration needed to deploy the packer jobs is as follows which deploys the
+**{project-name}-packer-jobs** job group as defined in **lf-ci-jobs.yaml**.
+
+ci-management.yaml:
+
+```
+- project:
+    name: packer-jobs
+
+    jobs:
+      - '{project-name}-packer-jobs'
+
+    project: ci-management
+    project-name: ci-management
+    branch: master
+    os-cloud-file-id: 'ci-managed-file-id'
+    build-node: centos7-basebuild-2c-1g
+
+    platforms:
+      - centos
+      - ubuntu-14.04
+      - ubuntu-16.04
+
+    templates:
+      - devstack
+      - docker
+      - gbp
+      - java-builder
+      - mininet
+
+    exclude:
+      - platforms: centos
+        templates: gbp
+      - platforms: centos
+        templates: mininet
+```
+
+Required parameters:
+
+**project**: is the project repo as defined in source control.
+**project-name**: is a custom name to call the job in Jenkins.
+**build-node**: is the name of the builder to use when building (Jenkins label).
+**os-cloud-file-id**: is the name of the managed file-id, which contains
+credentials required for packer to spin up build nodes on the cloud provider.
+**platforms**: is a list of supported platforms.
+**templates**: is a list of supported templates.
+
+Optional parameters:
+
+**branch**: is the git branch to build from.
+**packer-version**: is the version of packer to install in the build minion,
+when packer is not available.
+**exclude**: is a combination of platforms and templates which are not required
+to build.
+
 ## Deploying Python jobs
 
 We provide the following Python jobs templates:
