@@ -72,6 +72,30 @@
           regexp: '^Build logs: .*'
 
 - builder:
+    name: lf-infra-packer-build
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: 'packer-cloud-env'
+              variable: 'CLOUDENV'
+      - inject:
+          properties-content: |
+              PACKER_PLATFORM={platform}
+              PACKER_TEMPLATE={template}
+      - shell: !include-raw: ../shell/packer-install.sh
+      - shell: !include-raw: ../shell/packer-build.sh
+
+- builder:
+    name: lf-infra-packer-validate
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: 'packer-cloud-env'
+              variable: 'CLOUDENV'
+      - shell: !include-raw: ../shell/packer-install.sh
+      - shell: !include-raw: ../shell/packer-validate.sh
+
+- builder:
     name: lf-infra-sysstat
     builders:
       - shell: !include-raw:
@@ -196,6 +220,16 @@
 
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
+      - string:
+          name: OS_CLOUD
+          default: '{os-cloud}'
+          description: |
+              The name of a cloud configuration in clouds.yaml. OS_CLOUD is a
+              variable name that is significant to openstack client as a
+              environment variable. Please refer to the documentation for
+              further details.
+              https://docs.openstack.org/developer/python-openstackclient/
+
 
 - parameter:
     name: lf-infra-maven-parameters
@@ -319,6 +353,28 @@
     name: lf-infra-wrappers
     wrappers:
       - mask-passwords
+      - timeout:
+          type: absolute
+          timeout: '{build-timeout}'
+          timeout-var: 'BUILD_TIMEOUT'
+          fail: true
+      - timestamps
+      - ssh-agent-credentials:
+          users:
+            - '{jenkins-ssh-credential}'
+      - openstack:
+          single-use: true
+
+- wrapper:
+    name: lf-infra-cloud-wrappers
+    wrappers:
+      - mask-passwords
+      - config-file-provider:
+          files:
+            - file-id: npmrc
+              target: '$HOME/.npmrc'
+            - file-id: rackspace-heat
+              target: '$HOME/.config/openstack/clouds.yaml'
       - timeout:
           type: absolute
           timeout: '{build-timeout}'

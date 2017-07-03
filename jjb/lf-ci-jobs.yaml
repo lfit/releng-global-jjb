@@ -10,6 +10,8 @@
     jobs:
       - gerrit-jjb-merge
       - gerrit-jjb-verify
+      - gerrit-packer-verify
+      - gerrit-packer-merge
 
 - job-group:
     name: '{project-name}-github-ci-jobs'
@@ -20,8 +22,11 @@
     jjb-version: 1.6.2
 
     jobs:
-      - 'github-jjb-merge'
       - 'github-jjb-verify'
+      - 'github-jjb-merge':
+          platforms: '{platforms}'
+          templates: '{templates}'
+
 
 
 ####################
@@ -43,6 +48,14 @@
         pattern: '**/*.sh'
       - compare-type: ANT
         pattern: '**/*.yaml'
+
+- lf_packer_file_paths: &lf_packer_file_paths
+    name: lf-packer-file-paths
+    file-paths:
+      - compare-type: ANT
+        pattern: 'packer/**/*.sh'
+      - compare-type: ANT
+        pattern: 'packer/**/*.json'
 
 - lf_jjb_merge_builders: &lf_jjb_merge_builders
     name: lf-jjb-merge-builders
@@ -105,6 +118,7 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
+          os-cloud: '{os-cloud}'
       - lf-infra-jjb-parameters:
           jjb-version: '{jjb-version}'
 
@@ -274,3 +288,112 @@
           permit-all: true
           github-hooks: true
           auto-close-on-fail: false
+
+
+- job-template:
+    name: '{project-name}-ci-verify'
+    id: gerrit-packer-verify
+    concurrent: true
+    <<: *lf_jjb_verify_merge
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jjb_merge_builders
+
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: false
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: recheck$
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              <<: *lf_packer_file_paths
+
+    wrappers:
+      - lf-infra-cloud-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-infra-packer-validate
+
+
+- job-template:
+    name: '{project-name}-ci-merge-{platforms}-{templates}'
+    id: gerrit-packer-merge
+    concurrent: true
+    <<: *lf_jjb_verify_merge
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jjb_merge_builders
+
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: remerge$
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              <<: *lf_packer_file_paths
+
+    wrappers:
+      - lf-infra-cloud-wrappers:
+          build-timeout: 60
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-infra-packer-validate
+      - lf-infra-packer-build:
+          platform: '{platforms}'
+          template: '{templates}'
