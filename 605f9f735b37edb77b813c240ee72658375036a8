@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_ee673fe9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-03T17:05:50Z",
+      "side": 1,
+      "message": "You should prefix this with either \u0027Issue: \u0027 or \u0027JIRA: \u0027 just so that it\u0027s more clear what this is referring to.",
+      "revId": "605f9f735b37edb77b813c240ee72658375036a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
