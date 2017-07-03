@@ -72,6 +72,44 @@
           regexp: '^Build logs: .*'
 
 - builder:
+    name: lf-infra-packer-build
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: '{os-cloud-file-id}'
+              target: '$HOME/.config/openstack/clouds.yaml'
+            - file-id: 'packer-cloud-env'
+              variable: 'CLOUDENV'
+      - inject:
+          properties-content: |
+              PACKER_PLATFORM={platform}
+              PACKER_TEMPLATE={template}
+              PACKER_VERSION={packer-version}
+      - shell: !include-raw-escape:
+          - ../shell/packer-install.sh
+          - ../shell/packer-build.sh
+      - shell: !include-raw:
+          - ../shell/packer-clear-credentials.sh
+
+- builder:
+    name: lf-infra-packer-validate
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: '{os-cloud-file-id}'
+              target: '$HOME/.config/openstack/clouds.yaml'
+            - file-id: 'packer-cloud-env'
+              variable: 'CLOUDENV'
+      - inject:
+          properties-content: |
+              PACKER_VERSION={packer-version}
+      - shell: !include-raw-escape:
+          - ../shell/packer-install.sh
+          - ../shell/packer-validate.sh
+      - shell: !include-raw:
+          - ../shell/packer-clear-credentials.sh
+
+- builder:
     name: lf-infra-sysstat
     builders:
       - shell: !include-raw:
@@ -152,6 +190,46 @@
 ##############
 
 - parameter:
+    name: lf-infra-maven-parameters
+    parameters:
+      - string:
+          name: MAVEN_OPTS
+          default: '{mvn-opts}'
+          description: |
+              Maven Java opts. Example: -Xmx1024m -XX:MaxPermSize=256m
+      - string:
+          name: MAVEN_PARAMS
+          default: '{mvn-params}'
+          description: |
+              Maven parameters to pass to the mvn command.
+      - string:
+          name: MVN
+          # Sets an env var for shell scripts to be able to call the dynamically
+          # installed maven without having to calculate the path themselves.
+          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn'
+          description: 'Maven selector to be used by shell scripts'
+      - string:
+          name: STAGING_PROFILE_ID
+          default: '{staging-profile-id}'
+          description: |
+              Nexus staging profile ID.
+
+
+- parameter:
+    name: lf-infra-openstack-parameters
+    parameters:
+      - string:
+          name: OS_CLOUD
+          default: '{os-cloud}'
+          description: |
+              The name of a cloud configuration in clouds.yaml. OS_CLOUD is a
+              variable name that is significant to openstack client as a
+              environment variable. Please refer to the documentation for
+              further details.
+              https://docs.openstack.org/developer/python-openstackclient/
+
+
+- parameter:
     name: lf-infra-parameters
     # Standard parameters used in the LF CI environments. Gerrit variables are
     # not used by GitHub projects, but defining them isn't harmful.
@@ -197,30 +275,6 @@
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
 
-- parameter:
-    name: lf-infra-maven-parameters
-    parameters:
-      - string:
-          name: MAVEN_OPTS
-          default: '{mvn-opts}'
-          description: |
-              Maven Java opts. Example: -Xmx1024m -XX:MaxPermSize=256m
-      - string:
-          name: MAVEN_PARAMS
-          default: '{mvn-params}'
-          description: |
-              Maven parameters to pass to the mvn command.
-      - string:
-          name: MVN
-          # Sets an env var for shell scripts to be able to call the dynamically
-          # installed maven without having to calculate the path themselves.
-          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn'
-          description: 'Maven selector to be used by shell scripts'
-      - string:
-          name: STAGING_PROFILE_ID
-          default: '{staging-profile-id}'
-          description: |
-              Nexus staging profile ID.
 
 - parameter:
     name: lf-infra-tox-parameters
