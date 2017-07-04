@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_8e51dbda",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-04T14:35:11Z",
+      "side": 1,
+      "message": "Insert missing content/repositories to script path",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 36
+      },
+      "revId": "4f18144431cf74c677c5b5f620f0189757439312",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_ae5497ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-04T14:35:11Z",
+      "side": 1,
+      "message": "Without content/repositories Nexus will reject the upload anyway because NEXUS_URL/REPO_ID is an invalid path so the file size limit has nothing to do with it.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 61
+      },
+      "revId": "4f18144431cf74c677c5b5f620f0189757439312",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
