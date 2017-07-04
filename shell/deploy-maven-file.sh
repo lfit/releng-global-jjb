@@ -23,7 +23,7 @@ set -eu -o pipefail
 DEPLOY_LOG="$WORKSPACE/archives/deploy-maven-file.log"
 mkdir -p "$WORKSPACE/archives"
 
-NEXUS_REPO_URL="${NEXUS_URL}/$REPO_ID"
+NEXUS_REPO_URL="${NEXUS_URL}/content/repositories/$REPO_ID"
 
 while IFS="" read -r file
 do
