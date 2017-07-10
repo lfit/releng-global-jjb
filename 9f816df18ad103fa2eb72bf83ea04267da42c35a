@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b180788c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-10T14:56:27Z",
+      "side": 1,
+      "message": "Alphabetical order?",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d17304e6",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-10T14:56:27Z",
+      "side": 1,
+      "message": "This was in alphabetical order. and now it\u0027s not.",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
