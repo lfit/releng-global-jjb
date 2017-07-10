@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_f4402e37",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-10T21:03:57Z",
+      "side": 1,
+      "message": "There\u0027s no platforms or templates section being passed in.",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_d17304e6",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 6
@@ -30,6 +47,69 @@
       "writtenOn": "2017-07-10T14:56:27Z",
       "side": 1,
       "message": "This was in alphabetical order. and now it\u0027s not.",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_145cda24",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-10T21:03:57Z",
+      "side": 1,
+      "message": "I suspect that these will need to be passed as {obj:platforms} and {obj:templates}.\n\nAlso, there is no setup for doing packer verify and merge for github here.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 34
+      },
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d43d32bd",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-10T21:03:57Z",
+      "side": 1,
+      "message": "There are no github versions of these",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b44aa653",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-10T21:03:57Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be calling this rackspace-heat. Instead, I would suggest openstack-clouds",
+      "range": {
+        "startLine": 376,
+        "startChar": 23,
+        "endLine": 376,
+        "endChar": 37
+      },
       "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
