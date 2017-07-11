@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_749b1eca",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-11T05:54:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b180788c",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_f4402e37",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_b46186d5",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-11T05:54:39Z",
+      "side": 1,
+      "message": "I have designed the job such that platform and templates get passed from the parent project assuming every project may have different platform requirements",
+      "parentUuid": "1a2f8d8d_f4402e37",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_d17304e6",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2017-07-10T14:56:27Z",
       "side": 1,
       "message": "This was in alphabetical order. and now it\u0027s not.",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_945e8a11",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-11T05:54:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d17304e6",
       "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -76,6 +130,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_54a022f4",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-11T05:54:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_145cda24",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 34
+      },
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_d43d32bd",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 6
@@ -87,6 +165,24 @@
       "writtenOn": "2017-07-10T21:03:57Z",
       "side": 1,
       "message": "There are no github versions of these",
+      "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_34a59604",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-11T05:54:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d43d32bd",
       "revId": "9f816df18ad103fa2eb72bf83ea04267da42c35a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
