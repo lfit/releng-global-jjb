@@ -65,6 +65,24 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_f41f0e08",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "Thanh, you\u0027re correct not every project has a cloud or is using packer. As such, the packer jobs should be a new jobs group.",
+      "parentUuid": "1a2f8d8d_742c3e4b",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_3426b669",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -76,6 +94,30 @@
       "writtenOn": "2017-07-11T14:53:36Z",
       "side": 1,
       "message": "This pattern will cause packer to build for every single change in the packer directory. It would be nice if we can detect the platform and template so that it can be more precise. In ODL this would cause too many packer jobs to queue IMO.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 35
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b4198624",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "Clamping this down as tightly as possible is best. I\u0027ll also note that we can\u0027t do path clamping for GitHub :(",
+      "parentUuid": "1a2f8d8d_3426b669",
       "range": {
         "startLine": 53,
         "startChar": 0,
@@ -111,6 +153,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_d41c1216",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "I agree that it should be packer",
+      "parentUuid": "1a2f8d8d_b4e62643",
+      "range": {
+        "startLine": 291,
+        "startChar": 26,
+        "endLine": 291,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_34ca36a2",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -122,6 +188,30 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "Why is the packer job running jjb verify merge builders?",
+      "range": {
+        "startLine": 294,
+        "startChar": 9,
+        "endLine": 294,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_74d31e39",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "We should probably change the name of this anchor. It\u0027s more of the boiler verify_merge boiler plate.",
+      "parentUuid": "1a2f8d8d_34ca36a2",
       "range": {
         "startLine": 294,
         "startChar": 9,
@@ -157,6 +247,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_94168af0",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "This line should definitely be removed",
+      "parentUuid": "1a2f8d8d_14cf3ab2",
+      "range": {
+        "startLine": 296,
+        "startChar": 9,
+        "endLine": 296,
+        "endChar": 30
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_54d5c241",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -168,6 +282,30 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "I think \"packer\" would be more clear. ci is too generic.",
+      "range": {
+        "startLine": 355,
+        "startChar": 26,
+        "endLine": 355,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_54d82253",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "I agree with this.",
+      "parentUuid": "1a2f8d8d_54d5c241",
       "range": {
         "startLine": 355,
         "startChar": 26,
@@ -203,6 +341,70 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_34dd9643",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "I agree with this.",
+      "parentUuid": "1a2f8d8d_74d0be53",
+      "range": {
+        "startLine": 420,
+        "startChar": 26,
+        "endLine": 420,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_14e29a03",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "This line should be removed",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_f4e6ee15",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "We can\u0027t use gerrit triggers with github. Take a look at the JJB GitHub jobs",
+      "range": {
+        "startLine": 456,
+        "startChar": 0,
+        "endLine": 469,
+        "endChar": 39
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_94e32a33",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -219,6 +421,46 @@
         "startChar": 26,
         "endLine": 484,
         "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d4e3f203",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "This needs to be removed",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b4f066ca",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T15:08:10Z",
+      "side": 1,
+      "message": "Gerrit triggers can\u0027t be used with GitHub. See the JJB GitHub jobs to see how this should be done",
+      "range": {
+        "startLine": 520,
+        "startChar": 0,
+        "endLine": 537,
+        "endChar": 39
       },
       "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
