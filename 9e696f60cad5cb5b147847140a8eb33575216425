@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b44866cd",
+        "filename": "shell/git-validate-jira-urls.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-11T20:49:43Z",
+      "side": 1,
+      "message": "If you used \u0027-n\u0027 instead we won\u0027t need the else statement.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 24
+      },
+      "revId": "9e696f60cad5cb5b147847140a8eb33575216425",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d43bf236",
+        "filename": "shell/git-validate-jira-urls.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-11T20:49:43Z",
+      "side": 1,
+      "message": "exit 1?\n\nI think we want to successfully pass right?",
+      "range": {
+        "startLine": 20,
+        "startChar": 2,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "9e696f60cad5cb5b147847140a8eb33575216425",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
