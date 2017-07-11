@@ -15,10 +15,15 @@
 set -e -o pipefail
 set +u
 
-JIRA_LINK=$(git rev-list --format=%B --max-count=1 HEAD | grep -io 'http[s]*://jira\..*' || true)
-if [[ ! -z "$JIRA_LINK" ]]
+if [ -z ${JIRA_URL+x} ];
 then
-  echo 'Remove JIRA URLs from commit message'
-  echo 'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>, instead of URLs'
   exit 1
+else
+  JIRA_LINK=$(git rev-list --format=%B --max-count=1 HEAD | grep -io 'http[s]*://jira\..*' || true)
+  if [[ ! -z "$JIRA_LINK" ]]
+  then
+    echo 'Remove JIRA URLs from commit message'
+    echo 'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>, instead of URLs'
+    exit 1
+  fi
 fi
