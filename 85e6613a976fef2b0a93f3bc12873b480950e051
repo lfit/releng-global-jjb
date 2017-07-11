@@ -65,6 +65,29 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_3426b669",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-11T14:53:36Z",
+      "side": 1,
+      "message": "This pattern will cause packer to build for every single change in the packer directory. It would be nice if we can detect the platform and template so that it can be more precise. In ODL this would cause too many packer jobs to queue IMO.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 35
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_b4e62643",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
