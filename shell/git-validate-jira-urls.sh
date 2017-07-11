@@ -12,13 +12,21 @@
 # This script will make sure that there are no JIRA URLs in the commit
 # message. JIRA URLs will break the its-jira plugin
 
+# Ensure we fail the job if any steps fail.
+# Do not treat undefined variables as errors as in this case we are allowed
+# to have JIRA_URL undefined
 set -e -o pipefail
 set +u
 
-JIRA_LINK=$(git rev-list --format=%B --max-count=1 HEAD | grep -io 'http[s]*://jira\..*' || true)
-if [[ ! -z "$JIRA_LINK" ]]
+if [ -z ${JIRA_URL+x} ];
 then
-  echo 'Remove JIRA URLs from commit message'
-  echo 'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>, instead of URLs'
-  exit 1
+  exit 0
+else
+  JIRA_LINK=$(git rev-list --format=%B --max-count=1 HEAD | grep -io 'http[s]*://jira\..*' || true)
+  if [[ ! -z "$JIRA_LINK" ]]
+  then
+    echo 'Remove JIRA URLs from commit message'
+    echo 'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>, instead of URLs'
+    exit 1
+  fi
 fi
