@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_541702a4",
+        "filename": "shell/git-validate-jira-urls.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-11T20:49:43Z",
+      "side": 1,
+      "message": "Please add a comment to explain why +u is being set here.",
+      "revId": "186e9e8c10c870f5ab63c09a4423ea09e16750cf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_94456ab5",
+        "filename": "shell/git-validate-jira-urls.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-11T20:49:43Z",
+      "side": 1,
+      "message": "If you used \u0027-n\u0027 instead we won\u0027t need the else statement.",
+      "revId": "186e9e8c10c870f5ab63c09a4423ea09e16750cf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_7412feb5",
+        "filename": "shell/git-validate-jira-urls.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-11T20:49:43Z",
+      "side": 1,
+      "message": "I think we don\u0027t have to fail the build if it\u0027s not set?",
+      "revId": "186e9e8c10c870f5ab63c09a4423ea09e16750cf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
