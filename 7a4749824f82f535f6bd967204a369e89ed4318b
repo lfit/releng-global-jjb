@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_94732a15",
+        "filename": "shell/git-validate-jira-urls.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T21:29:21Z",
+      "side": 1,
+      "message": "This should be \u0027-n \"${JIRA_URL}\"\u0027",
+      "range": {
+        "startLine": 21,
+        "startChar": 5,
+        "endLine": 21,
+        "endChar": 21
+      },
+      "revId": "7a4749824f82f535f6bd967204a369e89ed4318b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_7460be35",
+        "filename": "shell/git-validate-jira-urls.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-11T21:29:21Z",
+      "side": 1,
+      "message": "Remove these two lines with the change to using -n",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 4
+      },
+      "revId": "7a4749824f82f535f6bd967204a369e89ed4318b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
