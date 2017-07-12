@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b480668c",
+        "filename": "shell/git-validate-jira-urls.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-12T03:20:41Z",
+      "side": 1,
+      "message": "So the point of passing JIRA_URL was so that we could parse the exact server here IMO. That way it should work regardless of if the user is using jira.example.org or bugs.example.org or issues.example.org, etc...\n\nWe could probably extract and check http[s] by parsing JIRA_URL whether it\u0027s set to http:// or https:// too.",
+      "range": {
+        "startLine": 23,
+        "startChar": 69,
+        "endLine": 23,
+        "endChar": 90
+      },
+      "revId": "793877e39aa8eaec84e29596ad68f20da5c0dae1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
