@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a2f8d8d_ff3927d9",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-12T14:49:44Z",
+      "side": 1,
+      "message": "We need to use an anchor to make common parts of the config  reusable. The only difference between a Gerrit and GitHub jobs should be the properties, scm and triggers. So for the most part the rest of the configuration could be reused via YAML Anchor.\n\nWe use anchors a lot in global-jjb so there\u0027s plenty of examples. You can look at the maven ones here too:\n\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-maven-jobs.yaml",
+      "revId": "cee7f3b96e19581594510c6bc4bb61a68b939b36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_1f2513ab",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-12T14:49:44Z",
+      "side": 1,
+      "message": "It\u0027s good practice to not duplicate code. Since this is the same as the shell script in the packer-build above. Create a new file packer-clear-credentials.sh and then add it to the shell list for both macros.",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 118,
+        "endChar": 16
+      },
+      "revId": "cee7f3b96e19581594510c6bc4bb61a68b939b36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_5f2b9b82",
+        "filename": "test.template",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-12T14:49:44Z",
+      "side": 1,
+      "message": "Unnecessary new line?",
+      "revId": "cee7f3b96e19581594510c6bc4bb61a68b939b36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_3f20cf9a",
+        "filename": "test.template",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-12T14:49:44Z",
+      "side": 1,
+      "message": "We are organizing by Gerrit and GitHub. Please put the packer project definitions under the appropriate category and in alphabetical order by project name.",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 16
+      },
+      "revId": "cee7f3b96e19581594510c6bc4bb61a68b939b36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
