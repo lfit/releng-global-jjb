@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_d4ac1238",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d4d9b284",
+      "range": {
+        "startLine": 9,
+        "startChar": 2,
+        "endLine": 9,
+        "endChar": 23
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_f4dcae76",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "They were already alphabetical your change did not reorder it. The commit message is not a changelog of what you modified during code review!\n\nIt should explain to the reviewer why this change is necessary and what the purpose of the change is!\n\nCan you please write a description of what the packer jobs do and why they are useful instead?",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b4a98626",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_f4dcae76",
       "range": {
         "startLine": 12,
         "startChar": 2,
@@ -77,6 +125,24 @@
       "side": 1,
       "message": "Thanh, you\u0027re correct not every project has a cloud or is using packer. As such, the packer jobs should be a new jobs group.",
       "parentUuid": "1a2f8d8d_742c3e4b",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_f4014e3a",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_f41f0e08",
       "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -177,6 +243,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_544f0293",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b4e62643",
+      "range": {
+        "startLine": 291,
+        "startChar": 26,
+        "endLine": 291,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_34ca36a2",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -211,6 +301,54 @@
       "writtenOn": "2017-07-11T15:08:10Z",
       "side": 1,
       "message": "We should probably change the name of this anchor. It\u0027s more of the boiler verify_merge boiler plate.",
+      "parentUuid": "1a2f8d8d_34ca36a2",
+      "range": {
+        "startLine": 294,
+        "startChar": 9,
+        "endLine": 294,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_34d116ce",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "there are sections which can common to packer jobs. It would be good to simple use this ?",
+      "parentUuid": "1a2f8d8d_74d31e39",
+      "range": {
+        "startLine": 294,
+        "startChar": 9,
+        "endLine": 294,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_744afe84",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "1a2f8d8d_34ca36a2",
       "range": {
         "startLine": 294,
@@ -271,6 +409,54 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_34447673",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_14cf3ab2",
+      "range": {
+        "startLine": 296,
+        "startChar": 9,
+        "endLine": 296,
+        "endChar": 30
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_14d61ac6",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_94168af0",
+      "range": {
+        "startLine": 296,
+        "startChar": 9,
+        "endLine": 296,
+        "endChar": 30
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_54d5c241",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -305,6 +491,54 @@
       "writtenOn": "2017-07-11T15:08:10Z",
       "side": 1,
       "message": "I agree with this.",
+      "parentUuid": "1a2f8d8d_54d5c241",
+      "range": {
+        "startLine": 355,
+        "startChar": 26,
+        "endLine": 355,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_f4da6ee8",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_54d82253",
+      "range": {
+        "startLine": 355,
+        "startChar": 26,
+        "endLine": 355,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_14497a8b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "1a2f8d8d_54d5c241",
       "range": {
         "startLine": 355,
@@ -365,6 +599,54 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_f45dce49",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_74d0be53",
+      "range": {
+        "startLine": 420,
+        "startChar": 26,
+        "endLine": 420,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d4d772be",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_34dd9643",
+      "range": {
+        "startLine": 420,
+        "startChar": 26,
+        "endLine": 420,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_14e29a03",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -382,6 +664,24 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_b4e4e6ac",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_14e29a03",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_f4e6ee15",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -393,6 +693,30 @@
       "writtenOn": "2017-07-11T15:08:10Z",
       "side": 1,
       "message": "We can\u0027t use gerrit triggers with github. Take a look at the JJB GitHub jobs",
+      "range": {
+        "startLine": 456,
+        "startChar": 0,
+        "endLine": 469,
+        "endChar": 39
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_94e1ea9c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Is there a `file-path:` equivalent for github triggers ?",
+      "parentUuid": "1a2f8d8d_f4e6ee15",
       "range": {
         "startLine": 456,
         "startChar": 0,
@@ -428,6 +752,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_74ee7e8d",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_94e32a33",
+      "range": {
+        "startLine": 484,
+        "startChar": 26,
+        "endLine": 484,
+        "endChar": 28
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_d4e3f203",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 7
@@ -439,6 +787,24 @@
       "writtenOn": "2017-07-11T15:08:10Z",
       "side": 1,
       "message": "This needs to be removed",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_54f38273",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d4e3f203",
       "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -468,6 +834,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_34e8f67b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b4f066ca",
+      "range": {
+        "startLine": 520,
+        "startChar": 0,
+        "endLine": 537,
+        "endChar": 39
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_d4c0927e",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 7
@@ -479,6 +869,30 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "I\u0027d like to understand why it\u0027s called packer-cloud-env1? will there be a 2 and 3 and 4?\n\nIf not if not maybe we can just call it packer-cloud for simplicity?",
+      "range": {
+        "startLine": 79,
+        "startChar": 24,
+        "endLine": 79,
+        "endChar": 41
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_f46cae38",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d4c0927e",
       "range": {
         "startLine": 79,
         "startChar": 24,
@@ -531,6 +945,48 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_b4fbc646",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_f4c38e88",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_14edfa8b",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_94ba0a09",
+      "range": {
+        "startLine": 85,
+        "startChar": 16,
+        "endLine": 86,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_b4bd0605",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 7
@@ -571,6 +1027,48 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_94f8ca4a",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_74379eb1",
+      "range": {
+        "startLine": 95,
+        "startChar": 16,
+        "endLine": 96,
+        "endChar": 56
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_74955ee3",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b4bd0605",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_14461a24",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 7
@@ -582,6 +1080,30 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "Let\u0027s not bother creating yet another wrapper. See my explanation below.",
+      "range": {
+        "startLine": 375,
+        "startChar": 10,
+        "endLine": 375,
+        "endChar": 33
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_f4882ec8",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_14461a24",
       "range": {
         "startLine": 375,
         "startChar": 10,
@@ -617,6 +1139,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_549a6215",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_543ca293",
+      "range": {
+        "startLine": 380,
+        "startChar": 11,
+        "endLine": 381,
+        "endChar": 36
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_3441160c",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 7
@@ -628,6 +1174,30 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "No need. We can push config file providers into the build steps so let\u0027s not create wrappers for this. I\u0027d prefer it to be in the builders anyway because we can make sure the files are only there when they are used and clean them up post build.",
+      "range": {
+        "startLine": 382,
+        "startChar": 11,
+        "endLine": 383,
+        "endChar": 59
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d48532ae",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_3441160c",
       "range": {
         "startLine": 382,
         "startChar": 11,
@@ -663,6 +1233,54 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_5436e204",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_9451eada",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b492a6f4",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_9451eada",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_b454e6ca",
         "filename": "shell/packer-build.sh",
         "patchSetId": 7
@@ -674,6 +1292,54 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "Rather than saying they are \"provided by a job parameter\" we should describe what the variable holds and how it\u0027s used by the script.",
+      "range": {
+        "startLine": 15,
+        "startChar": 26,
+        "endLine": 15,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_948faacc",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b454e6ca",
+      "range": {
+        "startLine": 15,
+        "startChar": 26,
+        "endLine": 15,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d45ad24f",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b454e6ca",
       "range": {
         "startLine": 15,
         "startChar": 26,
@@ -703,6 +1369,42 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_b4574626",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b402a6b2",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_74bc3e6d",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b402a6b2",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_d447721c",
         "filename": "shell/packer-build.sh",
         "patchSetId": 7
@@ -720,6 +1422,42 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_94544a22",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d447721c",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_54c142e3",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d447721c",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_f44a6e26",
         "filename": "shell/packer-build.sh",
         "patchSetId": 7
@@ -731,6 +1469,42 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "Only ODL has public and private clouds. All the other projects only have a single cloud.\n\nI\u0027m curious to know if the other clouds grep string are also \"public_cloud\" or if they have a different keyword?\n\nIt would be good if we can code this in such a way that the grep strings are automatically figured out at run time from parsing the relevant template file. That way it won\u0027t matter how many clouds a project uses we can filter for all of the clouds no matter if it\u0027s 1, 2, 3, etc...",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_7431de0a",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_f44a6e26",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_f4af0e2a",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_f44a6e26",
       "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -760,6 +1534,54 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_94a68a52",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_745e7eeb",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_343b56ed",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_745e7eeb",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_145dfae9",
         "filename": "shell/packer-install.sh",
         "patchSetId": 7
@@ -771,6 +1593,42 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "It\u0027s better practice to pushd and popd after we no longer need it. at the end of this else statement.",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_14405a55",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_145dfae9",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_74631e1b",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_145dfae9",
       "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -823,6 +1681,78 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_f424aec7",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_3458f6f9",
+      "range": {
+        "startLine": 27,
+        "startChar": 47,
+        "endLine": 27,
+        "endChar": 52
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d421b2b5",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_546382b1",
+      "range": {
+        "startLine": 27,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 8
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_d473f2e5",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_3458f6f9",
+      "range": {
+        "startLine": 27,
+        "startChar": 47,
+        "endLine": 27,
+        "endChar": 52
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_f4714e78",
         "filename": "shell/packer-install.sh",
         "patchSetId": 7
@@ -834,6 +1764,42 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "Does the jenkins user have access to /usr/local/bin? I suspect not and that this will fail?",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_f476eed7",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_f4714e78",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b42e26a4",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_f4714e78",
       "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -863,6 +1829,54 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_541dc272",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_340fd6e3",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_546822f5",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_340fd6e3",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 53
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_d46e5296",
         "filename": "shell/packer-validate.sh",
         "patchSetId": 7
@@ -874,6 +1888,42 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "Should list the variables that are expected by this script. CLOUDENV?",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_346d9605",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d46e5296",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_7418be84",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d46e5296",
       "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -897,6 +1947,42 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_942b2a94",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d4f532cc",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_14729ae5",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_d4f532cc",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_94ffaaaa",
         "filename": "test.template",
         "patchSetId": 7
@@ -914,6 +2000,24 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_34123663",
+        "filename": "test.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_94ffaaaa",
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_b46bc684",
         "filename": "test.template",
         "patchSetId": 7
@@ -925,6 +2029,30 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "Can we use real world examples? so that someone looking at this can immediately understand what is meant by a platform?",
+      "range": {
+        "startLine": 34,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 17
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_14173a53",
+        "filename": "test.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_b46bc684",
       "range": {
         "startLine": 34,
         "startChar": 8,
@@ -960,6 +2088,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_f40b8e29",
+        "filename": "test.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_9468ca88",
+      "range": {
+        "startLine": 38,
+        "startChar": 8,
+        "endLine": 39,
+        "endChar": 17
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_74055ec1",
         "filename": "test.template",
         "patchSetId": 7
@@ -983,6 +2135,30 @@
     },
     {
       "key": {
+        "uuid": "1a2f8d8d_d408922f",
+        "filename": "test.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_74055ec1",
+      "range": {
+        "startLine": 70,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 17
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_540a62d3",
         "filename": "test.template",
         "patchSetId": 7
@@ -994,6 +2170,30 @@
       "writtenOn": "2017-07-11T14:51:45Z",
       "side": 1,
       "message": "And here",
+      "range": {
+        "startLine": 73,
+        "startChar": 14,
+        "endLine": 75,
+        "endChar": 17
+      },
+      "revId": "85e6613a976fef2b0a93f3bc12873b480950e051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a2f8d8d_b4050616",
+        "filename": "test.template",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-12T07:31:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_540a62d3",
       "range": {
         "startLine": 73,
         "startChar": 14,
