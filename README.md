@@ -90,7 +90,10 @@ whatever your installation base URL is.
 either the same thing as **git-url** or the
 'git@github.com:' including the trailing ':'
 
-**github-org**: The name of the GitHub organization.
+**github-org**: The name of the GitHub organization. All members of this organization
+will be able to trigger the merge job.
+
+**white-list**: List of Github members you wish to be able to trigger the merge job.
 
 defaults.yaml:
 
@@ -102,6 +105,10 @@ defaults.yaml:
     jenkins-ssh-credential: opendaylight-jenkins-ssh
     gerrit-server-name: OpenDaylight
     github-org: lfit
+    white-list:
+      - jpwku
+      - tykeal
+      - zxiiro
 ```
 
 ## Config File Management

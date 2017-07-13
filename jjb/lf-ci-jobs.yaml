@@ -240,6 +240,7 @@
           auto-close-on-fail: false
           org-list:
             - '{github-org}'
+          white-list: '{obj:white-list)'
 
 - job-template:
     name: '{project-name}-jjb-verify'
