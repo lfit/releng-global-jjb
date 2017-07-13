@@ -11,6 +11,12 @@
     git-url: https://github.com
     git-clone-url: 'git@github.com:'
     github-org: example-org
+    github-pr-whitelist:
+      - jpwku
+      - tykeal
+      - zxiiro
+    github-pr-admin-list:
+      - tykeal
 
     # Common test config
     project: releng/ciman

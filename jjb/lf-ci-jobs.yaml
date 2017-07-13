@@ -1,4 +1,5 @@
 ---
+
 - job-group:
     name: '{project-name}-ci-jobs'
 
@@ -13,6 +14,14 @@
 
 - job-group:
     name: '{project-name}-github-ci-jobs'
+
+    # Defaults
+    github-pr-whitelist:
+      - ''
+    github-pr-admin-list:
+      - ''
+    github-org: ''
+
 
     # This job group contains all the recommended jobs that should be deployed
     # for any project ci that is using github.
@@ -213,7 +222,6 @@
     #####################
     # Job Configuration #
     #####################
-
     properties:
       - github:
           url: '{git-url}/{github-org}/{project}'
@@ -231,15 +239,15 @@
       - github
       - pollscm:
           cron: ''
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'JJB Merge'
           permit-all: false
           github-hooks: true
-          auto-close-on-fail: false
-          org-list:
-            - '{github-org}'
+          github-org: '{github-org}'
+          github-pr-whitelist: '{github-pr-whitelist}'
+          github-pr-admin-list: '{github-pr-admin-list}'
 
 - job-template:
     name: '{project-name}-jjb-verify'
@@ -267,10 +275,14 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true
           github-hooks: true
-          auto-close-on-fail: false
+          github-org: ''
+          github-pr-whitelist:
+            - ''
+          github-pr-admin-list:
+            - ''
