@@ -19,6 +19,7 @@
 
     jjb-version: 1.6.2
 
+
     jobs:
       - 'github-jjb-merge'
       - 'github-jjb-verify'
@@ -207,13 +208,13 @@
     name: '{project-name}-jjb-merge'
     id: github-jjb-merge
     <<: *lf_jjb_verify_merge
+
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_merge_builders
 
     #####################
     # Job Configuration #
     #####################
-
     properties:
       - github:
           url: '{git-url}/{github-org}/{project}'
@@ -231,15 +232,15 @@
       - github
       - pollscm:
           cron: ''
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'JJB Merge'
           permit-all: false
           github-hooks: true
-          auto-close-on-fail: false
-          org-list:
-            - '{github-org}'
+          github-org: '{github-org}'
+          github_pr_whitelist: '{obj:github_pr_whitelist}'
+          github_pr_admin_list: '{obj:github_pr_admin_list}'
 
 - job-template:
     name: '{project-name}-jjb-verify'
@@ -267,10 +268,14 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true
           github-hooks: true
-          auto-close-on-fail: false
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
