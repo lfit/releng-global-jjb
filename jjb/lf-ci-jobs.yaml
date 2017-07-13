@@ -1,4 +1,5 @@
 ---
+
 - job-group:
     name: '{project-name}-ci-jobs'
 
@@ -16,7 +17,11 @@
 
     # This job group contains all the recommended jobs that should be deployed
     # for any project ci that is using github.
-
+    github_org: ''
+    github_pr_whitelist: 
+      - ''
+    github_pr_admin_list: 
+      - ''
     jjb-version: 1.6.2
 
     jobs:
@@ -213,14 +218,13 @@
     #####################
     # Job Configuration #
     #####################
-
     properties:
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{git-url}/{github_org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
+          url: '{git-clone-url}{github_org}/{project}'
           refspec: ''
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
@@ -231,15 +235,15 @@
       - github
       - pollscm:
           cron: ''
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'JJB Merge'
           permit-all: false
           github-hooks: true
-          auto-close-on-fail: false
-          org-list:
-            - '{github-org}'
+          github_org: '{github_org}'
+          github_pr_whitelist: '{github_pr_whitelist}'
+          github_pr_admin_list: '{github_pr_admin_list}'
 
 - job-template:
     name: '{project-name}-jjb-verify'
@@ -255,11 +259,11 @@
 
     properties:
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{git-url}/{github_org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
+          url: '{git-clone-url}{github_org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
@@ -267,10 +271,14 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true
           github-hooks: true
-          auto-close-on-fail: false
+          github_org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''

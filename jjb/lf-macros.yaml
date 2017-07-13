@@ -330,3 +330,21 @@
             - '{jenkins-ssh-credential}'
       - openstack:
           single-use: true
+
+############
+# TRIGGERS #
+############
+
+- trigger:
+    name: lf-infra-github-pr-trigger
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '{trigger-phrase}'
+          only-trigger-phrase: '{only-trigger-phrase}'
+          status-context: '{status-context}'
+          permit-all: '{permit-all}'
+          github-hooks: '{github-hooks}'
+          auto-close-on-fail: false
+          org-list: '{obj:github_org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
