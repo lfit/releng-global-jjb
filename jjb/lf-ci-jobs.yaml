@@ -1,4 +1,11 @@
 ---
+- defaults:
+    name: global
+    github-pr-whitelist:
+        - ''
+    github-pr-admin-list:
+        - ''
+
 - job-group:
     name: '{project-name}-ci-jobs'
 
@@ -231,15 +238,16 @@
       - github
       - pollscm:
           cron: ''
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'JJB Merge'
           permit-all: false
           github-hooks: true
-          auto-close-on-fail: false
           org-list:
             - '{github-org}'
+          white-list: '{obj:github-pr-whitelist}'
+          admin-list: ''
 
 - job-template:
     name: '{project-name}-jjb-verify'
@@ -267,10 +275,13 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true
           github-hooks: true
-          auto-close-on-fail: false
+          org-list:
+            - ''
+          white-list: ''
+          admin-list: ''
