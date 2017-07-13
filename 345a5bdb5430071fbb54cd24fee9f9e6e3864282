@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12402989_365027c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-13T17:01:56Z",
+      "side": 1,
+      "message": "Can we add more details of why this change?\n\nAs I understand it the whitelist is a list of users who are allowed to trigger the PR plugin? It would be nice to explain that.",
+      "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d64f6788_47db334c",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-13T17:01:56Z",
+      "side": 1,
+      "message": "GitHub (we should consistently be spelling GitHub with the specific capitalization everywhere.",
+      "range": {
+        "startLine": 96,
+        "startChar": 24,
+        "endLine": 96,
+        "endChar": 30
+      },
+      "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1579f1a0_0816b507",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-13T17:01:56Z",
+      "side": 1,
+      "message": "I\u0027d probably call this github-whitelist or github-pr-whitelist. Since there are many JJB plugins that support a whitelist option they could in theory conflict.\n\n(Also whitelist is 1 word)",
+      "range": {
+        "startLine": 96,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 12
+      },
+      "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a93f66d_5f598ff0",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-13T17:01:56Z",
+      "side": 1,
+      "message": "Do any of the other github jobs need the whitelist? (most likely?)\n\nI\u0027m talking about jjb-verify, packer-merge|verify, maven-merge|verify, python-merge|verify",
+      "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
