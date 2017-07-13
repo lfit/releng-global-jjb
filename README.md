@@ -70,27 +70,40 @@ versioned git tags.
 
 ## Parameters stored in defaults.yaml
 
-Configure the following parameters in the ci-management repo's defaults.yaml
-file.
+Configure the following parameters in the ci-management repo's
+defaults.yaml file.
 
-**gerrit-server-name**: The name of the Gerrit Server as defined in Gerrit
-Trigger global configuration.
+**gerrit-server-name**: The name of the Gerrit Server as defined
+in Gerrit Trigger global configuration.
 
-**jenkins-ssh-credential**: The name of the Jenkins Credential to use for ssh
-connections.
+**jenkins-ssh-credential**: The name of the Jenkins Credential to
+use for ssh connections.
 
-If you are using GitHub then configure the following parameters in defaults.yaml
+If you are using GitHub then configure the following parameters
+in defaults.yaml
 
 **git-url**: Set this to the base URL of your GitHub repo. In
-general this should be <https://github.com>. If you are using GitHub
-Enterprise, or some other GitHub-style system, then it should be
-whatever your installation base URL is.
+general this should be <https://github.com>. If you are using
+GitHub Enterprise, or some other GitHub-style system, then it
+should be whatever your installation base URL is.
 
-**git-clone-url**: This is the clone prefix used by GitHub jobs. Set this to
-either the same thing as **git-url** or the
+**git-clone-url**: This is the clone prefix used by GitHub jobs.
+Set this to either the same thing as **git-url** or the
 'git@github.com:' including the trailing ':'
 
-**github-org**: The name of the GitHub organization.
+**github-org**: The name of the GitHub organization interpolated
+into the scm config.
+
+**github_pr_org**: The name of the GitHub organization. All members
+of this organization will be able to trigger any job using the
+`lf-infra-github-pr` macro.
+
+**github_pr_whitelist**: List of GitHub members you wish to be able to
+trigger any job that uses the `lf-infra-github-pr-trigger` macro.
+
+**github_pr_admin_list**: List of GitHub members that will have admin
+privileges on any job using the `lf-infra-github-pr-trigger`
+macro.
 
 defaults.yaml:
 
@@ -102,6 +115,12 @@ defaults.yaml:
     jenkins-ssh-credential: opendaylight-jenkins-ssh
     gerrit-server-name: OpenDaylight
     github-org: lfit
+    github_pr_whitelist:
+      - jpwku
+      - tykeal
+      - zxiiro
+    github_pr_admin_list:
+      - tykeal
 ```
 
 ## Config File Management
