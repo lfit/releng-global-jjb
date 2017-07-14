@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da3312ab_73554018",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-07-14T17:10:32Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "12402989_365027c0",
+      "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d64f6788_47db334c",
         "filename": "README.md",
         "patchSetId": 1
@@ -65,6 +83,54 @@
     },
     {
       "key": {
+        "uuid": "00815477_6526ee3d",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-07-14T17:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d64f6788_47db334c",
+      "range": {
+        "startLine": 96,
+        "startChar": 24,
+        "endLine": 96,
+        "endChar": 30
+      },
+      "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67230522_a09694c4",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-07-14T17:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1579f1a0_0816b507",
+      "range": {
+        "startLine": 96,
+        "startChar": 2,
+        "endLine": 96,
+        "endChar": 12
+      },
+      "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a93f66d_5f598ff0",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 1
@@ -76,6 +142,24 @@
       "writtenOn": "2017-07-13T17:01:56Z",
       "side": 1,
       "message": "Do any of the other github jobs need the whitelist? (most likely?)\n\nI\u0027m talking about jjb-verify, packer-merge|verify, maven-merge|verify, python-merge|verify",
+      "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "738c0565_1f4c43cb",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-07-14T17:10:32Z",
+      "side": 1,
+      "message": "I actually made the trigger a macro.",
+      "parentUuid": "4a93f66d_5f598ff0",
       "revId": "345a5bdb5430071fbb54cd24fee9f9e6e3864282",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
