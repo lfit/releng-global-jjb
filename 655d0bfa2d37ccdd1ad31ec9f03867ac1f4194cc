@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9d3c731_b61be9c3",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-14T18:14:45Z",
+      "side": 1,
+      "message": "JJB only allows one defaults section to be defined. Adding a default to a template should be a matter of defining it in the template, anything that calls it should be able to override something that is set.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 12
+      },
+      "revId": "655d0bfa2d37ccdd1ad31ec9f03867ac1f4194cc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
