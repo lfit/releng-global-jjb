@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81878515_acab6cde",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-17T16:12:19Z",
+      "side": 1,
+      "message": "Can we compare against distro and template here like we do in ODL so that a packer update doesn\u0027t launch every packer job all at once?\n\nWe should have standards for the common script names such as baseline.sh",
+      "revId": "4d81c467e867634f91d654a3eeedd0b3d25b674d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2ca6cca_878767c3",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-17T16:12:19Z",
+      "side": 1,
+      "message": "Missing colon after the r",
+      "range": {
+        "startLine": 2,
+        "startChar": 25,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "4d81c467e867634f91d654a3eeedd0b3d25b674d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c6c3017_39cf6997",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-17T16:12:19Z",
+      "side": 1,
+      "message": "Don\u0027t need trailing URL.",
+      "range": {
+        "startLine": 2,
+        "startChar": 34,
+        "endLine": 2,
+        "endChar": 69
+      },
+      "revId": "4d81c467e867634f91d654a3eeedd0b3d25b674d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df87ab42_0bdbd24d",
+        "filename": "shell/packer-clear-credentials.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-17T16:12:19Z",
+      "side": 1,
+      "message": "Missing colon after the r",
+      "range": {
+        "startLine": 2,
+        "startChar": 25,
+        "endLine": 2,
+        "endChar": 26
+      },
+      "revId": "4d81c467e867634f91d654a3eeedd0b3d25b674d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7629acb5_fd76d1ef",
+        "filename": "shell/packer-clear-credentials.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-17T16:12:19Z",
+      "side": 1,
+      "message": "No need for this ending string here. SPDX-License-Identifier only needs EPL-1.0.",
+      "range": {
+        "startLine": 2,
+        "startChar": 34,
+        "endLine": 2,
+        "endChar": 69
+      },
+      "revId": "4d81c467e867634f91d654a3eeedd0b3d25b674d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
