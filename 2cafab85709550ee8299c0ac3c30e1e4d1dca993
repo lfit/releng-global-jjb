@@ -22,6 +22,30 @@
       "revId": "2cafab85709550ee8299c0ac3c30e1e4d1dca993",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a67735e2_d8f84d67",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-07-17T17:35:35Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "31f05b3c_f8c08984",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "2cafab85709550ee8299c0ac3c30e1e4d1dca993",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
