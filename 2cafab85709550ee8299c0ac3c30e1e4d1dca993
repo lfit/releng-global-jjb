@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31f05b3c_f8c08984",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2017-07-17T17:14:08Z",
+      "side": 1,
+      "message": "two too many. same on l22 and l24",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 20,
+        "endChar": 8
+      },
+      "revId": "2cafab85709550ee8299c0ac3c30e1e4d1dca993",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
