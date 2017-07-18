@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "05d445de_8d46a311",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-18T00:05:47Z",
+      "side": 1,
+      "message": "move to separate file!",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 96,
+        "endChar": 16
+      },
+      "revId": "cee7f3b96e19581594510c6bc4bb61a68b939b36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_1f2513ab",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 10
@@ -30,6 +53,30 @@
       "writtenOn": "2017-07-12T14:49:44Z",
       "side": 1,
       "message": "It\u0027s good practice to not duplicate code. Since this is the same as the shell script in the packer-build above. Create a new file packer-clear-credentials.sh and then add it to the shell list for both macros.",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 118,
+        "endChar": 16
+      },
+      "revId": "cee7f3b96e19581594510c6bc4bb61a68b939b36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "48f8aba2_b36d94f6",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-18T00:05:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_1f2513ab",
       "range": {
         "startLine": 113,
         "startChar": 0,
@@ -59,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "538207bd_2831a12d",
+        "filename": "test.template",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-18T00:05:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_5f2b9b82",
+      "revId": "cee7f3b96e19581594510c6bc4bb61a68b939b36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a2f8d8d_3f20cf9a",
         "filename": "test.template",
         "patchSetId": 10
@@ -70,6 +135,30 @@
       "writtenOn": "2017-07-12T14:49:44Z",
       "side": 1,
       "message": "We are organizing by Gerrit and GitHub. Please put the packer project definitions under the appropriate category and in alphabetical order by project name.",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 16
+      },
+      "revId": "cee7f3b96e19581594510c6bc4bb61a68b939b36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57764cd6_ab686f65",
+        "filename": "test.template",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-18T00:05:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a2f8d8d_3f20cf9a",
       "range": {
         "startLine": 75,
         "startChar": 0,
