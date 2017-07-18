@@ -2,6 +2,63 @@
   "comments": [
     {
       "key": {
+        "uuid": "87a2d141_70ff0ca6",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-18T15:05:01Z",
+      "side": 1,
+      "message": "jjb-version? Does this job group use jjb?",
+      "revId": "295dca044f5df611bc64eb315f79cdf0389e97c6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2492ade_9282a198",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-18T15:05:01Z",
+      "side": 1,
+      "message": "jjb-version?",
+      "revId": "295dca044f5df611bc64eb315f79cdf0389e97c6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f49835a_64b12f16",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-18T15:05:01Z",
+      "side": 1,
+      "message": "We shouldn\u0027t have files specific for ODL here, global-jjb should never contain any project specific configuration.\n\nPerhaps we should simplify the pattern here such that all scripts that might be reused by projects are in a sub-directory like packer/provision/lib/devstack-pre-pip.sh\n\nThis way we would just have the 3 template files pattern and the lib directory:\n\n - compare-type: ANT\n   pattern: \u0027packer/vars/{platforms}.json\u0027\n - compare-type: ANT\n   pattern: \u0027packer/templates/{templates}.json\u0027\n - compare-type: ANT\n   pattern: \u0027packer/provision/{templates}.sh\u0027\n - compare-type: ANT\n   pattern: \u0027packer/provision/lib/**\u0027",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 55
+      },
+      "revId": "295dca044f5df611bc64eb315f79cdf0389e97c6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a37242cb_22634951",
         "filename": "shell/packer-build.sh",
         "patchSetId": 13
