@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "44e52696_d4a9aa60",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 27
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-18T19:14:22Z",
+      "side": 1,
+      "message": "Unnecessary new line.",
+      "revId": "b9628b68df367a8b62c676f980f9b6eda21b4c03",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0044ea3a_7dc676ee",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 27
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-18T19:14:22Z",
+      "side": 1,
+      "message": "This needs to be {obj:github_pr_whitelist}",
+      "revId": "b9628b68df367a8b62c676f980f9b6eda21b4c03",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d8cd2f06_f90def68",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 27
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-18T19:14:22Z",
+      "side": 1,
+      "message": "This needs to be {obj:github_pr_admin-list}",
+      "revId": "b9628b68df367a8b62c676f980f9b6eda21b4c03",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "614361da_547415b7",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 27
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-18T19:14:22Z",
+      "side": 1,
+      "message": "This needs to be {obj:github_pr_whitelist}",
+      "revId": "b9628b68df367a8b62c676f980f9b6eda21b4c03",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c0d8e123_1d89e3e0",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 27
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-18T19:14:22Z",
+      "side": 1,
+      "message": "This needs to be {obj:github_pr_admin-list}",
+      "revId": "b9628b68df367a8b62c676f980f9b6eda21b4c03",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
