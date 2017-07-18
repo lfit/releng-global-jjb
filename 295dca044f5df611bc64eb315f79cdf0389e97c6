@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "17d2c245_1dbd20f3",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-18T19:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87a2d141_70ff0ca6",
+      "revId": "295dca044f5df611bc64eb315f79cdf0389e97c6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2492ade_9282a198",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2017-07-18T15:05:01Z",
       "side": 1,
       "message": "jjb-version?",
+      "revId": "295dca044f5df611bc64eb315f79cdf0389e97c6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ff5d674_e0396e5c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-18T19:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2492ade_9282a198",
       "revId": "295dca044f5df611bc64eb315f79cdf0389e97c6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "74cd7998_ac4f5450",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-18T19:18:11Z",
+      "side": 1,
+      "message": "Since the basic idea here is to avoid using wildcard patterns (pattern: \u0027packer/provision/lib/**\u0027), which would invoke multiple jobs here. \n\nHaving project specific file list should be ok, since it does not start multiple jobs and also not start a job for projects which does not have that file path. \n\nThe only down side is having a project specific files listed as part of gjjb.",
+      "parentUuid": "0f49835a_64b12f16",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 55
+      },
+      "revId": "295dca044f5df611bc64eb315f79cdf0389e97c6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a37242cb_22634951",
         "filename": "shell/packer-build.sh",
         "patchSetId": 13
@@ -70,6 +130,30 @@
       "writtenOn": "2017-07-18T14:56:03Z",
       "side": 1,
       "message": "I\u0027m not sure where this @ came from? It\u0027s not listed in the spdx page and comment on patchset 7 did not mention it either.\n\nhttps://spdx.org/using-spdx\n\nCan we remove it?\n\nSame with all the other .sh files here.",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 2,
+        "endChar": 3
+      },
+      "revId": "295dca044f5df611bc64eb315f79cdf0389e97c6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3215f449_ade807a2",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-18T19:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a37242cb_22634951",
       "range": {
         "startLine": 2,
         "startChar": 2,
