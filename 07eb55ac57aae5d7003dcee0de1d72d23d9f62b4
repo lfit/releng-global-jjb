@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fd01104_66ff6d64",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 36
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-19T14:21:39Z",
+      "side": 1,
+      "message": "Unnecessary New line added.",
+      "revId": "07eb55ac57aae5d7003dcee0de1d72d23d9f62b4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77b0d1e6_93db36cb",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 36
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-19T14:21:39Z",
+      "side": 1,
+      "message": "Unnecessary new line added",
+      "revId": "07eb55ac57aae5d7003dcee0de1d72d23d9f62b4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
