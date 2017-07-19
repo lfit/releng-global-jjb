@@ -31,5 +31,5 @@ do
                               "$REPO_ID" \
                               "$file" \
                               -b "$MVN" \
-                              -g "$GROUP_ID" | tee "$DEPLOY_LOG"
+                              -g "$GROUP_ID" > "$DEPLOY_LOG" 2>&1
 done < <(find "$UPLOAD_FILES_PATH" -type f -name "*")
