@@ -1,4 +1,14 @@
-[GitCommit]
+[all]
+ignore = .tox/**,
+    .git/**,
+    .gitignore,
+    .gitreview,
+    .gitmodules,
+    node_modules/**,
+    **.sw?,
+    **.orig
+
+[all.GitCommit]
 bears = GitCommitBear
 ignore_length_regex = Signed-off-by,
     Also-by,
@@ -6,35 +16,27 @@ ignore_length_regex = Signed-off-by,
     http://,
     https://
 
-[Groovy]
+[all.Groovy]
 bears = SpaceConsistencyBear
-files = **/*.groovy
-ignore = .git/**,
-    .tox/**
+files = **.groovy
 indent_size = 4
 use_spaces = true
 
-[MarkDown]
+[all.MarkDown]
 bears = MarkdownBear,SpaceConsistencyBear,WriteGoodLintBear
-files = **/*.md, **/*.markdown
-ignore = .git/**,
-    .tox/**
+files = **.md, **.markdown
 use_spaces = true
 
-[ShellCheck]
+[all.ShellCheck]
 bears = ShellCheckBear,SpaceConsistencyBear
-files = **/*.sh
-ignore = .git/**,
-    .tox/**
+files = **.sh
 shell = bash
 indent_size = 4
 use_spaces = yeah
 
-[YAML]
+[all.YAML]
 bears = YAMLLintBear
-files = **/*.yaml
-ignore = .git/**,
-    .tox/**
+files = **.yaml
 document_start = True
 yamllint_config = yamllint.conf
 
