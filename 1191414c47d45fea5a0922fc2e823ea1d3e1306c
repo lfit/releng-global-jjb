@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf66b84a_87bd6ad8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-19T14:01:54Z",
+      "side": 1,
+      "message": "The patch appears to redirect stderr to stdout so this statement is not true I think.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 37
+      },
+      "revId": "1191414c47d45fea5a0922fc2e823ea1d3e1306c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10c12b38_ac830ce9",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-19T14:01:54Z",
+      "side": 1,
+      "message": "The commit message says it keeps stderr however the code here redirects stderr to stdout so doesn\u0027t actually keep stderr. I don\u0027t believe Maven prints to stderr for upload failures so this wouldn\u0027t help anyway.",
+      "range": {
+        "startLine": 34,
+        "startChar": 61,
+        "endLine": 34,
+        "endChar": 65
+      },
+      "revId": "1191414c47d45fea5a0922fc2e823ea1d3e1306c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
