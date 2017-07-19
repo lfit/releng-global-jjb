@@ -103,6 +103,7 @@
               UPLOAD_FILES_PATH={files-dir}
       - shell: !include-raw-escape:
           - ../shell/lftools-install.sh
+          - ../shell/common-variables.sh
           - ../shell/deploy-maven-file.sh
       - lf-provide-maven-settings-cleanup
 

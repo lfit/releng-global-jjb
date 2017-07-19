@@ -17,8 +17,14 @@
 # $GROUP_ID           :  Provided by a job parameter.
 # $UPLOAD_FILES_PATH  :  Provided by a job parameter.
 echo "---> deploy-maven-file.sh"
+
+# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.
 # Ensure we fail the job if any steps fail.
-set -eu -o pipefail
+set -e -o pipefail
+set +u
+
+export "$MAVEN_OPTIONS"
+export "$MAVEN_PARAMS"
 
 DEPLOY_LOG="$WORKSPACE/archives/deploy-maven-file.log"
 mkdir -p "$WORKSPACE/archives"
@@ -31,5 +37,7 @@ do
                               "$REPO_ID" \
                               "$file" \
                               -b "$MVN" \
-                              -g "$GROUP_ID" | tee "$DEPLOY_LOG"
+                              -g "$GROUP_ID" \
+                              -o "$MAVEN_OPTIONS" \
+                              -p "$MAVEN_PARAMS" |& tee "$DEPLOY_LOG"
 done < <(find "$UPLOAD_FILES_PATH" -type f -name "*")
