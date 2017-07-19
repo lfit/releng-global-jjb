@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74e90cab_4274e085",
+        "filename": "README.md",
+        "patchSetId": 37
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-19T14:27:02Z",
+      "side": 1,
+      "message": "GitHub",
+      "range": {
+        "startLine": 94,
+        "startChar": 32,
+        "endLine": 94,
+        "endChar": 38
+      },
+      "revId": "c709862ac6e03547022974725fabb5b05efd576e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
