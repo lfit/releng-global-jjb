@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "205e30b4_440cc58c",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-20T15:42:54Z",
+      "side": 1,
+      "message": "This is going to fail since Jenkins does not have the ability to write to /usr/local/bin by default.\n\nIt would make more sense to just extract the packer binary into ${WORKSPACE}/bin and have the packer build call either the packer.io that\u0027s on the path (if available) or the ${WORKSPACE}/bin/packer.io command, provided it exists ;)",
+      "revId": "77bb17723d37c38384bb77fd5bda2c9493fb9849",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
