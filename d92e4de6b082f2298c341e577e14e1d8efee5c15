@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "c64b7a09_e7bdbab6",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-21T14:27:43Z",
+      "side": 1,
+      "message": "Word wrap please.",
+      "revId": "d92e4de6b082f2298c341e577e14e1d8efee5c15",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "090e5907_8ae60fcd",
         "filename": "shell/packer-install.sh",
         "patchSetId": 17
@@ -37,6 +54,30 @@
       "side": 1,
       "message": "\"${WORKSPACE}/bin\" is being exported before packer is gets called, in the validate and build scripts.",
       "parentUuid": "090e5907_8ae60fcd",
+      "range": {
+        "startLine": 34,
+        "startChar": 32,
+        "endLine": 34,
+        "endChar": 58
+      },
+      "revId": "d92e4de6b082f2298c341e577e14e1d8efee5c15",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf3afed0_7d17bb54",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-21T14:27:43Z",
+      "side": 1,
+      "message": "Missed that thanks.",
+      "parentUuid": "0c89eab2_8571d393",
       "range": {
         "startLine": 34,
         "startChar": 32,
