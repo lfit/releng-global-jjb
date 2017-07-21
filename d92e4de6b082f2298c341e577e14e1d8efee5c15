@@ -22,6 +22,30 @@
       "revId": "d92e4de6b082f2298c341e577e14e1d8efee5c15",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c89eab2_8571d393",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-21T14:18:18Z",
+      "side": 1,
+      "message": "\"${WORKSPACE}/bin\" is being exported before packer is gets called, in the validate and build scripts.",
+      "parentUuid": "090e5907_8ae60fcd",
+      "range": {
+        "startLine": 34,
+        "startChar": 32,
+        "endLine": 34,
+        "endChar": 58
+      },
+      "revId": "d92e4de6b082f2298c341e577e14e1d8efee5c15",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
