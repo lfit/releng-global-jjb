@@ -10,8 +10,6 @@
 ##############################################################################
 echo "---> packer-clear-credentials.sh"
 
-#!/bin/bash
 set +e  # DO NOT cause build failure if any of the rm calls fail.
 rm "$CLOUDENV"
-rm "$HOME/.config/openstack/clouds.yaml"
 exit 0
