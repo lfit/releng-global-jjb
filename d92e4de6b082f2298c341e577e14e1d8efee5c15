@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "80ff4f86_542e6f95",
+        "filename": "README.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-24T02:21:54Z",
+      "side": 1,
+      "message": "thanks Andy",
+      "parentUuid": "b270e8a6_de2b3e5e",
+      "revId": "d92e4de6b082f2298c341e577e14e1d8efee5c15",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "090e5907_8ae60fcd",
         "filename": "shell/packer-install.sh",
         "patchSetId": 17
