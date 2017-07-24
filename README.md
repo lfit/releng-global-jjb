@@ -181,7 +181,6 @@ ci-management.yaml:
     project: ci-management
     project-name: ci-management
     branch: master
-    os-cloud-file-id: 'ci-managed-file-id'
     build-node: centos7-basebuild-2c-1g
 
     platforms:
@@ -208,8 +207,6 @@ Required parameters:
 **project**: is the project repo as defined in source control.
 **project-name**: is a custom name to call the job in Jenkins.
 **build-node**: is the name of the builder to use when building (Jenkins label).
-**os-cloud-file-id**: is the name of the managed file-id, which contains
-credentials required for packer to spin up build nodes on the cloud provider.
 **platforms**: is a list of supported platforms.
 **templates**: is a list of supported templates.
 
