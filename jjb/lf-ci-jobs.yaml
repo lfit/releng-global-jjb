@@ -491,7 +491,7 @@
       - lf-infra-github-pr-trigger:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
-          status-context: 'JJB Merge'
+          status-context: 'Packer {platforms}-${templates} Merge'
           permit-all: false
           github-hooks: true
           github-org: '{github-org}'
@@ -529,7 +529,7 @@
       - lf-infra-github-pr-trigger:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
-          status-context: 'JJB Verify'
+          status-context: 'Packer Verify'
           permit-all: true
           github-hooks: true
           github-org: ''
