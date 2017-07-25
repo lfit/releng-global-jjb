@@ -22,6 +22,30 @@
       "revId": "91d975d5c426a08e82d8a6bbe1e298fa82f2b7b5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15567411_3199dab6",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-07-25T14:18:46Z",
+      "side": 0,
+      "message": "I agree, but that\u0027s not the point of this change. This was a clean-up, not an enhancement to make it more flexible.",
+      "parentUuid": "a602b8b1_b8d72392",
+      "range": {
+        "startLine": 98,
+        "startChar": 38,
+        "endLine": 99,
+        "endChar": 40
+      },
+      "revId": "91d975d5c426a08e82d8a6bbe1e298fa82f2b7b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
