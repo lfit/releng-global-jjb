@@ -105,9 +105,16 @@
 - lf_packer: &lf_packer_common
     name: lf-packer-common
     # Adds wrappers and parameters sections common to packer jobs.
+
+    ######################
+    # Default parameters #
+    ######################
+
+    build-timeout: 30
+
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: 60
+          build-timeout: '{build-timeout}'
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     parameters:
@@ -123,12 +130,10 @@
     # Adds builders section common to merge packer jobs.
     builders:
       - lf-infra-packer-validate:
-          os-cloud-file-id: '{os-cloud-file-id}'
           packer-version: '{packer-version}'
       - lf-infra-packer-build:
           platform: '{platforms}'
           template: '{templates}'
-          os-cloud-file-id: '{os-cloud-file-id}'
           packer-version: '{packer-version}'
 
 - lf_packer_verify_builders: &lf_packer_verify_builders
@@ -136,7 +141,6 @@
     name: lf-packer-verify-builders
     builders:
       - lf-infra-packer-validate:
-          os-cloud-file-id: '{os-cloud-file-id}'
           packer-version: '{packer-version}'
 
 - parameter:
@@ -422,6 +426,7 @@
     # Default parameters #
     ######################
 
+    build-timeout: 10
     git-url: '$GIT_URL/$GERRIT_PROJECT'
 
     #####################
@@ -507,6 +512,12 @@
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_verify_builders
+
+    ######################
+    # Default parameters #
+    ######################
+
+    build-timeout: 10
 
     #####################
     # Job Configuration #

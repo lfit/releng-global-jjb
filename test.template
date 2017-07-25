@@ -49,7 +49,6 @@
         - "{project-name}-packer-jobs"
 
     project-name: gerrit-ciman
-    os-cloud-file-id: os-cloud-id
     platforms:
       - centos
       - ubuntu1604
@@ -91,7 +90,6 @@
         - "{project-name}-github-packer-jobs"
 
     project-name: github-ciman
-    os-cloud-file-id: os-cloud-id
     platforms:
       - centos
       - ubuntu1604
