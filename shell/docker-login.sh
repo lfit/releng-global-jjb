@@ -59,7 +59,7 @@ do_login() {
     docker login -u "$USER" -p "$PASS" -e "$2" "$1"
 }
 
-if [ "${REGISTRY:-none}" != 'none' ]
+if [ "${DOCKER_REGISTRY:-none}" != 'none' ]
 then
     for PORT in $REGISTRY_PORTS
     do
