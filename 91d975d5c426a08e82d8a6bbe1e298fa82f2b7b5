@@ -46,6 +46,30 @@
       "revId": "91d975d5c426a08e82d8a6bbe1e298fa82f2b7b5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "96192ec8_9e3c0416",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-25T14:20:07Z",
+      "side": 0,
+      "message": "Yes that\u0027s why I merged it. I mostly left the comment as a note. Maybe a Jira would be better... I\u0027ll go do that.",
+      "parentUuid": "15567411_3199dab6",
+      "range": {
+        "startLine": 98,
+        "startChar": 38,
+        "endLine": 99,
+        "endChar": 40
+      },
+      "revId": "91d975d5c426a08e82d8a6bbe1e298fa82f2b7b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
