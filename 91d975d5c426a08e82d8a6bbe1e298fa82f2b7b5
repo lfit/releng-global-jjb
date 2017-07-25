@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a602b8b1_b8d72392",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-25T14:17:26Z",
+      "side": 0,
+      "message": "I dislike that this is hardcoded it can be default to some thing but we should always allow the possibility of override because end users won\u0027t necessarily name things the same way we do.",
+      "range": {
+        "startLine": 98,
+        "startChar": 38,
+        "endLine": 99,
+        "endChar": 40
+      },
+      "revId": "91d975d5c426a08e82d8a6bbe1e298fa82f2b7b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
