@@ -123,12 +123,10 @@
     # Adds builders section common to merge packer jobs.
     builders:
       - lf-infra-packer-validate:
-          os-cloud-file-id: '{os-cloud-file-id}'
           packer-version: '{packer-version}'
       - lf-infra-packer-build:
           platform: '{platforms}'
           template: '{templates}'
-          os-cloud-file-id: '{os-cloud-file-id}'
           packer-version: '{packer-version}'
 
 - lf_packer_verify_builders: &lf_packer_verify_builders
@@ -136,7 +134,6 @@
     name: lf-packer-verify-builders
     builders:
       - lf-infra-packer-validate:
-          os-cloud-file-id: '{os-cloud-file-id}'
           packer-version: '{packer-version}'
 
 - parameter:

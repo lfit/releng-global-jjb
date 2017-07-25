@@ -94,8 +94,6 @@
     builders:
       - config-file-provider:
           files:
-            - file-id: '{os-cloud-file-id}'
-              target: '$HOME/.config/openstack/clouds.yaml'
             - file-id: 'packer-cloud-env'
               variable: 'CLOUDENV'
       - inject:
