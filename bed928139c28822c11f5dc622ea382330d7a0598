@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a308478a_ea7ab307",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-25T15:35:49Z",
+      "side": 1,
+      "message": "Too many topics in this patch should have been split into 2. Also the commit message summary line is too generic. Take a look at the image at the top of this blog https://chris.beams.io/posts/git-commit/\n\nIf we were debugging a bunch of generically named commit summaries all saying \"Improve packer job templates\" makes it very difficult to discover which patch introduced the issue. It\u0027s much easier to to debug if the summary line is more helpful saying something like:\n\n\"Set sensible default timeout values for packer jobs\"",
+      "revId": "bed928139c28822c11f5dc622ea382330d7a0598",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33361d17_ba747a3a",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-25T15:35:49Z",
+      "side": 1,
+      "message": "According https://jenkins.opendaylight.org/releng/view/packer/\n\nThe average job runs just over 30 minutes. So I think a fair default for packer merge jobs is a 45 or 60 minutes timeout. I\u0027m leaning towards 60 as it\u0027s a nicer round number.",
+      "revId": "bed928139c28822c11f5dc622ea382330d7a0598",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
