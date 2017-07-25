@@ -105,9 +105,16 @@
 - lf_packer: &lf_packer_common
     name: lf-packer-common
     # Adds wrappers and parameters sections common to packer jobs.
+
+    ######################
+    # Default parameters #
+    ######################
+
+    build-timeout: 45
+
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: 60
+          build-timeout: '{build-timeout}'
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     parameters:
@@ -419,6 +426,7 @@
     # Default parameters #
     ######################
 
+    build-timeout: 10
     git-url: '$GIT_URL/$GERRIT_PROJECT'
 
     #####################
@@ -504,6 +512,12 @@
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_verify_builders
+
+    ######################
+    # Default parameters #
+    ######################
+
+    build-timeout: 10
 
     #####################
     # Job Configuration #
