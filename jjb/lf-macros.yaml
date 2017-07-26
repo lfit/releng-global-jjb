@@ -183,6 +183,13 @@
           # DO NOT fail build if any of the above lines fail.
           exit 0
 
+- builder:
+    name: lf-rtd-trigger-build
+    builders:
+      - inject:
+          properties-content: RTD_PROJECT='{rtdproject}'
+      - shell: !include-raw-escape: shell/rtd-trigger-build.sh
+
 ##############
 # PARAMETERS #
 ##############

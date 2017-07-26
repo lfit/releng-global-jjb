@@ -1,0 +1,220 @@
+---
+- job-group:
+    name: '{project-name}-rtd-jobs'
+
+    # This job group contains all the read the docs jobs that should be deployed
+    # for any project ci.
+
+    jobs:
+      - gerrit-rtd-merge
+      - gerrit-rtd-verify
+
+- job-group:
+    name: '{project-name}-github-rtd-jobs'
+
+    # This job group contains all the read the docs jobs that should be deployed
+    # for any project ci that is using github.
+
+    jobs:
+      - github-rtd-merge
+      - github-rtd-verify
+
+# RTD verify and merge jobs are the same except for their scm, trigger, and
+# builders definition. This anchor is the common template
+- lf_rtd_common: &lf_rtd_common
+    name: lf-rtd-common
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      - lf-infra-publish
+
+
+- job-template:
+    name: '{project-name}-rtd-merge-{stream}'
+    id: gerrit-rtd-merge
+    build-timeout: 5
+    <<: *lf_rtd_common
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: ['**', '**/conf.py']
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: '{branch}'
+
+    triggers:
+      - gerrit:
+          server-name: '{server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'remerge$'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+    builders:
+      - lf-rtd-trigger-build:
+          rtdproject: '{rtdproject}'
+
+
+- job-template:
+    name: '{project-name}-rtd-verify-{stream}'
+    id: gerrit-rtd-verify
+    build-timeout: 10
+    concurrent: true
+    <<: *lf_rtd_common
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: ['**', '**/conf.py']
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: '{branch}'
+
+    triggers:
+      - gerrit:
+          server-name: '{server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'remerge$'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+    builders:
+      - shell: |
+          if [ "$GERRIT_PROJECT" != "docs" ]; then
+              cd docs/submodules/$GERRIT_PROJECT
+              git fetch origin $GERRIT_REFSPEC && git checkout FETCH_HEAD
+          else
+              git fetch origin $GERRIT_REFSPEC && git checkout FETCH_HEAD
+          fi
+      - shell: |
+          virtualenv $WORKSPACE/venv
+          source $WORKSPACE/venv/bin/activate
+          PYTHON="$WORKSPACE/venv/bin/python"
+          $PYTHON -m pip install --upgrade pip
+          $PYTHON -m pip freeze
+          $PYTHON -m pip install tox
+          tox -edocs
+
+          # Archive generated docs
+          mkdir -p "$WORKSPACE/archives"
+          mv docs/_build/html archives/
+
+- job-template:
+    name: '{project-name}-rtd-merge-{stream}'
+    id: github-rtd-merge
+    build-timeout: 5
+    <<: *lf_rtd_common
+
+    scm:
+      - lf-infra-github-scm
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: false
+          status-context: 'RTD Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+      - timed: 'H H * * *'
+
+    builders:
+      - lf-rtd-trigger-build:
+          rtdproject: '{rtdproject}'
+
+- job-template:
+    name: '{project-name}-verify-rtd-{stream}'
+    id: github-rtd-verify
+    build-timeout: 10
+    concurrent: true
+    <<: *lf_rtd_common
+
+
+    scm:
+      - lf-infra-github-scm
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'RTD Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+      - timed: 'H H * * *'
+
+    builders:
+      - shell: |
+          if [ "$GERRIT_PROJECT" != "docs" ]; then
+              cd docs/submodules/$GERRIT_PROJECT
+              git fetch origin $GERRIT_REFSPEC && git checkout FETCH_HEAD
+          else
+              git fetch origin $GERRIT_REFSPEC && git checkout FETCH_HEAD
+          fi
+      - shell: |
+          virtualenv $WORKSPACE/venv
+          source $WORKSPACE/venv/bin/activate
+          PYTHON="$WORKSPACE/venv/bin/python"
+          $PYTHON -m pip install --upgrade pip
+          $PYTHON -m pip freeze
+          $PYTHON -m pip install tox
+          tox -edocs
+
+          # Archive generated docs
+          mkdir -p "$WORKSPACE/archives"
+          mv docs/_build/html archives/
