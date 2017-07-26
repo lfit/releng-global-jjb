@@ -1,0 +1,260 @@
+---
+- job-group:
+    name: '{project-name}-rtd-jobs'
+
+    # This job group contains all the read the docs jobs that should be deployed
+    # for any project ci.
+
+    jobs:
+      - gerrit-docs-rtd-verify
+      - gerrit-docs-rtd-merge
+
+- job-group:
+    name: '{project-name}-github-rtd-jobs'
+
+    # This job group contains all the read the docs jobs that should be deployed
+    # for any project ci that is using github.
+
+    jobs:
+      - github-docs-rtd-verify
+      - github-docs-rtd-merge
+
+- job-template:
+    name: 'docs-merge-rtd-{stream}'
+    id: gerrit-docs-rtd-merge
+    node: centos7-java-builder-2c-8g
+
+    project-type: freestyle
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 14
+
+    parameters:
+      - lf-infra-openstack-parameters:
+          os-cloud: '{os-cloud}'
+
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+          artifacts: '{archive-artifacts}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '30'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'remerge'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths:
+                - compare-type: ANT
+                  pattern: docs/**/*.rst
+
+    builders:
+      - shell: !include-raw: docs-post-rtd.sh
+
+    publishers:
+      - email-notification:
+          email-recipients: '{email-recipients}'
+          email-prefix: '[docs]'
+      - lf-infra-publish
+
+- job-template:
+    # FIXME: Describe this job in docs/jenkins.rst
+    name: 'docs-verify-rtd-{stream}'
+    id: gerrit-docs-rtd-verify
+    node: centos7-java-builder-2c-8g
+    concurrent: true
+
+    project-type: freestyle
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 14
+
+    parameters:
+      - lf-infra-openstack-parameters:
+          os-cloud: '{os-cloud}'
+
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+          artifacts: '{archive-artifacts}'
+
+    scm:
+      - git-scm-with-submodules:
+          branch: '{branch}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit-trigger-patch-submitted:
+          server: '{server-name}'
+          project: '**'
+          branch: '{branch}'
+          files: 'docs/**/*.rst'
+      - timed: 'H H * * *'
+
+    builders:
+      - shell: |
+          if [ "$GERRIT_PROJECT" != "docs" ]; then
+              cd docs/submodules/$GERRIT_PROJECT
+              git fetch origin $GERRIT_REFSPEC && git checkout FETCH_HEAD
+          else
+              git fetch origin $GERRIT_REFSPEC && git checkout FETCH_HEAD
+          fi
+      - shell: |
+          virtualenv $WORKSPACE/venv
+          source $WORKSPACE/venv/bin/activate
+          PYTHON="$WORKSPACE/venv/bin/python"
+          $PYTHON -m pip install --upgrade pip
+          $PYTHON -m pip freeze
+          $PYTHON -m pip install tox
+          tox -edocs
+
+          # Archive generated docs
+          mkdir -p "$WORKSPACE/archives"
+          mv docs/_build/html archives/
+
+    publishers:
+      - email-notification:
+          email-recipients: '{email-recipients}'
+          email-prefix: '[docs]'
+      - lf-infra-publish
+
+- job-template:
+    name: 'docs-merge-rtd-{stream}'
+    id: github-docs-rtd-merge
+    node: centos7-java-builder-2c-8g
+
+    project-type: freestyle
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 14
+
+    parameters:
+      - lf-infra-parameters:
+          os-cloud: '{os-cloud}'
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+          artifacts: '{archive-artifacts}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '30'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'remerge'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths:
+                - compare-type: ANT
+                  pattern: docs/**/*.rst
+
+    builders:
+      - shell: !include-raw: docs-post-rtd.sh
+
+    publishers:
+      - email-notification:
+          email-recipients: '{email-recipients}'
+          email-prefix: '[docs]'
+      - lf-infra-publish
+
+- job-template:
+    # FIXME: Describe this job in docs/jenkins.rst
+    name: 'docs-verify-rtd-{stream}'
+    id: github-docs-rtd-verify
+    node: centos7-java-builder-2c-8g
+    concurrent: true
+
+    project-type: freestyle
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 14
+
+    parameters:
+      - lf-infra-parameters:
+          os-cloud: '{os-cloud}'
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+          artifacts: '{archive-artifacts}'
+
+    scm:
+      - git-scm-with-submodules:
+          branch: '{branch}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'RTD Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+      - timed: 'H H * * *'
+
+    builders:
+      - shell: |
+          if [ "$GERRIT_PROJECT" != "docs" ]; then
+              cd docs/submodules/$GERRIT_PROJECT
+              git fetch origin $GERRIT_REFSPEC && git checkout FETCH_HEAD
+          else
+              git fetch origin $GERRIT_REFSPEC && git checkout FETCH_HEAD
+          fi
+      - shell: |
+          virtualenv $WORKSPACE/venv
+          source $WORKSPACE/venv/bin/activate
+          PYTHON="$WORKSPACE/venv/bin/python"
+          $PYTHON -m pip install --upgrade pip
+          $PYTHON -m pip freeze
+          $PYTHON -m pip install tox
+          tox -edocs
+
+          # Archive generated docs
+          mkdir -p "$WORKSPACE/archives"
+          mv docs/_build/html archives/
+
+    publishers:
+      - email-notification:
+          email-recipients: '{email-recipients}'
+          email-prefix: '[docs]'
+      - lf-infra-publish
