@@ -1,0 +1,16 @@
+---
+- project:
+    name: gerrit-rtd-jobs
+    jobs:
+      - gerrit-rtd-merge
+      - gerrit-rtd-verify
+
+    rtdproject: gerrit-rtd
+
+- project:
+    name: github-rtd-jobs
+    jobs:
+      - github-rtd-merge
+      - github-rtd-verify
+
+    rtdproject: github-rtd
