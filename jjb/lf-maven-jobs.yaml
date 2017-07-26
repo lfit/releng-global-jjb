@@ -72,7 +72,12 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-      - lf-infra-maven-parameters
+      - lf-infra-maven-parameters:
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
+          # Staging repos do not make sense for CLM jobs so set it blank.
+          staging-profile-id: ''
 
     wrappers:
       - lf-infra-wrappers:
