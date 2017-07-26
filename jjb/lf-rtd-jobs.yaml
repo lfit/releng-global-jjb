@@ -1,0 +1,284 @@
+---
+- job-group:
+    name: '{project-name}-rtd-jobs'
+
+    # This job group contains all the ReadTheDocs jobs
+
+    jobs:
+      - gerrit-rtd-merge
+      - gerrit-rtd-verify
+
+- job-group:
+    name: '{project-name}-github-rtd-jobs'
+
+    # This job group contains all the ReadTheDocs jobs
+
+    jobs:
+      - github-rtd-merge
+      - github-rtd-verify
+
+####################
+# COMMON FUNCTIONS #
+####################
+
+- lf_rtd_common: &lf_rtd_common
+    name: lf-rtd-common
+    # RTD verify and merge jobs are the same except for their scm, trigger, and
+    # builders definition. This anchor is the common template
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '**/*.rst'
+      - compare-type: ANT
+        pattern: '**/conf.py'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      - lf-infra-publish
+
+#############
+# RTD MERGE #
+#############
+
+- lf_rtd_merge: &lf_rtd_merge
+    name: lf-rtd-merge
+
+    # Merge job which triggers a POST of the docs project to readthedocs
+    #
+    # Required parameters:
+    #
+    #     :rtdproject: This is the name of the project on ReadTheDocs.org.
+    #
+    # Optional parameters:
+    #
+    #     :branch: Git branch to fetch for the build. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-node: The node to run build on.
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 15)
+    #     :choosing-strategy: Jenkins setting to determine what to build. (default: default)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :stream: Keyword that can be used to represent a release code-name.
+    #         Often the same as the branch. (default: master)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #
+    #     :gerrit_trigger_file_paths: Override file paths which can be used to
+    #         filter which file modifications will trigger a build.
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    git-url: '$GIT_URL/$PROJECT'
+    stream: master
+    submodule-recursive: true
+    choosing-strategy: default
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    builders:
+      - lf-rtd-trigger-build:
+          rtdproject: '{rtdproject}'
+
+- job-template:
+    name: '{project-name}-rtd-merge-{stream}'
+    id: gerrit-rtd-merge
+    <<: *lf_rtd_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_rtd_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: '{branch}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: '{choosing-strategy}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'remerge$'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-rtd-merge-{stream}'
+    id: github-rtd-merge
+    <<: *lf_rtd_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_rtd_merge
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: false
+          status-context: 'RTD Merge'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+      - timed: 'H H * * *'
+
+#############
+# RTD VERIFY#
+#############
+
+- lf_rtd_verify: &lf_rtd_verify
+    name: lf-rtd-verify
+    # Verify job which runs a tox build of the docs project
+    #
+    # Required parameters:
+    #
+    #     :rtdproject: This is the name of the project on ReadTheDocs.org.
+    #
+    # Optional parameters:
+    #
+    #     :branch: Git branch to fetch for the build. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-node: The node to run build on.
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 15)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :choosing-strategy: Jenkins setting to determine what to build. (default: default)
+    #     :stream: Keyword that can be used to represent a release code-name.
+    #         Often the same as the branch. (default: master)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #
+    #     :gerrit_trigger_file_paths: Override file paths which can be used to
+    #         filter which file modifications will trigger a build.
+
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    git-url: '$GIT_URL/$PROJECT'
+    stream: master
+    submodule-recursive: true
+    choosing-strategy: default
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    builders:
+      - lf-rtd-verify
+
+- job-template:
+    name: '{project-name}-rtd-verify-{stream}'
+    id: gerrit-rtd-verify
+    concurrent: true
+    <<: *lf_rtd_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_rtd_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: '{branch}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: ''
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: '{choosing-strategy}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'recheck$'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-rtd-verify-{stream}'
+    id: github-rtd-verify
+    concurrent: true
+    <<: *lf_rtd_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_rtd_verify
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'RTD Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
