@@ -69,6 +69,7 @@
     parameters:
       - lf-infra-parameters:
           project: '{project}'
+          stream: '{stream}'
           branch: '{branch}'
       - lf-infra-maven-parameters
 
