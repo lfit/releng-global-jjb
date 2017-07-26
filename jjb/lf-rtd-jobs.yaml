@@ -1,0 +1,226 @@
+---
+- job-group:
+    name: '{project-name}-rtd-jobs'
+
+    # This job group contains all the read the docs jobs that should be deployed
+    # for any project ci.
+
+    jobs:
+      - gerrit-rtd-merge
+      - gerrit-rtd-verify
+
+- job-group:
+    name: '{project-name}-github-rtd-jobs'
+
+    # This job group contains all the read the docs jobs that should be deployed
+    # for any project ci that is using github.
+
+    jobs:
+      - github-rtd-merge
+      - github-rtd-verify
+
+####################
+# COMMON FUNCTIONS #
+####################
+
+# RTD verify and merge jobs are the same except for their scm, trigger, and
+# builders definition. This anchor is the common template
+- lf_rtd_common: &lf_rtd_common
+    name: lf-rtd-common
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          refspec: 'refs/heads/{branch}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      - lf-infra-publish
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: ['**', '**/conf.py']
+
+
+#############
+# RTD MERGE #
+#############
+
+- lf_rtd_merge: &lf_rtd_merge
+    name: lf-rtd-merge
+
+    ######################
+    # Default parameters #
+    ######################
+    
+    doc-project: docs
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    build-timeout: 5
+    builders:
+      - lf-rtd-trigger-build:
+          rtdproject: '{rtdproject}'
+
+- job-template:
+    name: '{project-name}-rtd-merge-{stream}'
+    id: gerrit-rtd-merge
+    <<: *lf_rtd_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_rtd_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: '{branch}'
+
+    triggers:
+      - gerrit:
+          server-name: '{server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'remerge$'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-rtd-merge-{stream}'
+    id: github-rtd-merge
+    <<: *lf_rtd_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_rtd_merge
+
+    scm:
+      - lf-infra-github-scm
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: false
+          status-context: 'RTD Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+      - timed: 'H H * * *'
+
+#############
+# RTD VERIFY#
+#############
+
+- lf_rtd_verify: &lf_rtd_verify
+    name: lf-rtd-verify
+    # Verify job which runs tox to build a doc project
+    #
+    # Required parameters:
+    #   For Gerrit:
+    #     :build-node: The node to run build on.
+    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #         be configured in defaults.yaml)
+    #     :mvn-settings: The name of settings file containing credentials for
+    #         the project.
+    #   For Github:
+    #
+    # Optional parameters:
+    #     :doc-project: Name of a project's documentation repository. (Default: 'docs')
+    #     :branch: Git branch to fetch for the build. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #   For Gerrit:
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :stream: Keyword that can be used to represent a release code-name.
+    #         Often the same as the branch. (default: master)
+    #     :gerrit_verify_triggers: Override Gerrit Triggers.
+    #     :gerrit_trigger_file_paths: Override file paths which can be used to
+    #         filter which file modifications will trigger a build.
+    #   For Github:
+    #     :url: URL clone project from. (default: $GIT_URL/$PROJECT)
+
+    ######################
+    # Default parameters #
+    ######################
+
+    doc-project: docs
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    build-timeout: 10
+    concurrent: true
+
+    builders:
+      - lf-rtd-verify
+
+- job-template:
+    name: '{project-name}-rtd-verify-{stream}'
+    id: gerrit-rtd-verify
+    <<: *lf_rtd_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_rtd_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: '{branch}'
+
+    triggers:
+      - gerrit:
+          server-name: '{server-name}'
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: 'recheck$'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-rtd-verify-{stream}'
+    id: github-rtd-verify
+    <<: *lf_rtd_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_rtd_verify
+
+    scm:
+      - lf-infra-github-scm
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'RTD Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+      - timed: 'H H * * *'

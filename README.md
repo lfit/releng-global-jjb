@@ -161,6 +161,8 @@ ci-management.yaml:
 Required parameters:
 
 **project**: is the project repo as defined in source control.
+**doc-project**: is the name of the doc project repo as defined in source control.
+                 It will possibly be the same as `project`. (default: 'docs')
 **project-name**: is a custom name to call the job in Jenkins.
 **build-node**: is the name of the builder to use when building (Jenkins label).
 

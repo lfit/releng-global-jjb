@@ -183,6 +183,18 @@
           # DO NOT fail build if any of the above lines fail.
           exit 0
 
+- builder:
+    name: lf-rtd-trigger-build
+    builders:
+      - inject:
+          properties-content: RTD_PROJECT='{rtdproject}'
+      - shell: !include-raw-escape: shell/rtd-trigger-build.sh
+
+- builder:
+    name: lf-rtd-verify
+    builders:
+      - shell: !include-raw: shell/rtd-verify.sh
+
 ##############
 # PARAMETERS #
 ##############
@@ -269,6 +281,14 @@
           default: 'refs/heads/{branch}'
           description: |
               Parameter to identify a refspec when pulling from Gerrit.
+
+              Note that Gerrit will override this parameter automatically if a
+              job is triggered by Gerrit.
+      - string:
+          name: GERRIT_DOC_PROJECT
+          default: '{doc-project}'
+          description: |
+              Parameter to identify a project's documentation project by name.
 
               Note that Gerrit will override this parameter automatically if a
               job is triggered by Gerrit.
