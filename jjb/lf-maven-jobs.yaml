@@ -84,6 +84,10 @@
           build-timeout: '{build-timeout}'
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
+    triggers:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
