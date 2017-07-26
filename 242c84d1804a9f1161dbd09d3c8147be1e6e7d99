@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5e0039a_8542c628",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-26T14:04:00Z",
+      "side": 1,
+      "message": "Is the \u0026 an accidental inclusion?",
+      "range": {
+        "startLine": 42,
+        "startChar": 31,
+        "endLine": 42,
+        "endChar": 32
+      },
+      "revId": "242c84d1804a9f1161dbd09d3c8147be1e6e7d99",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
