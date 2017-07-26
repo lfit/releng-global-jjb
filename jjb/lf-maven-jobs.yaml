@@ -18,7 +18,7 @@
     # for any project ci that is using github.
 
     jobs:
-      - gerrit-maven-clm
+      - github-maven-clm
       - github-maven-release
 
 ####################
