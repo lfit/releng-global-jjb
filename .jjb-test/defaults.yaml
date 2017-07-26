@@ -23,5 +23,6 @@
 
     # Common test config
     project: releng/ciman
+    project-name: releng/ciman
     stream: latest
     build-node: build-vm
