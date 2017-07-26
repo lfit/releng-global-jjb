@@ -34,10 +34,12 @@
     #     build-node:    The node to run build on.
     #     jenkins-ssh-credential: Credential to use for SSH. (Generally should
     #                             be configured in defaults.yaml)
-    #     settings-file: The name of settings file containing credentials for
-    #                    the project.
-    #     global-settings-file: The name of the Maven global settings to use for
-    #                           Maven configuration.
+    #     mvn-settings: The name of settings file containing credentials for
+    #                   the project.
+    #
+    # Optional parameters:
+    #     mvn-global-settings: The name of the Maven global settings to use for
+    #                          Maven configuration. (default: global-settings)
 
     project-type: freestyle
     node: '{build-node}'
@@ -50,8 +52,8 @@
     branch: master
     build-timeout: 15
     git-url: '$GIT_URL/$PROJECT'
-    global-settings-file: global-settings
     java-version: openjdk8
+    mvn-global-settings: global-settings
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn33
@@ -92,8 +94,8 @@
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
-          global-settings-file: '{global-settings-file}'
-          settings-file: '{settings-file}'
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
       - shell: !include-raw-escape:
           - ../shell/lftools-install.sh
           - ../shell/common-variables.sh
@@ -118,11 +120,13 @@
     #     build-node:    The node to run build on.
     #     jenkins-ssh-credential: Credential to use for SSH. (Generally should
     #                             be configured in defaults.yaml)
-    #     settings-file: The name of settings file containing credentials for
-    #                    the project.
-    #     global-settings-file: The name of the Maven global settings to use for
-    #                           Maven configuration.
+    #     mvn-settings: The name of settings file containing credentials for
+    #                   the project.
     #     staging-profile-id: Profile ID of the project's Nexus staging profile.
+    #
+    # Optional parameters:
+    #     mvn-global-settings: The name of the Maven global settings to use for
+    #                          Maven configuration. (default: global-settings)
 
     project-type: freestyle
     node: '{build-node}'
@@ -135,8 +139,8 @@
     branch: master
     build-timeout: 30
     git-url: '$GIT_URL/$PROJECT'
-    global-settings-file: global-settings
     java-version: openjdk8
+    mvn-global-settings: global-settings
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn33
@@ -173,8 +177,8 @@
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
-          global-settings-file: '{global-settings-file}'
-          settings-file: '{settings-file}'
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
       - lf-infra-create-netrc:
           server-id: opendaylight-staging
       - shell: !include-raw-escape:
