@@ -55,6 +55,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn33
+    stream: master
     submodule-recursive: true
 
     #####################
@@ -70,6 +71,7 @@
       - lf-infra-parameters:
           project: '{project}'
           branch: '{branch}'
+          stream: '{stream}'
       - lf-infra-maven-parameters
 
     wrappers:
