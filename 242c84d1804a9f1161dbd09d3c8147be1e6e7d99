@@ -22,6 +22,30 @@
       "revId": "242c84d1804a9f1161dbd09d3c8147be1e6e7d99",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "237b995f_e98a00a3",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-07-27T22:41:10Z",
+      "side": 1,
+      "message": "Its a shorthand for transporting stderr through pipe, doing that sends stderr also to deploy logs.\nex:\n$ ls -a /tmp/nonexist  |\u0026 tee test.out \nls: cannot access \u0027/tmp/nonexist\u0027: No such file or directory\n$ cat test.out \nls: cannot access \u0027/tmp/nonexist\u0027: No such file or directory\n\n$ ls -a /tmp/nonexist  | tee test.out \nls: cannot access \u0027/tmp/nonexist\u0027: No such file or directory\n$ cat test.out   # nothing in the logs.",
+      "parentUuid": "c5e0039a_8542c628",
+      "range": {
+        "startLine": 42,
+        "startChar": 31,
+        "endLine": 42,
+        "endChar": 32
+      },
+      "revId": "242c84d1804a9f1161dbd09d3c8147be1e6e7d99",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
