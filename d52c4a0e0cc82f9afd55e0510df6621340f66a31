@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e1d983c6_610d1711",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-31T15:48:58Z",
+      "side": 1,
+      "message": "I would just call this packer-cloud-settings.",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 25
+      },
+      "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31ff7be0_f9017a81",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-31T15:48:58Z",
+      "side": 1,
+      "message": "(default packer-cloud-env)",
+      "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f392c419_91c1f693",
+        "filename": "test.template",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-31T15:48:58Z",
+      "side": 1,
+      "message": "If we\u0027re going to test a setting it\u0027s better to test a non-default value of the setting. So use any other keyword other than packer-cloud-env would be ideal here so that we can confirm the setting is truly changed.",
+      "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df2acff4_d58c2159",
+        "filename": "test.template",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-07-31T15:48:58Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
