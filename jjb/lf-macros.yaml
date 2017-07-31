@@ -76,7 +76,7 @@
     builders:
       - config-file-provider:
           files:
-            - file-id: packer-cloud-env
+            - file-id: '{packer-cloud-env-file}'
               variable: CLOUDENV
       - inject:
           properties-content: |
@@ -94,7 +94,7 @@
     builders:
       - config-file-provider:
           files:
-            - file-id: 'packer-cloud-env'
+            - file-id: '{packer-cloud-env-file}'
               variable: 'CLOUDENV'
       - inject:
           properties-content: |

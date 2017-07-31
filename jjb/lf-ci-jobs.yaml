@@ -111,6 +111,7 @@
     ######################
 
     build-timeout: 45
+    packer-cloud-env-file: packer-cloud-env
 
     wrappers:
       - lf-infra-wrappers:
@@ -128,19 +129,32 @@
 - lf_packer_merge_builders: &lf_packer_merge_builders
     name: lf-packer-merge-builders
     # Adds builders section common to merge packer jobs.
+    # {packer-cloud-env-file} is passed from the project, defines the managed
+    #                   file-id name created in Jenkins
+    # {packer-version}: is global defined in job group level, the version number
+    #                   can be updated to install the latest version of packer.
+    # {platforms}:      defines the packer platform file, passed from the project.
+    # {template}:       defines the packer template file, passed from the project.
     builders:
       - lf-infra-packer-validate:
+          packer-cloud-env-file: '{packer-cloud-env-file}'
           packer-version: '{packer-version}'
       - lf-infra-packer-build:
+          packer-cloud-env-file: '{packer-cloud-env-file}'
+          packer-version: '{packer-version}'
           platform: '{platforms}'
           template: '{templates}'
-          packer-version: '{packer-version}'
 
 - lf_packer_verify_builders: &lf_packer_verify_builders
     # Adds builders section common to verify packer jobs.
+    # {packer-cloud-env-file} is passed from the project, defines the managed
+    #                   file-id name created in Jenkins
+    # {packer-version}: is global defined in job group level, the version number
+    #                   can be updated to install the latest version of packer.
     name: lf-packer-verify-builders
     builders:
       - lf-infra-packer-validate:
+          packer-cloud-env-file: '{packer-cloud-env-file}'
           packer-version: '{packer-version}'
 
 - parameter:

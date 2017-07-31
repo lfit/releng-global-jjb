@@ -48,6 +48,7 @@
     jobs:
         - "{project-name}-packer-jobs"
 
+    packer-cloud-env-file: packer-cloud-env
     project-name: gerrit-ciman
     platforms:
       - centos
@@ -89,6 +90,7 @@
     jobs:
         - "{project-name}-github-packer-jobs"
 
+    packer-cloud-env-file: packer-cloud-env
     project-name: github-ciman
     platforms:
       - centos
