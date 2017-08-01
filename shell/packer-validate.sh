@@ -21,11 +21,10 @@ mkdir -p "$PACKER_LOGS_DIR"
 export PATH="${WORKSPACE}/bin:$PATH"
 
 cd packer
-varfiles=(../packer/vars/*)
-templates=(../packer/templates/*)
+varfiles=(../packer/vars/*.json)
+templates=(../packer/templates/*.json)
 
 for varfile in "${varfiles[@]}"; do
-    [[ "${varfile##*/}" =~ ^(cloud-env.*)$ ]] && continue
     for template in "${templates[@]}"; do
         export PACKER_LOG="yes" && \
         export PACKER_LOG_PATH="$PACKER_LOGS_DIR/packer-validate-${varfile##*/}-${template##*/}.log" && \
