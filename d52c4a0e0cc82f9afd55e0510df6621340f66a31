@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "00a0d512_c6df1beb",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-01T04:56:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e1d983c6_610d1711",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 114,
+        "endChar": 25
+      },
+      "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "31ff7be0_f9017a81",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2017-07-31T15:48:58Z",
       "side": 1,
       "message": "(default packer-cloud-env)",
+      "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "01ea0411_801a9f8e",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-01T04:56:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31ff7be0_f9017a81",
       "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "4f608fe9_38f814e0",
+        "filename": "test.template",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-01T04:56:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f392c419_91c1f693",
+      "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df2acff4_d58c2159",
         "filename": "test.template",
         "patchSetId": 1
@@ -70,6 +130,24 @@
       "writtenOn": "2017-07-31T15:48:58Z",
       "side": 1,
       "message": "Same here.",
+      "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "85b7ccbf_8a3fb55c",
+        "filename": "test.template",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-01T04:56:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df2acff4_d58c2159",
       "revId": "d52c4a0e0cc82f9afd55e0510df6621340f66a31",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
