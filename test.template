@@ -22,6 +22,7 @@
     project: releng/ciman
     stream: latest
     build-node: build-vm
+    mvn-settings: project-settings
 
 ################
 # GERRIT TESTS #
