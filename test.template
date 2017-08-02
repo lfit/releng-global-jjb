@@ -41,7 +41,7 @@
 
     project-name: gerrit-maven
     staging-profile-id: uuddlrlrba
-    settings-file: gerrit-maven-project-settings
+    mvn-settings: gerrit-maven-project-settings
 
 - project:
     name: gerrit-packer-jobs
@@ -82,7 +82,7 @@
 
     project-name: github-maven
     staging-profile-id: uuddlrlrba
-    settings-file: aproject-settings
+    mvn-settings: aproject-settings
 
 - project:
     name: github-packer-jobs
