@@ -414,6 +414,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      - timed: '00 10 1 * *'
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on:
@@ -506,6 +507,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      - timed: '00 10 1 * *'
       - github
       - pollscm:
           cron: ''
