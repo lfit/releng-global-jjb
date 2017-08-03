@@ -1,0 +1,359 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06da85ba_78dc9825",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "Instead of copy pasting the same sections below to all the job templates. We should make anchors so that the code is reusable.",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a1fae52_72e67314",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "Alphabetical order please.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 29
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "78e0cf70_5116d53a",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "Alphabetical order please.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 29
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "09da1a36_a5f60103",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "This needs to be generalized. and non-specific to the docs project.",
+      "range": {
+        "startLine": 23,
+        "startChar": 11,
+        "endLine": 23,
+        "endChar": 15
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db256b74_9edf8cf5",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "gerrit-rtd-merge.\n\nThe \"docs\" was in OpenDaylight was referencing the OpenDaylight \"docs\" project. Scripts in global-jjb should be generalized to be used by any project.",
+      "range": {
+        "startLine": 24,
+        "startChar": 15,
+        "endLine": 24,
+        "endChar": 19
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a14d585_1f786c1d",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "node needs to be a required variable passed in by the job. We cannot assume every LF Infra has this node name.",
+      "range": {
+        "startLine": 25,
+        "startChar": 10,
+        "endLine": 25,
+        "endChar": 36
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1134f5c1_0e8a38cc",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "RTD jobs don\u0027t use the \"openstack\" command so this is completely unnecessary.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 32
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "799bd760_9191bb19",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "I do not believe lf-infra-parameters has an artifacts parameter.",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "411e5b0a_e65ce9f8",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "OpenDaylight docs jobs run in less than 10 minutes so less default the timeout to 10 minutes but setup a build-timeout variable that can be overrided.\n\nhttps://jenkins.opendaylight.org/releng/view/docs/",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2017c0a_661008b4",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "\u0027remerge$\u0027",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d569165_f3787b80",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "This is specific to the OpenDaylight docs project. We cannot assume this is the same pattern for other projects. Perhaps something like \u0027**/*.rst\u0027 might be a good start.",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 40
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "991cb0cc_839aee8c",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "include-raw-escape",
+      "range": {
+        "startLine": 66,
+        "startChar": 16,
+        "endLine": 66,
+        "endChar": 27
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4751250_a52cad60",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "No need for this email notification section.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 32
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33e02341_7b8d5f2d",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "What\u0027s this FIXME? can we just fix it?",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f4801255_3896a7d1",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "Needs a license header.",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8824e1ab_6fd20097",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "Let\u0027s not use {{ style escapes and call include-raw-escape instead in the job template.",
+      "range": {
+        "startLine": 5,
+        "startChar": 24,
+        "endLine": 5,
+        "endChar": 26
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c268dc3_1ee46244",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-03T20:42:39Z",
+      "side": 1,
+      "message": "Let\u0027s not pass in variables in this method. As mentioned in our best practices [0] we should avoid using JJB style variables in shell scripts.\n\n[0] https://lf-releng-tools.readthedocs.io/en/latest/best-practices.html#jenkins-job-builder",
+      "range": {
+        "startLine": 9,
+        "startChar": 84,
+        "endLine": 9,
+        "endChar": 96
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
