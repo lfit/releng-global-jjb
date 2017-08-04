@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "fe3dba0f_29e81538",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a1fae52_72e67314",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 29
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "78e0cf70_5116d53a",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 5
@@ -53,6 +77,30 @@
       "writtenOn": "2017-08-03T20:42:39Z",
       "side": 1,
       "message": "Alphabetical order please.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 29
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8e771534_a6bca681",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78e0cf70_5116d53a",
       "range": {
         "startLine": 19,
         "startChar": 0,
@@ -88,6 +136,30 @@
     },
     {
       "key": {
+        "uuid": "612f9de5_ba586e49",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Changed to {project-name}",
+      "parentUuid": "09da1a36_a5f60103",
+      "range": {
+        "startLine": 23,
+        "startChar": 11,
+        "endLine": 23,
+        "endChar": 15
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db256b74_9edf8cf5",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 5
@@ -99,6 +171,30 @@
       "writtenOn": "2017-08-03T20:42:39Z",
       "side": 1,
       "message": "gerrit-rtd-merge.\n\nThe \"docs\" was in OpenDaylight was referencing the OpenDaylight \"docs\" project. Scripts in global-jjb should be generalized to be used by any project.",
+      "range": {
+        "startLine": 24,
+        "startChar": 15,
+        "endLine": 24,
+        "endChar": 19
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d684b58_813eb806",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db256b74_9edf8cf5",
       "range": {
         "startLine": 24,
         "startChar": 15,
@@ -134,6 +230,30 @@
     },
     {
       "key": {
+        "uuid": "7e114754_64ad65c9",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Parameterized to {build-node}.",
+      "parentUuid": "3a14d585_1f786c1d",
+      "range": {
+        "startLine": 25,
+        "startChar": 10,
+        "endLine": 25,
+        "endChar": 36
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1134f5c1_0e8a38cc",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 5
@@ -157,6 +277,30 @@
     },
     {
       "key": {
+        "uuid": "31ef2e85_b6cf1e63",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "1134f5c1_0e8a38cc",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 32
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "799bd760_9191bb19",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 5
@@ -168,6 +312,24 @@
       "writtenOn": "2017-08-03T20:42:39Z",
       "side": 1,
       "message": "I do not believe lf-infra-parameters has an artifacts parameter.",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e48a621_ec5825c0",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "799bd760_9191bb19",
       "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -208,6 +370,24 @@
     },
     {
       "key": {
+        "uuid": "e6f5378e_17ee7de2",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2017c0a_661008b4",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7d569165_f3787b80",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 5
@@ -219,6 +399,30 @@
       "writtenOn": "2017-08-03T20:42:39Z",
       "side": 1,
       "message": "This is specific to the OpenDaylight docs project. We cannot assume this is the same pattern for other projects. Perhaps something like \u0027**/*.rst\u0027 might be a good start.",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 40
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31afb86b_d98463fc",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "7d569165_f3787b80",
       "range": {
         "startLine": 61,
         "startChar": 0,
@@ -254,6 +458,30 @@
     },
     {
       "key": {
+        "uuid": "23e365c8_ed9aa9e9",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "991cb0cc_839aee8c",
+      "range": {
+        "startLine": 66,
+        "startChar": 16,
+        "endLine": 66,
+        "endChar": 27
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c4751250_a52cad60",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 5
@@ -277,6 +505,30 @@
     },
     {
       "key": {
+        "uuid": "f539dcc8_c7e42ebe",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "c4751250_a52cad60",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 32
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "33e02341_7b8d5f2d",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 5
@@ -288,6 +540,24 @@
       "writtenOn": "2017-08-03T20:42:39Z",
       "side": 1,
       "message": "What\u0027s this FIXME? can we just fix it?",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff8efcb9_4b618a71",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-04T20:41:17Z",
+      "side": 1,
+      "message": "This was a copy/paste thing, not relevant here. Since that docs was in odl.  Removed.",
+      "parentUuid": "33e02341_7b8d5f2d",
       "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
