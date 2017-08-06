@@ -123,7 +123,7 @@
     # The builder requires passing the following parameters
     # REPO_ID:           Repository ID
     # GROUP_ID:          Group ID of the repository
-    # UPLOAD_FILES_PATH: Path to directory containing one or more files
+    # UPLOAD_FILES_DIR: Path to directory containing one or more files
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
@@ -132,9 +132,10 @@
           settings-file: '{settings-file}'
       - inject:
           properties-content: |
+              MAVEN_REPO_URL={nexus-url-path}
               REPO_ID={repo-id}
               GROUP_ID={group-id}
-              UPLOAD_FILES_PATH={files-dir}
+              UPLOAD_FILES_DIR={upload-files-dir}
       - shell: !include-raw-escape:
           - ../shell/lftools-install.sh
           - ../shell/common-variables.sh
