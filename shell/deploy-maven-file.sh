@@ -12,10 +12,18 @@
 # This script publishes packages (rpms/debs) or any file to Nexus hosted
 # maven2 repository.
 #
-# $NEXUS_URL          :  Jenkins global variable should be defined.
+# $MAVEN_REPO_URL     :  Provided by a job parameter.
+#                        The calling job can set $NEXUS_URL path or local
+#                        directory to stage files. ex:
+#                         -Durl="${NEXUS_URL}/content/repositories/$REPO_ID"
+#                         -Durl="file://$WORKSPACE/m2repo"
 # $REPO_ID            :  Provided by a job parameter.
+#                        A repository ID represents the repository.
 # $GROUP_ID           :  Provided by a job parameter.
-# $UPLOAD_FILES_PATH  :  Provided by a job parameter.
+#                        A group ID represents a nexus group.
+# $UPLOAD_FILES_PATH   :  Provided by a job parameter.
+#                        The directory contains one or more artifacts.
+
 echo "---> deploy-maven-file.sh"
 
 # DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.
@@ -28,12 +36,11 @@ export MAVEN_PARAMS
 
 DEPLOY_LOG="$WORKSPACE/archives/deploy-maven-file.log"
 mkdir -p "$WORKSPACE/archives"
-
-NEXUS_REPO_URL="${NEXUS_URL}/content/repositories/$REPO_ID"
+ls "$UPLOAD_FILES_PATH"
 
 while IFS="" read -r file
 do
-    lftools deploy maven-file "$NEXUS_REPO_URL" \
+    lftools deploy maven-file "$MAVEN_REPO_URL" \
                               "$REPO_ID" \
                               "$file" \
                               -b "$MVN" \
