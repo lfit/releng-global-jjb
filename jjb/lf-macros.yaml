@@ -132,6 +132,7 @@
           settings-file: '{settings-file}'
       - inject:
           properties-content: |
+              NEXUS_URL_PATH={nexus-url-path}
               REPO_ID={repo-id}
               GROUP_ID={group-id}
               UPLOAD_FILES_PATH={files-dir}
