@@ -139,7 +139,6 @@
           - ../shell/lftools-install.sh
           - ../shell/common-variables.sh
           - ../shell/deploy-maven-file.sh
-      - lf-provide-maven-settings-cleanup
 
 - builder:
     name: lf-maven-install
