@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "7376fe35_dc6feb43",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-07T21:10:49Z",
+      "side": 1,
+      "message": "Referencing ${NEXUS_URL} here might be confusing.",
+      "revId": "e22fd6759e626ab35563b7b90e3197fb1d6134f2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "def69c1d_3e8090fe",
         "filename": "shell/deploy-maven-file.sh",
         "patchSetId": 1
@@ -36,6 +53,30 @@
       "writtenOn": "2017-08-07T20:47:18Z",
       "side": 1,
       "message": "I took a long look at the lftools/deploy script and it seems to me it can already handle this param being a local path, but wanted to confirm - it can handle this without a change, right?",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 57
+      },
+      "revId": "e22fd6759e626ab35563b7b90e3197fb1d6134f2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e782fa45_04d5a2c8",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-07T21:10:49Z",
+      "side": 1,
+      "message": "Just wanna make sure I\u0027m seeing the same thing.  Parsed here https://github.com/lfit/releng-lftools/blob/master/shell/deploy#L131 . So if `file://\u003csomething\u003e` was passed then the nexus_url var gets `file:` ?",
+      "parentUuid": "def69c1d_3e8090fe",
       "range": {
         "startLine": 19,
         "startChar": 33,
