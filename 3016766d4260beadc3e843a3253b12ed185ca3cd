@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7831c0a7_e546a2c2",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "This naming scheme confuses me. Let\u0027s just call this lf_rtd_common.",
+      "range": {
+        "startLine": 24,
+        "startChar": 31,
+        "endLine": 24,
+        "endChar": 43
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d6783407_b46e3728",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "Let\u0027s just keep merge jobs for 7 days since they don\u0027t really do anything except call RTD to build.",
+      "range": {
+        "startLine": 31,
+        "startChar": 30,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9600971_8261d755",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "int not string.\n\nAlso I believe merge jobs just run curl so I think 30 minutes is way too long a timeout. Maybe 5 minutes for merge jobs is better and 10 minutes for Verify jobs [0]. The best way to achieve this is to set this to \u0027{build-timeout}\u0027\n\nand then in the respective job template sections define build-timeout as 5 and 10 minutes respectively.\n\n[0] https://jenkins.opendaylight.org/releng/view/docs/",
+      "range": {
+        "startLine": 41,
+        "startChar": 25,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee8c7d75_18f180b3",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "We don\u0027t have a macro called gerrit-trigger-patch-submitted",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 39
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cdb1315c_02c8805c",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "**/*.rst",
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "63e994ac_3a0124cc",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "This is a line that is specific to OpenDaylight\u0027s docs project. We should probably not copy that although this if-statement might be useful to downstream projects though. We should redesign this in a way that a project can pass a list of projects they can ignore.\n\nThis also needs to be fixed so it works with GitHub too and not just Gerrit.",
+      "range": {
+        "startLine": 97,
+        "startChar": 10,
+        "endLine": 97,
+        "endChar": 50
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da609948_d5eb3500",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "These shells need to be turned into shell scripts not inlined like this.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 39
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b83fb8c8_1dd3e60e",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "Missing license header. If you rebase this patch Jenkins should start failing due to this.",
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "641fda57_216e8f04",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "Let\u0027s not disable this as I think the original code here can be improved.",
+      "range": {
+        "startLine": 8,
+        "startChar": 21,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98db3525_61ab4f3f",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:41:56Z",
+      "side": 1,
+      "message": "As described in our Best Practices document. Let\u0027s not pass in JJB variables into shell scripts. Let\u0027s use an environment variable instead like:\n\n$RTD_PROJECT",
+      "range": {
+        "startLine": 9,
+        "startChar": 84,
+        "endLine": 9,
+        "endChar": 96
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
