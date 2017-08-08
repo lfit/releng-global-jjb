@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "065ac14c_adda9385",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:55:50Z",
+      "side": 1,
+      "message": "by",
+      "range": {
+        "startLine": 13,
+        "startChar": 27,
+        "endLine": 13,
+        "endChar": 29
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec02e7b_094d6f39",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 2
@@ -25,6 +48,53 @@
     },
     {
       "key": {
+        "uuid": "e019dfcd_a03908e0",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:55:50Z",
+      "side": 1,
+      "message": "+1\n\nThis is a API breaking change so we need to remember to include this in release notes and cannot release a point release with this patch.",
+      "parentUuid": "8ec02e7b_094d6f39",
+      "range": {
+        "startLine": 135,
+        "startChar": 14,
+        "endLine": 135,
+        "endChar": 45
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "719a4c85_3e7b04cf",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:55:50Z",
+      "side": 1,
+      "message": "Changing this is API breaking and means we\u0027re no longer backwards compatible. Is this change necessary?\n\nIf so we need to remember to include this in the release notes and means this cannot be included in a point release.",
+      "range": {
+        "startLine": 138,
+        "startChar": 32,
+        "endLine": 138,
+        "endChar": 48
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "38f882af_f4b31fef",
         "filename": "shell/deploy-maven-file.sh",
         "patchSetId": 2
@@ -36,6 +106,30 @@
       "writtenOn": "2017-08-08T19:48:54Z",
       "side": 1,
       "message": "Given that this is making it more flexible and therefore allowing local maven repos, I think that this should be changed from NEXUS_URL_PATH to MAVEN_REPO_URL instead as it\u0027s more clear that it takes a URL to a Maven Repo and not specifically to a Nexus repo.",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 17
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d4713b2_4d6943af",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-08T19:55:50Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "38f882af_f4b31fef",
       "range": {
         "startLine": 15,
         "startChar": 3,
