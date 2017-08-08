@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ec02e7b_094d6f39",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-08T19:48:54Z",
+      "side": 1,
+      "message": "Given that this is making it more flexible and therefore allowing local maven repos, I think that this should be changed from NEXUS_URL_PATH to MAVEN_REPO_URL instead as it\u0027s more clear that it takes a URL to a Maven Repo and not specifically to a Nexus repo.",
+      "range": {
+        "startLine": 135,
+        "startChar": 14,
+        "endLine": 135,
+        "endChar": 45
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "38f882af_f4b31fef",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-08T19:48:54Z",
+      "side": 1,
+      "message": "Given that this is making it more flexible and therefore allowing local maven repos, I think that this should be changed from NEXUS_URL_PATH to MAVEN_REPO_URL instead as it\u0027s more clear that it takes a URL to a Maven Repo and not specifically to a Nexus repo.",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 17
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93144999_41a220ac",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-08T19:48:54Z",
+      "side": 1,
+      "message": "See prior comment about the name",
+      "range": {
+        "startLine": 16,
+        "startChar": 52,
+        "endLine": 16,
+        "endChar": 65
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8372484f_974a2504",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-08T19:48:54Z",
+      "side": 1,
+      "message": "See prior comment about the name",
+      "range": {
+        "startLine": 43,
+        "startChar": 32,
+        "endLine": 43,
+        "endChar": 46
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
