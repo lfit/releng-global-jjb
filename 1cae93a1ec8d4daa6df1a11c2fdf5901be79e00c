@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c781eacb_8664de57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "065ac14c_adda9385",
+      "range": {
+        "startLine": 13,
+        "startChar": 27,
+        "endLine": 13,
+        "endChar": 29
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8ec02e7b_094d6f39",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 2
@@ -72,6 +96,78 @@
     },
     {
       "key": {
+        "uuid": "801ba889_4fec3c6d",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec02e7b_094d6f39",
+      "range": {
+        "startLine": 135,
+        "startChar": 14,
+        "endLine": 135,
+        "endChar": 45
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5bdaed9f_16d12c47",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ec02e7b_094d6f39",
+      "range": {
+        "startLine": 135,
+        "startChar": 14,
+        "endLine": 135,
+        "endChar": 45
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "551f4caf_15baca7f",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e019dfcd_a03908e0",
+      "range": {
+        "startLine": 135,
+        "startChar": 14,
+        "endLine": 135,
+        "endChar": 45
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "719a4c85_3e7b04cf",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 2
@@ -83,6 +179,54 @@
       "writtenOn": "2017-08-08T19:55:50Z",
       "side": 1,
       "message": "Changing this is API breaking and means we\u0027re no longer backwards compatible. Is this change necessary?\n\nIf so we need to remember to include this in the release notes and means this cannot be included in a point release.",
+      "range": {
+        "startLine": 138,
+        "startChar": 32,
+        "endLine": 138,
+        "endChar": 48
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc2840eb_e2bfa981",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "719a4c85_3e7b04cf",
+      "range": {
+        "startLine": 138,
+        "startChar": 32,
+        "endLine": 138,
+        "endChar": 48
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4429772_8cfc0544",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "presently packaging jobs are the only consumer of this api, so we should be ok, it must be mentioned in the release notes.",
+      "parentUuid": "719a4c85_3e7b04cf",
       "range": {
         "startLine": 138,
         "startChar": 32,
@@ -142,6 +286,30 @@
     },
     {
       "key": {
+        "uuid": "6f777277_9d908536",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38f882af_f4b31fef",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 17
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "93144999_41a220ac",
         "filename": "shell/deploy-maven-file.sh",
         "patchSetId": 2
@@ -165,6 +333,30 @@
     },
     {
       "key": {
+        "uuid": "a9ecc084_af98bf2b",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "93144999_41a220ac",
+      "range": {
+        "startLine": 16,
+        "startChar": 52,
+        "endLine": 16,
+        "endChar": 65
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8372484f_974a2504",
         "filename": "shell/deploy-maven-file.sh",
         "patchSetId": 2
@@ -176,6 +368,30 @@
       "writtenOn": "2017-08-08T19:48:54Z",
       "side": 1,
       "message": "See prior comment about the name",
+      "range": {
+        "startLine": 43,
+        "startChar": 32,
+        "endLine": 43,
+        "endChar": 46
+      },
+      "revId": "1cae93a1ec8d4daa6df1a11c2fdf5901be79e00c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "85a45366_17906824",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-08T23:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8372484f_974a2504",
       "range": {
         "startLine": 43,
         "startChar": 32,
