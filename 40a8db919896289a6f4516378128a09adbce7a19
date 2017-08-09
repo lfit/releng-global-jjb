@@ -22,6 +22,30 @@
       "revId": "40a8db919896289a6f4516378128a09adbce7a19",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d0b6058_c0e03231",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-09T23:17:31Z",
+      "side": 1,
+      "message": "This translates to ${NEXUS_URL} + ${path/to/repo}. example: \"${NEXUS_URL}/content/repositories/$REPO_ID\"",
+      "parentUuid": "37707097_1d97c8ec",
+      "range": {
+        "startLine": 23,
+        "startChar": 2,
+        "endLine": 23,
+        "endChar": 16
+      },
+      "revId": "40a8db919896289a6f4516378128a09adbce7a19",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
