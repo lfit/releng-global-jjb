@@ -1,0 +1,24 @@
+- defaults:
+    name: global
+
+    # General
+    jenkins-ssh-credential: test-credential
+
+    # Gerrit Infra
+    gerrit-server-name: test-server
+
+    # GitHub Infra
+    git-url: https://github.com
+    git-clone-url: 'git@github.com:'
+    github-org: example-org
+    github_pr_whitelist:
+      - jpwku
+      - tykeal
+      - zxiiro
+    github_pr_admin_list:
+      - tykeal
+
+    # Common test config
+    project: releng/ciman
+    stream: latest
+    build-node: build-vm

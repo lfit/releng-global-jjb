@@ -1,0 +1,18 @@
+---
+- project:
+    name: gerrit-maven-jobs
+    jobs:
+        - gerrit-maven-release
+
+    project-name: gerrit-maven
+    staging-profile-id: uuddlrlrba
+    mvn-settings: gerrit-maven-project-settings
+
+- project:
+    name: github-maven-jobs
+    jobs:
+        - github-maven-release
+
+    project-name: github-maven
+    staging-profile-id: uuddlrlrba
+    mvn-settings: aproject-settings

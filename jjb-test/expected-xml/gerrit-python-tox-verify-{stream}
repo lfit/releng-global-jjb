@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <actions/>
+  <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>true</concurrentBuild>
+  <assignedNode>build-vm</assignedNode>
+  <canRoam>false</canRoam>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>7</daysToKeep>
+        <numToKeep>-1</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>0</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>PROJECT</name>
+          <description>Parameter to identify a Gerrit project. This is typically the
+project repo path as exists in Gerrit.
+For example: ofextensions/circuitsw
+</description>
+          <defaultValue>releng/ciman</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>STREAM</name>
+          <description>Stream is often set to the same name as 'branch' but can
+sometimes be used as a name representing a project's release code
+name.
+</description>
+          <defaultValue>{stream}</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>GERRIT_PROJECT</name>
+          <description>Parameter to identify Gerrit project. This is typically the
+project repo path as exists in Gerrit.
+For example: ofextensions/circuitsw
+
+Note that Gerrit will override this parameter automatically if a
+job is triggered by Gerrit.
+</description>
+          <defaultValue>releng/ciman</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>GERRIT_BRANCH</name>
+          <description>Parameter to identify a Gerrit branch.
+
+Note that Gerrit will override this parameter automatically if a
+job is triggered by Gerrit.
+</description>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>GERRIT_REFSPEC</name>
+          <description>Parameter to identify a refspec when pulling from Gerrit.
+
+Note that Gerrit will override this parameter automatically if a
+job is triggered by Gerrit.
+</description>
+          <defaultValue/>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TOX_DIR</name>
+          <description>Path to directory containing tox.ini file.
+</description>
+          <defaultValue/>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>TOX_ENVS</name>
+          <description>Tox environments to run build against.
+Example: docs,py2,py3
+</description>
+          <defaultValue/>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <name>origin</name>
+        <refspec>$GERRIT_REFSPEC</refspec>
+        <url>$GIT_URL/$GERRIT_PROJECT</url>
+        <credentialsId>test-credential</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>refs/heads/$GERRIT_BRANCH</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <excludedUsers/>
+    <buildChooser class="com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTriggerBuildChooser"/>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <authorOrCommitter>false</authorOrCommitter>
+    <wipeOutWorkspace>true</wipeOutWorkspace>
+    <pruneBranches>false</pruneBranches>
+    <remotePoll>false</remotePoll>
+    <gitTool>Default</gitTool>
+    <submoduleCfg class="list"/>
+    <relativeTargetDir/>
+    <reference/>
+    <gitConfigName/>
+    <gitConfigEmail/>
+    <skipTag>true</skipTag>
+    <scmName/>
+    <useShallowClone>false</useShallowClone>
+    <ignoreNotifyCommit>false</ignoreNotifyCommit>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.SubmoduleOption>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>true</recursiveSubmodules>
+        <trackingSubmodules>false</trackingSubmodules>
+        <reference/>
+        <timeout>10</timeout>
+      </hudson.plugins.git.extensions.impl.SubmoduleOption>
+      <hudson.plugins.git.extensions.impl.WipeWorkspace/>
+    </extensions>
+  </scm>
+  <triggers class="vector">
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
+      <spec/>
+      <gerritProjects>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+          <compareType>ANT</compareType>
+          <pattern>releng/ciman</pattern>
+          <branches>
+            <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Branch>
+              <compareType>ANT</compareType>
+              <pattern>**/master</pattern>
+            </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Branch>
+          </branches>
+          <disableStrictForbiddenFileVerification>false</disableStrictForbiddenFileVerification>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+      </gerritProjects>
+      <skipVote>
+        <onSuccessful>false</onSuccessful>
+        <onFailed>false</onFailed>
+        <onUnstable>false</onUnstable>
+        <onNotBuilt>false</onNotBuilt>
+      </skipVote>
+      <silentMode>false</silentMode>
+      <silentStartMode>false</silentStartMode>
+      <escapeQuotes>true</escapeQuotes>
+      <noNameAndEmailParameters>false</noNameAndEmailParameters>
+      <readableMessage>false</readableMessage>
+      <dependencyJobsNames/>
+      <notificationLevel/>
+      <dynamicTriggerConfiguration>False</dynamicTriggerConfiguration>
+      <triggerConfigURL/>
+      <allowTriggeringUnreviewedPatches>false</allowTriggeringUnreviewedPatches>
+      <triggerOnEvents>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
+          <excludeDrafts>false</excludeDrafts>
+          <excludeTrivialRebase>false</excludeTrivialRebase>
+          <excludeNoCodeChange>false</excludeNoCodeChange>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginDraftPublishedEvent/>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedContainsEvent>
+          <commentAddedCommentContains>recheck$</commentAddedCommentContains>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedContainsEvent>
+      </triggerOnEvents>
+      <buildStartMessage/>
+      <buildFailureMessage/>
+      <buildSuccessfulMessage/>
+      <buildUnstableMessage/>
+      <buildNotBuiltMessage/>
+      <buildUnsuccessfulFilepath/>
+      <customUrl/>
+      <serverName>test-server</serverName>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
+  </triggers>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; lftools-install.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+# DO NOT set -u as virtualenv's activate script has unbound variables
+set -e -o pipefail
+
+virtualenv --quiet &quot;/tmp/v/lftools&quot;
+# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
+source &quot;/tmp/v/lftools/bin/activate&quot;
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade &quot;lftools&lt;1.0.0&quot;
+
+# pipdeptree prints out a lot of information because lftools pulls in many
+# dependencies. Let's only print it if we want to debug.
+# echo &quot;----&gt; Pip Dependency Tree&quot;
+# pip install --quiet --upgrade pipdeptree
+# pipdeptree
+</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; tox-install.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+# DO NOT set -u as virtualenv's activate script has unbound variables
+set -e -o pipefail
+
+virtualenv --quiet &quot;/tmp/v/tox&quot;
+# shellcheck source=/tmp/v/tox/bin/activate disable=SC1091
+source &quot;/tmp/v/tox/bin/activate&quot;
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade pipdeptree
+pip install --quiet --upgrade tox argparse
+
+echo &quot;----&gt; Pip Dependency Tree&quot;
+pipdeptree
+
+#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; tox-install.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+# DO NOT set -u as virtualenv's activate script has unbound variables
+set -e -o pipefail
+
+cd &quot;$WORKSPACE/$TOX_DIR&quot;
+
+if [ -n &quot;$TOX_ENVS&quot; ];
+then
+    tox -e &quot;$TOX_ENVS&quot;
+else
+    tox
+fi
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <org.jenkinsci.plugins.postbuildscript.PostBuildScript>
+      <buildSteps>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; sysstat.sh&quot;
+set +e  # DON'T fail build if script fails.
+
+OS=$(facter operatingsystem)
+case &quot;$OS&quot; in
+    Ubuntu)
+        SYSSTAT_PATH=&quot;/var/log/sysstat&quot;
+
+        # Dont run the script when systat is not enabled by default
+        if ! grep --quiet 'ENABLED=&quot;true&quot;' &quot;/etc/default/sysstat&quot;; then
+            exit 0
+        fi
+    ;;
+    CentOS|RedHat)
+        SYSSTAT_PATH=&quot;/var/log/sa&quot;
+    ;;
+    *)
+        # nothing to do
+        exit 0
+    ;;
+esac
+
+SAR_DIR=&quot;$WORKSPACE/archives/sar-reports&quot;
+mkdir -p &quot;$SAR_DIR&quot;
+cp &quot;$SYSSTAT_PATH/&quot;* &quot;$_&quot;
+# convert sar data to ascii format
+while IFS=&quot;&quot; read -r s
+do
+    [ -f &quot;$s&quot; ] &amp;&amp; LC_TIME=POSIX sar -A -f &quot;$s&quot; &gt; &quot;$SAR_DIR/sar${s//[!0-9]/}&quot;
+done &lt; &lt;(find &quot;$SYSSTAT_PATH&quot; -name &quot;sa[0-9]*&quot; || true)
+
+# DON'T fail build if script fails.
+exit 0
+</command>
+        </hudson.tasks.Shell>
+        <org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep plugin="config-file-provider">
+          <managedFiles>
+            <org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+              <fileId>jenkins-log-archives-settings</fileId>
+              <targetLocation/>
+              <variable>SETTINGS_FILE</variable>
+            </org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+          </managedFiles>
+        </org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep>
+        <EnvInjectBuilder>
+          <info>
+            <propertiesContent>SERVER_ID=logs</propertiesContent>
+          </info>
+        </EnvInjectBuilder>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; create-netrc.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
+NEXUS_URL=&quot;${NEXUS_URL:-$NEXUSPROXY}&quot;
+CREDENTIAL=$(xmlstarlet sel -N &quot;x=http://maven.apache.org/SETTINGS/1.0.0&quot; \
+    -t -m &quot;/x:settings/x:servers/x:server[x:id='${SERVER_ID}']&quot; \
+    -v x:username -o &quot;:&quot; -v x:password \
+    &quot;$SETTINGS_FILE&quot;)
+
+machine=$(echo &quot;$NEXUS_URL&quot; | awk -F/ '{print $3}')
+user=$(echo &quot;$CREDENTIAL&quot; | cut -f1 -d:)
+pass=$(echo &quot;$CREDENTIAL&quot; | cut -f2 -d:)
+
+echo &quot;machine $machine login $user password $pass&quot; &gt; ~/.netrc
+</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; lftools-install.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+# DO NOT set -u as virtualenv's activate script has unbound variables
+set -e -o pipefail
+
+virtualenv --quiet &quot;/tmp/v/lftools&quot;
+# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
+source &quot;/tmp/v/lftools/bin/activate&quot;
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade &quot;lftools&lt;1.0.0&quot;
+
+# pipdeptree prints out a lot of information because lftools pulls in many
+# dependencies. Let's only print it if we want to debug.
+# echo &quot;----&gt; Pip Dependency Tree&quot;
+# pip install --quiet --upgrade pipdeptree
+# pipdeptree
+
+#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; logs-deploy.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
+set -x  # Trace commands for this script to make debugging easier.
+
+ARCHIVE_ARTIFACTS=&quot;${ARCHIVE_ARTIFACTS:-}&quot;
+LOGS_SERVER=&quot;${LOGS_SERVER:-None}&quot;
+
+if [ &quot;${LOGS_SERVER}&quot; == 'None' ]
+then
+    set +x # Disable trace since we no longer need it
+
+    echo &quot;WARNING: Logging server not set&quot;
+else
+    NEXUS_URL=&quot;${NEXUS_URL:-$NEXUSPROXY}&quot;
+    NEXUS_PATH=&quot;${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}&quot;
+    BUILD_URL=&quot;${BUILD_URL}&quot;
+
+    lftools deploy archives -p &quot;$ARCHIVE_ARTIFACTS&quot; &quot;$NEXUS_URL&quot; &quot;$NEXUS_PATH&quot; &quot;$WORKSPACE&quot;
+    lftools deploy logs &quot;$NEXUS_URL&quot; &quot;$NEXUS_PATH&quot; &quot;$BUILD_URL&quot;
+
+    set +x  # Disable trace since we no longer need it.
+
+    echo &quot;Build logs: &lt;a href=\&quot;$LOGS_SERVER/$NEXUS_PATH\&quot;&gt;$LOGS_SERVER/$NEXUS_PATH&lt;/a&gt;&quot;
+fi
+</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+
+# Clear log credential files
+rm &quot;$SETTINGS_FILE&quot;
+rm ~/.netrc
+</command>
+        </hudson.tasks.Shell>
+        <hudson.plugins.descriptionsetter.DescriptionSetterBuilder>
+          <regexp>^Build logs: .*</regexp>
+        </hudson.plugins.descriptionsetter.DescriptionSetterBuilder>
+      </buildSteps>
+      <scriptOnlyIfSuccess>false</scriptOnlyIfSuccess>
+      <scriptOnlyIfFailure>false</scriptOnlyIfFailure>
+      <markBuildUnstable>false</markBuildUnstable>
+    </org.jenkinsci.plugins.postbuildscript.PostBuildScript>
+    <hudson.plugins.ws__cleanup.WsCleanup plugin="ws-cleanup">
+      <patterns>
+        <hudson.plugins.ws__cleanup.Pattern>
+          <pattern>**/*.jenkins-trigger</pattern>
+          <type>EXCLUDE</type>
+        </hudson.plugins.ws__cleanup.Pattern>
+      </patterns>
+      <deleteDirs>false</deleteDirs>
+      <cleanupMatrixParent>false</cleanupMatrixParent>
+      <externalDelete/>
+      <cleanWhenSuccess>true</cleanWhenSuccess>
+      <cleanWhenUnstable>true</cleanWhenUnstable>
+      <cleanWhenFailure>true</cleanWhenFailure>
+      <cleanWhenNotBuilt>true</cleanWhenNotBuilt>
+      <cleanWhenAborted>true</cleanWhenAborted>
+      <notFailBuild>true</notFailBuild>
+    </hudson.plugins.ws__cleanup.WsCleanup>
+  </publishers>
+  <buildWrappers>
+    <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+    <hudson.plugins.build__timeout.BuildTimeoutWrapper>
+      <timeoutMinutes>10</timeoutMinutes>
+      <timeoutEnvVar>BUILD_TIMEOUT</timeoutEnvVar>
+      <failBuild>true</failBuild>
+      <writingDescription>false</writingDescription>
+      <timeoutPercentage>0</timeoutPercentage>
+      <timeoutMinutesElasticDefault>3</timeoutMinutesElasticDefault>
+      <timeoutType>absolute</timeoutType>
+    </hudson.plugins.build__timeout.BuildTimeoutWrapper>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper/>
+    <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+      <user>test-credential</user>
+    </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    <jenkins.plugins.openstack.compute.JCloudsOneOffSlave/>
+  </buildWrappers>
+</project>

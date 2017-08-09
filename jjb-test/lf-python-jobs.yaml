@@ -1,0 +1,14 @@
+---
+- project:
+    name: gerrit-python-jobs
+    jobs:
+        - "{project-name}-python-jobs"
+
+    project-name: gerrit-python
+
+- project:
+    name: github-python-jobs
+    jobs:
+        - "{project-name}-github-python-jobs"
+
+    project-name: github-python

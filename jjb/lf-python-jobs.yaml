@@ -40,7 +40,7 @@
     branch: master
     build-timeout: 10
     git-url: '$GIT_URL/$GERRIT_PROJECT'
-    stream: '{stream}'
+    stream: master
     submodule-recursive: true
     tox-dir: ''
     tox-envs: ''
