@@ -13,7 +13,7 @@ echo "---> jjb-verify-job.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-jenkins-jobs -l DEBUG test --recursive -o archives/job-configs jjb/
+jenkins-jobs -l DEBUG test --recursive -o archives/job-configs --exclude jjb-test jjb
 
 # Sort job output into sub-directories. On large Jenkins systems that have
 # many jobs archiving so many files into the same directory makes NGINX return
