@@ -16,6 +16,24 @@
       "revId": "f2cc582854f577a3d39eb8ca02f243735e91930d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4c00b6b3_9fd58a5a",
+        "filename": "shell/lftools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-10T14:05:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb1308a5_780c106d",
+      "revId": "f2cc582854f577a3d39eb8ca02f243735e91930d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
