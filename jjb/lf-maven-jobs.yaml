@@ -253,3 +253,125 @@
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+################
+# Maven Verify #
+################
+
+- lf_maven_verify: &lf_maven_verify
+    name: lf-maven-verify
+
+    # Verify job which runs mvn clean install to test a project build..
+    #
+    # Required parameters:
+    #     build-node:    The node to run build on.
+    #     jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #                             be configured in defaults.yaml)
+    #     mvn-settings: The name of settings file containing credentials for
+    #                   the project.
+    #
+    # Optional parameters:
+    #     mvn-global-settings: The name of the Maven global settings to use for
+    #                          Maven configuration. (default: global-settings)
+    #     mvn-version: Version of maven to use.
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 60
+    git-url: '$GIT_URL/$PROJECT'
+    java-version: openjdk8
+    mvn-global-settings: global-settings
+    mvn-opts: ''
+    mvn-params: ''
+    mvn-version: mvn33
+    stream: master
+    submodule-recursive: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    concurrent: true
+
+    builders:
+      - jacoco-nojava-workaround
+      - provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - maven-target:
+          maven-version: '{mvn-version}'
+          goals: |
+              {mvn-goals}
+              -Dstream={stream}
+              {opendaylight-infra-mvn-opts}
+          java-opts:
+            - '{mvn-opts}'
+          settings: '{mvn-settings}'
+          settings-type: cfp
+          global-settings: 'global-settings'
+          global-settings-type: cfp
+
+    publishers:
+      - findbugs
+      - jacoco-report
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}'
+    id: gerrit-maven-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit-trigger-patch-submitted:
+          server: '{server-name}'
+          project: '{project}'
+          branch: '{branch}'
+          files: '**'
+
+- job-template:
+    name: '{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}'
+    id: github-maven-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_verify
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'Maven Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
