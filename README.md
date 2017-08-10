@@ -271,6 +271,17 @@ In this method a job can define a globstar for example `**/*.log` which then
 causes the archive script to do a globstar search for that pattern and archives
 any files it finds matching.
 
+## Overriding merge and verify triggers
+
+The default trigger conditions for Merge and Verify job types are overrideable
+in the a project configuration by overriding the following variables:
+
+- gerrit_merge_triggers
+- gerrit_verify_triggers
+
+These variables take a list of trigger-on values as defined in JJB docs here:
+<https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit>
+
 ## Appendix
 
 ### ShellCheck
