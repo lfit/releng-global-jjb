@@ -46,6 +46,30 @@
       "revId": "40a8db919896289a6f4516378128a09adbce7a19",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "348aa513_b9414b49",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-10T03:16:59Z",
+      "side": 1,
+      "message": "Ok so I was looking at the old documentation and it mentioned NEXUS_URL but the actual code was using NEXUS_URL_PATH so I guess this is write. The old code was just incorrectly documenting the parameter, that\u0027s why I thought the change was NEXUS_URL \u003e MAVEN_REPO_URL.",
+      "parentUuid": "8d0b6058_c0e03231",
+      "range": {
+        "startLine": 23,
+        "startChar": 2,
+        "endLine": 23,
+        "endChar": 16
+      },
+      "revId": "40a8db919896289a6f4516378128a09adbce7a19",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
