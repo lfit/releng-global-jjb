@@ -4,6 +4,7 @@
     jobs:
       - gerrit-maven-clm
       - gerrit-maven-release
+      - gerrit-maven-verify
 
     project-name: gerrit-maven
     staging-profile-id: uuddlrlrba
@@ -14,6 +15,7 @@
     jobs:
       - github-maven-clm
       - github-maven-release
+      - github-maven-verify
 
     project-name: github-maven
     staging-profile-id: uuddlrlrba
