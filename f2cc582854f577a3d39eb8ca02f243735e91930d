@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eb1308a5_780c106d",
+        "filename": "shell/lftools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-10T13:37:06Z",
+      "side": 1,
+      "message": "Given that LFTOOLS_VERSION takes 3 different cases, you should probably detail that if LFTOOLS_VERSION\u003drelease that LFTOOLS_REFSPEC is ignored and that the latest released version in PyPi will be installed.",
+      "revId": "f2cc582854f577a3d39eb8ca02f243735e91930d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
