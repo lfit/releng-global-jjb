@@ -33,7 +33,7 @@ For example: ofextensions/circuitsw
 sometimes be used as a name representing a project's release code
 name.
 </description>
-          <defaultValue>{stream}</defaultValue>
+          <defaultValue>master</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>GERRIT_PROJECT</name>
