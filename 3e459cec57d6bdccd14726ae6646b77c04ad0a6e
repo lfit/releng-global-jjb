@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c36934c3_12fbebed",
+        "filename": "shell/lftools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-10T14:53:49Z",
+      "side": 1,
+      "message": "Just thought about this after seeing the update for patch 2. Presently the only way to set these is to modify the script. These two variables should probably ingest environment variables and set them if the ENV vars don\u0027t exist.\n\nThat way the script doesn\u0027t have to be modified to be able to do testing, just some job parameters can be set, therefore making it possible to have jobs that can use different versions of lftools.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 22
+      },
+      "revId": "3e459cec57d6bdccd14726ae6646b77c04ad0a6e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
