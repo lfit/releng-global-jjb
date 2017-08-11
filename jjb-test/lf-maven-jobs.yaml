@@ -2,6 +2,7 @@
 - project:
     name: gerrit-maven-jobs
     jobs:
+      - gerrit-maven-clm
       - gerrit-maven-release
 
     project-name: gerrit-maven
@@ -11,6 +12,7 @@
 - project:
     name: github-maven-jobs
     jobs:
+      - github-maven-clm
       - github-maven-release
 
     project-name: github-maven
