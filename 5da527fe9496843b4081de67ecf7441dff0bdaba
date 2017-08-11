@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "97d1e69b_6ea14dab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-11T04:46:59Z",
+      "side": 1,
+      "message": "Please provide more details on any modifications made to the template while porting from the ODL project template.",
+      "revId": "5da527fe9496843b4081de67ecf7441dff0bdaba",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07bc62bd_95167f1e",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 4
