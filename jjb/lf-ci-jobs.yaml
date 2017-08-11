@@ -49,9 +49,8 @@
       - github-packer-merge
       - github-packer-verify
 
-
 ####################
-# Anchors & Macros #
+# COMMON FUNCTIONS #
 ####################
 
 - builder:
@@ -83,25 +82,6 @@
       - compare-type: ANT
         pattern: 'packer/provision/lib/**'
 
-- lf_jjb_merge_builders: &lf_jjb_merge_builders
-    name: lf-jjb-merge-builders
-    builders:
-      - lf-infra-jjbini
-      - shell: !include-raw-escape:
-          - ../shell/jjb-install.sh
-          - ../shell/jjb-merge-job.sh
-
-- lf_jjb_verify_builders: &lf_jjb_verify_builders
-    name: lf-jjb-verfy-builders
-    builders:
-      - lf-infra-jjbini
-      - shell: !include-raw-escape:
-          - ../shell/git-validate-jira-urls.sh
-          - ../shell/jjb-install.sh
-          - ../shell/jjb-verify-job.sh
-          - ../shell/jjb-check-unicode.sh
-      - lf-infra-gpg-verify-git-signature
-
 - lf_packer: &lf_packer_common
     name: lf-packer-common
     # Adds wrappers and parameters sections common to packer jobs.
@@ -126,39 +106,6 @@
       - lf-infra-packer-parameters:
           packer-version: '{packer-version}'
 
-- lf_packer_merge_builders: &lf_packer_merge_builders
-    name: lf-packer-merge-builders
-    # Adds builders section common to merge packer jobs.
-    # {packer-cloud-settings} is passed from the project, defines the managed
-    #                   file-id name created in Jenkins
-    #                   (default: packer-cloud-env)
-    # {packer-version}: is global defined in job group level, the version number
-    #                   can be updated to install the latest version of packer.
-    # {platforms}:      defines the packer platform file, passed from the project.
-    # {template}:       defines the packer template file, passed from the project.
-    builders:
-      - lf-infra-packer-validate:
-          packer-cloud-settings: '{packer-cloud-settings}'
-          packer-version: '{packer-version}'
-      - lf-infra-packer-build:
-          packer-cloud-settings: '{packer-cloud-settings}'
-          packer-version: '{packer-version}'
-          platform: '{platforms}'
-          template: '{templates}'
-
-- lf_packer_verify_builders: &lf_packer_verify_builders
-    # Adds builders section common to verify packer jobs.
-    # {packer-cloud-settings} is passed from the project, defines the managed
-    #                   file-id name created in Jenkins
-    #                   (default: packer-cloud-env)
-    # {packer-version}: is global defined in job group level, the version number
-    #                   can be updated to install the latest version of packer.
-    name: lf-packer-verify-builders
-    builders:
-      - lf-infra-packer-validate:
-          packer-cloud-settings: '{packer-cloud-settings}'
-          packer-version: '{packer-version}'
-
 - parameter:
     name: lf-infra-jjb-parameters
     parameters:
@@ -175,15 +122,8 @@
           default: '{packer-version}'
           description: Packer version to download and install.
 
-
-#################
-# Job Templates #
-#################
-
-# JJB verify and merge jobs are the same except for their scm, trigger, and
-# builders definition. This anchor is the common template
-- lf_jjb_verify_merge: &lf_jjb_verify_merge
-    name: lf-jjb-verify-merge
+- lf_jjb_common: &lf_jjb_common
+    name: lf-jjb-common
     project-type: freestyle
 
     node: '{build-node}'
@@ -221,10 +161,22 @@
     publishers:
       - lf-infra-publish
 
+#############
+# JJB Merge #
+#############
+
+- lf_jjb_merge_builders: &lf_jjb_merge_builders
+    name: lf-jjb-merge-builders
+    builders:
+      - lf-infra-jjbini
+      - shell: !include-raw-escape:
+          - ../shell/jjb-install.sh
+          - ../shell/jjb-merge-job.sh
+
 - job-template:
     name: '{project-name}-jjb-merge'
     id: gerrit-jjb-merge
-    <<: *lf_jjb_verify_merge
+    <<: *lf_jjb_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_merge_builders
 
@@ -265,10 +217,63 @@
               <<: *lf_jjb_file_paths
 
 - job-template:
+    name: '{project-name}-jjb-merge'
+    id: github-jjb-merge
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jjb_merge_builders
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github
+      - pollscm:
+          cron: ''
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: true
+          status-context: 'JJB Merge'
+          permit-all: false
+          github-hooks: true
+          github-org: '{github-org}'
+          github_pr_whitelist: '{obj:github_pr_whitelist}'
+          github_pr_admin_list: '{obj:github_pr_admin_list}'
+
+##############
+# JJB Verify #
+##############
+
+- lf_jjb_verify_builders: &lf_jjb_verify_builders
+    name: lf-jjb-verfy-builders
+    builders:
+      - lf-infra-jjbini
+      - shell: !include-raw-escape:
+          - ../shell/git-validate-jira-urls.sh
+          - ../shell/jjb-install.sh
+          - ../shell/jjb-verify-job.sh
+          - ../shell/jjb-check-unicode.sh
+      - lf-infra-gpg-verify-git-signature
+
+- job-template:
     name: '{project-name}-jjb-verify'
     id: gerrit-jjb-verify
     concurrent: true
-    <<: *lf_jjb_verify_merge
+    <<: *lf_jjb_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_verify_builders
 
@@ -313,48 +318,10 @@
               <<: *lf_jjb_file_paths
 
 - job-template:
-    name: '{project-name}-jjb-merge'
-    id: github-jjb-merge
-    <<: *lf_jjb_verify_merge
-    # yamllint disable-line rule:key-duplicates
-    <<: *lf_jjb_merge_builders
-
-    #####################
-    # Job Configuration #
-    #####################
-
-    properties:
-      - github:
-          url: '{git-url}/{github-org}/{project}'
-
-    scm:
-      - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: ''
-          branch: '{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-
-    triggers:
-      - github
-      - pollscm:
-          cron: ''
-      - lf-infra-github-pr-trigger:
-          trigger-phrase: '^remerge$'
-          only-trigger-phrase: true
-          status-context: 'JJB Merge'
-          permit-all: false
-          github-hooks: true
-          github-org: '{github-org}'
-          github_pr_whitelist: '{obj:github_pr_whitelist}'
-          github_pr_admin_list: '{obj:github_pr_admin_list}'
-
-- job-template:
     name: '{project-name}-jjb-verify'
     id: github-jjb-verify
     concurrent: true
-    <<: *lf_jjb_verify_merge
+    <<: *lf_jjb_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_verify_builders
 
@@ -388,11 +355,37 @@
           github_pr_admin_list:
             - ''
 
+################
+# Packer Merge #
+################
+
+- lf_packer_merge_builders: &lf_packer_merge_builders
+    name: lf-packer-merge-builders
+
+    # Adds builders section common to merge packer jobs.
+    # {packer-cloud-settings} is passed from the project, defines the managed
+    #                   file-id name created in Jenkins
+    #                   (default: packer-cloud-env)
+    # {packer-version}: is global defined in job group level, the version number
+    #                   can be updated to install the latest version of packer.
+    # {platforms}:      defines the packer platform file, passed from the project.
+    # {template}:       defines the packer template file, passed from the project.
+
+    builders:
+      - lf-infra-packer-validate:
+          packer-cloud-settings: '{packer-cloud-settings}'
+          packer-version: '{packer-version}'
+      - lf-infra-packer-build:
+          packer-cloud-settings: '{packer-cloud-settings}'
+          packer-version: '{packer-version}'
+          platform: '{platforms}'
+          template: '{templates}'
+
 - job-template:
     name: '{project-name}-packer-merge-{platforms}-{templates}'
     id: gerrit-packer-merge
     concurrent: true
-    <<: *lf_jjb_verify_merge
+    <<: *lf_jjb_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
@@ -436,10 +429,71 @@
               <<: *lf_packer_file_paths
 
 - job-template:
+    name: '{project-name}-packer-merge-{platforms}-{templates}'
+    id: github-packer-merge
+    concurrent: true
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_packer_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_packer_merge_builders
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - timed: '00 10 1 * *'
+      - github
+      - pollscm:
+          cron: ''
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: true
+          status-context: 'Packer {platforms}-${templates} Merge'
+          permit-all: false
+          github-hooks: true
+          github-org: '{github-org}'
+          github_pr_whitelist: '{obj:github_pr_whitelist}'
+          github_pr_admin_list: '{obj:github_pr_admin_list}'
+
+#################
+# Packer Verify #
+#################
+
+- lf_packer_verify_builders: &lf_packer_verify_builders
+    name: lf-packer-verify-builders
+
+    # Adds builders section common to verify packer jobs.
+    # {packer-cloud-settings} is passed from the project, defines the managed
+    #                   file-id name created in Jenkins
+    #                   (default: packer-cloud-env)
+    # {packer-version}: is global defined in job group level, the version number
+    #                   can be updated to install the latest version of packer.
+
+    builders:
+      - lf-infra-packer-validate:
+          packer-cloud-settings: '{packer-cloud-settings}'
+          packer-version: '{packer-version}'
+
+- job-template:
     name: '{project-name}-packer-verify'
     id: gerrit-packer-verify
     concurrent: true
-    <<: *lf_jjb_verify_merge
+    <<: *lf_jjb_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
@@ -486,54 +540,11 @@
                   branch-pattern: '**/{branch}'
               <<: *lf_packer_file_paths
 
-
-- job-template:
-    name: '{project-name}-packer-merge-{platforms}-{templates}'
-    id: github-packer-merge
-    concurrent: true
-    <<: *lf_jjb_verify_merge
-    # yamllint disable-line rule:key-duplicates
-    <<: *lf_packer_common
-    # yamllint disable-line rule:key-duplicates
-    <<: *lf_packer_merge_builders
-
-    #####################
-    # Job Configuration #
-    #####################
-
-    properties:
-      - github:
-          url: '{git-url}/{github-org}/{project}'
-
-    scm:
-      - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: ''
-          branch: '{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-
-    triggers:
-      - timed: '00 10 1 * *'
-      - github
-      - pollscm:
-          cron: ''
-      - lf-infra-github-pr-trigger:
-          trigger-phrase: '^remerge$'
-          only-trigger-phrase: true
-          status-context: 'Packer {platforms}-${templates} Merge'
-          permit-all: false
-          github-hooks: true
-          github-org: '{github-org}'
-          github_pr_whitelist: '{obj:github_pr_whitelist}'
-          github_pr_admin_list: '{obj:github_pr_admin_list}'
-
 - job-template:
     name: '{project-name}-packer-verify'
     id: github-packer-verify
     concurrent: true
-    <<: *lf_jjb_verify_merge
+    <<: *lf_jjb_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
