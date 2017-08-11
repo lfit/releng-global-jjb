@@ -114,7 +114,6 @@
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
           - ../shell/common-variables.sh
           - ../shell/sonatype-clm.sh
       - lf-provide-maven-settings-cleanup
