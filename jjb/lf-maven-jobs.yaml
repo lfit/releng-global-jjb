@@ -22,8 +22,47 @@
       - github-maven-release
 
 ####################
-# Anchors & Macros #
+# COMMON FUNCTIONS #
 ####################
+
+- lf_maven_common: &lf_maven_common
+    name: lf-maven-common
+
+    project-type: freestyle
+    node: '{build-node}'
+    jdk: '{java-version}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+      - lf-infra-maven-parameters:
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
+          # Staging repos do not make sense for CLM jobs so set it blank.
+          staging-profile-id: '{staging-profile-id}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      # TODO: Make email notification work.
+      # - lf-infra-email-notify:
+      #     email-recipients: '{email-recipients}'
+      #     email-prefix: '[releng]'
+      - lf-infra-publish
+
+#############
+# Maven CLM #
+#############
 
 - lf_maven_clm: &lf_maven_clm
     name: lf-maven-clm
@@ -41,15 +80,12 @@
     #     mvn-global-settings: The name of the Maven global settings to use for
     #                          Maven configuration. (default: global-settings)
 
-    project-type: freestyle
-    node: '{build-node}'
-    jdk: '{java-version}'
-
     ######################
     # Default parameters #
     ######################
 
     branch: master
+    build-days-to-keep: 30  # 30 days for troubleshooting purposes
     build-timeout: 15
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
@@ -60,31 +96,12 @@
     stream: master
     submodule-recursive: true
 
+    # Staging repos do not make sense for CLM jobs so set it blank.
+    staging-profile-id: ''
+
     #####################
     # Job Configuration #
     #####################
-
-    properties:
-      - lf-infra-properties:
-          # Keep around for 30 days for troubleshooting purposes.
-          build-days-to-keep: 30
-
-    parameters:
-      - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
-      - lf-infra-maven-parameters:
-          mvn-opts: '{mvn-opts}'
-          mvn-params: '{mvn-params}'
-          mvn-version: '{mvn-version}'
-          # Staging repos do not make sense for CLM jobs so set it blank.
-          staging-profile-id: ''
-
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       # Build weekly on Saturdays
@@ -105,8 +122,45 @@
       - sonatype-clm:
           application-name: '{project-name}'
 
-    publishers:
-      - lf-infra-publish
+- job-template:
+    name: '{project-name}-maven-clm-{stream}'
+    id: gerrit-maven-clm
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_clm
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+
+- job-template:
+    name: '{project-name}-maven-clm-{stream}'
+    id: github-maven-clm
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_clm
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+#################
+# Maven Release #
+#################
 
 - lf_maven_release: &lf_maven_release
     name: lf-maven-release
@@ -128,15 +182,12 @@
     #     mvn-global-settings: The name of the Maven global settings to use for
     #                          Maven configuration. (default: global-settings)
 
-    project-type: freestyle
-    node: '{build-node}'
-    jdk: '{java-version}'
-
     ######################
     # Default parameters #
     ######################
 
     branch: master
+    build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 30
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
@@ -150,27 +201,6 @@
     #####################
     # Job Configuration #
     #####################
-
-    properties:
-      - lf-infra-properties:
-          # Keep around for 30 days in case a release takes long to get approved.
-          build-days-to-keep: 30
-
-    parameters:
-      - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
-      - lf-infra-maven-parameters:
-          mvn-opts: '{mvn-opts}'
-          mvn-params: '{mvn-params}'
-          mvn-version: '{mvn-version}'
-          staging-profile-id: '{staging-profile-id}'
-
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     builders:
       - lf-jacoco-nojava-workaround
@@ -189,53 +219,11 @@
           - ../shell/maven-stage.sh
       - lf-provide-maven-settings-cleanup
 
-    publishers:
-      # TODO: Make email notification work.
-      # - lf-infra-email-notify:
-      #     email-recipients: '{email-recipients}'
-      #     email-prefix: '[releng]'
-      - lf-infra-publish
-
-
-#################
-# Job Templates #
-#################
-
-- job-template:
-    name: '{project-name}-maven-clm-{stream}'
-    id: gerrit-maven-clm
-    <<: *lf_maven_clm
-
-    scm:
-      - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          choosing-strategy: default
-
-- job-template:
-    name: '{project-name}-maven-clm-{stream}'
-    id: github-maven-clm
-    <<: *lf_maven_clm
-
-    properties:
-      - github:
-          url: '{git-url}/{github-org}/{project}'
-
-    scm:
-      - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-
 - job-template:
     name: '{project-name}-maven-release-{stream}'
     id: gerrit-maven-release
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_release
 
     scm:
@@ -250,6 +238,8 @@
 - job-template:
     name: '{project-name}-maven-release-{stream}'
     id: github-maven-release
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_release
 
     properties:

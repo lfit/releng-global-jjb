@@ -17,9 +17,9 @@
     jobs:
       - github-tox-verify
 
-####################
-# Anchors & Macros #
-####################
+##############
+# Tox Verify #
+##############
 
 - lf_tox_verify: &lf_tox_verify
     name: lf-tox-verify
@@ -79,10 +79,6 @@
 
     publishers:
       - lf-infra-publish
-
-#################
-# Job Templates #
-#################
 
 - job-template:
     # Python projects typically use tox to run testing.
