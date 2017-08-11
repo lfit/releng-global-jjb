@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07bc62bd_95167f1e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-11T04:45:18Z",
+      "side": 1,
+      "message": "Not happy with the level of documentation here. This template has significantly more variables than what\u0027s actually documented here. We should be documenting everything in the default parameters list.",
+      "revId": "5da527fe9496843b4081de67ecf7441dff0bdaba",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
