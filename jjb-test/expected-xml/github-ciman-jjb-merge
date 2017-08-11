@@ -60,6 +60,15 @@ job is triggered by Gerrit.
           <defaultValue/>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
+          <name>LFTOOLS_VERSION</name>
+          <description>Version of lftools to install. Can be a specific version like
+'0.6.0' or a PEP-440 definition.
+https://www.python.org/dev/peps/pep-0440/
+For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
+</description>
+          <defaultValue>&lt;1.0.0</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
           <name>JJB_VERSION</name>
           <description>Jenkins Job Builder version to download and install.</description>
           <defaultValue>1.6.2</defaultValue>
@@ -300,6 +309,18 @@ echo &quot;machine $machine login $user password $pass&quot; &gt; ~/.netrc
 ##############################################################################
 echo &quot;---&gt; lftools-install.sh&quot;
 
+# Script to install lftools via a version passed in via lf-infra-parameters
+#
+# Required parameters:
+#
+#     LFTOOLS_VERSION: Passed in via lf-infra-parameters configuration. Can be
+#                      set to a strict version number like '1.2.3' or using
+#                      PEP-440 definitions.
+#
+#                      Examples:
+#                          &lt;1.0.0
+#                          &gt;=1.0.0,&lt;2.0.0
+#
 # By default a released version of lftools should always be used.
 # The purpose of the 2 variables below is so that lftools devs can test
 # unreleased versions of lftools. There are 2 methods to install a dev version
@@ -346,9 +367,15 @@ case $LFTOOLS_MODE in
         ;;
 
     release)
-        pip install --quiet --upgrade &quot;lftools&lt;1.0.0&quot;
+        if [[ $LFTOOLS_VERSION =~ ^[0-9] ]]; then
+            LFTOOLS_VERSION=&quot;==$LFTOOLS_VERSION&quot;
+        fi
+
+        pip install --quiet --upgrade &quot;lftools${LFTOOLS_VERSION}&quot;
         ;;
 esac
+
+lftools --version
 
 # pipdeptree prints out a lot of information because lftools pulls in many
 # dependencies. Let's only print it if we want to debug.
