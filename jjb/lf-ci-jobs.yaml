@@ -76,19 +76,29 @@
 
 - lf_packer: &lf_packer_common
     name: lf-packer-common
-    # Adds wrappers and parameters sections common to packer jobs.
+    # Provide configuration common in packer jobs.
 
     ######################
     # Default parameters #
     ######################
 
+    branch: master
     build-timeout: 45
+    stream: master
+    submodule-recursive: true
     packer-cloud-settings: packer-cloud-env
 
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 7
 
     parameters:
       - lf-infra-parameters:
@@ -97,6 +107,14 @@
           branch: '{branch}'
       - lf-infra-packer-parameters:
           packer-version: '{packer-version}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      - lf-infra-publish
 
 - parameter:
     name: lf-infra-jjb-parameters
@@ -404,17 +422,54 @@
 # Packer Merge #
 ################
 
-- lf_packer_merge_builders: &lf_packer_merge_builders
-    name: lf-packer-merge-builders
+- lf_packer_merge: &lf_packer_merge
+    name: lf-packer-merge
 
-    # Adds builders section common to merge packer jobs.
-    # {packer-cloud-settings} is passed from the project, defines the managed
-    #                   file-id name created in Jenkins
-    #                   (default: packer-cloud-env)
-    # {packer-version}: is global defined in job group level, the version number
-    #                   can be updated to install the latest version of packer.
-    # {platforms}:      defines the packer platform file, passed from the project.
-    # {template}:       defines the packer template file, passed from the project.
+    # Packer Merge job runs `packer build` to build system images in the cloud.
+    #
+    # Required parameters:
+    #
+    #     :build-node: The node to run build on.
+    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #         be configured in defaults.yaml)
+    #     :mvn-settings: The name of settings file containing credentials for
+    #         the project.
+    #     :platforms: Platform or distribution to build. Typically json file
+    #         found in the packer/vars directory. (Example: centos)
+    #     :template: System template to build. Typically shell script found in
+    #         the packer/provision directory. (Example: java-builder)
+    #
+    # Optional parameters:
+    #
+    #     :branch: Git branch to fetch for the build. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :packer-cloud-settings: Name of settings file containing credentials
+    #         for the cloud that packer will build on. (default: packer-cloud-env)
+    #     :packer-version: Version of packer to install / use in build. (default: 1.0.2)
+    #     :stream: Keyword that can be used to represent a release code-name.
+    #         Often the same as the branch. (default: master)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #
+    #     :gerrit_verify_triggers: Override Gerrit Triggers.
+    #     :gerrit_trigger_file_paths: Override file paths which can be used to
+    #         filter which file modifications will trigger a build.
+    #         (default defined by lf_jjb_common)
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    #####################
+    # Job Configuration #
+    #####################
 
     builders:
       - lf-infra-packer-validate:
@@ -429,27 +484,11 @@
 - job-template:
     name: '{project-name}-packer-merge-{platforms}-{templates}'
     id: gerrit-packer-merge
-    concurrent: true
-    <<: *lf_jjb_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_packer_merge_builders
-
-    ######################
-    # Default parameters #
-    ######################
+    <<: *lf_packer_merge
 
     git-url: '$GIT_URL/$GERRIT_PROJECT'
-
-    gerrit_merge_triggers:
-      - change-merged-event
-      - comment-added-contains-event:
-          comment-contains-value: remerge$
-
-    #####################
-    # Job Configuration #
-    #####################
 
     scm:
       - lf-infra-gerrit-scm:
@@ -476,16 +515,9 @@
 - job-template:
     name: '{project-name}-packer-merge-{platforms}-{templates}'
     id: github-packer-merge
-    concurrent: true
-    <<: *lf_jjb_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_packer_merge_builders
-
-    #####################
-    # Job Configuration #
-    #####################
+    <<: *lf_packer_merge
 
     properties:
       - github:
@@ -519,37 +551,43 @@
 # Packer Verify #
 #################
 
-- lf_packer_verify_builders: &lf_packer_verify_builders
-    name: lf-packer-verify-builders
+- lf_packer_verify: &lf_packer_verify
+    name: lf-packer-verify
 
-    # Adds builders section common to verify packer jobs.
-    # {packer-cloud-settings} is passed from the project, defines the managed
-    #                   file-id name created in Jenkins
-    #                   (default: packer-cloud-env)
-    # {packer-version}: is global defined in job group level, the version number
-    #                   can be updated to install the latest version of packer.
-
-    builders:
-      - lf-infra-packer-validate:
-          packer-cloud-settings: '{packer-cloud-settings}'
-          packer-version: '{packer-version}'
-
-- job-template:
-    name: '{project-name}-packer-verify'
-    id: gerrit-packer-verify
-    concurrent: true
-    <<: *lf_jjb_common
-    # yamllint disable-line rule:key-duplicates
-    <<: *lf_packer_common
-    # yamllint disable-line rule:key-duplicates
-    <<: *lf_packer_verify_builders
+    # Packer Verify job runs `packer validate` to verify packer configuration.
+    #
+    # Required parameters:
+    #
+    #     :build-node: The node to run build on.
+    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #         be configured in defaults.yaml)
+    #     :mvn-settings: The name of settings file containing credentials for
+    #         the project.
+    #
+    # Optional parameters:
+    #
+    #     :branch: Git branch to fetch for the build. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :packer-cloud-settings: Name of settings file containing credentials
+    #         for the cloud that packer will build on. (default: packer-cloud-env)
+    #     :packer-version: Version of packer to install / use in build. (default: 1.0.2)
+    #     :stream: Keyword that can be used to represent a release code-name.
+    #         Often the same as the branch. (default: master)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #
+    #     :gerrit_verify_triggers: Override Gerrit Triggers.
+    #     :gerrit_trigger_file_paths: Override file paths which can be used to
+    #         filter which file modifications will trigger a build.
+    #         (default defined by lf_jjb_common)
 
     ######################
     # Default parameters #
     ######################
 
     build-timeout: 10
-    git-url: '$GIT_URL/$GERRIT_PROJECT'
 
     gerrit_verify_triggers:
       - patchset-created-event:
@@ -563,6 +601,22 @@
     #####################
     # Job Configuration #
     #####################
+
+    concurrent: true
+
+    builders:
+      - lf-infra-packer-validate:
+          packer-cloud-settings: '{packer-cloud-settings}'
+          packer-version: '{packer-version}'
+
+- job-template:
+    name: '{project-name}-packer-verify'
+    id: gerrit-packer-verify
+    <<: *lf_packer_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_packer_verify
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
 
     scm:
       - lf-infra-gerrit-scm:
@@ -588,22 +642,9 @@
 - job-template:
     name: '{project-name}-packer-verify'
     id: github-packer-verify
-    concurrent: true
-    <<: *lf_jjb_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_packer_verify_builders
-
-    ######################
-    # Default parameters #
-    ######################
-
-    build-timeout: 10
-
-    #####################
-    # Job Configuration #
-    #####################
+    <<: *lf_packer_verify
 
     properties:
       - github:
