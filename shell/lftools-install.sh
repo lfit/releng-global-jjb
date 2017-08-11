@@ -10,6 +10,18 @@
 ##############################################################################
 echo "---> lftools-install.sh"
 
+# Script to install lftools via a version passed in via lf-infra-parameters
+#
+# Required parameters:
+#
+#     LFTOOLS_VERSION: Passed in via lf-infra-parameters configuration. Can be
+#                      set to a strict version number like '1.2.3' or using
+#                      PEP-440 definitions.
+#
+#                      Examples:
+#                          <1.0.0
+#                          >=1.0.0,<2.0.0
+#
 # By default a released version of lftools should always be used.
 # The purpose of the 2 variables below is so that lftools devs can test
 # unreleased versions of lftools. There are 2 methods to install a dev version
@@ -56,9 +68,15 @@ case $LFTOOLS_MODE in
         ;;
 
     release)
-        pip install --quiet --upgrade "lftools<1.0.0"
+        if [[ $LFTOOLS_VERSION =~ ^[0-9] ]]; then
+            LFTOOLS_VERSION="==$LFTOOLS_VERSION"
+        fi
+
+        pip install --quiet --upgrade "lftools${LFTOOLS_VERSION}"
         ;;
 esac
+
+lftools --version
 
 # pipdeptree prints out a lot of information because lftools pulls in many
 # dependencies. Let's only print it if we want to debug.
