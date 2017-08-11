@@ -19,6 +19,8 @@
     github_pr_admin_list:
       - tykeal
 
+    lftools-version: '<1.0.0'
+
     # Common test config
     project: releng/ciman
     stream: latest
