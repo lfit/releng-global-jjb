@@ -58,6 +58,7 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
+          lftools-version: '{lftools-version}'
       - lf-infra-tox-parameters:
           tox-dir: '{tox-dir}'
           tox-envs: '{tox-envs}'

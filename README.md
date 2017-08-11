@@ -105,6 +105,10 @@ trigger any job that uses the `lf-infra-github-pr-trigger` macro.
 privileges on any job using the `lf-infra-github-pr-trigger`
 macro.
 
+**lftools-version**: Version of lftools to install. Can be a specific version
+like '0.6.1' or a PEP-440 definition. https://www.python.org/dev/peps/pep-0440/
+For example '<1.0.0' or '>=1.0.0,<2.0.0'.
+
 defaults.yaml:
 
 ```
@@ -121,6 +125,7 @@ defaults.yaml:
       - zxiiro
     github_pr_admin_list:
       - tykeal
+    lftools-version: '<1.0.0'
 ```
 
 ## Config File Management

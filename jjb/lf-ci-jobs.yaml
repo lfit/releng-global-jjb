@@ -103,6 +103,7 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
+          lftools-version: '{lftools-version}'
       - lf-infra-packer-parameters:
           packer-version: '{packer-version}'
 
@@ -150,6 +151,7 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
+          lftools-version: '{lftools-version}'
       - lf-infra-jjb-parameters:
           jjb-version: '{jjb-version}'
 
