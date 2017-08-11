@@ -266,7 +266,7 @@
               job is triggered by Gerrit.
       - string:
           name: GERRIT_REFSPEC
-          default: ''
+          default: 'refs/heads/{branch}'
           description: |
               Parameter to identify a refspec when pulling from Gerrit.
 
