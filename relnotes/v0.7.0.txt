@@ -1,0 +1,72 @@
+global-jjb v0.7.0 Release Notes
+===============================
+
+Thanks to Anil, and Thanh for contributing to this release.
+
+Upgrade considerations
+----------------------
+
+1. lftools-version MUST be configured in defaults.yaml
+   Example: https://git.opendaylight.org/gerrit/62005
+2. lf-infra-deploy-maven-file marco has backwards incompatible changes
+   new required parameter: maven-repo-url
+   parameter renamed: files-dir -> upload-files-dir
+
+
+Notable changes since v0.6.0
+----------------------------
+
+abd2795 Thanh Ha        Verify JJB when global-jjb is updated
+Project's own jjb tests will now also run validation when a patch to upgrade
+global-jjb is submitted.
+
+ec0a666 Thanh Ha        Add default refspec reference
+Bug made refspec not configurable. It is now configurable and defaults to the
+branch that the job is configured for.
+
+6c848c0 Thanh Ha        Migrate Maven Verify job template
+The Maven Verify job template is now available in global-jjb. We used the
+OpenDaylight project's version as a basis for this new template.
+
+05a16f0 Thanh Ha        Make Merge and Verify job triggers overrideable
+Merge and Verify job triggers are now overrideable in project definitions in
+cases where a project might have a topic branch for which they want to have
+a different triggering mechanism.
+
+687da40 Thanh Ha        Make lftools version configurable
+global-jjb now requires that lftools-version be configured in the project's
+defaults.yaml.
+
+cee8201 Thanh Ha        Refactor tests into jjb-tests directory
+Global-JJB now has tests that check the expected xml to ensure that
+configuration changes which might affect end users are caught and noted.
+
+40a8db9 Anil Belur      Generalize deploy maven-file builder
+Updates the maven-file command to support file:// paths in addition to http://
+paths.
+
+
+Full Change Log
+---------------
+
+244a6ee Thanh Ha        Add .jjb-test to tox jjb command
+edfa29a Thanh Ha        Revert "Exclude the jjb-test directory"
+0ea3365 Thanh Ha        Move tests to .jjb-test
+add46a7 Thanh Ha        Add all release notes up to date
+dec2659 Thanh Ha        Update expected-xml due to missing changes
+abd2795 Thanh Ha        Verify JJB when global-jjb is updated
+ec0a666 Thanh Ha        Add default refspec reference
+a04838d Thanh Ha        Refactor packer ci templates
+0f371e4 Thanh Ha        Refactor jjb ci templates
+6c848c0 Thanh Ha        Migrate Maven Verify job template
+687da40 Thanh Ha        Make lftools version configurable
+4b33733 Thanh Ha        Add method to test dev versions of lftools
+9d7f894 Thanh Ha        Add Maven CLM tests
+fbab52b Thanh Ha        Remove lftools install step from clm job
+bcf758c Thanh Ha        Reorganize template definition structure
+05a16f0 Thanh Ha        Make Merge and Verify job triggers overrideable
+aac7345 Thanh Ha        Fix python-tox incorrect default stream setting
+cee8201 Thanh Ha        Refactor tests into jjb-tests directory
+854da1e Thanh Ha        Exclude the jjb-test directory
+40a8db9 Anil Belur      Generalize deploy maven-file builder
+9486496 Thanh Ha        Add license header test for shell scripts
