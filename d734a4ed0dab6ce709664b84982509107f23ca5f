@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c022d7c2_8aca2015",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-14T20:18:22Z",
+      "side": 1,
+      "message": "We don\u0027t need the double {{ escape if we\u0027re using include-raw-escape. This should only be:\n\n ${GERRIT_BRANCH/\\//-}",
+      "range": {
+        "startLine": 16,
+        "startChar": 24,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "d734a4ed0dab6ce709664b84982509107f23ca5f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c756cd3_16bfb7bc",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-14T20:18:22Z",
+      "side": 1,
+      "message": "This needs to be an $RTD_PROJECT or whatever variable we set this to. We cannot use JJB style variables with include-raw-escape.",
+      "range": {
+        "startLine": 20,
+        "startChar": 85,
+        "endLine": 20,
+        "endChar": 95
+      },
+      "revId": "d734a4ed0dab6ce709664b84982509107f23ca5f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
