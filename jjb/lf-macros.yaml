@@ -377,6 +377,7 @@
           permit-all: '{permit-all}'
           github-hooks: '{github-hooks}'
           auto-close-on-fail: false
+          cancel-builds-on-update: '{cancel-builds-on-update}'
           org-list:
             - '{github-org}'
           white-list: '{obj:github_pr_whitelist}'
