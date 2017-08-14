@@ -137,6 +137,10 @@ job is triggered by Gerrit.
               <compareType>ANT</compareType>
               <pattern>**/*.yaml</pattern>
             </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
+            <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
+              <compareType>ANT</compareType>
+              <pattern>**/global-jjb</pattern>
+            </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
           </filePaths>
           <disableStrictForbiddenFileVerification>false</disableStrictForbiddenFileVerification>
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
