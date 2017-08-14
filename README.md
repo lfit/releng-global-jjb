@@ -109,6 +109,9 @@ macro.
 like '0.6.1' or a PEP-440 definition. <https://www.python.org/dev/peps/pep-0440/>
 For example `<1.0.0` or `>=1.0.0,<2.0.0`.
 
+**github-cancel-builds-on-update**: Set to `true` if you wish to cancel existing
+builds on an update.
+
 defaults.yaml:
 
 ```
