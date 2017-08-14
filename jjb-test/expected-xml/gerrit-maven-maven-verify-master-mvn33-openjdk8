@@ -63,7 +63,16 @@ job is triggered by Gerrit.
 Note that Gerrit will override this parameter automatically if a
 job is triggered by Gerrit.
 </description>
-          <defaultValue/>
+          <defaultValue>refs/heads/master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>LFTOOLS_VERSION</name>
+          <description>Version of lftools to install. Can be a specific version like
+'0.6.0' or a PEP-440 definition.
+https://www.python.org/dev/peps/pep-0440/
+For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
+</description>
+          <defaultValue>&lt;1.0.0</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>MAVEN_OPTS</name>
@@ -238,6 +247,39 @@ job is triggered by Gerrit.
 ##############################################################################
 echo &quot;---&gt; lftools-install.sh&quot;
 
+# Script to install lftools via a version passed in via lf-infra-parameters
+#
+# Required parameters:
+#
+#     LFTOOLS_VERSION: Passed in via lf-infra-parameters configuration. Can be
+#                      set to a strict version number like '1.2.3' or using
+#                      PEP-440 definitions.
+#
+#                      Examples:
+#                          &lt;1.0.0
+#                          &gt;=1.0.0,&lt;2.0.0
+#
+# By default a released version of lftools should always be used.
+# The purpose of the 2 variables below is so that lftools devs can test
+# unreleased versions of lftools. There are 2 methods to install a dev version
+# of lftools:
+#
+#     1) gerrit patch: Used to test a patch that has not yet been merged.
+#                      To do this set something like this:
+#                          LFTOOLS_MODE=gerrit
+#                          LFTOOLS_REFSPEC=refs/changes/96/5296/7
+#
+#     2) git branch: Used to install an lftools version from a specific branch.
+#                    To use this set the variables as follows:
+#                          LFTOOLS_MODE=git
+#                          LFTOOLS_REFSPEC=master
+#
+#     3) release : The intended use case and default setting.
+#                  Set LFTOOLS_MODE=release, in this case LFTOOLS_REFSPEC is unused.
+
+LFTOOLS_MODE=release  # release | git | gerrit
+LFTOOLS_REFSPEC=master
+
 # Ensure we fail the job if any steps fail.
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
@@ -246,7 +288,32 @@ virtualenv --quiet &quot;/tmp/v/lftools&quot;
 # shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
 source &quot;/tmp/v/lftools/bin/activate&quot;
 pip install --quiet --upgrade pip
-pip install --quiet --upgrade &quot;lftools&lt;1.0.0&quot;
+
+case $LFTOOLS_MODE in
+    gerrit)
+        git clone https://gerrit.linuxfoundation.org/infra/releng/lftools.git /tmp/lftools
+        pushd /tmp/lftools
+        git fetch origin &quot;$LFTOOLS_REFSPEC&quot;
+        git checkout FETCH_HEAD
+        pip install --quiet --upgrade -r requirements.txt
+        pip install --quiet --upgrade -e .
+        popd
+        ;;
+
+    git)
+        pip install --quiet --upgrade git+https://gerrit.linuxfoundation.org/infra/releng/lftools.git@&quot;$BRANCH&quot;
+        ;;
+
+    release)
+        if [[ $LFTOOLS_VERSION =~ ^[0-9] ]]; then
+            LFTOOLS_VERSION=&quot;==$LFTOOLS_VERSION&quot;
+        fi
+
+        pip install --quiet --upgrade &quot;lftools${LFTOOLS_VERSION}&quot;
+        ;;
+esac
+
+lftools --version
 
 # pipdeptree prints out a lot of information because lftools pulls in many
 # dependencies. Let's only print it if we want to debug.
@@ -468,6 +535,39 @@ echo &quot;machine $machine login $user password $pass&quot; &gt; ~/.netrc
 ##############################################################################
 echo &quot;---&gt; lftools-install.sh&quot;
 
+# Script to install lftools via a version passed in via lf-infra-parameters
+#
+# Required parameters:
+#
+#     LFTOOLS_VERSION: Passed in via lf-infra-parameters configuration. Can be
+#                      set to a strict version number like '1.2.3' or using
+#                      PEP-440 definitions.
+#
+#                      Examples:
+#                          &lt;1.0.0
+#                          &gt;=1.0.0,&lt;2.0.0
+#
+# By default a released version of lftools should always be used.
+# The purpose of the 2 variables below is so that lftools devs can test
+# unreleased versions of lftools. There are 2 methods to install a dev version
+# of lftools:
+#
+#     1) gerrit patch: Used to test a patch that has not yet been merged.
+#                      To do this set something like this:
+#                          LFTOOLS_MODE=gerrit
+#                          LFTOOLS_REFSPEC=refs/changes/96/5296/7
+#
+#     2) git branch: Used to install an lftools version from a specific branch.
+#                    To use this set the variables as follows:
+#                          LFTOOLS_MODE=git
+#                          LFTOOLS_REFSPEC=master
+#
+#     3) release : The intended use case and default setting.
+#                  Set LFTOOLS_MODE=release, in this case LFTOOLS_REFSPEC is unused.
+
+LFTOOLS_MODE=release  # release | git | gerrit
+LFTOOLS_REFSPEC=master
+
 # Ensure we fail the job if any steps fail.
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
@@ -476,7 +576,32 @@ virtualenv --quiet &quot;/tmp/v/lftools&quot;
 # shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
 source &quot;/tmp/v/lftools/bin/activate&quot;
 pip install --quiet --upgrade pip
-pip install --quiet --upgrade &quot;lftools&lt;1.0.0&quot;
+
+case $LFTOOLS_MODE in
+    gerrit)
+        git clone https://gerrit.linuxfoundation.org/infra/releng/lftools.git /tmp/lftools
+        pushd /tmp/lftools
+        git fetch origin &quot;$LFTOOLS_REFSPEC&quot;
+        git checkout FETCH_HEAD
+        pip install --quiet --upgrade -r requirements.txt
+        pip install --quiet --upgrade -e .
+        popd
+        ;;
+
+    git)
+        pip install --quiet --upgrade git+https://gerrit.linuxfoundation.org/infra/releng/lftools.git@&quot;$BRANCH&quot;
+        ;;
+
+    release)
+        if [[ $LFTOOLS_VERSION =~ ^[0-9] ]]; then
+            LFTOOLS_VERSION=&quot;==$LFTOOLS_VERSION&quot;
+        fi
+
+        pip install --quiet --upgrade &quot;lftools${LFTOOLS_VERSION}&quot;
+        ;;
+esac
+
+lftools --version
 
 # pipdeptree prints out a lot of information because lftools pulls in many
 # dependencies. Let's only print it if we want to debug.
