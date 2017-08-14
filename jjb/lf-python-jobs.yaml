@@ -130,6 +130,16 @@
     id: github-tox-verify
     <<: *lf_tox_verify
 
+    ######################
+    # Default parameters #
+    ######################
+
+    github-cancel-builds-on-update: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
     properties:
       - github:
           url: '{git-url}/{github-org}/{project}'
@@ -144,10 +154,16 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - github-pull-request:
+      - lf-infra-github-pr-trigger:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true
+          github-cancel-builds-on-update: '{github-cancel-builds-on-update}'
           github-hooks: true
           auto-close-on-fail: false
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''

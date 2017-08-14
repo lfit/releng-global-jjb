@@ -382,6 +382,16 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_verify
 
+    ######################
+    # Default parameters #
+    ######################
+
+    github-cancel-builds-on-update: true
+
+    #####################
+    # Job Configuration #
+    #####################
+
     properties:
       - github:
           url: '{git-url}/{github-org}/{project}'
@@ -402,6 +412,7 @@
           status-context: 'Maven Verify'
           permit-all: true
           github-hooks: true
+          github-cancel-builds-on-update: '{github-cancel-builds-on-update}'
           github-org: ''
           github_pr_whitelist:
             - ''
