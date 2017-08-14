@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "72d914a9_f7b16e85",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-14T15:10:48Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "7831c0a7_e546a2c2",
+      "range": {
+        "startLine": 24,
+        "startChar": 31,
+        "endLine": 24,
+        "endChar": 43
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d6783407_b46e3728",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 10
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-08T19:41:56Z",
       "side": 1,
       "message": "Let\u0027s just keep merge jobs for 7 days since they don\u0027t really do anything except call RTD to build.",
+      "range": {
+        "startLine": 31,
+        "startChar": 30,
+        "endLine": 31,
+        "endChar": 32
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f83c0f21_26d43b4b",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-14T15:10:48Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "d6783407_b46e3728",
       "range": {
         "startLine": 31,
         "startChar": 30,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1904e75c_190059a1",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-14T15:10:48Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "d9600971_8261d755",
+      "range": {
+        "startLine": 41,
+        "startChar": 25,
+        "endLine": 41,
+        "endChar": 29
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee8c7d75_18f180b3",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 10
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "40f7e6d6_a71fc24d",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-14T15:10:48Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "ee8c7d75_18f180b3",
+      "range": {
+        "startLine": 88,
+        "startChar": 8,
+        "endLine": 88,
+        "endChar": 39
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cdb1315c_02c8805c",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 10
@@ -105,6 +201,24 @@
       "writtenOn": "2017-08-08T19:41:56Z",
       "side": 1,
       "message": "**/*.rst",
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8fd899df_7c082f87",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-14T15:10:48Z",
+      "side": 1,
+      "message": "Removed with macro.",
+      "parentUuid": "cdb1315c_02c8805c",
       "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
