@@ -293,6 +293,7 @@
           only-trigger-phrase: true
           status-context: 'JJB Merge'
           permit-all: false
+          github-cancel-builds-on-update: true
           github-hooks: true
           github-org: '{github-org}'
           github_pr_whitelist: '{obj:github_pr_whitelist}'
@@ -415,6 +416,7 @@
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true
+          github-cancel-builds-on-update: true
           github-hooks: true
           github-org: ''
           github_pr_whitelist:
@@ -546,6 +548,7 @@
           only-trigger-phrase: true
           status-context: 'Packer {platforms}-${templates} Merge'
           permit-all: false
+          github-cancel-builds-on-update: true
           github-hooks: true
           github-org: '{github-org}'
           github_pr_whitelist: '{obj:github_pr_whitelist}'
@@ -669,6 +672,7 @@
           only-trigger-phrase: false
           status-context: 'Packer Verify'
           permit-all: true
+          github-cancel-builds-on-update: true
           github-hooks: true
           github-org: ''
           github_pr_whitelist:
