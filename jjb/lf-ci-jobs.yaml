@@ -267,6 +267,7 @@
 - job-template:
     name: '{project-name}-jjb-merge'
     id: github-jjb-merge
+    github-cancel-builds-on-update: true
     <<: *lf_jjb_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_merge
@@ -293,6 +294,7 @@
           only-trigger-phrase: true
           status-context: 'JJB Merge'
           permit-all: false
+          github-cancel-builds-on-update: '{github-cancel-builds-on-update}'
           github-hooks: true
           github-org: '{github-org}'
           github_pr_whitelist: '{obj:github_pr_whitelist}'
@@ -392,6 +394,7 @@
 - job-template:
     name: '{project-name}-jjb-verify'
     id: github-jjb-verify
+    github-cancel-builds-on-update: true
     <<: *lf_jjb_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_verify
@@ -415,6 +418,7 @@
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true
+          github-cancel-builds-on-update: '{github-cancel-builds-on-update}'
           github-hooks: true
           github-org: ''
           github_pr_whitelist:
@@ -519,6 +523,7 @@
 - job-template:
     name: '{project-name}-packer-merge-{platforms}-{templates}'
     id: github-packer-merge
+    github-cancel-builds-on-update: true
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_merge
@@ -546,6 +551,7 @@
           only-trigger-phrase: true
           status-context: 'Packer {platforms}-${templates} Merge'
           permit-all: false
+          github-cancel-builds-on-update: '{github-cancel-builds-on-update}'
           github-hooks: true
           github-org: '{github-org}'
           github_pr_whitelist: '{obj:github_pr_whitelist}'
@@ -646,6 +652,7 @@
 - job-template:
     name: '{project-name}-packer-verify'
     id: github-packer-verify
+    github-cancel-builds-on-update: true
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_verify
@@ -669,6 +676,7 @@
           only-trigger-phrase: false
           status-context: 'Packer Verify'
           permit-all: true
+          github-cancel-builds-on-update: '{github-cancel-builds-on-update}'
           github-hooks: true
           github-org: ''
           github_pr_whitelist:
