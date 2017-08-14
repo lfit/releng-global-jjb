@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9da78af0_899fc4fb",
+        "filename": "README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-14T20:14:14Z",
+      "side": 1,
+      "message": "group this with the other github parameters.\n\nI think we should just default this to true and not require anyone to set this and document the setting so that folks can override it if they don\u0027t like this behaviour.",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 20
+      },
+      "revId": "af7d3fab6a204a2af9d907bceada3713ed61ddf4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
