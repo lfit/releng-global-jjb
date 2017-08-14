@@ -105,6 +105,10 @@ trigger any job that uses the `lf-infra-github-pr-trigger` macro.
 privileges on any job using the `lf-infra-github-pr-trigger`
 macro.
 
+**github-cancel-builds-on-update**: Boolean condition regulating if existing builds
+should be cancelled on an update. Set to `true` if you wish to cancel existing
+builds on an update.
+
 defaults.yaml:
 
 ```
