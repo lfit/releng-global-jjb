@@ -57,7 +57,7 @@ job is triggered by Gerrit.
 Note that Gerrit will override this parameter automatically if a
 job is triggered by Gerrit.
 </description>
-          <defaultValue/>
+          <defaultValue>refs/heads/master</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>LFTOOLS_VERSION</name>

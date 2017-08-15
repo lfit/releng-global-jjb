@@ -5,7 +5,7 @@
   <keepDependencies>false</keepDependencies>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <concurrentBuild>true</concurrentBuild>
+  <concurrentBuild>false</concurrentBuild>
   <assignedNode>build-vm</assignedNode>
   <canRoam>false</canRoam>
   <properties>
@@ -62,7 +62,7 @@ job is triggered by Gerrit.
 Note that Gerrit will override this parameter automatically if a
 job is triggered by Gerrit.
 </description>
-          <defaultValue/>
+          <defaultValue>refs/heads/master</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>LFTOOLS_VERSION</name>
