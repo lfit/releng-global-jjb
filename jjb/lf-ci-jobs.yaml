@@ -150,6 +150,8 @@
         pattern: '**/*.sh'
       - compare-type: ANT
         pattern: '**/*.yaml'
+      - compare-type: ANT
+        pattern: '**/global-jjb'
 
     #####################
     # Job Configuration #
