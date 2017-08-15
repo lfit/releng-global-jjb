@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c59c99de_1775c961",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-15T16:03:01Z",
+      "side": 1,
+      "message": "I need to document this but best practice is to define things like this:\n\n name:\n id:\n \u003c\u003c: *imports  # Basically anchors/aliases\n \n ######################\n # Default parameters #\n ######################\n \n github-cancel-builds-on-update: true\n \n #####################\n # Job Configuration #\n #####################\n ...\n\nThis makes things extremely clear what values can be overrided (variables) by project configuration vs what is a jjb setting (like concurrent: true).",
+      "revId": "966df3ac7c1d9ba54860426e59b9740fdb8b9700",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
