@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c2b046f_4ea767a2",
+        "filename": "README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-15T15:22:20Z",
+      "side": 1,
+      "message": "Minor nit. I try to follow the jjb standard of using (default: true) here.",
+      "range": {
+        "startLine": 109,
+        "startChar": 39,
+        "endLine": 109,
+        "endChar": 57
+      },
+      "revId": "e78693f898ca736b01f0472b933c12efcb78e0f2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed5329ef_d4790afb",
+        "filename": "README.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-15T15:22:20Z",
+      "side": 1,
+      "message": "extra new line.",
+      "revId": "e78693f898ca736b01f0472b933c12efcb78e0f2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3b3cff8_b5140a97",
+        "filename": "jjb-test/defaults.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-15T15:22:20Z",
+      "side": 1,
+      "message": "If default is true then no need to add the config here.",
+      "revId": "e78693f898ca736b01f0472b933c12efcb78e0f2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "105e09d1_9871976f",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-15T15:22:20Z",
+      "side": 1,
+      "message": "Looks like everything is hardcoded now. If we want to hardcode then no need to document in readme. If we want to allow overriding then we need to setup a default variable in every template.",
+      "range": {
+        "startLine": 296,
+        "startChar": 42,
+        "endLine": 296,
+        "endChar": 46
+      },
+      "revId": "e78693f898ca736b01f0472b933c12efcb78e0f2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "67475c08_b6c9db0f",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-15T15:22:20Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "e78693f898ca736b01f0472b933c12efcb78e0f2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
