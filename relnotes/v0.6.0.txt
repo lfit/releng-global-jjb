@@ -1,0 +1,37 @@
+global-jjb v0.6.0 Release Notes
+===============================
+
+Thanks to Andy, Anil, and Thanh for contributing to this release.
+
+
+Notable changes since v0.5.0
+----------------------------
+
+1167954 Anil Belur      Make packer-cloud-env variable configurable
+packer-cloud-env was hardcoded previously but we've made it overrideable via
+config for users who name their files differently.
+
+b2ad485 Thanh Ha        Rename settings-file to mvn-settings in templates
+We've renamed settings-file to mvn-settings to lineup with what was being used
+in OpenDaylight for this setting. It also aligns with other settings that are
+prefixed with mvn-.
+
+
+Full Change Log
+---------------
+
+409ce61 Anil Belur      Add timer to packer merge job to build new images
+1167954 Anil Belur      Make packer-cloud-env variable configurable
+bdd2db6 Anil Belur      packer should validate only .json files
+446298e Thanh Ha        Rename settings-file to mvn-settings
+b2ad485 Thanh Ha        Rename settings-file to mvn-settings in templates
+4e9d92d Thanh Ha        Build CLM weekly on Saturdays
+7999054 Thanh Ha        Fix GitHub CLM job-group
+d3589c6 Thanh Ha        Add missing maven parameters to CLM job
+99505e6 Thanh Ha        Add missing stream declaration in clm job
+b2c0cd2 Andrew Grimberg Fix docker login for custom registry
+76eab87 Anil Belur      Set sensible default timeouts for packer jobs
+04163ad Andrew Grimberg Remove unneeded JJB variable from packer templates
+91d975d Thanh Ha        Remove unnecessary openstack configuration file
+a2a6562 Andrew Grimberg GitHub triggers need distinct status contexts
+242c84d Anil Belur      Pass common maven options to deploy file builder

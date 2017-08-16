@@ -1,0 +1,20 @@
+global-jjb v0.2.0 Release Notes
+===============================
+
+Thanks to Andy and Jeremy for contributing to this release.
+
+
+Noteable changes since v0.1.0
+-----------------------------
+
+The most interesting change is 0912741 providing jjb merge and verify jobs for
+GitHub projects.
+
+
+Full Change Log
+---------------
+
+0912741 Jeremy Phelps   Add macro for github SCM and bits for ghrpb
+989da0a Andrew Grimberg Transition Gerrit jobs to ID names
+724167b Andrew Grimberg Use anchors on JJB verify / merge job definitions
+5df8371 Andrew Grimberg Only ship logs if LOGS_SERVER defined

@@ -1,0 +1,41 @@
+global-jjb v0.5.0 Release Notes
+===============================
+
+Thanks to Anil, Daniel, Jeremy, Jessica, and Thanh for contributing to this
+release.
+
+
+Notable changes since v0.4.0
+----------------------------
+
+10821ed Anil Belur      Add generic packer templates
+Generically reusable packer jobs to global-jjb which allows us to reuse this
+job across LF projects.
+
+9ae2d51 Jeremy Phelps   Add whitelist and admin-list params to gh trigger
+New whitelist and admin-list options for GitHub PR triggers to control
+permissions.
+
+f32a666 Jessica Wagantall       Add Nexus IQ CLM scan job
+Reusable Nexus CLM jobs are now available via global-jjb.
+
+0dd71dd Thanh Ha        Expose stream as a env variable
+When using the lf-infra-parameters macro we now expose the STREAM variable
+which can be useful in shell scripts.
+
+
+Full Change Log
+---------------
+
+10821ed Anil Belur      Add generic packer templates
+eb4a78a Daniel Farrell  Cleanup Coala config
+9ae2d51 Jeremy Phelps   Add whitelist and admin-list params to gh trigger
+a99cfe8 Thanh Ha        Update SPDX License header to new format
+04ddcaa Jessica Wagantall       Validate URLs using Jenkins env variable
+793877e Jessica Wagantall       Check for JIRA URLs on JIRA based projects
+799b9c7 Anil Belur      Add missing content/repositories path to URL
+f32a666 Jessica Wagantall       Add Nexus IQ CLM scan job
+9201487 Thanh Ha        grep: DO NOT return exit code 1 on no match
+0dd71dd Thanh Ha        Expose stream as a env variable
+bd913bb Thanh Ha        Fix maven-release job choosing strategy
+704bde2 Anil Belur      Fix typo in deploy file builder loop

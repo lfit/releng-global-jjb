@@ -1,0 +1,16 @@
+global-jjb v0.1.0 Release Notes
+===============================
+
+This is a general announcement that Global JJB v0.1.0 is now released [0]. This
+is our first released version and provides the following:
+
+* jjb-merge job
+* jjb-verify job
+
+Detailed instructions on how to deploy it into a ci-management repo can be
+found here [1] and we will be deploying this to OpenDaylight via this patch [2]
+as a first example.
+
+[0] https://gerrit.linuxfoundation.org/infra/gitweb?p=releng/global-jjb.git;a=tag;h=c1daca12779fc5b5274148bd20d4130a9df0330e
+[1] https://gerrit.linuxfoundation.org/infra/gitweb?p=releng/global-jjb.git;a=blob_plain;f=README.md;hb=HEAD
+[2] https://git.opendaylight.org/gerrit/55694

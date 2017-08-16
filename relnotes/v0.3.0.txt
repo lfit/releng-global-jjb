@@ -1,0 +1,63 @@
+global-jjb v0.3.0 Release Notes
+===============================
+
+Thanks to Andy, Anil, JamO, and Jeremy for contributing to this release.
+
+
+Notable changes since v0.2.0
+----------------------------
+
+07b824c Thanh Ha        Enable archive pattern support
+Archiving artifacts via pattern from ARCHIVE_ARTIFACTS job parameter is now
+supported.
+
+afb0041 Thanh Ha        Use pipdeptree instead of freeze
+pipdeptree provides a dependency graph which is more useful than just a pip
+freeze. So some virtualenvs are now using this to print out the installed
+packages in the virtualenv. We later determined that this is too verbose for
+lftools virtualenv though so removed it for that virtualenv via 3a0a6bc.
+
+63d7528 Jamo Luhrsen    Use pip module instead of pip itself
+62f7abd Jamo Luhrsen    Call pipdeptree from python -m
+Workaround a kernel limitation and virtualenv's really long shebang lines
+causing jobs that have over 128 characters to fail their builds.
+
+52980f2 Thanh Ha        Add python tox verify job
+Python tox job is now available to run tox for Python projects.
+
+c887df2 Anil Belur      Enable sar report collection for global-jjb
+Sar reports are now a part of lf-infra-publish macro which provides time
+sliced resource usage data during a build. It's also printed as part of the
+_sys-info.log at the end of the build.
+
+34ab380 Thanh Ha        Create Maven release job
+New Maven job which removes -SNAPSHOT from pom.xml files and produces a release
+staging repo for Maven projects. This job also stores git.bundles in the log
+server so that the release commits can be reproduced and released after the
+staging repo has been promoted for release.
+
+
+Full Change Log
+---------------
+
+34ab380 Thanh Ha        Create Maven release job
+662ca55 Thanh Ha        Add support for GitHub to Python templates
+550cfc7 Anil Belur      Fix incorrect file name being echoed
+c887df2 Anil Belur      Enable sar report collection for global-jjb
+80daacb Thanh Ha        Fix warning about Default profile being deprecated
+3a0a6bc Thanh Ha        Do not print pipdeptree for lftools
+25d43b2 Thanh Ha        Set wget to quiet mode to hide Maven DL output
+62f7abd Jamo Luhrsen    Call pipdeptree from python -m
+56864ad Thanh Ha        Fix shellcheck warnings
+52980f2 Thanh Ha        Add python tox verify job
+bd6a04d Thanh Ha        Make virtualenv creation less verbose
+fda205d Thanh Ha        Allow git-url to be overridden by job
+3cde230 Jeremy Phelps   Make Github url and clone url at Jenkins level.
+5c363aa Andrew Grimberg Add macro section headers and new macros
+63d7528 Jamo Luhrsen    Use pip module instead of pip itself
+2d0e35e Andrew Grimberg All macros should be namespaced to lf-infra-
+afb0041 Thanh Ha        Use pipdeptree instead of freeze
+4e18e5e Thanh Ha        Fix jjb-verify to not fail on ls call
+07b824c Thanh Ha        Enable archive pattern support
+2c2b7ab Thanh Ha        Fix unbound variable failure
+0cd4f5d Thanh Ha        Make sure we fail if scripts fail

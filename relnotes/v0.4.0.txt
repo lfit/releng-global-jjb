@@ -1,0 +1,55 @@
+global-jjb v0.4.0 Release Notes
+===============================
+
+Thanks to Andy, Anil, Jessica, and Thanh for contributing to this release.
+
+
+Notable changes since v0.3.0
+----------------------------
+
+603e28b Anil Belur      Add maven-deploy-file builder for packaging jobs
+Adds a builder macro `lf-infra-deploy-maven-file` to deploy maven files to
+Nexus. Currently only supports DEB and RPMs.
+
+caacccc Thanh Ha        Add jenkins-admin scripts to global-jjb
+Moves the jenkins-admin groovy scripts from OpenDaylight's releng/builder
+project to global-jjb. These scripts are useful for terminating stuck nodes in
+Jenkins.
+
+a94198f Thanh Ha        Make global-jjb verify JJB files
+Adds a test file so that global-jjb templates are actually tested via the
+tox-verify job as JJB does not analyze it's code unless there's a job
+definition that uses the templates.
+
+9aacd8a Jessica Wagantall       lf-ci-jobs: Add git-validate-jira-urls.sh
+Adds a script that checks Jira integration such that commit messages uses Jira
+issue ID's rather than URLs which break Jira integration. Fails the build to
+warn the contributor if their commit message uses URL instead of ID.
+
+5a87383 Andrew Grimberg Add lf-infra-docker-login macro and script
+Adds a macro `lf-infra-docker-login` that can be used to login to a docker
+registry.
+
+
+Full Change Log
+---------------
+
+603e28b Anil Belur      Add maven-deploy-file builder for packaging jobs
+21fba96 Thanh Ha        Add write-good plugin to lint Markdown
+27d21a7 Thanh Ha        Add Markdown linting
+7d41e77 Thanh Ha        Reorganize .coafile
+caacccc Thanh Ha        Add jenkins-admin scripts to global-jjb
+a94198f Thanh Ha        Make global-jjb verify JJB files
+50527ea Andrew Grimberg Make sure docker-login is include-raw-escape
+97ad753 Thanh Ha        Add an appendix to the README
+9aacd8a Jessica Wagantall       lf-ci-jobs: Add git-validate-jira-urls.sh
+5a87383 Andrew Grimberg Add lf-infra-docker-login macro and script
+8ec4cbe Anil Belur      Add a check before running the sysstat script
+14ff360 Andrew Grimberg Fully render GitHub SCM clone URLs
+a480891 Andrew Grimberg Make GitHub JJB verify jobs actually verify
+6b8bc7c Anil Belur      Fix shellcheck errors SC2086
+129735b Thanh Ha        Install virtualenvs into /tmp/v
+0b474d9 Thanh Ha        Fix typo in WORKSPACE name
+8893827 Andrew Grimberg Jenkins cannot handle ${} vars in GitHub project
+4c23c24 Thanh Ha        Fix alias linking for lf_tox_verify
+e0a5998 Andrew Grimberg GitHub JJB verifies should be concurrent
