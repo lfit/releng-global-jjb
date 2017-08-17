@@ -22,6 +22,30 @@
       "revId": "56210496fe6fb5ecc5aca6f5e22785a91f2254aa",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c675fa1b_332c57b1",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:18:37Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "e6f3956e_ad1d72a5",
+      "range": {
+        "startLine": 65,
+        "startChar": 29,
+        "endLine": 65,
+        "endChar": 45
+      },
+      "revId": "56210496fe6fb5ecc5aca6f5e22785a91f2254aa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
