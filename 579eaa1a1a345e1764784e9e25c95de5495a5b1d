@@ -2,6 +2,69 @@
   "comments": [
     {
       "key": {
+        "uuid": "921ebe68_f852f95e",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-17T14:32:17Z",
+      "side": 1,
+      "message": "Just name this file `rtd-trigger-build.sh` since that\u0027s what it\u0027s doing.",
+      "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4181576c_2bacdca6",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-17T14:32:17Z",
+      "side": 1,
+      "message": "This is still unresolved.",
+      "range": {
+        "startLine": 16,
+        "startChar": 24,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a3d9bcd_56758ba1",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-17T14:32:17Z",
+      "side": 1,
+      "message": "I will not accept this patch until this is resolved and provided details on how to resolve in previous comments.",
+      "range": {
+        "startLine": 19,
+        "startChar": 21,
+        "endLine": 19,
+        "endChar": 27
+      },
+      "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee8ef107_aee141ae",
         "filename": "shell/docs-post-rtd.sh",
         "patchSetId": 16
