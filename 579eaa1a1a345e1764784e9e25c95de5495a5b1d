@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a881a553_63bf0266",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:12:22Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "921ebe68_f852f95e",
+      "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4181576c_2bacdca6",
         "filename": "shell/docs-post-rtd.sh",
         "patchSetId": 16
@@ -30,6 +48,30 @@
       "writtenOn": "2017-08-17T14:32:17Z",
       "side": 1,
       "message": "This is still unresolved.",
+      "range": {
+        "startLine": 16,
+        "startChar": 24,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4711eaa3_9b7fbbc1",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:12:22Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "4181576c_2bacdca6",
       "range": {
         "startLine": 16,
         "startChar": 24,
@@ -76,6 +118,30 @@
       "writtenOn": "2017-08-17T00:00:57Z",
       "side": 1,
       "message": "It would be a good practice, to avoid using JJB params directly in the shell scripts and inject the JJB variables as the previous steps. \n\nThis also makes the JJB yaml files more readable, easier to debug (if you need to print them in the script or modify them on the sandbox job directly), this also avoids potential shell check issues when these params are used with bash arrays for instance. \n\nHere explicitly states that params being passed to the builder. \n\nex: \n    builders:\n      - inject:\n          properties-content: RTD_PROJECT\u003d{rtdproject}\n      - shell: !include-raw-escape: shell/docs-post-rtd.sh",
+      "range": {
+        "startLine": 20,
+        "startChar": 84,
+        "endLine": 20,
+        "endChar": 96
+      },
+      "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77a7c988_94eb0735",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:12:22Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "ee8ef107_aee141ae",
       "range": {
         "startLine": 20,
         "startChar": 84,
