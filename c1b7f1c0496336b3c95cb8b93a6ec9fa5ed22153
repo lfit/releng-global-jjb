@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "82a6f48b_c9f616a7",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:47:07Z",
+      "side": 1,
+      "message": "Fixed with {obj:key} notation.  What is conf.p?",
+      "parentUuid": "4a0ecdf0_58d959bb",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 37
+      },
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5efd35e0_7e333a4d",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 18
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "4ff21f4b_f0f131ec",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:47:07Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "5efd35e0_7e333a4d",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 62
+      },
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8520216d_c3d861a2",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 18
@@ -59,6 +107,30 @@
       "writtenOn": "2017-08-17T15:21:56Z",
       "side": 1,
       "message": "Make this a macro because these 2 declarations go together and cannot be used separately.",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 62
+      },
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b0d66a8_3e50870a",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:47:07Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "8520216d_c3d861a2",
       "range": {
         "startLine": 154,
         "startChar": 0,
