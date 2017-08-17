@@ -617,6 +617,24 @@
     },
     {
       "key": {
+        "uuid": "a78e5da5_2702d44c",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:18:37Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "f4801255_3896a7d1",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8824e1ab_6fd20097",
         "filename": "shell/docs-post-rtd.sh",
         "patchSetId": 5
@@ -640,6 +658,30 @@
     },
     {
       "key": {
+        "uuid": "4c30070d_b6a0677d",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:18:37Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "8824e1ab_6fd20097",
+      "range": {
+        "startLine": 5,
+        "startChar": 24,
+        "endLine": 5,
+        "endChar": 26
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8c268dc3_1ee46244",
         "filename": "shell/docs-post-rtd.sh",
         "patchSetId": 5
@@ -651,6 +693,30 @@
       "writtenOn": "2017-08-03T20:42:39Z",
       "side": 1,
       "message": "Let\u0027s not pass in variables in this method. As mentioned in our best practices [0] we should avoid using JJB style variables in shell scripts.\n\n[0] https://lf-releng-tools.readthedocs.io/en/latest/best-practices.html#jenkins-job-builder",
+      "range": {
+        "startLine": 9,
+        "startChar": 84,
+        "endLine": 9,
+        "endChar": 96
+      },
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6710166e_8ca60ab8",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:18:37Z",
+      "side": 1,
+      "message": "Changed to env var.",
+      "parentUuid": "8c268dc3_1ee46244",
       "range": {
         "startLine": 9,
         "startChar": 84,
