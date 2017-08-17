@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a0ecdf0_58d959bb",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-17T15:21:56Z",
+      "side": 1,
+      "message": "If you look at the maven jobs yaml you can see how to define this in a way that is overridable that would be a good idea imo.\n\nShould also add conf.p to this list\n\nAlso try to declare these jobs in the same format as we do in the maven yaml file. I\u0027m planning to write that format up as a best practice.",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 73,
+        "endChar": 37
+      },
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5efd35e0_7e333a4d",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-17T15:21:56Z",
+      "side": 1,
+      "message": "As mentioned below make this a macro and then call the macro.",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 62
+      },
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8520216d_c3d861a2",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-17T15:21:56Z",
+      "side": 1,
+      "message": "Make this a macro because these 2 declarations go together and cannot be used separately.",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 62
+      },
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a82ad39a_aff91b7f",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-17T15:21:56Z",
+      "side": 1,
+      "message": "This if statement code is extremely specific the OpenDaylight docs project. We should make this configurable but default to \"docs\".",
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b635e890_80fad95a",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-17T15:21:56Z",
+      "side": 1,
+      "message": "The 2 shell scripts here need to be inside a macro and moved into a shell/rtd-verify.sh file so that we\u0027re not duplicating the code.",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 39
+      },
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
