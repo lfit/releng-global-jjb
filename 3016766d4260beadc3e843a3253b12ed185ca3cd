@@ -329,6 +329,30 @@
     },
     {
       "key": {
+        "uuid": "71f6e033_939e1ffd",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:13:37Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "641fda57_216e8f04",
+      "range": {
+        "startLine": 8,
+        "startChar": 21,
+        "endLine": 8,
+        "endChar": 27
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "98db3525_61ab4f3f",
         "filename": "shell/docs-post-rtd.sh",
         "patchSetId": 10
@@ -340,6 +364,30 @@
       "writtenOn": "2017-08-08T19:41:56Z",
       "side": 1,
       "message": "As described in our Best Practices document. Let\u0027s not pass in JJB variables into shell scripts. Let\u0027s use an environment variable instead like:\n\n$RTD_PROJECT",
+      "range": {
+        "startLine": 9,
+        "startChar": 84,
+        "endLine": 9,
+        "endChar": 96
+      },
+      "revId": "3016766d4260beadc3e843a3253b12ed185ca3cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a55fe793_ccb00120",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T15:13:37Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "98db3525_61ab4f3f",
       "range": {
         "startLine": 9,
         "startChar": 84,
