@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ee8ef107_aee141ae",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-17T00:00:57Z",
+      "side": 1,
+      "message": "It would be a good practice, to avoid using JJB params directly in the shell scripts and inject the JJB variables as the previous steps. \n\nThis also makes the JJB yaml files more readable, easier to debug (if you need to print them in the script or modify them on the sandbox job directly), this also avoids potential shell check issues when these params are used with bash arrays for instance. \n\nHere explicitly states that params being passed to the builder. \n\nex: \n    builders:\n      - inject:\n          properties-content: RTD_PROJECT\u003d{rtdproject}\n      - shell: !include-raw-escape: shell/docs-post-rtd.sh",
+      "range": {
+        "startLine": 20,
+        "startChar": 84,
+        "endLine": 20,
+        "endChar": 96
+      },
+      "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
