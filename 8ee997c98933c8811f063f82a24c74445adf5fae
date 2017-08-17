@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "69cefa33_78f90dad",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T14:25:23Z",
+      "side": 1,
+      "message": "anchors in place.",
+      "parentUuid": "06da85ba_78dc9825",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6a1fae52_72e67314",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 5
@@ -347,6 +365,24 @@
       "writtenOn": "2017-08-03T20:42:39Z",
       "side": 1,
       "message": "OpenDaylight docs jobs run in less than 10 minutes so less default the timeout to 10 minutes but setup a build-timeout variable that can be overrided.\n\nhttps://jenkins.opendaylight.org/releng/view/docs/",
+      "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8803418f_17107d2d",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-17T14:25:23Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "411e5b0a_e65ce9f8",
       "revId": "8ee997c98933c8811f063f82a24c74445adf5fae",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
