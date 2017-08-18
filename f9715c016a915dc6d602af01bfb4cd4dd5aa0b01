@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47cdf130_70377749",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-18T19:08:30Z",
+      "side": 1,
+      "message": "I\u0027d just call this lf-rtd-trigger-build\n\nAll the inject statement is doing is passing in configuration information for the command so is not significant.",
+      "range": {
+        "startLine": 187,
+        "startChar": 13,
+        "endLine": 187,
+        "endChar": 45
+      },
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e78f276_12e7b863",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-18T19:08:30Z",
+      "side": 1,
+      "message": "I\u0027d like this to have the same job description style as we do with our Maven jobs. I\u0027ll write up a best practice soon on the formatting so that it\u0027s documented.",
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2dcac643_d05382ac",
+        "filename": "shell/rtd-trigger-build.sh",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-18T19:08:30Z",
+      "side": 1,
+      "message": "This looks good to me now.",
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
