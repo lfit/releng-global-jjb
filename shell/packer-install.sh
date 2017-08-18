@@ -18,10 +18,8 @@ PACKER_VERSION="${PACKER_VERSION:-1.0.2}"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
-# Default packer binary made available on the build image
-packer_bin="/usr/local/bin/packer.io"
 
-if hash "$packer_bin" 2>/dev/null; then
+if hash packer.io 2>/dev/null; then
     echo "packer.io command is available."
 else
     echo "packer.io command not is available. Installing packer ..."
