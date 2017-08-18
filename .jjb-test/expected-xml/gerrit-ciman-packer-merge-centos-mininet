@@ -230,16 +230,14 @@ PACKER_VERSION=&quot;${PACKER_VERSION:-1.0.2}&quot;
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
-# Default packer binary made available on the build image
-packer_bin=&quot;/usr/local/bin/packer.io&quot;
 
-if hash &quot;$packer_bin&quot; 2&gt;/dev/null; then
+if hash packer.io 2&gt;/dev/null; then
     echo &quot;packer.io command is available.&quot;
 else
     echo &quot;packer.io command not is available. Installing packer ...&quot;
     # Installs Hashicorp's Packer binary, required for verify &amp; merge packer jobs
     pushd packer
-    wget &quot;https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip&quot;
+    wget -nv &quot;https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip&quot;
     mkdir -p &quot;${WORKSPACE}/bin&quot;
     unzip &quot;packer_${PACKER_VERSION}_linux_amd64.zip&quot; -d ${WORKSPACE}/bin/
     # rename packer to avoid conflict with binary in cracklib
@@ -342,16 +340,14 @@ PACKER_VERSION=&quot;${PACKER_VERSION:-1.0.2}&quot;
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
-# Default packer binary made available on the build image
-packer_bin=&quot;/usr/local/bin/packer.io&quot;
 
-if hash &quot;$packer_bin&quot; 2&gt;/dev/null; then
+if hash packer.io 2&gt;/dev/null; then
     echo &quot;packer.io command is available.&quot;
 else
     echo &quot;packer.io command not is available. Installing packer ...&quot;
     # Installs Hashicorp's Packer binary, required for verify &amp; merge packer jobs
     pushd packer
-    wget &quot;https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip&quot;
+    wget -nv &quot;https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip&quot;
     mkdir -p &quot;${WORKSPACE}/bin&quot;
     unzip &quot;packer_${PACKER_VERSION}_linux_amd64.zip&quot; -d ${WORKSPACE}/bin/
     # rename packer to avoid conflict with binary in cracklib

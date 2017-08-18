@@ -18,16 +18,14 @@ PACKER_VERSION="${PACKER_VERSION:-1.0.2}"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
-# Default packer binary made available on the build image
-packer_bin="/usr/local/bin/packer.io"
 
-if hash "$packer_bin" 2>/dev/null; then
+if hash packer.io 2>/dev/null; then
     echo "packer.io command is available."
 else
     echo "packer.io command not is available. Installing packer ..."
     # Installs Hashicorp's Packer binary, required for verify & merge packer jobs
     pushd packer
-    wget "https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip"
+    wget -nv "https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip"
     mkdir -p "${WORKSPACE}/bin"
     unzip "packer_${PACKER_VERSION}_linux_amd64.zip" -d ${WORKSPACE}/bin/
     # rename packer to avoid conflict with binary in cracklib
