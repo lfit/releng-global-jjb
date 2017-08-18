@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa633efd_cc087e6b",
+        "filename": "relnotes/v0.7.0.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2017-08-18T19:39:59Z",
+      "side": 1,
+      "message": "want",
+      "range": {
+        "startLine": 24,
+        "startChar": 59,
+        "endLine": 24,
+        "endChar": 62
+      },
+      "revId": "d6258b90e81f9d9901a50f9393915520abb56bb9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8cc42ef5_b20a45c2",
+        "filename": "relnotes/v0.7.0.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2017-08-18T19:39:59Z",
+      "side": 1,
+      "message": "for which",
+      "range": {
+        "startLine": 24,
+        "startChar": 47,
+        "endLine": 24,
+        "endChar": 53
+      },
+      "revId": "d6258b90e81f9d9901a50f9393915520abb56bb9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a53662d_b8f28e2e",
+        "filename": "relnotes/v0.7.0.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2017-08-18T19:39:59Z",
+      "side": 1,
+      "message": ".",
+      "range": {
+        "startLine": 25,
+        "startChar": 32,
+        "endLine": 25,
+        "endChar": 37
+      },
+      "revId": "d6258b90e81f9d9901a50f9393915520abb56bb9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3f90419_1a35f1e0",
+        "filename": "relnotes/v0.7.0.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2017-08-18T19:39:59Z",
+      "side": 1,
+      "message": "ensure",
+      "range": {
+        "startLine": 28,
+        "startChar": 56,
+        "endLine": 28,
+        "endChar": 65
+      },
+      "revId": "d6258b90e81f9d9901a50f9393915520abb56bb9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6bf716d7_674e904b",
+        "filename": "relnotes/v0.7.0.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2017-08-18T19:39:59Z",
+      "side": 1,
+      "message": "which",
+      "range": {
+        "startLine": 29,
+        "startChar": 22,
+        "endLine": 29,
+        "endChar": 26
+      },
+      "revId": "d6258b90e81f9d9901a50f9393915520abb56bb9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
