@@ -13,12 +13,12 @@
 
 test_dir=$(mktemp -d)
 script_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-expected_xml_dir="$script_dir/jjb-test/expected-xml"
+expected_xml_dir="$script_dir/.jjb-test/expected-xml"
 
 echo "Script Directory: $script_dir"
 echo "Test Directory: $test_dir"
 
-jenkins-jobs test --recursive -o "$test_dir" "$script_dir"
+jenkins-jobs test --recursive -o "$test_dir" "$script_dir":.jjb-test
 
 fail=false
 for xml in "$test_dir"/*; do
