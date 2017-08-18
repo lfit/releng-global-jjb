@@ -238,7 +238,7 @@ echo &quot;---&gt; jjb-merge-job.sh&quot;
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-jenkins-jobs update --recursive --delete-old --workers 4 --exclude jjb-test jjb
+jenkins-jobs update --recursive --delete-old --workers 4 jjb/
 </command>
     </hudson.tasks.Shell>
   </builders>
