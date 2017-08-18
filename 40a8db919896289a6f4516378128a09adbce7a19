@@ -70,6 +70,46 @@
       "revId": "40a8db919896289a6f4516378128a09adbce7a19",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ca7fbc3_571d2584",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-18T21:09:06Z",
+      "side": 1,
+      "message": "We should be documenting what the user of the macro has to pass in. Not what the environment variables that the macro converts them to.\n\n maven-repo-url:\n repo-id:\n group-id:\n upload-files-dir:",
+      "range": {
+        "startLine": 124,
+        "startChar": 6,
+        "endLine": 126,
+        "endChar": 53
+      },
+      "revId": "40a8db919896289a6f4516378128a09adbce7a19",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "471e516c_bfa49d88",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-18T21:09:06Z",
+      "side": 1,
+      "message": "Forgot to document these changes above.",
+      "revId": "40a8db919896289a6f4516378128a09adbce7a19",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
