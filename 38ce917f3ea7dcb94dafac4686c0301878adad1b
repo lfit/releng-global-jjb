@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efe5252f_16f9ba42",
+        "filename": "relnotes/v0.7.0.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 24
+      },
+      "writtenOn": "2017-08-19T01:59:52Z",
+      "side": 1,
+      "message": ", too.",
+      "range": {
+        "startLine": 12,
+        "startChar": 23,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "38ce917f3ea7dcb94dafac4686c0301878adad1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
