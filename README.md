@@ -16,6 +16,7 @@ JENKINS_HOSTNAME=jenkins092
 LOGS_SERVER=https://logs.opendaylight.org
 NEXUS_URL=https://nexus.opendaylight.org
 SILO=releng
+SONAR_URL=https://sonar.opendaylight.org
 ```
 
 Note: Use **GIT_CLONE_URL** for GitHub projects as this
