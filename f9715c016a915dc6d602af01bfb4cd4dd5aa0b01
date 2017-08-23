@@ -42,6 +42,70 @@
     },
     {
       "key": {
+        "uuid": "07d2444b_7aee2469",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-23T16:31:49Z",
+      "side": 1,
+      "message": "We have docs for this now in lftools best-practices. Sadly the build is failing due to the logger we added. We\u0027ll need to look into that...",
+      "parentUuid": "7e78f276_12e7b863",
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c1b1c66e_2646c0ba",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-23T16:31:49Z",
+      "side": 1,
+      "message": "As with the theme of global-jjb we should call this:\n\n {project-name}-rtd-verify-{stream}",
+      "range": {
+        "startLine": 91,
+        "startChar": 26,
+        "endLine": 91,
+        "endChar": 36
+      },
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc5834e4_9582421d",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-23T16:31:49Z",
+      "side": 1,
+      "message": "rtd-merge",
+      "range": {
+        "startLine": 150,
+        "startChar": 26,
+        "endLine": 150,
+        "endChar": 35
+      },
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2dcac643_d05382ac",
         "filename": "shell/rtd-trigger-build.sh",
         "patchSetId": 20
