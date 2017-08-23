@@ -4,6 +4,7 @@
     jobs:
       - gerrit-maven-clm
       - gerrit-maven-release
+      - gerrit-maven-sonar
       - gerrit-maven-verify
 
     project-name: gerrit-maven
@@ -15,6 +16,7 @@
     jobs:
       - github-maven-clm
       - github-maven-release
+      - github-maven-sonar
       - github-maven-verify
 
     project-name: github-maven
