@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eda0db47_a08e8f72",
+        "filename": "shell/rtd-trigger-build.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-24T20:45:21Z",
+      "side": 1,
+      "message": "Add an \"echo --\u003e \u003cfilename\u003e\" statement.",
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "518f5430_a238db98",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-24T20:45:21Z",
+      "side": 1,
+      "message": "Calling this file rtd-build.sh is fine.",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 23
+      },
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca244f12_7cb4ec0b",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-24T20:45:21Z",
+      "side": 1,
+      "message": "4 space indents please.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 2
+      },
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0750b1fa_e5ce8448",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-24T20:45:21Z",
+      "side": 1,
+      "message": "We have a shell/tox-install.sh script in global-jjb just include-raw-escape it.",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 26
+      },
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
