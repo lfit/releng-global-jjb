@@ -151,6 +151,30 @@
       "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d03b14b9_7e7b273e",
+        "filename": "shell/docs-post-rtd.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-08-24T02:15:50Z",
+      "side": 1,
+      "message": "Awesome!",
+      "parentUuid": "77a7c988_94eb0735",
+      "range": {
+        "startLine": 20,
+        "startChar": 84,
+        "endLine": 20,
+        "endChar": 96
+      },
+      "revId": "579eaa1a1a345e1764784e9e25c95de5495a5b1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
