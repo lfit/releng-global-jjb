@@ -178,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "0736cf88_4ef79174",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-24T20:38:41Z",
+      "side": 1,
+      "message": "I think you can actually check PROJECT to get to get the value for \"docs\" and GERRIT_PROJECT will be the project that triggered the build. So this statement might work:\n\n if [ \"$GERRIT_PROJECT\" !\u003d \"$PROJECT\" ]; then\n\nCan you give this a try?",
+      "parentUuid": "7033cf83_4a005066",
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b635e890_80fad95a",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 18
