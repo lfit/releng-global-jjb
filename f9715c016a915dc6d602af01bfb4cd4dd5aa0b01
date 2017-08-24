@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ac1375e1_3ea55ca9",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-24T16:49:38Z",
+      "side": 1,
+      "message": "fixed.",
+      "parentUuid": "47cdf130_70377749",
+      "range": {
+        "startLine": 187,
+        "startChar": 13,
+        "endLine": 187,
+        "endChar": 45
+      },
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7e78f276_12e7b863",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 20
@@ -83,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "4570a29f_ef4430b6",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-24T16:49:38Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "c1b1c66e_2646c0ba",
+      "range": {
+        "startLine": 91,
+        "startChar": 26,
+        "endLine": 91,
+        "endChar": 36
+      },
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc5834e4_9582421d",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 20
@@ -94,6 +142,30 @@
       "writtenOn": "2017-08-23T16:31:49Z",
       "side": 1,
       "message": "rtd-merge",
+      "range": {
+        "startLine": 150,
+        "startChar": 26,
+        "endLine": 150,
+        "endChar": 35
+      },
+      "revId": "f9715c016a915dc6d602af01bfb4cd4dd5aa0b01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ec01c3c5_d081672b",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-24T16:49:38Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "bc5834e4_9582421d",
       "range": {
         "startLine": 150,
         "startChar": 26,
