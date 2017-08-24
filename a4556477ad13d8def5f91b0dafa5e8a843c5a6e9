@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e673046_5f7b85b3",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-24T02:33:09Z",
+      "side": 1,
+      "message": "Can we also no verbose the wget. The download spam is not pleasant when viewing logs.",
+      "revId": "a4556477ad13d8def5f91b0dafa5e8a843c5a6e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
