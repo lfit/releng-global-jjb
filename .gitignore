@@ -4,9 +4,6 @@
 # Ignore changes to the JJB Configuration File
 jenkins.ini
 
-# Ignore Sandbox temporary files
-jjb/*/releng-*.yaml
-
 # Maven
 target/
 
@@ -26,5 +23,4 @@ __pycache__/
 *.pyc
 
 # global-jjb
-jjb/test.yaml
 archives/
