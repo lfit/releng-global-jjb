@@ -112,6 +112,30 @@
     },
     {
       "key": {
+        "uuid": "44a750d3_70677b82",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-25T17:07:40Z",
+      "side": 1,
+      "message": "Yeah it doesn\u0027t matter because it will just be ignored if nothing tries to use the variable.",
+      "parentUuid": "74c9a60a_1f8771dd",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 25
+      },
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eda0db47_a08e8f72",
         "filename": "shell/rtd-trigger-build.sh",
         "patchSetId": 22
