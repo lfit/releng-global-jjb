@@ -196,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "faaeb8e6_e5673f9e",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-25T15:41:34Z",
+      "side": 1,
+      "message": "Are you saying to make the default of $PROJECT different than {project} ?",
+      "parentUuid": "0736cf88_4ef79174",
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b635e890_80fad95a",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 18
@@ -207,6 +225,30 @@
       "writtenOn": "2017-08-17T15:21:56Z",
       "side": 1,
       "message": "The 2 shell scripts here need to be inside a macro and moved into a shell/rtd-verify.sh file so that we\u0027re not duplicating the code.",
+      "range": {
+        "startLine": 192,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 39
+      },
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0cfa3b1f_7fba1b99",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-25T15:41:34Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "b635e890_80fad95a",
       "range": {
         "startLine": 192,
         "startChar": 0,
