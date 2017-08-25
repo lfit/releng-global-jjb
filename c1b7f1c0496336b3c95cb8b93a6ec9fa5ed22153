@@ -214,6 +214,24 @@
     },
     {
       "key": {
+        "uuid": "10e789c7_c6b2185d",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-25T16:37:45Z",
+      "side": 1,
+      "message": "No I\u0027m saying if you just use this if statement without changing anything else. It should work the same and we don\u0027t have to introduce a new parameter.",
+      "parentUuid": "faaeb8e6_e5673f9e",
+      "revId": "c1b7f1c0496336b3c95cb8b93a6ec9fa5ed22153",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b635e890_80fad95a",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 18
