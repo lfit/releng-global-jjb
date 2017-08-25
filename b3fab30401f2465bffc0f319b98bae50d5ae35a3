@@ -2,6 +2,92 @@
   "comments": [
     {
       "key": {
+        "uuid": "70830b19_7914ecbb",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-25T16:51:07Z",
+      "side": 1,
+      "message": "Just because a project has ci doesn\u0027t mean they need docs jobs. I\u0027d remove this part of the sentence.",
+      "range": {
+        "startLine": 5,
+        "startChar": 57,
+        "endLine": 6,
+        "endChar": 25
+      },
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "022af820_316879f9",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-25T16:51:07Z",
+      "side": 1,
+      "message": "Same here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 57,
+        "endLine": 16,
+        "endChar": 46
+      },
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dafca4d9_d708ecc2",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-25T16:51:07Z",
+      "side": 1,
+      "message": "Looks like this anchor is still in progress but would be good to have it document all of the parameters similar to here:\n\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-maven-jobs.yaml#L267-L296",
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d697566d_1f305457",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-25T16:51:07Z",
+      "side": 1,
+      "message": "This should be moved into the anchor. Only SCM, Triggers should be defined here (and anything that\u0027s not common to both gerrit and github versions of the job)",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 25
+      },
+      "revId": "b3fab30401f2465bffc0f319b98bae50d5ae35a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eda0db47_a08e8f72",
         "filename": "shell/rtd-trigger-build.sh",
         "patchSetId": 22
