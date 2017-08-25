@@ -317,14 +317,42 @@ echo &quot;---&gt; tox-run.sh&quot;
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
+ARCHIVE_TOX_DIR=&quot;$WORKSPACE/archives/tox&quot;
+mkdir -p &quot;$ARCHIVE_TOX_DIR&quot;
+
 cd &quot;$WORKSPACE/$TOX_DIR&quot;
 
-if [ -n &quot;$TOX_ENVS&quot; ];
-then
-    tox -e &quot;$TOX_ENVS&quot;
-else
-    tox
+if [ -z &quot;$TOX_ENVS&quot; ]; then
+    TOX_ENVS=$(crudini --get tox.ini tox envlist)
 fi
+
+run_tox() {
+    local log_dir=&quot;$1&quot;
+    local env=&quot;$2&quot;
+
+    echo &quot;-----&gt; Running tox $env&quot;
+    if ! tox -e $env &gt; &quot;$log_dir/tox-$env.log&quot;; then
+        echo &quot;$env&quot; &gt;&gt; &quot;$log_dir/failed-envs.log&quot;
+    fi
+}
+
+TOX_ENVS=(${TOX_ENVS//,/ })
+if hash parallel 2&gt;/dev/null; then
+    export -f run_tox
+    parallel --jobs 200% &quot;run_tox $ARCHIVE_TOX_DIR {}&quot; ::: ${TOX_ENVS[*]}
+else
+    for env in &quot;${TOX_ENVS[@]}&quot;; do
+        run_tox &quot;$env&quot;
+    done
+fi
+
+if [ -f &quot;$ARCHIVE_TOX_DIR/failed-envs.log&quot; ]; then
+    failed_envs=($(cat &quot;$ARCHIVE_TOX_DIR/failed-envs.log&quot;))
+    echo &quot;ERROR: Failed the following builds: ${failed_envs[*]}&quot;
+    exit 1
+fi
+
+echo &quot;Completed tox runs.&quot;
 </command>
     </hudson.tasks.Shell>
   </builders>
