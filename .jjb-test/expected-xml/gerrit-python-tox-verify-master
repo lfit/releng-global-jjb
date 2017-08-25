@@ -317,14 +317,21 @@ echo &quot;---&gt; tox-run.sh&quot;
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
+ARCHIVE_TOX_DIR=&quot;$WORKSPACE/archives/tox&quot;
+mkdir -p &quot;$ARCHIVE_TOX_DIR&quot;
+
 cd &quot;$WORKSPACE/$TOX_DIR&quot;
 
-if [ -n &quot;$TOX_ENVS&quot; ];
-then
-    tox -e &quot;$TOX_ENVS&quot;
-else
-    tox
+if [ -z &quot;$TOX_ENVS&quot; ]; then
+    TOX_ENVS=$(crudini --get tox.ini tox envlist)
 fi
+
+TOX_ENVS=(${TOX_ENVS//,/ })
+for i in &quot;${TOX_ENVS[@]}&quot;; do
+    echo &quot;&quot;
+    echo &quot;-----&gt; Running tox $i&quot;
+    tox -e &quot;$i&quot; | tee -a &quot;$ARCHIVE_TOX_DIR/tox-$i.log&quot;
+done
 </command>
     </hudson.tasks.Shell>
   </builders>

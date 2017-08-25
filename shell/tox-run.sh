@@ -14,11 +14,18 @@ echo "---> tox-run.sh"
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
+ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
+mkdir -p "$ARCHIVE_TOX_DIR"
+
 cd "$WORKSPACE/$TOX_DIR"
 
-if [ -n "$TOX_ENVS" ];
-then
-    tox -e "$TOX_ENVS"
-else
-    tox
+if [ -z "$TOX_ENVS" ]; then
+    TOX_ENVS=$(crudini --get tox.ini tox envlist)
 fi
+
+TOX_ENVS=(${TOX_ENVS//,/ })
+for i in "${TOX_ENVS[@]}"; do
+    echo ""
+    echo "-----> Running tox $i"
+    tox -e "$i" | tee -a "$ARCHIVE_TOX_DIR/tox-$i.log"
+done
