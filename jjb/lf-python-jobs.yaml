@@ -58,7 +58,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - lf-infra-tox-parameters:
           tox-dir: '{tox-dir}'
           tox-envs: '{tox-envs}'
@@ -69,11 +68,11 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     builders:
-      - shell: !include-raw-escape:
+      - lf-lftools-install:
           # Workaround issue where the tox run later breaks the lftools virtualenv.
           # Without running the install first the run in the publisher will fail
           # due to missing lftools because it gets installed into a tox venv.
-          - ../shell/lftools-install.sh
+          lftools-version: '{lftools-version}'
       - shell: !include-raw-escape:
           - ../shell/tox-install.sh
           - ../shell/tox-run.sh
