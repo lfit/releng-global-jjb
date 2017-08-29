@@ -43,7 +43,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
@@ -208,13 +207,14 @@
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-lftools-install:
+          lftools-version: '{lftools-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
       - lf-infra-create-netrc:
           server-id: opendaylight-staging
       - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
           - ../shell/common-variables.sh
           - ../shell/maven-patch-release.sh
           - ../shell/maven-build.sh
@@ -492,11 +492,12 @@
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-lftools-install:
+          lftools-version: '{lftools-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
           - ../shell/common-variables.sh
           - ../shell/maven-build.sh
       - lf-provide-maven-settings-cleanup
