@@ -18,6 +18,9 @@ set -x  # Trace commands for this script to make debugging easier.
 ARCHIVE_ARTIFACTS="${ARCHIVE_ARTIFACTS:-}"
 LOGS_SERVER="${LOGS_SERVER:-None}"
 
+# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
+source "/tmp/v/lftools/bin/activate"
+
 if [ "${LOGS_SERVER}" == 'None' ]
 then
     set +x # Disable trace since we no longer need it

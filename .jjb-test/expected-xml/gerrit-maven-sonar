@@ -66,15 +66,6 @@ job is triggered by Gerrit.
           <defaultValue>refs/heads/master</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
-          <name>LFTOOLS_VERSION</name>
-          <description>Version of lftools to install. Can be a specific version like
-'0.6.0' or a PEP-440 definition.
-https://www.python.org/dev/peps/pep-0440/
-For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
-</description>
-          <defaultValue>&lt;1.0.0</defaultValue>
-        </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
           <name>MAVEN_OPTS</name>
           <description>Maven Java opts. Example: -Xmx1024m -XX:MaxPermSize=256m
 </description>
@@ -398,49 +389,12 @@ done &lt; &lt;(find &quot;$SYSSTAT_PATH&quot; -name &quot;sa[0-9]*&quot; || true
 exit 0
 </command>
         </hudson.tasks.Shell>
-        <org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep plugin="config-file-provider">
-          <managedFiles>
-            <org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
-              <fileId>jenkins-log-archives-settings</fileId>
-              <targetLocation/>
-              <variable>SETTINGS_FILE</variable>
-            </org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
-          </managedFiles>
-        </org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep>
         <EnvInjectBuilder>
           <info>
-            <propertiesContent>SERVER_ID=logs</propertiesContent>
+            <propertiesContent>LFTOOLS_VERSION={lftools-version}
+</propertiesContent>
           </info>
         </EnvInjectBuilder>
-        <hudson.tasks.Shell>
-          <command>#!/bin/bash
-# SPDX-License-Identifier: EPL-1.0
-##############################################################################
-# Copyright (c) 2017 The Linux Foundation and others.
-#
-# All rights reserved. This program and the accompanying materials
-# are made available under the terms of the Eclipse Public License v1.0
-# which accompanies this distribution, and is available at
-# http://www.eclipse.org/legal/epl-v10.html
-##############################################################################
-echo &quot;---&gt; create-netrc.sh&quot;
-
-# Ensure we fail the job if any steps fail.
-set -eu -o pipefail
-
-NEXUS_URL=&quot;${NEXUS_URL:-$NEXUSPROXY}&quot;
-CREDENTIAL=$(xmlstarlet sel -N &quot;x=http://maven.apache.org/SETTINGS/1.0.0&quot; \
-    -t -m &quot;/x:settings/x:servers/x:server[x:id='${SERVER_ID}']&quot; \
-    -v x:username -o &quot;:&quot; -v x:password \
-    &quot;$SETTINGS_FILE&quot;)
-
-machine=$(echo &quot;$NEXUS_URL&quot; | awk -F/ '{print $3}')
-user=$(echo &quot;$CREDENTIAL&quot; | cut -f1 -d:)
-pass=$(echo &quot;$CREDENTIAL&quot; | cut -f2 -d:)
-
-echo &quot;machine $machine login $user password $pass&quot; &gt; ~/.netrc
-</command>
-        </hudson.tasks.Shell>
         <hudson.tasks.Shell>
           <command>#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
@@ -527,8 +481,53 @@ lftools --version
 # echo &quot;----&gt; Pip Dependency Tree&quot;
 # pip install --quiet --upgrade pipdeptree
 # pipdeptree
+</command>
+        </hudson.tasks.Shell>
+        <org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep plugin="config-file-provider">
+          <managedFiles>
+            <org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+              <fileId>jenkins-log-archives-settings</fileId>
+              <targetLocation/>
+              <variable>SETTINGS_FILE</variable>
+            </org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+          </managedFiles>
+        </org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep>
+        <EnvInjectBuilder>
+          <info>
+            <propertiesContent>SERVER_ID=logs</propertiesContent>
+          </info>
+        </EnvInjectBuilder>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; create-netrc.sh&quot;
 
-#!/bin/bash
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
+NEXUS_URL=&quot;${NEXUS_URL:-$NEXUSPROXY}&quot;
+CREDENTIAL=$(xmlstarlet sel -N &quot;x=http://maven.apache.org/SETTINGS/1.0.0&quot; \
+    -t -m &quot;/x:settings/x:servers/x:server[x:id='${SERVER_ID}']&quot; \
+    -v x:username -o &quot;:&quot; -v x:password \
+    &quot;$SETTINGS_FILE&quot;)
+
+machine=$(echo &quot;$NEXUS_URL&quot; | awk -F/ '{print $3}')
+user=$(echo &quot;$CREDENTIAL&quot; | cut -f1 -d:)
+pass=$(echo &quot;$CREDENTIAL&quot; | cut -f2 -d:)
+
+echo &quot;machine $machine login $user password $pass&quot; &gt; ~/.netrc
+</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -547,6 +546,9 @@ set -x  # Trace commands for this script to make debugging easier.
 
 ARCHIVE_ARTIFACTS=&quot;${ARCHIVE_ARTIFACTS:-}&quot;
 LOGS_SERVER=&quot;${LOGS_SERVER:-None}&quot;
+
+# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
+source &quot;/tmp/v/lftools/bin/activate&quot;
 
 if [ &quot;${LOGS_SERVER}&quot; == 'None' ]
 then
