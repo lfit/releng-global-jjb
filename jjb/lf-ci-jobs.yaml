@@ -182,6 +182,76 @@
     publishers:
       - lf-infra-publish
 
+######################
+# Gerrit Branch Lock #
+######################
+
+- job-template:
+    name: '{project-name}-gerrit-branch-lock-{stream}'
+    id: gerrit-branch-lock
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    stream: master
+    gerrit_merge_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: (un)?lock branch$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 1
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          stream: '{stream}'
+          branch: '{branch}'
+          lftools-version: '{lftools-version}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 5
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: ''
+          branch: '{branch}'
+          submodule-recursive: false
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+
+    builders:
+      - shell: !include-raw-escape: ../shell/gerrit-branch-lock.sh
+
+
+    publishers:
+      - lf-infra-publish
+
 #############
 # JJB Merge #
 #############
