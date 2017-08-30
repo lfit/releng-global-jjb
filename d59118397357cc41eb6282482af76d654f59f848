@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80f46b0b_71982233",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 32
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T19:06:43Z",
+      "side": 1,
+      "message": "15",
+      "range": {
+        "startLine": 75,
+        "startChar": 78,
+        "endLine": 75,
+        "endChar": 81
+      },
+      "revId": "d59118397357cc41eb6282482af76d654f59f848",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6d9b83d_b350eae0",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 32
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T19:06:43Z",
+      "side": 1,
+      "message": "15",
+      "range": {
+        "startLine": 171,
+        "startChar": 78,
+        "endLine": 171,
+        "endChar": 80
+      },
+      "revId": "d59118397357cc41eb6282482af76d654f59f848",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
