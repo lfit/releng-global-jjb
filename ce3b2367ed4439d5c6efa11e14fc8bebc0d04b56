@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb963199_6a73b707",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 37
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T20:03:47Z",
+      "side": 1,
+      "message": "There is not enough variables passed here. This macro needs several parameters one of which is jenkins-ssh-credentials.",
+      "revId": "ce3b2367ed4439d5c6efa11e14fc8bebc0d04b56",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
