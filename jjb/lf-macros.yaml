@@ -166,6 +166,15 @@
               variable: 'SETTINGS_FILE'
 
 - builder:
+    name: lf-pip-install
+    # Call pip install to install packages into a virtualenv
+    # The first package listed in PIP_PACKAGES is used as the virtualenv name.
+    builders:
+      - inject:
+          properties-content: PIP_PACKAGES={pip-packages}
+      - shell: !include-raw-escape: ../shell/pip-install.sh
+
+- builder:
     name: lf-provide-maven-settings-cleanup
     # Clear maven settings files after we are done using them
     builders:
