@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4884a816_fc779b0a",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 29
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T15:44:49Z",
+      "side": 1,
+      "message": "Lemme adjust a directory up for this.",
+      "revId": "936727570a42512d47220dd3f69d763683e16c08",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "54aa3424_e25bd1aa",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 29
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T15:44:49Z",
+      "side": 1,
+      "message": "fixing to !include-raw-escape:",
+      "revId": "936727570a42512d47220dd3f69d763683e16c08",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
