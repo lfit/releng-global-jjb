@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b41dc53_c998c4eb",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T21:15:17Z",
+      "side": 1,
+      "message": "Please don\u0027t add this here. It needs to be configured at the project level. This is why the job was failing with duplicate id\u0027s.",
+      "revId": "acdaf875106ae63dc57a2898981d181deba13b1f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ee06ab1_b272eeef",
+        "filename": ".jjb-test/lf-rtd-jobs.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T21:15:17Z",
+      "side": 1,
+      "message": "Call this \"gerrit-rtd\" as it affects the output xml that is generated. A file called \"gerrit-test\" won\u0027t tell easily tell us which test generated that xml.",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "acdaf875106ae63dc57a2898981d181deba13b1f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "18102f10_c756ec9c",
+        "filename": ".jjb-test/lf-rtd-jobs.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T21:15:17Z",
+      "side": 1,
+      "message": "Call this \"github-rtd\" as it affects the output xml that is generated. A file called \"github-test\" won\u0027t tell easily tell us which test generated that xml.",
+      "range": {
+        "startLine": 18,
+        "startChar": 18,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "acdaf875106ae63dc57a2898981d181deba13b1f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
