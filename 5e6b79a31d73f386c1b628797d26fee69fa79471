@@ -1,0 +1,330 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8fc4ca10_c68720f8",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "!include-raw should be !include-raw-escape imo. Also the command accepts a list so we can do a single call like this:\n\n - shell: !include-raw:\n     - ../shell/tox-install.sh\n     - ../shell/rtd-verify.sh\n\n(also the code needs to go up 1 directory)",
+      "range": {
+        "startLine": 196,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 48
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a04b0c9e_1e5dedb4",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "Since this is a variable that\u0027s overrideable I\u0027d move this above properties and split the anchor into \"Default Parameters\" and \"Job Configuration\" sections like the merge anchor below.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 37
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fec56581_0fdb2f99",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "** means to build everything making **/conf.py pointless. Shouldn\u0027t this be **/*.rst and **/conf.py?\n\nAlthough I\u0027m torn on this one. If we just assume any rst file that exists triggers the docs job this will cause this job to run even if a project is not participating in the docs project build as a submodule. Maybe we can just keep this assumption until someone complains that the job is causing grief with their work.",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2e25e21_e25267f1",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "Would be good to have documentation for the merge here after \"name\" similar to what we\u0027re doing in the maven jobs templates.",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "89acb5fe_4f1c212b",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "I think we don\u0027t need this variable anymore since we\u0027re doing that \"$GERRIT_PROJECT\" \u003d\u003d \"$PROJECT\" setting in the shell script. Have you tested and verified it works?",
+      "range": {
+        "startLine": 68,
+        "startChar": 17,
+        "endLine": 68,
+        "endChar": 21
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f1610437_2ff024f1",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "I\u0027d consider build-timeout a default parameter not a job configuration as it\u0027s a variable that\u0027s overridable and used the the wrappers.",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87fa33e9_62dde7c1",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "gerrit-server-name is the standard global-jjb name for this variable.",
+      "range": {
+        "startLine": 92,
+        "startChar": 25,
+        "endLine": 92,
+        "endChar": 36
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66271e4f_0589c276",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "RTD Merge",
+      "range": {
+        "startLine": 119,
+        "startChar": 31,
+        "endLine": 119,
+        "endChar": 37
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b709f8c2_9150615c",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "What\u0027s mvn-settings used for? I don\u0027t think the RTD job does anything with maven?",
+      "range": {
+        "startLine": 143,
+        "startChar": 10,
+        "endLine": 144,
+        "endChar": 26
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b8d55ff_6a45c839",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "All of these variables are needed regardless of Gerrit or GitHub.",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 19
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f196bc88_02e939ea",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "Stream and giturl are needed regardless of Gerrit or GitHub.",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 61
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "42c63cbc_e1f67648",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "Not sure I saw a \"url\" variable defined anywhere for the RTD jobs?",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bd3c5dde_5100eab1",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "build-timeout is a lf-infra-wrappers variable so should be listed under default parameters",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66e5db31_23b9427c",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "gerrit-server-name is the standard global-jjb name for this variable.",
+      "range": {
+        "startLine": 193,
+        "startChar": 25,
+        "endLine": 193,
+        "endChar": 36
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4f6030f1_5a9aac98",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "Not sure we need to run the verify job every single day. What\u0027s the point?",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "00c946d8_f25b346a",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 26
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T01:35:58Z",
+      "side": 1,
+      "message": "Both lines 20 and 22 are exactly the same so if we move this to after the if statement we only need to call it once and the if-statement can be simplified to not have an \u0027else\u0027 statement.",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
