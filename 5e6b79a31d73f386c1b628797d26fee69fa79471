@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d1a742e8_a6f2a3e2",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T14:54:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8fc4ca10_c68720f8",
+      "range": {
+        "startLine": 196,
+        "startChar": 0,
+        "endLine": 197,
+        "endChar": 48
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a04b0c9e_1e5dedb4",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 26
@@ -105,6 +129,30 @@
     },
     {
       "key": {
+        "uuid": "525f3c83_661c97d2",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T14:54:43Z",
+      "side": 1,
+      "message": "Haven\u0027t verified it yet.",
+      "parentUuid": "89acb5fe_4f1c212b",
+      "range": {
+        "startLine": 68,
+        "startChar": 17,
+        "endLine": 68,
+        "endChar": 21
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f1610437_2ff024f1",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 26
@@ -116,6 +164,24 @@
       "writtenOn": "2017-08-30T01:35:58Z",
       "side": 1,
       "message": "I\u0027d consider build-timeout a default parameter not a job configuration as it\u0027s a variable that\u0027s overridable and used the the wrappers.",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fd25e79d_462c4eba",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T14:54:43Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "f1610437_2ff024f1",
       "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -145,6 +211,30 @@
     },
     {
       "key": {
+        "uuid": "e1d04138_cb3046ec",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T14:54:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "87fa33e9_62dde7c1",
+      "range": {
+        "startLine": 92,
+        "startChar": 25,
+        "endLine": 92,
+        "endChar": 36
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "66271e4f_0589c276",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 26
@@ -156,6 +246,30 @@
       "writtenOn": "2017-08-30T01:35:58Z",
       "side": 1,
       "message": "RTD Merge",
+      "range": {
+        "startLine": 119,
+        "startChar": 31,
+        "endLine": 119,
+        "endChar": 37
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d978184_788ff61c",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T14:54:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66271e4f_0589c276",
       "range": {
         "startLine": 119,
         "startChar": 31,
@@ -271,6 +385,24 @@
     },
     {
       "key": {
+        "uuid": "5d84ed56_44039d57",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T14:54:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd3c5dde_5100eab1",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "66e5db31_23b9427c",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 26
@@ -294,6 +426,30 @@
     },
     {
       "key": {
+        "uuid": "8358c3e0_8f0501ad",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T14:54:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66e5db31_23b9427c",
+      "range": {
+        "startLine": 193,
+        "startChar": 25,
+        "endLine": 193,
+        "endChar": 36
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4f6030f1_5a9aac98",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 26
@@ -305,6 +461,24 @@
       "writtenOn": "2017-08-30T01:35:58Z",
       "side": 1,
       "message": "Not sure we need to run the verify job every single day. What\u0027s the point?",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "604e1a74_7dcce644",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T14:54:43Z",
+      "side": 1,
+      "message": "Removed...run on trigger only.",
+      "parentUuid": "4f6030f1_5a9aac98",
       "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
