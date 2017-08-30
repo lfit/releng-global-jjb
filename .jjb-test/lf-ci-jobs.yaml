@@ -3,6 +3,7 @@
     name: gerrit-ci-jobs
     jobs:
       - "{project-name}-ci-jobs"
+      - gerrit-branch-lock
 
     project-name: gerrit-ciman
 
