@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dbc26608_422a993b",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 28
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T16:35:13Z",
+      "side": 1,
+      "message": "!include-raw-escape",
+      "revId": "41a55cc19ee3e4d9f9a136f5a0aaaa12e753f314",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ba2dec6_6fdf311f",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 28
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-30T16:35:13Z",
+      "side": 1,
+      "message": "This means we will be running the docs job even if they did not contribute any docs patches. Which means every single patch submission will run the rtd job. I think we should limit it to **/*.rst and **/conf.py like we had before.",
+      "revId": "41a55cc19ee3e4d9f9a136f5a0aaaa12e753f314",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
