@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "7f6c260c_27fd7f84",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T15:28:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2e25e21_e25267f1",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89acb5fe_4f1c212b",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 26
@@ -141,6 +159,30 @@
       "side": 1,
       "message": "Haven\u0027t verified it yet.",
       "parentUuid": "89acb5fe_4f1c212b",
+      "range": {
+        "startLine": 68,
+        "startChar": 17,
+        "endLine": 68,
+        "endChar": 21
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "000c6a64_ab2190b8",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T15:28:47Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "525f3c83_661c97d2",
       "range": {
         "startLine": 68,
         "startChar": 17,
@@ -305,6 +347,30 @@
     },
     {
       "key": {
+        "uuid": "1bb5eb57_f4249129",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T15:28:47Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "b709f8c2_9150615c",
+      "range": {
+        "startLine": 143,
+        "startChar": 10,
+        "endLine": 144,
+        "endChar": 26
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b8d55ff_6a45c839",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 26
@@ -316,6 +382,30 @@
       "writtenOn": "2017-08-30T01:35:58Z",
       "side": 1,
       "message": "All of these variables are needed regardless of Gerrit or GitHub.",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 19
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c0a3ec9e_640d56d5",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T15:28:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4b8d55ff_6a45c839",
       "range": {
         "startLine": 139,
         "startChar": 0,
@@ -351,6 +441,30 @@
     },
     {
       "key": {
+        "uuid": "10c80dbb_154d6521",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T15:28:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f196bc88_02e939ea",
+      "range": {
+        "startLine": 155,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 61
+      },
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "42c63cbc_e1f67648",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 26
@@ -362,6 +476,24 @@
       "writtenOn": "2017-08-30T01:35:58Z",
       "side": 1,
       "message": "Not sure I saw a \"url\" variable defined anywhere for the RTD jobs?",
+      "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5cce87c_7098ab9c",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-30T15:28:47Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "42c63cbc_e1f67648",
       "revId": "5e6b79a31d73f386c1b628797d26fee69fa79471",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
