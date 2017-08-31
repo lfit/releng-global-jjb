@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "797580de_87462520",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-31T15:18:01Z",
+      "side": 1,
+      "message": "Might be fun to parse it and negate even numbers of \"un\" and proceed with with odd numbers...\n\njk, I\u0027ll patch that :)",
+      "parentUuid": "5771b598_d362b542",
+      "range": {
+        "startLine": 197,
+        "startChar": 38,
+        "endLine": 197,
+        "endChar": 39
+      },
+      "revId": "8f4dea21dfa2e3cf91df567e1511936c9711722f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4f70d6ff_234f6398",
         "filename": "shell/gerrit-branch-lock.sh",
         "patchSetId": 1
