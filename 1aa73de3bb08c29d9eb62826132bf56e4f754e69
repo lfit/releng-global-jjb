@@ -120,6 +120,30 @@
     },
     {
       "key": {
+        "uuid": "edde0ea3_f756a119",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:54:14Z",
+      "side": 1,
+      "message": "Yes, fixed.",
+      "parentUuid": "d34ec001_b54d47fd",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b0b1b96_fda0dea0",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 44
