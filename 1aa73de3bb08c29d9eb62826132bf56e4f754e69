@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2033b0fc_38451199",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da5db8af_e9663f0e",
+      "range": {
+        "startLine": 190,
+        "startChar": 44,
+        "endLine": 190,
+        "endChar": 54
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bad92d47_fc950497",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 44
@@ -36,6 +60,30 @@
       "writtenOn": "2017-08-31T21:57:04Z",
       "side": 1,
       "message": "This is a default variable so list above project-type/node which are job configurations.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fd697b53_c142acd9",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "So this will be in the Job Configuration Section instead of defaults?",
+      "parentUuid": "bad92d47_fc950497",
       "range": {
         "startLine": 32,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "189f5dd0_f39e3688",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b0b1b96_fda0dea0",
+      "range": {
+        "startLine": 69,
+        "startChar": 11,
+        "endLine": 69,
+        "endChar": 21
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a8369dde_3ddaf4d6",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 44
@@ -82,6 +154,30 @@
       "writtenOn": "2017-08-31T21:57:04Z",
       "side": 1,
       "message": "Remove this as the user should not be able to configure this.",
+      "range": {
+        "startLine": 77,
+        "startChar": 11,
+        "endLine": 77,
+        "endChar": 28
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5cb324d_d427d5b5",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "a8369dde_3ddaf4d6",
       "range": {
         "startLine": 77,
         "startChar": 11,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "a8d9f169_69a83437",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "5ac28f02_bde7eef0",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 30
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79f5cd05_d516ae66",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 44
@@ -128,6 +248,24 @@
       "writtenOn": "2017-08-31T21:57:04Z",
       "side": 1,
       "message": "rtd-project",
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc805e41_dceacc9a",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79f5cd05_d516ae66",
       "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "59a9ca70_96c56441",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6dd75d64_f87e93b3",
+      "range": {
+        "startLine": 121,
+        "startChar": 29,
+        "endLine": 121,
+        "endChar": 50
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "706f30a5_3c67e66d",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 44
@@ -168,6 +330,24 @@
       "writtenOn": "2017-08-31T21:57:04Z",
       "side": 1,
       "message": "Remove this as we don\u0027t need to allow the user to override this setting.",
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a095585_dfcebc85",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "706f30a5_3c67e66d",
       "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -197,6 +377,30 @@
     },
     {
       "key": {
+        "uuid": "2b991232_d9d1e13e",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d940b417_e7b781c7",
+      "range": {
+        "startLine": 211,
+        "startChar": 4,
+        "endLine": 211,
+        "endChar": 30
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "460ea929_2c590501",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 44
@@ -208,6 +412,30 @@
       "writtenOn": "2017-08-31T21:57:04Z",
       "side": 1,
       "message": "choosing strategy should be gerrit since this is gerrit triggered.",
+      "range": {
+        "startLine": 235,
+        "startChar": 29,
+        "endLine": 235,
+        "endChar": 50
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0dbde698_b04a0aa8",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T23:06:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "460ea929_2c590501",
       "range": {
         "startLine": 235,
         "startChar": 29,
