@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "c079bec9_6be7dede",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T16:40:32Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "6b41dc53_c998c4eb",
+      "revId": "acdaf875106ae63dc57a2898981d181deba13b1f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ee06ab1_b272eeef",
         "filename": ".jjb-test/lf-rtd-jobs.yaml",
         "patchSetId": 38
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "b7b4f3d4_5a9dc77a",
+        "filename": ".jjb-test/lf-rtd-jobs.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T16:40:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ee06ab1_b272eeef",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "acdaf875106ae63dc57a2898981d181deba13b1f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "18102f10_c756ec9c",
         "filename": ".jjb-test/lf-rtd-jobs.yaml",
         "patchSetId": 38
@@ -53,6 +95,30 @@
       "writtenOn": "2017-08-30T21:15:17Z",
       "side": 1,
       "message": "Call this \"github-rtd\" as it affects the output xml that is generated. A file called \"github-test\" won\u0027t tell easily tell us which test generated that xml.",
+      "range": {
+        "startLine": 18,
+        "startChar": 18,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "acdaf875106ae63dc57a2898981d181deba13b1f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9f6c124_6574ec90",
+        "filename": ".jjb-test/lf-rtd-jobs.yaml",
+        "patchSetId": 38
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-08-31T16:40:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18102f10_c756ec9c",
       "range": {
         "startLine": 18,
         "startChar": 18,
