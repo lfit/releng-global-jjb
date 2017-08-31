@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5771b598_d362b542",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-31T15:14:55Z",
+      "side": 1,
+      "message": "This should probably be ? not * as you only want to support up to one (un) not something line ununununlock",
+      "range": {
+        "startLine": 197,
+        "startChar": 38,
+        "endLine": 197,
+        "endChar": 39
+      },
+      "revId": "8f4dea21dfa2e3cf91df567e1511936c9711722f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4f70d6ff_234f6398",
+        "filename": "shell/gerrit-branch-lock.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-31T15:14:55Z",
+      "side": 1,
+      "message": "Please line wrap at 80 characters, this is hard to parse in a review.",
+      "revId": "8f4dea21dfa2e3cf91df567e1511936c9711722f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0830265_22f28a52",
+        "filename": "shell/gerrit-branch-lock.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-08-31T15:14:55Z",
+      "side": 1,
+      "message": "We should exit -1 for unknown modes",
+      "revId": "8f4dea21dfa2e3cf91df567e1511936c9711722f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
