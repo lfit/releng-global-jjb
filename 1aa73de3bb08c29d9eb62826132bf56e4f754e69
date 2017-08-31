@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "d34ec001_b54d47fd",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-08-31T23:11:48Z",
+      "side": 1,
+      "message": "No i\u0027m saying this IS a default.\n\nbut project-type and node are Job Configurations. So this anchor should be split like this:\n\n name: lf-rtd-common\n \n ######################\n # Default parameters #\n ######################\n \n gerrit_trigger_file_paths....\n \n #####################\n # Job Configuration #\n #####################\n\n project-type: freestyle\n node: \u0027{build-node}\u0027\n \n properties ...\n\nMakes sense?",
+      "parentUuid": "fd697b53_c142acd9",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "1aa73de3bb08c29d9eb62826132bf56e4f754e69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b0b1b96_fda0dea0",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 44
