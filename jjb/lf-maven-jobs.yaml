@@ -257,157 +257,6 @@
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
-################
-# Maven Verify #
-################
-
-- lf_maven_verify: &lf_maven_verify
-    name: lf-maven-verify
-
-    # Verify job which runs mvn clean install to test a project build..
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #         the project.
-    #
-    # Optional parameters:
-    #
-    #     :branch: Git branch to fetch for the build. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :java-version: Version of Java to use for the build. (default: openjdk8)
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #         Maven configuration. (default: global-settings)
-    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
-    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    #     :mvn-version: Version of maven to use. (default: mvn33)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
-    #     :gerrit_trigger_file_paths: Override file paths which can be used to
-    #         filter which file modifications will trigger a build.
-
-    ######################
-    # Default parameters #
-    ######################
-
-    branch: master
-    build-days-to-keep: 7
-    build-timeout: 60
-    git-url: '$GIT_URL/$PROJECT'
-    java-version: openjdk8
-    mvn-global-settings: global-settings
-    mvn-opts: ''
-    mvn-params: '-Dstream=$STREAM'
-    mvn-version: mvn33
-    stream: master
-    submodule-recursive: true
-
-    gerrit_verify_triggers:
-      - patchset-created-event:
-          exclude-drafts: false
-          exclude-trivial-rebase: false
-          exclude-no-code-change: false
-      - draft-published-event
-      - comment-added-contains-event:
-          comment-contains-value: recheck$
-    gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: '**'
-
-    #####################
-    # Job Configuration #
-    #####################
-
-    concurrent: true
-
-    builders:
-      - lf-jacoco-nojava-workaround
-      - lf-maven-install:
-          mvn-version: '{mvn-version}'
-      - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
-      - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
-          - ../shell/common-variables.sh
-          - ../shell/maven-build.sh
-      - lf-provide-maven-settings-cleanup
-
-    publishers:
-      - findbugs
-      - lf-jacoco-report
-      - lf-infra-publish
-
-- job-template:
-    name: '{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}'
-    id: gerrit-maven-verify
-    <<: *lf_maven_common
-    # yamllint disable-line rule:key-duplicates
-    <<: *lf_maven_verify
-
-    scm:
-      - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          choosing-strategy: gerrit
-
-    triggers:
-      - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
-          projects:
-            - project-compare-type: ANT
-              project-pattern: '{project}'
-              branches:
-                - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
-
-- job-template:
-    name: '{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}'
-    id: github-maven-verify
-    <<: *lf_maven_common
-    # yamllint disable-line rule:key-duplicates
-    <<: *lf_maven_verify
-
-    properties:
-      - github:
-          url: '{git-url}/{github-org}/{project}'
-
-    scm:
-      - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-
-    triggers:
-      - lf-infra-github-pr-trigger:
-          trigger-phrase: '^recheck$'
-          only-trigger-phrase: false
-          status-context: 'Maven Verify'
-          permit-all: true
-          github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
-
 ###############
 # Maven Sonar #
 ###############
@@ -540,6 +389,157 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_sonar
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'Maven Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+
+################
+# Maven Verify #
+################
+
+- lf_maven_verify: &lf_maven_verify
+    name: lf-maven-verify
+
+    # Verify job which runs mvn clean install to test a project build..
+    #
+    # Required parameters:
+    #
+    #     :build-node: The node to run build on.
+    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #         be configured in defaults.yaml)
+    #     :mvn-settings: The name of settings file containing credentials for
+    #         the project.
+    #
+    # Optional parameters:
+    #
+    #     :branch: Git branch to fetch for the build. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :java-version: Version of Java to use for the build. (default: openjdk8)
+    #     :mvn-global-settings: The name of the Maven global settings to use for
+    #         Maven configuration. (default: global-settings)
+    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    #     :mvn-version: Version of maven to use. (default: mvn33)
+    #     :stream: Keyword that can be used to represent a release code-name.
+    #         Often the same as the branch. (default: master)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #
+    #     :gerrit_verify_triggers: Override Gerrit Triggers.
+    #     :gerrit_trigger_file_paths: Override file paths which can be used to
+    #         filter which file modifications will trigger a build.
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 60
+    git-url: '$GIT_URL/$PROJECT'
+    java-version: openjdk8
+    mvn-global-settings: global-settings
+    mvn-opts: ''
+    mvn-params: '-Dstream=$STREAM'
+    mvn-version: mvn33
+    stream: master
+    submodule-recursive: true
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: false
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: recheck$
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '**'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    concurrent: true
+
+    builders:
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+          - ../shell/common-variables.sh
+          - ../shell/maven-build.sh
+      - lf-provide-maven-settings-cleanup
+
+    publishers:
+      - findbugs
+      - lf-jacoco-report
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}'
+    id: gerrit-maven-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}'
+    id: github-maven-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_verify
 
     properties:
       - github:
