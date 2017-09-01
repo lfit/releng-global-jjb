@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a568dee2_33cecbfe",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 47
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-09-01T14:57:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3bd970b5_d3968dfd",
+      "range": {
+        "startLine": 190,
+        "startChar": 42,
+        "endLine": 190,
+        "endChar": 57
+      },
+      "revId": "3c4bda41cd2250c27fae7300653a586f77931c75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e32834b_a10c0429",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 47
@@ -36,6 +60,30 @@
       "writtenOn": "2017-09-01T14:54:34Z",
       "side": 1,
       "message": "No need for single quotes here.",
+      "range": {
+        "startLine": 197,
+        "startChar": 30,
+        "endLine": 197,
+        "endChar": 49
+      },
+      "revId": "3c4bda41cd2250c27fae7300653a586f77931c75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "80e3c33e_f9fb44e3",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 47
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-09-01T14:57:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e32834b_a10c0429",
       "range": {
         "startLine": 197,
         "startChar": 30,
