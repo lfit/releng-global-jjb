@@ -1,0 +1,40 @@
+global-jjb v0.8.0 Release Notes
+===============================
+
+Thanks to Anil, Jeremy, and Thanh for contributing to this release.
+
+Notable changes since v0.7.0
+----------------------------
+
+1c6c45e Jeremy Phelps   Generalize odl rtd jobs for global-jjb
+Read The Docs jobs have been migrated to global-jjb for easy use across
+projects.
+
+f48fc39 Thanh Ha        Add update-expected-xml call
+New tox command `tox -e update-expected-xml` will automatically update the
+xml in .jjb-test making it easier for developers to update these files.
+
+3eafac9 Thanh Ha        Add lf-pip-install macro to handle pypi packages
+New `lf-pip-install` macro is now available which will handle the installation
+of pypi packages. This is code that was copy pasted in many places but is now
+consolidated into a single macro making it easier to perform. Scripts may need
+to be updated to `source /path/to/virtualenv` when migrating to this macro.
+The name of the first pypi package listed in the macro will be used as the
+virtualenv name when creating the virtualenv in /tmp/v/NAME
+
+7f77f1f Thanh Ha        Migrate sonar job
+The Sonar job is now migrated to global-jjb allowing projects to now take
+advantage of this shared job.
+
+
+Full Change Log
+---------------
+
+1c6c45e Jeremy Phelps   Generalize odl rtd jobs for global-jjb
+f48fc39 Thanh Ha        Add update-expected-xml call
+c95e5d6 Thanh Ha        Re-order maven jobs alphabetically
+3eafac9 Thanh Ha        Add lf-pip-install macro to handle pypi packages
+7f77f1f Thanh Ha        Migrate sonar job
+3bfa042 Thanh Ha        Fix tox-run.sh print statement
+441d8bb Anil Belur      Dont prefix PATH with hash built-in command.
+9d51e65 Anil Belur      Update .gitignore
