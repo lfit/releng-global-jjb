@@ -56,7 +56,18 @@ do_login() {
         return 1
     fi
 
-    docker login -u "$USER" -p "$PASS" -e "$2" "$1"
+    docker_version=$(docker -v | awk '{print $3}')
+    compare_value=$(echo "17.06.0 $docker_version" | \
+                    tr " " "\n" | \
+                    sort -V | \
+                    sed -n 1p)
+    if [[ "$docker_version" == "$compare_value" && \
+          "$docker_version" != "17.06.0" ]]
+    then
+        docker login -u "$USER" -p "$PASS" -e "$2" "$1"
+    else
+        docker login -u "$USER" -p "$PASS"
+    fi
 }
 
 if [ "${DOCKER_REGISTRY:-none}" != 'none' ]
