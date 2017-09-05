@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "626eca22_f09b5f77",
+        "filename": "shell/gerrit-branch-lock.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-05T20:50:58Z",
+      "side": 1,
+      "message": "Oh! Spaces don\u0027t matter. It wants a tab delimiter.",
+      "revId": "fd2f911fd6b558c3291e72dc01ef57e6e768b5f3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
