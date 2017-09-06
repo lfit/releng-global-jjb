@@ -143,6 +143,53 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
       <hudson.plugins.git.extensions.impl.WipeWorkspace/>
     </extensions>
   </scm>
+  <triggers class="vector">
+    <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
+      <spec/>
+      <gerritProjects>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+          <compareType>ANT</compareType>
+          <pattern>releng/ciman</pattern>
+          <branches>
+            <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Branch>
+              <compareType>ANT</compareType>
+              <pattern>**/master</pattern>
+            </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Branch>
+          </branches>
+          <disableStrictForbiddenFileVerification>false</disableStrictForbiddenFileVerification>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+      </gerritProjects>
+      <skipVote>
+        <onSuccessful>false</onSuccessful>
+        <onFailed>false</onFailed>
+        <onUnstable>false</onUnstable>
+        <onNotBuilt>false</onNotBuilt>
+      </skipVote>
+      <silentMode>false</silentMode>
+      <silentStartMode>false</silentStartMode>
+      <escapeQuotes>true</escapeQuotes>
+      <noNameAndEmailParameters>false</noNameAndEmailParameters>
+      <readableMessage>false</readableMessage>
+      <dependencyJobsNames/>
+      <notificationLevel/>
+      <dynamicTriggerConfiguration>False</dynamicTriggerConfiguration>
+      <triggerConfigURL/>
+      <allowTriggeringUnreviewedPatches>false</allowTriggeringUnreviewedPatches>
+      <triggerOnEvents>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedContainsEvent>
+          <commentAddedCommentContains>build release$</commentAddedCommentContains>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedContainsEvent>
+      </triggerOnEvents>
+      <buildStartMessage/>
+      <buildFailureMessage/>
+      <buildSuccessfulMessage/>
+      <buildUnstableMessage/>
+      <buildNotBuiltMessage/>
+      <buildUnsuccessfulFilepath/>
+      <customUrl/>
+      <serverName>test-server</serverName>
+    </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
+  </triggers>
   <builders>
     <hudson.tasks.Shell>
       <command>mkdir -p $WORKSPACE/target/classes $WORKSPACE/jacoco/classes</command>

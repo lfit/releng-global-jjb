@@ -181,8 +181,9 @@
     #     staging-profile-id: Profile ID of the project's Nexus staging profile.
     #
     # Optional parameters:
-    #     mvn-global-settings: The name of the Maven global settings to use for
-    #                          Maven configuration. (default: global-settings)
+    #     :gerrit_verify_triggers: Override Gerrit Triggers.
+    #     :mvn-global-settings: The name of the Maven global settings to use for
+    #                           Maven configuration. (default: global-settings)
 
     ######################
     # Default parameters #
@@ -199,6 +200,10 @@
     mvn-version: mvn33
     stream: master
     submodule-recursive: true
+
+    gerrit_release_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: build release$
 
     #####################
     # Job Configuration #
@@ -237,6 +242,17 @@
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
 
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_release_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+
 - job-template:
     name: '{project-name}-maven-release-{stream}'
     id: github-maven-release
@@ -256,6 +272,19 @@
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^build release$'
+          only-trigger-phrase: true
+          status-context: 'Maven Release'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
 
 ###############
 # Maven Sonar #
