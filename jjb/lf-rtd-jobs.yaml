@@ -168,10 +168,6 @@
     name: lf-rtd-verify
     # Verify job which runs a tox build of the docs project
     #
-    # Required parameters:
-    #
-    #     :rtd-project: This is the name of the project on ReadTheDocs.org.
-    #
     # Optional parameters:
     #
     #     :branch: Git branch to fetch for the build. (default: master)
