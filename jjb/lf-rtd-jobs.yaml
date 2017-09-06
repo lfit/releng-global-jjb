@@ -91,6 +91,7 @@
     #     :build-node: The node to run build on.
     #     :build-timeout: Timeout in seconds before aborting build. (default: 15)
     #     :git-url: base URL of git project. (default: https://github.com)
+    #     :project-pattern: Project to trigger build against. (default: **)
     #     :stream: Keyword that can be used to represent a release code-name.
     #         Often the same as the branch. (default: master)
 
@@ -102,6 +103,7 @@
     build-days-to-keep: 7
     build-timeout: 15
     git-url: https://github.com
+    project-pattern: **
     stream: master
     submodule-recursive: true
 
@@ -129,7 +131,7 @@
                 comment-contains-value: 'remerge$'
           projects:
             - project-compare-type: 'ANT'
-              project-pattern: '**'
+              project-pattern: '{project-pattern}'
               branches:
                 - branch-compare-type: 'ANT'
                   branch-pattern: '**/{branch}'
@@ -181,6 +183,7 @@
     #     :doc-dir: Directory where tox will place built docs.
     #         as defined in the tox.ini (default: docs/_build/html)
     #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :project-pattern: Project to trigger build against. (default: **)
     #     :stream: Keyword that can be used to represent a release code-name.
     #         Often the same as the branch. (default: master)
     #     :submodule-recursive: Whether to checkout submodules recursively.
@@ -195,6 +198,7 @@
     build-timeout: 15
     doc-dir: docs/_build/html
     git-url: '$GIT_URL/$PROJECT'
+    project-pattern: **
     stream: master
     submodule-recursive: true
 
@@ -232,7 +236,7 @@
                 comment-contains-value: 'recheck$'
           projects:
             - project-compare-type: 'ANT'
-              project-pattern: '**'
+              project-pattern: '{project-pattern}'
               branches:
                 - branch-compare-type: 'ANT'
                   branch-pattern: '**/{branch}'
