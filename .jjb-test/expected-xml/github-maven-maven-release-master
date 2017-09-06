@@ -138,6 +138,26 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
       <hudson.plugins.git.extensions.impl.WipeWorkspace/>
     </extensions>
   </scm>
+  <triggers class="vector">
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger>
+      <spec/>
+      <adminlist/>
+      <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
+      <whitelist/>
+      <orgslist/>
+      <cron/>
+      <triggerPhrase>^build release$</triggerPhrase>
+      <onlyTriggerPhrase>true</onlyTriggerPhrase>
+      <useGitHubHooks>true</useGitHubHooks>
+      <permitAll>true</permitAll>
+      <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
+      <extensions>
+        <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+          <commitStatusContext>Maven Release</commitStatusContext>
+        </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+      </extensions>
+    </org.jenkinsci.plugins.ghprb.GhprbTrigger>
+  </triggers>
   <builders>
     <hudson.tasks.Shell>
       <command>mkdir -p $WORKSPACE/target/classes $WORKSPACE/jacoco/classes</command>
