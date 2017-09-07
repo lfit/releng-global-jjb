@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ad27eefe_38d7e19d",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-07T14:19:11Z",
+      "side": 1,
+      "message": "I was doing it to make it stand out. In Sphinx this marks it as a parameter and bolds the text but in this YAML it does nothing.",
+      "parentUuid": "6996238d_2ec16d39",
+      "range": {
+        "startLine": 184,
+        "startChar": 10,
+        "endLine": 184,
+        "endChar": 11
+      },
+      "revId": "2a21a291f0e6c6c17caef2533c7a5725185053bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "699c2f56_bf127a7d",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-09-07T14:14:44Z",
       "side": 1,
       "message": "Not certain if ONAP is more correct or not right now, but they have a comment trigger of \u0027please release\u0027 to do this right now. Personally I think the imperative of this is more suited to the intent but if we bring this in to that community we\u0027re going to have to do some retraining.\n\nI\u0027ll note that the ONAP trigger is currently only on their docker daily jobs.",
+      "range": {
+        "startLine": 206,
+        "startChar": 34,
+        "endLine": 206,
+        "endChar": 39
+      },
+      "revId": "2a21a291f0e6c6c17caef2533c7a5725185053bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "40b0dbbb_7e02c336",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-07T14:19:11Z",
+      "side": 1,
+      "message": "please release doesn\u0027t really describe what\u0027s happening imo. The reason I picked the wording here is because I plan on having 2 triggers.\n\n1) build release - which builds the release and produces staging repo\n2) promote release - which will hopefully hit the Nexus API to tell it to release the artifacts.",
+      "parentUuid": "699c2f56_bf127a7d",
       "range": {
         "startLine": 206,
         "startChar": 34,
