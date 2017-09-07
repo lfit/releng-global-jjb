@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6996238d_2ec16d39",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-09-07T14:14:44Z",
+      "side": 1,
+      "message": "What\u0027s with the leading \u0027:\u0027 ?",
+      "range": {
+        "startLine": 184,
+        "startChar": 10,
+        "endLine": 184,
+        "endChar": 11
+      },
+      "revId": "2a21a291f0e6c6c17caef2533c7a5725185053bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "699c2f56_bf127a7d",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-09-07T14:14:44Z",
+      "side": 1,
+      "message": "Not certain if ONAP is more correct or not right now, but they have a comment trigger of \u0027please release\u0027 to do this right now. Personally I think the imperative of this is more suited to the intent but if we bring this in to that community we\u0027re going to have to do some retraining.\n\nI\u0027ll note that the ONAP trigger is currently only on their docker daily jobs.",
+      "range": {
+        "startLine": 206,
+        "startChar": 34,
+        "endLine": 206,
+        "endChar": 39
+      },
+      "revId": "2a21a291f0e6c6c17caef2533c7a5725185053bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
