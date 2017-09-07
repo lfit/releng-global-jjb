@@ -93,6 +93,30 @@
       "revId": "2a21a291f0e6c6c17caef2533c7a5725185053bb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e9e079f_7d366b5d",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-07T14:20:24Z",
+      "side": 1,
+      "message": "FWIW if there\u0027s pushback they can override the trigger in their own jobs since \"gerrit_release_trigger\" is a variable.",
+      "parentUuid": "40b0dbbb_7e02c336",
+      "range": {
+        "startLine": 206,
+        "startChar": 34,
+        "endLine": 206,
+        "endChar": 39
+      },
+      "revId": "2a21a291f0e6c6c17caef2533c7a5725185053bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
