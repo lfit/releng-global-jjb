@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <actions/>
+  <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>true</concurrentBuild>
+  <assignedNode>build-vm</assignedNode>
+  <canRoam>false</canRoam>
+  <properties>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty>
+      <projectUrl>$GIT_URL/$GERRIT_PROJECT/example-org/releng/ciman</projectUrl>
+    </com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>PROJECT</name>
+          <description>Parameter to identify a Gerrit project. This is typically the
+project repo path as exists in Gerrit.
+For example: ofextensions/circuitsw
+</description>
+          <defaultValue>releng/ciman</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>STREAM</name>
+          <description>Stream is often set to the same name as 'branch' but can
+sometimes be used as a name representing a project's release code
+name.
+</description>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>GERRIT_PROJECT</name>
+          <description>Parameter to identify Gerrit project. This is typically the
+project repo path as exists in Gerrit.
+For example: ofextensions/circuitsw
+
+Note that Gerrit will override this parameter automatically if a
+job is triggered by Gerrit.
+</description>
+          <defaultValue>releng/ciman</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>GERRIT_BRANCH</name>
+          <description>Parameter to identify a Gerrit branch.
+
+Note that Gerrit will override this parameter automatically if a
+job is triggered by Gerrit.
+</description>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>GERRIT_REFSPEC</name>
+          <description>Parameter to identify a refspec when pulling from Gerrit.
+
+Note that Gerrit will override this parameter automatically if a
+job is triggered by Gerrit.
+</description>
+          <defaultValue>refs/heads/master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>LFTOOLS_VERSION</name>
+          <description>Version of lftools to install. Can be a specific version like
+'0.6.0' or a PEP-440 definition.
+https://www.python.org/dev/peps/pep-0440/
+For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
+</description>
+          <defaultValue>&lt;1.0.0</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <name>origin</name>
+        <refspec>+refs/pull/*:refs/remotes/origin/pr/*</refspec>
+        <url>git@github.com:example-org/releng/ciman</url>
+        <credentialsId>test-credential</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>**</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <excludedUsers/>
+    <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <authorOrCommitter>false</authorOrCommitter>
+    <wipeOutWorkspace>true</wipeOutWorkspace>
+    <pruneBranches>false</pruneBranches>
+    <remotePoll>false</remotePoll>
+    <gitTool>Default</gitTool>
+    <submoduleCfg class="list"/>
+    <relativeTargetDir/>
+    <reference/>
+    <gitConfigName/>
+    <gitConfigEmail/>
+    <skipTag>true</skipTag>
+    <scmName/>
+    <useShallowClone>false</useShallowClone>
+    <ignoreNotifyCommit>false</ignoreNotifyCommit>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.SubmoduleOption>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>true</recursiveSubmodules>
+        <trackingSubmodules>false</trackingSubmodules>
+        <reference/>
+        <timeout>10</timeout>
+      </hudson.plugins.git.extensions.impl.SubmoduleOption>
+      <hudson.plugins.git.extensions.impl.WipeWorkspace/>
+    </extensions>
+  </scm>
+  <triggers class="vector">
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger>
+      <spec/>
+      <adminlist/>
+      <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
+      <whitelist/>
+      <orgslist/>
+      <cron/>
+      <triggerPhrase>^jjb-deploy (?!\*+$).+$</triggerPhrase>
+      <onlyTriggerPhrase>true</onlyTriggerPhrase>
+      <useGitHubHooks>true</useGitHubHooks>
+      <permitAll>true</permitAll>
+      <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
+      <extensions>
+        <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+          <commitStatusContext>JJB Deploy Job</commitStatusContext>
+        </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+      </extensions>
+    </org.jenkinsci.plugins.ghprb.GhprbTrigger>
+  </triggers>
+  <builders>
+    <EnvInjectBuilder>
+      <info>
+        <propertiesContent>PIP_PACKAGES=jenkins-job-builder</propertiesContent>
+      </info>
+    </EnvInjectBuilder>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+# pip install packages into a virtualenv using the first listed package as venv name
+#
+# PIP_PACKAGES is a space separated list of pypi packages to install. The first
+#              listed package is used as the virtualenv directory name.
+echo &quot;---&gt; pip-install.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+# DO NOT set -u as virtualenv's activate script has unbound variables
+set -e -o pipefail
+
+# Install git-review using virtualenv to the latest version that supports
+# --reviewers option, available through pip install. Existing minion image has a
+# version that does not have it.
+virtualenv &quot;/tmp/v/${PIP_PACKAGES%% *}&quot;
+# shellcheck source=/tmp/v/venv/bin/activate disable=SC1091
+source &quot;/tmp/v/${PIP_PACKAGES%% *}/bin/activate&quot;
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade pipdeptree
+
+# PIP_PACKAGES needs to be passed through as a space separated list of packages
+# shellcheck disable=SC2086
+pip install --upgrade $PIP_PACKAGES
+
+echo &quot;----&gt; Pip Dependency Tree&quot;
+pipdeptree
+</command>
+    </hudson.tasks.Shell>
+    <org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep plugin="config-file-provider">
+      <managedFiles>
+        <org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+          <fileId>jjbini-sandbox</fileId>
+          <targetLocation>$HOME/.config/jenkins_jobs/jenkins_jobs.ini</targetLocation>
+          <variable/>
+        </org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+      </managedFiles>
+    </org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+# Push a job to jenkins-sandbox via Gerrit / GitHub comment
+# Comment Pattern: jjb-deploy JOB_NAME
+# JOB_NAME: Can also include * wildcards too. Additional parameters are ignored.
+echo &quot;---&gt; jjb-deploy-job.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+set -e -o pipefail
+
+# shellcheck source=/tmp/v/jenkins-job-builder/bin/activate disable=SC1091
+source &quot;/tmp/v/jenkins-job-builder/bin/activate&quot;
+
+echo &quot;-----&gt; Fetching project&quot;
+git fetch origin &quot;$GERRIT_REFSPEC&quot; &amp;&amp; git checkout FETCH_HEAD
+
+# If not Gerrit Trigger than assume GitHub
+COMMENT=&quot;${GERRIT_EVENT_COMMENT_TEXT:-$ghprbCommentBody}&quot;
+JOB_NAME=$(echo &quot;$COMMENT&quot; | grep jjb-deploy | awk '{print $2}')
+
+# Strip all * characters to prevent pushing all jobs to Jenkins
+if [ -z &quot;${JOB_NAME//*/}&quot; ]; then
+    echo &quot;ERROR: JOB_NAME cannot be empty or '*'.&quot;
+    exit 1
+fi
+
+jenkins-jobs update --recursive --workers 4 jjb/ &quot;$JOB_NAME&quot;
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <org.jenkinsci.plugins.postbuildscript.PostBuildScript>
+      <buildSteps>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; sysstat.sh&quot;
+set +e  # DON'T fail build if script fails.
+
+OS=$(facter operatingsystem)
+case &quot;$OS&quot; in
+    Ubuntu)
+        SYSSTAT_PATH=&quot;/var/log/sysstat&quot;
+
+        # Dont run the script when systat is not enabled by default
+        if ! grep --quiet 'ENABLED=&quot;true&quot;' &quot;/etc/default/sysstat&quot;; then
+            exit 0
+        fi
+    ;;
+    CentOS|RedHat)
+        SYSSTAT_PATH=&quot;/var/log/sa&quot;
+    ;;
+    *)
+        # nothing to do
+        exit 0
+    ;;
+esac
+
+SAR_DIR=&quot;$WORKSPACE/archives/sar-reports&quot;
+mkdir -p &quot;$SAR_DIR&quot;
+cp &quot;$SYSSTAT_PATH/&quot;* &quot;$_&quot;
+# convert sar data to ascii format
+while IFS=&quot;&quot; read -r s
+do
+    [ -f &quot;$s&quot; ] &amp;&amp; LC_TIME=POSIX sar -A -f &quot;$s&quot; &gt; &quot;$SAR_DIR/sar${s//[!0-9]/}&quot;
+done &lt; &lt;(find &quot;$SYSSTAT_PATH&quot; -name &quot;sa[0-9]*&quot; || true)
+
+# DON'T fail build if script fails.
+exit 0
+</command>
+        </hudson.tasks.Shell>
+        <org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep plugin="config-file-provider">
+          <managedFiles>
+            <org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+              <fileId>jenkins-log-archives-settings</fileId>
+              <targetLocation/>
+              <variable>SETTINGS_FILE</variable>
+            </org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+          </managedFiles>
+        </org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep>
+        <EnvInjectBuilder>
+          <info>
+            <propertiesContent>SERVER_ID=logs</propertiesContent>
+          </info>
+        </EnvInjectBuilder>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; create-netrc.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
+NEXUS_URL=&quot;${NEXUS_URL:-$NEXUSPROXY}&quot;
+CREDENTIAL=$(xmlstarlet sel -N &quot;x=http://maven.apache.org/SETTINGS/1.0.0&quot; \
+    -t -m &quot;/x:settings/x:servers/x:server[x:id='${SERVER_ID}']&quot; \
+    -v x:username -o &quot;:&quot; -v x:password \
+    &quot;$SETTINGS_FILE&quot;)
+
+machine=$(echo &quot;$NEXUS_URL&quot; | awk -F/ '{print $3}')
+user=$(echo &quot;$CREDENTIAL&quot; | cut -f1 -d:)
+pass=$(echo &quot;$CREDENTIAL&quot; | cut -f2 -d:)
+
+echo &quot;machine $machine login $user password $pass&quot; &gt; ~/.netrc
+</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; lftools-install.sh&quot;
+
+# Script to install lftools via a version passed in via lf-infra-parameters
+#
+# Required parameters:
+#
+#     LFTOOLS_VERSION: Passed in via lf-infra-parameters configuration. Can be
+#                      set to a strict version number like '1.2.3' or using
+#                      PEP-440 definitions.
+#
+#                      Examples:
+#                          &lt;1.0.0
+#                          &gt;=1.0.0,&lt;2.0.0
+#
+# By default a released version of lftools should always be used.
+# The purpose of the 2 variables below is so that lftools devs can test
+# unreleased versions of lftools. There are 2 methods to install a dev version
+# of lftools:
+#
+#     1) gerrit patch: Used to test a patch that has not yet been merged.
+#                      To do this set something like this:
+#                          LFTOOLS_MODE=gerrit
+#                          LFTOOLS_REFSPEC=refs/changes/96/5296/7
+#
+#     2) git branch: Used to install an lftools version from a specific branch.
+#                    To use this set the variables as follows:
+#                          LFTOOLS_MODE=git
+#                          LFTOOLS_REFSPEC=master
+#
+#     3) release : The intended use case and default setting.
+#                  Set LFTOOLS_MODE=release, in this case LFTOOLS_REFSPEC is unused.
+
+LFTOOLS_MODE=release  # release | git | gerrit
+LFTOOLS_REFSPEC=master
+
+# Ensure we fail the job if any steps fail.
+# DO NOT set -u as virtualenv's activate script has unbound variables
+set -e -o pipefail
+
+virtualenv --quiet &quot;/tmp/v/lftools&quot;
+# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
+source &quot;/tmp/v/lftools/bin/activate&quot;
+pip install --quiet --upgrade pip
+
+case $LFTOOLS_MODE in
+    gerrit)
+        git clone https://gerrit.linuxfoundation.org/infra/releng/lftools.git /tmp/lftools
+        pushd /tmp/lftools
+        git fetch origin &quot;$LFTOOLS_REFSPEC&quot;
+        git checkout FETCH_HEAD
+        pip install --quiet --upgrade -r requirements.txt
+        pip install --quiet --upgrade -e .
+        popd
+        ;;
+
+    git)
+        pip install --quiet --upgrade git+https://gerrit.linuxfoundation.org/infra/releng/lftools.git@&quot;$BRANCH&quot;
+        ;;
+
+    release)
+        if [[ $LFTOOLS_VERSION =~ ^[0-9] ]]; then
+            LFTOOLS_VERSION=&quot;==$LFTOOLS_VERSION&quot;
+        fi
+
+        pip install --quiet --upgrade &quot;lftools${LFTOOLS_VERSION}&quot;
+        ;;
+esac
+
+lftools --version
+
+# pipdeptree prints out a lot of information because lftools pulls in many
+# dependencies. Let's only print it if we want to debug.
+# echo &quot;----&gt; Pip Dependency Tree&quot;
+# pip install --quiet --upgrade pipdeptree
+# pipdeptree
+
+#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+echo &quot;---&gt; logs-deploy.sh&quot;
+
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
+
+set -x  # Trace commands for this script to make debugging easier.
+
+ARCHIVE_ARTIFACTS=&quot;${ARCHIVE_ARTIFACTS:-}&quot;
+LOGS_SERVER=&quot;${LOGS_SERVER:-None}&quot;
+
+if [ &quot;${LOGS_SERVER}&quot; == 'None' ]
+then
+    set +x # Disable trace since we no longer need it
+
+    echo &quot;WARNING: Logging server not set&quot;
+else
+    NEXUS_URL=&quot;${NEXUS_URL:-$NEXUSPROXY}&quot;
+    NEXUS_PATH=&quot;${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}&quot;
+    BUILD_URL=&quot;${BUILD_URL}&quot;
+
+    lftools deploy archives -p &quot;$ARCHIVE_ARTIFACTS&quot; &quot;$NEXUS_URL&quot; &quot;$NEXUS_PATH&quot; &quot;$WORKSPACE&quot;
+    lftools deploy logs &quot;$NEXUS_URL&quot; &quot;$NEXUS_PATH&quot; &quot;$BUILD_URL&quot;
+
+    set +x  # Disable trace since we no longer need it.
+
+    echo &quot;Build logs: &lt;a href=\&quot;$LOGS_SERVER/$NEXUS_PATH\&quot;&gt;$LOGS_SERVER/$NEXUS_PATH&lt;/a&gt;&quot;
+fi
+</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2017 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+
+# Clear log credential files
+rm &quot;$SETTINGS_FILE&quot;
+rm ~/.netrc
+</command>
+        </hudson.tasks.Shell>
+        <hudson.plugins.descriptionsetter.DescriptionSetterBuilder>
+          <regexp>^Build logs: .*</regexp>
+        </hudson.plugins.descriptionsetter.DescriptionSetterBuilder>
+      </buildSteps>
+      <scriptOnlyIfSuccess>false</scriptOnlyIfSuccess>
+      <scriptOnlyIfFailure>false</scriptOnlyIfFailure>
+      <markBuildUnstable>false</markBuildUnstable>
+    </org.jenkinsci.plugins.postbuildscript.PostBuildScript>
+    <hudson.plugins.ws__cleanup.WsCleanup plugin="ws-cleanup">
+      <patterns>
+        <hudson.plugins.ws__cleanup.Pattern>
+          <pattern>**/*.jenkins-trigger</pattern>
+          <type>EXCLUDE</type>
+        </hudson.plugins.ws__cleanup.Pattern>
+      </patterns>
+      <deleteDirs>false</deleteDirs>
+      <cleanupMatrixParent>false</cleanupMatrixParent>
+      <externalDelete/>
+      <cleanWhenSuccess>true</cleanWhenSuccess>
+      <cleanWhenUnstable>true</cleanWhenUnstable>
+      <cleanWhenFailure>true</cleanWhenFailure>
+      <cleanWhenNotBuilt>true</cleanWhenNotBuilt>
+      <cleanWhenAborted>true</cleanWhenAborted>
+      <notFailBuild>true</notFailBuild>
+    </hudson.plugins.ws__cleanup.WsCleanup>
+  </publishers>
+  <buildWrappers>
+    <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
+    <hudson.plugins.build__timeout.BuildTimeoutWrapper>
+      <timeoutMinutes>5</timeoutMinutes>
+      <timeoutEnvVar>BUILD_TIMEOUT</timeoutEnvVar>
+      <failBuild>true</failBuild>
+      <writingDescription>false</writingDescription>
+      <timeoutPercentage>0</timeoutPercentage>
+      <timeoutMinutesElasticDefault>3</timeoutMinutesElasticDefault>
+      <timeoutType>absolute</timeoutType>
+    </hudson.plugins.build__timeout.BuildTimeoutWrapper>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper/>
+    <com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+      <user>test-credential</user>
+    </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
+    <jenkins.plugins.openstack.compute.JCloudsOneOffSlave/>
+  </buildWrappers>
+</project>
