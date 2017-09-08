@@ -22,6 +22,30 @@
       "revId": "88f2843f58692701e1212e5b18c0dad8c1e29329",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ce101ae_937f6d30",
+        "filename": "shell/jjb-deploy-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-08T13:31:39Z",
+      "side": 1,
+      "message": "A perfectly valid use case of the sandbox is to test existing jobs. For example if something failed in production and we need to reproduce it to figure out what went wrong. No point forcing someone to have to submit a patch just to troubleshoot an existing job. This patch already limits the jobs being pushed by forcing them to pass a job name.\n\nAlthough I should add a check to ensure $JOB_NAME is not empty or just \u0027*\u0027 to be safe.",
+      "parentUuid": "d71cc5c5_9392e030",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 60
+      },
+      "revId": "88f2843f58692701e1212e5b18c0dad8c1e29329",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
