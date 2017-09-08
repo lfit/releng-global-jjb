@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "84fa6421_0009352c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-09-08T15:32:01Z",
+      "side": 1,
+      "message": "I think that this should be:\njjb-deploy (?!\\*$).+$\n\nWhich will according to my testing for java regex will do a negative lookahead to make sure that the jobs being requested aren\u0027t just * but must have at least one other character. This should be added protection to not even trigger the job by default if someone does something stupid.\n\nTested at http://www.regexplanet.com/advanced/java/index.html with the following input strings:\njjb-deploy *\njjb-deploy *-foo\njjb-deploy foo-*\njjb-deploy foo-*-bar",
+      "range": {
+        "startLine": 304,
+        "startChar": 34,
+        "endLine": 304,
+        "endChar": 48
+      },
+      "revId": "ddb978feaf6b4d69aa8772e617c30d71cdcdf277",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
