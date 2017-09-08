@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22018a0d_4c553f34",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-09-08T15:53:03Z",
+      "side": 1,
+      "message": "Does this macro even exist yet? If it does my grep-fu is apparently failing",
+      "range": {
+        "startLine": 334,
+        "startChar": 8,
+        "endLine": 334,
+        "endChar": 31
+      },
+      "revId": "4655917feca48e6c7163668405a0a60df413443a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
