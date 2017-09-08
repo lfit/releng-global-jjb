@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d71cc5c5_9392e030",
+        "filename": "shell/jjb-deploy-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-09-08T03:46:07Z",
+      "side": 1,
+      "message": "I think it would be good to limit the number of jobs users can push at once to Jenkins, such that the jobs are relevant to the files being modified. We could get a list of files which are changed with $(git log --pretty\u003d\"\" --name-only -n1) and ensure that jobs (regex) are within the same directory path.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 60
+      },
+      "revId": "88f2843f58692701e1212e5b18c0dad8c1e29329",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
