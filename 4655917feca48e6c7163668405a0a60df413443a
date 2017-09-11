@@ -22,6 +22,30 @@
       "revId": "4655917feca48e6c7163668405a0a60df413443a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "023c20a4_1ba410d1",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-11T14:57:55Z",
+      "side": 1,
+      "message": "Looks like I missed this question. Yes it does near the top of this file.",
+      "parentUuid": "22018a0d_4c553f34",
+      "range": {
+        "startLine": 334,
+        "startChar": 8,
+        "endLine": 334,
+        "endChar": 31
+      },
+      "revId": "4655917feca48e6c7163668405a0a60df413443a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
