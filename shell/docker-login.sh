@@ -66,7 +66,7 @@ do_login() {
     then
         docker login -u "$USER" -p "$PASS" -e "$2" "$1"
     else
-        docker login -u "$USER" -p "$PASS"
+        docker login -u "$USER" -p "$PASS" "$1"
     fi
 }
 
