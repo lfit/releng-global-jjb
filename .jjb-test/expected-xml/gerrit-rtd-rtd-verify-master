@@ -162,7 +162,6 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
       <triggerConfigURL/>
       <allowTriggeringUnreviewedPatches>false</allowTriggeringUnreviewedPatches>
       <triggerOnEvents>
-        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginChangeMergedEvent/>
         <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedContainsEvent>
           <commentAddedCommentContains>recheck$</commentAddedCommentContains>
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedContainsEvent>
