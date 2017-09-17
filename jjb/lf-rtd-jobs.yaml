@@ -227,7 +227,6 @@
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on:
-            - change-merged-event
             - comment-added-contains-event:
                 comment-contains-value: 'recheck$'
           projects:
