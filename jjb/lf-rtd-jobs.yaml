@@ -86,6 +86,14 @@
     #     :project-pattern: Project to trigger build against. (default: **)
     #     :stream: Keyword that can be used to represent a release code-name.
     #         Often the same as the branch. (default: master)
+    #
+    #     :gerrit_merge_triggers: Override Gerrit Triggers.
+    #     :gerrit_trigger_file_paths: Override file paths which can be used to
+    #         filter which file modifications will trigger a build.
+    #         (default: - compare-type: ANT
+    #                     pattern: '**/*.rst'
+    #                   - compare-type: ANT
+    #                     pattern: '**/conf.py')
 
     ######################
     # Default parameters #
@@ -98,6 +106,11 @@
     project-pattern: '**'
     stream: master
     submodule-recursive: true
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
 
     #####################
     # Job Configuration #
@@ -117,10 +130,7 @@
     triggers:
       - gerrit:
           server-name: '{gerrit-server-name}'
-          trigger-on:
-            - change-merged-event
-            - comment-added-contains-event:
-                comment-contains-value: 'remerge$'
+          trigger-on: '{obj:gerrit_merge_triggers}'
           projects:
             - project-compare-type: 'ANT'
               project-pattern: '{project-pattern}'
