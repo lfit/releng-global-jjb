@@ -239,6 +239,7 @@ fi
 git fetch origin &quot;$GERRIT_REFSPEC&quot; &amp;&amp; git checkout FETCH_HEAD
 
 echo &quot;---&gt; Generating docs&quot;
+cd &quot;$WORKSPACE&quot;
 tox -edocs
 
 echo &quot;---&gt; Archiving generated docs&quot;
