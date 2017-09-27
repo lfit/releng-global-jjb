@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "867e50e9_4d82338d",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-27T20:27:35Z",
+      "side": 1,
+      "message": "opendaylight-site?\n\nprobably should configure a default and then have the project pass this in.",
+      "range": {
+        "startLine": 237,
+        "startChar": 21,
+        "endLine": 237,
+        "endChar": 38
+      },
+      "revId": "6027384e481d37703c44a156ef7141ea4d49bd21",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
