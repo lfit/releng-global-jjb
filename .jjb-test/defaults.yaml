@@ -20,6 +20,7 @@
       - tykeal
 
     lftools-version: '<1.0.0'
+    mvn-site-id: project-site
 
     # Common test config
     project: releng/ciman
