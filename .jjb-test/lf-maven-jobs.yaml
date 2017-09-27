@@ -3,6 +3,8 @@
     name: gerrit-maven-jobs
     jobs:
       - gerrit-maven-clm
+      - gerrit-maven-javadoc-publish
+      - gerrit-maven-javadoc-verify
       - gerrit-maven-release
       - gerrit-maven-sonar
       - gerrit-maven-verify
@@ -15,6 +17,8 @@
     name: github-maven-jobs
     jobs:
       - github-maven-clm
+      - github-maven-javadoc-publish
+      - github-maven-javadoc-verify
       - github-maven-release
       - github-maven-sonar
       - github-maven-verify
