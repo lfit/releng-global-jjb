@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "767c525b_481919bd",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-28T19:28:53Z",
+      "side": 1,
+      "message": "I\u0027d call the variable cron to be perfectly clear that it\u0027s expecting a cron value.",
+      "range": {
+        "startLine": 187,
+        "startChar": 11,
+        "endLine": 187,
+        "endChar": 16
+      },
+      "revId": "e1c51ad39e35d6f87a002eeb1918aae7e170f3ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b637032d_b436d46d",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-28T19:28:53Z",
+      "side": 1,
+      "message": "cron",
+      "revId": "e1c51ad39e35d6f87a002eeb1918aae7e170f3ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "20e2ee9f_d411720b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-28T19:28:53Z",
+      "side": 1,
+      "message": "cron",
+      "range": {
+        "startLine": 248,
+        "startChar": 15,
+        "endLine": 248,
+        "endChar": 24
+      },
+      "revId": "e1c51ad39e35d6f87a002eeb1918aae7e170f3ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ec0a78b_6f775427",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-28T19:28:53Z",
+      "side": 1,
+      "message": "cron",
+      "range": {
+        "startLine": 280,
+        "startChar": 15,
+        "endLine": 280,
+        "endChar": 24
+      },
+      "revId": "e1c51ad39e35d6f87a002eeb1918aae7e170f3ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
