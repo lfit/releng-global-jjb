@@ -224,7 +224,7 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
     </org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep>
     <EnvInjectBuilder>
       <info>
-        <propertiesContent>SERVER_ID=opendaylight-staging</propertiesContent>
+        <propertiesContent>SERVER_ID=project-staging</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>

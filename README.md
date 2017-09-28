@@ -113,6 +113,9 @@ For example `<1.0.0` or `>=1.0.0,<2.0.0`.
 **mvn-site-id**: Maven Server ID from settings.xml containing the credentials
 to push to a Maven site repository.
 
+**mvn-staging-id**: Maven Server ID from settings.xml containing the credentials
+to push to a Maven staging repository.
+
 defaults.yaml:
 
 ```
