@@ -11,6 +11,19 @@
           properties-file: $WORKSPACE/.dependency.properties
 
 - builder:
+    name: lf-license-check
+    builders:
+      - inject:
+          properties-content: |
+              FILE_PATTERNS={file-patterns}
+              SPDX_DISABLE={spdx-disable}
+              LHC_VERSION={lhc-version}
+              LICENSE_EXCLUDE_PATHS={license-exclude-paths}
+              LICENSES_ALLOWED={licenses-allowed}
+      - shell: !include-raw-escape:
+          - ../shell/license-check.sh
+
+- builder:
     name: lf-infra-create-netrc
     builders:
       - inject:

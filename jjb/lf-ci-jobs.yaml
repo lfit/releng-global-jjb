@@ -36,7 +36,6 @@
       - gerrit-packer-merge
       - gerrit-packer-verify
 
-
 - job-group:
     name: '{project-name}-github-packer-jobs'
 
@@ -713,6 +712,131 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+
+#################
+# License Check #
+#################
+
+- lf_license_check: &lf_license_check
+    name: lf-license-check
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    file-patterns: >
+        *.go
+        *.groovy
+        *.java
+        *.py
+        *.sh
+    git-url: '$GIT_URL/$PROJECT'
+    lhc-version: 0.2.0
+    license-exclude-paths: ''
+    licenses-allowed: Apache-2.0,EPL-1.0,MIT
+    spdx-disable: false
+    stream: master
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: true
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-license-check:
+          file-patterns: '{file-patterns}'
+          spdx-disable: '{spdx-disable}'
+          lhc-version: '{lhc-version}'
+          license-exclude-paths: '{license-exclude-paths}'
+          licenses-allowed: '{licenses-allowed}'
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-license-check'
+    id: gerrit-license-check
+    <<: *lf_license_check
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          # Submodules are out of the project's control
+          submodule-recursive: false
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          # Trigger should not be overridable as we want to always run
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: false
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: recheck$
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**'
+
+- job-template:
+    name: '{project-name}-license-check'
+    id: github-license-check
+    <<: *lf_license_check
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          # Submodules are out of the project's control
+          submodule-recursive: false
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'License Check'
+          permit-all: true
+          github-hooks: true
 
 ####################
 # Info YAML Verify #
