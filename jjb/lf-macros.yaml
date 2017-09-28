@@ -4,6 +4,12 @@
 ############
 
 - builder:
+    name: lf-license-check
+    builders:
+      - shell: !include-raw-escape:
+          - ../shell/license-check.sh
+
+- builder:
     name: lf-infra-create-netrc
     # Macro to create a ~/.netrc file from a Maven settings.xml
     # Parameters:
