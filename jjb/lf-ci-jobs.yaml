@@ -7,6 +7,7 @@
       - gerrit-jjb-deploy-job
       - gerrit-jjb-merge
       - gerrit-jjb-verify
+      - gerrit-license-check
 
 - job-group:
     name: '{project-name}-github-ci-jobs'
@@ -23,7 +24,6 @@
     jobs:
       - gerrit-packer-merge
       - gerrit-packer-verify
-
 
 - job-group:
     name: '{project-name}-github-packer-jobs'
@@ -695,6 +695,115 @@
             - ''
           github_pr_admin_list:
             - ''
+
+#################
+# License Check #
+#################
+
+- lf_license_check: &lf_license_check
+    name: lf-license-check
+
+    # JJB Verify job runs `jenkins-jobs test` to validate JJB syntax
+    #
+    # Required parameters:
+    #
+    #     :build-node: The node to run build on.
+    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #         be configured in defaults.yaml)
+    #
+    # Optional parameters:
+    #
+    #     :branch: Git branch to fetch for the build. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    git-url: '$GIT_URL/$PROJECT'
+    stream: master
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: true
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+      - string:
+          name: LICENSE_EXCLUDE_PATHS
+          default: ''
+          description: |
+              Comma-separated list of paths to exclude from the license checker.
+              The paths used here will be matched using a contains rule so it
+              is best to be as precise with the path as possible. For example a
+              path of '/src/generated/' will be searched as
+              '**/src/generated/**'.
+
+              Example org/opendaylight/yang/gen,protobuff/messages
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - lf-license-check
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-license-check'
+    id: gerrit-license-check
+    <<: *lf_license_check
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          # Submodules are out of the project's control
+          submodule-recursive: false
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          # Trigger should not be overridable as we want to always run
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: false
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: recheck$
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**'
 
 ################
 # Packer Merge #
