@@ -144,6 +144,9 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
     </extensions>
   </scm>
   <triggers class="vector">
+    <hudson.triggers.TimerTrigger>
+      <spec/>
+    </hudson.triggers.TimerTrigger>
     <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
       <spec/>
       <gerritProjects>
