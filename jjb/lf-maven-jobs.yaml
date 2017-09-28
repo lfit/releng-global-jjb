@@ -184,6 +184,7 @@
     #     :gerrit_verify_triggers: Override Gerrit Triggers.
     #     :mvn-global-settings: The name of the Maven global settings to use for
     #                           Maven configuration. (default: global-settings)
+    #     :timed: Cron schedule when to trigger the job. (default: '')
 
     ######################
     # Default parameters #
@@ -200,6 +201,7 @@
     mvn-version: mvn33
     stream: master
     submodule-recursive: true
+    timed: ''
 
     gerrit_release_triggers:
       - comment-added-contains-event:
@@ -243,6 +245,7 @@
           choosing-strategy: default
 
     triggers:
+      - timed: '{timed}'
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on: '{obj:gerrit_release_triggers}'
@@ -274,6 +277,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      - timed: '{timed}'
       - lf-infra-github-pr-trigger:
           trigger-phrase: '^build release$'
           only-trigger-phrase: true
