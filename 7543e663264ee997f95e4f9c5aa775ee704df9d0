@@ -16,6 +16,24 @@
       "revId": "7543e663264ee997f95e4f9c5aa775ee704df9d0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2e37f06_3274e717",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-28T16:15:59Z",
+      "side": 1,
+      "message": "Good catch!",
+      "parentUuid": "299ff451_dc1e42ec",
+      "revId": "7543e663264ee997f95e4f9c5aa775ee704df9d0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
