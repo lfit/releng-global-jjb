@@ -21,6 +21,7 @@
 
     lftools-version: '<1.0.0'
     mvn-site-id: project-site
+    mvn-staging-id: project-staging
 
     # Common test config
     project: releng/ciman
