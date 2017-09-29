@@ -1,0 +1,68 @@
+global-jjb v0.9.0 Release Notes
+===============================
+
+Thanks to Jeremy and Thanh for contributing to this release.
+
+Upgrade considerations
+----------------------
+
+1. Release job maven-staging-id was hardcoded to opendaylight-staging
+   CI Management maintainers will need to now declare `mvn-staging-id`
+   in their defaults.yaml configurations.
+
+
+Notable changes since v0.8.0
+----------------------------
+
+859c2a8 Jeremy Phelps   Add timed parameter to lf-maven-release anchor
+The maven-release job now has a 'cron' configuration allowing projects to set
+the job to run via a schedule if needed. The cron configuration supports
+passing more than 1 line of cron items via the YAML pipe | character.
+
+add619c Thanh Ha        Add maven-javadoc jobs
+New maven-javadoc jobs will run `javadoc:aggregate` against projects to
+generate javadocs for the project. The verify jobs store a copy of the docs on
+the log server so that they can more easily be reviewed. The merge job will
+push these docs to Nexus in the javadoc repository.
+
+74befe2 Thanh Ha        Run tox envs separately and capture logs
+Tox jobs now will run all the tox envs in parallel and report back a summary.
+Each individual env run is additionally stored in the log server as
+'tox-$env.log' for further inspection if needed. We're hoping this will speed
+up tox builds moving forward.
+
+4d5dfa5 Thanh Ha        Add job to deploy to sandbox
+New job will allow ci-management contributors to push JJB patches to Gerrit and
+then via Gerrit comment keyword push jobs that they wish to test in the sandbox
+using `jjb-deploy JOB_NAME` where JOB_NAME is the name of the job that should
+be pushed to the sandbox. You can also use wildcards like 'project-merge-*' to
+push all jobs that start with the name project-merge- to the sandbox.
+
+11b2f87 Thanh Ha        Add trigger for launching release job via comment
+The release job can now be triggered via the `build release` keyword in a
+Gerrit Comment.
+
+df6bd25 Thanh Ha        Create job to lock|unlock branches via Gerrit
+New gerrit-branch-lock job will generate a patch to lock or unlock a Gerrit
+branch. The job can be triggered by leaving a Gerrit comment of `lock branch`
+or `unlock branch`. Committers on the project will still need to make the final
+decision on whether or not to merge the patch.
+
+
+Full Change Log
+---------------
+
+859c2a8 Jeremy Phelps   Add timed parameter to lf-maven-release anchor
+8f6f9fe Thanh Ha        DO NOT hardcode mvn staging server id
+add619c Thanh Ha        Add maven-javadoc jobs
+74befe2 Thanh Ha        Run tox envs separately and capture logs
+4fcbb75 Thanh Ha        Docs needs to be built from the $WORKSPACE
+7343a81 Thanh Ha        RTD Merge job GTriggers should be overridable
+104b6be Thanh Ha        Fix RTD Verify job Gerrit Triggers
+dd42fc2 Jeremy Phelps   Fix bug that removed custom docker registry
+4d5dfa5 Thanh Ha        Add job to deploy to sandbox
+11b2f87 Thanh Ha        Add trigger for launching release job via comment
+4372954 Thanh Ha        Remove rtd-project incorrectly labelled required
+f257ba1 Thanh Ha        Allow project-pattern to be overridable
+df6bd25 Thanh Ha        Create job to lock|unlock branches via Gerrit
+3297f52 Jeremy Phelps   Fix docker-login to conditionally use -e
