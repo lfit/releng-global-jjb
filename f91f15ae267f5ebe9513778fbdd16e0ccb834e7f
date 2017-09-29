@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "976db54d_a17fa283",
+        "filename": "shell/license-check.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-29T19:42:10Z",
+      "side": 1,
+      "message": "Allow disabling the spdx checker too.",
+      "revId": "f91f15ae267f5ebe9513778fbdd16e0ccb834e7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4e640c86_754f1342",
+        "filename": "shell/license-check.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-29T19:42:10Z",
+      "side": 1,
+      "message": "This list should be configurable.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 10
+      },
+      "revId": "f91f15ae267f5ebe9513778fbdd16e0ccb834e7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
