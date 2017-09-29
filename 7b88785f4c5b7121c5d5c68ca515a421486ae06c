@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e324086c_fc09d085",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-09-29T03:42:48Z",
+      "side": 1,
+      "message": "Should mention that multiline pipe is supported so that it\u0027s clear.",
+      "revId": "7b88785f4c5b7121c5d5c68ca515a421486ae06c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
