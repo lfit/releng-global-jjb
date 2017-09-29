@@ -110,6 +110,9 @@ macro.
 like '0.6.1' or a PEP-440 definition. <https://www.python.org/dev/peps/pep-0440/>
 For example `<1.0.0` or `>=1.0.0,<2.0.0`.
 
+**mvn-site-id**: Maven Server ID from settings.xml containing the credentials
+to push to a Maven site repository.
+
 defaults.yaml:
 
 ```
@@ -127,6 +130,7 @@ defaults.yaml:
     github_pr_admin_list:
       - tykeal
     lftools-version: '<1.0.0'
+    mvn-site-id: opendaylight-site
 ```
 
 ## Config File Management

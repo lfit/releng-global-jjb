@@ -3,11 +3,14 @@
     name: gerrit-maven-jobs
     jobs:
       - gerrit-maven-clm
+      - gerrit-maven-javadoc-publish
+      - gerrit-maven-javadoc-verify
       - gerrit-maven-release
       - gerrit-maven-sonar
       - gerrit-maven-verify
 
     project-name: gerrit-maven
+    javadoc-path: org.example.project/$STREAM
     staging-profile-id: uuddlrlrba
     mvn-settings: gerrit-maven-project-settings
 
@@ -15,10 +18,13 @@
     name: github-maven-jobs
     jobs:
       - github-maven-clm
+      - github-maven-javadoc-publish
+      - github-maven-javadoc-verify
       - github-maven-release
       - github-maven-sonar
       - github-maven-verify
 
     project-name: github-maven
+    javadoc-path: org.example.project/$STREAM
     staging-profile-id: uuddlrlrba
     mvn-settings: aproject-settings
