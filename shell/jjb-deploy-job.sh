@@ -27,7 +27,7 @@ COMMENT="${GERRIT_EVENT_COMMENT_TEXT:-$ghprbCommentBody}"
 JOB_NAME=$(echo "$COMMENT" | grep jjb-deploy | awk '{print $2}')
 
 # Strip all * characters to prevent pushing all jobs to Jenkins
-if [ -z "${JOB_NAME//*/}" ]; then
+if [ -z "${JOB_NAME//\*/}" ]; then
     echo "ERROR: JOB_NAME cannot be empty or '*'."
     exit 1
 fi
