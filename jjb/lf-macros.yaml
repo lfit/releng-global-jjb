@@ -307,6 +307,21 @@
               For example '<1.0.0' or '>=1.0.0,<2.0.0'.
 
 - parameter:
+    name: lf-infra-node-parameters
+    # Useful parameters when working with node jobs
+    parameters:
+      - string:
+          name: NODE_DIR
+          default: '{nodedir}'
+          description: |
+              Path to node directory.
+      - string:
+          name: NODE_VERSION
+          default: '{node-version}'
+          description: |
+              Version of npm to install.
+
+- parameter:
     name: lf-infra-tox-parameters
     # Useful parameters when working with TOX
     # https://tox.readthedocs.io/
