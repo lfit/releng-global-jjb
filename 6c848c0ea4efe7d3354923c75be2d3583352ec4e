@@ -22,6 +22,30 @@
       "revId": "6c848c0ea4efe7d3354923c75be2d3583352ec4e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14201e0d_f00f2916",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-06T14:44:05Z",
+      "side": 1,
+      "message": "Right plus you can recheck if you really want it. I\u0027m fine with changing this to true across all of global-jjb jobs. The other thing is these are overrideable so let\u0027s follow the OpenDaylight standard here of not building drafts by default.",
+      "parentUuid": "563efcf2_daab2141",
+      "range": {
+        "startLine": 315,
+        "startChar": 26,
+        "endLine": 315,
+        "endChar": 31
+      },
+      "revId": "6c848c0ea4efe7d3354923c75be2d3583352ec4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
