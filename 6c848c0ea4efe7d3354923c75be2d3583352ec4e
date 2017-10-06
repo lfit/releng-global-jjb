@@ -46,6 +46,30 @@
       "revId": "6c848c0ea4efe7d3354923c75be2d3583352ec4e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "50f11709_67c116eb",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2017-10-06T14:45:03Z",
+      "side": 1,
+      "message": "Contributed https://gerrit.linuxfoundation.org/infra/6716",
+      "parentUuid": "14201e0d_f00f2916",
+      "range": {
+        "startLine": 315,
+        "startChar": 26,
+        "endLine": 315,
+        "endChar": 31
+      },
+      "revId": "6c848c0ea4efe7d3354923c75be2d3583352ec4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
