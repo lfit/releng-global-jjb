@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b564fd5c_f2913d6e",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50e811f0_4338fe54",
+      "range": {
+        "startLine": 315,
+        "startChar": 21,
+        "endLine": 315,
+        "endChar": 28
+      },
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "055b2f32_856ca702",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 2
@@ -36,6 +60,24 @@
       "writtenOn": "2017-10-06T04:58:51Z",
       "side": 1,
       "message": "Let\u0027s set this to the latest lts version which I think is currently 6.11.4",
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b9d6851_cd0efa8a",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "055b2f32_856ca702",
       "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "492465ab_764d0a17",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "67ffcdd0_570daabd",
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e04c407b_54cf1c08",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 2
@@ -70,6 +130,30 @@
       "writtenOn": "2017-10-06T04:58:51Z",
       "side": 1,
       "message": "Please use the same documentation standard as in the maven templates file.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 66
+      },
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d25b741d_6e1ae171",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e04c407b_54cf1c08",
       "range": {
         "startLine": 31,
         "startChar": 0,
@@ -105,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "7aa354b9_c4ac736d",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9db1e31c_22460da6",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 20
+      },
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d95b4e4_4bc1b966",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 2
@@ -116,6 +224,24 @@
       "writtenOn": "2017-10-06T04:58:51Z",
       "side": 1,
       "message": "node-dir",
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "65ef8392_ad43afc0",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d95b4e4_4bc1b966",
       "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -139,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "da6ae106_5321043e",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "718aa290_e6526be9",
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "222cb561_7f49c38f",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 2
@@ -156,6 +300,24 @@
     },
     {
       "key": {
+        "uuid": "90bb5c10_e2b133b1",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "222cb561_7f49c38f",
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a29a4f2a_390dbc20",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 2
@@ -167,6 +329,30 @@
       "writtenOn": "2017-10-06T04:58:51Z",
       "side": 1,
       "message": "This is not a python job and I believe we are not using tox in this job.",
+      "range": {
+        "startLine": 89,
+        "startChar": 6,
+        "endLine": 89,
+        "endChar": 12
+      },
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c2a99a2_09d66c35",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a29a4f2a_390dbc20",
       "range": {
         "startLine": 89,
         "startChar": 6,
@@ -202,6 +388,30 @@
     },
     {
       "key": {
+        "uuid": "017206f4_cd00b9e6",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "edebf001_a18aa2da",
+      "range": {
+        "startLine": 111,
+        "startChar": 27,
+        "endLine": 111,
+        "endChar": 30
+      },
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "35b5d0a6_5e1595e1",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 2
@@ -213,6 +423,30 @@
       "writtenOn": "2017-10-06T04:58:51Z",
       "side": 1,
       "message": "Gerrit before GitHub alphabetically.",
+      "range": {
+        "startLine": 118,
+        "startChar": 8,
+        "endLine": 118,
+        "endChar": 14
+      },
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "489b6010_d2d2465d",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:18:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35b5d0a6_5e1595e1",
       "range": {
         "startLine": 118,
         "startChar": 8,
