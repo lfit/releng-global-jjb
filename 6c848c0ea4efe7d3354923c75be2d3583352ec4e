@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "563efcf2_daab2141",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2017-10-06T14:39:17Z",
+      "side": 1,
+      "message": "In OpenDaylight there was a discussion, which converged [0] on \"true\" here. Is there anybody who wishes to verify draft both on Upload and on Publish (without any commit difference at all)?\n\nBTW, \"false\" in line 317 is OK since tox jobs run CommitBear.\n\n[0] https://git.opendaylight.org/gerrit/46043",
+      "range": {
+        "startLine": 315,
+        "startChar": 26,
+        "endLine": 315,
+        "endChar": 31
+      },
+      "revId": "6c848c0ea4efe7d3354923c75be2d3583352ec4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
