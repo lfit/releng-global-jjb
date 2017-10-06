@@ -505,6 +505,30 @@
     },
     {
       "key": {
+        "uuid": "0d4ebf76_11dcce60",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:23:48Z",
+      "side": 1,
+      "message": "I think its good to keep this standard for all job templates in global-jjb.",
+      "parentUuid": "23d215a4_f92a76e6",
+      "range": {
+        "startLine": 139,
+        "startChar": 3,
+        "endLine": 141,
+        "endChar": 25
+      },
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "704bd3c1_964ad4b1",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 2
@@ -533,6 +557,30 @@
       "writtenOn": "2017-10-06T04:58:51Z",
       "side": 1,
       "message": "These 2 are probably unnecessary requirements for nodeenv.",
+      "range": {
+        "startLine": 22,
+        "startChar": 30,
+        "endLine": 22,
+        "endChar": 42
+      },
+      "revId": "3d83733796a1651a346a176edaaa482d50a4a588",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c8090047_a20423a8",
+        "filename": "shell/node-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-06T06:23:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20a14808_ae359b46",
       "range": {
         "startLine": 22,
         "startChar": 30,
