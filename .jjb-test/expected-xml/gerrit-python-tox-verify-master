@@ -166,7 +166,7 @@ Example: docs,py2,py3
       <allowTriggeringUnreviewedPatches>false</allowTriggeringUnreviewedPatches>
       <triggerOnEvents>
         <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
-          <excludeDrafts>false</excludeDrafts>
+          <excludeDrafts>true</excludeDrafts>
           <excludeTrivialRebase>false</excludeTrivialRebase>
           <excludeNoCodeChange>false</excludeNoCodeChange>
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
