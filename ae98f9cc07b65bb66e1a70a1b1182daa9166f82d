@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c12f6b86_a637ef51",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-10-12T22:06:33Z",
+      "side": 1,
+      "message": "This should probably be lf_node_verify not lf_tox_verify",
+      "range": {
+        "startLine": 28,
+        "startChar": 5,
+        "endLine": 28,
+        "endChar": 8
+      },
+      "revId": "ae98f9cc07b65bb66e1a70a1b1182daa9166f82d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
