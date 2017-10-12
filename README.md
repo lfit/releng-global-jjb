@@ -29,6 +29,7 @@ configuration.
 
 - Config File Provider
 - Description Setter
+- Environment Injector Plugin
 - Gerrit Trigger
 - Post Build Script
 - SSH Agent
