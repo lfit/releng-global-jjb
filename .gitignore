@@ -21,6 +21,7 @@ target/
 .tox/
 __pycache__/
 *.pyc
+docs/_build/
 
 # global-jjb
 archives/
