@@ -4,6 +4,19 @@
 ############
 
 - builder:
+    name: lf-fetch-dependent-patches
+    # Fetches all patches provided via comment trigger
+    #
+    # This macro will fetch all patches provided via comment trigger and will
+    # create a list of projects from those patches via environment variable
+    # called DEPENDENCY_BUILD_ORDER which can be used if necessary to build
+    # projects in the specified order. The order is determined by first patch
+    # instance for a project in the patch list.
+    builders:
+      - shell: !include-raw-escape: ../shell/gerrit-fetch-dependencies.sh
+      - inject: '$WORKSPACE/.dependency.properties'
+
+- builder:
     name: lf-infra-create-netrc
     # Macro to create a ~/.netrc file from a Maven settings.xml
     # Parameters:
