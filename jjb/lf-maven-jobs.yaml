@@ -232,6 +232,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn33
+    staging-profile-id: ''  # Unused by the javadoc jobs
     stream: master
     submodule-recursive: true
 
@@ -373,6 +374,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn33
+    staging-profile-id: ''  # Unused by the javadoc jobs
     stream: master
     submodule-recursive: true
 
