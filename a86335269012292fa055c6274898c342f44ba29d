@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "c1620950_6b4e2e0e",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-13T21:10:52Z",
+      "side": 1,
+      "message": "This is a Gerrit specific setting. So the current GitHub version of the job does not use filepaths at all. It just builds every patch at the moment.",
+      "parentUuid": "64a32ecb_ddb32073",
+      "revId": "a86335269012292fa055c6274898c342f44ba29d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d613183_1cfcd496",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 2
