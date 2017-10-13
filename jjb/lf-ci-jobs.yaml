@@ -72,6 +72,19 @@
             - file-id: jjbini-sandbox
               target: '$HOME/.config/jenkins_jobs/jenkins_jobs.ini'
 
+- lf_packer_verify_file_paths: &lf_packer_verify_file_paths
+    name: lf-packer-verify-file-paths
+    file-paths:
+      # Common files for all projects
+      - compare-type: ANT
+        pattern: 'packer/vars/**.json'
+      - compare-type: ANT
+        pattern: 'packer/templates/**.json'
+      - compare-type: ANT
+        pattern: 'packer/provision/**.sh'
+      - compare-type: ANT
+        pattern: 'packer/provision/lib/**'
+
 - lf_packer_file_paths: &lf_packer_file_paths
     name: lf-packer-file-paths
     file-paths:
@@ -852,7 +865,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
-              <<: *lf_packer_file_paths
+              <<: *lf_packer_verify_file_paths
 
 - job-template:
     name: '{project-name}-packer-verify'

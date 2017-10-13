@@ -140,15 +140,15 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
           <filePaths>
             <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
               <compareType>ANT</compareType>
-              <pattern>packer/vars/['centos', 'ubuntu1604'].json</pattern>
+              <pattern>packer/vars/**.json</pattern>
             </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
             <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
               <compareType>ANT</compareType>
-              <pattern>packer/templates/['java-builder', 'mininet'].json</pattern>
+              <pattern>packer/templates/**.json</pattern>
             </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
             <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
               <compareType>ANT</compareType>
-              <pattern>packer/provision/['java-builder', 'mininet'].sh</pattern>
+              <pattern>packer/provision/**.sh</pattern>
             </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
             <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
               <compareType>ANT</compareType>
