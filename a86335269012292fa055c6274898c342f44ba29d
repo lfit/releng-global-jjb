@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "b57e63ef_ce28c35b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-10-13T21:12:01Z",
+      "side": 1,
+      "message": "I\u0027m aware, but the plugin does support file paths per discussion with Jeremy. I thought Jeremy was submitting an update patch to JJB to get it in?",
+      "parentUuid": "c1620950_6b4e2e0e",
+      "revId": "a86335269012292fa055c6274898c342f44ba29d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d613183_1cfcd496",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 2
