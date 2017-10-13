@@ -10,7 +10,10 @@ A collection of documentation for Linux Foundation JJB Templates.
 
 Guides:
 
-- Best Practices
+.. toctree::
+   :maxdepth: 2
+
+   best-practices
 
 Indices and tables
 ==================
