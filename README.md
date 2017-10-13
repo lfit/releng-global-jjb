@@ -30,10 +30,19 @@ configuration.
 - Config File Provider
 - Description Setter
 - Environment Injector Plugin
-- Gerrit Trigger
+- Git plugin
 - Post Build Script
 - SSH Agent
 - Workspace Cleanup
+
+**Required for Gerrit connected systems**
+
+- Gerrit Trigger
+
+**Required for GitHub connected systems**
+
+- GitHub plugin
+- GitHub Pull Request Builder
 
 **Optional**
 
