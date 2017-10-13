@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82193293_f25ff9e3",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-13T21:02:16Z",
+      "side": 1,
+      "message": "Let\u0027s not use anchors to fix this since we\u0027re updating this. Let\u0027s use {obj:var} instead this way we can also override if necessary. See:\n\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-maven-jobs.yaml#L820-L822",
+      "revId": "a86335269012292fa055c6274898c342f44ba29d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3d613183_1cfcd496",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-13T21:02:16Z",
+      "side": 1,
+      "message": "I guess we should remove the old one if we\u0027re renaming it.",
+      "range": {
+        "startLine": 88,
+        "startChar": 25,
+        "endLine": 88,
+        "endChar": 45
+      },
+      "revId": "a86335269012292fa055c6274898c342f44ba29d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
