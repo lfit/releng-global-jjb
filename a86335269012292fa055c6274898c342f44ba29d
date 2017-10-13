@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "64a32ecb_ddb32073",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-10-13T21:05:43Z",
+      "side": 1,
+      "message": "I used an anchor here because the GitHub version of this will eventually need this (or something similar) as well when it finally supports ANT paths via JJB.\n\nGiven we have two different patterns and only one common anchor set I don\u0027t see how we can cleanly add in an object pass through like your suggesting.",
+      "parentUuid": "82193293_f25ff9e3",
+      "revId": "a86335269012292fa055c6274898c342f44ba29d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d613183_1cfcd496",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2017-10-13T21:02:16Z",
       "side": 1,
       "message": "I guess we should remove the old one if we\u0027re renaming it.",
+      "range": {
+        "startLine": 88,
+        "startChar": 25,
+        "endLine": 88,
+        "endChar": 45
+      },
+      "revId": "a86335269012292fa055c6274898c342f44ba29d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "57a0c676_0f75fc59",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-10-13T21:05:43Z",
+      "side": 1,
+      "message": "We aren\u0027t renaming it, this anchor is still in use and it does the correct thing for merge jobs. It\u0027s explicitly for verify jobs that it needs to be manhandled.",
+      "parentUuid": "3d613183_1cfcd496",
       "range": {
         "startLine": 88,
         "startChar": 25,
