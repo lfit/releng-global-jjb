@@ -1,4 +1,4 @@
-.. _lfreleng-docs:
+.. _lfreleng-global-jjb:
 
 Linux Foundation Releng Global JJB
 ==================================
