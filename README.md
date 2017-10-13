@@ -10,6 +10,7 @@ be available.
 For example:
 
 ```
+GERRIT_URL=https://git.opendaylight.org/gerrit
 GIT_URL=ssh://jenkins-$SILO@git.opendaylight.org:29418
 GIT_CLONE_URL=git@github.com:
 JENKINS_HOSTNAME=jenkins092

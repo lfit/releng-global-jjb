@@ -8,6 +8,7 @@
       - gerrit-maven-release
       - gerrit-maven-sonar
       - gerrit-maven-verify
+      - gerrit-maven-verify-dependencies
 
     project-name: gerrit-maven
     javadoc-path: org.example.project/$STREAM
