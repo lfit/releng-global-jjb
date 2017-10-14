@@ -138,6 +138,8 @@ html_theme = 'bootstrap'
 # html_theme_options = {}
 html_theme_options = {
     'bootswatch_theme': "cerulean",
+    'navbar_sidebarrel': False,
+    'source_link_position': "footer",
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -188,7 +190,9 @@ html_static_path = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 #
-# html_sidebars = {}
+html_sidebars = {
+    '**': ['localtoc.html', 'relations.html'],
+}
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
