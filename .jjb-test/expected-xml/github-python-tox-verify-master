@@ -292,6 +292,10 @@ run_tox() {
     local log_dir=&quot;$1&quot;
     local env=&quot;$2&quot;
 
+    # Sleep a random 10 second interval to workaround tox sdist
+    # conflicts due to building in the same dist directory.
+    sleep $[ ( $RANDOM % 10 )  + 1 ]s
+
     echo &quot;-----&gt; Running tox $env&quot;
     if ! tox -e $env &gt; &quot;$log_dir/tox-$env.log&quot;; then
         echo &quot;$env&quot; &gt;&gt; &quot;$log_dir/failed-envs.log&quot;
