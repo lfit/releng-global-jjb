@@ -7,6 +7,7 @@
     # This job group contains all the recommended jobs that should be deployed
     # for any project ci.
 
+    # TODO: Add Maven Merge job to this list once it's been fully tested.
     jobs:
       - gerrit-maven-clm
       - gerrit-maven-release
@@ -19,6 +20,7 @@
     # This job group contains all the recommended jobs that should be deployed
     # for any project ci that is using github.
 
+    # TODO: Add Maven Merge job to this list once it's been fully tested.
     jobs:
       - github-maven-clm
       - github-maven-release
@@ -381,6 +383,136 @@
           trigger-phrase: '^recheck$'
           only-trigger-phrase: true
           status-context: 'Maven Javadoc'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+
+###############
+# Maven Merge #
+###############
+
+- lf_maven_merge: &lf_maven_merge
+    name: lf-maven-merge
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30  # 30 days in case we need to troubleshoot
+    build-timeout: 30
+    cron: ''
+    git-url: '$GIT_URL/$PROJECT'
+    java-version: openjdk8
+    mvn-global-settings: global-settings
+    mvn-opts: ''
+    mvn-params: '-Dmerge'
+    mvn-version: mvn33
+    nexus-cut-dirs: 6  # Number of dirs in the Nexus path to remove for wget -r.
+    staging-profile-id: ''  # Unused by this job.
+    stream: master
+    submodule-recursive: true
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '**'
+
+    post_build_trigger: ''
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    builders:
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - lf-infra-create-netrc:
+          server-id: '{mvn-snapshots-id}'
+      - inject:
+          properties-content: |
+              NEXUS_CUT_DIRS={nexus-cut-dirs}
+              NEXUS_REPO={mvn-snapshot-repo}
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+          - ../shell/common-variables.sh
+          - ../shell/maven-fetch-metadata.sh
+          - ../shell/maven-build.sh
+          - ../shell/maven-deploy.sh
+      - lf-provide-maven-settings-cleanup
+
+    publishers:
+      - findbugs
+      - lf-jacoco-report
+      - lf-infra-publish
+      - trigger-parameterized-builds: '{obj:post_build_trigger}'
+
+- job-template:
+    name: '{project-name}-maven-merge-{stream}'
+    id: gerrit-maven-merge
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+
+    triggers:
+      - timed: 'H H * * 0'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-maven-merge-{stream}'
+    id: github-maven-merge
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_merge
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: false
+          status-context: 'Maven Merge'
           permit-all: true
           github-hooks: true
           github-org: ''

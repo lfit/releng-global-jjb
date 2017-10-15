@@ -5,6 +5,7 @@
       - gerrit-maven-clm
       - gerrit-maven-javadoc-publish
       - gerrit-maven-javadoc-verify
+      - gerrit-maven-merge
       - gerrit-maven-release
       - gerrit-maven-sonar
       - gerrit-maven-verify
@@ -14,6 +15,7 @@
     javadoc-path: org.example.project/$STREAM
     staging-profile-id: uuddlrlrba
     mvn-settings: gerrit-maven-project-settings
+    mvn-snapshot-repo: fakeproject-snapshots
 
 - project:
     name: github-maven-jobs
@@ -21,6 +23,7 @@
       - github-maven-clm
       - github-maven-javadoc-publish
       - github-maven-javadoc-verify
+      - github-maven-merge
       - github-maven-release
       - github-maven-sonar
       - github-maven-verify
@@ -29,3 +32,4 @@
     javadoc-path: org.example.project/$STREAM
     staging-profile-id: uuddlrlrba
     mvn-settings: aproject-settings
+    mvn-snapshot-repo: fakeproject-snapshots
