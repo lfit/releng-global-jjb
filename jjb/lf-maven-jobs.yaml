@@ -215,7 +215,7 @@
     #     :submodule-recursive: Whether to checkout submodules recursively.
     #         (default: true)
     #
-    #     :gerrit_javadoc_merge_triggers: Override Gerrit Triggers.
+    #     :gerrit_merge_triggers: Override Gerrit Triggers.
 
     ######################
     # Default parameters #
@@ -234,7 +234,7 @@
     stream: master
     submodule-recursive: true
 
-    gerrit_javadoc_merge_triggers:
+    gerrit_merge_triggers:
       - change-merged-event
       - comment-added-contains-event:
           comment-contains-value: remerge$
@@ -281,7 +281,7 @@
     triggers:
       - gerrit:
           server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_javadoc_merge_triggers}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
           projects:
             - project-compare-type: ANT
               project-pattern: '{project}'
@@ -357,7 +357,7 @@
     #     :submodule-recursive: Whether to checkout submodules recursively.
     #         (default: true)
     #
-    #     :gerrit_javadoc_verify_triggers: Override Gerrit Triggers.
+    #     :gerrit_verify_triggers: Override Gerrit Triggers.
 
     ######################
     # Default parameters #
@@ -376,7 +376,7 @@
     stream: master
     submodule-recursive: true
 
-    gerrit_javadoc_verify_triggers:
+    gerrit_verify_triggers:
       - patchset-created-event:
           exclude-drafts: true
           exclude-trivial-rebase: false
@@ -419,7 +419,7 @@
     triggers:
       - gerrit:
           server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_javadoc_verify_triggers}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
           projects:
             - project-compare-type: ANT
               project-pattern: '{project}'
