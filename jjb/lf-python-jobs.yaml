@@ -24,20 +24,38 @@
 - lf_tox_verify: &lf_tox_verify
     name: lf-tox-verify
 
-    # Required Variables:
-    #     branch:    git branch (default: master)
-    #     tox-dir:   directory containing the project's tox.ini relative to
-    #                the workspace. Empty works if tox.ini is at project root.
-
-    project-type: freestyle
-    node: '{build-node}'
-    concurrent: true
+    # Tox runner to verify a project
+    #
+    # Runs tox to verify a project.
+    #
+    # Required Parameters:
+    #
+    #     :build-node: The node to run build on.
+    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+    #         be configured in defaults.yaml)
+    #
+    # Optional Parameters:
+    #
+    #     :branch: The branch to build against. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :stream: Keyword that can be used to represent a release code-name.
+    #         Often the same as the branch. (default: master)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #     :tox-dir: Directory containing the project's tox.ini relative to
+    #         the workspace. Empty works if tox.ini is at project root.
+    #         (default: '')
+    #     :tox-envs: Tox environments to run. If blank run everything described
+    #         in tox.ini. (default: '')
 
     ######################
     # Default parameters #
     ######################
 
     branch: master
+    build-days-to-keep: 7
     build-timeout: 10
     git-url: '$GIT_URL/$GERRIT_PROJECT'
     stream: master
@@ -49,9 +67,13 @@
     # Job Configuration #
     #####################
 
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: true
+
     properties:
       - lf-infra-properties:
-          build-days-to-keep: 7
+          build-days-to-keep: '{build-days-to-keep}'
 
     parameters:
       - lf-infra-parameters:
