@@ -100,8 +100,21 @@
     #                   the project.
     #
     # Optional parameters:
-    #     mvn-global-settings: The name of the Maven global settings to use for
-    #                          Maven configuration. (default: global-settings)
+    #
+    #     :branch: The branch to build against. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :java-version: Version of Java to use for the build. (default: openjdk8)
+    #     :mvn-global-settings: The name of the Maven global settings to use for
+    #         Maven configuration. (default: global-settings)
+    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    #     :mvn-version: Version of maven to use. (default: mvn33)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #
+    #     :gerrit_merge_triggers: Override Gerrit Triggers.
 
     ######################
     # Default parameters #
@@ -473,6 +486,7 @@
     # directory can then be reused later to deploy to Nexus.
     #
     # Required parameters:
+    #
     #     :build-node: The node to run build on.
     #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
     #                              be configured in defaults.yaml)
@@ -483,12 +497,26 @@
     #     :staging-profile-id: Profile ID of the project's Nexus staging profile.
     #
     # Optional parameters:
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #                           Maven configuration. (default: global-settings)
+    #
+    #     :branch: The branch to build against. (default: master)
+    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
     #     :cron: Cron schedule when to trigger the job. This parameter also
     #         supports multiline input via YAML pipe | character in cases where
     #         one may want to provide more than 1 cron timer. (default: '')
+    #     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
+    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    #     :gerrit_verify_triggers: Override Gerrit Triggers.
+    #     :java-version: Version of Java to use for the build. (default: openjdk8)
+    #     :mvn-global-settings: The name of the Maven global settings to use for
+    #         Maven configuration. (default: global-settings)
+    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    #     :mvn-version: Version of maven to use. (default: mvn33)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
+    #
+    #     :gerrit_release_triggers: Override Gerrit Triggers.
 
     ######################
     # Default parameters #
@@ -497,6 +525,7 @@
     branch: master
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 30
+    cron: ''
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
     mvn-global-settings: global-settings
@@ -505,7 +534,6 @@
     mvn-version: mvn33
     stream: master
     submodule-recursive: true
-    cron: ''
 
     gerrit_release_triggers:
       - comment-added-contains-event:
