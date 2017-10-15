@@ -116,11 +116,9 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn33
+    staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
-
-    # Staging repos do not make sense for CLM jobs so set it blank.
-    staging-profile-id: ''
 
     #####################
     # Job Configuration #
@@ -646,15 +644,13 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn33
+    staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
 
     gerrit_sonar_triggers:
       - comment-added-contains-event:
           comment-contains-value: run-sonar$
-
-    # Staging repos do not make sense for CLM jobs so set it blank.
-    staging-profile-id: ''
 
     #####################
     # Job Configuration #
@@ -806,6 +802,7 @@
     mvn-opts: ''
     mvn-params: '-Dstream=$STREAM'
     mvn-version: mvn33
+    staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
 
