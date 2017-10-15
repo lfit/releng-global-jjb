@@ -1,0 +1,64 @@
+lftools v0.10.0 Release Notes
+=============================
+
+Thanks to Andy, Anil, Thanh, and Vratko for contributing to this release.
+
+
+Notable changes since v0.9.0
+----------------------------
+
+0ea9b36 Vratko Polak    Do not trigger on drafts before Publish
+Similar to OpenDaylight we do not want to trigger builds on drafts for verify
+jobs. A contributor can still force a run with 'recheck' if they really want
+to.
+
+0a73ead Thanh Ha        staging-profile-id unnecessary for javadoc jobs
+Updates javadoc jobs to no longer require the staging-profile-id. This
+parameter is really only needed for the release job.
+
+d0c780b Thanh Ha        Bootstrap global-jjb docs
+Series of patches to bootstrap global-jjb docs which can now be found on
+global-jjb.releng.linuxfoundation.org.
+
+414522e Thanh Ha        Sleep between 1 - 10 seconds for tox
+This adds a random sleep between 1 - 10 for tox runs to workaround parallel tox
+calls causing tox failures since each tox run creates a sdist package in the
+same directory.
+
+228fd6f Anil Belur      Migrate node-verify job to global-jjb
+Add a node-verify job copied from OpenDaylight over for NodeJS projects.
+
+3f633b2 Thanh Ha        Make staging-profile-id optional
+staging-profile-id's are only used in maven-release jobs so it was an
+unnecessary requirement
+
+f92a1ef Thanh Ha        Standardize gerrit_[merge|verify]_triggers
+The javadoc jobs were defining their own gerrit_javadoc_*_triggers but since we
+can override the variable per job it is not necessary to have the extra
+differentiation so update javadoc triggers to standardize on a common name.
+
+
+Full Change Log
+---------------
+
+c2494ac Thanh Ha        Add missing documentation to rtd jobs
+572515e Thanh Ha        Add missing documentation for Python jobs
+996bc86 Thanh Ha        Add missing stream documentation to maven docs
+4bd0080 Thanh Ha        Remove doc for unused parameter
+4b0adfe Thanh Ha        Add missing documentation from maven jobs
+f92a1ef Thanh Ha        Standardize gerrit_[merge|verify]_triggers
+3f633b2 Thanh Ha        Make staging-profile-id optional
+414522e Thanh Ha        Sleep between 1 - 10 seconds for tox
+228fd6f Anil Belur      Migrate node-verify job to global-jjb
+ed5d95f Thanh Ha        Bump Sphinx minimal dependencies to latest
+4159a50 Thanh Ha        Add LF Logo
+98d1d65 Thanh Ha        Add custom navbar ala OpenDaylight docs
+a863352 Andrew Grimberg Fix packer verify file path triggering
+533326d Thanh Ha        Fix cross link
+c410c7c Thanh Ha        Move best practices to global-jjb
+d0c780b Thanh Ha        Bootstrap global-jjb docs
+3ed9d2c Andrew Grimberg Add more required Jenkins plugins
+0a73ead Thanh Ha        staging-profile-id unnecessary for javadoc jobs
+827f7ac Andrew Grimberg Update required plugins list
+0ea9b36 Vratko Polak    Do not trigger on drafts before Publish
+4e494e6 Thanh Ha        Fix unescaped * in if-statement
