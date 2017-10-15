@@ -15,6 +15,11 @@ Guides:
 
    best-practices
 
+Global JJB Templates:
+
+- :doc:`jjb/lf-ci-jobs`
+- :doc:`jjb/lf-rtd-jobs`
+
 Indices and tables
 ==================
 
