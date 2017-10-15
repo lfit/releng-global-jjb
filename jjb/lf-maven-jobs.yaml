@@ -69,7 +69,7 @@
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
           # Staging repos do not make sense for CLM jobs so set it blank.
-          staging-profile-id: '{staging-profile-id}'
+          staging-profile-id: '{mvn-staging-id}'
 
     wrappers:
       - lf-infra-wrappers:
