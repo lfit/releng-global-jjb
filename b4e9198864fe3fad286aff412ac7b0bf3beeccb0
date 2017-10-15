@@ -329,6 +329,23 @@
     },
     {
       "key": {
+        "uuid": "14500b03_3f68738c",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:49:01Z",
+      "side": 1,
+      "message": "lftools is not used by any of the node scripts so unnecessary to install it at this point.",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b6c542fa_7816f048",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 5
