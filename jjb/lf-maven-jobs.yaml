@@ -506,7 +506,6 @@
     #         one may want to provide more than 1 cron timer. (default: '')
     #     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
     #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
     #     :java-version: Version of Java to use for the build. (default: openjdk8)
     #     :mvn-global-settings: The name of the Maven global settings to use for
     #         Maven configuration. (default: global-settings)
