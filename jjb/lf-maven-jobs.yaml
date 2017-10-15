@@ -7,6 +7,7 @@
     # This job group contains all the recommended jobs that should be deployed
     # for any project ci.
 
+    # TODO: Add Maven Merge job to this list once it's been fully tested.
     jobs:
       - gerrit-maven-clm
       - gerrit-maven-release
@@ -19,6 +20,7 @@
     # This job group contains all the recommended jobs that should be deployed
     # for any project ci that is using github.
 
+    # TODO: Add Maven Merge job to this list once it's been fully tested.
     jobs:
       - github-maven-clm
       - github-maven-release
@@ -90,34 +92,6 @@
 
 - lf_maven_clm: &lf_maven_clm
     name: lf-maven-clm
-
-    # Produces a CLM scan of the code into Nexus IQ Server.
-    #
-    # Required parameters:
-    #     build-node:    The node to run build on.
-    #     jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #                             be configured in defaults.yaml)
-    #     mvn-settings: The name of settings file containing credentials for
-    #                   the project.
-    #
-    # Optional parameters:
-    #
-    #     :branch: The branch to build against. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :java-version: Version of Java to use for the build. (default: openjdk8)
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #         Maven configuration. (default: global-settings)
-    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
-    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    #     :mvn-version: Version of maven to use. (default: mvn33)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_merge_triggers: Override Gerrit Triggers.
 
     ######################
     # Default parameters #
@@ -200,40 +174,6 @@
 
 - lf_maven_javadoc_publish: &lf_maven_javadoc_publish
     name: lf-maven-javadoc-publish
-
-    # Produces and publishes javadocs for a Maven project.
-    #
-    # Expects javadocs to be available in $WORKSPACE/target/site/apidocs
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :javadoc-path: The path in Nexus to deploy javadoc to.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #                              be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #                    the project.
-    #     :mvn-site-id: Maven Server ID from settings.xml to pull credentials from.
-    #         (Note: This setting should be configured in defaults.yaml.)
-    #
-    # Optional parameters:
-    #
-    #     :branch: The branch to build against. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :java-version: Version of Java to use for the build. (default: openjdk8)
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #         Maven configuration. (default: global-settings)
-    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
-    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    #     :mvn-version: Version of maven to use. (default: mvn33)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_merge_triggers: Override Gerrit Triggers.
 
     ######################
     # Default parameters #
@@ -348,37 +288,6 @@
 - lf_maven_javadoc_verify: &lf_maven_javadoc_verify
     name: lf-maven-javadoc-verify
 
-    # Produces javadocs for a Maven project.
-    #
-    # Expects javadocs to be available in $WORKSPACE/target/site/apidocs
-    #
-    # Required parameters:
-    #     build-node:    The node to run build on.
-    #     jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #                             be configured in defaults.yaml)
-    #     mvn-settings: The name of settings file containing credentials for
-    #                   the project.
-    #
-    # Optional parameters:
-    #
-    #     :branch: The branch to build against. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
-    #     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :java-version: Version of Java to use for the build. (default: openjdk8)
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #         Maven configuration. (default: global-settings)
-    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
-    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    #     :mvn-version: Version of maven to use. (default: mvn33)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
-
     ######################
     # Default parameters #
     ######################
@@ -480,51 +389,140 @@
           github_pr_admin_list:
             - ''
 
+###############
+# Maven Merge #
+###############
+
+- lf_maven_merge: &lf_maven_merge
+    name: lf-maven-merge
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30  # 30 days in case we need to troubleshoot
+    build-timeout: 30
+    cron: ''
+    git-url: '$GIT_URL/$PROJECT'
+    java-version: openjdk8
+    mvn-global-settings: global-settings
+    mvn-opts: ''
+    mvn-params: '-Dmerge'
+    mvn-version: mvn33
+    nexus-cut-dirs: 6  # Number of dirs in the Nexus path to remove for wget -r.
+    staging-profile-id: ''  # Unused by this job.
+    stream: master
+    submodule-recursive: true
+
+    gerrit_merge_triggers:
+      # TODO: Uncomment below.
+      #- change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '**'
+
+    post_build_trigger: ''
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    builders:
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - inject:
+          properties-content: |
+              NEXUS_CUT_DIRS={nexus-cut-dirs}
+              NEXUS_REPO={mvn-snapshot-repo}
+      - shell: !include-raw-escape:
+          - ../shell/common-variables.sh
+          - ../shell/maven-fetch-metadata.sh
+          - ../shell/maven-build.sh
+          - ../shell/maven-deploy.sh
+      - lf-provide-maven-settings-cleanup
+
+    publishers:
+      - findbugs
+      - jacoco-report
+      - lf-infra-publish
+      - trigger-parameterized-builds: '{obj:post_build_trigger}'
+
+- job-template:
+    name: '{project-name}-maven-merge-{stream}'
+    id: gerrit-maven-merge
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+
+    triggers:
+      - timed: 'H H * * 0'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-maven-merge-{stream}'
+    id: github-maven-merge
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_merge
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: false
+          status-context: 'Maven Merge'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+
 #################
 # Maven Release #
 #################
 
 - lf_maven_release: &lf_maven_release
     name: lf-maven-release
-
-    # Produces a release candidate by creating a staging repo in Nexus.
-    #
-    # Runs a Maven build and deploys to $WORKSPACE/m2repo directory. This
-    # directory can then be reused later to deploy to Nexus.
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #                              be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #                    the project.
-    #     :mvn-staging-id: Maven Server ID from settings.xml to pull credentials from.
-    #         (Note: This setting should be configured in defaults.yaml.)
-    #     :staging-profile-id: Profile ID of the project's Nexus staging profile.
-    #
-    # Optional parameters:
-    #
-    #     :branch: The branch to build against. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
-    #     :cron: Cron schedule when to trigger the job. This parameter also
-    #         supports multiline input via YAML pipe | character in cases where
-    #         one may want to provide more than 1 cron timer. (default: '')
-    #     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :java-version: Version of Java to use for the build. (default: openjdk8)
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #         Maven configuration. (default: global-settings)
-    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
-    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    #     :mvn-version: Version of maven to use. (default: mvn33)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_release_triggers: Override Gerrit Triggers.
 
     ######################
     # Default parameters #
@@ -636,38 +634,6 @@
 
 - lf_maven_sonar: &lf_maven_sonar
     name: lf-maven-sonar
-
-    # Sonar job which runs mvn clean install then publishes to Sonar.
-    #
-    # This job purposely only runs on the master branch as there are Additional
-    # configuration needed to support multiple branches and there's not much
-    # interest in that kind of support.
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #         the project.
-    #
-    # Optional parameters:
-    #
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :java-version: Version of Java to use for the build. (default: openjdk8)
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #         Maven configuration. (default: global-settings)
-    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
-    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    #     :mvn-version: Version of maven to use. (default: mvn33)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_sonar_triggers: Override Gerrit Triggers.
 
     ######################
     # Default parameters #
@@ -796,37 +762,6 @@
 - lf_maven_verify: &lf_maven_verify
     name: lf-maven-verify
 
-    # Verify job which runs mvn clean install to test a project build..
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #         the project.
-    #
-    # Optional parameters:
-    #
-    #     :branch: Git branch to fetch for the build. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :java-version: Version of Java to use for the build. (default: openjdk8)
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #         Maven configuration. (default: global-settings)
-    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
-    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    #     :mvn-version: Version of maven to use. (default: mvn33)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
-    #     :gerrit_trigger_file_paths: Override file paths which can be used to
-    #         filter which file modifications will trigger a build.
-
     ######################
     # Default parameters #
     ######################
@@ -947,43 +882,6 @@
 
 - lf_maven_verify_dependencies: &lf_maven_verify_dependencies
     name: lf-maven-verify-dependencies
-
-    # Verify job which runs mvn clean install to test a project build /w deps
-    #
-    # This job can be used to verify a patch in conjunction to all of the
-    # upstream patches it depends on. The user of this job can provide a list
-    # via comment trigger. The trigger is:
-    #
-    #     'recheck: SPACE_SEPERATED_LIST_OF_PATCHES'
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #         the project.
-    #
-    # Optional parameters:
-    #
-    #     :branch: Git branch to fetch for the build. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 60)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :java-version: Version of Java to use for the build. (default: openjdk8)
-    #     :mvn-global-settings: The name of the Maven global settings to use for
-    #         Maven configuration. (default: global-settings)
-    #     :mvn-opts: Sets MAVEN_OPTS. (default: '')
-    #     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    #     :mvn-version: Version of maven to use. (default: mvn33)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
-    #     :gerrit_trigger_file_paths: Override file paths which can be used to
-    #         filter which file modifications will trigger a build.
 
     ######################
     # Default parameters #
