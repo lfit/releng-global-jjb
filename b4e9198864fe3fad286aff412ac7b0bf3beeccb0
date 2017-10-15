@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "65a64d86_67630eb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b5b1057d_c5f1fd20",
+      "range": {
+        "startLine": 9,
+        "startChar": 27,
+        "endLine": 9,
+        "endChar": 33
+      },
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "178f3e8b_e3230dec",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
@@ -82,6 +106,30 @@
       "writtenOn": "2017-10-15T14:34:20Z",
       "side": 1,
       "message": "NodeJS",
+      "range": {
+        "startLine": 11,
+        "startChar": 6,
+        "endLine": 11,
+        "endChar": 12
+      },
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f047b643_9e626ca0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "178f3e8b_e3230dec",
       "range": {
         "startLine": 11,
         "startChar": 6,
@@ -117,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "22f90789_fe888469",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dec802a3_8ae180ca",
+      "range": {
+        "startLine": 13,
+        "startChar": 6,
+        "endLine": 13,
+        "endChar": 12
+      },
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae656f7d_d15c0d6a",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 5
@@ -128,6 +200,24 @@
       "writtenOn": "2017-10-15T14:34:20Z",
       "side": 1,
       "message": "\u0027Useful\u0027 is an unnecessary word. Hopefully we aren\u0027t creating unuseful macros ;) Just stick to the points.\n\n Parameters for NodeJS\n\nWould be a better description.",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faa7a69_639bd235",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae656f7d_d15c0d6a",
       "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -151,6 +241,24 @@
     },
     {
       "key": {
+        "uuid": "25ff01ea_05ce1f5f",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b1dde548_f3a6e8a1",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "270102c5_9746ff46",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 5
@@ -168,6 +276,24 @@
     },
     {
       "key": {
+        "uuid": "0668687d_76293f2e",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "270102c5_9746ff46",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a5b75a96_19611bc9",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 5
@@ -179,6 +305,24 @@
       "writtenOn": "2017-10-15T14:34:20Z",
       "side": 1,
       "message": "According to the defaults below node-dir is not required.",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b94411a2_4bd65f36",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5b75a96_19611bc9",
       "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -208,6 +352,30 @@
     },
     {
       "key": {
+        "uuid": "b2578244_aff7e6ec",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b6c542fa_7816f048",
+      "range": {
+        "startLine": 102,
+        "startChar": 7,
+        "endLine": 102,
+        "endChar": 13
+      },
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c7751879_6c502397",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 5
@@ -225,6 +393,24 @@
     },
     {
       "key": {
+        "uuid": "8114a228_fcd8e0d5",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c7751879_6c502397",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fb329900_e9b25697",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 5
@@ -236,6 +422,24 @@
       "writtenOn": "2017-10-15T14:34:20Z",
       "side": 1,
       "message": "Template definitions are so short that this is unnecessary. The meat of the information is in the anchor definition where we should define this.",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "62dc55ba_66f5a6be",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb329900_e9b25697",
       "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -265,6 +469,30 @@
     },
     {
       "key": {
+        "uuid": "99e520b4_8989a396",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2fd7124_5ccdc335",
+      "range": {
+        "startLine": 137,
+        "startChar": 7,
+        "endLine": 137,
+        "endChar": 13
+      },
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3033c4a_9ba00e4d",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 5
@@ -282,6 +510,24 @@
     },
     {
       "key": {
+        "uuid": "c187fb7f_8dc95e57",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3033c4a_9ba00e4d",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "40c10e27_cf81e964",
         "filename": "jjb/lf-node-jobs.yaml",
         "patchSetId": 5
@@ -293,6 +539,24 @@
       "writtenOn": "2017-10-15T14:34:20Z",
       "side": 1,
       "message": "Template definitions are so short that this is unnecessary. Just use the format inside of the anchor where the meat of the code is.",
+      "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c08cde15_09918391",
+        "filename": "jjb/lf-node-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-15T14:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40c10e27_cf81e964",
       "revId": "b4e9198864fe3fad286aff412ac7b0bf3beeccb0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
