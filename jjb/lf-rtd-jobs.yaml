@@ -74,18 +74,20 @@
     #
     # Required parameters:
     #
+    #     :build-node: The node to run build on.
     #     :rtd-project: This is the name of the project on ReadTheDocs.org.
     #
     # Optional parameters:
     #
     #     :branch: Git branch to fetch for the build. (default: master)
     #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-node: The node to run build on.
     #     :build-timeout: Timeout in seconds before aborting build. (default: 15)
     #     :git-url: base URL of git project. (default: https://github.com)
     #     :project-pattern: Project to trigger build against. (default: **)
     #     :stream: Keyword that can be used to represent a release code-name.
     #         Often the same as the branch. (default: master)
+    #     :submodule-recursive: Whether to checkout submodules recursively.
+    #         (default: true)
     #
     #     :gerrit_merge_triggers: Override Gerrit Triggers.
     #     :gerrit_trigger_file_paths: Override file paths which can be used to
@@ -172,7 +174,11 @@
     name: lf-rtd-verify
     # Verify job which runs a tox build of the docs project
     #
-    # Optional parameters:
+    # Required Parameters:
+    #
+    #     :build-node: The node to run build on.
+    #
+    # Optional Parameters:
     #
     #     :branch: Git branch to fetch for the build. (default: master)
     #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
