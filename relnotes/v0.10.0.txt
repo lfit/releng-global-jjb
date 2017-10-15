@@ -1,0 +1,34 @@
+global-jjb v0.10.0 Release Notes
+================================
+
+Thanks to Jeremy and Thanh for contributing to this release.
+
+Upgrade considerations
+----------------------
+
+1. Release job maven-staging-id was hardcoded to opendaylight-staging
+   CI Management maintainers will need to now declare `mvn-staging-id`
+   in their defaults.yaml configurations.
+
+
+Notable changes since v0.9.0
+----------------------------
+
+
+
+Full Change Log
+---------------
+
+1b6e57e Thanh Ha        Make OpenStack requirements optional
+fca0d2f Thanh Ha        Rename docs requirements for better sorting
+c9a8a31 Thanh Ha        Add LF Logo
+77c2d0f Thanh Ha        Add custom navbar ala OpenDaylight docs
+c4523b1 Thanh Ha        Bump Sphinx minimal dependencies to latest
+98006e1 Thanh Ha        Remove best practices guide from lftools
+c324414 Thanh Ha        Add cross link
+9a42505 Ry Jones        Update setuptools version
+54f8abc Thanh Ha        Refactor descriptions to README.md and __summary__
+d943695 Andrew Grimberg Re-order log ENV stripping and add new key
+6d79275 Anil Belur      Update JJB best practices
+589e597 Anil Belur      Spell check fixes in best practices
+bafa0da Thanh Ha        Bump version to 0.10.0-dev for next dev cycle
