@@ -179,6 +179,62 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
+Maven Merge
+-----------
+
+Merge job which runs `mvn clean deploy` to build a project.
+
+This job pushes files to Nexus using cURL instead of allowing the Maven deploy
+goal to push the upload. This is to get around the issue that Maven deploy does
+not properly support uploading files at the end of the build and instead pushes
+as it goes. There exists a `-Ddeploy-at-end` feature however it does not work
+extensions.
+
+This job uses the following strategy to deploy jobs to Nexus:
+
+1. `wget -r` to fetch maven-metadata.xml from Nexus
+2. `mvn deploy -DaltDeploymentRepository` to prepare files for upload
+3. Removes untouched maven-metadata.xml files before upload
+4. Use lftools (cURL) upload script to push artifacts to Nexus
+
+:Template Names:
+
+    - {project-name}-maven-merge-{stream}
+    - gerrit-maven-merge
+    - github-maven-merge
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        be configured in defaults.yaml)
+    :mvn-settings: The name of settings file containing credentials for the project.
+    :mvn-snapshot-id: Maven Server ID from settings.xml to pull credentials from.
+        (Note: This setting should be configured in defaults.yaml.)
+    :nexus-snapshot-repo: The repository id of the Nexus snapshot repo to deploy to.
+
+:Optional parameters:
+
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :mvn-global-settings: The name of the Maven global settings to use for
+        Maven configuration. (default: global-settings)
+    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-version: Version of maven to use. (default: mvn33)
+    :nexus-cut-dirs: Number of directories to cut from file path for `wget -r`.
+    :stream: Keyword that can be used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+
+    :gerrit_merge_triggers: Override Gerrit Triggers.
+    :gerrit_trigger_file_paths: Override file paths which can be used to
+        filter which file modifications will trigger a build.
+
 Maven Release
 -------------
 
