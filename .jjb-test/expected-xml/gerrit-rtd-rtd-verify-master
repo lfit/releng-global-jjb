@@ -81,14 +81,14 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <name>origin</name>
-        <refspec/>
+        <refspec>$GERRIT_REFSPEC</refspec>
         <url>$GIT_URL/$PROJECT</url>
         <credentialsId>test-credential</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>refs/heads/master</name>
+        <name>refs/heads/$GERRIT_BRANCH</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <excludedUsers/>
