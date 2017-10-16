@@ -72,19 +72,6 @@
             - file-id: jjbini-sandbox
               target: '$HOME/.config/jenkins_jobs/jenkins_jobs.ini'
 
-- lf_packer_verify_file_paths: &lf_packer_verify_file_paths
-    name: lf-packer-verify-file-paths
-    file-paths:
-      # Common files for all projects
-      - compare-type: ANT
-        pattern: 'packer/vars/**.json'
-      - compare-type: ANT
-        pattern: 'packer/templates/**.json'
-      - compare-type: ANT
-        pattern: 'packer/provision/**.sh'
-      - compare-type: ANT
-        pattern: 'packer/provision/lib/**'
-
 - lf_packer_file_paths: &lf_packer_file_paths
     name: lf-packer-file-paths
     file-paths:
@@ -682,9 +669,6 @@
     #         (default: true)
     #
     #     :gerrit_verify_triggers: Override Gerrit Triggers.
-    #     :gerrit_trigger_file_paths: Override file paths which can be used to
-    #         filter which file modifications will trigger a build.
-    #         (default defined by lf_jjb_common)
 
     ######################
     # Default parameters #
@@ -809,7 +793,6 @@
     #     :gerrit_verify_triggers: Override Gerrit Triggers.
     #     :gerrit_trigger_file_paths: Override file paths which can be used to
     #         filter which file modifications will trigger a build.
-    #         (default defined by lf_jjb_common)
 
     ######################
     # Default parameters #
@@ -825,6 +808,16 @@
       - draft-published-event
       - comment-added-contains-event:
           comment-contains-value: recheck$
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: 'packer/vars/**.json'
+      - compare-type: ANT
+        pattern: 'packer/templates/**.json'
+      - compare-type: ANT
+        pattern: 'packer/provision/**.sh'
+      - compare-type: ANT
+        pattern: 'packer/provision/lib/**'
 
     #####################
     # Job Configuration #
@@ -865,7 +858,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
-              <<: *lf_packer_verify_file_paths
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
     name: '{project-name}-packer-verify'
