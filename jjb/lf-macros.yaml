@@ -307,6 +307,19 @@
               For example '<1.0.0' or '>=1.0.0,<2.0.0'.
 
 - parameter:
+    name: lf-infra-node-parameters
+    # Parameters for NodeJS
+    parameters:
+      - string:
+          name: NODE_DIR
+          default: '{node-dir}'
+          description: Path to a Node project directory.
+      - string:
+          name: NODE_VERSION
+          default: '{node-version}'
+          description: Version of NodeJS to install.
+
+- parameter:
     name: lf-infra-tox-parameters
     # Useful parameters when working with TOX
     # https://tox.readthedocs.io/
