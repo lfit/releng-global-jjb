@@ -245,10 +245,10 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          branch: '{branch}'
+          branch: '$GERRIT_BRANCH'
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
           git-url: '{git-url}'
-          refspec: ''
+          refspec: '$GERRIT_REFSPEC'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
 
