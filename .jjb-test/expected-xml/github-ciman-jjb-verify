@@ -251,7 +251,7 @@ popd
 ##############################################################################
 echo &quot;---&gt; jjb-check-unicode.sh&quot;
 
-if LC_ALL=C grep -r '[^[:print:][:space:]]' jjb/; then
+if LC_ALL=C grep --exclude=docs/ -r '[^[:print:][:space:]]' jjb/; then
     echo &quot;Found files containing non-ascii characters.&quot;
     exit 1
 fi

@@ -10,7 +10,7 @@
 ##############################################################################
 echo "---> jjb-check-unicode.sh"
 
-if LC_ALL=C grep -r '[^[:print:][:space:]]' jjb/; then
+if LC_ALL=C grep --exclude=docs/ -r '[^[:print:][:space:]]' jjb/; then
     echo "Found files containing non-ascii characters."
     exit 1
 fi
