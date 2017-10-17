@@ -10,6 +10,8 @@ Upgrade considerations
    CI Management maintainers will need to now declare `mvn-staging-id`
    in their defaults.yaml configurations.
 
+2. Commit 74befe2 introduced calls to the crudini package. Packer will
+   need to be upgraded to install crudini in the images.
 
 Notable changes since v0.8.0
 ----------------------------
