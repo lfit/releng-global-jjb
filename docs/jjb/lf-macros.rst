@@ -223,3 +223,7 @@ lf-infra-wrappers
 
 Provides lf-infra recommended wrappers which should be used in every
 job-template.
+
+This wrapper requires that a managed file called `npmrc` exists in the Jenkins.
+The type of the file should be "Custom file".  You can set various npmrc settings in it.
+If you are not using npm then it is fine for the file to be empty.
