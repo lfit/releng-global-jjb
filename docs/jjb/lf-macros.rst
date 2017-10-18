@@ -223,3 +223,15 @@ lf-infra-wrappers
 
 Provides lf-infra recommended wrappers which should be used in every
 job-template.
+
+This wrapper requires that a managed file called `npmrc` exists in the Jenkins.  The main use
+case here is to point to a npm proxy, on Nexus for example.
+The type of the file should be "Custom file".  You can set various npmrc settings in it.
+Documentation on npm configuration can be found at https://docs.npmjs.com/files/npmrc.
+If you are not using npm then it is fine for the file to be empty.
+
+Example npmrc:
+
+.. code block:: bash
+
+   registry=https://nexus3.onap.org/repository/npm.public/
