@@ -337,7 +337,7 @@ machine=$(echo &quot;$NEXUS_URL&quot; | awk -F/ '{print $3}')
 user=$(echo &quot;$CREDENTIAL&quot; | cut -f1 -d:)
 pass=$(echo &quot;$CREDENTIAL&quot; | cut -f2 -d:)
 
-echo &quot;machine $machine login $user password $pass&quot; &gt; ~/.netrc
+echo &quot;machine ${machine%:*} login $user password $pass&quot; &gt; ~/.netrc
 </command>
         </hudson.tasks.Shell>
         <hudson.tasks.Shell>

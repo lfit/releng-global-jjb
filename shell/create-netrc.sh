@@ -23,4 +23,4 @@ machine=$(echo "$NEXUS_URL" | awk -F/ '{print $3}')
 user=$(echo "$CREDENTIAL" | cut -f1 -d:)
 pass=$(echo "$CREDENTIAL" | cut -f2 -d:)
 
-echo "machine $machine login $user password $pass" > ~/.netrc
+echo "machine ${machine%:*} login $user password $pass" > ~/.netrc
