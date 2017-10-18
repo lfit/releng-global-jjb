@@ -707,5 +707,14 @@ rm ~/.netrc
       <user>test-credential</user>
     </com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper>
     <jenkins.plugins.openstack.compute.JCloudsOneOffSlave/>
+    <org.jenkinsci.plugins.configfiles.buildwrapper.ConfigFileBuildWrapper plugin="config-file-provider">
+      <managedFiles>
+        <org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+          <fileId>npmrc</fileId>
+          <targetLocation>$WORKSPACE/.npmrc</targetLocation>
+          <variable/>
+        </org.jenkinsci.plugins.configfiles.buildwrapper.ManagedFile>
+      </managedFiles>
+    </org.jenkinsci.plugins.configfiles.buildwrapper.ConfigFileBuildWrapper>
   </buildWrappers>
 </project>

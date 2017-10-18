@@ -462,6 +462,8 @@
 # WRAPPERS #
 ############
 
+# Use of this macro will require that a managed file called `npmrc` exists.
+# It should define your proxy repo like so registry = https://nexus.onap.org/content/repositories/npm/
 - wrapper:
     name: lf-infra-wrappers
     wrappers:
@@ -477,3 +479,7 @@
             - '{jenkins-ssh-credential}'
       - openstack:
           single-use: true
+      - config-file-provider:
+          files:
+            - file-id: npmrc
+              target: '$WORKSPACE/.npmrc'
