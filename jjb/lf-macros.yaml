@@ -477,3 +477,7 @@
             - '{jenkins-ssh-credential}'
       - openstack:
           single-use: true
+      - config-file-provider:
+          files:
+            - file-id: npmrc
+              target: '$WORKSPACE/.npmrc'
