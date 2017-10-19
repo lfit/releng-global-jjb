@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b0ed635c_495701a3",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-19T04:16:39Z",
+      "side": 1,
+      "message": "I think this is a setting that we should require all CI to configuration. So it should be documented in the README (although we should probably move that README to rst in another patch)",
+      "parentUuid": "0c580732_2f09f1f3",
+      "range": {
+        "startLine": 465,
+        "startChar": 0,
+        "endLine": 465,
+        "endChar": 75
+      },
+      "revId": "a92436ce450f68ce955ea0ae49d6851392702804",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b9a91a97_adedda8a",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 3
@@ -41,6 +65,29 @@
         "startChar": 6,
         "endLine": 485,
         "endChar": 41
+      },
+      "revId": "a92436ce450f68ce955ea0ae49d6851392702804",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9199d159_94a18c79",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-19T04:16:39Z",
+      "side": 1,
+      "message": "It needs to go into $HOME/.npmrc just like it is done here:\n\n https://github.com/opendaylight/releng-builder/blob/master/jjb/releng-macros.yaml#L447-L450\n\nThat way anything that calls npm will by default load configuration from that file. It\u0027s especially necessary for OpenDaylight\u0027s case where a mvn execution calls npm as part of the dlux-web build.",
+      "range": {
+        "startLine": 485,
+        "startChar": 24,
+        "endLine": 485,
+        "endChar": 33
       },
       "revId": "a92436ce450f68ce955ea0ae49d6851392702804",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
