@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c580732_2f09f1f3",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-19T00:14:02Z",
+      "side": 1,
+      "message": "would this break existing jobs if npmrc does not exist, since we are using this wrapper all over ODL\u0027s releng/builder jobs?",
+      "range": {
+        "startLine": 465,
+        "startChar": 0,
+        "endLine": 465,
+        "endChar": 75
+      },
+      "revId": "a92436ce450f68ce955ea0ae49d6851392702804",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b9a91a97_adedda8a",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-19T00:14:02Z",
+      "side": 1,
+      "message": "Is this config file read by default? Do we need to add any option while doing npm install?",
+      "range": {
+        "startLine": 482,
+        "startChar": 6,
+        "endLine": 485,
+        "endChar": 41
+      },
+      "revId": "a92436ce450f68ce955ea0ae49d6851392702804",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
