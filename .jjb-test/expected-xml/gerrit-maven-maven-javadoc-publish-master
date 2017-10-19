@@ -75,6 +75,11 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
           <defaultValue>&lt;1.0.0</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
+          <name>M2_HOME</name>
+          <description>Maven selector to be used by shell scripts</description>
+          <defaultValue>/w/tools/hudson.tasks.Maven_MavenInstallation/mvn33</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
           <name>MAVEN_OPTS</name>
           <description>Maven Java opts. Example: -Xmx1024m -XX:MaxPermSize=256m
 </description>
