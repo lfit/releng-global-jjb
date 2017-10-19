@@ -248,7 +248,7 @@
           branch: '$GERRIT_BRANCH'
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
           git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
+          refspec: ''  # Leave blank!! A later script will handle fetching
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
 
