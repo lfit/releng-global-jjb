@@ -230,6 +230,12 @@
     name: lf-infra-maven-parameters
     parameters:
       - string:
+          name: M2_HOME
+          # Sets an env var for shell scripts to be able to call the dynamically
+          # installed maven without having to calculate the M2_HOME themselves.
+          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}'
+          description: 'Maven selector to be used by shell scripts'
+      - string:
           name: MAVEN_OPTS
           default: '{mvn-opts}'
           description: |
