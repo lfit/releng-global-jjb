@@ -2,9 +2,6 @@
 - job-group:
     name: '{project-name}-ci-jobs'
 
-    # This job group contains all the recommended jobs that should be deployed
-    # for any project ci.
-
     jjb-version: 1.6.2
 
     jobs:
@@ -15,9 +12,6 @@
 - job-group:
     name: '{project-name}-github-ci-jobs'
 
-    # This job group contains all the recommended jobs that should be deployed
-    # for any project ci that is using github.
-
     jjb-version: 1.6.2
 
     jobs:
@@ -25,12 +19,8 @@
       - github-jjb-merge
       - github-jjb-verify
 
-
 - job-group:
     name: '{project-name}-packer-jobs'
-
-    # This job group contains all the recommended jobs that should be deployed
-    # for any project ci that is using packer.
 
     packer-version: 1.1.1
 
@@ -41,9 +31,6 @@
 
 - job-group:
     name: '{project-name}-github-packer-jobs'
-
-    # This job group contains all the recommended jobs that should be deployed
-    # for any project ci that is using packer.
 
     packer-version: 1.1.1
 
@@ -270,28 +257,6 @@
 - lf_jjb_deploy_job: &lf_jjb_deploy_job
     name: lf-jjb-deploy-job
 
-    # Deploy jobs to jenkins-sandbox system via code review comment
-    #
-    # This job checks out the current code review patch and then runs a
-    # `jenkins-jobs update` to push a patch defined by the comment.
-    #
-    # Comment Trigger: jjb-deploy JOB_NAME
-    #
-    # JOB_NAME can include the * wildcard character to push multiple jobs
-    # matching the pattern. For example `jjb-deploy builder-jjb-*`` will push
-    # all builder-jjb-* jobs to the sandbox system.
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #
-    # Optional parameters:
-    #
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :gerrit_jjb_deploy_job_triggers: Override Gerrit Triggers.
-
     ######################
     # Default parameters #
     ######################
@@ -400,32 +365,6 @@
 - lf_jjb_merge: &lf_jjb_merge
     name: lf-jjb-merge
 
-    # JJB Merge job runs `jenkins-jobs update` to update production job configuration
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #         the project.
-    #
-    # Optional parameters:
-    #
-    #     :branch: Git branch to fetch for the build. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 10)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_merge_triggers: Override Gerrit Triggers.
-    #     :gerrit_trigger_file_paths: Override file paths which can be used to
-    #         filter which file modifications will trigger a build.
-    #         (default defined by lf_jjb_common)
-
     ######################
     # Default parameters #
     ######################
@@ -515,32 +454,6 @@
 
 - lf_jjb_verify: &lf_jjb_verify
     name: lf-jjb-verify
-
-    # JJB Verify job runs `jenkins-jobs test` to validate JJB syntax
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #         the project.
-    #
-    # Optional parameters:
-    #
-    #     :branch: Git branch to fetch for the build. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 10)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
-    #     :gerrit_trigger_file_paths: Override file paths which can be used to
-    #         filter which file modifications will trigger a build.
-    #         (default defined by lf_jjb_common)
 
     ######################
     # Default parameters #
@@ -640,36 +553,6 @@
 - lf_packer_merge: &lf_packer_merge
     name: lf-packer-merge
 
-    # Packer Merge job runs `packer build` to build system images in the cloud.
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #         the project.
-    #     :platforms: Platform or distribution to build. Typically json file
-    #         found in the packer/vars directory. (Example: centos)
-    #     :template: System template to build. Typically shell script found in
-    #         the packer/provision directory. (Example: java-builder)
-    #
-    # Optional parameters:
-    #
-    #     :branch: Git branch to fetch for the build. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 10)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :packer-cloud-settings: Name of settings file containing credentials
-    #         for the cloud that packer will build on. (default: packer-cloud-env)
-    #     :packer-version: Version of packer to install / use in build. (default: 1.0.2)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
-
     ######################
     # Default parameters #
     ######################
@@ -765,34 +648,6 @@
 
 - lf_packer_verify: &lf_packer_verify
     name: lf-packer-verify
-
-    # Packer Verify job runs `packer validate` to verify packer configuration.
-    #
-    # Required parameters:
-    #
-    #     :build-node: The node to run build on.
-    #     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-    #         be configured in defaults.yaml)
-    #     :mvn-settings: The name of settings file containing credentials for
-    #         the project.
-    #
-    # Optional parameters:
-    #
-    #     :branch: Git branch to fetch for the build. (default: master)
-    #     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    #     :build-timeout: Timeout in seconds before aborting build. (default: 10)
-    #     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    #     :packer-cloud-settings: Name of settings file containing credentials
-    #         for the cloud that packer will build on. (default: packer-cloud-env)
-    #     :packer-version: Version of packer to install / use in build. (default: 1.0.2)
-    #     :stream: Keyword that can be used to represent a release code-name.
-    #         Often the same as the branch. (default: master)
-    #     :submodule-recursive: Whether to checkout submodules recursively.
-    #         (default: true)
-    #
-    #     :gerrit_verify_triggers: Override Gerrit Triggers.
-    #     :gerrit_trigger_file_paths: Override file paths which can be used to
-    #         filter which file modifications will trigger a build.
 
     ######################
     # Default parameters #

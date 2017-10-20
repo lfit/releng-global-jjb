@@ -5,13 +5,6 @@
 
 - builder:
     name: lf-fetch-dependent-patches
-    # Fetches all patches provided via comment trigger
-    #
-    # This macro will fetch all patches provided via comment trigger and will
-    # create a list of projects from those patches via environment variable
-    # called DEPENDENCY_BUILD_ORDER which can be used if necessary to build
-    # projects in the specified order. The order is determined by first patch
-    # instance for a project in the patch list.
     builders:
       - shell: !include-raw: ../shell/gerrit-fetch-dependencies.sh
       - inject:
@@ -19,9 +12,6 @@
 
 - builder:
     name: lf-infra-create-netrc
-    # Macro to create a ~/.netrc file from a Maven settings.xml
-    # Parameters:
-    #     {server-id} The id of a server as defined in settings.xml
     builders:
       - inject:
           properties-content: 'SERVER_ID={server-id}'
@@ -29,25 +19,6 @@
 
 - builder:
     name: lf-infra-docker-login
-    # Login into a custom hosted docker registry and / or docker.io
-    #
-    # The Jenkins system should have the following global variables defined
-    #
-    # DOCKER_REGISTRY : Optional
-    #                   The DNS address of the registry (IP or FQDN)
-    #                   ex: nexus3.example.com
-    #
-    # REGISTRY_PORTS  : Required if DOCKER_REGISTRY is set
-    #                   Space separated listing of the registry ports to login
-    #                   to
-    #                   ex: 10001 10002 10003 10004
-    #
-    # DOCKERHUB_EMAIL : Optional
-    #                   If this variable is set then an attempt to login to
-    #                   DockerHub (docker.io) will be also made. It should be
-    #                   set to the email address for the credentials that will
-    #                   get looked up. Only _one_ credential will ever be found
-    #                   in the maven settings file for DockerHub
     builders:
       - lf-provide-maven-settings:
           global-settings-file: '{global-settings-file}'
@@ -57,10 +28,6 @@
 
 - builder:
     name: lf-infra-gpg-verify-git-signature
-    # Verify gpg signature of the latest commit message in $WORKSPACE
-    #
-    # This command assumes that $WORKSPACE is a git repo.
-    #
     # TODO: Verify signature after downloading users public key from a locally
     # created repository instead of the public keymesh. This requires a process
     # in place to get ODL developers public keys into a local repository without
@@ -132,12 +99,6 @@
 
 - builder:
     name: lf-infra-deploy-maven-file
-    # Deploy files to a repository.
-    #
-    # The builder requires passing the following parameters
-    # REPO_ID:           Repository ID
-    # GROUP_ID:          Group ID of the repository
-    # UPLOAD_FILES_PATH: Path to directory containing one or more files
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
@@ -158,8 +119,6 @@
 
 - builder:
     name: lf-maven-install
-    # call maven-target builder with a goal of --version to force Jenkins to
-    # install the needed maven version
     builders:
       # Create a $HOME/.wgetrc to make the Maven download quiet.
       - shell: 'echo "quiet=on" > "$HOME/.wgetrc"'
@@ -170,7 +129,6 @@
 
 - builder:
     name: lf-provide-maven-settings
-    # Push a global settings and user settings maven files
     builders:
       - config-file-provider:
           files:
@@ -181,8 +139,6 @@
 
 - builder:
     name: lf-pip-install
-    # Call pip install to install packages into a virtualenv
-    # The first package listed in PIP_PACKAGES is used as the virtualenv name.
     builders:
       - inject:
           properties-content: PIP_PACKAGES={pip-packages}
@@ -190,7 +146,6 @@
 
 - builder:
     name: lf-provide-maven-settings-cleanup
-    # Clear maven settings files after we are done using them
     builders:
       - shell: |
           #!/bin/bash
@@ -328,7 +283,6 @@
 
 - parameter:
     name: lf-infra-node-parameters
-    # Parameters for NodeJS
     parameters:
       - string:
           name: NODE_DIR
@@ -341,8 +295,6 @@
 
 - parameter:
     name: lf-infra-tox-parameters
-    # Useful parameters when working with TOX
-    # https://tox.readthedocs.io/
     parameters:
       - string:
           name: TOX_DIR
