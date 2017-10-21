@@ -39,6 +39,30 @@
       "revId": "f91f15ae267f5ebe9513778fbdd16e0ccb834e7f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bdb3e833_b81cbf25",
+        "filename": "shell/license-check.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-21T22:14:52Z",
+      "side": 1,
+      "message": "We also have some groovy scripts in releng/builder required to be added here.",
+      "parentUuid": "4e640c86_754f1342",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 10
+      },
+      "revId": "f91f15ae267f5ebe9513778fbdd16e0ccb834e7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
