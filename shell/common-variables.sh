@@ -18,5 +18,5 @@ MAVEN_OPTIONS="$(echo --show-version \
     -Djenkins \
     -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn \
     -Dmaven.repo.local=/tmp/r \
-    -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r)"
+    -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r) $MAVEN_OPTS"
 echo "$MAVEN_OPTIONS"
