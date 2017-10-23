@@ -398,7 +398,7 @@ echo &quot;---&gt; create-netrc.sh&quot;
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-NEXUS_URL=&quot;${NEXUS_URL:-$NEXUSPROXY}&quot;
+NEXUS_URL=&quot;${NEXUSPROXY:-$NEXUS_URL}&quot;
 CREDENTIAL=$(xmlstarlet sel -N &quot;x=http://maven.apache.org/SETTINGS/1.0.0&quot; \
     -t -m &quot;/x:settings/x:servers/x:server[x:id='${SERVER_ID}']&quot; \
     -v x:username -o &quot;:&quot; -v x:password \
@@ -524,7 +524,7 @@ then
 
     echo &quot;WARNING: Logging server not set&quot;
 else
-    NEXUS_URL=&quot;${NEXUS_URL:-$NEXUSPROXY}&quot;
+    NEXUS_URL=&quot;${NEXUSPROXY:-$NEXUS_URL}&quot;
     NEXUS_PATH=&quot;${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}&quot;
     BUILD_URL=&quot;${BUILD_URL}&quot;
 
