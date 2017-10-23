@@ -24,7 +24,7 @@ then
 
     echo "WARNING: Logging server not set"
 else
-    NEXUS_URL="${NEXUS_URL:-$NEXUSPROXY}"
+    NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
     BUILD_URL="${BUILD_URL}"
 
