@@ -193,3 +193,136 @@ Example:
           - build-file:
               settings: '{settings-file}'
               file-version: '{file-version}'
+
+
+Using JJB defaults
+------------------
+
+JJB has a concept called "defaults" which is what JJB will replace a variable with
+if it is unset. Variables can be used to fill in the blanks of job-templates and
+allow certain options in these sections to be configurable.
+
+JJB defaults can be used in 4 sections
+
+- Job Templates
+- Defaults
+- Macros
+- Project Sections
+
+Macros can contain variables but do NOT support default values getting filled in
+both at the macro definition level and at the defaults configuration level. Macros
+can be used by Job Templates but any variables defined in a Macro MUST be set to a
+value or a new variable redefined in the Job Template if you want to pass on the
+configuration. So for example if you have a macro that has a '{msg}' variable:
+
+Example:
+
+.. code-block:: yaml
+
+
+    - builder:
+      name: echo-msg
+      builders:
+        - shell: "echo {msg}"
+
+
+Using defaults in job templates can be done in two ways.
+
+1) Configure the message:
+
+Example:
+
+.. code-block:: yaml
+
+
+    - job-template:
+      name: echo-hello-world
+      builders:
+        - echo-msg:
+            msg: 'Hello World'
+
+2) Make '{msg}' configurable by the user of the job-template
+
+Example:
+
+.. code-block:: yaml
+
+
+    - job-template:
+      name: echo-message
+      builders:
+        - echo-msg:
+            msg: '{message}'
+
+
+In option 2, we redefined the variable msg as '{message}' which a user of the
+job-template can now pass into the job their own custom message which is different
+than option 1, where we set a static message to pass in. We purposely redefined
+the '{msg}' -> {message} here to show that you do not need to redefine it with
+the same name but we could have used the same name '{msg}' in the template too
+if we wanted to keep things the same.
+
+Job Templates can also default a default variable for the variables it defines.
+
+Example:
+
+.. code-block:: yaml
+
+
+    - job-template:
+      name: echo-message
+      message: 'Hello World'
+      builders:
+        - echo-msg:
+            msg: '{message}'
+
+
+This creates a job template variable called '{message}' which will default to
+"Hello World" if the user of the template does not explicitly pass in a message.
+Additionally there are 2 defaults concepts here we have to think about.
+
+1) default as defined in the job-template
+2) default as defined in a defaults configuration (typically defaults.yaml)
+
+In this case a default '{message}' is defined along with the job-template. JJB
+will use this default if the user (project section) does not declare a {message}.
+However, if we do not declare a default in the job-template then JJB will fallback
+to checking the "defaults configuration" and pulling that in.
+
+Projects are JJB sections to define real jobs and pass in variables as
+necessary. Therefore projects sections do NOT expand defaults.yaml. So you cannot
+configure a setting with {var} in here and expect defaults.yaml to fill it in for
+you. If a configuration is required it MUST be defined here. For example:
+
+Example:
+
+.. code-block:: yaml
+
+
+    - project
+      name: foo
+      jobs:
+        - 'echo-message'
+      message: 'I am foo'
+
+Defaults is the absolute last thing JJB checks if a variable is not configured in
+a job-template. So if a variable is not configured via projects, or job-template
+than JJB will fill it in with whatever is in the defaults file.
+
+Variable expansion order of precedence seems to be:
+
+1) project section definition
+2) job-template variable definition
+3) defaults.yaml variable definition
+
+.. note::
+
+        Only job-templates get filled in. Macros do NOT get variable expansion
+        from defaults.
+
+For any basic job configuration [1] for example "concurrent", "jdk", "node"
+etc... cannot set defaults with the same name as JJB will not expand them. Therefore
+to use "node" we should give the variable for that setting a different name such
+as "build-node" instead, if we want JJB to perform expansion for those settings.
+This issue only affects top level job configuration, it does not appear to affect
+things below the top level such as calling a builder, wrapper or parameter.
