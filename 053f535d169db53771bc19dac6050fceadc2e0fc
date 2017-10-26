@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c4a9d36_30f56fdc",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-26T14:46:57Z",
+      "side": 1,
+      "message": "Since this whole section is based off of original work from another author it\u0027s good practice to link back to the original post and mention that it is based off of work from said author. Either in a comment or a quick note.",
+      "range": {
+        "startLine": 199,
+        "startChar": 18,
+        "endLine": 199,
+        "endChar": 0
+      },
+      "revId": "053f535d169db53771bc19dac6050fceadc2e0fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "954acccd_a15595f5",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-26T14:46:57Z",
+      "side": 1,
+      "message": "As mentioned in the previous comment. We need to reword this. Defaults can ONLY be used in Job Templates so the statement here is not correct. It\u0027s especially confusing since this statement implies that one can use defaults in the macros section and then immediately in the next paragraph we state that defaults cannot be used.",
+      "revId": "053f535d169db53771bc19dac6050fceadc2e0fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
