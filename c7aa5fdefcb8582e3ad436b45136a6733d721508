@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80d35504_8a314d65",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-26T01:19:39Z",
+      "side": 1,
+      "message": "This should be a new section not a subsection of single quotes around variables. We should use \u003d\u003d\u003d\u003d\u003d\u003d\u003d here to make it a proper section.\n\nWe should create subsections for the various details below as well where it makes sense.",
+      "revId": "c7aa5fdefcb8582e3ad436b45136a6733d721508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93b9befc_a6ccb76c",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-26T01:19:39Z",
+      "side": 1,
+      "message": "We need to be extremely careful especially when writing documentation that we get the terms correct.\n\nDefaults is a JJB concept regarding providing a default value for a defined variable. Which is different than a Variable which is a feature that allows us to define variable inputs for a template.\n\nDefaults are only used in job-templates, no where else.",
+      "revId": "c7aa5fdefcb8582e3ad436b45136a6733d721508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc8916c3_15bd9ebd",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-26T01:19:39Z",
+      "side": 1,
+      "message": "This should be indented 3 spaces so it lines up with the n in note::\n\nI\u0027d probably reword this as follows fitting it into 1 line:\n\n .. note:: Defaults are filled only in job-templates and are NOT used in Macros.",
+      "revId": "c7aa5fdefcb8582e3ad436b45136a6733d721508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f61307f_6bad304f",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-10-26T01:19:39Z",
+      "side": 1,
+      "message": "What is [1]?",
+      "range": {
+        "startLine": 323,
+        "startChar": 32,
+        "endLine": 323,
+        "endChar": 36
+      },
+      "revId": "c7aa5fdefcb8582e3ad436b45136a6733d721508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
