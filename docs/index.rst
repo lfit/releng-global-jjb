@@ -19,8 +19,8 @@ Guides
 Global JJB Templates
 --------------------
 
-Job templates are designed in the `jjb/` directory but documentation is located
-in the `docs/jjb/` directory of this project.
+Job template code is in the `jjb/` directory but documentation is in the
+`docs/jjb/` directory of this project.
 
 - :doc:`jjb/lf-ci-jobs`
 - :doc:`jjb/lf-macros`

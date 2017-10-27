@@ -40,8 +40,8 @@ Tox runner to verify a project
 :Required Parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
 
 :Optional Parameters:
 
@@ -49,7 +49,7 @@ Tox runner to verify a project
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in seconds before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword representing a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)

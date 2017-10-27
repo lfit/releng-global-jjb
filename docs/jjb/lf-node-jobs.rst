@@ -6,7 +6,7 @@ Job Groups
 ==========
 
 {project-name}-node-jobs
---------------------------
+------------------------
 
 Jobs for NodeJS projects using Gerrit.
 
@@ -15,7 +15,7 @@ Jobs for NodeJS projects using Gerrit.
     - gerrit-node-verify
 
 {project-name}-github-node-jobs
----------------------------------
+-------------------------------
 
 Jobs for NodeJS projects using GitHub.
 
@@ -27,7 +27,7 @@ Job Templates
 =============
 
 Node Verify
-----------
+-----------
 
 Verify job for NodeJS projects
 
@@ -40,10 +40,9 @@ Verify job for NodeJS projects
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
-    :node-version: Version of NodeJS to install. A default is configured
-        via the job-group if a job-group is used.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
+    :node-version: Version of NodeJS to install. Default defined in job-group.
 
 :Optional parameters:
 
@@ -53,11 +52,11 @@ Verify job for NodeJS projects
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :node-dir: Path to a NodeJS project to run node test against
         (default: '')
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword representing a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override file paths filter which checks which
+        file modifications will trigger a build.
