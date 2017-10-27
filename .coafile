@@ -27,6 +27,16 @@ bears = MarkdownBear,SpaceConsistencyBear,WriteGoodLintBear
 files = **.md, **.markdown
 use_spaces = true
 
+[all.reStructuredText]
+bears = SpaceConsistencyBear,WriteGoodLintBear
+files = **.rst
+use_spaces = true
+ignore = .git/**,
+    .tox/**,
+    docs/jjb/lf-ci-jobs.rst,
+    docs/jjb/lf-macros.rst,
+    docs/jjb/lf-maven-jobs.rst
+
 [all.ShellCheck]
 bears = ShellCheckBear,SpaceConsistencyBear
 files = **.sh
