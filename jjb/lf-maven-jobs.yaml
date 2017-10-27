@@ -316,6 +316,8 @@
     # Job Configuration #
     #####################
 
+    concurrent: true
+
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
