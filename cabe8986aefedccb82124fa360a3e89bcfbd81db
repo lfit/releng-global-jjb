@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "32df8d6d_c49c78b8",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-29T01:26:29Z",
+      "side": 1,
+      "message": "The sample code is not very easily understandable. Could be improved.",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 239,
+        "endChar": 30
+      },
+      "revId": "cabe8986aefedccb82124fa360a3e89bcfbd81db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
