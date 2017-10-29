@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9631c0a9_5de1fbd3",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-29T01:26:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80d35504_8a314d65",
+      "revId": "c7aa5fdefcb8582e3ad436b45136a6733d721508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "93b9befc_a6ccb76c",
         "filename": "docs/best-practices.rst",
         "patchSetId": 1
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "d0480009_17c8bb55",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-29T01:26:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc8916c3_15bd9ebd",
+      "revId": "c7aa5fdefcb8582e3ad436b45136a6733d721508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f61307f_6bad304f",
         "filename": "docs/best-practices.rst",
         "patchSetId": 1
@@ -64,6 +100,30 @@
       "writtenOn": "2017-10-26T01:19:39Z",
       "side": 1,
       "message": "What is [1]?",
+      "range": {
+        "startLine": 323,
+        "startChar": 32,
+        "endLine": 323,
+        "endChar": 36
+      },
+      "revId": "c7aa5fdefcb8582e3ad436b45136a6733d721508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3e1a752_8a824aea",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-10-29T01:26:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f61307f_6bad304f",
       "range": {
         "startLine": 323,
         "startChar": 32,
