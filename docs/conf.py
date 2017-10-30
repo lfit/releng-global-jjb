@@ -67,7 +67,7 @@ author = 'Linux Foundation Releng'
 # built documents.
 #
 # The short X.Y version.
-version = '0.11.0'
+version = '0.12.0-dev'
 # The full version, including alpha/beta/rc tags.
 release = version
 
@@ -258,4 +258,3 @@ intersphinx_mapping = {
     'lftools': ('http://lftools.releng.linuxfoundation.org/en/latest/', None),
     'python': ('https://docs.python.org/', None),
 }
-
