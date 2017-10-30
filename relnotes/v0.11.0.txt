@@ -1,0 +1,54 @@
+lftools v0.11.0 Release Notes
+=============================
+
+Thanks to Anil, Jessica, Thanh, and Trevor for contributing to this release.
+
+
+Notable changes since v0.10.0
+-----------------------------
+
+8d44155 Jessica Wagantall       Add note to release notes v0.9.0
+Release notes of the v0.9.0 release were updated to mention a missing
+requirement on crudini.
+
+391e813 Thanh Ha        Migrate Global JJB docs to RST
+Global JJB docs have been migrated to a new URL which can be found here:
+http://global-jjb.releng.linuxfoundation.org
+
+642924b Thanh Ha        Add M2_HOME to Maven parameters
+Maven parameters will now also configure M2_HOME so that Java Unit tests can
+pick up the correct version of Maven.
+
+c43962c Anil Belur      Update packer version to 1.1.1
+Default packer version was upgraded to 1.1.1 of packer.
+
+6df0d5a Trevor Bramwell Let NEXUSPROXY override NEXUS_URL if both are set
+Fixed bug preventing NEXUS_URL from being able to be overrided by NEXUSPROXY
+
+410c98d Thanh Ha        Make javadoc-verify jobs run concurrently
+javadoc-verify jobs will now run concurrently as they should.
+
+1945ffb Thanh Ha        Cat the failed tox-envs
+Tox verify error logs should be a little easier to parse now as it will also
+print the error in the console log and not just to a separate log file.
+
+
+Full Change Log
+---------------
+
+1945ffb Thanh Ha        Cat the failed tox-envs
+bf30021 Thanh Ha        Add linting for RST files
+2eec22a Thanh Ha        Fix WriteGood lint errors
+1102b10 Thanh Ha        Pin nodeenv version to 1.1.2
+410c98d Thanh Ha        Make javadoc-verify jobs run concurrently
+4fe23ea Trevor Bramwell Remove port from NEXUS_URL for netrc
+6df0d5a Trevor Bramwell Let NEXUSPROXY override NEXUS_URL if both are set
+c43962c Anil Belur      Update packer version to 1.1.1
+f721ee3 Thanh Ha        Revert refspec change breaking submodule build
+642924b Thanh Ha        Add M2_HOME to Maven parameters
+391e813 Thanh Ha        Migrate Global JJB docs to RST
+8d44155 Jessica Wagantall       Add note to release notes v0.9.0
+0555e7c Thanh Ha        Ignore binary files when grepping
+ac63e87 Thanh Ha        Update RTD Gerrit job to check GERRIT_* variables
+f20644a Thanh Ha        Fix jjb-verify job to ignore the docs directory
+d641107 Thanh Ha        Convert packer file-paths cfg to {obj:var}
