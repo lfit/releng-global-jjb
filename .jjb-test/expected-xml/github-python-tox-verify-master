@@ -314,6 +314,10 @@ fi
 
 if [ -f &quot;$ARCHIVE_TOX_DIR/failed-envs.log&quot; ]; then
     failed_envs=($(cat &quot;$ARCHIVE_TOX_DIR/failed-envs.log&quot;))
+    for e in &quot;${failed_envs[@]}&quot;; do
+        echo &quot;cat $ARCHIVE_TOX_DIR/tox-$e.log&quot;
+        cat &quot;$ARCHIVE_TOX_DIR/tox-$e.log&quot;
+    done
     echo &quot;ERROR: Failed the following builds: ${failed_envs[*]}&quot;
     exit 1
 fi
