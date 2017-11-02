@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b825234d_52630a9c",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-02T15:48:07Z",
+      "side": 1,
+      "message": "Please provide an example npmrc configuration so that it\u0027s clear what people would use it for if the had one.\n\nAlso I think we should explain the main use case here is to allow us to setup a npm proxy.",
+      "revId": "59e4d7a67cf76fff146dacfc78fba5b7c0900f02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
