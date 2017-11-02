@@ -16,6 +16,24 @@
       "revId": "59e4d7a67cf76fff146dacfc78fba5b7c0900f02",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0df2507b_a2ae507b",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-02T15:57:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b825234d_52630a9c",
+      "revId": "59e4d7a67cf76fff146dacfc78fba5b7c0900f02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
