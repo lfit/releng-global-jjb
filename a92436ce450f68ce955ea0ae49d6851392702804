@@ -140,6 +140,30 @@
       "revId": "a92436ce450f68ce955ea0ae49d6851392702804",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "efa16e25_f75110d5",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-02T16:12:42Z",
+      "side": 1,
+      "message": "Updated to use $HOME",
+      "parentUuid": "ba7c6e56_624bf583",
+      "range": {
+        "startLine": 485,
+        "startChar": 24,
+        "endLine": 485,
+        "endChar": 33
+      },
+      "revId": "a92436ce450f68ce955ea0ae49d6851392702804",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
