@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45a2da03_8b7f51f4",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-02T14:48:41Z",
+      "side": 1,
+      "message": "Don\u0027t forget our documentation is now in docs/jjb/*.rst",
+      "revId": "9a2b0b6673658fee40092ceb8d34cdc258faf4ed",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
