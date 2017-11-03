@@ -2,8 +2,6 @@
 - job-group:
     name: '{project-name}-ci-jobs'
 
-    jjb-version: 1.6.2
-
     jobs:
       - gerrit-jjb-deploy-job
       - gerrit-jjb-merge
@@ -11,8 +9,6 @@
 
 - job-group:
     name: '{project-name}-github-ci-jobs'
-
-    jjb-version: 1.6.2
 
     jobs:
       - github-jjb-deploy-job
@@ -140,6 +136,7 @@
 
     branch: master
     build-timeout: 10
+    jjb-version: 1.6.2
     stream: master
     submodule-recursive: true
 
