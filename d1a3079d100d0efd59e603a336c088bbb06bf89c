@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f0d135b_ea3f19cc",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-03T14:33:53Z",
+      "side": 1,
+      "message": "Need a blank line before and after .. code-block:: (also code-block has a dash in it).",
+      "revId": "d1a3079d100d0efd59e603a336c088bbb06bf89c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
