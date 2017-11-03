@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dcb3f35a_cfb190c2",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-03T18:30:29Z",
+      "side": 1,
+      "message": "rename this to nexus-snapshot-repo to not confuse with mvn-snapshot-id",
+      "revId": "5789fe0c821b07159d7a61e7e3b241123fd0b61c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
