@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9be6fdc6_b96f24e3",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-03T15:19:06Z",
+      "side": 1,
+      "message": "Still missing a - here. So the annotation is failing.",
+      "range": {
+        "startLine": 235,
+        "startChar": 7,
+        "endLine": 235,
+        "endChar": 8
+      },
+      "revId": "da8b106b3e80e1847e1d5aaee526177c69a15907",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
