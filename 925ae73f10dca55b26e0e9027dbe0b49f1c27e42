@@ -22,6 +22,30 @@
       "revId": "925ae73f10dca55b26e0e9027dbe0b49f1c27e42",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "20ef178a_ed46d56b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-06T22:49:23Z",
+      "side": 1,
+      "message": "This comment has nothing to do with this patch however we certainly should have a verify-dependencies job for GitHub however the current one uses uses Gerrit specific syntax. In order to support the GitHub part we would have to write an entirely different script to handle the GitHub specific bits. This job has not been requested by a GitHub project yet so we have not yet implemented it so that we can deploy it to OpenDaylight who needs the job now faster.",
+      "parentUuid": "ec6d654c_ecefdeb3",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 40
+      },
+      "revId": "925ae73f10dca55b26e0e9027dbe0b49f1c27e42",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
