@@ -69,6 +69,30 @@
       "revId": "925ae73f10dca55b26e0e9027dbe0b49f1c27e42",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0baad11f_b868b128",
+        "filename": "shell/maven-fetch-metadata.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-06T22:52:18Z",
+      "side": 1,
+      "message": "There\u0027s a 4 space indent here. I\u0027m not sure what is proper indent you\u0027re looking for?",
+      "parentUuid": "ba010ada_5190e91a",
+      "range": {
+        "startLine": 17,
+        "startChar": 10,
+        "endLine": 23,
+        "endChar": 24
+      },
+      "revId": "925ae73f10dca55b26e0e9027dbe0b49f1c27e42",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
