@@ -46,6 +46,29 @@
       "revId": "925ae73f10dca55b26e0e9027dbe0b49f1c27e42",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba010ada_5190e91a",
+        "filename": "shell/maven-fetch-metadata.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-11-06T22:49:48Z",
+      "side": 1,
+      "message": "minor nit: needs a proper indent",
+      "range": {
+        "startLine": 17,
+        "startChar": 10,
+        "endLine": 23,
+        "endChar": 24
+      },
+      "revId": "925ae73f10dca55b26e0e9027dbe0b49f1c27e42",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
