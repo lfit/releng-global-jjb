@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec6d654c_ecefdeb3",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2017-11-06T22:46:31Z",
+      "side": 1,
+      "message": "Don\u0027t we need the mvn verify dependencies job for github?",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 40
+      },
+      "revId": "925ae73f10dca55b26e0e9027dbe0b49f1c27e42",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
