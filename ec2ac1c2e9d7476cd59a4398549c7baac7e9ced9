@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3e2f179d_25da15c4",
+        "filename": "shell/npm-config.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-07T19:33:41Z",
+      "side": 1,
+      "message": "I\u0027m not sure you can set a URL as a server-id in a Maven settings.xml (I could be wrong) but maybe we should be safe and have a server-id that doesn\u0027t have special characters.\n\nPerhaps NPM_REGISTERY \u003d URL and NPM_SERVER_ID \u003d maven settings.xml profile id.\n\nFor NPM_SERVER_ID we should provide a default name such as \"npm-server\" so that by default we don\u0027t have to configure this setting and just expect that npm-server always exists in settings.xml",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 15
+      },
+      "revId": "ec2ac1c2e9d7476cd59a4398549c7baac7e9ced9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
