@@ -22,6 +22,30 @@
       "revId": "ec2ac1c2e9d7476cd59a4398549c7baac7e9ced9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5b89731_df518a19",
+        "filename": "shell/npm-config.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-10T16:28:15Z",
+      "side": 1,
+      "message": "Yep, agreed.  Fixed.",
+      "parentUuid": "3e2f179d_25da15c4",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 15
+      },
+      "revId": "ec2ac1c2e9d7476cd59a4398549c7baac7e9ced9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
