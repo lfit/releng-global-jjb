@@ -205,6 +205,7 @@ directory can then be reused later to deploy to Nexus.
 
 :Optional parameters:
 
+    :archive-artifacts: Artifacts to archive to the logs server (default: ''). 
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in seconds before aborting build. (default: 60)
