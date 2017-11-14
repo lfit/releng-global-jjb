@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e9fb6dc_d359d563",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-11-14T17:59:28Z",
+      "side": 1,
+      "message": "You should be more specific in that you\u0027re adding the parameter to the github scm macro",
+      "revId": "f60f101612d4d2b8e9f6a5368e485872708996d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
