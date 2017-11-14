@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "326730f8_300c3891",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-11-14T18:05:05Z",
+      "side": 1,
+      "message": "Having a single line commit message is fine. What you should be saying for your subject:\n\n\u0027Add branches parameter to github scm macro\u0027\n\nAdditional body could be of something like.\n\n\u0027Make sure that the github scm macro accepts branches as a configuration option like the gerrit version of the macro\u0027",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 15
+      },
+      "revId": "3f9ad46250fc3776247d75a9d3f276f45dd3e219",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
