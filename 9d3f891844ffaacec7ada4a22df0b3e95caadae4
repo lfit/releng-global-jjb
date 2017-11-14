@@ -22,6 +22,30 @@
       "revId": "9d3f891844ffaacec7ada4a22df0b3e95caadae4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "caf64953_662bb3e4",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-14T22:37:22Z",
+      "side": 1,
+      "message": "So I\u0027m only going to use this on the verify jobs which we want triggered via ghprb.  This includes comments that trigger like \"recheck\".  If someone runs a job manually sha1 and ghprbActualCommit will not exist.  Alternatively someone could still set it to whatever they want.",
+      "parentUuid": "b2acfe02_8ceb5793",
+      "range": {
+        "startLine": 210,
+        "startChar": 0,
+        "endLine": 212,
+        "endChar": 34
+      },
+      "revId": "9d3f891844ffaacec7ada4a22df0b3e95caadae4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
