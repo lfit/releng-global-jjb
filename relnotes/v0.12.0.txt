@@ -1,0 +1,37 @@
+lftools v0.12.0 Release Notes
+=============================
+
+Thanks to Thanh, Jeremy, and Anil for contributing to this release.
+
+
+Notable changes since v0.11.0
+-----------------------------
+
+dd452eb Jeremy Phelps	Add branches parameter to github scm macro
+Make sure that the github scm macro accepts
+branches as a configuration option like the
+gerrit version of the macro.
+
+5a5524c Anil Belur	Enable maven jobs to archive artifacts
+Projects which use the maven jobs in global-jjb may
+require to archive additional logs such as surefire
+reports. This needs to be handled by globstar patterns
+passed through the projects using these templates.
+
+6624c7f Thanh Ha	Move jjb-version to templates
+It appears that `job-group` definitions take priority over `project`
+definitions. Move it to the template so that we can override the
+parameter correctly.
+
+
+Full Change Log
+---------------
+
+dd452eb Jeremy Phelps	Add branches parameter to github scm macro
+5a5524c Anil Belur	Enable maven jobs to archive artifacts
+ee00dc6 Jeremy Phelps	Add npm config script
+6624c7f Thanh Ha	Move jjb-version to templates
+f2d509d Jeremy Phelps	Add npmrc config file to lf-infra-wrappers
+4eaa376 Thanh Ha	Add install goal to javadoc job
+fc75b20 Thanh Ha	Bump to v0.12.0-dev
+cabe898 Thanh Ha	Add note on JJB defaults
