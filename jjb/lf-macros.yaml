@@ -392,7 +392,7 @@
           url: '{url}'
           refspec: '{refspec}'
           branches:
-            - 'refs/heads/{branch}'
+            - '{branch}'
           skip-tag: true
           wipe-workspace: true
           submodule:

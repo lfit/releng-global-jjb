@@ -207,6 +207,10 @@ lf-infra-github-scm
 
 Basic SCM configuration for GitHub based projects.
 
+On the `branch` variable you can assign `$sha1` or `$ghprbActualCommit`
+as the value.  This will require that the job be triggered via
+the GHPRB plugin and not manually.
+
 Triggers
 ========
 
