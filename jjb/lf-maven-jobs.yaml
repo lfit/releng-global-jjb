@@ -165,8 +165,8 @@
     scm:
       - lf-infra-github-scm:
           url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -378,7 +378,7 @@
       - lf-infra-github-scm:
           url: '{git-clone-url}{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
+          branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -618,7 +618,7 @@
       - lf-infra-github-scm:
           url: '{git-clone-url}{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
+          branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -740,7 +740,7 @@
       - lf-infra-github-scm:
           url: '{git-clone-url}{github-org}/{project}'
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
+          branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'

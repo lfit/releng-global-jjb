@@ -93,7 +93,7 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>master</name>
+        <name>$sha1</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <excludedUsers/>

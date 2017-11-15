@@ -110,14 +110,14 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <name>origin</name>
-        <refspec>+refs/pull/*:refs/remotes/origin/pr/*</refspec>
+        <refspec/>
         <url>git@github.com:example-org/releng/ciman</url>
         <credentialsId>test-credential</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>master</name>
+        <name>refs/heads/master</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <excludedUsers/>

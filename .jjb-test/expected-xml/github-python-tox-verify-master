@@ -96,7 +96,7 @@ Example: docs,py2,py3
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>master</name>
+        <name>$sha1</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <excludedUsers/>
