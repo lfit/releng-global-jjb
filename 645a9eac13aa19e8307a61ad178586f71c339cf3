@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f5858422_3b177efa",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-11-20T17:37:21Z",
+      "side": 1,
+      "message": "Added them in since yamllint was complaining at me on linting and the line can\u0027t be wrapped.",
+      "parentUuid": "fb5c38e3_704f6d5c",
+      "range": {
+        "startLine": 234,
+        "startChar": 10,
+        "endLine": 234,
+        "endChar": 50
+      },
+      "revId": "645a9eac13aa19e8307a61ad178586f71c339cf3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e62ed40_bbe678b8",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2017-11-20T17:31:06Z",
       "side": 1,
       "message": "ditto.",
+      "range": {
+        "startLine": 364,
+        "startChar": 10,
+        "endLine": 364,
+        "endChar": 50
+      },
+      "revId": "645a9eac13aa19e8307a61ad178586f71c339cf3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "75b9aaeb_70424cbb",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-11-20T17:37:21Z",
+      "side": 1,
+      "message": "See above comment",
+      "parentUuid": "2e62ed40_bbe678b8",
       "range": {
         "startLine": 364,
         "startChar": 10,
