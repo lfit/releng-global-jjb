@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "be0a91bd_e7f10c07",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2017-11-20T18:44:41Z",
+      "side": 1,
+      "message": "That\u0027s odd because this is nowhere near the 120 limit in yamllint.conf.",
+      "parentUuid": "f5858422_3b177efa",
+      "range": {
+        "startLine": 234,
+        "startChar": 10,
+        "endLine": 234,
+        "endChar": 50
+      },
+      "revId": "645a9eac13aa19e8307a61ad178586f71c339cf3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e62ed40_bbe678b8",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 6
