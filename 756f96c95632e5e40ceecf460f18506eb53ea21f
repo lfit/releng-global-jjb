@@ -16,6 +16,24 @@
       "revId": "756f96c95632e5e40ceecf460f18506eb53ea21f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "086bbca1_4c4154a1",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-22T21:11:02Z",
+      "side": 1,
+      "message": "Hmm yeah good point.  Let me take a closer look.",
+      "parentUuid": "46714cb3_80434c23",
+      "revId": "756f96c95632e5e40ceecf460f18506eb53ea21f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
