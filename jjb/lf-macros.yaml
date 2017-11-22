@@ -308,6 +308,14 @@
               Tox environments to run build against.
               Example: docs,py2,py3
 
+- parameter:
+    name: lf-infra-trigger-parameters
+    parameters:
+      - string:
+          name: UPSTREAM_JOB_LOGS_URL
+          default: ''
+          description: The console logs of upstream job.
+
 ##############
 # PROPERTIES #
 ##############
@@ -364,6 +372,20 @@
             # properties file as input for triggering another build.
             - '**/*.jenkins-trigger'
           fail-build: false
+
+- publisher:
+    # Triggers a downstream job with a parameter specifying
+    # the triggering jobs logs url.  This is useful for parsing
+    # info out like the autorelease repository created during
+    # a daily release job. Requires use of the `lf-infra-trigger-parameters`
+    # macro.
+    name: lf-infra-trigger-parameterized-job
+    publishers:
+      - trigger-parameterized-builds:
+          - project: '{job_to_trigger}'
+            condition: '{condition}'
+            predefined-parameters: |
+              UPSTREAM_LOGS_URL={upstream_logs_url}
 
 #######
 # SCM #
