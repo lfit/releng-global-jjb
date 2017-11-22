@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "46714cb3_80434c23",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2017-11-22T21:08:44Z",
+      "side": 1,
+      "message": "Adding this will cause all jobs to now need to pass a job_to_trigger parameter.\n\nYou probably need to set a default in the macro and verify that defining \u0027\u0027 for the job to trigger doesn\u0027t cause problems.",
+      "revId": "756f96c95632e5e40ceecf460f18506eb53ea21f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
