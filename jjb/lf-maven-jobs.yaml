@@ -77,6 +77,7 @@
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
           description: Artifacts to archive to the logs server.
+      - lf-infra-trigger-parameters
 
     wrappers:
       - lf-infra-wrappers:
@@ -553,6 +554,10 @@
     mvn-version: mvn33
     stream: master
     submodule-recursive: true
+    condition: 'SUCCESS'
+    upstream-job-logs-url: ''
+    job-to-trigger: ''
+
 
     gerrit_release_triggers:
       - comment-added-contains-event:
@@ -586,6 +591,12 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_release
 
+    publisher:
+      - lf-infra-trigger-parameterized-job:
+          condition: '{condition}'
+          upstream_job-logs_url: '{upstream-job-logs-url}'
+          job_to_trigger: '{job-to-trigger}'
+
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -613,6 +624,12 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_release
+
+    publisher:
+      - lf-infra-trigger-parameterized-job:
+          condition: '{condition}'
+          upstream_job_logs_url: '{upstream-job-logs-url}'
+          job_to_trigger: '{job-to-trigger}'
 
     properties:
       - github:

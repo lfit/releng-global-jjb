@@ -107,6 +107,11 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
           <description>Artifacts to archive to the logs server.</description>
           <defaultValue/>
         </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>UPSTREAM_JOB_LOGS_URL</name>
+          <description>The console logs of upstream job.</description>
+          <defaultValue/>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
