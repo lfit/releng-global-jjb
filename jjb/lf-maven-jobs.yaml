@@ -75,6 +75,7 @@
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
           description: Artifacts to archive to the logs server.
+      - lf-infra-trigger-parameters
 
     wrappers:
       - lf-infra-wrappers:
