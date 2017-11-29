@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "523eb230_9f2cbd2e",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-29T14:46:56Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "5a5524c53ec347a3230c34f29a963d87c685f37d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
