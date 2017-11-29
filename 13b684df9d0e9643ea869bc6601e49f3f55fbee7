@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6d0286c_5a4ea824",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-11-29T15:37:50Z",
+      "side": 1,
+      "message": "Did you mean UPSTREAM_JOB_LOGS_URL?\n\n(and {upstream-job-logs-url}, let\u0027s reserve underscore formatting specifically for {obj:var} style variables. This makes it extremely clear from the variable name when we\u0027re using it.",
+      "range": {
+        "startLine": 388,
+        "startChar": 14,
+        "endLine": 388,
+        "endChar": 31
+      },
+      "revId": "13b684df9d0e9643ea869bc6601e49f3f55fbee7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
