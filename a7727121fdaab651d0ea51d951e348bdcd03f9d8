@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2d4dac1f_9198aeff",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-30T20:14:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49e76ec1_d561b7ec",
+      "revId": "a7727121fdaab651d0ea51d951e348bdcd03f9d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b821de2d_238bf43f",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 5
@@ -30,6 +48,30 @@
       "writtenOn": "2017-11-30T01:09:43Z",
       "side": 1,
       "message": "We should pick names with a prefix that all match to identify that it\u0027s for the lf-infra-trigger-parameterized-job macro. It is possible for a job to configure another one of these so we need to be able to differentiate which one is being called. How about:\n\n - para-trigger-condition\n - para-trigger-upstream-job-logs-url\n - para-trigger-job-to-trigger\n\nThe last one depends on if we want to allow the list of jobs or a single job.",
+      "range": {
+        "startLine": 557,
+        "startChar": 4,
+        "endLine": 559,
+        "endChar": 22
+      },
+      "revId": "a7727121fdaab651d0ea51d951e348bdcd03f9d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6738933f_e9795908",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-30T20:14:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b821de2d_238bf43f",
       "range": {
         "startLine": 557,
         "startChar": 4,
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "61cead65_b3149243",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-30T20:14:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5523de6b_7cb8f072",
+      "revId": "a7727121fdaab651d0ea51d951e348bdcd03f9d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c8aa6e9_9db6a3b4",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 5
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "c1003551_f22f796e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-30T20:14:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c8aa6e9_9db6a3b4",
+      "revId": "a7727121fdaab651d0ea51d951e348bdcd03f9d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9b6d2b9c_41f61938",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 5
@@ -87,6 +165,24 @@
       "writtenOn": "2017-11-30T01:09:43Z",
       "side": 1,
       "message": "Use dash instead of underscore",
+      "revId": "a7727121fdaab651d0ea51d951e348bdcd03f9d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cb4cdbc5_83880bbf",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2017-11-30T20:14:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b6d2b9c_41f61938",
       "revId": "a7727121fdaab651d0ea51d951e348bdcd03f9d8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
