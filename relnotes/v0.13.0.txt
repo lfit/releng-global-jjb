@@ -1,0 +1,25 @@
+global-jjb v0.13.0 Release Notes
+================================
+
+Thanks to Jeremy and Thanh for contributing to this release.
+
+
+Notable changes since v0.12.0
+-----------------------------
+
+bd30390 Jeremy Phelps   Fix branch on verify and merge jobs
+GitHub job builders now reference $sha1 instead of refs/heads/$branch.
+
+92c2494 Thanh Ha        Migrate Maven Merge job to global-jjb
+Maven Merge jobs are now migrated to global-jjb. This new job has some
+significant changes since the last release so is not automatically included in
+the Maven job group in this release. We plan to fully test this in ODL first
+before moving it into the job group.
+
+
+Full Change Log
+---------------
+
+92c2494 Thanh Ha        Migrate Maven Merge job to global-jjb
+bd30390 Jeremy Phelps   Fix branch on verify and merge jobs
+9d3f891 Jeremy Phelps   Fix branch variable in github scm
