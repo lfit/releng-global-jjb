@@ -1,5 +1,5 @@
-lftools v0.12.0 Release Notes
-=============================
+global-jjb v0.12.0 Release Notes
+================================
 
 Thanks to Thanh, Jeremy, and Anil for contributing to this release.
 
