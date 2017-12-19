@@ -319,6 +319,7 @@ set -e -o pipefail
 
 ARCHIVE_TOX_DIR=&quot;$WORKSPACE/archives/tox&quot;
 mkdir -p &quot;$ARCHIVE_TOX_DIR&quot;
+export ARCHIVE_TOX_DIR
 
 cd &quot;$WORKSPACE/$TOX_DIR&quot;
 
@@ -327,26 +328,25 @@ if [ -z &quot;$TOX_ENVS&quot; ]; then
 fi
 
 run_tox() {
-    local log_dir=&quot;$1&quot;
-    local env=&quot;$2&quot;
+    local env=&quot;$1&quot;
 
     # Sleep a random 10 second interval to workaround tox sdist
     # conflicts due to building in the same dist directory.
     sleep $[ ( $RANDOM % 10 )  + 1 ]s
 
     echo &quot;-----&gt; Running tox $env&quot;
-    if ! tox -e $env &gt; &quot;$log_dir/tox-$env.log&quot;; then
-        echo &quot;$env&quot; &gt;&gt; &quot;$log_dir/failed-envs.log&quot;
+    if ! tox -e $env &gt; &quot;$ARCHIVE_TOX_DIR/tox-$env.log&quot;; then
+        echo &quot;$env&quot; &gt;&gt; &quot;$ARCHIVE_TOX_DIR/failed-envs.log&quot;
     fi
 }
 
 TOX_ENVS=(${TOX_ENVS//,/ })
 if hash parallel 2&gt;/dev/null; then
     export -f run_tox
-    parallel --jobs 200% &quot;run_tox $ARCHIVE_TOX_DIR {}&quot; ::: ${TOX_ENVS[*]}
+    parallel --jobs 200% &quot;run_tox {}&quot; ::: ${TOX_ENVS[*]}
 else
     for env in &quot;${TOX_ENVS[@]}&quot;; do
-        run_tox &quot;$ARCHIVE_TOX_DIR&quot; &quot;$env&quot;
+        run_tox &quot;$env&quot;
     done
 fi
 
