@@ -509,9 +509,9 @@ SAR_DIR=&quot;$WORKSPACE/archives/sar-reports&quot;
 mkdir -p &quot;$SAR_DIR&quot;
 cp &quot;$SYSSTAT_PATH/&quot;* &quot;$_&quot;
 # convert sar data to ascii format
-while IFS=&quot;&quot; read -r s
+while IFS=&quot;&quot; read -r sarfilenum
 do
-    [ -f &quot;$s&quot; ] &amp;&amp; LC_TIME=POSIX sar -A -f &quot;$s&quot; &gt; &quot;$SAR_DIR/sar${s//[!0-9]/}&quot;
+    [ -f &quot;$sarfilenum&quot; ] &amp;&amp; LC_TIME=POSIX sar -A -f &quot;$sarfilenum&quot; &gt; &quot;$SAR_DIR/sar${sarfilenum//[!0-9]/}&quot;
 done &lt; &lt;(find &quot;$SYSSTAT_PATH&quot; -name &quot;sa[0-9]*&quot; || true)
 
 # DON'T fail build if script fails.
