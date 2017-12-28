@@ -26,7 +26,7 @@ $MVN clean deploy \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
     -DaltDeploymentRepository=staging::default::file:"$WORKSPACE"/m2repo \
-    $MAVEN_PARAMS $MAVEN_OPTIONS
+    $MAVEN_OPTIONS $MAVEN_PARAMS
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
@@ -35,4 +35,4 @@ $MVN $SONAR_MAVEN_GOAL \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
     -DaltDeploymentRepository=staging::default::file:"$WORKSPACE"/m2repo \
-    $MAVEN_PARAMS $MAVEN_OPTIONS
+    $MAVEN_OPTIONS $MAVEN_PARAMS

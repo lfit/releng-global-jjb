@@ -34,6 +34,6 @@ for project in "${PROJECTS[@]}"; do
         -DskipTests=true \
         --global-settings "$GLOBAL_SETTINGS_FILE" \
         --settings "$SETTINGS_FILE" \
-        $MAVEN_PARAMS $MAVEN_OPTIONS
+        $MAVEN_OPTIONS $MAVEN_PARAMS
     popd
 done

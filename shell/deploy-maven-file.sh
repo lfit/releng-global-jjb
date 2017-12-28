@@ -44,6 +44,6 @@ do
                               "$file" \
                               -b "$MVN" \
                               -g "$GROUP_ID" \
-                              -p "$MAVEN_PARAMS $MAVEN_OPTIONS" \
+                              -p "$MAVEN_OPTIONS $MAVEN_PARAMS" \
                               |& tee "$DEPLOY_LOG"
 done < <(find "$UPLOAD_FILES_PATH" -type f -name "*")
