@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "094156e3_6fb09a91",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2017-12-28T02:11:30Z",
+      "side": 1,
+      "message": "hmm... since this is a global variable anyway. Instead of introducing a new macro variable how about moving this to a parameter instead so that if triggering the build manually we can easily type it into the build parameters box.",
+      "revId": "f86d24c42d268c5e2e894a2012a791d334ce92f7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
