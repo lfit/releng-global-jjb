@@ -95,12 +95,20 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
           <name>STAGING_PROFILE_ID</name>
           <description>Nexus staging profile ID.
 </description>
-          <defaultValue>uuddlrlrba</defaultValue>
+          <defaultValue/>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>ARCHIVE_ARTIFACTS</name>
           <description>Artifacts to archive to the logs server.</description>
           <defaultValue/>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>SONAR_MAVEN_GOAL</name>
+          <description>Maven goals to pass to the Sonar call. Typically sonar:sonar
+however to use a specific version of the sonar-maven-plugin we
+can call &quot;org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar&quot;.
+</description>
+          <defaultValue>sonar:sonar</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
@@ -185,9 +193,7 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
     </hudson.tasks.Shell>
     <EnvInjectBuilder>
       <info>
-        <propertiesContent>SONAR_HOST_URL=$SONAR_URL
-SONAR_MAVEN_GOAL=sonar:sonar
-</propertiesContent>
+        <propertiesContent>SONAR_HOST_URL=$SONAR_URL</propertiesContent>
       </info>
     </EnvInjectBuilder>
     <org.jenkinsci.plugins.configfiles.builder.ConfigFileBuildStep plugin="config-file-provider">
