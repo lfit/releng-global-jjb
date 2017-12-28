@@ -423,7 +423,7 @@ $MVN clean deploy \
     --global-settings &quot;$GLOBAL_SETTINGS_FILE&quot; \
     --settings &quot;$SETTINGS_FILE&quot; \
     -DaltDeploymentRepository=staging::default::file:&quot;$WORKSPACE&quot;/m2repo \
-    $MAVEN_PARAMS $MAVEN_OPTIONS
+    $MAVEN_OPTIONS $MAVEN_PARAMS
 
 #!/bin/bash
 # SPDX-License-Identifier: EPL-1.0

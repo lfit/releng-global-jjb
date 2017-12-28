@@ -30,6 +30,6 @@ $MVN clean install javadoc:aggregate \
     -Dfindbugs.skip=true \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
-    $MAVEN_PARAMS $MAVEN_OPTIONS
+    $MAVEN_OPTIONS $MAVEN_PARAMS
 
 mv "$WORKSPACE/target/site/apidocs" "$JAVADOC_DIR"

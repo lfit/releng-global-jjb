@@ -354,7 +354,7 @@ for project in &quot;${PROJECTS[@]}&quot;; do
         -DskipTests=true \
         --global-settings &quot;$GLOBAL_SETTINGS_FILE&quot; \
         --settings &quot;$SETTINGS_FILE&quot; \
-        $MAVEN_PARAMS $MAVEN_OPTIONS
+        $MAVEN_OPTIONS $MAVEN_PARAMS
     popd
 done
 </command>
@@ -410,7 +410,7 @@ $MVN clean deploy \
     --global-settings &quot;$GLOBAL_SETTINGS_FILE&quot; \
     --settings &quot;$SETTINGS_FILE&quot; \
     -DaltDeploymentRepository=staging::default::file:&quot;$WORKSPACE&quot;/m2repo \
-    $MAVEN_PARAMS $MAVEN_OPTIONS
+    $MAVEN_OPTIONS $MAVEN_PARAMS
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>

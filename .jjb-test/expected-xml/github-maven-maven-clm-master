@@ -233,7 +233,7 @@ $MVN clean install dependency:tree com.sonatype.clm:clm-maven-plugin:index \
     --global-settings &quot;$GLOBAL_SETTINGS_FILE&quot; \
     --settings &quot;$SETTINGS_FILE&quot; \
     -DaltDeploymentRepository=staging::default::file:&quot;$WORKSPACE&quot;/m2repo \
-    $MAVEN_PARAMS $MAVEN_OPTIONS
+    $MAVEN_OPTIONS $MAVEN_PARAMS
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
