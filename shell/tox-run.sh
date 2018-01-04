@@ -23,38 +23,12 @@ if [ -z "$TOX_ENVS" ]; then
     TOX_ENVS=$(crudini --get tox.ini tox envlist)
 fi
 
-run_tox() {
-    local log_dir="$1"
-    local env="$2"
-
-    # Sleep a random 10 second interval to workaround tox sdist
-    # conflicts due to building in the same dist directory.
-    sleep $[ ( $RANDOM % 10 )  + 1 ]s
-
-    echo "-----> Running tox $env"
-    if ! tox -e $env > "$log_dir/tox-$env.log"; then
-        echo "$env" >> "$log_dir/failed-envs.log"
-    fi
-}
-
-TOX_ENVS=(${TOX_ENVS//,/ })
-if hash parallel 2>/dev/null; then
-    export -f run_tox
-    parallel --jobs 200% "run_tox $ARCHIVE_TOX_DIR {}" ::: ${TOX_ENVS[*]}
+if [ ! -z "$TOX_ENVS" ]; then
+    detox -e $TOX_ENVS
 else
-    for env in "${TOX_ENVS[@]}"; do
-        run_tox "$ARCHIVE_TOX_DIR" "$env"
-    done
+    detox
 fi
 
-if [ -f "$ARCHIVE_TOX_DIR/failed-envs.log" ]; then
-    failed_envs=($(cat "$ARCHIVE_TOX_DIR/failed-envs.log"))
-    for e in "${failed_envs[@]}"; do
-        echo "cat $ARCHIVE_TOX_DIR/tox-$e.log"
-        cat "$ARCHIVE_TOX_DIR/tox-$e.log"
-    done
-    echo "ERROR: Failed the following builds: ${failed_envs[*]}"
-    exit 1
-fi
+# TODO: Parse out the separate logs for easier reading.
 
 echo "Completed tox runs."
