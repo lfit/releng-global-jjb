@@ -19,42 +19,16 @@ mkdir -p "$ARCHIVE_TOX_DIR"
 
 cd "$WORKSPACE/$TOX_DIR"
 
-if [ -z "$TOX_ENVS" ]; then
-    TOX_ENVS=$(crudini --get tox.ini tox envlist)
-fi
-
-run_tox() {
-    local log_dir="$1"
-    local env="$2"
-
-    # Sleep a random 10 second interval to workaround tox sdist
-    # conflicts due to building in the same dist directory.
-    sleep $[ ( $RANDOM % 10 )  + 1 ]s
-
-    echo "-----> Running tox $env"
-    if ! tox -e $env > "$log_dir/tox-$env.log"; then
-        echo "$env" >> "$log_dir/failed-envs.log"
-    fi
-}
-
-IFS=" " read -r -a TOX_ENVS <<< "${TOX_ENVS//,/ }"
-if hash parallel 2>/dev/null; then
-    export -f run_tox
-    parallel --jobs 200% "run_tox $ARCHIVE_TOX_DIR {}" ::: ${TOX_ENVS[*]}
+if [ ! -z "$TOX_ENVS" ]; then
+    detox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/detox.log"
 else
-    for env in "${TOX_ENVS[@]}"; do
-        run_tox "$ARCHIVE_TOX_DIR" "$env"
-    done
+    detox | tee -a "$ARCHIVE_TOX_DIR/detox.log"
 fi
 
-if [ -f "$ARCHIVE_TOX_DIR/failed-envs.log" ]; then
-    mapfile -t failed_envs < <(cat "$ARCHIVE_TOX_DIR/failed-envs.log")
-    for e in "${failed_envs[@]}"; do
-        echo "cat $ARCHIVE_TOX_DIR/tox-$e.log"
-        cat "$ARCHIVE_TOX_DIR/tox-$e.log"
-    done
-    echo "ERROR: Failed the following builds: ${failed_envs[*]}"
-    exit 1
-fi
+# Disable SC2116 as we want to echo a space separated list of TOX_ENVS
+# shellcheck disable=SC2116
+for i in $(echo "${TOX_ENVS//,/ }"); do
+    cp -r ".tox/$i/log" "$ARCHIVE_TOX_DIR/$i"
+done
 
 echo "Completed tox runs."
