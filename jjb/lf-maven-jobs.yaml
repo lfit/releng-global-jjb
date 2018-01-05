@@ -579,6 +579,14 @@
           - ../shell/maven-stage.sh
       - lf-provide-maven-settings-cleanup
 
+      # Parse logs and find autorelease and set it to AUTORELEASE_URL
+      - trigger-builds:
+          - project: '{docker-release-job}'
+            block: true
+            predefined-parameters: |
+              AUTORELEASE_URL=$AUTORELEASE_URL
+
+
 - job-template:
     name: '{project-name}-maven-release-{stream}'
     id: gerrit-maven-release
