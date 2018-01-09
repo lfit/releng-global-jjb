@@ -151,7 +151,11 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
             </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
             <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
               <compareType>ANT</compareType>
-              <pattern>packer/provision/mininet.sh</pattern>
+              <pattern>packer/provision/*.sh</pattern>
+            </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
+            <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
+              <compareType>ANT</compareType>
+              <pattern>packer/provision/mininet.yaml</pattern>
             </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
             <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
               <compareType>ANT</compareType>
