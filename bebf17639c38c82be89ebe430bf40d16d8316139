@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01e98e5b_d97761ac",
+        "filename": "shell/gerrit-fetch-dependencies.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T23:48:59Z",
+      "side": 1,
+      "message": "I think this will fail because mapfile parses new lines. Whereas we\u0027re expecting a space separated list here. We probably want to use the readarray format in this case.",
+      "revId": "bebf17639c38c82be89ebe430bf40d16d8316139",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b55ed6f6_d407135e",
+        "filename": "shell/maven-build-deps.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T23:48:59Z",
+      "side": 1,
+      "message": "If I recall this is a space separated list and not a new line separated list. We\u0027ll need to confirm this.\n\nmapfile parses new lines.",
+      "revId": "bebf17639c38c82be89ebe430bf40d16d8316139",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f048a93f_8e4cd797",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T23:48:59Z",
+      "side": 1,
+      "message": "I don\u0027t remember if jq returns a space separated list or a new line separated list.",
+      "revId": "bebf17639c38c82be89ebe430bf40d16d8316139",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
