@@ -22,7 +22,7 @@ set -eu -o pipefail
 
 REPOS_DIR="$WORKSPACE/.repos"
 
-PATCHES=($(echo "$GERRIT_EVENT_COMMENT_TEXT" | grep 'recheck:' | awk -F: '{print $2}'))
+mapfile -t PATCHES < <(echo "$GERRIT_EVENT_COMMENT_TEXT" | grep 'recheck:' | awk -F: '{print $2}')
 
 projects=()
 for patch in $(echo "${PATCHES[@]}"); do

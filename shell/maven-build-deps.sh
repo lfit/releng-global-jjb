@@ -20,7 +20,7 @@
 set -e -o pipefail
 set +u
 
-PROJECTS=($(echo "$DEPENDENCY_BUILD_ORDER"))
+mapfile -t PROJECTS < <(echo "$DEPENDENCY_BUILD_ORDER")
 REPOS_DIR="$WORKSPACE/.repos"
 
 export MAVEN_OPTS

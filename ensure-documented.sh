@@ -11,7 +11,7 @@
 
 # Checks for JJB documentation interest points and ensures they are documented.
 
-jjb_files=($(find jjb -name "*.yaml"))
+mapfile -t jjb_files < <(find jjb -name "*.yaml")
 
 undocumented_count=0
 for file in "${jjb_files[@]}"; do

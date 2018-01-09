@@ -22,8 +22,9 @@ nexus_repo_url="$NEXUS_URL/content/repositories/$NEXUS_REPO"
 
 # Remove metadata files that were not updated.
 set +e  # Temporarily disable to run diff command.
-metadata_files=($(diff -s -r "$m2repo_dir" "$WORKSPACE/m2repo-backup" \
-    | grep 'Files .* and .* are identical' | awk '{print $2}'))
+mapfile -t metadata_files < <(diff -s -r "$m2repo_dir" "$WORKSPACE/m2repo-backup" \
+    | grep 'Files .* and .* are identical' \
+    | awk '{print $2}')
 set -e  # Re-enable.
 
 set +u  # $metadata_files could be unbound if project is new.
