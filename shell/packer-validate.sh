@@ -21,17 +21,25 @@ mkdir -p "$PACKER_LOGS_DIR"
 export PATH="${WORKSPACE}/bin:$PATH"
 
 cd packer
-varfiles=(../packer/vars/*.json)
-templates=(../packer/templates/*.json)
+varfiles=(vars/*.json common-packer/vars/*.json)
+templates=(templates/*.json)
 
 for varfile in "${varfiles[@]}"; do
+    # cloud-env.json is a file containing credentials which is pulled in via
+    # CLOUDENV variable so skip it here.
+    if [[ "$varfile" == *"cloud-env.json"* ]]; then
+        continue
+    fi
+
+    echo "-----> Testing varfile: $varfile"
     for template in "${templates[@]}"; do
-        export PACKER_LOG="yes" && \
-        export PACKER_LOG_PATH="$PACKER_LOGS_DIR/packer-validate-${varfile##*/}-${template##*/}.log" && \
-                    packer.io validate -var-file="$CLOUDENV" \
-                    -var-file="$varfile" "$template"
-        if [ $? -ne 0 ]; then
-            break
+        export PACKER_LOG="yes"
+        export PACKER_LOG_PATH="$PACKER_LOGS_DIR/packer-validate-${varfile##*/}-${template##*/}.log"
+        if output=$(packer.io validate -var-file="$CLOUDENV" -var-file="$varfile" "$template"); then
+            echo "$template: $output"
+        else
+            echo "$template: $output"
+            exit 1
         fi
     done
 done
