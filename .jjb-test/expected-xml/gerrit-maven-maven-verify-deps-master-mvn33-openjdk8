@@ -263,7 +263,7 @@ set -eu -o pipefail
 
 REPOS_DIR=&quot;$WORKSPACE/.repos&quot;
 
-PATCHES=($(echo &quot;$GERRIT_EVENT_COMMENT_TEXT&quot; | grep 'recheck:' | awk -F: '{print $2}'))
+IFS=&quot; &quot; read -r -a PATCHES &lt;&lt;&lt; &quot;$(echo &quot;$GERRIT_EVENT_COMMENT_TEXT&quot; | grep 'recheck:' | awk -F: '{print $2}')&quot;
 
 projects=()
 for patch in $(echo &quot;${PATCHES[@]}&quot;); do
@@ -340,7 +340,7 @@ echo &quot;$MAVEN_OPTIONS&quot;
 set -e -o pipefail
 set +u
 
-PROJECTS=($(echo &quot;$DEPENDENCY_BUILD_ORDER&quot;))
+IFS=&quot; &quot; read -r -a PROJECTS &lt;&lt;&lt; &quot;$DEPENDENCY_BUILD_ORDER&quot;
 REPOS_DIR=&quot;$WORKSPACE/.repos&quot;
 
 export MAVEN_OPTS
