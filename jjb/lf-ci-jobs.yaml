@@ -58,13 +58,14 @@
 - lf_packer_file_paths: &lf_packer_file_paths
     name: lf-packer-file-paths
     file-paths:
-      # Common files for all projects
       - compare-type: ANT
         pattern: 'packer/vars/{platforms}.json'
       - compare-type: ANT
         pattern: 'packer/templates/{templates}.json'
       - compare-type: ANT
-        pattern: 'packer/provision/{templates}.sh'
+        pattern: 'packer/provision/*.sh'
+      - compare-type: ANT
+        pattern: 'packer/provision/{templates}.yaml'
       - compare-type: ANT
         pattern: 'packer/provision/lib/**'
 
