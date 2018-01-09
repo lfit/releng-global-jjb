@@ -214,17 +214,25 @@ mkdir -p &quot;$PACKER_LOGS_DIR&quot;
 export PATH=&quot;${WORKSPACE}/bin:$PATH&quot;
 
 cd packer
-varfiles=(../packer/vars/*.json)
-templates=(../packer/templates/*.json)
+varfiles=(vars/*.json common-packer/vars/*.json)
+templates=(templates/*.json)
 
 for varfile in &quot;${varfiles[@]}&quot;; do
+    # cloud-env.json is a file containing credentials which is pulled in via
+    # CLOUDENV variable so skip it here.
+    if [[ &quot;$varfile&quot; == *&quot;cloud-env.json&quot;* ]]; then
+        continue
+    fi
+
+    echo &quot;-----&gt; Testing varfile: $varfile&quot;
     for template in &quot;${templates[@]}&quot;; do
-        export PACKER_LOG=&quot;yes&quot; &amp;&amp; \
-        export PACKER_LOG_PATH=&quot;$PACKER_LOGS_DIR/packer-validate-${varfile##*/}-${template##*/}.log&quot; &amp;&amp; \
-                    packer.io validate -var-file=&quot;$CLOUDENV&quot; \
-                    -var-file=&quot;$varfile&quot; &quot;$template&quot;
-        if [ $? -ne 0 ]; then
-            break
+        export PACKER_LOG=&quot;yes&quot;
+        export PACKER_LOG_PATH=&quot;$PACKER_LOGS_DIR/packer-validate-${varfile##*/}-${template##*/}.log&quot;
+        if output=$(packer.io validate -var-file=&quot;$CLOUDENV&quot; -var-file=&quot;$varfile&quot; &quot;$template&quot;); then
+            echo &quot;$template: $output&quot;
+        else
+            echo &quot;$template: $output&quot;
+            exit 1
         fi
     done
 done
