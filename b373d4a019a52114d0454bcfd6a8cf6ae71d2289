@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "daacf7b0_9496fc20",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T14:11:58Z",
+      "side": 1,
+      "message": "I think it would be cleaner if we print which varfile is being tested in the outer loop and then inside the inner loop a list of all the templates and their return message on 1 line.",
+      "revId": "b373d4a019a52114d0454bcfd6a8cf6ae71d2289",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f65b4eeb_9fd4765b",
         "filename": "shell/packer-validate.sh",
         "patchSetId": 1
