@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e060ca75_ff0b1005",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T14:10:12Z",
+      "side": 1,
+      "message": "Improve how?",
+      "revId": "b373d4a019a52114d0454bcfd6a8cf6ae71d2289",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3670844_311ae007",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T14:10:12Z",
+      "side": 1,
+      "message": "We need to also check common-packer.",
+      "revId": "b373d4a019a52114d0454bcfd6a8cf6ae71d2289",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f65b4eeb_9fd4765b",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T14:10:12Z",
+      "side": 1,
+      "message": "This is unnecessary.",
+      "range": {
+        "startLine": 36,
+        "startChar": 25,
+        "endLine": 36,
+        "endChar": 26
+      },
+      "revId": "b373d4a019a52114d0454bcfd6a8cf6ae71d2289",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "94ca0437_1aebb116",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T14:10:12Z",
+      "side": 1,
+      "message": "Unnecessary trailing \\",
+      "range": {
+        "startLine": 37,
+        "startChar": 94,
+        "endLine": 37,
+        "endChar": 95
+      },
+      "revId": "b373d4a019a52114d0454bcfd6a8cf6ae71d2289",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ee23607_023ef9c3",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T14:10:12Z",
+      "side": 1,
+      "message": "Make these 2 lines 1 line and unindent them to the same level as the exports.",
+      "revId": "b373d4a019a52114d0454bcfd6a8cf6ae71d2289",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7d8654c_b039fc5f",
+        "filename": "shell/packer-validate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-09T14:10:12Z",
+      "side": 1,
+      "message": "ShellCheck recommends not checking status with $? and instead use `if command`.",
+      "revId": "b373d4a019a52114d0454bcfd6a8cf6ae71d2289",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
