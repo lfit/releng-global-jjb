@@ -302,7 +302,7 @@ run_tox() {
     fi
 }
 
-TOX_ENVS=(${TOX_ENVS//,/ })
+TOX_ENVS=(&quot;${TOX_ENVS//,/ }&quot;)
 if hash parallel 2&gt;/dev/null; then
     export -f run_tox
     parallel --jobs 200% &quot;run_tox $ARCHIVE_TOX_DIR {}&quot; ::: ${TOX_ENVS[*]}
@@ -313,7 +313,7 @@ else
 fi
 
 if [ -f &quot;$ARCHIVE_TOX_DIR/failed-envs.log&quot; ]; then
-    failed_envs=($(cat &quot;$ARCHIVE_TOX_DIR/failed-envs.log&quot;))
+    mapfile -t failed_envs &lt; &lt;(cat &quot;$ARCHIVE_TOX_DIR/failed-envs.log&quot;)
     for e in &quot;${failed_envs[@]}&quot;; do
         echo &quot;cat $ARCHIVE_TOX_DIR/tox-$e.log&quot;
         cat &quot;$ARCHIVE_TOX_DIR/tox-$e.log&quot;

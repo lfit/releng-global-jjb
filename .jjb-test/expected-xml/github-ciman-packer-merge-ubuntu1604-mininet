@@ -346,7 +346,7 @@ export PACKER_LOG_PATH=&quot;$PACKER_BUILD_LOG&quot; &amp;&amp; \
                         &quot;../packer/templates/$PACKER_TEMPLATE.json&quot;
 
 # Retrive the list of cloud providers
-clouds=($(jq -r '.builders[].name' &quot;../packer/templates/$PACKER_TEMPLATE.json&quot;))
+mapfile -t clouds &lt; &lt;(jq -r '.builders[].name' &quot;../packer/templates/$PACKER_TEMPLATE.json&quot;)
 
 # Split public/private clouds logs
 for cloud in &quot;${clouds[@]}&quot;; do
