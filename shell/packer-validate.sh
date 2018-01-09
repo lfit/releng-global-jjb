@@ -25,13 +25,22 @@ varfiles=(../packer/vars/*.json)
 templates=(../packer/templates/*.json)
 
 for varfile in "${varfiles[@]}"; do
+    # cloud-env.json is a file containing credentials which is pulled in via
+    # CLOUDENV variable so skip it here.
+    if [[ "$varfile" == *"cloud-env.json"* ]]; then
+        continue
+    fi
+
     for template in "${templates[@]}"; do
-        export PACKER_LOG="yes" && \
-        export PACKER_LOG_PATH="$PACKER_LOGS_DIR/packer-validate-${varfile##*/}-${template##*/}.log" && \
+        echo "---> Testing varfile: $varfile and $template"
+        PACKER_LOG="yes" \
+        PACKER_LOG_PATH="$PACKER_LOGS_DIR/packer-validate-${varfile##*/}-${template##*/}.log" \
                     packer.io validate -var-file="$CLOUDENV" \
                     -var-file="$varfile" "$template"
         if [ $? -ne 0 ]; then
-            break
+            exit 1
+        else
+            echo "Successfully validated files: $varfile $template"
         fi
     done
 done
