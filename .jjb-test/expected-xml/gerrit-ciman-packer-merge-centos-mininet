@@ -391,16 +391,22 @@ PACKER_BUILD_LOG=&quot;$PACKER_LOGS_DIR/packer-build.log&quot;
 mkdir -p &quot;$PACKER_LOGS_DIR&quot;
 export PATH=&quot;${WORKSPACE}/bin:$PATH&quot;
 
+# Prioritize the project's own version of vars if available
+platform_file=&quot;vars/$PACKER_PLATFORM.json&quot;
+if [ -f &quot;$PACKER_PLATFORM&quot; ]; then
+    platform_file=&quot;vars/$PACKER_PLATFORM.json&quot;
+fi
+
 cd packer
-export PACKER_LOG=&quot;yes&quot; &amp;&amp; \
-export PACKER_LOG_PATH=&quot;$PACKER_BUILD_LOG&quot; &amp;&amp; \
-                 packer.io build -color=false \
-                        -var-file=&quot;$CLOUDENV&quot; \
-                        -var-file=&quot;../packer/vars/$PACKER_PLATFORM.json&quot; \
-                        &quot;../packer/templates/$PACKER_TEMPLATE.json&quot;
+export PACKER_LOG=&quot;yes&quot;
+export PACKER_LOG_PATH=&quot;$PACKER_BUILD_LOG&quot;
+packer.io build -color=false \
+    -var-file=&quot;$CLOUDENV&quot; \
+    -var-file=&quot;$platform_file&quot; \
+    &quot;templates/$PACKER_TEMPLATE.json&quot;
 
 # Retrive the list of cloud providers
-mapfile -t clouds &lt; &lt;(jq -r '.builders[].name' &quot;../packer/templates/$PACKER_TEMPLATE.json&quot;)
+mapfile -t clouds &lt; &lt;(jq -r '.builders[].name' &quot;templates/$PACKER_TEMPLATE.json&quot;)
 
 # Split public/private clouds logs
 for cloud in &quot;${clouds[@]}&quot;; do
