@@ -37,8 +37,22 @@ for patch in $(echo "${PATCHES[@]}"); do
         projects+=("$project")
     fi
 
+    # Workaround for git-review bug in v1.24
+    # https://storyboard.openstack.org/#!/story/2001081
+    set +u  # Allow unbound variables for virtualenv
+    virtualenv --quiet "/tmp/v/git-review"
+    # shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
+    source "/tmp/v/git-review/bin/activate"
+    pip install --quiet --upgrade pip
+    pip install --quiet --upgrade git-review
+    set -u
+    # End git-review workaround
+
     pushd "$REPOS_DIR/$project"
-    git remote add gerrit "$GIT_URL/$project"
+    # If remote gerrit already exists just make sure path is expected
+    if ! git remote add gerrit "$GERRIT_URL/$project" > /dev/null 2>&1; then
+        git remote set-url gerrit "$GERRIT_URL/$project"
+    fi
     git review --cherrypick="$patch"
     popd
 done
