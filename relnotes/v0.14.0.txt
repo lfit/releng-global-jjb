@@ -1,0 +1,56 @@
+global-jjb v0.14.0 Release Notes
+================================
+
+Thanks to Jeremy and Thanh for contributing to this release.
+
+
+Notable changes since v0.13.0
+-----------------------------
+
+9ace820 Thanh Ha        Update remote gerrit to use GERRIT_URL
+Fixes issue when GIT_BASE and GIT_URL are pointing to a mirror. The git review
+command needs it's gerrit remote to point to Gerrit.
+
+7ce2809 Thanh Ha        Update merge job to work with common-packer
+8cc91c0 Thanh Ha        Update packer file_path triggers
+fec0bb3 Anil Belur      Improve packer-validate debugging output
+Updates packer ci jobs to work with the new common-packer project. The updates
+were designed to be backwards compatible so should not break projects that have
+not yet added common-packer to their builds.
+
+f3ed649 Thanh Ha        Use detox to run tox in parallel
+Switches our parallel tox calls to using detox instead of GNU parallel. detox
+is more aware of the tox environment than GNU parallel was which intermittently
+caused build issues for projects that had a lot of envs defined.
+
+89c7b0f Thanh Ha        Prioritize MAVEN_PARAMS to override OPTIONS
+When passing mvn-parmas for a parameter that's already defined by scripts it
+will now prioritize the project's declaration over the default environment.
+
+5ffdf16 Thanh Ha        Allow SONAR_MAVEN_GOAL to be configurable
+Sonar Maven goal is now configurable allowing projects to specify the version
+of the sonar plugin they wish to use in cases where they do not want to use the
+latest sonar plugin version.
+
+645a9ea Andrew Grimberg Base sigul macros and scripts
+Adds a new sigual macro which in the future will be used for signing artifacts
+in the CI system. It is currently not production ready.
+
+Full Change Log
+---------------
+
+9ace820 Thanh Ha        Update remote gerrit to use GERRIT_URL
+7ce2809 Thanh Ha        Update merge job to work with common-packer
+8cc91c0 Thanh Ha        Update packer file_path triggers
+fec0bb3 Anil Belur      Improve packer-validate debugging output
+f3ed649 Thanh Ha        Use detox to run tox in parallel
+bb5e0da Anil Belur      Fix ShellCheck v0.4.7 lint issues
+1ca3e3a Thanh Ha        Bump version to v0.14.0-dev
+562c337 Thanh Ha        Release global-jjb v0.13.1
+89c7b0f Thanh Ha        Prioritize MAVEN_PARAMS to override OPTIONS
+5ffdf16 Thanh Ha        Allow SONAR_MAVEN_GOAL to be configurable
+6f46b9b Anil Belur      Make sysstat script more readable
+8a9a1c0 Anil Belur      Update packer version to 1.1.3
+7b53496 Thanh Ha        Bump CLM job timeout to 30
+f5cc1dd Thanh Ha        Bump version to v0.14.0-dev
+645a9ea Andrew Grimberg Base sigul macros and scripts
