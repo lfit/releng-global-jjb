@@ -24,11 +24,11 @@ if hash packer.io 2>/dev/null; then
 else
     echo "packer.io command not is available. Installing packer ..."
     # Installs Hashicorp's Packer binary, required for verify & merge packer jobs
-    pushd packer
+    pushd "${WORKSPACE}"
     wget -nv "https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip"
     mkdir -p "${WORKSPACE}/bin"
-    unzip "packer_${PACKER_VERSION}_linux_amd64.zip" -d ${WORKSPACE}/bin/
+    unzip "packer_${PACKER_VERSION}_linux_amd64.zip" -d "${WORKSPACE}/bin/"
     # rename packer to avoid conflict with binary in cracklib
-    mv ${WORKSPACE}/bin/packer "${WORKSPACE}/bin/packer.io"
+    mv "${WORKSPACE}/bin/packer" "${WORKSPACE}/bin/packer.io"
     popd
 fi
