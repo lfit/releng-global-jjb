@@ -50,6 +50,24 @@
       "revId": "bebf17639c38c82be89ebe430bf40d16d8316139",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e33b4b72_3a225971",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-01-10T00:09:10Z",
+      "side": 1,
+      "message": "confirmed this returns a newline separated list",
+      "parentUuid": "f048a93f_8e4cd797",
+      "revId": "bebf17639c38c82be89ebe430bf40d16d8316139",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
