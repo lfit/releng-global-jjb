@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e6a273f_787c16c0",
+        "filename": "jenkins-admin/get_all_creds.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-10T20:28:02Z",
+      "side": 1,
+      "message": "format",
+      "range": {
+        "startLine": 5,
+        "startChar": 69,
+        "endLine": 5,
+        "endChar": 76
+      },
+      "revId": "d646d51b95a68f873947838dd9a446f61baab359",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bd264285_43378518",
+        "filename": "jenkins-admin/get_all_creds.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-10T20:28:02Z",
+      "side": 1,
+      "message": "types",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "d646d51b95a68f873947838dd9a446f61baab359",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d09eb848_139fd486",
+        "filename": "jenkins-admin/get_all_creds.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-10T20:28:02Z",
+      "side": 1,
+      "message": "Printing",
+      "range": {
+        "startLine": 13,
+        "startChar": 9,
+        "endLine": 13,
+        "endChar": 17
+      },
+      "revId": "d646d51b95a68f873947838dd9a446f61baab359",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d70cb59e_d72bcea4",
+        "filename": "jenkins-admin/get_all_creds.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-10T20:28:02Z",
+      "side": 1,
+      "message": "4 space indents please.",
+      "revId": "d646d51b95a68f873947838dd9a446f61baab359",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
