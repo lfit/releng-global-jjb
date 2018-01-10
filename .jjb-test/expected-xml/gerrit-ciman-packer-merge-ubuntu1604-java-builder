@@ -240,7 +240,7 @@ if hash packer.io 2&gt;/dev/null; then
 else
     echo &quot;packer.io command not is available. Installing packer ...&quot;
     # Installs Hashicorp's Packer binary, required for verify &amp; merge packer jobs
-    pushd packer
+    pushd ${WORKSPACE}
     wget -nv &quot;https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip&quot;
     mkdir -p &quot;${WORKSPACE}/bin&quot;
     unzip &quot;packer_${PACKER_VERSION}_linux_amd64.zip&quot; -d ${WORKSPACE}/bin/
@@ -358,7 +358,7 @@ if hash packer.io 2&gt;/dev/null; then
 else
     echo &quot;packer.io command not is available. Installing packer ...&quot;
     # Installs Hashicorp's Packer binary, required for verify &amp; merge packer jobs
-    pushd packer
+    pushd ${WORKSPACE}
     wget -nv &quot;https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip&quot;
     mkdir -p &quot;${WORKSPACE}/bin&quot;
     unzip &quot;packer_${PACKER_VERSION}_linux_amd64.zip&quot; -d ${WORKSPACE}/bin/
