@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b41bd23c_b71e120f",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-10T03:18:44Z",
+      "side": 1,
+      "message": "This line is doing substitution from \u0027,\u0027 to \u0027 \u0027 to create an array. So we cannot double quote here as it would create a 1 item array rather than a multi-item array.\n\nAlthough the patch I04fc3a083c420f71938b99f942b682093822ddda does away with the need to create this array in the first place. I think we should merge that over there but let\u0027s fix this one up first.",
+      "revId": "794caacfdf4cdb09fd61f1962199a086739a3994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
