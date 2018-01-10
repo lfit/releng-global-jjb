@@ -38,7 +38,7 @@ for patch in $(echo "${PATCHES[@]}"); do
     fi
 
     pushd "$REPOS_DIR/$project"
-    git remote add gerrit "$GIT_URL/$project"
+    git remote add gerrit "$GERRIT_URL/$project"
     git review --cherrypick="$patch"
     popd
 done
