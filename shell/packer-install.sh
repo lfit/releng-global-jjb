@@ -24,6 +24,7 @@ if hash packer.io 2>/dev/null; then
 else
     echo "packer.io command not is available. Installing packer ..."
     # Installs Hashicorp's Packer binary, required for verify & merge packer jobs
+    mkdir packer
     pushd packer
     wget -nv "https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip"
     mkdir -p "${WORKSPACE}/bin"
