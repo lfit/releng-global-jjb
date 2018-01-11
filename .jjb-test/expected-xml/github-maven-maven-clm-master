@@ -149,9 +149,24 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
     </extensions>
   </scm>
   <triggers class="vector">
-    <hudson.triggers.TimerTrigger>
-      <spec>H H * * 6</spec>
-    </hudson.triggers.TimerTrigger>
+    <org.jenkinsci.plugins.ghprb.GhprbTrigger>
+      <spec/>
+      <adminlist/>
+      <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
+      <whitelist/>
+      <orgslist/>
+      <cron/>
+      <triggerPhrase>^run-clm$</triggerPhrase>
+      <onlyTriggerPhrase>false</onlyTriggerPhrase>
+      <useGitHubHooks>true</useGitHubHooks>
+      <permitAll>true</permitAll>
+      <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
+      <extensions>
+        <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+          <commitStatusContext>CLM</commitStatusContext>
+        </org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
+      </extensions>
+    </org.jenkinsci.plugins.ghprb.GhprbTrigger>
   </triggers>
   <builders>
     <hudson.tasks.Shell>
