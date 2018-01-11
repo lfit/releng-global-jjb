@@ -281,8 +281,13 @@ set -e -o pipefail
 
 ARCHIVE_TOX_DIR=&quot;$WORKSPACE/archives/tox&quot;
 mkdir -p &quot;$ARCHIVE_TOX_DIR&quot;
-
 cd &quot;$WORKSPACE/$TOX_DIR&quot;
+
+if [ -d &quot;/opt/pyenv&quot; ]; then
+    echo &quot;---&gt; Setting up pyenv&quot;
+    export PYENV_ROOT=&quot;/opt/pyenv&quot;
+    export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;
+fi
 
 if [ ! -z &quot;$TOX_ENVS&quot; ]; then
     detox -e &quot;$TOX_ENVS&quot;  | tee -a &quot;$ARCHIVE_TOX_DIR/detox.log&quot;
