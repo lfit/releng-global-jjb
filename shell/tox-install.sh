@@ -19,7 +19,7 @@ virtualenv --quiet "/tmp/v/tox"
 source "/tmp/v/tox/bin/activate"
 pip install --quiet --upgrade pip
 pip install --quiet --upgrade pipdeptree
-pip install --quiet --upgrade detox tox argparse
+pip install --quiet --upgrade argparse detox tox tox-pyenv
 
 echo "----> Pip Dependency Tree"
 pipdeptree
