@@ -265,6 +265,17 @@ REPOS_DIR=&quot;$WORKSPACE/.repos&quot;
 
 IFS=&quot; &quot; read -r -a PATCHES &lt;&lt;&lt; &quot;$(echo &quot;$GERRIT_EVENT_COMMENT_TEXT&quot; | grep 'recheck:' | awk -F: '{print $2}')&quot;
 
+# Workaround for git-review bug in v1.24
+# https://storyboard.openstack.org/#!/story/2001081
+set +u  # Allow unbound variables for virtualenv
+virtualenv --quiet &quot;/tmp/v/git-review&quot;
+# shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
+source &quot;/tmp/v/git-review/bin/activate&quot;
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade git-review
+set -u
+# End git-review workaround
+
 projects=()
 for patch in $(echo &quot;${PATCHES[@]}&quot;); do
     json=$(curl -s &quot;$GERRIT_URL/changes/$patch&quot; | sed -e &quot;s/)]}'//&quot;)
@@ -277,17 +288,6 @@ for patch in $(echo &quot;${PATCHES[@]}&quot;); do
         # This array will be used later to determine project build order.
         projects+=(&quot;$project&quot;)
     fi
-
-    # Workaround for git-review bug in v1.24
-    # https://storyboard.openstack.org/#!/story/2001081
-    set +u  # Allow unbound variables for virtualenv
-    virtualenv --quiet &quot;/tmp/v/git-review&quot;
-    # shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
-    source &quot;/tmp/v/git-review/bin/activate&quot;
-    pip install --quiet --upgrade pip
-    pip install --quiet --upgrade git-review
-    set -u
-    # End git-review workaround
 
     pushd &quot;$REPOS_DIR/$project&quot;
     # If remote gerrit already exists just make sure path is expected
