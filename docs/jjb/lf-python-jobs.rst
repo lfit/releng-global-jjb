@@ -23,6 +23,21 @@ Jobs for Python projects using GitHub.
 
     - github-tox-verify
 
+
+Macros
+======
+
+lf-tox-install
+--------------
+
+Runs a shell script that installs tox in a Python virtualenv.
+
+:Required Parameters:
+
+    :python-version: Base Python version to use in the virtualenv. For example
+        python2 or python3.
+
+
 Job Templates
 =============
 
@@ -49,6 +64,8 @@ Tox runner to verify a project
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in seconds before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :python-version: Version of Python to configure as a base in virtualenv.
+        (default: python3)
     :stream: Keyword representing a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
