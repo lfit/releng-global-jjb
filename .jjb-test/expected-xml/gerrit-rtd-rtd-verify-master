@@ -205,7 +205,7 @@ echo &quot;---&gt; tox-install.sh&quot;
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-virtualenv --quiet &quot;/tmp/v/tox&quot;
+virtualenv --quiet -p &quot;$PYTHON_VERSION&quot; &quot;/tmp/v/tox&quot;
 # shellcheck source=/tmp/v/tox/bin/activate disable=SC1091
 source &quot;/tmp/v/tox/bin/activate&quot;
 pip install --quiet --upgrade pip

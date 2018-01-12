@@ -23,6 +23,21 @@ Jobs for Python projects using GitHub.
 
     - github-tox-verify
 
+
+Macros
+======
+
+lf-tox-install
+--------------
+
+Runs a shell script that installs tox in a Python virtualenv.
+
+:Required Parameters:
+
+    :python-version: Base Python version that should be used in the virtualenv.
+        For example python2 or python3.
+
+
 Job Templates
 =============
 

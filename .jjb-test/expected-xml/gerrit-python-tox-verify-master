@@ -274,6 +274,11 @@ lftools --version
 # pipdeptree
 </command>
     </hudson.tasks.Shell>
+    <EnvInjectBuilder>
+      <info>
+        <propertiesContent>PYTHON_VERSION=python3</propertiesContent>
+      </info>
+    </EnvInjectBuilder>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
@@ -291,7 +296,7 @@ echo &quot;---&gt; tox-install.sh&quot;
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-virtualenv --quiet &quot;/tmp/v/tox&quot;
+virtualenv --quiet -p &quot;$PYTHON_VERSION&quot; &quot;/tmp/v/tox&quot;
 # shellcheck source=/tmp/v/tox/bin/activate disable=SC1091
 source &quot;/tmp/v/tox/bin/activate&quot;
 pip install --quiet --upgrade pip
@@ -300,8 +305,10 @@ pip install --quiet --upgrade argparse detox tox tox-pyenv
 
 echo &quot;----&gt; Pip Dependency Tree&quot;
 pipdeptree
-
-#!/bin/bash
+</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.

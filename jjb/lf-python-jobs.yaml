@@ -17,6 +17,17 @@
     jobs:
       - github-tox-verify
 
+##########
+# Macros #
+##########
+
+- builder:
+    name: lf-infra-tox-install
+    builders:
+      - inject:
+          properties-content: 'PYTHON_VERSION={python-version}'
+      - shell: !include-raw-escape: ../shell/tox-install.sh
+
 ##############
 # Tox Verify #
 ##############
@@ -32,6 +43,7 @@
     build-days-to-keep: 7
     build-timeout: 10
     git-url: '$GIT_URL/$GERRIT_PROJECT'
+    python-version: python3
     stream: master
     submodule-recursive: true
     tox-dir: ''
@@ -70,9 +82,9 @@
           # Without running the install first the run in the publisher will fail
           # due to missing lftools because it gets installed into a tox venv.
           - ../shell/lftools-install.sh
-      - shell: !include-raw-escape:
-          - ../shell/tox-install.sh
-          - ../shell/tox-run.sh
+      - lf-infra-tox-install:
+          python-version: '{python-version}'
+      - shell: !include-raw-escape: ../shell/tox-run.sh
 
     publishers:
       - lf-infra-publish
