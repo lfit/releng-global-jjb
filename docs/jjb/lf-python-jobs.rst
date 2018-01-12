@@ -44,7 +44,15 @@ Job Templates
 Tox Verify
 ----------
 
-Tox runner to verify a project
+Tox runner to verify a project. This job is pyenv aware so if the image
+contains an installation of pyenv at /opt/pyenv it will pick it up and run
+Python tests with the appropriate Python versions. This job will set the
+following pyenv variables before running.
+
+.. code:: bash
+
+   export PYENV_ROOT="/opt/pyenv"
+   export PATH="$PYENV_ROOT/bin:$PATH"
 
 :Template Names:
 
