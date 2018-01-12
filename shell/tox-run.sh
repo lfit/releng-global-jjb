@@ -24,6 +24,7 @@ if [ -d "/opt/pyenv" ]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
 fi
 
+set +e  # Allow detox to fail so that we can collect the logs in the next step
 if [ ! -z "$TOX_ENVS" ]; then
     detox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/detox.log"
 else
@@ -35,5 +36,6 @@ fi
 for i in $(echo "${TOX_ENVS//,/ }"); do
     cp -r ".tox/$i/log" "$ARCHIVE_TOX_DIR/$i"
 done
+set -e  # Logs collected so re-enable
 
 echo "Completed tox runs."
