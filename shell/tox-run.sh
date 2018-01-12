@@ -27,16 +27,23 @@ if [ -d "/opt/pyenv" ]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
 fi
 
+set +e  # Allow detox to fail so that we can collect the logs in the next step
 if [ ! -z "$TOX_ENVS" ]; then
     detox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/detox.log"
+    detox_status="${PIPESTATUS[0]}"
 else
     detox | tee -a "$ARCHIVE_TOX_DIR/detox.log"
+    detox_status="${PIPESTATUS[0]}"
 fi
 
 # Disable SC2116 as we want to echo a space separated list of TOX_ENVS
 # shellcheck disable=SC2116
-for i in $(echo "${TOX_ENVS//,/ }"); do
-    cp -r ".tox/$i/log" "$ARCHIVE_TOX_DIR/$i"
+for i in .tox/*/log; do
+    tox_env=$(echo $i | awk -F'/' '{print $1}')
+    cp -r "$i" "$ARCHIVE_TOX_DIR/$tox_env"
 done
+set -e  # Logs collected so re-enable
 
 echo "Completed tox runs."
+
+test "$detox_status" -eq 0 || exit "$detox_status"
