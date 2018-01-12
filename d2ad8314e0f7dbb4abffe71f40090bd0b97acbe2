@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2caead1e_dcbc0968",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-12T02:28:44Z",
+      "side": 1,
+      "message": "I\u0027d just call this CLM. It\u0027s not a verify job.",
+      "range": {
+        "startLine": 198,
+        "startChar": 31,
+        "endLine": 198,
+        "endChar": 37
+      },
+      "revId": "d2ad8314e0f7dbb4abffe71f40090bd0b97acbe2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
