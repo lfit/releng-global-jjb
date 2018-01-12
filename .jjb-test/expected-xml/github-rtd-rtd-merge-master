@@ -9,8 +9,9 @@
   <assignedNode>build-vm</assignedNode>
   <canRoam>false</canRoam>
   <properties>
-    <com.coravy.hudson.plugins.github.GithubProjectProperty>
+    <com.coravy.hudson.plugins.github.GithubProjectProperty plugin="github">
       <projectUrl>https://github.com/example-org/releng/ciman</projectUrl>
+      <displayName/>
     </com.coravy.hudson.plugins.github.GithubProjectProperty>
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
@@ -79,8 +80,11 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
       <allowMembersOfWhitelistedOrgsAsAdmin>false</allowMembersOfWhitelistedOrgsAsAdmin>
       <whitelist/>
       <orgslist/>
+      <whiteListLabels/>
+      <blackListLabels/>
       <cron/>
       <triggerPhrase>^remerge$</triggerPhrase>
+      <skipBuildPhrase/>
       <onlyTriggerPhrase>false</onlyTriggerPhrase>
       <useGitHubHooks>true</useGitHubHooks>
       <permitAll>true</permitAll>

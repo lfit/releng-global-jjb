@@ -125,28 +125,22 @@ For example '&lt;1.0.0' or '&gt;=1.0.0,&lt;2.0.0'.
         <name>refs/heads/$GERRIT_BRANCH</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
-    <excludedUsers/>
-    <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-    <authorOrCommitter>false</authorOrCommitter>
-    <wipeOutWorkspace>true</wipeOutWorkspace>
-    <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
-    <relativeTargetDir/>
     <reference/>
     <gitConfigName/>
     <gitConfigEmail/>
-    <skipTag>true</skipTag>
-    <scmName/>
-    <useShallowClone>false</useShallowClone>
-    <ignoreNotifyCommit>false</ignoreNotifyCommit>
     <extensions>
+      <hudson.plugins.git.extensions.impl.BuildChooserSetting>
+        <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
+      </hudson.plugins.git.extensions.impl.BuildChooserSetting>
       <hudson.plugins.git.extensions.impl.SubmoduleOption>
         <disableSubmodules>false</disableSubmodules>
         <recursiveSubmodules>true</recursiveSubmodules>
         <trackingSubmodules>false</trackingSubmodules>
+        <parentCredentials>false</parentCredentials>
         <reference/>
         <timeout>10</timeout>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
