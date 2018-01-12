@@ -26,8 +26,9 @@ templates=(templates/*.json)
 
 for varfile in "${varfiles[@]}"; do
     # cloud-env.json is a file containing credentials which is pulled in via
-    # CLOUDENV variable so skip it here.
-    if [[ "$varfile" == *"cloud-env.json"* ]]; then
+    # CLOUDENV variable so skip it here. Also handle the case where a project
+    # has not vars/*.json file.
+    if [[ "$varfile" == *"cloud-env.json"* ]] || [[ "$varfile" == 'vars/*.json' ]]; then
         continue
     fi
 
