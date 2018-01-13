@@ -650,7 +650,7 @@ rm ~/.netrc
   <buildWrappers>
     <com.michelin.cio.hudson.plugins.maskpasswords.MaskPasswordsBuildWrapper/>
     <hudson.plugins.build__timeout.BuildTimeoutWrapper>
-      <timeoutMinutes>45</timeoutMinutes>
+      <timeoutMinutes>90</timeoutMinutes>
       <timeoutEnvVar>BUILD_TIMEOUT</timeoutEnvVar>
       <failBuild>true</failBuild>
       <writingDescription>false</writingDescription>
