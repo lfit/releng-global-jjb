@@ -78,7 +78,7 @@
     ######################
 
     branch: master
-    build-timeout: 45
+    build-timeout: 90
     stream: master
     submodule-recursive: true
     packer-cloud-settings: packer-cloud-env
