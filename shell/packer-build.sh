@@ -23,7 +23,7 @@ mkdir -p "$PACKER_LOGS_DIR"
 export PATH="${WORKSPACE}/bin:$PATH"
 
 # Prioritize the project's own version of vars if available
-platform_file="vars/$PACKER_PLATFORM.json"
+platform_file="common-packer/vars/$PACKER_PLATFORM.json"
 if [ -f "$PACKER_PLATFORM" ]; then
     platform_file="vars/$PACKER_PLATFORM.json"
 fi
