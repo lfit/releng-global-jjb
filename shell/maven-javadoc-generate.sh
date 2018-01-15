@@ -24,7 +24,7 @@ export MAVEN_OPTS
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
 $MVN clean install javadoc:aggregate \
-    -Pq -Dmaven.javadoc.skip=false \
+    -e -Pq -Dmaven.javadoc.skip=false \
     -DskipTests=true \
     -Dcheckstyle.skip=true \
     -Dfindbugs.skip=true \

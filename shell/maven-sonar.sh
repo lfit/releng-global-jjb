@@ -22,7 +22,7 @@ export MAVEN_OPTS
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
 $MVN clean deploy \
-    -Dsonar \
+    -e -Dsonar \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
     -DaltDeploymentRepository=staging::default::file:"$WORKSPACE"/m2repo \
@@ -31,7 +31,7 @@ $MVN clean deploy \
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
 $MVN $SONAR_MAVEN_GOAL \
-    -Dsonar -Dsonar.host.url="$SONAR_HOST_URL" \
+    -e -Dsonar -Dsonar.host.url="$SONAR_HOST_URL" \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
     -DaltDeploymentRepository=staging::default::file:"$WORKSPACE"/m2repo \
