@@ -10,6 +10,7 @@
     # TODO: Add Maven Merge job to this list once it's been fully tested.
     jobs:
       - gerrit-maven-clm
+      - gerrit-maven-merge
       - gerrit-maven-release
       - gerrit-maven-verify
       - gerrit-maven-verify-dependencies
@@ -23,6 +24,7 @@
     # TODO: Add Maven Merge job to this list once it's been fully tested.
     jobs:
       - github-maven-clm
+      - github-maven-merge
       - github-maven-release
       - github-maven-verify
 
