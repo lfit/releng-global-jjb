@@ -836,7 +836,12 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
+    archive-artifacts: >
+      **/*.log
+      **/target/surefire-reports/*-output.txt
+      **/target/failsafe-reports/failsafe-summary.xml
+      **/hs_err_*.log
+      target/**/feature.xml
     branch: master
     build-days-to-keep: 7
     build-timeout: 60
