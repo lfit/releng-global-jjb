@@ -55,6 +55,21 @@
 - lf_maven_common: &lf_maven_common
     name: lf-maven-common
 
+    ######################
+    # Default parameters #
+    ######################
+
+    archive-artifacts: >
+      **/*.log
+      **/hs_err_*.log
+      **/target/**/feature.xml
+      **/target/failsafe-reports/failsafe-summary.xml
+      **/target/surefire-reports/*-output.txt
+
+    #####################
+    # Job Configuration #
+    #####################
+
     project-type: freestyle
     node: '{build-node}'
     jdk: '{java-version}'
@@ -103,7 +118,6 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
     branch: master
     build-days-to-keep: 30  # 30 days for troubleshooting purposes
     build-timeout: 30
@@ -217,7 +231,6 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
     branch: master
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 30
@@ -331,7 +344,6 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
     branch: master
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 30
@@ -442,7 +454,6 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
     branch: master
     build-days-to-keep: 30  # 30 days in case we need to troubleshoot
     build-timeout: 30
@@ -573,7 +584,6 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
     branch: master
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 30
@@ -685,7 +695,6 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
     branch: master  # Sonar should always be run on master branch
     build-days-to-keep: 7
     build-timeout: 30
@@ -836,7 +845,6 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
     branch: master
     build-days-to-keep: 7
     build-timeout: 60
@@ -958,7 +966,6 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: ''
     branch: master
     build-days-to-keep: 7
     build-timeout: 60
