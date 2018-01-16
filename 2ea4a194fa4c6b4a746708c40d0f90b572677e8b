@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fef9005d_9e4327aa",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 840,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2018-01-16T18:12:47Z",
+      "side": 1,
+      "message": "our main need is to preserve karaf.log (target/exam/*/data/log/karaf.log) in all ODL projects, which this would do, so OK for me.. but of course you\u0027re possibly archiving a lot more more, if that\u0027s not an issue for you on the infra side, then go for it!",
+      "revId": "2ea4a194fa4c6b4a746708c40d0f90b572677e8b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
