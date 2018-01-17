@@ -43,7 +43,7 @@
     build-days-to-keep: 7
     build-timeout: 10
     git-url: '$GIT_URL/$GERRIT_PROJECT'
-    python-version: python3
+    python-version: python2
     stream: master
     submodule-recursive: true
     tox-dir: ''
