@@ -23,3 +23,16 @@ import sphinx_bootstrap_theme
 sys.path.insert(0, os.path.abspath('..'))
 
 from docs_conf import *
+
+project = 'lf-releng-global-jjb'
+project_cfg = 'lfdocs'
+version = '0.15.0-dev'
+release = version
+extensions = [
+  'sphinx.ext.autodoc',
+  'sphinx.ext.doctest',
+  'sphinx.ext.intersphinx',
+  'sphinx.ext.todo',
+  'sphinx.ext.coverage',
+  'sphinx.ext.viewcode',
+]
