@@ -708,6 +708,7 @@
     staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
+    choosing-strategy: gerrit
 
     gerrit_sonar_triggers:
       - comment-added-contains-event:
