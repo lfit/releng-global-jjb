@@ -12,7 +12,7 @@
 # Uses wget to fetch a project's maven-metadata.xml files from a Maven repository.
 
 # Ensure we fail the job if any steps fail.
-set -eu -o pipefail
+set -xeu -o pipefail
 
 project=$(xmlstarlet sel \
     -N "x=http://maven.apache.org/POM/4.0.0" -t \

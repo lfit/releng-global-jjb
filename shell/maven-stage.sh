@@ -16,7 +16,7 @@
 # $STAGING_PROFILE_ID :  Provided by a job parameter.
 
 # Ensure we fail the job if any steps fail.
-set -eu -o pipefail
+set -xeu -o pipefail
 
 TMP_FILE="$(mktemp)"
 lftools deploy nexus-stage "$NEXUS_URL" "$STAGING_PROFILE_ID" "$WORKSPACE/m2repo" | tee "$TMP_FILE"
