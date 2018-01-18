@@ -257,6 +257,15 @@
 ##########################################
 
 - builder:
+    name: lf-jenkins-cfg-clouds
+    builders:
+      - lf-infra-jjbini
+      - inject:
+          properties-content: 'jenkins_silos={jenkins-silos}'
+      - shell: !include-raw-escape: ../shell/jenkins-configure-clouds.sh
+      - shell: rm "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
+
+- builder:
     name: lf-jenkins-cfg-global-vars
     builders:
       - lf-infra-jjbini
@@ -315,6 +324,8 @@
       - shell: !include-raw-escape:
           - ../shell/lftools-install.sh
       - lf-jenkins-cfg-global-vars:
+          jenkins-silos: '{jenkins-silos}'
+      - lf-jenkins-cfg-clouds:
           jenkins-silos: '{jenkins-silos}'
 
     publishers:

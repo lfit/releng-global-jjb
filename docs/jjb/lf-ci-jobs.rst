@@ -109,26 +109,12 @@ Job submits a patch to lock or unlock a project's branch.
     - gerrit-branch-lock
 
 
+.. _lf-global-jjb-jenkins-cfg-merge:
+
 Jenkins Configuration Merge
 ---------------------------
 
 Jenkins job to manage Global Jenkins configuration.
-
-Global Environment Variables are managed via the
-``jenkins-config/global-vars-SILO.sh`` file in ci-management. Replace SILO with
-the name of the Jenkins silo the variable configuration is for.
-
-The format for this file is ``KEY=value`` for example::
-
-    GERRIT_URL=https://git.opendaylight.org/gerrit
-    GIT_BASE=git://devvexx.opendaylight.org/mirror/$PROJECT
-    GIT_URL=git://devvexx.opendaylight.org/mirror
-    JENKINS_HOSTNAME=vex-yul-odl-jenkins-2
-    LOGS_SERVER=https://logs.opendaylight.org
-    NEXUS_URL=https://nexus.opendaylight.org
-    ODLNEXUSPROXY=https://nexus.opendaylight.org
-    SILO=sandbox
-    SONAR_URL=https://sonar.opendaylight.org
 
 .. note::
 
@@ -163,6 +149,113 @@ Full Example:
 
 .. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-full.yaml
    :language: yaml
+
+Global Environment Variables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Global Environment Variables are managed via the
+``jenkins-config/global-vars-SILO.sh`` file in ci-management. Replace SILO with
+the name of the Jenkins silo the variable configuration is for.
+
+The format for this file is ``KEY=value`` for example::
+
+    GERRIT_URL=https://git.opendaylight.org/gerrit
+    GIT_BASE=git://devvexx.opendaylight.org/mirror/$PROJECT
+    GIT_URL=git://devvexx.opendaylight.org/mirror
+    JENKINS_HOSTNAME=vex-yul-odl-jenkins-2
+    LOGS_SERVER=https://logs.opendaylight.org
+    NEXUS_URL=https://nexus.opendaylight.org
+    ODLNEXUSPROXY=https://nexus.opendaylight.org
+    SILO=sandbox
+    SONAR_URL=https://sonar.opendaylight.org
+
+Cloud Configuration
+^^^^^^^^^^^^^^^^^^^
+
+This configuration requires the OpenStack Cloud plugin in Jenkins and is
+currently the only cloud plugin supported.
+
+OpenStack Cloud plugin version supported:
+
+* 2.30
+* 2.31
+
+Cloud configuration are managed via a directory structure in ci-management as
+follows:
+
+- jenkins-config/clouds/openstack/
+- jenkins-config/clouds/openstack/cattle/cloud.cfg
+- jenkins-config/clouds/openstack/cattle/centos7-builder-2c-2g.cfg
+- jenkins-config/clouds/openstack/cattle/centos7-builder-4c-4g.cfg
+- jenkins-config/clouds/openstack/cattle/centos7-docker-4c-4g.cfg
+
+The directory name inside of the "openstack" directory is used as the name of
+the cloud configuration. In this case "cattle" is being used as the cloud name.
+
+The ``cloud.cfg`` file is a special file used to configure the main cloud
+configuration in the format ``KEY=value``.
+
+:Cloud Parameters:
+
+    :CLOUD_URL: API endpoint URL for Keystone.
+        (default: "")
+    :CLOUD_IGNORE_SSL: Ignore unverified SSL certificates. (default: false)
+    :CLOUD_ZONE: OpenStack region to use. (default: "")
+    :CLOUD_CREDENTIAL_ID: Credential to use for authentication to OpenStack.
+        (default: "os-cloud")
+    :INSTANCE_CAP: Total number of instances the cloud will allow spin up.
+        (default: null)
+    :SANDBOX_CAP: Total number of instances the clodu will allow to
+        spin up. This applies to "sandbox" systems and overrides the
+        INSTANCE_CAP setting. (default: null)
+
+:Template Parameters:
+
+    .. note::
+
+       In the case of template definitions of a parameter below is not passed
+       the one defined in default clouds will be inherited.
+
+    :IMAGE_NAME: The image name to use for this template.
+        (default: "")
+    :LABELS: Labels to assign to the vm. (default: FILE_NAME)
+    :HARDWARE_ID: OpenStack flavor to use. (default: "")
+    :NETWORK_ID: OpenStack network to use. (default: "")
+    :USER_DATA_ID: User Data to pass into the instance.
+        (default: jenkins-init-script)
+    :INSTANCE_CAP: Total number of instances of this type that can be launched
+        at one time. When defined in clouds.cfg it defines the total for the
+        entire cloud. (default: null)
+    :SANDBOX_CAP: Total number of instances of this type that can be launched
+        at one time. When defined in clouds.cfg it defines the total for the
+        entire cloud. This applies to "sandbox" systems and overrides the
+        INSTANCE_CAP setting. (default: null)
+    :FLOATING_IP_POOL: Floating ip pool to use. (default: "")
+    :SECURITY_GROUPS: Security group to use. (default: "default")
+    :AVAILABILITY_ZONE: OpenStack availability zone to use. (default: "")
+    :START_TIMEOUT: Number of milliseconds to wait for the agent to be
+        provisioned and connected. (default: 600000)
+    :KEY_PAIR_NAME: SSH Public Key Pair to use for authentication.
+        (default: jenkins)
+    :NUM_EXECUTORS: Number of executors to enable for the instance.
+        (default: 1)
+    :JVM_OPTIONS: JVM Options to pass to Java. (default: "")
+    :FS_ROOT: File system root for the workspace. (default: "/w")
+    :RETENTION_TIME: Number of minutes to wait for an idle slave to be used
+        again before it's removed. If set to -1, the slave will be kept
+        forever. (default: 0)
+
+For a live example see the OpenDaylight project jenkins-config directory.
+https://github.com/opendaylight/releng-builder/tree/master/jenkins-config
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+:Cloud Configuration:
+
+    The directory ``groovy-inserts`` contains the groovy script output that is
+    used to push to Jenkins. In the event of a job failure this file can be
+    inspected.
 
 
 JJB Deploy Job
