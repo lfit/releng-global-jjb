@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eefc34f8_d02eda46",
+        "filename": "jenkins-admin/manage_clouds.groovy",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2018-01-18T17:48:30Z",
+      "side": 1,
+      "message": "white space!!!!!!!",
+      "range": {
+        "startLine": 26,
+        "startChar": 7,
+        "endLine": 26,
+        "endChar": 8
+      },
+      "revId": "0150055f447840efeb8902570780cf7a3ec83b06",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
