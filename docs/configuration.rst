@@ -46,3 +46,14 @@ Create a "Custom file" with contents:
    [global]
    timeout = 60
    index-url = https://nexus3.opendaylight.org/repository/PyPi/simple
+
+
+Jenkins CI Jobs
+===============
+
+jenkins-cfg-merge
+-----------------
+
+This job manages Jenkins Global configuration. Refer to
+the :ref:`CI Documentation <lf-global-jjb-jenkins-cfg-merge>` for job
+configuration details.
