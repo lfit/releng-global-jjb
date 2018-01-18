@@ -114,6 +114,14 @@ Jenkins Configuration Merge
 
 Jenkins job to manage Global Jenkins configuration.
 
+.. note::
+
+   Requires the jjbini file in Jenkins CFP to contain JJB 2.0 style
+   config definitions for "production" and "sandbox" systems.
+
+Global Environment Variables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Global Environment Variables are managed via the
 ``jenkins-config/global-vars-SILO.sh`` file in ci-management. Replace SILO with
 the name of the Jenkins silo the variable configuration is for.
@@ -130,10 +138,10 @@ The format for this file is ``KEY=value`` for example::
     SILO=sandbox
     SONAR_URL=https://sonar.opendaylight.org
 
-.. note::
+Cloud Configuration
+^^^^^^^^^^^^^^^^^^^
 
-   Requires the jjbini file in Jenkins CFP to contain JJB 2.0 style
-   config definitions for "production" and "sandbox" systems.
+credential-id default name is os-cloud
 
 :Template names:
 
