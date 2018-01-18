@@ -114,6 +114,43 @@ Jenkins Configuration Merge
 
 Jenkins job to manage Global Jenkins configuration.
 
+.. note::
+
+   Requires the jjbini file in Jenkins CFP to contain JJB 2.0 style
+   config definitions for "production" and "sandbox" systems.
+
+   :Template names:
+
+       - {project-name}-jenkins-cfg-merge
+       - gerrit-jenkins-cfg-merge
+       - github-jenkins-cfg-merge
+
+   :Optional parameters:
+
+       :branch: Git branch to build against. (default: master)
+       :cron: How often to run the job on a cron schedule. (default: @daily)
+       :git-url: URL to clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
+       :jenkins-silos: Space separated list of Jenkins silos to update
+           configuration for as defined in ~/.config/jenkins_jobs/jenkins_jobs.ini
+           (default: production sandbox)
+
+   Typically this template is automatically pulled in by the
+   "{project-name}-ci-jobs" job-group and does not need to be explicitly called if
+   the job group is being used.
+
+   Miniaml Example:
+
+   .. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-minimal.yaml
+      :language: yaml
+
+   Full Example:
+
+   .. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-full.yaml
+      :language: yaml
+
+Global Environment Variables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Global Environment Variables are managed via the
 ``jenkins-config/global-vars-SILO.sh`` file in ci-management. Replace SILO with
 the name of the Jenkins silo the variable configuration is for.
@@ -130,39 +167,36 @@ The format for this file is ``KEY=value`` for example::
     SILO=sandbox
     SONAR_URL=https://sonar.opendaylight.org
 
+Cloud Configuration
+^^^^^^^^^^^^^^^^^^^
+
 .. note::
 
-   Requires the jjbini file in Jenkins CFP to contain JJB 2.0 style
-   config definitions for "production" and "sandbox" systems.
+   This configuration requires the OpenStack Cloud plugin in Jenkins and is
+   currently the only cloud plugin supported.
 
-:Template names:
+Cloud configuration are managed via a directory structure in ci-management as
+follows:
 
-    - {project-name}-jenkins-cfg-merge
-    - gerrit-jenkins-cfg-merge
-    - github-jenkins-cfg-merge
+- jenkins-config/clouds/openstack/
+- jenkins-config/clouds/openstack/cattle/cloud.cfg
+- jenkins-config/clouds/openstack/cattle/centos7-builder-2c-2g.cfg
+- jenkins-config/clouds/openstack/cattle/centos7-builder-4c-4g.cfg
+- jenkins-config/clouds/openstack/cattle/centos7-docker-4c-4g.cfg
 
-:Optional parameters:
+The directory name inside of the "openstack" directory is used as the name of
+the cloud configuration. In this case "cattle" is being used as the cloud name.
 
-    :branch: Git branch to build against. (default: master)
-    :cron: How often to run the job on a cron schedule. (default: @daily)
-    :git-url: URL to clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
-    :jenkins-silos: Space separated list of Jenkins silos to update
-        configuration for as defined in ~/.config/jenkins_jobs/jenkins_jobs.ini
-        (default: production sandbox)
+The ``cloud.cfg`` file is a special file used to configure the main cloud
+configuration in the format ``KEY=value``.
 
-Typically this template is automatically pulled in by the
-"{project-name}-ci-jobs" job-group and does not need to be explicitly called if
-the job group is being used.
+:Cloud Parameters:
 
-Miniaml Example:
+    :INSTANCE_CAP: Total number of instances the cloud will allow spin up.
 
-.. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-minimal.yaml
-   :language: yaml
+:Template Parameters:
 
-Full Example:
-
-.. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-full.yaml
-   :language: yaml
+    :LABELS: Labels to assign to the vm.
 
 
 JJB Deploy Job
