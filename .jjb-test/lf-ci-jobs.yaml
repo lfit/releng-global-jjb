@@ -6,6 +6,7 @@
       - gerrit-branch-lock
 
     project-name: gerrit-ciman
+    branch: master
 
 - project:
     name: github-ci-jobs
@@ -13,6 +14,7 @@
       - "{project-name}-github-ci-jobs"
 
     project-name: github-ciman
+    branch: master
 
 
 - project:
