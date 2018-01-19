@@ -1,0 +1,8 @@
+---
+- project:
+    name: jenkins-cfg-merge-full-test
+    jobs:
+      - 'gerrit-jenkins-cfg-merge'
+
+    project-name: builder
+    jenkins-silos: releng sandbox

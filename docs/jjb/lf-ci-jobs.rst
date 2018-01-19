@@ -12,6 +12,7 @@ Recommended jobs that should be deployed for CI using Gerrit.
 
 :Includes:
 
+    - gerrit-jenkins-cfg-merge
     - gerrit-jjb-deploy-job
     - gerrit-jjb-merge
     - gerrit-jjb-verify
@@ -23,6 +24,7 @@ Recommended jobs that should be deployed CI using GitHub.
 
 :Includes:
 
+    - github-jenkins-cfg-merge
     - github-jjb-deploy-job
     - github-jjb-merge
     - github-jjb-verify
@@ -49,6 +51,18 @@ Jobs related to Packer builds for CI using GitHub.
 
 Macros
 ======
+
+lf-jenkins-cfg-global-vars
+--------------------------
+
+Manages the Global Jenkins variables. This macro will clear all exist macros
+in Jenkins and replaces them with the ones defined by the
+ci-management/jenkins-config/global-vars-SILO.sh script.
+
+:Required parameters:
+
+    :jenkins-silos: Space separated list of Jenkins silos to update
+        configuration for as defined in ~/.config/jenkins_jobs/jenkins_jobs.ini
 
 lf-infra-jjbini
 ---------------
@@ -88,6 +102,55 @@ Job submits a patch to lock or unlock a project's branch.
 :Template Names:
     - {project-name}-gerrit-branch-lock-{stream}
     - gerrit-branch-lock
+
+
+Jenkins Configuration Merge
+---------------------------
+
+Jenkins job to manage Global Jenkins configuration.
+
+Global Environment Variables are managed via the
+``jenkins-config/global-vars-SILO.sh`` file in ci-management. Replace SILO with
+the name of the Jenkins silo the variable configuration is for.
+
+The format for this file is ``KEY=value`` for example::
+
+    GERRIT_URL=https://git.opendaylight.org/gerrit
+    GIT_BASE=git://devvexx.opendaylight.org/mirror/$PROJECT
+    GIT_URL=git://devvexx.opendaylight.org/mirror
+    JENKINS_HOSTNAME=vex-yul-odl-jenkins-2
+    LOGS_SERVER=https://logs.opendaylight.org
+    NEXUS_URL=https://nexus.opendaylight.org
+    ODLNEXUSPROXY=https://nexus.opendaylight.org
+    SILO=sandbox
+    SONAR_URL=https://sonar.opendaylight.org
+
+:Template names:
+
+    - {project-name}-jenkins-cfg-merge
+    - gerrit-jenkins-cfg-merge
+    - github-jenkins-cfg-merge
+
+:Optional parameters:
+
+    :git-url: URL to clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
+    :jenkins-silos: Space separated list of Jenkins silos to update
+        configuration for as defined in ~/.config/jenkins_jobs/jenkins_jobs.ini
+        (default: production sandbox)
+
+Typically this template is automatically pulled in by the
+"{project-name}-ci-jobs" job-group and does not need to be explicitly called if
+the job group is being used.
+
+Miniaml Example:
+
+.. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-minimal.yaml
+   :language: yaml
+
+Full Example:
+
+.. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-full.yaml
+   :language: yaml
 
 
 JJB Deploy Job
