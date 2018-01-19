@@ -21,7 +21,7 @@ export MAVEN_OPTS
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
-$MVN clean deploy \
+$MVN $MAVEN_GOALS \
     -e \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \

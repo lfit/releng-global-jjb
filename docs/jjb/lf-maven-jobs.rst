@@ -52,6 +52,16 @@ Jobs for Maven projects to generate javadoc using GitHub.
 Macros
 ======
 
+lf-maven-build
+--------------
+
+Calls the maven build script to perform a maven build.
+
+:Required parameters:
+
+    :mvn-goals: The maven goals to perform for the build.
+        (default: clean deploy)
+
 lf-maven-common
 ---------------
 

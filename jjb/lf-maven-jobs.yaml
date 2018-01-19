@@ -53,6 +53,15 @@
 ##########
 
 - builder:
+    name: lf-maven-build
+    builders:
+      - inject:
+          properties-content: 'MAVEN_GOALS={mvn-goals}'
+      - shell: !include-raw-escape:
+          - ../shell/common-variables.sh
+          - ../shell/maven-build.sh
+
+- builder:
     name: lf-maven-deploy
     builders:
       - shell: !include-raw-escape:
@@ -479,6 +488,7 @@
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
     mvn-global-settings: global-settings
+    mvn-goals: clean deploy
     mvn-opts: ''
     mvn-params: '-Dmerge'
     mvn-version: mvn33
@@ -517,9 +527,9 @@
               NEXUS_REPO={nexus-snapshot-repo}
       - shell: !include-raw-escape:
           - ../shell/lftools-install.sh
-          - ../shell/common-variables.sh
           - ../shell/maven-fetch-metadata.sh
-          - ../shell/maven-build.sh
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
       - lf-maven-deploy
       - lf-provide-maven-settings-cleanup
 
@@ -609,6 +619,7 @@
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
     mvn-global-settings: global-settings
+    mvn-goals: clean deploy
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn33
@@ -634,9 +645,9 @@
           server-id: '{mvn-staging-id}'
       - shell: !include-raw-escape:
           - ../shell/lftools-install.sh
-          - ../shell/common-variables.sh
           - ../shell/maven-patch-release.sh
-          - ../shell/maven-build.sh
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
       - lf-maven-stage
       - lf-provide-maven-settings-cleanup
 
@@ -869,6 +880,7 @@
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
     mvn-global-settings: global-settings
+    mvn-goals: clean deploy
     mvn-opts: ''
     mvn-params: '-Dstream=$STREAM'
     mvn-version: mvn33
@@ -903,8 +915,8 @@
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape:
           - ../shell/lftools-install.sh
-          - ../shell/common-variables.sh
-          - ../shell/maven-build.sh
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
       - lf-provide-maven-settings-cleanup
 
     publishers:
@@ -990,6 +1002,7 @@
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
     mvn-global-settings: global-settings
+    mvn-goals: clean deploy
     mvn-opts: ''
     mvn-params: '-Dstream=$STREAM'
     mvn-version: mvn33
@@ -1021,9 +1034,8 @@
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-build-deps.sh
-      - shell: !include-raw-escape:
-          - ../shell/common-variables.sh
-          - ../shell/maven-build.sh
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
       - lf-provide-maven-settings-cleanup
 
     publishers:
