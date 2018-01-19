@@ -62,6 +62,11 @@ lf-maven-deploy
 
 Calls the maven deploy script to push artifacts to Nexus.
 
+lf-maven-stage
+---------------
+
+Calls the maven stage script to push artifacts to a Nexus staging repository.
+
 Job Templates
 =============
 
