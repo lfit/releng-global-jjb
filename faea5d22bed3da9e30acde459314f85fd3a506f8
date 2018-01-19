@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78eaeebd_e4c576e2",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-19T02:17:16Z",
+      "side": 1,
+      "message": "I believe these variables are needed by the deploy macro.",
+      "revId": "faea5d22bed3da9e30acde459314f85fd3a506f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
