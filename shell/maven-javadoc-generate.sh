@@ -13,7 +13,7 @@
 
 # DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.
 # Ensure we fail the job if any steps fail.
-set -e -o pipefail
+set -xe -o pipefail
 set +u
 
 JAVADOC_DIR="$WORKSPACE/archives/javadoc"
