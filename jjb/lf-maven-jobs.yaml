@@ -48,6 +48,17 @@
       - github-maven-javadoc-publish
       - github-maven-javadoc-verify
 
+##########
+# Macros #
+##########
+
+- builder:
+    name: lf-maven-deploy
+    builders:
+      - shell: !include-raw:
+          - ../shell/common-variables.sh
+          - ../shell/maven-deploy.sh
+
 ####################
 # COMMON FUNCTIONS #
 ####################
@@ -502,7 +513,7 @@
           - ../shell/common-variables.sh
           - ../shell/maven-fetch-metadata.sh
           - ../shell/maven-build.sh
-          - ../shell/maven-deploy.sh
+      - lf-maven-deploy
       - lf-provide-maven-settings-cleanup
 
     publishers:

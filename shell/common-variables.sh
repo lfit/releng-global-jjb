@@ -20,3 +20,10 @@ MAVEN_OPTIONS="$(echo --show-version \
     -Dmaven.repo.local=/tmp/r \
     -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r)"
 echo "$MAVEN_OPTIONS"
+
+# Activates the lftools virtualenv
+lftools_activate() {
+    virtualenv --quiet "/tmp/v/lftools"
+    # shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
+    source "/tmp/v/lftools/bin/activate"
+}
