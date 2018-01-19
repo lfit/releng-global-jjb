@@ -16,6 +16,24 @@
       "revId": "faea5d22bed3da9e30acde459314f85fd3a506f8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5e5b8133_5eded589",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-19T02:21:57Z",
+      "side": 1,
+      "message": "Nevermind I\u0027m wrong. It\u0027s used by the wget command in fetch-metadata.",
+      "parentUuid": "78eaeebd_e4c576e2",
+      "revId": "faea5d22bed3da9e30acde459314f85fd3a506f8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
