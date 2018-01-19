@@ -60,6 +60,13 @@
           - ../shell/maven-deploy.sh
 
 - builder:
+    name: lf-maven-stage
+    builders:
+      - shell: !include-raw-escape:
+          - ../shell/common-variables.sh
+          - ../shell/maven-stage.sh
+
+- builder:
     name: lf-update-java-alternatives
     builders:
       - inject:
@@ -648,7 +655,7 @@
           - ../shell/common-variables.sh
           - ../shell/maven-patch-release.sh
           - ../shell/maven-build.sh
-          - ../shell/maven-stage.sh
+      - lf-maven-stage
       - lf-provide-maven-settings-cleanup
 
 - job-template:
