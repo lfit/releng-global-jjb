@@ -3,6 +3,7 @@
     name: '{project-name}-ci-jobs'
 
     jobs:
+      - gerrit-jenkins-cfg-merge
       - gerrit-jjb-deploy-job
       - gerrit-jjb-merge
       - gerrit-jjb-verify
@@ -11,6 +12,7 @@
     name: '{project-name}-github-ci-jobs'
 
     jobs:
+      - github-jenkins-cfg-merge
       - github-jjb-deploy-job
       - github-jjb-merge
       - github-jjb-verify
@@ -247,6 +249,92 @@
 
     publishers:
       - lf-infra-publish
+
+##########################################
+# Jenkins Configuration Management Merge #
+##########################################
+
+- builder:
+    name: lf-jenkins-cfg-global-vars
+    builders:
+      - lf-infra-jjbini
+      - shell: !include-raw: ../shell/jenkins-configure-global-vars.sh
+      - shell: rm "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
+
+- lf_jenkins_configuration: &lf_jenkins_cfg_merge
+    name: lf-jenkins-cfg-merge
+
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: false
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 1
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          stream: ''
+          branch: master
+          lftools-version: '{lftools-version}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: 10
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+      - lf-jenkins-cfg-global-vars
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-jenkins-cfg-merge'
+    id: gerrit-jenkins-cfg-merge
+    <<: *lf_jenkins_cfg_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: 'refs/heads/{branch}'
+          branch: '{branch}'
+          submodule-recursive: true
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+- job-template:
+    name: '{project-name}-jenkins-cfg-merge'
+    id: github-jenkins-cfg-merge
+    <<: *lf_jenkins_cfg_merge
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: true
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
 
 ##################
 # JJB DEPLOY JOB #
