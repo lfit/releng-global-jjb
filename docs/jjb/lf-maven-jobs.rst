@@ -57,6 +57,10 @@ lf-maven-common
 
 Common Jenkins configuration for Maven jobs.
 
+lf-maven-deploy
+---------------
+
+Calls the maven deploy script to push artifacts to Nexus.
 
 Job Templates
 =============
