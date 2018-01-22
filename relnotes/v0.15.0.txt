@@ -1,0 +1,77 @@
+global-jjb v0.15.0 Release Notes
+================================
+
+Thanks to Anil, Daniel, Jessica and Thanh for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+1. maven-merge jobs are now part of the maven-job group.
+
+Projects that are using the maven-job group and pulling in the maven-merge job
+separately during testing need to remove the duplicate maven-merge job
+declaration otherwise jjb will fail.
+
+
+Notable changes since v0.14.0
+-----------------------------
+
+25d3bb4 Jessica Wagantall       Add Gerrit trigger to clm job
+CLM job is now Gerrit Comment triggerable via new "run-clm" keyword.
+
+444423b Thanh Ha        Install tox-pyenv
+b2f5578 Thanh Ha        Enable pyenv if available in image
+Tox will now use pyenv installed Python versions if the VM has pyenv installed
+to the /opt/pyenv directory.
+
+7030e31 Thanh Ha        Allow tox-install to handle base python ver
+The tox job now allows overriding the default base python version used to
+execute tox. This can be done by adding "python-version: python3" for example
+to your jjb project configuration. Defaults to python2.
+
+b8931c8 Thanh Ha        Add -e flag to mvn calls
+Maven jobs will now call the -e flag to print the full stack trace when a
+build failure occurs.
+
+44360a1 Thanh Ha        Add maven-merge job to maven job group
+After some basic testing on a few projects we've decided to fully release this
+job type for general consumption.
+
+ac158d4 Thanh Ha        Set default archive patterns for maven-verify
+Added some default archive patterns to all the Maven job types to pick up the
+most commonly used debugging files.
+
+5fa5b99 Thanh Ha        Improve verbosity in maven shell scripts
+Enables the -x bash parameter to increase verbosity in Maven related shell
+scripts inside global-jjb.
+
+
+Full Change Log
+---------------
+
+a5a5237 Thanh Ha        Increase maven-jobs default timeout to 60 mins
+4d253dd Thanh Ha        Use clean install for Sonar
+5fa5b99 Thanh Ha        Improve verbosity in maven shell scripts
+c187336 Thanh Ha        Revert "Switch global-jjb to lfdocs-conf"
+e47b229 Thanh Ha        Default to python2 for tox
+ac79981 Thanh Ha        Switch global-jjb to lfdocs-conf
+ac158d4 Thanh Ha        Set default archive patterns for maven-verify
+44360a1 Thanh Ha        Add maven-merge job to maven job group
+b8931c8 Thanh Ha        Add -e flag to mvn calls
+421dcd4 Anil Belur      Print file size before deploy maven file to nexus
+49afe0e Thanh Ha        Do not force expected-xml
+8bacaf6 Thanh Ha        Fix default platform location to common-packer
+7b93f6b Thanh Ha        Bump packer build timeout to 90 minutes
+aac0a15 Thanh Ha        Add a check for missing vars/*.json
+43a8f11 Thanh Ha        Update expected xml to JJB 2.0 format
+f6f5ec8 Thanh Ha        Fix detox logs not being archived
+7030e31 Thanh Ha        Allow tox-install to handle base python ver
+b2f5578 Thanh Ha        Enable pyenv if available in image
+444423b Thanh Ha        Install tox-pyenv
+26f8f75 Thanh Ha        Install git-review outside of loop
+25d3bb4 Jessica Wagantall       Add Gerrit trigger to clm job
+048fe0b Jessica Wagantall       Add script to print all creds in Jenkins
+b0c20e8 Thanh Ha        Bump version to v0.15.0-dev
+5e403de Thanh Ha        Release global-jjb v0.14.1
+333d661 Daniel Farrell  Don't try to pushd into dir that doesn't exist
