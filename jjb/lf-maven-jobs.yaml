@@ -83,7 +83,6 @@
 
     project-type: freestyle
     node: '{build-node}'
-    jdk: '{java-version}'
 
     properties:
       - lf-infra-properties:
