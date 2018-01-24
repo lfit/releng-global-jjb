@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "96d6c943_a41c0516",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-24T04:17:52Z",
+      "side": 1,
+      "message": "mvn might not be installed by the time this script runs so let\u0027s play it safe and use `java -version`",
+      "revId": "fd3988f807439cf9fd267d6269d24e60df3f8e87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7c80903e_793922ff",
         "filename": "shell/update-java-alternatives.sh",
         "patchSetId": 5
