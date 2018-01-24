@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "632eca09_02125b7d",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-24T03:53:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f99a0d5b_bbcc7315",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "2bdaeb338dfb0a30de5c2da989fb86af3662f127",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c8ae1c11_31c8c118",
         "filename": "shell/update-java-alternatives.sh",
         "patchSetId": 3
@@ -59,6 +83,24 @@
     },
     {
       "key": {
+        "uuid": "ebfaa478_ca561793",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-24T03:53:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8ae1c11_31c8c118",
+      "revId": "2bdaeb338dfb0a30de5c2da989fb86af3662f127",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d056393a_b0139e2f",
         "filename": "shell/update-java-alternatives.sh",
         "patchSetId": 3
@@ -70,6 +112,30 @@
       "writtenOn": "2018-01-24T03:15:31Z",
       "side": 1,
       "message": "Let\u0027s spell this out as RedHat in case some people don\u0027t know what RH means.",
+      "range": {
+        "startLine": 40,
+        "startChar": 19,
+        "endLine": 40,
+        "endChar": 21
+      },
+      "revId": "2bdaeb338dfb0a30de5c2da989fb86af3662f127",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "823917d5_34eb97b0",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-24T03:53:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d056393a_b0139e2f",
       "range": {
         "startLine": 40,
         "startChar": 19,
