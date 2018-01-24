@@ -110,6 +110,10 @@
           build-timeout: '{build-timeout}'
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
+    builders:
+      - shell: !include-raw-escape:
+          - ../shell/update-java-alternatives.sh
+
     publishers:
       # TODO: Make email notification work.
       # - lf-infra-email-notify:
