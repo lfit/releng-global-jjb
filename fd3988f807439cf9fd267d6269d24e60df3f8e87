@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "04149fb9_e9d7ec02",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-24T04:19:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96d6c943_a41c0516",
+      "revId": "fd3988f807439cf9fd267d6269d24e60df3f8e87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7c80903e_793922ff",
         "filename": "shell/update-java-alternatives.sh",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2018-01-24T04:15:00Z",
       "side": 1,
       "message": "on ubuntu we need the suffix -amd64",
+      "revId": "fd3988f807439cf9fd267d6269d24e60df3f8e87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d70c6a18_e7d07b06",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-24T04:19:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c80903e_793922ff",
       "revId": "fd3988f807439cf9fd267d6269d24e60df3f8e87",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
