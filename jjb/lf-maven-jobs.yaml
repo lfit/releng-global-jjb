@@ -59,6 +59,13 @@
           - ../shell/common-variables.sh
           - ../shell/maven-deploy.sh
 
+- builder:
+    name: lf-update-java-alternatives
+    builders:
+      - inject:
+          properties-content: 'SET_JDK_VERSION={java-version}'
+      - shell: !include-raw-escape: ../shell/update-java-alternatives.sh
+
 ####################
 # COMMON FUNCTIONS #
 ####################
@@ -168,6 +175,8 @@
             notbuilt: true
 
     builders:
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
@@ -264,6 +273,8 @@
     #####################
 
     builders:
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
@@ -383,6 +394,8 @@
     concurrent: true
 
     builders:
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
@@ -496,6 +509,8 @@
 
     builders:
       - lf-jacoco-nojava-workaround
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
@@ -617,6 +632,8 @@
 
     builders:
       - lf-jacoco-nojava-workaround
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
@@ -769,6 +786,8 @@
             notbuilt: true
 
     builders:
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-infra-maven-sonar:
           mvn-settings: '{mvn-settings}'
           mvn-version: '{mvn-version}'
@@ -888,6 +907,8 @@
 
     builders:
       - lf-jacoco-nojava-workaround
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
@@ -1004,6 +1025,8 @@
 
     builders:
       - lf-jacoco-nojava-workaround
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-provide-maven-settings:
