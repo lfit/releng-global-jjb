@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c8ae1c11_31c8c118",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-24T03:14:05Z",
+      "side": 1,
+      "message": "huh... I\u0027m surprised ShellCheck didn\u0027t flag these as missing double quotes.",
+      "revId": "2bdaeb338dfb0a30de5c2da989fb86af3662f127",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
