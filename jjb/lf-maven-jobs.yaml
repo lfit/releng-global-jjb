@@ -59,6 +59,15 @@
           - ../shell/common-variables.sh
           - ../shell/maven-deploy.sh
 
+- builder:
+    name: lf-update-java-alternatives
+    builders:
+      - inject:
+          properties-content: 'SET_JDK_VERSION={java-version}'
+      - shell: !include-raw-escape: ../shell/update-java-alternatives.sh
+      - inject:
+          properties-file: '/tmp/java.env'
+
 ####################
 # COMMON FUNCTIONS #
 ####################
@@ -170,6 +179,8 @@
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
@@ -266,6 +277,8 @@
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
@@ -385,6 +398,8 @@
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
@@ -498,6 +513,8 @@
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
@@ -619,6 +636,8 @@
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
@@ -771,6 +790,7 @@
 
     builders:
       - lf-infra-maven-sonar:
+          java-version: '{java-version}'
           mvn-settings: '{mvn-settings}'
           mvn-version: '{mvn-version}'
 
@@ -785,6 +805,8 @@
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - inject:
           # Switch this to the sonar wrapper when JJB 2.0 is available
           properties-content: SONAR_HOST_URL=$SONAR_URL
@@ -891,6 +913,8 @@
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
@@ -1007,6 +1031,8 @@
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
