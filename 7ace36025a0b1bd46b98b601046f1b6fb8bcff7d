@@ -67,6 +67,24 @@
       "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "305dd186_8263d49e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-29T18:04:13Z",
+      "side": 1,
+      "message": "ah I missed that this one was the sonar job. Yes in this case the code here is fine. For the other templates please default to a blank cron job.\n\nThanks for catching this!",
+      "parentUuid": "7e58becd_cc776343",
+      "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
