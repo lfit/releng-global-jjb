@@ -468,7 +468,7 @@
     branch: master
     build-days-to-keep: 30  # 30 days in case we need to troubleshoot
     build-timeout: 60
-    cron: ''
+    cron: 'H H * * 0'  # push fresh snapshot weekly
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
     mvn-global-settings: global-settings
@@ -539,7 +539,7 @@
           choosing-strategy: default
 
     triggers:
-      - timed: 'H H * * 0'
+      - timed: '{obj:cron}'
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on: '{obj:gerrit_merge_triggers}'
@@ -709,6 +709,7 @@
     branch: master  # Sonar should always be run on master branch
     build-days-to-keep: 7
     build-timeout: 60
+    cron: 'H H * * 6'  # run weekly
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
     mvn-global-settings: global-settings
@@ -753,7 +754,7 @@
               can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
 
     triggers:
-      - timed: 'H H * * 6'
+      - timed: '{obj:cron}'
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on: '{obj:gerrit_sonar_triggers}'
