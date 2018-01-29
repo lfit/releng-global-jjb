@@ -41,7 +41,7 @@
 
     branch: master
     build-days-to-keep: 7
-    build-timeout: 10
+    build-timeout: 15
     git-url: '$GIT_URL/$GERRIT_PROJECT'
     python-version: python2
     stream: master
