@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "e8ee8832_d1870d22",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-29T18:58:45Z",
+      "side": 1,
+      "message": "Yes, this is the same situation. Please keep the cron setting defaulting to the same behaviour as it was before.\n\nThe reason we need to run merge jobs on a weekly basis is to ensure that artifacts are refreshed in Nexus since they will be deleted automatically from Nexus if they are 3 weeks old.",
+      "parentUuid": "3ba28fa1_9f927045",
+      "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fc1bee6b_9e96ac43",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 1
