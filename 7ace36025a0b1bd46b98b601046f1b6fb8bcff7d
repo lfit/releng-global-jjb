@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b67d23c_54156c2b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-29T17:56:52Z",
+      "side": 1,
+      "message": "We don\u0027t want this to be a weekly procedure by default. Projects should override this in their project.yaml file in the \"project\" section.\n\nThis should default to (\u0027\u0027) blank.",
+      "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fc1bee6b_9e96ac43",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-29T17:56:52Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "948de68a_1fef395f",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-29T17:56:52Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
