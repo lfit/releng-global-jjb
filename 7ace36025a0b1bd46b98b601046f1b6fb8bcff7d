@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3ba28fa1_9f927045",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2018-01-29T18:50:33Z",
+      "side": 1,
+      "message": "Thanh, similar to the sonar template behavior and my change: the old template was hardcoded to run weekly; the new template uses a parameter value from the macro to run weekly.  What\u0027s your thought about the merge job default?",
+      "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fc1bee6b_9e96ac43",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 1
