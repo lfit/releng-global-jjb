@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebfe7024_73bdd92b",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-29T20:17:18Z",
+      "side": 1,
+      "message": "Instead of calling java -version here call it at the bottom of this script.\n\nSame with the echo statement below.",
+      "revId": "66325ea4d8da49564c94099c540ff25d4db5f361",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
