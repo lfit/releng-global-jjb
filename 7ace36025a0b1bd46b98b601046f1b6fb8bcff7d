@@ -50,6 +50,23 @@
       "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e58becd_cc776343",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2018-01-29T18:02:50Z",
+      "side": 1,
+      "message": "Thanh, it appears to me that the sonar job is currently hard-wired to run weekly via the timed trigger.  My change moves the value of the trigger to a parameter in the macro but does not change the behavior.  Your Gerrit comment suggests that you do NOT want it hard-wired to run weekly.  Please clarify.",
+      "revId": "7ace36025a0b1bd46b98b601046f1b6fb8bcff7d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
