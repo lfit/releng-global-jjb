@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c70eafab_3e893974",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-30T01:51:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4cc7d528_3e6b3e30",
+      "range": {
+        "startLine": 23,
+        "startChar": 22,
+        "endLine": 24,
+        "endChar": 25
+      },
+      "revId": "6f56de6a5d5a09431beb092c8ad84fa94dbe93e7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a5d38313_bd090809",
         "filename": "shell/update-java-alternatives.sh",
         "patchSetId": 14
@@ -36,6 +60,24 @@
       "writtenOn": "2018-01-30T01:31:17Z",
       "side": 1,
       "message": "unnecessarily complicated code here. Just do a simple\n\n echo \"JAVA_HOME\u003d$JAVA_HOME\" \u003e /tmp/java.env",
+      "revId": "6f56de6a5d5a09431beb092c8ad84fa94dbe93e7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33be8ff5_a69bb2ea",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-30T01:51:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5d38313_bd090809",
       "revId": "6f56de6a5d5a09431beb092c8ad84fa94dbe93e7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
