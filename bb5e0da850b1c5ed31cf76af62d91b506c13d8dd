@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30723f0b_3c48bfe8",
+        "filename": "shell/maven-deploy.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-01-31T21:59:11Z",
+      "side": 1,
+      "message": "This patch breaks the maven-deploy script and caused bug describe in RELENG-766. The diff command here is producing a newline separated list of objects so we should have used mapfile here not `IFS\u003d\" \" read -r -a array` code pattern...",
+      "revId": "bb5e0da850b1c5ed31cf76af62d91b506c13d8dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
