@@ -28,29 +28,35 @@ configuration.
 
 **Required**
 
-- Config File Provider
-- Description Setter
-- Environment Injector Plugin
-- Git plugin
-- Post Build Script
-- SSH Agent
-- Workspace Cleanup
+- [Config File Provider](https://plugins.jenkins.io/config-file-provider)
+- [Description Setter](https://plugins.jenkins.io/description-setter)
+- [Environment Injector Plugin](https://plugins.jenkins.io/envinject)
+- [Git plugin](https://plugins.jenkins.io/git)
+- [Post Build Script](https://plugins.jenkins.io/postbuildscript)
+
+    Due to security concerns Post Build Script is not available through
+    the Jenkins update center and must install it manually. You can
+    download it
+    [here](https://updates.jenkins-ci.org/download/plugins/postbuildscript/).
+
+- [SSH Agent](https://plugins.jenkins.io/ssh-agent)
+- [Workspace Cleanup](https://plugins.jenkins.io/ws-cleanup)
 
 **Required for Gerrit connected systems**
 
-- Gerrit Trigger
+- [Gerrit Trigger](https://plugins.jenkins.io/gerrit-trigger)
 
 **Required for GitHub connected systems**
 
-- GitHub plugin
-- GitHub Pull Request Builder
+- [GitHub plugin](https://plugins.jenkins.io/github)
+- [GitHub Pull Request Builder](https://plugins.jenkins.io/ghprb)
 
 **Optional**
 
-- Mask Passwords
-- MsgInject
-- OpenStack Cloud
-- Timestamps
+- [Mask Passwords](https://plugins.jenkins.io/mask-passwords)
+- [MsgInject](https://plugins.jenkins.io/msginject)
+- [OpenStack Cloud](https://plugins.jenkins.io/openstack-cloud)
+- [Timestamps](https://plugins.jenkins.io/timestamper)
 
 ## Installing global-jjb
 
