@@ -24,6 +24,8 @@ echo "$MAVEN_OPTIONS"
 # Activates the lftools virtualenv
 lftools_activate() {
     virtualenv --quiet "/tmp/v/lftools"
+    set +u  # Ignore unbound variables in activate
     # shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
     source "/tmp/v/lftools/bin/activate"
+    set -u  # Restore unbound variable checking
 }
