@@ -15,6 +15,7 @@ Guides
    :maxdepth: 2
 
    best-practices
+   configuration
 
 Global JJB Templates
 --------------------
