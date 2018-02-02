@@ -470,3 +470,5 @@
           files:
             - file-id: npmrc
               target: '$HOME/.npmrc'
+            - file-id: pipconf
+              target: '$HOME/.config/pip/pip.conf'
