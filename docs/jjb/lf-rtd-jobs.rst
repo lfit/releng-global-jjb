@@ -1,3 +1,5 @@
+.. _lf-global-jjb-rtd-jobs:
+
 ################
 ReadTheDocs Jobs
 ################
