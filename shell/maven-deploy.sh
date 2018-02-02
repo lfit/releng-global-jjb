@@ -13,6 +13,7 @@
 # Requires the existance of $WORKSPACE/m2repo and $WORKSPACE/m2repo-backup to
 # compare if maven metadata files have changed. Unchanged files are then
 # removed from $WORKSPACE/m2repo before uploading to the snapshot repo.
+echo "---> maven-deploy.sh"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
@@ -22,7 +23,7 @@ nexus_repo_url="$NEXUS_URL/content/repositories/$NEXUS_REPO"
 
 lftools_activate
 
-# Remove metadata files that were not updated.
+echo "-----> Remove metadata files that were not updated"
 set +e  # Temporarily disable to run diff command.
 mapfile -t metadata_files <<< "$(diff -s -r "$m2repo_dir" "$WORKSPACE/m2repo-backup" \
     | grep 'Files .* and .* are identical' \
@@ -40,4 +41,6 @@ set -u  # Re-enable.
 
 find "$m2repo_dir" -type d -empty -delete
 maven_metadata_validate "$m2repo_dir"
+
+echo "-----> Upload files to Nexus"
 lftools deploy nexus -s "$nexus_repo_url" "$m2repo_dir"
