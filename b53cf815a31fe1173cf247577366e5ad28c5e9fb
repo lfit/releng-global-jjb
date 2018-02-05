@@ -16,6 +16,24 @@
       "revId": "b53cf815a31fe1173cf247577366e5ad28c5e9fb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db5c681c_bafa21dd",
+        "filename": "shell/common-variables.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-05T20:19:58Z",
+      "side": 1,
+      "message": "Thanks for catching that. Fixed.",
+      "parentUuid": "a73cad55_dd9a48eb",
+      "revId": "b53cf815a31fe1173cf247577366e5ad28c5e9fb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
