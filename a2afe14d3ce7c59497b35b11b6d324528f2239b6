@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2b84563a_5ed014e4",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-05T17:29:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bd3c3f2_8c9331e8",
+      "revId": "a2afe14d3ce7c59497b35b11b6d324528f2239b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43cbea95_3c45d1c0",
         "filename": "docs/configuration.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2018-02-02T22:59:49Z",
       "side": 1,
       "message": "Should mention that an empty file is valid as well, but that it is still required to be defined.",
+      "revId": "a2afe14d3ce7c59497b35b11b6d324528f2239b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c4ef63aa_c559e639",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-05T17:29:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43cbea95_3c45d1c0",
       "revId": "a2afe14d3ce7c59497b35b11b6d324528f2239b6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
