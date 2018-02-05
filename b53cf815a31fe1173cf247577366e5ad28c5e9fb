@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a73cad55_dd9a48eb",
+        "filename": "shell/common-variables.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 63
+      },
+      "writtenOn": "2018-02-05T20:18:55Z",
+      "side": 1,
+      "message": "hah, you get lucky... this syntax failed for me when sourced.\n\nno closing paren",
+      "revId": "b53cf815a31fe1173cf247577366e5ad28c5e9fb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
