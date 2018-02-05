@@ -39,5 +39,5 @@ fi
 set -u  # Re-enable.
 
 find "$m2repo_dir" -type d -empty -delete
-
+maven_metadata_validate "$m2repo_dir"
 lftools deploy nexus -s "$nexus_repo_url" "$m2repo_dir"
