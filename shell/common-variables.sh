@@ -29,3 +29,39 @@ lftools_activate() {
     source "/tmp/v/lftools/bin/activate"
     set -u  # Restore unbound variable checking
 }
+
+# Check maven-metadata.xml for any unexpected timestamp mismatches
+maven_metadata_validate() {
+    stage_dir="$1"
+
+    if [ -z "$1" ]; then
+        echo "Usage: maven_metadata_validate STAGE_REPO_DIR"
+        exit 1
+    fi
+
+    error=0
+    mapfile -t files < <(find "$stage_dir" -name maven-metadata.xml | grep SNAPSHOT)
+
+    for f in "${files[@]}"; do
+        timestamp=$(xmlstarlet sel -t -v "/metadata/versioning/snapshot/timestamp" "$f")
+        mapfile -t ext_timestamps < <(xmlstarlet sel -t -m "/metadata/versioning/snapshotVersions/snapshotVersion" -v extension -v "' '" -v value -v "' '" -v updated -n "$f")
+
+        for t in "${ext_timestamps[@]}"; do
+            if [[ $t != *"$timestamp"* ]]; then
+                echo "Snapshot 'value' mismatch in $t vs $timestamp"
+                error=1
+            fi
+
+            # Updated is timestamp without the dot character
+            if [[ $t != *"${timestamp//\./}"* ]]; then
+                echo "Snapshot 'updated' mismatch in ${t//\./} vs ${timestamp//\./}"
+                error=1
+            fi
+        done
+    done
+
+    if [ $error -ne 0 ]; then
+        echo "ERROR: Mismatches in maven-metadata discovered. Quitting..."
+        exit 1
+    fi
+}
