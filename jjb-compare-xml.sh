@@ -42,6 +42,16 @@ for xml in "$test_dir"/*; do
     fi
 done
 
+echo "Checking for double curly braces..."
+mapfile -t xml_files < <(find "$test_dir" -type f)
+for xml in "${xml_files[@]}"; do
+    if grep '{{' "$xml"; then
+        echo "ERROR: Double curly braces discovered in output XML."
+        exit 1
+    fi
+done
+echo "No double curly braces found."
+
 # Cleanup
 rm -rf "$test_dir" "$expected_xml_dir"
 
