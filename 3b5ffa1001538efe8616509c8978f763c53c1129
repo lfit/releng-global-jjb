@@ -22,6 +22,30 @@
       "revId": "3b5ffa1001538efe8616509c8978f763c53c1129",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0238c9b7_c1620388",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-06T04:22:09Z",
+      "side": 1,
+      "message": "This will break for those who got used to without the colon. I would suggest making the colon optional with something like.\n\n jjb-deploy[:]* (?....",
+      "parentUuid": "522b9f50_0b690371",
+      "range": {
+        "startLine": 267,
+        "startChar": 34,
+        "endLine": 267,
+        "endChar": 59
+      },
+      "revId": "3b5ffa1001538efe8616509c8978f763c53c1129",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
