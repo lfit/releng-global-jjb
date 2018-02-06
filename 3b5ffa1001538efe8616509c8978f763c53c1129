@@ -46,6 +46,30 @@
       "revId": "3b5ffa1001538efe8616509c8978f763c53c1129",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e8f2a216_8e41c7be",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2018-02-06T19:31:58Z",
+      "side": 1,
+      "message": "ok, this works for me locally with egrep (the [:]* part, but\nI can\u0027t figure out how to locally test that the regexp\npattern that matches a job still works. I\u0027m worried that\nadding single quotes will break it. any idea how I can test?",
+      "parentUuid": "0238c9b7_c1620388",
+      "range": {
+        "startLine": 267,
+        "startChar": 34,
+        "endLine": 267,
+        "endChar": 59
+      },
+      "revId": "3b5ffa1001538efe8616509c8978f763c53c1129",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
