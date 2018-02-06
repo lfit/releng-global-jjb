@@ -264,7 +264,7 @@
     stream: master
     gerrit_jjb_deploy_job_triggers:
       - comment-added-contains-event:
-          comment-contains-value: jjb-deploy (?!\*+$).+$
+          comment-contains-value: 'jjb-deploy[:]* (?!\*+$).+$'
 
     #####################
     # Job Configuration #
