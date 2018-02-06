@@ -57,7 +57,8 @@
     builders:
       - inject:
           properties-content: 'MAVEN_GOALS={mvn-goals}'
-      - shell: !include-raw-escape:
+      # include-raw-escape fails here due to JJB bug
+      - shell: !include-raw:
           - ../shell/common-variables.sh
           - ../shell/maven-build.sh
 
@@ -71,7 +72,8 @@
 - builder:
     name: lf-maven-stage
     builders:
-      - shell: !include-raw-escape:
+      # include-raw-escape fails due to JJB bug
+      - shell: !include-raw:
           - ../shell/common-variables.sh
           - ../shell/maven-stage.sh
 
