@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "522b9f50_0b690371",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2018-02-06T03:57:30Z",
+      "side": 1,
+      "message": "so, it fails to verify if the : is there, so maybe that\u0027s\nwhy it is without. It should verify if we wrap in single\nquotes, but now I wonder if that will break the regexp?",
+      "range": {
+        "startLine": 267,
+        "startChar": 34,
+        "endLine": 267,
+        "endChar": 59
+      },
+      "revId": "3b5ffa1001538efe8616509c8978f763c53c1129",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
