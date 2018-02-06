@@ -71,7 +71,8 @@
 - builder:
     name: lf-maven-stage
     builders:
-      - shell: !include-raw-escape:
+      # include-raw-escape fails due to JJB bug
+      - shell: !include-raw:
           - ../shell/common-variables.sh
           - ../shell/maven-stage.sh
 
