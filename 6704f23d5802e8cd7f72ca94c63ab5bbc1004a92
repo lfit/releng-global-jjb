@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a813e71d_77a45a2a",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-02-08T12:16:43Z",
+      "side": 1,
+      "message": "imho, the comment should be removed, since anyone reviewing the code would learn from this they could write a simple job to achieve this.",
+      "range": {
+        "startLine": 38,
+        "startChar": 12,
+        "endLine": 38,
+        "endChar": 75
+      },
+      "revId": "6704f23d5802e8cd7f72ca94c63ab5bbc1004a92",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
