@@ -35,6 +35,7 @@ set -eu -o pipefail
 
 # Execute the credential lookup and login to the registry
 do_login() {
+    set +x  # Ensure that no other scripts add `set -x` and print passwords
     echo "$1"
     CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
         -t -m "/x:settings/x:servers/x:server[starts-with(x:id, '${1}')]" \
