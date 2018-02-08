@@ -71,7 +71,11 @@ versioned git tags.
     # Add the new submodule to ci-management's jjb directory.
     # Note: Perform once per ci-management repo.
     cd jjb/
-    git submodule add https://gerrit.linuxfoundation.org/infra/releng/global-jjb
+
+    # For production deployments:
+    git submodule add https://github.com/lfit/releng-global-jjb global-jjb
+    # For test deployments comment the above and uncomment the below
+    # git submodule add https://gerrit.linuxfoundation.org/infra/releng/global-jjb
 
     # Checkout the version of global-jjb you wish to deploy.
     cd global-jjb
