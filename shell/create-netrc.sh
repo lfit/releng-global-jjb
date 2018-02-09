@@ -1,7 +1,7 @@
 #!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
-# Copyright (c) 2017 The Linux Foundation and others.
+# Copyright (c) 2017,2018 The Linux Foundation and others.
 #
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Eclipse Public License v1.0
@@ -10,8 +10,14 @@
 ##############################################################################
 echo "---> create-netrc.sh"
 
-# Ensure we fail the job if any steps fail.
-set -eu -o pipefail
+if [ -z "$NEXUS_URL" ]
+then
+  # Failure is inconcequential when NEXUS_URL is zero-length
+  set +e
+else
+  # Ensure we fail the job if any steps fail.
+  set -eu -o pipefail
+fi
 
 NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
 CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
