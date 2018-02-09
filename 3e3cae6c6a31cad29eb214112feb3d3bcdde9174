@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "26558126_a2a35fe3",
+        "filename": "shell/jenkins-configure-global-vars.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-09T13:58:16Z",
+      "side": 1,
+      "message": "Need to check if a user puts a space in the file will it be ignored or cause this to fail?\n\n\nAlso we should support comments (lines starting with #) as I suspect folks may want to add comments to the file.",
+      "revId": "3e3cae6c6a31cad29eb214112feb3d3bcdde9174",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
