@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1509ebe2_3d907a07",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-09T03:00:58Z",
+      "side": 1,
+      "message": "I think simply having the following is sufficient:\n\n if [ -z \"$NEXUS_URL\" ]; then\n     echo \"WARN: NEXUS_URL not defined.\n     exit 0\n fi",
+      "revId": "d3e49232f3f29d05117868a2975baacbe641afc5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
