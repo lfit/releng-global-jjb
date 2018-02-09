@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a93fc6b1_88bcc49a",
+        "filename": "shell/jenkins-configure-global-vars.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-09T03:42:37Z",
+      "side": 1,
+      "message": "Should document that this script requires lftools to be preinstalled to /tmp/v/lftools.",
+      "revId": "713cd5f10d1d67d62fd8c6b28ac03b327d8c427b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f298fbed_8017923d",
+        "filename": "shell/jenkins-configure-global-vars.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-09T03:42:37Z",
+      "side": 1,
+      "message": "Don\u0027t need this line of code as this script is already assuming that this directory exists. Plus if it didn\u0027t we made not effort to actually install lftools after this...",
+      "revId": "713cd5f10d1d67d62fd8c6b28ac03b327d8c427b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
