@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5482dab9_9ffba0aa",
+        "filename": "relnotes/v0.16.0.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-09T19:44:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37f0517b_e3a1a2bc",
+      "revId": "109ef782f0554df0c1f2163c986b38f0c50139dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c63cd3e5_2a426747",
         "filename": "relnotes/v0.16.0.txt",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "b44b8ab6_48080000",
+        "filename": "relnotes/v0.16.0.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-09T19:44:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c63cd3e5_2a426747",
+      "revId": "109ef782f0554df0c1f2163c986b38f0c50139dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9a7dead_5119c797",
         "filename": "relnotes/v0.16.0.txt",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2018-02-09T19:41:03Z",
       "side": 1,
       "message": "second occurrence: should be \"overridden\"",
+      "revId": "109ef782f0554df0c1f2163c986b38f0c50139dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "acca61d6_daed05bf",
+        "filename": "relnotes/v0.16.0.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-09T19:44:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9a7dead_5119c797",
       "revId": "109ef782f0554df0c1f2163c986b38f0c50139dd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
