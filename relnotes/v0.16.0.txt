@@ -1,0 +1,67 @@
+global-jjb v0.16.0 Release Notes
+================================
+
+Thanks to Andrew, Christopher, Jamo, Jessica, Sam, Thanh, and Trevor
+for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+1. fc00439 Add pip.conf to wrappers
+
+A pipconf definition is now required in Config File Provider configuration in
+Jenkins. It can be empty but must exist.
+
+
+Notable changes since v0.15.0
+-----------------------------
+
+b804ed7 Jamo Luhrsen    Add : to jjb-deploy:
+The jjb-deploy job that is used to push jobs to the sandobx now accepts 2
+formats:
+
+1) jjb-deploy job-name
+2) jjb-deploy: job-name
+
+fc00439 Thanh Ha        Add pip.conf to wrappers
+Adds a new required config file provider file called pipconf which can be blank
+however is useful to define for pip a local proxy server to pull packages from
+more quickly.
+
+d22c3fe Thanh Ha        Allow goal override for maven-build macro
+Maven goals can now be overridden (default: clean deploy) via the
+"{mvn-goals}" parameter in your project definition.
+
+61fe474 Jessica Wagantall       Add script to update Java alternatives
+Maven jobs now properly handle JAVA_HOME and default Java configuration before
+running a Maven build.
+
+bc80d1d Christopher Lott (cl778h)       Refactor macro/template cron param
+Allow maven-merge and maven-sonar cron configuration to be overridden by the
+projects.
+
+
+Full Change Log
+---------------
+
+c4295ab Andrew Grimberg Update submodule documentation
+6704f23 Thanh Ha        set +x around sensitive code docker login code
+b804ed7 Jamo Luhrsen    Add : to jjb-deploy:
+8ec9758 Thanh Ha        Add test to check for double curly braces
+be559eb Christopher Lott (cl778h)       Repair shell-include directive
+f529361 Thanh Ha        Add maven metadata validator tool
+fc00439 Thanh Ha        Add pip.conf to wrappers
+d22c3fe Thanh Ha        Allow goal override for maven-build macro
+76a760c Thanh Ha        Split maven-stage script into a reusable macro
+d38f363 Thanh Ha        Fix local platform file path
+1f02269 Thanh Ha        Disable unbound variable checking for activate
+64e510a Thanh Ha        Add sphinx link to rtd jobs page
+86f57f3 Thanh Ha        deploy cleanup not removing all unmodified files
+db26322 Sam Hague       update docs to use minutes over seconds
+fd81b0d Trevor Bramwell Add Links to Plugins mentioned in README
+61fe474 Jessica Wagantall       Add script to update Java alternatives
+d33f3cb Jessica Wagantall       Remove jdk variable from lf-maven-jobs
+f2f717b Thanh Ha        Bump default timeout to 15 minutes for tox
+bc80d1d Christopher Lott (cl778h)       Refactor macro/template cron param
+7ff047e Thanh Ha        Split maven-deploy into a macro
