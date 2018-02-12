@@ -16,6 +16,24 @@
       "revId": "3e3cae6c6a31cad29eb214112feb3d3bcdde9174",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b1521820_1c0ca20a",
+        "filename": "shell/jenkins-configure-global-vars.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-12T15:36:33Z",
+      "side": 1,
+      "message": "if [[ $var \u003d\u003d \u0027#\u0027* ]] || [ -z \"$var\" ]; then\n        continue\n    fi",
+      "parentUuid": "26558126_a2a35fe3",
+      "revId": "3e3cae6c6a31cad29eb214112feb3d3bcdde9174",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
