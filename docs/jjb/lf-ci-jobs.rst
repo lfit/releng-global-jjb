@@ -59,6 +59,11 @@ Manages the Global Jenkins variables. This macro will clear all exist macros
 in Jenkins and replaces them with the ones defined by the
 ci-management/jenkins-config/global-vars-SILO.sh script.
 
+.. note::
+
+   Requires the jjbini file in Jenkins CFP to contain JJB 2.0 style
+   config definitions for "production" and "sandbox" systems.
+
 :Required parameters:
 
     :jenkins-silos: Space separated list of Jenkins silos to update
@@ -124,6 +129,11 @@ The format for this file is ``KEY=value`` for example::
     ODLNEXUSPROXY=https://nexus.opendaylight.org
     SILO=sandbox
     SONAR_URL=https://sonar.opendaylight.org
+
+.. note::
+
+   Requires the jjbini file in Jenkins CFP to contain JJB 2.0 style
+   config definitions for "production" and "sandbox" systems.
 
 :Template names:
 
