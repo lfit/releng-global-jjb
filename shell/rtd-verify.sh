@@ -20,6 +20,7 @@ if [ "$GERRIT_PROJECT" != "$PROJECT" ]; then
 fi
 
 git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
+git submodule update
 
 echo "---> Generating docs"
 cd "$WORKSPACE"
