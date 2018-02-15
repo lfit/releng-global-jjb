@@ -69,6 +69,8 @@
       - compare-type: ANT
         pattern: 'packer/provision/{templates}.yaml'
       - compare-type: ANT
+        pattern: 'packer/provision/local-{templates}.yaml'
+      - compare-type: ANT
         pattern: 'packer/provision/lib/**'
 
 - lf_packer: &lf_packer_common
