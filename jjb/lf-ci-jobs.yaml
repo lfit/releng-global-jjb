@@ -273,8 +273,18 @@
     ######################
 
     branch: master
+    cron: '@daily'
     git-url: '$GIT_URL/$GERRIT_PROJECT'
     jenkins-silos: production sandbox
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: 'jenkins-config/**'
 
     #####################
     # Job Configuration #
@@ -324,6 +334,19 @@
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
 - job-template:
     name: '{project-name}-jenkins-cfg-merge'
     id: github-jenkins-cfg-merge
@@ -341,6 +364,21 @@
           submodule-recursive: true
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - timed: '{obj:cron}'
+      - github
+      - pollscm:
+          cron: ''
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: true
+          status-context: 'Jenkins CFG Merge'
+          permit-all: false
+          github-hooks: true
+          github-org: '{github-org}'
+          github_pr_whitelist: '{obj:github_pr_whitelist}'
+          github_pr_admin_list: '{obj:github_pr_admin_list}'
 
 
 ##################
