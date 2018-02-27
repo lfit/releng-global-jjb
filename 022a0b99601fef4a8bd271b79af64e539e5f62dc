@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "638e898d_102179b4",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-02-27T16:07:25Z",
+      "side": 1,
+      "message": "Doesn\u0027t this mean that we potentially have a lot of other broken things? I know that env inject is used in numerous places!",
+      "revId": "022a0b99601fef4a8bd271b79af64e539e5f62dc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
