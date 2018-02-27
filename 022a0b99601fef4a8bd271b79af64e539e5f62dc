@@ -16,6 +16,24 @@
       "revId": "022a0b99601fef4a8bd271b79af64e539e5f62dc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e36c557_534d6bb2",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-02-27T16:09:40Z",
+      "side": 1,
+      "message": "Yes, potentially. We\u0027ll have to deal with them as they come up. Seems to affect certain variable names over others, at least GERRIT_URL is not getting overwritten.",
+      "parentUuid": "638e898d_102179b4",
+      "revId": "022a0b99601fef4a8bd271b79af64e539e5f62dc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
