@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "901a727e_8e55b43d",
+        "filename": "shell/gerrit-fetch-dependencies.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-02-27T14:41:29Z",
+      "side": 1,
+      "message": "Changing this from GIT_URL to GERRIT_URL means that you won\u0027t be using any git mirror when fetching these extra projects.",
+      "range": {
+        "startLine": 50,
+        "startChar": 46,
+        "endLine": 50,
+        "endChar": 56
+      },
+      "revId": "e03f102261acc78e74107e7b73c1009cfe01ea81",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
