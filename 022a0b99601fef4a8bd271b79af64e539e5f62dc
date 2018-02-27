@@ -34,6 +34,24 @@
       "revId": "022a0b99601fef4a8bd271b79af64e539e5f62dc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af8b6509_34e8adb3",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-02-27T17:00:36Z",
+      "side": 1,
+      "message": "Ok, just as long as we\u0027re aware of it.",
+      "parentUuid": "7e36c557_534d6bb2",
+      "revId": "022a0b99601fef4a8bd271b79af64e539e5f62dc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
