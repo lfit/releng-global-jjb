@@ -80,7 +80,11 @@
     name: lf-update-java-alternatives
     builders:
       - inject:
-          properties-content: 'SET_JDK_VERSION={java-version}'
+          # Work around inject plugin overriding our GIT_URL variable incorrectly
+          # https://issues.jenkins-ci.org/browse/JENKINS-49775
+          properties-content: |
+            SET_JDK_VERSION={java-version}
+            GIT_URL="$GIT_URL"
       - shell: !include-raw-escape: ../shell/update-java-alternatives.sh
       - inject:
           properties-file: '/tmp/java.env'
