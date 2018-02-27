@@ -41,8 +41,13 @@ for patch in $(echo "${PATCHES[@]}"); do
     project=$(echo "$json" | jq -r '.project')
     branch=$(echo "$json" | jq -r '.branch')
 
+    if [ "$GERRIT_CHANGE_NUMBER" == "$patch" ]; then
+        echo "WARN: GERRIT_CHANGE and $patch are one and the same. Ignoring patch..."
+        continue
+    fi
+
     if [ ! -d "$REPOS_DIR/$project" ]; then
-        git clone -q --depth 1 -b "$branch" "$GIT_URL/$project" "$REPOS_DIR/$project"
+        git clone -q --depth 1 -b "$branch" "$GERRIT_URL/$project" "$REPOS_DIR/$project"
 
         # This array will be used later to determine project build order.
         projects+=("$project")
