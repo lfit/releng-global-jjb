@@ -143,6 +143,8 @@ The format for this file is ``KEY=value`` for example::
 
 :Optional parameters:
 
+    :branch: Git branch to build against. (default: master)
+    :cron: How often to run the job on a cron schedule. (default: @daily)
     :git-url: URL to clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
     :jenkins-silos: Space separated list of Jenkins silos to update
         configuration for as defined in ~/.config/jenkins_jobs/jenkins_jobs.ini
