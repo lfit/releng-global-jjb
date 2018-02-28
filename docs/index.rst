@@ -6,7 +6,12 @@ Linux Foundation Releng Global JJB
 Linux Foundation Release Engineering Global Jenkins Job Builder (JJB)
 Documentation.
 
-A collection of documentation for Linux Foundation JJB Templates.
+Global-JJB is a library project containing reusable Jenkins Job Builder
+templates that can be deployed to any project. It is mainly used by LFCI to
+deploy management Jenkins jobs to an LF managed Jenkins instance however there
+are other jobs defined for various software languages which may be helpful
+to projects whom use the same build technology. It is intended to save time
+for projects from having to define their own job templates.
 
 Guides
 ------
