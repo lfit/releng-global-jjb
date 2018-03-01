@@ -11,8 +11,8 @@
 echo "---> rtd-verify.sh"
 
 # Ensure we fail the job if any steps fail.
-# DO NOT set -u as virtualenv's activate script has unbound variables
-set -e -o pipefail
+# DO NOT set -u
+set -xe -o pipefail
 
 echo "---> Fetching project"
 if [ "$GERRIT_PROJECT" != "$PROJECT" ]; then

@@ -10,6 +10,10 @@
 ##############################################################################
 echo "---> rtd-trigger-build.sh"
 
+# Ensure we fail the job if any steps fail.
+# DO NOT set -u
+set -xe -o pipefail
+
 if [ "$GERRIT_BRANCH" == "master" ]; then
     RTD_BUILD_VERSION=latest
 else
