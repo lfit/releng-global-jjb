@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92bfad3a_8025b7e4",
+        "filename": "shell/rtd-trigger-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-01T15:58:04Z",
+      "side": 1,
+      "message": "There\u0027s nothing virtualenv in this script although it does need to ignore -u to access GERRIT_BRANCH properly.",
+      "revId": "f35954d711199ac63bfa4d70591074f3d07f715b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1890f970_7632354b",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-01T15:58:04Z",
+      "side": 1,
+      "message": "Realized this comment a little wrong too as there\u0027s nothing virtualenv here but it does need it for GERRIT_* parameters.",
+      "revId": "f35954d711199ac63bfa4d70591074f3d07f715b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
