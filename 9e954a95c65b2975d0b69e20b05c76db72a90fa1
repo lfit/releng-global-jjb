@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68fdfe81_f2fa3128",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-05T19:37:24Z",
+      "side": 1,
+      "message": "Probably should mention that troubleshooting logs are available in the groovy-inserts directory on the log server.",
+      "revId": "9e954a95c65b2975d0b69e20b05c76db72a90fa1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
