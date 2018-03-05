@@ -33,6 +33,24 @@
       "revId": "f813b7436f6c4417bc1b99483bea903b2bce4720",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3cf606dd_5b3db46c",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-05T19:22:22Z",
+      "side": 1,
+      "message": "Gave this a try but because of the nested loops in this file it absolutely spams the logs. I think a more precise `set -x`s or echos would be more useful in this file.\n\nAnother idea I\u0027ve been floating around is standardizing on a \"DEBUG_JOB\u003dtrue|false\" parameter for all scripts which will enable -x if the user checks the box at build time. This will allow us to easily turn it on / off.",
+      "parentUuid": "573f98a0_9b30f1b4",
+      "revId": "f813b7436f6c4417bc1b99483bea903b2bce4720",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
