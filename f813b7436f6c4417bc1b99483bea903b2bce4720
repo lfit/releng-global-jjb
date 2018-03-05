@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82721287_794e94aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-05T17:58:39Z",
+      "side": 1,
+      "message": "Let\u0027s provide a little more information in the commit message to explain setup and / or if this change requires upgrade attention from consumers.",
+      "revId": "f813b7436f6c4417bc1b99483bea903b2bce4720",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
