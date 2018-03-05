@@ -16,6 +16,23 @@
       "revId": "f813b7436f6c4417bc1b99483bea903b2bce4720",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "573f98a0_9b30f1b4",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2018-03-05T18:09:48Z",
+      "side": 1,
+      "message": "Perhaps set -x ?",
+      "revId": "f813b7436f6c4417bc1b99483bea903b2bce4720",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
