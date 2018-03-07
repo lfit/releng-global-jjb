@@ -19,6 +19,52 @@
     },
     {
       "key": {
+        "uuid": "79a581de_3f70586b",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-07T01:27:04Z",
+      "side": 1,
+      "message": "while this is cool and convenient. I\u0027d be more comfortable having this as part of a single macro with the builder in a way where the credential is provided. The macro runs what it needs to and immediately removes the credential.\n\nFor example docker login macro:\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-macros.yaml#L20-L27\n\nThis is to guard against the \"env\" call at the end of the job not accidently leaking these credentials and ensures that they only exist for as long as they are needed.",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 176,
+        "endChar": 35
+      },
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79dd9dd8_48f7fc5b",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-07T01:27:04Z",
+      "side": 1,
+      "message": "Turn this whole thing into a reusable macro that takes input via parameters. It should set the credential and clean it up immediately after the script ends.",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 62
+      },
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae81cdc5_0aeb3ee3",
         "filename": "shell/sonar-cli.sh",
         "patchSetId": 1
@@ -70,6 +116,69 @@
       "writtenOn": "2018-03-07T01:20:06Z",
       "side": 1,
       "message": "Not applicable here?",
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e9ad35c6_d2f4c2aa",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-07T01:27:04Z",
+      "side": 1,
+      "message": "This comment is a lie as it implies `set -eu -o pipefail` which isn\u0027t being set here (although probably should).",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 6
+      },
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e5a64714_9a462219",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-07T01:27:04Z",
+      "side": 1,
+      "message": "parameterized this so that we can select a version.",
+      "range": {
+        "startLine": 19,
+        "startChar": 60,
+        "endLine": 19,
+        "endChar": 69
+      },
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3c1b352_301036ac",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-07T01:27:04Z",
+      "side": 1,
+      "message": "Put a set +x right before the `java -jar` call so that we don\u0027t accidently print the password.",
       "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
