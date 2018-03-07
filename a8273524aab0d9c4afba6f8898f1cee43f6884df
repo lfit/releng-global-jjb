@@ -60,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "0b0fc72d_2456b401",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-03-07T01:46:54Z",
+      "side": 1,
+      "message": "Agree on safety.. i can use a settings file. But how can i call the individual variables in a command like this?\n\njava -jar ./nexus-iq-cli-\u003cversion\u003e.jar -xc -i Test123 -s http://localhost:8070\n-a username:password sample-application.zip",
+      "parentUuid": "79a581de_3f70586b",
+      "range": {
+        "startLine": 172,
+        "startChar": 0,
+        "endLine": 176,
+        "endChar": 35
+      },
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79dd9dd8_48f7fc5b",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 1
