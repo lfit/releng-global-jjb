@@ -362,6 +362,8 @@ Runs `jenkins-jobs test` to validate JJB syntax
         (default defined by lf_jjb_common)
 
 
+.. _gjjb-packer-merge:
+
 Packer Merge
 ------------
 
@@ -400,6 +402,8 @@ Packer Merge job runs `packer build` to build system images in the cloud.
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
+
+.. _gjjb-packer-verify:
 
 Packer Verify
 -------------
