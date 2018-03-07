@@ -7,6 +7,7 @@
 
     jobs:
       - gerrit-tox-verify
+      - gerrit-python-xc-clm
 
 - job-group:
     name: '{project-name}-github-python-jobs'
@@ -89,6 +90,100 @@
     publishers:
       - lf-infra-publish
 
+#################
+# Python XC CLM #
+#################
+
+- lf_python_clm_xc: &lf_python_xc_clm
+    name: lf-python-xc-clm
+
+    ######################
+    # Default parameters #
+    ######################
+
+    archive-artifacts: >
+      **/*.log
+      **/hs_err_*.log
+      **/target/**/feature.xml
+      **/target/failsafe-reports/failsafe-summary.xml
+      **/target/surefire-reports/*-output.txt
+
+    branch: master
+    build-days-to-keep: 30  # 30 days for troubleshooting purposes
+    build-timeout: 60
+    git-url: '$GIT_URL/$PROJECT'
+    java-version: openjdk8
+    staging-profile-id: ''  # Unused in this job
+    stream: master
+    submodule-recursive: true
+
+    gerrit_clm_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: run-xc-clm$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: '{archive-artifacts}'
+          description: Artifacts to archive to the logs server.
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      - lf-infra-publish
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_clm_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+    wrappers:
+      - credentials-binding:
+          - username-password-separated:
+             credential-id: sonar-xc-clm
+             username: CLM_USER
+             password: CLM_PASSWORD
+    builders:
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - inject:
+          properties-content: 'CLM_PROJECT_NAME={project-name}'
+      - shell: !include-raw-escape:
+          - ../shell/sonar-cli.sh
+      - lf-provide-maven-settings-cleanup
+      - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
+
 - job-template:
     # Python projects typically use tox to run testing.
     name: '{project-name}-tox-verify-{stream}'
@@ -159,3 +254,17 @@
           permit-all: true
           github-hooks: true
           auto-close-on-fail: false
+
+- job-template:
+    name: '{project-name}-python-clm-{stream}'
+    id: gerrit-python-xc-clm
+    <<: *lf_python_xc_clm
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
