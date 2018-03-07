@@ -106,6 +106,30 @@
     },
     {
       "key": {
+        "uuid": "94db73ee_507cf4ff",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-03-07T01:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae81cdc5_0aeb3ee3",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "924e79ef_812f65d2",
         "filename": "shell/sonar-cli.sh",
         "patchSetId": 1
@@ -117,6 +141,24 @@
       "writtenOn": "2018-03-07T01:20:06Z",
       "side": 1,
       "message": "Change or remove this description.",
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1bc24b3f_304b99d0",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-03-07T01:37:25Z",
+      "side": 1,
+      "message": "oops.. done",
+      "parentUuid": "924e79ef_812f65d2",
       "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -140,6 +182,24 @@
     },
     {
       "key": {
+        "uuid": "9d6bae1e_6e5b5793",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-03-07T01:37:25Z",
+      "side": 1,
+      "message": "Done and removed",
+      "parentUuid": "31b98ba9_8136623b",
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e9ad35c6_d2f4c2aa",
         "filename": "shell/sonar-cli.sh",
         "patchSetId": 1
@@ -151,6 +211,30 @@
       "writtenOn": "2018-03-07T01:27:04Z",
       "side": 1,
       "message": "This comment is a lie as it implies `set -eu -o pipefail` which isn\u0027t being set here (although probably should).",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 6
+      },
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d58a83b6_67da6c16",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-03-07T01:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9ad35c6_d2f4c2aa",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -186,6 +270,30 @@
     },
     {
       "key": {
+        "uuid": "d69e1091_2aa2c8c8",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-03-07T01:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5a64714_9a462219",
+      "range": {
+        "startLine": 19,
+        "startChar": 60,
+        "endLine": 19,
+        "endChar": 69
+      },
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c3c1b352_301036ac",
         "filename": "shell/sonar-cli.sh",
         "patchSetId": 1
@@ -197,6 +305,24 @@
       "writtenOn": "2018-03-07T01:27:04Z",
       "side": 1,
       "message": "Put a set +x right before the `java -jar` call so that we don\u0027t accidently print the password.",
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5d08aea_3e1db571",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-03-07T01:37:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c3c1b352_301036ac",
       "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
