@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b83e9ea_3ffd4d59",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-03-07T01:20:06Z",
+      "side": 1,
+      "message": "Does this require the credentials-binding plugin?",
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "924e79ef_812f65d2",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-03-07T01:20:06Z",
+      "side": 1,
+      "message": "Change or remove this description.",
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "31b98ba9_8136623b",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-03-07T01:20:06Z",
+      "side": 1,
+      "message": "Not applicable here?",
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
