@@ -6,6 +6,7 @@
     # for any project ci that is using Gerrit.
 
     jobs:
+      - gerrit-python-xc-clm
       - gerrit-tox-verify
 
 - job-group:
@@ -15,6 +16,7 @@
     # for any project ci that is using GitHub.
 
     jobs:
+      - github-python-xc-clm
       - github-tox-verify
 
 ##########
@@ -27,6 +29,173 @@
       - inject:
           properties-content: 'PYTHON_VERSION={python-version}'
       - shell: !include-raw-escape: ../shell/tox-install.sh
+
+- builder:
+    name: lf-infra-clm-python
+    builders:
+      - inject:
+          properties-content: 'CLM_PROJECT_NAME={clm-project-name}'
+      - shell: !include-raw-escape:
+          - ../shell/sonar-cli.sh
+
+####################
+# COMMON FUNCTIONS #
+####################
+
+- lf_python_common: &lf_python_common
+    name: lf-python-common
+
+    ######################
+    # Default parameters #
+    ######################
+
+    archive-artifacts: >
+      **/*.log
+      **/hs_err_*.log
+      **/target/**/feature.xml
+      **/target/failsafe-reports/failsafe-summary.xml
+      **/target/surefire-reports/*-output.txt
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+      - string:
+          name: NEXUS_IQ_CLI_JAR
+          default: nexus-iq-cli-1.44.0-01.jar
+          description: Nexus IQ CLI package to download and use.
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: '{archive-artifacts}'
+          description: Artifacts to archive to the logs server.
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      - lf-infra-publish
+
+#################
+# Python XC CLM #
+#################
+
+- lf_python_clm_xc: &lf_python_xc_clm
+    name: lf-python-xc-clm
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30  # 30 days for troubleshooting purposes
+    build-timeout: 60
+    git-url: '$GIT_URL/$PROJECT'
+    java-version: openjdk8
+    staging-profile-id: ''  # Unused in this job
+    stream: master
+    submodule-recursive: true
+
+    gerrit_clm_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: run-xc-clm$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_clm_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+    wrappers:
+      - credentials-binding:
+          - username-password-separated:
+              credential-id: sonar-xc-clm
+              username: CLM_USER
+              password: CLM_PASSWORD
+    builders:
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - lf-infra-clm-python:
+          clm-project-name: '{project-name}'
+      - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
+
+- job-template:
+    name: '{project-name}-python-clm-{stream}'
+    id: gerrit-python-xc-clm
+    <<: *lf_python_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_python_xc_clm
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+
+- job-template:
+    name: '{project-name}-python-clm-{stream}'
+    id: github-python-xc-clm
+    <<: *lf_python_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_python_xc_clm
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^run-xc-clm$'
+          only-trigger-phrase: false
+          status-context: 'CLM'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
 
 ##############
 # Tox Verify #
