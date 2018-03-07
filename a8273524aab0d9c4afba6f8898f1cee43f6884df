@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a3892db2_9345e722",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-03-07T01:30:21Z",
+      "side": 1,
+      "message": "yes.. we need to put in the release notes that we need to add this plugin + the sonar-xc-clm credential in Jenkins",
+      "parentUuid": "9b83e9ea_3ffd4d59",
+      "revId": "a8273524aab0d9c4afba6f8898f1cee43f6884df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79a581de_3f70586b",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 1
