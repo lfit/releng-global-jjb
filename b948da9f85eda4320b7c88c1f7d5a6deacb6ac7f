@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63dbc0da_75572118",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-03-09T20:13:03Z",
+      "side": 1,
+      "message": "You should clean up the cli-auth.txt file that was just created.",
+      "revId": "b948da9f85eda4320b7c88c1f7d5a6deacb6ac7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
