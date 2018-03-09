@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e30a3fd1_f05208a2",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-03-09T20:20:09Z",
+      "side": 1,
+      "message": "The jar file needs to be downloaded to /tmp and called from there or you end up polluting your scans append -O /tmp/${NEXUS_IQ_CLI_JAR}",
+      "revId": "e5382c1583734035f957f0e618e19f20e54c688d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb44a633_106a6bd0",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-03-09T20:20:09Z",
+      "side": 1,
+      "message": "You define ${NEXUS_IQ_CLI_JAR} as a var but then don\u0027t reuse it here. This should be /tmp/${NEXUS_IQ_CLI_JAR}",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 36
+      },
+      "revId": "e5382c1583734035f957f0e618e19f20e54c688d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
