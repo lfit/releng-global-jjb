@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad5d163f_027034d1",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-03-09T20:08:41Z",
+      "side": 1,
+      "message": "You should run wget with -nv to make it quieter but not lose error messages",
+      "revId": "a00665fa89cd0ef7418f626565ced90fcd8e926c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
