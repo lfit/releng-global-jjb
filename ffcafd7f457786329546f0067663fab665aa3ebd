@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f75499bd_b43a9acd",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-03-12T15:22:28Z",
+      "side": 1,
+      "message": "This is a deviation from what we\u0027ve been doing previously. So, we\u0027re going to mark as UNSTABLE now instead of FAILED if the postbuildscript fails?",
+      "revId": "ffcafd7f457786329546f0067663fab665aa3ebd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
