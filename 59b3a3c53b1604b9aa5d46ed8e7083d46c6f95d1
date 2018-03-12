@@ -1,0 +1,199 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2339c9d_b8594d26",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "Why are these things being archived? Most of them are Java / Maven output.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 45
+      },
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a8efc44_f5c9f44c",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "Instead of making people remember the entire filename it is better to let them select the version and have the code create the filename as it should be a well known name anyway.\n\nAlso parameterize the version {nexus-iq-cli-version} so that consumers can set the version they want in their Project definition.\n\nThis should probably go into the CLM anchor as well. as I wouldn\u0027t want to force ALL Python jobs to require NEXUS_IQ_CLI.",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 45
+      },
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33a6176d_db9a87ec",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "Just \"run-clm\" to keep it the same as the other CLM jobs. We don\u0027t want to make users learn different triggers for every job. If they are similar let\u0027s standardize on the same trigger.\n\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-maven-jobs.yaml#L176",
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4c35d25f_641f4069",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "Refer to the comment in the shell script file. Prefer we didn\u0027t use the credentials-binding and instead use CFP to place a file that can be deleted.",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 36
+      },
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a04ea1cf_87be6793",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "run-clm only please.",
+      "range": {
+        "startLine": 188,
+        "startChar": 26,
+        "endLine": 188,
+        "endChar": 40
+      },
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9c1a9311_a7b0a119",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "First line should always be straight to the point short summary. Then provide details in the body of the message. \"This script...\" is also a superfluous statement.\n\nSomething like the following is better:\n\n Perform a CLM scan of Python files\n \n Downloads nexus-iq-cli and uses it to perform an XC Evaluation\n or extended report to provide a CLM scan of Python code.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 10
+      },
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "56b234d8_ce647927",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "Call \"set +x\" right before the lines:\n\n set +x  # Prevent set -x from other scripts from printing passwords\n echo \"${CLM_USER}:${CLM_PASSWORD}\" ...\n java -jar ...",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 6
+      },
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5149acc5_cb2535ab",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "I\u0027d prefer if we didn\u0027t hardcode the URL. If this makes sense as a default then let\u0027s default but still allow it to be overrided.",
+      "range": {
+        "startLine": 20,
+        "startChar": 79,
+        "endLine": 20,
+        "endChar": 118
+      },
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3eeb991_c85f1cec",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T02:18:20Z",
+      "side": 1,
+      "message": "If we\u0027re handling the cli-auth.txt in this way I would prefer we use CFP to place the cli-auth.txt file in an expected location. Use it in this script and immediately delete it. This way the credentials only exist on the system for as long as it is needed.\n\nUsing the credentials binding wrapper makes the 2 variables available to all scripts for the entire run of the Jenkins job.",
+      "revId": "59b3a3c53b1604b9aa5d46ed8e7083d46c6f95d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
