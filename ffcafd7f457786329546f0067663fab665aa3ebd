@@ -16,6 +16,24 @@
       "revId": "ffcafd7f457786329546f0067663fab665aa3ebd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a7907d7_ade9923f",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-12T15:25:20Z",
+      "side": 1,
+      "message": "Yes, unfortunately we have to because the new PostBuildScript plugin will fail the entire build we don\u0027t set this option. Which is worse. Previously it just ignored and did affect the build result.\n\nOn the other hand marking unstable might be a good idea to let us know something is wrong and we have to investigate. These scripts should be coded in away that allows it to pass in all of our use cases.",
+      "parentUuid": "f75499bd_b43a9acd",
+      "revId": "ffcafd7f457786329546f0067663fab665aa3ebd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
