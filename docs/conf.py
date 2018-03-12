@@ -67,7 +67,7 @@ author = 'Linux Foundation Releng'
 # built documents.
 #
 # The short X.Y version.
-version = '0.17.0'
+version = '0.18.0-dev'
 # The full version, including alpha/beta/rc tags.
 release = version
 
