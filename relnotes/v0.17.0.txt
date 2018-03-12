@@ -1,0 +1,60 @@
+global-jjb v0.17.0 Release Notes
+================================
+
+Thanks to Christopher, Jessica, and Thanh for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+1. c26afec Add script to manage Jenkins cloud cfg
+
+No action is necessary as this feature is disabled by default however if a
+project is using the Jenkins OpenStack Cloud Plugin we highly recommend
+configuring the ci-management repo to manage this plugin configuration as
+it makes the cloud configuration much more transparent to the project and
+allows the configuration to be stored in the repo.
+
+Full documentation on how to use this feature is available in the global-jjb
+documentation here:
+
+http://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-ci-jobs.html#lf-global-jjb-jenkins-cfg-merge
+
+An example of the OpenDaylight project's configuration for this plugin can
+be seen here https://git.opendaylight.org/gerrit/68907
+
+
+Notable changes since v0.16.0
+-----------------------------
+
+2ea5908 Thanh Ha        Add triggers to jenkins-cfg job
+The jenkins-cfg job now has actual triggers both daily a comment triggers so
+that job actually runs regularly.
+
+c26afec Thanh Ha        Add script to manage Jenkins cloud cfg
+It is now possible to manage the Jenkins OpenStack Cloud plugin configuration
+via placing files in the ci-management repo. Refer to the global-jjb
+documentation for details.
+
+http://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-ci-jobs.html#lf-global-jjb-jenkins-cfg-merge
+
+59b3a3c Jessica Wagantall       Add CLM support for Python
+A new python-clm job is available which is capable of publishing CLM reports
+for Python projects.
+
+
+Full Change Log
+---------------
+
+de2a342 Thanh Ha        Document pyenv usage in the tox job
+e7cead5 Thanh Ha        Pin JJB to 2.0.2 for tests
+59b3a3c Jessica Wagantall       Add CLM support for Python
+ef1c587 Thanh Ha        Add explicit links for Packer jobs
+c26afec Thanh Ha        Add script to manage Jenkins cloud cfg
+338c1a2 Lott, Christopher (cl778h)      Make rtd jobs verbose
+0116521 Thanh Ha        Add a description of global-jjb
+022a0b9 Thanh Ha        GIT_URL variable corruption in script
+2ea5908 Thanh Ha        Add triggers to jenkins-cfg job
+7c591a5 Thanh Ha        Add local-{templates}.yaml path to packer pattern
+a0ea4aa Thanh Ha        Git submodule update after fetching patch
+f372e4b Thanh Ha        Add a note about requiring jjbini configuration
