@@ -382,11 +382,17 @@
     publishers:
       - postbuildscript:
           builders:
-            - lf-infra-sysstat
-            - lf-infra-ship-logs
-          script-only-if-succeeded: false
-          script-only-if-failed: false
-          mark-unstable-if-failed: false
+            - role: BOTH
+              build-on:
+                - ABORTED
+                - FAILURE
+                - NOT_BUILT
+                - SUCCESS
+                - UNSTABLE
+              build-steps:
+                - lf-infra-sysstat
+                - lf-infra-ship-logs
+          mark-unstable-if-failed: true
       - workspace-cleanup:
           exclude:
             # Do not clean up *.jenkins-trigger files for jobs that use a
