@@ -15,6 +15,7 @@ echo "---> packer-install.sh"
 # $PACKER_VERSION        : Define a packer version passed as job paramter
 
 PACKER_VERSION="${PACKER_VERSION:-1.1.3}"
+export PATH="${WORKSPACE}/bin:$PATH"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
