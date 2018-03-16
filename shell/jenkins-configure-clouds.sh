@@ -123,6 +123,7 @@ get_minion_options() {
     flavors["v2-highcpu-32"]="21dfb8a3-c472-4a2c-a8e1-4da8de415ff8"
 
     image_name=$(get_cfg "$cfg_file" IMAGE_NAME "")
+    volume_size=$(get_cfg "$cfg_file" VOLUME_SIZE "")
     hardware_id=$(get_cfg "$cfg_file" HARDWARE_ID "")
     network_id=$(get_cfg "$cfg_file" NETWORK_ID "")
     user_data_id=$(get_cfg "$cfg_file" USER_DATA_ID "jenkins-init-script")
@@ -143,7 +144,11 @@ get_minion_options() {
     fs_root=$(get_cfg "$cfg_file" FS_ROOT "/w")
     retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
 
-    echo "    new BootSource.Image(\"$image_name\"),"
+    if [ ! -z "$volume_size" ]; then
+        echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
+    else
+        echo "    new BootSource.Image(\"$image_name\"),"
+    fi
     echo "    \"${flavors[${hardware_id}]}\","
     echo "    \"$network_id\","
     echo "    \"$user_data_id\","
