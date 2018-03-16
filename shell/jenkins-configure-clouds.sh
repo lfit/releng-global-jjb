@@ -18,6 +18,12 @@
 #                     configuration to. (default: jenkins)
 echo "---> jenkins-configure-clouds.sh"
 
+# Allows for local testing. Pass in the ci-management directory path by calling
+# bash ./jjb/global-jjb/shell/jenkins-configure-clouds.sh /path/to/dir
+# Also pass in `export jenkins_silos=name` by default name is "jenkins" but
+# should match the config section for the system in your jenkins_jobs.ini file.
+WORKSPACE=${1:-$WORKSPACE}
+
 if [ ! -d "$WORKSPACE/jenkins-config/clouds" ]; then
     echo "WARN: jenkins-config/clouds does not exist. Skipping cloud management..."
     exit 0
