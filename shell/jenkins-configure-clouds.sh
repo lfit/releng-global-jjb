@@ -13,9 +13,22 @@
 # Configuration is read from $WORKSPACE/jenkins-config/clouds/openstack/$cloud/cloud.cfg
 #
 # Requirements: lftools must be installed to /tmp/v/lftools
+#
 # Parameters:
+#
+#     WORKSPACE:  The path to the local ci-management repository.
 #     jenkins_silos:  Space separated list of Jenkins silos to push
-#                     configuration to. (default: jenkins)
+#                     configuration to. This must match a configuration section
+#                     in the config file located at
+#                     ~/.config/jenkins_jobs/jenkins_jobs.ini config file.
+#                     (default: jenkins)
+#
+# Local testing can be performed by exporting the parameters "WORKSPACE" and
+# "jenkins_silos" as environment variables. For example:
+#
+#    export WORKSPACE=/tmp/ci-management
+#    export jenkins_silos=sandbox
+#    bash ./jjb/global-jjb/shell/jenkins-configure-clouds.sh
 echo "---> jenkins-configure-clouds.sh"
 
 if [ ! -d "$WORKSPACE/jenkins-config/clouds" ]; then
