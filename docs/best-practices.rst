@@ -337,11 +337,17 @@ variable. JJB will fill in whatever is in the defaults configuration.
 
 Variable expansion order of precedence seems to be:
 
-1. project section definition
-2. job-template variable definition
-3. defaults.yaml variable definition
+1. job-group section definition
+2. project section definition
+3. job-template variable definition
+4. defaults.yaml variable definition
 
 .. note:: Defaults set variables in job-templates and are NOT used in Macros.
+
+global-jjb should not provide job-group definitions and leave it up to users of
+global-jjb to create their own as a job-group as a variable defined in a job
+group the highest precendence. Global JJB should strive to be purely a
+job-template and macro library for downstream consumers.
 
 Final thoughts
 --------------
