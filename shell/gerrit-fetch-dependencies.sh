@@ -30,7 +30,7 @@ set +u  # Allow unbound variables for virtualenv
 virtualenv --quiet "/tmp/v/git-review"
 # shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
 source "/tmp/v/git-review/bin/activate"
-pip install --quiet --upgrade pip
+pip install --quiet --upgrade pip setuptools
 pip install --quiet --upgrade git-review
 set -u
 # End git-review workaround

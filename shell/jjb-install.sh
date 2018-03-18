@@ -17,7 +17,7 @@ set -e -o pipefail
 virtualenv "/tmp/v/jjb"
 # shellcheck source=/tmp/v/jjb/bin/activate disable=SC1091
 source "/tmp/v/jjb/bin/activate"
-pip install --quiet --upgrade pip
+pip install --quiet --upgrade pip setuptools
 pip install --quiet --upgrade pipdeptree
 pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
 

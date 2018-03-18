@@ -17,7 +17,7 @@ set -e -o pipefail
 virtualenv --quiet "/tmp/v/python"
 # shellcheck source=/tmp/v/node/bin/activate disable=SC1091
 source "/tmp/v/python/bin/activate"
-pip install --quiet --upgrade pip
+pip install --quiet --upgrade pip setuptools
 pip install --quiet --upgrade pipdeptree
 pip install --quiet --upgrade nodeenv
 
