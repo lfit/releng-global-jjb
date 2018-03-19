@@ -16,6 +16,14 @@ set -xe -o pipefail
 
 echo "---> Fetching project"
 if [ "$GERRIT_PROJECT" != "$PROJECT" ]; then
+    # Only test projects that are a submodule of docs
+    if ! git submodule | grep "$GERRIT_PROJECT"; then
+        echo "WARN: Project is not a submodule of docs. This likely means " \
+            "the project is not participating in the monolithic docs build " \
+            "and should have their own verify job. Quitting job run..."
+        exit 0
+    fi
+
     cd "docs/submodules/$GERRIT_PROJECT"
 fi
 
