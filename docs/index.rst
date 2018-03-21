@@ -12,6 +12,14 @@ managed Jenkins instance, there are other jobs defined for which may be helpful
 to projects whom use the same build technology. The intention is to save time
 for projects from having to define their own job templates.
 
+Release Notes
+-------------
+
+Global JJB provides regular releases. The release notes for all releases are
+available in the relnotes directory in Git.
+
+https://github.com/lfit/releng-global-jjb/tree/master/relnotes
+
 Guides
 ------
 
