@@ -147,7 +147,7 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 15
-    doc-dir: docs/_build/html
+    doc-dir: "TOX_DIR"/docs/_build/html
     git-url: '$GIT_URL/$PROJECT'
     project-pattern: '**'
     stream: master

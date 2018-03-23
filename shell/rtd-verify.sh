@@ -36,4 +36,4 @@ tox -edocs
 
 echo "---> Archiving generated docs"
 mkdir -p "$WORKSPACE/archives"
-mv "$DOC_DIR" archives/
+mv "$TOX_DIR"/"$DOC_DIR" archives/
