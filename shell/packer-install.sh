@@ -13,16 +13,13 @@ echo "---> packer-install.sh"
 # if its not available
 
 # $PACKER_VERSION        : Define a packer version passed as job paramter
-
 PACKER_VERSION="${PACKER_VERSION:-1.1.3}"
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-if hash packer.io 2>/dev/null; then
-    echo "packer.io command is available."
-else
-    echo "packer.io command not is available. Installing packer ..."
+packer_install() {
+    echo "Installing packer ..."
     # Installs Hashicorp's Packer binary, required for verify & merge packer jobs
     pushd "${WORKSPACE}"
     wget -nv "https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip"
@@ -31,4 +28,20 @@ else
     # rename packer to avoid conflict with binary in cracklib
     mv "${WORKSPACE}/bin/packer" "${WORKSPACE}/bin/packer.io"
     popd
+}
+
+# Functions to compare semantic versions x.y.z
+version_gt() { test "$(echo "$@" | tr " " "\n" | sort -V | head -n 1)" != "$1"; }
+version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | head -n 1)" == "$1"; }
+version_lt() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" != "$1"; }
+version_ge() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"; }
+
+if hash packer.io 2>/dev/null; then
+    CURRENT_VERSION="$(packer.io --version)"
+    if version_lt $CURRENT_VERSION $PACKER_VERSION; then
+       echo "$CURRENT_VERSION is less than $PACKER_VERSION"
+       packer_install()
+    fi
+else
+    packer_install()
 fi
