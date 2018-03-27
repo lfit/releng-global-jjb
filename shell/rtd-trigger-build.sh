@@ -23,7 +23,7 @@ fi
 CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
     -t -m "/x:settings/x:servers/x:server[x:id='${SERVER_ID}']" \
     -v x:username -o ":" -v x:password \
-    "$SETTINGS_FILE")
+    "$GLOBAL_SETTINGS_FILE")
 
 RTD_BUILD_TOKEN=$(echo "$CREDENTIAL" | cut -f2 -d:)
 
