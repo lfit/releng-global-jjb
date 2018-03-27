@@ -25,7 +25,6 @@
     ######################
     rtd-project: ''
     rtd-build-url: ''
-    global-settings-file: '$WORKSPACE/settings.xml'
     rtd-server-id: ''
 
 
@@ -58,6 +57,10 @@
       - lf-infra-wrappers:
           build-timeout: '{build-timeout}'
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
+      - config-file-provider:
+          files:
+            - file-id: '{settings-file}'
+              variable: 'SETTINGS_FILE'
 
     publishers:
       - lf-infra-publish
@@ -94,7 +97,6 @@
       - lf-rtd-trigger-build:
           rtd-project: '{rtd-project}'
           rtd-build-url: '{rtd-build-url}'
-          global-settings-file: '{global-settings-file}'
           rtd-server-id: '{rtd-server-id}'
 
 - job-template:

@@ -15,17 +15,18 @@ echo "---> rtd-trigger-build.sh"
 set -xe -o pipefail
 
 if [ "$GERRIT_BRANCH" == "master" ]; then
-    RTD_BUILD_VERSION=latest
+    RTD_BUILD_VERSION=master
 else
     RTD_BUILD_VERSION="${GERRIT_BRANCH/\//-}"
 fi
 
+set +x
 CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
     -t -m "/x:settings/x:servers/x:server[x:id='${SERVER_ID}']" \
     -v x:username -o ":" -v x:password \
     "$SETTINGS_FILE")
 
-RTD_BUILD_TOKEN=$(echo "$CREDENTIAL" | cut -f2 -d:)
+RTD_BUILD_TOKEN=$(echo "$CREDENTIAL" | cut -f2 -d: | xargs)
 
 curl -X POST -d "branches=$RTD_BUILD_VERSION" -d "token=$RTD_BUILD_TOKEN" "$RTD_BUILD_URL"
 
