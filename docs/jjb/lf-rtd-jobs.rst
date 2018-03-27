@@ -44,7 +44,24 @@ Job Templates
 ReadTheDocs Merge
 -----------------
 
-Merge job which triggers a POST of the docs project to readthedocs
+Merge job which triggers a POST of the docs project to readthedocs.
+
+In order to use this job the ``Generic API incoming webhook`` must first be
+configured in ReadTheDocs. To do that follow these steps:
+
+#. Browse to https://readthedocs.org/dashboard/PROJECT/integrations/
+#. Click on ``Generic API incoming webhook``
+
+   .. note::
+
+      If not available click on ``Add integration`` and add the
+      ``Generic API incoming webhook``.
+
+#. Copy the custom webhook URL, this is your ``rtd-build-url``
+
+   For example: https://readthedocs.org/api/v2/webhook/opendaylight/32321/
+
+#. Copy the token, this is your ``rtd-token``
 
 :Template Names:
     - {project-name}-rtd-merge-{stream}
@@ -56,7 +73,12 @@ Merge job which triggers a POST of the docs project to readthedocs
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
-    :rtd-project: This is the name of the project on ReadTheDocs.org.
+    :rtd-build-url: This is the generic webhook url from readthedocs.org. Refer
+        to the above instructions to generate one.
+        (Check Admin > Integrations > Generic API incoming webhook)
+    :rtd-token: The unique token for the project Generic webhook. Refer
+        to the above instructions to generate one.
+        (Check Admin > Integrations > Generic API incoming webhook)
 
 :Optional parameters:
 
