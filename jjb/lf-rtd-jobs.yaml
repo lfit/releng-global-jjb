@@ -88,6 +88,9 @@
     builders:
       - lf-rtd-trigger-build:
           rtd-project: '{rtd-project}'
+          rtd-build-url: '{rtd-build-url}'
+          global-settings-file: '{global-settings-file}'
+          rtd-server-id: '{rtd-server-id}'
 
 - job-template:
     name: '{project-name}-rtd-merge-{stream}'
