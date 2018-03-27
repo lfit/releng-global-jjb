@@ -5,8 +5,9 @@
       - gerrit-rtd-merge
       - gerrit-rtd-verify
 
-    rtd-project: gerrit-rtd
     project-name: gerrit-rtd
+    rtd-build-url: fake-rtd-build-url
+    rtd-token: fake-rtd-token
 
 - project:
     name: github-rtd-jobs
@@ -14,5 +15,6 @@
       - github-rtd-merge
       - github-rtd-verify
 
-    rtd-project: github-rtd
     project-name: github-rtd
+    rtd-build-url: fake-rtd-build-url
+    rtd-token: fake-rtd-token
