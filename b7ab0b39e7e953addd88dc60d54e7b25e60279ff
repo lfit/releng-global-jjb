@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7783d870_34629ea5",
+        "filename": "shell/rtd-trigger-build.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-03-27T22:39:00Z",
+      "side": 1,
+      "message": "Why is this pulling from global_settings? RTD tokens are per doc. This would break ODL and the workflow we\u0027re pushing.",
+      "revId": "b7ab0b39e7e953addd88dc60d54e7b25e60279ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
