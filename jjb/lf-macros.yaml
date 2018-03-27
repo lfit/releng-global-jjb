@@ -185,7 +185,9 @@
     name: lf-rtd-trigger-build
     builders:
       - inject:
-          properties-content: RTD_PROJECT={rtd-project}
+          properties-content: |
+            RTD_BUILD_URL={rtd-build-url}
+            RTD_TOKEN={rtd-token}
       - shell: !include-raw-escape: ../shell/rtd-trigger-build.sh
 
 - builder:
