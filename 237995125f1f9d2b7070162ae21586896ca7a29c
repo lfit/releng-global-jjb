@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8d6df0b7_81414282",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-03-28T17:30:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66ef61ed_20d2c2f0",
+      "revId": "237995125f1f9d2b7070162ae21586896ca7a29c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29ce6d6d_f71fc27d",
         "filename": "shell/packer-install.sh",
         "patchSetId": 2
@@ -30,6 +48,30 @@
       "writtenOn": "2018-03-28T14:35:20Z",
       "side": 1,
       "message": "We don\u0027t need to check every possible combination IMO if all we\u0027re interested in is if the current version is a minimal version. I think the conditional checking can be simplified as follows:\n\n\n function install_packer() {\n   ...\n }\n \n if hash packer.io ...\n   if current_version \u003c expected_version; then\n     install_packer()\n   fi\n else\n   install_packer()\n fi",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 6
+      },
+      "revId": "237995125f1f9d2b7070162ae21586896ca7a29c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ba6d001_aa5bc76b",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-03-28T17:30:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29ce6d6d_f71fc27d",
       "range": {
         "startLine": 30,
         "startChar": 0,
