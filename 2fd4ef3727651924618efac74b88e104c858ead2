@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efeeeb5e_195a941a",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-04-02T18:45:32Z",
+      "side": 0,
+      "message": "Why is the export being removed? Doesn\u0027t this line exist to keep double installs from happening?",
+      "revId": "2fd4ef3727651924618efac74b88e104c858ead2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
