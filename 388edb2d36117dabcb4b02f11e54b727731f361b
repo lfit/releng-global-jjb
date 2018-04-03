@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7288688_58998c66",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2018-04-03T13:54:24Z",
+      "side": 1,
+      "message": "Perhaps it would be wise to pin all the tools here, not just tox?  Anyone can break us anytime.",
+      "revId": "388edb2d36117dabcb4b02f11e54b727731f361b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
