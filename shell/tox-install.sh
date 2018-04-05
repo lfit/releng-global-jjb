@@ -17,7 +17,7 @@ set -e -o pipefail
 virtualenv --quiet -p "$PYTHON_VERSION" "/tmp/v/tox"
 # shellcheck source=/tmp/v/tox/bin/activate disable=SC1091
 source "/tmp/v/tox/bin/activate"
-pip install --quiet --upgrade pip setuptools
+pip install --quiet --upgrade "pip==9.0.3" setuptools
 pip install --quiet --upgrade pipdeptree
 pip install --quiet --upgrade argparse detox "tox<3.0.0" tox-pyenv
 
