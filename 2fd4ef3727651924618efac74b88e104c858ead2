@@ -16,6 +16,24 @@
       "revId": "2fd4ef3727651924618efac74b88e104c858ead2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8529169f_15dddc69",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-05T03:12:55Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "efeeeb5e_195a941a",
+      "revId": "2fd4ef3727651924618efac74b88e104c858ead2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "db0412c7_73b50aa7",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-05T03:12:55Z",
+      "side": 1,
+      "message": "Correct, at a later point in time we may want to install a version between 2 releases of packer, these functions would be helpful since I already spent time testing the code.",
+      "parentUuid": "082c0b77_194d3796",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 82
+      },
+      "revId": "841424e8a15b0293b7e14d3ea73acc69fd61b569",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "02169b99_05c6e1d3",
         "filename": "shell/packer-install.sh",
         "patchSetId": 4
@@ -36,6 +60,24 @@
       "writtenOn": "2018-04-02T18:45:32Z",
       "side": 1,
       "message": "Should state that the installed version of packer is greater than or equal to the required minimum version.",
+      "revId": "841424e8a15b0293b7e14d3ea73acc69fd61b569",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b589f867_5d21832d",
+        "filename": "shell/packer-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-05T03:12:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02169b99_05c6e1d3",
       "revId": "841424e8a15b0293b7e14d3ea73acc69fd61b569",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
