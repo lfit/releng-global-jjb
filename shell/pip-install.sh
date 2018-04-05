@@ -24,7 +24,7 @@ set -e -o pipefail
 virtualenv "/tmp/v/${PIP_PACKAGES%% *}"
 # shellcheck source=/tmp/v/venv/bin/activate disable=SC1091
 source "/tmp/v/${PIP_PACKAGES%% *}/bin/activate"
-pip install --quiet --upgrade pip setuptools
+pip install --quiet --upgrade "pip==9.0.3" setuptools
 pip install --quiet --upgrade pipdeptree
 
 # PIP_PACKAGES needs to be passed through as a space separated list of packages
