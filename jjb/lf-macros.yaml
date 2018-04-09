@@ -87,6 +87,18 @@
           - ../shell/packer-clear-credentials.sh
 
 - builder:
+    name: lf-infra-push-gerrit-patch
+    builders:
+      - inject:
+          properties-content: |
+              'PROJECT={project}'
+              'GERRIT_HOST={gerrit-host}'
+              'GERRIT_COMMIT_MESSAGE={gerrit-commit-message}'
+              'GERRIT_TOPIC={gerrit-topic}'
+              'REVIEWERS_EMAIL={reviewers-email}'
+      - shell: !include-raw: ../shell/gerrit-push-patch.sh
+
+- builder:
     name: lf-infra-sysstat
     builders:
       - shell: !include-raw:
