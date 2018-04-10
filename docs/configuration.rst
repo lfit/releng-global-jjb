@@ -28,8 +28,8 @@ Create a "Custom file" with contents:
 
    registry = https://nexus.opendaylight.org/content/repositories/npmjs/
 
-pip.conf
---------
+pipconf
+-------
 
 This file contains default configuration for the python-pip tool and lives
 in $HOME/.config/pip/pip.conf. Documentation for pip.conf is available via the
