@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "29282f6e_64a70b53",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-10T23:53:06Z",
+      "side": 1,
+      "message": "makes sense, let me fix this.",
+      "parentUuid": "b1efb589_4365a053",
+      "range": {
+        "startLine": 59,
+        "startChar": 26,
+        "endLine": 59,
+        "endChar": 39
+      },
+      "revId": "d50e0032ccef8f1761bc6f6b8f5bc599540ed5d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9032f5c4_9315fcc8",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 3
