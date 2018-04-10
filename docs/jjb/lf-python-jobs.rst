@@ -41,6 +41,67 @@ Runs a shell script that installs tox in a Python virtualenv.
 Job Templates
 =============
 
+Python Sonar with Tox
+---------------------
+
+Sonar scans for Python based repos. This job will perform a tox call which
+runs the coverage command to gather tests results. These test results get
+published back into Sonar after running the Sonar goals.
+
+To get the Sonar coverage results, tox.ini needs to exist and configured
+with coverage commands to run.
+
+The coverage commands define the code that gets executed by the test suites.
+It does not guarantee that the code tests executed properly, but it will help
+pointing out the code that is not tested at all.
+
+For example:
+
+.. code-block:: bash
+
+    [testenv:py27]
+    commands =
+            coverage run --module pytest --junitxml xunit-results.xml
+            coverage xml --omit=".tox/py27/*","tests/*"
+            coverage report --omit=".tox/py27/*","tests/*"
+
+For more details refer to coverage and sonar documentation:
+
+https://coverage.readthedocs.io/
+https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
+
+:Template Names:
+
+    - {project-name}-tox-sonar
+    - gerrit-tox-sonar
+    - github-tox-sonar
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        get configured in defaults.yaml)
+    :mvn-settings: The name of settings file containing credentials for the project.
+
+:Optional parameters:
+
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :cron: Cron schedule when to trigger the job. This parameter also
+        supports multiline input via YAML pipe | character in cases where
+        one may want to provide more than 1 cron timer.  (default: H 11 * * *
+        to run once a day)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :mvn-global-settings: The name of the Maven global settings to use for
+        Maven configuration. (default: global-settings)
+    :mvn-version: Version of maven to use. (default: mvn33)
+    :stream: Keyword used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :gerrit_sonar_triggers: Override Gerrit Triggers.
+
 Tox Verify
 ----------
 
