@@ -165,12 +165,12 @@
           #!/bin/bash
           set +e  # DO NOT cause build failure if any of the rm calls fail.
 
-          rm "$GLOBAL_SETTINGS_FILE" "$SETTINGS_FILE"
+          rm -f "$GLOBAL_SETTINGS_FILE" "$SETTINGS_FILE"
 
           # In some cases we use the lf-provide-maven-settings macro to produce
           # a "$HOME/.netrc" file containing credentials. Remove that file here
           # too if it exists.
-          rm "$HOME/.netrc"
+          rm -f "$HOME/.netrc"
 
           # DO NOT fail build if any of the above lines fail.
           exit 0
