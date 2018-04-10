@@ -196,6 +196,159 @@
           github_pr_admin_list:
             - ''
 
+########################
+# Python Sonar with Tox #
+########################
+
+- lf_tox_sonar: &lf_tox_sonar
+    name: lf-tox_sonar
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master  # Sonar should always be run on master branch
+    build-days-to-keep: 7
+    build-timeout: 60
+    cron: 'H 11 * * *'  # run daily
+    git-url: '$GIT_URL/$PROJECT'
+    java-version: openjdk8
+    python-version: python2
+    mvn-global-settings: global-settings
+    mvn-settings: '{mvn-settings}'
+    mvn-version: mvn33
+    sonar-mvn-goal: 'sonar:sonar'
+    stream: master
+    submodule-recursive: true
+
+    gerrit_sonar_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: run-sonar$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: '{archive-artifacts}'
+          description: Artifacts to archive to the logs server.
+      - string:
+          name: SONAR_MAVEN_GOAL
+          default: '{sonar-mvn-goal}'
+          description: |
+              Maven goals to pass to the Sonar call. Typically sonar:sonar
+              however to use a specific version of the sonar-maven-plugin we
+              can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
+
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_sonar_triggers}'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/master'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
+    builders:
+      - shell: !include-raw-escape:
+          # Workaround issue where the tox run later breaks the lftools virtualenv.
+          # Without running the install first the run in the publisher will fail
+          # due to missing lftools because it gets installed into a tox venv.
+          - ../shell/lftools-install.sh
+      - lf-infra-tox-install:
+          python-version: '{python-version}'
+      - shell: !include-raw-escape: ../shell/tox-run.sh
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - lf-infra-tox-sonar:
+          java-version: '{java-version}'
+          mvn-settings: '{mvn-settings}'
+          mvn-version: '{mvn-version}'
+
+    publishers:
+      - lf-infra-publish
+
+- builder:
+    name: lf-infra-tox-sonar
+    # Run a Sonar build with Maven
+    builders:
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - inject:
+          # Switch this to the sonar wrapper when JJB 2.0 is available
+          properties-content: SONAR_HOST_URL=$SONAR_URL
+      - shell: !include-raw-escape:
+          - ../shell/common-variables.sh
+          - ../shell/maven-sonar.sh
+      - lf-provide-maven-settings-cleanup
+
+- job-template:
+    name: '{project-name}-tox-sonar'
+    id: gerrit-tox-sonar
+    <<: *lf_python_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_tox_sonar
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: $GERRIT_REFSPEC
+          branch: $GERRIT_BRANCH
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+
+- job-template:
+    name: '{project-name}-tox-sonar'
+    id: github-tox-sonar
+    <<: *lf_python_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_tox_sonar
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - lf-infra-github-pr-trigger:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'Maven Verify'
+          permit-all: true
+          github-hooks: true
+          github-org: ''
+          github_pr_whitelist:
+            - ''
+          github_pr_admin_list:
+            - ''
+
 ##############
 # Tox Verify #
 ##############
