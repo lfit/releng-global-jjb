@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "dad8d955_f5c92915",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-10T23:53:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9032f5c4_9315fcc8",
+      "range": {
+        "startLine": 73,
+        "startChar": 29,
+        "endLine": 73,
+        "endChar": 42
+      },
+      "revId": "d50e0032ccef8f1761bc6f6b8f5bc599540ed5d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5b49897b_e3c58a57",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 3
@@ -83,6 +107,30 @@
       "writtenOn": "2018-04-10T15:37:54Z",
       "side": 1,
       "message": "See above",
+      "range": {
+        "startLine": 76,
+        "startChar": 36,
+        "endLine": 76,
+        "endChar": 49
+      },
+      "revId": "d50e0032ccef8f1761bc6f6b8f5bc599540ed5d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3618cfeb_00934337",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-10T23:53:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b49897b_e3c58a57",
       "range": {
         "startLine": 76,
         "startChar": 36,
