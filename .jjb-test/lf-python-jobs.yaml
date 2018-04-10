@@ -3,6 +3,7 @@
     name: gerrit-python-jobs
     jobs:
       - "{project-name}-python-jobs"
+      - gerrit-python-tox-sonar
 
     project-name: gerrit-python
 
@@ -10,5 +11,6 @@
     name: github-python-jobs
     jobs:
       - "{project-name}-github-python-jobs"
+      - github-python-tox-sonar
 
     project-name: github-python
