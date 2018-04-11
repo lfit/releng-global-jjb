@@ -366,6 +366,30 @@
     },
     {
       "key": {
+        "uuid": "32284f70_a108ca69",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-11T14:04:59Z",
+      "side": 1,
+      "message": "You need to think of them as separate components. If you variablize this then \"lf-infra-maven-tox-sonar\" now requires a variable mvn-global-settings. Which means in the builder steps definition you need to redeclare the variable and pass it in like:\n\n lf-infra-maven-tox-sonar:\n   mvn-global-settings: \u0027{mvn-global-settings}\u0027",
+      "parentUuid": "ba953cc1_240082fc",
+      "range": {
+        "startLine": 306,
+        "startChar": 32,
+        "endLine": 306,
+        "endChar": 47
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "24da42a2_de22e2c0",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 6
