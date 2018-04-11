@@ -434,6 +434,30 @@
       "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f435b434_d10858ef",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T18:07:39Z",
+      "side": 1,
+      "message": "Actually, I just tested this and Jenkins fails. Either we need to point to the right settings file or create a \"dummy\" settings file for this job. Do you agree with the \"dummy\" settings option?",
+      "parentUuid": "24da42a2_de22e2c0",
+      "range": {
+        "startLine": 307,
+        "startChar": 26,
+        "endLine": 307,
+        "endChar": 40
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
