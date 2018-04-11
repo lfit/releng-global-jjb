@@ -13,7 +13,7 @@ Jobs for Maven projects using Gerrit.
 :Includes:
 
     - gerrit-maven-clm
-    - gerrit-maven-release
+    - gerrit-maven-stage
     - gerrit-maven-verify
     - gerrit-maven-verify-dependencies
 
@@ -25,7 +25,7 @@ Jobs for Maven projects using GitHub.
 :Includes:
 
     - github-maven-clm
-    - github-maven-release
+    - github-maven-stage
     - github-maven-verify
 
 {project-name}-maven-javadoc-jobs
@@ -258,8 +258,8 @@ This job uses the following strategy to deploy jobs to Nexus:
     :gerrit_trigger_file_paths: Override file paths which can be used to
         filter which file modifications will trigger a build.
 
-Maven Release
--------------
+Maven Stage
+-----------
 
 Produces a release candidate by creating a staging repo in Nexus.
 
@@ -268,9 +268,9 @@ directory can then be reused later to deploy to Nexus.
 
 :Template Names:
 
-    - {project-name}-maven-release-{stream}
-    - gerrit-maven-release
-    - github-maven-release
+    - {project-name}-maven-stage-{stream}
+    - gerrit-maven-stage
+    - github-maven-stage
 
 :Required parameters:
 

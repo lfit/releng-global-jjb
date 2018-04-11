@@ -11,7 +11,7 @@
     jobs:
       - gerrit-maven-clm
       - gerrit-maven-merge
-      - gerrit-maven-release
+      - gerrit-maven-stage
       - gerrit-maven-verify
       - gerrit-maven-verify-dependencies
 
@@ -25,7 +25,7 @@
     jobs:
       - github-maven-clm
       - github-maven-merge
-      - github-maven-release
+      - github-maven-stage
       - github-maven-verify
 
 - job-group:
@@ -622,12 +622,12 @@
           github_pr_admin_list:
             - ''
 
-#################
-# Maven Release #
-#################
+###############
+# Maven Stage #
+###############
 
-- lf_maven_release: &lf_maven_release
-    name: lf-maven-release
+- lf_maven_stage: &lf_maven_stage
+    name: lf-maven-stage
 
     ######################
     # Default parameters #
@@ -649,7 +649,7 @@
 
     gerrit_release_triggers:
       - comment-added-contains-event:
-          comment-contains-value: build release$
+          comment-contains-value: stage-release$
 
     #####################
     # Job Configuration #
@@ -675,8 +675,8 @@
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-release-{stream}'
-    id: gerrit-maven-release
+    name: '{project-name}-maven-stage-{stream}'
+    id: gerrit-maven-stage
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_release
@@ -703,11 +703,11 @@
                   branch-pattern: '**/{branch}'
 
 - job-template:
-    name: '{project-name}-maven-release-{stream}'
-    id: github-maven-release
+    name: '{project-name}-maven-stage-{stream}'
+    id: github-maven-stage
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_maven_release
+    <<: *lf_maven_stage
 
     properties:
       - github:

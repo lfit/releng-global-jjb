@@ -6,8 +6,8 @@
       - gerrit-maven-javadoc-publish
       - gerrit-maven-javadoc-verify
       - gerrit-maven-merge
-      - gerrit-maven-release
       - gerrit-maven-sonar
+      - gerrit-maven-stage
       - gerrit-maven-verify
       - gerrit-maven-verify-dependencies
 
@@ -25,8 +25,8 @@
       - github-maven-javadoc-publish
       - github-maven-javadoc-verify
       - github-maven-merge
-      - github-maven-release
       - github-maven-sonar
+      - github-maven-stage
       - github-maven-verify
 
     project-name: github-maven
