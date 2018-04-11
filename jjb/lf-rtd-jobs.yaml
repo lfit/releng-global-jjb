@@ -87,7 +87,8 @@
 
     builders:
       - lf-rtd-trigger-build:
-          rtd-project: '{rtd-project}'
+          rtd-build-url: '{rtd-build-url}'
+          rtd-token: '{rtd-token}'
 
 - job-template:
     name: '{project-name}-rtd-merge-{stream}'
