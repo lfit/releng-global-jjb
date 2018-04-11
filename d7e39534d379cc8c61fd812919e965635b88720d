@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "eda8243b_1f0e9305",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "Working on it...",
+      "parentUuid": "68a82174_421cc1ce",
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "141931fc_ef9328a3",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2018-04-11T01:51:37Z",
       "side": 1,
       "message": "Don\u0027t even mention Maven. This is a python-sonar job.",
+      "range": {
+        "startLine": 200,
+        "startChar": 2,
+        "endLine": 200,
+        "endChar": 23
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "45fd83ca_6d327aa9",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "141931fc_ef9328a3",
       "range": {
         "startLine": 200,
         "startChar": 2,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "1d473147_be708c85",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "03517480_46e1220f",
+      "range": {
+        "startLine": 218,
+        "startChar": 4,
+        "endLine": 219,
+        "endChar": 18
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "392e8aa6_136319b0",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 6
@@ -76,6 +142,30 @@
       "writtenOn": "2018-04-11T01:51:37Z",
       "side": 1,
       "message": "Unnecessary variable get rid of it.",
+      "range": {
+        "startLine": 222,
+        "startChar": 4,
+        "endLine": 222,
+        "endChar": 48
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4abedeb0_c7a7e24b",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "392e8aa6_136319b0",
       "range": {
         "startLine": 222,
         "startChar": 4,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "a031fbcb_52bed959",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "Not really, will remove..",
+      "parentUuid": "cf7804b7_41203613",
+      "range": {
+        "startLine": 240,
+        "startChar": 0,
+        "endLine": 245,
+        "endChar": 32
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "88780707_87a69c2d",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 6
@@ -122,6 +236,30 @@
       "writtenOn": "2018-04-11T01:51:37Z",
       "side": 1,
       "message": "Jacoco reports are a Java thing. I don\u0027t think we need it in Python projects.",
+      "range": {
+        "startLine": 290,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 24
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c4f896b_8e302a91",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88780707_87a69c2d",
       "range": {
         "startLine": 290,
         "startChar": 0,
@@ -157,6 +295,30 @@
     },
     {
       "key": {
+        "uuid": "655833f7_397dbe0c",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b4b5358_933b29b7",
+      "range": {
+        "startLine": 291,
+        "startChar": 6,
+        "endLine": 291,
+        "endChar": 16
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "476d86e7_70593a93",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 6
@@ -180,6 +342,30 @@
     },
     {
       "key": {
+        "uuid": "ba953cc1_240082fc",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "This one fails on JJB:\nmvn-global-settings parameter missing to format {mvn-global-settings}\n\nThe issue is because this variable is under the separate builder and not within the builder steps in line #275 which do have access to that variable. \n\nThe maven sonar job we have in lf-maven-jobs has also the same issue :(",
+      "parentUuid": "476d86e7_70593a93",
+      "range": {
+        "startLine": 306,
+        "startChar": 32,
+        "endLine": 306,
+        "endChar": 47
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "24da42a2_de22e2c0",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 6
@@ -191,6 +377,30 @@
       "writtenOn": "2018-04-11T01:51:37Z",
       "side": 1,
       "message": "I wonder if we can just pass a blank value or whatever the default in Jenkins is. mvn-settings typically only contains credentials for Nexus so I don\u0027t think it\u0027s necessary to even pass this in this job.",
+      "range": {
+        "startLine": 307,
+        "startChar": 26,
+        "endLine": 307,
+        "endChar": 40
+      },
+      "revId": "d7e39534d379cc8c61fd812919e965635b88720d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "60f69040_08d59bcd",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-11T05:00:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24da42a2_de22e2c0",
       "range": {
         "startLine": 307,
         "startChar": 26,
