@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "369d2793_858847c1",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-11T14:04:59Z",
+      "side": 1,
+      "message": "Let\u0027s not bother mentioning python. Just call it lf-tox-sonar",
+      "range": {
+        "startLine": 203,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 29
+      },
+      "revId": "29c3f234a5b9c402ff3985af68cea423df6be91e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6dabaa44_63e1d0f6",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-11T14:04:59Z",
+      "side": 1,
+      "message": "lf-tox-sonar (we don\u0027t state that maven is java so no point mentioning python).",
+      "range": {
+        "startLine": 285,
+        "startChar": 19,
+        "endLine": 285,
+        "endChar": 35
+      },
+      "revId": "29c3f234a5b9c402ff3985af68cea423df6be91e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ab9ee90_d6152657",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-11T14:04:59Z",
+      "side": 1,
+      "message": "Let\u0027s try to keep the id and job-template name similar. \n\ngerrit-tox-sonar",
+      "range": {
+        "startLine": 304,
+        "startChar": 0,
+        "endLine": 305,
+        "endChar": 31
+      },
+      "revId": "29c3f234a5b9c402ff3985af68cea423df6be91e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
