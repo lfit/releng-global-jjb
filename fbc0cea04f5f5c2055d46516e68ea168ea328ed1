@@ -16,6 +16,24 @@
       "revId": "fbc0cea04f5f5c2055d46516e68ea168ea328ed1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83c135b6_7220951b",
+        "filename": "shell/rtd-trigger-build.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-11T02:34:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6be738ad_6d4274aa",
+      "revId": "fbc0cea04f5f5c2055d46516e68ea168ea328ed1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
