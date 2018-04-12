@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e90ec6e_e52672c2",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-04-12T17:05:34Z",
+      "side": 1,
+      "message": "extra blank line",
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "17c0ba57_72d4f0e9",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-04-12T17:05:34Z",
+      "side": 1,
+      "message": "If this is expected to be ran daily it can be \u0027@daily\u0027 or \u0027H H * * *\u0027. Otherwise looking back I\u0027d think there was a specific reason the 11:XX UTC  was chosen.",
+      "range": {
+        "startLine": 213,
+        "startChar": 11,
+        "endLine": 213,
+        "endChar": 21
+      },
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "928443d4_82572a78",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-04-12T17:05:34Z",
+      "side": 1,
+      "message": "should this be prefixed with \u0027TODO:\u0027 ?",
+      "range": {
+        "startLine": 303,
+        "startChar": 12,
+        "endLine": 303,
+        "endChar": 18
+      },
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71480062_9ff39709",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-04-12T17:05:34Z",
+      "side": 1,
+      "message": "Should sonar runs be triggered on \u0027recheck\u0027 to a PR, or even on a PR upload at all?",
+      "range": {
+        "startLine": 347,
+        "startChar": 1,
+        "endLine": 357,
+        "endChar": 16
+      },
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
