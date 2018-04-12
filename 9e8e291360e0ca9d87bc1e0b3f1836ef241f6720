@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79ef5d01_63426dc9",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-12T20:44:03Z",
+      "side": 1,
+      "message": "I would add something like:\n\n For more details refer to coverage and sonar documentation:\n \n https://coverage.readthedocs.io/\n https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import",
+      "revId": "9e8e291360e0ca9d87bc1e0b3f1836ef241f6720",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
