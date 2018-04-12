@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "18707e45_39661837",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-12T01:11:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd681f64_103ecc24",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "cd869f23a890acf53216671284d8e2ff79e3e8df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d795ec97_4945db29",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "e46284c2_f51fb820",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-12T01:11:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d795ec97_4945db29",
+      "range": {
+        "startLine": 19,
+        "startChar": 12,
+        "endLine": 19,
+        "endChar": 13
+      },
+      "revId": "cd869f23a890acf53216671284d8e2ff79e3e8df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c89cb24a_62d83f01",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 6
@@ -59,6 +107,30 @@
       "writtenOn": "2018-04-12T00:42:42Z",
       "side": 1,
       "message": "I use --reviewers locally and I have to pass as a space\nseparated list. is it different here somehow?",
+      "range": {
+        "startLine": 34,
+        "startChar": 49,
+        "endLine": 34,
+        "endChar": 71
+      },
+      "revId": "cd869f23a890acf53216671284d8e2ff79e3e8df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4103aaf4_2ba7ef0d",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-12T01:11:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c89cb24a_62d83f01",
       "range": {
         "startLine": 34,
         "startChar": 49,
