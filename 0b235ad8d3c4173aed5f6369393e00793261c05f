@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b20c88f0_57fe9048",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-12T20:18:37Z",
+      "side": 1,
+      "message": "Done\n\nYes we need to let the users know to configure their tox.ini coverage commands",
+      "parentUuid": "24334897_a679df78",
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2e90ec6e_e52672c2",
         "filename": "docs/jjb/lf-python-jobs.rst",
         "patchSetId": 13
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "6e1664c6_70f86a49",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-12T20:18:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e90ec6e_e52672c2",
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "17c0ba57_72d4f0e9",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 13
@@ -47,6 +83,30 @@
       "writtenOn": "2018-04-12T17:05:34Z",
       "side": 1,
       "message": "If this is expected to be ran daily it can be \u0027@daily\u0027 or \u0027H H * * *\u0027. Otherwise looking back I\u0027d think there was a specific reason the 11:XX UTC  was chosen.",
+      "range": {
+        "startLine": 213,
+        "startChar": 11,
+        "endLine": 213,
+        "endChar": 21
+      },
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "565aa1de_c9ccb361",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-12T20:18:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17c0ba57_72d4f0e9",
       "range": {
         "startLine": 213,
         "startChar": 11,
@@ -106,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "2947efcb_3bf95634",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-12T20:18:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0157e0b_894fefee",
+      "range": {
+        "startLine": 303,
+        "startChar": 12,
+        "endLine": 303,
+        "endChar": 18
+      },
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1fd4468_bb9b769d",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 13
@@ -129,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "a927501c_1fd6db72",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-12T20:18:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1fd4468_bb9b769d",
+      "range": {
+        "startLine": 348,
+        "startChar": 28,
+        "endLine": 348,
+        "endChar": 35
+      },
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29ffd7b4_6cb21192",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 13
@@ -140,6 +248,30 @@
       "writtenOn": "2018-04-12T19:33:20Z",
       "side": 1,
       "message": "This is \"Python Sonar\".",
+      "range": {
+        "startLine": 350,
+        "startChar": 27,
+        "endLine": 350,
+        "endChar": 39
+      },
+      "revId": "0b235ad8d3c4173aed5f6369393e00793261c05f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e1241068_294cf774",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-12T20:18:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "29ffd7b4_6cb21192",
       "range": {
         "startLine": 350,
         "startChar": 27,
