@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db7d2e12_4178d66f",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-12T23:55:59Z",
+      "side": 1,
+      "message": "See comment in the script, the single quotes being passed here are the cause of the leading / trailing quotes. If we don\u0027t pass them here then I think we can simplify the script?",
+      "range": {
+        "startLine": 94,
+        "startChar": 14,
+        "endLine": 99,
+        "endChar": 49
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "38b25084_a08d4b1b",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-12T23:55:59Z",
+      "side": 1,
+      "message": "Instead of starting with \"This script\" since it is assumed it is better to save space and just get straight to the point. Something like:\n\n Push a change to Gerrit if files modified in repo",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 13
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "36401e48_58c464a8",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-12T23:55:59Z",
+      "side": 1,
+      "message": "Latest version is always changing. It\u0027s better to be specific and say what the minimum version that introduced the --reviewers option was so that it\u0027s clear which version you need to install if you\u0027re failing.\n\nLooks like that option was added by this commit:\n\nhttps://github.com/openstack-infra/git-review/commit/d1266ee0a5a14d8c7788337785c097a1201fa5ec\n\nWhich made it into version 1.25.0 as far as I can tell:\n\nhttps://github.com/openstack-infra/git-review/commits/1.25.0",
+      "range": {
+        "startLine": 14,
+        "startChar": 68,
+        "endLine": 15,
+        "endChar": 9
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10d09b5e_b8e02bd2",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-12T23:55:59Z",
+      "side": 1,
+      "message": "No need to mention CentOS or this line at all.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 16
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2de5b9db_78141e00",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-12T23:55:59Z",
+      "side": 1,
+      "message": "The reason there are leading / trailing quotes is because we passed it in inside the macro. Can we simplify this by just not passing it in first place?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 69
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
