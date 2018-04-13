@@ -234,6 +234,30 @@
       "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "836f74ba_63b03494",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-13T01:07:43Z",
+      "side": 1,
+      "message": "Also if don\u0027t quote the gerrit commit message when its multiline, injecting the env variable is incorrectly interpreted.\n\n    builders:\n      - shell: !include-raw-escape: opendaylight-infra-update-image-list.sh\n      - lf-infra-push-gerrit-patch:\n          project: {project}\n          gerrit-user: jenkins-$SILO\n          gerrit-host: git.opendaylight.org\n          gerrit-topic: releng-update-cloud-image-list\n          gerrit-commit-message: |\n              \u0027Update cloud image list docs\n              testing with some extra lines\n              blah blah ... bla\u0027\n          reviewers-email: jluhrsen@redhat.com\n\nex:\n00:29:55 [EnvInject] - Injecting as environment variables the properties content \n00:29:55 blah\u003dblah ... bla\n00:29:55 testing\u003dwith some extra lines\n00:29:55 GERRIT_TOPIC\u003dreleng-update-cloud-image-list\n00:29:55 GERRIT_COMMIT_MESSAGE\u003dUpdate cloud image list docs\n00:29:55 GERRIT_USER\u003djenkins-sandbox\n00:29:55 REVIEWERS_EMAIL\u003djluhrsen@redhat.com\n00:29:55 PROJECT\u003dOrderedDict([(\u0027project\u0027, None)])\n00:29:55 GERRIT_HOST\u003dgit.opendaylight.org\n\nhttps://jenkins.opendaylight.org/sandbox/job/builder-update-image-list/15/console",
+      "parentUuid": "2de5b9db_78141e00",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 69
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
