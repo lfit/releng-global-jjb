@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bd0d12ed_98bfe558",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-13T00:07:35Z",
+      "side": 1,
+      "message": "The projects which consume this builder would be most likely use quotes especially for things like Gerrit commit message.",
+      "parentUuid": "db7d2e12_4178d66f",
+      "range": {
+        "startLine": 94,
+        "startChar": 14,
+        "endLine": 99,
+        "endChar": 49
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "38b25084_a08d4b1b",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2018-04-12T23:55:59Z",
       "side": 1,
       "message": "Instead of starting with \"This script\" since it is assumed it is better to save space and just get straight to the point. Something like:\n\n Push a change to Gerrit if files modified in repo",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 13
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f05c1d0_9293a5b4",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-13T00:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38b25084_a08d4b1b",
       "range": {
         "startLine": 11,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "a3bb7c68_05c8b13a",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-13T00:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36401e48_58c464a8",
+      "range": {
+        "startLine": 14,
+        "startChar": 68,
+        "endLine": 15,
+        "endChar": 9
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "10d09b5e_b8e02bd2",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 7
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "caec1e80_9d0a9b56",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-13T00:07:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10d09b5e_b8e02bd2",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 16
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2de5b9db_78141e00",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 7
@@ -105,6 +201,30 @@
       "writtenOn": "2018-04-12T23:55:59Z",
       "side": 1,
       "message": "The reason there are leading / trailing quotes is because we passed it in inside the macro. Can we simplify this by just not passing it in first place?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 69
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f6b33bd_f21b00bd",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-13T00:07:35Z",
+      "side": 1,
+      "message": "The projects which consume this builder would be tempted to pass the quotes especially for things like Gerrit commit message. I don\u0027t see a problem in having this as an additional check which filters that out if its there, rather than making an assumption that it wont be passed.",
+      "parentUuid": "2de5b9db_78141e00",
       "range": {
         "startLine": 48,
         "startChar": 0,
