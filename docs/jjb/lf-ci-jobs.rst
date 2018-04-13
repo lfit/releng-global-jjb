@@ -81,20 +81,15 @@ Provides jenkins_jobs.ini configuration for Jenkins sandbox.
 
 .. todo:: This needs to be consolidated into lf-infra-jjbini when JJB 2.0 is available
 
-lf-packer-verify-file-paths
----------------------------
+lf-packer-common
+----------------
 
-Gerrit file-paths for packer verify jobs.
+Common packer configuration.
 
 lf-packer-file-paths
 --------------------
 
 Gerrit file-paths for packer jobs.
-
-lf-packer-common
-----------------
-
-Common packer configuration.
 
 lf-packer-parameters
 --------------------
@@ -105,6 +100,11 @@ Parameters useful for packer related tasks.
 
     :packer-version: Version of packer to install / use.
         (shell: PACKER_VERSION)
+
+lf-packer-verify-file-paths
+---------------------------
+
+Gerrit file-paths for packer verify jobs.
 
 Job Templates
 =============
