@@ -96,6 +96,16 @@ lf-packer-common
 
 Common packer configuration.
 
+lf-infra-packer-parameters
+--------------------------
+
+Parameters useful for packer related tasks.
+
+:Parameters:
+
+    :packer-version: Version of packer to install / use.
+        (shell: PACKER_VERSION)
+
 Job Templates
 =============
 
