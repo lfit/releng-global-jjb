@@ -20,8 +20,6 @@
 - job-group:
     name: '{project-name}-packer-jobs'
 
-    packer-version: 1.1.3
-
     jobs:
       - gerrit-packer-merge
       - gerrit-packer-verify
@@ -29,8 +27,6 @@
 
 - job-group:
     name: '{project-name}-github-packer-jobs'
-
-    packer-version: 1.1.3
 
     jobs:
       - github-packer-merge
@@ -129,7 +125,7 @@
     parameters:
       - string:
           name: PACKER_VERSION
-          default: '{packer-version}'
+          default: '{packer-version|1.1.3}'
           description: Packer version to download and install.
 
 - lf_jjb_common: &lf_jjb_common
