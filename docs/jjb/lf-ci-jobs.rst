@@ -96,8 +96,8 @@ lf-packer-common
 
 Common packer configuration.
 
-lf-infra-packer-parameters
---------------------------
+lf-packer-parameters
+--------------------
 
 Parameters useful for packer related tasks.
 
