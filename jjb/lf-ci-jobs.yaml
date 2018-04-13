@@ -102,7 +102,7 @@
           stream: '{stream}'
           branch: '{branch}'
           lftools-version: '{lftools-version}'
-      - lf-infra-packer-parameters:
+      - lf-packer-parameters:
           packer-version: '{packer-version}'
 
     wrappers:
@@ -122,7 +122,7 @@
           description: Jenkins Job Builder version to download and install.
 
 - parameter:
-    name: lf-infra-packer-parameters
+    name: lf-packer-parameters
     parameters:
       - string:
           name: PACKER_VERSION
