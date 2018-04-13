@@ -20,8 +20,6 @@
 - job-group:
     name: '{project-name}-packer-jobs'
 
-    packer-version: 1.2.2
-
     jobs:
       - gerrit-packer-merge
       - gerrit-packer-verify
@@ -29,8 +27,6 @@
 
 - job-group:
     name: '{project-name}-github-packer-jobs'
-
-    packer-version: 1.2.2
 
     jobs:
       - github-packer-merge
@@ -86,6 +82,7 @@
     stream: master
     submodule-recursive: true
     packer-cloud-settings: packer-cloud-env
+    packer-version: 1.2.2
 
     #####################
     # Job Configuration #
