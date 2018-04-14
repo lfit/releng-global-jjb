@@ -18,8 +18,7 @@ virtualenv "/tmp/v/jjb"
 # shellcheck source=/tmp/v/jjb/bin/activate disable=SC1091
 source "/tmp/v/jjb/bin/activate"
 pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade pipdeptree
 pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
 
-echo "----> Pip Dependency Tree"
-pipdeptree
+echo "----> pip freeze"
+pip freeze

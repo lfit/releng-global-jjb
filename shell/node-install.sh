@@ -18,8 +18,7 @@ virtualenv --quiet "/tmp/v/python"
 # shellcheck source=/tmp/v/node/bin/activate disable=SC1091
 source "/tmp/v/python/bin/activate"
 pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade pipdeptree
 pip install --quiet --upgrade nodeenv
 
-echo "----> Pip Dependency Tree"
-pipdeptree
+echo "----> pip freeze"
+pip freeze
