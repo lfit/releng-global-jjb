@@ -50,7 +50,7 @@ set -e -o pipefail
 virtualenv --quiet "/tmp/v/lftools"
 # shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
 source "/tmp/v/lftools/bin/activate"
-pip install --quiet --upgrade pip setuptools
+pip install --quiet --upgrade "pip==9.0.3" setuptools
 
 case $LFTOOLS_MODE in
     gerrit)
