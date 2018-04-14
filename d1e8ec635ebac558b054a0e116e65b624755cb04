@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6fdb079c_4609252f",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-14T06:35:36Z",
+      "side": 1,
+      "message": "I think since we are setting this default value here, we could remove another default value set in shell script so we you want to update the packer version, simply update it in a single place?",
+      "range": {
+        "startLine": 85,
+        "startChar": 4,
+        "endLine": 85,
+        "endChar": 25
+      },
+      "revId": "d1e8ec635ebac558b054a0e116e65b624755cb04",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
