@@ -258,6 +258,30 @@
       "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1005fa7d_25ede6c3",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-17T15:49:40Z",
+      "side": 1,
+      "message": "gerrit-commit-message: |\n     \u0027Update cloud image list docs\n     testing with some extra lines\n     blah blah ... bla\u0027\n\nOk I see now. We are using a | character which in YAML means pass this string in as a new line separated string so when the script passes this to the command it breaks the command up to multiple lines.\n\nIt would be better to use the \u003e character for the gerrit-commit-message as in YAML that means this is a space separated string and would enter into the code as a single line.",
+      "parentUuid": "836f74ba_63b03494",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 69
+      },
+      "revId": "c9ef2bc42f9dad808bf9e19b7b1e792a7555b64d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
