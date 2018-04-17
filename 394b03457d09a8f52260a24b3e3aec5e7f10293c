@@ -22,6 +22,30 @@
       "revId": "394b03457d09a8f52260a24b3e3aec5e7f10293c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb68845f_4e2059e7",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-17T21:49:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eb03bb90_19bc259e",
+      "range": {
+        "startLine": 11,
+        "startChar": 2,
+        "endLine": 11,
+        "endChar": 3
+      },
+      "revId": "394b03457d09a8f52260a24b3e3aec5e7f10293c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
