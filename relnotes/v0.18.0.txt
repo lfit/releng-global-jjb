@@ -1,0 +1,75 @@
+global-jjb v0.18.0 Release Notes
+================================
+
+Thanks to Anil, Jeremy, Jessica, Ry, and Thanh for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+1. PostBuildScript 2.x support
+
+This release updates some macros that requires the PostBuildScript 2.0 plugin
+or newer to be installed in Jenkins and JJB 2.0.3 or newer to be installed for
+the jjb-verify and jjb-merge jobs.
+
+2. ReadTheDocs (RTD) merge job updated for RTD v2 API
+
+The rtd-merge now replaces the previous ``rtd-project`` parameter with 2 new
+parameters ``rtd-build-url`` and ``rtd-token``. This is to support the newer
+RTD v2 API which no longer allows anonymous triggering of builds in RTD.
+
+Refer to the rtd-merge job documentation for details:
+http://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-rtd-jobs.html#readthedocs-merge
+
+
+Notable changes since v0.17.0
+-----------------------------
+
+f76c82a Thanh Ha        Support PostBuildScript 2.x
+PostBuildScript 2.x in Jenkins is now supported by global-jjb allowing us to
+move off of the older and no longer supported 1.x release of the plugin.
+
+841f374 Thanh Ha        Add support for VolumeFromImage boot source
+The OpenStack cloud plugin version 2.32 adds support for allowing us to set
+the volume size of a minion from the plugin. global-jjb now supports this as
+well via the jenkins-cfg job.
+
+Refer to the jenkins-cfg job documentation for full details:
+http://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-ci-jobs.html#jenkins-configuration-merge
+
+ad0ee7c Ry Jones        Fix pip version to 9.0.3
+We now pin all global-jjb pip dependencies to version 9.0.3 as upstream's
+latest 10.0.0 release is a major change that breaks several of our jobs.
+
+b020128 Jeremy Phelps   Update RTD to use Generic API v2 webhook
+Adds support for RTD's Generic API v2 which no longer allows anonymous build
+triggering and requires a build url + token for each project.
+
+d859830 Jessica Wagantall       Add lf_tox_sonar job
+Adds a python-sonar job that can be used by Python projects to generate sonar
+reports.
+
+
+Full Change Log
+---------------
+
+9f237eb Thanh Ha        Replace pipdeptree with pip freeze
+a434075 Thanh Ha        Pin pip to 9.0.3
+d859830 Jessica Wagantall       Add lf_tox_sonar job
+be6ec04 Jeremy Phelps   Update default jjb version
+b020128 Jeremy Phelps   Update RTD to use Generic API v2 webhook
+d0059ff Thanh Ha        Force rm for cleanup macro
+f1fe473 Thanh Ha        Fix pipconf name to the default one
+ad0ee7c Ry Jones        Fix pip version
+81a5e9d Anil Belur      Validate packer version before install
+edf56a1 Jeremy Phelps   Pin tox to <3.0.0 as it breaks detox
+7f88f16 Thanh Ha        Revert "Update RTD to use custom trigger url"
+12d6179 Jeremy Phelps   Update RTD to use custom trigger url
+3ea6a67 Thanh Ha        Add link to release notes
+4d3e0b4 Thanh Ha        Quit build if submodule not found
+aa20551 Thanh Ha        Ensure setuptools is updated
+841f374 Thanh Ha        Add support for VolumeFromImage boot source
+f77ecf8 Anil Belur      Export packer binary dir in $PATH
+f76c82a Thanh Ha        Support PostBuildScript 2.x
+b7aabb1 Thanh Ha        Document job-group defaults order of priority
