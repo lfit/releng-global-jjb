@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01db0b02_116725e0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-19T21:25:16Z",
+      "side": 1,
+      "message": "\"Correct\" makes it sound like you did something wrong, you didn\u0027t. Sounds better with something like \"Respond to feedback\".\n\nAnother approach that would make the commit messages more meaning full, each of the tasks below are different enough that they could be separate patches. Personally I like small easily reviewable bite sized changes over large changes that try to cover everything and it keeps reviews on topic rather than all over the place :)",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 30
+      },
+      "revId": "085ecfaa58185dddb78ace62ae553bb0642a876b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "818f6be3_b5baa640",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-19T21:25:16Z",
+      "side": 1,
+      "message": "Should mention that the changes here are to respond to comments in I5e5c420539ab3a3e5b292620da4418c16d557221",
+      "revId": "085ecfaa58185dddb78ace62ae553bb0642a876b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "577540ab_1186ed8d",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-19T21:25:16Z",
+      "side": 1,
+      "message": "typo: xc-clm",
+      "range": {
+        "startLine": 58,
+        "startChar": 20,
+        "endLine": 58,
+        "endChar": 23
+      },
+      "revId": "085ecfaa58185dddb78ace62ae553bb0642a876b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f948db69_015038ae",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-19T21:25:16Z",
+      "side": 1,
+      "message": "The fact that it\u0027s a jar is superfluous in this case. no need to mention it. Then the same parameter can be used regardless of if it\u0027s a jar, zip, tar.gz, etc...",
+      "range": {
+        "startLine": 108,
+        "startChar": 29,
+        "endLine": 108,
+        "endChar": 33
+      },
+      "revId": "085ecfaa58185dddb78ace62ae553bb0642a876b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
