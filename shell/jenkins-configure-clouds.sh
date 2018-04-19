@@ -121,6 +121,13 @@ get_minion_options() {
     flavors["v2-highcpu-8"]="221de281-95ec-414f-8e42-c86c9e0b318d"
     flavors["v2-highcpu-16"]="ddd6863a-ef4f-475c-9aee-61d46898651d"
     flavors["v2-highcpu-32"]="21dfb8a3-c472-4a2c-a8e1-4da8de415ff8"
+    flavors["odl-highcpu-2"]="def1b86f-b7f8-4943-b430-4a0599170006"
+    flavors["odl-highcpu-4"]="0c8ec795-2ff8-4623-98cf-b4c1d92bb37c"
+    flavors["odl-highcpu-8"]="458d6499-e2c8-4580-aa88-a4a04a33ee25"
+    flavors["odl-standard-1"]="35800a3f-0c69-428d-b5cb-136d17d46c48"
+    flavors["odl-standard-2"]="8ead227a-acfe-4290-be70-fbab92e6dd2f"
+    flavors["odl-standard-4"]="f76fb18d-d5fb-4175-95c1-b29d8039d102"
+    flavors["odl-standard-8"]="ba38b1af-4f87-4e4e-860e-94e8329d0d78"
 
     image_name=$(get_cfg "$cfg_file" IMAGE_NAME "")
     volume_size=$(get_cfg "$cfg_file" VOLUME_SIZE "")
