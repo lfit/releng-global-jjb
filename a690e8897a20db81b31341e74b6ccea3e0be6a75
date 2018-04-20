@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e591827_2329cec1",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-20T02:01:27Z",
+      "side": 1,
+      "message": "Can we add to this documentation that the repo created has the format \"autorelase-####\"? Just to be more specific.",
+      "range": {
+        "startLine": 264,
+        "startChar": 0,
+        "endLine": 264,
+        "endChar": 65
+      },
+      "revId": "a690e8897a20db81b31341e74b6ccea3e0be6a75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3b3ba6d_4e89f6a2",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-04-20T02:01:27Z",
+      "side": 1,
+      "message": "lf_maven_stage",
+      "range": {
+        "startLine": 682,
+        "startChar": 9,
+        "endLine": 682,
+        "endChar": 25
+      },
+      "revId": "a690e8897a20db81b31341e74b6ccea3e0be6a75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
