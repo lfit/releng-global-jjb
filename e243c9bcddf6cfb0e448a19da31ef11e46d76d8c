@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e84e09f_26d4639f",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-20T01:40:49Z",
+      "side": 1,
+      "message": "We should use dashes here so that the parameter pattern is consistent with what we use elsewhere. The rule is\n\n Object Variables {obj:var_use_underscore}\n Regular Variables {var-use-dashes}",
+      "range": {
+        "startLine": 112,
+        "startChar": 20,
+        "endLine": 112,
+        "endChar": 40
+      },
+      "revId": "e243c9bcddf6cfb0e448a19da31ef11e46d76d8c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
