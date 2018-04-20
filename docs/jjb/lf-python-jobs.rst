@@ -41,6 +41,41 @@ Runs a shell script that installs tox in a Python virtualenv.
 Job Templates
 =============
 
+Python XC CLM
+-------------
+
+CLM scans for Python based repos. This job will call the Nexus IQ CLI
+directly to run the scans.
+
+A new credential named "nexus-iq-xc-clm" needs to exist in the Jenkins credentials.
+The credential should contain the username and password to access Nexus
+IQ Server.
+
+:Template Names:
+
+    - {project-name}-python-clm-{stream}
+    - gerrit-python-xc-clm
+    - github-python-xc-clm
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        get configured in defaults.yaml)
+
+:Optional parameters:
+
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :nexus-iq-cli-version: Nexus IQ CLI package version to download and use. (default: 1.44.0-01)
+    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :stream: Keyword used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :gerrit_clm_triggers: Override Gerrit Triggers.
+
 Python Sonar with Tox
 ---------------------
 
