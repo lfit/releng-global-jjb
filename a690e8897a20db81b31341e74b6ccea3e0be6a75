@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "385edd53_ce5ffc44",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-20T15:52:40Z",
+      "side": 1,
+      "message": "In odl every project has a different repo name.\n\nautorelease-#### is for the autorelease project.\nodlparent-#### is for the odlparent project.\nyangtools-#### is for the yangtools project.\n\netc...\n\nI can add details that it will be in the format [a-z]+-[0-9][0-9][0-9][0-9].",
+      "parentUuid": "5e591827_2329cec1",
+      "range": {
+        "startLine": 264,
+        "startChar": 0,
+        "endLine": 264,
+        "endChar": 65
+      },
+      "revId": "a690e8897a20db81b31341e74b6ccea3e0be6a75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d3b3ba6d_4e89f6a2",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 1
