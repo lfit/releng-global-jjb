@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d4b0c6c8_d55027da",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-20T18:59:13Z",
+      "side": 1,
+      "message": "Version should just be the version component. The script can build out the rest of the path.",
+      "revId": "49d63f37c3d7c2cc8ff82d33c8dece96948c7967",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b789f94a_8802f8b8",
+        "filename": "shell/nexus-iq-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-20T18:59:13Z",
+      "side": 1,
+      "message": "nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar",
+      "range": {
+        "startLine": 17,
+        "startChar": 19,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "49d63f37c3d7c2cc8ff82d33c8dece96948c7967",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c5f12ec_8fe500c1",
+        "filename": "shell/nexus-iq-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-20T18:59:13Z",
+      "side": 1,
+      "message": "nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar",
+      "range": {
+        "startLine": 18,
+        "startChar": 51,
+        "endLine": 18,
+        "endChar": 74
+      },
+      "revId": "49d63f37c3d7c2cc8ff82d33c8dece96948c7967",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
