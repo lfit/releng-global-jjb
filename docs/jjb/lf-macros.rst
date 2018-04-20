@@ -118,7 +118,7 @@ Call pip install to install packages into a virtualenv located in
 
 .. note:: The first package listed in PIP_PACKAGES is used as the VENV name.
 
-.. _lf-provide-maven-settings
+.. _lf-provide-maven-settings:
 
 lf-provide-maven-settings
 -------------------------

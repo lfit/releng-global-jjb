@@ -35,12 +35,15 @@ Global JJB Templates
 Job template code is in the `jjb/` directory but documentation is in the
 `docs/jjb/` directory of this project.
 
-- :doc:`jjb/lf-ci-jobs`
-- :doc:`jjb/lf-macros`
-- :doc:`jjb/lf-maven-jobs`
-- :doc:`jjb/lf-node-jobs`
-- :doc:`jjb/lf-python-jobs`
-- :doc:`jjb/lf-rtd-jobs`
+.. toctree::
+   :maxdepth: 1
+
+   jjb/lf-ci-jobs
+   jjb/lf-macros
+   jjb/lf-maven-jobs
+   jjb/lf-node-jobs
+   jjb/lf-python-jobs
+   jjb/lf-rtd-jobs
 
 Indices and tables
 ==================

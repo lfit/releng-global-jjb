@@ -19,7 +19,7 @@ Documentation for npmrc is available via the `npm project
 <https://docs.npmjs.com/files/npmrc>`_.
 
 :Required: This file MUST exist. An empty file is acceptable if a
-proxy is not available for the project.
+    proxy is not available for the project.
 :type: Custom file
 
 Create a "Custom file" with contents:
@@ -36,7 +36,7 @@ in $HOME/.config/pip/pip.conf. Documentation for pip.conf is available via the
 `pip project <https://pip.readthedocs.io/en/stable/user_guide/#configuration>`_.
 
 :Required: This file MUST exist. An empty file is acceptable if a
-proxy is not available for the project.
+    proxy is not available for the project.
 :type: Custom file
 
 Create a "Custom file" with contents:
