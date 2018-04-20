@@ -36,7 +36,7 @@
       - inject:
           properties-content: 'CLM_PROJECT_NAME={clm-project-name}'
       - shell: !include-raw-escape:
-          - ../shell/sonar-cli.sh
+          - ../shell/nexus-iq-cli.sh
 
 ####################
 # COMMON FUNCTIONS #
@@ -129,7 +129,7 @@
     wrappers:
       - credentials-binding:
           - username-password-separated:
-              credential-id: sonar-xc-clm
+              credential-id: nexus-iq-xc-clm
               username: CLM_USER
               password: CLM_PASSWORD
     builders:
