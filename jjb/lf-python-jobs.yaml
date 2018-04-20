@@ -112,7 +112,7 @@
 
     gerrit_clm_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-xc-clm$
+          comment-contains-value: run-clm$
 
     #####################
     # Job Configuration #
@@ -185,7 +185,7 @@
 
     triggers:
       - lf-infra-github-pr-trigger:
-          trigger-phrase: '^run-xc-clm$'
+          trigger-phrase: '^run-clm$'
           only-trigger-phrase: false
           status-context: 'CLM'
           permit-all: true
