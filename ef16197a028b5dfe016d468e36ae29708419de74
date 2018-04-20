@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c4c667e_079448ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-20T10:15:19Z",
+      "side": 1,
+      "message": "minor nit: \n\n  CLI format.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 11
+      },
+      "revId": "ef16197a028b5dfe016d468e36ae29708419de74",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8fdcf140_3ddd7767",
+        "filename": "shell/nexus-iq-cli.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-20T10:15:19Z",
+      "side": 1,
+      "message": "Create a separate variable for this file on top of the script and reuse it all places. later if you need to update the path it can be done in a single place",
+      "range": {
+        "startLine": 20,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 38
+      },
+      "revId": "ef16197a028b5dfe016d468e36ae29708419de74",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad1395b_39dab54a",
+        "filename": "shell/nexus-iq-cli.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-20T10:15:19Z",
+      "side": 1,
+      "message": "clean up /tmp/${NEXUS_IQ_CLI_VERSION}, if its no longer required.",
+      "revId": "ef16197a028b5dfe016d468e36ae29708419de74",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
