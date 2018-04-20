@@ -14,8 +14,10 @@
 # the repo
 
 set +x
-wget -nv https://download.sonatype.com/clm/scanner/${NEXUS_IQ_CLI_JAR} -O /tmp/${NEXUS_IQ_CLI_JAR}
+CLI_LOCATION="/tmp/${NEXUS_IQ_CLI_VERSION}"
+wget -nv https://download.sonatype.com/clm/scanner/${NEXUS_IQ_CLI_VERSION} -O ${CLI_LOCATION}
 echo "-a" > cli-auth.txt
 echo "${CLM_USER}:${CLM_PASSWORD}" >> cli-auth.txt
-java -jar /tmp/${NEXUS_IQ_CLI_JAR} @cli-auth.txt -xc -i ${CLM_PROJECT_NAME} -s https://nexus-iq.wl.linuxfoundation.org -t build .
+java -jar ${CLI_LOCATION} @cli-auth.txt -xc -i ${CLM_PROJECT_NAME} -s https://nexus-iq.wl.linuxfoundation.org -t build .
 rm cli-auth.txt
+rm ${CLI_LOCATION}
