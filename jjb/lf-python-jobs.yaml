@@ -51,10 +51,6 @@
 
     archive-artifacts: >
       **/*.log
-      **/hs_err_*.log
-      **/target/**/feature.xml
-      **/target/failsafe-reports/failsafe-summary.xml
-      **/target/surefire-reports/*-output.txt
 
     #####################
     # Job Configuration #
@@ -73,14 +69,6 @@
           branch: '{branch}'
           stream: '{stream}'
           lftools-version: '{lftools-version}'
-      - string:
-          name: NEXUS_IQ_CLI_JAR
-          default: nexus-iq-cli-1.44.0-01.jar
-          description: Nexus IQ CLI package to download and use.
-      - string:
-          name: ARCHIVE_ARTIFACTS
-          default: '{archive-artifacts}'
-          description: Artifacts to archive to the logs server.
 
     wrappers:
       - lf-infra-wrappers:
@@ -117,6 +105,12 @@
     #####################
     # Job Configuration #
     #####################
+
+    parameters:
+      - string:
+          name: NEXUS_IQ_CLI_VERSION
+          default: {nexus-iq-cli-version}
+          description: Nexus IQ CLI package to download and use.
 
     triggers:
       # Build weekly on Saturdays
