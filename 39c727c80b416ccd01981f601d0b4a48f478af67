@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1eaad87e_0addb25d",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-21T01:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b1af75f_9a5d321c",
+      "range": {
+        "startLine": 40,
+        "startChar": 30,
+        "endLine": 40,
+        "endChar": 33
+      },
+      "revId": "39c727c80b416ccd01981f601d0b4a48f478af67",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "439c47a5_3d748143",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2018-04-20T15:50:13Z",
       "side": 1,
       "message": "Do we need to disable this? According to https://github.com/koalaman/shellcheck/wiki/SC1083 it\u0027s about curly braces which I don\u0027t see being used here at all.",
+      "range": {
+        "startLine": 54,
+        "startChar": 21,
+        "endLine": 54,
+        "endChar": 27
+      },
+      "revId": "39c727c80b416ccd01981f601d0b4a48f478af67",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4ef4585_11db5905",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-21T01:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "439c47a5_3d748143",
       "range": {
         "startLine": 54,
         "startChar": 21,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "6d5c56c2_be2a31bd",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-21T01:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6cc18d68_d4505e3a",
+      "range": {
+        "startLine": 60,
+        "startChar": 20,
+        "endLine": 60,
+        "endChar": 22
+      },
+      "revId": "39c727c80b416ccd01981f601d0b4a48f478af67",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1612ff1f_952b2532",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 9
@@ -82,6 +154,30 @@
       "writtenOn": "2018-04-20T15:50:13Z",
       "side": 1,
       "message": "Do we need to disable this? According to https://github.com/koalaman/shellcheck/wiki/SC1083 it\u0027s about curly braces which I don\u0027t see being used here at all.",
+      "range": {
+        "startLine": 76,
+        "startChar": 21,
+        "endLine": 76,
+        "endChar": 27
+      },
+      "revId": "39c727c80b416ccd01981f601d0b4a48f478af67",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14b85a2c_f1c4bf38",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-04-21T01:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1612ff1f_952b2532",
       "range": {
         "startLine": 76,
         "startChar": 21,
