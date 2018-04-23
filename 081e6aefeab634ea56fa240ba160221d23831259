@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19d0148c_a4292bc1",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-23T17:54:56Z",
+      "side": 1,
+      "message": "According to the patch that follows this nexus_iq_cli_version has a default version and is not a required parameter.",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 68
+      },
+      "revId": "081e6aefeab634ea56fa240ba160221d23831259",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
