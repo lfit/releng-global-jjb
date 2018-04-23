@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "032bdf9b_c37fbb71",
+        "filename": "shell/nexus-iq-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-23T17:52:07Z",
+      "side": 1,
+      "message": "Bonus points for cleaning up! :)",
+      "revId": "573da00d2208bf4a3c683aade82fa013f113eaa2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
