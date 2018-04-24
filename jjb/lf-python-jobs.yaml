@@ -430,6 +430,7 @@
       - draft-published-event
       - comment-added-contains-event:
           comment-contains-value: recheck$
+    parallel: true
 
     #####################
     # Job Configuration #
@@ -443,6 +444,7 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: gerrit
+          parallel: '{parallel}'
 
     triggers:
       - gerrit:
