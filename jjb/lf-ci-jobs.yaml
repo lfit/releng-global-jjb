@@ -468,6 +468,11 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
+          skip-vote:
+            success: true
+            failed: true
+            unstable: true
+            notbuilt: true
 
 - job-template:
     name: '{project-name}-jjb-deploy-job'
