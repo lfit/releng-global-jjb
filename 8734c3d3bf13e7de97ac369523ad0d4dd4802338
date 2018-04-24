@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a8bca211_7be7d8fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-24T20:41:48Z",
+      "side": 1,
+      "message": "Just above the Change-Id line add:\n\n Issue: RELENG-912\n\nThis way we can reference back to the Jira if needed.",
+      "revId": "8734c3d3bf13e7de97ac369523ad0d4dd4802338",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
