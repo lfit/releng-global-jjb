@@ -98,6 +98,7 @@
     staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
+    parallel: true
 
     gerrit_clm_triggers:
       - comment-added-contains-event:
