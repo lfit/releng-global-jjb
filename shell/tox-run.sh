@@ -28,12 +28,26 @@ if [ -d "/opt/pyenv" ]; then
 fi
 
 set +e  # Allow detox to fail so that we can collect the logs in the next step
-if [ ! -z "$TOX_ENVS" ]; then
-    detox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/detox.log"
-    detox_status="${PIPESTATUS[0]}"
-else
-    detox | tee -a "$ARCHIVE_TOX_DIR/detox.log"
-    detox_status="${PIPESTATUS[0]}"
+
+PARALLEL=true/false;
+if [ "${PARALLEL}" = true ]; then
+
+    if [ ! -z "$TOX_ENVS" ]; then
+        detox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/detox.log"
+        detox_status="${PIPESTATUS[0]}"
+    else
+        detox | tee -a "$ARCHIVE_TOX_DIR/detox.log"
+        detox_status="${PIPESTATUS[0]}"
+    fi
+
+elif [ "${PARALLEL}" = false ]; then
+    if [ ! -z "$TOX_ENVS" ]; then
+        tox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/tox.log"
+        tox_status="${PIPESTATUS[0]}"
+    else
+        tox | tee -a "$ARCHIVE_TOX_DIR/tox.log"
+        tox_status="${PIPESTATUS[0]}"
+    fi
 fi
 
 # Disable SC2116 as we want to echo a space separated list of TOX_ENVS
