@@ -431,6 +431,8 @@
       - comment-added-contains-event:
           comment-contains-value: recheck$
 
+    parallel: true
+
     #####################
     # Job Configuration #
     #####################
@@ -443,6 +445,13 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: gerrit
+
+    parameters:
+      - bool:
+          name: PARALLEL
+          default: '{parallel}'
+          description: Tox test type used to configure serial or parallel testing.
+
 
     triggers:
       - gerrit:
