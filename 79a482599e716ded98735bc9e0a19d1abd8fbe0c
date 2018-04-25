@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1842e6c8_90cdc40f",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2018-04-25T21:07:52Z",
+      "side": 1,
+      "message": "why is this set? also, perhaps catch if PARALLEL is unset set to false.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 20
+      },
+      "revId": "79a482599e716ded98735bc9e0a19d1abd8fbe0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
