@@ -12,6 +12,8 @@
 # This script takes the java-version variable to set the proper alternative
 # for java, javac and java_sdk_openjdk for ubuntu or centos/fedora/redhat distros
 
+set -u -o pipefail
+
 JAVA_ENV_FILE="/tmp/java.env"
 
 update-java-redhat() {
