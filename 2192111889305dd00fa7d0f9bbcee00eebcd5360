@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f887a86_bc8f9aef",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-04-26T19:18:25Z",
+      "side": 1,
+      "message": "Since the default has been to run tox in parallel, instead of checking if Parallel is unset, it can always default to true \"PARALLEL\u003d${PARALLEL:-true}\".",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 2
+      },
+      "revId": "2192111889305dd00fa7d0f9bbcee00eebcd5360",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
