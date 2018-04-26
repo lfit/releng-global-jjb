@@ -22,6 +22,30 @@
       "revId": "2192111889305dd00fa7d0f9bbcee00eebcd5360",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26c1fa0b_4cb2f457",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2018-04-26T19:24:16Z",
+      "side": 1,
+      "message": "I changed the patch to catch if PARALLEL is unset set to false based on a previous review.",
+      "parentUuid": "5f887a86_bc8f9aef",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 2
+      },
+      "revId": "2192111889305dd00fa7d0f9bbcee00eebcd5360",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
