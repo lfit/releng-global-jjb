@@ -79,6 +79,7 @@
 
     branch: master
     build-timeout: 90
+    build-timer: '@monthly'
     stream: master
     submodule-recursive: true
     packer-cloud-settings: packer-cloud-env
@@ -745,7 +746,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - timed: '00 10 1 * *'
+      - timed: '{build-timer}'
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on: '{obj:gerrit_merge_triggers}'
@@ -778,7 +779,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - timed: '00 10 1 * *'
+      - timed: '{build-timer}'
       - github
       - pollscm:
           cron: ''
