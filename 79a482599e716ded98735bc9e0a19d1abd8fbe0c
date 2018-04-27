@@ -22,6 +22,30 @@
       "revId": "79a482599e716ded98735bc9e0a19d1abd8fbe0c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9e4c6b6_9896385a",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-27T16:15:30Z",
+      "side": 1,
+      "message": "PARALLEL\u003d\"${PARALLEL:-true}\"",
+      "parentUuid": "1842e6c8_90cdc40f",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 20
+      },
+      "revId": "79a482599e716ded98735bc9e0a19d1abd8fbe0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
