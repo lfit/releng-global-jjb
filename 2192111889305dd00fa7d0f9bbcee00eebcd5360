@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "8cbea0b9_e7a5fa01",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-27T15:06:56Z",
+      "side": 1,
+      "message": "I think you meant to put this in the tox job configuration. This here is applying it to the \"CLM\" job not tox.\n\nAlso you need to add a string parameter in the \"parameters:\" section of JJB for Jenkins to add an actual parameter. The definition here purely is to tell JJB what variable \"parallel\" should be set to by default if the user does not provide on. We still need to define the parameter itself.",
+      "revId": "2192111889305dd00fa7d0f9bbcee00eebcd5360",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f887a86_bc8f9aef",
         "filename": "shell/tox-run.sh",
         "patchSetId": 5
