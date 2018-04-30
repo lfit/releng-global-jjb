@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aea2c5e6_e17d8d1c",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-04-30T13:16:01Z",
+      "side": 1,
+      "message": "parallel is not a valid parameter of the git-scm plugin:\n\nhttps://docs.openstack.org/infra/jenkins-job-builder/scm.html\n\nThis is not what we need here though. What we to do is define a environment variable that Jenkins passes to the bash script. To do that we need to declare a Jenkins Parameter. You can do that using the \"string\" parameter in JJB:\n\nhttps://docs.openstack.org/infra/jenkins-job-builder/parameters.html\n\nWe have a few examples of this in global-jjb for example in the Python CLM job:\n\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-python-jobs.yaml#L110-L114",
+      "range": {
+        "startLine": 447,
+        "startChar": 10,
+        "endLine": 447,
+        "endChar": 32
+      },
+      "revId": "39be1026ce4511f78351a77e7f7a94be4f71806c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
