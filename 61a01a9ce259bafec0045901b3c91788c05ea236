@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c31546e_94c37520",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-02T19:17:56Z",
+      "side": 1,
+      "message": "This really should be\n\nIssue: RELENG-912\n\nI don\u0027t like seeing non-annotated footer meta-data",
+      "revId": "61a01a9ce259bafec0045901b3c91788c05ea236",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
