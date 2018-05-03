@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9cc026d0_f82a7639",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2018-05-03T22:00:44Z",
+      "side": 1,
+      "message": "Grammar check doesn\u0027t like this, fixed 3x in next patchset",
+      "range": {
+        "startLine": 79,
+        "startChar": 58,
+        "endLine": 79,
+        "endChar": 64
+      },
+      "revId": "b36b320613a5aeef4d016f73e81c26802b83e0e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27da0150_80b92603",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2018-05-03T22:00:44Z",
+      "side": 1,
+      "message": "jenkins_jobs.errors.JenkinsJobsException: obj parameter missing to format {obj:gerrit_trigger_file_paths}\n\nNot sure how to fix that properly but I made it work in next patchset",
+      "range": {
+        "startLine": 132,
+        "startChar": 28,
+        "endLine": 132,
+        "endChar": 31
+      },
+      "revId": "b36b320613a5aeef4d016f73e81c26802b83e0e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
