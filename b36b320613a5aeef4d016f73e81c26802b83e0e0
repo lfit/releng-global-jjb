@@ -45,6 +45,30 @@
       "revId": "b36b320613a5aeef4d016f73e81c26802b83e0e0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb20ceeb_637a62d2",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-03T22:02:21Z",
+      "side": 1,
+      "message": "Thanks for fixing this. Inheritance probably wasn\u0027t coming through properly via the common anchor.",
+      "parentUuid": "27da0150_80b92603",
+      "range": {
+        "startLine": 132,
+        "startChar": 28,
+        "endLine": 132,
+        "endChar": 31
+      },
+      "revId": "b36b320613a5aeef4d016f73e81c26802b83e0e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
