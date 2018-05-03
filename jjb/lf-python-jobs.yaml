@@ -102,6 +102,9 @@
     gerrit_clm_triggers:
       - comment-added-contains-event:
           comment-contains-value: run-clm$
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '**'
 
     #####################
     # Job Configuration #
@@ -125,6 +128,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
           skip-vote:
             successful: true
             failed: true
@@ -219,6 +223,9 @@
     gerrit_sonar_triggers:
       - comment-added-contains-event:
           comment-contains-value: run-sonar$
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '**'
 
     #####################
     # Job Configuration #
@@ -260,6 +267,7 @@
               branches:
                 - branch-compare-type: 'ANT'
                   branch-pattern: '**/master'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
           skip-vote:
             successful: true
             failed: true
@@ -430,6 +438,9 @@
       - draft-published-event
       - comment-added-contains-event:
           comment-contains-value: recheck$
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '**'
 
     parallel: true
 
@@ -463,6 +474,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
     # Python projects typically use tox to run testing.
