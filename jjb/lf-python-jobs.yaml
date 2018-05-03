@@ -53,6 +53,10 @@
       **/*.log
     nexus-iq-cli-version: 1.44.0-01
 
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '**'
+
     #####################
     # Job Configuration #
     #####################
@@ -125,6 +129,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
           skip-vote:
             successful: true
             failed: true
@@ -260,6 +265,7 @@
               branches:
                 - branch-compare-type: 'ANT'
                   branch-pattern: '**/master'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
           skip-vote:
             successful: true
             failed: true
@@ -463,6 +469,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
     # Python projects typically use tox to run testing.
