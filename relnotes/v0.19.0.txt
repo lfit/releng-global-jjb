@@ -1,0 +1,48 @@
+global-jjb v0.19.0 Release Notes
+================================
+
+Thanks to Anil, Jessica, Vanessa, and Thanh for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+None.
+
+Notable changes since v0.18.0
+-----------------------------
+
+cfc3432 Anil Belur      Add generic push changes to gerrit builder
+A new macro named "lf-infra-push-gerrit-patch" is available which will take a
+pre-staged repository and turn it into a commit object and push to Gerrit for
+code review.
+
+bfe91be Thanh Ha        Skip vote for jjb-deploy
+jjb-deploy job will now skip voting in Gerrit when the job is triggered.
+
+68bfb0c Vanessa Rene Valderrama Configure tox tests allow serial execution
+The tox job will now run "detox" if "parallel: true" is configured else it will
+run "tox" instead providing a way for projects to choose which tox runner they
+prefer to use.
+
+f3d8d90 Thanh Ha        Fix jenkins-cfg GitHub cfg to build head of branch
+The jenkins-cfg job has been fixed to work on GitHub projects outside of a PR.
+It was originally incorrectly configured for GitHub projects.
+
+
+Full Change Log
+---------------
+
+f3d8d90 Thanh Ha        Fix jenkins-cfg GitHub cfg to build head of branch
+68bfb0c Vanessa Rene Valderrama Configure tox tests allow serial execution
+35adc33 Thanh Ha        Add instructions on how to test script locally
+d04c92d Thanh Ha        Print out heading information
+cb633b4 Thanh Ha        Sort packer macros alphabetically
+f492626 Thanh Ha        Simplify packer-parameters macro name to just lf
+cddcc9d Thanh Ha        Set default packer variable in job-template
+bfe91be Thanh Ha        Skip vote for jjb-deploy
+86ae572 Jessica Wagantall       Update XC CLM job parameters
+4f358d5 Jessica Wagantall       Add docs for Python XC CLM
+cfc3432 Anil Belur      Add generic push changes to gerrit builder
+1c46666 Thanh Ha        Fail Sphinx build even on warnings
+a91e95c Jessica Wagantall       Rename sonar-cli.sh to nexus-iq-cli.sh
