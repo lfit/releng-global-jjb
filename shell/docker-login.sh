@@ -22,6 +22,12 @@
 #                    Listing of all the registry ports to login to
 #                    ex: 10001 10002 10003 10004
 #
+# $DOCKERHUB_REGISTRY: Optional
+#                      Set global Jenkins variable to `docker.io`
+#                      Additionally you will need to add as an entry
+#                      to your projects mvn-settings file with username
+#                      and password creds.
+#
 # $SETTINGS_FILE   : Job level variable with maven settings file location
 #
 # $DOCKERHUB_EMAIL : Optional
@@ -81,6 +87,11 @@ then
         # Nexus, however, does not need this and ignores the value
         do_login "$REGISTRY" none
     done
+fi
+
+if [ "${DOCKERHUB_REGISTRY:-none}" != 'none' ]
+then
+    do_login "$DOCKERHUB_REGISTRY"
 fi
 
 # Attempt to login to docker.io only if $DOCKERHUB_EMAIL is configured
