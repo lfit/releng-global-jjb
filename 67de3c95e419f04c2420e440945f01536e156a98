@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "6262a294_5ac10464",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-04T18:00:45Z",
+      "side": 1,
+      "message": "A setting cannot be both \"Optional\" and \"Required\" at the same time. Which is it?",
+      "range": {
+        "startLine": 35,
+        "startChar": 21,
+        "endLine": 39,
+        "endChar": 46
+      },
+      "revId": "67de3c95e419f04c2420e440945f01536e156a98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "633ff453_2db39708",
         "filename": "shell/docker-login.sh",
         "patchSetId": 6
