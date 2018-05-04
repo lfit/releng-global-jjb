@@ -22,13 +22,22 @@
 #                    Listing of all the registry ports to login to
 #                    ex: 10001 10002 10003 10004
 #
+# $DOCKERHUB_REGISTRY: Optional
+#                      Set global Jenkins variable to `docker.io`
+#                      Additionally you will need to add as an entry
+#                      to your projects mvn-settings file with username
+#                      and password creds.  If you are using docker version
+#                      < 17.06.0 you will need to set DOCKERHUB_EMAIL
+#                      to auth to docker.io.
+#
 # $SETTINGS_FILE   : Job level variable with maven settings file location
 #
 # $DOCKERHUB_EMAIL : Optional
 #                    Jenkins global variable that defines the email address that
 #                    should be used for logging into DockerHub
 #                    If defined than an attempt to login to docker hub will
-#                    happen
+#                    happen.  Note that this is required if you are using
+#                    docker version < 17.06.0.
 
 # Ensure we fail the job if any steps fail
 set -eu -o pipefail
@@ -65,6 +74,12 @@ do_login() {
     if [[ "$docker_version" == "$compare_value" && \
           "$docker_version" != "17.06.0" ]]
     then
+        if [ "${DOCKERHUB_EMAIL:-none}" == 'none' ]
+        then
+            echo "You are using docker version: $( docker -v ) \
+                  You must set DOCKERHUB_EMAIL"
+            exit 1
+        fi
         docker login -u "$USER" -p "$PASS" -e "$2" "$1"
     else
         docker login -u "$USER" -p "$PASS" "$1"
@@ -83,8 +98,7 @@ then
     done
 fi
 
-# Attempt to login to docker.io only if $DOCKERHUB_EMAIL is configured
-if [ "${DOCKERHUB_EMAIL:-none}" != 'none' ]
+if [ "${DOCKERHUB_REGISTRY:-none}" != 'none' ]
 then
-    do_login docker.io "$DOCKERHUB_EMAIL"
+    do_login "$DOCKERHUB_REGISTRY"
 fi
