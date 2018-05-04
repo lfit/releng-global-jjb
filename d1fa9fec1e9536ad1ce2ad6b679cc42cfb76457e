@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "9a1968e8_7972ec41",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-05-04T16:58:30Z",
+      "side": 1,
+      "message": "I believe this is a function for semver comparison in the packer jobs.",
+      "parentUuid": "7856d912_69344b2f",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 43
+      },
+      "revId": "d1fa9fec1e9536ad1ce2ad6b679cc42cfb76457e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e91e23bc_230be498",
         "filename": "shell/docker-login.sh",
         "patchSetId": 2
