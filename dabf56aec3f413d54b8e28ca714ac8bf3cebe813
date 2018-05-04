@@ -22,6 +22,30 @@
       "revId": "dabf56aec3f413d54b8e28ca714ac8bf3cebe813",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5df14f_283887d2",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T19:11:50Z",
+      "side": 1,
+      "message": "Because it is handled in `do_login()` right?",
+      "parentUuid": "649b3236_895649a1",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 116,
+        "endChar": 43
+      },
+      "revId": "dabf56aec3f413d54b8e28ca714ac8bf3cebe813",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
