@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "bbe5faa3_1b598d01",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T17:11:50Z",
+      "side": 1,
+      "message": "Cool thanks",
+      "parentUuid": "31156fb4_13800483",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 43
+      },
+      "revId": "d1fa9fec1e9536ad1ce2ad6b679cc42cfb76457e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e91e23bc_230be498",
         "filename": "shell/docker-login.sh",
         "patchSetId": 2
@@ -131,6 +155,30 @@
       "writtenOn": "2018-05-04T16:14:48Z",
       "side": 1,
       "message": "yep, good catch.",
+      "parentUuid": "e91e23bc_230be498",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 10
+      },
+      "revId": "d1fa9fec1e9536ad1ce2ad6b679cc42cfb76457e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d3e06a4_588688e7",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T17:11:50Z",
+      "side": 1,
+      "message": "Wait, The only way this block",
       "parentUuid": "e91e23bc_230be498",
       "range": {
         "startLine": 77,
