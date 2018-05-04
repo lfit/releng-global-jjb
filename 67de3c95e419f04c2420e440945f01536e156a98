@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ee372e98_cd9087bf",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T18:10:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6262a294_5ac10464",
+      "range": {
+        "startLine": 35,
+        "startChar": 21,
+        "endLine": 39,
+        "endChar": 46
+      },
+      "revId": "67de3c95e419f04c2420e440945f01536e156a98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "633ff453_2db39708",
         "filename": "shell/docker-login.sh",
         "patchSetId": 6
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3d1e0564_8d5b363e",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T18:10:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "633ff453_2db39708",
+      "revId": "67de3c95e419f04c2420e440945f01536e156a98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fe9a5880_67489029",
         "filename": "shell/docker-login.sh",
         "patchSetId": 6
@@ -53,6 +95,24 @@
       "writtenOn": "2018-05-04T17:30:49Z",
       "side": 1,
       "message": "Doing this makes this backwards incompatible with any systems that are currently configured with a DOCKERHUB_EMAIL but not DOCKERHUB_REGISTRY. This would be better to check for _either_ of those values and then pass an email to the do_login if the DOCKERHUB_EMAIL is defined, if not, then pass a none.",
+      "revId": "67de3c95e419f04c2420e440945f01536e156a98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "410be466_d2a07d14",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T18:10:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe9a5880_67489029",
       "revId": "67de3c95e419f04c2420e440945f01536e156a98",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
