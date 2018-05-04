@@ -46,6 +46,30 @@
       "revId": "8fec7d9ac5d2a55e7bf83ee258cbc52985994c8b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b50a7602_8e3e5b8a",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-04T14:20:13Z",
+      "side": 1,
+      "message": "Maybe we can have it check which version of docker is installed and adjust accordingly?",
+      "parentUuid": "18727c03_2c7e153a",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 2
+      },
+      "revId": "8fec7d9ac5d2a55e7bf83ee258cbc52985994c8b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
