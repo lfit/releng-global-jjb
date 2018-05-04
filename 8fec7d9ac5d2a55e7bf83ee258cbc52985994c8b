@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8cf120e5_d7dc2371",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-05-04T03:17:14Z",
+      "side": 1,
+      "message": "So if DOCKERHUB_REGISTRY is set along with DOCKERHUB_EMAIL, won\u0027t this will login twice?",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 2
+      },
+      "revId": "8fec7d9ac5d2a55e7bf83ee258cbc52985994c8b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
