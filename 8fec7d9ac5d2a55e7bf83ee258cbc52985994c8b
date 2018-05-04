@@ -22,6 +22,30 @@
       "revId": "8fec7d9ac5d2a55e7bf83ee258cbc52985994c8b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "18727c03_2c7e153a",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T13:14:13Z",
+      "side": 1,
+      "message": "Ah yeah I think you are right, though on Docker version 17.06.0 or greater you do not need email.  Let me remove the redundancy there.",
+      "parentUuid": "8cf120e5_d7dc2371",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 2
+      },
+      "revId": "8fec7d9ac5d2a55e7bf83ee258cbc52985994c8b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
