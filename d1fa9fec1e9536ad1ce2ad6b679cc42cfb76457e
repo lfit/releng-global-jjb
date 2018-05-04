@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "31156fb4_13800483",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-04T17:01:16Z",
+      "side": 1,
+      "message": "Here\u0027s a link:\n\nhttps://github.com/lfit/releng-global-jjb/blob/master/shell/packer-install.sh#L33-L37\n\nWe should probably figure out a better way to share these than to copy it everywhere but I\u0027d be ok with just copy pasting it for now.",
+      "parentUuid": "9a1968e8_7972ec41",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 43
+      },
+      "revId": "d1fa9fec1e9536ad1ce2ad6b679cc42cfb76457e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e91e23bc_230be498",
         "filename": "shell/docker-login.sh",
         "patchSetId": 2
