@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1cc8bf94_905137f4",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-04T19:57:20Z",
+      "side": 1,
+      "message": "This needs documentation in release notes / commit message that this will require systems that do not currently have DOCKERHUB_REGISTRY configured and use this script must do so or they will stop logging into dockerhub.",
+      "revId": "cc998bcae1d8018060bc2d227bf6deacee09dea1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
