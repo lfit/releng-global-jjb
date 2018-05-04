@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "633ff453_2db39708",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-04T17:30:49Z",
+      "side": 1,
+      "message": "This is a completely useless if statement here. This _needs_ to be a version check",
+      "revId": "67de3c95e419f04c2420e440945f01536e156a98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe9a5880_67489029",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-04T17:30:49Z",
+      "side": 1,
+      "message": "Doing this makes this backwards incompatible with any systems that are currently configured with a DOCKERHUB_EMAIL but not DOCKERHUB_REGISTRY. This would be better to check for _either_ of those values and then pass an email to the do_login if the DOCKERHUB_EMAIL is defined, if not, then pass a none.",
+      "revId": "67de3c95e419f04c2420e440945f01536e156a98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
