@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7856d912_69344b2f",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T16:25:56Z",
+      "side": 1,
+      "message": "The other way to do it is to write a function that compares semver directly I think.  This was easier at the time to do as everything required was already there.  In any case we don\u0027t really care about \u003e17.06.0 since we know that the --email flag does not exist there.\nIs there something obvious I\u0027m missing?",
+      "parentUuid": "cceb0107_bbfbeb0e",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 43
+      },
+      "revId": "d1fa9fec1e9536ad1ce2ad6b679cc42cfb76457e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e91e23bc_230be498",
         "filename": "shell/docker-login.sh",
         "patchSetId": 2
