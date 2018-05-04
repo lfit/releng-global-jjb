@@ -46,6 +46,30 @@
       "revId": "dabf56aec3f413d54b8e28ca714ac8bf3cebe813",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a08e08b_f8b61778",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-04T19:27:31Z",
+      "side": 1,
+      "message": "Looks like that\u0027s how the API was previously but Trevor\u0027s right the new do_login doesn\u0027t actually need to pass the 2nd parameter anymore since there\u0027s a check now. I\u0027d be ok with changing this in another patch.",
+      "parentUuid": "6e5df14f_283887d2",
+      "range": {
+        "startLine": 116,
+        "startChar": 8,
+        "endLine": 116,
+        "endChar": 43
+      },
+      "revId": "dabf56aec3f413d54b8e28ca714ac8bf3cebe813",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
