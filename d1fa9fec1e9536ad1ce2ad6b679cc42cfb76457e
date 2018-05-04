@@ -22,6 +22,30 @@
       "revId": "d1fa9fec1e9536ad1ce2ad6b679cc42cfb76457e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2919b7f_b1e3ea07",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T16:14:48Z",
+      "side": 1,
+      "message": "yep, good catch.",
+      "parentUuid": "e91e23bc_230be498",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 10
+      },
+      "revId": "d1fa9fec1e9536ad1ce2ad6b679cc42cfb76457e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
