@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e91e23bc_230be498",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-04T16:13:48Z",
+      "side": 1,
+      "message": "This is the wrong place for this. It now means that you _have_ to set a DOCKERHUB_EMAIL ENV var on systems that have docker \u003c17.06.0 even if you don\u0027t have a docker account associated!",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 10
+      },
+      "revId": "d1fa9fec1e9536ad1ce2ad6b679cc42cfb76457e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
