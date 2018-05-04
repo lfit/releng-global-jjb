@@ -22,6 +22,30 @@
       "revId": "35ea64f04f1b02548a5d71c9abd3680975fc4aa2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23d558ec_03682154",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-04T18:48:20Z",
+      "side": 1,
+      "message": "Yes I forgot to remove it.",
+      "parentUuid": "80bbaced_3f3e8a7f",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 10
+      },
+      "revId": "35ea64f04f1b02548a5d71c9abd3680975fc4aa2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
