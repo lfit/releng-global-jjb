@@ -48,4 +48,4 @@ do
                               -g "$GROUP_ID" \
                               -p "$MAVEN_OPTIONS $MAVEN_PARAMS" \
                               |& tee "$DEPLOY_LOG"
-done < <(find "$UPLOAD_FILES_PATH" -type f -name "*")
+done < <(find "$UPLOAD_FILES_PATH" -xtype f -name "*")
