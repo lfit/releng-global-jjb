@@ -1,0 +1,26 @@
+global-jjb v0.19.1 Release Notes
+================================
+
+Thanks to Dimitrios for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+None.
+
+Notable changes since v0.19.0
+-----------------------------
+
+d3cac52 Dimitrios Markou        Bug Fix: Replace -type f with -xtype f
+The -type f parameter cannot recognize symbolic link files
+so the replacement with the -xtype f parameter solve this problem
+
+This hotfix release is based on a request from the OpenDaylight
+packaging team (Daniel Farrell and Dimitrios Markou) due to blocked jobs.
+
+
+Full Change Log
+---------------
+
+d3cac52 Dimitrios Markou        Bug Fix: Replace -type f with -xtype f
