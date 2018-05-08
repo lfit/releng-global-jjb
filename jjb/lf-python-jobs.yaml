@@ -215,7 +215,7 @@
     python-version: python2
     mvn-global-settings: global-settings
     mvn-settings: '{mvn-settings}'
-    mvn-version: mvn33
+    mvn-version: mvn35
     sonar-mvn-goal: 'sonar:sonar'
     stream: master
     submodule-recursive: true

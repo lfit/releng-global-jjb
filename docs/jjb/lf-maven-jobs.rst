@@ -109,7 +109,7 @@ Produces a CLM scan of the code into Nexus IQ Server.
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    :mvn-version: Version of maven to use. (default: mvn33)
+    :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -151,7 +151,7 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    :mvn-version: Version of maven to use. (default: mvn33)
+    :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -190,7 +190,7 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    :mvn-version: Version of maven to use. (default: mvn33)
+    :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -247,7 +247,7 @@ This job uses the following strategy to deploy jobs to Nexus:
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    :mvn-version: Version of maven to use. (default: mvn33)
+    :mvn-version: Version of maven to use. (default: mvn35)
     :nexus-cut-dirs: Number of directories to cut from file path for `wget -r`.
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -298,7 +298,7 @@ directory can then be reused later to deploy to Nexus.
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    :mvn-version: Version of maven to use. (default: mvn33)
+    :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -342,7 +342,7 @@ interest in that kind of support.
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    :mvn-version: Version of maven to use. (default: mvn33)
+    :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -379,7 +379,7 @@ Verify job which runs mvn clean install to test a project build..
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    :mvn-version: Version of maven to use. (default: mvn33)
+    :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -423,7 +423,7 @@ via comment trigger.
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
-    :mvn-version: Version of maven to use. (default: mvn33)
+    :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
