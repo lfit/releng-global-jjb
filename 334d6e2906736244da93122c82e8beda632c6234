@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dba812e6_2afca9b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2018-05-09T19:32:35Z",
+      "side": 1,
+      "message": "when was this flag added, or has it always been there.\nasking just in case the jjb version we are using in infra\nmight not have that flag.",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "334d6e2906736244da93122c82e8beda632c6234",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
