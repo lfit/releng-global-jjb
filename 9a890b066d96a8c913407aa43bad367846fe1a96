@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b01edaf_90d82389",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-11T19:34:33Z",
+      "side": 1,
+      "message": "Interesting line breaking style. Not an issue, but doing ~50 char lines in the body seems a bit odd to me ;)",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 38
+      },
+      "revId": "9a890b066d96a8c913407aa43bad367846fe1a96",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "415fb484_a2382dab",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-11T19:34:33Z",
+      "side": 1,
+      "message": "$PROJECTDOMAIN",
+      "range": {
+        "startLine": 32,
+        "startChar": 36,
+        "endLine": 32,
+        "endChar": 52
+      },
+      "revId": "9a890b066d96a8c913407aa43bad367846fe1a96",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
