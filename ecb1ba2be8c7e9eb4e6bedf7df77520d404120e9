@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "02310d88_cd617b6e",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T15:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de3f6d8e_6dd3423b",
+      "range": {
+        "startLine": 61,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 51
+      },
+      "revId": "ecb1ba2be8c7e9eb4e6bedf7df77520d404120e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6b84c89c_b066f870",
         "filename": "docs/jjb/lf-macros.rst",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-05-11T15:33:49Z",
       "side": 1,
       "message": "with",
+      "range": {
+        "startLine": 80,
+        "startChar": 47,
+        "endLine": 80,
+        "endChar": 51
+      },
+      "revId": "ecb1ba2be8c7e9eb4e6bedf7df77520d404120e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cf7f172f_ed3c06e9",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T15:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b84c89c_b066f870",
       "range": {
         "startLine": 80,
         "startChar": 47,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "95ba63a2_e2f16ea2",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T15:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44915e68_f7b8405f",
+      "range": {
+        "startLine": 35,
+        "startChar": 45,
+        "endLine": 35,
+        "endChar": 49
+      },
+      "revId": "ecb1ba2be8c7e9eb4e6bedf7df77520d404120e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e4e51766_6f3a8fa6",
         "filename": "shell/docker-login.sh",
         "patchSetId": 4
@@ -82,6 +154,30 @@
       "writtenOn": "2018-05-11T15:33:49Z",
       "side": 1,
       "message": "This should be in caps. It is our practice to have bash / sh vars be in all caps",
+      "range": {
+        "startLine": 63,
+        "startChar": 6,
+        "endLine": 63,
+        "endChar": 16
+      },
+      "revId": "ecb1ba2be8c7e9eb4e6bedf7df77520d404120e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9cad981c_b98a5c82",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T15:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4e51766_6f3a8fa6",
       "range": {
         "startLine": 63,
         "startChar": 6,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "1b3a36e9_478c12c4",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T15:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ecb4d635_8793d51b",
+      "range": {
+        "startLine": 65,
+        "startChar": 6,
+        "endLine": 65,
+        "endChar": 16
+      },
+      "revId": "ecb1ba2be8c7e9eb4e6bedf7df77520d404120e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3f855e0_94aef733",
         "filename": "shell/docker-login.sh",
         "patchSetId": 4
@@ -128,6 +248,30 @@
       "writtenOn": "2018-05-11T15:33:49Z",
       "side": 1,
       "message": "This should be in caps. It is our practice to have bash / sh vars be in all caps",
+      "range": {
+        "startLine": 71,
+        "startChar": 11,
+        "endLine": 71,
+        "endChar": 21
+      },
+      "revId": "ecb1ba2be8c7e9eb4e6bedf7df77520d404120e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "adda0fe7_0ddb02c2",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T15:40:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3f855e0_94aef733",
       "range": {
         "startLine": 71,
         "startChar": 11,
