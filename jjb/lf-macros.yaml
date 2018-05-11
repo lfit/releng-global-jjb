@@ -23,6 +23,8 @@
       - lf-provide-maven-settings:
           global-settings-file: '{global-settings-file}'
           settings-file: '{settings-file}'
+      - inject:
+          properties-content: DESIRED_SETTINGS_FILE={desired-settings-file|settings-file}
       - shell: !include-raw-escape: ../shell/docker-login.sh
       - lf-provide-maven-settings-cleanup
 
