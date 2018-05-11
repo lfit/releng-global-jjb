@@ -149,6 +149,11 @@ lf-rtd-verify
 
 ReadTheDocs verify script.
 
+lf-infra-provide-docker-cleanup
+-------------------------------
+
+Forcibly removes all of the docker images.
+
 Parameters
 ==========
 
