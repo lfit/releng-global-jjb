@@ -32,6 +32,9 @@
 #
 # $SETTINGS_FILE   : Job level variable with maven settings file location
 #
+# $GLOBAL_SETTINGS_FILE : Job level variable wiht global settings file location.
+#                    You will define a setting for docker.io login here.
+#
 # $DOCKERHUB_EMAIL : Optional
 #                    Jenkins global variable that defines the email address that
 #                    should be used for logging into DockerHub
@@ -54,11 +57,18 @@ version_lt() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" != "$1";
 set_creds() {
     set +x  # Ensure that no other scripts add `set -x` and print passwords
     echo "$1"
-    CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
+    if [ "$1" == "docker.io" ]; then
+      CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
+        -t -m "/x:settings/x:servers/x:server[starts-with(x:id, '${1}')]" \
+        -v x:username -o ":" -v x:password \
+        "$GLOBAL_SETTINGS_FILE")
+      else
+      CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
         -t -m "/x:settings/x:servers/x:server[starts-with(x:id, '${1}')]" \
         -v x:username -o ":" -v x:password \
         "$SETTINGS_FILE")
 
+    fi
     USER=$(echo "$CREDENTIAL" | cut -f1 -d:)
     PASS=$(echo "$CREDENTIAL" | cut -f2 -d:)
 
