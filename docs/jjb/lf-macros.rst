@@ -25,6 +25,13 @@ Create a ~/.netrc file from a Maven settings.xml
 
     :server-id: The id of a server as defined in settings.xml.
 
+:Optional parameters:
+
+    :ALT_NEXUS_SERVER: URL of custom nexus server.
+        If set this will take precedence.
+        Use this to point at nexus3.edgexfoundry.org
+        for example.
+
 lf-infra-deploy-maven-file
 --------------------------
 
