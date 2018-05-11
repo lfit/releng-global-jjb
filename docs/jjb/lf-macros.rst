@@ -54,20 +54,37 @@ Login into a custom hosted docker registry and / or docker.io
 
 The Jenkins system should have the following global variables defined
 
-:Environment variables:
 
-    :DOCKER_REGISTRY: The DNS address of the registry (IP or FQDN)
-        ex: nexus3.example.com (GLOBAL variable)
+    :DOCKER_REGISTRY: Optional
+                     Jenkins global variable should be defined. If set, then
+                     this is the FQDN that will be used for logging into the
+                     custom docker registry ex: nexus3.example.com
 
-    :REGISTRY_PORTS: Required if DOCKER_REGISTRY is set. Space separated list
-        of the registry ports to login to. ex: 10001 10002 10003 10004
-        (GLOBAL variable)
+    :REGISTRY_PORTS: Required if DOCKER_REGISTRY is set Jenkins global variable
+                     should be defined (space separated). Listing of all the
+                     registry ports to login to ex: 10001 10002 10003 10004
 
-    :DOCKERHUB_EMAIL: If this variable is set then an attempt to login to
-        DockerHub (docker.io) will be also made. It should be set to the email
-        address for the credentials that will get looked up. Only _one_
-        credential will ever be found in the maven settings file for DockerHub.
-        (GLOBAL variable)
+    :DOCKERHUB_REGISTRY: Optional
+                       Set global Jenkins variable to `docker.io`. Additionally
+                       you will need to add as an entry to your projects mvn
+                      -settings file with username and password creds.  If you
+                       are using docker version < 17.06.0 you will need to set
+                       DOCKERHUB_EMAIL to auth to docker.io
+
+    :desired-settings-file: Optional
+                          Job level variable with settings file location. The
+                          defualt is the project maven settings file,
+                          $SETTINGS_FILE.  You can opt to set this to
+                          $GLOBAL_SETTINGS_FILE
+
+    :GLOBAL_SETTINGS_FILE: Job level variable; global settings file location.
+                     You will define a setting for docker.io login here.
+
+    :DOCKERHUB_EMAIL: Optional
+                    Jenkins global variable that defines the email address that
+                    should be used for logging into DockerHub Note that this
+                    will not be used if you are using docker version >=17.06.0.
+
 
 lf-infra-gpg-verify-git-signature
 ---------------------------------
