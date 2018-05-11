@@ -13,7 +13,7 @@
 
 # $DOCKER_REGISTRY : Optional
 #                    Jenkins global variable should be defined
-#                    If set, then this is the base IP or FQDN that will be used
+#                    If set, then this is the FQDN that will be used
 #                    for logging into the custom docker registry
 #                    ex: nexus3.example.com
 #
@@ -30,7 +30,12 @@
 #                      < 17.06.0 you will need to set DOCKERHUB_EMAIL
 #                      to auth to docker.io
 #
-# $SETTINGS_FILE   : Job level variable with maven settings file location
+# $DESIRED_SETTINGS_FILE   : Job level variable with settings file location.
+#                            The defualt is the project maven settings file,
+#                            $SETTINGS_FILE
+#
+# $GLOBAL_SETTINGS_FILE : Job level variable with global settings file location.
+#                    You will define a setting for docker.io login here.
 #
 # $DOCKERHUB_EMAIL : Optional
 #                    Jenkins global variable that defines the email address that
@@ -54,10 +59,11 @@ version_lt() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" != "$1";
 set_creds() {
     set +x  # Ensure that no other scripts add `set -x` and print passwords
     echo "$1"
+
     CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
         -t -m "/x:settings/x:servers/x:server[starts-with(x:id, '${1}')]" \
         -v x:username -o ":" -v x:password \
-        "$SETTINGS_FILE")
+        "${DESIRED_SETTINGS_FILE}")
 
     USER=$(echo "$CREDENTIAL" | cut -f1 -d:)
     PASS=$(echo "$CREDENTIAL" | cut -f2 -d:)
