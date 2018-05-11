@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dba25682_aa98e3e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "463aa9f6_ac52511a",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 35
+      },
+      "revId": "e3657ba41674cfb77c00e6e14083127263ed9d6b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ad0c04f6_3f03957a",
         "filename": "docs/jjb/lf-macros.rst",
         "patchSetId": 6
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "b1e4e471_c024fd7a",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ad0c04f6_3f03957a",
+      "revId": "e3657ba41674cfb77c00e6e14083127263ed9d6b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27f3d24a_48f3c653",
         "filename": "docs/jjb/lf-macros.rst",
         "patchSetId": 6
@@ -53,6 +95,30 @@
       "writtenOn": "2018-05-11T21:16:48Z",
       "side": 1,
       "message": "Dangling whitespace",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 28
+      },
+      "revId": "e3657ba41674cfb77c00e6e14083127263ed9d6b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4375a4de_e4c8a38e",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-05-11T21:35:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27f3d24a_48f3c653",
       "range": {
         "startLine": 89,
         "startChar": 0,
