@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "463aa9f6_ac52511a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-11T21:16:48Z",
+      "side": 1,
+      "message": "Could you please fix the line wrapping? This should be a 72 character line wrap, no 50 character line wrap",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 35
+      },
+      "revId": "e3657ba41674cfb77c00e6e14083127263ed9d6b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ad0c04f6_3f03957a",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-11T21:16:48Z",
+      "side": 1,
+      "message": "Please fix the line wrapping. All of the added code feel unnatural in the line wrapping. It should be wrapping ~80 characters, not 50!",
+      "revId": "e3657ba41674cfb77c00e6e14083127263ed9d6b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27f3d24a_48f3c653",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-11T21:16:48Z",
+      "side": 1,
+      "message": "Dangling whitespace",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 28
+      },
+      "revId": "e3657ba41674cfb77c00e6e14083127263ed9d6b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
