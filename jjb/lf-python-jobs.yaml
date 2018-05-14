@@ -111,6 +111,11 @@
     #####################
 
     parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
       - string:
           name: NEXUS_IQ_CLI_VERSION
           default: '{nexus-iq-cli-version}'
