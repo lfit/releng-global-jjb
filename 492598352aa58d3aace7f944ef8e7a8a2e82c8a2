@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39348e71_7fccff8b",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-05-14T23:07:21Z",
+      "side": 1,
+      "message": "No need to set this to a value \"None\", instead set this to an empty string, to avoid the Unbound variable error. Later use -z to check if the variable is unset or empty in the if condition.\n\nex:\n\nALT_NEXUS_URL\u003d\"${ALT_NEXUS_URL:-}\" \u0026\u0026 if [[ -z $ALT_NEXUS_URL ]]; then echo \"set\"; fi",
+      "range": {
+        "startLine": 16,
+        "startChar": 32,
+        "endLine": 16,
+        "endChar": 36
+      },
+      "revId": "492598352aa58d3aace7f944ef8e7a8a2e82c8a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ed0522c0_23e96e13",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-05-14T23:07:21Z",
+      "side": 1,
+      "message": "This extra check is not required, please read above. URL\u0027s should be empty or unset.",
+      "range": {
+        "startLine": 18,
+        "startChar": 26,
+        "endLine": 18,
+        "endChar": 57
+      },
+      "revId": "492598352aa58d3aace7f944ef8e7a8a2e82c8a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
