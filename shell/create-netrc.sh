@@ -13,9 +13,9 @@ echo "---> create-netrc.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-ALT_NEXUS_URL="${ALT_NEXUS_URL}"
+ALT_NEXUS_URL="${ALT_NEXUS_URL:-None}"
 
-if [ -z "$ALT_NEXUS_URL" ]
+if [[ -z "$ALT_NEXUS_URL" || "$ALT_NEXUS_URL" == "None" ]]
 then
     NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
 else
