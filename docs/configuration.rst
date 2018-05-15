@@ -47,6 +47,63 @@ Create a "Custom file" with contents:
    timeout = 60
    index-url = https://nexus3.opendaylight.org/repository/PyPi/simple
 
+jjbini
+------
+
+This file contains the Jenkins Job Builder `configuration
+https://docs.openstack.org/infra/jenkins-job-builder/execution.html#configuration-file`_
+for :ref:`lf-ci-jobs`.
+
+:Required: This file MUST exist.
+:type: Custom file
+
+Create a "Custom file" with contents:
+
+.. code::
+
+    [job_builder]
+    ignore_cache=True
+    keep_descriptions=False
+    include_path=.:scripts:~/git/
+    recursive=True
+
+    [jenkins]
+    user=jenkins
+    password=1234567890abcdef1234567890abcdef
+    url=https://jenkins.example.com
+    query_plugins_info=False
+
+
+jenkins-log-archives-settings
+-----------------------------
+
+See :ref:`lf-infra-ship-logs` for usage.
+
+Requires a credentials named 'logs' of type 'Username and Password'.
+
+:Required: This file MUST exist. An empty file is acceptable if Nexus is
+           not available for the project.
+:type: Maven settings.xml
+
+.. code::
+
+   foo
+
+packer-cloud-env
+----------------
+
+Cloud environment configuration variables for Packer jobs. These can
+contain credentials and configuration for whichever clouds packer jobs
+are using.
+
+:Required: This file MUST exist in order to use packer jobs.
+:type: Custom file
+
+.. code::
+
+   {
+     "cloud_foo": "bar"
+   }
 
 Jenkins CI Jobs
 ===============
@@ -57,3 +114,5 @@ jenkins-cfg-merge
 This job manages Jenkins Global configuration. Refer to
 the :ref:`CI Documentation <lf-global-jjb-jenkins-cfg-merge>` for job
 configuration details.
+
+.. TODO: Add details about jenkins-config directory and global-vars-$SILO.sh scripts
