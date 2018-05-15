@@ -144,6 +144,8 @@
 
     gerrit_trigger_file_paths:
       - compare-type: ANT
+        pattern: '**/*.groovy'
+      - compare-type: ANT
         pattern: '**/*.sh'
       - compare-type: ANT
         pattern: '**/*.yml'
