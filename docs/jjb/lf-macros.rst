@@ -107,6 +107,8 @@ way using git-review.
         email addresses to CC on the patch.
     :project: Gerrit project name.
 
+.. _lf-infra-ship-logs:
+
 lf-infra-ship-logs
 ------------------
 
