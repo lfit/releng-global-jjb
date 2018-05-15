@@ -91,6 +91,8 @@ Run `packer validate` to verify packer configuration.
         server as CLOUDENV environment variable.
     :packer-version: Version of packer to use.
 
+.. _lf-infra-ship-logs:
+
 lf-infra-ship-logs
 ------------------
 
