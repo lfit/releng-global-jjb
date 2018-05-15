@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "105c68fd_c67a5eab",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-15T14:41:49Z",
+      "side": 1,
+      "message": "This should be in all caps",
+      "range": {
+        "startLine": 30,
+        "startChar": 3,
+        "endLine": 30,
+        "endChar": 24
+      },
+      "revId": "180dfc3c1183af8c4817fde6b2d2d893d0528158",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "95b57ed3_1c7ba666",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-15T14:41:49Z",
+      "side": 1,
+      "message": "This states that this defaults to $SETTINGS_FILE but there is no code to support this claim!",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 47
+      },
+      "revId": "180dfc3c1183af8c4817fde6b2d2d893d0528158",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ae03996_9b967d9d",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-15T14:41:49Z",
+      "side": 1,
+      "message": "Why is this documented? There is no code that uses this variable?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 72
+      },
+      "revId": "180dfc3c1183af8c4817fde6b2d2d893d0528158",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
