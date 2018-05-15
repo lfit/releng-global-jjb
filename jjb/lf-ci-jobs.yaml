@@ -148,6 +148,8 @@
       - compare-type: ANT
         pattern: '**/*.yaml'
       - compare-type: ANT
+        pattern: '**/*.groovy'
+      - compare-type: ANT
         pattern: '**/global-jjb'
 
     #####################
