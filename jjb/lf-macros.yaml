@@ -219,6 +219,16 @@
     builder:
       - shell: !include-raw-escape: ../shell/sigul-install.sh
 
+- builder:
+    name: lf-infra-provide-docker-cleanup
+    builders:
+      - shell: |
+          #!/bin/bash
+          set +e  # DO NOT cause build failure if docker rmi fails
+          docker rmi -f $(docker images -a -q)
+          exit 0
+
+
 ##############
 # PARAMETERS #
 ##############
