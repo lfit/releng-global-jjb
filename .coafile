@@ -46,7 +46,7 @@ use_spaces = yeah
 
 [all.YAML]
 bears = YAMLLintBear
-files = **.yaml
+files = **.yaml, **.yml
 document_start = True
 yamllint_config = yamllint.conf
 

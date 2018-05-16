@@ -146,6 +146,8 @@
       - compare-type: ANT
         pattern: '**/*.sh'
       - compare-type: ANT
+        pattern: '**/*.yml'
+      - compare-type: ANT
         pattern: '**/*.yaml'
       - compare-type: ANT
         pattern: '**/global-jjb'
