@@ -13,6 +13,8 @@
 # Takes a list of Gerrit patches and fetches all projects and cherry-pick
 # patches for projects. The trigger is
 #     'recheck: SPACE_SEPERATED_LIST_OF_PATCHES'
+#     or
+#     'reverify: SPACE_SEPERATED_LIST_OF_PATCHES'
 #
 # NOTE: This script assumes the user will provide the correct dependency order
 #       via the PATCHES list.
@@ -22,7 +24,7 @@ set -eu -o pipefail
 
 REPOS_DIR="$WORKSPACE/.repos"
 
-IFS=" " read -r -a PATCHES <<< "$(echo "$GERRIT_EVENT_COMMENT_TEXT" | grep 'recheck:' | awk -F: '{print $2}')"
+IFS=" " read -r -a PATCHES <<< "$(echo "$GERRIT_EVENT_COMMENT_TEXT" | grep -E '(recheck:|reverify:)' | awk -F: '{print $2}')"
 
 # Workaround for git-review bug in v1.24
 # https://storyboard.openstack.org/#!/story/2001081
