@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "785841c7_cb1d4192",
+        "filename": "shell/jjb-cleanup.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-05-17T23:03:07Z",
+      "side": 1,
+      "message": "we should also `unset JJB_VENV`?",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 49
+      },
+      "revId": "fb4c5d5aef5a57f5aad163d00ae912f7b5627732",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
