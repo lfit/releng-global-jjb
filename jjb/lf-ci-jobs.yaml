@@ -625,7 +625,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: recheck$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
 
     #####################
     # Job Configuration #
@@ -707,7 +707,7 @@
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^recheck$'
+          trigger-phrase: '^recheck$|^reverify$'
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true
@@ -732,7 +732,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: recheck$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
 
     #####################
     # Job Configuration #
@@ -799,7 +799,7 @@
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^recheck$'
+          trigger-phrase: '^recheck$|^reverify$'
           only-trigger-phrase: false
           status-context: 'INFO File Verify'
           permit-all: true
@@ -950,7 +950,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: recheck$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -1035,7 +1035,7 @@
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^recheck$'
+          trigger-phrase: '^recheck$|^reverify$'
           only-trigger-phrase: false
           status-context: 'Packer Verify'
           permit-all: true
