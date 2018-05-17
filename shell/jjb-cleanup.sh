@@ -8,22 +8,18 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-echo "---> jjb-install.sh"
+echo "---> jjb-cleanup.sh"
+# Cleans up the temporary directory created for the virtualenv but only if it
+# exists under /tmp. This is to ensure we never attempt to blow away '/'
+# through mis-set bash variables.
 
 # Ensure we fail the job if any steps fail.
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-# Create a virtualenv in a temporary directoy and write it down to used
-# or cleaned up later; cleanup is done in the script jjb-cleanup.sh.
-JJB_VENV="$(mktemp -d)"
-export JJB_VENV
-virtualenv "$JJB_VENV"
-echo "JJB_VENV=$JJB_VENV" > "$WORKSPACE/.jjb.properties"
-# shellcheck source=$VENV_DIR/bin/activate disable=SC1091
-source "$JJB_VENV/bin/activate"
-pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
-
-echo "----> pip freeze"
-pip freeze
+# shellcheck source="$WORKSPACE/.jjb.properties" disable=SC1091
+source "$WORKSPACE/.jjb.properties"
+if [[ -n "$JJB_VENV" && "$JJB_VENV" =~ /tmp/.* ]]; then
+    rm -r "$JJB_VENV" && "$JJB_VENV removed"
+fi
+rm "$WORKSPACE/.jjb.properties"

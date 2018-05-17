@@ -529,6 +529,7 @@
       - shell: !include-raw-escape:
           - ../shell/jjb-install.sh
           - ../shell/jjb-merge-job.sh
+          - ../shell/jjb-cleanup.sh
 
 - job-template:
     name: '{project-name}-jjb-merge'
@@ -627,6 +628,7 @@
           - ../shell/jjb-install.sh
           - ../shell/jjb-verify-job.sh
           - ../shell/jjb-check-unicode.sh
+          - ../shell/jjb-cleanup.sh
       - lf-infra-gpg-verify-git-signature
 
 - job-template:
