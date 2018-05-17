@@ -20,6 +20,7 @@ set -e -o pipefail
 # shellcheck source="$WORKSPACE/.jjb.properties" disable=SC1091
 source "$WORKSPACE/.jjb.properties"
 if [[ -n "$JJB_VENV" && "$JJB_VENV" =~ /tmp/.* ]]; then
-    rm -r "$JJB_VENV" && "$JJB_VENV removed"
+    rm -r "$JJB_VENV" && echo "$JJB_VENV removed"
+    unset JJB_VENV
 fi
 rm "$WORKSPACE/.jjb.properties"
