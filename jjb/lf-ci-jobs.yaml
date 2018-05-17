@@ -613,6 +613,8 @@
       - draft-published-event
       - comment-added-contains-event:
           comment-contains-value: recheck$
+      - comment-added-contains-event:
+          comment-contains-value: reverify$
 
     #####################
     # Job Configuration #
@@ -681,7 +683,7 @@
 
     triggers:
       - lf-infra-github-pr-trigger:
-          trigger-phrase: '^recheck$'
+          trigger-phrase: '^recheck$|^reverify$'
           only-trigger-phrase: false
           status-context: 'JJB Verify'
           permit-all: true

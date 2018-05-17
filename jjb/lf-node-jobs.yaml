@@ -50,6 +50,8 @@
       - draft-published-event
       - comment-added-contains-event:
           comment-contains-value: recheck$
+      - comment-added-contains-event:
+          comment-contains-value: reverify$
 
     #####################
     # Job Configuration #
@@ -132,7 +134,7 @@
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^recheck$'
+          trigger-phrase: '^recheck$|^reverify$'
           only-trigger-phrase: false
           status-context: 'Node Verify'
           permit-all: true
