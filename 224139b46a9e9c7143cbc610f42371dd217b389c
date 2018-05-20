@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "972902d7_8c150e98",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-20T17:48:26Z",
+      "side": 1,
+      "message": "typo: global-jjb",
+      "range": {
+        "startLine": 10,
+        "startChar": 34,
+        "endLine": 10,
+        "endChar": 41
+      },
+      "revId": "224139b46a9e9c7143cbc610f42371dd217b389c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a0182e6_e4bb3766",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-20T17:48:26Z",
+      "side": 1,
+      "message": "I believe this is regex so maybe we can do\n\n(recheck|reverify)$\n\nthat way if folks copy paste the regex they\u0027ll get both in the same call.",
+      "revId": "224139b46a9e9c7143cbc610f42371dd217b389c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
