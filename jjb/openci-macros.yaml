@@ -1,0 +1,9 @@
+---
+############
+# BUILDERS #
+############
+
+- builder:
+    name: openci-emit-ape
+    builders:
+      - shell: !include-raw-escape: ../shell/openci-emit-ape.sh
