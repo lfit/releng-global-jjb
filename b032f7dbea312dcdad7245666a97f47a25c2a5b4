@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cf38ad9_3489b383",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-25T16:24:27Z",
+      "side": 1,
+      "message": "This should be in all caps since it\u0027s an ENV var",
+      "range": {
+        "startLine": 74,
+        "startChar": 5,
+        "endLine": 74,
+        "endChar": 26
+      },
+      "revId": "b032f7dbea312dcdad7245666a97f47a25c2a5b4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
