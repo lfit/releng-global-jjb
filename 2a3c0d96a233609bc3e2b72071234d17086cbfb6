@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be051a1a_5d680e44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-30T01:59:22Z",
+      "side": 1,
+      "message": "This is possibly an untrue statement. We should probably update shell/jjb-install.sh along with this change as the new usage of JJB_VERSION likely does affect us even if the existing scripts are not calling tox yet.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 22
+      },
+      "revId": "2a3c0d96a233609bc3e2b72071234d17086cbfb6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
