@@ -160,6 +160,8 @@ Full Example:
 .. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-full.yaml
    :language: yaml
 
+.. _jenkins-cfg-envvar:
+
 Global Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
