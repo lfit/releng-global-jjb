@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "207a2b57_9e29d789",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-31T21:13:28Z",
+      "side": 1,
+      "message": "This line really needs to be wrapped. It\u0027s hard to review like this. It\u0027s also something I would hate to read in a terminal!",
+      "revId": "b0c1c672a4671432b1b6a5240cac504676cfb0ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
