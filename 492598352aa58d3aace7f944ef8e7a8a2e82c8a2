@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cac3e6d1_195d9300",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-05-31T01:45:59Z",
+      "side": 1,
+      "message": "Made a typo in the previous comment, the corrected version should be \nALT_NEXUS_URL\u003d\"${ALT_NEXUS_URL:+ALT_NEXUS_URL}\"\n\ntry ex:\n#!/bin/bash\nset -eu -o pipefail\nALT_NEXUS_URL\u003d\"${ALT_NEXUS_URL:+ALT_NEXUS_URL}\"\n[ -z \"$ALT_NEXUS_URL\" ] \u0026\u0026 echo \"\u0027$ALT_NEXUS_URL\u0027 set null\"\"",
+      "parentUuid": "39348e71_7fccff8b",
+      "range": {
+        "startLine": 16,
+        "startChar": 32,
+        "endLine": 16,
+        "endChar": 36
+      },
+      "revId": "492598352aa58d3aace7f944ef8e7a8a2e82c8a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ed0522c0_23e96e13",
         "filename": "shell/create-netrc.sh",
         "patchSetId": 2
