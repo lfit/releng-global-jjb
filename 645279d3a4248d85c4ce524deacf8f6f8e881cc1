@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fb08162_d0eaca8f",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-31T21:36:15Z",
+      "side": 1,
+      "message": "used in the",
+      "range": {
+        "startLine": 71,
+        "startChar": 7,
+        "endLine": 71,
+        "endChar": 15
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35fe7795_aa599415",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-31T21:36:15Z",
+      "side": 1,
+      "message": "environment",
+      "range": {
+        "startLine": 107,
+        "startChar": 6,
+        "endLine": 107,
+        "endChar": 17
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5dff0ac0_02bff0e1",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-31T21:36:15Z",
+      "side": 1,
+      "message": "builder\n\nSince we\u0027ve deprecated the basebuild termn",
+      "range": {
+        "startLine": 148,
+        "startChar": 27,
+        "endLine": 148,
+        "endChar": 36
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e22e4395_490e9bbf",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-31T21:36:15Z",
+      "side": 1,
+      "message": "builder",
+      "range": {
+        "startLine": 182,
+        "startChar": 27,
+        "endLine": 182,
+        "endChar": 36
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a1c6597_246fb33f",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-05-31T21:36:15Z",
+      "side": 1,
+      "message": "builder",
+      "range": {
+        "startLine": 199,
+        "startChar": 27,
+        "endLine": 199,
+        "endChar": 36
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
