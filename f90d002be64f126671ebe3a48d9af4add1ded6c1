@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e95a1a26_e72fca0d",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-31T16:30:31Z",
+      "side": 1,
+      "message": "Do we even need this variable? I think we could override NEXUS_URL via inject. Inject\u0027s take precedence over what\u0027s defined in global-config I think.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 50
+      },
+      "revId": "f90d002be64f126671ebe3a48d9af4add1ded6c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
