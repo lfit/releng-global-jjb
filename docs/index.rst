@@ -26,8 +26,12 @@ Guides
 .. toctree::
    :maxdepth: 2
 
-   best-practices
+   install
    configuration
+
+   best-practices
+   glossary
+   appendix
 
 Global JJB Templates
 --------------------
