@@ -7,10 +7,10 @@ Linux Foundation Release Engineering Global Jenkins Job Builder (JJB)
 Documentation.
 
 Global-JJB is a library project containing reusable Jenkins Job Builder
-templates. Mainly used by LFCI to deploy management Jenkins jobs to an LF
-managed Jenkins instance, there are other jobs defined for which may be helpful
-to projects whom use the same build technology. The intention is to save time
-for projects from having to define their own job templates.
+templates. Developed for LFCI to deploy management Jenkins jobs to an LF
+managed Jenkins instance, there are other jobs defined which may be helpful
+to projects that use the same build technology. The intention is to help
+projects save time from having to define their own job templates.
 
 Release Notes
 -------------
