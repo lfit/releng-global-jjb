@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3994952d_17df509a",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-05-31T15:42:04Z",
+      "side": 1,
+      "message": "Yeah using \"None\" as a placeholder in Bash is bad practice IMO. We can simplify the next line if this was just a blank string instead.",
+      "parentUuid": "cac3e6d1_195d9300",
+      "range": {
+        "startLine": 16,
+        "startChar": 32,
+        "endLine": 16,
+        "endChar": 36
+      },
+      "revId": "492598352aa58d3aace7f944ef8e7a8a2e82c8a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ed0522c0_23e96e13",
         "filename": "shell/create-netrc.sh",
         "patchSetId": 2
