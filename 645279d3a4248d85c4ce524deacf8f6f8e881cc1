@@ -2,6 +2,328 @@
   "comments": [
     {
       "key": {
+        "uuid": "136456cb_ffc43261",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "Can we describe the sections being migrated? Maybe just the titles of the sections",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5b952d77_a986b5bc",
+        "filename": "docs/appendix.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "Bold",
+      "range": {
+        "startLine": 10,
+        "startChar": 19,
+        "endLine": 10,
+        "endChar": 24
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e9aea3e_afd333e2",
+        "filename": "docs/appendix.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "(common with ci-management and releng/builder repos),\nwe require",
+      "range": {
+        "startLine": 9,
+        "startChar": 36,
+        "endLine": 10,
+        "endChar": 10
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fd8d70e1_a25cab78",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "ci-management or releng/builder repos",
+      "range": {
+        "startLine": 12,
+        "startChar": 23,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c52fa0d_0a8d0c3c",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "Remove this \"you are\" \n\nIf using Github... sounds less personalized",
+      "range": {
+        "startLine": 39,
+        "startChar": 52,
+        "endLine": 39,
+        "endChar": 59
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0336324d_963fadf3",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "value",
+      "range": {
+        "startLine": 44,
+        "startChar": 32,
+        "endLine": 44,
+        "endChar": 37
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a67fa25a_a410f356",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "authorized (or allowed)",
+      "range": {
+        "startLine": 54,
+        "startChar": 45,
+        "endLine": 54,
+        "endChar": 64
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "70d894ae_30656202",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "Can we make this less project specific? \n\u003clf-project-name\u003e",
+      "range": {
+        "startLine": 68,
+        "startChar": 31,
+        "endLine": 68,
+        "endChar": 43
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22e4e1aa_6d17382f",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "Can we make this less project specific? \n\u003clf-project-name\u003e",
+      "range": {
+        "startLine": 71,
+        "startChar": 20,
+        "endLine": 71,
+        "endChar": 32
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bb8c21d5_56800fc1",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "Can we make this less project specific? \n\u003clf-project-name\u003e\n\nActually, we are starting to generalize these ServerIDs into \"staging\", \"releases\", etc. \n\nShall we promote these names rather?",
+      "range": {
+        "startLine": 72,
+        "startChar": 23,
+        "endLine": 72,
+        "endChar": 35
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "213d8aca_760e2497",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "Same as my previous comment in line 72",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 43
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3cc0c45_f05fb337",
+        "filename": "docs/glossary.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "(JJB), a",
+      "range": {
+        "startLine": 8,
+        "startChar": 37,
+        "endLine": 8,
+        "endChar": 45
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ebe8613_9b2c9ed8",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "``ci-management`` or ``releng/builder``",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6534ed18_98db9260",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "Jenkins configuration",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 7
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9fb08162_d0eaca8f",
         "filename": "docs/install.rst",
         "patchSetId": 5
@@ -18,6 +340,52 @@
         "startChar": 7,
         "endLine": 71,
         "endChar": 15
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "446b2dde_0c8832d8",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "ci-management or releng/builder",
+      "range": {
+        "startLine": 81,
+        "startChar": 51,
+        "endLine": 81,
+        "endChar": 64
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d96e71aa_49597491",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-05-31T21:44:59Z",
+      "side": 1,
+      "message": "ci-management or releng/builder configuration",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 13
       },
       "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
