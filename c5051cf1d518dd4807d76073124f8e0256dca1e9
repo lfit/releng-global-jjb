@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9cbecb58_6184ec59",
+        "filename": "docs/glossary.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T15:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37e150f3_b59416a6",
+      "revId": "c5051cf1d518dd4807d76073124f8e0256dca1e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "096e2562_4bd1bf3a",
         "filename": "docs/install.rst",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3dc5bb01_8a73e6df",
+        "filename": "docs/install.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T15:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "096e2562_4bd1bf3a",
+      "revId": "c5051cf1d518dd4807d76073124f8e0256dca1e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76226736_6d50b875",
         "filename": "docs/install.rst",
         "patchSetId": 7
@@ -47,6 +83,30 @@
       "writtenOn": "2018-06-01T15:27:06Z",
       "side": 1,
       "message": "Remove this since we now explain it in the glossary?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 47
+      },
+      "revId": "c5051cf1d518dd4807d76073124f8e0256dca1e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "87b05afa_cac049e3",
+        "filename": "docs/install.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T15:39:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "76226736_6d50b875",
       "range": {
         "startLine": 8,
         "startChar": 0,
