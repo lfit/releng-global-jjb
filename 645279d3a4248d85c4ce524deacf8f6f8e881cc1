@@ -301,6 +301,30 @@
     },
     {
       "key": {
+        "uuid": "33dd8d7d_7e595be8",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "I\u0027ll add this but I don\u0027t think we should be listing every exception to the rule. We should standardize on one and projects that have exceptions should document their own exceptions.\n\n...\n\n\nThought of this a bit I think we\u0027ll leave a note at the top to mention that for the OpenDaylight project all instances of ci-management is releng/builder.",
+      "parentUuid": "3ebe8613_9b2c9ed8",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6534ed18_98db9260",
         "filename": "docs/install.rst",
         "patchSetId": 5
@@ -312,6 +336,30 @@
       "writtenOn": "2018-05-31T21:44:59Z",
       "side": 1,
       "message": "Jenkins configuration",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 7
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9c3700d2_5a66084e",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6534ed18_98db9260",
       "range": {
         "startLine": 8,
         "startChar": 0,
@@ -347,6 +395,30 @@
     },
     {
       "key": {
+        "uuid": "8a1ad61c_15493a1e",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9fb08162_d0eaca8f",
+      "range": {
+        "startLine": 71,
+        "startChar": 7,
+        "endLine": 71,
+        "endChar": 15
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "446b2dde_0c8832d8",
         "filename": "docs/install.rst",
         "patchSetId": 5
@@ -358,6 +430,30 @@
       "writtenOn": "2018-05-31T21:44:59Z",
       "side": 1,
       "message": "ci-management or releng/builder",
+      "range": {
+        "startLine": 81,
+        "startChar": 51,
+        "endLine": 81,
+        "endChar": 64
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d53440fa_0ac0e497",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "446b2dde_0c8832d8",
       "range": {
         "startLine": 81,
         "startChar": 51,
@@ -393,6 +489,30 @@
     },
     {
       "key": {
+        "uuid": "f8272b4c_7a2cd735",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "I think we should just leave this section header ci-management. If we have 3 projects with different names for their ci-management repo this title will get a little crazy.\n\nAs mentioned above I\u0027ve left a note at the top of the file to state that all instances of ci-management refers to releng/builder in OpenDaylight.",
+      "parentUuid": "d96e71aa_49597491",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 13
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "35fe7795_aa599415",
         "filename": "docs/install.rst",
         "patchSetId": 5
@@ -404,6 +524,30 @@
       "writtenOn": "2018-05-31T21:36:15Z",
       "side": 1,
       "message": "environment",
+      "range": {
+        "startLine": 107,
+        "startChar": 6,
+        "endLine": 107,
+        "endChar": 17
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "547b41b6_a1d2b4f9",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35fe7795_aa599415",
       "range": {
         "startLine": 107,
         "startChar": 6,
@@ -439,6 +583,30 @@
     },
     {
       "key": {
+        "uuid": "72d338b4_d2585650",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5dff0ac0_02bff0e1",
+      "range": {
+        "startLine": 148,
+        "startChar": 27,
+        "endLine": 148,
+        "endChar": 36
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e22e4395_490e9bbf",
         "filename": "docs/install.rst",
         "patchSetId": 5
@@ -462,6 +630,30 @@
     },
     {
       "key": {
+        "uuid": "59157eed_e01517d4",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e22e4395_490e9bbf",
+      "range": {
+        "startLine": 182,
+        "startChar": 27,
+        "endLine": 182,
+        "endChar": 36
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a1c6597_246fb33f",
         "filename": "docs/install.rst",
         "patchSetId": 5
@@ -473,6 +665,30 @@
       "writtenOn": "2018-05-31T21:36:15Z",
       "side": 1,
       "message": "builder",
+      "range": {
+        "startLine": 199,
+        "startChar": 27,
+        "endLine": 199,
+        "endChar": 36
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a03cc082_cf6c7388",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:35:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a1c6597_246fb33f",
       "range": {
         "startLine": 199,
         "startChar": 27,
