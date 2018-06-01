@@ -1,0 +1,45 @@
+global-jjb v0.20.0 Release Notes
+================================
+
+Thanks to Anil, Dimitrios, Jeremy, Jessica, Thanh, Trevor and Zack
+for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+Not required but we highly recommend switching to Maven 3.5.2 for any Maven
+Merge jobs.
+
+
+Notable changes since v0.19.0
+-----------------------------
+
+008d7f1 Thanh Ha        Remove maven_metadata_validate function
+The maven_metadata_validate function is removed and we now recommend using
+Maven 3.5.2 or later for maven-merge jobs.
+
+dc91493 Jeremy Phelps   Add docker clean macro
+New macro `lf-infra-provide-docker-cleanup` to cleanup docker images.
+
+1951f33 Zack Williams   Add *.groovy as a filetype trigger to ci-verify
+aec2a0c Trevor Bramwell Support the .yml YAML File Suffix for CI Jobs
+jjb-verify jobs will now trigger on *.groovy and *.yml file changes.
+
+
+Full Change Log
+---------------
+
+ed23bb6 Thanh Ha        Remove echo statement
+1951f33 Zack Williams   Add *.groovy as a filetype trigger to ci-verify
+7a1a1bd Thanh Ha        Simplify conditional statement for ALT_NEXUS_REPO
+9b24045 Trevor Bramwell Fix echo when removing venv in jjb-cleanup.sh
+1c748f6 Trevor Bramwell Use a temporary directory for jjb-installs
+aec2a0c Trevor Bramwell Support the .yml YAML File Suffix for CI Jobs
+4925983 Jeremy Phelps   Prevent unbound variable error on create-netrc.sh
+7550665 Jessica Wagantall       Add lf-infra-parameters XC CLM
+dc91493 Jeremy Phelps   Add docker clean macro
+f90d002 Jeremy Phelps   Add ALT_NEXUS_URL to create-netrc
+334d6e2 Anil Belur      Use --jobs-only option with jjb-deploy
+d3cac52 Dimitrios Markou        Bug Fix: Replace -type f with -xtype f
+008d7f1 Thanh Ha        Remove maven_metadata_validate function
