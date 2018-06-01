@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6565c459_2fb73422",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-01T03:09:12Z",
+      "side": 1,
+      "message": "Need to investigate how to make sure github job gets triggered only when an INFO.yaml change file is detected",
+      "range": {
+        "startLine": 789,
+        "startChar": 0,
+        "endLine": 800,
+        "endChar": 31
+      },
+      "revId": "779962dfb29557f26b43430be458f61377612583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
