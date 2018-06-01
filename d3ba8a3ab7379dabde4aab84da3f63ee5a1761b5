@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ed532583_89a157e0",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:26:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abad5b70_096c83fc",
+      "range": {
+        "startLine": 4,
+        "startChar": 11,
+        "endLine": 4,
+        "endChar": 25
+      },
+      "revId": "d3ba8a3ab7379dabde4aab84da3f63ee5a1761b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0df67082_dd804dbe",
         "filename": "README.md",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-05-31T21:19:31Z",
       "side": 1,
       "message": "Spurious \u0027for\u0027",
+      "range": {
+        "startLine": 5,
+        "startChar": 55,
+        "endLine": 5,
+        "endChar": 58
+      },
+      "revId": "d3ba8a3ab7379dabde4aab84da3f63ee5a1761b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61001d47_655acedd",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:26:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0df67082_dd804dbe",
       "range": {
         "startLine": 5,
         "startChar": 55,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "35d91a88_516e9dcf",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:26:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "989f45ba_6f2bbac8",
+      "range": {
+        "startLine": 6,
+        "startChar": 12,
+        "endLine": 6,
+        "endChar": 16
+      },
+      "revId": "d3ba8a3ab7379dabde4aab84da3f63ee5a1761b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0cc3178d_6b591eb4",
         "filename": "README.md",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2018-05-31T21:28:28Z",
       "side": 1,
       "message": "The intention is to help projects save time",
+      "range": {
+        "startLine": 6,
+        "startChar": 48,
+        "endLine": 7,
+        "endChar": 12
+      },
+      "revId": "d3ba8a3ab7379dabde4aab84da3f63ee5a1761b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d11bbf6d_4f34e447",
+        "filename": "README.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T00:26:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0cc3178d_6b591eb4",
       "range": {
         "startLine": 6,
         "startChar": 48,
