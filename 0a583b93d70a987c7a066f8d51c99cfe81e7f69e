@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9bf7a9d7_1e2e951e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-01T22:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79fa3261_1a2aeb8c",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 5
+      },
+      "revId": "0a583b93d70a987c7a066f8d51c99cfe81e7f69e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e5e6f77b_855d619e",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "71d92e94_ae3b2a97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-01T22:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5e6f77b_855d619e",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 1
+      },
+      "revId": "0a583b93d70a987c7a066f8d51c99cfe81e7f69e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29f73799_54c4814d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-01T22:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8282a331_3bd72a28",
+      "range": {
+        "startLine": 10,
+        "startChar": 41,
+        "endLine": 10,
+        "endChar": 49
+      },
+      "revId": "0a583b93d70a987c7a066f8d51c99cfe81e7f69e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "12cf8c6d_f6dd9cd6",
         "filename": "shell/info-file-schema.yaml",
         "patchSetId": 6
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "035ae105_2a07886e",
+        "filename": "shell/info-file-schema.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-01T22:11:03Z",
+      "side": 1,
+      "message": "Investigating the states. \n\nI have corrected all other comments in the meanwhile",
+      "parentUuid": "12cf8c6d_f6dd9cd6",
+      "revId": "0a583b93d70a987c7a066f8d51c99cfe81e7f69e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e2383b4c_308a3820",
         "filename": "shell/info-file-schema.yaml",
         "patchSetId": 6
@@ -99,6 +189,24 @@
       "writtenOn": "2018-06-01T18:26:22Z",
       "side": 1,
       "message": "There no reason to have this comment here if it\u0027s not being used",
+      "revId": "0a583b93d70a987c7a066f8d51c99cfe81e7f69e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3286a88f_9bb54ae2",
+        "filename": "shell/info-file-schema.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-01T22:11:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2383b4c_308a3820",
       "revId": "0a583b93d70a987c7a066f8d51c99cfe81e7f69e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
