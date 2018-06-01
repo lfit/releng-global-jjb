@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1f5fa07_4b2a0573",
+        "filename": "shell/openci-emit-ape.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 125
+      },
+      "writtenOn": "2018-06-01T08:39:14Z",
+      "side": 1,
+      "message": "this script does not emit the event but just generates the event body for the prototype.\n\nYolanda has been working on a utility to emit events which can be incorporated into this script.\n\nBtw, we are looking into message spec since we got some info from CNCF guys which we will use while working on the message spec.",
+      "revId": "69fc6ccbb7ac01d21452036ece81b1af121b171e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
