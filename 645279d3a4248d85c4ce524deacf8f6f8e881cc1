@@ -325,6 +325,30 @@
     },
     {
       "key": {
+        "uuid": "ab9b8341_bb316a24",
+        "filename": "docs/install.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-01T00:46:38Z",
+      "side": 1,
+      "message": "That works well. \n\nThanks!",
+      "parentUuid": "33dd8d7d_7e595be8",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 17
+      },
+      "revId": "645279d3a4248d85c4ce524deacf8f6f8e881cc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6534ed18_98db9260",
         "filename": "docs/install.rst",
         "patchSetId": 5
