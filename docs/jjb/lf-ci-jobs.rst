@@ -29,6 +29,24 @@ Recommended jobs that should be deployed CI using GitHub.
     - github-jjb-merge
     - github-jjb-verify
 
+{project-name}-info-yaml-jobs
+-----------------------------
+
+Jobs to verify INFO.yaml file changes.
+
+:Includes:
+
+    - gerrit-info-yaml-verify
+
+{project-name}-github-info-yaml-jobs
+-----------------------------
+
+Jobs to verify INFO.yaml file changes using Github.
+
+:Includes:
+
+    - github-info-yaml-verify
+
 {project-name}-packer-jobs
 --------------------------
 
@@ -85,6 +103,11 @@ lf-packer-common
 ----------------
 
 Common packer configuration.
+
+lf-info-file-paths
+--------------------
+
+Gerrit file-paths for INFO.yaml jobs.
 
 lf-packer-file-paths
 --------------------
@@ -376,6 +399,39 @@ Runs `jenkins-jobs test` to validate JJB syntax
         filter which file modifications will trigger a build.
         (default defined by lf_jjb_common)
 
+.. _gjjb-info-yaml-verify:
+
+Info YAML Verify
+----------------
+
+Info YAML Verify job validates that INFO.yaml file changes are kept isolated from
+other file changes.
+
+:Template Names:
+    - {project-name}-info-yaml-verify
+    - gerrit-info-yaml-verify
+    - github-info-yaml-verify
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        be configured in defaults.yaml)
+
+:Optional parameters:
+
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :stream: Keyword that can be used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :gerrit_verify_triggers: Override Gerrit Triggers.
+    :gerrit_trigger_file_paths: Override file paths which can be used to
+        filter which file modifications will trigger a build.
+        (default defined by lf_jjb_common)
 
 .. _gjjb-packer-merge:
 
