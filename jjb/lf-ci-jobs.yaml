@@ -18,6 +18,18 @@
       - github-jjb-verify
 
 - job-group:
+    name: '{project-name}-info-yaml-jobs'
+
+    jobs:
+      - gerrit-info-yaml-verify
+
+- job-group:
+    name: '{project-name}-github-info-yaml-jobs'
+
+    jobs:
+      - github-info-yaml-verify
+
+- job-group:
     name: '{project-name}-packer-jobs'
 
     jobs:
@@ -699,6 +711,99 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+
+####################
+# Info YAML Verify #
+####################
+
+- lf_info_yaml_verify: &lf_info_yaml_verify
+    name: lf-info-yaml-verify
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: recheck$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    concurrent: true
+
+    builders:
+      - shell: !include-raw-escape:
+          - ../shell/git-validate-info-yaml.sh
+          - ../shell/info-file-validate.sh
+
+- job-template:
+    name: '{project-name}-info-yaml-verify'
+    id: gerrit-info-yaml-verify
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_info_yaml_verify
+
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths:
+                - compare-type: REG_EXP
+                  pattern: 'INFO.yaml'
+
+- job-template:
+    name: '{project-name}-info-yaml-verify'
+    id: github-info-yaml-verify
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_info_yaml_verify
+
+    properties:
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^recheck$'
+          only-trigger-phrase: false
+          status-context: 'INFO File Verify'
+          permit-all: true
+          github-hooks: true
+          # included-regions MUST match gerrit file-paths
+          included-regions: 'INFO.yaml'
 
 ################
 # Packer Merge #
