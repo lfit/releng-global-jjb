@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: Apache-2.0
+##############################################################################
+# Copyright (c) 2018 Linux Foundation and others.
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Apache License, Version 2.0
+# which accompanies this distribution, and is available at
+# http://www.apache.org/licenses/LICENSE-2.0
+##############################################################################
+---
+$schema: 'http://json-schema.org/schema#'
+$id: 'https://github.com/opnfv/releng/blob/master/jjb/releng/info-schema.yaml'
+
+required:
+  - 'project'
+  - 'project_creation_date'
+  - 'project_category'
+  - 'lifecycle_state'
+  - 'project_lead'
+  - 'primary_contact'
+  - 'issue_tracking'
+  - 'mailing_list'
+  - 'realtime_discussion'
+  - 'repositories'
+  - 'committers'
+  - 'tsc'
+
+properties:
+  project:
+    type: 'string'
+  project_creation_date:
+    type: 'string'
+  project_category:
+    type: 'string'
+  lifecycle_status:
+    type: 'string'
+    enum: ['Incubation', '']
+  project_lead: &user_object
+    type: 'object'
+    properties:
+      name:
+        type: 'string'
+      email:
+        type: 'string'
+        format: 'email'
+      id:
+        type: 'string'
+      company:
+        type: 'string'
+      timezone:
+        type: 'string'
+        format: 'timezone'
+        # pattern: '^.*/.*$'
+    additionalProperties: false
+  primary_contact: *user_object
+  issue_tracking:
+    type: 'object'
+    properties:
+      type:
+        type: 'string'
+      url:
+        type: 'string'
+        format: 'uri'
+      key:
+        type: 'string'
+      required: ['type', 'url']
+  committers:
+    type: 'array'
+    items: *user_object
