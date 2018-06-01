@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "88219038_e77ce185",
+        "filename": "jjb/openci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T14:53:22Z",
+      "side": 1,
+      "message": "Since global-jjb needs to support GitHub as well we need to also have a GitHub based template. Look at one of the maven verify jobs and copy the GitHub section they all mostly look quite similar.",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 23
+      },
+      "revId": "69fc6ccbb7ac01d21452036ece81b1af121b171e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f1f5fa07_4b2a0573",
         "filename": "shell/openci-emit-ape.sh",
         "patchSetId": 1
@@ -13,6 +36,46 @@
       "writtenOn": "2018-06-01T08:39:14Z",
       "side": 1,
       "message": "this script does not emit the event but just generates the event body for the prototype.\n\nYolanda has been working on a utility to emit events which can be incorporated into this script.\n\nBtw, we are looking into message spec since we got some info from CNCF guys which we will use while working on the message spec.",
+      "revId": "69fc6ccbb7ac01d21452036ece81b1af121b171e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a998c229_b9784bd5",
+        "filename": "shell/openci-emit-ape.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T14:53:22Z",
+      "side": 1,
+      "message": "2018",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "69fc6ccbb7ac01d21452036ece81b1af121b171e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77fafd59_f4294323",
+        "filename": "shell/openci-emit-ape.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T14:53:22Z",
+      "side": 1,
+      "message": "We should probably `set -e` too",
       "revId": "69fc6ccbb7ac01d21452036ece81b1af121b171e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
