@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a5aa24ee_49cb313a",
+        "filename": "docs/glossary.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T01:43:46Z",
+      "side": 1,
+      "message": "Maybe add ci-management here...",
+      "revId": "669c599123785ffa231b10d80f990a196a5a0299",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
