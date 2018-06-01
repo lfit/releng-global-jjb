@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc63224a_13a6d4a1",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T15:03:56Z",
+      "side": 1,
+      "message": ".. code-block:: ini",
+      "revId": "6b336601965ae7486406a1f0a83c8008891f613c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4fa8529a_cd748f6a",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T15:03:56Z",
+      "side": 1,
+      "message": "\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\"?\u003e\n\u003csettings xmlns\u003d\"http://maven.apache.org/SETTINGS/1.0.0\" \n          xmlns:xsi\u003d\"http://www.w3.org/2001/XMLSchema-instance\" \n          xsi:schemaLocation\u003d\"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd\"\u003e\n\n\u003c/settings\u003e",
+      "range": {
+        "startLine": 90,
+        "startChar": 3,
+        "endLine": 90,
+        "endChar": 6
+      },
+      "revId": "6b336601965ae7486406a1f0a83c8008891f613c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c613317e_207d8a06",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-01T15:03:56Z",
+      "side": 1,
+      "message": ".. code-block:: json",
+      "revId": "6b336601965ae7486406a1f0a83c8008891f613c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
