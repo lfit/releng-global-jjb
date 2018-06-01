@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "322fb951_e5467759",
+        "filename": "docs/glossary.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-01T16:08:32Z",
+      "side": 1,
+      "message": "Extra period",
+      "range": {
+        "startLine": 11,
+        "startChar": 43,
+        "endLine": 11,
+        "endChar": 44
+      },
+      "revId": "30d02a5d60c5c40371f46b88b1260a2623b1673c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
