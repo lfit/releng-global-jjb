@@ -16,6 +16,29 @@
       "revId": "69fc6ccbb7ac01d21452036ece81b1af121b171e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a03f5efe_b8bfe7fd",
+        "filename": "shell/openci-emit-ape.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 175
+      },
+      "writtenOn": "2018-06-01T08:44:28Z",
+      "side": 1,
+      "message": "i need that to be quoted, otherwise my code rejects for invalid JSON:\n\n\u0027confidenceLevel\u0027: \"{ $CONFIDENCE_LEVEL }\"",
+      "range": {
+        "startLine": 26,
+        "startChar": 20,
+        "endLine": 26,
+        "endChar": 21
+      },
+      "revId": "69fc6ccbb7ac01d21452036ece81b1af121b171e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
