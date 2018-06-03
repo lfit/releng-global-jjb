@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f3c7a2f8_c436036c",
+        "filename": "shell/license-check.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-03T19:13:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "976db54d_a17fa283",
+      "revId": "f91f15ae267f5ebe9513778fbdd16e0ccb834e7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e640c86_754f1342",
         "filename": "shell/license-check.sh",
         "patchSetId": 5
@@ -54,6 +72,30 @@
       "side": 1,
       "message": "We also have some groovy scripts in releng/builder required to be added here.",
       "parentUuid": "4e640c86_754f1342",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 10
+      },
+      "revId": "f91f15ae267f5ebe9513778fbdd16e0ccb834e7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f8a5e5ba_593ebdc7",
+        "filename": "shell/license-check.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-03T19:13:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdb3e833_b81cbf25",
       "range": {
         "startLine": 33,
         "startChar": 0,
