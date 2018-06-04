@@ -19,8 +19,11 @@ set -e -o pipefail
 # shellcheck source=/tmp/v/jenkins-job-builder/bin/activate disable=SC1091
 source "/tmp/v/jenkins-job-builder/bin/activate"
 
-echo "-----> Fetching project"
-git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
+# Fetch patch if gerrit project matches the jjb-deploy project
+if [ "${GERRIT_PROJECT}" == "${PROJECT}" ]; then
+    echo "-----> Fetching ${PROJECT} patch"
+    git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
+fi
 
 # If not Gerrit Trigger than assume GitHub
 COMMENT="${GERRIT_EVENT_COMMENT_TEXT:-$ghprbCommentBody}"
