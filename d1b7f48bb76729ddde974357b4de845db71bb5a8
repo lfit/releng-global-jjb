@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc1e79d8_577d5d47",
+        "filename": "relnotes/v0.20.0.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-04T15:50:45Z",
+      "side": 1,
+      "message": "0.19.1 or .2",
+      "range": {
+        "startLine": 15,
+        "startChar": 23,
+        "endLine": 15,
+        "endChar": 29
+      },
+      "revId": "d1b7f48bb76729ddde974357b4de845db71bb5a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
