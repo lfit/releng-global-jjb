@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "38b45730_29b78d58",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-04T17:16:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89ce9f41_1a1ff114",
+      "range": {
+        "startLine": 52,
+        "startChar": 67,
+        "endLine": 52,
+        "endChar": 68
+      },
+      "revId": "05695fdcc26dd16eed913571ccfbd2df0aecb9d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6439fc14_5cadfdcc",
         "filename": "tox.ini",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-04T17:12:47Z",
       "side": 1,
       "message": "lftools 0.13.0 is the current version out as of this morning. Shouldn\u0027t we be merging with that as the default?",
+      "range": {
+        "startLine": 57,
+        "startChar": 62,
+        "endLine": 57,
+        "endChar": 68
+      },
+      "revId": "05695fdcc26dd16eed913571ccfbd2df0aecb9d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc1dedd5_16ea4466",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-04T17:16:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6439fc14_5cadfdcc",
       "range": {
         "startLine": 57,
         "startChar": 62,
