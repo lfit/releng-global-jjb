@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "10b551d8_10a79d5b",
+        "filename": "docs/conf.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-04T15:54:19Z",
+      "side": 1,
+      "message": "Yes, there was a problem with it though and I backed out awhile ago. I can\u0027t remember what the problem was....",
+      "parentUuid": "03395a14_ba2ab8e8",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 17
+      },
+      "revId": "d1b7f48bb76729ddde974357b4de845db71bb5a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dc1e79d8_577d5d47",
         "filename": "relnotes/v0.20.0.txt",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-04T15:50:45Z",
       "side": 1,
       "message": "0.19.1 or .2",
+      "range": {
+        "startLine": 15,
+        "startChar": 23,
+        "endLine": 15,
+        "endChar": 29
+      },
+      "revId": "d1b7f48bb76729ddde974357b4de845db71bb5a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "234d03ab_6cfcb067",
+        "filename": "relnotes/v0.20.0.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-04T15:54:19Z",
+      "side": 1,
+      "message": "Considering release notes were not sent out for the 0.19.2 release the change log includes everything from 0.19.0.",
+      "parentUuid": "dc1e79d8_577d5d47",
       "range": {
         "startLine": 15,
         "startChar": 23,
