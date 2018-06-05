@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "02d70b4b_d32c6bb3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-05T16:09:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "721f1d93_2a737bfd",
+      "range": {
+        "startLine": 10,
+        "startChar": 5,
+        "endLine": 10,
+        "endChar": 14
+      },
+      "revId": "058a9786aaef12f1d167f5594296e9e915b2402e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f388de8f_e65e0292",
         "filename": "jenkins-init-scripts/README",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-05T15:40:59Z",
       "side": 1,
       "message": "Delete this word. It\u0027s not just for OpenStack but for EC2 as well.",
+      "range": {
+        "startLine": 2,
+        "startChar": 4,
+        "endLine": 2,
+        "endChar": 13
+      },
+      "revId": "058a9786aaef12f1d167f5594296e9e915b2402e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33d72d2d_b8895999",
+        "filename": "jenkins-init-scripts/README",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-05T16:09:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f388de8f_e65e0292",
       "range": {
         "startLine": 2,
         "startChar": 4,
@@ -83,6 +131,30 @@
       "side": 1,
       "message": "Given how we run the CI, it\u0027s likely a good idea. Given that the point behind this configuration is for dynamic labs to be able to interact without ssh key validation issues.",
       "parentUuid": "ce6d80c8_116e8729",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 30
+      },
+      "revId": "058a9786aaef12f1d167f5594296e9e915b2402e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a4a5647_ecb6e41f",
+        "filename": "jenkins-init-scripts/basic-settings.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-05T16:09:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0bd4634_5c8ae39d",
       "range": {
         "startLine": 27,
         "startChar": 0,
