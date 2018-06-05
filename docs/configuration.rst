@@ -1,4 +1,4 @@
-.. _global-jjb-configuration:
+.. _configuration:
 
 #############
 Configuration
@@ -91,12 +91,16 @@ Example GitHub Infra:
        mvn-site-id: opendaylight-site
        mvn-staging-id: opendaylight-staging
 
+.. _jenkins-files:
+
 Jenkins Files
 =============
 
 global-jjb makes use of the Jenkins Config File Provider plugin to provide some
 default configurations for certain tools. This section details the files to
 define in Jenkins' **Manage Files** configuration.
+
+.. _npmrc:
 
 npmrc
 -----
@@ -114,6 +118,8 @@ Create a "Custom file" with contents:
 .. code::
 
    registry = https://nexus.opendaylight.org/content/repositories/npmjs/
+
+.. _pipconf:
 
 pipconf
 -------
@@ -134,9 +140,12 @@ Create a "Custom file" with contents:
    timeout = 60
    index-url = https://nexus3.opendaylight.org/repository/PyPi/simple
 
+.. _jenkins-ci-jobs:
 
 Jenkins CI Jobs
 ===============
+
+.. _jenkins-cfg-merge:
 
 jenkins-cfg-merge
 -----------------
@@ -144,6 +153,8 @@ jenkins-cfg-merge
 This job manages Jenkins Global configuration. Refer to
 the :ref:`CI Documentation <lf-global-jjb-jenkins-cfg-merge>` for job
 configuration details.
+
+.. _log-archiving:
 
 Log Archiving
 =============
