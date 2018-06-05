@@ -1,0 +1,15 @@
+The files in this directory are for initializing a Jenkins minion just before
+the cloud plugin hands the minion over to Jenkins.
+
+init.sh is the entry point script which then calls all other scripts.
+
+init.sh also provides a local init script entry point by checking for the
+existance of the file CIMAN_ROOT/jenkins-init-scripts/local-init.sh. If this
+file exists it can be used to further customize the server node before handing
+it to Jenkins for job use.
+
+To use this create a managed file in Jenkins with the contents:
+
+    #!/bin/bash
+    git clone https://gerrit.example.org/r/ci-management.git /opt/ciman
+    /opt/ciman/jjb/global-jjb/jenkins-init-scripts/init.sh
