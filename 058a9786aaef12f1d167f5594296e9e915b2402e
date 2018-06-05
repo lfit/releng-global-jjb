@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce6d80c8_116e8729",
+        "filename": "jenkins-init-scripts/basic-settings.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-05T04:03:46Z",
+      "side": 1,
+      "message": "I wonder if it\u0027s even worth maintaining all this. We could move the 2 keys StrictHostKeyChecking and UserKnownHostsFile into the above \"Hosts *\" section.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 30
+      },
+      "revId": "058a9786aaef12f1d167f5594296e9e915b2402e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
