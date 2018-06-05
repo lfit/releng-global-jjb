@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3b5ce48a_ef61b7d3",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-05T15:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f2d3449_a41d424c",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 14
+      },
+      "revId": "f82b36de044f7d045203c127a0f400541836b7a9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ef8e77d_5922e51b",
         "filename": "docs/configuration.rst",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-04T19:04:41Z",
       "side": 1,
       "message": "This should probably detail all of our currently required settings, not just a generic json blob",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 4
+      },
+      "revId": "f82b36de044f7d045203c127a0f400541836b7a9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3f614d8_92f3ff10",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-05T15:31:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ef8e77d_5922e51b",
       "range": {
         "startLine": 113,
         "startChar": 0,
