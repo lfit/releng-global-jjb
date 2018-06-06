@@ -65,7 +65,7 @@ Example Gerrit Infra:
        name: global
 
        # lf-infra defaults
-       jenkins-ssh-credential: opendaylight-jenkins-ssh
+       jenkins-ssh-credential: jenkins-ssh
        gerrit-server-name: OpenDaylight
        lftools-version: '<1.0.0'
        mvn-site-id: opendaylight-site
