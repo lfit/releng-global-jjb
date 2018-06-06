@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "abda71ce_89a02654",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-06T04:04:01Z",
+      "side": 1,
+      "message": "Not sure if this comment provides value to the description. How do I know if my topic is unique?",
+      "range": {
+        "startLine": 104,
+        "startChar": 33,
+        "endLine": 104,
+        "endChar": 52
+      },
+      "revId": "c7a3497f6814da848fe7bad03d6cb54713d1af98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c5ecdabe_d7ea9913",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-06T04:04:01Z",
+      "side": 1,
+      "message": "Is this a single email address? or is it a space-separated list of emails? or is it a comma-separated list of emails?",
+      "revId": "c7a3497f6814da848fe7bad03d6cb54713d1af98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
