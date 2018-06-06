@@ -10,5 +10,5 @@
 ##############################################################################
 
 # Clear log credential files
-rm "$SETTINGS_FILE"
-rm ~/.netrc
+rm -f "$SETTINGS_FILE"
+rm -f ~/.netrc
