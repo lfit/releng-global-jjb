@@ -289,9 +289,8 @@
           name: PROJECT
           default: '{project}'
           description: |
-              Parameter to identify a Gerrit project. This is typically the
-              project repo path as exists in Gerrit.
-              For example: ofextensions/circuitsw
+              Parameter to identify a SCM project to build. This is typically
+              the project repo path. For example: ofextensions/circuitsw
       - string:
           name: STREAM
           default: '{stream}'
@@ -303,28 +302,40 @@
           name: GERRIT_PROJECT
           default: '{project}'
           description: |
-              Parameter to identify Gerrit project. This is typically the
-              project repo path as exists in Gerrit.
-              For example: ofextensions/circuitsw
+              Gerrit Trigger provided parameter to identify Gerrit project that
+              triggered the build. This is typically the project repo path as
+              exists in Gerrit. For example: ofextensions/circuitsw
 
-              Note that Gerrit will override this parameter automatically if a
-              job is triggered by Gerrit.
+              If using Gerrit, in a manual build this should match the PROJECT
+              parameter above.
       - string:
           name: GERRIT_BRANCH
           default: '{branch}'
           description: |
-              Parameter to identify a Gerrit branch.
+              Gerrit Trigger provided parameter to identify a Gerrit branch.
 
-              Note that Gerrit will override this parameter automatically if a
-              job is triggered by Gerrit.
+              If using Gerrit, in a manual build override with the branch to
+              build against.
       - string:
           name: GERRIT_REFSPEC
           default: 'refs/heads/{branch}'
           description: |
-              Parameter to identify a refspec when pulling from Gerrit.
+              Gerrit Trigger provided parameter to identify a refspec to fetch
+              from Gerrit.
 
-              Note that Gerrit will override this parameter automatically if a
-              job is triggered by Gerrit.
+              If using Gerrit, in a manual build override with a refspec.
+              https://git-scm.com/book/en/v2/Git-Internals-The-Refspec
+              For example: 'refs/heads/master'
+      - string:
+          name: sha1
+          default: 'origin/{branch}'
+          description: |
+              GitHub PR Trigger provided parameter for specifying the commit
+              to checkout.
+
+              If using GitHub, in a manual build override with a branch path or
+              sha1 hash to a specific commit. For example: 'origin/master'
+      # Tools
       - string:
           name: LFTOOLS_VERSION
           default: '{lftools-version}'
