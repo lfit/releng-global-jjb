@@ -117,6 +117,30 @@
       "revId": "b0a23279da45fd4163b82a0ed505f5f41f1c0306",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6627bbd9_449e2314",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-06T19:15:36Z",
+      "side": 1,
+      "message": "It happens, just as long as we don\u0027t let it touch the published docs.",
+      "parentUuid": "9b84de06_26d7cc8f",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 219,
+        "endChar": 61
+      },
+      "revId": "b0a23279da45fd4163b82a0ed505f5f41f1c0306",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
