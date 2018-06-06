@@ -158,7 +158,7 @@ get_minion_options() {
     security_groups=$(get_cfg "$cfg_file" SECURITY_GROUPS "default")
     availability_zone=$(get_cfg "$cfg_file" AVAILABILITY_ZONE "")
     start_timeout=$(get_cfg "$cfg_file" START_TIMEOUT "600000")
-    key_pair_name=$(get_cfg "$cfg_file" KEY_PAIR_NAME "jenkins")
+    key_pair_name=$(get_cfg "$cfg_file" KEY_PAIR_NAME "jenkins-ssh")
     num_executors=$(get_cfg "$cfg_file" NUM_EXECUTORS "1")
     jvm_options=$(get_cfg "$cfg_file" JVM_OPTIONS "")
     fs_root=$(get_cfg "$cfg_file" FS_ROOT "/w")
@@ -181,7 +181,7 @@ get_minion_options() {
     echo "    $num_executors,"
     echo "    \"$jvm_options\","
     echo "    \"$fs_root\","
-    echo "    new LauncherFactory.SSH(\"jenkins\", \"\"),"
+    echo "    new LauncherFactory.SSH(\"$key_pair_name\", \"\"),"
     echo "    $retention_time"
 }
 
