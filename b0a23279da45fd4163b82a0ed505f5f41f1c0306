@@ -45,6 +45,30 @@
       "revId": "b0a23279da45fd4163b82a0ed505f5f41f1c0306",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23c1d071_aa313396",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-06T18:47:12Z",
+      "side": 1,
+      "message": "*sigh* password changed :-/. In any case, please fix this. I don\u0027t want it to hit RTD.",
+      "parentUuid": "ba2f957f_d397a787",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 219,
+        "endChar": 61
+      },
+      "revId": "b0a23279da45fd4163b82a0ed505f5f41f1c0306",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
