@@ -91,6 +91,21 @@ Run `packer validate` to verify packer configuration.
         server as CLOUDENV environment variable.
     :packer-version: Version of packer to use.
 
+lf-infra-push-gerrit-patch
+--------------------------
+
+Push a change through a Jenkins job to a Gerrit repository in an automated
+way using git-review.
+
+:Required parameters:
+
+    :gerrit-user: Gerrit user-id used for submitting the change.
+    :gerrit-host: Gerrit hostname.
+    :gerrit-topic: Gerrit topic. Use a unique topic.
+    :gerrit-commit-message: Commit message to assign.
+    :reviewers-email: Reviewers email.
+    :project: Gerrit project name.
+
 lf-infra-ship-logs
 ------------------
 
