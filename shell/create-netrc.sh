@@ -31,4 +31,5 @@ machine=$(echo "$NEXUS_URL" | awk -F/ '{print $3}')
 user=$(echo "$CREDENTIAL" | cut -f1 -d:)
 pass=$(echo "$CREDENTIAL" | cut -f2 -d:)
 
+set +x  # Disable `set -x` to prevent printing passwords
 echo "machine ${machine%:*} login $user password $pass" > ~/.netrc
