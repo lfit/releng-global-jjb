@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "14f522b0_e1316c0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-06T18:17:51Z",
+      "side": 1,
+      "message": "You\u0027ve made a lot of non-related comment / documentation changes in this.\n\nCould you either break those apart or at least note it in the commit log?",
+      "revId": "aa5b3fa0cf2feba2221325a7baad880d2b85417d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
