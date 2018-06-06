@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "603e319d_3bbbf843",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-06T19:15:36Z",
+      "side": 1,
+      "message": "This \u0027is\u0027 still needs to be deleted.",
+      "range": {
+        "startLine": 196,
+        "startChar": 8,
+        "endLine": 196,
+        "endChar": 10
+      },
+      "revId": "d8648393ce2932f9d2c4285077e472c6e3839bd5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
