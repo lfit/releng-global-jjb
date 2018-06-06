@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f703d4f_843e4753",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-06T14:10:18Z",
+      "side": 1,
+      "message": "Wording like this might be better.\n\n Space-separated list of email addresses to CC on the patch.",
+      "range": {
+        "startLine": 106,
+        "startChar": 22,
+        "endLine": 107,
+        "endChar": 15
+      },
+      "revId": "657a132ae51423d7ebbc7100a84ff9d4dd9d01fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
