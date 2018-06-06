@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "11eda4b4_8368bfc5",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-06T19:09:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fe74efaf_10dcb196",
+      "range": {
+        "startLine": 196,
+        "startChar": 8,
+        "endLine": 196,
+        "endChar": 10
+      },
+      "revId": "b0a23279da45fd4163b82a0ed505f5f41f1c0306",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2f957f_d397a787",
         "filename": "docs/configuration.rst",
         "patchSetId": 9
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "*sigh* password changed :-/. In any case, please fix this. I don\u0027t want it to hit RTD.",
       "parentUuid": "ba2f957f_d397a787",
+      "range": {
+        "startLine": 216,
+        "startChar": 0,
+        "endLine": 219,
+        "endChar": 61
+      },
+      "revId": "b0a23279da45fd4163b82a0ed505f5f41f1c0306",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b84de06_26d7cc8f",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-06T19:09:16Z",
+      "side": 1,
+      "message": "Shit, yeah I fucked up. Thanks for changing them I\u0027ll clear it out of here.",
+      "parentUuid": "23c1d071_aa313396",
       "range": {
         "startLine": 216,
         "startChar": 0,
