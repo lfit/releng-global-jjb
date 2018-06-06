@@ -16,6 +16,24 @@
       "revId": "aa5b3fa0cf2feba2221325a7baad880d2b85417d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "363f1230_84e540af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-06T19:33:05Z",
+      "side": 1,
+      "message": "Sure I\u0027ll update the commit message. I wanted to try to clarify the usage for either Gerrit Trigger vs GitHub PR Trigger.",
+      "parentUuid": "14f522b0_e1316c0d",
+      "revId": "aa5b3fa0cf2feba2221325a7baad880d2b85417d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
