@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0792f6e7_55578f55",
+        "filename": "shell/license-check.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-06-06T00:50:59Z",
+      "side": 1,
+      "message": "Please add a few lines on what the scripts does and args.\n\nAlso usage and ex would be helpful.",
+      "revId": "87a1b4c1817293bba5e63e6c415e20b0dd8d75fd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
