@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ba20048_33523640",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-06T17:14:29Z",
+      "side": 0,
+      "message": "Had to remove this because this document is already named \"configuration\" so an implicit link of :doc:`configuration` already exists. Sphinx picks this up as a duplicate link.",
+      "revId": "efc1f452019d36fa2973f9276b91facada2ba5e8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
