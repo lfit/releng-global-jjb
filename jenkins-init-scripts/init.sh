@@ -11,6 +11,7 @@
 
 INIT_SCRIPTS_DIR="/opt/ciman/jjb/global-jjb/jenkins-init-scripts"
 
+"$INIT_SCRIPTS_DIR/package-listing.sh"
 "$INIT_SCRIPTS_DIR/basic-settings.sh"
 "$INIT_SCRIPTS_DIR/disable-firewall.sh"
 "$INIT_SCRIPTS_DIR/create-swap-file.sh"

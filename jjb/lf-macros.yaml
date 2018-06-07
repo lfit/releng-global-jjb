@@ -53,6 +53,12 @@
           regexp: '^Build logs: .*'
 
 - builder:
+    name: lf-infra-package-listing
+    builders:
+      - shell: !include-raw:
+          - ../shell/package-listing.sh
+
+- builder:
     name: lf-infra-packer-build
     builders:
       - config-file-provider:
@@ -427,6 +433,7 @@
                 - UNSTABLE
               build-steps:
                 - lf-infra-sysstat
+                - lf-infra-package-listing
                 - lf-infra-ship-logs
           mark-unstable-if-failed: true
       - workspace-cleanup:
