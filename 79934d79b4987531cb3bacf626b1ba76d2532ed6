@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d11fbf33_6c1f9bc9",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-08T14:06:54Z",
+      "side": 1,
+      "message": "2018\n\n... Unless this was copied from somewhere?",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71d71fc2_182aa106",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-08T14:06:54Z",
+      "side": 1,
+      "message": "I\u0027d consider this a breaking change as we need to ensure all bootscripts use the new init scripts change. The init scripts patch wasn\u0027t a breaking change because it didn\u0027t require people to install it. This patch would now force people upgrading global-jjb to have to install the new init scripts moving forward.\n\nI would put a note in the commit message to state that this is a breaking change.",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a1efc27_a9afe883",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-08T14:06:54Z",
+      "side": 1,
+      "message": "2018\n\n... Unless this was copied from somewhere?",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "02799c89_65c6eab3",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-08T14:06:54Z",
+      "side": 1,
+      "message": "I like putting underscores in to make it easier to read the variables at a quick glance.\n\nOS_FAMILY for example.\n\nSame with START_PACKAGES, END_PACKAGES, and DIFF_PACKAGES below.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 8
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5beeadd9_9328eed4",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-08T14:06:54Z",
+      "side": 1,
+      "message": "If this is true then there WILL be a starting_packages file.\n\nIs that right?",
+      "range": {
+        "startLine": 25,
+        "startChar": 45,
+        "endLine": 26,
+        "endChar": 27
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "290f6b8d_71e343f1",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-08T14:06:54Z",
+      "side": 1,
+      "message": "Unnecessary comment. We can easily see a diff is being created by looking at the code.",
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14a967fb_48d75b90",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-08T14:06:54Z",
+      "side": 1,
+      "message": "do we want `cp -f` here in case a file already exists?",
+      "range": {
+        "startLine": 65,
+        "startChar": 11,
+        "endLine": 65,
+        "endChar": 15
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
