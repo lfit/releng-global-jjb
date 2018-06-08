@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c23d5d7d_2639c14c",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-06-08T04:16:46Z",
+      "side": 1,
+      "message": "minor: Requires credentials ..",
+      "range": {
+        "startLine": 193,
+        "startChar": 0,
+        "endLine": 193,
+        "endChar": 22
+      },
+      "revId": "d7aea64218f661ff41de685e7919dbf213635ec6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
