@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45f14138_de60e6b7",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-08T03:58:37Z",
+      "side": 1,
+      "message": "I meant in my last comment to remove this but no big deal... It\u0027s not really good practice to include the term we are defining in the definition because if the reader didn\u0027t understand the term, restating the term again as the definition ads no value to the explanation of the term.",
+      "range": {
+        "startLine": 106,
+        "startChar": 22,
+        "endLine": 106,
+        "endChar": 38
+      },
+      "revId": "801f8ef4dc01ad762bfb16f60accd75f0ed5be17",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
