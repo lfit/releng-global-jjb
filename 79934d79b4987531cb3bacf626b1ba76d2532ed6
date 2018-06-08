@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "62924e49_b5b1157f",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-08T19:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d11fbf33_6c1f9bc9",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "71d71fc2_182aa106",
         "filename": "jenkins-init-scripts/package-listing.sh",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-08T14:06:54Z",
       "side": 1,
       "message": "I\u0027d consider this a breaking change as we need to ensure all bootscripts use the new init scripts change. The init scripts patch wasn\u0027t a breaking change because it didn\u0027t require people to install it. This patch would now force people upgrading global-jjb to have to install the new init scripts moving forward.\n\nI would put a note in the commit message to state that this is a breaking change.",
+      "range": {
+        "startLine": 13,
+        "startChar": 16,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ad6b409_feb27fd9",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-08T19:13:43Z",
+      "side": 1,
+      "message": "I\u0027ve made this more dynamic and should make it less of a breaking change.",
+      "parentUuid": "71d71fc2_182aa106",
       "range": {
         "startLine": 13,
         "startChar": 16,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "45e4ca72_0d518496",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-08T19:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02799c89_65c6eab3",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 8
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5beeadd9_9328eed4",
         "filename": "shell/package-listing.sh",
         "patchSetId": 1
@@ -105,6 +177,30 @@
       "writtenOn": "2018-06-08T14:06:54Z",
       "side": 1,
       "message": "If this is true then there WILL be a starting_packages file.\n\nIs that right?",
+      "range": {
+        "startLine": 25,
+        "startChar": 45,
+        "endLine": 26,
+        "endChar": 27
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b3ace4e3_86e2869b",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-08T19:13:43Z",
+      "side": 1,
+      "message": "Correct. I\u0027ve fixed this.",
+      "parentUuid": "5beeadd9_9328eed4",
       "range": {
         "startLine": 25,
         "startChar": 45,
@@ -134,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "372fa274_a540549d",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-08T19:13:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "290f6b8d_71e343f1",
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "14a967fb_48d75b90",
         "filename": "shell/package-listing.sh",
         "patchSetId": 1
@@ -145,6 +259,30 @@
       "writtenOn": "2018-06-08T14:06:54Z",
       "side": 1,
       "message": "do we want `cp -f` here in case a file already exists?",
+      "range": {
+        "startLine": 65,
+        "startChar": 11,
+        "endLine": 65,
+        "endChar": 15
+      },
+      "revId": "79934d79b4987531cb3bacf626b1ba76d2532ed6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83326001_a404fd61",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-08T19:13:43Z",
+      "side": 1,
+      "message": "Done. Though there really shouldn\u0027t be a file there of that name.",
+      "parentUuid": "14a967fb_48d75b90",
       "range": {
         "startLine": 65,
         "startChar": 11,
