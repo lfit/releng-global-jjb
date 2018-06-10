@@ -26,6 +26,10 @@
 
     gerrit_trigger_file_paths:
       - compare-type: ANT
+        pattern: '**/*.css'
+      - compare-type: ANT
+        pattern: '**/*.html'
+      - compare-type: ANT
         pattern: '**/*.rst'
       - compare-type: ANT
         pattern: '**/conf.py'
