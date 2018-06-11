@@ -814,16 +814,6 @@
       - comment-added-contains-event:
           comment-contains-value: recheck$
 
-    gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: 'packer/vars/**.json'
-      - compare-type: ANT
-        pattern: 'packer/templates/**.json'
-      - compare-type: ANT
-        pattern: 'packer/provision/**.sh'
-      - compare-type: ANT
-        pattern: 'packer/provision/lib/**'
-
     #####################
     # Job Configuration #
     #####################
@@ -842,7 +832,19 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_verify
 
+    ######################
+    # Default parameters #
+    ######################
+
     git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: 'packer/**'
+
+    #####################
+    # Job Configuration #
+    #####################
 
     scm:
       - lf-infra-gerrit-scm:
@@ -872,6 +874,17 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_verify
 
+    ######################
+    # Default parameters #
+    ######################
+
+    github_included_regions:
+      - 'packer/.*'
+
+    #####################
+    # Job Configuration #
+    #####################
+
     properties:
       - github:
           url: '{git-url}/{github-org}/{project}'
@@ -886,14 +899,9 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^recheck$'
-          only-trigger-phrase: false
           status-context: 'Packer Verify'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
+          included-regions: '{obj:github_included_regions}'
