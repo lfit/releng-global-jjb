@@ -53,22 +53,6 @@
             - file-id: jjbini-sandbox
               target: '$HOME/.config/jenkins_jobs/jenkins_jobs.ini'
 
-- lf_packer_file_paths: &lf_packer_file_paths
-    name: lf-packer-file-paths
-    file-paths:
-      - compare-type: ANT
-        pattern: 'packer/vars/{platforms}.json'
-      - compare-type: ANT
-        pattern: 'packer/templates/{templates}.json'
-      - compare-type: ANT
-        pattern: 'packer/provision/*.sh'
-      - compare-type: ANT
-        pattern: 'packer/provision/{templates}.yaml'
-      - compare-type: ANT
-        pattern: 'packer/provision/local-{templates}.yaml'
-      - compare-type: ANT
-        pattern: 'packer/provision/lib/**'
-
 - lf_packer: &lf_packer_common
     name: lf-packer-common
     # Provide configuration common in packer jobs.
@@ -707,11 +691,6 @@
     # Default parameters #
     ######################
 
-    gerrit_merge_triggers:
-      - change-merged-event
-      - comment-added-contains-event:
-          comment-contains-value: remerge$
-
     #####################
     # Job Configuration #
     #####################
@@ -733,7 +712,20 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_merge
 
+    ######################
+    # Default parameters #
+    ######################
+
     git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    #####################
+    # Job Configuration #
+    #####################
 
     scm:
       - lf-infra-gerrit-scm:
@@ -755,7 +747,17 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
-              <<: *lf_packer_file_paths
+              file-paths:
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/.*\.sh'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/{templates}\.yaml'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/local-{templates}\.yaml'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/templates\/{templates}\.json'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/vars\/{platforms}\.json'
 
 - job-template:
     name: '{project-name}-packer-merge-{platforms}-{templates}'
@@ -763,6 +765,10 @@
     <<: *lf_packer_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_merge
+
+    #####################
+    # Job Configuration #
+    #####################
 
     properties:
       - github:
@@ -782,15 +788,23 @@
       - github
       - pollscm:
           cron: ''
-      - lf-infra-github-pr-trigger:
+
+      - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
-          status-context: 'Packer {platforms}-${templates} Merge'
+          status-context: 'Packer {platforms}-{templates} Merge'
           permit-all: false
           github-hooks: true
-          github-org: '{github-org}'
-          github_pr_whitelist: '{obj:github_pr_whitelist}'
-          github_pr_admin_list: '{obj:github_pr_admin_list}'
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
+          included-regions:
+            - 'packer\/provision\/.*\.sh'
+            - 'packer\/provision\/{templates}\.yaml'
+            - 'packer\/provision\/local-{templates}\.yaml'
+            - 'packer\/templates\/{templates}\.json'
+            - 'packer\/vars\/{platforms}\.json'
 
 #################
 # Packer Verify #
@@ -814,16 +828,6 @@
       - comment-added-contains-event:
           comment-contains-value: recheck$
 
-    gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: 'packer/vars/**.json'
-      - compare-type: ANT
-        pattern: 'packer/templates/**.json'
-      - compare-type: ANT
-        pattern: 'packer/provision/**.sh'
-      - compare-type: ANT
-        pattern: 'packer/provision/lib/**'
-
     #####################
     # Job Configuration #
     #####################
@@ -842,7 +846,19 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_verify
 
+    ######################
+    # Default parameters #
+    ######################
+
     git-url: '$GIT_URL/$GERRIT_PROJECT'
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'packer\/.*'
+
+    #####################
+    # Job Configuration #
+    #####################
 
     scm:
       - lf-infra-gerrit-scm:
@@ -872,6 +888,17 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packer_verify
 
+    ######################
+    # Default parameters #
+    ######################
+
+    github_included_regions:
+      - 'packer\/.*'
+
+    #####################
+    # Job Configuration #
+    #####################
+
     properties:
       - github:
           url: '{git-url}/{github-org}/{project}'
@@ -886,14 +913,10 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'Packer Verify'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
+          included-regions: '{obj:github_included_regions}'
