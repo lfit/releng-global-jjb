@@ -293,8 +293,12 @@
           comment-contains-value: remerge$
 
     gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: 'jenkins-config/**'
+      - compare-type: REG_EXP
+        pattern: 'jenkins-config\/.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - 'jenkins-config\/.*'
 
     #####################
     # Job Configuration #
@@ -382,16 +386,17 @@
       - github
       - pollscm:
           cron: ''
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'Jenkins CFG Merge'
           permit-all: false
           github-hooks: true
-          github-org: '{github-org}'
-          github_pr_whitelist: '{obj:github_pr_whitelist}'
-          github_pr_admin_list: '{obj:github_pr_admin_list}'
-
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
+          included-regions: '{obj:github_included_regions}'
 
 ##################
 # JJB DEPLOY JOB #
