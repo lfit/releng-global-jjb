@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "3737251f_c4bc7f3e",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-12T15:56:19Z",
+      "side": 1,
+      "message": "Yes you can. See my series of patches to change all that:\n\nhttps://gerrit.linuxfoundation.org/infra/#/q/topic:included-regions",
+      "parentUuid": "121ff0d7_10d5f1e6",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "25e20b0c_f06a03e6",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 9
