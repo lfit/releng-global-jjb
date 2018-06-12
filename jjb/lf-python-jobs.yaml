@@ -51,7 +51,6 @@
 
     archive-artifacts: >
       **/*.log
-    nexus-iq-cli-version: 1.44.0-01
 
     #####################
     # Job Configuration #
@@ -95,16 +94,18 @@
     build-timeout: 60
     git-url: '$GIT_URL/$PROJECT'
     java-version: openjdk8
+    nexus-iq-cli-version: 1.44.0-01
     staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
 
-    gerrit_clm_triggers:
-      - comment-added-contains-event:
-          comment-contains-value: run-clm$
     gerrit_trigger_file_paths:
       - compare-type: ANT
-        pattern: '**'
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
 
     #####################
     # Job Configuration #
@@ -121,24 +122,6 @@
           default: '{nexus-iq-cli-version}'
           description: Nexus IQ CLI package to download and use.
 
-    triggers:
-      # Build weekly on Saturdays
-      - timed: 'H H * * 6'
-      - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_clm_triggers}'
-          projects:
-            - project-compare-type: ANT
-              project-pattern: '{project}'
-              branches:
-                - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
-          skip-vote:
-            successful: true
-            failed: true
-            unstable: true
-            notbuilt: true
     wrappers:
       - credentials-binding:
           - username-password-separated:
@@ -158,6 +141,18 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_python_xc_clm
 
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_clm_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: run-clm$
+
+    #####################
+    # Job Configuration #
+    #####################
+
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -166,6 +161,25 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_clm_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
 
 - job-template:
     name: '{project-name}-python-clm-{stream}'
@@ -188,17 +202,15 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+      - github-pull-request:
           trigger-phrase: '^run-clm$'
           only-trigger-phrase: false
           status-context: 'CLM'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
+          included-regions: '{obj:github_included_regions}'
 
 ########################
 # Python Sonar with Tox #
@@ -225,12 +237,13 @@
     stream: master
     submodule-recursive: true
 
-    gerrit_sonar_triggers:
-      - comment-added-contains-event:
-          comment-contains-value: run-sonar$
     gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: '**'
+      - compare-type: REG_EXP
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
 
     #####################
     # Job Configuration #
@@ -260,24 +273,6 @@
               Maven goals to pass to the Sonar call. Typically sonar:sonar
               however to use a specific version of the sonar-maven-plugin we
               can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
-
-    triggers:
-      - timed: '{obj:cron}'
-      - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_sonar_triggers}'
-          projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project}'
-              branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: '**/master'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
-          skip-vote:
-            successful: true
-            failed: true
-            unstable: true
-            notbuilt: true
 
     builders:
       - shell: !include-raw-escape:
@@ -322,6 +317,18 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_tox_sonar
 
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_sonar_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: run-sonar$
+
+    #####################
+    # Job Configuration #
+    #####################
+
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -330,6 +337,24 @@
           branch: $GERRIT_BRANCH
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
+
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_sonar_triggers}'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
 
 - job-template:
     name: '{project-name}-tox-sonar'
@@ -352,17 +377,13 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^run-sonar$'
           only-trigger-phrase: false
           status-context: 'Python Sonar'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
+          included-regions: '{obj:github_included_regions}'
 
 ##############
 # Tox Verify #
@@ -379,11 +400,20 @@
     build-days-to-keep: 7
     build-timeout: 15
     git-url: '$GIT_URL/$GERRIT_PROJECT'
+    parallel: true
     python-version: python2
     stream: master
     submodule-recursive: true
     tox-dir: ''
     tox-envs: ''
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
 
     #####################
     # Job Configuration #
@@ -443,11 +473,6 @@
       - draft-published-event
       - comment-added-contains-event:
           comment-contains-value: recheck$
-    gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: '**'
-
-    parallel: true
 
     #####################
     # Job Configuration #
@@ -504,7 +529,7 @@
       - github-pull-request:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
-          status-context: 'JJB Verify'
+          status-context: 'Tox Verify'
           permit-all: true
           github-hooks: true
-          auto-close-on-fail: false
+          included-regions: '{obj:github_included_regions}'
