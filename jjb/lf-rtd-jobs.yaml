@@ -25,10 +25,14 @@
     ######################
 
     gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: '**/*.rst'
-      - compare-type: ANT
-        pattern: '**/conf.py'
+      - compare-type: REG_EXP
+        pattern: '.*\.rst'
+      - compare-type: REG_EXP
+        pattern: '.*\/conf.py'
+
+    github_included_regions:
+      - '.*\.rst'
+      - '.*\/conf.py'
 
     #####################
     # Job Configuration #
@@ -121,18 +125,21 @@
           url: '{git-url}/{github-org}/{project}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
-          trigger-phrase: '^remerge$'
-          only-trigger-phrase: false
-          status-context: 'RTD Merge'
-          permit-all: true
-          github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
       - timed: 'H H * * *'
+      - github
+      - pollscm:
+          cron: ''
+      - github-pull-request:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: true
+          status-context: 'RTD Merge'
+          permit-all: false
+          github-hooks: true
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
+          included-regions: '{obj:github_included_regions}'
 
 #############
 # RTD VERIFY#
@@ -222,14 +229,10 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'RTD Verify'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
+          included-regions: '{obj:github_included_regions}'
