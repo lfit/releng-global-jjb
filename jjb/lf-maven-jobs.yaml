@@ -179,24 +179,6 @@
     # Job Configuration #
     #####################
 
-    triggers:
-      # Build weekly on Saturdays
-      - timed: 'H H * * 6'
-      - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_clm_triggers}'
-          projects:
-            - project-compare-type: ANT
-              project-pattern: '{project}'
-              branches:
-                - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-          skip-vote:
-            successful: true
-            failed: true
-            unstable: true
-            notbuilt: true
-
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
@@ -229,6 +211,24 @@
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
 
+    triggers:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_clm_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
 - job-template:
     name: '{project-name}-maven-clm-{stream}'
     id: github-maven-clm
@@ -250,17 +250,18 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+      - github-pull-request:
           trigger-phrase: '^run-clm$'
           only-trigger-phrase: false
           status-context: 'CLM'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
 
 #########################
 # Maven Javadoc Publish #
@@ -367,15 +368,16 @@
       - github
       - pollscm:
           cron: ''
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
-          status-context: 'JJB Merge'
+          status-context: 'Maven Javadoc Publish'
           permit-all: false
           github-hooks: true
-          github-org: '{github-org}'
-          github_pr_whitelist: '{obj:github_pr_whitelist}'
-          github_pr_admin_list: '{obj:github_pr_admin_list}'
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
 
 ########################
 # Maven Javadoc Verify #
@@ -477,17 +479,12 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^recheck$'
-          only-trigger-phrase: true
-          status-context: 'Maven Javadoc'
+          only-trigger-phrase: false
+          status-context: 'Maven Javadoc Verify'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
 
 ###############
 # Maven Merge #
@@ -522,8 +519,12 @@
           comment-contains-value: remerge$
 
     gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: '**'
+      - compare-type: REG_EXP
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
 
     post_build_trigger: ''
 
@@ -610,17 +611,20 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      - github
+      - pollscm:
+          cron: ''
+      - github-pull-request:
           trigger-phrase: '^remerge$'
-          only-trigger-phrase: false
+          only-trigger-phrase: true
           status-context: 'Maven Merge'
-          permit-all: true
+          permit-all: false
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
+          included-regions: '{obj:github_included_regions}'
 
 #################
 # Maven Release #
@@ -724,17 +728,12 @@
 
     triggers:
       - timed: '{obj:cron}'
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^build release$'
           only-trigger-phrase: true
           status-context: 'Maven Release'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
 
 ###############
 # Maven Sonar #
@@ -878,17 +877,12 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
-          trigger-phrase: '^recheck$'
+      - github-pull-request:
+          trigger-phrase: '^run-sonar$'
           only-trigger-phrase: false
-          status-context: 'Maven Verify'
+          status-context: 'Maven Sonar'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
 
 ################
 # Maven Verify #
@@ -924,8 +918,12 @@
       - comment-added-contains-event:
           comment-contains-value: recheck$
     gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: '**'
+      - compare-type: REG_EXP
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
 
     #####################
     # Job Configuration #
@@ -1002,17 +1000,13 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - lf-infra-github-pr-trigger:
+      - github-pull-request:
           trigger-phrase: '^recheck$'
           only-trigger-phrase: false
           status-context: 'Maven Verify'
           permit-all: true
           github-hooks: true
-          github-org: ''
-          github_pr_whitelist:
-            - ''
-          github_pr_admin_list:
-            - ''
+          included-regions: '{obj:github_included_regions}'
 
 #############################
 # Maven Verify Dependencies #
