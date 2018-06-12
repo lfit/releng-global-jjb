@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "98a79ad8_5673c0d9",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "498c4c90_54d71765",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 63
+      },
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "961be9bf_7f6c671f",
         "filename": "docs/jjb/lf-ci-jobs.rst",
         "patchSetId": 9
@@ -36,6 +60,24 @@
       "writtenOn": "2018-06-09T15:24:54Z",
       "side": 1,
       "message": "What\u0027s different between Gerrit and GitHub that we cannot deploy this job to both?",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "121ff0d7_10d5f1e6",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "With Github I am not able to restrict the trigger of these jobs. \n\nThese jobs will be triggered for a file pattern matching \"INFO.yaml\" but I cannot specify a pattern in the Github trigger",
+      "parentUuid": "961be9bf_7f6c671f",
       "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "edb92557_a82bc984",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "See my explanation in docs/jjb/lf-ci-jobs.rst",
+      "parentUuid": "25e20b0c_f06a03e6",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e4fd9d6_aca9d432",
         "filename": "shell/info-file-validate.sh",
         "patchSetId": 9
@@ -70,6 +130,24 @@
       "writtenOn": "2018-06-09T15:24:54Z",
       "side": 1,
       "message": "Please echo the script name.\n\n echo \u0027--\u003e info-file-validate.sh\u0027",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3d85d7c_e964ff8f",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e4fd9d6_aca9d432",
       "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "e5ff7c53_0b7eaea6",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a807da4_a9e815e7",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ee059cf5_483c2876",
         "filename": "shell/info-file-validate.sh",
         "patchSetId": 9
@@ -104,6 +200,24 @@
       "writtenOn": "2018-06-09T15:24:54Z",
       "side": 1,
       "message": "Use /tmp/v to avoid https://tox.readthedocs.io/en/latest/example/jenkins.html#avoiding-the-path-too-long-error-with-long-shebang-lines\n\n\n source \"/tmp/v/info/bin/activate\"",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "78822d3c_e69364cb",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ee059cf5_483c2876",
       "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -144,6 +258,24 @@
     },
     {
       "key": {
+        "uuid": "4ed0901d_b93e46c6",
+        "filename": "shell/info-yaml-requirements.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f184e58_ca4b72a3",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "72d0f81a_5bdccb60",
         "filename": "shell/yaml-verify-schema.py",
         "patchSetId": 9
@@ -155,6 +287,24 @@
       "writtenOn": "2018-06-09T15:24:54Z",
       "side": 1,
       "message": "One liner pydocs should be written as:\n\n \"\"\"Parse arguments and verify YAML\"\"\"\n\n\nMulti-line pydoc should be written as:\n\n \"\"\"This is the summary line\n \n This is the pydoc body for additional details.\n and can be as many lines as necessary.\n \"\"\"",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "276763d9_8c684cd0",
+        "filename": "shell/yaml-verify-schema.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72d0f81a_5bdccb60",
       "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -178,6 +328,24 @@
     },
     {
       "key": {
+        "uuid": "cf20944c_d57b00e1",
+        "filename": "shell/yaml-verify-schema.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9cf2ce96_b0e04d77",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dc8533d6_9336bb72",
         "filename": "shell/yaml-verify-schema.py",
         "patchSetId": 9
@@ -189,6 +357,24 @@
       "writtenOn": "2018-06-09T15:24:54Z",
       "side": 1,
       "message": "It\u0027s pretty obvious that the below code is about errors. I don\u0027t think this comment adds any value.",
+      "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7296e894_bca9f312",
+        "filename": "shell/yaml-verify-schema.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-12T05:12:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc8533d6_9336bb72",
       "revId": "1224096c5cfbfe669ca8e14aceb82011b28ee39b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
