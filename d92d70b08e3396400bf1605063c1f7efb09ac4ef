@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "0629563c_6f64ee2c",
+        "filename": "shell/info-file-schema.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-13T19:53:14Z",
+      "side": 1,
+      "message": "This file should be renamed info.schema and perhaps relocated along with the python file out of shell?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 34
+      },
+      "revId": "d92d70b08e3396400bf1605063c1f7efb09ac4ef",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf430d10_2a270fb0",
         "filename": "shell/info-file-schema.yaml",
         "patchSetId": 17
