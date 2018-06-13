@@ -47,7 +47,7 @@ case "${OS_FAMILY}" in
     ;;
 esac
 
-if [ -f "${START_PACKAGES}" ]
+if ( [ -f "${START_PACKAGES}" ] && [ -f "${END_PACKAGES}" ] )
 then
     diff "${START_PACKAGES}" "${END_PACKAGES}" > "${DIFF_PACKAGES}"
 fi
