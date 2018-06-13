@@ -18,18 +18,19 @@ set -x # Trace commands for this script to make debugging easier
 
 OS_FAMILY=$(facter osfamily | tr '[:upper:]' '[:lower:]')
 
+# Capture the CI WORKSPACE safely in the case that it doesn't exist
+workspace="${WORKSPACE:-}"
+
 START_PACKAGES=/tmp/packages_start.txt
 END_PACKAGES=/tmp/packages_end.txt
 DIFF_PACKAGES=/tmp/packages_diff.txt
 
-# This script may be run during system boot, if that is true then there will be
-# a starting_packages file. We will want to create a diff if we have a starting
-# packages file
+# Swap to creating END_PACKAGES if we are running in a CI job (determined by if
+# we have a workspace env) or if the starting packages listing already exists.
 PACKAGES="${START_PACKAGES}"
-if [ -f "${PACKAGES}" ]
+if ( [ "${workspace}" ] || [ -f "${START_PACKAGES}" ] )
 then
     PACKAGES="${END_PACKAGES}"
-    CREATEDIFF=1
 fi
 
 case "${OS_FAMILY}" in
@@ -46,15 +47,15 @@ case "${OS_FAMILY}" in
     ;;
 esac
 
-if [ "${CREATEDIFF}" ]
+if [ -f "${START_PACKAGES}" ]
 then
     diff "${START_PACKAGES}" "${END_PACKAGES}" > "${DIFF_PACKAGES}"
 fi
 
 # If running in a Jenkins job, then copy the created files to the archives
 # location
-if [ "${WORKSPACE}" ]
+if [ "${workspace}" ]
 then
-    mkdir -p "${WORKSPACE}/archives/"
-    cp -f /tmp/packages_*.txt "${WORKSPACE}/archives/"
+    mkdir -p "${workspace}/archives/"
+    cp -f /tmp/packages_*.txt "${workspace}/archives/"
 fi
