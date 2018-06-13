@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf430d10_2a270fb0",
+        "filename": "shell/info-file-schema.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-13T19:51:13Z",
+      "side": 1,
+      "message": "This is still pointing at OPNFV. It should instead point at the global-jjb schema file.",
+      "range": {
+        "startLine": 12,
+        "startChar": 5,
+        "endLine": 12,
+        "endChar": 78
+      },
+      "revId": "d92d70b08e3396400bf1605063c1f7efb09ac4ef",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "355f5c35_1fe9128f",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-13T19:51:13Z",
+      "side": 1,
+      "message": "It doesn\u0027t make sense to write these to a file to immediately install them...we can just \u0027pip install ...\u0027 these in the script.",
+      "range": {
+        "startLine": 19,
+        "startChar": 1,
+        "endLine": 23,
+        "endChar": 3
+      },
+      "revId": "d92d70b08e3396400bf1605063c1f7efb09ac4ef",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e4e53173_e6cba9cb",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-13T19:51:13Z",
+      "side": 1,
+      "message": "There are two ways we could go about this: 1) clone global-jjb as part of the job and cd to where these files are located and execute the script 2) wget the script and schema before executing them.\n\nI\u0027m not sure which is the better approach, though I\u0027m leaning toward git clone (as we don\u0027t have to constantly update the list of files if that changes), and we don\u0027t have to worry about whether or not wget/curl is installed and the plethora of flags they may need.",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 36
+      },
+      "revId": "d92d70b08e3396400bf1605063c1f7efb09ac4ef",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
