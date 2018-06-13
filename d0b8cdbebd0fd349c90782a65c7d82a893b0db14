@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ba12036_a1ec0489",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-13T18:53:17Z",
+      "side": 1,
+      "message": "I think parenthesis mean open a subshell in bash. Which I\u0027m not sure we need here. I we just need the 2 conditionals like:\n\n if [] \u0026\u0026 []",
+      "range": {
+        "startLine": 50,
+        "startChar": 3,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "d0b8cdbebd0fd349c90782a65c7d82a893b0db14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
