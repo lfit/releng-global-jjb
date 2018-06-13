@@ -22,6 +22,30 @@
       "revId": "d0b8cdbebd0fd349c90782a65c7d82a893b0db14",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "19fe054b_5040b6c4",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-13T19:37:51Z",
+      "side": 1,
+      "message": "Ok inside an if statement it is ok to put the parenthesis although it\u0027s not necessary.",
+      "parentUuid": "1ba12036_a1ec0489",
+      "range": {
+        "startLine": 50,
+        "startChar": 3,
+        "endLine": 50,
+        "endChar": 4
+      },
+      "revId": "d0b8cdbebd0fd349c90782a65c7d82a893b0db14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
