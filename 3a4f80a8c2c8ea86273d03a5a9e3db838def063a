@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e8168f6_9eb18bfd",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-06-13T23:15:20Z",
+      "side": 1,
+      "message": "Note: this starts the builds @ 00:00 on day-of-month 1.\nEarlier we were starting the build at \u002700 10 1 * *\u0027, which means “At 10:00 on day-of-month 1.”, specifically to avoid start 25 packer jobs at the same time autorelease jobs are started. \n\nit might not break anything atm, but it spwans around 25  packer jobs at the same time, instead could build in the random hour of the same day with this \u00270 H 1 * *\u0027.\n\nIts not necessay this should be fixed here, i\u0027ll submit a change downstream in releng/builder.",
+      "range": {
+        "startLine": 82,
+        "startChar": 18,
+        "endLine": 82,
+        "endChar": 26
+      },
+      "revId": "3a4f80a8c2c8ea86273d03a5a9e3db838def063a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
