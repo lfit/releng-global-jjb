@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "129f2588_34cb6d03",
+        "filename": "shell/info-file-schema.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-13T00:04:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "199c648a_62f0d919",
+      "range": {
+        "startLine": 29,
+        "startChar": 2,
+        "endLine": 30,
+        "endChar": 18
+      },
+      "revId": "b3b00466b2f1e77fa571a1060c9431324bc28000",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "39152ab5_57528465",
         "filename": "shell/info-file-schema.yaml",
         "patchSetId": 11
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "06117157_af08ea6e",
+        "filename": "shell/info-file-schema.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-13T00:04:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "39152ab5_57528465",
+      "range": {
+        "startLine": 35,
+        "startChar": 2,
+        "endLine": 35,
+        "endChar": 18
+      },
+      "revId": "b3b00466b2f1e77fa571a1060c9431324bc28000",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43fe3415_2874fed9",
         "filename": "shell/info-file-schema.yaml",
         "patchSetId": 11
@@ -59,6 +107,30 @@
       "writtenOn": "2018-06-12T20:34:08Z",
       "side": 1,
       "message": "As there is no format defined for \u0027timezone\u0027 in jsonschema, the previous comment was a note to write either a regex to validate timezones (foo/bar) or implement a validator for them.\n\nhttps://spacetelescope.github.io/understanding-json-schema/reference/string.html?highlight\u003dpattern#format",
+      "range": {
+        "startLine": 52,
+        "startChar": 8,
+        "endLine": 52,
+        "endChar": 26
+      },
+      "revId": "b3b00466b2f1e77fa571a1060c9431324bc28000",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a5a9a9f7_8b7e22ff",
+        "filename": "shell/info-file-schema.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-13T00:04:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43fe3415_2874fed9",
       "range": {
         "startLine": 52,
         "startChar": 8,
