@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6d547111_524ee891",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T20:40:02Z",
+      "side": 1,
+      "message": "OH yes.. thanks! we removed it .. let me update this",
+      "parentUuid": "b6927088_82d6767d",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 110,
+        "endChar": 37
+      },
+      "revId": "73042754bb6ff48ed96bd4b8e1dc5987571fd883",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc5d2e2e_5cb852b9",
         "filename": "info-schema",
         "patchSetId": 23
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-14T20:11:48Z",
       "side": 1,
       "message": "This is missing \u0027_\u0027 as in \u0027Los_Angeles\u0027 and \u0027-\u0027 as in \u0027Porto-Novo\u0027\n\nI belive you can list this all as on range: [A-Za-z_-]",
+      "range": {
+        "startLine": 55,
+        "startChar": 38,
+        "endLine": 55,
+        "endChar": 53
+      },
+      "revId": "73042754bb6ff48ed96bd4b8e1dc5987571fd883",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd62a2d1_1b95d8cb",
+        "filename": "info-schema",
+        "patchSetId": 23
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T20:40:02Z",
+      "side": 1,
+      "message": "In ONAP we are using \"Los Angeles\" for example..  :(\n\nDo we have this standardized?",
+      "parentUuid": "bc5d2e2e_5cb852b9",
       "range": {
         "startLine": 55,
         "startChar": 38,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "8d83fee7_99c8c900",
+        "filename": "shell/git-validate-info-yaml.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T20:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ab6fcf8_270e93f3",
+      "revId": "73042754bb6ff48ed96bd4b8e1dc5987571fd883",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "715bed6c_cc24a303",
         "filename": "shell/git-validate-info-yaml.sh",
         "patchSetId": 23
@@ -76,6 +142,30 @@
       "writtenOn": "2018-06-14T20:11:48Z",
       "side": 1,
       "message": "This is fine for now, but we may need to revisit it in the future as I just realized I\u0027m not sure if this will work for Github since they allow multiple commits: so HEAD~1 might refer to the previous commit in the PR, instead of there intended merge point.",
+      "range": {
+        "startLine": 24,
+        "startChar": 38,
+        "endLine": 24,
+        "endChar": 45
+      },
+      "revId": "73042754bb6ff48ed96bd4b8e1dc5987571fd883",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e8706dbf_25314368",
+        "filename": "shell/git-validate-info-yaml.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T20:40:02Z",
+      "side": 1,
+      "message": "Sure.. I need to check on this and how the repo looks like after \"checking out\" the patchset that we are about to review.",
+      "parentUuid": "715bed6c_cc24a303",
       "range": {
         "startLine": 24,
         "startChar": 38,
@@ -145,6 +235,30 @@
       "writtenOn": "2018-06-14T20:11:48Z",
       "side": 1,
       "message": "This should just say \u0027schema\u0027",
+      "range": {
+        "startLine": 48,
+        "startChar": 53,
+        "endLine": 48,
+        "endChar": 67
+      },
+      "revId": "73042754bb6ff48ed96bd4b8e1dc5987571fd883",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c6bac06_b3acc4fe",
+        "filename": "yaml-verify-schema.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T20:40:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d269869_fd896a6f",
       "range": {
         "startLine": 48,
         "startChar": 53,
