@@ -22,6 +22,29 @@
       "revId": "3a4f80a8c2c8ea86273d03a5a9e3db838def063a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cab3533a_bdda8fa3",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-14T15:40:29Z",
+      "side": 1,
+      "message": "We have a standard name for this. cron: \u0027@monthly\u0027\n\nWe should use the \"cron\" variable name as it\u0027s standard for all of our templates that allow modifying this.",
+      "range": {
+        "startLine": 82,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 15
+      },
+      "revId": "3a4f80a8c2c8ea86273d03a5a9e3db838def063a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
