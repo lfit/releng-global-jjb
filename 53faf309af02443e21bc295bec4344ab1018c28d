@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0967972_e0ff3808",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-14T22:23:18Z",
+      "side": 1,
+      "message": "no need for this prefix. just info-yaml-verify is fine.",
+      "range": {
+        "startLine": 397,
+        "startChar": 4,
+        "endLine": 397,
+        "endChar": 9
+      },
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08b75b4f_d8c3903e",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-14T22:23:18Z",
+      "side": 1,
+      "message": "need a doc for github_included_regions too",
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fb714fc_bcd2e7da",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 26
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-14T22:23:18Z",
+      "side": 1,
+      "message": "Use the GitHub mirror URL.",
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "85305764_d4a8c410",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 26
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-14T22:23:18Z",
+      "side": 1,
+      "message": "Continuation lines should be indented by 4 spaces.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 12
+      },
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
