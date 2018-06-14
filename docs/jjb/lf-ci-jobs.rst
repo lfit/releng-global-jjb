@@ -403,6 +403,7 @@ Packer Merge job runs `packer build` to build system images in the cloud.
 
 :Optional parameters:
 
+    :cron: Time when the packer image should be rebuilt (default: @monthly)
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in seconds before aborting build. (default: 10)
