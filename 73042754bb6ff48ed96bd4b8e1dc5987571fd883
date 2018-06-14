@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "580342cf_ee6ff379",
+        "filename": "info-schema",
+        "patchSetId": 23
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-14T21:13:29Z",
+      "side": 1,
+      "message": "It sure is! ;) https://www.iana.org/time-zones\n\n`ls /usr/share/zoneinfo`",
+      "parentUuid": "dd62a2d1_1b95d8cb",
+      "range": {
+        "startLine": 55,
+        "startChar": 38,
+        "endLine": 55,
+        "endChar": 53
+      },
+      "revId": "73042754bb6ff48ed96bd4b8e1dc5987571fd883",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ab6fcf8_270e93f3",
         "filename": "shell/git-validate-info-yaml.sh",
         "patchSetId": 23
