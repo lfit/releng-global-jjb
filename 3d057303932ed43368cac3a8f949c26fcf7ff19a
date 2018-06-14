@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "289006ee_d3893cc8",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 25
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-14T21:13:29Z",
+      "side": 1,
+      "message": "\"... and that INFO.yaml files follow the schema defined in `global-jjb/info-schema`\"",
+      "range": {
+        "startLine": 403,
+        "startChar": 1,
+        "endLine": 403,
+        "endChar": 19
+      },
+      "revId": "3d057303932ed43368cac3a8f949c26fcf7ff19a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
