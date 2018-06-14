@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c97467c_14ce40eb",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T01:48:47Z",
+      "side": 1,
+      "message": "Cloning from Gerrit since I get a key issue (permissions denied) after trying to clone from Github (ONAP\u0027s sandbox)",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 68
+      },
+      "revId": "73042754bb6ff48ed96bd4b8e1dc5987571fd883",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2155ad95_724f7e5a",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T01:48:47Z",
+      "side": 1,
+      "message": "Removed the loop since we are validating already that we only have one single \"INFO.yaml\" being verified in the gerrit. \n\nIf the gerrit to get verified contains changes other than just INFO.yaml, the change gets -1\u0027ed",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 12
+      },
+      "revId": "73042754bb6ff48ed96bd4b8e1dc5987571fd883",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
