@@ -101,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "92d34b70_1c06e157",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 26
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T22:32:32Z",
+      "side": 1,
+      "message": "I tried, but I get this error:\n01:15:57 + git clone git@github.com:lfit/releng-global-jjb.git\n01:15:57 Cloning into \u0027releng-global-jjb\u0027...\n01:15:57 Host key verification failed.\n01:15:57 fatal: Could not read from remote repository.\n01:15:57 \n01:15:57 Please make sure you have the correct access rights\n01:15:57 and the repository exists.\n\n\nIs this just because Sandbox should not be allowed to clone from github?",
+      "parentUuid": "1fb714fc_bcd2e7da",
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "85305764_d4a8c410",
         "filename": "shell/info-file-validate.sh",
         "patchSetId": 26
@@ -112,6 +130,30 @@
       "writtenOn": "2018-06-14T22:23:18Z",
       "side": 1,
       "message": "Continuation lines should be indented by 4 spaces.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 12
+      },
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "09fde9a6_f61b26f9",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 26
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T22:32:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85305764_d4a8c410",
       "range": {
         "startLine": 24,
         "startChar": 0,
