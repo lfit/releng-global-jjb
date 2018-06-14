@@ -123,6 +123,7 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
           mvn-opts: '{mvn-opts}'
@@ -307,10 +308,11 @@
           server-id: '{mvn-site-id}'
       - inject:
           properties-content: 'DEPLOY_PATH={javadoc-path}'
+      - lf-lftools-install
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-javadoc-generate.sh
-          - ../shell/lftools-install.sh
+          - ../shell/lftools-activate.sh
           - ../shell/maven-javadoc-publish.sh
       - lf-provide-maven-settings-cleanup
 
@@ -546,8 +548,9 @@
           properties-content: |
               NEXUS_CUT_DIRS={nexus-cut-dirs}
               NEXUS_REPO={nexus-snapshot-repo}
+      - lf-lftools-install
       - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
+          - ../shell/lftools-activate.sh
           - ../shell/maven-fetch-metadata.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
@@ -666,8 +669,9 @@
           settings-file: '{mvn-settings}'
       - lf-infra-create-netrc:
           server-id: '{mvn-staging-id}'
+      - lf-lftools-install
       - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
+          - ../shell/lftools-activate.sh
           - ../shell/maven-patch-release.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
@@ -775,6 +779,7 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
           mvn-opts: '{mvn-opts}'
@@ -942,8 +947,7 @@
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
-      - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
+      - lf-lftools-install
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
       - lf-provide-maven-settings-cleanup

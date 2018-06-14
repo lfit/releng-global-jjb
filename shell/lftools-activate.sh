@@ -8,15 +8,11 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
+echo "---> lftools-activate.sh"
 
-# This file contains a list of variables that are generally useful in many
-# scripts. It is meant to be sourced in other scripts so that the variables can
-# be called.
-
-MAVEN_OPTIONS="$(echo --show-version \
-    --batch-mode \
-    -Djenkins \
-    -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn \
-    -Dmaven.repo.local=/tmp/r \
-    -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r)"
-echo "$MAVEN_OPTIONS"
+# This script activates the virtualenv containing lftools so it can be
+# used by other scripts included in the same build step.
+# shellcheck source=$WORKSPACE/.lftools.properties disable=SC1091
+source "$WORKSPACE/.lftools.properties"
+# shellcheck source=$LFTOOLS_VENV/bin/activate disable=SC1091
+source "$LFTOOLS_VENV/bin/activate"

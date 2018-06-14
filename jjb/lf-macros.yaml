@@ -27,6 +27,18 @@
       - lf-provide-maven-settings-cleanup
 
 - builder:
+    name: lf-infra-lftools-install
+    builders:
+      - shell: !include-raw:
+          - ../shell/lftools-install.sh
+
+- builder:
+    name: lf-infra-lftools-cleanup
+    builders:
+      - shell: !include-raw:
+          - ../shell/lftools-cleanup.sh
+
+- builder:
     name: lf-infra-gpg-verify-git-signature
     # TODO: Verify signature after downloading users public key from a locally
     # created repository instead of the public keymesh. This requires a process
@@ -44,8 +56,9 @@
               variable: 'SETTINGS_FILE'
       - lf-infra-create-netrc:
           server-id: logs
+      - lf-infra-lftools-install
       - shell: !include-raw:
-          - ../shell/lftools-install.sh
+          - ../shell/lftools-activate.sh
           - ../shell/logs-deploy.sh
       - shell: !include-raw:
           - ../shell/logs-clear-credentials.sh
@@ -130,9 +143,9 @@
               REPO_ID={repo-id}
               GROUP_ID={group-id}
               UPLOAD_FILES_PATH={upload-files-dir}
+      - lf-infra-lftools-install
       - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
-          - ../shell/common-variables.sh
+          - ../shell/lftools-activate.sh
           - ../shell/deploy-maven-file.sh
       - lf-provide-maven-settings-cleanup
 
@@ -342,6 +355,11 @@
               If using GitHub, in a manual build override with a branch path or
               sha1 hash to a specific commit. For example: 'origin/master'
       # Tools
+      - lf-lftools-parameters
+
+- parameter:
+    name: lf-lftools-parameters
+    parameters:
       - string:
           name: LFTOOLS_VERSION
           default: '{lftools-version}'
@@ -435,6 +453,7 @@
                 - lf-infra-sysstat
                 - lf-infra-package-listing
                 - lf-infra-ship-logs
+                - lf-infra-lftools-cleanup
           mark-unstable-if-failed: true
       - workspace-cleanup:
           exclude:
@@ -442,6 +461,26 @@
             # properties file as input for triggering another build.
             - '**/*.jenkins-trigger'
           fail-build: false
+
+- publisher:
+    name: lf-infra-lftools-cleanup
+    # Macro to cleanup lftools after a build
+    #
+    # Handles the following:
+    #   - Cleaning up the lftools virtualenv
+    publishers:
+      - postbuildscript:
+          builders:
+            - role: BOTH
+              build-on:
+                - ABORTED
+                - FAILURE
+                - NOT_BUILT
+                - SUCCESS
+                - UNSTABLE
+              build-steps:
+                - lf-infra-lftools-cleanup
+          mark-unstable-if-failed: true
 
 #######
 # SCM #

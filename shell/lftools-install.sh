@@ -47,9 +47,12 @@ LFTOOLS_REFSPEC=master
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-virtualenv --quiet "/tmp/v/lftools"
-# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
-source "/tmp/v/lftools/bin/activate"
+LFTOOLS_VENV="$(mktemp -d -t /tmp/gjjb-XXX)"
+export LFTOOLS_VENV
+virtualenv --quiet "$LFTOOLS_VENV"
+echo "LFTOOLS_VENV=$LFTOOLS_VENV" > "$WORKSPACE/.lftools.properties"
+# shellcheck source=$LFTOOLS_VENV/bin/activate disable=SC1091
+source "$LFTOOLS_VENV/bin/activate"
 pip install --quiet --upgrade "pip==9.0.3" setuptools
 
 case $LFTOOLS_MODE in

@@ -20,8 +20,6 @@ echo "---> jenkins-configure-global-vars.sh"
 
 GROOVY_SCRIPT_FILE="jjb/global-jjb/jenkins-admin/set_global_properties.groovy"
 
-# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
-source "/tmp/v/lftools/bin/activate"
 silos="${jenkins_silos:-jenkins}"
 
 set -eu -o pipefail

@@ -69,6 +69,7 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
 
     wrappers:
@@ -115,6 +116,7 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
       - string:
           name: NEXUS_IQ_CLI_VERSION
@@ -241,6 +243,7 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
       - string:
           name: ARCHIVE_ARTIFACTS
@@ -280,11 +283,10 @@
             notbuilt: true
 
     builders:
-      - shell: !include-raw-escape:
-          # Workaround issue where the tox run later breaks the lftools virtualenv.
-          # Without running the install first the run in the publisher will fail
-          # due to missing lftools because it gets installed into a tox venv.
-          - ../shell/lftools-install.sh
+      # Workaround issue where the tox run later breaks the lftools virtualenv.
+      # Without running the install first the run in the publisher will fail
+      # due to missing lftools because it gets installed into a tox venv.
+      - lf-lftools-install
       - lf-infra-tox-install:
           python-version: '{python-version}'
       - shell: !include-raw-escape: ../shell/tox-run.sh
@@ -402,6 +404,7 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
       - lf-infra-tox-parameters:
           tox-dir: '{tox-dir}'
@@ -413,11 +416,10 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     builders:
-      - shell: !include-raw-escape:
-          # Workaround issue where the tox run later breaks the lftools virtualenv.
-          # Without running the install first the run in the publisher will fail
-          # due to missing lftools because it gets installed into a tox venv.
-          - ../shell/lftools-install.sh
+      # Workaround issue where the tox run later breaks the lftools virtualenv.
+      # Without running the install first the run in the publisher will fail
+      # due to missing lftools because it gets installed into a tox venv.
+      - lf-lftools-install
       - lf-infra-tox-install:
           python-version: '{python-version}'
       - shell: !include-raw-escape: ../shell/tox-run.sh

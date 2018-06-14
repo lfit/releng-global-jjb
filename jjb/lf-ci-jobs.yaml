@@ -101,6 +101,7 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
       - lf-packer-parameters:
           packer-version: '{packer-version}'
@@ -171,6 +172,7 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
       - lf-infra-jjb-parameters:
           jjb-version: '{jjb-version}'
@@ -219,7 +221,6 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
-          lftools-version: '{lftools-version}'
 
     wrappers:
       - lf-infra-wrappers:
@@ -263,7 +264,10 @@
       - lf-infra-jjbini
       - inject:
           properties-content: 'jenkins_silos={jenkins-silos}'
-      - shell: !include-raw-escape: ../shell/jenkins-configure-clouds.sh
+      - lf-infra-lftools-install
+      - shell: !include-raw-escape:
+         - ../shell/lftools-activate.sh
+         - ../shell/jenkins-configure-clouds.sh
       - shell: rm "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
 - builder:
@@ -272,7 +276,10 @@
       - lf-infra-jjbini
       - inject:
           properties-content: 'jenkins_silos={jenkins-silos}'
-      - shell: !include-raw-escape: ../shell/jenkins-configure-global-vars.sh
+      - lf-infra-lftools-install
+      - shell: !include-raw-escape:
+         - ../shell/lftools-activate.sh
+         - ../shell/jenkins-configure-global-vars.sh
       - shell: rm "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
 - lf_jenkins_configuration: &lf_jenkins_cfg_merge
@@ -314,6 +321,7 @@
           project: '{project}'
           stream: ''
           branch: master
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
 
     wrappers:
@@ -322,8 +330,6 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     builders:
-      - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
       - lf-jenkins-cfg-global-vars:
           jenkins-silos: '{jenkins-silos}'
       - lf-jenkins-cfg-clouds:
@@ -429,6 +435,7 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
+      - lf-lftools-parameters:
           lftools-version: '{lftools-version}'
 
     wrappers:
