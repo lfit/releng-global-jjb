@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "875e0f4c_8001bcc4",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T22:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0967972_e0ff3808",
+      "range": {
+        "startLine": 397,
+        "startChar": 4,
+        "endLine": 397,
+        "endChar": 9
+      },
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08b75b4f_d8c3903e",
         "filename": "docs/jjb/lf-ci-jobs.rst",
         "patchSetId": 26
@@ -36,6 +60,24 @@
       "writtenOn": "2018-06-14T22:23:18Z",
       "side": 1,
       "message": "need a doc for github_included_regions too",
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "127938c5_7d32410a",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-14T22:29:15Z",
+      "side": 1,
+      "message": "The github_included_regions is not optional or required, but rather a parameter with a fixed value that is set to match \"INFO.yaml\". Users are not allowed to change this value since this job should only track that pattern. \n\nWill documenting it cause confusion and making people think it is an option? In which section shall I put it if so.",
+      "parentUuid": "08b75b4f_d8c3903e",
       "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
