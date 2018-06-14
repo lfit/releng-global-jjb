@@ -241,14 +241,6 @@ On the `branch` variable you can assign `$sha1` or `$ghprbActualCommit`
 as the value.  This will require that the job be triggered via
 the GHPRB plugin and not manually.
 
-Triggers
-========
-
-lf-infra-github-pr-trigger
---------------------------
-
-Provides configuration for a GitHub PR Trigger.
-
 Wrappers
 ========
 
