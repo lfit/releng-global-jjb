@@ -1,0 +1,12 @@
+- triggers:
+   - github-pull-request:
+       trigger-phrase: ^remerge$
+       only-trigger-phrase: true
+       status-context: JJB Merge
+       permit-all: false
+       github-hooks: true
+       org-list:
+         - '{github-org}'
+       white-list: '{obj:github_pr_whitelist}'
+       admin-list: '{obj:github_pr_admin_list}'
+       included_regions: '{obj:github_included_regions}'

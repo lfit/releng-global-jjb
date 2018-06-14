@@ -34,7 +34,7 @@ values used by global-jjb templates.
 **GitHub required parameters**:
 
 :git-url: Set this to the base URL of your GitHub repo. In
-    general this should be <https://github.com>. If you are using
+    general this should be https://github.com. If you are using
     GitHub Enterprise, or some other GitHub-style system, then it
     should be whatever your installation base URL is.
 
@@ -46,14 +46,13 @@ values used by global-jjb templates.
     into the scm config.
 
 :github_pr_org: The name of the GitHub organization. All members
-    of this organization will be able to trigger any job using the
-    `lf-infra-github-pr` macro.
+    of this organization will be able to trigger jobs.
 
 :github_pr_whitelist: List of GitHub members you wish to be able to
-    trigger any job that uses the `lf-infra-github-pr-trigger` macro.
+    trigger jobs.
 
 :github_pr_admin_list: List of GitHub members that will have admin
-    privileges on any job using the `lf-infra-github-pr-trigger` macro.
+    privileges on the jobs.
 
 Example Gerrit Infra:
 

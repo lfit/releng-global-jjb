@@ -143,6 +143,8 @@ complete running via the logs-clear-credentials.sh script. This script contains
 2. Run the build scripts in this case lftools-install.sh and logs-deploy.sh
 3. Remove credentials provided by config-file-provider
 
+.. _preserve-variable-refs:
+
 Preserving Objects in Variable References
 =========================================
 
@@ -160,18 +162,10 @@ Example:
 
 .. code-block:: yaml
 
-    - triggers:
-       - lf-infra-github-pr-trigger:
-           trigger-phrase: ^remerge$
-           status-context: JJB Merge
-           permit-all: false
-           github-hooks: true
-           github-org: '{github-org}'
-           github_pr_whitelist: '{obj:github_pr_whitelist}'
-           github_pr_admin_list: '{obj:github_pr_admin_list}'
+   .. literalinclude:: _static/github-pr-trigger.example
 
-In the above example note the use of underscores in `github_pr_admin_list` and
-`github_pr_admin_list`.
+In the above example note the use of underscores in ``github_pr_whitelist``,
+``github_pr_admin_list``, and ``github_included_regions``.
 
 Using single quotes around variables
 ====================================
