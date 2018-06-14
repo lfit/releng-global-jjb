@@ -45,6 +45,30 @@
       "revId": "3a4f80a8c2c8ea86273d03a5a9e3db838def063a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c26bb62b_08f9d120",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-14T19:43:13Z",
+      "side": 1,
+      "message": "I don\u0027t mind changing the name to cron.\n\nThe @monthly, @daily, etc use the hash system \u0027H\u0027, whereas as you stated Anil, this currently starts all 25 of those jobs at once.",
+      "parentUuid": "cab3533a_bdda8fa3",
+      "range": {
+        "startLine": 82,
+        "startChar": 4,
+        "endLine": 82,
+        "endChar": 15
+      },
+      "revId": "3a4f80a8c2c8ea86273d03a5a9e3db838def063a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
