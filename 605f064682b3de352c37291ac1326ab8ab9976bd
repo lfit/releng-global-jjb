@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47e9fabd_a1d99bb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-15T01:10:54Z",
+      "side": 1,
+      "message": "It\u0027s better to use the Change-Id for this patch since Gerrit automatically turns it into a link anyway.",
+      "revId": "605f064682b3de352c37291ac1326ab8ab9976bd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
