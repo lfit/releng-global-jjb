@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "4f03a5ac_ac9b495a",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 26
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-15T18:03:19Z",
+      "side": 1,
+      "message": "Removed gerrit_trigger_file_paths since it is a fixed value",
+      "parentUuid": "127938c5_7d32410a",
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1fb714fc_bcd2e7da",
         "filename": "shell/info-file-validate.sh",
         "patchSetId": 26
@@ -113,6 +131,24 @@
       "side": 1,
       "message": "I tried, but I get this error:\n01:15:57 + git clone git@github.com:lfit/releng-global-jjb.git\n01:15:57 Cloning into \u0027releng-global-jjb\u0027...\n01:15:57 Host key verification failed.\n01:15:57 fatal: Could not read from remote repository.\n01:15:57 \n01:15:57 Please make sure you have the correct access rights\n01:15:57 and the repository exists.\n\n\nIs this just because Sandbox should not be allowed to clone from github?",
       "parentUuid": "1fb714fc_bcd2e7da",
+      "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51282916_0fde1943",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 26
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-06-15T18:03:19Z",
+      "side": 1,
+      "message": "Done, my bad I was using the wrong command",
+      "parentUuid": "92d34b70_1c06e157",
       "revId": "53faf309af02443e21bc295bec4344ab1018c28d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
