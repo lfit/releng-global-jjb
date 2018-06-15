@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0359b7fc_5a16b3d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-15T01:02:59Z",
+      "side": 1,
+      "message": "Please link to the relevant change-id that introduced the instance_name change.",
+      "revId": "13dd68a50aa64c69039511a901b2a67da79bc72f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
