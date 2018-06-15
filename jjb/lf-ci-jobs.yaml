@@ -79,7 +79,7 @@
     stream: master
     submodule-recursive: true
     packer-cloud-settings: packer-cloud-env
-    packer-version: 1.2.2
+    packer-version: 1.2.3
 
     #####################
     # Job Configuration #

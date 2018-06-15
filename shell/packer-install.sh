@@ -16,7 +16,7 @@ echo "---> packer-install.sh"
 set -eu -o pipefail
 
 # $PACKER_VERSION        : Define a packer version passed as job paramter
-PACKER_VERSION="${PACKER_VERSION:-1.2.2}"
+PACKER_VERSION="${PACKER_VERSION:-1.2.3}"
 export PATH="${WORKSPACE}/bin:$PATH"
 
 packer_install() {
