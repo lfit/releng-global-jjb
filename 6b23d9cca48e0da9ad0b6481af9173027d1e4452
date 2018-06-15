@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7adb9a2_672519a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-15T19:03:28Z",
+      "side": 1,
+      "message": "Needs packer version \u003e\u003d 1.2.3 as the instance_name was introduced in 1.2.3 so 1.2.3 is a valid version to use.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "6b23d9cca48e0da9ad0b6481af9173027d1e4452",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7863e4d1_ca7c0edf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-15T19:03:28Z",
+      "side": 1,
+      "message": "Would be better to link to the tag for 1.2.3 instead https://github.com/hashicorp/packer/blob/v1.2.3/CHANGELOG.md\n\nLinking to master means that link will have different information in it when someone looks at it a year from now.",
+      "revId": "6b23d9cca48e0da9ad0b6481af9173027d1e4452",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
