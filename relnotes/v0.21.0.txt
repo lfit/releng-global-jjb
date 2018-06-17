@@ -1,0 +1,93 @@
+global-jjb v0.21.0 Release Notes
+================================
+
+Thanks to Andrew, Anil, Jessica, Luis, Thanh, and Trevor
+for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+efc1f45 Thanh Ha        Consolidate keypair default names to jenkins-ssh
+This is a potential breaking change. If you are not explicitly declaring
+`jenkins-ssh-credential` in defaults.yaml or `KEY_PAIR_NAME` in clouds.cfg
+for the "jenkins-cfg" job. Then the default naming for these keypairs is now
+`jenkins-ssh`. Make sure to update either the Jenkins Credentials name or
+set the explicit configurations as mentioned previously.
+
+
+Notable changes since v0.20.0
+-----------------------------
+
+d1fb28b Luis Gomez      Allow any project/branch to deploy jjb jobs
+The "jjb-deploy" job can now be run from any Gerrit project. When run against
+an "ci-management" repo then it will perform as it did before. When run against
+a non-ci-manamgent repo the job will fetch the master branch from ci-management
+and deploy the job from there.
+
+55ab265 Thanh Ha        Setup tools in global-jjb tox.ini
+Creates a global tox.ini which can be used by projects to use common
+PyPi tools. This replaces the need to "source /path/to/venv"
+everywhere in our scripts to jump to different tools.
+Instead we replace it with one of:
+
+    tox -q -c jjb/global-jjb/tox.ini -e openstack -- {parameters}
+
+d9aeddd Thanh Ha        Add jenkins-init-scripts to global-jjb
+These are the minion initialization scripts that start running
+when our cloud plugin spawns a new minion. They are responsible
+for prepping the minion for Jenkins to take over and run the job.
+
+efc1f45 Thanh Ha        Consolidate keypair default names to jenkins-ssh
+This is an attempt to consolidate all our different instances
+of the ssh-keypair name all over the place. By default we will
+consolidate on `jenkins-ssh` as the default keypair name.
+
+a079f1b Andrew Grimberg Add package lists to job logs
+Jobs will now archive a package-listing of OS level package installations for
+reference in the log server.
+
+f6db870 Trevor Bramwell Configurable Timed Trigger for Packer Merge Jobs
+Packer jobs timed triggers can now be overrided by projects that want a
+different timer than default of "@monthly".
+
+b83660f Jessica Wagantall       Add INFO.yaml verify jobs
+New job for verifying LF INFO.yaml files. These files will be used in the
+future to manage things like project permissions from inside the repo.
+
+
+Full Change Log
+---------------
+
+a8ff64a Thanh Ha        Remove unnecessary github trigger macro
+22db112 Anil Belur      Set minimal packer version to 1.2.3
+b83660f Jessica Wagantall       Add INFO.yaml verify jobs
+f6db870 Trevor Bramwell Configurable Timed Trigger for Packer Merge Jobs
+3142525 Thanh Ha        Set docs version from git
+d0b8cdb Andrew Grimberg Only create package diff if start and end exist
+a57c991 Andrew Grimberg Make package listing script smarter
+6eefde1 Thanh Ha        Use include-regions to limit RTD build paths
+0f14d33 Thanh Ha        Use include-regions to limit MVN build paths
+2bad748 Thanh Ha        Use include-regions to limit node build paths
+3046ee6 Thanh Ha        Use include-regions to limit Py build paths
+a0fac97 Thanh Ha        Use include-regions to limit JenkinsCFG build path
+add7cdb Thanh Ha        Use include-regions to limit JJB build paths
+0845375 Thanh Ha        Use include-regions to limit packer build paths
+4d6ed41 Thanh Ha        Add CSS and HTML to rtd build pattern
+2fea1a4 Trevor Bramwell Add documentation for CFP files
+a079f1b Andrew Grimberg Add package lists to job logs
+801f8ef Anil Belur      Document lf-infra-push-gerrit-patch macro in RTD
+9dd5c89 Thanh Ha        Update OpenStack plugin supported versions list
+c6c8d6b Thanh Ha        DO NOT fail if global-vars-.sh is not configured
+ad6bd3d Thanh Ha        Handle missing CREDENTIAL when creating .netrc
+b9e3254 Thanh Ha        Disable -x to prevent printing passwords
+386d0e8 Thanh Ha        Clear log credential files with force (-f)
+efa1504 Thanh Ha        Add sha1 parameter for GitHub jobs
+efc1f45 Thanh Ha        Consolidate keypair default names to jenkins-ssh
+d9aeddd Thanh Ha        Add jenkins-init-scripts to global-jjb
+140ad4d Thanh Ha        Add labels for linking in configuration.rst
+55ab265 Thanh Ha        Setup tools in global-jjb tox.ini
+eeefc4d Thanh Ha        Redirect README documentation to RTD
+d1fb28b Luis Gomez      Allow any project/branch to deploy jjb jobs
+5aaa1c1 Thanh Ha        Migrate README to RTD
+9f181f0 Thanh Ha        REM security notice about PostBuildScript plugin
