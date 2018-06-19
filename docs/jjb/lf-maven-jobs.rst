@@ -52,6 +52,17 @@ Jobs for Maven projects to generate javadoc using GitHub.
 Macros
 ======
 
+lf-infra-maven-sonar
+--------------------
+
+Runs Sonar against a Maven project.
+
+:Required Parameters:
+
+    :java-version: Version of Java to execute Sonar with.
+    :mvn-version: Version of Maven to execute Sonar with.
+    :mvn-settings: Maven settings.xml file containing credentials to use.
+
 lf-maven-build
 --------------
 
@@ -76,6 +87,16 @@ lf-maven-stage
 ---------------
 
 Calls the maven stage script to push artifacts to a Nexus staging repository.
+
+lf-update-java-alternatives
+---------------------------
+
+Setup Java alternatives for the Distro.
+
+:Required Parameters:
+
+    :java-version: Version of Java to set as the default Java.
+        Eg. openjdk8
 
 Job Templates
 =============
