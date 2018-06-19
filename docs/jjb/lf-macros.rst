@@ -75,6 +75,11 @@ lf-infra-gpg-verify-git-signature
 Verify gpg signature of the latest commit message in $WORKSPACE.
 This command assumes that $WORKSPACE is a git repo.
 
+lf-infra-package-listing
+------------------------
+
+Lists distro level packages.
+
 lf-infra-packer-build
 ---------------------
 
@@ -157,6 +162,27 @@ Cleanup maven settings.xml configuration. This should be called at the end of
 any macros that calles the
 :ref:`lf-provide-maven-settings <lf-provide-maven-settings>` macro.
 
+.. _provide-sigul-config:
+
+lf-provide-sigul-configuration
+------------------------------
+
+Provides sigual configuration to the Jenkins build node.
+
+Requires the following Config File Provider managed files in Jenkins
+preconfigured.
+
+* sigul-config
+* sigul-password
+* sigul-pki
+
+.. _provide-sigul-config-cleanup:
+
+lf-provide-sigul-configuration-cleanup
+--------------------------------------
+
+Cleanup configuration provided by `provide-sigul-config`.
+
 lf-rtd-trigger-build
 --------------------
 
@@ -166,6 +192,13 @@ lf-rtd-verify
 -------------
 
 ReadTheDocs verify script.
+
+lf-sigul-install
+----------------
+
+Install Sigul.
+
+Requires ``SIGUL_BRIDGE_IP`` configured as a global envvar.
 
 lf-infra-provide-docker-cleanup
 -------------------------------
@@ -180,6 +213,16 @@ lf-infra-maven-parameters
 
 Provides parameters needed by Maven. Should be used by any jobs that need to
 call the mvn cli.
+
+lf-infra-openstack-parameters
+-----------------------------
+
+Provides parameters needed by OpenStack client CLI. Use in jobs that need to
+call the openstack cli.
+
+:Required Parameters:
+
+    :os-cloud: Configures ``OS_CLOUD`` envvar as used by openstack cli.
 
 lf-infra-parameters
 -------------------
