@@ -27,6 +27,35 @@ Jobs for Python projects using GitHub.
 Macros
 ======
 
+lf-infra-clm-python
+-------------------
+
+Run CLM scanning against a Python project.
+
+:Required Parameters:
+
+    :clm-project-name: Project name in Nexus IQ to send results to.
+
+lf-infra-tox-install
+--------------------
+
+Install Tox into a virtualenv.
+
+:Required Parameters:
+
+    :python-version: Version of Python to install into the Tox virtualenv.
+        Eg. python2 / python3
+
+lf-infra-tox-sonar
+------------------
+
+Runs Sonar scanning against a Python project.
+
+:Required Parameters:
+
+    :java-version: Version of Java to use to run Sonar.
+    :mvn-version: Version of Maven to use to run Sonar.
+
 lf-tox-install
 --------------
 
