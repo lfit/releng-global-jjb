@@ -97,12 +97,12 @@
     builders:
       - inject:
           properties-content: |
-              PROJECT='{project}'
-              GERRIT_COMMIT_MESSAGE='{gerrit-commit-message}'
-              GERRIT_HOST='{gerrit-host}'
-              GERRIT_TOPIC='{gerrit-topic}'
-              GERRIT_USER='{gerrit-user}'
-              REVIEWERS_EMAIL='{reviewers-email}'
+              PROJECT={project}
+              GERRIT_COMMIT_MESSAGE={gerrit-commit-message}
+              GERRIT_HOST={gerrit-host}
+              GERRIT_TOPIC={gerrit-topic}
+              GERRIT_USER={gerrit-user}
+              REVIEWERS_EMAIL={reviewers-email}
       - shell: !include-raw-escape: ../shell/gerrit-push-patch.sh
 
 - builder:
