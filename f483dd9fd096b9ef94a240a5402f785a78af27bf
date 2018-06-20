@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fc76be6a_720fabb5",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-20T21:34:29Z",
+      "side": 1,
+      "message": "We should add a comment here to say that this is a special case for this job.",
+      "revId": "f483dd9fd096b9ef94a240a5402f785a78af27bf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
