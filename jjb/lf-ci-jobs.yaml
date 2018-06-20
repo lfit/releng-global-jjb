@@ -412,7 +412,9 @@
     ######################
 
     branch: master
-    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    # jjb-deploy should always clone $PROJECT regardless of what
+    # $GERRIT_PROJECT triggered the job.
+    git-url: '$GIT_URL/$PROJECT'
     stream: master
     gerrit_jjb_deploy_job_triggers:
       - comment-added-contains-event:
