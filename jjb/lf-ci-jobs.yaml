@@ -412,7 +412,7 @@
     ######################
 
     branch: master
-    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    git-url: '$GIT_URL/$PROJECT'
     stream: master
     gerrit_jjb_deploy_job_triggers:
       - comment-added-contains-event:
