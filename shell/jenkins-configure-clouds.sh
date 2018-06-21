@@ -63,7 +63,7 @@ get_cfg() {
         exit 1
     fi
 
-    cfg=$(grep "${setting^^}" "$cfg_file" | tail -1 | awk -F'=' '{print $2}')
+    cfg=$(grep "^${setting^^}=" "$cfg_file" | tail -1 | awk -F'=' '{print $2}')
     cfg=${cfg:-"$default"}
     echo "$cfg"
 }
