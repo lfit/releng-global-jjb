@@ -212,6 +212,7 @@ OpenStack Cloud plugin version supported:
 * 2.32
 * 2.33
 * 2.34
+* 2.35
 
 Cloud configuration are managed via a directory structure in ci-management as
 follows:
