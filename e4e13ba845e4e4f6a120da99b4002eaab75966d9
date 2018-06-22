@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffec6fb7_52b1d8f8",
+        "filename": "info-schema",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-06-22T20:43:09Z",
+      "side": 1,
+      "message": "These \u0027{\u0027 aren\u0027t needed, nor is \u0027required: false\u0027.\n\nJust removing \u0027version\u0027 from the required map above should be sufficient.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 3
+      },
+      "revId": "e4e13ba845e4e4f6a120da99b4002eaab75966d9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
