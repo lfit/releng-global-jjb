@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "54b25cd5_f0d3cbad",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2018-06-22T16:29:33Z",
+      "side": 1,
+      "message": "Hmm. what do I do for this one?",
+      "range": {
+        "startLine": 1039,
+        "startChar": 7,
+        "endLine": 1039,
+        "endChar": 52
+      },
+      "revId": "cc4427298fe0ffca2cd5426432c36c8062f7cb6f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
