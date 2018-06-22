@@ -436,6 +436,10 @@
       - lf-infra-tox-parameters:
           tox-dir: '{tox-dir}'
           tox-envs: '{tox-envs}'
+      - bool:
+          name: PARALLEL
+          default: '{parallel}'
+          description: Tox test type used to configure serial or parallel testing.
 
     wrappers:
       - lf-infra-wrappers:
@@ -486,13 +490,6 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: gerrit
-
-    parameters:
-      - bool:
-          name: PARALLEL
-          default: '{parallel}'
-          description: Tox test type used to configure serial or parallel testing.
-
 
     triggers:
       - gerrit:
