@@ -13,7 +13,6 @@ $id: 'https://github.com/lfit/releng-global-jjb/blob/master/info-schema'
 
 required:
   - 'project'
-  - 'version'
   - 'project_creation_date'
   - 'project_category'
   - 'lifecycle_state'
@@ -29,8 +28,10 @@ required:
 properties:
   project:
     type: 'string'
-  version:
-    type: 'string'
+  version: {
+    type: 'string',
+    required: false 
+  }
   project_creation_date:
     type: 'string'
   project_category:
