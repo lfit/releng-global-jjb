@@ -145,6 +145,10 @@
       - compare-type: REG_EXP
         pattern: '.*\.sh'
       - compare-type: REG_EXP
+        pattern: '.*\.bat'
+      - compare-type: REG_EXP
+        pattern: '.*\.ps1'
+      - compare-type: REG_EXP
         pattern: '.*\.(yaml|yml)'
       - compare-type: REG_EXP
         pattern: '.*\/global-jjb'
@@ -153,6 +157,8 @@
     github_included_regions:
       - '.*\.groovy'
       - '.*\.sh'
+      - '.*\.bat'
+      - '.*\.ps1'
       - '.*\.(yaml|yml)'
       - '.*\/global-jjb'
 
@@ -872,6 +878,10 @@
                 - compare-type: REG_EXP
                   pattern: 'packer\/provision\/.*\.sh'
                 - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/.*\.bat'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/.*\.ps1'
+                - compare-type: REG_EXP
                   pattern: 'packer\/provision\/{templates}\.yaml'
                 - compare-type: REG_EXP
                   pattern: 'packer\/provision\/local-{templates}\.yaml'
@@ -923,6 +933,8 @@
           # included-regions MUST match Gerrit Trigger file-paths
           included-regions:
             - 'packer\/provision\/.*\.sh'
+            - 'packer\/provision\/.*\.bat'
+            - 'packer\/provision\/.*\.ps1'
             - 'packer\/provision\/{templates}\.yaml'
             - 'packer\/provision\/local-{templates}\.yaml'
             - 'packer\/templates\/{templates}\.json'
