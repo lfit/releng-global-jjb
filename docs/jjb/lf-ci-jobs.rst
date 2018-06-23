@@ -70,6 +70,30 @@ Jobs related to Packer builds for CI using GitHub.
 Macros
 ======
 
+lf-infra-jjb-parameters
+-----------------------
+
+:Required Parameters:
+
+    :jjb-version: Version of Jenkins Job Builder (JJB) to install and use in
+        the jjb jobs.
+
+lf-jenkins-cfg-clouds
+---------------------
+
+Deploys Jenkins Cloud configuration read from the ``jenkins-clouds`` directory
+in ci-management repositories.
+
+.. note::
+
+   Requires the jjbini file in Jenkins CFP to contain JJB 2.0 style
+   config definitions for "production" and "sandbox" systems.
+
+:Required Parameters:
+
+    :jenkins-silos: Space-separated list of Jenkins silos to update
+        configuration for as defined in ~/.config/jenkins_jobs/jenkins_jobs.ini
+
 lf-jenkins-cfg-global-vars
 --------------------------
 
@@ -84,7 +108,7 @@ ci-management/jenkins-config/global-vars-SILO.sh script.
 
 :Required parameters:
 
-    :jenkins-silos: Space separated list of Jenkins silos to update
+    :jenkins-silos: Space-separated list of Jenkins silos to update
         configuration for as defined in ~/.config/jenkins_jobs/jenkins_jobs.ini
 
 lf-infra-jjbini
