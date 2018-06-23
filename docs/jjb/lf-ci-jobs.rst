@@ -427,6 +427,34 @@ other file changes. Verifies INFO.yaml files follow the schema defined in
         (default: true)
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
+.. _license-checker:
+
+License Checker
+---------------
+
+Job to scan projects for files missing license headers.
+
+:Template Names:
+    - {project-name}-license-check
+    - gerrit-license-check
+    - github-license-check
+
+:Optional parameters:
+
+    :file-patterns: Space-separated list of file patterns to scan.
+        (default: \*.go \*.groovy \*.java \*.py \*.sh)
+    :spdx-disable: Disable the SPDX-Identifier checker. (default: false)
+    :lhc-version: Version of LHC to use. (default: 0.2.0)
+    :license-exclude-paths: Comma-separated list of paths to exclude from the
+        license checker. The paths used here will be matched using a contains
+        rule so it is best to be as precise with the path as possible.
+        For example a path of '/src/generated/' will be searched as
+        '**/src/generated/**'.
+        Example: org/opendaylight/yang/gen,protobuff/messages
+        (default: '')
+    :licenses-allowed: Comma-separated list of allowed licenses.
+        (default: Apache-2.0,EPL-1.0,MIT)
+
 .. _gjjb-packer-merge:
 
 Packer Merge
