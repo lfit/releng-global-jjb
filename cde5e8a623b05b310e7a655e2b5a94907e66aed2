@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7546039d_a8c61995",
+        "filename": "jenkins-init-scripts/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-06-23T10:28:03Z",
+      "side": 1,
+      "message": "\u0027submodules\u0027\n\n--recurse-submodules",
+      "range": {
+        "startLine": 14,
+        "startChar": 24,
+        "endLine": 14,
+        "endChar": 34
+      },
+      "revId": "cde5e8a623b05b310e7a655e2b5a94907e66aed2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
