@@ -11,5 +11,5 @@ it to Jenkins for job use.
 To use this create a managed file in Jenkins with the contents:
 
     #!/bin/bash
-    git clone https://gerrit.example.org/r/ci-management.git /opt/ciman
+    git clone --recurse-submodules https://gerrit.example.org/r/ci-management.git /opt/ciman
     /opt/ciman/jjb/global-jjb/jenkins-init-scripts/init.sh
