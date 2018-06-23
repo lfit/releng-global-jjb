@@ -46,7 +46,20 @@ mkdir -p "$SCRIPT_DIR"
 
 silos="${jenkins_silos:-jenkins}"
 
+set +x  # Disable `set -x` to prevent printing passwords
+echo "Configuring $silo"
+JENKINS_URL=$(crudini --get "$HOME"/.config/jenkins_jobs/jenkins_jobs.ini "$silo" url)
+JENKINS_USER=$(crudini --get "$HOME"/.config/jenkins_jobs/jenkins_jobs.ini "$silo" user)
+JENKINS_PASSWORD=$(crudini --get "$HOME"/.config/jenkins_jobs/jenkins_jobs.ini "$silo" password)
+export JENKINS_URL
+export JENKINS_USER
+export JENKINS_PASSWORD
+OS_PLUGIN_VER="$(lftools jenkins plugins list \
+    | grep 'Openstack Cloud Plugin' | awk -F':' '{print $2}')"
+
 set -eu -o pipefail
+
+version_ge() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"; }
 
 get_cfg() {
     if [ -z ${3+x} ]; then
@@ -153,6 +166,7 @@ get_minion_options() {
     if [ "$silo" == "sandbox" ]; then
         instance_cap=$(get_cfg "$cfg_file" SANDBOX_CAP "null")
     fi
+    min_instance_cap=$(get_cfg "$cfg_file" MIN_INSTANCE_CAP "null")
 
     floating_ip_pool=$(get_cfg "$cfg_file" FLOATING_IP_POOL "")
     security_groups=$(get_cfg "$cfg_file" SECURITY_GROUPS "default")
@@ -164,25 +178,49 @@ get_minion_options() {
     fs_root=$(get_cfg "$cfg_file" FS_ROOT "/w")
     retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
 
-    if [ ! -z "$volume_size" ]; then
-        echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
-    else
-        echo "    new BootSource.Image(\"$image_name\"),"
+    if version_ge "$OS_PLUGIN_VER" "2.35"; then
+        if [ ! -z "$volume_size" ]; then
+            echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
+        else
+            echo "    new BootSource.Image(\"$image_name\"),"
+        fi
+        echo "    \"${flavors[${hardware_id}]}\","
+        echo "    \"$network_id\","
+        echo "    \"$user_data_id\","
+        echo "    $instance_cap,"
+        echo "    $min_instance_cap,"
+        echo "    \"$floating_ip_pool\","
+        echo "    \"$security_groups\","
+        echo "    \"$availability_zone\","
+        echo "    $start_timeout,"
+        echo "    \"$key_pair_name\","
+        echo "    $num_executors,"
+        echo "    \"$jvm_options\","
+        echo "    \"$fs_root\","
+        echo "    new LauncherFactory.SSH(\"$key_pair_name\", \"\"),"
+        echo "    $retention_time"
+
+    else  # SlaveOptions() structure for versions <= 2.34
+        if [ ! -z "$volume_size" ]; then
+            echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
+        else
+            echo "    new BootSource.Image(\"$image_name\"),"
+        fi
+        echo "    \"${flavors[${hardware_id}]}\","
+        echo "    \"$network_id\","
+        echo "    \"$user_data_id\","
+        echo "    $instance_cap,"
+        echo "    \"$floating_ip_pool\","
+        echo "    \"$security_groups\","
+        echo "    \"$availability_zone\","
+        echo "    $start_timeout,"
+        echo "    \"$key_pair_name\","
+        echo "    $num_executors,"
+        echo "    \"$jvm_options\","
+        echo "    \"$fs_root\","
+        echo "    new LauncherFactory.SSH(\"$key_pair_name\", \"\"),"
+        echo "    $retention_time"
     fi
-    echo "    \"${flavors[${hardware_id}]}\","
-    echo "    \"$network_id\","
-    echo "    \"$user_data_id\","
-    echo "    $instance_cap,"
-    echo "    \"$floating_ip_pool\","
-    echo "    \"$security_groups\","
-    echo "    \"$availability_zone\","
-    echo "    $start_timeout,"
-    echo "    \"$key_pair_name\","
-    echo "    $num_executors,"
-    echo "    \"$jvm_options\","
-    echo "    \"$fs_root\","
-    echo "    new LauncherFactory.SSH(\"$key_pair_name\", \"\"),"
-    echo "    $retention_time"
 }
 
 get_template_cfg() {
@@ -253,13 +291,5 @@ for silo in $silos; do
         cat "$insert_file" >> "$script_file"
     done
 
-    set +x  # Disable `set -x` to prevent printing passwords
-    echo "Configuring $silo"
-    JENKINS_URL=$(crudini --get "$HOME"/.config/jenkins_jobs/jenkins_jobs.ini "$silo" url)
-    JENKINS_USER=$(crudini --get "$HOME"/.config/jenkins_jobs/jenkins_jobs.ini "$silo" user)
-    JENKINS_PASSWORD=$(crudini --get "$HOME"/.config/jenkins_jobs/jenkins_jobs.ini "$silo" password)
-    export JENKINS_URL
-    export JENKINS_USER
-    export JENKINS_PASSWORD
     lftools jenkins groovy "$script_file"
 done
