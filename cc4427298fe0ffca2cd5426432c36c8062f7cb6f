@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "cbeac70f_076f827a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-24T13:54:57Z",
+      "side": 1,
+      "message": "I think this pattern might be easier to manage if we ever decide to add a 3rd option: ^(recheck|reverify)$",
+      "range": {
+        "startLine": 483,
+        "startChar": 27,
+        "endLine": 483,
+        "endChar": 47
+      },
+      "revId": "cc4427298fe0ffca2cd5426432c36c8062f7cb6f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a4693d15_9aa65484",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 922,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-06-24T13:54:57Z",
+      "side": 1,
+      "message": "missing trialing $",
+      "revId": "cc4427298fe0ffca2cd5426432c36c8062f7cb6f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "54b25cd5_f0d3cbad",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 2
