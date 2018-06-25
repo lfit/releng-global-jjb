@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd1b5efd_2b4a0be4",
+        "filename": "jenkins-init-scripts/check-process-lock.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-06-25T17:47:42Z",
+      "side": 1,
+      "message": "Please don\u0027t do an inline like this. Practice good coding and actually write this over multiple lines. Besides, it\u0027s longer than 80 characters.\n\nSecond, do we have any guarantee that this isn\u0027t going to cause the system to take longer than 5 minutes to start? If it does these systems will never get onlined since we have to have it up and running in that amount of time or the OS plugin will consider it a failed instance and kill it.",
+      "revId": "1c07c54c3f2dac36c10952a471cd7a0f9ba28c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
