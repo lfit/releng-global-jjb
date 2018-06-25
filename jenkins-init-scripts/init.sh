@@ -15,6 +15,7 @@ INIT_SCRIPTS_DIR="/opt/ciman/jjb/global-jjb/jenkins-init-scripts"
 "$INIT_SCRIPTS_DIR/basic-settings.sh"
 "$INIT_SCRIPTS_DIR/disable-firewall.sh"
 "$INIT_SCRIPTS_DIR/create-swap-file.sh"
+"$INIT_SCRIPTS_DIR/check-process-lock.sh"
 
 # Entry point for additional local minion customization
 # Eg. OpenDaylight has additional bootstrap scripts depending on minion type.
