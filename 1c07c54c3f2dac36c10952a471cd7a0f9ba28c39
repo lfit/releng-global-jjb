@@ -16,6 +16,24 @@
       "revId": "1c07c54c3f2dac36c10952a471cd7a0f9ba28c39",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c2a2cd56_074004dc",
+        "filename": "jenkins-init-scripts/check-process-lock.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-06-26T00:23:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd1b5efd_2b4a0be4",
+      "revId": "1c07c54c3f2dac36c10952a471cd7a0f9ba28c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
