@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22981c3d_a8ac65a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-07-09T15:40:29Z",
+      "side": 1,
+      "message": "Please mark this as Issue: or JIRA: I don\u0027t like seeing bare footer metadata!",
+      "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69024c76_33812053",
+        "filename": "jenkins-init-scripts/check-process-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-07-09T15:40:29Z",
+      "side": 1,
+      "message": "This is still longer than it should be! Break it across several lines. We shouldn\u0027t be writing lines that are longer than 80 characters when they _can_ be broken at shorter points",
+      "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
