@@ -169,6 +169,7 @@ get_minion_options() {
 
     OS_PLUGIN_VER="$(lftools jenkins plugins list \
         | grep -i 'OpenStack Cloud Plugin' | awk -F':' '{print $2}')"
+    echo "OpenStack Cloud Plugin version: $OS_PLUGIN_VER"
     if version_ge "$OS_PLUGIN_VER" "2.35"; then
         if [ ! -z "$volume_size" ]; then
             echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
