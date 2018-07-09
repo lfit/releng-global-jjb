@@ -368,7 +368,7 @@ Runs `jenkins-jobs update` to update production job configuration
 
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -403,7 +403,7 @@ Runs `jenkins-jobs test` to validate JJB syntax
 
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -439,7 +439,7 @@ other file changes. Verifies INFO.yaml files follow the schema defined in
 
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -465,6 +465,7 @@ Job to scan projects for files missing license headers.
         (default: \*.go \*.groovy \*.java \*.py \*.sh)
     :spdx-disable: Disable the SPDX-Identifier checker. (default: false)
     :lhc-version: Version of LHC to use. (default: 0.2.0)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :license-exclude-paths: Comma-separated list of paths to exclude from the
         license checker. The paths used here will be matched using a contains
         rule so it is best to be as precise with the path as possible.
@@ -504,7 +505,7 @@ Packer Merge job runs `packer build` to build system images in the cloud.
     :cron: Time when the packer image should be rebuilt (default: @monthly)
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    :build-timeout: Timeout in minutes before aborting build. (default: 90)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :packer-cloud-settings: Name of settings file containing credentials
         for the cloud that packer will build on. (default: packer-cloud-env)
@@ -541,7 +542,7 @@ Packer Verify job runs `packer validate` to verify packer configuration.
 
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :packer-cloud-settings: Name of settings file containing credentials
         for the cloud that packer will build on. (default: packer-cloud-env)
