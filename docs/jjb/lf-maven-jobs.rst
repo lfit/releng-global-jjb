@@ -123,7 +123,7 @@ Produces a CLM scan of the code into Nexus IQ Server.
 
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
@@ -165,7 +165,7 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
 
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
@@ -203,7 +203,7 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
 
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
@@ -257,7 +257,7 @@ This job uses the following strategy to deploy jobs to Nexus:
 
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :cron: Cron schedule when to trigger the job. This parameter also
         supports multiline input via YAML pipe | character in cases where
         one may want to provide more than 1 cron timer. (default: 'H H * * 0'
@@ -308,7 +308,7 @@ directory can then be reused later to deploy to Nexus.
     :archive-artifacts: Artifacts to archive to the logs server (default: '').
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :cron: Cron schedule when to trigger the job. This parameter also
         supports multiline input via YAML pipe | character in cases where
         one may want to provide more than 1 cron timer. (default: '')
@@ -352,7 +352,7 @@ interest in that kind of support.
 :Optional parameters:
 
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :cron: Cron schedule when to trigger the job. This parameter also
         supports multiline input via YAML pipe | character in cases where
         one may want to provide more than 1 cron timer.  (default: 'H H * * 6'
@@ -393,7 +393,7 @@ Verify job which runs mvn clean install to test a project build..
 
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for

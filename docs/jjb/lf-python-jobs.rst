@@ -96,7 +96,7 @@ IQ Server.
 
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :nexus-iq-cli-version: Nexus IQ CLI package version to download and use. (default: 1.44.0-01)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :stream: Keyword used to represent a release code-name.
@@ -156,7 +156,7 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
 :Optional parameters:
 
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :cron: Cron schedule when to trigger the job. This parameter also
         supports multiline input via YAML pipe | character in cases where
         one may want to provide more than 1 cron timer.  (default: H 11 * * *
@@ -206,7 +206,7 @@ following pyenv variables before running.
 
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :python-version: Version of Python to configure as a base in virtualenv.
         (default: python3)

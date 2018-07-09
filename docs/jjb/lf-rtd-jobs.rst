@@ -84,7 +84,7 @@ ReadTheDocs. To do that follow these steps:
 
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 15)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :git-url: base URL of git project. (default: https://github.com)
     :project-pattern: Project to trigger build against. (default: \*\*)
     :stream: Keyword representing a release code-name.
@@ -124,7 +124,7 @@ Verify job which runs a tox build of the docs project
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-node: The node to run build on.
-    :build-timeout: Timeout in seconds before aborting build. (default: 15)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :doc-dir: Directory where tox will place built docs.
         as defined in the tox.ini (default: docs/_build/html)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)

@@ -48,7 +48,7 @@ Verify job for NodeJS projects
 
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in seconds before aborting build. (default: 10)
+    :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :node-dir: Path to a NodeJS project to run node test against
         (default: '')
