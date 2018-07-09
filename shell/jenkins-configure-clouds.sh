@@ -168,7 +168,7 @@ get_minion_options() {
     retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
 
     OS_PLUGIN_VER="$(lftools jenkins plugins list \
-        | grep 'Openstack Cloud Plugin' | awk -F':' '{print $2}')"
+        | grep 'Open[Ss]tack Cloud Plugin' | awk -F':' '{print $2}')"
     if version_ge "$OS_PLUGIN_VER" "2.35"; then
         if [ ! -z "$volume_size" ]; then
             echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
@@ -215,19 +215,21 @@ get_minion_options() {
 }
 
 get_template_cfg() {
-    if [ -z $1 ]; then
-        >&2 echo "Usage: get_template_cfg CFG_FILE"
+    if [ -z $2 ]; then
+        >&2 echo "Usage: get_template_cfg CFG_FILE SILO [MINION_PREFIX]"
         exit 1
     fi
 
     local cfg_file="$1"
-    local minion_prefix="${2:-}"
+    local silo="${2}"
+    local minion_prefix="${3:-}"
+
 
     template_name=$(basename $cfg_file .cfg)
     labels=$(get_cfg "$cfg_file" LABELS "")
 
     echo "minion_options = new SlaveOptions("
-    get_minion_options "$cfg_file"
+    get_minion_options "$cfg_file" "$silo"
     echo ")"
 
     echo "template = new JCloudsSlaveTemplate("
@@ -281,7 +283,7 @@ for silo in $silos; do
         echo "templates = []" >> $insert_file
         mapfile -t templates < <(find $cfg_dir -maxdepth 1 -not -type d -not -name "cloud.cfg")
         for template in "${templates[@]}"; do
-            get_template_cfg "$template" "$node_prefix" >> "$insert_file"
+            get_template_cfg "$template" "$silo" "$node_prefix" >> "$insert_file"
             echo "templates.add(template)" >> "$insert_file"
         done
 
