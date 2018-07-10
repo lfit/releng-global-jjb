@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "feb6419f_46264edc",
+        "filename": "shell/gerrit-fetch-dependencies.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-10T17:51:37Z",
+      "side": 1,
+      "message": "On modern Linux we don\u0027t need to use egrep.\n\nhttps://unix.stackexchange.com/questions/17949/what-is-the-difference-between-grep-egrep-and-fgrep\n\nI think this should just be `grep -E` instead.",
+      "range": {
+        "startLine": 27,
+        "startChar": 70,
+        "endLine": 27,
+        "endChar": 75
+      },
+      "revId": "d113e63c987519b0008aede3d1b7917e0ac9a227",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3cd8ce84_1dfca989",
+        "filename": "shell/gerrit-fetch-dependencies.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-10T17:51:37Z",
+      "side": 1,
+      "message": "I thin",
+      "revId": "d113e63c987519b0008aede3d1b7917e0ac9a227",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
