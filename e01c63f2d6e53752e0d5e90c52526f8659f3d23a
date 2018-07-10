@@ -74,6 +74,24 @@
       "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61a096c8_44af3e4b",
+        "filename": "jenkins-init-scripts/check-process-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-07-10T04:48:09Z",
+      "side": 1,
+      "message": "If you\u0027re writing out multiple lines to a file in bash, you can use the \u0027HEREDOC\u0027 syntax.\n\n\u003e cat \u003c\u003c EOF\n\u003e function apt() {\n\u003e   while [ $(fuser /var/lib/dpdk/lock) ]; do\n\u003e     echo \"Waiting on apt lock...\"\n\u003e     sleep 1\n\u003e   done\n\u003e   $(which apt) $@\n\u003e }\n\u003e EOF \u003e\u003e ~/.bashrc",
+      "parentUuid": "984f80ac_908e0d0d",
+      "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
