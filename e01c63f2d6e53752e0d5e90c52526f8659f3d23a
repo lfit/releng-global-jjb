@@ -56,6 +56,24 @@
       "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "984f80ac_908e0d0d",
+        "filename": "jenkins-init-scripts/check-process-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-07-10T01:57:51Z",
+      "side": 1,
+      "message": "This is a bash alias, we can\u0027t call a bash function if this is broken down into multiple lines. \n\nHowever, I could replace this with a bash function like below:\n\necho \"\" \u003e\u003e ~/.bashrc\necho \"# Check for apt lock file and wait for any background processes to finish\" \u003e\u003e ~/.bashrc\necho \"apt() {\" \u003e\u003e ~/.bashrc\necho \"    while [ \\$(fuser \\\"/var/lib/dpkg/lock\\\") ]; do\" \u003e\u003e ~/.bashrc\necho \"        echo \\\"Waiting on apt lock...\\\"\" \u003e\u003e ~/.bashrc\necho \"        sleep 1\" \u003e\u003e ~/.bashrc\necho \"    done\" \u003e\u003e ~/.bashrc\necho \"}\" \u003e\u003e ~/.bashrc\n \nPlease let me know if there is a better way, i\u0027ll update the changes.",
+      "parentUuid": "69024c76_33812053",
+      "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
