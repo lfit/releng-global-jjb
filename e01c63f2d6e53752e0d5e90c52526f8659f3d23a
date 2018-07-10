@@ -92,6 +92,24 @@
       "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d16092fe_e9ef9ad4",
+        "filename": "jenkins-init-scripts/check-process-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-07-10T05:56:47Z",
+      "side": 1,
+      "message": "Trevor: I have tested this work check out the output from the gist here. However, are there any specific use-case which might not work?",
+      "parentUuid": "61a096c8_44af3e4b",
+      "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
