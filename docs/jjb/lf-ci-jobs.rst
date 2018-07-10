@@ -232,7 +232,7 @@ currently the only cloud plugin supported.
 OpenStack Cloud plugin version supported:
 
 * 2.30 - 2.34
-* 2.35 - 2.36
+* 2.35 - 2.37
 
 Cloud configuration are managed via a directory structure in ci-management as
 follows:
