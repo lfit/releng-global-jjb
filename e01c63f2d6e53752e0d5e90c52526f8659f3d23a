@@ -33,6 +33,29 @@
       "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a7e7f27_2e794c29",
+        "filename": "jenkins-init-scripts/check-process-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-07-10T01:52:11Z",
+      "side": 1,
+      "message": "should use append here \u0027\u003e\u003e\u0027 or this would override the skel defaults from ~/.bashrc",
+      "range": {
+        "startLine": 17,
+        "startChar": 139,
+        "endLine": 17,
+        "endChar": 140
+      },
+      "revId": "e01c63f2d6e53752e0d5e90c52526f8659f3d23a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
