@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fdeae36_960357f0",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-11T16:57:15Z",
+      "side": 1,
+      "message": "Apparently this prints to the groovy script causing an invalid groovy script.",
+      "revId": "dfb2c6ca52a4c885e42d6c2252706bd824c75068",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
