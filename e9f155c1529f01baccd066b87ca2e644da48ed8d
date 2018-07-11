@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fccadce_cbfec46e",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-11T18:34:54Z",
+      "side": 1,
+      "message": "Is this sentence incomplete? \n\nMaybe I am not reading it well, can we double check?",
+      "range": {
+        "startLine": 301,
+        "startChar": 21,
+        "endLine": 302,
+        "endChar": 21
+      },
+      "revId": "e9f155c1529f01baccd066b87ca2e644da48ed8d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
