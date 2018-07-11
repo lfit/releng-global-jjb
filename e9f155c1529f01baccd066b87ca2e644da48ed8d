@@ -22,6 +22,30 @@
       "revId": "e9f155c1529f01baccd066b87ca2e644da48ed8d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a3fab18f_92b2cf99",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-11T18:36:34Z",
+      "side": 1,
+      "message": "removed the \"using\" word.",
+      "parentUuid": "5fccadce_cbfec46e",
+      "range": {
+        "startLine": 301,
+        "startChar": 21,
+        "endLine": 302,
+        "endChar": 21
+      },
+      "revId": "e9f155c1529f01baccd066b87ca2e644da48ed8d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
