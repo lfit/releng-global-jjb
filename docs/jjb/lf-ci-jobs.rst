@@ -298,6 +298,8 @@ configuration in the format ``KEY=value``.
     :RETENTION_TIME: Number of minutes to wait for an idle slave to be used
         again before it's removed. If set to -1, the slave will be kept
         forever. (default: 0)
+    :CONNECTION_TYPE: The connection type for Jenkins to connect to the build
+        minion using. Valid options JNLP or SSH. (default: "SSH")
 
 For a live example see the OpenDaylight project jenkins-config directory.
 https://github.com/opendaylight/releng-builder/tree/master/jenkins-config

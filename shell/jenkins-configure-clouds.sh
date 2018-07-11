@@ -102,6 +102,24 @@ get_cloud_cfg() {
     echo ")"
 }
 
+get_launcher_factory() {
+    if [ -z $1 ]; then
+        >&2 echo "Usage: get_launcher_factory JNLP|SSH"
+        exit 1
+    fi
+
+    local connection_type="$1"
+
+    if [ "$connection_type" == "JNLP" ]; then
+        echo "new LauncherFactory.JNLP()"
+    elif [ "$connection_type" == "SSH" ]; then
+        echo "new LauncherFactory.SSH(\"$key_pair_name\", \"\")"
+    else
+        >&2 echo "Unknown connection type $connection_type"
+        exit 1
+    fi
+}
+
 get_minion_options() {
     if [ -z $1 ]; then
         >&2 echo "Usage: get_minion_options CFG_FILE"
@@ -166,6 +184,8 @@ get_minion_options() {
     jvm_options=$(get_cfg "$cfg_file" JVM_OPTIONS "")
     fs_root=$(get_cfg "$cfg_file" FS_ROOT "/w")
     retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
+    connection_type=$(get_cfg "$cfg_file" CONNECTION_TYPE "SSH")
+    launcher_factory=$(get_launcher_factory "$connection_type")
 
     OS_PLUGIN_VER="$(lftools jenkins plugins list \
         | grep -i 'OpenStack Cloud Plugin' | awk -F':' '{print $2}')"
@@ -188,7 +208,7 @@ get_minion_options() {
         echo "    $num_executors,"
         echo "    \"$jvm_options\","
         echo "    \"$fs_root\","
-        echo "    new LauncherFactory.SSH(\"$key_pair_name\", \"\"),"
+        echo "    $launcher_factory,"
         echo "    $retention_time"
 
     else  # SlaveOptions() structure for versions <= 2.34
@@ -209,7 +229,7 @@ get_minion_options() {
         echo "    $num_executors,"
         echo "    \"$jvm_options\","
         echo "    \"$fs_root\","
-        echo "    new LauncherFactory.SSH(\"$key_pair_name\", \"\"),"
+        echo "    \"$launcher_factory\","
         echo "    $retention_time"
     fi
 }
