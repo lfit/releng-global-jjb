@@ -477,6 +477,8 @@ Job to scan projects for files missing license headers.
         (default: '')
     :licenses-allowed: Comma-separated list of allowed licenses.
         (default: Apache-2.0,EPL-1.0,MIT)
+    :project-pattern: The ANT based pattern for Gerrit Trigger to choose which
+        projects to trigger job against. (default: '**')
 
 .. _gjjb-packer-merge:
 

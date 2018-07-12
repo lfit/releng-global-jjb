@@ -743,6 +743,7 @@
     lhc-version: 0.2.0
     license-exclude-paths: ''
     licenses-allowed: Apache-2.0,EPL-1.0,MIT
+    project-pattern: '**'
     spdx-disable: false
     stream: master
 
@@ -812,7 +813,7 @@
                 comment-contains-value: recheck$
           projects:
             - project-compare-type: ANT
-              project-pattern: '**'
+              project-pattern: '{project-pattern}'
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**'
