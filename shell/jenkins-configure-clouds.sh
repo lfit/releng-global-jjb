@@ -179,7 +179,10 @@ get_minion_options() {
     security_groups=$(get_cfg "$cfg_file" SECURITY_GROUPS "default")
     availability_zone=$(get_cfg "$cfg_file" AVAILABILITY_ZONE "")
     start_timeout=$(get_cfg "$cfg_file" START_TIMEOUT "600000")
-    key_pair_name=$(get_cfg "$cfg_file" KEY_PAIR_NAME "jenkins-ssh")
+
+    kpn_default="$(get_cfg "$(dirname $cfg_file)/cloud.cfg" KEY_PAIR_NAME "jenkins-ssh")"
+    key_pair_name=$(get_cfg "$cfg_file" KEY_PAIR_NAME "$kpn_default")
+
     num_executors=$(get_cfg "$cfg_file" NUM_EXECUTORS "1")
     jvm_options=$(get_cfg "$cfg_file" JVM_OPTIONS "")
     fs_root=$(get_cfg "$cfg_file" FS_ROOT "/w")
