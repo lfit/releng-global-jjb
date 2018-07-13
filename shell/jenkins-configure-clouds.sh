@@ -166,7 +166,9 @@ get_minion_options() {
     volume_size=$(get_cfg "$cfg_file" VOLUME_SIZE "")
     hardware_id=$(get_cfg "$cfg_file" HARDWARE_ID "")
     network_id=$(get_cfg "$cfg_file" NETWORK_ID "")
-    user_data_id=$(get_cfg "$cfg_file" USER_DATA_ID "jenkins-init-script")
+
+    udi_default="$(get_cfg "$(dirname $cfg_file)/cloud.cfg" USER_DATA_ID "jenkins-init-script")"
+    user_data_id=$(get_cfg "$cfg_file" USER_DATA_ID "$udi_default")
 
     # Handle Sandbox systems that might have a different cap.
     instance_cap=$(get_cfg "$cfg_file" INSTANCE_CAP "null")
