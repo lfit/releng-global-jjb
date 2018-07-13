@@ -1,0 +1,86 @@
+global-jjb v0.22.0 Release Notes
+================================
+
+Thanks to Andrew, Anil, Aric, Luis, Thanh, and Trevor
+for contributing to this release.
+
+
+Upgrade considerations
+----------------------
+
+None.
+
+
+Notable changes since v0.21.0
+-----------------------------
+
+46d1da1 Thanh Ha        Pull default USER_DATA_ID from cloud.cfg
+38f7e0e Thanh Ha        Pull default KEY_PAIR_NAME from cloud.cfg
+USER_DATA_ID and KEY_PAIR_NAME defaults are now first pulled from cloud.cfg
+and then finally a fallback to the function definition. For these settings
+it is expected that if a minion template does not define one that it first
+falls back on the definition in cloud.cfg and was a cause of confusion when it
+did not.
+
+092d315 Thanh Ha        Add support for JNLP based minions
+JNLP based minion support has been added to jenkins-cfg management. This allows
+Windows minions to now be managed by the jenkins-cfg job.
+
+a97f48e Aric Gardner    Support recheck and reverify in global-jjb
+Adds more strict checking of Gerrit Triggers and allow the use of both
+"recheck" and "reverify" as keywords for triggering verify jobs as some
+consumers of global-jjb either keywords or both.
+
+We recommended downstream projects to also implement the same feature as well
+in their own ci-management repos to keep consistency across projects.
+
+50385bf Thanh Ha        Fix missing parameters in tox-verify job
+tox-verify job was missing the PARALLEL parameter causing issues with
+tox-verify jobs caused by the v0.19.0 release.
+
+bbaf6b5 Thanh Ha        Add license check job using new lhc
+New license-checker job is now available for scanning code paths for license
+header violations.
+
+0218d6c Thanh Ha        Add support for OS Plugin v2.35
+
+5589ae7 Luis Gomez      Change project to clone by jjb-deploy
+jjb-deploy can now be run from any project Gerrit patch. When run from a
+ci-management one, it will deploy from the proposed patch. When run from a
+non-ci-management repo, it will deploy from latest ci-mamagenement master
+branch.
+
+
+Full Change Log
+---------------
+
+46d1da1 Thanh Ha        Pull default USER_DATA_ID from cloud.cfg
+afd5c39 Andrew Grimberg Sigul install location has changed
+38f7e0e Thanh Ha        Pull default KEY_PAIR_NAME from cloud.cfg
+092d315 Thanh Ha        Add support for JNLP based minions
+00c63a2 Thanh Ha        Revert "Print out OS Cloud Plugin version"
+a97f48e Aric Gardner    Support recheck and reverify in global-jjb
+8f93085 Trevor Bramwell Make toxworkdir configurable and default to /tmp/v
+4fdaf41 Thanh Ha        Document support for os-cloud-plugin 2.37
+dfb2c6c Thanh Ha        Print out OS Cloud Plugin version
+948b602 Thanh Ha        Fix API breakage caused by OS Plugin version scan
+689c999 Trevor Bramwell Update build-timeout parameter documentation
+5fbc7e5 Thanh Ha        Document support for OS Cloud plugin 2.36
+3789318 Thanh Ha        Fix empty  variable when run in Jenkins
+7241784 Andrew Grimberg Global-JJB Jenkins scripts require recurse
+555f8f2 Trevor Bramwell Support Windows Scripts in JJB and Packer Jobs
+1df3ea4 Aric Gardner    Make version string optional.
+714b19a Thanh Ha        Enable ensure-documented check
+b0086f1 Thanh Ha        Document undocumented macros
+24529ff Thanh Ha        Document undocumented ci-jobs macros
+549ade4 Thanh Ha        Document undocumented Python macros
+9747fab Thanh Ha        Document undocumented maven macros
+d0dddc7 Thanh Ha        Rvrt "Add pre-commit hook for trailing-whitespace"
+50385bf Thanh Ha        Fix missing parameters in tox-verify job
+bbaf6b5 Thanh Ha        Add license check job using new lhc
+0218d6c Thanh Ha        Add support for OS Plugin v2.35
+4c33fa8 Thanh Ha        Use a more exact grep for fetching cfg options
+f325f0d Thanh Ha        Add pre-commit hook for trailing-whitespace
+5589ae7 Luis Gomez      Change project to clone by jjb-deploy
+d0fb728 Anil Belur      Remove extra parameter quotes
+199b633 Trevor Bramwell Remove Unused Jenkins-Admin Groovy Scripts
