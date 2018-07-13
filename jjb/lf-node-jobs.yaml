@@ -97,7 +97,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: recheck$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
 
     #####################
     # Job Configuration #
@@ -144,7 +144,7 @@
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^recheck$'
+          trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
           status-context: 'Node Verify'
           permit-all: true
