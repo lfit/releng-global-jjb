@@ -958,6 +958,8 @@
           packer-version: '{packer-version}'
           platform: '{platforms}'
           template: '{templates}'
+      - description-setter:
+          description: '.*Creating the image:(.*)'
 
 - job-template:
     name: '{project-name}-packer-merge-{platforms}-{templates}'
