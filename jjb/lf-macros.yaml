@@ -456,6 +456,23 @@
             - '**/*.jenkins-trigger'
           fail-build: false
 
+- publisher:
+    name: lf-infra-maven-release-pass-autorelease
+    # lf infra macro to trigger a parameterized job
+    # with AUTORELEASE parameter.  The triggered job will
+    # need to have this parameter defined.
+    publishers:
+      - trigger-parameterized-builds:
+        # project is a list
+          - project: '{obj:builds_to_trigger}'
+            # predifined-parameters is a string
+            predefined-parameters: '{obj:predefined_parameters}'
+            # condition Can be: ‘SUCCESS’, ‘UNSTABLE’, ‘FAILED_OR_BETTER’,
+            #         ‘UNSTABLE_OR_BETTER’, ‘UNSTABLE_OR_WORSE’,
+            #         ‘FAILED’, ‘ALWAYS’. (default ‘ALWAYS’)
+            condition: '{trigger-condition}'
+
+
 #######
 # SCM #
 #######

@@ -107,6 +107,11 @@
       **/target/failsafe-reports/failsafe-summary.xml
       **/target/surefire-reports/*-output.txt
 
+    # Defaults for lf-infra-maven-release-pass-autorelease
+    builds_to_trigger:
+      - ''
+    predefined_parameters: ''
+
     #####################
     # Job Configuration #
     #####################
@@ -146,6 +151,9 @@
       #     email-recipients: '{email-recipients}'
       #     email-prefix: '[releng]'
       - lf-infra-publish
+      - lf-infra-maven-release-pass-autorelease:
+          builds_to_triggers: '{obj:builds_to_trigger}'
+          predefined_parameters: '{obj:predefined_parameters}'
 
 #############
 # Maven CLM #
