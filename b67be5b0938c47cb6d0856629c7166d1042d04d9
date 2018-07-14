@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2fe30ff4_0218a028",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-14T02:58:40Z",
+      "side": 1,
+      "message": "It needs parameters I think.\n\nShould this go before the lf-infra-pubisher? if it goes after it means none of the thing it does will go into logs.\n\nThe documentation mentioned that this is only needed for the maven-release job. Putting it here would apply it to every maven job.",
+      "range": {
+        "startLine": 154,
+        "startChar": 47,
+        "endLine": 154,
+        "endChar": 48
+      },
+      "revId": "b67be5b0938c47cb6d0856629c7166d1042d04d9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
