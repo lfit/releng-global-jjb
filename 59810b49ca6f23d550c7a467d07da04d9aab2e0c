@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "68ee1c05_a3c506ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-14T02:54:49Z",
+      "side": 1,
+      "message": "Move Issue: down one so that it\u0027s attached to the footer.",
+      "revId": "59810b49ca6f23d550c7a467d07da04d9aab2e0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8bbb0041_8d7151a8",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-14T02:54:49Z",
+      "side": 1,
+      "message": "I think this will conflict with the publisher that also writes stuff to the build description. I wonder if we can append somehow.",
+      "revId": "59810b49ca6f23d550c7a467d07da04d9aab2e0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
