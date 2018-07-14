@@ -22,6 +22,30 @@
       "revId": "b67be5b0938c47cb6d0856629c7166d1042d04d9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "18b6584a_d3b606d8",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-07-14T03:05:32Z",
+      "side": 1,
+      "message": "Fixed the paramters.  \nIf I add this only to maven-release templates won\u0027t it wipe out the publisher defined in common?",
+      "parentUuid": "2fe30ff4_0218a028",
+      "range": {
+        "startLine": 154,
+        "startChar": 47,
+        "endLine": 154,
+        "endChar": 48
+      },
+      "revId": "b67be5b0938c47cb6d0856629c7166d1042d04d9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
