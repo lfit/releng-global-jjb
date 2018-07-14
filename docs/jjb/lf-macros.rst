@@ -287,6 +287,14 @@ Provides basic lf-infra recommended publisher configurations which should be
 used in all job templates. This primary objective of this trigger is to
 gather build logs and copy them to a log server.
 
+lf-infra-maven-release-pass-autorelease
+---------------------------------------
+
+Provides a way to trigger a parameterized job with AUTORELEASE set.  It is intended
+to be used in `maven-release` jobs and trigger an associated docker release job.
+This is a deterministic way to get the exact java artifact that you intend into your
+container.
+
 SCM
 ===
 
