@@ -26,4 +26,4 @@ env_vars = properties.getEnvVars()
 
 env_vars.clear()
 global_vars.each{ k, v -> env_vars.put(k, v) }
-instance.save()
+Jenkins.instance.save()
