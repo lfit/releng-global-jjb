@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "e4b6b05e_01411fe6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-07-16T15:22:09Z",
+      "side": 1,
+      "message": "As Thanh mentions, this needs to be moved down so that it\u0027s part of the footer, not floating as part of the message body!",
+      "revId": "59810b49ca6f23d550c7a467d07da04d9aab2e0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "68ee1c05_a3c506ab",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +47,24 @@
       "writtenOn": "2018-07-14T02:54:49Z",
       "side": 1,
       "message": "I think this will conflict with the publisher that also writes stuff to the build description. I wonder if we can append somehow.",
+      "revId": "59810b49ca6f23d550c7a467d07da04d9aab2e0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "28dbfee9_18df5299",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-07-16T15:22:09Z",
+      "side": 1,
+      "message": "I think you\u0027re correct that it\u0027s going to conflict with our current use in the lf-infra-ship-logs.\n\n@Trevor can you please verify in a sandbox if we end up with a single one of these defined or if JJB is managing to insert 2 description setters because it\u0027s coming in via XML and both actually work then?",
+      "parentUuid": "8bbb0041_8d7151a8",
       "revId": "59810b49ca6f23d550c7a467d07da04d9aab2e0c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
