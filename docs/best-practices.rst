@@ -104,6 +104,38 @@ declaring it as parameter makes the variable global.
     `!include-raw-escape` will insert extra curly braces, in such cases its
     recommended to use `!include-raw`.
 
+.. _shell-scripts:
+
+Shell scripts
+=============
+
+When developing shell scripts for JJB we recommend to create shell scripts as
+a separate file instead of inlining in YAML. This way we can ensure that the
+ShellCheck linter can catch potential issues with the scripts.
+
+When writing the script itself, we recommend to redeclare all expected
+inputs at the top of the file using lowercase variable names before setting
+``set -u`` after the inputs section. This ensures that all variables the
+script expects are at the top of the file which is useful for others to review
+and debug the script at a later stage. The ``set -u`` configuration before the
+start of the script code ensures that we catch any of these undeclared
+variables at the top of the file.
+
+Example:
+
+.. code-block:: bash
+
+   #!/bin/bash
+
+   # Inputs
+   tox_dir="${TOX_DIR:-$WORKSPACE}"
+   tox_envs="${TOX_ENVS:-}"
+
+   # Script start
+   set -eux -o pipefail
+
+   # ... script code goes here
+
 Usage of config-file-provider
 =============================
 
