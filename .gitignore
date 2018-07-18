@@ -4,9 +4,6 @@
 # Ignore changes to the JJB Configuration File
 jenkins.ini
 
-# Maven
-target/
-
 # Vagrant
 .vagrant
 
