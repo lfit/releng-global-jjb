@@ -23,5 +23,9 @@ __pycache__/
 *.pyc
 docs/_build/
 
+# Node / NPM
+_cacache/
+anonymous-cli-metrics.json
+
 # global-jjb
 archives/
