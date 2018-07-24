@@ -189,6 +189,8 @@
     <<: *lf_python_xc_clm
 
     properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
           url: '{git-url}/{github-org}/{project}'
 
@@ -364,6 +366,8 @@
     <<: *lf_tox_sonar
 
     properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
           url: '{git-url}/{github-org}/{project}'
 
@@ -510,6 +514,8 @@
     <<: *lf_tox_verify
 
     properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
           url: '{git-url}/{github-org}/{project}'
 
