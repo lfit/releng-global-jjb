@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "21f17094_1f8296ec",
+        "filename": "jjb/lf-c-cpp-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-24T14:58:25Z",
+      "side": 1,
+      "message": "Need a pre-builder so that we can allow projects to setup dependencies.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 59
+      },
+      "revId": "710e8ebe5d9cd03f372564fe1832e6d1ad783063",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
