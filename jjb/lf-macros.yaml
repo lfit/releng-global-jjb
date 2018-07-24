@@ -253,6 +253,29 @@
 ##############
 
 - parameter:
+    name: lf-cmake-parameters
+    # Parameters useful in CMake builds.
+    parameters:
+      - string:
+          name: BUILD_DIR
+          default: '{build-dir}'
+          description: 'Directory to build the project in.'
+      - string:
+          name: CMAKE_OPTS
+          default: '{cmake-opts}'
+          description: |
+              Options to pass to CMAKE.
+              Example: -DCMAKE_INSTALL_PREFIX=$WORKSPACE/target/output
+      - string:
+          name: INSTALL_PREFIX
+          default: '{install-prefix}'
+          description: Install prefix for C/C++ builds. Example: /usr/local
+      - string:
+          name: MAKE_OPTS
+          default: '{make-opts}'
+          description: 'Options to pass to make. Example: -j8'
+
+- parameter:
     name: lf-infra-maven-parameters
     parameters:
       - string:
