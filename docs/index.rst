@@ -40,14 +40,10 @@ Job template code is in the `jjb/` directory but documentation is in the
 `docs/jjb/` directory of this project.
 
 .. toctree::
+   :glob:
    :maxdepth: 1
 
-   jjb/lf-ci-jobs
-   jjb/lf-macros
-   jjb/lf-maven-jobs
-   jjb/lf-node-jobs
-   jjb/lf-python-jobs
-   jjb/lf-rtd-jobs
+   jjb/*
 
 Indices and tables
 ==================

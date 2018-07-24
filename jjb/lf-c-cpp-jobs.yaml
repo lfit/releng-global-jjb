@@ -1,0 +1,132 @@
+---
+################
+# CMAKE VERIFY #
+################
+
+- lf_cmake_verify: &lf_cmake_verify
+    name: lf-cmake-verify
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-dir: '$WORKSPACE/target'
+    build-timeout: 15
+    cmake-opts: ''
+    git-url: '$GIT_URL/$PROJECT'
+    install-prefix: '$BUILD_DIR/output'
+    make-opts: ''
+    pre-build: ''
+    stream: master
+    submodule-recursive: true
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+      - lf-cmake-parameters:
+          build-dir: '{build-dir}'
+          cmake-opts: '{cmake-opts}'
+          install-prefix: '{install-prefix}'
+          make-opts: '{make-opts}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    builders:
+      - shell: '{pre-build}'
+      - shell: !include-raw-escape: ../shell/cmake-build.sh
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-cmake-verify-{stream}'
+    id: gerrit-cmake-verify
+    concurrent: true
+    <<: *lf_cmake_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: '$GERRIT_BRANCH'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-cmake-verify-{stream}'
+    id: github-cmake-verify
+    concurrent: true
+    <<: *lf_cmake_verify
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+      - github:
+          url: '{git-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: '{submodule-recursive}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^(recheck|reverify)$'
+          only-trigger-phrase: false
+          status-context: 'CMake Verify'
+          permit-all: true
+          github-hooks: true
+          included-regions: '{obj:github_included_regions}'
