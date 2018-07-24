@@ -228,6 +228,12 @@ Forcibly removes all of the docker images.
 Parameters
 ==========
 
+lf-cmake-parameters
+-------------------
+
+Provides parameters needed by CMake. Should be used by any jobs that need to
+call the ``cmake && make && make install`` pattern.
+
 lf-infra-maven-parameters
 -------------------------
 
