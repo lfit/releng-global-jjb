@@ -950,9 +950,6 @@
     #####################
 
     builders:
-      - lf-infra-packer-validate:
-          packer-cloud-settings: '{packer-cloud-settings}'
-          packer-version: '{packer-version}'
       - lf-infra-packer-build:
           packer-cloud-settings: '{packer-cloud-settings}'
           packer-version: '{packer-version}'
