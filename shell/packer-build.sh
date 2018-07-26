@@ -32,6 +32,10 @@ fi
 
 export PACKER_LOG="yes"
 export PACKER_LOG_PATH="$PACKER_BUILD_LOG"
+packer.io validate \
+    -var-file="$CLOUDENV" \
+    -var-file="$platform_file" \
+    "templates/$PACKER_TEMPLATE.json"
 packer.io build -color=false \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
