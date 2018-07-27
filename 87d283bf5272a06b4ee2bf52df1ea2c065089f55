@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3da325dd_d6a64e2c",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-27T17:37:31Z",
+      "side": 1,
+      "message": "Would this be done better if I define \"lf-infra-clm-parameters\" (new macro)? that only the CLM job uses? \nIf i define \"lf-infra-clm-parameters\" I can remove the STAGING_PROFILE_ID too.",
+      "parentUuid": "33ad8d1d_312e2e4e",
+      "range": {
+        "startLine": 304,
+        "startChar": 5,
+        "endLine": 308,
+        "endChar": 85
+      },
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "597f6284_ac66a13a",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 4
