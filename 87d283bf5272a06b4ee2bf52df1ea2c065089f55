@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67d3f570_a6826503",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-27T17:11:54Z",
+      "side": 1,
+      "message": "Why is \"stage-release\" the default?\n\n(I don\u0027t really know what the different policies are would be good if we can understand that)",
+      "range": {
+        "startLine": 135,
+        "startChar": 40,
+        "endLine": 135,
+        "endChar": 53
+      },
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33ad8d1d_312e2e4e",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-27T17:11:54Z",
+      "side": 1,
+      "message": "I don\u0027t like this, we\u0027re forcing every maven job to now pass this parameter regardless of if they need it or not. Let\u0027s define it only in the CLM job.",
+      "range": {
+        "startLine": 304,
+        "startChar": 5,
+        "endLine": 308,
+        "endChar": 85
+      },
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "597f6284_ac66a13a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-27T17:11:54Z",
+      "side": 1,
+      "message": "What was the old default pattern? similar?",
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "705b3144_d7053abd",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-27T17:11:54Z",
+      "side": 1,
+      "message": "Let\u0027s use manual by default. I think selected means it has to exist in the dropdown menu so a new project won\u0027t be in that list?",
+      "range": {
+        "startLine": 205,
+        "startChar": 29,
+        "endLine": 205,
+        "endChar": 37
+      },
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c61a506_8085daf6",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-27T17:11:54Z",
+      "side": 1,
+      "message": "See other comment, I don\u0027t think we should be pushing this into every job.\n\nThe fact that staging-profile-id did this was a mistake on my part.",
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
