@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a541bcd_0e30d39d",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-27T21:12:46Z",
+      "side": 1,
+      "message": "Valid values include: \u0027build\u0027, \u0027stage-release\u0027, \u0027operate\u0027\n\nstage-release seems to be the more complete for the purpose of preparing for the release.",
+      "range": {
+        "startLine": 135,
+        "startChar": 40,
+        "endLine": 135,
+        "endChar": 53
+      },
+      "revId": "96aedb306e77f5bb1c7a2d15e90da83ccf6c2e7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
