@@ -1,0 +1,33 @@
+global-jjb v0.23.0 Release Notes
+================================
+
+Thanks to everyone who contributed to this release.
+
+
+Upgrade considerations
+----------------------
+
+None.
+
+
+Notable changes since v0.22.0
+-----------------------------
+
+f0dae80 Thanh Ha        Add cmake-verify job template
+CMake projects can now use a global-jjb defined verify job.
+
+5ca1149 Thanh Ha        Fix global-vars fail to instantiate instance
+Fix bug in which instance.save() to no longer worked to update global
+variables, we resolved by using the full function call Jenkins.instance.save().
+
+
+Full Change Log
+---------------
+
+4a56aac Thanh Ha        Use eval so that $cmake_opts is properly parsed
+10a40a3 Thanh Ha        Validate only template/platform that is built
+b788ff5 Thanh Ha        Fix GitHub templates override lf-infra-properties
+f0dae80 Thanh Ha        Add cmake-verify job template
+71937a2 Thanh Ha        Add Best Practice for Shell scripts
+62570ef Thanh Ha        Add Node / NPM cache & metrics to .gitignore
+5ca1149 Thanh Ha        Fix global-vars fail to instantiate instance
