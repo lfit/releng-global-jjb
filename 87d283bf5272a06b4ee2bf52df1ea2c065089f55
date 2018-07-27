@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "70878988_5dd51f85",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-27T17:30:52Z",
+      "side": 1,
+      "message": "I was reading through https://help.sonatype.com/iqserver/policy-management/understanding-the-parts-of-a-policy#UnderstandingthePartsofaPolicy-UsageSuggestionsforEachStage\n\nLooked to me like the stage-release option fits the workflow of the projects since these reports are generated in order to prepare for a release. I thought we could change this to \"release\" level after a project goes into code freeze. \n\nI think \"release\" is the most meticulous stage it seems, but it seems to deal with only new policy violations.. I think I should check with Steve W to see what he thinks.",
+      "parentUuid": "67d3f570_a6826503",
+      "range": {
+        "startLine": 135,
+        "startChar": 40,
+        "endLine": 135,
+        "endChar": 53
+      },
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "33ad8d1d_312e2e4e",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 4
