@@ -253,6 +253,15 @@
 ##############
 
 - parameter:
+    name: lf-clm-parameters
+    parameters:
+      - string:
+          name: NEXUS_IQ_STAGE
+          default: '{nexus-iq-stage}'
+          description: |
+              Stage the policy evaluation will be run against on the Nexus IQ Server.
+
+- parameter:
     name: lf-cmake-parameters
     # Parameters useful in CMake builds.
     parameters:

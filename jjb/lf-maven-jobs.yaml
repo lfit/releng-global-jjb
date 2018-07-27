@@ -167,13 +167,40 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    nexus-iq-stage: 'stage-release'
     staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
 
+    nexus-iq-scan-patterns:
+      - '**/*.jar'
+      - '**/*.war'
+      - '**/*.ear'
+      - '**/*.zip'
+      - '**/*.tar.gz'
+
     gerrit_clm_triggers:
       - comment-added-contains-event:
           comment-contains-value: run-clm$
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+      - lf-infra-maven-parameters:
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
+          # Staging repos do not make sense for CLM jobs so set it blank.
+          staging-profile-id: '{staging-profile-id}'
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: '{archive-artifacts}'
+          description: Artifacts to archive to the logs server.
+      - lf-clm-parameters:
+          nexus-iq-stage: '{nexus-iq-stage}'
 
     #####################
     # Job Configuration #
@@ -192,8 +219,12 @@
           - ../shell/sonatype-clm.sh
       - lf-provide-maven-settings-cleanup
       - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
-      - sonatype-clm:
-          application-name: '{project-name}'
+      - nexus-iq-policy-evaluator:
+          stage: '{nexus-iq-stage}'
+          application-type: 'manual'
+          application-id: '{project-name}'
+          scan-patterns: '{nexus-iq-scan-patterns}'
+          fail-build-network-error: true
 
 - job-template:
     name: '{project-name}-maven-clm-{stream}'
