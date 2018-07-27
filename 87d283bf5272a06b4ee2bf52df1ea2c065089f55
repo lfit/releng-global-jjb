@@ -113,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "3b13d9e4_e26f61fd",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-27T17:42:27Z",
+      "side": 1,
+      "message": "Double checked this. It is taking the default:\n**/*.jar, **/*.war, **/*.ear, **/*.zip, **/*.tar.gz.\n\nNeed to add the tarball and zip.",
+      "parentUuid": "597f6284_ac66a13a",
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "705b3144_d7053abd",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 4
@@ -124,6 +142,30 @@
       "writtenOn": "2018-07-27T17:11:54Z",
       "side": 1,
       "message": "Let\u0027s use manual by default. I think selected means it has to exist in the dropdown menu so a new project won\u0027t be in that list?",
+      "range": {
+        "startLine": 205,
+        "startChar": 29,
+        "endLine": 205,
+        "endChar": 37
+      },
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b2a3e00_9d234321",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-27T17:42:27Z",
+      "side": 1,
+      "message": "I need to test what would happen if the option is already there and we select \"manual\". I havent been able to test this since the IQ server needs to be updated. Working on that in parallel.",
+      "parentUuid": "705b3144_d7053abd",
       "range": {
         "startLine": 205,
         "startChar": 29,
