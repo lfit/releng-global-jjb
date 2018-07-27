@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "85bdc01d_fb308433",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-27T18:13:44Z",
+      "side": 1,
+      "message": "Yeah we can define a new parameter. I\u0027ve stopped using \"lf-infra\" for new macros, just use \"lf-\u003cmacro\u003e\" so it can be a little shorter.\n\nSTAGING_PROFILE_ID doesn\u0027t make sense for a CLM job either though. I\u0027m pretty sure the only job that uses this variable is the \"release\" job.",
+      "parentUuid": "3da325dd_d6a64e2c",
+      "range": {
+        "startLine": 304,
+        "startChar": 5,
+        "endLine": 308,
+        "endChar": 85
+      },
+      "revId": "87d283bf5272a06b4ee2bf52df1ea2c065089f55",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "597f6284_ac66a13a",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 4
