@@ -302,6 +302,11 @@
           default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn'
           description: 'Maven selector to be used by shell scripts'
       - string:
+          name: NEXUS_IQ_STAGE
+          default: '{nexus-iq-stage}'
+          description: |
+              Stage the policy evaluation will be run against on the Nexus IQ Server.
+      - string:
           name: STAGING_PROFILE_ID
           default: '{staging-profile-id}'
           description: |
