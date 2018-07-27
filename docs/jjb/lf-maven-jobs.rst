@@ -110,6 +110,8 @@ Produces a CLM scan of the code into Nexus IQ Server.
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
+    :nexus-iq-stage: Stage the policy evaluation will be run against on
+        the Nexus IQ Server. (default: 'stage-release')
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.

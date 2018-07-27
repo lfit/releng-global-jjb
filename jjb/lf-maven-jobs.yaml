@@ -128,6 +128,8 @@
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
+          # Nexus IQ Stage needed for CLM jobs. Set to blank for others.
+          nexus-iq-stage: '{nexus-iq-stage}'
           # Staging repos do not make sense for CLM jobs so set it blank.
           staging-profile-id: '{staging-profile-id}'
       - string:
@@ -167,9 +169,15 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    nexus-iq-stage: 'stage-release' 
     staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
+
+    nexus-iq-scan-patterns:
+      - '**/taregt/*.jar'
+      - '**/target/*.war'
+      - '**/target/*.ear'
 
     gerrit_clm_triggers:
       - comment-added-contains-event:
@@ -192,8 +200,12 @@
           - ../shell/sonatype-clm.sh
       - lf-provide-maven-settings-cleanup
       - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
-      - sonatype-clm:
-          application-name: '{project-name}'
+      - nexus-iq-policy-evaluator:
+          stage: '{nexus-iq-stage}'
+          application-type: 'selected'
+          application-id: '{project-name}'
+          scan-patterns: '{obj:nexus-iq-scan-patterns}'
+          fail-build-network-error: true
 
 - job-template:
     name: '{project-name}-maven-clm-{stream}'
@@ -283,6 +295,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    nexus-iq-stage: ''  # Unused by the javadoc jobs
     staging-profile-id: ''  # Unused by the javadoc jobs
     stream: master
     submodule-recursive: true
@@ -399,6 +412,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    nexus-iq-stage: ''  # Unused by the javadoc jobs
     staging-profile-id: ''  # Unused by the javadoc jobs
     stream: master
     submodule-recursive: true
@@ -509,6 +523,7 @@
     mvn-params: '-Dmerge'
     mvn-version: mvn35
     nexus-cut-dirs: 6  # Number of dirs in the Nexus path to remove for wget -r.
+    nexus-iq-stage: ''  # Unused by this job.
     staging-profile-id: ''  # Unused by this job.
     stream: master
     submodule-recursive: true
@@ -648,6 +663,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    nexus-iq-stage: ''  # Unused by this job.
     stream: master
     submodule-recursive: true
 
@@ -757,6 +773,7 @@
     mvn-params: ''
     mvn-version: mvn35
     sonar-mvn-goal: 'sonar:sonar'
+    nexus-iq-stage: ''  # Unused by this job
     staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
@@ -905,6 +922,7 @@
     mvn-opts: ''
     mvn-params: '-Dstream=$STREAM'
     mvn-version: mvn35
+    nexus-iq-stage: ''  # Unused by this job
     staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
@@ -1029,6 +1047,7 @@
     mvn-opts: ''
     mvn-params: '-Dstream=$STREAM'
     mvn-version: mvn35
+    nexus-iq-stage: ''  # Unused by this job
     staging-profile-id: ''  # Unused by this job
     stream: master
     submodule-recursive: true

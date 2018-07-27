@@ -771,7 +771,9 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
-              file-paths: 'INFO.yaml'
+              file-paths:
+                - compare-type: REG_EXP
+                  pattern: 'INFO.yaml'
 
 - job-template:
     name: '{project-name}-info-yaml-verify'
