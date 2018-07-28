@@ -27,7 +27,7 @@ mkdir -p "$build_dir"
 cd "$build_dir" || exit
 # $cmake_opts needs to wordsplit to pass options.
 # shellcheck disable=SC2086
-cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" $cmake_opts ..
+eval cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" $cmake_opts ..
 # $make_opts needs to wordsplit to pass options.
 # shellcheck disable=SC2086
 make $make_opts
