@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "388e0967_078d142a",
+        "filename": "jjb/lf-c-cpp-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-30T21:58:11Z",
+      "side": 1,
+      "message": "Considering verify jobs are always tied to the {branch} passed in by the user anyway. Maybe we should code this as:\n\n white-list-target-branches:\n   - \u0027{branch}\u0027\n\nThis way no new parameters are added and the respective job is always tied to the branch it\u0027s stream is named after.",
+      "revId": "b86966d9049c9421ca08c6a6b3177d42bc460fa3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
