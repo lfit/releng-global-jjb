@@ -410,6 +410,8 @@
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'
 
 ##################
 # JJB DEPLOY JOB #
@@ -524,6 +526,8 @@
           status-context: 'JJB Deploy Job'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
 
 #############
 # JJB Merge #
@@ -624,6 +628,8 @@
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'
 
 ##############
 # JJB Verify #
@@ -734,6 +740,8 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'
 
 #################
 # License Check #
@@ -863,6 +871,8 @@
           status-context: 'License Check'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
 
 ####################
 # Info YAML Verify #
@@ -957,6 +967,8 @@
           github-hooks: true
           # included-regions MUST match gerrit file-paths
           included-regions: 'INFO.yaml'
+          white-list-target-branches:
+            - '{branch}'
 
 ################
 # Packer Merge #
@@ -1086,6 +1098,8 @@
             - 'packer\/provision\/local-{templates}\.yaml'
             - 'packer\/templates\/{templates}\.json'
             - 'packer\/vars\/{platforms}\.json'
+          white-list-target-branches:
+            - '{branch}'
 
 #################
 # Packer Verify #
@@ -1201,3 +1215,5 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'

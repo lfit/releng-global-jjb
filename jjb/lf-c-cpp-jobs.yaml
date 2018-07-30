@@ -131,3 +131,5 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'

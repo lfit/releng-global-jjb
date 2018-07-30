@@ -150,6 +150,8 @@
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'
 
 #############
 # RTD VERIFY#
@@ -249,3 +251,5 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'

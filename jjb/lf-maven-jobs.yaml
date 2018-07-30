@@ -296,6 +296,8 @@
             - '{github-org}'
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
+          white-list-target-branches:
+            - '{branch}'
 
 #########################
 # Maven Javadoc Publish #
@@ -415,6 +417,8 @@
             - '{github-org}'
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
+          white-list-target-branches:
+            - '{branch}'
 
 ########################
 # Maven Javadoc Verify #
@@ -525,6 +529,8 @@
           status-context: 'Maven Javadoc Verify'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
 
 ###############
 # Maven Merge #
@@ -667,6 +673,8 @@
             - '{github-org}'
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
+          white-list-target-branches:
+            - '{branch}'
           included-regions: '{obj:github_included_regions}'
 
 #################
@@ -780,6 +788,8 @@
           status-context: 'Maven Release'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
 
 ###############
 # Maven Sonar #
@@ -932,6 +942,8 @@
           status-context: 'Maven Sonar'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
 
 ################
 # Maven Verify #
@@ -1059,6 +1071,8 @@
           status-context: 'Maven Verify'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
           included-regions: '{obj:github_included_regions}'
 
 #############################
