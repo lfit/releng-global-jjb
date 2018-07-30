@@ -52,6 +52,11 @@
     archive-artifacts: >
       **/*.log
 
+    github_white_list_target_branches:
+      - 'master'
+    github_included_regions:
+      - '.*'
+
     #####################
     # Job Configuration #
     #####################
@@ -106,6 +111,8 @@
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
       - '.*'
+    github_white_list_target_branches:
+      - 'master'
 
     #####################
     # Job Configuration #
@@ -212,6 +219,7 @@
           status-context: 'CLM'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
           included-regions: '{obj:github_included_regions}'
 
 ########################
@@ -246,6 +254,8 @@
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
       - '.*'
+    github_white_list_target_branches:
+      - 'master'
 
     #####################
     # Job Configuration #
@@ -387,7 +397,9 @@
           status-context: 'Python Sonar'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
           included-regions: '{obj:github_included_regions}'
+          
 
 ##############
 # Tox Verify #
@@ -418,6 +430,9 @@
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
       - '.*'
+    github_white_list_target_branches:
+      - 'master'
+
 
     #####################
     # Job Configuration #
@@ -535,4 +550,5 @@
           status-context: 'Tox Verify'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
           included-regions: '{obj:github_included_regions}'

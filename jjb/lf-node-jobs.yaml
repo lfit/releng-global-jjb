@@ -45,6 +45,7 @@
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
       - '.*'
+ 
 
     #####################
     # Job Configuration #
@@ -152,3 +153,6 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'
+
