@@ -212,6 +212,8 @@
           status-context: 'CLM'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
           included-regions: '{obj:github_included_regions}'
 
 ########################
@@ -387,6 +389,8 @@
           status-context: 'Python Sonar'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
           included-regions: '{obj:github_included_regions}'
 
 ##############
@@ -535,4 +539,6 @@
           status-context: 'Tox Verify'
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
           included-regions: '{obj:github_included_regions}'
