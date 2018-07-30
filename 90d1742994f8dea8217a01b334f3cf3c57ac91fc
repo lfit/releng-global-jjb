@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "725f8910_a1183f7d",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-30T16:38:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c892384f_a6f40c0b",
+      "range": {
+        "startLine": 224,
+        "startChar": 29,
+        "endLine": 224,
+        "endChar": 37
+      },
+      "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "85339e7f_a4297556",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 9
@@ -36,6 +60,24 @@
       "writtenOn": "2018-07-30T14:23:34Z",
       "side": 1,
       "message": "Remove this",
+      "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7cd9cc87_629c844d",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-30T16:38:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85339e7f_a4297556",
       "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "a41ed917_46809382",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-30T16:38:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "844db40e_cda370f0",
+      "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d4af3581_bd7b2e68",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 9
@@ -70,6 +130,24 @@
       "writtenOn": "2018-07-30T14:23:34Z",
       "side": 1,
       "message": "Remove this",
+      "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "53e570d4_e4e9ee85",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-30T16:38:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4af3581_bd7b2e68",
       "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -93,6 +171,24 @@
     },
     {
       "key": {
+        "uuid": "4e37c808_3ea2d5a3",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-30T16:38:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "28ebee6c_248d3e3f",
+      "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8be9a0e1_baa2ba8b",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 9
@@ -104,6 +200,24 @@
       "writtenOn": "2018-07-30T14:23:34Z",
       "side": 1,
       "message": "Remove this",
+      "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "defee593_20e8ee11",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-30T16:38:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8be9a0e1_baa2ba8b",
       "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -127,6 +241,24 @@
     },
     {
       "key": {
+        "uuid": "8efd7acf_2849003b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-30T16:38:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50133e86_db1d09a7",
+      "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "21608525_b3f67e60",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 9
@@ -138,6 +270,30 @@
       "writtenOn": "2018-07-30T14:23:34Z",
       "side": 1,
       "message": "Remove this line",
+      "range": {
+        "startLine": 1084,
+        "startChar": 41,
+        "endLine": 1084,
+        "endChar": 44
+      },
+      "revId": "90d1742994f8dea8217a01b334f3cf3c57ac91fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fada7f6_7ffa93f8",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-07-30T16:38:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "21608525_b3f67e60",
       "range": {
         "startLine": 1084,
         "startChar": 41,
