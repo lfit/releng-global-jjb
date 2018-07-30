@@ -107,6 +107,12 @@
       **/target/failsafe-reports/failsafe-summary.xml
       **/target/surefire-reports/*-output.txt
 
+    github_white_list_target_branches:
+      - 'master'
+    github_included_regions:
+      - '.*'
+
+
     #####################
     # Job Configuration #
     #####################
@@ -264,6 +270,10 @@
             - '{github-org}'
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
+          included-regions: '{obj:github_included_regions}'
+
+
 
 #########################
 # Maven Javadoc Publish #
@@ -382,6 +392,9 @@
             - '{github-org}'
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
+          included-regions: '{obj:github_included_regions}'
+
 
 ########################
 # Maven Javadoc Verify #
@@ -491,6 +504,9 @@
           status-context: 'Maven Javadoc Verify'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
+          included-regions: '{obj:github_included_regions}'
+
 
 ###############
 # Maven Merge #
@@ -632,7 +648,9 @@
             - '{github-org}'
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
           included-regions: '{obj:github_included_regions}'
+
 
 #################
 # Maven Release #
@@ -744,6 +762,9 @@
           status-context: 'Maven Release'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
+          included-regions: '{obj:github_included_regions}'
+
 
 ###############
 # Maven Sonar #
@@ -895,6 +916,9 @@
           status-context: 'Maven Sonar'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
+          included-regions: '{obj:github_included_regions}'
+
 
 ################
 # Maven Verify #
@@ -1021,6 +1045,7 @@
           status-context: 'Maven Verify'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
           included-regions: '{obj:github_included_regions}'
 
 #############################

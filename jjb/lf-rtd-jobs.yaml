@@ -41,6 +41,10 @@
       - '.*\.rst'
       - '.*\/conf.py'
 
+    github_white_list_target_branches:
+      - 'master'
+
+
     #####################
     # Job Configuration #
     #####################
@@ -149,6 +153,8 @@
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
+
 
 #############
 # RTD VERIFY#
@@ -247,3 +253,5 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
+

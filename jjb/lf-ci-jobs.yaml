@@ -160,6 +160,9 @@
       - '.*\.ps1'
       - '.*\.(yaml|yml)'
       - '.*\/global-jjb'
+    github_white_list_target_branches:
+      - 'master'
+
 
     #####################
     # Job Configuration #
@@ -407,6 +410,7 @@
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
 
 ##################
 # JJB DEPLOY JOB #
@@ -520,6 +524,7 @@
           status-context: 'JJB Deploy Job'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
 
 #############
 # JJB Merge #
@@ -620,6 +625,7 @@
           white-list: '{obj:github_pr_whitelist}'
           admin-list: '{obj:github_pr_admin_list}'
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
 
 ##############
 # JJB Verify #
@@ -730,6 +736,7 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
 
 #################
 # License Check #
@@ -858,6 +865,7 @@
           status-context: 'License Check'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
 
 ####################
 # Info YAML Verify #
@@ -951,6 +959,7 @@
           github-hooks: true
           # included-regions MUST match gerrit file-paths
           included-regions: 'INFO.yaml'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
 
 ################
 # Packer Merge #
@@ -1080,6 +1089,7 @@
             - 'packer\/provision\/local-{templates}\.yaml'
             - 'packer\/templates\/{templates}\.json'
             - 'packer\/vars\/{platforms}\.json'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
 
 #################
 # Packer Verify #
@@ -1195,3 +1205,4 @@
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
+          white-list-target-branches: '{obj:github_white_list_target_branches}'

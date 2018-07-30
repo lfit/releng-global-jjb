@@ -51,6 +51,11 @@
 
     archive-artifacts: >
       **/*.log
+    
+    github_white_list_target_branches:
+      - 'master'
+    github_included_regions:
+      - '.*'
 
     #####################
     # Job Configuration #
@@ -212,6 +217,7 @@
           status-context: 'CLM'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
           included-regions: '{obj:github_included_regions}'
 
 ########################
@@ -387,7 +393,9 @@
           status-context: 'Python Sonar'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
           included-regions: '{obj:github_included_regions}'
+          
 
 ##############
 # Tox Verify #
@@ -535,4 +543,5 @@
           status-context: 'Tox Verify'
           permit-all: true
           github-hooks: true
+          white-list-target-branches: '{obj:github_white_list_target_branches}'
           included-regions: '{obj:github_included_regions}'
