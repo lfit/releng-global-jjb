@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c1b1fcf_2f3ab738",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-31T14:23:37Z",
+      "side": 1,
+      "message": "Can we just call this \"github-url\" I don\u0027t feel the word \"project\" adds any value and most of our other services that use their baseurl is just called:\n\n- nexus-url\n- gerrit-url\n- jenkins-url\n\netc... so it would be consistent with that pattern.",
+      "range": {
+        "startLine": 165,
+        "startChar": 11,
+        "endLine": 165,
+        "endChar": 18
+      },
+      "revId": "91b7df8edf436455577059f155070c9ea11f95df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
