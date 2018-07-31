@@ -83,6 +83,7 @@
     build-days-to-keep: 7
     build-timeout: 15
     git-url: https://github.com
+    github-url: 'https://github.com'
     project-pattern: '**'
     stream: master
     submodule-recursive: true
@@ -131,7 +132,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     triggers:
       - timed: 'H H * * *'
@@ -166,6 +167,7 @@
     build-timeout: 15
     doc-dir: docs/_build/html
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     project-pattern: '**'
     stream: master
     submodule-recursive: true
@@ -228,7 +230,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:

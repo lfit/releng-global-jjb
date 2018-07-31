@@ -34,6 +34,7 @@
     build-days-to-keep: 7
     build-timeout: 10
     git-url: '$GIT_URL/$GERRIT_PROJECT'
+    github-url: 'https://github.com'
     node-dir: ''
     stream: master
     submodule-recursive: true
@@ -133,7 +134,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:

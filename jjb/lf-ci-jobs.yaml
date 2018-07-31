@@ -75,6 +75,7 @@
     branch: master
     build-timeout: 90
     cron: '@monthly'
+    github-url: 'https://github.com'
     stream: master
     submodule-recursive: true
     packer-cloud-settings: packer-cloud-env
@@ -134,6 +135,7 @@
 
     branch: master
     build-timeout: 10
+    github-url: 'https://github.com'
     jjb-version: 2.0.5
     stream: master
     submodule-recursive: true
@@ -292,6 +294,7 @@
     branch: master
     cron: '@daily'
     git-url: '$GIT_URL/$GERRIT_PROJECT'
+    github-url: 'https://github.com'
     jenkins-silos: production sandbox
 
     gerrit_merge_triggers:
@@ -380,7 +383,7 @@
           project: '{project}'
           build-days-to-keep: 1
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -423,6 +426,7 @@
     # jjb-deploy should always clone $PROJECT regardless of what
     # $GERRIT_PROJECT triggered the job.
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     stream: master
     gerrit_jjb_deploy_job_triggers:
       - comment-added-contains-event:
@@ -502,7 +506,7 @@
           project: '{project}'
           build-days-to-keep: 1
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -594,7 +598,7 @@
           project: '{project}'
           build-days-to-keep: 7
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -711,7 +715,7 @@
           project: '{project}'
           build-days-to-keep: 7
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -752,6 +756,7 @@
         *.py
         *.sh
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     lhc-version: 0.2.0
     license-exclude-paths: ''
     licenses-allowed: Apache-2.0,EPL-1.0,MIT
@@ -839,7 +844,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -929,9 +934,10 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_info_yaml_verify
 
+    github-url: 'https://github.com'
     properties:
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -1044,7 +1050,7 @@
           project: '{project}'
           build-days-to-keep: 7
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -1176,7 +1182,7 @@
           project: '{project}'
           build-days-to-keep: 7
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:

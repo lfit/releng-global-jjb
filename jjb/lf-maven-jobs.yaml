@@ -162,6 +162,7 @@
     build-days-to-keep: 30  # 30 days for troubleshooting purposes
     build-timeout: 60
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-opts: ''
@@ -271,7 +272,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -311,6 +312,7 @@
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 60
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-opts: ''
@@ -388,7 +390,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -429,6 +431,7 @@
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 60
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-opts: ''
@@ -504,7 +507,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -539,6 +542,7 @@
     build-timeout: 60
     cron: 'H H * * 0'  # push fresh snapshot weekly
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -638,7 +642,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -681,6 +685,7 @@
     build-timeout: 60
     cron: ''
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -756,7 +761,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -792,6 +797,7 @@
     build-timeout: 60
     cron: 'H H * * 6'  # run weekly
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-opts: ''
@@ -908,7 +914,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -942,6 +948,7 @@
     build-days-to-keep: 7
     build-timeout: 60
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -1034,7 +1041,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
@@ -1069,6 +1076,7 @@
     build-days-to-keep: 7
     build-timeout: 60
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
