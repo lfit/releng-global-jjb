@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "0d81dd6c_41b90e8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-07-31T14:58:57Z",
+      "side": 1,
+      "message": "Just above Change-Id: add:\n\n Issue: RELENG-1103",
+      "revId": "91b7df8edf436455577059f155070c9ea11f95df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c1b1fcf_2f3ab738",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 1
