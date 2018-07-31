@@ -16,6 +16,7 @@
     build-timeout: 15
     cmake-opts: ''
     git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     install-prefix: '$BUILD_DIR/output'
     make-opts: ''
     pre-build: ''
@@ -111,7 +112,7 @@
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: '{git-url}/{github-org}/{project}'
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
