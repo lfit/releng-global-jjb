@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "df380d7f_e64a67fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-01T00:16:47Z",
+      "side": 1,
+      "message": "This is the a better Summary then the existing summary.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 45
+      },
+      "revId": "96b62e85f7dca9ca971a4b5b2bf7a442944f2dd4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ccfa4c3_11cc77e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-01T00:16:47Z",
+      "side": 1,
+      "message": "For Gerrit links we can make them shorter by removing #/c\n\nSo https://review.openstack.org/584581 would look nicer as a link.",
+      "revId": "96b62e85f7dca9ca971a4b5b2bf7a442944f2dd4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e3b932a8_62078718",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 12
