@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d1ebce08_41250d3b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-01T13:25:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d81dd6c_41b90e8f",
+      "revId": "91b7df8edf436455577059f155070c9ea11f95df",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c1b1fcf_2f3ab738",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 1
