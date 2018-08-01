@@ -16,6 +16,8 @@ Verify job which runs cmake && make && make install to test a project build..
     - gerrit-cmake-verify
     - github-cmake-verify
 
+:Comment Trigger: recheck|reverify
+
 :Required parameters:
 
     :build-node: The node to run build on.

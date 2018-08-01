@@ -112,6 +112,8 @@ Produces a CLM scan of the code into Nexus IQ Server.
     - gerrit-maven-clm
     - github-maven-clm
 
+:Comment Trigger: run-clm
+
 :Required parameters:
 
     :build-node:    The node to run build on.
@@ -152,6 +154,8 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
     - {project-name}-maven-javadoc-publish-{stream}
     - gerrit-maven-javadoc-publish
     - github-maven-javadoc-publish
+
+:Comment Trigger: remerge
 
 :Required parameters:
 
@@ -194,6 +198,8 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
     - {project-name}-maven-javadoc-verify-{stream}
     - gerrit-maven-javadoc-verify
     - github-maven-javadoc-verify
+
+:Comment Trigger: recheck|reverify
 
 :Required parameters:
     :build-node:    The node to run build on.
@@ -244,6 +250,8 @@ This job uses the following strategy to deploy jobs to Nexus:
     - {project-name}-maven-merge-{stream}
     - gerrit-maven-merge
     - github-maven-merge
+
+:Comment Trigger: remerge
 
 :Required parameters:
 
@@ -344,6 +352,8 @@ interest in that kind of support.
     - gerrit-maven-sonar
     - github-maven-sonar
 
+:Comment Trigger: run-sonar
+
 :Required parameters:
 
     :build-node: The node to run build on.
@@ -383,6 +393,8 @@ Verify job which runs mvn clean install to test a project build..
     - {project-name}-maven-verify-{stream}-{mvn-version}-{java-version}
     - gerrit-maven-verify
     - github-maven-verify
+
+:Comment Trigger: recheck|reverify
 
 :Required parameters:
 

@@ -358,6 +358,8 @@ Runs `jenkins-jobs update` to update production job configuration
     - gerrit-jjb-merge
     - github-jjb-merge
 
+:Comment Trigger: remerge
+
 :Required parameters:
 
     :build-node: The node to run build on.
@@ -392,6 +394,8 @@ Runs `jenkins-jobs test` to validate JJB syntax
     - {project-name}-jjb-verify
     - gerrit-jjb-verify
     - github-jjb-verify
+
+:Comment Trigger: recheck|reverify
 
 :Required parameters:
 
@@ -492,6 +496,8 @@ Packer Merge job runs `packer build` to build system images in the cloud.
     - gerrit-packer-merge
     - github-packer-merge
 
+:Comment Trigger: remerge
+
 :Required parameters:
 
     :build-node: The node to run build on.
@@ -533,6 +539,8 @@ Packer Verify job runs `packer validate` to verify packer configuration.
     - {project-name}-packer-verify
     - gerrit-packer-verify
     - github-packer-verify
+
+:Comment Trigger: recheck|reverify
 
 :Required parameters:
 

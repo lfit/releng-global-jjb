@@ -37,6 +37,8 @@ Verify job for NodeJS projects
     - gerrit-node-verify
     - github-node-verify
 
+:Comment Trigger: recheck|reverify
+
 :Required parameters:
 
     :build-node: The node to run build on.

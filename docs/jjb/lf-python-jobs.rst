@@ -86,6 +86,8 @@ IQ Server.
     - gerrit-python-xc-clm
     - github-python-xc-clm
 
+:Comment Trigger: run-clm
+
 :Required parameters:
 
     :build-node: The node to run build on.
@@ -146,6 +148,8 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     - gerrit-tox-sonar
     - github-tox-sonar
 
+:Comment Trigger: run-sonar
+
 :Required parameters:
 
     :build-node: The node to run build on.
@@ -195,6 +199,8 @@ following pyenv variables before running.
     - {project-name}-tox-verify-{stream}
     - gerrit-tox-verify
     - github-tox-verify
+
+:Comment Trigger: recheck|reverify
 
 :Required Parameters:
 

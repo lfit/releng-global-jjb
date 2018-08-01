@@ -68,6 +68,8 @@ ReadTheDocs. To do that follow these steps:
     - gerrit-rtd-merge
     - github-rtd-merge
 
+:Comment Trigger: remerge
+
 :Required parameters:
 
     :build-node: The node to run build on.
@@ -112,6 +114,8 @@ Verify job which runs a tox build of the docs project
     - {project-name}-rtd-verify-{stream}
     - gerrit-rtd-verify
     - github-rtd-verify
+
+:Comment Trigger: recheck|reverify
 
 :Required Parameters:
 
