@@ -228,6 +228,12 @@ Forcibly removes all of the docker images.
 Parameters
 ==========
 
+lf-clm-parameters
+-------------------
+
+Provides the policy evaluation stage to run against Nexus IQ Server.
+Valid values include: 'build', 'stage-release', 'operate'.
+
 lf-cmake-parameters
 -------------------
 
