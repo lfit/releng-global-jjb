@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0b02ab0_b776038d",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 594,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-01T13:46:39Z",
+      "side": 1,
+      "message": "Put this under jjb_common",
+      "revId": "ceb158dfbc16203526c412bad8c521a78cc1e945",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eb0f0a1e_8dc700bc",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-01T13:46:39Z",
+      "side": 1,
+      "message": "Put this under jjb_common",
+      "revId": "ceb158dfbc16203526c412bad8c521a78cc1e945",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "356d8f66_af07d3e0",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1048,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-01T13:46:39Z",
+      "side": 1,
+      "message": "Put this under packer-common",
+      "revId": "ceb158dfbc16203526c412bad8c521a78cc1e945",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14f643f6_6c9dc951",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1181,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-01T13:46:39Z",
+      "side": 1,
+      "message": "Put this under packer-common",
+      "revId": "ceb158dfbc16203526c412bad8c521a78cc1e945",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
