@@ -173,7 +173,7 @@
     stream: master
     submodule-recursive: true
 
-    nexus-iq-scan-patterns:
+    nexus_iq_scan_patterns:
       - '**/*.ear'
       - '**/*.jar'
       - '**/*.tar.gz'
@@ -224,7 +224,7 @@
           stage: '{nexus-iq-stage}'
           application-type: 'manual'
           application-id: '{project-name}'
-          scan-patterns: '{nexus-iq-scan-patterns}'
+          scan-patterns: '{obj:nexus_iq_scan_patterns}'
           fail-build-network-error: true
 
 - job-template:
