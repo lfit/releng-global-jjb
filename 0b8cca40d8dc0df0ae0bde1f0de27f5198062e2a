@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c5c3767_bd24ef23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-01T15:15:05Z",
+      "side": 1,
+      "message": "This line is no longer accurate so remove it.",
+      "revId": "0b8cca40d8dc0df0ae0bde1f0de27f5198062e2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
