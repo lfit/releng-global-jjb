@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7fd39937_ec88cf76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-08-01T00:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df380d7f_e64a67fa",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 45
+      },
+      "revId": "96b62e85f7dca9ca971a4b5b2bf7a442944f2dd4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4ccfa4c3_11cc77e9",
         "filename": "/COMMIT_MSG",
         "patchSetId": 12
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "f514c507_c7ff2fa1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-08-01T00:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4ccfa4c3_11cc77e9",
+      "revId": "96b62e85f7dca9ca971a4b5b2bf7a442944f2dd4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e3b932a8_62078718",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 12
@@ -53,6 +95,30 @@
       "writtenOn": "2018-08-01T00:15:31Z",
       "side": 1,
       "message": "Alphabetical order.",
+      "range": {
+        "startLine": 176,
+        "startChar": 5,
+        "endLine": 180,
+        "endChar": 21
+      },
+      "revId": "96b62e85f7dca9ca971a4b5b2bf7a442944f2dd4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3036457a_ff8f50b2",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-08-01T00:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e3b932a8_62078718",
       "range": {
         "startLine": 176,
         "startChar": 5,
