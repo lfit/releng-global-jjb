@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5c318183_9be56b89",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-01T13:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6aaba4ec_bf6eac72",
+      "revId": "ca4f045ff43f8157db363f236cc03011fb501655",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5477e58b_5f31a0ff",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "31241e60_69e04527",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-01T13:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5477e58b_5f31a0ff",
+      "revId": "ca4f045ff43f8157db363f236cc03011fb501655",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "945410e9_5efbcb6f",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 2
@@ -47,6 +83,30 @@
       "writtenOn": "2018-07-31T15:02:05Z",
       "side": 1,
       "message": "Can we split this included regions change into a separate patch?",
+      "range": {
+        "startLine": 110,
+        "startChar": 4,
+        "endLine": 111,
+        "endChar": 12
+      },
+      "revId": "ca4f045ff43f8157db363f236cc03011fb501655",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8ba63e6a_b7c73528",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-01T13:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "945410e9_5efbcb6f",
       "range": {
         "startLine": 110,
         "startChar": 4,
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "22bea4ac_38df90a6",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-01T13:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa646b7a_9d2c0671",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 12
+      },
+      "revId": "ca4f045ff43f8157db363f236cc03011fb501655",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ef22c57_1156a790",
         "filename": "jjb/lf-rtd-jobs.yaml",
         "patchSetId": 2
@@ -93,6 +177,24 @@
       "writtenOn": "2018-07-31T15:02:05Z",
       "side": 1,
       "message": "Unnecessary whitespace edit.",
+      "revId": "ca4f045ff43f8157db363f236cc03011fb501655",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3babf667_5bd03142",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-01T13:23:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ef22c57_1156a790",
       "revId": "ca4f045ff43f8157db363f236cc03011fb501655",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
