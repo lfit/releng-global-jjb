@@ -16,6 +16,21 @@
 
 
 - project:
+    name: gerrit-openstack-jobs
+    jobs:
+      - gerrit-openstack-cron
+
+    project-name: gerrit-ciman
+
+- project:
+    name: github-openstack-jobs
+    jobs:
+      - github-openstack-cron
+
+    project-name: github-ciman
+
+
+- project:
     name: gerrit-packer-jobs
     jobs:
       - "{project-name}-packer-jobs"
