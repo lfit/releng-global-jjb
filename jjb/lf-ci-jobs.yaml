@@ -1217,3 +1217,80 @@
           included-regions: '{obj:github_included_regions}'
           white-list-target-branches:
             - '{branch}'
+
+##################
+# OPENSTACK CRON #
+##################
+
+- lf_openstack_cron: &lf_openstack_cron
+    name: lf-openstack-cron
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 10
+    cron: '@daily'
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    github-url: 'https://github.com'
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'jenkins-config\/.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - 'jenkins-config\/.*'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: false
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+      # Listed after to override openstack-infra-wrappers clouds.yaml definition
+      - config-file-provider:
+          files:
+            - file-id: clouds-yaml
+              target: '$HOME/.config/openstack/clouds.yaml'
+            - file-id: npmrc
+              target: '$HOME/.npmrc'
+            - file-id: pipconf
+              target: '$HOME/.config/pip/pip.conf'
+
+    triggers:
+      - timed: '{obj:cron}'
+
+    builders:
+      - shell: !include-raw-escape:
+          - ../shell/openstack-cron.sh
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-openstack-cron'
+    id: gerrit-openstack-cron
+    <<: *lf_openstack_cron
+
+- job-template:
+    name: '{project-name}-openstack-cron'
+    id: github-openstack-cron
+    <<: *lf_openstack_cron
