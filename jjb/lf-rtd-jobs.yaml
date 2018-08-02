@@ -142,7 +142,7 @@
       - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
-          status-context: 'RTD Merge'
+          status-context: '{project-name}-{stream}-RTD Merge'
           permit-all: false
           github-hooks: true
           org-list:
@@ -247,7 +247,7 @@
       - github-pull-request:
           trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
-          status-context: 'RTD Verify'
+          status-context: '{project-name}-{stream}-RTD Verify'
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'

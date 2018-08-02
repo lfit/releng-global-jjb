@@ -289,7 +289,7 @@
       - github-pull-request:
           trigger-phrase: '^run-clm$'
           only-trigger-phrase: false
-          status-context: 'CLM'
+          status-context: '{project-name}-{stream}-CLM'
           permit-all: true
           github-hooks: true
           org-list:
@@ -410,7 +410,7 @@
       - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
-          status-context: 'Maven Javadoc Publish'
+          status-context: '{project-name}-{stream}-Maven Javadoc Publish'
           permit-all: false
           github-hooks: true
           org-list:
@@ -526,7 +526,7 @@
       - github-pull-request:
           trigger-phrase: ^(recheck|reverify)$
           only-trigger-phrase: false
-          status-context: 'Maven Javadoc Verify'
+          status-context: '{project-name}-{stream}-Maven Javadoc Verify'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
@@ -666,7 +666,7 @@
       - github-pull-request:
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
-          status-context: 'Maven Merge'
+          status-context: '{project-name}-{stream}-Maven Merge'
           permit-all: false
           github-hooks: true
           org-list:
@@ -785,7 +785,7 @@
       - github-pull-request:
           trigger-phrase: '^build release$'
           only-trigger-phrase: true
-          status-context: 'Maven Release'
+          status-context: '{project-name}-{stream}-Maven Release'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
@@ -939,7 +939,7 @@
       - github-pull-request:
           trigger-phrase: '^run-sonar$'
           only-trigger-phrase: false
-          status-context: 'Maven Sonar'
+          status-context: '{project-name}-Maven Sonar'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
@@ -1068,7 +1068,7 @@
       - github-pull-request:
           trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
-          status-context: 'Maven Verify'
+          status-context: '{project-name}-{stream}-Maven Verify'
           permit-all: true
           github-hooks: true
           white-list-target-branches:

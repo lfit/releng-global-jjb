@@ -210,7 +210,7 @@
       - github-pull-request:
           trigger-phrase: '^run-clm$'
           only-trigger-phrase: false
-          status-context: 'CLM'
+          status-context: '{project-name}-{stream}-CLM'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
@@ -388,7 +388,7 @@
       - github-pull-request:
           trigger-phrase: '^run-sonar$'
           only-trigger-phrase: false
-          status-context: 'Python Sonar'
+          status-context: '{project-name}-Python Sonar'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
@@ -539,7 +539,7 @@
       - github-pull-request:
           trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
-          status-context: 'Tox Verify'
+          status-context: '{project-name}-{stream}-Tox Verify'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
