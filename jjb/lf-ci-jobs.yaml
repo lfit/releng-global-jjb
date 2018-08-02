@@ -7,6 +7,7 @@
       - gerrit-jjb-deploy-job
       - gerrit-jjb-merge
       - gerrit-jjb-verify
+      - gerrit-openstack-cron
 
 - job-group:
     name: '{project-name}-github-ci-jobs'
@@ -16,6 +17,7 @@
       - github-jjb-deploy-job
       - github-jjb-merge
       - github-jjb-verify
+      - github-openstack-cron
 
 - job-group:
     name: '{project-name}-info-yaml-jobs'
@@ -1214,6 +1216,149 @@
           status-context: 'Packer Verify'
           permit-all: true
           github-hooks: true
+          included-regions: '{obj:github_included_regions}'
+          white-list-target-branches:
+            - '{branch}'
+
+##################
+# OPENSTACK CRON #
+##################
+
+- lf_openstack_cron: &lf_openstack_cron
+    name: lf-openstack-cron
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 10
+    cron: '@daily'
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    github-url: 'https://github.com'
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'jenkins-config\/.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - 'jenkins-config\/.*'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: false
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          stream: ''
+          branch: master
+          lftools-version: '{lftools-version}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+      # Listed after to override openstack-infra-wrappers clouds.yaml definition
+      - config-file-provider:
+          files:
+            - file-id: clouds-yaml
+              target: '$HOME/.config/openstack/clouds.yaml'
+            - file-id: npmrc
+              target: '$HOME/.npmrc'
+            - file-id: pipconf
+              target: '$HOME/.config/pip/pip.conf'
+
+    builders:
+      - shell: !include-raw-escape:
+          - ../shell/lftools-install.sh
+      - lf-jenkins-cfg-global-vars:
+          jenkins-silos: '{jenkins-silos}'
+      - lf-jenkins-cfg-clouds:
+          jenkins-silos: '{jenkins-silos}'
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-openstack-cron'
+    id: gerrit-openstack-cron
+    <<: *lf_openstack_cron
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: 'refs/heads/{branch}'
+          branch: '{branch}'
+          submodule-recursive: true
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-openstack-cron'
+    id: github-openstack-cron
+    <<: *lf_openstack_cron
+
+    properties:
+      - lf-infra-properties:
+          project: '{project}'
+          build-days-to-keep: 7
+      - github:
+          url: '{github-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: true
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - timed: '{obj:cron}'
+      - github
+      - pollscm:
+          cron: ''
+      - github-pull-request:
+          trigger-phrase: '^run-openstack-cron$'
+          only-trigger-phrase: true
+          status-context: 'OpenStack Cron'
+          permit-all: false
+          github-hooks: true
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
           included-regions: '{obj:github_included_regions}'
           white-list-target-branches:
             - '{branch}'
