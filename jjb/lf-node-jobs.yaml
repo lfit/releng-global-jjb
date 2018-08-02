@@ -149,7 +149,7 @@
       - github-pull-request:
           trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
-          status-context: 'Node Verify'
+          status-context: '{project-name}-{stream}-Node Verify'
           permit-all: true
           github-hooks: true
           included-regions: '{obj:github_included_regions}'
