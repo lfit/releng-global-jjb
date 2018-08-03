@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "92a315d9_3eac706a",
+        "filename": "shell/cmake-stage.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-03T15:44:33Z",
+      "side": 1,
+      "message": "Any chance we can incorporate the sigul bits here as a first trial?",
+      "revId": "893eeb3d0eba8b55fbe456fe8c78187ff94ce425",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
