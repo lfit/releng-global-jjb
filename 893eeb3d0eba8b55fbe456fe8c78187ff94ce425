@@ -16,6 +16,24 @@
       "revId": "893eeb3d0eba8b55fbe456fe8c78187ff94ce425",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6ebe7f2_0d9b8ac3",
+        "filename": "shell/cmake-stage.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-03T15:56:32Z",
+      "side": 1,
+      "message": "Out of the scope for this work IMO. We should definitely do sigul stuff but as it\u0027s own separate patch.",
+      "parentUuid": "92a315d9_3eac706a",
+      "revId": "893eeb3d0eba8b55fbe456fe8c78187ff94ce425",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
