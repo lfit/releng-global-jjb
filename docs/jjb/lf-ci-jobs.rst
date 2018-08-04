@@ -13,6 +13,7 @@ Recommended jobs that should be deployed for CI using Gerrit.
 :Includes:
 
     - gerrit-jenkins-cfg-merge
+    - gerrit-jenkins-sandbox-cleanup
     - gerrit-jjb-deploy-job
     - gerrit-jjb-merge
     - gerrit-jjb-verify
@@ -25,6 +26,7 @@ Recommended jobs that should be deployed CI using GitHub.
 :Includes:
 
     - github-jenkins-cfg-merge
+    - github-jenkins-sandbox-cleanup
     - github-jjb-deploy-job
     - github-jjb-merge
     - github-jjb-verify
@@ -312,6 +314,30 @@ Troubleshooting
     The directory ``groovy-inserts`` contains the groovy script output that is
     used to push to Jenkins. In the event of a job failure this file can be
     inspected.
+
+
+Jenkins Sandbox Cleanup
+-----------------------
+
+Cleanup Jenkins Sandbox of jobs and views periodically.
+
+:Template names:
+
+    - {project-name}-jenkins-sandbox-cleanup
+    - gerrit-jenkins-sandbox-cleanup
+    - github-jenkins-sandbox-cleanup
+
+:Comment Trigger: NONE
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally
+        should be configured in defaults.yaml)
+
+:Optional parameters:
+
+    :cron: Schedule to run job. (default: '0 8 * * 6')
 
 
 JJB Deploy Job
