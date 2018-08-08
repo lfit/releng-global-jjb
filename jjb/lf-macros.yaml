@@ -49,6 +49,11 @@
       - shell: !include-raw: ../shell/gpg-verify-git-signature.sh
 
 - builder:
+    name: lf-infra-pre-build
+    builders:
+      - shell: !include-raw-escape: ../shell/python-tools-install.sh
+
+- builder:
     name: lf-infra-ship-logs
     builders:
       - config-file-provider:
@@ -58,7 +63,9 @@
       - lf-infra-create-netrc:
           server-id: logs
       - shell: !include-raw:
-          - ../shell/lftools-install.sh
+          # Ensure python-tools are installed in case job template does not
+          # call the lf-infra-pre-build macro.
+          - ../shell/python-tools-install.sh
           - ../shell/logs-deploy.sh
       - shell: !include-raw:
           - ../shell/logs-clear-credentials.sh
