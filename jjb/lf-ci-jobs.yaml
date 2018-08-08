@@ -136,7 +136,7 @@
     branch: master
     build-timeout: 10
     github-url: 'https://github.com'
-    jjb-version: 2.0.5
+    jjb-version: 2.2.1
     stream: master
     submodule-recursive: true
 
