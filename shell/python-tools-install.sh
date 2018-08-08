@@ -1,7 +1,7 @@
 #!/bin/bash -l
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
-# Copyright (c) 2017 The Linux Foundation and others.
+# Copyright (c) 2018 The Linux Foundation and others.
 #
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Eclipse Public License v1.0
@@ -9,17 +9,15 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-# Publishes javadoc to a Maven project.
+set -eux -o pipefail
 
-# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.
-# Ensure we fail the job if any steps fail.
-set -e -o pipefail
-set +u
+REQUIREMENTS_FILE=$(mktemp /tmp/requirements-XXXX.txt)
 
-JAVADOC_DIR="$WORKSPACE/archives/javadoc"
+cat << EOF > "$REQUIREMENTS_FILE"
+lftools~=0.15.0
+python-heatclient~=1.16.1
+python-openstackclient~=3.16.0
+EOF
 
-pushd "$JAVADOC_DIR"
-zip -r "$WORKSPACE/javadoc.zip" .
-popd
-
-lftools deploy nexus-zip "$NEXUS_URL" "javadoc" "$DEPLOY_PATH" "$WORKSPACE/javadoc.zip"
+pip install --user --quiet --upgrade pip==18.0 setuptools==40.0.0
+pip install --user --quiet --upgrade -r "$REQUIREMENTS_FILE"
