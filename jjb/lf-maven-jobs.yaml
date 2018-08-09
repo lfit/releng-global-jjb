@@ -288,7 +288,7 @@
       - timed: 'H H * * 6'
       - github-pull-request:
           trigger-phrase: '^run-clm$'
-          only-trigger-phrase: false
+          only-trigger-phrase: true
           status-context: 'CLM'
           permit-all: true
           github-hooks: true
