@@ -70,6 +70,30 @@
       "revId": "3ae312fbcced7c547bbe98a5692a6d2dcfc17558",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a842eca_f6c547a3",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-09T23:42:57Z",
+      "side": 0,
+      "message": "got it..fix inbound",
+      "parentUuid": "e7849242_869d4a0e",
+      "range": {
+        "startLine": 291,
+        "startChar": 31,
+        "endLine": 291,
+        "endChar": 36
+      },
+      "revId": "3ae312fbcced7c547bbe98a5692a6d2dcfc17558",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
