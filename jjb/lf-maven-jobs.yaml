@@ -286,18 +286,6 @@
     triggers:
       # Build weekly on Saturdays
       - timed: 'H H * * 6'
-      - github-pull-request:
-          trigger-phrase: '^run-clm$'
-          only-trigger-phrase: false
-          status-context: 'CLM'
-          permit-all: true
-          github-hooks: true
-          org-list:
-            - '{github-org}'
-          white-list: '{obj:github_pr_whitelist}'
-          admin-list: '{obj:github_pr_admin_list}'
-          white-list-target-branches:
-            - '{branch}'
 
 #########################
 # Maven Javadoc Publish #
