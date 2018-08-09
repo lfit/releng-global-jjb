@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "58ee9864_c8693573",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-09T18:35:25Z",
+      "side": 0,
+      "message": "Maybe we just need to change this to \"true\".\n\nThere\u0027s a bunch of other cases where we also allow trigger phrase builds too.",
+      "range": {
+        "startLine": 291,
+        "startChar": 31,
+        "endLine": 291,
+        "endChar": 36
+      },
+      "revId": "3ae312fbcced7c547bbe98a5692a6d2dcfc17558",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
