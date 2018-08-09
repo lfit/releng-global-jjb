@@ -22,6 +22,30 @@
       "revId": "3ae312fbcced7c547bbe98a5692a6d2dcfc17558",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1577d276_da3e31a1",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-09T23:41:32Z",
+      "side": 0,
+      "message": "Hmm that\u0027s not a bad idea, although for this particular job, will a committer ever need to run CLM?",
+      "parentUuid": "58ee9864_c8693573",
+      "range": {
+        "startLine": 291,
+        "startChar": 31,
+        "endLine": 291,
+        "endChar": 36
+      },
+      "revId": "3ae312fbcced7c547bbe98a5692a6d2dcfc17558",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
