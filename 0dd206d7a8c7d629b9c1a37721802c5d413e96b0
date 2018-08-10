@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "185cdfb4_f88f820f",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-10T00:37:58Z",
+      "side": 1,
+      "message": "This overrides the previous image :(",
+      "revId": "0dd206d7a8c7d629b9c1a37721802c5d413e96b0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
