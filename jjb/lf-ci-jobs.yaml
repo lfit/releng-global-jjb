@@ -4,6 +4,7 @@
 
     jobs:
       - gerrit-jenkins-cfg-merge
+      - gerrit-jenkins-sandbox-cleanup
       - gerrit-jjb-deploy-job
       - gerrit-jjb-merge
       - gerrit-jjb-verify
@@ -13,6 +14,7 @@
 
     jobs:
       - github-jenkins-cfg-merge
+      - github-jenkins-sandbox-cleanup
       - github-jjb-deploy-job
       - github-jjb-merge
       - github-jjb-verify
@@ -412,6 +414,59 @@
           included-regions: '{obj:github_included_regions}'
           white-list-target-branches:
             - '{branch}'
+
+
+###########################
+# JENKINS SANDBOX CLEANUP #
+###########################
+
+- lf_jenkins_sandbox_cleanup: &lf_jenkins_sandbox_cleanup
+    name: lf-jenkins-sandbox-cleanup
+
+    ######################
+    # Default parameters #
+    ######################
+
+    build-timeout: 30
+    # Run every Saturday at 08:00 UTC
+    cron: '0 8 * * 6'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+    concurrent: true
+
+    parameters:
+      - lf-infra-jjb-parameters:
+          jjb-version: '{jjb-version}'
+
+    triggers:
+      - timed: '{obj:cron}'
+
+    builders:
+      - lf-infra-jjbini
+      - shell: !include-raw-escape:
+          - ../shell/jjb-install.sh
+          - ../shell/jenkins-sandbox-cleanup.sh
+          - ../shell/jjb-cleanup.sh
+
+- job-template:
+    name: '{project-name}-jenkins-sandbox-cleanup'
+    id: gerrit-jenkins-sandbox-cleanup
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jenkins_sandbox_cleanup
+
+- job-template:
+    name: '{project-name}-jenkins-sandbox-cleanup'
+    id: github-jenkins-sandbox-cleanup
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jenkins_sandbox_cleanup
+
 
 ##################
 # JJB DEPLOY JOB #
