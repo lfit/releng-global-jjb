@@ -34,6 +34,23 @@
       "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc5b1bde_95a5a75e",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-08-17T19:11:48Z",
+      "side": 1,
+      "message": "This command doesn\u0027t seem to be valid, at least on my laptop \njphelps@workhorse ~/projects/edgex/ci-management                                                                                                                                                 \n\u003e $ grep -r \u0027ZZCI - \u0027 --include \\*.yaml | awk -F\": \" -e \u0027{print $3}\u0027 | sed \"s:\u0027::;s:\u0027$::;/^$/d\" | sort -u                                                               \nawk: not an option: -e",
+      "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
