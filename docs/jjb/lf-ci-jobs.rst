@@ -447,6 +447,37 @@ Runs `jenkins-jobs test` to validate JJB syntax
         filter which file modifications will trigger a build.
         (default defined by lf_jjb_common)
 
+.. _jjb-verify-upstream-gjjb:
+
+JJB Verify Upstream Global JJB
+------------------------------
+
+Runs `jenkins-jobs test` to validate JJB syntax for upstream global-jjb
+patches. This job is useful to notify upstream that they may be breaking
+project level jobs.
+
+:Template Names:
+    - {project-name}-jjb-verify-upstream-gjjb
+    - gerrit-jjb-verify-upstream-gjjb
+
+:Comment Trigger: recheck|reverify
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        be configured in defaults.yaml)
+
+:Optional parameters:
+
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 10)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :jjb-version: Version of JJB to install.
+    :stream: Keyword that can be used to represent a release code-name.
+        Often the same as the branch. (default: master)
+
 .. _info-yaml-verify:
 
 Info YAML Verify
