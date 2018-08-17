@@ -16,6 +16,24 @@
       "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b817351d_c6444786",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-17T19:09:54Z",
+      "side": 1,
+      "message": "yep this file is required though to do anything with openstack. We should document it in ci-jobs.rst though",
+      "parentUuid": "b3d46426_f9485544",
+      "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
