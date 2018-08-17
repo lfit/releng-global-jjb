@@ -39,6 +39,30 @@
       "revId": "0dd206d7a8c7d629b9c1a37721802c5d413e96b0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0307d8ad_19bfad06",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-17T02:24:08Z",
+      "side": 1,
+      "message": "Nope :(\n\n$ openstack --os-cloud opendaylight image list -c protected\nNo recognized column names in [\u0027protected\u0027]. Recognized columns are (\u0027ID\u0027, \u0027Name\u0027, \u0027Status\u0027).",
+      "parentUuid": "6bec21b4_7e63ccce",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 32,
+        "endChar": 50
+      },
+      "revId": "0dd206d7a8c7d629b9c1a37721802c5d413e96b0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
