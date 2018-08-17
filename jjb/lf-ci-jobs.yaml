@@ -798,6 +798,76 @@
           white-list-target-branches:
             - '{branch}'
 
+############################
+# JJB Verify Upstream GJJB #
+############################
+
+- lf_jjb_verify: &lf_jjb_verify_upstream_gjjb
+    name: lf-jjb-verify-upstream-gjjb
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    concurrent: true
+
+    builders:
+      - shell: cd jjb/global-jjb && git checkout $GERRIT_REFSPEC
+      - lf-infra-jjbini
+      - shell: !include-raw-escape:
+          - ../shell/git-validate-jira-urls.sh
+          - ../shell/jjb-install.sh
+          - ../shell/jjb-verify-job.sh
+          - ../shell/jjb-check-unicode.sh
+          - ../shell/jjb-cleanup.sh
+      - lf-infra-gpg-verify-git-signature
+
+- job-template:
+    name: '{project-name}-jjb-verify-upstream-gjjb'
+    id: gerrit-jjb-verify-upstream-gjjb
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_jjb_verify_upstream_gjjb
+
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: '$GIT_URL/$PROJECT'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: ''
+          branch: 'master'
+          submodule-recursive: true
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: 'LinuxFoundation'
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: true
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: 'releng/global-jjb'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/master'
+          gerrit-build-failed-verified-value: 0
+          gerrit-build-failed-codereview-value: -1
+
 #################
 # License Check #
 #################
