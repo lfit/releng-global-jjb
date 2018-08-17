@@ -69,6 +69,42 @@
       "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2593928d_6ea03f33",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-17T19:36:39Z",
+      "side": 1,
+      "message": "It is valid at least on CentOS. Here\u0027s my test here:\n\nhttps://jenkins.opendaylight.org/sandbox/job/builder-openstack-cron/4/",
+      "parentUuid": "bc5b1bde_95a5a75e",
+      "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1edb75f1_dd527dcf",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-17T19:36:39Z",
+      "side": 1,
+      "message": "doh, i\u0027ll fix that...",
+      "parentUuid": "effccba9_db48d7c2",
+      "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
