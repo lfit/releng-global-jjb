@@ -28,6 +28,10 @@ set -eu -o pipefail
 if [ -z "$CREDENTIAL" ] && [ "$SERVER_ID" == "logs" ]; then
     echo "WARN: Log server credential not found."
     exit 0
+elif [ -z "$CREDENTIAL" ] && [ "$SERVER_ID" == "ossrh" ]; then
+    echo "WARN: OSSRH credentials not found."
+    echo "      This is needed for staging to Maven Central."
+    exit 0
 elif [ -z "$CREDENTIAL" ]; then
     echo "ERROR: Credential not found."
     exit 1
@@ -38,4 +42,4 @@ user=$(echo "$CREDENTIAL" | cut -f1 -d:)
 pass=$(echo "$CREDENTIAL" | cut -f2 -d:)
 
 set +x  # Disable `set -x` to prevent printing passwords
-echo "machine ${machine%:*} login $user password $pass" > ~/.netrc
+echo "machine ${machine%:*} login $user password $pass" >> ~/.netrc
