@@ -1,0 +1,13 @@
+---
+features:
+  - |
+    Add support to maven-stage jobs to publish to Maven Central via OSSRH.
+
+    This is accomplished by adding these 2 new optional parameters to the job
+    configuration.
+
+    .. code-block:: yaml
+
+       - gerrit-maven-stage:
+           mvn-central: true
+           ossrh-profile-id: 7edbe315063867
