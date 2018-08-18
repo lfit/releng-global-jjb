@@ -11,7 +11,7 @@
 echo "---> sigul-install.sh"
 
 # Ensure we fail the job if any steps fail.
-set -eu -o pipefail
+set -e -o pipefail
 
 # Setup sigul RPM repo
 echo "[fedora-infra-sigul]

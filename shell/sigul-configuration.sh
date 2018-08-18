@@ -11,7 +11,7 @@
 echo "---> sigul-configuration.sh"
 
 # Ensure we fail the job if any steps fail.
-set -eu -o pipefail
+set -e -o pipefail
 
 # Sigul pki configuration is designed to live in ${HOME}/sigul
 cd "${HOME}"
@@ -23,4 +23,3 @@ tar Jxf sigul.tar.xz
 
 # Any future use of $SIGUL_PASSWORD needs to have it null terminated
 sed -i 's/$/\x0/' "${SIGUL_PASSWORD}"
-
