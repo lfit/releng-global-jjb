@@ -667,11 +667,13 @@
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
+    mvn-central: false
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    ossrh-profile-id: ''
     sign-artifacts: false
     stream: master
     submodule-recursive: true
@@ -726,6 +728,15 @@
           sign-artifacts: '{sign-artifacts}'
           sign-dir: '$WORKSPACE/m2repo'
       - lf-maven-stage
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{mvn-central}'
+          steps:
+            - lf-infra-create-netrc:
+                server-id: 'ossrh'
+            - inject:
+                properties-content: 'OSSRH_PROFILE_ID={ossrh-profile-id}'
+            - shell: !include-raw-escape: ../shell/maven-central.sh
       - lf-provide-maven-settings-cleanup
 
 - job-template:

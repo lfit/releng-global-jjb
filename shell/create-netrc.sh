@@ -28,14 +28,23 @@ set -eu -o pipefail
 if [ -z "$CREDENTIAL" ] && [ "$SERVER_ID" == "logs" ]; then
     echo "WARN: Log server credential not found."
     exit 0
+elif [ -z "$CREDENTIAL" ] && [ "$SERVER_ID" == "ossrh" ]; then
+    echo "WARN: OSSRH credentials not found."
+    echo "      This is needed for staging to Maven Central."
+    exit 0
 elif [ -z "$CREDENTIAL" ]; then
     echo "ERROR: Credential not found."
     exit 1
 fi
 
-machine=$(echo "$NEXUS_URL" | awk -F/ '{print $3}')
+if [ "$SERVER_ID" == "ossrh" ]; then
+    machine="oss.sonatype.org"
+else
+    machine=$(echo "$NEXUS_URL" | awk -F/ '{print $3}')
+fi
+
 user=$(echo "$CREDENTIAL" | cut -f1 -d:)
 pass=$(echo "$CREDENTIAL" | cut -f2 -d:)
 
 set +x  # Disable `set -x` to prevent printing passwords
-echo "machine ${machine%:*} login $user password $pass" > ~/.netrc
+echo "machine ${machine%:*} login $user password $pass" >> ~/.netrc
