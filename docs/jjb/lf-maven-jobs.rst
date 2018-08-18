@@ -278,6 +278,7 @@ directory is then used later to deploy to Nexus.
     :mvn-settings: The name of settings file containing credentials for the project.
     :mvn-staging-id: Maven Server ID from settings.xml to pull credentials from.
         (Note: This setting should be configured in defaults.yaml.)
+    :sign-artifacts: Sign artifacts with Sigul. (default: false)
     :staging-profile-id: Profile ID of the project's Nexus staging profile.
 
 :Optional parameters:

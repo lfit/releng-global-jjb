@@ -177,20 +177,6 @@
               variable: 'SETTINGS_FILE'
 
 - builder:
-    name: lf-provide-sigul-configuration
-    # Push configuration files to interact with sigul
-    builders:
-      - config-file-provider:
-          files:
-            - file-id: sigul-config
-              variable: SIGUL_CONFIG
-            - file-id: sigul-password
-              variable: SIGUL_PASSWORD
-            - file-id: sigul-pki
-              variable: SIGUL_PKI
-      - shell: !include-raw: ../shell/sigul-configuration.sh
-
-- builder:
     name: lf-pip-install
     builders:
       - inject:
@@ -215,12 +201,6 @@
           exit 0
 
 - builder:
-    name: lf-provide-sigul-configuration-cleanup
-    # Clear sigul configuration files after we're done using them
-    builders:
-      - shell: !include-raw: ../shell/sigul-configuration-cleanup.sh
-
-- builder:
     name: lf-rtd-trigger-build
     builders:
       - inject:
@@ -239,11 +219,30 @@
           - ../shell/rtd-verify.sh
 
 - builder:
-    name: lf-sigul-install
+    name: lf-sigul-sign-dir
     # Requires that Jenkins be configured with SIGUL_BRIDGE_IP as a global
     # Environment variable
     builders:
-      - shell: !include-raw: ../shell/sigul-install.sh
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '$SIGN_ARTIFACTS'
+          steps:
+            - config-file-provider:
+                files:
+                  - file-id: sigul-config
+                    variable: SIGUL_CONFIG
+                  - file-id: sigul-password
+                    variable: SIGUL_PASSWORD
+                  - file-id: sigul-pki
+                    variable: SIGUL_PKI
+            - shell: !include-raw-escape: ../shell/sigul-configuration.sh
+            - shell: !include-raw-escape: ../shell/sigul-install.sh
+            - inject:
+                properties-content: SIGN_DIR={sign-dir}
+            - shell: !include-raw-escape:
+                - ../shell/common-variables.sh
+                - ../shell/sigul-sign-dir.sh
+            - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
 
 - builder:
     name: lf-infra-provide-docker-cleanup
