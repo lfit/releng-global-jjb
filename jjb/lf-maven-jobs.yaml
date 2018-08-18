@@ -658,6 +658,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    sign-artifacts: true
     stream: master
     submodule-recursive: true
 
@@ -690,6 +691,10 @@
           name: STAGING_PROFILE_ID
           default: '{staging-profile-id}'
           description: Nexus staging profile ID.
+      - bool:
+          name: SIGN_ARTIFACTS
+          default: '{sign-artifacts}'
+          description: Use Sigul to sign artifacts.
 
     builders:
       - lf-jacoco-nojava-workaround
@@ -707,6 +712,8 @@
           - ../shell/maven-patch-release.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
+      - lf-sigul-sign-dir:
+          sign-dir: '$WORKSPACE/m2repo'
       - lf-maven-stage
       - lf-provide-maven-settings-cleanup
 
