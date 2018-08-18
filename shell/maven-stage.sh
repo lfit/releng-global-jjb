@@ -15,6 +15,8 @@
 # $NEXUS_URL          :  Jenkins global variable should be defined.
 # $STAGING_PROFILE_ID :  Provided by a job parameter.
 
+mvn_central="${MVN_CENTRAL:-false}"
+
 # Ensure we fail the job if any steps fail.
 set -xeu -o pipefail
 
@@ -23,10 +25,18 @@ lftools_activate
 TMP_FILE="$(mktemp)"
 lftools deploy nexus-stage "$NEXUS_URL" "$STAGING_PROFILE_ID" "$WORKSPACE/m2repo" | tee "$TMP_FILE"
 staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$TMP_FILE")
+rm "$TMP_FILE"
 
 # Store repo info to a file in archives
 mkdir -p "$WORKSPACE/archives"
-echo "$staging_repo" > "$WORKSPACE/archives/staging-repo.txt"
+echo "$staging_repo ${NEXUS_URL}/content/repositories/$staging_repo" > "$WORKSPACE/archives/staging-repo.txt"
 
-# Cleanup
-rm "$TMP_FILE"
+if [ "$mvn_central" == true ]; then
+    MC_TMP_FILE="$(mktemp)"
+    echo "Staging in OSSRH for Maven Central"
+    lftools deploy nexus-stage "https://oss.sonatype.org" "7edbe315063867" "$WORKSPACE/m2repo" | tee "$MC_TMP_FILE"
+    mc_staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$MC_TMP_FILE")
+    rm "$MC_TMP_FILE"
+
+    echo "$mc_staging_repo https://oss.sonatype.org/content/repositories/$mc_staging_repo" >> "$WORKSPACE/archives/staging-repo.txt"
+fi
