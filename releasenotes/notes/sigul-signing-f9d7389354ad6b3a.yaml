@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add Sigul signing support to the maven-staging job.
