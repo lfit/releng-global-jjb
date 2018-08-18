@@ -712,6 +712,8 @@
     #####################
 
     builders:
+      - lf-sigul-install
+      - lf-provide-sigul-configuration
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
@@ -729,6 +731,7 @@
           mvn-goals: '{mvn-goals}'
       - lf-maven-stage
       - lf-provide-maven-settings-cleanup
+      - lf-provide-sigul-configuration-cleanup
 
 - job-template:
     name: '{project-name}-maven-stage-{stream}'
