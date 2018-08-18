@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9f04253_0ce08433",
+        "filename": "shell/maven-stage.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-08-18T19:21:22Z",
+      "side": 1,
+      "message": "This is hard coding a Maven Central Nexus staging ID. I would expect that we should be ending up with a different ID per project that we setup for Maven Central push",
+      "range": {
+        "startLine": 37,
+        "startChar": 59,
+        "endLine": 37,
+        "endChar": 73
+      },
+      "revId": "408fc151bf74ae36e1610e3b7c20ad33898f49cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6b75d023_15e75995",
+        "filename": "shell/maven-stage.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-08-18T19:21:22Z",
+      "side": 1,
+      "message": "This is the same as lines 25 - 32 just with some different parameters. as such, I think that lines 25 - 32 should be functionalized and then called with the needed parameters.",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 131
+      },
+      "revId": "408fc151bf74ae36e1610e3b7c20ad33898f49cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
