@@ -1,0 +1,28 @@
+---
+features:
+  - |
+    New macro ``lf-sigul-sign-dir`` available to sign artifacts in a provided
+    directory using Sigul.
+
+    Usage:
+
+    .. code-block:: yaml
+
+       - lf-sigul-sign-dir:
+           sign-dir: '$WORKSPACE/m2repo'
+
+    This macro also requires a boolean variable to ``SIGN_ARTIFACTS`` to be set
+    to true to activate the macro. We recommend the job-template that uses
+    this macro to define it in the job parameters section.
+
+    Example:
+
+    .. code-block:: yaml
+
+       - bool:
+           name: SIGN_ARTIFACTS
+           default: '{sign-artifacts}'
+           description: Use Sigul to sign artifacts.
+
+  - |
+    Add Sigul signing support to the maven-staging job.
