@@ -391,8 +391,6 @@ Runs `jenkins-jobs update` to update production job configuration
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
         be configured in defaults.yaml)
-    :mvn-settings: The name of settings file containing credentials for
-        the project.
 
 :Optional parameters:
 
@@ -428,8 +426,6 @@ Runs `jenkins-jobs test` to validate JJB syntax
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
         be configured in defaults.yaml)
-    :mvn-settings: The name of settings file containing credentials for
-        the project.
 
 :Optional parameters:
 
