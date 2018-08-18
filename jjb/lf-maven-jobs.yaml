@@ -60,6 +60,8 @@
       **/target/failsafe-reports/failsafe-summary.xml
       **/target/surefire-reports/*-output.txt
 
+    mvn-central: false
+
     #####################
     # Job Configuration #
     #####################
@@ -78,6 +80,7 @@
           stream: '{stream}'
           lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
+          mvn-central: '{mvn-central}'
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
@@ -144,6 +147,7 @@
           stream: '{stream}'
           lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
+          mvn-central: false
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
@@ -719,6 +723,8 @@
           settings-file: '{mvn-settings}'
       - lf-infra-create-netrc:
           server-id: '{mvn-staging-id}'
+      - lf-infra-create-netrc:
+          server-id: 'ossrh'
       - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
@@ -836,6 +842,7 @@
           stream: '{stream}'
           lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
+          mvn-central: false
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'

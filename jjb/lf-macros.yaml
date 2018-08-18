@@ -335,6 +335,10 @@
           # yamllint disable-line rule:line-length
           default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn'
           description: 'Maven selector to be used by shell scripts'
+      - bool:
+          name: MVN_CENTRAL
+          default: '{mvn-central}'
+          description: Also stage to OSSRH for Maven Central.
 
 - parameter:
     name: lf-infra-openstack-parameters
