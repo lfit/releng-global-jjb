@@ -235,7 +235,7 @@
     name: lf-sigul-install
     # Requires that Jenkins be configured with SIGUL_BRIDGE_IP as a global
     # Environment variable
-    builder:
+    builders:
       - shell: !include-raw-escape: ../shell/sigul-install.sh
 
 - builder:
