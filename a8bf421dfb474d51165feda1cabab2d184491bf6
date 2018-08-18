@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "489162d5_f6413c92",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-18T01:52:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b817351d_c6444786",
+      "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc5b1bde_95a5a75e",
         "filename": "shell/openstack-protect-in-use-images.sh",
         "patchSetId": 9
@@ -102,6 +120,42 @@
       "side": 1,
       "message": "doh, i\u0027ll fix that...",
       "parentUuid": "effccba9_db48d7c2",
+      "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dffba496_760128ab",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-18T01:52:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1edb75f1_dd527dcf",
+      "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dcb8502_42d78401",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-18T01:52:36Z",
+      "side": 1,
+      "message": "Looks like not all versions of awk have -e. I\u0027ll try without -e and see if it still works.",
+      "parentUuid": "bc5b1bde_95a5a75e",
       "revId": "a8bf421dfb474d51165feda1cabab2d184491bf6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
