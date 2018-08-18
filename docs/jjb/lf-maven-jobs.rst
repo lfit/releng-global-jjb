@@ -92,6 +92,9 @@ Produces a CLM scan of the code into Nexus IQ Server.
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
+    :mvn-central: Set to 'true' to also stage to OSSRH. This is for projects
+        that want to release to Maven Central. If set the parameter
+        ``ossrh-profile-id`` also needs to be set. (default: false)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
@@ -103,6 +106,8 @@ Produces a CLM scan of the code into Nexus IQ Server.
         For example 'odl-'. (default: '')
     :nexus-iq-stage: Stage the policy evaluation will be run against on
         the Nexus IQ Server. (default: 'build')
+    :ossrh-profile-id: Profile ID for project as provided by OSSRH.
+        (default: '')
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
