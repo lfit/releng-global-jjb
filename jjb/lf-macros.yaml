@@ -181,7 +181,7 @@
               variable: SIGUL_PASSWORD
             - file-id: sigul-pki
               variable: SIGUL_PKI
-      - shell: !include-raw-escape: ../shell/sigul-configuration.sh
+      - shell: !include-raw: ../shell/sigul-configuration.sh
 
 - builder:
     name: lf-pip-install
@@ -211,7 +211,7 @@
     name: lf-provide-sigul-configuration-cleanup
     # Clear sigul configuration files after we're done using them
     builders:
-      - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
+      - shell: !include-raw: ../shell/sigul-configuration-cleanup.sh
 
 - builder:
     name: lf-rtd-trigger-build
@@ -236,7 +236,7 @@
     # Requires that Jenkins be configured with SIGUL_BRIDGE_IP as a global
     # Environment variable
     builders:
-      - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - shell: !include-raw: ../shell/sigul-install.sh
 
 - builder:
     name: lf-infra-provide-docker-cleanup
