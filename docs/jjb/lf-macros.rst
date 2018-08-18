@@ -187,27 +187,6 @@ Cleanup maven settings.xml configuration. This should be called at the end of
 any macros that calles the
 :ref:`lf-provide-maven-settings <lf-provide-maven-settings>` macro.
 
-.. _provide-sigul-config:
-
-lf-provide-sigul-configuration
-------------------------------
-
-Provides sigual configuration to the Jenkins build node.
-
-Requires the following Config File Provider managed files in Jenkins
-preconfigured.
-
-* sigul-config
-* sigul-password
-* sigul-pki
-
-.. _provide-sigul-config-cleanup:
-
-lf-provide-sigul-configuration-cleanup
---------------------------------------
-
-Cleanup configuration provided by `provide-sigul-config`.
-
 lf-rtd-trigger-build
 --------------------
 
@@ -218,12 +197,16 @@ lf-rtd-verify
 
 ReadTheDocs verify script.
 
-lf-sigul-install
-----------------
+lf-sigul-sign-dir
+-----------------
 
-Install Sigul.
+Use Sigul to sign a directory via {sign-dir}.
 
 Requires ``SIGUL_BRIDGE_IP`` configured as a global envvar.
+
+:Required Parameters:
+    :sign-artifacts: Whether or not to sign artifacts with Sigul.
+    :sign-dir: Directory to sign.
 
 lf-infra-provide-docker-cleanup
 -------------------------------

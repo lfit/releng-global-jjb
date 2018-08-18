@@ -297,6 +297,7 @@ directory is then used later to deploy to Nexus.
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
+    :sign-artifacts: Sign artifacts with Sigul. (default: false)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
