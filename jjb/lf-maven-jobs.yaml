@@ -107,6 +107,8 @@
       **/target/failsafe-reports/failsafe-summary.xml
       **/target/surefire-reports/*-output.txt
 
+    mvn-central: false
+
     #####################
     # Job Configuration #
     #####################
@@ -129,6 +131,7 @@
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
           # Staging repos do not make sense for CLM jobs so set it blank.
+          mvn-central: '{mvn-central}'
           staging-profile-id: '{staging-profile-id}'
       - string:
           name: ARCHIVE_ARTIFACTS

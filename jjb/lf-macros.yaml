@@ -313,9 +313,11 @@
       - string:
           name: STAGING_PROFILE_ID
           default: '{staging-profile-id}'
-          description: |
-              Nexus staging profile ID.
-
+          description: Nexus staging profile ID.
+      - bool:
+          name: MVN_CENTRAL
+          default: '{mvn-central}'
+          description: Also stage to OSSRH for Maven Central.
 
 - parameter:
     name: lf-infra-openstack-parameters
