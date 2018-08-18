@@ -107,6 +107,8 @@
       **/target/failsafe-reports/failsafe-summary.xml
       **/target/surefire-reports/*-output.txt
 
+    mvn-central: false
+
     #####################
     # Job Configuration #
     #####################
@@ -129,6 +131,7 @@
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
           # Staging repos do not make sense for CLM jobs so set it blank.
+          mvn-central: '{mvn-central}'
           staging-profile-id: '{staging-profile-id}'
       - string:
           name: ARCHIVE_ARTIFACTS
@@ -196,6 +199,7 @@
           mvn-version: '{mvn-version}'
           # Staging repos do not make sense for CLM jobs so set it blank.
           staging-profile-id: '{staging-profile-id}'
+          mvn-central: false
       - string:
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
@@ -722,6 +726,8 @@
           settings-file: '{mvn-settings}'
       - lf-infra-create-netrc:
           server-id: '{mvn-staging-id}'
+      - lf-infra-create-netrc:
+          server-id: 'ossrh'
       - shell: !include-raw-escape:
           - ../shell/lftools-install.sh
           - ../shell/maven-patch-release.sh
@@ -838,6 +844,7 @@
           mvn-version: '{mvn-version}'
           # Staging repos do not make sense for Sonar jobs so set it blank.
           staging-profile-id: ''
+          mvn-central: false
       - string:
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
