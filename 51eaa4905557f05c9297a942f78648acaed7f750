@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb4a245_1c0b0161",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-18T21:19:23Z",
+      "side": 1,
+      "message": "pip freeze is probably a good idea.",
+      "revId": "51eaa4905557f05c9297a942f78648acaed7f750",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
