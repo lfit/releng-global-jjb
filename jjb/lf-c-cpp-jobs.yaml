@@ -15,6 +15,7 @@
     build-dir: '$WORKSPACE/target'
     build-timeout: 15
     cmake-opts: ''
+    cron: '@daily'
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     install-prefix: '$BUILD_DIR/output'
@@ -116,6 +117,7 @@
           choosing-strategy: gerrit
 
     triggers:
+      - timed: '{obj:cron}'
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on:
@@ -150,6 +152,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      - timed: '{obj:cron}'
       - github-pull-request:
           trigger-phrase: '^(stage-release)$'
           only-trigger-phrase: true
