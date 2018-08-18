@@ -128,8 +128,6 @@
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
-          # Staging repos do not make sense for CLM jobs so set it blank.
-          staging-profile-id: '{staging-profile-id}'
       - string:
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
@@ -169,7 +167,6 @@
     mvn-params: ''
     mvn-version: mvn35
     nexus-iq-stage: 'build'
-    staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
 
@@ -194,8 +191,6 @@
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
-          # Staging repos do not make sense for CLM jobs so set it blank.
-          staging-profile-id: '{staging-profile-id}'
       - string:
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
@@ -320,7 +315,6 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
-    staging-profile-id: ''  # Unused by the javadoc jobs
     stream: master
     submodule-recursive: true
 
@@ -441,7 +435,6 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
-    staging-profile-id: ''  # Unused by the javadoc jobs
     stream: master
     submodule-recursive: true
 
@@ -556,7 +549,6 @@
     mvn-params: '-Dmerge'
     mvn-version: mvn35
     nexus-cut-dirs: 6  # Number of dirs in the Nexus path to remove for wget -r.
-    staging-profile-id: ''  # Unused by this job.
     stream: master
     submodule-recursive: true
 
@@ -711,6 +703,26 @@
     # Job Configuration #
     #####################
 
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+      - lf-infra-maven-parameters:
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
+          staging-profile-id: '{staging-profile-id}'
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: '{archive-artifacts}'
+          description: Artifacts to archive to the logs server.
+      - string:
+          name: STAGING_PROFILE_ID
+          default: '{staging-profile-id}'
+          description: Nexus staging profile ID.
+
     builders:
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
@@ -814,7 +826,6 @@
     mvn-params: ''
     mvn-version: mvn35
     sonar-mvn-goal: 'sonar:sonar'
-    staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
 
@@ -836,8 +847,6 @@
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
-          # Staging repos do not make sense for Sonar jobs so set it blank.
-          staging-profile-id: ''
       - string:
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
@@ -967,7 +976,6 @@
     mvn-opts: ''
     mvn-params: '-Dstream=$STREAM'
     mvn-version: mvn35
-    staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
 
@@ -1097,7 +1105,6 @@
     mvn-opts: ''
     mvn-params: '-Dstream=$STREAM'
     mvn-version: mvn35
-    staging-profile-id: ''  # Unused by this job
     stream: master
     submodule-recursive: true
 
