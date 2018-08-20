@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77fbf201_7bf5195e",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-08-20T15:34:07Z",
+      "side": 1,
+      "message": "I\u0027m assuming that there is no github version of this because global-jjb is purely a Gerrit based project and all the downstreams will have to be watching the Gerrit stream on the LF Gerrit?",
+      "revId": "e9a058af2478d5b0927429955022b1a56aef9fdd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
