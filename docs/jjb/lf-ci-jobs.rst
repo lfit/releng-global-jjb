@@ -273,9 +273,10 @@ configuration in the format ``KEY=value``.
        the one defined in default clouds will be inherited.
 
     :IMAGE_NAME: The image name to use for this template.
-        (default: "")
+        (required)
+    :HARDWARE_ID: OpenStack flavor to use. (required)
+
     :LABELS: Labels to assign to the vm. (default: FILE_NAME)
-    :HARDWARE_ID: OpenStack flavor to use. (default: "")
     :NETWORK_ID: OpenStack network to use. (default: "")
     :USER_DATA_ID: User Data to pass into the instance.
         (default: jenkins-init-script)
