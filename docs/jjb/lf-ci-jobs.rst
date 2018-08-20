@@ -540,6 +540,41 @@ Job to scan projects for files missing license headers.
     :project-pattern: The ANT based pattern for Gerrit Trigger to choose which
         projects to trigger job against. (default: '**')
 
+.. _gjjb-openstack-cron:
+
+OpenStack Cron
+--------------
+
+Cron job that runs regularly to perform periodic tasks against OpenStack.
+
+This job requires a Config File Provider file named ``clouds-yaml`` available
+containing the credentials for the cloud.
+
+:Template Names:
+    - {project-name}-openstack-cron
+    - gerrit-openstack-cron
+    - github-openstack-cron
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        be configured in defaults.yaml)
+
+:Optional parameters:
+
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 90)
+    :cron: Time when the packer image should be rebuilt (default: @daily)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :openstack-cloud: OS_CLOUD setting to pass to openstack client.
+        (default: vex)
+    :stream: Keyword that can be used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+
 .. _gjjb-packer-merge:
 
 Packer Merge
