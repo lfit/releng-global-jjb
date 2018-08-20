@@ -96,7 +96,6 @@
     github-url: 'https://github.com'
     java-version: openjdk8
     nexus-iq-cli-version: 1.44.0-01
-    staging-profile-id: ''  # Unused in this job
     stream: master
     submodule-recursive: true
 

@@ -310,12 +310,6 @@
           # yamllint disable-line rule:line-length
           default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn'
           description: 'Maven selector to be used by shell scripts'
-      - string:
-          name: STAGING_PROFILE_ID
-          default: '{staging-profile-id}'
-          description: |
-              Nexus staging profile ID.
-
 
 - parameter:
     name: lf-infra-openstack-parameters
