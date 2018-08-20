@@ -16,6 +16,24 @@
       "revId": "e9a058af2478d5b0927429955022b1a56aef9fdd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e1904fb_1618a088",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-20T16:15:37Z",
+      "side": 1,
+      "message": "Yeah I didn\u0027t want to force non-Gerrit projects to suddenly require Gerrit Trigger. If someone requests it we could add it in the future however I think we\u0027ll get good enough coverage by monitoring our Gerrit based projects at least.",
+      "parentUuid": "77fbf201_7bf5195e",
+      "revId": "e9a058af2478d5b0927429955022b1a56aef9fdd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
