@@ -405,7 +405,7 @@
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'Maven Javadoc Publish'
-          permit-all: false
+          permit-all: true
           github-hooks: true
           org-list:
             - '{github-org}'
@@ -660,7 +660,7 @@
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'Maven Merge'
-          permit-all: false
+          permit-all: true
           github-hooks: true
           org-list:
             - '{github-org}'

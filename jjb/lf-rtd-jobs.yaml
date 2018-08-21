@@ -143,7 +143,7 @@
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'RTD Merge'
-          permit-all: false
+          permit-all: true
           github-hooks: true
           org-list:
             - '{github-org}'

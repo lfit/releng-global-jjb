@@ -405,7 +405,7 @@
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'Jenkins CFG Merge'
-          permit-all: false
+          permit-all: true
           github-hooks: true
           org-list:
             - '{github-org}'
@@ -676,7 +676,7 @@
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'JJB Merge'
-          permit-all: false
+          permit-all: true
           github-hooks: true
           org-list:
             - '{github-org}'
@@ -1307,7 +1307,7 @@
           trigger-phrase: '^remerge$'
           only-trigger-phrase: true
           status-context: 'Packer {platforms}-{templates} Merge'
-          permit-all: false
+          permit-all: true
           github-hooks: true
           org-list:
             - '{github-org}'
