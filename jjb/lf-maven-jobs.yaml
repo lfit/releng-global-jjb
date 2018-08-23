@@ -234,6 +234,7 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_clm
 
+    disabled: true
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -268,6 +269,7 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_clm
 
+    disabled: true
     properties:
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
