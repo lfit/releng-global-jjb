@@ -16,6 +16,7 @@
     build-timeout: 15
     cmake-opts: ''
     cron: '@daily'
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     install-prefix: '$BUILD_DIR/output'
@@ -32,6 +33,7 @@
 
     project-type: freestyle
     node: '{build-node}'
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
@@ -179,6 +181,7 @@
     build-dir: '$WORKSPACE/target'
     build-timeout: 15
     cmake-opts: ''
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     install-prefix: '$BUILD_DIR/output'
@@ -210,6 +213,7 @@
 
     project-type: freestyle
     node: '{build-node}'
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:

@@ -82,6 +82,7 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 15
+    disable-job: false
     git-url: https://github.com
     github-url: 'https://github.com'
     project-pattern: '**'
@@ -96,6 +97,8 @@
     #####################
     # Job Configuration #
     #####################
+
+    disabled: '{disable-job}'
 
     builders:
       - lf-rtd-trigger-build:
@@ -167,6 +170,7 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 15
+    disable-job: false
     doc-dir: docs/_build/html
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
@@ -186,6 +190,8 @@
     #####################
     # Job Configuration #
     #####################
+
+    disabled: '{disable-job}'
 
     builders:
       - lf-rtd-verify:

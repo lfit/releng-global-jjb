@@ -33,6 +33,7 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 10
+    disable-job: false
     git-url: '$GIT_URL/$GERRIT_PROJECT'
     github-url: 'https://github.com'
     node-dir: ''
@@ -54,6 +55,7 @@
     project-type: freestyle
     node: '{build-node}'
     concurrent: true
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
