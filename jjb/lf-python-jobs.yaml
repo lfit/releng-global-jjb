@@ -141,6 +141,7 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_python_xc_clm
 
+    disabled: true
     ######################
     # Default parameters #
     ######################
@@ -188,6 +189,7 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_python_xc_clm
 
+    disabled: true
     properties:
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
