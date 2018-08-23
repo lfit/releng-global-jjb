@@ -22,6 +22,30 @@
       "revId": "9c2ed070d86745a7929ebc727b5286e74178f8a5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8c521bc9_9e606cb7",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-08-23T23:08:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1be5def9_c5173592",
+      "range": {
+        "startLine": 95,
+        "startChar": 17,
+        "endLine": 95,
+        "endChar": 22
+      },
+      "revId": "9c2ed070d86745a7929ebc727b5286e74178f8a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
