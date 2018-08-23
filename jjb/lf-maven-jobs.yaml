@@ -159,6 +159,7 @@
     branch: master
     build-days-to-keep: 30  # 30 days for troubleshooting purposes
     build-timeout: 60
+    disable-job: true
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
@@ -202,6 +203,8 @@
     # Job Configuration #
     #####################
 
+    disabled: '{disable-job}'
+
     builders:
       - lf-maven-install:
           mvn-version: '{mvn-version}'
@@ -229,7 +232,6 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_clm
 
-    disabled: true
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -264,7 +266,6 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_clm
 
-    disabled: true
     properties:
       - lf-infra-properties:
           build-days-to-keep: '{build-days-to-keep}'
@@ -310,6 +311,7 @@
     branch: master
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 60
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
@@ -328,6 +330,8 @@
     #####################
     # Job Configuration #
     #####################
+
+    disabled: '{disable-job}'
 
     builders:
       - lf-maven-install:
@@ -430,6 +434,7 @@
     branch: master
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 60
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
@@ -454,6 +459,7 @@
     #####################
 
     concurrent: true
+    disabled: '{disable-job}'
 
     builders:
       - lf-maven-install:
@@ -542,6 +548,7 @@
     build-days-to-keep: 30  # 30 days in case we need to troubleshoot
     build-timeout: 60
     cron: '@daily'
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
@@ -572,6 +579,8 @@
     #####################
     # Job Configuration #
     #####################
+
+    disabled: '{disable-job}'
 
     builders:
       - lf-jacoco-nojava-workaround
@@ -687,6 +696,7 @@
     build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
     build-timeout: 60
     cron: '@daily'
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
@@ -705,6 +715,8 @@
     #####################
     # Job Configuration #
     #####################
+
+    disabled: '{disable-job}'
 
     parameters:
       - lf-infra-parameters:
@@ -821,6 +833,7 @@
     build-days-to-keep: 7
     build-timeout: 60
     cron: 'H H * * 6'  # run weekly
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
@@ -839,6 +852,8 @@
     #####################
     # Job Configuration #
     #####################
+
+    disabled: '{disable-job}'
 
     parameters:
       - lf-infra-parameters:
@@ -971,6 +986,7 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 60
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
@@ -1004,6 +1020,7 @@
     #####################
 
     concurrent: true
+    disabled: '{disable-job}'
 
     builders:
       - lf-jacoco-nojava-workaround
@@ -1100,6 +1117,7 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 60
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
@@ -1123,6 +1141,7 @@
     #####################
 
     concurrent: true
+    disabled: '{disable-job}'
 
     builders:
       - lf-jacoco-nojava-workaround

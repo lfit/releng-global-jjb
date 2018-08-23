@@ -77,6 +77,7 @@
     branch: master
     build-timeout: 90
     cron: '@monthly'
+    disable-job: false
     github-url: 'https://github.com'
     stream: master
     submodule-recursive: true
@@ -89,6 +90,7 @@
 
     project-type: freestyle
     node: '{build-node}'
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
@@ -137,6 +139,7 @@
 
     branch: master
     build-timeout: 10
+    disable-job: false
     github-url: 'https://github.com'
     jjb-version: 2.2.1
     stream: master
@@ -171,6 +174,7 @@
 
     project-type: freestyle
     node: '{build-node}'
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
@@ -207,6 +211,7 @@
     ######################
 
     branch: master
+    disable-job: false
     git-url: '$GIT_URL/$GERRIT_PROJECT'
     stream: master
     gerrit_merge_triggers:
@@ -219,6 +224,7 @@
 
     project-type: freestyle
     node: '{build-node}'
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
@@ -295,6 +301,7 @@
 
     branch: master
     cron: '@daily'
+    disable-job: false
     git-url: '$GIT_URL/$GERRIT_PROJECT'
     github-url: 'https://github.com'
     jenkins-silos: production sandbox
@@ -319,6 +326,7 @@
     project-type: freestyle
     node: '{build-node}'
     concurrent: false
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
@@ -430,6 +438,7 @@
     build-timeout: 30
     # Run every Saturday at 08:00 UTC
     cron: '0 8 * * 6'
+    disable-job: false
 
     #####################
     # Job Configuration #
@@ -438,6 +447,7 @@
     project-type: freestyle
     node: '{build-node}'
     concurrent: true
+    disabled: '{disable-job}'
 
     parameters:
       - lf-infra-jjb-parameters:
@@ -480,6 +490,7 @@
     ######################
 
     branch: master
+    disable-job: false
     # jjb-deploy should always clone $PROJECT regardless of what
     # $GERRIT_PROJECT triggered the job.
     git-url: '$GIT_URL/$PROJECT'
@@ -496,6 +507,7 @@
     project-type: freestyle
     node: '{build-node}'
     concurrent: true
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
@@ -888,6 +900,7 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 15
+    disable-job: false
     file-patterns: >
         *.go
         *.groovy
@@ -910,6 +923,7 @@
     project-type: freestyle
     node: '{build-node}'
     concurrent: true
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
@@ -1116,6 +1130,7 @@
     build-days-to-keep: 7
     build-timeout: 10
     cron: '@daily'
+    disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     openstack-cloud: vex
@@ -1128,6 +1143,7 @@
     project-type: freestyle
     node: '{build-node}'
     concurrent: false
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
