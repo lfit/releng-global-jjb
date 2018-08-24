@@ -1,0 +1,74 @@
+global-jjb v0.24.0 Release Notes
+================================
+
+Thanks to everyone who contributed to this release.
+
+
+Upgrade considerations
+----------------------
+
+maven-stage job was renamed to maven-release to more align with what it
+actually does.
+
+
+Notable changes since v0.23.0
+-----------------------------
+
+ab9889f Jessica Wagantall       Update CLM job to use Nexus Policy Evaluation
+Nexus CLM jobs were updated to work with the Nexus Platform Plugin in Jenkins.
+The older Sonatype CLM plugin is no longer supported.
+
+893eeb3 Thanh Ha        Add CMake Stage job
+Add CMake staging job for c/c++ projects to use. This job pushes artifacts
+to a Nexus Staging repository.
+
+32363c6 Thanh Ha        Rename maven-release job to maven-stage
+The maven-release job was renamed to maven-stage to more align with that it
+actually does. We will use maven-release to do a real release in the future.
+
+1eda455 Thanh Ha        Add Jenkins Sandbox Cleanup job
+New cron job that can run regularly to cleanup the Sandbox system of jobs and
+views. This was done via backend cron task on the system itself however this
+new job gives more visibility.
+
+9cb04c8 Thanh Ha        Add option to disable-job for all jobs
+New option "disable-job" is now available for all global-jjb jobs allowing
+projects to disable jobs.
+
+b3c4fef Thanh Ha        Add pre-build step to prep vm before build
+New pre-build macro available which will be used in the future to run
+preparation scripts before starting the job run. For example installing
+extra dependencies.
+
+
+Full Change Log
+---------------
+
+39a6c08 Thanh Ha        Re-enable CLM jobs
+9cb04c8 Thanh Ha        Add option to disable-job for all jobs
+4280674 Jeremy Phelps   Disable CLM jobs by default
+b3c4fef Thanh Ha        Add pre-build step to prep vm before build
+33acf6e Thanh Ha        Set permit-all true for all jobs
+40baa00 Thanh Ha        Require IMAGE_NAME and HARDWARE_ID
+41d5d68 Thanh Ha        Make maven-merge jobs run daily
+e1382a1 Thanh Ha        Make staging jobs run daily
+8421dad Thanh Ha        Refactor staging-profile-id out of mvn-parameters
+af33417 Thanh Ha        Allow unbound variables in sigul scripts
+2ef6606 Thanh Ha        Use include-raw instead of escape for sigul macros
+0bb231c Thanh Ha        Fix typo in lf-sigual-install builders syntax
+d7b9a7c Thanh Ha        Move openstack-cron job to global-jjb
+e9a058a Thanh Ha        Add job to verify upstream global-jjb patches
+7255eaa Thanh Ha        Document the jjb-version variable
+5ead957 Thanh Ha        Remove mvn-settings requirement from jjb job docs
+9643e91 Jeremy Phelps   Make GHPRB trigger on comment only
+775ab31 Thanh Ha        Test with latest JJB and supported JJB
+3ae312f Jeremy Phelps   Upgrade minimal jjb version to 2.2.1
+1eda455 Thanh Ha        Add Jenkins Sandbox Cleanup job
+8a5ed77 Thanh Ha        Fix packer {cron} should be {obj:cron}
+32363c6 Thanh Ha        Rename maven-release job to maven-stage
+356637f Thanh Ha        Fix nexus-iq-scan-patterns should be obj class
+893eeb3 Thanh Ha        Add CMake Stage job
+c75a769 Thanh Ha        Document comment triggers
+1a00581 Jeremy Phelps   Add github whitelist branches params to trigger.
+33157b2 Jeremy Phelps   Fix github project url for properties
+ab9889f Jessica Wagantall       Update CLM job to use Nexus Policy Evaluation
