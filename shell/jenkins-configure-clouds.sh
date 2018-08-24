@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2018 The Linux Foundation and others.

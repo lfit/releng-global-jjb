@@ -95,6 +95,11 @@ lf-infra-gpg-verify-git-signature
 Verify gpg signature of the latest commit message in $WORKSPACE.
 This command assumes that $WORKSPACE is a git repo.
 
+lf-infra-pre-build
+------------------
+
+Macro that runs before all builders to prepare the system for job use.
+
 lf-infra-package-listing
 ------------------------
 
