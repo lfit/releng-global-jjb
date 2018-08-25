@@ -5,48 +5,12 @@ Maven Jobs
 Job Groups
 ==========
 
-{project-name}-maven-jobs
--------------------------
+.. include:: ../job-groups.rst
 
-Jobs for Maven projects using Gerrit.
+Below is a list of Maven job groups:
 
-:Includes:
-
-    - gerrit-maven-clm
-    - gerrit-maven-stage
-    - gerrit-maven-verify
-    - gerrit-maven-verify-dependencies
-
-{project-name}-github-maven-jobs
---------------------------------
-
-Jobs for Maven projects using GitHub.
-
-:Includes:
-
-    - github-maven-clm
-    - github-maven-stage
-    - github-maven-verify
-
-{project-name}-maven-javadoc-jobs
----------------------------------
-
-Jobs for Maven projects to generate javadoc using Gerrit.
-
-:Includes:
-
-    - gerrit-maven-javadoc-publish
-    - gerrit-maven-javadoc-verify
-
-{project-name}-github-maven-javadoc-jobs
-----------------------------------------
-
-Jobs for Maven projects to generate javadoc using GitHub.
-
-:Includes:
-
-    - github-maven-javadoc-publish
-    - github-maven-javadoc-verify
+.. literalinclude:: ../../jjb/lf-maven-job-groups.yaml
+   :language: yaml
 
 
 Macros

@@ -1,0 +1,20 @@
+---
+- job-group:
+    name: '{project-name}-github-node-jobs'
+
+    # Job group containing recommended jobs to deploy for a Node Project.
+
+    node-version: 6.11.4
+
+    jobs:
+      - github-node-verify
+
+- job-group:
+    name: '{project-name}-node-jobs'
+
+    # Job group containing recommended jobs to deploy for a Node Project.
+
+    node-version: 6.11.4
+
+    jobs:
+      - gerrit-node-verify

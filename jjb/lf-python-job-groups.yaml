@@ -1,0 +1,20 @@
+---
+- job-group:
+    name: '{project-name}-python-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using Gerrit.
+
+    jobs:
+      - gerrit-python-xc-clm
+      - gerrit-tox-verify
+
+- job-group:
+    name: '{project-name}-github-python-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project ci that is using GitHub.
+
+    jobs:
+      - github-python-xc-clm
+      - github-tox-verify
