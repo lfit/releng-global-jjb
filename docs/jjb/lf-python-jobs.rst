@@ -5,23 +5,12 @@ Python Jobs
 Job Groups
 ==========
 
-{project-name}-python-jobs
---------------------------
+.. include:: ../job-groups.rst
 
-Jobs for Python projects using Gerrit.
+Below is a list of Maven job groups:
 
-:Includes:
-
-    - gerrit-tox-verify
-
-{project-name}-github-python-jobs
----------------------------------
-
-Jobs for Python projects using GitHub.
-
-:Includes:
-
-    - github-tox-verify
+.. literalinclude:: ../../jjb/lf-python-job-groups.yaml
+   :language: yaml
 
 
 Macros

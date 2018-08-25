@@ -5,23 +5,13 @@ NodeJS Jobs
 Job Groups
 ==========
 
-{project-name}-node-jobs
-------------------------
+.. include:: ../job-groups.rst
 
-Jobs for NodeJS projects using Gerrit.
+Below is a list of Node job groups:
 
-:Includes:
+.. literalinclude:: ../../jjb/lf-node-job-groups.yaml
+   :language: yaml
 
-    - gerrit-node-verify
-
-{project-name}-github-node-jobs
--------------------------------
-
-Jobs for NodeJS projects using GitHub.
-
-:Includes:
-
-    - github-node-verify
 
 Job Templates
 =============

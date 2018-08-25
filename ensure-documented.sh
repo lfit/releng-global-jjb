@@ -16,7 +16,6 @@ mapfile -t jjb_files < <(find jjb -name "*.yaml")
 undocumented_count=0
 for file in "${jjb_files[@]}"; do
     mapfile -t docs_interests < <(grep -e '\- builder:' \
-         -e '\- job-group:' \
          -e '\- job-template:' \
          -e '\- parameter:' \
          -e '\- property:' \
