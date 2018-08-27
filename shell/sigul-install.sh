@@ -16,7 +16,7 @@ set -e -o pipefail
 # Setup sigul RPM repo
 echo "[fedora-infra-sigul]
 name=Fedora builder packages for sigul
-baseurl=https://kojipkgs.fedoraproject.org/repos-dist/epel\$releasever-infra/latest/\$basearch/
+baseurl=https://infrastructure.fedoraproject.org/repo/\$releasever/\$basearch/
 enabled=1
 gpgcheck=1
 gpgkey=https://infrastructure.fedoraproject.org/repo/infra/RPM-GPG-KEY-INFRA-TAGS
