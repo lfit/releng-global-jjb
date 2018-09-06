@@ -7,25 +7,12 @@ ReadTheDocs Jobs
 Job Groups
 ==========
 
-{project-name}-rtd-jobs
------------------------
+.. include:: ../job-groups.rst
 
-Jobs to deploy for a project producing ReadTheDocs using Gerrit.
+Below is a list of Maven job groups:
 
-:Includes:
-
-    - gerrit-rtd-merge
-    - gerrit-rtd-verify
-
-{project-name}-github-rtd-jobs
-------------------------------
-
-Jobs to deploy for a project producing ReadTheDocs using GitHub.
-
-:Includes:
-
-    - github-rtd-merge
-    - github-rtd-verify
+.. literalinclude:: ../../jjb/lf-rtd-job-groups.yaml
+   :language: yaml
 
 
 Macros

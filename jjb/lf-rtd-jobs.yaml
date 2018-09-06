@@ -1,17 +1,4 @@
 ---
-- job-group:
-    name: '{project-name}-rtd-jobs'
-
-    jobs:
-      - gerrit-rtd-merge
-      - gerrit-rtd-verify
-
-- job-group:
-    name: '{project-name}-github-rtd-jobs'
-
-    jobs:
-      - github-rtd-merge
-      - github-rtd-verify
 
 ####################
 # COMMON FUNCTIONS #

@@ -5,69 +5,13 @@ CI Jobs
 Job Groups
 ==========
 
-{project-name}-ci-jobs
-----------------------
+.. include:: ../job-groups.rst
 
-Recommended jobs that should be deployed for CI using Gerrit.
+Below is a list of CI job groups:
 
-:Includes:
+.. literalinclude:: ../../jjb/lf-ci-job-groups.yaml
+   :language: yaml
 
-    - gerrit-jenkins-cfg-merge
-    - gerrit-jenkins-sandbox-cleanup
-    - gerrit-jjb-deploy-job
-    - gerrit-jjb-merge
-    - gerrit-jjb-verify
-
-{project-name}-github-ci-jobs
------------------------------
-
-Recommended jobs that should be deployed CI using GitHub.
-
-:Includes:
-
-    - github-jenkins-cfg-merge
-    - github-jenkins-sandbox-cleanup
-    - github-jjb-deploy-job
-    - github-jjb-merge
-    - github-jjb-verify
-
-{project-name}-info-yaml-jobs
------------------------------
-
-Jobs to verify INFO.yaml file changes.
-
-:Includes:
-
-    - gerrit-info-yaml-verify
-
-{project-name}-github-info-yaml-jobs
-------------------------------------
-
-Jobs to verify INFO.yaml file changes using Github.
-
-:Includes:
-
-    - github-info-yaml-verify
-
-{project-name}-packer-jobs
---------------------------
-
-Jobs related to Packer builds for CI using Gerrit.
-
-:Includes:
-
-    - gerrit-packer-merge
-    - gerrit-packer-verify
-
-{project-name}-github-packer-jobs
----------------------------------
-
-Jobs related to Packer builds for CI using GitHub.
-
-:Includes:
-
-    - github-packer-merge
-    - github-packer-verify
 
 Macros
 ======
