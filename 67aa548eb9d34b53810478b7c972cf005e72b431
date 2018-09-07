@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13aa5535_61f6adca",
+        "filename": "docs/release-notes.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-09-07T23:32:21Z",
+      "side": 1,
+      "message": "Is this meant to be empty?\n\nOr are we just adding the space for now?",
+      "range": {
+        "startLine": 1,
+        "startChar": 1,
+        "endLine": 1,
+        "endChar": 32
+      },
+      "revId": "67aa548eb9d34b53810478b7c972cf005e72b431",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
