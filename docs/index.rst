@@ -26,6 +26,7 @@ Guides
 .. toctree::
    :maxdepth: 2
 
+   release-notes
    install
    configuration
 
