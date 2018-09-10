@@ -1,0 +1,17 @@
+---
+upgrade:
+  - |
+    Global JJB now has non-JJB YAML configuration and requires action on the
+    ci-management repo when upgrading to this version of Global JJB to prevent
+    JJB from picking up these YAMLs as config. Follow the instructions below
+    BEFORE upgrading globall-jjb:
+
+    .. code-block:: bash
+
+       cd <git-root>
+       git mv jjb/global-jjb global-jjb
+       mkdir jjb/global-jjb
+       ln -s ../../global-jjb/shell jjb/global-jjb/shell
+       ln -s ../../global-jjb/jjb jjb/global-jjb/jjb
+       git add jjb/global-jjb
+       git commit -sm "Prepare repo for global-jjb v0.25.0"
