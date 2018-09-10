@@ -104,11 +104,18 @@ Global JJB as follows:
    .. code-block:: bash
 
       GLOBAL_JJB_VERSION=v0.1.0
-      git submodule add https://github.com/lfit/releng-global-jjb.git jjb/global-jjb
-      cd jjb/global-jjb
+      git submodule add https://github.com/lfit/releng-global-jjb.git
+      cd global-jjb
       git checkout $GLOBAL_JJB_VERSION
-      cd ../..
+      cd ..
       git add jjb/global-jjb
+
+      # Setup symlinks
+      mkdir jjb/global-jjb
+      ln -s ../../global-jjb/shell jjb/global-jjb/shell
+      ln -s ../../global-jjb/jjb jjb/global-jjb/jjb
+      git add jjb/global-jjb
+
       git commit -sm "Install global-jjb $GLOBAL_JJB_VERSION"
 
    .. note::
