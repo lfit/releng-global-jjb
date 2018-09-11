@@ -94,6 +94,23 @@
       "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3b8d6be1_e9b3f96e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-11T14:53:26Z",
+      "side": 1,
+      "message": "I\u0027m wondering if we should default to true|false now.\n\nConsidering we have outside consumers who are not LF projects, maybe false is the right default.",
+      "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
