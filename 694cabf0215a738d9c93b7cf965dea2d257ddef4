@@ -70,6 +70,30 @@
       "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "533fd4c4_529ef467",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-11T14:52:23Z",
+      "side": 1,
+      "message": "If you look at it via GUI it will tell you that you have an invalid config file if it\u0027s missing. If you try to save the config then it will reset the fileId to blank.\n\nIf you try to run a build with a blank fileId it still errors out with \"not able to provide the file [ManagedFile: id\u003d, ...\".\n\nSame as the regular failure case. I think at the very least we get an error message that is clear what went wrong.",
+      "parentUuid": "41f12b50_ebed32db",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 39
+      },
+      "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
