@@ -46,6 +46,30 @@
       "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41f12b50_ebed32db",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-09-11T13:59:43Z",
+      "side": 1,
+      "message": "I agree with that, and fully expect that to work, I\u0027m just thinking about what happens if / when someone looks at the job via the Jenkins GUI. If it\u0027s someone with edit job permissions then it could well do weird and unexpected things if those config files don\u0027t exist.\n\nIn any case, the regular use case is valid, so I\u0027ll agree to this.",
+      "parentUuid": "055ebaef_034166e7",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 39
+      },
+      "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
