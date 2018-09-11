@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c31f34b_9b2f5db8",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-09-11T04:46:18Z",
+      "side": 1,
+      "message": "This still means we\u0027re requiring any that uses this template to have the managed configuration files with IDs of sigul-config, sigul-password, and sigul-pki defined. I really wish there was a conditional JJB option :-/",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 39
+      },
+      "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
