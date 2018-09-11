@@ -22,6 +22,30 @@
       "revId": "24514f0fd0e1b4acbcc2b8b350d6fd3f213914c7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b2c4ac04_ecbe1241",
+        "filename": "releasenotes/notes/global-jjb-install-symlinks-a03bfc8e84b14874.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-11T14:58:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97ef62bd_86222ae3",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 29
+      },
+      "revId": "24514f0fd0e1b4acbcc2b8b350d6fd3f213914c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
