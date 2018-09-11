@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "97ef62bd_86222ae3",
+        "filename": "releasenotes/notes/global-jjb-install-symlinks-a03bfc8e84b14874.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-09-11T04:53:59Z",
+      "side": 1,
+      "message": "You\u0027re missing the symlink steps that are described in the updated documentation",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 29
+      },
+      "revId": "24514f0fd0e1b4acbcc2b8b350d6fd3f213914c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
