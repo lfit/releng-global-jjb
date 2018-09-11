@@ -22,6 +22,30 @@
       "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "055ebaef_034166e7",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-11T05:46:45Z",
+      "side": 1,
+      "message": "Those only have to be defined if \"$SIGN_ARTIFACTS\u003dTrue\".\n\nHere\u0027s a quick test to prove it:\n\nhttps://jenkins.opendaylight.org/sandbox/job/zxiiro-test/1/console\n\nhttps://jenkins.opendaylight.org/sandbox/job/zxiiro-test/2/console\n\nBuild run #1 passes and successfully skips the config-file-provider steps so does not fail the build.\n\nBuild run #2 fails because config-file-provider is unable to find the made up config file I gave it.",
+      "parentUuid": "4c31f34b_9b2f5db8",
+      "range": {
+        "startLine": 231,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 39
+      },
+      "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
