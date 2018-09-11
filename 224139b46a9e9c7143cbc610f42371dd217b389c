@@ -57,6 +57,24 @@
       "revId": "224139b46a9e9c7143cbc610f42371dd217b389c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "54bd04ad_50534bc7",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-11T16:10:04Z",
+      "side": 1,
+      "message": "The annoying thing about this pattern \"^Patch Set[ ]+[0-9]+:([ ]+|[\\n]+)(recheck|reverify)$\"\n\nIs if you vote the message becomes:\n\n Patch Set 1: Code-Review+2\n \n recheck\n\nSo now we cannot vote and recheck on the same update.",
+      "parentUuid": "9fe0550c_5b7e9c51",
+      "revId": "224139b46a9e9c7143cbc610f42371dd217b389c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
