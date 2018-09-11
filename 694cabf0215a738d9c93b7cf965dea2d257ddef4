@@ -111,6 +111,24 @@
       "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2f367e65_63218cb1",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-09-11T14:55:01Z",
+      "side": 1,
+      "message": "Defaulting false is probably the correct thing to do. After all, it does require a substantial infrastructure setup to support and it\u0027s not something we can expect others to do by default just to setup a CI.",
+      "parentUuid": "3b8d6be1_e9b3f96e",
+      "revId": "694cabf0215a738d9c93b7cf965dea2d257ddef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
