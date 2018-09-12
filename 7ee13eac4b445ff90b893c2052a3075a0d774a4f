@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c05399a_605125d7",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-12T00:35:47Z",
+      "side": 1,
+      "message": "We can further simplify this. No need for the shell variable, and just use jjb-variable directly.",
+      "range": {
+        "startLine": 228,
+        "startChar": 32,
+        "endLine": 228,
+        "endChar": 49
+      },
+      "revId": "7ee13eac4b445ff90b893c2052a3075a0d774a4f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
