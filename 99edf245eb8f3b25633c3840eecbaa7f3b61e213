@@ -16,6 +16,24 @@
       "revId": "99edf245eb8f3b25633c3840eecbaa7f3b61e213",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "701ae8ab_3dc04990",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-12T14:46:46Z",
+      "side": 1,
+      "message": "We can do that just to be safe and not over expose variables.",
+      "parentUuid": "ecbadaa4_d1b88e53",
+      "revId": "99edf245eb8f3b25633c3840eecbaa7f3b61e213",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
