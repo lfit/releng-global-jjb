@@ -1,0 +1,14 @@
+---
+features:
+  - |
+    Add support to the packer-build job to use clouds.yaml for openstack builder
+    configuration rather than through the cloud-env file. This allows us to
+    simplify the template configuration for openstack builders moving forward.
+upgrade:
+  - |
+    Minimum packer version 1.2.5 is now required for the packer-build job.
+  - |
+    **lf-infra-packer-build** macro now requires 2 new variables to be passed.
+
+    #. **openstack:** Set to true if template is built using the openstack builder
+    #. **openstack-cloud:** The clouds.yaml cloud to use when running ``packer build``

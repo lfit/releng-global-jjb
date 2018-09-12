@@ -110,6 +110,14 @@ lf-infra-packer-build
 
 Run `packer build` to build system images.
 
+:Required parameters:
+
+    :openstack: Packer template uses an OpenStack builder (true|false).
+    :openstack-cloud: Sets OS_CLOUD variable to the value of this parameter.
+    :packer-version: Version of packer to use.
+    :platform: Build platform as found in the vars directory.
+    :template: Packer template to build as found in the templates directory.
+
 lf-infra-packer-validate
 ------------------------
 
