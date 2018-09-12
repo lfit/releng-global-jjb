@@ -22,6 +22,30 @@
       "revId": "2b3cda5089750601fada2c62cf8d2f5d8050f513",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5df97064_1b62a49e",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-09-12T18:09:19Z",
+      "side": 1,
+      "message": "It\u0027s guaranteed on RPM systems, dpkg (in all my testing) always listed things sorted so it\u0027s not passed to sort.\n\nSee lines 36 - 48. IIRC this script is called twice. Once at the start of the job, and once at the end. It\u0027s designed to be safely used that way.",
+      "parentUuid": "e2726cf4_b85d1cff",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 66
+      },
+      "revId": "2b3cda5089750601fada2c62cf8d2f5d8050f513",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
