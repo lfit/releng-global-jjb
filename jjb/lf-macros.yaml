@@ -81,12 +81,21 @@
 - builder:
     name: lf-infra-packer-build
     builders:
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{openstack}'
+          steps:
+            - config-file-provider:
+                files:
+                  - file-id: clouds-yaml
+                    target: '$HOME/.config/openstack/clouds.yaml'
       - config-file-provider:
           files:
             - file-id: '{packer-cloud-settings}'
               variable: CLOUDENV
       - inject:
           properties-content: |
+              OS_CLOUD={openstack-cloud}
               PACKER_PLATFORM={platform}
               PACKER_TEMPLATE={template}
               PACKER_VERSION={packer-version}
