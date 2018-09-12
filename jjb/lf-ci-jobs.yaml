@@ -37,7 +37,7 @@
     stream: master
     submodule-recursive: true
     packer-cloud-settings: packer-cloud-env
-    packer-version: 1.2.3
+    packer-version: 1.2.5
 
     #####################
     # Job Configuration #
@@ -1172,12 +1172,19 @@
 - lf_packer_merge: &lf_packer_merge
     name: lf-packer-merge
 
+    ######################
+    # Default parameters #
+    ######################
+
+    os-cloud: vex
+
     #####################
     # Job Configuration #
     #####################
 
     builders:
       - lf-infra-packer-build:
+          os-cloud: '{os-cloud}'
           packer-cloud-settings: '{packer-cloud-settings}'
           packer-version: '{packer-version}'
           platform: '{platforms}'

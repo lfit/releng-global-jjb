@@ -83,10 +83,13 @@
     builders:
       - config-file-provider:
           files:
+            - file-id: clouds-yaml
+              target: '$HOME/.config/openstack/clouds.yaml'
             - file-id: '{packer-cloud-settings}'
               variable: CLOUDENV
       - inject:
           properties-content: |
+              OS_CLOUD={os-cloud}
               PACKER_PLATFORM={platform}
               PACKER_TEMPLATE={template}
               PACKER_VERSION={packer-version}
