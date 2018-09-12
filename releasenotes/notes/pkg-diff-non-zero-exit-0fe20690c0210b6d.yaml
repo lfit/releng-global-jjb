@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix package listing script in post-builder from causing UNSTABLE build due
+    to difference in the two files being compared.
