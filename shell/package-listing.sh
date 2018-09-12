@@ -49,7 +49,8 @@ esac
 
 if ( [ -f "${START_PACKAGES}" ] && [ -f "${END_PACKAGES}" ] )
 then
-    diff "${START_PACKAGES}" "${END_PACKAGES}" > "${DIFF_PACKAGES}"
+    # ` || true` Ignore exit code because diff exits 1 when there is a diff
+    diff "${START_PACKAGES}" "${END_PACKAGES}" > "${DIFF_PACKAGES}" || true
 fi
 
 # If running in a Jenkins job, then copy the created files to the archives
