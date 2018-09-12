@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2726cf4_b85d1cff",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-09-12T18:04:37Z",
+      "side": 1,
+      "message": "Does start and end packages guarantee sorted order? if not you should be sort both before passing it to diff.",
+      "range": {
+        "startLine": 53,
+        "startChar": 4,
+        "endLine": 53,
+        "endChar": 66
+      },
+      "revId": "2b3cda5089750601fada2c62cf8d2f5d8050f513",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
