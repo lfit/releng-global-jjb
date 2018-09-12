@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7d85eb47_0c1cb990",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-12T01:06:18Z",
+      "side": 1,
+      "message": "Downside this is we now require clouds-yaml even for non-openstack packer users.\n\nI wonder if we can somehow make this optional.",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 59
+      },
+      "revId": "fa4b19658c52cc94ac45830a40f6db4ea0673cf3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
