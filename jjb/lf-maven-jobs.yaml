@@ -658,6 +658,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    sign-artifacts: false
     stream: master
     submodule-recursive: true
 
@@ -707,6 +708,9 @@
           - ../shell/maven-patch-release.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
+      - lf-sigul-sign-dir:
+          sign-artifacts: '{sign-artifacts}'
+          sign-dir: '$WORKSPACE/m2repo'
       - lf-maven-stage
       - lf-provide-maven-settings-cleanup
 
