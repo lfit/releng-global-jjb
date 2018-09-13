@@ -56,6 +56,7 @@ for i in .tox/*/log; do
 done
 set -e  # Logs collected so re-enable
 
+deactivate
 echo "Completed tox runs."
 
 test "$tox_status" -eq 0 || exit "$tox_status"
