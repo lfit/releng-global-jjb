@@ -1,0 +1,7 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Jeremy Phelps <jphelps@linuxfoundation.org>
+Submitted-by: Jeremy Phelps <jphelps@linuxfoundation.org>
+Submitted-at: Thu, 13 Sep 2018 21:16:45 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/12584
+Project: releng/global-jjb
+Branch: refs/heads/v0.24.x
