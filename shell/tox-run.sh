@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -9,9 +9,6 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> tox-run.sh"
-
-# shellcheck source=/tmp/v/tox/bin/activate disable=SC1091
-source "/tmp/v/tox/bin/activate"
 
 # Ensure we fail the job if any steps fail.
 # DO NOT set -u as virtualenv's activate script has unbound variables
