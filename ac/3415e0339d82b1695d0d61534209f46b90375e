@@ -1,0 +1,7 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Eric Ball <eball@linuxfoundation.org>
+Submitted-by: Eric Ball <eball@linuxfoundation.org>
+Submitted-at: Thu, 13 Sep 2018 23:56:30 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/12589
+Project: releng/global-jjb
+Branch: refs/heads/v0.24.x
