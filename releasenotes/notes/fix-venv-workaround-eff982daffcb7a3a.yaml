@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Fix the lftools virtualenv workaround we had to put in place in
+    the tox-verify job. By running `deactivate` at the end of the
+    tox-run script we no longer need the workaround.
+
