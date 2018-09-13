@@ -72,9 +72,7 @@
     name: lf-maven-stage
     builders:
       # include-raw-escape fails due to JJB bug
-      - shell: !include-raw:
-          - ../shell/common-variables.sh
-          - ../shell/maven-stage.sh
+      - shell: !include-raw: ../shell/maven-stage.sh
 
 - builder:
     name: lf-update-java-alternatives
@@ -739,6 +737,7 @@
           description: Nexus staging profile ID.
 
     builders:
+      - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
@@ -749,9 +748,7 @@
           settings-file: '{mvn-settings}'
       - lf-infra-create-netrc:
           server-id: '{mvn-staging-id}'
-      - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
-          - ../shell/maven-patch-release.sh
+      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
       - lf-maven-stage

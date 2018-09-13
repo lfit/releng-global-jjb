@@ -18,8 +18,6 @@
 # Ensure we fail the job if any steps fail.
 set -xeu -o pipefail
 
-lftools_activate
-
 TMP_FILE="$(mktemp)"
 lftools deploy nexus-stage "$NEXUS_URL" "$STAGING_PROFILE_ID" "$WORKSPACE/m2repo" | tee "$TMP_FILE"
 staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$TMP_FILE")
@@ -29,4 +27,4 @@ mkdir -p "$WORKSPACE/archives"
 echo "$staging_repo" > "$WORKSPACE/archives/staging-repo.txt"
 
 # Cleanup
-rm "$TMP_FILE"
+rm -f "$TMP_FILE"
