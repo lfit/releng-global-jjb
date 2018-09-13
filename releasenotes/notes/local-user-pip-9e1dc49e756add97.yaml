@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fix jobs failing with UNSTABLE build due to install pip==18.0 missing.
+    This change moves all the jobs to using lf-infra-pre-build to install
+    lftools via --user command.

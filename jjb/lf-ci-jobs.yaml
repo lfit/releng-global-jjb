@@ -236,7 +236,7 @@
       - inject:
           properties-content: 'jenkins_silos={jenkins-silos}'
       - shell: !include-raw-escape: ../shell/jenkins-configure-clouds.sh
-      - shell: rm "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
+      - shell: rm -f "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
 - builder:
     name: lf-jenkins-cfg-global-vars
@@ -245,7 +245,7 @@
       - inject:
           properties-content: 'jenkins_silos={jenkins-silos}'
       - shell: !include-raw-escape: ../shell/jenkins-configure-global-vars.sh
-      - shell: rm "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
+      - shell: rm -f "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
 - lf_jenkins_configuration: &lf_jenkins_cfg_merge
     name: lf-jenkins-cfg-merge
@@ -301,8 +301,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     builders:
-      - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
+      - lf-infra-pre-build
       - lf-jenkins-cfg-global-vars:
           jenkins-silos: '{jenkins-silos}'
       - lf-jenkins-cfg-clouds:
@@ -572,6 +571,7 @@
     #####################
 
     builders:
+      - lf-infra-pre-build
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/jjb-install.sh
@@ -680,6 +680,7 @@
     concurrent: true
 
     builders:
+      - lf-infra-pre-build
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/git-validate-jira-urls.sh
