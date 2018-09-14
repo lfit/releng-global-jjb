@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix RTD job failing to find PBR install.
