@@ -36,9 +36,6 @@ if [ ! -d "$WORKSPACE/jenkins-config/clouds" ]; then
     exit 0
 fi
 
-#shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
-source "/tmp/v/lftools/bin/activate"
-
 GROOVY_SCRIPT_FILE="jjb/global-jjb/jenkins-admin/manage_clouds.groovy"
 OS_CLOUD_DIR="$WORKSPACE/jenkins-config/clouds/openstack"
 SCRIPT_DIR="$WORKSPACE/archives/groovy-inserts"
