@@ -101,6 +101,7 @@
     disabled: '{disable-job}'
 
     builders:
+      - lf-infra-pre-build
       - lf-rtd-trigger-build:
           rtd-build-url: '{rtd-build-url}'
           rtd-token: '{rtd-token}'
@@ -194,6 +195,7 @@
     disabled: '{disable-job}'
 
     builders:
+      - lf-infra-pre-build
       - lf-rtd-verify:
           doc-dir: '{doc-dir}'
 
