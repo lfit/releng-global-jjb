@@ -72,7 +72,9 @@
     name: lf-maven-stage
     builders:
       # include-raw-escape fails due to JJB bug
-      - shell: !include-raw: ../shell/maven-stage.sh
+      - shell: !include-raw:
+          - ../shell/common-variables.sh
+          - ../shell/maven-stage.sh
 
 - builder:
     name: lf-update-java-alternatives
@@ -204,6 +206,7 @@
     disabled: '{disable-job}'
 
     builders:
+      - lf-infra-pre-build
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-update-java-alternatives:
@@ -332,6 +335,7 @@
     disabled: '{disable-job}'
 
     builders:
+      - lf-infra-pre-build
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-update-java-alternatives:
@@ -346,7 +350,6 @@
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-javadoc-generate.sh
-          - ../shell/lftools-install.sh
           - ../shell/maven-javadoc-publish.sh
       - lf-provide-maven-settings-cleanup
 
@@ -460,6 +463,7 @@
     disabled: '{disable-job}'
 
     builders:
+      - lf-infra-pre-build
       - lf-maven-install:
           mvn-version: '{mvn-version}'
       - lf-update-java-alternatives:
@@ -581,6 +585,7 @@
     disabled: '{disable-job}'
 
     builders:
+      - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
@@ -595,9 +600,7 @@
           properties-content: |
               NEXUS_CUT_DIRS={nexus-cut-dirs}
               NEXUS_REPO={nexus-snapshot-repo}
-      - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
-          - ../shell/maven-fetch-metadata.sh
+      - shell: !include-raw-escape: ../shell/maven-fetch-metadata.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
       - lf-maven-deploy
@@ -892,6 +895,7 @@
             notbuilt: true
 
     builders:
+      - lf-infra-pre-build
       - lf-infra-maven-sonar:
           java-version: '{java-version}'
           mvn-settings: '{mvn-settings}'
@@ -1020,6 +1024,7 @@
     disabled: '{disable-job}'
 
     builders:
+      - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
@@ -1028,8 +1033,6 @@
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
-      - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
       - lf-provide-maven-settings-cleanup
@@ -1141,6 +1144,7 @@
     disabled: '{disable-job}'
 
     builders:
+      - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
           mvn-version: '{mvn-version}'
