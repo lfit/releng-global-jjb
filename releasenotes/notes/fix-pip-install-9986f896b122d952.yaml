@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix `pip install pip setuptools` which seems to fail against the Nexus 3
+    proxy. Run them as separate calls to make things happier.
