@@ -19,6 +19,6 @@ python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 EOF
 
-pip install --user --quiet --upgrade pip==18.0 setuptools==40.0.0
-pip install --user --quiet --upgrade -r "$REQUIREMENTS_FILE"
+python -m pip install --user --quiet --upgrade pip~=18.0 setuptools~=40.2.0
+python -m pip install --user --quiet --upgrade -r "$REQUIREMENTS_FILE"
 pip freeze

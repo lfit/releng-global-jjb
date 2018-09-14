@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Use `python -m pip` to ensure that we are using the pip version that
+    was installed rather than the OS wrapper version of pip.
