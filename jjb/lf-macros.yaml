@@ -234,9 +234,8 @@
     builders:
       - inject:
           properties-content: DOC_DIR={doc-dir}
-      - shell: !include-raw-escape:
-          - ../shell/tox-install.sh
-          - ../shell/rtd-verify.sh
+      - shell: !include-raw-escape: ../shell/tox-install.sh
+      - shell: !include-raw-escape: ../shell/rtd-verify.sh
 
 - builder:
     name: lf-sigul-install
