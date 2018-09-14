@@ -14,7 +14,7 @@ set -eux -o pipefail
 REQUIREMENTS_FILE=$(mktemp /tmp/requirements-XXXX.txt)
 
 cat << EOF > "$REQUIREMENTS_FILE"
-lftools~=0.15.0
+lftools~=0.17.1
 python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 EOF
