@@ -1,0 +1,6 @@
+---
+deprecations:
+  - |
+    lftools-install.sh is deprecated and will be removed in a future release.
+    We recommend installing lftools via `pip install --user lftools` to install
+    instead of using this script.
