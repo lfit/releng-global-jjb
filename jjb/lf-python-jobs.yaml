@@ -286,11 +286,7 @@
               can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
 
     builders:
-      - shell: !include-raw-escape:
-          # Workaround issue where the tox run later breaks the lftools virtualenv.
-          # Without running the install first the run in the publisher will fail
-          # due to missing lftools because it gets installed into a tox venv.
-          - ../shell/lftools-install.sh
+      - lf-infra-pre-build
       - lf-infra-tox-install:
           python-version: '{python-version}'
       - shell: !include-raw-escape: ../shell/tox-run.sh
