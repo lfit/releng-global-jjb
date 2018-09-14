@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fix the lftools virtualenv workaround we had to put in place in
+    the tox-verify job by using ``pip install --user`` for global tool
+    installs.
