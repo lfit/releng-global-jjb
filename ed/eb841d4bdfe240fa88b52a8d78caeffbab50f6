@@ -1,0 +1,7 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-by: Andrew Grimberg <agrimberg@linuxfoundation.org>
+Submitted-at: Fri, 14 Sep 2018 15:49:56 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/12602
+Project: releng/global-jjb
+Branch: refs/heads/v0.24.x
