@@ -617,6 +617,7 @@
     #####################
 
     builders:
+      - lf-infra-pre-build
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/jjb-install.sh
@@ -725,6 +726,7 @@
     concurrent: true
 
     builders:
+      - lf-infra-pre-build
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/git-validate-jira-urls.sh

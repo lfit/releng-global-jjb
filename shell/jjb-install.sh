@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -22,8 +22,7 @@ virtualenv "$JJB_VENV"
 echo "JJB_VENV=$JJB_VENV" > "$WORKSPACE/.jjb.properties"
 # shellcheck source=$VENV_DIR/bin/activate disable=SC1091
 source "$JJB_VENV/bin/activate"
-pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
+python -m pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
 
 echo "----> pip freeze"
 pip freeze
