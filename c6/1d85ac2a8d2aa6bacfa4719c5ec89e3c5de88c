@@ -1,0 +1,8 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+1: Robert Varga <nite@hq.sk>
+Code-Review+2: Sam Hague <shague@redhat.com>
+Submitted-by: Sam Hague <shague@redhat.com>
+Submitted-at: Mon, 17 Sep 2018 13:41:20 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/12623
+Project: releng/global-jjb
+Branch: refs/heads/v0.24.x
