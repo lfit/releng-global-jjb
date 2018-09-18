@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Add lf-infra-wrappers-windows to handle Windows specific wrapper
+    configuration.
+  - |
+    Refactor lf-infra-wrappers to be for Linux systems and split out the
+    non-linux specific components into a new lf-infra-wrappers-common. This
+    change is seamless for current users of lf-infra-wrappers.

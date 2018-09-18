@@ -554,7 +554,7 @@
 ############
 
 - wrapper:
-    name: lf-infra-wrappers
+    name: lf-infra-wrappers-common
     wrappers:
       - mask-passwords
       - timeout:
@@ -563,14 +563,26 @@
           timeout-var: 'BUILD_TIMEOUT'
           fail: true
       - timestamps
-      - ssh-agent-credentials:
-          users:
-            - '{jenkins-ssh-credential}'
       - openstack:
           single-use: true
+
+- wrapper:
+    name: lf-infra-wrappers
+    wrappers:
+      - lf-infra-wrappers-common:
+          build-timeout: '{build-timeout}'
       - config-file-provider:
           files:
             - file-id: npmrc
               target: '$HOME/.npmrc'
             - file-id: pipconf
               target: '$HOME/.config/pip/pip.conf'
+      - ssh-agent-credentials:
+          users:
+            - '{jenkins-ssh-credential}'
+
+- wrapper:
+    name: lf-infra-wrappers-windows
+    wrappers:
+      - lf-infra-wrappers-common:
+          build-timeout: '{build-timeout}'
