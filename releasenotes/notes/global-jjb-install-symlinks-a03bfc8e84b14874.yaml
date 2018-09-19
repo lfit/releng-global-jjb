@@ -1,6 +1,10 @@
 ---
 upgrade:
   - |
+    Upgrade to global-jjb v0.24.6 before performing this upgrade. This ensures
+    that jjb-verify job pulls in a regex fix that will allow it to verify
+    the v0.25.0 upgrade.
+  - |
     Global JJB now has non-JJB YAML configuration and requires action on the
     ci-management repo when upgrading to this version of Global JJB to prevent
     JJB from picking up these YAMLs as config. Follow the instructions below

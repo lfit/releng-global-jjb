@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    jjb-verify will now test on all changes in the jjb directory. The previous
+    pattern was too specific and sometimes missed verifying patches that
+    should be verified.
