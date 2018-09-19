@@ -110,9 +110,9 @@
       - compare-type: REG_EXP
         pattern: '.*\.ps1'
       - compare-type: REG_EXP
-        pattern: '.*\.(yaml|yml)'
+        pattern: 'jjb/.*'
       - compare-type: REG_EXP
-        pattern: '.*\/global-jjb'
+        pattern: 'global-jjb'
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
@@ -120,8 +120,8 @@
       - '.*\.sh'
       - '.*\.bat'
       - '.*\.ps1'
-      - '.*\.(yaml|yml)'
-      - '.*\/global-jjb'
+      - 'jjb/.*'
+      - 'global-jjb'
 
     #####################
     # Job Configuration #
