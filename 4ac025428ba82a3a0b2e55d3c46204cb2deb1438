@@ -34,6 +34,24 @@
       "revId": "4ac025428ba82a3a0b2e55d3c46204cb2deb1438",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aca89d17_7926afee",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-20T15:04:24Z",
+      "side": 1,
+      "message": "The code is here https://github.com/lfit/releng-lftools/blob/master/lftools/openstack/stack.py#L86-L100\n\nYes, it does and retires for a reasonable amount of time before giving up. There\u0027s certain deletes we cannot do.",
+      "parentUuid": "104f6b09_37a994ca",
+      "revId": "4ac025428ba82a3a0b2e55d3c46204cb2deb1438",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
