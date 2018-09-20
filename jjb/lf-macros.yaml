@@ -497,6 +497,24 @@
             - '**/*.jenkins-trigger'
           fail-build: false
 
+- publisher:
+    name: lf-stack-delete
+    publishers:
+      - postbuildscript:
+          builders:
+            - role: BOTH
+              build-on:
+                - ABORTED
+                - FAILURE
+                - SUCCESS
+                - UNSTABLE
+              build-steps:
+                - shell: |
+                    #!/bin/bash -l
+                    echo "Deleting $STACK_NAME"
+                    lftools openstack stack delete "$STACK_NAME"
+          mark-unstable-if-failed: false
+
 #######
 # SCM #
 #######

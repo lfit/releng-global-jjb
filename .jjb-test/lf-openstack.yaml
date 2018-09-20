@@ -1,0 +1,9 @@
+---
+- job:
+    name: openstack-tester
+    parameters:
+      - string:
+          name: STACK_NAME
+          default: test-lf-stack-delete
+    publishers:
+      - lf-stack-delete
