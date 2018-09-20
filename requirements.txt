@@ -1,4 +1,4 @@
 reno~=2.10.0
-sphinx>=1.6.4
+sphinx~=1.7.9
 sphinxcontrib-programoutput
 sphinx_bootstrap_theme>=0.6.0
