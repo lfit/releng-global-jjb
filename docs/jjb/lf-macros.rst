@@ -295,6 +295,14 @@ Provides basic lf-infra recommended publisher configurations which should be
 used in all job templates. This primary objective of this trigger is to
 gather build logs and copy them to a log server.
 
+lf-stack-delete
+---------------
+
+Delete an openstack heat stack. Use at the end of a job that creates a stack.
+
+This macro requires a parameter defined in the job named STACK_NAME
+containing the name of the stack to delete.
+
 SCM
 ===
 

@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Add lf-stack-delete macro to delete an openstack heat stack at the end of
+    the job.
+
+    This macro requires a parameter defined in the job named STACK_NAME
+    containing the name of the stack to delete.
