@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Replace jjb-verify to test on all changes in the shell/* directory.
