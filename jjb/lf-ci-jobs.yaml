@@ -102,13 +102,7 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*\.groovy'
-      - compare-type: REG_EXP
-        pattern: '.*\.sh'
-      - compare-type: REG_EXP
-        pattern: '.*\.bat'
-      - compare-type: REG_EXP
-        pattern: '.*\.ps1'
+        pattern: 'shell/.*'
       - compare-type: REG_EXP
         pattern: 'jjb/.*'
       - compare-type: REG_EXP

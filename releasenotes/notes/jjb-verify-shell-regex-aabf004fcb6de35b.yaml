@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Replace jjb-verify to test on all changes in the jjb/shell/* directory with
+    patterns for specific files.
