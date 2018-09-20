@@ -16,6 +16,24 @@
       "revId": "4ac025428ba82a3a0b2e55d3c46204cb2deb1438",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "104f6b09_37a994ca",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-09-20T04:55:26Z",
+      "side": 1,
+      "message": "Does this handle other states such as DELETE_FAILED, CREATE_FAILED?",
+      "parentUuid": "3f46dff0_dba9a74b",
+      "revId": "4ac025428ba82a3a0b2e55d3c46204cb2deb1438",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
