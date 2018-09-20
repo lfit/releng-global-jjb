@@ -46,6 +46,30 @@
       "revId": "337be5d9baa1c1661ea775c63861fe7d99486f80",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e622270_fbf1076b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-09-20T16:26:45Z",
+      "side": 1,
+      "message": "submitted a change as recommended \n\nhttps://gerrit.linuxfoundation.org/infra/12684",
+      "parentUuid": "7636b1c4_f0c50d1f",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 26
+      },
+      "revId": "337be5d9baa1c1661ea775c63861fe7d99486f80",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
