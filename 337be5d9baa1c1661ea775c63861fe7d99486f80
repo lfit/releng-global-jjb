@@ -22,6 +22,30 @@
       "revId": "337be5d9baa1c1661ea775c63861fe7d99486f80",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7636b1c4_f0c50d1f",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-20T15:26:34Z",
+      "side": 1,
+      "message": "Not all these things are in the jjb directory. We also have a shell directory. I guess we could also patch it to build against everything in shell/.* too and remove all this.",
+      "parentUuid": "99e30ac9_833c6a63",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 26
+      },
+      "revId": "337be5d9baa1c1661ea775c63861fe7d99486f80",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
