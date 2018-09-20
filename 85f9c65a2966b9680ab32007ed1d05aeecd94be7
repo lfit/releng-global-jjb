@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "616666ca_aa40902a",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-09-20T14:51:22Z",
+      "side": 1,
+      "message": "\u003e\u003d v0.17.0",
+      "range": {
+        "startLine": 303,
+        "startChar": 10,
+        "endLine": 303,
+        "endChar": 17
+      },
+      "revId": "85f9c65a2966b9680ab32007ed1d05aeecd94be7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
