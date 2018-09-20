@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "99e30ac9_833c6a63",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-09-20T04:03:40Z",
+      "side": 1,
+      "message": "Is this really required, if the below regex is going to trigger jjb-verify for any file?",
+      "range": {
+        "startLine": 104,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 26
+      },
+      "revId": "337be5d9baa1c1661ea775c63861fe7d99486f80",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
