@@ -772,7 +772,7 @@
 
     builders:
       - shell: |
-          cd jjb/global-jjb
+          cd global-jjb
           git fetch https://gerrit.linuxfoundation.org/infra/releng/global-jjb $GERRIT_REFSPEC
           git cherry-pick FETCH_HEAD
       - lf-infra-jjbini

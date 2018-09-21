@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    The jenkins-init scripts dir is now updated to reflect changes recommended
+    for the v0.25.0 release. We unfortunately missed this critical piece in the
+    v0.25.0 release.
