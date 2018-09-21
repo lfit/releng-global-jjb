@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    jjb-cleanup.sh may be merged with other shell scripts that ``set -u`` which
+    causes Jenkins to fail when activating virtualenvs
