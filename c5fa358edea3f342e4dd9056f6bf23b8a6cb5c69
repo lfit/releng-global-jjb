@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b6462c5_e6559e4b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-21T02:20:18Z",
+      "side": 1,
+      "message": "Put this after jjb/.* one so that it\u0027s more alphabetical.",
+      "revId": "c5fa358edea3f342e4dd9056f6bf23b8a6cb5c69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b935430e_6c105c55",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-21T02:20:18Z",
+      "side": 1,
+      "message": "What about our github friends?",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 116,
+        "endChar": 17
+      },
+      "revId": "c5fa358edea3f342e4dd9056f6bf23b8a6cb5c69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "401c0f73_6ea8e786",
+        "filename": "releasenotes/notes/jjb-verify-shell-regex-aabf004fcb6de35b.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-21T02:20:18Z",
+      "side": 1,
+      "message": "according to the code it\u0027s only the shell/* directory?",
+      "range": {
+        "startLine": 4,
+        "startChar": 53,
+        "endLine": 4,
+        "endChar": 56
+      },
+      "revId": "c5fa358edea3f342e4dd9056f6bf23b8a6cb5c69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4dea5868_940a396f",
+        "filename": "releasenotes/notes/jjb-verify-shell-regex-aabf004fcb6de35b.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-09-21T02:20:18Z",
+      "side": 1,
+      "message": "This statement is not correct. It implies that we are testing specific files but I think we are removing the specific file type check right?\n\nI think just stating that it will now test against all changes in the shell/* directory is sufficient.",
+      "range": {
+        "startLine": 4,
+        "startChar": 75,
+        "endLine": 5,
+        "endChar": 32
+      },
+      "revId": "c5fa358edea3f342e4dd9056f6bf23b8a6cb5c69",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
