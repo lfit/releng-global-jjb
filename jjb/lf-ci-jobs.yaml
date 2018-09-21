@@ -102,26 +102,17 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*\.groovy'
-      - compare-type: REG_EXP
-        pattern: '.*\.sh'
-      - compare-type: REG_EXP
-        pattern: '.*\.bat'
-      - compare-type: REG_EXP
-        pattern: '.*\.ps1'
-      - compare-type: REG_EXP
         pattern: 'jjb/.*'
       - compare-type: REG_EXP
         pattern: 'global-jjb'
+      - compare-type: REG_EXP
+        pattern: 'shell/.*'
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - '.*\.groovy'
-      - '.*\.sh'
-      - '.*\.bat'
-      - '.*\.ps1'
       - 'jjb/.*'
       - 'global-jjb'
+      - 'shell/.*'
 
     #####################
     # Job Configuration #
