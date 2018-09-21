@@ -15,7 +15,7 @@ echo "---> jjb-cleanup.sh"
 
 # Ensure we fail the job if any steps fail.
 # DO NOT set -u as virtualenv's activate script has unbound variables
-set -e -o pipefail
+set -e +u -o pipefail
 
 # shellcheck source="$WORKSPACE/.jjb.properties" disable=SC1091
 source "$WORKSPACE/.jjb.properties"
