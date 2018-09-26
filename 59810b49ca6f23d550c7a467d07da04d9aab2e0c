@@ -68,6 +68,24 @@
       "revId": "59810b49ca6f23d550c7a467d07da04d9aab2e0c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fda196d_9f93fcfd",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-09-26T19:54:31Z",
+      "side": 1,
+      "message": "I\u0027ll verify this, but reading the description from the plugin this won\u0027t be possible. Even if you have multiple group matches in the regex, it only takes the first one.\n\nAnother way forward may be to set the Build Name instead of the description using this plugin: https://wiki.jenkins.io/display/JENKINS/Build+Name+Setter+Plugin",
+      "parentUuid": "28dbfee9_18df5299",
+      "revId": "59810b49ca6f23d550c7a467d07da04d9aab2e0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
