@@ -138,7 +138,7 @@ Typically this template is automatically pulled in by the
 "{project-name}-ci-jobs" job-group and does not need to be explicitly called if
 the job group is being used.
 
-Miniaml Example:
+Minimal Example:
 
 .. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-merge-minimal.yaml
    :language: yaml
@@ -205,7 +205,7 @@ configuration in the format ``KEY=value``.
         (default: "os-cloud")
     :INSTANCE_CAP: Total number of instances the cloud will allow spin up.
         (default: null)
-    :SANDBOX_CAP: Total number of instances the clodu will allow to
+    :SANDBOX_CAP: Total number of instances the cloud will allow to
         spin up. This applies to "sandbox" systems and overrides the
         INSTANCE_CAP setting. (default: null)
 

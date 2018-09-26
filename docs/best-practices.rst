@@ -329,7 +329,7 @@ In this case there is a default '{message}' set in the
 If we do not declare a default in the :ref:`job-template <job-template>` then
 JJB will fallback to checking the "defaults configuration".
 
-This means that the precendence of defaults is as follows:
+This means that the precedence of defaults is as follows:
 
 1. User-provided
 2. Job Template
@@ -372,7 +372,7 @@ Variable expansion order of precedence seems to be:
 
 global-jjb should not provide job-group definitions and leave it up to users of
 global-jjb to create their own as a job-group as a variable defined in a job
-group the highest precendence. Global JJB should strive to be purely a
+group the highest precedence. Global JJB should strive to be purely a
 job-template and macro library for downstream consumers.
 
 Final thoughts
