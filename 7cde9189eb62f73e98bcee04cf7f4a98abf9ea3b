@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "4876fe4b_6f3d8dca",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2018-09-28T20:49:23Z",
+      "side": 1,
+      "message": "Should this be -ux? Although the commands in this script will probably succeed (as root), is there be any reason to proceed with the build should one of them fail.",
+      "revId": "7cde9189eb62f73e98bcee04cf7f4a98abf9ea3b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "80516d66_79072a66",
         "filename": "shell/package-listing.sh",
         "patchSetId": 1
