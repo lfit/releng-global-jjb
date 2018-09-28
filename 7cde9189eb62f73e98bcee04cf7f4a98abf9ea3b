@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "80516d66_79072a66",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-09-28T17:43:37Z",
+      "side": 1,
+      "message": "Tested this to work only F28, but not on ubuntu 16.04. However, the problem is that it still returns \"generic\", instead of on \u0027redhat\u0027. Can confirm, jq -r \u0027.plays[0].tasks[0].hosts.localhost.ansible_facts.ansible_os_family\u0027 might be more appropriate?",
+      "range": {
+        "startLine": 21,
+        "startChar": 5,
+        "endLine": 21,
+        "endChar": 72
+      },
+      "revId": "7cde9189eb62f73e98bcee04cf7f4a98abf9ea3b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "01bc5a8b_38bb3c4a",
         "filename": "shell/sysstat.sh",
         "patchSetId": 1
