@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7ed69e60_75897b09",
+        "filename": "shell/package-listing.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-09-28T19:51:24Z",
+      "side": 1,
+      "message": "ansible_os_family returns RedHat on CentOS and Fedora for me. I\u0027ve got a more \"clean(ish)\" jq plus your suggested fact is the same one that is currently be selected.",
+      "parentUuid": "80516d66_79072a66",
+      "range": {
+        "startLine": 21,
+        "startChar": 5,
+        "endLine": 21,
+        "endChar": 72
+      },
+      "revId": "7cde9189eb62f73e98bcee04cf7f4a98abf9ea3b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "01bc5a8b_38bb3c4a",
         "filename": "shell/sysstat.sh",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-09-28T16:56:41Z",
       "side": 1,
       "message": "this will most likely not work by default, unless we have an ansible inventory file installed with `local ansible_connection\u003dlocal`.",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 15
+      },
+      "revId": "7cde9189eb62f73e98bcee04cf7f4a98abf9ea3b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13dde974_44ebe55e",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-09-28T19:51:24Z",
+      "side": 1,
+      "message": "I just tested on a centos test node I\u0027ve got access to, you\u0027re correct. I\u0027m going to push a change to fix all of these up so that they should work properly",
+      "parentUuid": "01bc5a8b_38bb3c4a",
       "range": {
         "startLine": 15,
         "startChar": 6,
