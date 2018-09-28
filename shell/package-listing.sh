@@ -16,7 +16,10 @@ set -eu -o pipefail
 
 set -x # Trace commands for this script to make debugging easier
 
-OS_FAMILY=$(facter osfamily | tr '[:upper:]' '[:lower:]')
+OS_FAMILY=$(ANSIBLE_STDOUT_CALLBACK=json ANSIBLE_LOAD_CALLBACK_PLUGINS=1 ansible
+    \ all -i "localhost," --connection=local -m setup | jq -r \
+    '.. | .ansible_os_family? | select(type != "null")' \
+    | tr '[:upper:]' '[:lower:]')
 
 # Capture the CI WORKSPACE safely in the case that it doesn't exist
 workspace="${WORKSPACE:-}"

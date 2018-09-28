@@ -11,9 +11,13 @@
 echo "---> sysstat.sh"
 set +e  # DON'T fail build if script fails.
 
-OS=$(facter operatingsystem)
-case "$OS" in
-    Ubuntu)
+OS_FAMILY=$(ANSIBLE_STDOUT_CALLBACK=json ANSIBLE_LOAD_CALLBACK_PLUGINS=1 ansible
+    \ all -i "localhost," --connection=local -m setup | jq -r \
+    '.. | .ansible_os_family? | select(type != "null")' \
+    | tr '[:upper:]' '[:lower:]')
+
+case "${OS_FAMILY}" in
+    debian)
         SYSSTAT_PATH="/var/log/sysstat"
 
         # Dont run the script when systat is not enabled by default
@@ -21,7 +25,7 @@ case "$OS" in
             exit 0
         fi
     ;;
-    CentOS|RedHat)
+    redhat)
         SYSSTAT_PATH="/var/log/sa"
     ;;
     *)

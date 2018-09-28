@@ -37,10 +37,13 @@ update-java-ubuntu() {
 }
 
 echo "---> Updating Java version"
-OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+OS_FAMILY=$(ANSIBLE_STDOUT_CALLBACK=json ANSIBLE_LOAD_CALLBACK_PLUGINS=1 ansible
+    \ all -i "localhost," --connection=local -m setup | jq -r \
+    '.. | .ansible_os_family? | select(type != "null")' \
+    | tr '[:upper:]' '[:lower:]')
 
-case "${OS}" in
-    fedora|centos|redhat)
+case "${OS_FAMILY}" in
+    redhat)
         echo "---> RedHat type system detected"
         update-java-redhat
     ;;

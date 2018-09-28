@@ -9,14 +9,20 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-OS=$(facter operatingsystem)
+OS=$(ANSIBLE_STDOUT_CALLBACK=json ANSIBLE_LOAD_CALLBACK_PLUGINS=1 ansible
+    \ all -i "localhost," --connection=local -m setup | jq -r \
+    '.. | .ansible_distribution? | select(type != "null")' \
+    | tr '[:upper:]' '[:lower:]')
 
 case "$OS" in
-    Fedora)
+    fedora)
         systemctl stop firewalld
     ;;
-    CentOS|RedHat)
-        if [ "$(facter operatingsystemrelease | cut -d '.' -f1)" -lt "7" ]; then
+    centos|redhat)
+        if [ "$(ANSIBLE_STDOUT_CALLBACK=json ANSIBLE_LOAD_CALLBACK_PLUGINS=1 \
+            ansible all -i \"localhost,\" --connection=local -m setup | jq -r \
+            '.. | .distrubtion_major_version? | select(type != \"null\"')" \
+            -lt "7" ]; then
             service iptables stop
         else
             systemctl stop firewalld
