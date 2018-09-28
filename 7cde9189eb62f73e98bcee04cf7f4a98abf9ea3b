@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01bc5a8b_38bb3c4a",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-09-28T16:56:41Z",
+      "side": 1,
+      "message": "this will most likely not work by default, unless we have an ansible inventory file installed with `local ansible_connection\u003dlocal`.",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 15
+      },
+      "revId": "7cde9189eb62f73e98bcee04cf7f4a98abf9ea3b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
