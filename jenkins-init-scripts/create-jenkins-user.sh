@@ -9,7 +9,10 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+OS=$(ANSIBLE_STDOUT_CALLBACK=json ANSIBLE_LOAD_CALLBACK_PLUGINS=1 ansible
+    \ localhost -m setup | jq -r \
+    '.plays[0].tasks[0].hosts.localhost.ansible_facts.ansible_distribution' \
+    | tr '[:upper:]' '[:lower:]')
 
 useradd -m -s /bin/bash jenkins
 
