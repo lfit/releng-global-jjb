@@ -165,6 +165,7 @@
     project-pattern: '**'
     stream: master
     submodule-recursive: true
+    gerrit-skip-vote: false
 
     gerrit_verify_triggers:
       - patchset-created-event:
@@ -214,6 +215,11 @@
                 - branch-compare-type: 'ANT'
                   branch-pattern: '**/{branch}'
               file-paths: '{obj:gerrit_trigger_file_paths}'
+          skip-vote:
+            successful: '{gerrit-skip-vote}'
+            failed: '{gerrit-skip-vote}'
+            unstable: '{gerrit-skip-vote}'
+            notbuilt: '{gerrit-skip-vote}'
 
 - job-template:
     name: '{project-name}-rtd-verify-{stream}'
