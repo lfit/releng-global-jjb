@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f0750da0_26865260",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-10-02T21:49:35Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 11,
+        "startChar": 39,
+        "endLine": 11,
+        "endChar": 45
+      },
+      "revId": "3149b8c15cbededb4a91d60e6eb40bbed94e47f0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15427ad1_2d1b06cf",
+        "filename": "jjb/lf-rtd-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2018-10-02T21:49:35Z",
+      "side": 1,
+      "message": "I like how elegant this is vs. how complex I was expecting it to be.",
+      "range": {
+        "startLine": 218,
+        "startChar": 8,
+        "endLine": 222,
+        "endChar": 42
+      },
+      "revId": "3149b8c15cbededb4a91d60e6eb40bbed94e47f0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
