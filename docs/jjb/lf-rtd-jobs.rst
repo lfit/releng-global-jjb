@@ -118,6 +118,7 @@ Verify job which runs a tox build of the docs project
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :doc-dir: Directory where tox will place built docs.
         as defined in the tox.ini (default: docs/_build/html)
+    :gerrit-skip-vote: Should we skip voting for this job. (default: false)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :project-pattern: Project to trigger build against. (default: \*\*)
     :stream: Keyword representing a release code-name.
