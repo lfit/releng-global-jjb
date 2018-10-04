@@ -36,6 +36,7 @@
     github-url: 'https://github.com'
     stream: master
     submodule-recursive: true
+    submodule-timeout: 10
     packer-cloud-settings: packer-cloud-env
     packer-version: 1.2.5
 
@@ -99,6 +100,7 @@
     jjb-version: 2.2.1
     stream: master
     submodule-recursive: true
+    submodule-timeout: 10
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -195,6 +197,7 @@
           refspec: ''
           branch: '{branch}'
           submodule-recursive: false
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -312,6 +315,7 @@
           refspec: 'refs/heads/{branch}'
           branch: '{branch}'
           submodule-recursive: true
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -346,6 +350,7 @@
           refspec: ''
           branch: 'refs/heads/{branch}'
           submodule-recursive: true
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -491,6 +496,7 @@
           refspec: 'refs/heads/{branch}'
           branch: '{branch}'
           submodule-recursive: true
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -528,6 +534,7 @@
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '$sha1'
           submodule-recursive: true
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -584,6 +591,7 @@
           refspec: ''
           branch: '{branch}'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -623,6 +631,7 @@
           refspec: ''
           branch: 'refs/heads/{branch}'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -704,6 +713,7 @@
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: gerrit
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -743,6 +753,7 @@
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -807,6 +818,7 @@
           refspec: ''
           branch: 'master'
           submodule-recursive: true
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -913,6 +925,7 @@
           branch: '$GERRIT_BRANCH'
           # Submodules are out of the project's control
           submodule-recursive: false
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: gerrit
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -953,6 +966,7 @@
           branch: '$sha1'
           # Submodules are out of the project's control
           submodule-recursive: false
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -1012,6 +1026,7 @@
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: gerrit
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -1047,6 +1062,7 @@
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -1140,6 +1156,7 @@
           refspec: 'refs/heads/{branch}'
           branch: '{branch}'
           submodule-recursive: true
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -1154,6 +1171,7 @@
           refspec: ''
           branch: 'refs/heads/{branch}'
           submodule-recursive: true
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -1221,6 +1239,7 @@
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: gerrit
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -1275,6 +1294,7 @@
           refspec: ''
           branch: 'refs/heads/{branch}'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -1370,6 +1390,7 @@
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: gerrit
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -1409,6 +1430,7 @@
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
