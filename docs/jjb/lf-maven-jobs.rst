@@ -107,6 +107,8 @@ Produces a CLM scan of the code into Nexus IQ Server.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
 
@@ -151,6 +153,8 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
 
@@ -192,6 +196,8 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
@@ -252,6 +258,8 @@ This job uses the following strategy to deploy jobs to Nexus:
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
@@ -306,6 +314,8 @@ directory is then used later to deploy to Nexus.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_release_triggers: Override Gerrit Triggers.
 
@@ -352,6 +362,8 @@ interest in that kind of support.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_sonar_triggers: Override Gerrit Triggers.
 
@@ -391,6 +403,8 @@ Verify job which runs mvn clean install to test a project build..
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
@@ -435,6 +449,8 @@ via comment trigger.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to

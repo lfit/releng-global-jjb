@@ -20,6 +20,7 @@
     node-dir: ''
     stream: master
     submodule-recursive: true
+    submodule-timeout: 10
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -94,6 +95,7 @@
           refspec: '$GERRIT_REFSPEC'
           branch: 'origin/$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: gerrit
 
     triggers:
@@ -125,6 +127,7 @@
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
