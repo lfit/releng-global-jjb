@@ -1,0 +1,13 @@
+---
+features:
+  - |
+    Add a new ``submodule-timeout`` optional parameter to provide a timeout
+    value (in minutes) for timeout operations.
+
+upgrade:
+  - |
+
+    Any project using the lf-infra-gerrit-scm and lf-infra-github-scm macros
+    in our out of global-jjb should need to add a submodule-timeout value.
+    It is recommended to set this value to ``10`` since that is the default
+    value used by the Jenkins Git Plugin. 

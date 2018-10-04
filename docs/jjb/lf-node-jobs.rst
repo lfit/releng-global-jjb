@@ -48,6 +48,8 @@ Verify job for NodeJS projects
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which

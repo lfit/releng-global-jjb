@@ -348,6 +348,8 @@ Runs `jenkins-jobs update` to update production job configuration
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
@@ -384,6 +386,8 @@ Runs `jenkins-jobs test` to validate JJB syntax
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
@@ -451,6 +455,9 @@ other file changes. Verifies INFO.yaml files follow the schema defined in
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
 .. _license-checker:
@@ -518,6 +525,8 @@ containing the credentials for the cloud.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
 .. _gjjb-packer-merge:
 
@@ -562,6 +571,8 @@ Packer Merge job runs `packer build` to build system images in the cloud.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
@@ -601,6 +612,8 @@ Packer Verify job runs `packer validate` to verify packer configuration.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to

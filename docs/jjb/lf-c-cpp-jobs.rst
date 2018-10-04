@@ -54,6 +54,8 @@ project into a tar.xz tarball to produce a release candidate.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
     :version: (default: '') Project version to stage release as. There are 2
         methods for using this value:
 
@@ -116,6 +118,8 @@ Verify job which runs cmake && make && make install to test a project build..
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which to filter which file
