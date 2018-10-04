@@ -123,6 +123,7 @@
     nexus-iq-stage: 'build'
     stream: master
     submodule-recursive: true
+    submodule-timeout: 10
 
     nexus_iq_scan_patterns:
       - '**/*.ear'
@@ -187,12 +188,17 @@
     <<: *lf_maven_clm
 
     scm:
-      - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
+      - git:
+          credentials-id: '{jenkins-ssh-credential}'
+          url: '{git-url}'
           refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
+          branches:
+            - 'refs/heads/$GERRIT_BRANCH'
+          skip-tag: true
+          wipe-workspace: true
+          submodule:
+            recursive: '{submodule-recursive}'
+            timeout: '{submodule-timeout}'
           choosing-strategy: default
 
     triggers:
