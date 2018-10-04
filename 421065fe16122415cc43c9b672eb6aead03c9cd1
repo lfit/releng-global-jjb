@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e2ced762_a44e619b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "RELENG-1297 ??",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 18
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "418f2723_2e95f953",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "what about for github templates?",
+      "range": {
+        "startLine": 236,
+        "startChar": 0,
+        "endLine": 242,
+        "endChar": 60
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "29e1a369_fd509b23",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "any reason this is not required for other mvn templates which use the scm section?",
+      "range": {
+        "startLine": 324,
+        "startChar": 1,
+        "endLine": 331,
+        "endChar": 60
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "76dc8853_2fb7568e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 445,
+        "startChar": 0,
+        "endLine": 452,
+        "endChar": 35
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f93cbda9_e9b66691",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 477,
+        "startChar": 0,
+        "endLine": 485,
+        "endChar": 57
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fe867b89_1914aa98",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "same comment",
+      "range": {
+        "startLine": 581,
+        "startChar": 0,
+        "endLine": 588,
+        "endChar": 36
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47683573_7c2b7ded",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 730,
+        "startChar": 0,
+        "endLine": 737,
+        "endChar": 36
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "45727606_d7daf6f2",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 905,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 898,
+        "startChar": 0,
+        "endLine": 905,
+        "endChar": 36
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1045e19f_34142993",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1015,
+        "startChar": 1,
+        "endLine": 1022,
+        "endChar": 35
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7fd7de5_98360bf7",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1056,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1049,
+        "startChar": 0,
+        "endLine": 1056,
+        "endChar": 60
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8cb00428_e821ff6a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1146,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-04T22:07:33Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 1139,
+        "startChar": 0,
+        "endLine": 1146,
+        "endChar": 35
+      },
+      "revId": "421065fe16122415cc43c9b672eb6aead03c9cd1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
