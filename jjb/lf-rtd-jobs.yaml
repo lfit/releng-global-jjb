@@ -165,6 +165,7 @@
     project-pattern: '**'
     stream: master
     submodule-recursive: true
+    submodule-timeout: 10
     gerrit-skip-vote: false
 
     gerrit_verify_triggers:
@@ -202,6 +203,7 @@
           git-url: '{git-url}'
           refspec: ''  # Leave blank!! A later script will handle fetching
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
 
     triggers:
@@ -241,6 +243,7 @@
           refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
           branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
