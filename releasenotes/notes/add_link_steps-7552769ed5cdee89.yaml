@@ -1,0 +1,4 @@
+---
+other:
+  - |
+    Add missing link steps for upgrading to global-jjb >= v0.25.0.
