@@ -114,6 +114,8 @@ Global JJB as follows:
       mkdir jjb/global-jjb
       ln -s ../../global-jjb/shell jjb/global-jjb/shell
       ln -s ../../global-jjb/jjb jjb/global-jjb/jjb
+      ln -s ../../global-jjb/jenkins-admin jjb/global-jjb/jenkins-admin
+      ln -s ../../global-jjb/jenkins-init-sripts jjb/global-jjb/jenkins-init-scripts
       git add jjb/global-jjb
 
       git commit -sm "Install global-jjb $GLOBAL_JJB_VERSION"
