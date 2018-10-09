@@ -129,6 +129,13 @@ get_minion_options() {
     # Create a flavor mapping to manage hardware_id until OpenStack Cloud
     # plugin supports using names
     declare -A flavors
+    flavors["lf-standard-1"]="7d76cbb0-f547-4c2c-beaf-554f33832721"
+    flavors["lf-standard-2"]="ef454088-7839-42a0-bf23-5e0ab6386a27"
+    flavors["lf-standard-4"]="bd74e1e6-c2ed-475b-ab3f-2ce13936a215"
+    flavors["lf-standard-8"]="32d74024-8418-41b6-9675-b77816748148"
+    flavors["lf-highcpu-2"]="1051d06a-61ea-45e3-b9b4-93de92880b27"
+    flavors["lf-highcpu-4"]="35eb8e11-490f-4d1a-9f19-76091fc04547"
+    flavors["lf-highcpu-8"]="68af673f-54ee-4255-871c-158c18e4f643"
     flavors["v1-standard-1"]="bbcb7eb5-5c8d-498f-9d7e-307c575d3566"
     flavors["v1-standard-2"]="ca2a6e9c-2236-4107-8905-7ae9427132ff"
     flavors["v1-standard-4"]="5cf64088-893b-46b5-9bb1-ee020277635d"
