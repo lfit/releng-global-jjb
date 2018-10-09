@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add new lf-flavors.  These OpenStack flavors are v2 flavors with an
+    attached root disk.
