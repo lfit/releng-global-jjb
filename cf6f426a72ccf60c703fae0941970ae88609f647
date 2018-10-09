@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6485834_7ca65bb5",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-09T16:30:36Z",
+      "side": 1,
+      "message": "H comes before S. So highcpu then standard",
+      "range": {
+        "startLine": 132,
+        "startChar": 0,
+        "endLine": 138,
+        "endChar": 66
+      },
+      "revId": "cf6f426a72ccf60c703fae0941970ae88609f647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
