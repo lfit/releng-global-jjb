@@ -9,8 +9,8 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> lftools-install.sh"
-echo "WARNING: The lftools-install.sh script is deprecated. We now recommend \
-to use `pip install --user lftools` to install."
+echo 'WARNING: The lftools-install.sh script is deprecated. We now recommend \
+to use `pip install --user lftools` to install.'
 
 # Script to install lftools via a version passed in via lf-infra-parameters
 #
