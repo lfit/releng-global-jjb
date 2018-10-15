@@ -36,11 +36,14 @@ values used by global-jjb templates.
 :git-url: Set this to the base URL of your GitHub repo. In
     general this should be https://github.com. If you are using
     GitHub Enterprise, or some other GitHub-style system, then it
-    should be whatever your installation base URL is.
+    should be whatever your installation base URL is. This sets a job
+    property that GitHub Pull Request Builder requires in order to work.
+    Note that this is the web url to your project: (eg. https://github.com/$ORG/$PROJECT)
 
 :git-clone-url: This is the clone prefix used by GitHub jobs.
-    Set this to either the same thing as **git-url** or the
-    'git@github.com:' including the trailing ':'
+    Set this to either the same bse url as **git-url**, or to
+    'git@github.com:' including the trailing ':'.  This will be determined
+    by your clone method (https or git).
 
 :github-org: The name of the GitHub organization interpolated
     into the scm config.
