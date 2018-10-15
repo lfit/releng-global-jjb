@@ -120,6 +120,7 @@
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
+    nexus-iq-namespace: ''  # Recommend a trailing dash when set. Example: odl-
     nexus-iq-stage: 'build'
     stream: master
     submodule-recursive: true
@@ -175,7 +176,7 @@
       - nexus-iq-policy-evaluator:
           stage: '{nexus-iq-stage}'
           application-type: 'manual'
-          application-id: '{project-name}'
+          application-id: '{nexus-iq-namespace}{project-name}'
           scan-patterns: '{obj:nexus_iq_scan_patterns}'
           fail-build-network-error: true
 

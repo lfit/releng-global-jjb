@@ -78,6 +78,7 @@
     github-url: 'https://github.com'
     java-version: openjdk8
     nexus-iq-cli-version: 1.44.0-01
+    nexus-iq-namespace: ''  # Recommend a trailing dash when set. Example: odl-
     stream: master
     submodule-recursive: true
 
@@ -116,7 +117,7 @@
       - lf-update-java-alternatives:
           java-version: '{java-version}'
       - lf-infra-clm-python:
-          clm-project-name: '{project-name}'
+          clm-project-name: '{nexus-iq-namespace}{project-name}'
 
 - job-template:
     name: '{project-name}-python-clm-{stream}'

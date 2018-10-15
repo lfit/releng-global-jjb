@@ -86,7 +86,12 @@ IQ Server.
 :Optional parameters:
 
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :nexus-iq-cli-version: Nexus IQ CLI package version to download and use. (default: 1.44.0-01)
+    :nexus-iq-cli-version: Nexus IQ CLI package version to download and use.
+        (default: 1.44.0-01)
+    :nexus-iq-namespace: Insert a namespace to project AppID for projects that
+        share a Nexus IQ system to avoid project name collision. We recommend
+        inserting a trailing - dash if using this parameter.
+        For example 'odl-'. (default: '')
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
