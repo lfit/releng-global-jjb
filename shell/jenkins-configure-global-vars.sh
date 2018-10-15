@@ -18,7 +18,7 @@
 #                     configuration to. (default: jenkins)
 echo "---> jenkins-configure-global-vars.sh"
 
-GROOVY_SCRIPT_FILE="jjb/global-jjb/jenkins-admin/set_global_properties.groovy"
+GROOVY_SCRIPT_FILE="global-jjb/jenkins-admin/set_global_properties.groovy"
 
 silos="${jenkins_silos:-jenkins}"
 
