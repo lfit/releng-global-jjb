@@ -9,7 +9,7 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-INIT_SCRIPTS_DIR="/opt/ciman/jjb/global-jjb/jenkins-init-scripts"
+INIT_SCRIPTS_DIR="/opt/ciman/global-jjb/jenkins-init-scripts"
 
 "$INIT_SCRIPTS_DIR/package-listing.sh"
 "$INIT_SCRIPTS_DIR/basic-settings.sh"

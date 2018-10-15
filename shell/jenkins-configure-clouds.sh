@@ -36,7 +36,7 @@ if [ ! -d "$WORKSPACE/jenkins-config/clouds" ]; then
     exit 0
 fi
 
-GROOVY_SCRIPT_FILE="jjb/global-jjb/jenkins-admin/manage_clouds.groovy"
+GROOVY_SCRIPT_FILE="global-jjb/jenkins-admin/manage_clouds.groovy"
 OS_CLOUD_DIR="$WORKSPACE/jenkins-config/clouds/openstack"
 SCRIPT_DIR="$WORKSPACE/archives/groovy-inserts"
 mkdir -p "$SCRIPT_DIR"
