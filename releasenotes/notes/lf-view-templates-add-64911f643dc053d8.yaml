@@ -1,0 +1,79 @@
+---
+features:
+  - |
+    New view-templates ``common-view`` and ``integration-csit-view`` are
+    available for projects to manage Jenkins views through code.
+
+    To use the common-view template in a project.
+
+    Usage:
+
+    .. code-block:: yaml
+
+       - project:
+           ...
+           views:
+             - common-view
+
+    To use the integration-csit-view template in a project.
+
+    Usage:
+
+    .. code-block:: yaml
+
+       - project:
+           ...
+           views:
+             - integration-csit-view
+
+  - |
+    A separate project section can be defined for views that are common to a
+    set of jobs. This creates a list-type view called ``docs`` in Jenkins which
+    lists all the jobs under the view.
+
+    Usage:
+
+    .. code-block:: yaml
+
+       - project:
+           name: <project-name-view>
+           project: <project>
+           project-name: <project-name>
+           views:
+             - common-view
+
+    Example Usage:
+
+    .. code-block:: yaml
+
+       ---
+       - project:
+           name: project-view
+           project: project
+           project-name: project
+           views:
+             - common-view
+
+       - project:
+           name: project-stream1
+           project: project
+           project-name: project
+           jobs:
+             - '{project-name}-{seq}'
+
+       - project:
+           name: project-stream2
+           project: project
+           project-name: project
+           jobs:
+             - '{project-name}-{seq}'
+
+       - project:
+           name: project-stream3
+           project: project
+           project-name: project
+            jobs:
+             - '{project-name}-{seq}'
+
+       - job-template:
+           name: '{project-name}-{seq}'
