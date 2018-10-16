@@ -5,3 +5,11 @@
       - 'gerrit-jenkins-cfg-merge'
 
     project-name: ci-management
+
+- project:
+    name: jenkins-cfg-jobs-view
+    project-name: jenkins-cfg
+    views:
+      - common-view
+    view-regex: '^jenkins-cfg.*'
+    view-description: 'List of jenkins-cfg jobs'

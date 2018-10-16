@@ -12,3 +12,11 @@
       - "{project-name}-github-node-jobs"
 
     project-name: github-node
+
+- project:
+    name: node-jobs-view
+    project-name: node
+    views:
+      - common-view
+    view-regex: '.*-node$'
+    view-description: 'List of node jobs'
