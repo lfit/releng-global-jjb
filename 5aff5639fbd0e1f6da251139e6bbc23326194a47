@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48c2a8b7_9ed77784",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-16T15:33:01Z",
+      "side": 1,
+      "message": "move this to after \"stream\".\n\n\nI like to separate _ parameters clearly from the rest of the pack because they are \"special\"",
+      "revId": "5aff5639fbd0e1f6da251139e6bbc23326194a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9b1af8b_047aa24c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-16T15:33:01Z",
+      "side": 1,
+      "message": "move this to after \"jenkins-silos\".\n\n\nI like to separate _ parameters clearly from the rest of the pack because they are \"special\"",
+      "revId": "5aff5639fbd0e1f6da251139e6bbc23326194a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "eea5403e_f05ca5d4",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-16T15:33:01Z",
+      "side": 1,
+      "message": "move this to after \"stream\".\n\n\nI like to separate _ parameters clearly from the rest of the pack because they are \"special\"",
+      "revId": "5aff5639fbd0e1f6da251139e6bbc23326194a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44a59e25_95404ce7",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-16T15:33:01Z",
+      "side": 1,
+      "message": "These are breaking changes and should be release noted as breaking as there are users of these macros outside of global-jjb.",
+      "revId": "5aff5639fbd0e1f6da251139e6bbc23326194a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
