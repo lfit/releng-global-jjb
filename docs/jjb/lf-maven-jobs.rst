@@ -97,6 +97,10 @@ Produces a CLM scan of the code into Nexus IQ Server.
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
+    :nexus-iq-namespace: Insert a namespace to project AppID for projects that
+        share a Nexus IQ system to avoid project name collision. We recommend
+        inserting a trailing - dash if using this parameter.
+        For example 'odl-'. (default: '')
     :nexus-iq-stage: Stage the policy evaluation will be run against on
         the Nexus IQ Server. (default: 'build')
     :stream: Keyword that can be used to represent a release code-name.

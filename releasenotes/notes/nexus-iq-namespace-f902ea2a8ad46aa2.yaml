@@ -1,0 +1,12 @@
+---
+features:
+  - |
+    Add a new ``nexus-iq-namespace`` optional parameter to insert a namespace
+    into Nexus IQ AppID. This is useful for shared Nexus IQ systems where
+    projects might have concern about namespace collision.
+
+    .. note::
+
+       We recommend when using the namespace to add a trailing - to the value.
+       Eg. 'odl-', this is to make the namespace look nice for example
+       "odl-aaa" is the result of namespace odl-, and project name aaa.
