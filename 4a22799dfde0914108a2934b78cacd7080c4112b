@@ -16,6 +16,24 @@
       "revId": "4a22799dfde0914108a2934b78cacd7080c4112b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81eea95d_ceb739fb",
+        "filename": "jjb/lf-view-templates.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-16T23:17:31Z",
+      "side": 1,
+      "message": "AFAIK, that column just does not appear in the view.",
+      "parentUuid": "f51737dc_57d30ff8",
+      "revId": "4a22799dfde0914108a2934b78cacd7080c4112b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
