@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    On Ubuntu 18.04 set PATH to include $HOME/.local/bin.
+    This is needed for pip install --user to work, and is missing
+    in Ubuntu versions past 16.04.
