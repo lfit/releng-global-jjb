@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad7447bd_2194ce2b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-10-16T01:29:51Z",
+      "side": 1,
+      "message": "I noticed that for new applications, this will not be created manually. Unless we turn this feature on in Nexus IQ. Unfortunately, to turn this feature on, we need to select 1 organization only which makes it usless to us. \n\nThis is just a note and I don\u0027t think it should affect what this patch does, I just wanted to mention it.",
+      "range": {
+        "startLine": 179,
+        "startChar": 10,
+        "endLine": 179,
+        "endChar": 25
+      },
+      "revId": "7f9ae14335b6f2ef54626fed349d8a8f36d6d902",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
