@@ -1,0 +1,76 @@
+---
+########################
+# common view template #
+########################
+
+- view-template:
+    id: 'common-view'
+    name: '{project-name}'
+
+    ######################
+    # Default parameters #
+    ######################
+    view-description: 'List of {project-name} jobs'
+    view-regex: '^{project-name}-.*'
+    view-filter-executors: false
+    view-filter-queue: false
+    view-recurse: false
+
+    ######################
+    # view Configuration #
+    ######################
+
+    view-type: list
+    filter-executors: '{view-filter-executors}'
+    filter-queue: '{view-filter-queue}'
+    columns:
+      - status
+      - weather
+      - job
+      - last-success
+      - last-failure
+      - last-duration
+      - build-button
+      - jacoco
+      - find-bugs
+      - robot-list
+    recurse: '{view-recurse}'
+    regex: '{view-regex}'
+    description: '{view-description}'
+
+#############################
+# integration view template #
+#############################
+
+- view-template:
+    id: 'integration-csit-view'
+    name: '{project-name}'
+
+    ######################
+    # Default parameters #
+    ######################
+    view-description: 'List of {project-name} jobs'
+    view-regex: '^{project-name}-csit.*'
+    view-filter-executors: false
+    view-filter-queue: false
+    view-recurse: false
+
+    ######################
+    # view Configuration #
+    ######################
+
+    view-type: list
+    filter-executors: '{view-filter-executors}'
+    filter-queue: '{view-filter-queue}'
+    columns:
+      - status
+      - weather
+      - job
+      - last-success
+      - last-failure
+      - last-duration
+      - build-button
+      - robot-list
+    recurse: '{view-recurse}'
+    regex: '{view-regex}'
+    description: '{view-description}'
