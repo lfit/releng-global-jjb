@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2153c7a_6263bf60",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2018-10-16T01:46:16Z",
+      "side": 1,
+      "message": "This is passive. \n\nWe can use \"Determined by your...\"",
+      "range": {
+        "startLine": 45,
+        "startChar": 56,
+        "endLine": 45,
+        "endChar": 69
+      },
+      "revId": "09ba3f7cfc395fe8c913709225a635a9f4c45261",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
