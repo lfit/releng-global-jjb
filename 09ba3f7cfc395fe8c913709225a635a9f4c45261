@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9b03d3f2_d0f6463f",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-10-16T15:34:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f185e703_c2d2e746",
+      "range": {
+        "startLine": 44,
+        "startChar": 32,
+        "endLine": 44,
+        "endChar": 35
+      },
+      "revId": "09ba3f7cfc395fe8c913709225a635a9f4c45261",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2153c7a_6263bf60",
         "filename": "docs/configuration.rst",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-10-16T01:46:16Z",
       "side": 1,
       "message": "This is passive. \n\nWe can use \"Determined by your...\"",
+      "range": {
+        "startLine": 45,
+        "startChar": 56,
+        "endLine": 45,
+        "endChar": 69
+      },
+      "revId": "09ba3f7cfc395fe8c913709225a635a9f4c45261",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "211388c6_216bdb1f",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-10-16T15:34:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d2153c7a_6263bf60",
       "range": {
         "startLine": 45,
         "startChar": 56,
