@@ -10,7 +10,7 @@
 ##############################################################################
 
 OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
-
+OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 useradd -m -s /bin/bash jenkins
 
 if grep -q docker /etc/group; then
@@ -29,3 +29,8 @@ cp -r "/home/${OS}/.ssh/authorized_keys" /home/jenkins/.ssh/authorized_keys
 echo -e 'y\n' | ssh-keygen -N "" -f /home/jenkins/.ssh/id_rsa -t rsa
 chown -R jenkins:jenkins /home/jenkins/.ssh /w
 chmod 700 /home/jenkins/.ssh
+
+if [[ "$OS_RELEASE" == "18.04" ]]
+then
+  echo "export PATH=$HOME/.local/bin:$PATH" >> /home/jenkins/.bashrc
+fi
