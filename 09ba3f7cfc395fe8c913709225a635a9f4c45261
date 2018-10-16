@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f185e703_c2d2e746",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-16T02:13:20Z",
+      "side": 1,
+      "message": "typo: base?",
+      "range": {
+        "startLine": 44,
+        "startChar": 32,
+        "endLine": 44,
+        "endChar": 35
+      },
+      "revId": "09ba3f7cfc395fe8c913709225a635a9f4c45261",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d2153c7a_6263bf60",
         "filename": "docs/configuration.rst",
         "patchSetId": 2
