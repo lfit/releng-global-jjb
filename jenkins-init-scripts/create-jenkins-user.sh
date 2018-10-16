@@ -10,6 +10,13 @@
 ##############################################################################
 
 OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
+
+if [[ "$OS_RELEASE" == "18.04" ]] && [[ "$OS" == 'ubuntu' ]]
+then
+  echo 'PATH=$HOME/.local/bin:$PATH
+export PATH' >> /etc/profile
+fi
 
 useradd -m -s /bin/bash jenkins
 
