@@ -35,3 +35,11 @@
     mvn-settings: aproject-settings
     mvn-snapshot-id: fakeproject-snapshots
     nexus-snapshot-repo: fakeproject-snapshots
+
+- project:
+    name: maven-jobs-view
+    project-name: maven
+    views:
+      - common-view
+    view-regex: '.*-maven$'
+    view-description: 'List of maven jobs'

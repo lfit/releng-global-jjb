@@ -14,3 +14,11 @@
       - github-tox-sonar
 
     project-name: github-python
+
+- project:
+    name: python-jobs-view
+    project-name: python
+    views:
+      - common-view
+    view-regex: '.*-python$'
+    view-description: 'List of Python jobs'
