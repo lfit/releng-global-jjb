@@ -7,3 +7,11 @@
           default: test-lf-stack-delete
     publishers:
       - lf-stack-delete
+
+- project:
+    name: openstack-jobs-view
+    project-name: openstack
+    views:
+      - common-view
+    view-regex: '.*-openstack$'
+    view-description: 'List of openstack jobs'
