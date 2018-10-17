@@ -46,6 +46,30 @@
       "revId": "fcb2bb5b9aa6367ab8a538769fc00bf79487affb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c82542da_c64e6475",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-17T01:01:13Z",
+      "side": 1,
+      "message": "actually, if you want to set user-wide and system-wide env variable, you should probably be setting this in `/etc/profile` or `~/.profile` instead of .bashrc?",
+      "parentUuid": "5140b728_32ea47b6",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 2
+      },
+      "revId": "fcb2bb5b9aa6367ab8a538769fc00bf79487affb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
