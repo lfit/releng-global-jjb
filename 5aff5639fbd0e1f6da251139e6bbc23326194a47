@@ -139,6 +139,24 @@
       "revId": "5aff5639fbd0e1f6da251139e6bbc23326194a47",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "12846fa7_09709d6d",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 552,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-17T15:06:09Z",
+      "side": 1,
+      "message": "There are no defaults for macros. So anyone outside of global-jjb who\u0027s calling the macro now has to update their calls to these 2 macros now need to insert the timeout parameter.\n\nRemember global-jjb job-templates are not the only things that might use macros defined in this file. In ODL our autorelease jobs rely on several macros from global-jjb so they would need to be updated if any of them suddenly require a new parameter like this one.",
+      "parentUuid": "6a82c35c_de1bf30b",
+      "revId": "5aff5639fbd0e1f6da251139e6bbc23326194a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
