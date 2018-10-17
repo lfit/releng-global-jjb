@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "176786f6_9b0096a2",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2018-10-17T00:26:08Z",
+      "side": 1,
+      "message": "Do you want $HOME for current script or $HOME for shell that sources the .bashrc. Same question for $PATH.\nmaybe you want: echo \u0027export PATH\u003d$HOME/.local/bin:$PATH\u0027",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 2
+      },
+      "revId": "fcb2bb5b9aa6367ab8a538769fc00bf79487affb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
