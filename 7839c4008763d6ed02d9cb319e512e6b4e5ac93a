@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d3b0b0a0_eab9eb6d",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-17T18:50:48Z",
+      "side": 1,
+      "message": "If you\u0027re going to add it this way, then you should add this to the profile _before_ the jenkins user is created. So move this up to above line 14.",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 2
+      },
+      "revId": "7839c4008763d6ed02d9cb319e512e6b4e5ac93a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
