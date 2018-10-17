@@ -22,6 +22,30 @@
       "revId": "fcb2bb5b9aa6367ab8a538769fc00bf79487affb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5140b728_32ea47b6",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-10-17T00:27:07Z",
+      "side": 1,
+      "message": "ah good question.  This runs as user-data which is probably root?",
+      "parentUuid": "176786f6_9b0096a2",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 2
+      },
+      "revId": "fcb2bb5b9aa6367ab8a538769fc00bf79487affb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
