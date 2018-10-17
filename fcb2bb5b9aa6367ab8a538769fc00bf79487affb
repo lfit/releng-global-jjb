@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0c40b7b4_4b6d00c7",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-10-17T15:48:29Z",
+      "side": 1,
+      "message": "Going to refactor as we discussed to put into /etc/profile",
+      "parentUuid": "2b68a502_e7014491",
+      "range": {
+        "startLine": 35,
+        "startChar": 7,
+        "endLine": 35,
+        "endChar": 43
+      },
+      "revId": "fcb2bb5b9aa6367ab8a538769fc00bf79487affb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "176786f6_9b0096a2",
         "filename": "jenkins-init-scripts/create-jenkins-user.sh",
         "patchSetId": 1
