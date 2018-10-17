@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f09e044_166f77bf",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-17T18:54:20Z",
+      "side": 1,
+      "message": "@Thanh\u0027s channel comment about this was intending for you to get rid of the leading spaces, not add more ;)",
+      "revId": "eaf26200c16c0b94a933a615a7aa8d0d208a6a6d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27619b47_4a2d2ffe",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-17T18:54:20Z",
+      "side": 1,
+      "message": "Unneeded blank line",
+      "revId": "eaf26200c16c0b94a933a615a7aa8d0d208a6a6d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
