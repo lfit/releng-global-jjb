@@ -342,6 +342,30 @@
     },
     {
       "key": {
+        "uuid": "9f555849_adfc316f",
+        "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T13:29:46Z",
+      "side": 1,
+      "message": "I\u0027m not talking about the view here. I\u0027m talking about the example itself does not work and causes a job name collision because every job in this example has the same name! If you copy paste this example into a file like /tmp/test.yaml and run `jenkins-jobs test /tmp/test.yaml` you should get the following error:\n\n\n jenkins_jobs.errors.JenkinsJobsException: Duplicate definitions for job \u0027project\u0027 specified\n\nI think it\u0027s good practice when providing an example to at least provide an example that works and passes a basic `jenkins-jobs test` run.",
+      "parentUuid": "fab8458d_4357ea00",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 74,
+        "endChar": 32
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c2655341_a722f8d5",
         "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
         "patchSetId": 6
