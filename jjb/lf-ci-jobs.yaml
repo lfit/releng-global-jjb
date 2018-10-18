@@ -1344,6 +1344,8 @@
 
     builders:
       - lf-infra-packer-validate:
+          openstack: '{openstack}'
+          openstack-cloud: '{openstack-cloud}'
           packer-cloud-settings: '{packer-cloud-settings}'
           packer-version: '{packer-version}'
 
