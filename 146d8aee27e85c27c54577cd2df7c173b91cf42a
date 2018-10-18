@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9d425df3_02ee9272",
+        "filename": "docs/jjb/lf-views.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "will fix this in default.yaml",
+      "parentUuid": "985cd221_8c331af5",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 74
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff61fa99_0b381f55",
         "filename": "docs/jjb/lf-views.rst",
         "patchSetId": 6
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "d2a1b285_e4fbb69e",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "I don\u0027t think this is the same as nesting in JJB because the variable is already available in the template. I remember testing this to be work. :) \n\nhttps://jenkins.opendaylight.org/sandbox/view/project/configure\n\nDo we have an example of nesting in the JJB docs?",
+      "parentUuid": "2c163efd_9e4bf66f",
+      "range": {
+        "startLine": 13,
+        "startChar": 31,
+        "endLine": 13,
+        "endChar": 45
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c77b9f1_4d1be6c7",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 6
@@ -82,6 +130,30 @@
       "writtenOn": "2018-10-18T00:52:38Z",
       "side": 1,
       "message": "Same as above, you cannot nest variables in JJB it won\u0027t parse the nested variable.",
+      "range": {
+        "startLine": 14,
+        "startChar": 18,
+        "endLine": 14,
+        "endChar": 32
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "313af7d8_af477167",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "Response above.",
+      "parentUuid": "4c77b9f1_4d1be6c7",
       "range": {
         "startLine": 14,
         "startChar": 18,
@@ -111,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "c07cf790_1d0629a9",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "This is the option under the \"Job Filters\" -\u003e \"Recurse in subfolders\". this is used in conjunction with the job filters to recurse jobs in the folders.",
+      "parentUuid": "d0f63a40_b2e3ccce",
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a089601d_40d3c25a",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 6
@@ -122,6 +212,30 @@
       "writtenOn": "2018-10-18T00:52:38Z",
       "side": 1,
       "message": "See comments above regarding this.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 40
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4f9c6e25_db5624be",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "I missed defining this .jjb-tests/defaults.yaml. This should be defined in defaults.yaml in the upstream project.\n\nSome of the project view may have more detailed desc, maybe its good to keep this?\n\nex: https://github.com/opendaylight/releng-builder/blob/master/jjb/releng-views.yaml#L38-L41",
+      "parentUuid": "a089601d_40d3c25a",
       "range": {
         "startLine": 52,
         "startChar": 0,
@@ -157,6 +271,30 @@
     },
     {
       "key": {
+        "uuid": "2374d222_995658f6",
+        "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "Done - will fix in next patch",
+      "parentUuid": "98f29869_f886aab5",
+      "range": {
+        "startLine": 31,
+        "startChar": 54,
+        "endLine": 31,
+        "endChar": 62
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9c141070_1a68ee14",
         "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
         "patchSetId": 6
@@ -168,6 +306,30 @@
       "writtenOn": "2018-10-18T00:52:38Z",
       "side": 1,
       "message": "project \u0026 project-name need to be unique otherwise you\u0027ll get name collision because all these \"- project:\" sections are trying to declare the same project names.",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 74,
+        "endChar": 32
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab8458d_4357ea00",
+        "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "Name collisions only occur in the below scenario, where we define the view under each project-stream$1 (project section).\n\nMore disadvantages in the below use case:\n1. then we will end up with a view for each job-name if we make this unique. Also if we see in ODL we are using project-name: VAL and project: VAL as the same VAL in most projects. The workaround for 1 is to use the view only in a single project.\n2. The workaround in 1. causes code management issue, when older streams like carbon, nitrogen are EOL-ed then get project sections get removed in ODL, therefore causing the view for a project to be accidently removed.: \n\nIf we make the project-name unique, then\n\n       - project:\n           name: project-stream1\n           project: project\n           project-name: project\n           jobs:\n             - \u0027{project-name}-{seq}\u0027\n           views:\n             - common-view\n\n       - project:\n           name: project-stream2\n           project: project\n           project-name: project\n           jobs:\n             - \u0027{project-name}-{seq}\u0027\n           views:\n             - common-view\n\n       - project:\n           name: project-stream3\n           project: project\n           project-name: project\n           jobs:\n             - \u0027{project-name}-{seq}\u0027\n           views:\n             - common-view\n\nTo overcome the name collisions issue and avoiding a view being create for each job-name, I\u0027ve created a separate project (like below) for a view specific to each project for ease of code management and avoiding name collisions.\n\n       - project:\n           name: project-view\n           project: project\n           project-name: project\n           views:\n             - common-view",
+      "parentUuid": "9c141070_1a68ee14",
       "range": {
         "startLine": 73,
         "startChar": 3,
@@ -196,6 +358,53 @@
         "startChar": 31,
         "endLine": 76,
         "endChar": 36
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a562f012_65d6e053",
+        "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "Done - will fix in next patch",
+      "parentUuid": "c2655341_a722f8d5",
+      "range": {
+        "startLine": 76,
+        "startChar": 31,
+        "endLine": 76,
+        "endChar": 36
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "95aa0e97_1bd532b8",
+        "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-18T11:16:51Z",
+      "side": 1,
+      "message": "remove {seq} in the template. this was taken from my sample code. Done - will fix in next patch",
+      "range": {
+        "startLine": 79,
+        "startChar": 33,
+        "endLine": 79,
+        "endChar": 38
       },
       "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
