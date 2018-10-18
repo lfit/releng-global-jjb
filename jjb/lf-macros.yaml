@@ -508,6 +508,34 @@
           fail-build: false
 
 - publisher:
+    name: lf-infra-publish-windows
+    # lf-infra macro to finish up a build.
+    #
+    # Handles the following:
+    #   - Shipping logs to Nexus logs site repository
+    #   - Cleanup workspace
+    publishers:
+      # TODO: RELENG-1228 Develop log shipping script for Windows systems
+      # - postbuildscript:
+      #     builders:
+      #       - role: BOTH
+      #         build-on:
+      #           - ABORTED
+      #           - FAILURE
+      #           - NOT_BUILT
+      #           - SUCCESS
+      #           - UNSTABLE
+      #         build-steps:
+      #           - lf-infra-ship-logs-windows
+      #     mark-unstable-if-failed: true
+      - workspace-cleanup:
+          exclude:
+            # Do not clean up *.jenkins-trigger files for jobs that use a
+            # properties file as input for triggering another build.
+            - '**/*.jenkins-trigger'
+          fail-build: false
+
+- publisher:
     name: lf-stack-delete
     publishers:
       - postbuildscript:

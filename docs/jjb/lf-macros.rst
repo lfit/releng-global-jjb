@@ -297,6 +297,12 @@ Provides basic lf-infra recommended publisher configurations which should be
 used in all job templates. This primary objective of this trigger is to
 gather build logs and copy them to a log server.
 
+lf-infra-publish-windows
+------------------------
+
+Windows publisher for use at the end of Windows job templates. Takes care of
+cleaning out the workspace at the end of a job.
+
 lf-stack-delete
 ---------------
 

@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add ``lf-infra-publish-windows``. A publisher for use at the end of Windows
+    based job-templates.
