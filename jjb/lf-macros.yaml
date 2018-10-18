@@ -109,10 +109,20 @@
 - builder:
     name: lf-infra-packer-validate
     builders:
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{openstack}'
+          steps:
+            - config-file-provider:
+                files:
+                  - file-id: clouds-yaml
+                    target: '$HOME/.config/openstack/clouds.yaml'
+            - inject:
+                properties-content: OS_CLOUD={openstack-cloud}
       - config-file-provider:
           files:
             - file-id: '{packer-cloud-settings}'
-              variable: 'CLOUDENV'
+              variable: CLOUDENV
       - inject:
           properties-content: |
               PACKER_VERSION={packer-version}
