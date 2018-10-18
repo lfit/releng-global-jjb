@@ -1318,6 +1318,8 @@
     ######################
 
     build-timeout: 10
+    openstack: true
+    openstack-cloud: vex
 
     gerrit_verify_triggers:
       - patchset-created-event:
@@ -1344,6 +1346,8 @@
 
     builders:
       - lf-infra-packer-validate:
+          openstack: '{openstack}'
+          openstack-cloud: '{openstack-cloud}'
           packer-cloud-settings: '{packer-cloud-settings}'
           packer-version: '{packer-version}'
 

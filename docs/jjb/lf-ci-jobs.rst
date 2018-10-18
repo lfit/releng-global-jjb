@@ -594,6 +594,9 @@ Packer Verify job runs `packer validate` to verify packer configuration.
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :openstack: Packer template uses an OpenStack builder (default: true).
+    :openstack-cloud: Sets OS_CLOUD variable to the value of this parameter.
+        (default: vex).
     :packer-cloud-settings: Name of settings file containing credentials
         for the cloud that packer will build on. (default: packer-cloud-env)
     :packer-version: Version of packer to install / use in build. (default: 1.0.2)

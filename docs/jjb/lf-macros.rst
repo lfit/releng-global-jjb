@@ -125,6 +125,8 @@ Run `packer validate` to verify packer configuration.
 
 :Required parameters:
 
+    :openstack: Packer template uses an OpenStack builder (true|false).
+    :openstack-cloud: Sets OS_CLOUD variable to the value of this parameter.
     :packer-cloud-settings: Cloud configuration file. Loaded on the build
         server as CLOUDENV environment variable.
     :packer-version: Version of packer to use.

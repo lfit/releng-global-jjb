@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix packer-verify job to correctly work with ``clouds.yaml`` config model
+    implemented in global-jjb v0.25.0.
