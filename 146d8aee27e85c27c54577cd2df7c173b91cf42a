@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "985cd221_8c331af5",
+        "filename": "docs/jjb/lf-views.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "According to the code, neither of these are configured via defaults.yaml.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 74
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff61fa99_0b381f55",
+        "filename": "docs/jjb/lf-views.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "According to the code, neither of these are configured via defaults.yaml.",
+      "range": {
+        "startLine": 71,
+        "startChar": 5,
+        "endLine": 72,
+        "endChar": 74
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c163efd_9e4bf66f",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "JJB does not support nesting a variable inside of a variable. This will parse out as a literal \u0027{project-name}\u0027.\n\nI think it\u0027s better to set the description below to \u0027List of {project-name} jobs\u0027 directly and skip the view-description parameter. I don\u0027t think folks really care about setting this themselves when they use this template.",
+      "range": {
+        "startLine": 13,
+        "startChar": 31,
+        "endLine": 13,
+        "endChar": 45
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4c77b9f1_4d1be6c7",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "Same as above, you cannot nest variables in JJB it won\u0027t parse the nested variable.",
+      "range": {
+        "startLine": 14,
+        "startChar": 18,
+        "endLine": 14,
+        "endChar": 32
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0f63a40_b2e3ccce",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "What does view-recurse do? I don\u0027t see this setting in the UI.",
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a089601d_40d3c25a",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "See comments above regarding this.",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 40
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "98f29869_f886aab5",
+        "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "I don\u0027t see any \u0027docs\u0027 project being declared in the example below.",
+      "range": {
+        "startLine": 31,
+        "startChar": 54,
+        "endLine": 31,
+        "endChar": 62
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9c141070_1a68ee14",
+        "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "project \u0026 project-name need to be unique otherwise you\u0027ll get name collision because all these \"- project:\" sections are trying to declare the same project names.",
+      "range": {
+        "startLine": 73,
+        "startChar": 3,
+        "endLine": 74,
+        "endChar": 32
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c2655341_a722f8d5",
+        "filename": "releasenotes/notes/lf-view-templates-add-64911f643dc053d8.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-18T00:52:38Z",
+      "side": 1,
+      "message": "what is \"{seq}\"? it\u0027s not being declared anywhere?",
+      "range": {
+        "startLine": 76,
+        "startChar": 31,
+        "endLine": 76,
+        "endChar": 36
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
