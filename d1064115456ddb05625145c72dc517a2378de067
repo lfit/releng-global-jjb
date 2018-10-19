@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fcc2767a_28994bb9",
+        "filename": "releasenotes/notes/submodule-timeout-e75d10f51ca36933.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-19T18:58:22Z",
+      "side": 1,
+      "message": "no need for this blank line here.",
+      "revId": "d1064115456ddb05625145c72dc517a2378de067",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2dd00d4b_4c8d15b4",
+        "filename": "releasenotes/notes/submodule-timeout-e75d10f51ca36933.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-19T18:58:22Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "d1064115456ddb05625145c72dc517a2378de067",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
