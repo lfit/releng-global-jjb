@@ -99,6 +99,8 @@ IQ Server.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
     :gerrit_clm_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which used to filter which
         file modifications will trigger a build. Refer to JJB documentation for
@@ -168,6 +170,8 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
     :gerrit_sonar_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which used to filter which
         file modifications will trigger a build. Refer to JJB documentation for
@@ -214,6 +218,8 @@ following pyenv variables before running.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
     :tox-dir: Directory containing the project's tox.ini relative to
         the workspace. Empty works if tox.ini is at project root.
         (default: '')

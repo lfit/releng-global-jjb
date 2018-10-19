@@ -323,6 +323,11 @@ lf-infra-gerrit-scm
 
 Basic SCM configuration for Gerrit based projects.
 
+:Required parameters:
+
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+
 lf-infra-github-scm
 -------------------
 
@@ -331,6 +336,11 @@ Basic SCM configuration for GitHub based projects.
 On the `branch` variable you can assign `$sha1` or `$ghprbActualCommit`
 as the value.  This will require that the job be triggered via
 the GHPRB plugin and not manually.
+
+:Required parameters:
+
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
 
 Wrappers
 ========
