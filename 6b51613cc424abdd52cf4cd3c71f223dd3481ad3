@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3cef6792_c9722ab3",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-23T22:20:41Z",
+      "side": 1,
+      "message": "The default for this variable was removed between change 7 \u0026 8. There is no documentation stating that it needs to be either set at the project level or at the defaults level!",
+      "range": {
+        "startLine": 15,
+        "startChar": 23,
+        "endLine": 15,
+        "endChar": 46
+      },
+      "revId": "6b51613cc424abdd52cf4cd3c71f223dd3481ad3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "27c665b5_26b7bc77",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-23T22:20:41Z",
+      "side": 1,
+      "message": "The default for this variable was removed between change 7 \u0026 8. There is no documentation stating that it needs to be either set at the project level or at the defaults level!",
+      "range": {
+        "startLine": 16,
+        "startChar": 19,
+        "endLine": 16,
+        "endChar": 38
+      },
+      "revId": "6b51613cc424abdd52cf4cd3c71f223dd3481ad3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1282f9da_4d110456",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-23T22:20:41Z",
+      "side": 1,
+      "message": "The default for this variable was removed between change 7 \u0026 8. There is no documentation stating that it needs to be either set at the project level or at the defaults level!",
+      "range": {
+        "startLine": 45,
+        "startChar": 23,
+        "endLine": 45,
+        "endChar": 46
+      },
+      "revId": "6b51613cc424abdd52cf4cd3c71f223dd3481ad3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a33c206_4c44e56f",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-23T22:20:41Z",
+      "side": 1,
+      "message": "The default for this variable was removed between change 7 \u0026 8. There is no documentation stating that it needs to be either set at the project level or at the defaults level!",
+      "range": {
+        "startLine": 46,
+        "startChar": 19,
+        "endLine": 46,
+        "endChar": 38
+      },
+      "revId": "6b51613cc424abdd52cf4cd3c71f223dd3481ad3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
