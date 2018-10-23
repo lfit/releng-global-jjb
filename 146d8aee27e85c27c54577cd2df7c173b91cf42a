@@ -119,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "fd60b72a_662341ba",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-23T02:38:03Z",
+      "side": 1,
+      "message": "tested with diff scenarios as suggested, removing the view-template defaults so that the user have the freedom to define them either in the project section or the global defaults.",
+      "parentUuid": "d2a1b285_e4fbb69e",
+      "range": {
+        "startLine": 13,
+        "startChar": 31,
+        "endLine": 13,
+        "endChar": 45
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4c77b9f1_4d1be6c7",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 6
