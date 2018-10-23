@@ -190,6 +190,30 @@
     },
     {
       "key": {
+        "uuid": "0d326c04_c0794568",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-23T03:23:41Z",
+      "side": 1,
+      "message": "if we set the regex as below, then the project will not have the flexibility to define there own regex, so instead removed this from the template defaults.\n\nregex: \u0027^{project-name}-.*",
+      "parentUuid": "313af7d8_af477167",
+      "range": {
+        "startLine": 14,
+        "startChar": 18,
+        "endLine": 14,
+        "endChar": 32
+      },
+      "revId": "146d8aee27e85c27c54577cd2df7c173b91cf42a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d0f63a40_b2e3ccce",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 6
