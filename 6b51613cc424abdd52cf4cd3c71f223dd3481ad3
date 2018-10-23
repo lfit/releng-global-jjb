@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f12bee19_6f1df564",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-23T22:24:47Z",
+      "side": 1,
+      "message": "I\u0027ve updated the docs in L41 which suggest that this need to be set globally in defaults.yaml. \n\nhttps://gerrit.linuxfoundation.org/infra/#/c/12989/9/docs/jjb/lf-views.rst",
+      "parentUuid": "3cef6792_c9722ab3",
+      "range": {
+        "startLine": 15,
+        "startChar": 23,
+        "endLine": 15,
+        "endChar": 46
+      },
+      "revId": "6b51613cc424abdd52cf4cd3c71f223dd3481ad3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27c665b5_26b7bc77",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 9
