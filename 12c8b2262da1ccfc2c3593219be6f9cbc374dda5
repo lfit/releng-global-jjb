@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "750b8702_ccbb4dfc",
+        "filename": "docs/jjb/lf-views.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-10-24T16:30:51Z",
+      "side": 1,
+      "message": "I would suggest that since these are now required and are \"Generally set in defaults.yaml\" that a suggested default also be given.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 65
+      },
+      "revId": "12c8b2262da1ccfc2c3593219be6f9cbc374dda5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
