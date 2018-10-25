@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e09872f6_4221fb12",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-25T15:20:39Z",
+      "side": 1,
+      "message": "Personally my rule of thumb is if an end user doesn\u0027t need to care, then set a reasonable default. Requiring all projects to copy paste configuration that the majority of the time they probably just want the defaults seems excessive.\n\nFor example if the 3 boolean fields above will typically be false then setting it in the view-template will allow one less configuration someone setting this up needs to worry about.\n\nSame with view-regex and view-description. I can\u0027t imagine a user of the common-view will care about setting this 99% of the time.\n\nI\u0027m not going to -1 for this but IMO less is more.",
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "abadd160_307dfb65",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-25T15:20:39Z",
+      "side": 1,
+      "message": "Do we mean for this to be \u0027{project-name}-csit\u0027?\n\nBecause if a project has both a common-view and a integration-csit-view then \"{project-name}\" will result in the same view name being used for both views. Thus duplicate name collision.",
+      "range": {
+        "startLine": 38,
+        "startChar": 10,
+        "endLine": 38,
+        "endChar": 26
+      },
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
