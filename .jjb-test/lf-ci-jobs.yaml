@@ -67,3 +67,11 @@
       - common-view
     view-regex: '.*-ci-jobs$|.*-openstack-jobs$|.*-packer-jobs$'
     view-description: 'List of ci-jobs, openstack and packer jobs'
+
+- project:
+    name: gerrit-jenkins-cfg-verify
+    jobs:
+      - "gerrit-jenkins-cfg-verify"
+
+    project-name: gerrit-ciman
+
