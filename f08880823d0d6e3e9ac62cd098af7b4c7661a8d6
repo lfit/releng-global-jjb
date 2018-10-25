@@ -84,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "2f057daa_f2601bcb",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-25T21:50:21Z",
+      "side": 1,
+      "message": "We already know it\u0027s a csit view, so why not default it to include csit in the view name so that the user does not have to explicitly name it themselves?\n\n(Less is more)\n\nThis would allow this format for view declaration too:\n\n- project:\n    name: netvirt-views\n    views:\n      - common-view\n      - integration-csit-view\n\n    project: netvirt\n    project-name: netvirt\n\n(Typically \"project-name\" should be the same as \"project\" and is how we usually use it in most of our code, this would be a deviation to that standard if we suddenly started telling people to use mismatch project-names from projects.)",
+      "parentUuid": "ff52ace9_6300ddac",
+      "range": {
+        "startLine": 38,
+        "startChar": 10,
+        "endLine": 38,
+        "endChar": 26
+      },
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baf8e792_d780b607",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 11
