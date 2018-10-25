@@ -97,6 +97,8 @@ Gerrit file-paths for packer verify jobs.
 Job Templates
 =============
 
+.. _gerrit-branch-lock:
+
 Gerrit Branch Lock
 ------------------
 
@@ -106,6 +108,26 @@ Job submits a patch to lock or unlock a project's branch.
     - {project-name}-gerrit-branch-lock-{stream}
     - gerrit-branch-lock
 
+:Comment Trigger:
+
+    * lock branch
+    * unlock branch
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally
+        should be configured in defaults.yaml)
+
+:Optional parameters:
+
+    :branch: Git branch to build against. (default: master)
+    :git-url: URL to clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
+    :stream: Keyword that can be used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :gerrit_merge_triggers: Override Gerrit Triggers.
 
 .. _lf-global-jjb-jenkins-cfg-merge:
 
