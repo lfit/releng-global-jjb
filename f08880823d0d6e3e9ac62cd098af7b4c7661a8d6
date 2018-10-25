@@ -39,6 +39,23 @@
       "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baf8e792_d780b607",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-25T15:23:11Z",
+      "side": 1,
+      "message": "Actually the way this is designed this view regex will result in the same view regex as the common-view too....\n\nWe probably only care about .*csit.* jobs in a csit view regex....",
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
