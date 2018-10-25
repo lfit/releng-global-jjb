@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f0da52d2_65571b88",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-25T21:39:33Z",
+      "side": 1,
+      "message": "I\u0027ll add patch as to keep these as view defaults, so that user does not have to define it in defaults.yaml.\n\n    view-filter-executors: false\n    view-filter-queue: false\n    view-recurse: false",
+      "parentUuid": "e09872f6_4221fb12",
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "abadd160_307dfb65",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 11
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "ff52ace9_6300ddac",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-25T21:39:33Z",
+      "side": 1,
+      "message": "It\u0027s not required since the project has the flexibility to call it whatever they want and have tested it with ODL, no name collision occur when we use a separate project section.\n\nex:\n\n- project:\n    name: netvirt-csit-view\n    project: netvirt\n    project-name: netvirt-csit\n    views:\n      - integration-csit-view\n    view-description: \u0027List of netvirt-csit jobs\u0027\n    view-regex: \u0027netvirt-csit(?!(.*gate)|(.*hwvtep)).*\u0027\n\n- project:\n    name: netvirt-view\n    project: netvirt\n    project-name: netvirt\n    views:\n      - common-view",
+      "parentUuid": "abadd160_307dfb65",
+      "range": {
+        "startLine": 38,
+        "startChar": 10,
+        "endLine": 38,
+        "endChar": 26
+      },
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baf8e792_d780b607",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 11
@@ -53,6 +95,24 @@
       "writtenOn": "2018-10-25T15:23:11Z",
       "side": 1,
       "message": "Actually the way this is designed this view regex will result in the same view regex as the common-view too....\n\nWe probably only care about .*csit.* jobs in a csit view regex....",
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "89a1cf45_5c4f90de",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-25T21:39:33Z",
+      "side": 1,
+      "message": "If the CSIT job has a specific regex they like, they can use it like the above, since which will override the global defaults definition.",
+      "parentUuid": "baf8e792_d780b607",
       "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
