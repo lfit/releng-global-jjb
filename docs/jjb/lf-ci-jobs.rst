@@ -282,6 +282,34 @@ Troubleshooting
     used to push to Jenkins. In the event of a job failure this file can be
     inspected.
 
+ .. _lf-global-jjb-jenkins-cfg-verify:
+
+Jenkins Configuration Verify
+----------------------------
+
+Jenkins job to verify the Global Jenkins configuration.
+
+.. note::
+
+ Requires the "clouds-yaml" file to be setup on the Jenkins host.
+
+:Template names:
+
+  - {project-name}-jenkins-cfg-verify
+  - gerrit-jenkins-cfg-verify
+
+:Optional parameters:
+
+  :branch: Git branch to build against. (default: master)
+  :git-url: URL to clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
+
+This job is not part of the "{project-name}-ci-jobs" group. It must be called
+explicitly.
+
+Example:
+
+.. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-verify.yaml
+  :language: yaml
 
 Jenkins Sandbox Cleanup
 -----------------------
