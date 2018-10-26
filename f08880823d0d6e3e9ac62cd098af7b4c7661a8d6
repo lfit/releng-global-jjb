@@ -108,6 +108,30 @@
     },
     {
       "key": {
+        "uuid": "9e661145_c933efd4",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-10-26T21:21:36Z",
+      "side": 1,
+      "message": "I\u0027ve submitted this change here, although am not fully in support of this approach.\n\nhttps://gerrit.linuxfoundation.org/infra/#/c/13196/\n\nI\u0027d still like this to be user-defined because the may not want the views, prefixed with `-csit`. In ODL itself we have some views \u0027CSIT-1node, CSIT-2node\u0027, these would become \u0027CSIT-1node-csit, CSIT-2node-csit\u0027 with this approach.\n\nex:\nhttps://jenkins.opendaylight.org/releng/view/CSIT-1node/\n\nLet\u0027s give the flexibility on naming the views to the project?",
+      "parentUuid": "2f057daa_f2601bcb",
+      "range": {
+        "startLine": 38,
+        "startChar": 10,
+        "endLine": 38,
+        "endChar": 26
+      },
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baf8e792_d780b607",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 11
