@@ -17,6 +17,7 @@ Common view groups jobs related to a project and supports the following
 columns.
 
 :Columns:
+
     - status
     - weather
     - job
@@ -29,6 +30,7 @@ columns.
     - robot-list
 
 :Template Names:
+
     - common-view
     - {project-name}
 
@@ -37,13 +39,14 @@ columns.
     :project-name: The name of the view.
     :view-description: View description. (Generally set to 'List of
         {project-name} jobs' in defaults.yaml)
-    :view-filter-executors: View filter executor. (Generally set to 'false' in
-        defaults.yaml)
-    :view-filter-queue: View filter queue. (Generally set to 'false' in
-        defaults.yaml)
     :view-regex: Regex to match the jobs. (Generally set to '^{project-name}-.*'
         in defaults.yaml)
-    :view-recurse: View recurse. (Generally set to 'false' in defaults.yaml)
+
+:Default parameters:
+
+    :view-filter-executors: View filter executor. (default: false)
+    :view-filter-queue: View filter queue. (default: false)
+    :view-recurse: View recurse. (default: false)
 
 Integration CSIT view
 ---------------------
@@ -52,6 +55,7 @@ Integration CSIT view provides a view for integration or CSIT jobs.
 The view supports the following set of columns.
 
 :Columns:
+
     - status
     - weather
     - job
@@ -62,6 +66,7 @@ The view supports the following set of columns.
     - robot-list
 
 :Template Names:
+
     - integration-csit-view
     - {project-name}
 
@@ -70,10 +75,11 @@ The view supports the following set of columns.
     :project-name: The name of the view.
     :view-description: View description. (Generally set to 'List of
         {project-name} jobs' in defaults.yaml)
-    :view-filter-executors: View filter executor. (Generally set to 'false' in
-        defaults.yaml)
-    :view-filter-queue: View filter queue. (Generally set to 'false' in
-        defaults.yaml)
     :view-regex: Regex to match the jobs. (Generally set to '^{project-name}-.*'
         in defaults.yaml)
-    :view-recurse: View recurse. (Generally set to 'false' in defaults.yaml)
+
+:Default parameters:
+
+    :view-filter-executors: View filter executor. (default: false)
+    :view-filter-queue: View filter queue. (default: false)
+    :view-recurse: View recurse. (default: false)
