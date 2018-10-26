@@ -30,6 +30,3 @@
 
     view-regex: '{project-name}-.*'
     view-description: 'List of {project-name} jobs'
-    view-filter-executors: false
-    view-filter-queue: false
-    view-recurse: false
