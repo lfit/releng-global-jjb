@@ -8,6 +8,14 @@
     name: '{project-name}'
 
     ######################
+    # Default parameters #
+    ######################
+
+    view-filter-executors: false
+    view-filter-queue: false
+    view-recurse: false
+
+    ######################
     # view Configuration #
     ######################
 
@@ -35,7 +43,15 @@
 
 - view-template:
     id: 'integration-csit-view'
-    name: '{project-name}'
+    name: '{project-name}-csit'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    view-filter-executors: false
+    view-filter-queue: false
+    view-recurse: false
 
     ######################
     # view Configuration #
