@@ -93,6 +93,30 @@
       "revId": "408fc151bf74ae36e1610e3b7c20ad33898f49cb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da89ab9a_42191c0d",
+        "filename": "shell/maven-stage.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-29T18:40:21Z",
+      "side": 1,
+      "message": "I split this out into a separate file so we could use conditional-step to skip this code if a project does not want to use maven-central. It\u0027s hard to functionalize this across shell scripts though so I might skip this unless someone has a better idea.",
+      "parentUuid": "6b75d023_15e75995",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 131
+      },
+      "revId": "408fc151bf74ae36e1610e3b7c20ad33898f49cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
