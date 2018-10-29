@@ -16,6 +16,24 @@
       "revId": "1f2235767423adf8fc7f5b90e5bceafbb7f7a198",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a944a3ed_082745db",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-29T20:34:47Z",
+      "side": 1,
+      "message": "Both of these are special cases. We want to throw a warning when the credential is not found but not outright fail the job because both logs and ossrh are optional.",
+      "parentUuid": "9b8df633_3796ead8",
+      "revId": "1f2235767423adf8fc7f5b90e5bceafbb7f7a198",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
