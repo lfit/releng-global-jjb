@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5803da72_e9d4a5be",
+        "filename": "releasenotes/notes/maven-central-160a7cb5e538bfa8.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-10-29T22:43:19Z",
+      "side": 1,
+      "message": "Or github-maven-stage?",
+      "revId": "2f43e2ee13855a63f793d2991f1a3dbf064c1cec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
