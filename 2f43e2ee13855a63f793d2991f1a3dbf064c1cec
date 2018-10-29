@@ -16,6 +16,24 @@
       "revId": "2f43e2ee13855a63f793d2991f1a3dbf064c1cec",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a0c4903c_57e66f33",
+        "filename": "releasenotes/notes/maven-central-160a7cb5e538bfa8.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-29T22:46:03Z",
+      "side": 1,
+      "message": "It\u0027s meant to be a single example of how to use the new feature. I\u0027m assuming folks will read the docs for the full details on all iterations of the job-template otherwise our release notes will just be the docs too.\n\nDo you think there is value in listing every iteration here as well?",
+      "parentUuid": "5803da72_e9d4a5be",
+      "revId": "2f43e2ee13855a63f793d2991f1a3dbf064c1cec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
