@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "38bed825_2182eba9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-29T18:39:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "318f7d03_83ed4586",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 62
+      },
+      "revId": "8ba8da20fa5e7714cebded68f2082038b478a6ae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eabd1401_ebf0de4f",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2018-08-18T17:25:34Z",
       "side": 1,
       "message": "need to make sure we document this in the RST files.",
+      "range": {
+        "startLine": 134,
+        "startChar": 10,
+        "endLine": 134,
+        "endChar": 21
+      },
+      "revId": "8ba8da20fa5e7714cebded68f2082038b478a6ae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "716abcf9_62b2e3c6",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-29T18:39:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eabd1401_ebf0de4f",
       "range": {
         "startLine": 134,
         "startChar": 10,
