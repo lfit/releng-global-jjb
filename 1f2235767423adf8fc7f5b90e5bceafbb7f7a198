@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b8df633_3796ead8",
+        "filename": "shell/create-netrc.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-10-29T19:47:01Z",
+      "side": 1,
+      "message": "I don\u0027t understand why this logic handles both logs and ossrh.  It\u0027s either/or?",
+      "revId": "1f2235767423adf8fc7f5b90e5bceafbb7f7a198",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
