@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Specify refspec to be blank for SCM config on github-maven-merge job.  Setting the
+    refspec to `+refs/pull/*:refs/remotes/origin/pr/*` causes there to be no merge job triggered.
