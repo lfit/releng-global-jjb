@@ -132,6 +132,30 @@
     },
     {
       "key": {
+        "uuid": "5aeae9cf_6be58a91",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-29T15:43:59Z",
+      "side": 1,
+      "message": "In this change, in a previous discussion I recall you mentioning to me that nesting variables worked right?\n\nIf that\u0027s true couldn\u0027t we used nested variables for this?\n\n - view-template:\n     name: \u0027{view-name}\u0027\n \n     ############\n     # Defaults #\n     ############\n \n     view-name: \u0027CSIT-{project-name}\u0027\n\nWith this format the default view-name is in the Syntax that is today currently used by ODL. CSIT-[VIEW_NAME]. If the project wanted to change it they could do so by overriding the view-name. This is assuming your previous comment that nesting variables works.",
+      "parentUuid": "9e661145_c933efd4",
+      "range": {
+        "startLine": 38,
+        "startChar": 10,
+        "endLine": 38,
+        "endChar": 26
+      },
+      "revId": "f08880823d0d6e3e9ac62cd098af7b4c7661a8d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baf8e792_d780b607",
         "filename": "jjb/lf-views.yaml",
         "patchSetId": 11
