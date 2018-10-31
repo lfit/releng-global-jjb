@@ -38,8 +38,7 @@
 
 - project:
     name: maven-jobs-view
-    project-name: maven
     views:
       - common-view
-    view-regex: '.*-maven$'
-    view-description: 'List of maven jobs'
+
+    project-name: maven
