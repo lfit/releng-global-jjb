@@ -3,25 +3,9 @@
 # common view template #
 ########################
 
-- view-template:
-    id: 'common-view'
-    name: '{project-name}'
+- lf_view_common_columns: &lf_view_common_columns
+    name: lf-view-common-columns
 
-    ######################
-    # Default parameters #
-    ######################
-
-    view-filter-executors: false
-    view-filter-queue: false
-    view-recurse: false
-
-    ######################
-    # view Configuration #
-    ######################
-
-    view-type: list
-    filter-executors: '{view-filter-executors}'
-    filter-queue: '{view-filter-queue}'
     columns:
       - status
       - weather
@@ -32,17 +16,75 @@
       - build-button
       - jacoco
       - find-bugs
-      - robot-list
-    recurse: '{view-recurse}'
-    regex: '{view-regex}'
-    description: '{view-description}'
-
-#############################
-# integration view template #
-#############################
 
 - view-template:
-    id: 'integration-csit-view'
+    id: 'common-view'
+    name: '{view-name}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    view-description: 'View using common-view template.'
+    view-filter-executors: false
+    view-filter-queue: false
+    view-recurse: false
+
+    ######################
+    # view Configuration #
+    ######################
+
+    view-type: list
+    description: '{view-description}'
+    filter-executors: '{view-filter-executors}'
+    filter-queue: '{view-filter-queue}'
+    recurse: '{view-recurse}'
+    regex: '{view-regex}'
+    <<: *lf_view_common_columns
+
+######################
+# CSIT view template #
+######################
+
+- view-template:
+    id: 'csit-view'
+    name: '{view-name}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    view-description: 'CSIT jobs.'
+    view-filter-executors: false
+    view-filter-queue: false
+    view-recurse: false
+
+    ######################
+    # view Configuration #
+    ######################
+
+    view-type: list
+    description: '{view-description}'
+    filter-executors: '{view-filter-executors}'
+    filter-queue: '{view-filter-queue}'
+    recurse: '{view-recurse}'
+    regex: '{view-regex}'
+    columns:
+      - status
+      - weather
+      - job
+      - last-success
+      - last-failure
+      - last-duration
+      - build-button
+      - robot-list
+
+#########################
+# project view template #
+#########################
+
+- view-template:
+    id: 'project-view'
     name: '{project-name}'
 
     ######################
@@ -58,17 +100,9 @@
     ######################
 
     view-type: list
+    description: 'List of jobs for {project-name}.'
     filter-executors: '{view-filter-executors}'
     filter-queue: '{view-filter-queue}'
-    columns:
-      - status
-      - weather
-      - job
-      - last-success
-      - last-failure
-      - last-duration
-      - build-button
-      - robot-list
     recurse: '{view-recurse}'
-    regex: '{view-regex}'
-    description: '{view-description}'
+    regex: '^{project-name}-.*'
+    <<: *lf_view_common_columns
