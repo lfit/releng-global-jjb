@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "130a6500_60023aa2",
+        "filename": "docs/jjb/lf-views.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-31T12:55:18Z",
+      "side": 1,
+      "message": "Our usual wording here is \"Optional\"",
+      "range": {
+        "startLine": 45,
+        "startChar": 1,
+        "endLine": 45,
+        "endChar": 8
+      },
+      "revId": "623aa33c0650d5eb3f6e60abc92489b7515226c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e362e6c4_d8aef46f",
+        "filename": "docs/jjb/lf-views.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-10-31T12:55:18Z",
+      "side": 1,
+      "message": "Our usual wording here is \"Optional\"",
+      "range": {
+        "startLine": 81,
+        "startChar": 1,
+        "endLine": 81,
+        "endChar": 8
+      },
+      "revId": "623aa33c0650d5eb3f6e60abc92489b7515226c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
