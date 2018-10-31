@@ -17,8 +17,7 @@
 
 - project:
     name: python-jobs-view
-    project-name: python
     views:
-      - common-view
-    view-regex: '.*-python$'
-    view-description: 'List of Python jobs'
+      - project-view
+
+    project-name: python
