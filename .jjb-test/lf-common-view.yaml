@@ -1,0 +1,7 @@
+---
+- project:
+    name: common-view-test
+    views:
+      - common-view
+
+    project-name: common-view-test

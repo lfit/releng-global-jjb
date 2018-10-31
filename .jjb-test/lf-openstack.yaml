@@ -10,8 +10,9 @@
 
 - project:
     name: openstack-jobs-view
-    project-name: openstack
     views:
       - common-view
+
+    project-name: openstack
     view-regex: '.*-openstack$'
     view-description: 'List of openstack jobs'

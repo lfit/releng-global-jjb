@@ -34,21 +34,22 @@
       - find-bugs
       - robot-list
     recurse: '{view-recurse}'
-    regex: '{view-regex}'
-    description: '{view-description}'
+    regex: '^{project-name}-.*'
+    description: 'List of jobs for {project-name}.'
 
-#############################
-# integration view template #
-#############################
+######################
+# CSIT view template #
+######################
 
 - view-template:
-    id: 'integration-csit-view'
-    name: '{project-name}'
+    id: 'csit-view'
+    name: '{view-name}'
 
     ######################
     # Default parameters #
     ######################
 
+    view-description: 'CSIT jobs.'
     view-filter-executors: false
     view-filter-queue: false
     view-recurse: false

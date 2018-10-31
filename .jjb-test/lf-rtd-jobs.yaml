@@ -21,8 +21,9 @@
 
 - project:
     name: rtd-jobs-view
-    project-name: rtd
     views:
       - common-view
-    view-regex: '.*-rtd$'
+
+    project-name: rtd
+    view-regex: '.*-rtd-.*$'
     view-description: 'List of rtd jobs'
