@@ -1,10 +1,47 @@
 ---
-########################
-# common view template #
-########################
+######################
+# CSIT view template #
+######################
 
 - view-template:
-    id: 'common-view'
+    id: 'csit-view'
+    name: '{view-name}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    view-description: 'CSIT jobs.'
+    view-filter-executors: false
+    view-filter-queue: false
+    view-recurse: false
+
+    ######################
+    # view Configuration #
+    ######################
+
+    view-type: list
+    filter-executors: '{view-filter-executors}'
+    filter-queue: '{view-filter-queue}'
+    columns:
+      - status
+      - weather
+      - job
+      - last-success
+      - last-failure
+      - last-duration
+      - build-button
+      - robot-list
+    recurse: '{view-recurse}'
+    regex: '{view-regex}'
+    description: '{view-description}'
+
+#########################
+# project view template #
+#########################
+
+- view-template:
+    id: 'project-view'
     name: '{project-name}'
 
     ######################
@@ -34,41 +71,5 @@
       - find-bugs
       - robot-list
     recurse: '{view-recurse}'
-    regex: '{view-regex}'
-    description: '{view-description}'
-
-#############################
-# integration view template #
-#############################
-
-- view-template:
-    id: 'integration-csit-view'
-    name: '{project-name}'
-
-    ######################
-    # Default parameters #
-    ######################
-
-    view-filter-executors: false
-    view-filter-queue: false
-    view-recurse: false
-
-    ######################
-    # view Configuration #
-    ######################
-
-    view-type: list
-    filter-executors: '{view-filter-executors}'
-    filter-queue: '{view-filter-queue}'
-    columns:
-      - status
-      - weather
-      - job
-      - last-success
-      - last-failure
-      - last-duration
-      - build-button
-      - robot-list
-    recurse: '{view-recurse}'
-    regex: '{view-regex}'
-    description: '{view-description}'
+    regex: '^{project-name}-.*'
+    description: 'List of jobs for {project-name}.'
