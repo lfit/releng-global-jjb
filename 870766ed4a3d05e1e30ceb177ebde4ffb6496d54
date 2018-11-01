@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca8757dd_2541088f",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-01T21:10:45Z",
+      "side": 1,
+      "message": "Either we have cron or we don\u0027t. No point commenting it out if it doesn\u0027t exist.",
+      "revId": "870766ed4a3d05e1e30ceb177ebde4ffb6496d54",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "811c0704_8fc1b57e",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-01T21:10:45Z",
+      "side": 1,
+      "message": "I don\u0027t think this job cares about production/sandbox as it\u0027s just verifying files in the ci-management repo. I don\u0027t think we need this line.",
+      "revId": "870766ed4a3d05e1e30ceb177ebde4ffb6496d54",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
