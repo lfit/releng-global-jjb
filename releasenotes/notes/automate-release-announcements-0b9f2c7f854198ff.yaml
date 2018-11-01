@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    New job-template **{project-name}-release-announce** for lf-releng projects
+    to automate release announcement emails.
