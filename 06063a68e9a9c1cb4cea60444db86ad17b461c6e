@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8303b0ff_a57b948a",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-02T02:38:17Z",
+      "side": 0,
+      "message": "There is no special case. We should not be defining this kind of defaults inside of defaults.yaml because it then applies to every single template that uses these keywords regardless of if it applies to that template or not. Defaults should be defined in the view-template so that the specific use cases of those templates are left in tact.\n\nWhat defaults.yaml is good for is for things that globally apply to all jobs or views like gerrit server. Not things that only apply to a few cases because otherwise if we have too many views that use view-regex in different ways this will override their correct intent.",
+      "parentUuid": "1a9400ec_052ca873",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "06063a68e9a9c1cb4cea60444db86ad17b461c6e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cab7ec43_09c095dc",
         "filename": ".jjb-test/lf-ci-jobs/jenkins-cfg-merge-minimal.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-02T00:35:51Z",
       "side": 0,
       "message": "why remove this?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 48
+      },
+      "revId": "06063a68e9a9c1cb4cea60444db86ad17b461c6e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4901dc47_32e2f77f",
+        "filename": ".jjb-test/lf-ci-jobs/jenkins-cfg-merge-minimal.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-02T02:38:17Z",
+      "side": 0,
+      "message": "This affects our documentation for the jenkins-cfg-merge job. The reason it is titled \"minimal\" is it is pulled in as an absolute minimal configuration for this job.\n\nViews are not required to use the jenkins-cfg job and this incorrectly injects the view as an example into the docs.",
+      "parentUuid": "cab7ec43_09c095dc",
       "range": {
         "startLine": 9,
         "startChar": 0,
