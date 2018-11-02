@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81c5f7d2_adb32ee1",
+        "filename": ".jjb-test/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-02T02:56:20Z",
+      "side": 1,
+      "message": "See comment on the next file but I\u0027d recommend pulling this into a directory for \"lf-ci-jobs\" and then making a minimal configuration example for this job so that I could be pulled into the docs automatically.",
+      "revId": "43f50239edbdee1b806d334cfef55abce87896a6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07c578e7_c805fb26",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-02T02:56:20Z",
+      "side": 1,
+      "message": "If you do:\n\n Example:\n \n .. literalinclude:: ../path/to/test.yaml\n    :language: yaml\n\nThe test you added will double as an example for how to use the job.",
+      "revId": "43f50239edbdee1b806d334cfef55abce87896a6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
