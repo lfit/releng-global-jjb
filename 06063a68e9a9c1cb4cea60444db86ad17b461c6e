@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a9400ec_052ca873",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 0,
+      "message": "retain this line for project which dont want to define a special case regex.",
+      "range": {
+        "startLine": 31,
+        "startChar": 4,
+        "endLine": 31,
+        "endChar": 35
+      },
+      "revId": "06063a68e9a9c1cb4cea60444db86ad17b461c6e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cab7ec43_09c095dc",
+        "filename": ".jjb-test/lf-ci-jobs/jenkins-cfg-merge-minimal.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 0,
+      "message": "why remove this?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 48
+      },
+      "revId": "06063a68e9a9c1cb4cea60444db86ad17b461c6e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2460257d_2c82f062",
+        "filename": ".jjb-test/lf-node-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 0,
+      "message": "regex will not match as expected.",
+      "range": {
+        "startLine": 21,
+        "startChar": 4,
+        "endLine": 21,
+        "endChar": 26
+      },
+      "revId": "06063a68e9a9c1cb4cea60444db86ad17b461c6e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae631361_6262bdc0",
+        "filename": ".jjb-test/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 0,
+      "message": "I\u0027d suggest let\u0027s retain view-regex since this giving project flexibility to have any regex that suites job naming convention.",
+      "range": {
+        "startLine": 23,
+        "startChar": 17,
+        "endLine": 23,
+        "endChar": 28
+      },
+      "revId": "06063a68e9a9c1cb4cea60444db86ad17b461c6e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}

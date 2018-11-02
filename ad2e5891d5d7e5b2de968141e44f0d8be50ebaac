@@ -1,0 +1,170 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a56e6de5_1f313da6",
+        "filename": ".jjb-test/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 1,
+      "message": "The `regex` in the view-template will not work correctly \n\n1. view-regex is not defined for the common-view.\n2. even if you remove this line, since the project wants to pass all the ${JOB_NAMES} with regex `.*-ci-jobs$|.*-openstack-jobs$|.*-packer-jobs$` but we are setting it to regex: \u0027^{project-name}-.*\u0027. This translates to regex: \u0027^ci-jobs-.*\u0027 which will result in excluding the $JOB_NAMES that are required to match two additional regexs. This is an example i have taken from the regex for the packaging/ansible/puppet jobs.",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 64
+      },
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fd692bd_dda3e1a0",
+        "filename": ".jjb-test/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 1,
+      "message": "The `regex` in the view-template will not work correctly since they project wants to pass all the ${JOB_NAMES} ending with string `-maven$` but we are setting it to regex: \u0027^{project-name}-.*\u0027. This translates to regex: \u0027^maven-.*\u0027 which will result in an empty view when no $JOB_NAMES are matching.",
+      "range": {
+        "startLine": 44,
+        "startChar": 3,
+        "endLine": 44,
+        "endChar": 23
+      },
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce7ce9a0_5e62b728",
+        "filename": ".jjb-test/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 1,
+      "message": "Add this line here:\n   view-regex: \u0027.*-maven$\u0027",
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2df50800_21e19b70",
+        "filename": ".jjb-test/lf-node-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 1,
+      "message": "Add this line here:\n   view-regex: \u0027.*-node$",
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "89e86c44_904b23bf",
+        "filename": ".jjb-test/lf-openstack.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 1,
+      "message": "this will never get used because `view-regex` is not used for common-view and we are setting regex: \u0027^{project-name}-.*\u0027. \n\nI\u0027d suggest let\u0027s retain view-regex since this give project to flexibility to have any regex that suite there job naming convention.",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 31
+      },
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c98c465_537cc1f8",
+        "filename": ".jjb-test/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 1,
+      "message": "add line here:\n   view-regex: \u0027.*-python$\u0027",
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc083f0f_d0644c86",
+        "filename": ".jjb-test/lf-rtd-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 1,
+      "message": "this will never get used because `view-regex` is not used for common-view and we are setting regex: \u0027^{project-name}-.*\u0027. \n\nI\u0027d suggest let\u0027s retain view-regex since this give project flexibility to have any regex that suite their job naming convention.",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 28
+      },
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7db218bf_e6b2be89",
+        "filename": "jjb/lf-views.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-02T00:35:51Z",
+      "side": 1,
+      "message": "Change this to \"regex: \u0027{view-regex}\u0027\" and retain the ability for the project to define their regex.",
+      "range": {
+        "startLine": 37,
+        "startChar": 4,
+        "endLine": 37,
+        "endChar": 31
+      },
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
