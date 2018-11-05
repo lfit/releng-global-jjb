@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    New detox version requires tox >= 3.5 and < 4. Instead of
+    explicitly pulling tox, we are now implicitly pulling via
+    detox. (https://jira.opendaylight.org/browse/RELENG-136)
