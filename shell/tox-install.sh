@@ -14,7 +14,8 @@ echo "---> tox-install.sh"
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-python -m pip install --user --quiet --upgrade argparse detox "tox<3.0.0" tox-pyenv
+# Tox version is pulled in through detox to mitigate version conflict
+python -m pip install --user --quiet --upgrade argparse detox tox-pyenv
 
 echo "----> pip freeze"
 pip freeze
