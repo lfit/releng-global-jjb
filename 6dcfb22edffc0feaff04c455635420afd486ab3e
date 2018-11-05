@@ -1,0 +1,187 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b12ada94_cc8b3f02",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "No need to use a note for this. Plus the indentation below does not line up to under the \"n\" so would not render correctly.",
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f8730512_9d6e6b0f",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "Unindent this and change \"clouds-yaml\" to ``clouds-yaml`` so that it gets noticeably quoted.",
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cb71cd15_aea1632c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "verify jobs can be concurrent \u0027true\u0027 because we don\u0027t need to worry about merge collision.",
+      "range": {
+        "startLine": 417,
+        "startChar": 16,
+        "endLine": 417,
+        "endChar": 21
+      },
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0d71b8c_229bebcc",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "Add this comment just above this line:\n\n # Listed after to override openstack-infra-wrappers clouds.yaml definition\n\nto document that order matters here.",
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a2de356_a7f11f2c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "I think we\u0027re going to deprecate this file. Instead as the very first builder item. Add this macro:\n\n      - lf-infra-pre-build\n\nIt will pull in the heatclient.",
+      "range": {
+        "startLine": 448,
+        "startChar": 45,
+        "endLine": 448,
+        "endChar": 65
+      },
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e306de6d_384b6ffb",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "Please also add GitHub template support.",
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "851258ea_f5230a26",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "It is now 2018",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aebb41e6_b62f0217",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "Cattle is the name of the cloud. If we have a setup with more than 1 cloud account, then there will be another name to check. So this comment is not completely accurate considering the code below.\n\nI would  just state jenkins-config/clouds/openstack.",
+      "range": {
+        "startLine": 13,
+        "startChar": 34,
+        "endLine": 13,
+        "endChar": 40
+      },
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bde86d4d_d95c87af",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-05T02:50:41Z",
+      "side": 1,
+      "message": "This comment implies:\n\n set -eux -o pipefail\n\nRemove the 2nd comment because there\u0027s no virtualenv being used in this file.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 69
+      },
+      "revId": "6dcfb22edffc0feaff04c455635420afd486ab3e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
