@@ -1,0 +1,7 @@
+Code-Review+2: Bengt Thuree <bthuree@linuxfoundation.org>
+Verified+1: OpenDaylight Jenkins <releng+odl-jobbuilder@linuxfoundation.org>
+Submitted-by: Thanh Ha (zxiiro) <thanh.ha@linuxfoundation.org>
+Submitted-at: Mon, 05 Nov 2018 08:08:05 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/13319
+Project: releng/global-jjb
+Branch: refs/heads/v0.26.x
