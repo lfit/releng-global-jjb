@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f6f79d4_b94e4a88",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2018-11-06T02:20:12Z",
+      "side": 1,
+      "message": "perhaps mention github-jenkins-cfg-verify here too?",
+      "revId": "61058641e6095fc24a57f6349f1c7a7d83eb988a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
