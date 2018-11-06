@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5da0b2c9_b86e1826",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T00:49:25Z",
+      "side": 1,
+      "message": "Alphabetical order please.",
+      "revId": "30b327e8ca128a8b0c01b8e3b9cc86b6b3aa3381",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4df75f2f_3cb29325",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T00:49:25Z",
+      "side": 1,
+      "message": "Move above jjb-version for alphabetical ordering.",
+      "revId": "30b327e8ca128a8b0c01b8e3b9cc86b6b3aa3381",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ea73183_2472138a",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T00:49:25Z",
+      "side": 1,
+      "message": "here too.",
+      "revId": "30b327e8ca128a8b0c01b8e3b9cc86b6b3aa3381",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6be1abb9_e10dceef",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T00:49:25Z",
+      "side": 1,
+      "message": "here too.",
+      "revId": "30b327e8ca128a8b0c01b8e3b9cc86b6b3aa3381",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e15f2e42_eed4c514",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T00:49:25Z",
+      "side": 1,
+      "message": "above jjb-version",
+      "revId": "30b327e8ca128a8b0c01b8e3b9cc86b6b3aa3381",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3da8158_1ee66359",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T00:49:25Z",
+      "side": 1,
+      "message": "Here too.",
+      "revId": "30b327e8ca128a8b0c01b8e3b9cc86b6b3aa3381",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef52c141_c39e8429",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T00:49:25Z",
+      "side": 1,
+      "message": "here too.",
+      "revId": "30b327e8ca128a8b0c01b8e3b9cc86b6b3aa3381",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
