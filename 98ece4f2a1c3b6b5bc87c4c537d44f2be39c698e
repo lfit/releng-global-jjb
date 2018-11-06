@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9d7bd55d_06283292",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T01:14:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "037d8956_b2514eec",
+      "revId": "98ece4f2a1c3b6b5bc87c4c537d44f2be39c698e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e757234f_b04db1f2",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 6
@@ -30,6 +48,30 @@
       "writtenOn": "2018-11-06T01:09:28Z",
       "side": 1,
       "message": "Needs a different name because status contexts in GitHub have to be unique. Call this \"Jenkins CFG Verify\".",
+      "range": {
+        "startLine": 509,
+        "startChar": 27,
+        "endLine": 509,
+        "endChar": 37
+      },
+      "revId": "98ece4f2a1c3b6b5bc87c4c537d44f2be39c698e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "549e6c4f_51e1a17e",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T01:14:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e757234f_b04db1f2",
       "range": {
         "startLine": 509,
         "startChar": 27,
