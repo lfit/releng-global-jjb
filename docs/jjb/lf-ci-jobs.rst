@@ -23,6 +23,8 @@ lf-infra-jjb-parameters
 
     :jjb-version: Version of Jenkins Job Builder (JJB) to install and use in
         the jjb jobs.
+    :jjb-cache: Location of Jenkins Job Builder (JJB) cache used for jjb
+        jobs.
 
 lf-jenkins-cfg-clouds
 ---------------------
@@ -366,6 +368,7 @@ Runs `jenkins-jobs update` to update production job configuration
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :jjb-version: JJB version to install. (default: see job-template)
+    :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -404,6 +407,7 @@ Runs `jenkins-jobs test` to validate JJB syntax
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :jjb-version: JJB version to install. (default: see job-template)
+    :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -444,6 +448,7 @@ project level jobs.
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :jjb-version: JJB version to install. (default: see job-template)
+    :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
 
