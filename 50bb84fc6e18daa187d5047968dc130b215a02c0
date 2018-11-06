@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "082ee2af_269271ff",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-06T06:38:45Z",
+      "side": 1,
+      "message": "Why not? I think we should add it.",
+      "range": {
+        "startLine": 305,
+        "startChar": 0,
+        "endLine": 306,
+        "endChar": 11
+      },
+      "revId": "50bb84fc6e18daa187d5047968dc130b215a02c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
