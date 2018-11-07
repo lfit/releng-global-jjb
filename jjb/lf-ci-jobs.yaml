@@ -1239,6 +1239,8 @@
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     openstack-cloud: vex
+    openstack-image-cleanup: true
+    openstack-image-cleanup-age: 30
     stream: master
     submodule-timeout: 10
 
@@ -1283,7 +1285,15 @@
       - lf-infra-pre-build
       - inject:
           properties-content: OS_CLOUD={openstack-cloud}
+      # Images
       - shell: !include-raw-escape: ../shell/openstack-protect-in-use-images.sh
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{openstack-image-cleanup}'
+          steps:
+            - inject:
+                properties-content: OS_IMAGE_CLEANUP_AGE={openstack-image-cleanup-age}
+            - shell: !include-raw-escape: ../shell/openstack-cleanup-old-images.sh
 
     publishers:
       - lf-infra-publish
