@@ -1280,9 +1280,9 @@
       - timed: '{obj:cron}'
 
     builders:
+      - lf-infra-pre-build
       - inject:
           properties-content: OS_CLOUD={openstack-cloud}
-      - shell: !include-raw-escape: ../shell/openstack-install.sh
       - shell: !include-raw-escape: ../shell/openstack-protect-in-use-images.sh
 
     publishers:
