@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "da677ded_798e5f5e",
+        "filename": ".jjb-test/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-07T03:24:45Z",
+      "side": 1,
+      "message": "I am ok with having a separate view template (for project-views and another for common-views), but let\u0027s not hardcode the regex param. \n\nMaybe we should consider gettings a point of view from Andy and other reviewers in the team.",
+      "parentUuid": "f375d85b_1498bd8c",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 64
+      },
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7fd692bd_dda3e1a0",
         "filename": ".jjb-test/lf-maven-jobs.yaml",
         "patchSetId": 1
