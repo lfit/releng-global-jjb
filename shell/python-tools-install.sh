@@ -15,6 +15,7 @@ REQUIREMENTS_FILE=$(mktemp /tmp/requirements-XXXX.txt)
 
 cat << EOF > "$REQUIREMENTS_FILE"
 lftools~=0.18.0
+lftools[openstack]
 python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 EOF

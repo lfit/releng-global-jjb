@@ -1,0 +1,5 @@
+---
+other:
+  - |
+    lftools' ``openstack`` module will now be installed as part of
+    pre-build.
