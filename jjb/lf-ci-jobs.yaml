@@ -1239,6 +1239,7 @@
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     openstack-cloud: vex
+    openstack-image-age: 30
     stream: master
     submodule-timeout: 10
 
@@ -1282,8 +1283,12 @@
     builders:
       - lf-infra-pre-build
       - inject:
-          properties-content: OS_CLOUD={openstack-cloud}
+          properties-content: |
+              OS_CLOUD={openstack-cloud}
+              OS_IMAGE_AGE={openstack-image-age}
+      # Images
       - shell: !include-raw-escape: ../shell/openstack-protect-in-use-images.sh
+      - shell: !include-raw-escape: ../shell/openstack-cleanup-old-images.sh
 
     publishers:
       - lf-infra-publish
