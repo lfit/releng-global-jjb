@@ -1,0 +1,7 @@
+---
+- project:
+    name: openstack-cron-minimal-test
+    jobs:
+      - 'gerrit-openstack-cron'
+
+    project-name: ci-management

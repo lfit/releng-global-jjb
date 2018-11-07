@@ -570,12 +570,25 @@ containing the credentials for the cloud.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :openstack-cloud: OS_CLOUD setting to pass to openstack client.
         (default: vex)
+    :openstack-image-cleanup: Whether or not to run the image cleanup script.
+        (default: true)
+    :openstack-image-cleanup-age: Age in days of image before marking it for
+        removal. (default: 30)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+
+Minimal Example:
+
+.. literalinclude:: ../../.jjb-test/lf-ci-jobs/openstack-cron-minimal.yaml
+
+Full Example:
+
+.. literalinclude:: ../../.jjb-test/lf-ci-jobs/openstack-cron-full.yaml
+
 
 .. _gjjb-packer-merge:
 
