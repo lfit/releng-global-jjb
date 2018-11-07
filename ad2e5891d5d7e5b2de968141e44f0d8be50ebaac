@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "f375d85b_1498bd8c",
+        "filename": ".jjb-test/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-07T02:51:18Z",
+      "side": 1,
+      "message": "I think we are trying to cram 2 use cases into a single \"common-view\" here. What I see is:\n\n 1. project-view which is simply every single project gets this and has a hardcoded regex that they shouldn\u0027t have to care about configuring ^{project-name}.*\n \n 2. A bunch of 1 off views that while imo should be just declared as \"- view\" instead of using a view template as listed above.\n\nThe issue with I have with creating a template for these 1 off views is that the template we are creating isn\u0027t special and is just redefining every single possible configuration that a \"view\" can have. Which imo might as well not use a template.\n\nConsidering you your continued request to create this view-template though I will concede this point and propose 2 actions.\n\n a. rename the current common-view to project-view as I really do feel like projects should have minimal requirements to automatically get the project view as this is a view provided to every single project, it is used often.\n \n b. create a new common-view that lets you modify the view-regex as requested.",
+      "parentUuid": "8ffa60b4_c23e3a2a",
+      "range": {
+        "startLine": 69,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 64
+      },
+      "revId": "ad2e5891d5d7e5b2de968141e44f0d8be50ebaac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7fd692bd_dda3e1a0",
         "filename": ".jjb-test/lf-maven-jobs.yaml",
         "patchSetId": 1
