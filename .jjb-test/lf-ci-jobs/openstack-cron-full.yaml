@@ -8,3 +8,4 @@
     openstack-cloud: example-cloud
     openstack-image-cleanup: false
     openstack-image-cleanup-age: 42
+    openstack-image-protect: false
