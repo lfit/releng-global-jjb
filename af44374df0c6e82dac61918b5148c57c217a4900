@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7ef5740_2c49bebe",
+        "filename": ".jjb-test/lf-ci-jobs/openstack-cron-full.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-08T05:15:08Z",
+      "side": 1,
+      "message": "Is there a specific reason the age is being set as 42 days?",
+      "range": {
+        "startLine": 10,
+        "startChar": 33,
+        "endLine": 10,
+        "endChar": 35
+      },
+      "revId": "af44374df0c6e82dac61918b5148c57c217a4900",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
