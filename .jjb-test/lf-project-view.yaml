@@ -1,0 +1,7 @@
+---
+- project:
+    name: project-view-test
+    views:
+      - project-view
+
+    project-name: project-view-test
