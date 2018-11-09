@@ -69,6 +69,21 @@
       - mininet
 
 - project:
+    name: throttle-ci-jobs
+    jobs:
+      - "{project-name}-ci-jobs"
+
+    throttle-enabled: true
+    throttle_categories:
+        - 'cat1'
+        - 'cat2'
+    throttle-max-per-node: 3
+    throttle-max-total: 2
+    throttle-option: 'category'
+
+    project-name: throttle-ciman
+
+- project:
     name: ci-jobs-view
     views:
       - project-view

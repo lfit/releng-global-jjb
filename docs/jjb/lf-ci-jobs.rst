@@ -462,6 +462,15 @@ Runs `jenkins-jobs test` to validate JJB syntax
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :throttle_categories: List of categories to throttle by.
+    :throttle-enabled: Whether or not to enable throttling on the job.
+        (default: true)
+    :throttle-max-per-node: Max jobs to run on the same node. (default: 1)
+    :throttle-max-total: Max jobs to run across the entire project. - 0
+        means 'unlimited' (default: 0)
+    :throttle-option: Throttle by the project or by list of categories
+        defined in the throttle plugin configuration. (options: 'project',
+        'category'; default: project)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
