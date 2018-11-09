@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    The **openstack-cron** job now has the ability to remove images older than
+    a specified age (default: 30).

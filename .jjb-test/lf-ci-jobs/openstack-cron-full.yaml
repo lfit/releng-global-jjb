@@ -1,0 +1,10 @@
+---
+- project:
+    name: openstack-cron-full-test
+    jobs:
+      - 'gerrit-openstack-cron'
+
+    project-name: ciman-full
+    openstack-cloud: example-cloud
+    openstack-image-cleanup: false
+    openstack-image-cleanup-age: 42
