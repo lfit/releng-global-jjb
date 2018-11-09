@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Support for the `Throttle Plugin`_ is added to JJB jobs so static
+    build servers can restrict the number of concurrent JJB jobs ran at
+    the same time.
+
+    .. _Throttle Plugin: https://plugins.jenkins.io/throttle-concurrents

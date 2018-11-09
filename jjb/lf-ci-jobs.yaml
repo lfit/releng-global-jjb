@@ -113,6 +113,11 @@
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
+    throttle_categories: []
+    throttle-option: 'project'
+    throttle-enabled: true
+    throttle-max-per-node: 1
+    throttle-max-total: 0
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -140,6 +145,12 @@
       - lf-infra-properties:
           project: '{project}'
           build-days-to-keep: 7
+      - throttle:
+          categories: '{obj:throttle_categories}'
+          enabled: '{throttle-enabled}'
+          max-per-node: '{throttle-max-per-node}'
+          max-total: '{throttle-max-total}'
+          option: '{throttle-option}'
 
     parameters:
       - lf-infra-parameters:
