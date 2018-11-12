@@ -97,7 +97,7 @@
     build-timeout: 10
     disable-job: false
     github-url: 'https://github.com'
-    jjb-version: 2.2.1
+    jjb-version: 2.8.0
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
