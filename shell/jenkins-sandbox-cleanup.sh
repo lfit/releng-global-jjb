@@ -14,3 +14,11 @@ echo "---> jenkins-sandbox-cleanup.sh"
 set -eux -o pipefail
 
 bash -c "/usr/bin/yes 2>/dev/null || true" | jenkins-jobs -s sandbox delete-all
+
+# Recreate the All default view.
+cat << EOF > all-view.yaml
+- view:
+    name: All
+    view-type: all
+EOF
+jenkins-jobs -s sandbox update -v all-view.yaml
