@@ -576,6 +576,8 @@ containing the credentials for the cloud.
         removal. (default: 30)
     :openstack-image-protect: Whether or not to run the image protect script.
         (default: true)
+    :openstack-volume-cleanup: Whether or not to run the volume cleanup script.
+        (default: true)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.

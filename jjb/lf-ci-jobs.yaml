@@ -1242,6 +1242,7 @@
     openstack-image-cleanup: true
     openstack-image-cleanup-age: 30
     openstack-image-protect: true
+    openstack-volume-cleanup: true
     stream: master
     submodule-timeout: 10
 
@@ -1286,6 +1287,12 @@
       - lf-infra-pre-build
       - inject:
           properties-content: OS_CLOUD={openstack-cloud}
+      # Volumes
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{openstack-volume-cleanup}'
+          steps:
+            - shell: !include-raw-escape: ../shell/openstack-cleanup-orphaned-volumes.sh
       # Images
       - conditional-step:
           condition-kind: boolean-expression
