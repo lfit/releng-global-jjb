@@ -13,5 +13,6 @@
     openstack-image-cleanup: false
     openstack-image-cleanup-age: 42
     openstack-image-protect: false
+    openstack-server-cleanup: false
     openstack-stack-cleanup: false
     openstack-volume-cleanup: false
