@@ -577,6 +577,8 @@ containing the credentials for the cloud.
         removal. (default: 30)
     :openstack-image-protect: Whether or not to run the image protect script.
         (default: true)
+    :openstack-server-cleanup: Whether or not to run the server cleanup script.
+        (default: true)
     :openstack-stack-cleanup: Whether or not to run the stack cleanup script.
         (default: true)
     :openstack-volume-cleanup: Whether or not to run the volume cleanup script.
