@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    The **openstack-cron** job now has the ability to remove orphaned
+    stacks.
+other:
+  - |
+    The **openstack-cron** job now runs every hour instead of daily. This is
+    because stack cleanup should happen more regularly.
