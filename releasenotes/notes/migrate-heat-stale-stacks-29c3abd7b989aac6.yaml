@@ -1,0 +1,13 @@
+---
+features:
+  - |
+    The **openstack-cron** job now has the ability to remove orphaned
+    stacks.
+upgrade:
+  - |
+    The **openstack-cron** job now requires a new parameter configured
+    ``jenkins-urls`` in order to use the job.
+other:
+  - |
+    The **openstack-cron** job now runs every hour instead of daily. This is
+    because stack cleanup should happen more regularly.
