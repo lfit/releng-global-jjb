@@ -1242,6 +1242,7 @@
     openstack-image-cleanup: true
     openstack-image-cleanup-age: 30
     openstack-image-protect: true
+    openstack-stack-cleanup: true
     openstack-volume-cleanup: true
     stream: master
     submodule-timeout: 10
@@ -1265,6 +1266,11 @@
           stream: '{stream}'
           branch: '{branch}'
           lftools-version: '{lftools-version}'
+      - string:
+          name: JENKINS_URLS
+          default: '{jenkins-urls}'
+          description: |
+              Space separated list of Jenkins URLs to check for active builds.
 
     wrappers:
       - lf-infra-wrappers:
@@ -1287,6 +1293,12 @@
       - lf-infra-pre-build
       - inject:
           properties-content: OS_CLOUD={openstack-cloud}
+      # Stacks
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{openstack-stack-cleanup}'
+          steps:
+            - shell: !include-raw-escape: ../shell/openstack-cleanup-orphaned-stacks.sh
       # Volumes
       - conditional-step:
           condition-kind: boolean-expression
