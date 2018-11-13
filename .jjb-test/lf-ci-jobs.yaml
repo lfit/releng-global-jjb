@@ -22,12 +22,20 @@
 
     project-name: gerrit-ciman
 
+    jenkins-urls: >
+        https://jenkins.example.org
+        https://jenkins.example.org/sandbox
+
 - project:
     name: github-openstack-jobs
     jobs:
       - github-openstack-cron
 
     project-name: github-ciman
+
+    jenkins-urls: >
+        https://jenkins.example.org
+        https://jenkins.example.org/sandbox
 
 
 - project:

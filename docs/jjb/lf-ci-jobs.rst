@@ -560,13 +560,14 @@ containing the credentials for the cloud.
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
         be configured in defaults.yaml)
+    :jenkins-urls: URLs to Jenkins systems to check for active builds.
 
 :Optional parameters:
 
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 90)
-    :cron: Time when the packer image should be rebuilt (default: @daily)
+    :cron: Time when the packer image should be rebuilt (default: @hourly)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :openstack-cloud: OS_CLOUD setting to pass to openstack client.
         (default: vex)
@@ -575,6 +576,8 @@ containing the credentials for the cloud.
     :openstack-image-cleanup-age: Age in days of image before marking it for
         removal. (default: 30)
     :openstack-image-protect: Whether or not to run the image protect script.
+        (default: true)
+    :openstack-stack-cleanup: Whether or not to run the stack cleanup script.
         (default: true)
     :openstack-volume-cleanup: Whether or not to run the volume cleanup script.
         (default: true)
