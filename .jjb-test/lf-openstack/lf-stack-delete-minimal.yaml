@@ -1,0 +1,16 @@
+- job-template:
+    name: stack-delete-test
+
+    #####################
+    # Default variables #
+    #####################
+
+    openstack-cloud: lf-cloud
+
+    #####################
+    # Job configuration #
+    #####################
+
+    publishers:
+      - lf-stack-delete:
+          openstack-cloud: '{openstack-cloud}'
