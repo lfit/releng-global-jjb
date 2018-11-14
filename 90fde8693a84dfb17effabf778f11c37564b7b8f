@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "90e55924_b6cb1323",
+        "filename": "shell/openstack-cleanup-orphaned-servers.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2018-11-14T20:01:20Z",
+      "side": 1,
+      "message": "Do we need to keep this commented-out line?",
+      "range": {
+        "startLine": 28,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 55
+      },
+      "revId": "90fde8693a84dfb17effabf778f11c37564b7b8f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
