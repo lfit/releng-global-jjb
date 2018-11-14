@@ -16,6 +16,24 @@
       "revId": "9a7b6a85c8d33a1a77344f8cfd96b05531a08aa4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f18258a_26879bf3",
+        "filename": "releasenotes/notes/packer-version-c1970bd1cbe0b9b5.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-14T02:42:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c776ea17_8d6bc800",
+      "revId": "9a7b6a85c8d33a1a77344f8cfd96b05531a08aa4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
