@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c776ea17_8d6bc800",
+        "filename": "releasenotes/notes/packer-version-c1970bd1cbe0b9b5.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-14T02:35:28Z",
+      "side": 1,
+      "message": "I don\u0027t think we need to release note this since it\u0027s already covered by the job-template note previously.\n\nPlus if you only read the release notes without the context of this patch it doesn\u0027t really tell the reader how this affects them. Folks using global-jjb are likely to use the job-template which sets this version and not this bash script directly.",
+      "revId": "9a7b6a85c8d33a1a77344f8cfd96b05531a08aa4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
