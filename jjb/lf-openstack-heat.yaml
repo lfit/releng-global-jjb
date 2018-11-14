@@ -1,0 +1,55 @@
+---
+- builder:
+    name: lf-stack-create
+    builders:
+      - inject:
+          properties-content: |
+            OS_CLOUD={openstack-cloud}
+            OS_STACK_NAME=$SILO-$JOB_NAME-$BUILD_NUMBER
+            OS_STACK_TEMPLATE={openstack-heat-template}
+      - config-file-provider:
+          files:
+            - file-id: clouds-yaml
+              target: '$HOME/.config/openstack/clouds.yaml'
+      - shell: |
+          #!/bin/bash
+          # Setup openstack heat parameters file
+          stack_parameters="$WORKSPACE/stack-parameters.yaml"
+          JOB_SUM=$(echo "$JOB_NAME" | sum | awk '{{ print $1 }}')
+          VM_NAME="$JOB_SUM-$BUILD_NUMBER"
+          cat > "$WORKSPACE/params.yaml" << EOF
+          {openstack-heat-parameters}
+          job_name: '$VM_NAME'
+          silo: '$SILO'
+          EOF
+          echo "parameters:" > "$stack_parameters"
+          cat "$WORKSPACE/params.yaml" | sed 's/^/    /' >> "$stack_parameters"
+          cat "$stack_parameters"
+      - shell: !include-raw-escape: ../shell/openstack-stack-create.sh
+      #- shell: !include-raw-escape: opendaylight-infra-copy-ssh-keys.sh
+
+- publisher:
+    name: lf-stack-delete
+    publishers:
+      - postbuildscript:
+          builders:
+            - role: BOTH
+              build-on:
+                - ABORTED
+                - FAILURE
+                - SUCCESS
+                - UNSTABLE
+              build-steps:
+                - inject:
+                    properties-content: |
+                      OS_CLOUD={openstack-cloud}
+                      OS_STACK_NAME=$SILO-$JOB_NAME-$BUILD_NUMBER
+                - config-file-provider:
+                    files:
+                      - file-id: clouds-yaml
+                        target: '$HOME/.config/openstack/clouds.yaml'
+                - shell: |
+                    #!/bin/bash -l
+                    echo "Deleting $OS_STACK_NAME"
+                    lftools openstack --os-cloud "$OS_CLOUD" stack delete "$OS_STACK_NAME"
+          mark-unstable-if-failed: false
