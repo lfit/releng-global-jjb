@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f2122e4_55d330ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-14T02:44:04Z",
+      "side": 1,
+      "message": "Not sure why the commit message prints this twice?",
+      "revId": "86b0a6fcd368b8d114d19c05f7a0949a29a0ee16",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
