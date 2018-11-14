@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3c24f939_0a967335",
+        "filename": "jjb/lf-openstack-heat.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-14T19:51:56Z",
+      "side": 1,
+      "message": "This used to be a 1 liner so didn\u0027t need to be a shell script. It\u0027s been tweaked enough times that it should probably be a script at this point. I\u0027ll update it in the next iteration.",
+      "parentUuid": "ec5f30f9_4d5c2a84",
+      "revId": "df6aa3d61a100b5d9f3827a501d34081d2df2a01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfcdfabe_feab95c0",
         "filename": "jjb/lf-openstack-heat.yaml",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2018-11-14T13:55:06Z",
       "side": 1,
       "message": "what\u0027s the pattern for var names as far as uppercase and lowercase?",
+      "revId": "df6aa3d61a100b5d9f3827a501d34081d2df2a01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9c24fe2d_0c5dfa57",
+        "filename": "shell/openstack-stack-ssh-ready.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-14T19:51:56Z",
+      "side": 1,
+      "message": "I\u0027m not always consistent but the general rule I try to follow is UPPERCASE for variables that are static / unchanging, and lowercase for local variables.",
+      "parentUuid": "c663df11_26e65946",
       "revId": "df6aa3d61a100b5d9f3827a501d34081d2df2a01",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
