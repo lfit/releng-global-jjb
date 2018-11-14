@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec5f30f9_4d5c2a84",
+        "filename": "jjb/lf-openstack-heat.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 63
+      },
+      "writtenOn": "2018-11-14T13:55:06Z",
+      "side": 1,
+      "message": "any reason this is not a shell script?",
+      "revId": "df6aa3d61a100b5d9f3827a501d34081d2df2a01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bfcdfabe_feab95c0",
+        "filename": "jjb/lf-openstack-heat.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 63
+      },
+      "writtenOn": "2018-11-14T13:55:06Z",
+      "side": 1,
+      "message": "more details, like \"openstack heat parameters\", since this is dumped to a single console and is hard to follow.",
+      "revId": "df6aa3d61a100b5d9f3827a501d34081d2df2a01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c663df11_26e65946",
+        "filename": "shell/openstack-stack-ssh-ready.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 63
+      },
+      "writtenOn": "2018-11-14T13:55:06Z",
+      "side": 1,
+      "message": "what\u0027s the pattern for var names as far as uppercase and lowercase?",
+      "revId": "df6aa3d61a100b5d9f3827a501d34081d2df2a01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
