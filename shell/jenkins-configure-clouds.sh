@@ -129,6 +129,10 @@ get_minion_options() {
     # Create a flavor mapping to manage hardware_id until OpenStack Cloud
     # plugin supports using names
     declare -A flavors
+    # ShellCheck 0.4.4 incorrectly flags these as unused vars
+    # Fails on first instance of each different associatve array prefix
+    # Fails when using single/double/no quotes, all of which are valid bash
+    # shellcheck disable=SC2154
     flavors["lf-highcpu-2"]="1051d06a-61ea-45e3-b9b4-93de92880b27"
     flavors["lf-highcpu-4"]="35eb8e11-490f-4d1a-9f19-76091fc04547"
     flavors["lf-highcpu-8"]="68af673f-54ee-4255-871c-158c18e4f643"
@@ -136,6 +140,7 @@ get_minion_options() {
     flavors["lf-standard-2"]="ef454088-7839-42a0-bf23-5e0ab6386a27"
     flavors["lf-standard-4"]="bd74e1e6-c2ed-475b-ab3f-2ce13936a215"
     flavors["lf-standard-8"]="32d74024-8418-41b6-9675-b77816748148"
+    # shellcheck disable=SC2154
     flavors["odl-highcpu-2"]="def1b86f-b7f8-4943-b430-4a0599170006"
     flavors["odl-highcpu-4"]="0c8ec795-2ff8-4623-98cf-b4c1d92bb37c"
     flavors["odl-highcpu-8"]="458d6499-e2c8-4580-aa88-a4a04a33ee25"
@@ -143,6 +148,7 @@ get_minion_options() {
     flavors["odl-standard-2"]="8ead227a-acfe-4290-be70-fbab92e6dd2f"
     flavors["odl-standard-4"]="f76fb18d-d5fb-4175-95c1-b29d8039d102"
     flavors["odl-standard-8"]="ba38b1af-4f87-4e4e-860e-94e8329d0d78"
+    # shellcheck disable=SC2154
     flavors["v1-standard-1"]="bbcb7eb5-5c8d-498f-9d7e-307c575d3566"
     flavors["v1-standard-2"]="ca2a6e9c-2236-4107-8905-7ae9427132ff"
     flavors["v1-standard-4"]="5cf64088-893b-46b5-9bb1-ee020277635d"
@@ -153,6 +159,7 @@ get_minion_options() {
     flavors["v1-standard-64"]="0c1d9008-f546-4608-9e8f-f8bdaec8dddd"
     flavors["v1-standard-96"]="5741c775-92a4-4488-bd77-dd7b08e2be81"
     flavors["v1-standard-128"]="e82d0a5b-8031-4526-9a5d-a15f7b4d48ff"
+    # shellcheck disable=SC2154
     flavors["v2-highcpu-1"]="c04abb7a-2b61-4ed3-8ce8-6c40ad9df750"
     flavors["v2-highcpu-2"]="03bdf34e-8905-46bc-a4b9-8dbf94b6e06d"
     flavors["v2-highcpu-4"]="3b72e578-7875-4e0e-91b7-71ed292f3ca2"
