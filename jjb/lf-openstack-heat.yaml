@@ -1,0 +1,43 @@
+---
+- builder:
+    name: lf-stack-create
+    builders:
+      - inject:
+          properties-content: |
+            OS_CLOUD={openstack-cloud}
+            OS_STACK_NAME=$SILO-$JOB_NAME-$BUILD_NUMBER
+            OS_STACK_TEMPLATE={openstack-heat-template}
+            OS_STACK_TEMPLATE_DIR={openstack-heat-template-dir}
+      - config-file-provider:
+          files:
+            - file-id: clouds-yaml
+              target: '$HOME/.config/openstack/clouds.yaml'
+      - shell: !include-raw: ../shell/openstack-stack-parameters.sh
+      - shell: !include-raw-escape: ../shell/openstack-stack-create.sh
+      - shell: !include-raw-escape: ../shell/openstack-stack-ssh-ready.sh
+
+- publisher:
+    name: lf-stack-delete
+    publishers:
+      - postbuildscript:
+          builders:
+            - role: BOTH
+              build-on:
+                - ABORTED
+                - FAILURE
+                - SUCCESS
+                - UNSTABLE
+              build-steps:
+                - inject:
+                    properties-content: |
+                      OS_CLOUD={openstack-cloud}
+                      OS_STACK_NAME=$SILO-$JOB_NAME-$BUILD_NUMBER
+                - config-file-provider:
+                    files:
+                      - file-id: clouds-yaml
+                        target: '$HOME/.config/openstack/clouds.yaml'
+                - shell: |
+                    #!/bin/bash -l
+                    echo "Deleting $OS_STACK_NAME"
+                    lftools openstack --os-cloud "$OS_CLOUD" stack delete "$OS_STACK_NAME"
+          mark-unstable-if-failed: false
