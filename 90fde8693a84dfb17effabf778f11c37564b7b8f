@@ -22,6 +22,30 @@
       "revId": "90fde8693a84dfb17effabf778f11c37564b7b8f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5fe2a5_5540a469",
+        "filename": "shell/openstack-cleanup-orphaned-servers.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-14T20:05:16Z",
+      "side": 1,
+      "message": "I think I intended to rework this to add error handling. Let me look into finally doing that.",
+      "parentUuid": "90e55924_b6cb1323",
+      "range": {
+        "startLine": 28,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 55
+      },
+      "revId": "90fde8693a84dfb17effabf778f11c37564b7b8f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
