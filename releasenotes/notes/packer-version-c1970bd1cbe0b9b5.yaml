@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Upgrade the default version of packer to match the version in the ci jobs.
