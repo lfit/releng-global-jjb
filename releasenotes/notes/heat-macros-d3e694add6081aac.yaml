@@ -1,0 +1,14 @@
+---
+features:
+  - |
+    New ``lf-stack-create`` macro allows job-templates to setup a OpenStack
+    Heat stack, useful for spinning up CSIT labs to run integration tests
+    against. Use with the ``lf-stack-delete`` macro.
+
+upgrade:
+  - |
+    ``lf-stack-delete`` has been modified to be a companion macro to
+    ``lf-stack-create`` in order to cleanup the stack at the end of a job run.
+    It now includes a required parameter **openstack-cloud** to choose the
+    ``clouds.yaml`` cloud configuration for the project. Existing users of
+    this macro will need to update their job templates accordingly.
