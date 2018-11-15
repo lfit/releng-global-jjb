@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6660352_059db95a",
+        "filename": "shell/openstack-stack-copy-ssh-keys.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 63
+      },
+      "writtenOn": "2018-11-15T22:18:00Z",
+      "side": 1,
+      "message": "where is i coming from?",
+      "range": {
+        "startLine": 20,
+        "startChar": 67,
+        "endLine": 20,
+        "endChar": 68
+      },
+      "revId": "5f5b19c1aeeab174374276db481e1441a1786d0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
