@@ -25,7 +25,13 @@ stack_in_jenkins() {
         JENKINS_URL="$jenkins/computer/api/json?tree=computer[executors[currentExecutable[url]],oneOffExecutors[currentExecutable[url]]]&xpath=//url&wrapper=builds"
         resp=$(curl -s -w "\\n\\n%{http_code}" --globoff -H "Content-Type:application/json" "$JENKINS_URL")
         json_data=$(echo "$resp" | head -n1)
-        #status=$(echo "$resp" | awk 'END {print $NF}')
+        status=$(echo "$resp" | awk 'END {print $NF}')
+
+        if [ "$status" != 200 ]; then
+            >&2 echo "ERROR: Failed to fetch data from $JENKINS_URL with status code $status"
+            >&2 echo "$resp"
+            exit 1
+        fi
 
         if [[ "${jenkins}" == *"jenkins."*".org" ]] || [[ "${jenkins}" == *"jenkins."*".io" ]]; then
             silo="production"
