@@ -21,6 +21,8 @@ lf-infra-jjb-parameters
 
 :Required Parameters:
 
+    :jjb-cache: Location of Jenkins Job Builder (JJB) cache used for jjb
+        jobs.
     :jjb-version: Version of Jenkins Job Builder (JJB) to install and use in
         the jjb jobs.
 
@@ -392,6 +394,7 @@ Runs `jenkins-jobs update` to update production job configuration
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :jjb-version: JJB version to install. (default: see job-template)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -430,6 +433,7 @@ Runs `jenkins-jobs test` to validate JJB syntax
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :jjb-version: JJB version to install. (default: see job-template)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -470,6 +474,7 @@ project level jobs.
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :jjb-version: JJB version to install. (default: see job-template)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)

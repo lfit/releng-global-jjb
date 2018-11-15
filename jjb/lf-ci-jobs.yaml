@@ -77,6 +77,10 @@
           name: JJB_VERSION
           default: '{jjb-version}'
           description: Jenkins Job Builder version to download and install.
+      - string:
+          name: XDG_CACHE_HOME
+          default: '{jjb-cache}'
+          description: Jenkins Job Builder cache location.
 
 - parameter:
     name: lf-packer-parameters
@@ -97,6 +101,7 @@
     build-timeout: 10
     disable-job: false
     github-url: 'https://github.com'
+    jjb-cache: '$HOME/.cache/jenkins_jobs'
     jjb-version: 2.2.1
     stream: master
     submodule-recursive: true
@@ -136,6 +141,7 @@
           branch: '{branch}'
           lftools-version: '{lftools-version}'
       - lf-infra-jjb-parameters:
+          jjb-cache: '{jjb-cache}'
           jjb-version: '{jjb-version}'
 
     wrappers:
@@ -540,6 +546,7 @@
 
     parameters:
       - lf-infra-jjb-parameters:
+          jjb-cache: '{jjb-cache}'
           jjb-version: '{jjb-version}'
 
     triggers:
