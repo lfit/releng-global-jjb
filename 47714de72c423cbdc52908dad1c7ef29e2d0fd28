@@ -22,6 +22,30 @@
       "revId": "47714de72c423cbdc52908dad1c7ef29e2d0fd28",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "215ec875_725e87f6",
+        "filename": "shell/jenkins-sandbox-cleanup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-19T10:09:58Z",
+      "side": 1,
+      "message": "Despite that, we sometimes get views being uploaded by staff on accident anyway. I\u0027d rather make sure we clean everything up.",
+      "parentUuid": "26202a38_c9b0adae",
+      "range": {
+        "startLine": 16,
+        "startChar": 61,
+        "endLine": 16,
+        "endChar": 79
+      },
+      "revId": "47714de72c423cbdc52908dad1c7ef29e2d0fd28",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
