@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    The GERRIT_REFSPEC build parameter can now be used to trigger a test build
+    from the Jenkins Sandbox system against a work in progress packer image
+    patch from a GitHub Pull Request.
