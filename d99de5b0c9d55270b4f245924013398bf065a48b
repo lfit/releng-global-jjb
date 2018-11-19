@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "525ddded_b73da56b",
+        "filename": "releasenotes/notes/submodule-timeout-e75d10f51ca36933.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2018-11-19T14:44:03Z",
+      "side": 1,
+      "message": "x",
+      "range": {
+        "startLine": 14,
+        "startChar": 14,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "d99de5b0c9d55270b4f245924013398bf065a48b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1581b9bf_1c2e643e",
+        "filename": "releasenotes/notes/submodule-timeout-e75d10f51ca36933.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2018-11-19T14:44:03Z",
+      "side": 1,
+      "message": "it is",
+      "range": {
+        "startLine": 15,
+        "startChar": 67,
+        "endLine": 15,
+        "endChar": 72
+      },
+      "revId": "d99de5b0c9d55270b4f245924013398bf065a48b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
