@@ -1272,8 +1272,10 @@
     scm:
       - lf-infra-github-scm:
           url: '{git-clone-url}{github-org}/{project}'
-          refspec: ''
-          branch: 'refs/heads/{branch}'
+          refspec: >
+              +refs/heads/*:refs/remotes/origin/*
+              +refs/pull/*:refs/remotes/origin/pr/*
+          branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
@@ -1285,7 +1287,7 @@
           cron: ''
 
       - github-pull-request:
-          trigger-phrase: '^remerge$'
+          trigger-phrase: '^(remerge|packer-test-build)$'
           only-trigger-phrase: true
           status-context: 'Packer {platforms}-{templates} Merge'
           permit-all: true
