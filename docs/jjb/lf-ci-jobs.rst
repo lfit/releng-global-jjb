@@ -344,10 +344,10 @@ Cleanup Jenkins Sandbox of jobs and views periodically.
 JJB Deploy Job
 --------------
 
-Deploy jobs to jenkins-sandbox system via code review comment
+Deploy jobs to jenkins-sandbox system via code review comment.
 
 This job checks out the current code review patch and then runs a
-`jenkins-jobs update` to push a patch defined by the comment.
+``jenkins-jobs update`` to push a patch defined by the comment.
 
 :Template names:
 
@@ -360,7 +360,7 @@ This job checks out the current code review patch and then runs a
     .. note::
 
        JOB_NAME can include the * wildcard character to push multiple jobs
-       matching the pattern. For example `jjb-deploy builder-jjb-*`` will push
+       matching the pattern. For example ``jjb-deploy builder-jjb-*`` will push
        all builder-jjb-* jobs to the sandbox system.
 
 :Required parameters:
