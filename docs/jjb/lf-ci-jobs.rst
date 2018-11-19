@@ -312,6 +312,9 @@ Example:
 .. literalinclude:: ../../.jjb-test/lf-ci-jobs/jenkins-cfg-verify.yaml
    :language: yaml
 
+
+.. _jenkins-sandbox-cleanup:
+
 Jenkins Sandbox Cleanup
 -----------------------
 
@@ -335,6 +338,8 @@ Cleanup Jenkins Sandbox of jobs and views periodically.
 
     :cron: Schedule to run job. (default: '0 8 * * 6')
 
+
+.. _jjb-deploy:
 
 JJB Deploy Job
 --------------
@@ -369,6 +374,8 @@ This job checks out the current code review patch and then runs a
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :gerrit_jjb_deploy_job_triggers: Override Gerrit Triggers.
 
+
+.. _jjb-merge:
 
 JJB Merge
 ---------
@@ -408,6 +415,8 @@ Runs `jenkins-jobs update` to update production job configuration
         filter which file modifications will trigger a build.
         (default defined by lf_jjb_common)
 
+
+.. _jjb-verify:
 
 JJB Verify
 ----------
