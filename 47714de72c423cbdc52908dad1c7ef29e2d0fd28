@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "26202a38_c9b0adae",
+        "filename": "shell/jenkins-sandbox-cleanup.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-19T10:04:31Z",
+      "side": 1,
+      "message": "why not delete only jobs here, since we dont really allow users to create/edit/del views?",
+      "range": {
+        "startLine": 16,
+        "startChar": 61,
+        "endLine": 16,
+        "endChar": 79
+      },
+      "revId": "47714de72c423cbdc52908dad1c7ef29e2d0fd28",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
