@@ -652,6 +652,25 @@ Packer Merge job runs `packer build` to build system images in the cloud.
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
+Test an in-progress patch
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To test an in-progress patch from Gerrit or GitHub Pull Request. Upload this
+job to the :doc:`Jenkins Sandbox <lfdocs:jenkins-sandbox>`. Then when manually
+building the job replace the GERRIT_REFSPEC parameter with the Gerrit patch
+or GitHub Pull Request number.
+
+Example Gerrit:
+
+.. code-block:: none
+
+   GERRIT_REFSPEC: refs/changes/28/77828/1
+
+Example GitHub:
+
+.. code-block:: none
+
+   GERRIT_REFSPEC: origin/pr/49/merge
 
 .. _gjjb-packer-verify:
 
