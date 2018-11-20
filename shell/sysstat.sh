@@ -14,12 +14,25 @@ set +e  # DON'T fail build if script fails.
 OS=$(facter operatingsystem)
 case "$OS" in
     Ubuntu)
+        os_release=$(facter operatingsystemrelease)
+        case $os_release in
+            16.04|18.04)
+                if ! systemctl status sysstat > /dev/null; then
+                    exit 0
+                fi
+                ;;
+            14.04)
+                if [[ ! -f /etc/default/sysstat ]] ||
+                      ! grep --quiet 'ENABLED="true"' /etc/default/sysstat; then
+                    exit 0
+                fi
+                ;;
+            *)
+                echo "ERROR: Unknown Release: Ubuntu $os_release"
+                exit 1
+                ;;
+        esac
         SYSSTAT_PATH="/var/log/sysstat"
-
-        # Dont run the script when systat is not enabled by default
-        if ! grep --quiet 'ENABLED="true"' "/etc/default/sysstat"; then
-            exit 0
-        fi
     ;;
     CentOS|RedHat)
         SYSSTAT_PATH="/var/log/sa"
