@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a0251ab_241d38f0",
+        "filename": "shell/openstack-stack-parameters.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-20T03:07:26Z",
+      "side": 1,
+      "message": "this approach should preserve the yaml formatting if you want to prefix the line with `spaces`.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 3
+      },
+      "revId": "3957e7acf87be74dbfaccee20400b6f401a568a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "16920693_9ce3248e",
+        "filename": "shell/openstack-stack-parameters.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-20T03:07:26Z",
+      "side": 1,
+      "message": "so this may not be required here.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 58
+      },
+      "revId": "3957e7acf87be74dbfaccee20400b6f401a568a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
