@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "17fcf103_a61dcc9a",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-20T03:07:26Z",
+      "side": 0,
+      "message": "Do we need to do `pip install --user --upgrade lftools` in the previous step?",
+      "range": {
+        "startLine": 553,
+        "startChar": 20,
+        "endLine": 553,
+        "endChar": 64
+      },
+      "revId": "0b174473134b72965f9642a32d24dc43279a014a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
