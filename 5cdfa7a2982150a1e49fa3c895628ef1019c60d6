@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b74fd1b6_b009281e",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-20T04:06:27Z",
+      "side": 1,
+      "message": "A better way of checking if sysstat is enabled is to check the status of the service which is better than checking the existence of the file.",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 45
+      },
+      "revId": "5cdfa7a2982150a1e49fa3c895628ef1019c60d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
