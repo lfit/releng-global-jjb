@@ -15,9 +15,9 @@ OS=$(facter operatingsystem)
 case "$OS" in
     Ubuntu)
         SYSSTAT_PATH="/var/log/sysstat"
-
-        # Dont run the script when systat is not enabled by default
-        if ! grep --quiet 'ENABLED="true"' "/etc/default/sysstat"; then
+        # Don't run the script when systat is not enabled by default
+        if [[ ! -f /etc/default/sysstat ]] ||
+              ! grep --quiet 'ENABLED="true"' /etc/default/sysstat; then
             exit 0
         fi
     ;;
