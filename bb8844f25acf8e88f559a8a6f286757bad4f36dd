@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da05e148_2e0b5e13",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-21T01:24:12Z",
+      "side": 1,
+      "message": "Is this tested to work? \n\nWe should probably be using `systemctl status sysstat` for 16.04\u003e is only going to be supported 14.04 is going to be EOL-ed soon?",
+      "range": {
+        "startLine": 19,
+        "startChar": 13,
+        "endLine": 19,
+        "endChar": 47
+      },
+      "revId": "bb8844f25acf8e88f559a8a6f286757bad4f36dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
