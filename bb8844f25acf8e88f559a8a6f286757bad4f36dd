@@ -22,6 +22,29 @@
       "revId": "bb8844f25acf8e88f559a8a6f286757bad4f36dd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bdcaf24c_6fafe93c",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-21T12:23:23Z",
+      "side": 1,
+      "message": "this might not work on 16.04? \n\n$ systemctl status sysstat\nsysstat.service - LSB: Start/stop sysstat\u0027s sadc\n   Loaded: loaded (/etc/init.d/sysstat; bad; vendor preset: enabled)\n   Active: active (exited) since Wed 2018-11-07 07:41:46 AEST; 2 weeks 0 days ago\n     Docs: man:systemd-sysv-generator(8)\n    Tasks: 0\n   Memory: 0B\n      CPU: 0\n\nNov 07 07:41:45 abelur-i5537 systemd[1]: Starting LSB: Start/stop sysstat\u0027s sadc...\nNov 07 07:41:46 abelur-i5537 sysstat[1227]:  * Starting the system activity data collector sadc\nNov 07 07:41:46 abelur-i5537 sysstat[1227]:    ...done.\nNov 07 07:41:46 abelur-i5537 systemd[1]: Started LSB: Start/stop sysstat\u0027s sadc.",
+      "range": {
+        "startLine": 19,
+        "startChar": 13,
+        "endLine": 19,
+        "endChar": 34
+      },
+      "revId": "bb8844f25acf8e88f559a8a6f286757bad4f36dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
