@@ -13,6 +13,10 @@ set -eux -o pipefail
 
 REQUIREMENTS_FILE=$(mktemp /tmp/requirements-XXXX.txt)
 
+# Note: To test lftools master branch change the lftools configuration below in
+#       the requirements file from "lftools[openstack]~=#.##.#" to
+#       git+https://github.com/lfit/releng-lftools.git#egg=lftools[openstack]
+
 cat << EOF > "$REQUIREMENTS_FILE"
 lftools[openstack]~=0.18.0
 python-heatclient~=1.16.1
