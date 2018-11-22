@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd9a0f97_b7179071",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-22T04:11:06Z",
+      "side": 1,
+      "message": "Typo: Unbuntu -\u003e Ubuntu",
+      "range": {
+        "startLine": 31,
+        "startChar": 46,
+        "endLine": 31,
+        "endChar": 53
+      },
+      "revId": "674e0ded3c4dd7256ef71d706ef3776c90463295",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
