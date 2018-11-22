@@ -19,6 +19,10 @@ python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 EOF
 
+echo "Requirements file"
+echo "-----------------"
+cat "$REQUIREMENTS_FILE"
+
 # Use `python -m pip` to ensure we are using the latest version of pip
 python -m pip install --user --quiet --upgrade pip
 python -m pip install --user --quiet --upgrade setuptools
