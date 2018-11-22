@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7e7338b6_75afbca2",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-22T12:02:45Z",
+      "side": 1,
+      "message": "rename \u0027rel\u0027 to \u0027release_version\u0027 or \u0027lts_version\u0027",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "674e0ded3c4dd7256ef71d706ef3776c90463295",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fd9a0f97_b7179071",
         "filename": "shell/sysstat.sh",
         "patchSetId": 5
