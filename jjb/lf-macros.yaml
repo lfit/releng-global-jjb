@@ -171,7 +171,6 @@
               GROUP_ID={group-id}
               UPLOAD_FILES_PATH={upload-files-dir}
       - shell: !include-raw-escape:
-          - ../shell/lftools-install.sh
           - ../shell/common-variables.sh
           - ../shell/deploy-maven-file.sh
       - lf-provide-maven-settings-cleanup
@@ -405,15 +404,6 @@
 
               If using GitHub, in a manual build override with a branch path or
               sha1 hash to a specific commit. For example: 'origin/master'
-      # Tools
-      - string:
-          name: LFTOOLS_VERSION
-          default: '{lftools-version}'
-          description: |
-              Version of lftools to install. Can be a specific version like
-              '0.6.0' or a PEP-440 definition.
-              https://www.python.org/dev/peps/pep-0440/
-              For example '<1.0.0' or '>=1.0.0,<2.0.0'.
 
 - parameter:
     name: lf-infra-node-parameters

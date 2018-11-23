@@ -49,7 +49,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
 
     wrappers:
       - lf-infra-wrappers:
@@ -102,7 +101,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - string:
           name: NEXUS_IQ_CLI_VERSION
           default: '{nexus-iq-cli-version}'
@@ -251,7 +249,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - string:
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
@@ -435,7 +432,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - lf-infra-tox-parameters:
           tox-dir: '{tox-dir}'
           tox-envs: '{tox-envs}'

@@ -76,7 +76,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
@@ -142,7 +141,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
@@ -694,7 +692,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'
@@ -845,7 +842,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - lf-infra-maven-parameters:
           mvn-opts: '{mvn-opts}'
           mvn-params: '{mvn-params}'

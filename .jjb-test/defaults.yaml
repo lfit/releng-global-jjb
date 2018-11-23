@@ -19,7 +19,6 @@
     github_pr_admin_list:
       - tykeal
 
-    lftools-version: '<1.0.0'
     mvn-site-id: project-site
     mvn-staging-id: project-staging
 

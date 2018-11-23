@@ -48,7 +48,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
       - lf-infra-node-parameters:
           node-dir: '{node-dir}'
           node-version: '{node-version}'
