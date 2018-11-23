@@ -303,18 +303,6 @@ lf-infra-publish-windows
 Windows publisher for use at the end of Windows job templates. Takes care of
 cleaning out the workspace at the end of a job.
 
-lf-stack-delete
----------------
-
-Requirements:
-
-* lftools >= v0.17.0
-
-Delete an openstack heat stack. Use at the end of a job that creates a stack.
-
-This macro requires a parameter defined in the job named STACK_NAME
-containing the name of the stack to delete.
-
 SCM
 ===
 
