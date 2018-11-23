@@ -46,6 +46,30 @@
       "revId": "a5bcede778c19af1e7b9401817986a2f3cb3e298",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee909bc1_f99774dd",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-23T01:11:20Z",
+      "side": 1,
+      "message": "So I have to set this as follows:\n\nlftools[openstack]\u003dgit+https://github.com/lfit/releng-lftools.git#egg\u003dlftools[openstack]\n\nMy question is if we need to test a job to pull in from the master can we edit this file on Jenkins job config.",
+      "parentUuid": "dd9602d0_79011b7b",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 17,
+        "endChar": 75
+      },
+      "revId": "a5bcede778c19af1e7b9401817986a2f3cb3e298",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
