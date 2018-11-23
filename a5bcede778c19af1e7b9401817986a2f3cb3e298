@@ -22,6 +22,30 @@
       "revId": "a5bcede778c19af1e7b9401817986a2f3cb3e298",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd9602d0_79011b7b",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-23T00:27:22Z",
+      "side": 1,
+      "message": "Why?\n\nThis completely bypasses PyPi and installs directly from a git repo. This is not how a user of a python package would normally install a Python package.\n\nThat\u0027s like saying you shouldn\u0027t use yum to install CentOS packages and instead you should be cloning packages from git repos and then run \"./configure\" \u0026\u0026 \"make install\" for every package you want to use.\n\nPackage managers have their place.",
+      "parentUuid": "97760d05_9db71e09",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 17,
+        "endChar": 75
+      },
+      "revId": "a5bcede778c19af1e7b9401817986a2f3cb3e298",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
