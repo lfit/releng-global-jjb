@@ -58,7 +58,6 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
-          lftools-version: '{lftools-version}'
       - lf-packer-parameters:
           packer-version: '{packer-version}'
 
@@ -139,7 +138,6 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
-          lftools-version: '{lftools-version}'
       - lf-infra-jjb-parameters:
           jjb-cache: '{jjb-cache}'
           jjb-version: '{jjb-version}'
@@ -191,7 +189,6 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
-          lftools-version: '{lftools-version}'
 
     wrappers:
       - lf-infra-wrappers:
@@ -295,7 +292,6 @@
           project: '{project}'
           stream: ''
           branch: master
-          lftools-version: '{lftools-version}'
 
     wrappers:
       - lf-infra-wrappers:
@@ -436,7 +432,6 @@
           project: '{project}'
           stream: ''
           branch: master
-          lftools-version: '{lftools-version}'
 
     wrappers:
       - lf-infra-wrappers:
@@ -616,7 +611,6 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
-          lftools-version: '{lftools-version}'
 
     wrappers:
       - lf-infra-wrappers:
@@ -1042,7 +1036,6 @@
           project: '{project}'
           branch: '{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
 
     wrappers:
       - lf-infra-wrappers:
@@ -1273,7 +1266,6 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
-          lftools-version: '{lftools-version}'
       - string:
           name: JENKINS_URLS
           default: '{jenkins-urls}'
@@ -1389,7 +1381,6 @@
           project: '{project}'
           stream: '{stream}'
           branch: '{branch}'
-          lftools-version: '{lftools-version}'
       - lf-packer-parameters:
           packer-version: '{packer-version}'
 

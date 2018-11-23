@@ -45,7 +45,6 @@
           branch: '{branch}'
           refspec: 'refs/heads/{branch}'
           stream: '{stream}'
-          lftools-version: '{lftools-version}'
 
     wrappers:
       - lf-infra-wrappers:
