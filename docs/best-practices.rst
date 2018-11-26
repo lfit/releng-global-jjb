@@ -158,7 +158,6 @@ ship-logs example:
           - shell: !include-raw:
               - ../shell/logs-get-credentials.sh
           - shell: !include-raw:
-              - ../shell/lftools-install.sh
               - ../shell/logs-deploy.sh
           - shell: !include-raw:
               - ../shell/logs-clear-credentials.sh
@@ -172,7 +171,7 @@ complete running via the logs-clear-credentials.sh script. This script contains
 3 basic steps:
 
 1. Provide credentials via config-file-provider
-2. Run the build scripts in this case lftools-install.sh and logs-deploy.sh
+2. Run logs-deploy.sh
 3. Remove credentials provided by config-file-provider
 
 .. _preserve-variable-refs:
