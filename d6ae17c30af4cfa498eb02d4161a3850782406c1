@@ -22,6 +22,30 @@
       "revId": "d6ae17c30af4cfa498eb02d4161a3850782406c1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "79a41e26_7c9f73f7",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-11-26T07:26:53Z",
+      "side": 1,
+      "message": "`Run the build scripts in this case` was not required earlier too ... I was wondering what that meant.",
+      "parentUuid": "01562638_6c422475",
+      "range": {
+        "startLine": 174,
+        "startChar": 11,
+        "endLine": 174,
+        "endChar": 24
+      },
+      "revId": "d6ae17c30af4cfa498eb02d4161a3850782406c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
