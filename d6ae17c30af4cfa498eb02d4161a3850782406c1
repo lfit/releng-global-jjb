@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01562638_6c422475",
+        "filename": "docs/best-practices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-26T07:20:48Z",
+      "side": 1,
+      "message": "I think this changes the language of the wording here and how it\u0027s interpreted.\n\nIn the previous version \"Run the build scripts in this case lftools-install.sh and logs-deploy.sh\" it\u0027s saying it will run some build scripts, more specifically \"lftools-install.sh\" and \"logs-deploy.sh\".\n\nThe new language \"Run the build scripts and logs-deploy.sh\" is now implying that it will run some \"build scripts\" and then \"logs-deploy.sh\". What are the \"build scripts\"?\n\nI think the new language: \"Run logs-deploy.sh\" will be more clear here as it\u0027s saying exactly what it will do whereas the current proposed language is making an ambiguous claim that there are some \"build scripts\" not mentioned that will be run.",
+      "range": {
+        "startLine": 174,
+        "startChar": 11,
+        "endLine": 174,
+        "endChar": 24
+      },
+      "revId": "d6ae17c30af4cfa498eb02d4161a3850782406c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
