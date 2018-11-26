@@ -30,7 +30,7 @@
     ######################
 
     branch: master
-    build-timeout: 90
+    build-timeout: 600
     cron: '@monthly'
     disable-job: false
     github-url: 'https://github.com'
