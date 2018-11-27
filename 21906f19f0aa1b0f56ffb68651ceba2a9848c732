@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd101b92_3b5cc8ea",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-27T04:19:58Z",
+      "side": 1,
+      "message": "Why are you bumping this to 600? 90 is a reasonable default.\n\nIf you need a higher build-timeout for a specific packer job then override this at the project level we don\u0027t need this in global-jjb.",
+      "revId": "21906f19f0aa1b0f56ffb68651ceba2a9848c732",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
