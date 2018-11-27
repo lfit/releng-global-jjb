@@ -98,6 +98,7 @@
 
     branch: master
     build-timeout: 10
+    concurrent: true
     disable-job: false
     github-url: 'https://github.com'
     jjb-cache: '$HOME/.cache/jenkins_jobs'
@@ -818,7 +819,7 @@
     # Job Configuration #
     #####################
 
-    concurrent: true
+    concurrent: '{concurrent}'
 
     builders:
       - lf-infra-pre-build
