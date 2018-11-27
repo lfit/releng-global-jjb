@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "623d09cd_145164dd",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2018-11-27T15:58:43Z",
+      "side": 1,
+      "message": "Nitpicking here, but based on the values actually used, as well as other instances in this file, this should be \"(true|false)\" instead.",
+      "range": {
+        "startLine": 182,
+        "startChar": 60,
+        "endLine": 182,
+        "endChar": 70
+      },
+      "revId": "e9967b039a9e74d47397be0c0acf81002fd758c4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
