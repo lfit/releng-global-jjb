@@ -1,0 +1,19 @@
+---
+- job-template:
+    name: lf-maven-central-macro-test
+
+    #####################
+    # Default variables #
+    #####################
+
+    mvn-central: true
+    ossrh-profile-id: ''
+
+    #####################
+    # Job configuration #
+    #####################
+
+    builders:
+      - lf-maven-central:
+          mvn-central: '{mvn-central}'
+          ossrh-profile-id: '{ossrh-profile-id}'

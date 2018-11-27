@@ -176,6 +176,19 @@
       - lf-provide-maven-settings-cleanup
 
 - builder:
+    name: lf-maven-central
+    builders:
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{mvn-central}'
+          steps:
+            - lf-infra-create-netrc:
+                server-id: 'ossrh'
+            - inject:
+                properties-content: 'OSSRH_PROFILE_ID={ossrh-profile-id}'
+            - shell: !include-raw-escape: ../shell/maven-central.sh
+
+- builder:
     name: lf-maven-install
     builders:
       # Create a $HOME/.wgetrc to make the Maven download quiet.

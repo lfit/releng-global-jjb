@@ -725,15 +725,9 @@
           sign-artifacts: '{sign-artifacts}'
           sign-dir: '$WORKSPACE/m2repo'
       - lf-maven-stage
-      - conditional-step:
-          condition-kind: boolean-expression
-          condition-expression: '{mvn-central}'
-          steps:
-            - lf-infra-create-netrc:
-                server-id: 'ossrh'
-            - inject:
-                properties-content: 'OSSRH_PROFILE_ID={ossrh-profile-id}'
-            - shell: !include-raw-escape: ../shell/maven-central.sh
+      - lf-maven-central:
+          mvn-central: '{mvn-central}'
+          ossrh-profile-id: '{ossrh-profile-id}'
       - lf-provide-maven-settings-cleanup
 
 - job-template:
