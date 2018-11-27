@@ -805,6 +805,8 @@
     # Default parameters #
     ######################
 
+    build-concurrent: true
+
     gerrit_verify_triggers:
       - patchset-created-event:
           exclude-drafts: true
@@ -818,7 +820,7 @@
     # Job Configuration #
     #####################
 
-    concurrent: true
+    concurrent: '{build-concurrent}'
 
     builders:
       - lf-infra-pre-build

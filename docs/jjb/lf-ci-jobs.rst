@@ -439,6 +439,8 @@ Runs `jenkins-jobs test` to validate JJB syntax
 :Optional parameters:
 
     :branch: Git branch to fetch for the build. (default: master)
+    :build-concurrent: Whether or not to allow this job to run multiple jobs
+        simultaneously. (default: true)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
