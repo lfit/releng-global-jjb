@@ -236,6 +236,20 @@
       - shell: !include-raw-escape: ../shell/tox-install.sh
       - shell: !include-raw-escape: ../shell/rtd-verify.sh
 
+
+- builder:
+    name: lf-maven-central
+    builders:
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{mvn-central}'
+          steps:
+            - lf-infra-create-netrc:
+                server-id: 'ossrh'
+            - inject:
+                properties-content: 'OSSRH_PROFILE_ID={ossrh-profile-id}'
+            - shell: !include-raw-escape: ../shell/maven-central.sh
+
 - builder:
     name: lf-sigul-sign-dir
     # Requires that Jenkins be configured with SIGUL_BRIDGE_IP as a global
