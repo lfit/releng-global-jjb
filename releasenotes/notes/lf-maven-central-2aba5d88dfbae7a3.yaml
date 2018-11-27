@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    New macro **lf-maven-central** is available to deploy artifacts to OSSRH
+    staging for jobs that want to eventually deploy to Maven Central.
+
+    .. literalinclude:: ../../.jjb-test/lf-macros/lf-maven-central-minimal.yaml
+       :language: yaml
