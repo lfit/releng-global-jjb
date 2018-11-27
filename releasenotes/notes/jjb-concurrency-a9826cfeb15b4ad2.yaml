@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Concurrency for the jjb-verify job can now be configured by setting the 'build-concurrent' parameter.
