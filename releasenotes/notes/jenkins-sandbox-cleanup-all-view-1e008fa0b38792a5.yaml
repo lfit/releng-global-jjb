@@ -9,6 +9,6 @@ upgrade:
        successfully delete all jobs and views, the primary purpose of this job.
 fixes:
   - |
-    :ref:`RELENG-1450 <https://jira.linuxfoundation.org/browse/RELENG-1450>`_
+    `RELENG-1450 <https://jira.linuxfoundation.org/browse/RELENG-1450>`_
     All view disappears on Jenkins Sandbox after views are deleted. The **All**
     view is now recreated after ``delete-all`` is run.
