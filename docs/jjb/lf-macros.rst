@@ -164,6 +164,29 @@ lf-jacoco-nojava-workaround
 
 Workaround for Jenkins not able to find Java in JaCoCo runs.
 
+.. _lf-maven-central:
+
+lf-maven-central
+----------------
+
+Publish artifacts to OSSRH (Maven Central) staging.
+
+Requires that the project's settings.xml contains a ServerId 'ossrh' with the
+credentials for the project's OSSRH account.
+
+This macro assumes the directory ``$WORKSPACE/m2repo`` contains a Maven 2
+repository which is to upload to OSSRH.
+
+:Required parameters:
+
+    :mvn-central: Whether or not to upload to mvn-central. (true|false)
+    :ossrh-profile-id: Nexus staging profile ID as provided by OSSRH.
+
+.. literalinclude:: ../../.jjb-test/lf-macros/lf-maven-central-minimal.yaml
+   :language: yaml
+
+.. _lf-maven-install:
+
 lf-maven-install
 ----------------
 
