@@ -51,6 +51,24 @@
       "revId": "ff277e5e8c2e2c05d61756be0e0bd2db773dbede",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a721f1da_177206d1",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-28T07:30:37Z",
+      "side": 1,
+      "message": "See the comment above at line 100. I guess I started writing here and then forgot and wrote at the top.",
+      "parentUuid": "953e9492_b155fb78",
+      "revId": "ff277e5e8c2e2c05d61756be0e0bd2db773dbede",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
