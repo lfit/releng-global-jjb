@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba9f172c_5f7c7867",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-28T05:14:05Z",
+      "side": 1,
+      "message": "Since this parameter only exists for the verify job let\u0027s drop it in the default section for the verify job.",
+      "revId": "ff277e5e8c2e2c05d61756be0e0bd2db773dbede",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5af2f8f9_51075df3",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-28T05:14:05Z",
+      "side": 1,
+      "message": "Since this parameter onl yexis",
+      "revId": "ff277e5e8c2e2c05d61756be0e0bd2db773dbede",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
