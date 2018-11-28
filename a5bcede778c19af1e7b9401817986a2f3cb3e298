@@ -118,6 +118,30 @@
       "revId": "a5bcede778c19af1e7b9401817986a2f3cb3e298",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c263f60f_cd3f127a",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-28T06:27:45Z",
+      "side": 1,
+      "message": "Let me know if the new wording is more clear.",
+      "parentUuid": "07684375_a589a2fb",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 17,
+        "endChar": 75
+      },
+      "revId": "a5bcede778c19af1e7b9401817986a2f3cb3e298",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
