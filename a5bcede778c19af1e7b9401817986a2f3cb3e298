@@ -94,6 +94,30 @@
       "revId": "a5bcede778c19af1e7b9401817986a2f3cb3e298",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07684375_a589a2fb",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2018-11-28T06:22:19Z",
+      "side": 1,
+      "message": "could you expand a bit on the :change the lftools configuration below:....",
+      "parentUuid": "c6d5203c_2903b079",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 17,
+        "endChar": 75
+      },
+      "revId": "a5bcede778c19af1e7b9401817986a2f3cb3e298",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
