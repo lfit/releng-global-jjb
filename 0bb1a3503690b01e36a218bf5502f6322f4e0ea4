@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82c740d9_ec335042",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-29T22:45:28Z",
+      "side": 1,
+      "message": "I think \" concurrent: \u0027{build-concurrent}\u0027  \" should stay on this line. Moving it down make sit only apply to Gerrit projects and removes the setting from github projects. Keep it in the anchor so that it applies to both.",
+      "revId": "0bb1a3503690b01e36a218bf5502f6322f4e0ea4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
