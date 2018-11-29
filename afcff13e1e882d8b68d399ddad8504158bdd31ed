@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebcee94e_c2aa6a52",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-29T22:51:45Z",
+      "side": 1,
+      "message": "Remove this line.",
+      "revId": "afcff13e1e882d8b68d399ddad8504158bdd31ed",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "849448cc_6f508fd3",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-11-29T22:51:45Z",
+      "side": 1,
+      "message": "Remove this line.",
+      "revId": "afcff13e1e882d8b68d399ddad8504158bdd31ed",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
