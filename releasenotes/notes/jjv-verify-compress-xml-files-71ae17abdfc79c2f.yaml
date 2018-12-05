@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Compress and upload all jjb-verify XML files to Nexus, to ease out the IOPs
+    on cron jobs that manage the logs on Nexus and optimize job performace by
+    ~8 mins. This is because the job generates around ~2.3K XML files (small
+    files) which is uploaded to Nexus in every run of jjb-verify. Doing this
+    is faster as compared to the Nexus Unpack plugin in the Nexus end unpacking
+    the zip file we upload takes longer.

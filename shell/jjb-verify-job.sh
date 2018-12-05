@@ -28,3 +28,8 @@ do
     fi
 done
 popd
+
+if [ ! -z "$(ls -A archives/job-configs)" ]; then
+    tar cvzf archives/job-configs.tar.gz archives/job-configs
+    rm -rf archives/job-configs
+fi
