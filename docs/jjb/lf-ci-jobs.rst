@@ -721,3 +721,43 @@ Packer Verify job runs `packer validate` to verify packer configuration.
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
         filter which file modifications will trigger a build.
+
+
+Puppet Verify
+-------------
+
+Runs puppet-lint in the ``puppet-dir`` directory. puppet-lint runs recursively,
+so the base directory is usually the best place to run from.
+
+:Template Names:
+
+    - '{project-name}-puppet-verify'
+    - puppet-verify
+
+:Comment Trigger: recheck|reverify
+
+:Required Parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
+
+:Optional Parameters:
+
+    :branch: The branch to build against. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :git-url: URL clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
+    :stream: Keyword representing a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :puppet-dir: Directory containing the project's puppet module(s) relative
+        to the workspace.
+        (default: '')
+    :gerrit_trigger_file_paths: Override file paths which used to filter which
+        file modifications will trigger a build. Refer to JJB documentation for
+        "file-path" details.
+        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
