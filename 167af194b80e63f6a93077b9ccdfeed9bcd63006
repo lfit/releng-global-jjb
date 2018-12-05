@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3c9a1b1_3a36e30f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-12-05T10:30:02Z",
+      "side": 1,
+      "message": "typo: present",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "167af194b80e63f6a93077b9ccdfeed9bcd63006",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "448f0f18_01372bc4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-12-05T10:30:02Z",
+      "side": 1,
+      "message": "I wouldn\u0027t compare complete job runs but rather the time difference between these 2 lines in the logs:\n\n lftools deploy archives \n Archives upload complete\n\nThis will give you a more true statement about the upload itself. Using the entire job run as a statement about upload performance wouldn\u0027t accurately reflect the upload part of the job itself and is affected by the VM performing slowly during the jjb test part of the job.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 13
+      },
+      "revId": "167af194b80e63f6a93077b9ccdfeed9bcd63006",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
