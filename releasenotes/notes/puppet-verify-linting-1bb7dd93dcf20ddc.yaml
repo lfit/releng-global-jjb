@@ -1,0 +1,14 @@
+---
+features:
+  - |
+    Add a puppet-verify job to lf-ci-jobs. This job will perform Puppet
+    linting on the specified repository.
+
+    .. code-block:: yaml
+
+       - project:
+           name: lf-infra-puppet-mymodule
+           project-name: lf-infra-puppet
+           project: puppet/modules/mymodule
+           jobs:
+             - puppet-verify
