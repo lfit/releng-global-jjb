@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "698a5a5d_774000a6",
+        "filename": "shell/puppet-lint.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-12-06T05:05:20Z",
+      "side": 1,
+      "message": "It would be good to provide the flexibility to install a specific version of lint or manage the version through global-jjb.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 23
+      },
+      "revId": "da7781045ecdecc3555e9a09ff18511d4f3c9671",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
