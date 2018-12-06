@@ -30,6 +30,6 @@ done
 popd
 
 if [ ! -z "$(ls -A archives/job-configs)" ]; then
-    tar cvzf archives/job-configs.tar.gz archives/job-configs
+    tar cJvf archives/job-configs.tar.xz archives/job-configs
     rm -rf archives/job-configs
 fi
