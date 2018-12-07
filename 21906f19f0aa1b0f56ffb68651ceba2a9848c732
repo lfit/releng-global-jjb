@@ -16,6 +16,24 @@
       "revId": "21906f19f0aa1b0f56ffb68651ceba2a9848c732",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22bed709_fc20d285",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2018-12-07T16:17:46Z",
+      "side": 1,
+      "message": "Reasonable.. Can we abandoned this?",
+      "parentUuid": "bd101b92_3b5cc8ea",
+      "revId": "21906f19f0aa1b0f56ffb68651ceba2a9848c732",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
