@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7894c5a3_01b79893",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-12-07T02:28:27Z",
+      "side": 1,
+      "message": "This build timeout is way too high for most use cases. You should override this at the project level for specific packer builds that actually need the longer timeout.",
+      "range": {
+        "startLine": 33,
+        "startChar": 19,
+        "endLine": 33,
+        "endChar": 22
+      },
+      "revId": "6f4b5a38478ef33fef1b6b8cdf75ff812829105c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
