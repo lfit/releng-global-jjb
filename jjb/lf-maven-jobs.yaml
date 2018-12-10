@@ -941,12 +941,18 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
       - github-pull-request:
           trigger-phrase: '^run-sonar$'
-          only-trigger-phrase: false
+          only-trigger-phrase: true
           status-context: 'Maven Sonar'
           permit-all: true
           github-hooks: true
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
           white-list-target-branches:
             - '{branch}'
 
