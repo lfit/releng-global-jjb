@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2c05352c_2d2853c8",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1712,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-12-10T20:58:15Z",
+      "side": 1,
+      "message": "We should be supporting this for both gerrit and github if we\u0027re going to stick this into global-jjb (which seems like a proper place to stick it since we do have projects that can make use of it!)",
+      "range": {
+        "startLine": 1710,
+        "startChar": 0,
+        "endLine": 1712,
+        "endChar": 21
+      },
+      "revId": "90004b90fb9171581a12a43c04a6f6c9d0f27b94",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
