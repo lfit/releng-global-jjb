@@ -18,8 +18,8 @@ set +u
 
 JAVADOC_DIR="$WORKSPACE/archives/javadoc"
 
-pushd "$JAVADOC_DIR"
-zip -r "$WORKSPACE/javadoc.zip" .
-popd
+if [ ! -z "$(ls -A $JAVADOC_DIR)" ]; then
+    tar cvJf "$WORKSPACE/archives/javadocs.tar.xz" .
+    rm -rf "$JAVADOC_DIR"
+fi
 
-lftools deploy nexus-zip "$NEXUS_URL" "javadoc" "$DEPLOY_PATH" "$WORKSPACE/javadoc.zip"
