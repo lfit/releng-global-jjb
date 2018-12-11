@@ -23,3 +23,9 @@ zip -r "$WORKSPACE/javadoc.zip" .
 popd
 
 lftools deploy nexus-zip "$NEXUS_URL" "javadoc" "$DEPLOY_PATH" "$WORKSPACE/javadoc.zip"
+
+# Tarball the javadoc dir and rm the directory to avoid re-upload into logs
+if [ ! -z "$(ls -A $JAVADOC_DIR)" ]; then
+    tar cvJf "$WORKSPACE/archives/javadocs.tar.xz" .
+    rm -rf "$JAVADOC_DIR"
+fi
