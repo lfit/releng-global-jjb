@@ -133,6 +133,7 @@ get_minion_options() {
     # Fails on first instance of each different associatve array prefix
     # Fails when using single/double/no quotes, all of which are valid bash
     # shellcheck disable=SC2154
+    flavors["acumos-highcpu-4-avx"]="c720c1f8-62e9-4695-823d-f7f54db46c86"
     flavors["lf-highcpu-2"]="1051d06a-61ea-45e3-b9b4-93de92880b27"
     flavors["lf-highcpu-4"]="35eb8e11-490f-4d1a-9f19-76091fc04547"
     flavors["lf-highcpu-8"]="68af673f-54ee-4255-871c-158c18e4f643"
