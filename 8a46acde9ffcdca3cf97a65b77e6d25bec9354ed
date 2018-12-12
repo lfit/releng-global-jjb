@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f41208ec_905cbe42",
+        "filename": "shell/maven-javadoc-publish.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2018-12-12T06:40:03Z",
+      "side": 1,
+      "message": "I think this if-statement is redundant considering that if the script makes it this far than `lftools deploy1 must have been successful which means $JAVADOC_DIR must exist.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 41
+      },
+      "revId": "8a46acde9ffcdca3cf97a65b77e6d25bec9354ed",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1340ecbe_889aa04e",
         "filename": "shell/maven-javadoc-publish.sh",
         "patchSetId": 2
