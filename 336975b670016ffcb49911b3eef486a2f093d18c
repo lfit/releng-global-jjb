@@ -22,6 +22,30 @@
       "revId": "336975b670016ffcb49911b3eef486a2f093d18c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24c1168e_5e9a38b0",
+        "filename": "shell/maven-javadoc-publish.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2018-12-12T04:16:53Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "c7f5b707_d480e43a",
+      "range": {
+        "startLine": 25,
+        "startChar": 39,
+        "endLine": 25,
+        "endChar": 46
+      },
+      "revId": "336975b670016ffcb49911b3eef486a2f093d18c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
