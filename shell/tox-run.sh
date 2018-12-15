@@ -24,6 +24,10 @@ if [ -d "/opt/pyenv" ]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
 fi
 
+# Set and pass in PYTHONPATH to circumvent installation bug in tox>=3.2.0
+export PYTHONPATH=$(pwd)
+export TOX_TESTENV_PASSENV=PYTHONPATH
+
 set +e  # Allow detox to fail so that we can collect the logs in the next step
 
 PARALLEL="${PARALLEL:-true}"
