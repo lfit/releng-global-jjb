@@ -56,6 +56,8 @@
 - builder:
     name: lf-infra-ship-logs
     builders:
+      # Ensure no pre-existing .netrc files are overriding logs config
+      - lf-provide-maven-settings-cleanup
       - config-file-provider:
           files:
             - file-id: 'jenkins-log-archives-settings'
