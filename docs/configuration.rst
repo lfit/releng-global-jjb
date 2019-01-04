@@ -113,11 +113,47 @@ Documentation for npmrc is available via the `npm project
     proxy is not available for the project.
 :type: Custom file
 
-Create a "Custom file" with contents:
+Create a **Custom file** with contents:
 
 .. code-block:: ini
 
    registry = https://nexus.opendaylight.org/content/repositories/npmjs/
+
+.. _clouds-yaml:
+
+clouds-yaml
+-----------
+
+Needed by ``openstack client`` and ``packer`` to fetch OpenStack
+credentials and configuration. This file is OpenStack's `clouds.yaml
+<https://docs.openstack.org/python-openstackclient/pike/configuration/index.html>`_
+file.
+
+:Optional: Needed for jobs that use ``openstack client``. ``packer`` if
+    building against OpenStack infra.
+:type: Custom file
+
+Create a **Custom file** with contents:
+
+.. code-block:: yaml
+
+   clouds:
+   vex:
+    auth:
+      project_name: OS_PROJECT_NAME
+      username: OS_USERNAME
+      password: OS_PASSWORD
+      auth_url: 'https://auth.vexxhost.net/v3/'
+      user_domain_name: Default
+      project_domain_name: Default
+    region_name: ca-ymq-1
+
+.. warning::
+
+   If using packer 1.3.0 make sure that the clouds.yaml **profile**
+   configuration is **NOT** configured. Using **profile** causes packer to look
+   for another file called ``clouds-public.yaml`` for configuration.
+
 
 .. _pipconf:
 
@@ -132,7 +168,7 @@ in $HOME/.config/pip/pip.conf. Documentation for pip.conf is available via the
     proxy is not available for the project.
 :type: Custom file
 
-Create a "Custom file" with contents:
+Create a **Custom file** with contents:
 
 .. code-block:: ini
 
@@ -152,7 +188,7 @@ for :doc:`jjb/lf-ci-jobs`.
 :Required: This file MUST exist.
 :type: Custom file
 
-Create a "Custom file" with contents:
+Create a **Custom file** with contents:
 
 .. code-block:: ini
 
