@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    maven-fetch-metadata.sh was not respecting the "-f" (for file path)
+    flag in MAVEN_PARAMS, causing lf-maven-merge jobs that utilize this
+    flag to fail. It will now set a path based on this flag if it is present,
+    or default to the current working directory.
