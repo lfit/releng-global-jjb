@@ -14,13 +14,22 @@
 # Ensure we fail the job if any steps fail.
 set -xeu -o pipefail
 
+# Check for "-f" maven param, indicating a change in pom location.
+set +eu
+pom_path="pom.xml"
+file_path=$(echo $MAVEN_PARAMS | grep -E "\-f \S+" | awk '{ print $2 }')
+if [ ! -z $file_path ]; then
+    pom_path="$file_path/pom.xml"
+fi
+set -eu
+
 project=$(xmlstarlet sel \
     -N "x=http://maven.apache.org/POM/4.0.0" -t \
     --if "/x:project/x:groupId" \
       -v "/x:project/x:groupId" \
     --elif "/x:project/x:parent/x:groupId" \
       -v "/x:project/x:parent/x:groupId" \
-    --else -o "" pom.xml)
+    --else -o "" $pom_path)
 project_path="${project//.//}"
 
 mkdir -p "$WORKSPACE/m2repo/$project_path"
