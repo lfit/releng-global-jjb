@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4dc1d656_cfdd620e",
+        "filename": "shell/maven-fetch-metadata.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-01-09T17:25:37Z",
+      "side": 1,
+      "message": "Move this above the \"Ensure we fail the job if any steps fail\" Then we don\u0027t have to do the set +/-eu dance.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 2
+      },
+      "revId": "6e8548b9e568c85fede3778b3e4c0c36d5e4967d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
