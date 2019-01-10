@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Check openjdk $VERSION before setting $JAVA_HOME. This enables jobs to pass
+    "openjdk10" or "openjdk11" on CentOS 7 images to use the OpenJDK version
+    installed in /opt.
