@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42569c29_45d2d8d2",
+        "filename": "releasenotes/notes/support-openjdk-11-64e4abc6df528ce8.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-01-10T23:47:49Z",
+      "side": 1,
+      "message": "should? we don\u0027t know for sure?",
+      "range": {
+        "startLine": 4,
+        "startChar": 59,
+        "endLine": 4,
+        "endChar": 65
+      },
+      "revId": "801735d996024a4208fa0ba032c8bab0df2030fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
