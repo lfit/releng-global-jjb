@@ -15,12 +15,12 @@
 JAVA_ENV_FILE="/tmp/java.env"
 
 update-java-redhat() {
-    if [[ "${SET_JDK_VERSION: -2}" = "11" ]]; then
+    if [[ "${SET_JDK_VERSION//[a-zA-Z]/}" = "11" ]]; then
         export JAVA_HOME="/opt/jdk-11"
-    elif [[ "${SET_JDK_VERSION: -2}" = "10" ]]; then
+    elif [[ "${SET_JDK_VERSION//[a-zA-Z]/}" = "10" ]]; then
         export JAVA_HOME="/opt/jdk-10.0.2"
     else
-        export JAVA_HOME="/usr/lib/jvm/java-1.${SET_JDK_VERSION: -1}.0-openjdk"
+        export JAVA_HOME="/usr/lib/jvm/java-1.${SET_JDK_VERSION//[a-zA-Z]/}.0-openjdk"
     fi
     sudo /usr/sbin/alternatives --install /usr/bin/java java "${JAVA_HOME}/bin/java" 1
     sudo /usr/sbin/alternatives --install /usr/bin/javac javac "${JAVA_HOME}/bin/javac" 1
