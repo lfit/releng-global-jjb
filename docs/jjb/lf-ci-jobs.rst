@@ -736,8 +736,8 @@ Packer Verify job runs `packer validate` to verify packer configuration.
 Puppet Verify
 -------------
 
-Runs puppet-lint in the ``puppet-dir`` directory. puppet-lint runs recursively,
-so the base directory is usually the best place to run from.
+Runs puppet-lint in the ``puppet-dir`` directory. Since puppet-lint runs recursively,
+it should usually be executed from the base directory.
 
 :Template Names:
 
