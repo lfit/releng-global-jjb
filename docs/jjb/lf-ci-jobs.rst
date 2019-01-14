@@ -737,7 +737,7 @@ Puppet Verify
 -------------
 
 Runs puppet-lint in the ``puppet-dir`` directory. puppet-lint runs recursively,
-so the base directory is usually the best place to run from.
+the base directory is usually the best place to run from.
 
 :Template Names:
 
