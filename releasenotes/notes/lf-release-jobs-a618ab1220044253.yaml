@@ -1,0 +1,18 @@
+---
+features:
+  - |
+    New ``lf-release-job-merge`` and ``lf-release-job-verify`` templates allow
+    projects to have self-serve releases. Project will create a tagname.yaml
+    file in the releases/ directory of their git repo.
+    example:
+
+    .. code-block:: bash
+
+       $ cat releases/4.0.0.yaml
+       ---
+       artifact_type: 'maven'
+       version: '4.0.0'
+       project: 'odlparent'
+       log_dir: 'odlparent-maven-release-master/11/'
+       #below is optional
+       maven_central_url: 'oss.sonatype.org'
