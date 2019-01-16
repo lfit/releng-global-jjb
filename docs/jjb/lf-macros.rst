@@ -247,6 +247,13 @@ check-info-votes
 
 Calls shell script to validate votes on a change to an INFO.yaml
 
+lf-releases
+-----------
+
+Sets up lftools.ini (required)
+Then runs ../shell/release-job.sh
+
+
 lf-sigul-sign-dir
 -----------------
 
