@@ -230,6 +230,16 @@ lf-rtd-verify
 
 ReadTheDocs verify script.
 
+lf-release-job-merge
+----------------------
+
+Release jobs to promote artifacts and tag repositories.
+
+lf-release-job-verify
+----------------------
+
+Release jobs verify
+
 lf-sigul-sign-dir
 -----------------
 

@@ -1,0 +1,7 @@
+---
+- job-group:
+    name: '{project-name}-release-jobs'
+
+    jobs:
+      - gerrit-release-merge
+      - gerrit-release-verify
