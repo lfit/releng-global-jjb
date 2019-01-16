@@ -1,0 +1,7 @@
+---
+- job-group:
+    name: 'lf-releng-release-jobs'
+
+    jobs:
+      - releng-release-merge
+      - releng-release-verify
