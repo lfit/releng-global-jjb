@@ -247,6 +247,19 @@ check-info-votes
 
 Calls shell script to validate votes on a change to an INFO.yaml
 
+lf-releases
+-----------
+
+realizses lftools.ini (required)
+needed to push to nexus.
+
+[nexus]
+username=
+password=
+
+Then runs ../shell/release-job.sh
+
+
 lf-sigul-sign-dir
 -----------------
 
