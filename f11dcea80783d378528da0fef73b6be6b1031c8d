@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e24b2bd5_1276dc99",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-01-17T18:08:54Z",
+      "side": 1,
+      "message": "Why is this being added in global-jjb?\nThis should be only added in ODPI\u0027s local project yaml files as adding them here will affect any other project using global-jjb.",
+      "range": {
+        "startLine": 127,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 36
+      },
+      "revId": "f11dcea80783d378528da0fef73b6be6b1031c8d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
