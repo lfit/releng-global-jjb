@@ -310,7 +310,7 @@
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-javadoc-publish-{stream}'
+    name: '{project-name}-maven-javadoc-publish-{stream}-{java-version}'
     id: gerrit-maven-javadoc-publish
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -340,7 +340,7 @@
                   branch-pattern: '**/{branch}'
 
 - job-template:
-    name: '{project-name}-maven-javadoc-publish-{stream}'
+    name: '{project-name}-maven-javadoc-publish-{stream}-{java-version}'
     id: github-maven-javadoc-publish
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -436,7 +436,7 @@
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-javadoc-verify-{stream}'
+    name: '{project-name}-maven-javadoc-verify-{stream}-{java-version}'
     id: gerrit-maven-javadoc-verify
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -464,7 +464,7 @@
                   branch-pattern: '**/{branch}'
 
 - job-template:
-    name: '{project-name}-maven-javadoc-verify-{stream}'
+    name: '{project-name}-maven-javadoc-verify-{stream}-{java-version}'
     id: github-maven-javadoc-verify
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
