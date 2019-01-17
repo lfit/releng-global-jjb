@@ -22,6 +22,30 @@
       "revId": "f11dcea80783d378528da0fef73b6be6b1031c8d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af417127_d2dc6c58",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-01-17T18:11:21Z",
+      "side": 1,
+      "message": "For more info, you can use ODL as an example:\nhttps://github.com/opendaylight/releng-builder/blob/master/jjb/releng-templates-java.yaml#L24",
+      "parentUuid": "e24b2bd5_1276dc99",
+      "range": {
+        "startLine": 127,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 36
+      },
+      "revId": "f11dcea80783d378528da0fef73b6be6b1031c8d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
