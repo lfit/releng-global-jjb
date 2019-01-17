@@ -124,6 +124,8 @@
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
+    mvn-central: true
+    ossrh-profile-id: 56dff43ca17820
 
     nexus_iq_scan_patterns:
       - '**/*.ear'
