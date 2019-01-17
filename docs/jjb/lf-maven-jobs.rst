@@ -172,7 +172,7 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
 
 :Template Names:
 
-    - {project-name}-maven-javadoc-verify-{stream}
+    - {project-name}-maven-javadoc-verify-{stream}-{java-version}
     - gerrit-maven-javadoc-verify
     - github-maven-javadoc-verify
 

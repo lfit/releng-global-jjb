@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Extend ${JOB_NAME} to include {java-version} parameter to support jobs
+    to build with multiple versions of openjdk{8,11}.
