@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7ebcc0f_36c99f6f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-01-22T01:39:08Z",
+      "side": 1,
+      "message": "Confused on this sentence",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 24
+      },
+      "revId": "9be84e7131f4ad6db0692aa6cbe049a6970f6ce4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
