@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "cca04447_dff6ea85",
+        "filename": "shell/releng-release-repos.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-01-22T19:16:59Z",
+      "side": 1,
+      "message": "We don\u0027t need the features of .format, but I\u0027ll change it if there\u0027s some insistence.",
+      "parentUuid": "406a6208_94bfe67f",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 31
+      },
+      "revId": "88a45436ee6f0e6ff24ad2e5a0a1f319498e56a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e988f055_76ec9b17",
         "filename": "shell/releng-release-repos.py",
         "patchSetId": 8
@@ -59,6 +83,30 @@
       "writtenOn": "2019-01-22T01:26:25Z",
       "side": 1,
       "message": "I would put this one last",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 11
+      },
+      "revId": "88a45436ee6f0e6ff24ad2e5a0a1f319498e56a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71416557_df3a80ca",
+        "filename": "shell/releng-release-repos.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-01-22T19:16:59Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "e988f055_76ec9b17",
       "range": {
         "startLine": 51,
         "startChar": 0,
