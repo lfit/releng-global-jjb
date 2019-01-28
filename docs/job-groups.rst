@@ -30,5 +30,5 @@ the aaa project. The job-group also hardcodes ``mvn-version`` to *mvn35* and
 ``build-timeout`` to *180* for all projects using this job-group.
 
 A benefit of this method is for example disabling entire category of jobs by
-modifying the job-group, insert ``disable-jobs: true`` parameter
+modifying the job-group, insert ``disable-job: true`` parameter
 against the jobs to disable.
