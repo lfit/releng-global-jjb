@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Packer merge jobs now include the image name in the Jenkins build
+    description.
