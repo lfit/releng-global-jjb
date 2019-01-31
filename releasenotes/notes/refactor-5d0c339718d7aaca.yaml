@@ -1,0 +1,16 @@
+---
+upgrade:
+  - |
+    Jobs using the **lf-maven-stage** macro now need to update to the new
+    usage. Preparation calls to **lf-provide-maven-settings**,
+    **lf-infra-create-netrc**, and **lf-provide-maven-settings-cleanup** are no
+    longer necessary to prepare the **lf-maven-stage** macro.
+
+    Usage:
+
+    .. code-block:: yaml
+
+       - lf-maven-stage:
+          mvn-global-settings: 'global-settings'
+          mvn-settings: 'settings'
+          mvn-staging-id: 'staging profile id'
