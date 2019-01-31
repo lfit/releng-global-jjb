@@ -184,11 +184,15 @@
           condition-kind: boolean-expression
           condition-expression: '{mvn-central}'
           steps:
+            - lf-provide-maven-settings:
+                global-settings-file: '{mvn-global-settings}'
+                settings-file: '{mvn-settings}'
             - lf-infra-create-netrc:
                 server-id: 'ossrh'
             - inject:
                 properties-content: 'OSSRH_PROFILE_ID={ossrh-profile-id}'
             - shell: !include-raw-escape: ../shell/maven-central.sh
+            - lf-provide-maven-settings-cleanup
 
 - builder:
     name: lf-maven-install
