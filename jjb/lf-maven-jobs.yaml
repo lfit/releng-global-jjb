@@ -24,10 +24,16 @@
 - builder:
     name: lf-maven-stage
     builders:
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - lf-infra-create-netrc:
+          server-id: '{mvn-staging-id}'
       # include-raw-escape fails due to JJB bug
-      - shell: !include-raw:
+      - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-stage.sh
+      - lf-provide-maven-settings-cleanup
 
 - builder:
     name: lf-update-java-alternatives
@@ -713,18 +719,19 @@
           mvn-version: '{mvn-version}'
       - lf-update-java-alternatives:
           java-version: '{java-version}'
+      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
-      - lf-infra-create-netrc:
-          server-id: '{mvn-staging-id}'
-      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
       - lf-sigul-sign-dir:
           sign-artifacts: '{sign-artifacts}'
           sign-dir: '$WORKSPACE/m2repo'
-      - lf-maven-stage
+      - lf-maven-stage:
+          mvn-global-settings: '{mvn-global-settings}'
+          mvn-settings: '{mvn-settings}'
+          mvn-staging-id: '{mvn-staging-id}'
       - lf-maven-central:
           mvn-central: '{mvn-central}'
           ossrh-profile-id: '{ossrh-profile-id}'
