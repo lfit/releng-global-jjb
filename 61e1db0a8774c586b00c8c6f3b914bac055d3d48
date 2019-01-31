@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6cf5e6d2_e26f7734",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-01-31T16:07:12Z",
+      "side": 1,
+      "message": "These 2 macros expect parameters which need to be defined here.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 30
+      },
+      "revId": "61e1db0a8774c586b00c8c6f3b914bac055d3d48",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7c1a7d9_53639cf5",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-01-31T16:07:12Z",
+      "side": 1,
+      "message": "This variable needs to match what\u0027s defined in lf-maven-stage",
+      "range": {
+        "startLine": 726,
+        "startChar": 10,
+        "endLine": 726,
+        "endChar": 30
+      },
+      "revId": "61e1db0a8774c586b00c8c6f3b914bac055d3d48",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebd134bb_40887a67",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-01-31T16:07:12Z",
+      "side": 1,
+      "message": "same here.",
+      "range": {
+        "startLine": 727,
+        "startChar": 10,
+        "endLine": 727,
+        "endChar": 23
+      },
+      "revId": "61e1db0a8774c586b00c8c6f3b914bac055d3d48",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "747faaab_603a254a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-01-31T16:07:12Z",
+      "side": 1,
+      "message": "same here.",
+      "range": {
+        "startLine": 728,
+        "startChar": 10,
+        "endLine": 728,
+        "endChar": 19
+      },
+      "revId": "61e1db0a8774c586b00c8c6f3b914bac055d3d48",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
