@@ -4,6 +4,7 @@
 
     jobs:
       - gerrit-jenkins-cfg-merge
+      - gerrit-jenkins-cfg-verify
       - gerrit-jenkins-sandbox-cleanup
       - gerrit-jjb-deploy-job
       - gerrit-jjb-merge
@@ -14,6 +15,7 @@
 
     jobs:
       - github-jenkins-cfg-merge
+      - github-jenkins-cfg-verify
       - github-jenkins-sandbox-cleanup
       - github-jjb-deploy-job
       - github-jjb-merge
