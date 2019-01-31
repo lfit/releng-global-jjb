@@ -23,6 +23,14 @@ for file in jenkins-config/clouds/openstack/*/*; do
     echo "ERROR: No matching image found for $IMAGE_NAME"
     error=true
   fi
+  # Set the $HARDWARE_ID variable to the the file's HARDWARE_ID value
+  export "$(grep HARDWARE_ID $file)"
+  # The flavor should be listed. Spaces in grep string ensure complete match.
+  openstack flavor list | grep " $HARDWARE_ID "
+  if [ $? -ne 0 ]; then
+    echo "ERROR: No matching flavor found for $HARDWARE_ID"
+    error=true
+  fi
 done
 
 if [ "$error" = true ]; then
