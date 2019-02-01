@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "659baa5f_5ece198c",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-01T15:22:20Z",
+      "side": 1,
+      "message": "A more robust way to do this is:\neval \"$(grep IMAGE_NAME $file)\"\nIf if the returns anything unexpected, the \u0027eval\u0027 will fail\nPretty sure you do not need to export. Never export unless it is required.",
+      "revId": "ca3081138e3b2b614b3455d514380bfd9e553ccb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0ba6e0b4_8c1d5e54",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-01T15:22:20Z",
+      "side": 1,
+      "message": "if ! openstack image list --property name\u003d\"$IMAGE_NAME\" | grep \"active\" ; then\n\na little cleaner",
+      "range": {
+        "startLine": 21,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 23
+      },
+      "revId": "ca3081138e3b2b614b3455d514380bfd9e553ccb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "faf64cbf_10d4a1f8",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-01T15:22:20Z",
+      "side": 1,
+      "message": "error variable is a boolean: so you can\n    if $error; then\nnote no \u0027\"\u0027",
+      "revId": "ca3081138e3b2b614b3455d514380bfd9e553ccb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
