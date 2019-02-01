@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e634db3b_734842c1",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-01T18:37:29Z",
+      "side": 1,
+      "message": "export is required here. eval does not work, and would introduce significant risk even if it did (it would allow for arbitrary execution of any command put into the file on a line starting with IMAGE_NAME).\n\nHowever, I did make the grep commands more specific.",
+      "parentUuid": "659baa5f_5ece198c",
+      "revId": "ca3081138e3b2b614b3455d514380bfd9e553ccb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ba6e0b4_8c1d5e54",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 2
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "8cfb8fce_6640a881",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-01T18:37:29Z",
+      "side": 1,
+      "message": "Done (both here and on the similar command below).",
+      "parentUuid": "0ba6e0b4_8c1d5e54",
+      "range": {
+        "startLine": 21,
+        "startChar": 2,
+        "endLine": 22,
+        "endChar": 23
+      },
+      "revId": "ca3081138e3b2b614b3455d514380bfd9e553ccb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "faf64cbf_10d4a1f8",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 2
@@ -53,6 +95,24 @@
       "writtenOn": "2019-02-01T15:22:20Z",
       "side": 1,
       "message": "error variable is a boolean: so you can\n    if $error; then\nnote no \u0027\"\u0027",
+      "revId": "ca3081138e3b2b614b3455d514380bfd9e553ccb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a6cb4420_630dbfed",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-01T18:37:29Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "faf64cbf_10d4a1f8",
       "revId": "ca3081138e3b2b614b3455d514380bfd9e553ccb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
