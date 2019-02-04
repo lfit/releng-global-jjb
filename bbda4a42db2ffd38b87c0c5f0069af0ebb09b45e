@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "4722f53d_ad5c8634",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-04T16:19:17Z",
+      "side": 1,
+      "message": "set -ue\nThe only \u0027exit 0\u0027 is out the bottom",
+      "revId": "bbda4a42db2ffd38b87c0c5f0069af0ebb09b45e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "411d1017_3a3a8f17",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-04T16:19:17Z",
+      "side": 1,
+      "message": "This is kinda cool how this works. Because the RHS is not getting evaluated (good news for security) the variable might not get set. Note \u0027export a\u003d b b\u0027, \u0027export # a\u003d\u0027 and \u0027export\u0027 ar all valid. The \u0027set -ue\u0027 (above) will catch all these situations.",
+      "revId": "bbda4a42db2ffd38b87c0c5f0069af0ebb09b45e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6bdd19c7_dbb593f0",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 3
@@ -13,6 +47,30 @@
       "writtenOn": "2019-02-04T04:50:24Z",
       "side": 1,
       "message": "How about putting this just before \u0027done\u0027.\nMight speed up the script, if loads of files, and it fails on first. Or you want to list every failure perhaps?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 2
+      },
+      "revId": "bbda4a42db2ffd38b87c0c5f0069af0ebb09b45e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6120bf8_aa81385c",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-04T16:19:17Z",
+      "side": 1,
+      "message": "Actually I like it out here, then you could pickup multiple errors. If the \u0027openstack flavor list\u0027 was taking minutes to run the performance might be an issue.",
+      "parentUuid": "6bdd19c7_dbb593f0",
       "range": {
         "startLine": 36,
         "startChar": 0,
