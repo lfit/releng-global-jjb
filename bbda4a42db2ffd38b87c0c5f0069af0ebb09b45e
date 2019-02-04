@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6bdd19c7_dbb593f0",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-02-04T04:50:24Z",
+      "side": 1,
+      "message": "How about putting this just before \u0027done\u0027.\nMight speed up the script, if loads of files, and it fails on first. Or you want to list every failure perhaps?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 2
+      },
+      "revId": "bbda4a42db2ffd38b87c0c5f0069af0ebb09b45e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
