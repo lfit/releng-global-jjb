@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cff99e36_62c466fe",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-02-05T21:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bfa0b29_272b6a5c",
+      "range": {
+        "startLine": 31,
+        "startChar": 39,
+        "endLine": 31,
+        "endChar": 44
+      },
+      "revId": "b12cef21478df5124223b7d10dc469ecfe48d5c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "de22b823_c2cddf9e",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-02-04T06:31:31Z",
       "side": 1,
       "message": "If you intend to use the builder you should do it like this. \nSimilar to calling a function and passing the params. \n\n      - lf-maven-stage:\n          mvn-global-settings: \u0027{mvn-global-settings}\u0027\n          mvn-settings: \u0027{mvn-settings}\u0027\n          mvn-staging-id: \u0027{mvn-staging-id}\u0027",
+      "range": {
+        "startLine": 730,
+        "startChar": 10,
+        "endLine": 731,
+        "endChar": 39
+      },
+      "revId": "b12cef21478df5124223b7d10dc469ecfe48d5c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "192e9dfe_b04f0b28",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-02-05T21:22:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de22b823_c2cddf9e",
       "range": {
         "startLine": 730,
         "startChar": 10,
