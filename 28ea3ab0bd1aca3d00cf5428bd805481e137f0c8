@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1b99ed3f_598f0077",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-05T02:06:43Z",
+      "side": 1,
+      "message": "No, it is always defined in this file. If you look at the other jobs, it is either defined in the job (as I\u0027ve done here) or in a common settings definition (e.g. lf_jjb_common).",
+      "parentUuid": "99f12aed_4b034572",
+      "range": {
+        "startLine": 509,
+        "startChar": 31,
+        "endLine": 509,
+        "endChar": 35
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c07ca65_2b1e4fa8",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "692cec4c_6047eb9f",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-05T02:06:43Z",
+      "side": 1,
+      "message": "No. We don\u0027t want it to; we want failures to be displayed, and exit once all files have been tested.",
+      "parentUuid": "0c07ca65_2b1e4fa8",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43208c20_d285548a",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2019-02-05T01:35:32Z",
       "side": 1,
       "message": "why are these lines being changed, does this offer any improvements? The code is more readable as it is with is square brackets?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 4
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3d77f3a4_2054df51",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-05T02:06:43Z",
+      "side": 1,
+      "message": "I changed it at Tim\u0027s suggestion. They both seem fine to me.",
+      "parentUuid": "43208c20_d285548a",
       "range": {
         "startLine": 24,
         "startChar": 0,
