@@ -235,6 +235,30 @@
       "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "40378f1d_ff2f0743",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-02-05T03:40:50Z",
+      "side": 1,
+      "message": "If you set error to either true or false, for me, it is more readable (less option for missunderstanding) if you explicitely check for true or false later. At least in my, non C, background :)",
+      "parentUuid": "9c595f35_25da1a5a",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 2
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
