@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ea517624_97112e39",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-05T00:22:39Z",
+      "side": 1,
+      "message": "Done (I used the standard bash options most global-jjb scripts use).",
+      "parentUuid": "4722f53d_ad5c8634",
+      "revId": "bbda4a42db2ffd38b87c0c5f0069af0ebb09b45e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "411d1017_3a3a8f17",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 3
@@ -71,6 +89,30 @@
       "side": 1,
       "message": "Actually I like it out here, then you could pickup multiple errors. If the \u0027openstack flavor list\u0027 was taking minutes to run the performance might be an issue.",
       "parentUuid": "6bdd19c7_dbb593f0",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 2
+      },
+      "revId": "bbda4a42db2ffd38b87c0c5f0069af0ebb09b45e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c15822f3_9e642d92",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-05T00:22:39Z",
+      "side": 1,
+      "message": "Bengt, I think it\u0027s more useful here. As Tim pointed out, this way it will catch and alert the user to all errors, rather than one at a time.",
+      "parentUuid": "b6120bf8_aa81385c",
       "range": {
         "startLine": 36,
         "startChar": 0,
