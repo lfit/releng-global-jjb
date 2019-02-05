@@ -191,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "2fac16c0_079cd197",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T02:45:51Z",
+      "side": 1,
+      "message": "Sorry, but this way is less readable, I really prefer keeping the code as it was earlier since this does not add any more optimization to the code than what is already present.",
+      "parentUuid": "3d77f3a4_2054df51",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 4
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9c595f35_25da1a5a",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 4
