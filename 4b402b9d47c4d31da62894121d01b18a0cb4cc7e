@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "46239ead_9994c06c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "Release notes is required for this new feature. Also it would good to have some docs or steps on how to test this with some existing projects?",
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69c73e49_8631ee32",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "the job template does not match the templates below?",
+      "range": {
+        "startLine": 25,
+        "startChar": 6,
+        "endLine": 25,
+        "endChar": 26
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81e15607_9458f483",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "Are these separate bullet points or a single line? PS make these into bullets, if required.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 12
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7165daa_fe8f1342",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "Change to ... ?\n\n\"Release verify job checks the schema and ensures that the staging-repo.txt.gz is available on the job.\"",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 80
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef1f7bc9_20907a29",
+        "filename": "jjb/lf-release-job-groups.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "do we need the job groups for github?",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5bb2d7a9_46ad4c93",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 2,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 18
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "369dd866_40465154",
+        "filename": "shell/release-job-merge.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "928dd1d1_405e4a0d",
+        "filename": "shell/release-job-verify.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "2019",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5963ad2_33cec480",
+        "filename": "shell/release-job-verify.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:17:09Z",
+      "side": 1,
+      "message": "both the verify and merge scripts are pretty much the same except this block, this can be refactored into a single scripts with a if-else clause.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 34
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
