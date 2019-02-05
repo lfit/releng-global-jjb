@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "99f12aed_4b034572",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:35:32Z",
+      "side": 1,
+      "message": "why is this being changed to a hardcoded value? I see that this should allow for a value to be set from the project calling this jobs.",
+      "range": {
+        "startLine": 509,
+        "startChar": 31,
+        "endLine": 509,
+        "endChar": 35
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c07ca65_2b1e4fa8",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:35:32Z",
+      "side": 1,
+      "message": "Does the script fail when the openstack command returns nothing?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "43208c20_d285548a",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T01:35:32Z",
+      "side": 1,
+      "message": "why are these lines being changed, does this offer any improvements? The code is more readable as it is with is square brackets?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 4
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
