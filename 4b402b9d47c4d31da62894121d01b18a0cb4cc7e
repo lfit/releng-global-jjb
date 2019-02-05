@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ecafea94_4562dac7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-02-05T23:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46239ead_9994c06c",
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "69c73e49_8631ee32",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 15
@@ -111,6 +129,30 @@
     },
     {
       "key": {
+        "uuid": "084ac34c_79ca56a5",
+        "filename": "jjb/lf-release-job-groups.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-02-05T23:16:20Z",
+      "side": 1,
+      "message": "Thanh said we did not.",
+      "parentUuid": "ef1f7bc9_20907a29",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 29
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5bb2d7a9_46ad4c93",
         "filename": "jjb/lf-release-jobs.yaml",
         "patchSetId": 15
@@ -122,6 +164,30 @@
       "writtenOn": "2019-02-05T01:17:09Z",
       "side": 1,
       "message": "2019",
+      "range": {
+        "startLine": 2,
+        "startChar": 18,
+        "endLine": 3,
+        "endChar": 18
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c08586b_3daa5c91",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-02-05T23:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bb2d7a9_46ad4c93",
       "range": {
         "startLine": 2,
         "startChar": 18,
@@ -157,6 +223,30 @@
     },
     {
       "key": {
+        "uuid": "5e562b4d_00dd1646",
+        "filename": "shell/release-job-merge.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-02-05T23:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "369dd866_40465154",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "928dd1d1_405e4a0d",
         "filename": "shell/release-job-verify.sh",
         "patchSetId": 15
@@ -180,6 +270,30 @@
     },
     {
       "key": {
+        "uuid": "0800c3b0_a855e153",
+        "filename": "shell/release-job-verify.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-02-05T23:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "928dd1d1_405e4a0d",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5963ad2_33cec480",
         "filename": "shell/release-job-verify.sh",
         "patchSetId": 15
@@ -191,6 +305,30 @@
       "writtenOn": "2019-02-05T01:17:09Z",
       "side": 1,
       "message": "both the verify and merge scripts are pretty much the same except this block, this can be refactored into a single scripts with a if-else clause.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 34
+      },
+      "revId": "4b402b9d47c4d31da62894121d01b18a0cb4cc7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ece07604_dd7e6409",
+        "filename": "shell/release-job-verify.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-02-05T23:16:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5963ad2_33cec480",
       "range": {
         "startLine": 53,
         "startChar": 0,
