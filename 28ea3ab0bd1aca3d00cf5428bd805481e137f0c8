@@ -144,6 +144,30 @@
     },
     {
       "key": {
+        "uuid": "7de70600_652dc76f",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-05T16:17:19Z",
+      "side": 1,
+      "message": "and not just exit, but exit with non-zero status\nif the openstack returns nothing, with zero status the grep will fail\nThe pipefail sez exit with non-zero status if any command in the pipe returns a non-zero status. The exit status of the script is taken from the first command that failed",
+      "parentUuid": "692cec4c_6047eb9f",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43208c20_d285548a",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 4
@@ -209,6 +233,47 @@
         "endLine": 27,
         "endChar": 4
       },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "21f36f5c_ced129e8",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-05T16:17:19Z",
+      "side": 1,
+      "message": "When \u0027-e\u0027 is set this is the most readable approach. The \u0027-e\u0027 has to be set so that any unexpected errors cause the script to error out. The worse thing is batch script can do is to quietly ignore an error.",
+      "parentUuid": "2fac16c0_079cd197",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 4
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3db760ff_f00b5ab8",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-05T16:17:19Z",
+      "side": 1,
+      "message": "The safest thing to do her is \u0027unset IMAGE_NAME HARDWARE_ID\u0027 so they are not set second time around. I thought about it and I don\u0027t think it is needed (primarily because of the improved RE in the \u0027grep $file\u0027)",
       "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
