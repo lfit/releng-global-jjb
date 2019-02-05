@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "a6df2ad0_c073f51c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-05T02:41:39Z",
+      "side": 1,
+      "message": "this line shows its modified, from \u0027{submodule-recursive}\u0027 to \u0027true\u0027.",
+      "parentUuid": "1b99ed3f_598f0077",
+      "range": {
+        "startLine": 509,
+        "startChar": 31,
+        "endLine": 509,
+        "endChar": 35
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c07ca65_2b1e4fa8",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 4
