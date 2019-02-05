@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "be9cc846_9dd49a5b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-02-05T02:44:26Z",
+      "side": 1,
+      "message": "Sorry, to clarify: I meant that this was always a mistake. This should have been defined here originally, because it is not defined in the shared \"lf_jenkins_cfg_verify\" section.",
+      "parentUuid": "1b99ed3f_598f0077",
+      "range": {
+        "startLine": 509,
+        "startChar": 31,
+        "endLine": 509,
+        "endChar": 35
+      },
+      "revId": "28ea3ab0bd1aca3d00cf5428bd805481e137f0c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c07ca65_2b1e4fa8",
         "filename": "shell/jenkins-verify-images.sh",
         "patchSetId": 4
