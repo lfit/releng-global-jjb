@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Modified lf-maven-jobs.yaml sonar cron entry to '{obj:cron}'
+    to pass value from custom user config file.
+

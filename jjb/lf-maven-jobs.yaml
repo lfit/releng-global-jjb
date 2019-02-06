@@ -941,8 +941,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      # Build weekly on Saturdays
-      - timed: 'H H * * 6'
+      - timed: '{obj:cron}'
       - github-pull-request:
           trigger-phrase: '^run-sonar$'
           only-trigger-phrase: true
