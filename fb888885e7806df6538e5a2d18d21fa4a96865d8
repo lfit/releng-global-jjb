@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8515b693_2e8e0277",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-06T23:15:57Z",
+      "side": 1,
+      "message": "Modify",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 8
+      },
+      "revId": "fb888885e7806df6538e5a2d18d21fa4a96865d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24ce7600_67606d23",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-06T23:15:57Z",
+      "side": 1,
+      "message": "this line is not required at all",
+      "revId": "fb888885e7806df6538e5a2d18d21fa4a96865d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2d0943c4_8d762c7e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-06T23:15:57Z",
+      "side": 1,
+      "message": "define `cron: \u0027H H * * 6\u0027` in maven common anchor, so that this does not break any upstream jobs.",
+      "revId": "fb888885e7806df6538e5a2d18d21fa4a96865d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
