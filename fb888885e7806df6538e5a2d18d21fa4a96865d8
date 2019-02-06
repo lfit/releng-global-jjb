@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "d9d48e59_93a28650",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-06T23:17:57Z",
+      "side": 1,
+      "message": "Agreed we don\u0027t need this comment.",
+      "parentUuid": "24ce7600_67606d23",
+      "revId": "fb888885e7806df6538e5a2d18d21fa4a96865d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2d0943c4_8d762c7e",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 5
@@ -53,6 +71,24 @@
       "writtenOn": "2019-02-06T23:15:57Z",
       "side": 1,
       "message": "define `cron: \u0027H H * * 6\u0027` in maven common anchor, so that this does not break any upstream jobs.",
+      "revId": "fb888885e7806df6538e5a2d18d21fa4a96865d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "02b91930_ed02d38e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-06T23:17:57Z",
+      "side": 1,
+      "message": "No please don\u0027t.\n\nThe default sonar cron variable is the same as here so nothing changes code wise.",
+      "parentUuid": "2d0943c4_8d762c7e",
       "revId": "fb888885e7806df6538e5a2d18d21fa4a96865d8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
