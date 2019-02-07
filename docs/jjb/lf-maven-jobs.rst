@@ -27,6 +27,20 @@ Runs Sonar against a Maven project.
     :mvn-version: Version of Maven to execute Sonar with.
     :mvn-settings: Maven settings.xml file containing credentials to use.
 
+lf-infra-maven-sonarcloud
+-------------------------
+
+Runs Sonar against a Maven project and pushes results to SonarCloud.
+
+:Required Parameters:
+
+    :java-version: Version of Java to execute Sonar with.
+    :mvn-version: Version of Maven to execute Sonar with.
+    :mvn-settings: Maven settings.xml file containing credentials to use.
+    :sonarcloud-project-key: SonarCloud project key.
+    :sonarcloud-project-organization: SonarCloud project organization.
+    :sonarcloud-api-token: SonarCloud API Token.
+
 lf-maven-build
 --------------
 
@@ -363,6 +377,14 @@ interest in that kind of support.
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
+    :sonar-mvn-goals: Maven goals to run for sonar analysis.
+        (default: sonar:sonar)
+    :sonarcloud: Whether or not to use SonarCloud ``true|false``.
+        (default: false)
+    :sonarcloud-project-key: SonarCloud project key. (default: '')
+    :sonarcloud-project-organization: SonarCloud project organization.
+        (default: '')
+    :sonarcloud-api-token: SonarCloud API Token. (default: '')
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -371,6 +393,12 @@ interest in that kind of support.
         (default: 10)
 
     :gerrit_sonar_triggers: Override Gerrit Triggers.
+
+
+SonarCloud Example:
+
+.. literalinclude:: ../../.jjb-test/lf-maven-jobs/maven-sonarcloud.yaml
+   :language: yaml
 
 Maven Verify
 ------------

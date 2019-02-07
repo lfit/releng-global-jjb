@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Add support for pushing Sonar results to SonarCloud.
+
+    Example Usage:
+
+    .. literalinclude:: ../.jjb-test/lf-maven-jobs/maven-sonarcloud.yaml
+       :language: yaml

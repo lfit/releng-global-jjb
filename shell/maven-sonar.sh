@@ -27,10 +27,19 @@ $MVN clean install \
     --settings "$SETTINGS_FILE" \
     $MAVEN_OPTIONS $MAVEN_PARAMS
 
+declare -a params
+params+=("--global-settings $GLOBAL_SETTINGS_FILE")
+params+=("--settings $SETTINGS_FILE")
+
+if [ "$SONAR_HOST_URL" = "https://sonarcloud.io" ]; then
+    params+=("-Dsonar.projectKey=$PROJECT_KEY")
+    params+=("-Dsonar.organization=$PROJECT_ORGANIZATION")
+    params+=("-Dsonar.login=$API_TOKEN")
+fi
+
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
-$MVN $SONAR_MAVEN_GOAL \
+"$MVN" $SONAR_MAVEN_GOAL \
     -e -Dsonar -Dsonar.host.url="$SONAR_HOST_URL" \
-    --global-settings "$GLOBAL_SETTINGS_FILE" \
-    --settings "$SETTINGS_FILE" \
+    ${params[*]} \
     $MAVEN_OPTIONS $MAVEN_PARAMS
