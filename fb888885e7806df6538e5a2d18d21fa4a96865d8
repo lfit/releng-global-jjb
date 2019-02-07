@@ -92,6 +92,24 @@
       "revId": "fb888885e7806df6538e5a2d18d21fa4a96865d8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf35920a_c29e36f3",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-02-07T00:48:04Z",
+      "side": 1,
+      "message": "Agreed, please dont add this to the mvn common, to every job would become timed.",
+      "parentUuid": "02b91930_ed02d38e",
+      "revId": "fb888885e7806df6538e5a2d18d21fa4a96865d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
