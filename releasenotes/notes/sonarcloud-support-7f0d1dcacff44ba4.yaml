@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add support for pushing Sonar results to SonarCloud. Refer to
+    :ref:`Maven Sonar docs <maven-sonar>` for details.

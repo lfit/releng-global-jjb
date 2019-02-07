@@ -817,6 +817,10 @@
     mvn-params: ''
     mvn-version: mvn35
     sonar-mvn-goal: 'sonar:sonar'
+    sonarcloud: false
+    sonarcloud-project-key: ''
+    sonarcloud-project-organization: ''
+    sonarcloud-api-token: ''
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -871,10 +875,31 @@
 
     builders:
       - lf-infra-pre-build
-      - lf-infra-maven-sonar:
-          java-version: '{java-version}'
-          mvn-settings: '{mvn-settings}'
-          mvn-version: '{mvn-version}'
+      # With SonarCloud
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{sonarcloud}'
+          steps:
+            - shell: echo 'Using SonarCloud'
+            - lf-infra-maven-sonarcloud:
+                java-version: '{java-version}'
+                mvn-settings: '{mvn-settings}'
+                mvn-version: '{mvn-version}'
+                sonarcloud-project-key: '{sonarcloud-project-key}'
+                sonarcloud-project-organization: '{sonarcloud-project-organization}'
+                sonarcloud-api-token: '{sonarcloud-api-token}'
+      # With SonarQube
+      - conditional-step:
+          condition-kind: not
+          condition-operand:
+            condition-kind: boolean-expression
+            condition-expression: '{sonarcloud}'
+          steps:
+            - shell: echo 'Using SonarQube'
+            - lf-infra-maven-sonar:
+                java-version: '{java-version}'
+                mvn-settings: '{mvn-settings}'
+                mvn-version: '{mvn-version}'
 
     publishers:
       - lf-jacoco-report
@@ -892,6 +917,29 @@
       - inject:
           # Switch this to the sonar wrapper when JJB 2.0 is available
           properties-content: SONAR_HOST_URL=$SONAR_URL
+      - lf-provide-maven-settings:
+          global-settings-file: global-settings
+          settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape:
+          - ../shell/common-variables.sh
+          - ../shell/maven-sonar.sh
+      - lf-provide-maven-settings-cleanup
+
+- builder:
+    name: lf-infra-maven-sonarcloud
+    # Run a Sonar build with Maven
+    builders:
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - inject:
+          # Switch this to the sonar wrapper when JJB 2.0 is available
+          properties-content: |
+            SONAR_HOST_URL=https://sonarcloud.io
+            PROJECT_KEY={sonarcloud-project-key}
+            PROJECT_ORGANIZATION={sonarcloud-project-organization}
+            API_TOKEN={sonarcloud-api-token}
       - lf-provide-maven-settings:
           global-settings-file: global-settings
           settings-file: '{mvn-settings}'
