@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "c394ba44_696bf042",
+        "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-08T18:39:18Z",
+      "side": 1,
+      "message": "Yeah I\u0027ve thought of this briefly. I think for now this is fine since the worst thing that can happen with API keys is someone can push different sonar results to the project. It\u0027s not really much different than our existing SonarQube setup either, we found some committers were able to push their local build results to SonarQube. So risk is low imo.",
+      "parentUuid": "7977ceff_8366bb69",
+      "range": {
+        "startLine": 15,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 31
+      },
+      "revId": "d3bbc5b3a6572178a1cd68dc9c7959535b35d8dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a05c229e_e3f34ea7",
         "filename": "shell/maven-sonar.sh",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-02-08T17:42:00Z",
       "side": 1,
       "message": "If you\u0027re collapsing the options into an array, it would be good to repeat it here as well. So move the `declare` block above here, then call \"$MVN\" clean install ...\n\nthen append the Sonar cloud params.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 32
+      },
+      "revId": "d3bbc5b3a6572178a1cd68dc9c7959535b35d8dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a8b3440_eb95d103",
+        "filename": "shell/maven-sonar.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-08T18:39:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a05c229e_e3f34ea7",
       "range": {
         "startLine": 24,
         "startChar": 0,
