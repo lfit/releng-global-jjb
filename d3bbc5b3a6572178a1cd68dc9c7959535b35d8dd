@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7977ceff_8366bb69",
+        "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-02-08T17:42:00Z",
+      "side": 1,
+      "message": "This is probably fine for now, as we do the same for RTD jobs, but we may want to find the best way storing these moving forward either through credentials, or jenkins envionment variables and we prefix all project specific ones with their name (ex: PROJECT1_SONARCLOUD_TOKEN).",
+      "range": {
+        "startLine": 15,
+        "startChar": 4,
+        "endLine": 15,
+        "endChar": 31
+      },
+      "revId": "d3bbc5b3a6572178a1cd68dc9c7959535b35d8dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a05c229e_e3f34ea7",
+        "filename": "shell/maven-sonar.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-02-08T17:42:00Z",
+      "side": 1,
+      "message": "If you\u0027re collapsing the options into an array, it would be good to repeat it here as well. So move the `declare` block above here, then call \"$MVN\" clean install ...\n\nthen append the Sonar cloud params.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 32
+      },
+      "revId": "d3bbc5b3a6572178a1cd68dc9c7959535b35d8dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
