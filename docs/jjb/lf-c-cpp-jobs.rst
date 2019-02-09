@@ -5,6 +5,61 @@ C/C++ Jobs
 Job Templates
 =============
 
+CMake Sonar
+-----------
+
+Sonar job which runs cmake && make then publishes to Sonar.
+
+This job purposely runs on the master branch as there are configuration needed
+to support multi-branch.
+
+:Template Names:
+
+    - {project-name}-cmake-sonar
+    - gerrit-cmake-sonar
+    - github-cmake-sonar
+
+:Comment Trigger: run-sonar
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Configure in
+        defaults.yaml)
+    :sonar-scanner-version: Version of sonar-scanner to install.
+    :sonarcloud-project-key: SonarCloud project key.
+    :sonarcloud-project-organization: SonarCloud project organization.
+    :sonarcloud-api-token: SonarCloud API Token.
+
+:Optional parameters:
+
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :cmake-opts: Parameters to pass to cmake. (default: '')
+    :cron: Cron schedule when to trigger the job. This parameter also
+        supports multiline input via YAML pipe | character in cases where
+        one may want to provide more than 1 cron timer.  (default: '@daily')
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
+        (default: $BUILD_DIR/output)
+
+        .. code-block:: bash
+           :caption: Example
+
+           install-prefix: |
+               #!/bin/bash
+               echo "Hello World."
+
+    :make-opts: Parameters to pass to make. (default: '')
+    :pre-build: Shell script to run before performing build. Useful for
+        setting up dependencies. (default: '')
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+
+    :gerrit_sonar_triggers: Override Gerrit Triggers.
+
 CMake Stage
 -----------
 
