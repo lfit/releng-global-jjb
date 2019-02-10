@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "316e2d5f_4a416141",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-10T16:36:00Z",
+      "side": 1,
+      "message": "Looks like mvn-build still needs this so we cannot remove this just yet.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 41
+      },
+      "revId": "07b563b1c4934442a5f1ec9ab34e3a4f81ca0270",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
