@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "89bcf0e2_96e8180d",
+        "filename": "shell/release-announce.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-10T20:11:56Z",
+      "side": 1,
+      "message": "This is usually done with \u0027here doc\u0027\ncat \u003c\u003c EOF | mail\nHi every... \nEOF\n\nIt makes dealing with quotes, variables and whitespace a little easier.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "a88ec92e0461a70a2a09cc1aca17a14135ac11a9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb4d26d1_3df04e82",
+        "filename": "shell/release-announce.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-02-10T20:11:56Z",
+      "side": 1,
+      "message": "Is the \u0027eval\u0027 is needed ?",
+      "revId": "a88ec92e0461a70a2a09cc1aca17a14135ac11a9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
