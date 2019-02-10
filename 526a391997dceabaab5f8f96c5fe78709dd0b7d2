@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f87232bd_3876b16d",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-10T18:18:58Z",
+      "side": 1,
+      "message": "Should lineup with the text",
+      "range": {
+        "startLine": 234,
+        "startChar": 16,
+        "endLine": 234,
+        "endChar": 22
+      },
+      "revId": "526a391997dceabaab5f8f96c5fe78709dd0b7d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2973faef_65b476b6",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-10T18:18:58Z",
+      "side": 1,
+      "message": "here too",
+      "range": {
+        "startLine": 239,
+        "startChar": 17,
+        "endLine": 239,
+        "endChar": 22
+      },
+      "revId": "526a391997dceabaab5f8f96c5fe78709dd0b7d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f571eba9_18a298f5",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-10T18:18:58Z",
+      "side": 1,
+      "message": "check\u0027s out, or checkout",
+      "range": {
+        "startLine": 29,
+        "startChar": 2,
+        "endLine": 29,
+        "endChar": 11
+      },
+      "revId": "526a391997dceabaab5f8f96c5fe78709dd0b7d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a96e508_a07a263a",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-10T18:18:58Z",
+      "side": 1,
+      "message": "If these macros are the same then just make 1 macro.",
+      "range": {
+        "startLine": 251,
+        "startChar": 0,
+        "endLine": 260,
+        "endChar": 59
+      },
+      "revId": "526a391997dceabaab5f8f96c5fe78709dd0b7d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ce2d3a8_ca2a23f4",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-10T18:18:58Z",
+      "side": 1,
+      "message": "So these release jobs are currently for ODL Maven style jobs.\n\nSome forward thinking...\n\nReleasing \"Docker\" for example will be handled differently. I\u0027m wondering if we want to create parent jobs to handle the different cases?\n\nEg.\n\n  - release-tag-verify  # verifies release tags but does not push\n    - release-maven-verify  # verifies the release files availablilty but does not release\n  - release-tag-merge  # handles tags\n    - release-maven-merge  # handles maven artifacts\n    - release docker-merge  # ... future handles docker artifacts\n\nIn this case the release-tag-* jobs are the parent jobs, they will use the \"parameterized trigger\" to trigger addidtional jobs as necessary depending on project as blocking jobs before releasing the tags.",
+      "revId": "526a391997dceabaab5f8f96c5fe78709dd0b7d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be5cbbe5_54146206",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-10T18:18:58Z",
+      "side": 1,
+      "message": "smart",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 54,
+        "endChar": 30
+      },
+      "revId": "526a391997dceabaab5f8f96c5fe78709dd0b7d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}

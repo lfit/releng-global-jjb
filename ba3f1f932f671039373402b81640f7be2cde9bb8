@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "36dd9db3_34925dbf",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-10T18:18:58Z",
+      "side": 0,
+      "message": "Accidental delete?",
+      "revId": "ba3f1f932f671039373402b81640f7be2cde9bb8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
