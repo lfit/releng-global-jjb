@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cdd4d9da_0c02d826",
+        "filename": "shell/cmake-sonar.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-13T06:54:12Z",
+      "side": 1,
+      "message": "Unnecessary as `set -e` will fail the build if if wget fails to download.",
+      "parentUuid": "c9d2efce_e46e3a35",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 120
+      },
+      "revId": "7e66b111c22dec7fc341d593d33b74b4ca9d724b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "85a43467_ec7d6d96",
         "filename": "shell/cmake-sonar.sh",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-02-13T06:45:21Z",
       "side": 1,
       "message": "Error handling?",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 66
+      },
+      "revId": "7e66b111c22dec7fc341d593d33b74b4ca9d724b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af699157_eb10eab5",
+        "filename": "shell/cmake-sonar.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-13T06:54:12Z",
+      "side": 1,
+      "message": "Unnecessary as `set -e` will fail the build if if wget fails to download.",
+      "parentUuid": "85a43467_ec7d6d96",
       "range": {
         "startLine": 29,
         "startChar": 0,
