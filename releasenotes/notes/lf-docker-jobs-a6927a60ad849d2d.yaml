@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    gerrit-docker-verify runs for new commits and runs a build of the affected
+    docker images.
+  - |
+    gerrit-docker-merge runs for merged commits, runs a build of the affected
+    docker images and pushes the images to Nexus3.
