@@ -1,0 +1,13 @@
+---
+- project:
+    name: '{project-name}-docker'
+    jobs:
+      - '{project-name}-gerrit-docker-jobs'
+
+    project: docker/project
+    project-name: docker-project
+    container-public-registry: pub-registry
+    container-snapshot-registry: snap-registry
+    docker-name: docker-image-name
+    branch: master
+    mvn-settings: docker-project-settings
