@@ -1,0 +1,188 @@
+---
+# This file contains job templates for Docker projects.
+
+##########
+# Macros #
+##########
+
+- builder:
+    name: lf-docker-build
+    builders:
+      - inject:
+          # Docker registry is purposely not using an '_' so as to not conflict
+          # with the Jenkins global env var
+          properties-content: |
+            DOCKER_ARGS={docker_build_args}
+            DOCKER_NAME={docker_name}
+            DOCKER_ROOT={docker_root}
+            DOCKER_TAG={docker_tag}
+            BUILD_MODE=SNAPSHOT
+            DOCKERREGISTRY={docker_registry}
+      - shell: !include-raw-escape:
+          - ../shell/docker-build.sh
+
+- builder:
+    name: lf-docker-push
+    builders:
+      - inject:
+          # Docker registry is purposely not using an '_' so as to not conflict
+          # with the Jenkins global env var
+          properties-content: |
+            DOCKER_ARGS={docker_build_args}
+            DOCKER_NAME={docker_name}
+            DOCKER_ROOT={docker_root}
+            DOCKER_TAG={docker_tag}
+            BUILD_MODE=SNAPSHOT
+            DOCKERREGISTRY={docker_registry}
+      - shell: !include-raw-escape:
+          - ../shell/docker-push.sh
+
+####################
+# COMMON FUNCTIONS #
+####################
+
+- lf_docker_common: &lf_docker_common
+    name: lf-docker-common
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    submodule-recursive: true
+
+    # default params for docker jobs
+    pre_build_script: ''
+    post_build_script: ''
+    docker_root: '$WORKSPACE'
+    docker_build_args: ''
+    docker_name: 'unnamed'
+    # Default to LF standard 'snapshots' docker registry
+    docker_registry: '$DOCKER_REGISTRY:10003'
+    docker_tag: 'latest'
+    submodule-timeout: 10
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          branch: '{branch}'
+          project: '{project}'
+          stream: '{stream}'
+          lftools-version: '{lftools-version}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      - lf-infra-publish
+
+- docker_verify_common: &docker_verify_common
+    name: docker-verify-common
+
+    concurrent: true
+
+    scm:
+      - gerrit-trigger-scm:
+          refspec: '$GERRIT_REFSPEC'
+          choosing-strategy: 'default'
+          submodule-recursive: '{submodule-recursive}'
+
+    triggers:
+      - gerrit-trigger-patch-submitted:
+          status-context: '{project}-Docker-Verify'
+          server: '{server-name}'
+          project: '{project}'
+          branch: '{branch}'
+          files: '{files}'
+
+- docker_merge_common: &docker_merge_common
+    name: docker-merge-common
+
+    scm:
+      - gerrit-trigger-scm:
+          refspec: '$GERRIT_REFSPEC'
+          choosing-strategy: 'default'
+          submodule-recursive: '{submodule-recursive}'
+
+    triggers:
+      - gerrit-trigger-patch-merged:
+          server: '{server-name}'
+          project: '{project}'
+          branch: '{branch}'
+          files: '{files}'
+      - pollscm:
+          cron: ''
+
+#################
+# Docker Verify #
+#################
+
+- job-template:
+    name: '{project-name}-{stream}-verify-docker'
+    # Job template for Docker verify jobs
+    #
+    # The purpose of this job template is to run a docker build, and potentially
+    # test validation of the docker image
+
+    ######################
+    # Default parameters #
+    ######################
+
+    <<: *lf_docker_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *docker_verify_common
+
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: 'global-settings'
+          settings-file: '{mvn-settings}'
+      - shell: '{pre_build_script}'
+      - lf-docker-build
+      - inject:
+          # Import the docker image information from the build step
+          properties-file: 'env_inject.txt'
+      # Execute any post build clean-up or testing
+      - shell: '{post_build_script}'
+
+################
+# Docker Merge #
+################
+
+- job-template:
+    name: '{project-name}-{stream}-merge-docker'
+    # Job template for Docker merge jobs
+    #
+    # The purpose of this job template is to run a docker build, and potentially
+    # test validation of the docker image
+
+    <<: *lf_docker_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *docker_merge_common
+
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: 'global-settings'
+          settings-file: '{mvn-settings}'
+      - shell: '{pre_build_script}'
+      - lf-docker-build
+      - inject:
+          # Import the docker image information from the build step
+          properties-file: 'env_inject.txt'
+      # Execute any post build clean-up or testing
+      - shell: '{post_build_script}'
+      # Provided all steps have already passed, push the docker image
+      - lf-docker-push
