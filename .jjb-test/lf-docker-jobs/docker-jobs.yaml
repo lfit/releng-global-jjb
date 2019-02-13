@@ -1,0 +1,11 @@
+---
+- project:
+    name: '{project-name}-docker'
+    jobs:
+      - '{project-name}-docker-jobs'
+
+    project: 'docker/project'
+    project-name: 'docker-project'
+    branch: 'master'
+    mvn-settings: 'docker-project-settings'
+    dockerhub-release: true
