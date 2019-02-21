@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "88ca1c51_499dd40b",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-02-21T09:56:14Z",
+      "side": 1,
+      "message": "Even though ONAP uses both snapshot and staging names, they always end up pushing into docker.snapshot . I think I might still need to have this option in ONAP since they will get confused if I remove it",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 8
+      },
+      "revId": "af9b68164c7b0b6df1db34dc2ae5831fbb600a0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
