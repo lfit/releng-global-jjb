@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "e1c785c5_5e1935da",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-02-21T09:59:43Z",
+      "side": 1,
+      "message": "I think this should be just $IMAGE_VERSION-latest",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 54
+      },
+      "revId": "af9b68164c7b0b6df1db34dc2ae5831fbb600a0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "376ff8f0_537f1117",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-02-21T09:59:43Z",
+      "side": 1,
+      "message": "I think this should be just $IMAGE_VERSION-latest",
+      "range": {
+        "startLine": 27,
+        "startChar": 6,
+        "endLine": 27,
+        "endChar": 56
+      },
+      "revId": "af9b68164c7b0b6df1db34dc2ae5831fbb600a0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "88ca1c51_499dd40b",
         "filename": "shell/docker-build.sh",
         "patchSetId": 5
