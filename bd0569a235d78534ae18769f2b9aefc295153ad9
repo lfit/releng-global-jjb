@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "980ea1d0_a955a73d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-26T21:54:00Z",
+      "side": 1,
+      "message": "typo: artifact",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 28
+      },
+      "revId": "bd0569a235d78534ae18769f2b9aefc295153ad9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fdd7d28d_c390b920",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-02-26T21:54:00Z",
+      "side": 1,
+      "message": "Whitespace.\n\nAlso can we pin the version with ~\u003d1.2.3 (whatever the latest version is fine too) so that we can control the version updates a bit.",
+      "revId": "bd0569a235d78534ae18769f2b9aefc295153ad9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
