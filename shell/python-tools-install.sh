@@ -22,6 +22,7 @@ lftools[openstack]~=0.18.0
 python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 dogpile.cache~=0.6.8  # Version 0.7.[01] seems to break openstackclient
+niet # Extract values from yaml 
 EOF
 
 echo "Requirements file"
