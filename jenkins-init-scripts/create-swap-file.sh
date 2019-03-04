@@ -9,6 +9,9 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
+# DEBUG
+exec  > /create-swap-files.log 2>&1
+set -x
 # Get the blockCount from the 'SWAP_SIZE' environmental variable
 blockCount=${SWAP_SIZE-''}
 
