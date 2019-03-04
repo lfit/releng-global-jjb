@@ -11,5 +11,20 @@ it to Jenkins for job use.
 To use this create a managed file in Jenkins with the contents:
 
     #!/bin/bash
-    git clone --recurse-submodules https://gerrit.example.org/r/ci-management.git /opt/ciman
-    /opt/ciman/jjb/global-jjb/jenkins-init-scripts/init.sh
+
+    gerritHost=gerrit.example.org
+
+    until host $gerritHost &>/dev/null ; do
+        echo "Waiting until $gerritHost is resolvable..."
+    done
+
+    git clone --recurse-submodules https://$gerritHost/r/ci-management /opt/ciman
+
+    # This is used to create a swapspace on the minion
+    # The amount of swap space will equal SWAP_COUNT * 1m
+    # so SWAP_COUNT=1k will result in s 1G swap
+    export SWAP_COUNT=0
+
+    /opt/ciman/global-jjb/jenkins-init-scripts/init.sh
+
+    rm -rf /opt/ciman
