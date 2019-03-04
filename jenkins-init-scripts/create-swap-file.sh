@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2018 The Linux Foundation and others.
@@ -9,7 +9,12 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-dd if=/dev/zero of=/swap count=1024 bs=1MiB
+# Get the number of blocks from the 'SWAP_COUNT' environmental variable
+swapCount=${SWAP_COUNT-1k}
+
+[[ $swapCount == 0 ]] && exit
+
+dd if=/dev/zero of=/swap count="$swapCount" bs=1MiB
 chmod 600 /swap
 mkswap /swap
 swapon /swap

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2016 The Linux Foundation and others.
@@ -9,12 +9,13 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-INIT_SCRIPTS_DIR="/opt/ciman/global-jjb/jenkins-init-scripts"
+# Don't 'hard-code' the location
+cd "$(dirname "$0")"
 
-"$INIT_SCRIPTS_DIR/package-listing.sh"
-"$INIT_SCRIPTS_DIR/basic-settings.sh"
-"$INIT_SCRIPTS_DIR/disable-firewall.sh"
-"$INIT_SCRIPTS_DIR/create-swap-file.sh"
+./package-listing.sh
+./basic-settings.sh
+./disable-firewall.sh
+./create-swap-file.sh
 
 # Entry point for additional local minion customization
 # Eg. OpenDaylight has additional bootstrap scripts depending on minion type.
@@ -24,4 +25,4 @@ fi
 
 # Create the jenkins user last so that hopefully we DO NOT have to deal with
 # guard files
-"$INIT_SCRIPTS_DIR/create-jenkins-user.sh"
+./create-jenkins-user.sh

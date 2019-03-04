@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2016 The Linux Foundation and others.
@@ -12,10 +12,8 @@
 OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 
-if [[ "$OS_RELEASE" == "18.04" ]] && [[ "$OS" == 'ubuntu' ]]
-then
-  echo 'PATH=$HOME/.local/bin:$PATH
-export PATH' >> /etc/profile
+if [[ "$OS_RELEASE" == '18.04' && "$OS" == 'ubuntu' ]]; then
+    echo 'export PATH=$HOME/.local/bin:$PATH' >> /etc/profile
 fi
 
 useradd -m -s /bin/bash jenkins
@@ -29,10 +27,14 @@ if grep -q mock /etc/group; then
     usermod -a -G mock jenkins
 fi
 
-mkdir /home/jenkins/.ssh /w
+mkdir /home/jenkins/.ssh
 cp -r "/home/${OS}/.ssh/authorized_keys" /home/jenkins/.ssh/authorized_keys
 
 # Generate ssh key for use by Robot jobs
 echo -e 'y\n' | ssh-keygen -N "" -f /home/jenkins/.ssh/id_rsa -t rsa
-chown -R jenkins:jenkins /home/jenkins/.ssh /w
-chmod 700 /home/jenkins/.ssh
+chown -R jenkins:jenkins /home/jenkins/.ssh
+chmod 0700 /home/jenkins/.ssh
+
+# The '/w' may already be part of image
+[[ ! -d '/w' ]] && mkdir /w
+chmod -R jenkins:jenkins /w
