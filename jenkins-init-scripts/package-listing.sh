@@ -9,9 +9,11 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-# Share script with JJB jobs so we only have to maintain it in one place
-JJB_SHELL_DIR="$(dirname $0)/../shell"
+# The 'init' scripts are located in 'jenkins-init-scripts' directory.
+# The 'global-jjb' scripts are located in 'shell' directory.  The
+# 'package-listing' script is used by both, this is a simple wrapper
+# for 'shell/package-listing.sh'. Arguments would be quietly discarded.
 
-# Make sure the script is executable and then run it
-chmod +x "${JJB_SHELL_DIR}/package-listing.sh"
-"${JJB_SHELL_DIR}/package-listing.sh"
+jjb_init_scripts="$(dirname "$0")/../shell"
+
+"$jjb_init_scripts/package-listing.sh"
