@@ -12,10 +12,8 @@
 OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 
-if [[ "$OS_RELEASE" == "18.04" ]] && [[ "$OS" == 'ubuntu' ]]
-then
-  echo 'PATH=$HOME/.local/bin:$PATH
-export PATH' >> /etc/profile
+if [[ "$OS_RELEASE" == "18.04" && "$OS" == 'ubuntu' ]]; then
+  echo 'export PATH=$HOME/.local/bin:$PATH' >> /etc/profile
 fi
 
 useradd -m -s /bin/bash jenkins
@@ -30,12 +28,13 @@ if grep -q mock /etc/group; then
 fi
 
 mkdir /home/jenkins/.ssh
-cp -r "/home/${OS}/.ssh/authorized_keys" /home/jenkins/.ssh/authorized_keys
+cp "/home/${OS}/.ssh/authorized_keys" /home/jenkins/.ssh/authorized_keys
+chmod 0600 /home/jenkins/.ssh/authorized_keys
 
 # Generate ssh key for use by Robot jobs
 echo -e 'y\n' | ssh-keygen -N "" -f /home/jenkins/.ssh/id_rsa -t rsa
 chown -R jenkins:jenkins /home/jenkins/.ssh
-chmod 700 /home/jenkins/.ssh
+chmod 0700 /home/jenkins/.ssh
 
 # The '/w' volume may already be part of image
 [[ ! -d '/w' ]] && mkdir /w
