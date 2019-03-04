@@ -9,19 +9,25 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-INIT_SCRIPTS_DIR="/opt/ciman/global-jjb/jenkins-init-scripts"
+ciman_root=$(readlink -f "$(dirname "$0")"/../..)
 
-"$INIT_SCRIPTS_DIR/package-listing.sh"
-"$INIT_SCRIPTS_DIR/basic-settings.sh"
-"$INIT_SCRIPTS_DIR/disable-firewall.sh"
-"$INIT_SCRIPTS_DIR/create-swap-file.sh"
+echo "    Start init.sh: $SECONDS" >> /time
+"$ciman_root/global-jjb/shell/package-listing.sh"
+echo "    package-listing.sh: $SECONDS" >> /time
+"$ciman_root/global-jjb/jenkins-init-scripts/basic-settings.sh"
+echo "    basic-settings.sh: $SECONDS" >> /time
+"$ciman_root/global-jjb/jenkins-init-scripts/disable-firewall.sh"
+echo "    disable-firewall.sh: $SECONDS" >> /time
+"$ciman_root/global-jjb/jenkins-init-scripts/create-swap-file.sh"
+echo "    create-swap-file.sh: $SECONDS" >> /time
 
 # Entry point for additional local minion customization
-# Eg. OpenDaylight has additional bootstrap scripts depending on minion type.
-if [ -f "/opt/ciman/jenkins-init-scripts/local-init.sh" ]; then
-    /opt/ciman/jenkins-init-scripts/local-init.sh
+# Note this is called before the 'jenkins' account is created
+if [ -e "$ciman_root/jenkins-init-scripts/local-init.sh" ]; then
+    "$ciman_root/jenkins-init-scripts/local-init.sh"
 fi
 
 # Create the jenkins user last so that hopefully we DO NOT have to deal with
 # guard files
-"$INIT_SCRIPTS_DIR/create-jenkins-user.sh"
+"$ciman_root/global-jjb/jenkins-init-scripts/create-jenkins-user.sh"
+echo "    create-jenkinis-user.sh: $SECONDS" >> /time
