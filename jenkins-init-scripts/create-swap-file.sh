@@ -9,6 +9,9 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
+# DEBUG
+exec  > /create-swap-files.log 2>&1
+set -x
 # Get the blockCount from the 'SWAP_SIZE' environmental variable
 blockCount=${SWAP_SIZE-''}
 
@@ -24,7 +27,7 @@ case $blockCount in
 esac
 [[ $blockCount == 0 ]] && exit
 
-dd if=/dev/zero of=/swap count="${blockCount}k" bs=1MiB
+time dd if=/dev/zero of=/swap count="${blockCount}k" bs=1MiB
 chmod 600 /swap
 mkswap /swap
 swapon /swap
