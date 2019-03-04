@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49848bb9_c28d9be7",
+        "filename": "jenkins-init-scripts/init.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-04T19:15:00Z",
+      "side": 1,
+      "message": "Why jenkins-init-scripts dir? Some repos have jenkins-scripts already. None have jenkins-init-scripts directory.\n\nI would think some projects may want the \u0027jenkins\u0027 user when they run their script. I don\u0027t understand why that is a problem.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 2
+      },
+      "revId": "c9e90ea630dc2573fad0c660d3d365f1c1800a1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
