@@ -1,15 +1,33 @@
-The files in this directory are for initializing a Jenkins minion just before
-the cloud plugin hands the minion over to Jenkins.
+The files in this directory are for initializing a Jenkins minion just
+before the cloud plugin hands the minion over to Jenkins.
 
-init.sh is the entry point script which then calls all other scripts.
+The Jenkins 'init.sh' script will check for a project specific init
+script: '$ciman_root/jenkins-init-scripts/local-init.sh'.  If the file
+exits and is executable, it will be executed. Note the local init
+script will be executed before the 'jenkins' user has been created.
+You can also call a project specific script from the Jenkins Manged
+File after the call to 'init.sh'.
 
-init.sh also provides a local init script entry point by checking for the
-existance of the file CIMAN_ROOT/jenkins-init-scripts/local-init.sh. If this
-file exists it can be used to further customize the server node before handing
-it to Jenkins for job use.
-
-To use this create a managed file in Jenkins with the contents:
+To use this create a Jenkins Managed File with the contents:
 
     #!/bin/bash
-    git clone --recurse-submodules https://gerrit.example.org/r/ci-management.git /opt/ciman
-    /opt/ciman/jjb/global-jjb/jenkins-init-scripts/init.sh
+
+    gerrit_host=gerrit.example.org
+    ciman_root=/opt/ciman
+
+    until host $gerrit_host &>/dev/null ; do
+        echo "Waiting until $gerrit_host is resolvable..."
+        sleep 1
+    done
+
+    git clone --recurse-submodules https://$gerrit_host/r/ci-management $ciman_root
+
+    # Specify swapspace on the minion
+    # SWAP_SIZE specifies the size of swapspace in GB If set to '0' no
+    # swapspace will be allocated If unset, 1GB swapspace will be
+    # allocated
+    #export SWAP_SIZE=0
+
+    $ciman_root/global-jjb/jenkins-init-scripts/init.sh
+
+    rm -rf $ciman_root

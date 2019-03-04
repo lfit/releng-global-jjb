@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    **jenkiins-init-scripts** The 'ciman' repo is not longer required to be
+    located in '/opt/ciman'.
