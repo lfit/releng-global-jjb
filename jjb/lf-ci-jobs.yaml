@@ -598,7 +598,7 @@
     submodule-timeout: 10
     gerrit_jjb_deploy_job_triggers:
       - comment-added-contains-event:
-          comment-contains-value: 'jjb-deploy[:]* (?!\*+$).+$'
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(jjb-deploy[:]* (?!\*+$).+$)'
 
     #####################
     # Job Configuration #
