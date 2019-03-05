@@ -24,9 +24,9 @@ set -eu -o pipefail
 declare -a images
 declare -a cfg_images
 declare -a yaml_images
-readarray -t cfg_images <<< "$(grep -r IMAGE_NAME --include \*.cfg \
+readarray -t cfg_images <<< "$(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
     | awk -F'=' '{print $2}' | sort -u)"
-readarray -t yaml_images <<< "$(grep -r 'ZZCI - ' --include \*.yaml \
+readarray -t yaml_images <<< "$(grep -r 'ZZCI - ' --include \*.yaml jjb \
     | awk -F": " '{print $3}' | sed "s:'::;s:'$::;/^$/d" | sort -u)"
 mapfile -t images < <(for R in "${cfg_images[@]}" "${yaml_images[@]}" ; do echo "$R" ; done | sort -u)
 
