@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2568df00_383f0108",
+        "filename": "jenkins-init-scripts/create-swap-file.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-03-05T23:03:59Z",
+      "side": 1,
+      "message": "If this dependent on a specific image for Hyp? \n\nThis should moved to common-packer or the `ci-man/jjb/packer/local-builder.yaml` ansible bits, and not in the startup scripts which would potentially increase the VM startup time.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 51
+      },
+      "revId": "5db7a34241c08cb7975ab6ca21b8c7d822e7dea0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
