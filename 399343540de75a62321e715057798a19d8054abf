@@ -22,6 +22,30 @@
       "revId": "399343540de75a62321e715057798a19d8054abf",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "157ca9ac_3e67626a",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-05T16:31:54Z",
+      "side": 1,
+      "message": "\u003e I think you are missing \u0027()\u0027 to make the RHS an array\n \u003e images+\u003d($(grep.........-u))\n \u003e \n \u003e or break it up a little bit, which will make it a little more\n \u003e readable\n \u003e \n \u003e conf_images\u003d$(grep -r IMAGE_NAME --include \\*.cfg ...)\n \u003e yaml_images\u003d$(grep -r \u0027ZZCI - \u0027 --include \\*.yaml ...) || true\n \u003e \n \u003e sorted_images\u003d$(echo $conf_images $yaml_images | sort)\n \u003e \n \u003e for image in $sorted_images ; do\n \u003e \n \u003e (many quotes left out)\n\nthat is not going to work (sorry no testing, just winging it)\n\nsorted_list\u003d$(for i in \"$conf_images $yaml_images\"; do echo \"$i\"; done | sort)\"\n\nfor image in \"$sorted_list\"; do",
+      "parentUuid": "c2dff069_478dd552",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 15
+      },
+      "revId": "399343540de75a62321e715057798a19d8054abf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
