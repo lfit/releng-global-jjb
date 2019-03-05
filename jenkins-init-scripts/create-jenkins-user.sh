@@ -29,10 +29,14 @@ if grep -q mock /etc/group; then
     usermod -a -G mock jenkins
 fi
 
-mkdir /home/jenkins/.ssh /w
+mkdir /home/jenkins/.ssh
 cp -r "/home/${OS}/.ssh/authorized_keys" /home/jenkins/.ssh/authorized_keys
 
 # Generate ssh key for use by Robot jobs
 echo -e 'y\n' | ssh-keygen -N "" -f /home/jenkins/.ssh/id_rsa -t rsa
-chown -R jenkins:jenkins /home/jenkins/.ssh /w
+chown -R jenkins:jenkins /home/jenkins/.ssh
 chmod 700 /home/jenkins/.ssh
+
+# The '/w' volume may already be part of image
+[[ ! -d '/w' ]] && mkdir /w
+chown -R jenkins:jenkins /w

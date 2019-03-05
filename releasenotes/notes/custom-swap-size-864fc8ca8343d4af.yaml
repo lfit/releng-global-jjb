@@ -1,0 +1,12 @@
+---
+prelude:
+  - |
+    Previously the swap size was fixed at 1GB.
+features:
+  - |
+    If env var SWAP_COUNT is set when the jenkins-init-scripts/init.sh script
+    is called, it will be used to specify the swap size. If it is 'zero' then
+    no swap space is created. The swap space is allocated with the 'dd'
+    command. The SWAP_COUNT will be used in the 'count' switch. The 'bs'
+    switch is set to 1M so a SWAP_COUNT of 1kB will result is a swap size of
+    1G. See the 'dd' manual for more info.
