@@ -26,8 +26,10 @@ declare -a cfg_images
 declare -a yaml_images
 readarray -t cfg_images <<< "$(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
     | awk -F'=' '{print $2}' | sort -u)"
+set +o pipefail  # Not all projects have images in YAML files and grep returns non-zero on 0 results.
 readarray -t yaml_images <<< "$(grep -r 'ZZCI - ' --include \*.yaml jjb \
     | awk -F": " '{print $3}' | sed "s:'::;s:'$::;/^$/d" | sort -u)"
+set -o pipefail  # Re-enable pipefail
 mapfile -t images < <(for R in "${cfg_images[@]}" "${yaml_images[@]}" ; do echo "$R" ; done | sort -u)
 
 
