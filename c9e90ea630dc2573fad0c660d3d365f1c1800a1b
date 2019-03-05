@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ecde363c_0cd64cf2",
+        "filename": "jenkins-init-scripts/README",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-05T16:57:26Z",
+      "side": 1,
+      "message": "Yep and this is also documented here:\n\nhttps://docs.releng.linuxfoundation.org/en/latest/infra/bootstrap.html\n\nWe should use intersphinx linking to have the docs reference the script in global-jjb so that we can guarantee they are always the same information.",
+      "parentUuid": "02949727_42e15eaa",
+      "range": {
+        "startLine": 18,
+        "startChar": 8,
+        "endLine": 18,
+        "endChar": 57
+      },
+      "revId": "c9e90ea630dc2573fad0c660d3d365f1c1800a1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "98858254_f54292ad",
         "filename": "jenkins-init-scripts/create-jenkins-user.sh",
         "patchSetId": 1
