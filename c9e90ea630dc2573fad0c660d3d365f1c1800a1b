@@ -45,6 +45,30 @@
       "revId": "c9e90ea630dc2573fad0c660d3d365f1c1800a1b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "64babcf0_5d8f9fe0",
+        "filename": "jenkins-init-scripts/init.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-05T16:46:26Z",
+      "side": 1,
+      "message": "To allow a smooth transition from old style to new style without breaking a production system that\u0027s still using the jenkins-scripts directory.\n\nIn ODL we lived with both jenkins-scripts in production and jenkins-init-scripts in sandbox for ~1 month before we were ready to make the leap on the production system.",
+      "parentUuid": "49848bb9_c28d9be7",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 2
+      },
+      "revId": "c9e90ea630dc2573fad0c660d3d365f1c1800a1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
