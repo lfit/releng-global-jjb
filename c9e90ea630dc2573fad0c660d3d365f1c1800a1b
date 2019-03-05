@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "98858254_f54292ad",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-03-05T16:44:58Z",
+      "side": 1,
+      "message": "authorized_keys 600 as well, no?",
+      "range": {
+        "startLine": 36,
+        "startChar": 29,
+        "endLine": 36,
+        "endChar": 29
+      },
+      "revId": "c9e90ea630dc2573fad0c660d3d365f1c1800a1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49848bb9_c28d9be7",
         "filename": "jenkins-init-scripts/init.sh",
         "patchSetId": 1
