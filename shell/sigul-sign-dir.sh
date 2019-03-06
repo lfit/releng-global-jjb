@@ -13,5 +13,4 @@ echo "---> sigul-sign-dir.sh"
 # Ensure we fail the job if any steps fail.
 set -e -o pipefail
 
-lftools_activate
-lftools sign sigul "${SIGN_DIR}"
+lftools sign sigul "${SIGN_DIR}" "${SIGN_MODE}"
