@@ -679,6 +679,7 @@
     mvn-version: mvn35
     ossrh-profile-id: ''
     sign-artifacts: false
+    sign-mode: parallel
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -728,6 +729,7 @@
       - lf-sigul-sign-dir:
           sign-artifacts: '{sign-artifacts}'
           sign-dir: '$WORKSPACE/m2repo'
+          sign-mode: '{sign-mode}'
       - lf-maven-stage:
           mvn-global-settings: '{mvn-global-settings}'
           mvn-settings: '{mvn-settings}'

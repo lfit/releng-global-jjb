@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    **lf-sigul-sign-dir** macros now supports a ``sign-mode`` parameter which
+    allows jobs to choose to sign artifacts using either *parallel* mode
+    (default) or *serial* mode.
+upgrade:
+  - |
+    **lf-sigul-sign-dir** users need to add a new parameter ``sign-mode`` to
+    their job-templates setting either *parallel* or *serial* as the value.
