@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "2cd0af27_07a4a1b0",
+        "filename": "jenkins-init-scripts/create-jenkins-user.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-06T00:10:06Z",
+      "side": 1,
+      "message": "The \u0027hyperledger\u0027 projects allocates a /w volume in common-packer. It is a \u0027tmpfs\u0027 file system.",
+      "revId": "5db7a34241c08cb7975ab6ca21b8c7d822e7dea0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2568df00_383f0108",
         "filename": "jenkins-init-scripts/create-swap-file.sh",
         "patchSetId": 1
@@ -13,6 +30,30 @@
       "writtenOn": "2019-03-05T23:03:59Z",
       "side": 1,
       "message": "If this dependent on a specific image for Hyp? \n\nThis should moved to common-packer or the `ci-man/jjb/packer/local-builder.yaml` ansible bits, and not in the startup scripts which would potentially increase the VM startup time.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 51
+      },
+      "revId": "5db7a34241c08cb7975ab6ca21b8c7d822e7dea0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4dd0242f_ccdb778e",
+        "filename": "jenkins-init-scripts/create-swap-file.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-06T00:10:06Z",
+      "side": 1,
+      "message": "This is backward compatible. If you don\u0027t export SWAP_COUNT it will work exactly the same way as it did before. Needs to be documented\n\nI have already created an ansible playbook for creating swap space in common-packer. Thanh suggested that I let the \u0027init\u0027 scripts allocate swap space.\n\nAllocating swap does not take long (at most a couple of seconds).\n\nI would have to change the code here to check for swap space and do nothing if it already exists. If the swap space is allocated here it needs to allow the project to specify the size.\n\nDo we need to meet to talk reach an consensus?",
+      "parentUuid": "2568df00_383f0108",
       "range": {
         "startLine": 17,
         "startChar": 0,
