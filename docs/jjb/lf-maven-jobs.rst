@@ -66,6 +66,13 @@ lf-maven-stage
 
 Calls the maven stage script to push artifacts to a Nexus staging repository.
 
+:Required Parameters:
+
+    :mvn-global-settings: The name of the Maven global settings to use for
+        Maven configuration.
+    :mvn-settings: The name of settings file containing credentials for the project.
+    :sign-mode: serial|parallel
+
 lf-update-java-alternatives
 ---------------------------
 

@@ -30,6 +30,8 @@
       - lf-infra-create-netrc:
           server-id: '{mvn-staging-id}'
       # include-raw-escape fails due to JJB bug
+      - inject:
+          properties-content: SIGN_MODE={sign-mode}
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-stage.sh
@@ -679,6 +681,7 @@
     mvn-version: mvn35
     ossrh-profile-id: ''
     sign-artifacts: false
+    sign-mode: parallel
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -728,10 +731,12 @@
       - lf-sigul-sign-dir:
           sign-artifacts: '{sign-artifacts}'
           sign-dir: '$WORKSPACE/m2repo'
+          sign-mode: '{sign-mode}'
       - lf-maven-stage:
           mvn-global-settings: '{mvn-global-settings}'
           mvn-settings: '{mvn-settings}'
           mvn-staging-id: '{mvn-staging-id}'
+          sign-mode: '{sign-mode}'
       - lf-maven-central:
           mvn-central: '{mvn-central}'
           mvn-global-settings: '{mvn-global-settings}'

@@ -15,11 +15,13 @@
 # $NEXUS_URL          :  Jenkins global variable should be defined.
 # $STAGING_PROFILE_ID :  Provided by a job parameter.
 
+sign_mode=${SIGN_MODE:-parallel}
+
 # Ensure we fail the job if any steps fail.
 set -xeu -o pipefail
 
 TMP_FILE="$(mktemp)"
-lftools deploy nexus-stage "$NEXUS_URL" "$STAGING_PROFILE_ID" "$WORKSPACE/m2repo" | tee "$TMP_FILE"
+lftools deploy nexus-stage -m "$sign_mode" "$NEXUS_URL" "$STAGING_PROFILE_ID" "$WORKSPACE/m2repo" | tee "$TMP_FILE"
 staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$TMP_FILE")
 
 # Store repo info to a file in archives
