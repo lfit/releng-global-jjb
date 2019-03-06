@@ -240,6 +240,7 @@ Requires ``SIGUL_BRIDGE_IP`` configured as a global envvar.
 :Required Parameters:
     :sign-artifacts: Whether or not to sign artifacts with Sigul.
     :sign-dir: Directory to sign.
+    :sign-mode: serial|parallel
 
 lf-infra-provide-docker-cleanup
 -------------------------------
