@@ -13,5 +13,5 @@ echo "---> sigul-sign-dir.sh"
 # Ensure we fail the job if any steps fail.
 set -e -o pipefail
 
-lftools_activate
-lftools sign sigul "${SIGN_DIR}"
+# Hardcode to serial mode as the Sigul client has I/O issues
+lftools sign sigul -m serial "${SIGN_DIR}"

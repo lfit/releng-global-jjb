@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Hardcode Sigul to sign in serial mode. The Sigul client throws I/O errors
+    on large projects when parallel mode signing is used.

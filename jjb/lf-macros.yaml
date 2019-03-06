@@ -277,7 +277,6 @@
             - inject:
                 properties-content: SIGN_DIR={sign-dir}
             - shell: !include-raw-escape:
-                - ../shell/common-variables.sh
                 - ../shell/sigul-sign-dir.sh
             - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
 
