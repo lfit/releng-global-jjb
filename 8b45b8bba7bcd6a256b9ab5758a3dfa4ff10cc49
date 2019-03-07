@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5ff113b_6c8ce756",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-07T18:16:03Z",
+      "side": 1,
+      "message": "Change this to serial",
+      "range": {
+        "startLine": 682,
+        "startChar": 15,
+        "endLine": 682,
+        "endChar": 23
+      },
+      "revId": "8b45b8bba7bcd6a256b9ab5758a3dfa4ff10cc49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
