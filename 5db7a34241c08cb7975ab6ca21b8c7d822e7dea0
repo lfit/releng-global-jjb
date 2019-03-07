@@ -63,6 +63,30 @@
       "revId": "5db7a34241c08cb7975ab6ca21b8c7d822e7dea0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83cf80e6_4aad0ebb",
+        "filename": "jenkins-init-scripts/create-swap-file.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-03-07T01:12:17Z",
+      "side": 1,
+      "message": "LGTM. Thanks for clarifying on slack.",
+      "parentUuid": "4dd0242f_ccdb778e",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 51
+      },
+      "revId": "5db7a34241c08cb7975ab6ca21b8c7d822e7dea0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
