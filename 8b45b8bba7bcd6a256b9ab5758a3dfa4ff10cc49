@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "23f2cf27_d20c8053",
+        "filename": "releasenotes/notes/sign-mode-2e46e7c5e0b93135.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-07T18:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3550e14b_16794163",
+      "range": {
+        "startLine": 6,
+        "startChar": 16,
+        "endLine": 6,
+        "endChar": 31
+      },
+      "revId": "8b45b8bba7bcd6a256b9ab5758a3dfa4ff10cc49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a0532778_b87d20cb",
         "filename": "releasenotes/notes/sign-mode-2e46e7c5e0b93135.yaml",
         "patchSetId": 5
@@ -59,6 +83,30 @@
       "writtenOn": "2019-03-07T18:20:15Z",
       "side": 1,
       "message": "This should be updated to explain the change from parallel to serial and include the note on how to set the previous behavior",
+      "range": {
+        "startLine": 9,
+        "startChar": 3,
+        "endLine": 10,
+        "endChar": 75
+      },
+      "revId": "8b45b8bba7bcd6a256b9ab5758a3dfa4ff10cc49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "17ac3bcc_379da349",
+        "filename": "releasenotes/notes/sign-mode-2e46e7c5e0b93135.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-07T18:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0532778_b87d20cb",
       "range": {
         "startLine": 9,
         "startChar": 3,
