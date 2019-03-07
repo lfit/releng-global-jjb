@@ -1,0 +1,18 @@
+---
+fixes:
+  - |
+    The JJB Deploy Job is configured to trigger only if the Gerrit comment
+    starts with the `jjb-deploy` keyword.
+
+    Without the regex being optimized the job triggers on any occurance
+    of the `jjb-deploy` keyword in a Gerrit comment, with is waste infra
+    resources.
+
+    Example of a valid command in Gerrit comment that triggers the job:
+
+    ``jjb-deploy builder-jjb-*``
+
+    Example of a invalid command in Gerrit comment that would _not_ trigger
+    the job:
+
+    ``Update the job. jjb-deploy builder-jjb-*``
