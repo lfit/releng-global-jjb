@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "31e1795c_6ea59315",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2019-03-07T12:13:23Z",
+      "side": 1,
+      "message": "Can you clarify how this verifies \"jjb-deploy\" is \"intended as a command\"? I see the regex change but I need some human-readable context.",
+      "range": {
+        "startLine": 10,
+        "startChar": 27,
+        "endLine": 10,
+        "endChar": 51
+      },
+      "revId": "22085d5d239b5868cf86ad24b022f8e97961058f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
