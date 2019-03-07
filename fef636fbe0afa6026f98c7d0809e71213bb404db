@@ -22,6 +22,30 @@
       "revId": "fef636fbe0afa6026f98c7d0809e71213bb404db",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "823772cc_5e82ca23",
+        "filename": "shell/sigul-sign-dir.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-07T18:08:17Z",
+      "side": 1,
+      "message": "I thought I\u0027d simplify the patch. Let me revert ti back to the previous patch then.",
+      "parentUuid": "d3b7c772_05a52174",
+      "range": {
+        "startLine": 17,
+        "startChar": 19,
+        "endLine": 17,
+        "endChar": 29
+      },
+      "revId": "fef636fbe0afa6026f98c7d0809e71213bb404db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
