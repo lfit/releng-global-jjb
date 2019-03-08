@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "50c94707_570678d9",
+        "filename": "jenkins-init-scripts/init.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 266
+      },
+      "writtenOn": "2019-03-08T18:24:48Z",
+      "side": 1,
+      "message": "Still a typo here",
+      "revId": "dff758c39b65cb014bf1d8d753bb46bc51d74e5f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
