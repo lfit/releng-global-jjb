@@ -18,7 +18,7 @@ REQUIREMENTS_FILE=$(mktemp /tmp/requirements-XXXX.txt)
 #       git+https://github.com/lfit/releng-lftools.git#egg=lftools[openstack]
 
 cat << EOF > "$REQUIREMENTS_FILE"
-lftools[openstack]~=0.20.0
+lftools[openstack]~=0.21.0
 python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 dogpile.cache~=0.6.8  # Version 0.7.[01] seems to break openstackclient
