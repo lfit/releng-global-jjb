@@ -1,0 +1,24 @@
+---
+features:
+  - |
+    **lf-sigul-sign-dir** macros now supports a ``sign-mode`` parameter which
+    allows jobs to choose to sign artifacts using either *parallel* mode
+    or *serial* mode (default).
+upgrade:
+  - |
+    **lf-sigul-sign-dir** users need to add a new parameter ``sign-mode`` to
+    their job-templates setting either *parallel* or *serial* as the value, we
+    recommend setting serial mode for this setting.
+
+    **{project-name}-maven-stage-{stream}**'s Sigul signer now defaults to
+    *serial* mode instead of the previous *parallel* behaviour. To change
+    this back to the previous behaviour pass the "sign-mode" parameter to the
+    job template:
+
+    .. code-block:: yaml
+
+       - project:
+           name: parallel-sign
+           jobs:
+             - gerrit-maven-stage:
+                 sign-mode: parallel

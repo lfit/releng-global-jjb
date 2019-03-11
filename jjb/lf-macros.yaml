@@ -275,9 +275,10 @@
             - shell: !include-raw-escape: ../shell/sigul-configuration.sh
             - shell: !include-raw-escape: ../shell/sigul-install.sh
             - inject:
-                properties-content: SIGN_DIR={sign-dir}
+                properties-content: |
+                    SIGN_DIR={sign-dir}
+                    SIGN_MODE={sign-mode}
             - shell: !include-raw-escape:
-                - ../shell/common-variables.sh
                 - ../shell/sigul-sign-dir.sh
             - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
 
