@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8771b0dd_ee6cbe7a",
+        "filename": "jenkins-init-scripts/create-swap-file.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-03-12T06:47:44Z",
+      "side": 1,
+      "message": "What would happen is the SWAP_SIZE value is set in the job to a size that exceeds the storage available on the VM flavour type? \n\nAre you considering validating size depending on the VM that has spinned up? Sorry, missed asking this earlier.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 18
+      },
+      "revId": "9f4568634944b869c646ea46ee9206a9af2a4645",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
