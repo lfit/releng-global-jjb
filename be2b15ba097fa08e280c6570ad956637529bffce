@@ -22,6 +22,30 @@
       "revId": "be2b15ba097fa08e280c6570ad956637529bffce",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1efe0dd3_dc7cda1f",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-03-12T21:07:40Z",
+      "side": 1,
+      "message": "Hmm, maybe it shouldn\u0027t. That might surprise people if jobs are throttled by default.\n\nFrom my understanding of Thanh\u0027s comment, the throttling won\u0027t be enabled unless the plugin is installed.",
+      "parentUuid": "940dc17c_7517ee2f",
+      "range": {
+        "startLine": 118,
+        "startChar": 4,
+        "endLine": 118,
+        "endChar": 26
+      },
+      "revId": "be2b15ba097fa08e280c6570ad956637529bffce",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
