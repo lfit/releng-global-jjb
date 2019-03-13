@@ -70,6 +70,30 @@
       "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d610762_5c82fffa",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-13T14:30:10Z",
+      "side": 0,
+      "message": "I did do that. All lines are owned by Andy. File was probably copied in and has not changed since. If there is a \u0027history\u0027 it was in the old repo.\n\nAs I see it, SW support is all about fighting chaos and complexity. Part of the process has to include reducing complexity whenever possible.",
+      "parentUuid": "9790de05_dc23a822",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
