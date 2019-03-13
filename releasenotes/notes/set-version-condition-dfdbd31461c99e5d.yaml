@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    lf-maven-set-version conditional step for lf-maven-stage to allow
+    teams to run Maven versions plugin to update their artifact versions.
+    Step will run if maven-version-plugin-enabled is set to true.
