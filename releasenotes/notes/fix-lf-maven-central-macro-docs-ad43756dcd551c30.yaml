@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Update the lf-maven-cental macro documentation and example templates with
+    the missing requireed params.

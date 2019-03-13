@@ -7,6 +7,8 @@
     #####################
 
     mvn-central: true
+    mvn-global-settings: ''
+    mvn-settings: ''
     ossrh-profile-id: ''
 
     #####################
@@ -16,4 +18,6 @@
     builders:
       - lf-maven-central:
           mvn-central: '{mvn-central}'
+          mvn-global-settings: '{mvn-global-settings}'
+          mvn-settings: '{mvn-settings}'
           ossrh-profile-id: '{ossrh-profile-id}'

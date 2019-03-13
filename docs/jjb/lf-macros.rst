@@ -180,6 +180,10 @@ repository which is to upload to OSSRH.
 :Required parameters:
 
     :mvn-central: Whether or not to upload to mvn-central. (true|false)
+    :mvn-global-settings: The name of the Maven global settings to use for
+        Maven configuration. (default: global-settings)
+    :mvn-settings: The name of settings file containing credentials for the
+        project.
     :ossrh-profile-id: Nexus staging profile ID as provided by OSSRH.
 
 .. literalinclude:: ../../.jjb-test/lf-macros/lf-maven-central-minimal.yaml
