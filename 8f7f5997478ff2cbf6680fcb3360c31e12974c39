@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "24f94120_871d20e9",
+        "filename": ".coafile",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-13T23:33:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23e9b956_9847a5ed",
+      "range": {
+        "startLine": 39,
+        "startChar": 4,
+        "endLine": 39,
+        "endChar": 31
+      },
+      "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6381d311_86a36feb",
         "filename": ".jjb-test/lf-docker-jobs/docker-jobs.yaml",
         "patchSetId": 9
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "df163385_efc9082c",
+        "filename": ".jjb-test/lf-docker-jobs/docker-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-13T23:33:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6381d311_86a36feb",
+      "range": {
+        "startLine": 3,
+        "startChar": 10,
+        "endLine": 3,
+        "endChar": 17
+      },
+      "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "434a821b_40dbffe1",
         "filename": ".jjb-test/lf-docker-jobs/docker-jobs.yaml",
         "patchSetId": 9
@@ -59,6 +107,30 @@
       "writtenOn": "2019-03-13T03:32:04Z",
       "side": 1,
       "message": "is this required for this example or this should be \u0027jenkins-ssh-credential\u0027?",
+      "range": {
+        "startLine": 10,
+        "startChar": 4,
+        "endLine": 10,
+        "endChar": 43
+      },
+      "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "96ac5d76_811d516f",
+        "filename": ".jjb-test/lf-docker-jobs/docker-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-13T23:33:44Z",
+      "side": 1,
+      "message": "In this case yes, so that the docker login step uses this file to fetch the docker registry\n\njenkins-ssh-credential should be defined globally IMO",
+      "parentUuid": "434a821b_40dbffe1",
       "range": {
         "startLine": 10,
         "startChar": 4,
@@ -111,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "783c2aeb_04b9f360",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-13T23:33:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e42b9021_1c58b3a5",
+      "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f57f319c_0455eb73",
         "filename": "shell/docker-build-pom-version.sh",
         "patchSetId": 9
@@ -139,6 +229,24 @@
       "writtenOn": "2019-03-13T03:03:46Z",
       "side": 1,
       "message": "Use quotes instead of shellcheck directive",
+      "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c52184c5_c529155b",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-13T23:33:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51b95537_9a07c035",
       "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
