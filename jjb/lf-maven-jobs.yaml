@@ -22,6 +22,26 @@
           - ../shell/maven-deploy.sh
 
 - builder:
+    name: lf-maven-versions-plugin
+    builders:
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{maven-versions-plugin}'
+          steps:
+            - inject:
+                properties-file: version.properties
+            - maven-target:
+                maven-version: '{mvn-version}'
+                pom: '{mvn-pom}'
+                goals: 'versions:set versions:update-child-modules versions:commit -B'
+                properties:
+                  - 'newVersion=${{maven-versions-plugin-set-version}}'
+                settings: '{mvn-settings}'
+                settings-type: cfp
+                global-settings: 'global-settings'
+                global-settings-type: cfp
+
+- builder:
     name: lf-maven-stage
     builders:
       - lf-provide-maven-settings:
@@ -671,6 +691,8 @@
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
+    maven-versions-plugin: false
+    maven-versions-plugin-set-version: ''
     mvn-central: false
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -678,6 +700,7 @@
     mvn-params: ''
     mvn-version: mvn35
     ossrh-profile-id: ''
+    mvn-pom: ''
     sign-artifacts: false
     sign-mode: serial
     stream: master
@@ -724,6 +747,12 @@
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
       - shell: !include-raw-escape: ../shell/maven-patch-release.sh
+      - lf-maven-versions-plugin:
+          maven-versions-plugin: '{maven-versions-plugin}'
+          mvn-version: '{mvn-version}'
+          mvn-pom: '{mvn-pom}'
+          maven-versions-plugin-set-version: '{maven-versions-plugin-set-version}'
+          mvn-settings: '{mvn-settings}'
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
       - lf-sigul-sign-dir:
