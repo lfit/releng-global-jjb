@@ -34,6 +34,8 @@ set +u
 export MAVEN_OPTIONS
 export MAVEN_PARAMS
 
+pip install --user lftools==0.17.1
+
 DEPLOY_LOG="$WORKSPACE/archives/deploy-maven-file.log"
 mkdir -p "$WORKSPACE/archives"
 
