@@ -94,6 +94,30 @@
       "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f0be06d_331d09f9",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-13T15:37:25Z",
+      "side": 0,
+      "message": "This script is called twice and exists so that we can compare the package listing from a fresh VM vs at the end of the a job run. This is so that we can see what packages were installed at the start of a job vs when the job ended.\n\nIt\u0027s useful for debugging in cases where a job might have introduced new packages we were not aware of. You can see examples of it in action on the logs server for example:\n\nhttps://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/autorelease-release-neon-mvn35-openjdk8/55/\n\nlook at the 3 files that start with packages_*. The file packages_start.txt.gz is created by the jenkins-init script when the VM initializes. The packages_end.txt.gz and packages_diff.txt are at the end of the build.",
+      "parentUuid": "5d610762_5c82fffa",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
