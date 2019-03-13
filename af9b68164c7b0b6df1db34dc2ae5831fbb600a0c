@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "464c5e29_756d216e",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-13T03:03:46Z",
+      "side": 1,
+      "message": "Not a big fan of \u0027-\u0027 in variable names.",
+      "parentUuid": "e1c785c5_5e1935da",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 54
+      },
+      "revId": "af9b68164c7b0b6df1db34dc2ae5831fbb600a0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "376ff8f0_537f1117",
         "filename": "shell/docker-build.sh",
         "patchSetId": 5
