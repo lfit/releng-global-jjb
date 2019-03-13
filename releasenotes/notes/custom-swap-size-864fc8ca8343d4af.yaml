@@ -1,7 +1,7 @@
 ---
-prelude:
-  - |
+prelude: |
     Previously the swap size was fixed at 1GB.
+    |
 features:
   - |
     If the environmental variable 'SWAP_SIZE' is set when the

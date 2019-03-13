@@ -1,8 +1,8 @@
 ---
-prelude:
-  - |
+prelude: |
     The work directory (/w) was created in the '/' volume. The ownership was
     set to 'jenkins:jenkins'.
+    |
 features:
   - |
     If the work directory or volume (/w) aleady exists, the ownership will be
