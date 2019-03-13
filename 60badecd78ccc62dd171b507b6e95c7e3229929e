@@ -118,6 +118,30 @@
       "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9de9ab45_03e531f0",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-13T18:13:32Z",
+      "side": 0,
+      "message": "jenkins-init-scripts/package-list.sh does nothing except call shell/package-listing.sh. Now init.sh calls shell/package-listing.sh directly. The call at the end of the build is already made directly to shell/package-listing.sh (jjb/lf-macros.yaml)",
+      "parentUuid": "5f0be06d_331d09f9",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
