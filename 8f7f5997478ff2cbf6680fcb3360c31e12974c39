@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e42b9021_1c58b3a5",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-13T03:03:46Z",
+      "side": 1,
+      "message": "docker build $DOCKER_ARGS . -t \"$IMAGE_NAME\" -t \"$IMAGE_NAME_LATEST\" | \\\n    tee \"$WORKSPACE/docker_build_log.txt\nWould eliminate need for shellcheck directive. If either varaiable contained a space, the error might be hard to debug.",
+      "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f57f319c_0455eb73",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-13T03:03:46Z",
+      "side": 1,
+      "message": "Have we considered a naming convention for exported vars. I assume DOCKER_ is a naming convention used by docker. We could use say a \u0027LF_\u0027 prefix for exported vars. Thus you would use LF_DOCKER_REGISTRY.\n\nI understand the name was created elsewhere so you can\u0027t just change it.",
+      "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51b95537_9a07c035",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-13T03:03:46Z",
+      "side": 1,
+      "message": "Use quotes instead of shellcheck directive",
+      "revId": "8f7f5997478ff2cbf6680fcb3360c31e12974c39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
