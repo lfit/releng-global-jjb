@@ -22,6 +22,30 @@
       "revId": "462d891b31842c6995da4fa37e22c04363a969db",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b3ce325b_c5a581b1",
+        "filename": "jenkins-init-scripts/init.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-13T03:30:36Z",
+      "side": 1,
+      "message": "It is not an environmental variable which why I left it lower-case which is a Unix convention (long predating Linux). I was quite surprised see LF use upper-case vars in shell variables.\n\nhttps://stackoverflow.com/questions/673055/correct-bash-and-shell-script-variable-capitalization",
+      "parentUuid": "26df0a50_e930ea5e",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 10
+      },
+      "revId": "462d891b31842c6995da4fa37e22c04363a969db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

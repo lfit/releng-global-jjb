@@ -22,6 +22,30 @@
       "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d978420_ce4c2263",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-13T03:30:36Z",
+      "side": 0,
+      "message": "The question I had was, why does this file exist? It is a one-liner that does nothing useful (except call the \u0027real package-listing.sh).\n\nThe chmod is pretty useless, the script it is calling is in a repo, so we control the permissions.\n\nIt is, of course easy enough to recreate the file. There may be some history behind this files existence, which may explain how we got here.",
+      "parentUuid": "e12e7865_1d30c3cd",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
