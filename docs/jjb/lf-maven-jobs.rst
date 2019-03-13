@@ -47,6 +47,11 @@ lf-maven-deploy
 
 Calls the maven deploy script to push artifacts to Nexus.
 
+lf-maven-set-version
+--------------------
+
+Conditional builder. Calls Maven versions plugin to set, update and commit the version.versions:set
+
 lf-maven-stage
 ---------------
 
@@ -309,11 +314,13 @@ directory is then used later to deploy to Nexus.
     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
+    :maven-set-version: Boolean. Whether to call Maven versions plugin or not. (default: false)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
+    :release-version: New version to use in Maven versions plugin. (default: '')
     :sign-artifacts: Sign artifacts with Sigul. (default: false)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)

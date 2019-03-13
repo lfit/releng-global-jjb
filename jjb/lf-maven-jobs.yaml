@@ -22,6 +22,26 @@
           - ../shell/maven-deploy.sh
 
 - builder:
+    name: lf-maven-set-version
+    builders:
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{maven-set-version}'
+          steps:
+            - inject:
+                properties-file: version.properties
+            - maven-target:
+                maven-version: '{mvn-version}'
+                pom: '{pom}'
+                goals: 'versions:set versions:update-child-modules versions:commit -B'
+                properties:
+                  - 'newVersion=${{release-version}}'
+                settings: '{mvn-settings}'
+                settings-type: cfp
+                global-settings: 'global-settings'
+                global-settings-type: cfp
+
+- builder:
     name: lf-maven-stage
     builders:
       # include-raw-escape fails due to JJB bug
@@ -665,6 +685,8 @@
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
+    maven-set-version: false
+    release-version: ''
     mvn-central: false
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -672,6 +694,7 @@
     mvn-params: ''
     mvn-version: mvn35
     ossrh-profile-id: ''
+    pom: ''
     sign-artifacts: false
     stream: master
     submodule-recursive: true
@@ -719,6 +742,12 @@
       - lf-infra-create-netrc:
           server-id: '{mvn-staging-id}'
       - shell: !include-raw-escape: ../shell/maven-patch-release.sh
+      - lf-maven-set-version:
+          maven-set-version: '{maven-set-version}'
+          maven-version: '{maven-version}'
+          pom: '{pom}'
+          release-version: '{release-version}'
+          mvn-settings: '{mvn-settings}'
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
       - lf-sigul-sign-dir:
