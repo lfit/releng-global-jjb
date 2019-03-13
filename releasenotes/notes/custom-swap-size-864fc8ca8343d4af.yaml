@@ -1,11 +1,9 @@
 ---
-prelude:
-  - |
-    Previously the swap size was fixed at 1GB.
 features:
   - |
-    If the environmental variable 'SWAP_SIZE' is set when the
-    'init.sh' script is called, then a 'SWAP_SIZE' GB swap space will
-    be configured. If 'SWAP_SIZE' is '0' or is not a valid integer,
-    then no swap space is cofigured. If it is unset then 1GB of swap
-    will be configured.
+    **jenkins-init-scripts** If the environmental variable 'SWAP_SIZE' is
+    set when the 'init.sh' script is called, then a 'SWAP_SIZE' GB swap
+    space will be configured. If 'SWAP_SIZE' is '0' or is not a valid
+    integer, then no swap space is configured. If it is unset then 1GB
+    of swap will be configured. Previously the swap size was fixed at
+    1GB.
