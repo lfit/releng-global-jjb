@@ -34,6 +34,12 @@ echo "---> Generating docs"
 cd "$WORKSPACE"
 tox -edocs
 
+echo "---> Generating release notes report"
+# Only if the projects have releasenotes directory
+if [ -d "$WORKSPACE/releasenotes" ]; then
+    tox -ereno-report | tee -a "$WORKSPACE/archives/reno-report.log"
+fi
+
 echo "---> Archiving generated docs"
 mkdir -p "$WORKSPACE/archives"
 mv "$DOC_DIR" archives/

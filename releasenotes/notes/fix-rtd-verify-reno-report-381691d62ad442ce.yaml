@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Enable RTD verify to check release notes files for formatting issues
+    with `reno report` using tox.
