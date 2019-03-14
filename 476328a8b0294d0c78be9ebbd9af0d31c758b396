@@ -22,6 +22,30 @@
       "revId": "476328a8b0294d0c78be9ebbd9af0d31c758b396",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "02b8ea6e_f84b3ee8",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-03-14T02:23:06Z",
+      "side": 1,
+      "message": "@Bengt these are bash inbuilt and are complete diff expressions.\n\nex: \n\n//input\n$ echo $SET_JDK_VERSION \nopenjdk11\n\n// incorrect - returns only the last char in subscript\n$ echo \"${SET_JDK_VERSION: -1}\"\n1\n\n// expected\n$ echo \"${SET_JDK_VERSION//[a-zA-Z]/}\"\n11",
+      "parentUuid": "b00d9bce_68f3c8f8",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 84
+      },
+      "revId": "476328a8b0294d0c78be9ebbd9af0d31c758b396",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
