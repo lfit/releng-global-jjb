@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "78dc9bf8_1cf4a68b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-03-14T17:25:04Z",
+      "side": 1,
+      "message": "*extraction",
+      "range": {
+        "startLine": 12,
+        "startChar": 32,
+        "endLine": 12,
+        "endChar": 41
+      },
+      "revId": "476328a8b0294d0c78be9ebbd9af0d31c758b396",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b00d9bce_68f3c8f8",
         "filename": "shell/update-java-alternatives.sh",
         "patchSetId": 1
@@ -37,6 +60,30 @@
       "side": 1,
       "message": "@Bengt these are bash inbuilt and are complete diff expressions.\n\nex: \n\n//input\n$ echo $SET_JDK_VERSION \nopenjdk11\n\n// incorrect - returns only the last char in subscript\n$ echo \"${SET_JDK_VERSION: -1}\"\n1\n\n// expected\n$ echo \"${SET_JDK_VERSION//[a-zA-Z]/}\"\n11",
       "parentUuid": "b00d9bce_68f3c8f8",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 84
+      },
+      "revId": "476328a8b0294d0c78be9ebbd9af0d31c758b396",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c1a35de_8058a11b",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-03-14T17:25:04Z",
+      "side": 1,
+      "message": "I think what Bengt is asking is whether we should filter other non-digit characters, as in:\n${SET_JDK_VERSION//[a-zA-Z:-]/}\nI think the dash/hyphen, though not currently necessary, might be a good idea.",
+      "parentUuid": "02b8ea6e_f84b3ee8",
       "range": {
         "startLine": 35,
         "startChar": 0,
