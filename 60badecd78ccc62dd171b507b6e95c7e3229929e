@@ -142,6 +142,23 @@
       "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b1c47efe_c35e9857",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-14T19:25:54Z",
+      "side": 0,
+      "message": "This file should not be deleted as we want the master init script to only call scripts in the init directory. This being a wrapper to another script is a result of this design decision.",
+      "revId": "60badecd78ccc62dd171b507b6e95c7e3229929e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
