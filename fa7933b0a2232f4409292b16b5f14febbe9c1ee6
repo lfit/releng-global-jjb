@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7adeccc_741b272e",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-03-14T10:36:49Z",
+      "side": 1,
+      "message": "this can be removed. understood from the \u0027default\u0027 value.",
+      "range": {
+        "startLine": 317,
+        "startChar": 24,
+        "endLine": 317,
+        "endChar": 33
+      },
+      "revId": "fa7933b0a2232f4409292b16b5f14febbe9c1ee6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d34fb1b5_98cc494e",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-03-14T10:36:49Z",
+      "side": 1,
+      "message": "Change this variable name to `maven-version-plugin-enabled`? it\u0027s more intuitive to the user its a bool var.",
+      "range": {
+        "startLine": 317,
+        "startChar": 4,
+        "endLine": 317,
+        "endChar": 22
+      },
+      "revId": "fa7933b0a2232f4409292b16b5f14febbe9c1ee6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
