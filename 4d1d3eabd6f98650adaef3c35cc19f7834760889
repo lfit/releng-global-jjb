@@ -22,6 +22,30 @@
       "revId": "4d1d3eabd6f98650adaef3c35cc19f7834760889",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8bdb31ad_a1d54858",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-03-14T17:35:23Z",
+      "side": 1,
+      "message": "That\u0027s not really in the scope of this change. But I think this change can probably be abandoned (hopefully we can discuss during or after the sync today), since I was able to fix Akraino\u0027s problem without this change.",
+      "parentUuid": "4e5350d6_517a925c",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 19
+      },
+      "revId": "4d1d3eabd6f98650adaef3c35cc19f7834760889",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
