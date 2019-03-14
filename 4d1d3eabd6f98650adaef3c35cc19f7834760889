@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e5350d6_517a925c",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-14T17:33:16Z",
+      "side": 1,
+      "message": "Do these really need to be exported? There are only two processes created here: \u0027pip\u0027 and \u0027lftools\u0027. Can\u0027t imagine \u0027pip\u0027 would not need them and they are passed as options to \u0027lftools\u0027. They are not set here, which means they are already exported..??\n\nIt would be nice if the name (all upper-case) meant it was a env var.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 19
+      },
+      "revId": "4d1d3eabd6f98650adaef3c35cc19f7834760889",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
