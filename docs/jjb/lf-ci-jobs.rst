@@ -369,6 +369,18 @@ This job checks out the current code review patch and then runs a
 
     .. note::
 
+       The JJB Deploy Job is configured to trigger only if the Gerrit comment
+       starts with the `jjb-deploy` keyword.
+
+       Example of a valid command in Gerrit comment that triggers the job:
+
+       ``jjb-deploy builder-jjb-*``
+
+       Example of a invalid command in Gerrit comment that would _not_ trigger
+       the job:
+
+       ``Update the job. jjb-deploy builder-jjb-*``
+
        JOB_NAME can include the * wildcard character to push multiple jobs
        matching the pattern. For example ``jjb-deploy builder-jjb-*`` will push
        all builder-jjb-* jobs to the sandbox system.
