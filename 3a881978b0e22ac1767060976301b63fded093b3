@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4ebfa76_788283fb",
+        "filename": "jenkins-init-scripts/init.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-14T23:22:44Z",
+      "side": 1,
+      "message": "This doesn\u0027t make sense to be called jjb_root. There is no place that you use this particular var that you don\u0027t add on jenkins-init-scripts to the path. Instead just make it init_root or init_scripts and drop the extra directory strip. That would mean that on lines 15-18 and 28 that you can drop the the jenkins-init-scripts path addition as well.",
+      "revId": "3a881978b0e22ac1767060976301b63fded093b3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
