@@ -32,7 +32,7 @@ update-java-redhat() {
 }
 
 update-java-ubuntu() {
-    export JAVA_HOME="/usr/lib/jvm/java-${SET_JDK_VERSION: -1}-openjdk-amd64"
+    export JAVA_HOME="/usr/lib/jvm/java-${SET_JDK_VERSION//[a-zA-Z]/}-openjdk-amd64"
     sudo /usr/bin/update-alternatives --install /usr/bin/java java "${JAVA_HOME}/bin/java" 1
     sudo /usr/bin/update-alternatives --install /usr/bin/javac javac "${JAVA_HOME}/bin/javac" 1
     sudo /usr/bin/update-alternatives --install /usr/lib/jvm/java-openjdk java_sdk_openjdk "${JAVA_HOME}" 1
