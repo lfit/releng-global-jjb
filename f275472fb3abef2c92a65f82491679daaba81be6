@@ -16,6 +16,24 @@
       "revId": "f275472fb3abef2c92a65f82491679daaba81be6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a819e1ca_44f2acc0",
+        "filename": "jenkins-init-scripts/create-swap-file.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-15T23:02:18Z",
+      "side": 1,
+      "message": "I have created a new ticket for this issue:\n    RELENG-1870 Jenkins Init Scripts Slow when allocating Swap Space",
+      "parentUuid": "85d659cf_c7efdc5b",
+      "revId": "f275472fb3abef2c92a65f82491679daaba81be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
