@@ -93,6 +93,30 @@
       "revId": "476328a8b0294d0c78be9ebbd9af0d31c758b396",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a07f6f4_5fb0ae8e",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-03-15T00:22:09Z",
+      "side": 1,
+      "message": "I agree that\u0027s not necessary, because the input is going to be \u0027openjdk8\u0027 or \u0027openjdk11\u0027.",
+      "parentUuid": "7c1a35de_8058a11b",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 84
+      },
+      "revId": "476328a8b0294d0c78be9ebbd9af0d31c758b396",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
