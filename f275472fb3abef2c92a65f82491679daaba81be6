@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85d659cf_c7efdc5b",
+        "filename": "jenkins-init-scripts/create-swap-file.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-15T21:10:02Z",
+      "side": 1,
+      "message": "Might I suggest doing a man on fallocate(1) and using that here instead of a potentially long dd for large swap files?\n\nThanks to: https://serverfault.com/questions/152733/creating-swap-files-faster for the pointer ;)",
+      "revId": "f275472fb3abef2c92a65f82491679daaba81be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
