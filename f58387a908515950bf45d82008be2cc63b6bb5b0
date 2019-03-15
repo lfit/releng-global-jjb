@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "298e2af7_7a0bbab0",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-03-15T02:02:37Z",
+      "side": 1,
+      "message": "The \":-\" are outside the brackets, and appear to break the intended function. Should this be:\n[a-zA-Z:-]",
+      "range": {
+        "startLine": 23,
+        "startChar": 73,
+        "endLine": 23,
+        "endChar": 75
+      },
+      "revId": "f58387a908515950bf45d82008be2cc63b6bb5b0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfa17755_4b99f11f",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-03-15T02:02:37Z",
+      "side": 1,
+      "message": "The \":-\" are outside the brackets, and appear to break the intended function. Should this be:\n[a-zA-Z:-]",
+      "range": {
+        "startLine": 35,
+        "startChar": 59,
+        "endLine": 35,
+        "endChar": 69
+      },
+      "revId": "f58387a908515950bf45d82008be2cc63b6bb5b0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
