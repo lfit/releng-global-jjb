@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a9895c1_a449db2e",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-03-18T18:18:48Z",
+      "side": 1,
+      "message": "This might be clearer if it was called \u0027lf-maven-versions-plugin\u0027 - set version doesn\u0027t convey a separate plugin is needed or used.",
+      "range": {
+        "startLine": 50,
+        "startChar": 9,
+        "endLine": 50,
+        "endChar": 20
+      },
+      "revId": "986da8d200d34cdfd1b90c17a5f379d2c02aa35b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "997be3c8_959aac28",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-03-18T18:18:48Z",
+      "side": 1,
+      "message": "Conditionally calls [...] when `maven-versions-plugin-enabled` is set.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 26
+      },
+      "revId": "986da8d200d34cdfd1b90c17a5f379d2c02aa35b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "faefb523_8b31009e",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-03-18T18:18:48Z",
+      "side": 1,
+      "message": "This might be clearer as \u0027maven `versions:set`\u0027. Reading version.versions hurts my brain.",
+      "range": {
+        "startLine": 53,
+        "startChar": 79,
+        "endLine": 53,
+        "endChar": 99
+      },
+      "revId": "986da8d200d34cdfd1b90c17a5f379d2c02aa35b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b71fa3d3_3da5c513",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-03-18T18:18:48Z",
+      "side": 1,
+      "message": "versions",
+      "range": {
+        "startLine": 317,
+        "startChar": 11,
+        "endLine": 317,
+        "endChar": 18
+      },
+      "revId": "986da8d200d34cdfd1b90c17a5f379d2c02aa35b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f37f04e6_cd0ab94e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 15
+      },
+      "writtenOn": "2019-03-18T18:18:48Z",
+      "side": 1,
+      "message": "versions",
+      "range": {
+        "startLine": 29,
+        "startChar": 40,
+        "endLine": 29,
+        "endChar": 47
+      },
+      "revId": "986da8d200d34cdfd1b90c17a5f379d2c02aa35b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
