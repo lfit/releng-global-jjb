@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa6d2246_64372acb",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-19T15:26:57Z",
+      "side": 1,
+      "message": "Should document all of the required parameters that this macro has.",
+      "revId": "3e1f621e36e1ba6a85b48b3c9e3cbc5ebf47d4d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d893ab8_b8716f69",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-19T15:26:57Z",
+      "side": 1,
+      "message": "Personally I prefer not having the word \"enabled\" and just having it implied.\n\n maven-versions-plugin: true",
+      "revId": "3e1f621e36e1ba6a85b48b3c9e3cbc5ebf47d4d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef8d897b_222bbbcd",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-19T15:26:57Z",
+      "side": 1,
+      "message": "Maybe call this \"maven-versions-plugin-set-version\"\n\nMainly so that it\u0027s sorted with the other variable.",
+      "revId": "3e1f621e36e1ba6a85b48b3c9e3cbc5ebf47d4d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d6f0a99_6fcf7019",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-19T15:26:57Z",
+      "side": 1,
+      "message": "mvn-pom, just so that it follows the same pattern as all the other mvn commands.",
+      "range": {
+        "startLine": 35,
+        "startChar": 23,
+        "endLine": 35,
+        "endChar": 26
+      },
+      "revId": "3e1f621e36e1ba6a85b48b3c9e3cbc5ebf47d4d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
