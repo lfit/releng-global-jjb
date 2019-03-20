@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b194707f_816fb3ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-03-20T02:49:08Z",
+      "side": 1,
+      "message": "overall LGTM with minor nits\n\n1. release notes missing\n2. Issue missing in the commit message (optional if you have one always to go back and refer to details)",
+      "revId": "d4508a520ad510a034586191a1dc8f66ba7e2b46",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
