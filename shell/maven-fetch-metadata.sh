@@ -15,7 +15,11 @@
 pom_path="pom.xml"
 file_path=$(echo $MAVEN_PARAMS | grep -E "\-f \S+" | awk '{ print $2 }')
 if [ ! -z $file_path ]; then
-    pom_path="$file_path/pom.xml"
+    if [ -d $file_path ]; then
+        pom_path="$file_path/pom.xml"
+    else
+        pom_path="$file_path"
+    fi
 fi
 
 # Ensure we fail the job if any steps fail.
