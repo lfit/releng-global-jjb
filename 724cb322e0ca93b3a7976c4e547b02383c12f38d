@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "49a0cc3a_98014c20",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-20T14:31:34Z",
+      "side": 1,
+      "message": "Again with the \u0027_\u0027 (underscore)",
+      "revId": "724cb322e0ca93b3a7976c4e547b02383c12f38d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8d4cdf2a_da00a60f",
         "filename": "docs/jjb/lf-ci-jobs.rst",
         "patchSetId": 2
@@ -19,6 +36,23 @@
         "endLine": 468,
         "endChar": 37
       },
+      "revId": "724cb322e0ca93b3a7976c4e547b02383c12f38d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b619af84_09938932",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-20T14:31:34Z",
+      "side": 1,
+      "message": "everything else uses \u0027-\u0027 (dash)",
       "revId": "724cb322e0ca93b3a7976c4e547b02383c12f38d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
