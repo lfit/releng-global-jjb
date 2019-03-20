@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Adapt maven path search for files and dirs. The "-f" maven param can
+    specify both a directory, in which case it will look for "pom.xml" in the
+    directory, or a specific file. The original version of this search was only
+    compatible with directories that contain a pom.xml file.
