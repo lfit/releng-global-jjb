@@ -59,6 +59,24 @@
     },
     {
       "key": {
+        "uuid": "ab59f7d6_e61cbdea",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-20T14:36:46Z",
+      "side": 1,
+      "message": "The underscore is correct in this instance because throttle categories is expecting a list object.\n\nJJB dash only variables will convert the list object into a literal string so that wouldn\u0027t work. We need the underscore to make sure it preserves the list object as an object.",
+      "parentUuid": "b619af84_09938932",
+      "revId": "724cb322e0ca93b3a7976c4e547b02383c12f38d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1b3378dc_2a4e35bc",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 2
