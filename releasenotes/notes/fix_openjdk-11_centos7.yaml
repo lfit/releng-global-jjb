@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix JAVA_HOME for openjdk11 on CentOS 7 to use the OpenJDK version installed
+    in /usr/lib/jvm/java-11-openjdk.
