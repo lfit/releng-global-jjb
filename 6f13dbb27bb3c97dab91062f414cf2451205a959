@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d41747f0_708830a9",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-21T18:08:13Z",
+      "side": 1,
+      "message": "This looks like an Ubuntu path? Are you sure it\u0027s RedHat?",
+      "revId": "6f13dbb27bb3c97dab91062f414cf2451205a959",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
