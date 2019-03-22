@@ -1,0 +1,13 @@
+---
+prelude: >
+    WhiteSource is a security and license compliance management platform. 
+    It is used to perform scans on a great variety of coding and scripting
+    languages.
+features:
+  - |
+    Job {project-name}-whitesource-scan-{stream} uses the WhiteSource Unified
+    Agent scanner CLI tool to perform the code scan and report the results into
+    the WhiteSource dashboard.
+other:
+  - |
+    To run this job, a configuration file is needed (wss-unified-agent.config.example).

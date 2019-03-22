@@ -1,0 +1,10 @@
+---
+- project:
+    name: whitesource-scan-project-jobs
+    jobs:
+      - gerrit-whitesource-scan
+    ws-product-name: EXAMPLE-ORG
+    wss-unified-agent-config: '.config/wss-unified-agent.config'
+    project-name: 'whitesource-scan-project'
+    project: 'whitesource/scan-project-jobs'
+    branch: 'master'
