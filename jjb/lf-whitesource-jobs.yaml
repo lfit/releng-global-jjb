@@ -1,0 +1,208 @@
+---
+
+##########
+# Macros #
+##########
+
+- builder:
+    name: lf-infra-wss-unified-agent-scan
+    builders:
+      - shell: !include-raw:
+          - ../shell/whitesource-unified-agent-cli.sh
+
+####################
+# COMMON FUNCTIONS #
+####################
+
+- lf_whitesource_common: &lf_whitesource_common
+    name: lf-whitesource-common
+
+    ######################
+    # Default parameters #
+    ######################
+
+    archive-artifacts: >
+      **/*.log
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+      - credentials-binding:
+          - text:
+              credential-id: wss-apiKey
+              variable: wss-apiKey
+
+    publishers:
+      - lf-infra-publish
+
+##################################
+# WHITESOURCE UNIFIED AGENT SCAN #
+##################################
+
+- lf_wss_unified_agent_scan: &lf_wss_unified_agent_scan
+    name: lf-wss-unified-agent-scan
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30
+    build-timeout: 60
+    disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
+    java-version: openjdk8
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    wss-unified-agent-opts: ''
+    wss-unified-agent-version: 19.2.2.2
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: '{disable-job}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+      - string:
+          name: WSS_PROJECT_NAME
+          default: '{project-name}'
+          description: Project to asociate the WhiteSource report in the dashboard.
+      - string:
+          name: WSS_PRODUCT_NAME
+          default: '{wss-product-name}'
+          description: Product to asociate the WhiteSource report in the dashboard.
+      - string:
+          name: WSS_UNIFIED_AGENT_CONFIG
+          default: '{wss-unified-agent-config}'
+          description: Path to wss-unifed-agent.config
+      - string:
+          name: WSS_UNIFIED_AGENT_OPTIONS
+          default: '{wss-unified-agent-opts}'
+          description: Options to pass to the WhiteSource Unified Agent CLI.
+      - string:
+          name: WSS_UNIFIED_AGENT_VERSION
+          default: '{wss-unified-agent-version}'
+          description: WhiteSource Unified Agent version package to download and use.
+
+    builders:
+      - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - lf-infra-wss-unified-agent-scan
+
+- job-template:
+    name: '{project-name}-whitesource-scan-{stream}'
+    id: gerrit-whitesource-scan
+    <<: *lf_whitesource_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_wss_unified_agent_scan
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_wss_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: run-whitesource$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_wss_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
+- job-template:
+    name: '{project-name}-whitesource-scan-{stream}'
+    id: github-whitesource-scan
+    <<: *lf_whitesource_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_wss_unified_agent_scan
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+      - github:
+          url: '{github-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: 'H H * * 6'
+      - github-pull-request:
+          trigger-phrase: '^run-whitesource$'
+          only-trigger-phrase: false
+          status-context: 'WhiteSource'
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
