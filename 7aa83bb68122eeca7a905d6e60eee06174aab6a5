@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79e1d50b_2b7d99f4",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-22T15:43:10Z",
+      "side": 1,
+      "message": "+x is the default\nwhy not -ue \"",
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e54e503b_3204ab3f",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-22T15:43:10Z",
+      "side": 1,
+      "message": "CLI_LOCATION is a local variable, please keep it lower-case.",
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7333759c_b95f4652",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-22T15:43:10Z",
+      "side": 1,
+      "message": "Please indent line-coninuation:\njava -jar .... \\\n    -product $WS_PRODUCT_NAME -project $WS_PROJECT_NAME \\\n    $WSS_UNIFIED_AGENT_OPTIONS\nrm -f $CLI_LOCATION",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 16
+      },
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
