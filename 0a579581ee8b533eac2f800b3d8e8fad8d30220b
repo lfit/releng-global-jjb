@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc4555db_7c6a3000",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-23T16:21:42Z",
+      "side": 1,
+      "message": "please add \u0027-u\u0027",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a164902_e331da01",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-23T16:21:42Z",
+      "side": 1,
+      "message": "Please keep shell variables in lower case. We depend on env variables a great deal and it is nice to know \u0027at a glance\u0027 which are shell variables.\n\n(plagiarized quote) By convention, environment variables ( PAGER , EDITOR , ...) and internal shell variables ( SHELL , BASH_VERSION , ...) are capitalized. All other variable names should be lower case. ... If it\u0027s your variable, lowercase it. If you export it, uppercase it.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 67
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b8765f9f_8816294b",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-23T16:21:42Z",
+      "side": 1,
+      "message": "Please add -u",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "597e568f_259a14ad",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-23T16:21:42Z",
+      "side": 1,
+      "message": "The use of `` instead of $() is deprecated.\nshell variables should be lower-case\nLine too long., 80 is not cast is stone, but this approaches 100.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 120
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83222d62_69d23331",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-23T16:21:42Z",
+      "side": 1,
+      "message": "shell variables lower-case",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 67
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2112c1f7_61caf458",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-23T16:21:42Z",
+      "side": 1,
+      "message": "-ue",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
