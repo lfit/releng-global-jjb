@@ -1,0 +1,104 @@
+---
+####################
+# COMMON FUNCTIONS #
+####################
+
+- lf_info_vote_common: &lf_info_vote_common
+    name: lf-info-vote-common
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'INFO.yaml'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: '{build-node}'
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: $GERRIT_PROJECT
+          branch: 'master'
+          refspec: 'refs/heads/{branch}'
+          stream: 'master'
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    publishers:
+      - lf-infra-publish
+
+
+- lf_info_vote_verify: &lf_info_vote_verify
+    name: lf-info-vote-verify
+
+    branch: master
+    stream: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
+    submodule-timeout: 10
+    submodule-recursive: true
+    gerrit-skip-vote: false
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: '{disable-job}'
+
+    builders:
+      - check-info-votes
+
+
+- job-template:
+    name: 'info-vote'
+    id: info-vote-verify
+    <<: *lf_info_vote_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_info_vote_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: '$GERRIT_BRANCH'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
+          projects:
+            - project-compare-type: 'REG_EXP'
+              project-pattern: '**'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/master'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+          skip-vote:
+            successful: '{gerrit-skip-vote}'
+            failed: '{gerrit-skip-vote}'
+            unstable: '{gerrit-skip-vote}'
+            notbuilt: '{gerrit-skip-vote}'
