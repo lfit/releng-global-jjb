@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "f6ea5f6f_72cdc538",
+        "filename": ".jjb-test/lf-whitesource-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-26T18:44:31Z",
+      "side": 1,
+      "message": "What\u0027s wss mean?\n\nWe should probably standardize all whitesource prefixes to just \"ws-\" so that they are the same.",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 7
+      },
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e954d363_bff2f998",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-26T18:44:31Z",
+      "side": 1,
+      "message": "I don\u0027t know what wss stands for but I think we should standardize our prefix to \"ws-\" so that it\u0027s clear all variables with that prefix are about the same job config.",
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "79e1d50b_2b7d99f4",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 2
