@@ -36,6 +36,29 @@
     },
     {
       "key": {
+        "uuid": "7b50c266_3eeaee6f",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-03-26T00:23:19Z",
+      "side": 1,
+      "message": "Perhaps rename this variable to \"jar_location\" or something that is more related to java and the function of the jar file?",
+      "range": {
+        "startLine": 20,
+        "startChar": 11,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7333759c_b95f4652",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 2
