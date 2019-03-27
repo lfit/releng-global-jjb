@@ -424,6 +424,8 @@ Runs `jenkins-jobs update` to update production job configuration
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
+    :jjb-workers: Number of threads to run **update** with. Set to 0 by default
+        which is equivalent to the number of available CPU cores. (default: 0)
     :jjb-version: JJB version to install. (default: see job-template)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)

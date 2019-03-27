@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    The **jjb-merge** job now has a new parameter ``jjb-workers`` to allow
+    configuration of the number of threads to run update with. Default is *0*
+    which is equivalent to the number of CPU cores available on the system.

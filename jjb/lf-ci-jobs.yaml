@@ -719,6 +719,8 @@
     # Default parameters #
     ######################
 
+    jjb-workers: 0
+
     gerrit_merge_triggers:
       - change-merged-event
       - comment-added-contains-event:
@@ -731,6 +733,8 @@
     builders:
       - lf-infra-pre-build
       - lf-infra-jjbini
+      - inject:
+          properties-content: JJB_WORKERS={jjb-workers}
       - shell: !include-raw-escape:
           - ../shell/jjb-install.sh
           - ../shell/jjb-merge-job.sh

@@ -10,7 +10,9 @@
 ##############################################################################
 echo "---> jjb-merge-job.sh"
 
+workers="${JJB_WORKERS:-0}"
+
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-jenkins-jobs update --recursive --delete-old --workers 4 jjb/
+jenkins-jobs update --recursive --delete-old --workers "$workers" jjb/
