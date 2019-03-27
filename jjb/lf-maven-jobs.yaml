@@ -1064,7 +1064,7 @@
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
     mvn-opts: ''
-    mvn-params: '-Dstream=$STREAM'
+    mvn-params: '-Dstream=$STREAM -Dmaven.source.skip=true'
     mvn-version: mvn35
     stream: master
     submodule-recursive: true

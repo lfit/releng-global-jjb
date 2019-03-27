@@ -1,0 +1,6 @@
+---
+other:
+  - |
+    The Maven Verify job will now call ``-Dmaven.source.skip`` to skip source
+    jar generation in the verify job. This saves us some time in the verify
+    build as the source artifacts are not useful in a verify job.
