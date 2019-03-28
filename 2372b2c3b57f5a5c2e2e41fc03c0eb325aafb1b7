@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "040ec3da_ded2665a",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-28T03:00:01Z",
+      "side": 1,
+      "message": "gerrit_wss_triggers",
+      "range": {
+        "startLine": 56,
+        "startChar": 5,
+        "endLine": 56,
+        "endChar": 24
+      },
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ea37fd13_4a56cd6d",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-28T03:00:01Z",
+      "side": 1,
+      "message": "Looks like a duplicate of below. Delete this",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 83
+      },
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7239c554_0ca0f3d4",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-28T03:00:01Z",
+      "side": 1,
+      "message": "maybe call this gerrit_wss_triggers",
+      "range": {
+        "startLine": 133,
+        "startChar": 11,
+        "endLine": 133,
+        "endChar": 15
+      },
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac9d8817_e399b13f",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-28T03:00:01Z",
+      "side": 1,
+      "message": "gerrit_wss_triggers",
+      "range": {
+        "startLine": 156,
+        "startChar": 28,
+        "endLine": 156,
+        "endChar": 47
+      },
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "124a22bd_d493129a",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-03-28T03:00:01Z",
+      "side": 1,
+      "message": "set +options are the default. I think you wanted to do `set -ue -o pipefail`\n\nYou may want to re-test this after enabling `set -u` though because some of the variables below might fail.",
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
