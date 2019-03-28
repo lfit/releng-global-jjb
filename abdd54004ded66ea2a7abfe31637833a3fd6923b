@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f7e65d1_7821fdcb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-28T17:55:00Z",
+      "side": 1,
+      "message": "This should be \u0027yet\u0027 not \u0027yep\u0027",
+      "range": {
+        "startLine": 18,
+        "startChar": 12,
+        "endLine": 18,
+        "endChar": 15
+      },
+      "revId": "abdd54004ded66ea2a7abfe31637833a3fd6923b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aa767eb6_6030aee3",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-28T17:55:00Z",
+      "side": 1,
+      "message": "Trailing white space",
+      "range": {
+        "startLine": 17,
+        "startChar": 39,
+        "endLine": 17,
+        "endChar": 40
+      },
+      "revId": "abdd54004ded66ea2a7abfe31637833a3fd6923b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3d5ffc8c_e9d023a1",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-28T17:55:00Z",
+      "side": 1,
+      "message": "Trailing white space",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 2
+      },
+      "revId": "abdd54004ded66ea2a7abfe31637833a3fd6923b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
