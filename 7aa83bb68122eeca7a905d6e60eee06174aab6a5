@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a669377b_ffa93082",
+        "filename": ".jjb-test/lf-whitesource-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-28T00:00:34Z",
+      "side": 1,
+      "message": "wss \u003d WhiteSource Software\nI will standardize all to wss since the CLI and config files are named wss by them already. Would that be better?",
+      "parentUuid": "f6ea5f6f_72cdc538",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 7
+      },
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e954d363_bff2f998",
         "filename": "docs/jjb/lf-whitesource-jobs.rst",
         "patchSetId": 2
@@ -36,6 +60,24 @@
       "writtenOn": "2019-03-26T18:44:31Z",
       "side": 1,
       "message": "I don\u0027t know what wss stands for but I think we should standardize our prefix to \"ws-\" so that it\u0027s clear all variables with that prefix are about the same job config.",
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c400d826_c3d8fd65",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-28T00:00:34Z",
+      "side": 1,
+      "message": "wss is the official name of their file and CLI they use. \nStandardizing all to wss would be better, do you think?",
+      "parentUuid": "e954d363_bff2f998",
       "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "4166d9f4_6de5a5b5",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-28T00:00:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "79e1d50b_2b7d99f4",
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e54e503b_3204ab3f",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 2
@@ -70,6 +130,24 @@
       "writtenOn": "2019-03-22T15:43:10Z",
       "side": 1,
       "message": "CLI_LOCATION is a local variable, please keep it lower-case.",
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e6c52877_a336095b",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-28T00:00:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e54e503b_3204ab3f",
       "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -99,6 +177,30 @@
     },
     {
       "key": {
+        "uuid": "cdaba9b6_a7630753",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-28T00:00:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b50c266_3eeaee6f",
+      "range": {
+        "startLine": 20,
+        "startChar": 11,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7333759c_b95f4652",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 2
@@ -110,6 +212,30 @@
       "writtenOn": "2019-03-22T15:43:10Z",
       "side": 1,
       "message": "Please indent line-coninuation:\njava -jar .... \\\n    -product $WS_PRODUCT_NAME -project $WS_PROJECT_NAME \\\n    $WSS_UNIFIED_AGENT_OPTIONS\nrm -f $CLI_LOCATION",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 16
+      },
+      "revId": "7aa83bb68122eeca7a905d6e60eee06174aab6a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35b505e4_cdb52115",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-28T00:00:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7333759c_b95f4652",
       "range": {
         "startLine": 20,
         "startChar": 0,
