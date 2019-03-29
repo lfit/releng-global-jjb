@@ -243,6 +243,24 @@
     },
     {
       "key": {
+        "uuid": "aaa9e232_7269ed62",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-03-29T20:00:04Z",
+      "side": 1,
+      "message": "It might be that is it OK if is not set, in which case you just: ${WSS_UNIFIED_AGENT_OPTIONS-} it expands to \"\" if it is not set.",
+      "parentUuid": "aede9bb2_8ed8513f",
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "906d45b0_03982551",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 4
