@@ -1,0 +1,101 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0f4ae8c4_53833526",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-29T17:29:33Z",
+      "side": 1,
+      "message": "Dangling white space",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 2
+      },
+      "revId": "227e6173fe3a9dcf25b1a7118592039b9741fbcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "344d055d_00c5df24",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-29T17:29:33Z",
+      "side": 1,
+      "message": "Not needed. See line 85",
+      "revId": "227e6173fe3a9dcf25b1a7118592039b9741fbcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3093334_9b741a74",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-29T17:29:33Z",
+      "side": 1,
+      "message": "use \u0027pushd -n \"$PATCH_DIR\" || exit\u0027",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 85,
+        "endChar": 4
+      },
+      "revId": "227e6173fe3a9dcf25b1a7118592039b9741fbcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d148c4c4_4217c120",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-29T17:29:33Z",
+      "side": 1,
+      "message": "change to \u0027popd -n || exit\u0027",
+      "revId": "227e6173fe3a9dcf25b1a7118592039b9741fbcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "07121a02_feee4212",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-03-29T17:29:33Z",
+      "side": 1,
+      "message": "change to \u0027popd -n || exit\u0027",
+      "revId": "227e6173fe3a9dcf25b1a7118592039b9741fbcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
