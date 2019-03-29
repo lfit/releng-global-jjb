@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0574acfe_0b17617e",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-29T18:30:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "040ec3da_ded2665a",
+      "range": {
+        "startLine": 56,
+        "startChar": 5,
+        "endLine": 56,
+        "endChar": 24
+      },
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ea37fd13_4a56cd6d",
         "filename": "jjb/lf-whitesource-jobs.yaml",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2019-03-28T03:00:01Z",
       "side": 1,
       "message": "Looks like a duplicate of below. Delete this",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 83
+      },
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f7891c15_c5044b24",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-29T18:30:27Z",
+      "side": 1,
+      "message": "We need 2 project and product. \nThis is how WhiteSource categorizes the reports:\nORG (onap) -\u003e Products (aai, aaf, appc ..) -\u003e Projects (aai-aai-common, aaf-authz ..)",
+      "parentUuid": "ea37fd13_4a56cd6d",
       "range": {
         "startLine": 95,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "1d8e653d_34bcbbdc",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-29T18:30:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7239c554_0ca0f3d4",
+      "range": {
+        "startLine": 133,
+        "startChar": 11,
+        "endLine": 133,
+        "endChar": 15
+      },
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ac9d8817_e399b13f",
         "filename": "jjb/lf-whitesource-jobs.yaml",
         "patchSetId": 4
@@ -82,6 +154,30 @@
       "writtenOn": "2019-03-28T03:00:01Z",
       "side": 1,
       "message": "gerrit_wss_triggers",
+      "range": {
+        "startLine": 156,
+        "startChar": 28,
+        "endLine": 156,
+        "endChar": 47
+      },
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2d8abac4_04befe3e",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-29T18:30:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ac9d8817_e399b13f",
       "range": {
         "startLine": 156,
         "startChar": 28,
@@ -111,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "8a8d6408_8bebd3ac",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-29T18:30:27Z",
+      "side": 1,
+      "message": "testing now..",
+      "parentUuid": "124a22bd_d493129a",
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "906d45b0_03982551",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 4
@@ -122,6 +236,24 @@
       "writtenOn": "2019-03-28T15:00:54Z",
       "side": 1,
       "message": "Might as well put a \u0027-f\u0027 here, if this file does not exist it won\u0027t cause an error. If it exists and the rm can\u0027t remove it, it will return an error.",
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e04dfa65_f8dd583e",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-29T18:30:27Z",
+      "side": 1,
+      "message": "I think the wget will fail first and hence this rm will not be processed",
+      "parentUuid": "906d45b0_03982551",
       "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
