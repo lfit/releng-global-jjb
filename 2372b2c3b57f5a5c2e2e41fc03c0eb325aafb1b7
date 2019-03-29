@@ -225,6 +225,24 @@
     },
     {
       "key": {
+        "uuid": "aede9bb2_8ed8513f",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-03-29T18:42:14Z",
+      "side": 1,
+      "message": "Yes I actually started getting \nWSS_UNIFIED_AGENT_OPTIONS: unbound variable\n\nWill look into it in a bit...",
+      "parentUuid": "8a8d6408_8bebd3ac",
+      "revId": "2372b2c3b57f5a5c2e2e41fc03c0eb325aafb1b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "906d45b0_03982551",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 4
