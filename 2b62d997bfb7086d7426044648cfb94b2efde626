@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9cbc711b_d26e304f",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:50:14Z",
+      "side": 1,
+      "message": "Seems strange to have a trailing \u0027-\u0027 in an argument.",
+      "revId": "2b62d997bfb7086d7426044648cfb94b2efde626",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
