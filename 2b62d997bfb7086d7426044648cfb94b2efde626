@@ -16,6 +16,24 @@
       "revId": "2b62d997bfb7086d7426044648cfb94b2efde626",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10513fb5_5c614028",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-01T18:58:10Z",
+      "side": 1,
+      "message": "Still testing this... because if i add it as \n${WSS_UNIFIED_AGENT_OPTIONS-}  JJB is translating it as \n\n${{WSS_UNIFIED_AGENT_OPTIONS-}}  \n\nI am checking why .. maybe is my jjb version..",
+      "parentUuid": "9cbc711b_d26e304f",
+      "revId": "2b62d997bfb7086d7426044648cfb94b2efde626",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
