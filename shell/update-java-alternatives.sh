@@ -17,6 +17,12 @@ JAVA_ENV_FILE="/tmp/java.env"
 update-java-redhat() {
     if [[ "${SET_JDK_VERSION//[a-zA-Z]/}" = "11" ]]; then
         export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+
+        # Backwards compatibility for ODL autorelease
+        # Remove this when ODL autorelease builders are updated
+        if [ ! -f "$JAVA_HOME" ]; then
+            export JAVA_HOME="/opt/jdk-11"
+        fi
     else
         export JAVA_HOME="/usr/lib/jvm/java-1.${SET_JDK_VERSION//[a-zA-Z:-]/}.0-openjdk"
     fi
