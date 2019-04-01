@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add backwards compatibility for ODL autorelease builders which uses a
+    different path ``/opt/jdk-11``.
