@@ -22,6 +22,30 @@
       "revId": "33420f2537de49b788ff8373d39a0779dd5aa24d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8fb30fa6_7efd80e9",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-01T19:27:23Z",
+      "side": 1,
+      "message": "\u003e so this change will not work with the latest images.\n\nThis change will work with new and old images because it uses both paths. If the new path does not exist it will fallback to the old path. In any case since we\u0027re updating the images in ODL we can abandon this patch.",
+      "parentUuid": "dea942bc_5de773cd",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 10
+      },
+      "revId": "33420f2537de49b788ff8373d39a0779dd5aa24d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
