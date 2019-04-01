@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dea942bc_5de773cd",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-01T19:19:29Z",
+      "side": 1,
+      "message": "We just need to update to the latest version builder image here. \n\nhttps://git.opendaylight.org/gerrit/#/c/81343/\n\nNow we are pulling in the openjdk11 from upstream CentOS repos and not installing it in /opt/jdk-11 anymore, so this change will not work with the latest images. \n\n$ ls /usr/lib/jvm/java-11-openjdk\nbin  conf  include  legal  lib  release  tapset\n\n$ rpm -qa | grep openjdk11\n[centos@abelur-c7-621 ~]$ rpm -qa | grep openjd\njava-11-openjdk-headless-11.0.2.7-0.el7_6.x86_64\njava-1.7.0-openjdk-devel-1.7.0.211-2.6.17.1.el7_6.x86_64\njava-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64\njava-1.8.0-openjdk-devel-1.8.0.201.b09-2.el7_6.x86_64\njava-1.7.0-openjdk-headless-1.7.0.211-2.6.17.1.el7_6.x86_64\njava-11-openjdk-11.0.2.7-0.el7_6.x86_64\njava-1.7.0-openjdk-1.7.0.211-2.6.17.1.el7_6.x86_64\njava-1.8.0-openjdk-headless-1.8.0.201.b09-2.el7_6.x86_64\njava-11-openjdk-devel-11.0.2.7-0.el7_6.x86_64\n\n$ ls /opt/jdk-11\nls: cannot access /opt/jdk-11: No such file or directory",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 10
+      },
+      "revId": "33420f2537de49b788ff8373d39a0779dd5aa24d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
