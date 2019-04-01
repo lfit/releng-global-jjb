@@ -1,0 +1,169 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bed6ef5f_8f27e4a9",
+        "filename": "releasenotes/notes/lf-release-jobs-a618ab1220044253.yaml",
+        "patchSetId": 39
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "Is this like a here-doc ? Create file with this contents?",
+      "range": {
+        "startLine": 11,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 44
+      },
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f652d20_744522cf",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "With sooo many variables being used here, it would REALLY help if all shell variables were lower-case.",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59081625_f8b05f19",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "export PYTHONPATH\u003d$(pwd)",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 17
+      },
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c53a9596_236d24f9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "make this a shell variable (lower-case) so it becomes an \u0027alias\u0027 of the global var. Also you can set the default: maven_central_url\u003d\"${MAVEN_CENTRAL_URL:-}\"\nthen below you can:\nif [[ -z $maven_central_url ]]; then\nthis is reliable because you have -u set.",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "23bdc730_d00edd19",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "Not a big fan of a 2 space indent I much prefer 4 spaces. I acknowledge that is personal choice.",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8d9d682b_e7792daa",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "Indent\nYou are setting an environment variable is that what you want?",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8dd28ed0_5e6aa743",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "I don\u0027t think you want to quietly bail here if this pushd fails\nI am a big fan of \u0027cd/cd -\u0027 rather than pushd/popd when you are only dealing with 2 dirs. Personal choice..",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7f97ffa_818d0751",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "I don\u0027t think you want to quietly exit if this popd fails",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b457d57d_7c9a4b85",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T18:42:56Z",
+      "side": 1,
+      "message": "this is not needed (unless I am understanding the logic)",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
