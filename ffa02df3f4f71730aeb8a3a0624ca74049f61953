@@ -22,6 +22,23 @@
       "revId": "ffa02df3f4f71730aeb8a3a0624ca74049f61953",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d8b6d83d_0adef08e",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-01T20:03:01Z",
+      "side": 1,
+      "message": "${WSS_UNIFIED_AGENT_OPTIONS-} then you can use set -u\nThat assumes it is OK if WSS_UNIFIED_OPTIONS is undefined, based on the name I assume there may be no \u0027OPTIONS\u0027 Unlike $WSS_UNIFIED_AGENT_CONFIG, if that is unset it should be an error (that the -u will catch). Ping me directly if my explanation sucks.",
+      "revId": "ffa02df3f4f71730aeb8a3a0624ca74049f61953",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
