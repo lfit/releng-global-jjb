@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a620cd6_c8778649",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-01T19:11:38Z",
+      "side": 1,
+      "message": "To long line?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 113
+      },
+      "revId": "ffa02df3f4f71730aeb8a3a0624ca74049f61953",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
