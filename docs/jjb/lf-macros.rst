@@ -5,6 +5,14 @@ Global Macros
 Builders
 ========
 
+comment-to-gerrit
+-----------------
+
+This macro will post a comment to the gerrit patchset if the build
+creates a file named gerrit_comment.txt
+To use this macro add it to the list of builders.
+
+
 lf-fetch-dependent-patches
 --------------------------
 

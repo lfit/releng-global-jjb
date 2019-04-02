@@ -3,6 +3,14 @@
 # BUILDERS #
 ############
 
+# To take advantage of this macro, have your build write
+# out the file 'gerrit_comment.txt' with information to post
+# back to gerrit and include this macro in the list of builders.
+- builder:
+    name: comment-to-gerrit
+    builders:
+      - shell: !include-raw ../shell/comment-to-gerrit.sh
+
 - builder:
     name: lf-fetch-dependent-patches
     builders:
