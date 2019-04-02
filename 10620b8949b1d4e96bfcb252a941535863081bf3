@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ecb448b8_c1d84e2a",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-02T18:33:20Z",
+      "side": 1,
+      "message": "This entire script should be put in an include and not inlined in the JJB",
+      "revId": "10620b8949b1d4e96bfcb252a941535863081bf3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac261028_e3a86a30",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-02T18:33:20Z",
+      "side": 1,
+      "message": "I don\u0027t think this will properly expand. You\u0027ve got the sub-shell call inside single quotes which means bash shouldn\u0027t interpolate",
+      "revId": "10620b8949b1d4e96bfcb252a941535863081bf3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
