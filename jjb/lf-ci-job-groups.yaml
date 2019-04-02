@@ -9,6 +9,7 @@
       - gerrit-jjb-deploy-job
       - gerrit-jjb-merge
       - gerrit-jjb-verify
+      - gerrit-tox-verify
 
 - job-group:
     name: '{project-name}-github-ci-jobs'
@@ -20,6 +21,7 @@
       - github-jjb-deploy-job
       - github-jjb-merge
       - github-jjb-verify
+      - github-tox-verify
 
 - job-group:
     name: '{project-name}-info-yaml-jobs'
