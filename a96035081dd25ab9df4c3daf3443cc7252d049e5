@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a1918cd_5d358f67",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-03T15:21:23Z",
+      "side": 1,
+      "message": "This looks like the only difference in the two parts of the the if.\n\nI would invert the logic and set a variable pointing to the correct version of pip. That way the pip install commands can be common and outside the blocks.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 30
+      },
+      "revId": "a96035081dd25ab9df4c3daf3443cc7252d049e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d975bd1_be011ed9",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-03T15:21:23Z",
+      "side": 1,
+      "message": "This isn\u0027t inside a block structure, why is it indented?",
+      "range": {
+        "startLine": 43,
+        "startChar": 2,
+        "endLine": 54,
+        "endChar": 4
+      },
+      "revId": "a96035081dd25ab9df4c3daf3443cc7252d049e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
