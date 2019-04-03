@@ -242,6 +242,11 @@ lf-rtd-verify
 
 ReadTheDocs verify script.
 
+check-info-votes
+----------------
+
+Calls shell script to validate votes on a change to an INFO.yaml
+
 lf-sigul-sign-dir
 -----------------
 
