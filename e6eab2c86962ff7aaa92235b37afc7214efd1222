@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81d91aa3_494fd18a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 41
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-03T19:52:54Z",
+      "side": 1,
+      "message": "-u",
+      "revId": "e6eab2c86962ff7aaa92235b37afc7214efd1222",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5924364d_390e7169",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 41
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-03T19:52:54Z",
+      "side": 1,
+      "message": "shellcheck if fine with no \u0027|| exit\u0027 when -e is set.",
+      "revId": "e6eab2c86962ff7aaa92235b37afc7214efd1222",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a306248e_a2a643a7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 41
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-03T19:52:54Z",
+      "side": 1,
+      "message": "remove \u0027|| exit\u0027",
+      "revId": "e6eab2c86962ff7aaa92235b37afc7214efd1222",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
