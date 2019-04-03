@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0fab633b_70740778",
+        "filename": "shell/comment-to-gerrit.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-03T16:08:58Z",
+      "side": 1,
+      "message": "Does this actually work? I would think that it doesn\u0027t actually acquire the data inside gerrit_comment.txt since it\u0027s inside single quotes for the sub-shell call",
+      "revId": "b2e2b5b7d3bb61ee9886debb4e010769c35be398",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
