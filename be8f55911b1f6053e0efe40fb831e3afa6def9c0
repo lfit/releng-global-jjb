@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f47cf9bc_2dd49a52",
+        "filename": "releasenotes/notes/lf-release-jobs-a618ab1220044253.yaml",
+        "patchSetId": 39
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-04-03T18:29:04Z",
+      "side": 1,
+      "message": "its an example of the file contents",
+      "parentUuid": "bed6ef5f_8f27e4a9",
+      "range": {
+        "startLine": 11,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 44
+      },
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6f652d20_744522cf",
         "filename": "shell/release-job.sh",
         "patchSetId": 39
@@ -53,6 +77,30 @@
       "writtenOn": "2019-04-01T18:42:56Z",
       "side": 1,
       "message": "export PYTHONPATH\u003d$(pwd)",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 17
+      },
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce04c3f3_08c68e34",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-04-03T18:29:04Z",
+      "side": 1,
+      "message": "Declare and assign separately to avoid masking return values. [SC2155]",
+      "parentUuid": "59081625_f8b05f19",
       "range": {
         "startLine": 18,
         "startChar": 0,
@@ -144,6 +192,24 @@
       "writtenOn": "2019-04-01T18:42:56Z",
       "side": 1,
       "message": "I don\u0027t think you want to quietly exit if this popd fails",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "394ad185_2bdc0401",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-04-03T18:29:04Z",
+      "side": 1,
+      "message": "I dont think its possible that this will fail. || exit is for shellcheck",
+      "parentUuid": "c7f97ffa_818d0751",
       "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
