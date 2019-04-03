@@ -66,6 +66,23 @@
     },
     {
       "key": {
+        "uuid": "53e3998a_8479442b",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-03T19:48:51Z",
+      "side": 1,
+      "message": "-u is quite useful. particularly with so many env vars",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "59081625_f8b05f19",
         "filename": "shell/release-job.sh",
         "patchSetId": 39
@@ -101,6 +118,30 @@
       "side": 1,
       "message": "Declare and assign separately to avoid masking return values. [SC2155]",
       "parentUuid": "59081625_f8b05f19",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 17
+      },
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc7aafed_78caf877",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-03T19:48:51Z",
+      "side": 1,
+      "message": "oh yea that right",
+      "parentUuid": "ce04c3f3_08c68e34",
       "range": {
         "startLine": 18,
         "startChar": 0,
@@ -210,6 +251,24 @@
       "side": 1,
       "message": "I dont think its possible that this will fail. || exit is for shellcheck",
       "parentUuid": "c7f97ffa_818d0751",
+      "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "60844f67_b2ed914c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-03T19:48:51Z",
+      "side": 1,
+      "message": "With the current implementation it is not likely to, but that could change. shellcheck has no problem with this. If this popd fails the script quietly exits before completing, which can be extremely difficult to debug. If you want to keep it just make it \u0027-1\u0027.",
+      "parentUuid": "394ad185_2bdc0401",
       "revId": "be8f55911b1f6053e0efe40fb831e3afa6def9c0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
