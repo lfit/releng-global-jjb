@@ -16,6 +16,24 @@
       "revId": "b2e2b5b7d3bb61ee9886debb4e010769c35be398",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "988a0964_298844ae",
+        "filename": "shell/comment-to-gerrit.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-03T16:18:30Z",
+      "side": 1,
+      "message": "Nevermind, I was missing the open interpolation from line 21",
+      "parentUuid": "0fab633b_70740778",
+      "revId": "b2e2b5b7d3bb61ee9886debb4e010769c35be398",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
