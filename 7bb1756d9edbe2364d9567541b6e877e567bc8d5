@@ -2,6 +2,109 @@
   "comments": [
     {
       "key": {
+        "uuid": "6e2068f5_dd343e0d",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-04T09:56:25Z",
+      "side": 1,
+      "message": "set in defaults.yaml",
+      "range": {
+        "startLine": 36,
+        "startChar": 57,
+        "endLine": 37,
+        "endChar": 39
+      },
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db781799_d47a8b02",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-04T09:56:25Z",
+      "side": 1,
+      "message": "rm empty line",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e5bae055_509dda79",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-04T09:56:25Z",
+      "side": 1,
+      "message": "asciibetically",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 90
+      },
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d8ab4ff_04c928f1",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-04T09:56:25Z",
+      "side": 1,
+      "message": "Add example config here (and optionally in the release notes). Add a link to wss-unified-agent.config.example",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9086e007_e903f6b0",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-04T09:56:25Z",
+      "side": 1,
+      "message": "make the version overrideable from the jobs, similar to the way we do for the packer jobs. this was if you need to upgrade/rollback a version won\u0027t require a new global-jjb release for testing purposes.",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 39
+      },
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f8ac9fa3_133391ba",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 8
@@ -13,6 +116,29 @@
       "writtenOn": "2019-04-04T00:14:19Z",
       "side": 1,
       "message": "This is the default we want set -u",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a956e3e_985f9e69",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-04T09:56:25Z",
+      "side": 1,
+      "message": "define this on top of the script WSS_UNIFIED_AGENT_URL",
+      "range": {
+        "startLine": 21,
+        "startChar": 9,
+        "endLine": 21,
+        "endChar": 96
+      },
       "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -48,6 +174,24 @@
       "side": 1,
       "message": "Tim.. i contacted you twice for help on this but didn\u0027t got an answer :(\n\nI mentioned I was having trouble using \" ${WSS_UNIFIED_AGENT_OPTIONS:-}\" becuase jjb translates it to \" ${{WSS_UNIFIED_AGENT_OPTIONS:-}}\" .. do you know how to fix that?\n\nI decided to use the same way we do in other scripts.. \n\nThis is a variable that is ok if is empty.",
       "parentUuid": "2e5fee07_a3c5df66",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d93f968_2d5f84c9",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-04T09:56:25Z",
+      "side": 1,
+      "message": "Jess: PS refer to the best global-jjb practices guide.\n\nhttps://docs.releng.linuxfoundation.org/projects/global-jjb/en/v0.11.2/best-practices.html\n\n\"\nWhen a macro which invokes a shell script has no JJB parameters defined !include-raw-escape will insert extra curly braces, in such cases its recommended to use !include-raw.\n\n\"",
+      "parentUuid": "d8dca52b_29cc0388",
       "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
