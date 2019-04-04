@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7fa92d4c_f50f89c1",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-04T18:59:48Z",
+      "side": 1,
+      "message": "set -eu -o pipefail\n(disable -x) great for development/debug not wanted in production logs",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 6
+      },
+      "revId": "232378ffaca9f7ef383b9371b4f4144259225d8c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3262cb6f_b1007bcf",
         "filename": "wss-unified-agent.config.example",
         "patchSetId": 10
