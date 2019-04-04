@@ -9,7 +9,7 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> check-info-votes.sh"
-set -xe -o pipefail
+set -u unset
 
 ref=$(echo "$GERRIT_REFSPEC" | awk -F"/" '{ print $4 }')
 pip="pip3"
@@ -45,5 +45,5 @@ if [[ "$exit_status" -ne 0 ]]; then
   exit "$exit_status"
 else
   echo "Vote completed submitting review"
-  ssh -p "$GERRIT_PORT" "$JENKINS_SSH_CREDENTIAL"@"$GERRIT_HOST" gerrit review "$change" --submit
+  ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$change" --submit
 fi
