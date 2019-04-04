@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "58f5640b_3a5e041d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 42
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T21:14:41Z",
+      "side": 1,
+      "message": "Add\n\necho \"---\u003e release-job.sh\"\n\nafter line 11",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "79788079c589e363ca6556ce1a33ef4720ceeee0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b15342f7_2bc77625",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 42
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T21:14:41Z",
+      "side": 1,
+      "message": "This is specific to ODL Nexus. \nDo we need to make this variable generic?",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 13
+      },
+      "revId": "79788079c589e363ca6556ce1a33ef4720ceeee0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
