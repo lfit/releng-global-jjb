@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3262cb6f_b1007bcf",
+        "filename": "wss-unified-agent.config.example",
+        "patchSetId": 10
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 266
+      },
+      "writtenOn": "2019-04-04T18:50:08Z",
+      "side": 1,
+      "message": "These are duplicated in lines 141-143, is this intentional?",
+      "revId": "232378ffaca9f7ef383b9371b4f4144259225d8c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
