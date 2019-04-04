@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f8ac9fa3_133391ba",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-04T00:14:19Z",
+      "side": 1,
+      "message": "This is the default we want set -u",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e5fee07_a3c5df66",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-04T00:14:19Z",
+      "side": 1,
+      "message": "with -u set: ${WSS_UNIFIED_AGENT_OPTIONS:-} If WSS_UNIFIED_AGENT_OPTIONS is unset it returns \"\"",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
