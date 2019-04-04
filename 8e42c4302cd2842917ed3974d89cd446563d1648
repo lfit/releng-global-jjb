@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f611750a_ab5f6cc2",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T18:37:06Z",
+      "side": 1,
+      "message": "For now, this file will be stored in the tech team repos .config folder or root. \n\nThis is something that likely might change but for now we are assuming that to unblock us.",
+      "parentUuid": "78503f26_cd6cff28",
+      "range": {
+        "startLine": 107,
+        "startChar": 6,
+        "endLine": 109,
+        "endChar": 47
+      },
+      "revId": "8e42c4302cd2842917ed3974d89cd446563d1648",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ff0a435_7af1fd22",
         "filename": "jjb/lf-whitesource-jobs.yaml",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2019-04-04T18:23:47Z",
       "side": 1,
       "message": "This should be configurable.",
+      "range": {
+        "startLine": 157,
+        "startChar": 15,
+        "endLine": 157,
+        "endChar": 26
+      },
+      "revId": "8e42c4302cd2842917ed3974d89cd446563d1648",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fdd21c11_51821772",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T18:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ff0a435_7af1fd22",
       "range": {
         "startLine": 157,
         "startChar": 15,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "47a036a4_318251c4",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T18:37:06Z",
+      "side": 1,
+      "message": "Nop.. I confirmed here\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-maven-jobs.yaml",
+      "parentUuid": "c1e98e08_4637b8c2",
+      "range": {
+        "startLine": 189,
+        "startChar": 30,
+        "endLine": 189,
+        "endChar": 43
+      },
+      "revId": "8e42c4302cd2842917ed3974d89cd446563d1648",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "574d15ec_b553a57c",
         "filename": "jjb/lf-whitesource-jobs.yaml",
         "patchSetId": 9
@@ -82,6 +154,30 @@
       "writtenOn": "2019-04-04T18:23:47Z",
       "side": 1,
       "message": "Again, configurable.",
+      "range": {
+        "startLine": 199,
+        "startChar": 15,
+        "endLine": 199,
+        "endChar": 26
+      },
+      "revId": "8e42c4302cd2842917ed3974d89cd446563d1648",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7391b7c_1c8c3748",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T18:37:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "574d15ec_b553a57c",
       "range": {
         "startLine": 199,
         "startChar": 15,
