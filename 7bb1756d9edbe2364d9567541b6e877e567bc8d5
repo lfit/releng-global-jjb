@@ -33,6 +33,24 @@
       "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d8dca52b_29cc0388",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T00:18:32Z",
+      "side": 1,
+      "message": "Tim.. i contacted you twice for help on this but didn\u0027t got an answer :(\n\nI mentioned I was having trouble using \" ${WSS_UNIFIED_AGENT_OPTIONS:-}\" becuase jjb translates it to \" ${{WSS_UNIFIED_AGENT_OPTIONS:-}}\" .. do you know how to fix that?\n\nI decided to use the same way we do in other scripts.. \n\nThis is a variable that is ok if is empty.",
+      "parentUuid": "2e5fee07_a3c5df66",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
