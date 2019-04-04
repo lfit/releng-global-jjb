@@ -53,12 +53,12 @@
     gerrit_verify_triggers:
       - comment-added-contains-event:
           comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(vote)$'
-      - comment-added:
+      - comment-added-event:
           approval-category: 'CRVW'
-          approval-value: '+2'
+          approval-value: 2
       - comment-added:
           approval-category: 'Code-Review'
-          approval-value: '+2'
+          approval-value: 2
 
     #####################
     # Job Configuration #
