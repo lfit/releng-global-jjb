@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2e0aeee9_d26cd13f",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T17:47:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e2068f5_dd343e0d",
+      "range": {
+        "startLine": 36,
+        "startChar": 57,
+        "endLine": 37,
+        "endChar": 39
+      },
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "db781799_d47a8b02",
         "filename": "docs/jjb/lf-whitesource-jobs.rst",
         "patchSetId": 8
@@ -36,6 +60,24 @@
       "writtenOn": "2019-04-04T09:56:25Z",
       "side": 1,
       "message": "rm empty line",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "295c00bd_62084464",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T17:47:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db781799_d47a8b02",
       "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "f54a460a_42c84dd4",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T17:47:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5bae055_509dda79",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 90
+      },
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5d8ab4ff_04c928f1",
         "filename": "docs/jjb/lf-whitesource-jobs.rst",
         "patchSetId": 8
@@ -82,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "670c15e4_9737061d",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T17:47:29Z",
+      "side": 1,
+      "message": "Done in line 22",
+      "parentUuid": "5d8ab4ff_04c928f1",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9086e007_e903f6b0",
         "filename": "jjb/lf-whitesource-jobs.yaml",
         "patchSetId": 8
@@ -93,6 +177,30 @@
       "writtenOn": "2019-04-04T09:56:25Z",
       "side": 1,
       "message": "make the version overrideable from the jobs, similar to the way we do for the packer jobs. this was if you need to upgrade/rollback a version won\u0027t require a new global-jjb release for testing purposes.",
+      "range": {
+        "startLine": 78,
+        "startChar": 4,
+        "endLine": 78,
+        "endChar": 39
+      },
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7526b6c_05fba6d5",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T17:47:29Z",
+      "side": 1,
+      "message": "Done\n\nThis is overrideable already if the dev adds the value in the parameter line 116",
+      "parentUuid": "9086e007_e903f6b0",
       "range": {
         "startLine": 78,
         "startChar": 4,
@@ -192,6 +300,24 @@
       "side": 1,
       "message": "Jess: PS refer to the best global-jjb practices guide.\n\nhttps://docs.releng.linuxfoundation.org/projects/global-jjb/en/v0.11.2/best-practices.html\n\n\"\nWhen a macro which invokes a shell script has no JJB parameters defined !include-raw-escape will insert extra curly braces, in such cases its recommended to use !include-raw.\n\n\"",
       "parentUuid": "d8dca52b_29cc0388",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93b376a6_1d0c48d0",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-04T17:47:29Z",
+      "side": 1,
+      "message": "This is exactly the answer I was looking for!\n\nThanks a ton Anil!",
+      "parentUuid": "7d93f968_2d5f84c9",
       "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
