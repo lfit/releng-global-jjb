@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "26e24e88_ec2a3bd6",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 42
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-04T21:20:13Z",
+      "side": 1,
+      "message": "I think this row should be removed, seems to be a merge error.",
+      "range": {
+        "startLine": 265,
+        "startChar": 0,
+        "endLine": 265,
+        "endChar": 44
+      },
+      "revId": "79788079c589e363ca6556ce1a33ef4720ceeee0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "58f5640b_3a5e041d",
         "filename": "shell/release-job.sh",
         "patchSetId": 42
