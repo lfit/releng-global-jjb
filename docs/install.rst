@@ -104,14 +104,14 @@ Global JJB as follows:
    .. code-block:: bash
 
       GLOBAL_JJB_VERSION=v0.1.0
-      git submodule add https://github.com/lfit/releng-global-jjb.git
+      git submodule add https://github.com/lfit/releng-global-jjb.git global-jjb
       cd global-jjb
       git checkout $GLOBAL_JJB_VERSION
       cd ..
-      git add jjb/global-jjb
 
       # Setup symlinks
-      mkdir jjb/global-jjb
+      mkdir -p jjb/global-jjb
+      ln -s ../../global-jjb/jenkins-init-scripts jjb/global-jjb/jenkins-init-scripts
       ln -s ../../global-jjb/shell jjb/global-jjb/shell
       ln -s ../../global-jjb/jjb jjb/global-jjb/jjb
       git add jjb/global-jjb
