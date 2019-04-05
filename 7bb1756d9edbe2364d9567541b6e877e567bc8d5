@@ -321,6 +321,24 @@
       "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26a3b557_ee77326a",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-05T11:52:12Z",
+      "side": 1,
+      "message": "Glad that worked! This is precisely the reason the best practices guides should be updated/referred to regularly.",
+      "parentUuid": "93b376a6_1d0c48d0",
+      "revId": "7bb1756d9edbe2364d9567541b6e877e567bc8d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
