@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "75a5bfad_d4241bc0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 42
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-04-05T19:30:03Z",
+      "side": 1,
+      "message": "I do it later on, as I don\u0027t want to see the pip installs.",
+      "parentUuid": "58f5640b_3a5e041d",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "79788079c589e363ca6556ce1a33ef4720ceeee0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b15342f7_2bc77625",
         "filename": "shell/release-job.sh",
         "patchSetId": 42
@@ -59,6 +83,30 @@
       "writtenOn": "2019-04-04T21:14:41Z",
       "side": 1,
       "message": "This is specific to ODL Nexus. \nDo we need to make this variable generic?",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 13
+      },
+      "revId": "79788079c589e363ca6556ce1a33ef4720ceeee0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f31fb28c_c4c826e8",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 42
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-04-05T19:30:03Z",
+      "side": 1,
+      "message": "I think it should be renamed nexus proxy and set as a global var in each projects jenkins.",
+      "parentUuid": "b15342f7_2bc77625",
       "range": {
         "startLine": 32,
         "startChar": 0,
