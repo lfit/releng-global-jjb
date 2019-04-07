@@ -1,0 +1,360 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b39e8ef_d67f2820",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 44
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "These macros are not in the macros.yaml file so maybe we forgot to remove them?",
+      "range": {
+        "startLine": 255,
+        "startChar": 0,
+        "endLine": 263,
+        "endChar": 19
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e5136db_55d651f8",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "Missing the key?\n\n KEY\u003dVALUE\n WHATEVER_DIR\u003d$WORKSPACE/m2repo",
+      "range": {
+        "startLine": 100,
+        "startChar": 10,
+        "endLine": 100,
+        "endChar": 28
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8aa1cc15_a7cacbbb",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "Only reason to ever import this is if MAVEN_OPTIONS is needed, which I don\u0027t think is the case here?",
+      "range": {
+        "startLine": 101,
+        "startChar": 8,
+        "endLine": 102,
+        "endChar": 40
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee99a71e_df74726e",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "lf-infra-pre-build should always be the 1st builder listed in the builder\u0027s section unless you have a good reason for it to not be?",
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d85eede_dc9a64ff",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "We have a standard for this via {gerrit-server-name} which comes from defaults.yaml so should be available on all ci-management repos.",
+      "range": {
+        "startLine": 125,
+        "startChar": 24,
+        "endLine": 125,
+        "endChar": 31
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5af4985_63dc9c3e",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "Make this part of the lf-releases macro since as far as I can tell that\u0027s where it\u0027s used.",
+      "range": {
+        "startLine": 174,
+        "startChar": 23,
+        "endLine": 175,
+        "endChar": 57
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac8e121a_2d8b3a58",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "Only reason to ever import this is if MAVEN_OPTIONS is needed, which I don\u0027t think is the case here?",
+      "range": {
+        "startLine": 186,
+        "startChar": 6,
+        "endLine": 187,
+        "endChar": 40
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b344c96_1728c0de",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "lf-infra-pre-build should always be the 1st builder listed in the builder\u0027s section unless you have a good reason for it to not be?",
+      "range": {
+        "startLine": 188,
+        "startChar": 8,
+        "endLine": 188,
+        "endChar": 26
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c56180a8_dee97e52",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "We have a standard for this via {gerrit-server-name} which comes from defaults.yaml so should be available on all ci-management repos.",
+      "range": {
+        "startLine": 200,
+        "startChar": 24,
+        "endLine": 200,
+        "endChar": 31
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adab749_2a6987eb",
+        "filename": "releasenotes/notes/lf-release-jobs-a618ab1220044253.yaml",
+        "patchSetId": 44
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "This should be an optional field for the user and assume oss.sonatype.org as the default (less is more).",
+      "range": {
+        "startLine": 17,
+        "startChar": 7,
+        "endLine": 17,
+        "endChar": 24
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3089d329_40045cc7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "The problem with listing separate `pip installs` is Python won\u0027t consider compatible dependencies across the installs which means a later pip install could break dependencies from a previous pip install.\n\nThe way to ensure that the considerations are made there is 2 routes around this:\n\n1) 1 pip install with all of the deps listed on the same command\n\n2) 1 pip install -r reqs.txt, with all the deps listed in the txt file",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 30
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c26ad9e2_add21932",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "Considering there\u0027s only 1 Maven Central maybe default this to oss.sonatype.org ?",
+      "range": {
+        "startLine": 36,
+        "startChar": 40,
+        "endLine": 36,
+        "endChar": 44
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ad0f8444_2eb71e0f",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "Move this code closer to where the MAVEN_CENTRAL_URL is actually used so that it\u0027s easier to tell related code. Along with the suggestion below this code should be moved into a separate file anyway.",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 4
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f7f7088_a4bb5896",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "We should indent when we pushd and popd so that it\u0027s easier to visualize the code and see when we\u0027re missing a popd.",
+      "range": {
+        "startLine": 73,
+        "startChar": 2,
+        "endLine": 93,
+        "endChar": 30
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2bec464f_91fd1ae7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "More than just showing a list of the tags, can we show the tag itself too and confirm that the tag is signed by what key?\n\nI think there should be something like `git log --show-signatures -n 1` or something or was it `git show`.",
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5587d5d9_aca2f733",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T11:55:50Z",
+      "side": 1,
+      "message": "Instead of doing all of this in the same script. Take a look at lf-maven-central macro:\n\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-macros.yaml#L188-L203\n\nUsing this method it allows us to not only more easily manage the deploy stage, but to allow the user to more easily switch on and off the code.\n\nTake aways from this:\n\n1) Make a macro for the Maven Central part\n2) Use conditional build step to allow it to easily turn on and off the script:\n3) Standardize the variables \"mvn-central: true\" for example to turn on the feature so that all related jobs can be assumed to have similar variables.",
+      "range": {
+        "startLine": 104,
+        "startChar": 2,
+        "endLine": 113,
+        "endChar": 4
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
