@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9dec7b9a_f186c1f4",
+        "filename": "docs/install.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-07T12:06:58Z",
+      "side": 1,
+      "message": "Are we missing a cd jjb/global-jjb here? because all the ../.. seems to assume that we\u0027re already in the jjb/global-jjb dir. Howeve the last argument seems to suggest we\u0027re not which seems to be conflicting information.\n\nI think there\u0027s 2 paths here:\n\n1) Assume we\u0027re in the jjb/global-jjb directory:\n\n cd jjb/global-jjb\n ln -s ../../global-jjb/jenkins-init-scripts .\n ln -s ../../global-jjb/shell .\n ln -s ../../global-jjb/jjb .\n\n2) Assume we\u0027re not in the jjb/global-jjb directory:\n\n ln -s global-jjb/jenkins-init-scripts jjb/global-jjb\n ln -s global-jjb/shell jjb/global-jjb\n ln -s global-jjb/jjb jjb/global-jjb\n\nI could be wrong, so double check. Also dropping the final directory path in the final arguments make the command a little shorter since ln will create the link with the same name as arg1.",
+      "revId": "af5f3aa9ff310c5dc6df52d19d3155c0c321f1c2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
