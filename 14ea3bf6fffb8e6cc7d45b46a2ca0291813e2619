@@ -249,6 +249,76 @@
     },
     {
       "key": {
+        "uuid": "92512d70_f2eec132",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-07T14:32:48Z",
+      "side": 1,
+      "message": "you are in \u00273.6.4\u0027 environment, you can just use \u0027pip\u0027",
+      "parentUuid": "3089d329_40045cc7",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 30
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be313806_1af64e41",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-07T14:32:48Z",
+      "side": 1,
+      "message": "Looking at this and Line #42 and knowing -u is set, why not just just NEXUS_URL\u003d$ODLNEXUSPROXY\nIs changing this env var going to effect any child processes? Or does it only effect this script, in which case a shell variable (nexus_url) makes it clear who is effected by this assignment.\nEnv vars a very powerful (and dangerous), limit their use whenever possible.",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 30
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "44d4c3a8_271e92ad",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-07T14:32:48Z",
+      "side": 1,
+      "message": "I don\u0027t understand purpose of these? Unless you want to trigger a error (-u) sooner rather than later ?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 12
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c26ad9e2_add21932",
         "filename": "shell/release-job.sh",
         "patchSetId": 44
@@ -265,6 +335,29 @@
         "startChar": 40,
         "endLine": 36,
         "endChar": 44
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "10518775_fffe5e22",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-07T14:32:48Z",
+      "side": 1,
+      "message": "fi\n\nNEXUS_URL\u003d\"${ODLNEXUSPROXY:-$NEXUS_URL}\"\nNEXUS_PATH\u003d\"${SILO}/${JENKINS_HOSTNAME}/\"\n\nsame logic but more readable",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 2
       },
       "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
@@ -306,6 +399,30 @@
       "writtenOn": "2019-04-07T11:55:50Z",
       "side": 1,
       "message": "We should indent when we pushd and popd so that it\u0027s easier to visualize the code and see when we\u0027re missing a popd.",
+      "range": {
+        "startLine": 73,
+        "startChar": 2,
+        "endLine": 93,
+        "endChar": 30
+      },
+      "revId": "14ea3bf6fffb8e6cc7d45b46a2ca0291813e2619",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a6ba4436_94ac8d0a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 44
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-07T14:32:48Z",
+      "side": 1,
+      "message": "Or\n(cd $PATH_DIR\n    command\n    command\n    )\nthen you never forget the popd",
+      "parentUuid": "0f7f7088_a4bb5896",
       "range": {
         "startLine": 73,
         "startChar": 2,
