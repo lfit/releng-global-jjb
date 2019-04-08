@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f9439ee_a4812c15",
+        "filename": "releasenotes/notes/comment-to-gerrit-b847278a0d09cb1f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-08T17:38:38Z",
+      "side": 1,
+      "message": "Extra space.. let\u0027s remove it",
+      "range": {
+        "startLine": 5,
+        "startChar": 57,
+        "endLine": 5,
+        "endChar": 58
+      },
+      "revId": "533fafc8ebb291bfb6fe6eb167a34c3e9d63b0ba",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
