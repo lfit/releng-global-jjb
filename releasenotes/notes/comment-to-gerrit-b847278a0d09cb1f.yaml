@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    New ``comment-to-gerrit`` builder
+    Will comment back to gerrit patchset if a file called 
+    gerrit_comment.txt is created by the build.
