@@ -79,6 +79,7 @@
       - change-merged-event
       - comment-added-contains-event:
           comment-contains-value: remerge$
+      - ref-updated-event
 
     #####################
     # Job Configuration #
@@ -109,6 +110,8 @@
               branches:
                 - branch-compare-type: 'ANT'
                   branch-pattern: '**/{branch}'
+                - branch-compare-type: 'ANT'
+                  branch-pattern: 'refs/tags/**'
               file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:

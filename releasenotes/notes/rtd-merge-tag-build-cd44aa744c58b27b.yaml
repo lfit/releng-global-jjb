@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Tag releases will now trigger a docs build to regenerate and update the
+    release note link.
