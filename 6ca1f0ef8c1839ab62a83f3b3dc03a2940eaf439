@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a14cfe56_2d846cd9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 45
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-08T20:49:16Z",
+      "side": 1,
+      "message": "Use \u0027grep -q\u0027, we do not want to see the output of the grep in the log.",
+      "revId": "6ca1f0ef8c1839ab62a83f3b3dc03a2940eaf439",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
