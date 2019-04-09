@@ -76,6 +76,7 @@
           # Ensure python-tools are installed in case job template does not
           # call the lf-infra-pre-build macro.
           - ../shell/python-tools-install.sh
+      - shell: !include-raw:
           - ../shell/logs-deploy.sh
       - shell: !include-raw:
           - ../shell/logs-clear-credentials.sh
