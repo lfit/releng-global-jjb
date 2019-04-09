@@ -13,25 +13,15 @@ echo "---> logs-deploy.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-set -x  # Trace commands for this script to make debugging easier.
-
-ARCHIVE_ARTIFACTS="${ARCHIVE_ARTIFACTS:-}"
-LOGS_SERVER="${LOGS_SERVER:-None}"
-
-if [ "${LOGS_SERVER}" == 'None' ]
-then
-    set +x # Disable trace since we no longer need it
-
+if [[ -z $LOGS_SERVER ]]; then
     echo "WARNING: Logging server not set"
 else
-    NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
-    NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
-    BUILD_URL="${BUILD_URL}"
+    nexus_url="${NEXUSPROXY:-$NEXUS_URL}"
+    nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
 
-    lftools deploy archives -p "$ARCHIVE_ARTIFACTS" "$NEXUS_URL" "$NEXUS_PATH" "$WORKSPACE"
-    lftools deploy logs "$NEXUS_URL" "$NEXUS_PATH" "$BUILD_URL"
+    lftools deploy archives -p "${ARCHIVE_ARTIFACTS:-}" "$nexus_url" \
+            "$nexus_path" "$WORKSPACE"
+    lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
-    set +x  # Disable trace since we no longer need it.
-
-    echo "Build logs: <a href=\"$LOGS_SERVER/$NEXUS_PATH\">$LOGS_SERVER/$NEXUS_PATH</a>"
+    echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
 fi
