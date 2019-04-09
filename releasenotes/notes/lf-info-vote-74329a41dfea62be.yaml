@@ -2,6 +2,6 @@
 features:
   - |
     New ``info-vote-verify`` macro
-    Will count votes against an INFO.yaml change and sumbit
-    automatically if a majority of committers and tsc mebers
-    vote +1 or +2 on the change.
+    Will count votes against an INFO.yaml change and sumbit automatically
+    if a majority of committers vote +1 or +2 on the change.
+    Job is triggered by +2 votes or a comment of "vote"
