@@ -1,0 +1,6 @@
+---
+fixes:
+  - wss-unified-agent.config file should not be opened
+    for configuration to tech teams. The config file should
+    be part of Jenkins Settings Files and called via Managed
+    Files.
