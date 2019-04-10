@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f8f65970_76813550",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 46
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-10T00:43:32Z",
+      "side": 1,
+      "message": "What I mean is since this one script is doing both verify and merge I\u0027d recommend breaking the merge part out into a separate macro so that one script handles the verify steps and the other script handles the merge steps. Then only the merge job pulls in the macro that does the non-verify related work.\n\nWhile using $JOB_NAME \u003d~ \"merge\" is clever but that means this code breaks for projects that have the word \"merge\" in their project name.",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 6
+      },
+      "revId": "c1248e33dfa3ca675ff88ba82369733c02ee2896",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
