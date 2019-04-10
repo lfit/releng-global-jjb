@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df2c77be_f415968e",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-10T04:00:17Z",
+      "side": 0,
+      "message": "Loosing this pip freeze will make certain types of debugging much harder as it\u0027s been the only way we\u0027ve found issues between what a CI builder _did_ and what developers have setup.\n\nInstead of getting rid of it, output it to a file and store it in $WORKSPACE/archives so that the log storing routines can pick it up as an extra environment artifact.",
+      "revId": "00abd5048e7fa6b55c2ccda441a8c7e72cd2d48d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}

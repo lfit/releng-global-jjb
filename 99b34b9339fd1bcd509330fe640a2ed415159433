@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a2f5ed4_1f196bf8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-10T04:00:17Z",
+      "side": 1,
+      "message": "Move this to the footer as, this preserves the linking for JIRA and Gerrit but also puts it where it belongs.\n\nIssue: RELENG-1902",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "99b34b9339fd1bcd509330fe640a2ed415159433",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
