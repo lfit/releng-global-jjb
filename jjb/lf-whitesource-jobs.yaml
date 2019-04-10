@@ -7,6 +7,10 @@
 - builder:
     name: lf-infra-wss-unified-agent-scan
     builders:
+      - config-file-provider:
+          files:
+            - file-id: wss-unified-agent.config
+              target: $WORKSPACE/wss-unified-agent.config
       - shell: !include-raw:
           - ../shell/whitesource-unified-agent-cli.sh
 
@@ -105,10 +109,6 @@
           name: WSS_PRODUCT_NAME
           default: '{wss-product-name}'
           description: Product to asociate the WhiteSource report in the dashboard.
-      - string:
-          name: WSS_UNIFIED_AGENT_CONFIG
-          default: '{wss-unified-agent-config}'
-          description: Path to wss-unifed-agent.config
       - string:
           name: WSS_UNIFIED_AGENT_OPTIONS
           default: '{wss-unified-agent-opts}'
