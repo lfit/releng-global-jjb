@@ -22,6 +22,30 @@
       "revId": "540c7b365f6615aac543a23bca59a678a7535bcd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e00c896e_17f3bfd4",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-11T00:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6fb4ea2d_7f662696",
+      "range": {
+        "startLine": 21,
+        "startChar": 9,
+        "endLine": 21,
+        "endChar": 98
+      },
+      "revId": "540c7b365f6615aac543a23bca59a678a7535bcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
