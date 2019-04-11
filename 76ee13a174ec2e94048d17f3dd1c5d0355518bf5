@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "082921a5_7d7e7861",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-11T00:26:18Z",
+      "side": 1,
+      "message": "Enclose variable between {} to clarify which part is variable perhaps",
+      "range": {
+        "startLine": 20,
+        "startChar": 38,
+        "endLine": 20,
+        "endChar": 63
+      },
+      "revId": "76ee13a174ec2e94048d17f3dd1c5d0355518bf5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "19b252c4_94aca8d5",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-11T00:26:18Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 21,
+        "startChar": 67,
+        "endLine": 21,
+        "endChar": 92
+      },
+      "revId": "76ee13a174ec2e94048d17f3dd1c5d0355518bf5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
