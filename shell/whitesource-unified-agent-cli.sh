@@ -17,11 +17,11 @@
 set -xe -o pipefail
 set -u
 echo "---> whitesource-unified-agent-cli.sh"
-jar_location="/tmp/wss-unified-agent-$WSS_UNIFIED_AGENT_VERSION.jar"
-wget -nv https://s3.amazonaws.com/unified-agent/wss-unified-agent-$WSS_UNIFIED_AGENT_VERSION.jar \
-    -O $jar_location
+jar_location="/tmp/wss-unified-agent-${WSS_UNIFIED_AGENT_VERSION}.jar"
+wget -nv https://s3.amazonaws.com/unified-agent/wss-unified-agent-${WSS_UNIFIED_AGENT_VERSION}.jar \
+    -O ${jar_location}
 echo "---> Running WhiteSource Unified Agent CLI ..."
-java -jar $jar_location -c wss-unified-agent.config \
-    -product $WSS_PRODUCT_NAME -project $WSS_PROJECT_NAME \
-    ${WSS_UNIFIED_AGENT_OPTIONS:-}
-rm $jar_location
+java -jar ${jar_location} -c wss-unified-agent.config \
+    -product ${WSS_PRODUCT_NAME} -project ${WSS_PROJECT_NAME} \
+    -projectVersion ${GERRIT_BRANCH} ${WSS_UNIFIED_AGENT_OPTIONS:-}
+rm ${jar_location}
