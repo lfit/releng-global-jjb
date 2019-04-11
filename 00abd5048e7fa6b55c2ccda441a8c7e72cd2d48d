@@ -16,6 +16,24 @@
       "revId": "00abd5048e7fa6b55c2ccda441a8c7e72cd2d48d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8924e7b4_4302a8c0",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-11T14:42:20Z",
+      "side": 0,
+      "message": "Agreed, I deleted this expecting someone to want to have access to this.",
+      "parentUuid": "df2c77be_f415968e",
+      "revId": "00abd5048e7fa6b55c2ccda441a8c7e72cd2d48d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
