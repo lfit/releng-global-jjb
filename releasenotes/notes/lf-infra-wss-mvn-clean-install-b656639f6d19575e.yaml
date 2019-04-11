@@ -1,0 +1,6 @@
+---
+features:
+  - Allows maven to run a clean install step before
+    the WhiteSource scan runs the Unified Agent to
+    fetch additional dependencies. Set to false by
+    default.
