@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Hardcode project version to the "GERRIT_BRANCH".
+    Follow previous convention from CLM where reports were
+    versioned after the branch name.
+    Fix minor nits with bash varaibles.
