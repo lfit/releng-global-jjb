@@ -5,6 +5,22 @@
 ##########
 
 - builder:
+    name: lf-infra-wss-mvn-clean-install
+    builders:
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{mvn-clean-install}'
+          steps:
+            - maven-target:
+                maven-version: '{mvn-version}'
+                pom: '{mvn-pom}'
+                goals: 'clean install'
+                settings: '{mvn-settings}'
+                settings-type: cfp
+                global-settings: 'global-settings'
+                global-settings-type: cfp
+
+- builder:
     name: lf-infra-wss-unified-agent-scan
     builders:
       - config-file-provider:
@@ -76,6 +92,10 @@
     git-url: '$GIT_URL/$PROJECT'
     github-url: 'https://github.com'
     java-version: openjdk8
+    mvn-clean-install: false
+    mvn-global-settings: global-settings
+    mvn-pom: ''
+    mvn-version: mvn35
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -122,6 +142,11 @@
       - lf-infra-pre-build
       - lf-update-java-alternatives:
           java-version: '{java-version}'
+      - lf-infra-wss-mvn-clean-install:
+          mvn-clean-install: '{mvn-clean-install}'
+          mvn-version: '{mvn-version}'
+          mvn-pom: '{mvn-pom}'
+          mvn-settings: '{mvn-settings}'
       - lf-infra-wss-unified-agent-scan
 
 - job-template:
