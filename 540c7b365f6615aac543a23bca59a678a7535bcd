@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6fb4ea2d_7f662696",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-11T00:32:00Z",
+      "side": 1,
+      "message": "please move this URL on top\n\nwss-unified-agent\u003d\"https://s3.amazonaws.com/unified-agent/wss-unified-agent-${WSS_UNIFIED_AGENT_VERSION}.jar\"",
+      "range": {
+        "startLine": 21,
+        "startChar": 9,
+        "endLine": 21,
+        "endChar": 98
+      },
+      "revId": "540c7b365f6615aac543a23bca59a678a7535bcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
