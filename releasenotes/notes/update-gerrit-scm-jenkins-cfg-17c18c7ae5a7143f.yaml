@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Update jenkins-cfg-verify job to validate new images names obtained from
+    $GERRIT_REFSPEC instead of the master branch. 
