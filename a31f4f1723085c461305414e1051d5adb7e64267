@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "760480fa_cbcb1f9c",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-12T22:51:28Z",
+      "side": 1,
+      "message": "The reason I did not use mktemp is because it creates the files and I use them to know if this if first or second time through.",
+      "parentUuid": "8ce6d506_0214df11",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 38
+      },
+      "revId": "a31f4f1723085c461305414e1051d5adb7e64267",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "620dc3b0_385ee124",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 3
@@ -36,6 +60,24 @@
       "writtenOn": "2019-04-12T20:51:21Z",
       "side": 1,
       "message": "I fail to see how this conditional would ever be entered.",
+      "revId": "a31f4f1723085c461305414e1051d5adb7e64267",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9baae7b3_ab3253f6",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-12T22:51:28Z",
+      "side": 1,
+      "message": "First time through, neither files exist so it goes to \u0027else\u0027, which creates file1. Second time through the \u0027if\u0027 is true so it creates file2 and compares them, send the diff to the log (or No diffs). I was thinking the diff in the log would be all we need, but I could archive diff output and/or file1/file2 if anyone thinks it would be useful.\n\nYou made me rethink the logic and I even re-tested it, I am pretty sure it is correct.",
+      "parentUuid": "620dc3b0_385ee124",
       "revId": "a31f4f1723085c461305414e1051d5adb7e64267",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
