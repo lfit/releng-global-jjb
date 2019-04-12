@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "786e7eec_50e347f9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 47
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-12T21:13:47Z",
+      "side": 1,
+      "message": "I still have a hard time looking at scripts that don\u0027t differentiate between environmental and shell variables names.\n\nThis is the first place I have worked at where this was not accepted practice.",
+      "revId": "6b0f305bd483e577383d76a967b5b0c0183e1d36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "83e8f98f_7abcd84d",
         "filename": "shell/release-job.sh",
         "patchSetId": 47
@@ -59,6 +76,29 @@
       "writtenOn": "2019-04-12T20:28:51Z",
       "side": 1,
       "message": "Why hard code the patch dir instead of using mktemp?",
+      "revId": "6b0f305bd483e577383d76a967b5b0c0183e1d36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f5f4cc48_fafb4d22",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 47
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-12T21:13:47Z",
+      "side": 1,
+      "message": "If this is truly meant to be readable:\nprintf \"%-20s%s\\n\" RELEASE_FILE: $release_file\nIf you have written any \u0027C\u0027 you already know all about \u0027FORMAT\u0027",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 28
+      },
       "revId": "6b0f305bd483e577383d76a967b5b0c0183e1d36",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
