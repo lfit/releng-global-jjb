@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ed5c6b3_dc89d155",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 47
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-12T20:28:51Z",
+      "side": 1,
+      "message": "Why is this __ANY__ when the verify is linked against the defined {gerrit-server-name} ?",
+      "range": {
+        "startLine": 190,
+        "startChar": 24,
+        "endLine": 190,
+        "endChar": 31
+      },
+      "revId": "6b0f305bd483e577383d76a967b5b0c0183e1d36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "83e8f98f_7abcd84d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 47
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-12T20:28:51Z",
+      "side": 1,
+      "message": "All the \" make this harder to read, it should probably be the following:\n\nLOGS_URL\u003d\"${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}\"",
+      "range": {
+        "startLine": 60,
+        "startChar": 11,
+        "endLine": 60,
+        "endChar": 49
+      },
+      "revId": "6b0f305bd483e577383d76a967b5b0c0183e1d36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aff301f4_5d3b0d22",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 47
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-12T20:28:51Z",
+      "side": 1,
+      "message": "Why hard code the patch dir instead of using mktemp?",
+      "revId": "6b0f305bd483e577383d76a967b5b0c0183e1d36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
