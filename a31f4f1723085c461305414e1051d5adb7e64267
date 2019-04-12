@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8ce6d506_0214df11",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-12T20:51:21Z",
+      "side": 1,
+      "message": "I don\u0027t see anywhere that /tmp/pip-list-start.txt would be generated. Additionally, in both cases of these listing files, they aren\u0027t stored out to the archive location so can\u0027t be inspected post job.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 38
+      },
+      "revId": "a31f4f1723085c461305414e1051d5adb7e64267",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "620dc3b0_385ee124",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-12T20:51:21Z",
+      "side": 1,
+      "message": "I fail to see how this conditional would ever be entered.",
+      "revId": "a31f4f1723085c461305414e1051d5adb7e64267",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
