@@ -46,6 +46,30 @@
       "revId": "99b34b9339fd1bcd509330fe640a2ed415159433",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6867e64e_d1c02a70",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-04-12T08:24:27Z",
+      "side": 1,
+      "message": "@Tim: rm the blank line between the JIRA issue (in CR commit message) and the footer. As an example, I\u0027d do something like this:\n\nIssue: RELENG-1902\nChange-Id: Ib0f99bd1eb125015467c7eaf91d26c76e92bffa0\nSigned-off-by: Tim Johnson \u003ctijohnson@linuxfoundation.org\u003e",
+      "parentUuid": "88d83a5d_012acc9c",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "99b34b9339fd1bcd509330fe640a2ed415159433",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
