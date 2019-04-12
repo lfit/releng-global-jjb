@@ -70,6 +70,30 @@
       "revId": "99b34b9339fd1bcd509330fe640a2ed415159433",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51f121da_f6314446",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-12T14:21:15Z",
+      "side": 1,
+      "message": "Thanks for the explanation so clear even I could understand.",
+      "parentUuid": "6867e64e_d1c02a70",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "99b34b9339fd1bcd509330fe640a2ed415159433",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
