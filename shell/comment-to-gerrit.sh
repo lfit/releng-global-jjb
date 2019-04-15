@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> comment-to-gerrit.sh"
 set -xe -o pipefail
 
 if [[ -e gerrit_comment.txt ]] ; then

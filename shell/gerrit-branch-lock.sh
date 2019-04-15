@@ -8,6 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
+echo "---> gerrit-branch-lock.sh"
 # Generates a patch to lock|unlock a branch in Gerrit
 #
 # Assumes that the project repository was cloned via ssh and thus uses ssh to

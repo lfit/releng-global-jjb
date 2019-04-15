@@ -8,6 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
+echo "---> gerrit-fetch-dependencies.sh"
 # Fetches patches all projects provided by comment trigger
 #
 # Takes a list of Gerrit patches and fetches all projects and cherry-pick

@@ -8,6 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
+echo "---> gerrit-push-patch.sh"
 # Push a change to Gerrit if files modified in repository.
 #
 # The script requires to install the minimum version 1.25 of git-review using

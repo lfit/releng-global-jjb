@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> maven-patch-release.sh"
 # This script removes the -SNAPSHOT from a project to prepare it for release.
 
 PATCH_DIR="$WORKSPACE/archives/patches"

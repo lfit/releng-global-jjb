@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> git-validate-jira-urls.sh"
 # This script will make sure that there are no JIRA URLs in the commit
 # message. JIRA URLs will break the its-jira plugin
 

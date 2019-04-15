@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> docker-login.sh"
 # Log into a custom hosted docker registry and / or docker.io
 
 # $DOCKER_REGISTRY : Optional

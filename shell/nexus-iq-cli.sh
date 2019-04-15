@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> nexus-iq-cli.sh"
 # This script downloads nexus-iq-cli-1.44.0-01.jar and uses it to perform an
 # XC Evaluation or extended report which provides a scan of python files within
 # the repo

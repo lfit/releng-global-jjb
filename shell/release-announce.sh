@@ -8,6 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
+echo "---> release-announce.sh"
 
 PROJECT="${GERRIT_PROJECT#releng/}"  # For releng projects strip the prefix
 TAG_NAME="${GERRIT_REFNAME#refs/tags/}"

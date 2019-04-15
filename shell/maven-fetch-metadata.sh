@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> maven-fetch-metadata.sh"
 # Uses wget to fetch a project's maven-metadata.xml files from a Maven repository.
 
 # Check for "-f" maven param, indicating a change in pom location.

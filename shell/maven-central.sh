@@ -8,6 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
+echo "---> maven-central.sh"
 
 profile_id="${OSSRH_PROFILE_ID:-}"
 

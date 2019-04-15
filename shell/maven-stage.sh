@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> maven-stage.sh"
 # This script publishes artifacts to a staging repo in Nexus.
 #
 # $WORKSPACE/m2repo   :  Exists and used to deploy the staging repository.

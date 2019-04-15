@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> sonatype-clm.sh"
 # This script builds a Maven project and deploys it into a staging repo which
 # can be used to deploy elsewhere later eg. Nexus staging / snapshot repos.
 

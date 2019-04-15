@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> maven-build-deps.sh"
 # Builds projects provided via $DEPENDENCY_BUILD_ORDER list
 #
 # This runs a `mvn clean install` against all projects provided by a list. This

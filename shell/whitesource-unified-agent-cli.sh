@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> whitesource-unified-agent-cli.sh"
 # This script downloads wss-unified-agent-<version>.jar and uses it to perform
 # a scan on the code whithin a repo based on the wss-unified-agent.config provided.
 

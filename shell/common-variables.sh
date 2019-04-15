@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> common-variables.sh"
 # This file contains a list of variables that are generally useful in many
 # scripts. It is meant to be sourced in other scripts so that the variables can
 # be called.

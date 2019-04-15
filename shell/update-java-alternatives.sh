@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> update-java-alternatives.sh"
 # This script takes the java-version variable to set the proper alternative
 # for java, javac and java_sdk_openjdk for ubuntu or centos/fedora/redhat distros
 

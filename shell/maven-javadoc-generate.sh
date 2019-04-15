@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-
+echo "---> maven-javadoc-generate.sh"
 # Generates javadoc in a Maven project.
 
 # DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.
