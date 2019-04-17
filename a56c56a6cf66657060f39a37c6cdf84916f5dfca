@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "766b233a_e2573faa",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 49
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-17T15:08:48Z",
+      "side": 1,
+      "message": "Your indentation style changes between this and the later indents. Please choose one style all the way through the file",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 39
+      },
+      "revId": "a56c56a6cf66657060f39a37c6cdf84916f5dfca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6a2e387_b451c973",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 49
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-17T15:08:48Z",
+      "side": 1,
+      "message": "Not certain I asked previously, but why is there an extra indent on this section? I understand it\u0027s a block of work that logically goes together, but from the point of view of bash it\u0027s all at the same level of the pushd on line 63. Same with lines 87-106",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 32
+      },
+      "revId": "a56c56a6cf66657060f39a37c6cdf84916f5dfca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
