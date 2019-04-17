@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abc9b9a_bb171f5c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 51
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-17T15:18:13Z",
+      "side": 1,
+      "message": "wrong indent",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 6
+      },
+      "revId": "d229f7317cf3d55bbe8c0e73fa2271b1e5f8947a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
