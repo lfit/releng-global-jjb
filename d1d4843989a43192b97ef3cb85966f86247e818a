@@ -22,6 +22,30 @@
       "revId": "d1d4843989a43192b97ef3cb85966f86247e818a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d76b32c_7c7f843d",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-17T14:42:14Z",
+      "side": 1,
+      "message": "This is a similar pattern to our package-listing.sh script in global-jjb. It\u0027s called twice. Once during system boot and once during the postbuild scripts.\n\n@Tim: I know you decided not to store off the changes to archives, but I would really prefer we save off the start, end, and diff states no matter what.\n\nIt does us no good to be getting a diff if the rather dynamic nature of pip install goes and installs newer versions of packages on us during a job, thus breaking it, but _not_ changing between runs",
+      "parentUuid": "909cd55a_ecdd65c2",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 73
+      },
+      "revId": "d1d4843989a43192b97ef3cb85966f86247e818a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
