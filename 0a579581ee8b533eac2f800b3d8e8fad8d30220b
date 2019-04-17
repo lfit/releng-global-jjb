@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "729aed07_5574788f",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-17T14:32:14Z",
+      "side": 1,
+      "message": "Isn\u0027t this the docker port to use when you pull?\nand 10002 for push",
+      "parentUuid": "d1c84074_1357e7ea",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 50
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a5d772f2_b61e7284",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 11
@@ -41,6 +65,29 @@
         "startChar": 4,
         "endLine": 135,
         "endChar": 27
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "293af704_4723f099",
+        "filename": "releasenotes/notes/lf-docker-jobs-a6927a60ad849d2d.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-17T14:32:14Z",
+      "side": 1,
+      "message": "Will? When???",
+      "range": {
+        "startLine": 11,
+        "startChar": 24,
+        "endLine": 11,
+        "endChar": 28
       },
       "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
@@ -162,6 +209,29 @@
       "writtenOn": "2019-03-23T16:21:42Z",
       "side": 1,
       "message": "-ue",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b25046e9_7026c661",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-17T14:32:14Z",
+      "side": 1,
+      "message": "docker push to :10002??? Or just for dockerhub?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 34
+      },
       "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
