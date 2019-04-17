@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd51b309_05764754",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 48
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-17T14:13:58Z",
+      "side": 1,
+      "message": "Is this one needed? Should it not be created in the \"mktemp -d\" command.",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 23
+      },
+      "revId": "c49ca5ace438e0853ea00568cf2983939275d9e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd15de62_5f2e51d4",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 48
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-17T14:13:58Z",
+      "side": 1,
+      "message": "Whats the point of -n? Seems to not change directory to \"$PATCH_DIR\" just adding it to the stack",
+      "range": {
+        "startLine": 65,
+        "startChar": 8,
+        "endLine": 65,
+        "endChar": 10
+      },
+      "revId": "c49ca5ace438e0853ea00568cf2983939275d9e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "97a49fb1_fa4c71c6",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 48
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-04-17T14:13:58Z",
+      "side": 1,
+      "message": "Whats the point of -n? Seems to not change directory just removing top from the stack",
+      "range": {
+        "startLine": 88,
+        "startChar": 7,
+        "endLine": 88,
+        "endChar": 9
+      },
+      "revId": "c49ca5ace438e0853ea00568cf2983939275d9e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
