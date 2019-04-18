@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "916d199c_0e6cec5b",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 52
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-18T15:58:47Z",
+      "side": 1,
+      "message": "Use \u0027-q\u0027 (return error status but generate no output",
+      "revId": "0ed3c84d0a301e86f0eeaefe9a35c8830a64f31b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ce4dbf8_4bb1d1c1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 52
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-18T15:58:47Z",
+      "side": 1,
+      "message": "This assignment was already made on line 41",
+      "revId": "0ed3c84d0a301e86f0eeaefe9a35c8830a64f31b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
