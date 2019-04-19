@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    The packer-merge job for Gerrit systems was improperly configured to use the
+    Gerrit Trigger choosing strategy and not default. This caused issues
+    unexpected issues with retriggering merged changes when the expectation was
+    that it would pick up the lastest change as per normal.

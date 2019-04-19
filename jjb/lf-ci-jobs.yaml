@@ -1449,7 +1449,7 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
-          choosing-strategy: gerrit
+          choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
