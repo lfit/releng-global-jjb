@@ -38,7 +38,7 @@
     submodule-recursive: true
     submodule-timeout: 10
     packer-cloud-settings: packer-cloud-env
-    packer-version: 1.2.5
+    packer-version: 1.4.0
 
     #####################
     # Job Configuration #

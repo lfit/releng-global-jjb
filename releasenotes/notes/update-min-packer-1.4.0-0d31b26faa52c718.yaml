@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    The next release of common-packer will require a minimum version of 1.3.2
+    for packer. The current release of packer is 1.4.0.
