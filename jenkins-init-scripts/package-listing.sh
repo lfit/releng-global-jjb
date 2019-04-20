@@ -16,6 +16,4 @@
 
 jjb_init_scripts="$(dirname "$0")/../shell"
 
-# Make sure that the package listing script is executable
-chmod +x "$jjb_init_scripts/package-listing.sh"
 "$jjb_init_scripts/package-listing.sh"
