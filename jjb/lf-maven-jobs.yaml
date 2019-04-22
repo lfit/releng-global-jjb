@@ -727,6 +727,10 @@
           mvn-params: '{mvn-params}'
           mvn-version: '{mvn-version}'
           staging-profile-id: '{staging-profile-id}'
+      - bool:
+          name: MAVEN_VERSIONS_PLUGIN
+          default: '{maven-versions-plugin}'
+          description: Use maven-versions-plugin to update pom versions.
       - string:
           name: ARCHIVE_ARTIFACTS
           default: '{archive-artifacts}'
@@ -746,13 +750,13 @@
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
-      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-versions-plugin:
           maven-versions-plugin: '{maven-versions-plugin}'
           mvn-version: '{mvn-version}'
           mvn-pom: '{mvn-pom}'
           maven-versions-plugin-set-version: '{maven-versions-plugin-set-version}'
           mvn-settings: '{mvn-settings}'
+      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-build:
           mvn-goals: '{mvn-goals}'
       - lf-sigul-sign-dir:
