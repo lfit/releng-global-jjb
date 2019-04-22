@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "72e6d8f1_08057ea4",
+        "filename": "jenkins-init-scripts/package-listing.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-22T17:15:47Z",
+      "side": 1,
+      "message": "Leave off the \"on Windows\" bit. It\u0027s not that the script becomes executable on Windows, it\u0027s that the target script might be edited by someone from windows destroying our modes.\n\nWe have to take into consideration that there are environments that people will edit from that are not under our control. It\u0027s better to be _sure_ that a script is in the proper setup than to blindly rely on the modes being set correctly.",
+      "revId": "764b4900a0d0b4819cfb324cc14323d16178214a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
