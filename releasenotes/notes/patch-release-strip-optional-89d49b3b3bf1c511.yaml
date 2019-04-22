@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Projects using maven versions plugin let this plugin take care or
+    updating their versions in the pom.xml. When maven-versions-plugin
+    is set to "true", skip the stripping of SNAPSHOTS from the pom.xml
+    files. maven-versions-plugin is set to "false" by default. 

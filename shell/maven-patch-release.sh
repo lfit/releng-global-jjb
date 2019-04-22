@@ -19,9 +19,11 @@ set -eu -o pipefail
 
 echo "$PROJECT" "$(git rev-parse --verify HEAD)" | tee -a "$PATCH_DIR/taglist.log"
 
-# Strip -SNAPSHOT from version to prepare release.
-find . -name "*.xml" -print0 | xargs -0 sed -i 's/-SNAPSHOT//g'
+if [[ "${maven-versions-plugin}" == "false" ]] ; then
+    # Strip -SNAPSHOT from version to prepare release.
+    find . -name "*.xml" -print0 | xargs -0 sed -i 's/-SNAPSHOT//g'
 
-git commit -am "Release $PROJECT"
-git format-patch --stdout "origin/$GERRIT_BRANCH" > "$PATCH_DIR/${PROJECT//\//-}.patch"
-git bundle create "$PATCH_DIR/${PROJECT//\//-}.bundle" "origin/${GERRIT_BRANCH}..HEAD"
+    git commit -am "Release $PROJECT"
+    git format-patch --stdout "origin/$GERRIT_BRANCH" > "$PATCH_DIR/${PROJECT//\//-}.patch"
+    git bundle create "$PATCH_DIR/${PROJECT//\//-}.bundle" "origin/${GERRIT_BRANCH}..HEAD"
+fi
