@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "540ad7b3_dfc8ddb9",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-22T23:41:14Z",
+      "side": 1,
+      "message": "Notice this is set to false in line 694:\nmaven-versions-plugin: false\n\nThis should be transparent for projects using this job and they will not have to define this variable if they are not using the maven versions plugin.",
+      "range": {
+        "startLine": 732,
+        "startChar": 10,
+        "endLine": 732,
+        "endChar": 44
+      },
+      "revId": "aed7c617a09c33e04510d72ec643c74e2caecb2e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
