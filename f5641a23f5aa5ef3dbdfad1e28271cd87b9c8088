@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ef23cf9_ff2b22a2",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-23T21:39:25Z",
+      "side": 1,
+      "message": "bash supports booleans:\nif $MAVEN_VERSIONS_PLUGIN; then\njust a little cleaner (\"\" not required)",
+      "revId": "f5641a23f5aa5ef3dbdfad1e28271cd87b9c8088",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14f8e5ea_0b8691a7",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-23T21:39:25Z",
+      "side": 1,
+      "message": "extra line",
+      "revId": "f5641a23f5aa5ef3dbdfad1e28271cd87b9c8088",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
