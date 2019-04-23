@@ -45,6 +45,30 @@
       "revId": "aed7c617a09c33e04510d72ec643c74e2caecb2e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5d2c97dc_18e65f47",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-23T20:12:52Z",
+      "side": 1,
+      "message": "Was looking more.. yes.. the versions plugin will make the changes and I will need to add a way to commit them later on after that run... let me do that and test ..",
+      "parentUuid": "125ad0b8_79bdbf92",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 90
+      },
+      "revId": "aed7c617a09c33e04510d72ec643c74e2caecb2e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
