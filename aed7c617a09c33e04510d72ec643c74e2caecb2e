@@ -22,6 +22,29 @@
       "revId": "aed7c617a09c33e04510d72ec643c74e2caecb2e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "125ad0b8_79bdbf92",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-23T19:19:42Z",
+      "side": 1,
+      "message": "This part is required for self-managed releases. If the maven-versions-plugin doesn\u0027t give us a way to get this information then projects using it will _not_ be able to initiate their own releases without RE support",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 90
+      },
+      "revId": "aed7c617a09c33e04510d72ec643c74e2caecb2e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
