@@ -577,6 +577,7 @@
           skip-tag: true
           wipe-workspace: true
           submodule:
+            disable: '{submodule-disable}'
             recursive: '{submodule-recursive}'
             timeout: '{submodule-timeout}'
           choosing-strategy: '{choosing-strategy}'
@@ -593,6 +594,7 @@
           skip-tag: true
           wipe-workspace: true
           submodule:
+            disable: '{submodule-disable}'
             recursive: '{submodule-recursive}'
             timeout: '{submodule-timeout}'
           choosing-strategy: '{choosing-strategy}'

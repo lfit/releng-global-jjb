@@ -59,6 +59,8 @@ https://s3.amazonaws.com/unified-agent/wss-unified-agent.config
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
     :wss-unified-agent-version: WhiteSource Unified Agent version package to download
         and use.
     :gerrit_trigger_file_paths: Override file paths which used to filter which

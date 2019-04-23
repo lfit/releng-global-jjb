@@ -99,6 +99,7 @@
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
+    submodule-disable: false
     wss-unified-agent-opts: ''
     wss-unified-agent-version: 19.2.2.2
 
@@ -176,6 +177,7 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
@@ -217,6 +219,7 @@
           branch: 'refs/heads/{branch}'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 

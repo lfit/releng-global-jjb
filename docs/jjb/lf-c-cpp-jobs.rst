@@ -57,6 +57,8 @@ to support multi-branch.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_sonar_triggers: Override Gerrit Triggers.
 
@@ -111,6 +113,8 @@ project into a tar.xz tarball to produce a release candidate.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
     :version: (default: '') Project version to stage release as. There are 2
         methods for using this value:
 
@@ -175,6 +179,8 @@ Verify job which runs cmake && make && make install to test a project build..
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which to filter which file

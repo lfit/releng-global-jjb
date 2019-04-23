@@ -81,6 +81,7 @@
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
+    submodule-disable: false
 
     gerrit_trigger_file_paths:
       - compare-type: ANT
@@ -145,6 +146,7 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
@@ -186,6 +188,7 @@
           branch: 'refs/heads/{branch}'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -229,6 +232,7 @@
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
+    submodule-disable: false
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -327,6 +331,7 @@
           branch: $GERRIT_BRANCH
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
@@ -367,6 +372,7 @@
           branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
@@ -403,6 +409,7 @@
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
+    submodule-disable: false
     tox-dir: ''
     tox-envs: ''
 
@@ -485,6 +492,7 @@
           branch: '$GERRIT_BRANCH'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: gerrit
 
     triggers:
@@ -518,6 +526,7 @@
           branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 

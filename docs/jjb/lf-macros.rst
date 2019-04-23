@@ -356,6 +356,8 @@ Basic SCM configuration for Gerrit based projects.
 
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
 lf-infra-github-scm
 -------------------
@@ -370,6 +372,8 @@ the GHPRB plugin and not manually.
 
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
 Wrappers
 ========

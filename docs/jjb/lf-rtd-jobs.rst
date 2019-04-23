@@ -82,6 +82,8 @@ ReadTheDocs. To do that follow these steps:
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
@@ -129,6 +131,8 @@ Verify job which runs a tox build of the docs project
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which

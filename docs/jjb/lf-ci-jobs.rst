@@ -139,6 +139,8 @@ Job submits a patch to lock or unlock a project's branch.
         Often the same as the branch. (default: master)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
     :gerrit_merge_triggers: Override Gerrit Triggers.
 
 .. _lf-global-jjb-jenkins-cfg-merge:
@@ -433,6 +435,8 @@ Runs `jenkins-jobs update` to update production job configuration
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
@@ -476,6 +480,8 @@ Runs `jenkins-jobs test` to validate JJB syntax
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
     :throttle_categories: List of categories to throttle by.
     :throttle-enabled: Whether or not to enable throttling on the job.
         (default: true)
@@ -555,6 +561,8 @@ other file changes. Verifies INFO.yaml files follow the schema defined in
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
@@ -638,6 +646,8 @@ containing the credentials for the cloud.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
 Minimal Example:
 
@@ -693,6 +703,8 @@ Packer Merge job runs `packer build` to build system images in the cloud.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
@@ -750,6 +762,8 @@ Packer Verify job runs `packer validate` to verify packer configuration.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
@@ -797,3 +811,5 @@ the base directory is usually the best place to run from.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)

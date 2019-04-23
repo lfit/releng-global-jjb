@@ -141,6 +141,8 @@ Produces a CLM scan of the code into Nexus IQ Server.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
 
@@ -187,6 +189,8 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
 
@@ -230,6 +234,8 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
@@ -292,6 +298,9 @@ This job uses the following strategy to deploy jobs to Nexus:
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
         filter which file modifications will trigger a build.
@@ -380,6 +389,8 @@ directory is then used later to deploy to Nexus.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_release_triggers: Override Gerrit Triggers.
 
@@ -466,6 +477,8 @@ interest in that kind of support.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_sonar_triggers: Override Gerrit Triggers.
 
@@ -513,6 +526,8 @@ Verify job which runs mvn clean install to test a project build..
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
@@ -580,6 +595,8 @@ via comment trigger.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to

@@ -47,6 +47,7 @@
     disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     submodule-timeout: 10
+    submodule-disable: false
     submodule-recursive: true
     gerrit-skip-vote: false
 
@@ -85,6 +86,7 @@
           refspec: '$GERRIT_REFSPEC'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: gerrit
 
     triggers:

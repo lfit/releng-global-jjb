@@ -168,6 +168,7 @@
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
+    submodule-disable: false
     gerrit-skip-vote: false
 
     gerrit_verify_triggers:
@@ -206,6 +207,7 @@
           refspec: ''  # Leave blank!! A later script will handle fetching
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
@@ -246,6 +248,7 @@
           branch: '$sha1'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 

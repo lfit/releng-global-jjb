@@ -1,0 +1,16 @@
+---
+features:
+  - |
+    **lf-infra-gerrit-scm** and **lf-infra-github-scm** now require a
+    ``submodule-disable`` parameter (bool) to control whether submodules
+    are ignored or not during git fetch operations.
+  - |
+    All job-templates now provide an optional ``submodule-disable`` parameter
+    for git fetch operations, defaulting to ``false``.
+
+upgrade:
+  - |
+    Any project using the **lf-infra-gerrit-scm** and **lf-infra-github-scm**
+    macros in global-jjb should need to add a ``submodule-disable`` value. It
+    is recommended to default this value to ``false`` since it is the
+    default used by the Jenkins Git Plugin.
