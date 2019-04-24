@@ -630,6 +630,116 @@
                   branch-pattern: '**/{branch}'
               file-paths: '{obj:gerrit_trigger_file_paths}'
 
+- lf_maven_docker_merge: &lf_maven_docker_merge
+    name: lf-maven-docker-merge
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30  # 30 days in case we need to troubleshoot
+    build-timeout: 60
+    cron: '@daily'
+    disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
+    java-version: openjdk8
+    mvn-global-settings: global-settings
+    mvn-goals: clean deploy
+    mvn-opts: ''
+    mvn-params: '-Dmerge'
+    mvn-version: mvn35
+    nexus-cut-dirs: 6  # Number of dirs in the Nexus path to remove for wget -r.
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
+
+    post_build_trigger: ''
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: '{disable-job}'
+
+    builders:
+      - lf-infra-pre-build
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-infra-docker-login:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      # must provide maven settings AFTER docker due to its cleanup
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - lf-infra-create-netrc:
+          server-id: '{mvn-snapshot-id}'
+      - inject:
+          properties-content: |
+              NEXUS_CUT_DIRS={nexus-cut-dirs}
+              NEXUS_REPO={nexus-snapshot-repo}
+              NEXUS3_PULL_REGISTRY={nexus3-public-registry}
+              NEXUS3_PUSH_REGISTRY={nexus3-snapshot-registry}
+      - shell: !include-raw-escape: ../shell/maven-fetch-metadata.sh
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
+      # NO lf-maven-deploy
+      - lf-provide-maven-settings-cleanup
+
+    publishers:
+      - findbugs
+      - lf-jacoco-report
+      - lf-infra-publish
+      - trigger-parameterized-builds: '{obj:post_build_trigger}'
+
+- job-template:
+    name: '{project-name}-maven-docker-merge-{stream}'
+    id: gerrit-maven-docker-merge
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
 - job-template:
     name: '{project-name}-maven-merge-{stream}'
     id: github-maven-merge
@@ -776,6 +886,130 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_stage
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_release_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+
+- lf_maven_docker_stage: &lf_maven_docker_stage
+    name: lf-maven-docker-stage
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30  # 30 days in case it takes long to get approved.
+    build-timeout: 60
+    cron: '@daily'
+    disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
+    java-version: openjdk8
+    maven-versions-plugin: false
+    maven-versions-plugin-set-version: ''
+    mvn-central: false
+    mvn-global-settings: global-settings
+    mvn-goals: clean deploy
+    mvn-opts: ''
+    mvn-params: ''
+    mvn-version: mvn35
+    ossrh-profile-id: ''
+    mvn-pom: ''
+    sign-artifacts: false
+    sign-mode: serial
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+
+    gerrit_release_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: stage-release$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: '{disable-job}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+      - lf-infra-maven-parameters:
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
+          staging-profile-id: '{staging-profile-id}'
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: '{archive-artifacts}'
+          description: Artifacts to archive to the logs server.
+      - string:
+          name: STAGING_PROFILE_ID
+          default: '{staging-profile-id}'
+          description: Nexus staging profile ID.
+
+    builders:
+      - lf-infra-pre-build
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - lf-infra-docker-login:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      # must provide maven settings AFTER docker-login due to its cleanup
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
+      - lf-maven-versions-plugin:
+          maven-versions-plugin: '{maven-versions-plugin}'
+          mvn-version: '{mvn-version}'
+          mvn-pom: '{mvn-pom}'
+          maven-versions-plugin-set-version: '{maven-versions-plugin-set-version}'
+          mvn-settings: '{mvn-settings}'
+      - inject:
+          properties-content: |
+              NEXUS3_PULL_REGISTRY={nexus3-public-registry}
+              NEXUS3_PUSH_REGISTRY={nexus3-staging-registry}
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
+      - lf-sigul-sign-dir:
+          sign-artifacts: '{sign-artifacts}'
+          sign-dir: '$WORKSPACE/m2repo'
+          sign-mode: '{sign-mode}'
+      # NO lf-maven-stage
+      # NO lf-maven-central
+      - lf-provide-maven-settings-cleanup
+
+- job-template:
+    name: '{project-name}-maven-docker-stage-{stream}'
+    id: gerrit-maven-docker-stage
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_stage
 
     scm:
       - lf-infra-gerrit-scm:
@@ -1119,6 +1353,108 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- lf_maven_docker_verify: &lf_maven_docker_verify
+    name: lf-maven-docker-verify
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 60
+    disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
+    java-version: openjdk8
+    mvn-global-settings: global-settings
+    mvn-goals: clean install
+    mvn-opts: ''
+    mvn-params: '-Dstream=$STREAM -Dmaven.source.skip=true'
+    mvn-version: mvn35
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - '.*'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    concurrent: true
+    disabled: '{disable-job}'
+
+    builders:
+      - lf-infra-pre-build
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - lf-infra-docker-login:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      # must provide maven settings AFTER docker due to its cleanup
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - inject:
+          properties-content: |
+              NEXUS3_PULL_REGISTRY={nexus3-public-registry}
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
+      - lf-provide-maven-settings-cleanup
+
+    publishers:
+      - findbugs
+      - lf-jacoco-report
+      - lf-infra-publish
+
+- job-template:
+    name: '{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}'
+    id: gerrit-maven-docker-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_verify
 
     scm:
       - lf-infra-gerrit-scm:

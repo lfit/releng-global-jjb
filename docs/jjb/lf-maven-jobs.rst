@@ -75,7 +75,7 @@ Conditionally calls Maven versions plugin to set, update and commit the maven `v
     :mvn-settings: Maven settings.xml file containing credentials to use.
 
 lf-maven-stage
----------------
+--------------
 
 Calls the maven stage script to push artifacts to a Nexus staging repository.
 
@@ -298,10 +298,31 @@ This job uses the following strategy to deploy jobs to Nexus:
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
-
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
         filter which file modifications will trigger a build.
+
+Maven Merge for Docker
+----------------------
+
+Similar to Maven Merge as described above but: logs in to Docker
+registries, runs `mvn clean deploy` to build a project, and skips the
+lf-maven-deploy builder. The project POM file should invoke a plugin
+to build a Docker image and deploy it to the registry in the
+environment variable NEXUS3_PUSH_REGISTRY. Appropriate for projects
+that do not need to deploy any POM or JAR files.
+
+:Template Names:
+
+    - {project-name}-maven-docker-merge-{stream}
+    - gerrit-maven-docker-merge
+
+:Required parameters:
+
+    :nexus3-snapshot-registry: Docker registry target for the deploy action.
+
+All other required and optional parameters are identical to the Maven Merge job
+described above.
 
 Maven Stage
 -----------
@@ -356,8 +377,29 @@ directory is then used later to deploy to Nexus.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
-
     :gerrit_release_triggers: Override Gerrit Triggers.
+
+Maven Stage for Docker
+----------------------
+
+Similar to Maven Stage as described above but: logs in to Docker
+registries, runs `mvn clean deploy` to build a project, and skips the
+lf-maven-deploy builder. The project POM file should invoke a plugin
+to build a Docker image and deploy it to the registry in the
+environment variable NEXUS3_PUSH_REGISTRY. Appropriate for projects
+that do not need to deploy any POM or JAR files.
+
+:Template Names:
+
+    - {project-name}-maven-docker-stage-{stream}
+    - gerrit-maven-docker-stage
+
+:Required parameters:
+
+    :nexus3-staging-registry: Docker registry target for the deploy action.
+
+All other required and optional parameters are identical to the Maven Stage job
+described above.
 
 .. _maven-sonar:
 
@@ -465,6 +507,23 @@ Verify job which runs mvn clean install to test a project build..
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
         filter which file modifications will trigger a build.
+
+Maven Verify for Docker
+-----------------------
+
+Similar to Maven Verify as described above but: logs in to Docker
+registries, then runs `mvn clean install` to build a project.  The
+project POM file should invoke a plugin to build a Docker image.
+Appropriate for projects that do not need to deploy any POM or JAR
+files.
+
+:Template Names:
+
+    - {project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}
+    - gerrit-maven-docker-verify
+
+All required and optional parameters are identical to the Maven Verify job
+described above.
 
 Maven Verify /w Dependencies
 ----------------------------
