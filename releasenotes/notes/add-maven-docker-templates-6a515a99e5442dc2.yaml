@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add verify, merge and stage templates for Java projects that build and
+    wrap a JAR (e.g., a Spring-Boot application) inside a Docker image,
+    and do not need to deploy any JAR libraries or POM files.
