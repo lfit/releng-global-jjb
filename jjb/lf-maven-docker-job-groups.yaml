@@ -1,0 +1,22 @@
+---
+- job-group:
+    name: '{project-name}-maven-docker-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any maven docker project.
+
+    jobs:
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+      - gerrit-maven-docker-verify
+
+- job-group:
+    name: '{project-name}-github-maven-docker-jobs'
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any maven docker project that is using github.
+
+    jobs:
+      - github-maven-docker-merge
+      - github-maven-docker-stage
+      - github-maven-docker-verify
