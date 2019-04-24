@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d19d75d5_3c501b14",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "Can we please change these vars from being NEXUS3 specific to more like CONTAINER_PULL_REGISTRY that way, in the future if we use a different container registry system we don\u0027t have mismatched docs from how they\u0027re used.",
+      "range": {
+        "startLine": 315,
+        "startChar": 9,
+        "endLine": 315,
+        "endChar": 29
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f5793e6_4ae775ca",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "Can we please change these vars from being NEXUS3 specific to more like CONTAINER_PUSH_REGISTRY that way, in the future if we use a different container registry system we don\u0027t have mismatched docs from how they\u0027re used.",
+      "range": {
+        "startLine": 316,
+        "startChar": 37,
+        "endLine": 316,
+        "endChar": 57
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "817ae02c_c1fea5fa",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 326,
+        "startChar": 5,
+        "endLine": 326,
+        "endChar": 27
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99919c62_fbabed92",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 327,
+        "startChar": 5,
+        "endLine": 327,
+        "endChar": 29
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15629779_4d1a2aa8",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 398,
+        "startChar": 9,
+        "endLine": 398,
+        "endChar": 29
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fbb978b_24c607fb",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 399,
+        "startChar": 37,
+        "endLine": 399,
+        "endChar": 57
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2ce8412f_48aa06f2",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 409,
+        "startChar": 5,
+        "endLine": 409,
+        "endChar": 27
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c86579d6_8882a259",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 410,
+        "startChar": 5,
+        "endLine": 410,
+        "endChar": 28
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0273731_ea9508c9",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 528,
+        "startChar": 25,
+        "endLine": 528,
+        "endChar": 45
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff6ccef_3e855ef9",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 538,
+        "startChar": 5,
+        "endLine": 538,
+        "endChar": 27
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e855f5c_b80846eb",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "Can we please change these vars from being NEXUS3 specific to more like CONTAINER_PULL_REGISTRY and container-public-registry that way, in the future if we use a different container registry system we don\u0027t have mismatched docs from how they\u0027re used.",
+      "range": {
+        "startLine": 741,
+        "startChar": 14,
+        "endLine": 741,
+        "endChar": 59
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "08d2d96a_959a46bc",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "Can we please change these vars from being NEXUS3 specific to more like CONTAINER_PUSH_REGISTRY and container-snapshot-registry that way, in the future if we use a different container registry system we don\u0027t have mismatched docs from how they\u0027re used.",
+      "range": {
+        "startLine": 742,
+        "startChar": 14,
+        "endLine": 742,
+        "endChar": 61
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ded9050_4fdd5cd7",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1072,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 1071,
+        "startChar": 14,
+        "endLine": 1072,
+        "endChar": 60
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "593ea2b3_c783b07e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1552,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-24T18:02:03Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 1552,
+        "startChar": 14,
+        "endLine": 1552,
+        "endChar": 59
+      },
+      "revId": "6d48625ca7f5cbab4607d721271ed55474e93a68",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
