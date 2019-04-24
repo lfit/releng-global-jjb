@@ -672,6 +672,115 @@
             - '{branch}'
           included-regions: '{obj:github_included_regions}'
 
+##########################
+# Maven Merge for Docker #
+##########################
+
+- lf_maven_docker_merge: &lf_maven_docker_merge
+    name: lf-maven-docker-merge
+
+    builders:
+      - lf-infra-pre-build
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-infra-docker-login:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      # must provide maven settings AFTER docker due to its cleanup
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - lf-infra-create-netrc:
+          server-id: '{mvn-snapshot-id}'
+      - inject:
+          properties-content: |
+              NEXUS_CUT_DIRS={nexus-cut-dirs}
+              NEXUS_REPO={nexus-snapshot-repo}
+              CONTAINER_PULL_REGISTRY={container-public-registry}
+              CONTAINER_PUSH_REGISTRY={container-snapshot-registry}
+      - shell: !include-raw-escape: ../shell/maven-fetch-metadata.sh
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
+      # NO lf-maven-deploy
+      - lf-provide-maven-settings-cleanup
+
+- job-template:
+    name: '{project-name}-maven-docker-merge-{stream}'
+    id: gerrit-maven-docker-merge
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_merge
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-maven-docker-merge-{stream}'
+    id: github-maven-docker-merge
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_merge
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_merge
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+      - github:
+          url: '{github-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github
+      - pollscm:
+          cron: ''
+      - github-pull-request:
+          trigger-phrase: '^remerge$'
+          only-trigger-phrase: true
+          status-context: 'Maven Merge'
+          permit-all: true
+          github-hooks: true
+          org-list:
+            - '{github-org}'
+          white-list: '{obj:github_pr_whitelist}'
+          admin-list: '{obj:github_pr_admin_list}'
+          white-list-target-branches:
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
+
 ###############
 # Maven Stage #
 ###############
@@ -809,6 +918,115 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_stage
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+      - github:
+          url: '{github-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - timed: '{obj:cron}'
+      - github-pull-request:
+          trigger-phrase: '^build release$'
+          only-trigger-phrase: true
+          status-context: 'Maven Release'
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
+
+##########################
+# Maven Stage for Docker #
+##########################
+
+- lf_maven_docker_stage: &lf_maven_docker_stage
+    name: lf-maven-docker-stage
+
+    builders:
+      - lf-infra-pre-build
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - lf-infra-docker-login:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      # must provide maven settings AFTER docker-login due to its cleanup
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
+      - lf-maven-versions-plugin:
+          maven-versions-plugin: '{maven-versions-plugin}'
+          mvn-version: '{mvn-version}'
+          mvn-pom: '{mvn-pom}'
+          maven-versions-plugin-set-version: '{maven-versions-plugin-set-version}'
+          mvn-settings: '{mvn-settings}'
+      - inject:
+          properties-content: |
+              CONTAINER_PULL_REGISTRY={container-public-registry}
+              CONTAINER_PUSH_REGISTRY={container-staging-registry}
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
+      - lf-sigul-sign-dir:
+          sign-artifacts: '{sign-artifacts}'
+          sign-dir: '$WORKSPACE/m2repo'
+          sign-mode: '{sign-mode}'
+      # NO lf-maven-stage
+      # NO lf-maven-central
+      - lf-provide-maven-settings-cleanup
+
+- job-template:
+    name: '{project-name}-maven-docker-stage-{stream}'
+    id: gerrit-maven-docker-stage
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_stage
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_stage
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_release_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+
+- job-template:
+    name: '{project-name}-maven-docker-stage-{stream}'
+    id: github-maven-docker-stage
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_stage
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_stage
 
     properties:
       - lf-infra-properties:
@@ -1152,6 +1370,101 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_verify
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: '{build-days-to-keep}'
+      - github:
+          url: '{github-url}/{github-org}/{project}'
+
+    scm:
+      - lf-infra-github-scm:
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: '^(recheck|reverify)$'
+          only-trigger-phrase: false
+          status-context: 'Maven Verify'
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
+
+###########################
+# Maven Verify for Docker #
+###########################
+
+- lf_maven_docker_verify: &lf_maven_docker_verify
+    name: lf-maven-docker-verify
+
+    builders:
+      - lf-infra-pre-build
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - lf-infra-docker-login:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      # must provide maven settings AFTER docker due to its cleanup
+      - lf-provide-maven-settings:
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
+      - inject:
+          properties-content: |
+              CONTAINER_PULL_REGISTRY={container-public-registry}
+      - lf-maven-build:
+          mvn-goals: '{mvn-goals}'
+      - lf-provide-maven-settings-cleanup
+
+- job-template:
+    name: '{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}'
+    id: gerrit-maven-docker-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_verify
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+- job-template:
+    name: '{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}'
+    id: github-maven-docker-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_verify
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_docker_verify
 
     properties:
       - lf-infra-properties:
