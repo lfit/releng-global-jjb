@@ -9,7 +9,7 @@
 - builder:
     name: comment-to-gerrit
     builders:
-      - shell: !include-raw ../shell/comment-to-gerrit.sh
+      - shell: !include-raw: ../shell/comment-to-gerrit.sh
 
 - builder:
     name: lf-fetch-dependent-patches
