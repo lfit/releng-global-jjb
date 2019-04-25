@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "08372788_e938d468",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-04-25T18:22:37Z",
+      "side": 1,
+      "message": "I think being over strict here is probably the wise choice.",
+      "parentUuid": "9c3cc99c_81fc57c2",
+      "revId": "f5641a23f5aa5ef3dbdfad1e28271cd87b9c8088",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "14f8e5ea_0b8691a7",
         "filename": "shell/maven-patch-release.sh",
         "patchSetId": 3
