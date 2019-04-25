@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9c3cc99c_81fc57c2",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-25T17:23:01Z",
+      "side": 1,
+      "message": "Thanks!.. I think I will leave it like this to make it more strict. For example, If someone says \nMAVEN_VERSIONS_PLUGIN\u003d\u0027\u003cany random valid command\u003e\u0027\nThe contents inside the if will be executed which I want to avoid.\nThe condition will also be evaluated as \"true\" if we have the variable like this:\nMAVEN_VERSIONS_PLUGIN\u003d\n\nI want to avoid those cases...",
+      "parentUuid": "3ef23cf9_ff2b22a2",
+      "revId": "f5641a23f5aa5ef3dbdfad1e28271cd87b9c8088",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "14f8e5ea_0b8691a7",
         "filename": "shell/maven-patch-release.sh",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2019-04-23T21:39:25Z",
       "side": 1,
       "message": "extra line",
+      "revId": "f5641a23f5aa5ef3dbdfad1e28271cd87b9c8088",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e19132a3_1e944a7f",
+        "filename": "shell/maven-patch-release.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-25T17:23:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14f8e5ea_0b8691a7",
       "revId": "f5641a23f5aa5ef3dbdfad1e28271cd87b9c8088",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
