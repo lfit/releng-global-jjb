@@ -12,6 +12,8 @@ To use this create a Jenkins Managed File with the contents:
 
     #!/bin/bash
 
+    exec > /var/log/jenkins-init.log 2>&1
+
     gerrit_host=gerrit.example.org
     ciman_root=/opt/ciman
 
@@ -31,3 +33,5 @@ To use this create a Jenkins Managed File with the contents:
     $ciman_root/global-jjb/jenkins-init-scripts/init.sh
 
     rm -rf $ciman_root
+
+    echo "jenkins-init: Done"

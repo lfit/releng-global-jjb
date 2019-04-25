@@ -1,0 +1,5 @@
+---
+other:
+  - |
+    Update example Jenkins Init Script in README to redirect all output to a
+    log file.
