@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "424b3eea_65ee41ee",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-26T19:40:45Z",
+      "side": 1,
+      "message": "We need to add the name before this line\n\n##########################\n# Maven Merge for Docker #\n##########################",
+      "range": {
+        "startLine": 675,
+        "startChar": 0,
+        "endLine": 675,
+        "endChar": 47
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f155e790_31cafb01",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-26T19:40:45Z",
+      "side": 1,
+      "message": "Merge job does not need to run daily",
+      "range": {
+        "startLine": 685,
+        "startChar": 4,
+        "endLine": 685,
+        "endChar": 18
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd260802_0fdf96e6",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-26T19:40:45Z",
+      "side": 1,
+      "message": "Not needed for a merge job",
+      "range": {
+        "startLine": 773,
+        "startChar": 6,
+        "endLine": 773,
+        "endChar": 27
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71de9860_d1657d36",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-26T19:40:45Z",
+      "side": 1,
+      "message": "No timer needed for a merge job as it should only run when a change is merged",
+      "range": {
+        "startLine": 809,
+        "startChar": 0,
+        "endLine": 809,
+        "endChar": 27
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2e61f517_b00ef5e2",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 988,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-26T19:40:45Z",
+      "side": 1,
+      "message": "Need to add this before the line\n\n##########################\n# Maven Stage for Docker #\n##########################",
+      "range": {
+        "startLine": 988,
+        "startChar": 0,
+        "endLine": 988,
+        "endChar": 47
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "397f4a25_ec5f4f8b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1489,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-26T19:40:45Z",
+      "side": 1,
+      "message": "Need to add this before the line\n\n###########################\n# Maven Verify for Docker #\n###########################",
+      "range": {
+        "startLine": 1489,
+        "startChar": 0,
+        "endLine": 1489,
+        "endChar": 49
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61cf5b3a_95fa74d7",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1527,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-26T19:40:45Z",
+      "side": 1,
+      "message": "This is similar to lf-maven-verify, do we need this?\nWe could just call lf-maven-verify in the \u0027{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}\u0027 job and move the builder section in line 1536 inside the job also so that it overwrites the one in lf-maven-verify .\n\nThat way we do not duplicate too much code..",
+      "range": {
+        "startLine": 1490,
+        "startChar": 0,
+        "endLine": 1527,
+        "endChar": 12
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "78f03704_5e8d5811",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1555,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-04-26T19:40:45Z",
+      "side": 1,
+      "message": "This builder can be moved to inside the \u0027{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}\u0027 job to overwrite the builder steps called in lf-maven-verify if we are planning to do what I mentioned in my previous comment",
+      "range": {
+        "startLine": 1536,
+        "startChar": 0,
+        "endLine": 1555,
+        "endChar": 41
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
