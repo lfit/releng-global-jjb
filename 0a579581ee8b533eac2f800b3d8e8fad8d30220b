@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "206632e5_2cdeadc0",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-04-29T16:50:50Z",
+      "side": 1,
+      "message": "with the conflict between DOCKER_REGISTRY \u0026 DOCKERREGISTRY would it not be better to name this LF_DOCKER_REGISTRY",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1c84074_1357e7ea",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 11
