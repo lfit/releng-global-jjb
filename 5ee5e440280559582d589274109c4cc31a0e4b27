@@ -163,6 +163,30 @@
     },
     {
       "key": {
+        "uuid": "05b2daa0_5bae4796",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1527,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-04-29T09:57:58Z",
+      "side": 1,
+      "message": "This initial section is identical in the two macros, but the builders section of this macro is different; adds       - lf-infra-docker-login:",
+      "parentUuid": "61cf5b3a_95fa74d7",
+      "range": {
+        "startLine": 1490,
+        "startChar": 0,
+        "endLine": 1527,
+        "endChar": 12
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "78f03704_5e8d5811",
         "filename": "jjb/lf-maven-jobs.yaml",
         "patchSetId": 7
@@ -174,6 +198,30 @@
       "writtenOn": "2019-04-26T19:40:45Z",
       "side": 1,
       "message": "This builder can be moved to inside the \u0027{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}\u0027 job to overwrite the builder steps called in lf-maven-verify if we are planning to do what I mentioned in my previous comment",
+      "range": {
+        "startLine": 1536,
+        "startChar": 0,
+        "endLine": 1555,
+        "endChar": 41
+      },
+      "revId": "5ee5e440280559582d589274109c4cc31a0e4b27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2b138d04_ec88820f",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1555,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-04-29T09:57:58Z",
+      "side": 1,
+      "message": "well I can duplicate the builders section but that will require showing it twice, once in the gerrit template and once in the github template.  Which kind of duplication do you prefer?",
+      "parentUuid": "78f03704_5e8d5811",
       "range": {
         "startLine": 1536,
         "startChar": 0,
