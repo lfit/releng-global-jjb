@@ -71,7 +71,6 @@ Conditionally calls Maven versions plugin to set, update and commit the maven `v
     :maven-versions-plugin: Whether to call Maven versions plugin or not. (default: false)
     :mvn-version: Version of Maven to execute Sonar with.
     :mvn-pom: Location of pom.xml.
-    :maven-versions-plugin-set-version: Version number to upgrade to.
     :mvn-settings: Maven settings.xml file containing credentials to use.
 
 lf-maven-stage
@@ -346,7 +345,6 @@ directory is then used later to deploy to Nexus.
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
-    :maven-versions-plugin-set-version: New version to use in Maven versions plugin. (default: '')
     :ossrh-profile-id: Profile ID for project as provided by OSSRH.
         (default: '')
     :sign-artifacts: Sign artifacts with Sigul. (default: false)

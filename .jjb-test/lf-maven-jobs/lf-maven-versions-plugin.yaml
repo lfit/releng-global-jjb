@@ -4,7 +4,6 @@
     jobs:
       - gerrit-maven-stage:
           maven-versions-plugin: true
-          maven-versions-plugin-set-version: 2.0.0
           mvn-pom: location/pom.xml
 
     project-name: gerrit-maven-versions-plugin
