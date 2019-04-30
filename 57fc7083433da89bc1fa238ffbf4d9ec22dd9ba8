@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4af2a64_ca479c41",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-30T20:35:03Z",
+      "side": 0,
+      "message": "This blank line is intentional to make a clear indication of variables that are dash (object vars) and non-dash (string vars).",
+      "revId": "57fc7083433da89bc1fa238ffbf4d9ec22dd9ba8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}

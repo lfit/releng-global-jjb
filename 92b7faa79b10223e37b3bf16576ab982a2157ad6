@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "88847bf7_4f5ce336",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-30T20:35:03Z",
+      "side": 1,
+      "message": "Maven Docker Merge",
+      "range": {
+        "startLine": 773,
+        "startChar": 27,
+        "endLine": 773,
+        "endChar": 38
+      },
+      "revId": "92b7faa79b10223e37b3bf16576ab982a2157ad6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4ccf6b5d_7d6ebfd5",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 1489,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-04-30T20:35:03Z",
+      "side": 1,
+      "message": "Maven Docker Verify",
+      "range": {
+        "startLine": 1489,
+        "startChar": 27,
+        "endLine": 1489,
+        "endChar": 39
+      },
+      "revId": "92b7faa79b10223e37b3bf16576ab982a2157ad6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
