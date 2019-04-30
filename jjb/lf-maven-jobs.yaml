@@ -35,7 +35,7 @@
                 pom: '{mvn-pom}'
                 goals: 'versions:set versions:update-child-modules versions:commit -B'
                 properties:
-                  - 'newVersion=${{maven-versions-plugin-set-version}}'
+                  - 'newVersion=${{release_version}}'
                 settings: '{mvn-settings}'
                 settings-type: cfp
                 global-settings: 'global-settings'
@@ -692,7 +692,6 @@
     github-url: 'https://github.com'
     java-version: openjdk8
     maven-versions-plugin: false
-    maven-versions-plugin-set-version: ''
     mvn-central: false
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -754,7 +753,6 @@
           maven-versions-plugin: '{maven-versions-plugin}'
           mvn-version: '{mvn-version}'
           mvn-pom: '{mvn-pom}'
-          maven-versions-plugin-set-version: '{maven-versions-plugin-set-version}'
           mvn-settings: '{mvn-settings}'
       - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-build:

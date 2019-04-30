@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    This is a variable that does not need to be defined by the users
+    of the jobs. The version needed in this builder step is inherited
+    from versions.properties as "release_version" and it is fixed as
+    that.
+    This also helps teams not having to define this version in 2
+    places and just rely on version.properties.
