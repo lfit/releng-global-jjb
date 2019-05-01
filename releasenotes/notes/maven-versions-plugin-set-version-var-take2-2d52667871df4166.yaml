@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Remove maven-versions-plugin-set-version variable in newly added macro.
+    This is a variable that does not need to be defined by the users
+    of the jobs. The version needed in this builder step is inherited
+    from versions.properties as "release_version".

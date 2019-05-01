@@ -970,7 +970,6 @@
           maven-versions-plugin: '{maven-versions-plugin}'
           mvn-version: '{mvn-version}'
           mvn-pom: '{mvn-pom}'
-          maven-versions-plugin-set-version: '{maven-versions-plugin-set-version}'
           mvn-settings: '{mvn-settings}'
       - inject:
           properties-content: |
