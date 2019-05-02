@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Use maven goal install (not deploy) in the maven + docker verify job.
+    An image cannot be pushed by a verification job, and the deploy target
+    directs the plugin to push.

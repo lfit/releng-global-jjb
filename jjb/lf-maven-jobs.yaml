@@ -1402,6 +1402,9 @@
 - lf_maven_docker_verify: &lf_maven_docker_verify
     name: lf-maven-docker-verify
 
+    # image push not allowed during verification
+    mvn-goals: clean install
+
     builders:
       - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
