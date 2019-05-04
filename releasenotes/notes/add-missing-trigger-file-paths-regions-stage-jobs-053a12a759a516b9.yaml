@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Add missing config for triggering on file paths to maven stage macros and templates,
+    namely gerrit_trigger_file_paths nad github_included_regions, to make those
+    macros and templates match the behavior of maven verify and maven merge.
