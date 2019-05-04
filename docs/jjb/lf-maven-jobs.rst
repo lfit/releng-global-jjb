@@ -393,6 +393,8 @@ directory is then used later to deploy to Nexus.
         (default: false)
 
     :gerrit_release_triggers: Override Gerrit Triggers.
+    :gerrit_trigger_file_paths: Override file paths which can be used to
+        filter which file modifications will trigger a build.
 
 Maven Stage for Docker
 ----------------------
