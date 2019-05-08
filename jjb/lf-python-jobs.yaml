@@ -471,6 +471,10 @@
     # Default parameters #
     ######################
 
+    skip-vote-successful: false
+    skip-vote-failed: false
+    skip-vote-unstable: false
+    skip-vote-notbuilt: false
     gerrit_verify_triggers:
       - patchset-created-event:
           exclude-drafts: true
@@ -506,6 +510,11 @@
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
               file-paths: '{obj:gerrit_trigger_file_paths}'
+          skip-vote:
+            successful: '{skip-vote-successful}'
+            failed: '{skip-vote-failed}'
+            unstable: '{skip-vote-unstable}'
+            notbuilt: '{skip-vote-notbuilt}'
 
 - job-template:
     # Python projects typically use tox to run testing.
