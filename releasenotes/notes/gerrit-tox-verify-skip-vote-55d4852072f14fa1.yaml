@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    **gerrit-tox-verify** now has a new parameter ``gerrit-skip-vote``
+    (bool) to control whether Jenkins should skip voting depending on
+    the build outcome. It defaults to ``false`` since it is the
+    default used by the Jenkins Gerrit Trigger Plugin.
