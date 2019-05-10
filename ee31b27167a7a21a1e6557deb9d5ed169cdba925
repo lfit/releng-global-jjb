@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7da15e6e_c7b949e4",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1428,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-10T18:28:45Z",
+      "side": 1,
+      "message": "if you\u0027re going to stick the {java-version} in here, then it would probably be apropos to also add the {mvn-version} so that it ends up being \u0027Maven Verify {mvn-version}-{java-version}\u0027",
+      "revId": "ee31b27167a7a21a1e6557deb9d5ed169cdba925",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
