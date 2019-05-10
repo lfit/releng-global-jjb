@@ -1425,7 +1425,7 @@
       - github-pull-request:
           trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
-          status-context: 'Maven Verify'
+          status-context: 'Maven Verify {mvn-version}-{java-version}'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
@@ -1525,7 +1525,7 @@
       - github-pull-request:
           trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
-          status-context: 'Maven Docker Verify'
+          status-context: 'Maven Docker Verify {mvn-version}-{java-version}'
           permit-all: true
           github-hooks: true
           white-list-target-branches:

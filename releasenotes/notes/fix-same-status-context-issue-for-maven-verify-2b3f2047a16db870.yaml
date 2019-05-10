@@ -1,0 +1,9 @@
+---
+    fixes:
+  - |
+    fix multiple jobs created using same job-template  update same 
+    github check status due to hard coded status-context to Maven Verify.
+    Now appending status-context with maven-version and java-version to 
+    make it unique. And create different status checks in the github.
+    fix applied for maven verify and maven docker verify jobs
+
