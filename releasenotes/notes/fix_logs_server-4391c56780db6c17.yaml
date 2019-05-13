@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Fix log shipping script to not require a LOGS_SERVER. There was a regression
+    that caused the log shipping script to start requiring a LOGS_SERVER which
+    fails in the case of a system that does not have that optional environment
+    variable set.
