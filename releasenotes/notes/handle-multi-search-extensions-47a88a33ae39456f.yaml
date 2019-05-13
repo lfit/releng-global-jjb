@@ -1,0 +1,39 @@
+---
+fixes:
+  - |
+    Handle multiple search extension / patterns passed by upstream JJB
+    ${ARCHIVE_ARTIFACTS} param as a single string by spliting these values
+    before being passed to `lftools deploy archive`.
+
+    ARCHIVE_ARTIFACTS='**/*.prop \
+                      **/*.log \
+                      **/target/surefire-reports/*-output.txt \
+                      **/target/failsafe-reports/failsafe-summary.xml \
+                      **/hs_err_*.log **/target/feature/feature.xml'
+
+    For ex, the above env varialbe is passed into `lftools deploy archives`
+    as:
+
+    .. code-block:: bash
+
+       lftools deploy archives -p '**/*.prop \
+                         **/*.log \
+                         **/target/surefire-reports/*-output.txt \
+                         **/target/failsafe-reports/failsafe-summary.xml \
+                         **/hs_err_*.log **/target/feature/feature.xml' \
+                         "$NEXUS_URL" \
+                         "$NEXUS_PATH" \
+                         "$WORKSPACE"
+
+    The correct way of passing this as per lftools implmentation is:
+
+    .. code-block:: bash
+
+       lftools deploy archives -p '**/*.prop' \
+                         -p '**/*.log' \
+                         -p '**/target/surefire-reports/*-output.txt' \
+                         -p '**/target/failsafe-reports/failsafe-summary.xml' \
+                         -p '**/hs_err_*.log **/target/feature/feature.xml' \
+                         "$NEXUS_URL" \
+                         "$NEXUS_PATH" \
+                         "$WORKSPACE"
