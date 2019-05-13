@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e42decef_18ffd058",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-13T15:10:23Z",
+      "side": 1,
+      "message": "Take a look at the configuration of the lf-rtd jobs. In particular the common block for lf-rtd-verify uses a single variable to control voting:\n\nLine 172: gerrit-skip-vote: false\n\nthen that variable is used for all the skip-vote options\n\nI think it\u0027s easier to do this with a single toggle since you\u0027re going to want voting, or not want voting. I can\u0027t think of a single time where we wanted to only enable voting for one build case.",
+      "range": {
+        "startLine": 474,
+        "startChar": 0,
+        "endLine": 477,
+        "endChar": 29
+      },
+      "revId": "749c1b0defc1da631bec65b089e835c480478dff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
