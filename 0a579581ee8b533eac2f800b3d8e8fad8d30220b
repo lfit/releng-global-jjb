@@ -66,6 +66,30 @@
     },
     {
       "key": {
+        "uuid": "29ebeb07_94963af0",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-13T18:35:23Z",
+      "side": 1,
+      "message": "The registry at port 10003 is typically the SNAPSHOT registry; that\u0027s the destination of merge jobs. The registry at port 10004 is typically the STAGING registry; that should be the destination of stage jobs, even tho no stage job is defined here :/",
+      "parentUuid": "729aed07_5574788f",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 50
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a5d772f2_b61e7284",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 11
