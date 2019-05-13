@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7fc8fd85_e006342d",
+        "filename": "releasenotes/notes/fix-same-status-context-issue-for-maven-verify-2b3f2047a16db870.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-13T20:49:48Z",
+      "side": 1,
+      "message": "Dangling whitespace",
+      "range": {
+        "startLine": 4,
+        "startChar": 66,
+        "endLine": 4,
+        "endChar": 67
+      },
+      "revId": "392dd5f748ca81b6672dc4ac1b820de886c68263",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a928dd6b_65e65ac8",
+        "filename": "releasenotes/notes/fix-same-status-context-issue-for-maven-verify-2b3f2047a16db870.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-13T20:49:48Z",
+      "side": 1,
+      "message": "Dangling whitespace",
+      "range": {
+        "startLine": 6,
+        "startChar": 71,
+        "endLine": 6,
+        "endChar": 72
+      },
+      "revId": "392dd5f748ca81b6672dc4ac1b820de886c68263",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
