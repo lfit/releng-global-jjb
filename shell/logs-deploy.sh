@@ -13,7 +13,7 @@ echo "---> logs-deploy.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-if [[ -z $LOGS_SERVER ]]; then
+if [[ -z $"${LOGS_SERVER:-}" ]]; then
     echo "WARNING: Logging server not set"
 else
     nexus_url="${NEXUSPROXY:-$NEXUS_URL}"
