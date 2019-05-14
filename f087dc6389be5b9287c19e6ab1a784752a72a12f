@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f819977_a936d0d8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-14T20:29:45Z",
+      "side": 1,
+      "message": "Write this in a more imperative tone.\n\nDrop the use of \u0027I\u0027",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 32
+      },
+      "revId": "f087dc6389be5b9287c19e6ab1a784752a72a12f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b4441b0_0ec9f5a5",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-14T20:29:45Z",
+      "side": 1,
+      "message": "This requires that we code in a gerrit_patchset_revision into all JJB. If it\u0027s done badly we won\u0027t get anything except whatever is set at a default level and never move forward.",
+      "revId": "f087dc6389be5b9287c19e6ab1a784752a72a12f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
