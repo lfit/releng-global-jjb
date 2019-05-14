@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ce4c8317_e2eac9ca",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-05-14T13:03:55Z",
+      "side": 1,
+      "message": "I think handling this in the same style as we do other global-jjb scripts would be better:\n\nhttps://github.com/lfit/releng-global-jjb/blob/master/shell/cmake-stage.sh\n\nThis way the top of the file as a list of all parameters it\u0027s expecting and we can keep the `-u` setting.",
+      "revId": "5ce32b3e1feec5e4617f7108d11865bf5f1e3f72",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
