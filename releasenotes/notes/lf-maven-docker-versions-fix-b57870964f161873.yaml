@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    lf-maven-versions-plugin builder step needs to run before maven-patch-release.sh
+    as this second script contains a condition to confirm if the maven vesions
+    plugin was selected as a way to remove the 'SNAPSHOT' pattern from the pom.xml
+    files.
+    lf-maven-docker-stage was based on lf-maven-stage and it seems that these particular
+    builder steps were switched in place accidentally.
