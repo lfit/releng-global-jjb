@@ -1,0 +1,14 @@
+---
+fixes:
+  - |
+    Fix error with handling unbound arrays for search extensions, when using
+    `set -u`. The correct way of using this.
+
+    .. code-block:: bash
+
+       set -u
+       arr=()
+       echo "output: '${arr[@]}'"
+       bash: arr[@]: unbound variable
+       echo "output: '${arr[@]:-}'"
+       foo: ''
