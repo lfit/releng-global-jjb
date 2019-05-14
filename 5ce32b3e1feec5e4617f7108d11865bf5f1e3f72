@@ -16,6 +16,24 @@
       "revId": "5ce32b3e1feec5e4617f7108d11865bf5f1e3f72",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ece99278_61e02043",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-05-14T13:19:09Z",
+      "side": 1,
+      "message": "I\u0027ve preserved the `-u` setting, but have updated only the array that is failing below L26.",
+      "parentUuid": "ce4c8317_e2eac9ca",
+      "revId": "5ce32b3e1feec5e4617f7108d11865bf5f1e3f72",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
