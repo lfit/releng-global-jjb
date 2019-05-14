@@ -21,9 +21,10 @@ else
 
     # Handle multiple search extensions as separate values to '-p|--pattern'
     set -f # Disable pathname expansion
+    search_exts=()
     IFS=' ' read -r -a search_exts <<< "${ARCHIVE_ARTIFACTS:-}"
     pattern_opts=()
-    for search_ext in "${search_exts[@]}";
+    for search_ext in "${search_exts[@]:-}";
     do
         pattern_opts+=("-p" "$search_ext")
     done
