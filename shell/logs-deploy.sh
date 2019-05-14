@@ -11,7 +11,7 @@
 echo "---> logs-deploy.sh"
 
 # Ensure we fail the job if any steps fail.
-set -eu -o pipefail
+set -e -o pipefail
 
 if [[ -z $"${LOGS_SERVER:-}" ]]; then
     echo "WARNING: Logging server not set"
@@ -22,7 +22,6 @@ else
     # Handle multiple search extensions as separate values to '-p|--pattern'
     set -f # Disable pathname expansion
     IFS=' ' read -r -a search_exts <<< "${ARCHIVE_ARTIFACTS:-}"
-    pattern_opts=()
     for search_ext in "${search_exts[@]}";
     do
         pattern_opts+=("-p" "$search_ext")
