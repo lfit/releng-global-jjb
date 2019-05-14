@@ -992,12 +992,12 @@
       - lf-provide-maven-settings:
           global-settings-file: '{mvn-global-settings}'
           settings-file: '{mvn-settings}'
-      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-versions-plugin:
           maven-versions-plugin: '{maven-versions-plugin}'
           mvn-version: '{mvn-version}'
           mvn-pom: '{mvn-pom}'
           mvn-settings: '{mvn-settings}'
+      - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - inject:
           properties-content: |
               CONTAINER_PULL_REGISTRY={container-public-registry}
