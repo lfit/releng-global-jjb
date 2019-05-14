@@ -432,6 +432,12 @@
               https://git-scm.com/book/en/v2/Git-Internals-The-Refspec
               For example: 'refs/heads/master'
       - string:
+          name: GERRIT_PATCHSET_REVISION
+          default: '$GERRIT_PATCHSET_REVISION'
+          description: |
+              Gerrit Trigger provided parameter to identify a patch set revision
+              so that it can be submitted by Non-Interactive Users from Gerrit.
+      - string:
           name: sha1
           default: 'origin/{branch}'
           description: |
