@@ -7,7 +7,7 @@
     name: lf-info-vote-common
 
     gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
+      - compare-type: ANT
         pattern: 'INFO.yaml'
 
     #####################
