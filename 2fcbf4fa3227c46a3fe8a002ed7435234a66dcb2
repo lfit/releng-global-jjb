@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "515c1296_d9f34cf7",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-05-14T12:50:19Z",
+      "side": 1,
+      "message": "I don\u0027t get what the significance of $\" before ${LOGS_SERVER} is. Looks like a typo to me but does it do something?",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 28
+      },
+      "revId": "2fcbf4fa3227c46a3fe8a002ed7435234a66dcb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
