@@ -23,7 +23,7 @@ else
     set -f # Disable pathname expansion
     IFS=' ' read -r -a search_exts <<< "${ARCHIVE_ARTIFACTS:-}"
     pattern_opts=()
-    for search_ext in "${search_exts[@]}";
+    for search_ext in "${search_exts[@]-}";
     do
         pattern_opts+=("-p" "$search_ext")
     done
