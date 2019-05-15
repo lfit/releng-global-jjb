@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3c77f04_257f8f1b",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-15T00:26:46Z",
+      "side": 1,
+      "message": "I am pretty sure this is still not going to do what you want in all situations\nARCHIVE_ARTIFACTS \u003d not-set \u0026 set to \"\"\nif [[ -v $ARCHIVE_ARTIFACTS \u0026\u0026 -n $ARCHIVE_ARTIFACTS ]]; then\n    IFS\u003d\u0027 \u0027 read -r -a search_exts \u003c\u003c\u003c \"$ARCHIVE_ARTIFACTS\"\n    pattern_opts\u003d()\t\n    for search_ext in ${search_exts[@]}; do\n        pattern_opts+\u003d(\"-p\" \"$search_exts\")\t\n    done\nfi\ndon\u0027t need to initialize search_exts, \u0027read -a\u0027 will do that. This will pass tox but probably not shellcheck.\n\nBut I really don\u0027t understand the use of arrays at all:\npattern_opts\u003d\"\"\nfor i in ${ARCHIVE_ARTIFACTS:-}; do\n        pattern_opts+\u003d\" -p $i\"\ndone\nThis seems a little more readable... not a big fan of arrays in bash... the syntax sucks",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 8
+      },
+      "revId": "d589c771dc75206bb2b6d592435c8316cffd29fb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
