@@ -19,19 +19,15 @@ else
     nexus_url="${NEXUSPROXY:-$NEXUS_URL}"
     nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
 
-    # Handle multiple search extensions as separate values to '-p|--pattern'
-    set -f # Disable pathname expansion
-    search_exts=()
-    IFS=' ' read -r -a search_exts <<< "${ARCHIVE_ARTIFACTS:-}"
-    pattern_opts=()
-    for search_ext in "${search_exts[@]:-}";
-    do
-        pattern_opts+=("-p" "$search_ext")
-    done
+    (set -f
+        pattern_opts=""
+        for arg in ${ARCHIVE_ARTIFACTS:-}; do
+            pattern_opts+="-p $arg "
+        done
+        # shellcheck disable=SC2086 (pattern_opts can't be quoted)
+        lftools deploy archives $pattern_opts "$nexus_url" "$nexus_path" \
+            "$WORKSPACE")
 
-    lftools deploy archives "${pattern_opts[@]}" "$nexus_url" "$nexus_path" \
-            "$WORKSPACE"
-    set +f  # Enable pathname expansion
     lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
     echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
