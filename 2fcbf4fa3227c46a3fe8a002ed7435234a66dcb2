@@ -22,6 +22,30 @@
       "revId": "2fcbf4fa3227c46a3fe8a002ed7435234a66dcb2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "81ebad55_aea49e92",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-20T17:07:39Z",
+      "side": 1,
+      "message": "Umm... does look like a typo managed to get in :-/",
+      "parentUuid": "515c1296_d9f34cf7",
+      "range": {
+        "startLine": 16,
+        "startChar": 9,
+        "endLine": 16,
+        "endChar": 28
+      },
+      "revId": "2fcbf4fa3227c46a3fe8a002ed7435234a66dcb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
