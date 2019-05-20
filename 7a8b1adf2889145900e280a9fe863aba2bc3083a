@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "1d1ce37d_8a3eba21",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-05-20T19:38:24Z",
+      "side": 1,
+      "message": "Where would a user find documentation on the releases/ directory and contents, to understand how the a.b.c.yaml file should be created/contain etc?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 27
+      },
+      "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dde7bbf6_df7a3a37",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 56
@@ -22,6 +45,53 @@
       "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "43d947d2_db7a96b4",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 56
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-05-20T19:38:24Z",
+      "side": 1,
+      "message": "Agree :)",
+      "parentUuid": "dde7bbf6_df7a3a37",
+      "range": {
+        "startLine": 279,
+        "startChar": 12,
+        "endLine": 280,
+        "endChar": 57
+      },
+      "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6739cd52_3b9d337a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 56
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-05-20T19:38:24Z",
+      "side": 1,
+      "message": "In ONAP we are using \"git tag -sm \"Release ${VERSION}\" ${VERSION}\nShould this be standardised to a common format here or?",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 45
+      },
+      "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
