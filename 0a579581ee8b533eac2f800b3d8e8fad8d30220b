@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d1fdd09c_873ba71c",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f712399_3389d9af",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 21
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "612bec02_58608256",
         "filename": "docs/jjb/lf-docker-jobs.rst",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2019-05-20T13:31:02Z",
       "side": 1,
       "message": "I\u0027m concerned this might assume a constant tag string, with the parameter forever fixed by the project JJB.  Instead I feel the image tag should reflect the software version on the branch being built, which will vary over time and may be something like \"1.0.0\" etc.  How will the build job extract version details for supplying to this template?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 1
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e3e66c5_fb0f00f1",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Yes,, this is where I am still stuck since in case of ONAP they have a very specific tag structure. We only use \"#.#.#\" for the release job, but for the verify we need to be able to extract this from somewhere else.",
+      "parentUuid": "612bec02_58608256",
       "range": {
         "startLine": 55,
         "startChar": 0,
@@ -68,6 +116,30 @@
       "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0f25a7f_c78c7827",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "880569b8_a5d3c517",
+      "range": {
+        "startLine": 71,
+        "startChar": 33,
+        "endLine": 71,
+        "endChar": 41
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -105,6 +177,24 @@
       "writtenOn": "2019-04-29T16:50:50Z",
       "side": 1,
       "message": "with the conflict between DOCKER_REGISTRY \u0026 DOCKERREGISTRY would it not be better to name this LF_DOCKER_REGISTRY",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e9b6309e_7016981e",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Good idea.. i might use the same as the current maven docker jobs.. \"container\"",
+      "parentUuid": "206632e5_2cdeadc0",
       "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -182,6 +272,30 @@
     },
     {
       "key": {
+        "uuid": "22cfc2a5_02b4eed3",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "The staging job is not defined yet. Do other projects uses 10004? Even though we have it in ONAP, no ones is using it :( which is a bad practice",
+      "parentUuid": "29ebeb07_94963af0",
+      "range": {
+        "startLine": 86,
+        "startChar": 4,
+        "endLine": 86,
+        "endChar": 50
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a5d772f2_b61e7284",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 11
@@ -205,6 +319,30 @@
     },
     {
       "key": {
+        "uuid": "412beb97_5800d308",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Not necessarily. In case on ONAP we don\u0027t explicitly have \"docker/*\" define in the repos for example. They can trigger docker push on any path of the repo itself.",
+      "parentUuid": "a5d772f2_b61e7284",
+      "range": {
+        "startLine": 135,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 27
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "293af704_4723f099",
         "filename": "releasenotes/notes/lf-docker-jobs-a6927a60ad849d2d.yaml",
         "patchSetId": 11
@@ -216,6 +354,30 @@
       "writtenOn": "2019-04-17T14:32:14Z",
       "side": 1,
       "message": "Will? When???",
+      "range": {
+        "startLine": 11,
+        "startChar": 24,
+        "endLine": 11,
+        "endChar": 28
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8f17e34a_194af41b",
+        "filename": "releasenotes/notes/lf-docker-jobs-a6927a60ad849d2d.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Actually.. not really since this job should accept a DockerHub registry.. \nLet me remove it",
+      "parentUuid": "293af704_4723f099",
       "range": {
         "startLine": 11,
         "startChar": 24,
@@ -256,6 +418,42 @@
       "writtenOn": "2019-05-20T13:58:14Z",
       "side": 1,
       "message": "-eu",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b0fbd259_0531f003",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f07b928_b60e2047",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3777820_7423a8a1",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc4555db_7c6a3000",
       "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -309,6 +507,30 @@
     },
     {
       "key": {
+        "uuid": "36ee30dc_251e350e",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d13d291a_611466b1",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 67
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b8765f9f_8816294b",
         "filename": "shell/docker-build-pom-version.sh",
         "patchSetId": 11
@@ -344,6 +566,24 @@
     },
     {
       "key": {
+        "uuid": "e4a9a4e2_95dd6145",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "483db3f4_68a6c69f",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "597e568f_259a14ad",
         "filename": "shell/docker-build-pom-version.sh",
         "patchSetId": 11
@@ -355,6 +595,30 @@
       "writtenOn": "2019-03-23T16:21:42Z",
       "side": 1,
       "message": "The use of `` instead of $() is deprecated.\nshell variables should be lower-case\nLine too long., 80 is not cast is stone, but this approaches 100.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 120
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d529d67a_c7552abf",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "597e568f_259a14ad",
       "range": {
         "startLine": 16,
         "startChar": 0,
@@ -390,6 +654,30 @@
     },
     {
       "key": {
+        "uuid": "a30e0508_3aaf58d2",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83222d62_69d23331",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 67
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2112c1f7_61caf458",
         "filename": "shell/docker-push.sh",
         "patchSetId": 11
@@ -401,6 +689,24 @@
       "writtenOn": "2019-03-23T16:21:42Z",
       "side": 1,
       "message": "-ue",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4976c44_1809a7b8",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2112c1f7_61caf458",
       "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -442,6 +748,30 @@
       "side": 1,
       "message": "These lines look good to me - they push the most recently built images, which are tagged with the coordinates of the appropriate Docker (Nexus) registry. This script applies equally to snapshot (merge) and stage-release builds, which use different target registries.",
       "parentUuid": "b25046e9_7026c661",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 34
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f2c09049_0bf5327e",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-20T23:56:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32c59061_4f5d3db4",
       "range": {
         "startLine": 17,
         "startChar": 0,
