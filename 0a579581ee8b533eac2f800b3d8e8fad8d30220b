@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "2f712399_3389d9af",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-20T14:08:05Z",
+      "side": 1,
+      "message": "No such script.  I do see two variants, one that uses fixed tags and one that pulls version info from pom.xml file.",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 22,
+        "endChar": 21
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "612bec02_58608256",
         "filename": "docs/jjb/lf-docker-jobs.rst",
         "patchSetId": 11
@@ -18,6 +41,29 @@
         "startChar": 0,
         "endLine": 55,
         "endChar": 1
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "880569b8_a5d3c517",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-20T14:08:05Z",
+      "side": 1,
+      "message": "pubLishes  ...  to a SNAPSHOT registry",
+      "range": {
+        "startLine": 71,
+        "startChar": 33,
+        "endLine": 71,
+        "endChar": 41
       },
       "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
