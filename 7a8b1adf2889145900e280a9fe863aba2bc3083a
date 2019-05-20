@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "0895609b_c597d564",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 56
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-20T22:45:14Z",
+      "side": 1,
+      "message": "if [[ -z ${LOGS_SERVER:-} ]]; then\n\nYou can delete line 27. The \"\" around the {} is NOT required by shellcheck",
+      "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6739cd52_3b9d337a",
         "filename": "shell/release-job.sh",
         "patchSetId": 56
@@ -89,6 +106,23 @@
         "endLine": 89,
         "endChar": 45
       },
+      "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "806be0d0_196f2741",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 56
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-20T22:45:14Z",
+      "side": 1,
+      "message": "if [[ -z ${MAVEN_CENTRAL_URL} ]]; then   #if unset or empty\nif [[ -v MAVEN_CENTRAL_URL ]]; then      #if unset\n\nYou can delete line 28.",
       "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
