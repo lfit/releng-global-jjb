@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "612bec02_58608256",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-20T13:31:02Z",
+      "side": 1,
+      "message": "I\u0027m concerned this might assume a constant tag string, with the parameter forever fixed by the project JJB.  Instead I feel the image tag should reflect the software version on the branch being built, which will vary over time and may be something like \"1.0.0\" etc.  How will the build job extract version details for supplying to this template?",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 1
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95d08cfc_a6e29dcc",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-20T13:31:02Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 1
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "206632e5_2cdeadc0",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 11
@@ -267,6 +313,30 @@
       "writtenOn": "2019-04-17T14:32:14Z",
       "side": 1,
       "message": "docker push to :10002??? Or just for dockerhub?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 34
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "32c59061_4f5d3db4",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-20T13:31:02Z",
+      "side": 1,
+      "message": "These lines look good to me - they push the most recently built images, which are tagged with the coordinates of the appropriate Docker (Nexus) registry. This script applies equally to snapshot (merge) and stage-release builds, which use different target registries.",
+      "parentUuid": "b25046e9_7026c661",
       "range": {
         "startLine": 17,
         "startChar": 0,
