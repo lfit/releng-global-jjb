@@ -199,6 +199,23 @@
     },
     {
       "key": {
+        "uuid": "7f07b928_b60e2047",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-20T13:58:14Z",
+      "side": 1,
+      "message": "-eu",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4a164902_e331da01",
         "filename": "shell/docker-build-param-version.sh",
         "patchSetId": 11
@@ -210,6 +227,30 @@
       "writtenOn": "2019-03-23T16:21:42Z",
       "side": 1,
       "message": "Please keep shell variables in lower case. We depend on env variables a great deal and it is nice to know \u0027at a glance\u0027 which are shell variables.\n\n(plagiarized quote) By convention, environment variables ( PAGER , EDITOR , ...) and internal shell variables ( SHELL , BASH_VERSION , ...) are capitalized. All other variable names should be lower case. ... If it\u0027s your variable, lowercase it. If you export it, uppercase it.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 67
+      },
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d13d291a_611466b1",
+        "filename": "shell/docker-build-param-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-20T13:58:14Z",
+      "side": 1,
+      "message": "Note that \u0027shellcheck\u0027 does NOT check for uninitialzed variables if they are upper-case, it assumes that if they are upper-case they env variables.",
+      "parentUuid": "4a164902_e331da01",
       "range": {
         "startLine": 20,
         "startChar": 0,
@@ -236,6 +277,24 @@
       "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "483db3f4_68a6c69f",
+        "filename": "shell/docker-build-pom-version.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-20T13:58:14Z",
+      "side": 1,
+      "message": "This script is already debugged so adding the \u0027-u\u0027 doesn\u0027t really help much now, but when someone need to enhance/fix this script at a future time it may prevent some broken code from getting merged in.",
+      "parentUuid": "b8765f9f_8816294b",
+      "revId": "0a579581ee8b533eac2f800b3d8e8fad8d30220b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     },
     {
       "key": {
