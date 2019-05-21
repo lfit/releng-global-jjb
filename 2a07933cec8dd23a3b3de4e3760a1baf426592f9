@@ -22,6 +22,30 @@
       "revId": "2a07933cec8dd23a3b3de4e3760a1baf426592f9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b91b1cc9_fe435d45",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-21T16:09:23Z",
+      "side": 0,
+      "message": "You were looking at older version of file, please check latest version",
+      "parentUuid": "04d18c72_560d8c73",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "2a07933cec8dd23a3b3de4e3760a1baf426592f9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
