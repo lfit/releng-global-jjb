@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    request-2.22.0 does not work with python-3.4.9, so pin requests
+    to v2.21.0 to address the tox failures.
