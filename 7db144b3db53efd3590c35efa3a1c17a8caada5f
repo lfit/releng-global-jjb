@@ -46,6 +46,30 @@
       "revId": "7db144b3db53efd3590c35efa3a1c17a8caada5f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "26aea9e8_1e5627c5",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-22T13:10:55Z",
+      "side": 1,
+      "message": "Your particular version has an unneeded matching group (around remerge). We aren\u0027t doing anything specific with the match groups so there is no need for it. I prefer to have things be more succinct when it comes to regexes and using the supported regex shorthands helps readability.",
+      "parentUuid": "ebc9edbf_49a0771b",
+      "range": {
+        "startLine": 290,
+        "startChar": 56,
+        "endLine": 290,
+        "endChar": 68
+      },
+      "revId": "7db144b3db53efd3590c35efa3a1c17a8caada5f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
