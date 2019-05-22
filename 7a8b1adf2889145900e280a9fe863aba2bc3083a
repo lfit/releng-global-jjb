@@ -112,6 +112,30 @@
     },
     {
       "key": {
+        "uuid": "54196f7f_180c4720",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 56
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-05-22T20:40:59Z",
+      "side": 1,
+      "message": "the sigul line below does the -s (sign)",
+      "parentUuid": "6739cd52_3b9d337a",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 45
+      },
+      "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "806be0d0_196f2741",
         "filename": "shell/release-job.sh",
         "patchSetId": 56
