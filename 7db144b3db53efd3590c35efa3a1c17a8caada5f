@@ -22,6 +22,30 @@
       "revId": "7db144b3db53efd3590c35efa3a1c17a8caada5f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ebc9edbf_49a0771b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-05-22T13:03:39Z",
+      "side": 1,
+      "message": "That should work too, more than one way to slove! :)\n\nI\u0027m using match groups discarding everything else except for \u0027remerge\u0027 - keyword -, group1. In your case above, this requires a match the entire input. Also this is \u0027\\s\u0027is equivalent shorthand of explicit \u0027([ ]+|[\\n]+)\u0027",
+      "parentUuid": "4cdd2251_aa29c3b0",
+      "range": {
+        "startLine": 290,
+        "startChar": 56,
+        "endLine": 290,
+        "endChar": 68
+      },
+      "revId": "7db144b3db53efd3590c35efa3a1c17a8caada5f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
