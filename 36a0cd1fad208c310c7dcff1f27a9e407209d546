@@ -22,6 +22,29 @@
       "revId": "36a0cd1fad208c310c7dcff1f27a9e407209d546",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "098c7d7d_34c766b9",
+        "filename": "shell/docker-build-yaml-params.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:43:27Z",
+      "side": 1,
+      "message": "I need a yaml example to be standardize",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 39
+      },
+      "revId": "36a0cd1fad208c310c7dcff1f27a9e407209d546",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
