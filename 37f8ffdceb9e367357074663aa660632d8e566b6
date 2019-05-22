@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9e30c8be_b2adca91",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-22T20:33:28Z",
+      "side": 1,
+      "message": "I will keep comments.\nGlobbing is so rarely needed/wanted in scripts, Makes one wonder if the default for all scripts should not be -f and you turn it on when you need it. What about \u0027set -euf -o pipefail\u0027 for this whole script?",
+      "parentUuid": "0e3e5ef9_14800e9c",
+      "range": {
+        "startLine": 22,
+        "startChar": 5,
+        "endLine": 22,
+        "endChar": 11
+      },
+      "revId": "37f8ffdceb9e367357074663aa660632d8e566b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4cbb6acb_4d557bba",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "6ab285cf_1c271b7f",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-22T20:33:28Z",
+      "side": 1,
+      "message": "As much as I H8 arrays in bash, think I am with you here",
+      "parentUuid": "4cbb6acb_4d557bba",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 27,
+        "endChar": 35
+      },
+      "revId": "37f8ffdceb9e367357074663aa660632d8e566b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b1bc49c4_93fa50ab",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 6
@@ -59,6 +107,30 @@
       "writtenOn": "2019-05-21T20:53:51Z",
       "side": 1,
       "message": "has this been tested? this breaks the existing copy_archives\n\nhttps://jenkins.opendaylight.org/sandbox/job/autorelease-update-validate-jobs-fluorine/3/console\n\n20:38:42 + echo \u0027---\u003e logs-deploy.sh\u0027\n20:38:42 ---\u003e logs-deploy.sh\n20:38:42 + set -eu -o pipefail\n20:38:42 + [[ -z https://logs.opendaylight.org ]]\n20:38:42 + nexus_url\u003dhttps://nexus.opendaylight.org\n20:38:42 + nexus_path\u003dsandbox/vex-yul-odl-jenkins-2/autorelease-update-validate-jobs-fluorine/3\n20:38:42 + set -f\n20:38:42 + pattern_opts\u003d\n20:38:42 + lftools deploy archives https://nexus.opendaylight.org sandbox/vex-yul-odl-jenkins-2/autorelease-update-validate-jobs-fluorine/3 /w/workspace/autorelease-update-validate-jobs-fluorine\n20:38:45 Traceback (most recent call last):\n20:38:45   File \"/home/jenkins/.local/bin/lftools\", line 10, in \u003cmodule\u003e\n20:38:45     sys.exit(main())\n20:38:45   File \"/home/jenkins/.local/lib/python2.7/site-packages/lftools/cli/__init__.py\", line 110, in main\n20:38:45     cli(obj\u003d{})\n20:38:45   File \"/usr/lib/python2.7/site-packages/click/core.py\", line 722, in __call__\n20:38:45     return self.main(*args, **kwargs)\n20:38:45   File \"/usr/lib/python2.7/site-packages/click/core.py\", line 697, in main\n20:38:45     rv \u003d self.invoke(ctx)\n20:38:45   File \"/usr/lib/python2.7/site-packages/click/core.py\", line 1066, in invoke\n20:38:45     return _process_result(sub_ctx.command.invoke(sub_ctx))\n20:38:45   File \"/usr/lib/python2.7/site-packages/click/core.py\", line 1066, in invoke\n20:38:45     return _process_result(sub_ctx.command.invoke(sub_ctx))\n20:38:45   File \"/usr/lib/python2.7/site-packages/click/core.py\", line 895, in invoke\n20:38:45     return ctx.invoke(self.callback, **ctx.params)\n20:38:45   File \"/usr/lib/python2.7/site-packages/click/core.py\", line 535, in invoke\n20:38:45     return callback(*args, **kwargs)\n20:38:45   File \"/usr/lib/python2.7/site-packages/click/decorators.py\", line 17, in new_func\n20:38:45     return f(get_current_context(), *args, **kwargs)\n20:38:45   File \"/home/jenkins/.local/lib/python2.7/site-packages/lftools/cli/deploy.py\", line 63, in archives\n20:38:45     deploy_sys.deploy_archives(nexus_url, nexus_path, workspace, pattern)\n20:38:45   File \"/home/jenkins/.local/lib/python2.7/site-packages/lftools/deploy.py\", line 236, in deploy_archives\n20:38:45     copy_archives(workspace, pattern)\n20:38:45   File \"/home/jenkins/.local/lib/python2.7/site-packages/lftools/deploy.py\", line 170, in copy_archives\n20:38:45     for file_or_dir in os.listdir(archives_dir):\n20:38:45 OSError: [Errno 20] Not a directory: \u0027/w/workspace/autorelease-update-validate-jobs-fluorine/archives\u0027\n20:38:45 [autorelease-update-validate-jobs-fluorine] $ /bin/bash /tmp/jenkins7483693620747950681.sh\n20:38:45 [description-setter] Could not determine description.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 0
+      },
+      "revId": "37f8ffdceb9e367357074663aa660632d8e566b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1aed4c63_32fd6dc7",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-22T20:33:28Z",
+      "side": 1,
+      "message": "Most of my testing was with a wrapper script and without actually calling lftools, which did allow me to check the args being passed to lftools. If you look at the log above the \u0027for\u0027 loop did not trigger (ARCHIVE_ARTIFACTS was empty or unset) so $pattern_opts\u003d\"\". The command line args passed to lftools look valid. Problem in lttools. Let me know if I am wrong here.",
+      "parentUuid": "b1bc49c4_93fa50ab",
       "range": {
         "startLine": 22,
         "startChar": 0,
