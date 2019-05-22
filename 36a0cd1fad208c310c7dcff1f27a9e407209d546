@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5174ca3e_ae6b45d7",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:42:43Z",
+      "side": 1,
+      "message": "Let me know if we are going to allow building an image with no tag or if is best idea to fail the job if there is no tag from the git describe command",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 54
+      },
+      "revId": "36a0cd1fad208c310c7dcff1f27a9e407209d546",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
