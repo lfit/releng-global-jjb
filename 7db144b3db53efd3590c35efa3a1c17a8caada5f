@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4cdd2251_aa29c3b0",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-22T12:34:02Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this just be \u0027\\s+\u0027? It looks like you\u0027re trying to capture / include any empty space before the actual command\n\nIf you\u0027re trying to get this to be more strict but still handle human foibles, then it should be more like:\n\n^Patch Set\\s+\\d+:\\s+remerge\\s*$",
+      "range": {
+        "startLine": 290,
+        "startChar": 56,
+        "endLine": 290,
+        "endChar": 68
+      },
+      "revId": "7db144b3db53efd3590c35efa3a1c17a8caada5f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
