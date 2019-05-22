@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "aa355cef_6889da5d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 56
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-05-22T20:41:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1d1ce37d_8a3eba21",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 27
+      },
+      "revId": "7a8b1adf2889145900e280a9fe863aba2bc3083a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dde7bbf6_df7a3a37",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 56
