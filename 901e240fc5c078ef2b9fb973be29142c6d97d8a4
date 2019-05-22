@@ -88,6 +88,23 @@
     },
     {
       "key": {
+        "uuid": "f5ce30c6_1ef34a26",
+        "filename": "jjb/lf-docker-job-groups.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-22T11:54:07Z",
+      "side": 1,
+      "message": "Why no {project-name}-github-docker-jobs group?",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "40ec4e1c_09a74c7e",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 15
@@ -99,6 +116,30 @@
       "writtenOn": "2019-05-22T10:14:25Z",
       "side": 1,
       "message": "maybe just \"container-push-registry\" ??",
+      "range": {
+        "startLine": 38,
+        "startChar": 49,
+        "endLine": 38,
+        "endChar": 57
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fd5b1f5_ee9a260e",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-22T11:54:07Z",
+      "side": 1,
+      "message": "That definitely makes more sense than trying to stick a Maven concept into a non-maven workflow",
+      "parentUuid": "40ec4e1c_09a74c7e",
       "range": {
         "startLine": 38,
         "startChar": 49,
@@ -182,6 +223,29 @@
       "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5f470b3_0d889358",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-22T11:54:07Z",
+      "side": 1,
+      "message": "See note from Chris. Additionally, do not run forked shell commands with backtick, use $( ) notation instead. I\u0027m surprised shellcheck let this pass!",
+      "range": {
+        "startLine": 18,
+        "startChar": 16,
+        "endLine": 18,
+        "endChar": 30
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
