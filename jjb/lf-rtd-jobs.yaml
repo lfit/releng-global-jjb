@@ -78,7 +78,7 @@
     gerrit_merge_triggers:
       - change-merged-event
       - comment-added-contains-event:
-          comment-contains-value: remerge$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(remerge)$'
       - ref-updated-event
 
     #####################

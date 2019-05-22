@@ -132,7 +132,7 @@
 
     gerrit_clm_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-clm$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(run-clm)$'
 
     #####################
     # Job Configuration #
@@ -317,7 +317,7 @@
 
     gerrit_sonar_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-sonar$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(run-sonar)$'
 
     #####################
     # Job Configuration #

@@ -161,7 +161,7 @@
 
     gerrit_clm_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-clm$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(run-clm)$'
 
     parameters:
       - lf-infra-parameters:
@@ -312,7 +312,7 @@
     gerrit_merge_triggers:
       - change-merged-event
       - comment-added-contains-event:
-          comment-contains-value: remerge$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(remerge)$'
 
     #####################
     # Job Configuration #
@@ -564,7 +564,7 @@
     gerrit_merge_triggers:
       - change-merged-event
       - comment-added-contains-event:
-          comment-contains-value: remerge$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(remerge)$'
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -832,7 +832,7 @@
 
     gerrit_release_triggers:
       - comment-added-contains-event:
-          comment-contains-value: stage-release$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(stage-release)$'
 
     gerrit_trigger_file_paths:
       - compare-type: ANT
@@ -1118,7 +1118,7 @@
 
     gerrit_sonar_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-sonar$
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(run-sonar)$'
 
     #####################
     # Job Configuration #
