@@ -162,6 +162,29 @@
     },
     {
       "key": {
+        "uuid": "2e352ba1_69f31a92",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:36:42Z",
+      "side": 1,
+      "message": "if zero tags are present this yields the empty string, please defend against that possibility",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 1
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "24cbc1ef_a10aba8c",
         "filename": "shell/docker-build-git-params.sh",
         "patchSetId": 15
