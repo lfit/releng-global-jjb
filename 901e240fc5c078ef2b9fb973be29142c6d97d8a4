@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "faeb9698_d9f770a5",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d923b48_874b5480",
+      "range": {
+        "startLine": 75,
+        "startChar": 48,
+        "endLine": 75,
+        "endChar": 56
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cc33a3b4_287ce827",
         "filename": "docs/jjb/lf-docker-jobs.rst",
         "patchSetId": 15
@@ -36,6 +60,30 @@
       "writtenOn": "2019-05-22T10:14:25Z",
       "side": 1,
       "message": "See above.  I suggest this should simply be container-registry and the JJB creator chooses the target.",
+      "range": {
+        "startLine": 87,
+        "startChar": 15,
+        "endLine": 87,
+        "endChar": 23
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46b5f02e_35e4874c",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc33a3b4_287ce827",
       "range": {
         "startLine": 87,
         "startChar": 15,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "8e159304_9c6084c5",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Yes,, the tag part comes from the docker-use-params-from varaible which i forgot to mention",
+      "parentUuid": "7ae14b32_41b4ee7d",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 1
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba638373_4a59f95d",
         "filename": "docs/jjb/lf-docker-jobs.rst",
         "patchSetId": 15
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "be394bd7_df12df8c",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Forgot that variable docker-use-params-from \nadding it now..",
+      "parentUuid": "ba638373_4a59f95d",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f5ce30c6_1ef34a26",
         "filename": "jjb/lf-docker-job-groups.yaml",
         "patchSetId": 15
@@ -99,6 +189,24 @@
       "writtenOn": "2019-05-22T11:54:07Z",
       "side": 1,
       "message": "Why no {project-name}-github-docker-jobs group?",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3520cbd0_cbc3adb7",
+        "filename": "jjb/lf-docker-job-groups.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "{project-name}-gerrit-docker-jobs right?",
+      "parentUuid": "f5ce30c6_1ef34a26",
       "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
@@ -152,6 +260,54 @@
     },
     {
       "key": {
+        "uuid": "a2ab5999_a56dc671",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40ec4e1c_09a74c7e",
+      "range": {
+        "startLine": 38,
+        "startChar": 49,
+        "endLine": 38,
+        "endChar": 57
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f7f6d20_8c12cb7e",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fd5b1f5_ee9a260e",
+      "range": {
+        "startLine": 38,
+        "startChar": 49,
+        "endLine": 38,
+        "endChar": 57
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "deee7abd_ab5e814d",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 15
@@ -163,6 +319,24 @@
       "writtenOn": "2019-05-22T10:14:25Z",
       "side": 1,
       "message": "Why no githib-docker-verify job?",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92e8713a_c94a58a7",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Working on them...",
+      "parentUuid": "deee7abd_ab5e814d",
       "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -186,6 +360,24 @@
     },
     {
       "key": {
+        "uuid": "2ff1bea5_fa643abc",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Working on them...",
+      "parentUuid": "77da7733_f0225962",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "757460a3_66dd66d5",
         "filename": "shell/docker-build-git-params.sh",
         "patchSetId": 15
@@ -197,6 +389,24 @@
       "writtenOn": "2019-05-22T10:14:25Z",
       "side": 1,
       "message": "Please PLEASE echo the script name at the start to give us a chance of finding this when things go wrong",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b03e82f_0f5830e4",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "757460a3_66dd66d5",
       "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -249,6 +459,54 @@
     },
     {
       "key": {
+        "uuid": "90a741d5_d9c9c644",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Are we going to allow building and pushing images with no tag? or shall we just break the build if the git describe comes back with no tag?\nI was reading this article to see what implications there are... https://success.docker.com/article/images-tagging-vs-digests",
+      "parentUuid": "2e352ba1_69f31a92",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 1
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fea18a6a_7918adb4",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f5f470b3_0d889358",
+      "range": {
+        "startLine": 18,
+        "startChar": 16,
+        "endLine": 18,
+        "endChar": 30
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "24cbc1ef_a10aba8c",
         "filename": "shell/docker-build-git-params.sh",
         "patchSetId": 15
@@ -260,6 +518,30 @@
       "writtenOn": "2019-05-22T10:14:25Z",
       "side": 1,
       "message": "This looks wrong - it should be the CONTAINER_PUSH_REGISTRY",
+      "range": {
+        "startLine": 19,
+        "startChar": 13,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57366599_2b60d0a2",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "24cbc1ef_a10aba8c",
       "range": {
         "startLine": 19,
         "startChar": 13,
@@ -295,6 +577,30 @@
     },
     {
       "key": {
+        "uuid": "3dd65074_b3c56d8f",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "I agree.. I am to used to ONAP ways... I will remove it for now. I think if people want to tag it as latest, they can configure it in the yaml option right?",
+      "parentUuid": "647ff7aa_b126505f",
+      "range": {
+        "startLine": 20,
+        "startChar": 20,
+        "endLine": 20,
+        "endChar": 43
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7f1347f8_60131439",
         "filename": "shell/docker-build-yaml-params.sh",
         "patchSetId": 15
@@ -312,6 +618,24 @@
     },
     {
       "key": {
+        "uuid": "1a987a28_b1dd5e91",
+        "filename": "shell/docker-build-yaml-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f1347f8_60131439",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4dbdc1d8_3c4ba8cd",
         "filename": "shell/docker-build-yaml-params.sh",
         "patchSetId": 15
@@ -323,6 +647,30 @@
       "writtenOn": "2019-05-22T10:14:25Z",
       "side": 1,
       "message": "Probably should be PUSH",
+      "range": {
+        "startLine": 20,
+        "startChar": 13,
+        "endLine": 20,
+        "endChar": 36
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a14ab73_0318c59b",
+        "filename": "shell/docker-build-yaml-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-22T20:07:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4dbdc1d8_3c4ba8cd",
       "range": {
         "startLine": 20,
         "startChar": 13,
