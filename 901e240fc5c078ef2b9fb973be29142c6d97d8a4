@@ -1,0 +1,250 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4d923b48_874b5480",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "I don\u0027t think this is right.  It should publish to a CONFIGURABLE registry.",
+      "range": {
+        "startLine": 75,
+        "startChar": 48,
+        "endLine": 75,
+        "endChar": 56
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc33a3b4_287ce827",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "See above.  I suggest this should simply be container-registry and the JJB creator chooses the target.",
+      "range": {
+        "startLine": 87,
+        "startChar": 15,
+        "endLine": 87,
+        "endChar": 23
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ae14b32_41b4ee7d",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "please clarify that this excludes the tag, which comes from an alternate method.",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 1
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba638373_4a59f95d",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "Where is the parameter to choose the tagging method?",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40ec4e1c_09a74c7e",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "maybe just \"container-push-registry\" ??",
+      "range": {
+        "startLine": 38,
+        "startChar": 49,
+        "endLine": 38,
+        "endChar": 57
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "deee7abd_ab5e814d",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "Why no githib-docker-verify job?",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77da7733_f0225962",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "why no github-docker-merge ?",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "757460a3_66dd66d5",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "Please PLEASE echo the script name at the start to give us a chance of finding this when things go wrong",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24cbc1ef_a10aba8c",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "This looks wrong - it should be the CONTAINER_PUSH_REGISTRY",
+      "range": {
+        "startLine": 19,
+        "startChar": 13,
+        "endLine": 19,
+        "endChar": 36
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "647ff7aa_b126505f",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "In general I really dislike \"latest\" because if two branches are both active, like a previous release getting fixes plus the current release on master, then the latest tag will flip-flop between them which I think yields only confusion.  Maybe this should be configurable??",
+      "range": {
+        "startLine": 20,
+        "startChar": 20,
+        "endLine": 20,
+        "endChar": 43
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f1347f8_60131439",
+        "filename": "shell/docker-build-yaml-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "Please PLEASE echo the script name at the start to give us a chance of finding this when things go wrong",
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4dbdc1d8_3c4ba8cd",
+        "filename": "shell/docker-build-yaml-params.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-22T10:14:25Z",
+      "side": 1,
+      "message": "Probably should be PUSH",
+      "range": {
+        "startLine": 20,
+        "startChar": 13,
+        "endLine": 20,
+        "endChar": 36
+      },
+      "revId": "901e240fc5c078ef2b9fb973be29142c6d97d8a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
