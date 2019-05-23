@@ -53,7 +53,7 @@
 
     gerrit_verify_triggers:
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(vote)$'
+          comment-contains-value: '^Patch Set\s+\d+:\s+vote\s*$'
       - comment-added-event:
           approval-category: 'CRVW'
           approval-value: 2
