@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "1b37884b_bed781a8",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-23T15:17:17Z",
+      "side": 1,
+      "message": "You\u0027re in a catch 22 situation then. If we only tag when something is ready for release, and you can\u0027t verify because you have no tag, then you will never get to a point where there is a tag. That\u0027s why I\u0027m saying the tag has to come from something other than a tag!\n\nIn other words, we need something that does something like the following:\n\nif git describe comes back null\n  then read set tag to something like 0.0.1-$short_gitsha\n    if a file exists with a version \u003e 0.0.1\n      then use file base version\n    fi\n  else\n    if file exists with a version \u003e git_describe version\n      then use file based version\n    fi\nfi\n\nIn other words, we need some logic to get us over this problem.",
+      "parentUuid": "6e21a320_ff5a7073",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 54
+      },
+      "revId": "36a0cd1fad208c310c7dcff1f27a9e407209d546",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "098c7d7d_34c766b9",
         "filename": "shell/docker-build-yaml-params.sh",
         "patchSetId": 16
