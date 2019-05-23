@@ -163,7 +163,7 @@
 
     gerrit_wss_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-whitesource$
+          comment-contains-value: '^Patch Set\s+\d+:\s+(run-whitesource)\s*$'
 
     #####################
     # Job Configuration #

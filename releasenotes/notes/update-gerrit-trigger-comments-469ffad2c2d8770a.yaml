@@ -1,0 +1,6 @@
+---
+upgrade:
+  - |
+    Update gerrit comment trigger to use a more standard regex and avoid triggering
+    jobs, when these keywords are intended to be used as code review comments
+    between users. Also improve the regex and make it more succient.

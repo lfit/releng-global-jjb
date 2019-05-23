@@ -132,7 +132,7 @@
 
     gerrit_clm_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-clm$
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-clm\s*$'
 
     #####################
     # Job Configuration #
@@ -317,7 +317,7 @@
 
     gerrit_sonar_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-sonar$
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
 
     #####################
     # Job Configuration #
@@ -479,7 +479,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
 
     #####################
     # Job Configuration #

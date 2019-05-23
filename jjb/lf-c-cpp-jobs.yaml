@@ -99,7 +99,7 @@
           server-name: '{gerrit-server-name}'
           trigger-on:
             - comment-added-contains-event:
-                comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(stage-release)$'
+                comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
           projects:
             - project-compare-type: 'ANT'
               project-pattern: '{project}'
@@ -262,7 +262,7 @@
           server-name: '{gerrit-server-name}'
           trigger-on:
             - comment-added-contains-event:
-                comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(stage-release)$'
+                comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
           projects:
             - project-compare-type: 'ANT'
               project-pattern: '{project}'
@@ -339,7 +339,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+          comment-contains-value: '^Patch Set\s+\d+:\s+(remerge|reverify)\s*$'
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP

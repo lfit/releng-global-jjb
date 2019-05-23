@@ -161,7 +161,7 @@
 
     gerrit_clm_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-clm$
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-clm\s*$'
 
     parameters:
       - lf-infra-parameters:
@@ -312,7 +312,7 @@
     gerrit_merge_triggers:
       - change-merged-event
       - comment-added-contains-event:
-          comment-contains-value: remerge$
+          comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
 
     #####################
     # Job Configuration #
@@ -445,7 +445,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
 
     #####################
     # Job Configuration #
@@ -564,7 +564,7 @@
     gerrit_merge_triggers:
       - change-merged-event
       - comment-added-contains-event:
-          comment-contains-value: remerge$
+          comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -832,7 +832,7 @@
 
     gerrit_release_triggers:
       - comment-added-contains-event:
-          comment-contains-value: stage-release$
+          comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
 
     gerrit_trigger_file_paths:
       - compare-type: ANT
@@ -1118,7 +1118,7 @@
 
     gerrit_sonar_triggers:
       - comment-added-contains-event:
-          comment-contains-value: run-sonar$
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
 
     #####################
     # Job Configuration #
@@ -1331,7 +1331,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
