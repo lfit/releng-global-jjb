@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a3079a5_baa0a5c9",
+        "filename": ".jjb-test/lf-docker-jobs/docker-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-24T18:01:58Z",
+      "side": 1,
+      "message": "Add an example of the docker-tag.yaml",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 3
+      },
+      "revId": "d1c70e487b5c73f396da6c0e7c524f23ba3e0922",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9adc5d3_ee8c9689",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 17
