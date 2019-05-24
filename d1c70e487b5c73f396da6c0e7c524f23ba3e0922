@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9adc5d3_ee8c9689",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-24T18:01:18Z",
+      "side": 1,
+      "message": "This conditional step should only deal with the tagging part, not the build step\n\nAdd a separate step for running the build (common step for both options)",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 25
+      },
+      "revId": "d1c70e487b5c73f396da6c0e7c524f23ba3e0922",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4518d392_415e2563",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-24T18:01:18Z",
+      "side": 1,
+      "message": "Move before the conditional",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 69
+      },
+      "revId": "d1c70e487b5c73f396da6c0e7c524f23ba3e0922",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fb24876_09993f14",
+        "filename": "shell/docker-build-git-params.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-24T18:01:18Z",
+      "side": 1,
+      "message": "returned empty",
+      "range": {
+        "startLine": 22,
+        "startChar": 22,
+        "endLine": 22,
+        "endChar": 46
+      },
+      "revId": "d1c70e487b5c73f396da6c0e7c524f23ba3e0922",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
