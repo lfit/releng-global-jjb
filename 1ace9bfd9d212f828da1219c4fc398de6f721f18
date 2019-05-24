@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "67ba46a7_7a1e83b2",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 58
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-24T17:28:38Z",
+      "side": 1,
+      "message": "spelling",
+      "range": {
+        "startLine": 253,
+        "startChar": 0,
+        "endLine": 253,
+        "endChar": 9
+      },
+      "revId": "1ace9bfd9d212f828da1219c4fc398de6f721f18",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
