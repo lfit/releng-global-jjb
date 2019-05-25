@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfa8482c_b8a56fa0",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-25T00:35:03Z",
+      "side": 1,
+      "message": "would you please add sample tag yaml file content here?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 6
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11643864_00d736db",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-25T00:35:03Z",
+      "side": 1,
+      "message": ".. the example for when this option is used.",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 62
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b02ce971_fcd9a846",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-25T00:35:03Z",
+      "side": 1,
+      "message": "I don\u0027t see any mention of docker-pre-build-script nor docker-post-build-script, are those params available for use?",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 1
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73c6c960_f1d9d9eb",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-25T00:35:03Z",
+      "side": 1,
+      "message": "what do these pre and post scripts do?",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 3
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fdaf913d_b2ebcbce",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-25T00:35:03Z",
+      "side": 1,
+      "message": "do you want cleanup to run BEFORE or AFTER the push?  Seems to me clean should be the very last step (?)",
+      "range": {
+        "startLine": 166,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 3
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07b1eb3a_56517b5c",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-25T00:35:03Z",
+      "side": 1,
+      "message": "it might be worth commenting that DOCKER_IMAGE is set by a previous step, NOT by a jjb param?",
+      "range": {
+        "startLine": 17,
+        "startChar": 35,
+        "endLine": 17,
+        "endChar": 47
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db7b8937_b7cbf76e",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-25T00:35:03Z",
+      "side": 1,
+      "message": "could this be put into a local shell variable to avoid repetition please?  It is used three times here.",
+      "range": {
+        "startLine": 22,
+        "startChar": 10,
+        "endLine": 22,
+        "endChar": 28
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb3382df_70853d0f",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-25T00:35:03Z",
+      "side": 1,
+      "message": "Please echo the script name!",
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
