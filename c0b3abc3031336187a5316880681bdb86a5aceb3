@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bafa4b82_4594ae22",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-05-25T10:00:49Z",
+      "side": 0,
+      "message": "Do not remove this comment, makes the code more readable on why this block is required.",
+      "range": {
+        "startLine": 22,
+        "startChar": 4,
+        "endLine": 22,
+        "endChar": 76
+      },
+      "revId": "c0b3abc3031336187a5316880681bdb86a5aceb3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
