@@ -87,6 +87,7 @@ for STACK_NAME in "${OS_STACKS[@]}"; do
         continue
     else
         echo "Deleting orphaned stack: $STACK_NAME"
-        lftools openstack --os-cloud "$os_cloud" stack delete "$STACK_NAME"
+        # Dont fail on orphaned stack in DELETE_FAILED state
+        lftools openstack --os-cloud "$os_cloud" stack delete "$STACK_NAME" || true
     fi
 done

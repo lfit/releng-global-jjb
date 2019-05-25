@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Do not fail jobs on stacks with DELETE_FAILED state. The jobs should always
+    complete removing any orphaned servers without failing on the stack delete.
