@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c3cc4aa0_7b76fd96",
+        "filename": "shell/openstack-cleanup-orphaned-stacks.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-05-26T02:59:14Z",
+      "side": 1,
+      "message": "This statement is incorrect. The code below means ignore ALL errors coming from lftools, not just DELETE_FAILED. This would mask other issues that may arise from delete failure.\n\nIf the intent really is to only ignore for DELETE_FAILED then lftools should be improved to print a warning on only DELETE_FAILED states and continue to report failure for the other states.",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "3fca00a49b306981b626b440f3d287f9195b2d46",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
