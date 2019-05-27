@@ -23,11 +23,19 @@ else
     # Handle multiple search extensions as separate values to '-p|--pattern'
     # "arg1 arg2" -> (-p arg1 -p arg2)
     pattern_opts=()
+    empty=true
     for arg in ${ARCHIVE_ARTIFACTS:-}; do
         pattern_opts+=("-p" "$arg")
+        empty=false
     done
-    lftools deploy archives "${pattern_opts[@]}" "$nexus_url" "$nexus_path" \
-            "$WORKSPACE"
+    # The 'empty' flag is required because someolder versions of bash generate
+    # a "unbound variable" when pattern_opts = ()
+    if $empty; then
+        lftools deploy archives "$nexus_url" "$nexus_path" "$WORKSPACE"
+    else
+        lftools deploy archives "${pattern_opts[@]}" "$nexus_url" \
+                "$nexus_path" "$WORKSPACE"
+    fi
     lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
     echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
