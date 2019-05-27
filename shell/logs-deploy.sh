@@ -10,9 +10,8 @@
 ##############################################################################
 echo "---> logs-deploy.sh"
 
-# Ensure we fail the job if any steps fail
-# Disable 'globbing'
-set -euf -o pipefail
+# Ensure we fail the job if any steps fail.
+set -eu -o pipefail
 
 if [[ -z $"${LOGS_SERVER:-}" ]]; then
     echo "WARNING: Logging server not set"
@@ -21,13 +20,18 @@ else
     nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
 
     # Handle multiple search extensions as separate values to '-p|--pattern'
-    # "arg1 arg2" -> (-p arg1 -p arg2)
+    set -f # Disable pathname expansion
+    search_exts=()
+    IFS=' ' read -r -a search_exts <<< "${ARCHIVE_ARTIFACTS:-}"
     pattern_opts=()
-    for arg in ${ARCHIVE_ARTIFACTS:-}; do
-        pattern_opts+=("-p" "$arg")
+    for search_ext in "${search_exts[@]:-}";
+    do
+        pattern_opts+=("-p" "$search_ext")
     done
+
     lftools deploy archives "${pattern_opts[@]}" "$nexus_url" "$nexus_path" \
             "$WORKSPACE"
+    set +f  # Enable pathname expansion
     lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
     echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
