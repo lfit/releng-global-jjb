@@ -207,7 +207,7 @@
           fail-build-network-error: true
 
 - job-template:
-    name: '{project-name}-maven-clm-{stream}'
+    name: '{project-name}-maven-clm-{stream}-{java-version}'
     id: gerrit-maven-clm
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -243,7 +243,7 @@
             notbuilt: true
 
 - job-template:
-    name: '{project-name}-maven-clm-{stream}'
+    name: '{project-name}-maven-clm-{stream}-{java-version}'
     id: github-maven-clm
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -611,7 +611,7 @@
       - trigger-parameterized-builds: '{obj:post_build_trigger}'
 
 - job-template:
-    name: '{project-name}-maven-merge-{stream}'
+    name: '{project-name}-maven-merge-{stream}-{java-version}'
     id: gerrit-maven-merge
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -642,7 +642,7 @@
               file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
-    name: '{project-name}-maven-merge-{stream}'
+    name: '{project-name}-maven-merge-{stream}-{java-version}'
     id: github-maven-merge
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -905,7 +905,7 @@
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-stage-{stream}'
+    name: '{project-name}-maven-stage-{stream}-{java-version}'
     id: gerrit-maven-stage
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -936,7 +936,7 @@
               file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
-    name: '{project-name}-maven-stage-{stream}'
+    name: '{project-name}-maven-stage-{stream}-{java-version}'
     id: github-maven-stage
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates

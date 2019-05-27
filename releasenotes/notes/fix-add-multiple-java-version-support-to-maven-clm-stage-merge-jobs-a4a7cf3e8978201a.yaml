@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add support to generate multiple maven clm, stage, merge jobs based on the
+    java version. In this change appending the java-version to the maven jobs
+    so global jjb have a support to generate the jobs based on the java-version
+    given in the project template
