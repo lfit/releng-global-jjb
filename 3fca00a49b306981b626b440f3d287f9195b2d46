@@ -22,6 +22,30 @@
       "revId": "3fca00a49b306981b626b440f3d287f9195b2d46",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5446b4e3_b250b860",
+        "filename": "shell/openstack-cleanup-orphaned-stacks.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-28T02:11:03Z",
+      "side": 1,
+      "message": "Are you getting a DELETE_FAILED because something did not exist, or is it failing to delete something that existed. The second situation is an ERROR and should not be ignored. If it cannot delete something we either have permission problem or we are getting IO errors. The end result of a delete of a file that does not exist is the same and a successful delete, no harm no foul.\n\nYou want it to work like \u0027rm -f\u0027\n\nUnfortunately the fix here may be in lftools not in this script...",
+      "parentUuid": "c3cc4aa0_7b76fd96",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "3fca00a49b306981b626b440f3d287f9195b2d46",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
