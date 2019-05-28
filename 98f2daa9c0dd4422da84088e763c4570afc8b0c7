@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b05b6432_3dbf7284",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-28T23:52:10Z",
+      "side": 1,
+      "message": "Sorry not sure what you mean... Could you point me to an example?",
+      "parentUuid": "dfa8482c_b8a56fa0",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 6
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "11643864_00d736db",
         "filename": "docs/jjb/lf-docker-jobs.rst",
         "patchSetId": 19
@@ -36,6 +60,30 @@
       "writtenOn": "2019-05-25T00:35:03Z",
       "side": 1,
       "message": ".. the example for when this option is used.",
+      "range": {
+        "startLine": 57,
+        "startChar": 46,
+        "endLine": 57,
+        "endChar": 62
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70781a51_9e64a06c",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-28T23:52:10Z",
+      "side": 1,
+      "message": "Will add it in the .jjb-test",
+      "parentUuid": "11643864_00d736db",
       "range": {
         "startLine": 57,
         "startChar": 46,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "793b4996_d56aa9c1",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-28T23:52:10Z",
+      "side": 1,
+      "message": "You are right.. i will mention them in my next patch",
+      "parentUuid": "b02ce971_fcd9a846",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 1
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "73c6c960_f1d9d9eb",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 19
@@ -82,6 +154,30 @@
       "writtenOn": "2019-05-25T00:35:03Z",
       "side": 1,
       "message": "what do these pre and post scripts do?",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 3
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a0c275d_14fe3c8b",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-28T23:52:10Z",
+      "side": 1,
+      "message": "ONAP has similar docker templates and they requested these optional steps to be there in case they need to execute anything in the repo before and after they execute the docker build and push. Just to bring flexibility for some teams that need it.",
+      "parentUuid": "73c6c960_f1d9d9eb",
       "range": {
         "startLine": 71,
         "startChar": 0,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "b47fb686_4a16bc54",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-28T23:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fdaf913d_b2ebcbce",
+      "range": {
+        "startLine": 166,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 3
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07b1eb3a_56517b5c",
         "filename": "shell/docker-build.sh",
         "patchSetId": 19
@@ -128,6 +248,30 @@
       "writtenOn": "2019-05-25T00:35:03Z",
       "side": 1,
       "message": "it might be worth commenting that DOCKER_IMAGE is set by a previous step, NOT by a jjb param?",
+      "range": {
+        "startLine": 17,
+        "startChar": 35,
+        "endLine": 17,
+        "endChar": 47
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ef0dab1_1f0935cd",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-28T23:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07b1eb3a_56517b5c",
       "range": {
         "startLine": 17,
         "startChar": 35,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "e40511f2_6771d130",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-28T23:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db7b8937_b7cbf76e",
+      "range": {
+        "startLine": 22,
+        "startChar": 10,
+        "endLine": 22,
+        "endChar": 28
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cb3382df_70853d0f",
         "filename": "shell/docker-push.sh",
         "patchSetId": 19
@@ -174,6 +342,24 @@
       "writtenOn": "2019-05-25T00:35:03Z",
       "side": 1,
       "message": "Please echo the script name!",
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70877e1f_518c6f1e",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-28T23:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb3382df_70853d0f",
       "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
