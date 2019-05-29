@@ -22,6 +22,30 @@
       "revId": "6d57c70b8c9e30c4b31d340fe001b9d624124133",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9b5b713_24f6f3f0",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-05-29T15:41:36Z",
+      "side": 1,
+      "message": "I want a good explanation on this as well. We have the paths defined for very specific reasons and we need _really_ good reasoning to side step this.",
+      "parentUuid": "ac613a2b_f6cf2b33",
+      "range": {
+        "startLine": 21,
+        "startChar": 18,
+        "endLine": 21,
+        "endChar": 28
+      },
+      "revId": "6d57c70b8c9e30c4b31d340fe001b9d624124133",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
