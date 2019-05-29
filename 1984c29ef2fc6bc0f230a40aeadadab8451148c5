@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "87adbaaa_27226332",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-29T17:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77d017e6_fa7506f3",
+      "range": {
+        "startLine": 176,
+        "startChar": 10,
+        "endLine": 176,
+        "endChar": 48
+      },
+      "revId": "1984c29ef2fc6bc0f230a40aeadadab8451148c5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6b5040c4_07a5ae4c",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 20
@@ -36,6 +60,30 @@
       "writtenOn": "2019-05-29T13:01:56Z",
       "side": 1,
       "message": "Please reshuffle the order here to match customary naming, I suggest:\n\n    \u0027{project-name}-docker-verify-{stream}\u0027",
+      "range": {
+        "startLine": 199,
+        "startChar": 10,
+        "endLine": 199,
+        "endChar": 49
+      },
+      "revId": "1984c29ef2fc6bc0f230a40aeadadab8451148c5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6dd2d34_2775e297",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-29T17:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b5040c4_07a5ae4c",
       "range": {
         "startLine": 199,
         "startChar": 10,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "c983b8b3_4320ccdd",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-29T17:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a06f8e20_880b3414",
+      "range": {
+        "startLine": 243,
+        "startChar": 10,
+        "endLine": 243,
+        "endChar": 48
+      },
+      "revId": "1984c29ef2fc6bc0f230a40aeadadab8451148c5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "acb62e3a_9ee12e7c",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 20
@@ -82,6 +154,30 @@
       "writtenOn": "2019-05-29T13:01:56Z",
       "side": 1,
       "message": "Please reshuffle the order here to match customary naming, I suggest:\n    \u0027{project-name}-docker-merge-{stream}\u0027",
+      "range": {
+        "startLine": 266,
+        "startChar": 10,
+        "endLine": 266,
+        "endChar": 48
+      },
+      "revId": "1984c29ef2fc6bc0f230a40aeadadab8451148c5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0218a5aa_ba2d6a84",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-29T17:35:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "acb62e3a_9ee12e7c",
       "range": {
         "startLine": 266,
         "startChar": 10,
