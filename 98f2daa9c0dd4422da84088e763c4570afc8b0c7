@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "8783b8f2_042f20a6",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-29T00:19:52Z",
+      "side": 1,
+      "message": "I was asking for an example of the YAML content put in a file that will be read by yq to extract the tag - I suspect it\u0027s as simple as this:\n\n    tag: 1.0.0\n\nBest to show an example that can be easily copy-pasted.",
+      "parentUuid": "b05b6432_3dbf7284",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 6
+      },
+      "revId": "98f2daa9c0dd4422da84088e763c4570afc8b0c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "11643864_00d736db",
         "filename": "docs/jjb/lf-docker-jobs.rst",
         "patchSetId": 19
