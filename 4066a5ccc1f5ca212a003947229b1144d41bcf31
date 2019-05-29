@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77180e1c_5a14c62a",
+        "filename": "jenkins-init-scripts/create-swap-file.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-05-29T12:01:43Z",
+      "side": 1,
+      "message": "Is fallocate supported on FS\u0027s/flvour? Afaik, this was only supported on extent based FS, like ext4, btrfs and xfs. It would be good to have a way to check if the FS support is available and then choose to call dd or fallocate, assuming in the future we have an arch/flavor/fs which might not have this available. Also would be useful if want these script to work with containers in near future.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 55
+      },
+      "revId": "4066a5ccc1f5ca212a003947229b1144d41bcf31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
