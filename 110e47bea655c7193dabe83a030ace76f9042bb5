@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5d391632_9017b5b8",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-29T18:46:20Z",
+      "side": 1,
+      "message": "Pls add req param:\n\n    :mvn-settings: Maven settings.xml file containing credentials to use.",
+      "revId": "110e47bea655c7193dabe83a030ace76f9042bb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c2e7a54_b227069b",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-29T18:46:20Z",
+      "side": 1,
+      "message": "Same as above:\n\n    :mvn-settings: Maven settings.xml file containing credentials to use.",
+      "revId": "110e47bea655c7193dabe83a030ace76f9042bb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c32e805d_24a2fc06",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 21
@@ -13,6 +47,30 @@
       "writtenOn": "2019-05-29T18:05:22Z",
       "side": 1,
       "message": "In a non-maven project I feel a job should not have to define a parameter named \u0027mvn-settings\u0027. I realize there\u0027s only one settings file per project, and it has maven details among other things, but these are kept very carefully hidden by the RelEng team.  So perhaps you\u0027ll consider a different parameter name here such as \u0027project-settings\u0027 (parallel with \u0027global-settings\u0027)?",
+      "range": {
+        "startLine": 132,
+        "startChar": 25,
+        "endLine": 132,
+        "endChar": 41
+      },
+      "revId": "110e47bea655c7193dabe83a030ace76f9042bb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1987dc0_5ad23591",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-29T18:46:20Z",
+      "side": 1,
+      "message": "ok, never mind.",
+      "parentUuid": "c32e805d_24a2fc06",
       "range": {
         "startLine": 132,
         "startChar": 25,
