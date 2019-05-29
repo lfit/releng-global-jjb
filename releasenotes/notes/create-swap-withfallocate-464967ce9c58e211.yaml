@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Use 'fallocate' instead of 'dd' to allocate swap space.

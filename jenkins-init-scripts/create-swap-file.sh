@@ -9,22 +9,25 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-# Get the blockCount from the 'SWAP_SIZE' environmental variable
-blockCount=${SWAP_SIZE-''}
+# Get the swap_size from the 'SWAP_SIZE' environmental variable
+swap_size=${SWAP_SIZE-''}
 
 # Validate SWAP_SIZE
-# Empty:   Set blockCount 1
+# Empty:   Set swap_size 1
 # Zero:    No Swap
-# Integer: Set blockCount
+# Integer: Set swap_size
 # Else:    No Swap
-case $blockCount in
-    '')      blockCount=1 ;;
-    [0-9]*)  blockCount=$blockCount ;;
+case $swap_size in
+    '')      swap_size=1 ;;
+    [0-9]*)  swap_size=$swap_size ;;
     *)       exit ;;
 esac
-[[ $blockCount == 0 ]] && exit
+[[ $swap_size == 0 ]] && exit
 
-dd if=/dev/zero of=/swap count="${blockCount}k" bs=1MiB
+echo "Allocating ${swap_size}GB Swapspace"
+rm -rf /swap
+touch /swap     # fallocate expects file to exist
+fallocate --zero-range --length "${swap_size}GiB" /swap
 chmod 600 /swap
 mkswap /swap
 swapon /swap
