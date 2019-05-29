@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0df13b48_3b186355",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-29T19:34:31Z",
+      "side": 1,
+      "message": "This is docker push, not docker build.",
+      "range": {
+        "startLine": 11,
+        "startChar": 18,
+        "endLine": 11,
+        "endChar": 23
+      },
+      "revId": "0c69eafccb53ac892448dbc0eeff81046720cb67",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
