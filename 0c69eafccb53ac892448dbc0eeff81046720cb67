@@ -22,6 +22,30 @@
       "revId": "0c69eafccb53ac892448dbc0eeff81046720cb67",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3987d35c_17f0b200",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-29T19:36:18Z",
+      "side": 1,
+      "message": "oh.. absolutely my bad!",
+      "parentUuid": "0df13b48_3b186355",
+      "range": {
+        "startLine": 11,
+        "startChar": 18,
+        "endLine": 11,
+        "endChar": 23
+      },
+      "revId": "0c69eafccb53ac892448dbc0eeff81046720cb67",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
