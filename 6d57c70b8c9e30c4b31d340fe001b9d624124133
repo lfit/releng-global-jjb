@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ac613a2b_f6cf2b33",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-05-29T14:32:07Z",
+      "side": 1,
+      "message": "I\u0027d like to understand the requirement for having the logs outside of the defined path. Doing this would require the cron jobs on Nexus to find these logs clean up scripts outside ${SILO}.",
+      "range": {
+        "startLine": 21,
+        "startChar": 18,
+        "endLine": 21,
+        "endChar": 28
+      },
+      "revId": "6d57c70b8c9e30c4b31d340fe001b9d624124133",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
