@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    **lf-infra-ship-logs** macro which leverages **logs-deploy.sh** shell
+    script now allows overriding the Nexus upload path via an environment
+    variable named ``NEXUS_PATH``. If the variable is empty or not set,
+    the old default value will be used.

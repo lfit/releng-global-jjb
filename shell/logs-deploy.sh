@@ -18,7 +18,7 @@ if [[ -z $"${LOGS_SERVER:-}" ]]; then
     echo "WARNING: Logging server not set"
 else
     nexus_url="${NEXUSPROXY:-$NEXUS_URL}"
-    nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
+    nexus_path="${NEXUS_PATH:-${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}}"
 
     if [[ -n ${ARCHIVE_ARTIFACTS:-} ]] ; then
         # Handle multiple search extensions as separate values to '-p|--pattern'
