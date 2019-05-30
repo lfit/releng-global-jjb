@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f83d1c6_b860e1ae",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-30T00:51:03Z",
+      "side": 1,
+      "message": "Please forgive a dumb question, why do you not need to pass arguments in a similar way to this lf-docker-build macro? It needs docker-build-args docker-name and more.",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 136,
+        "endChar": 2
+      },
+      "revId": "c714ccf3cc5ad65864ce7922ad2d1a142b347290",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
