@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "36272c42_e1bf2f23",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-05-30T23:52:14Z",
+      "side": 1,
+      "message": "Note that \u0027tee\u0027 will only redirect stdout to the file, stderr goes directly to the console.",
+      "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9d39f145_7ac6a53d",
         "filename": "shell/docker-get-git-describe.sh",
         "patchSetId": 10
