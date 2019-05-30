@@ -13,6 +13,10 @@ echo "---> docker-get-yaml-tag.sh"
 
 set -eu -o pipefail
 
+# Install yq to read container-tag.yaml
+python -m pip install --user --quiet --upgrade yq
+export PATH="/home/jenkins/.local/bin:$PATH"
+
 cd "$DOCKER_ROOT"
 container_tag_file=container-tag.yaml
 
