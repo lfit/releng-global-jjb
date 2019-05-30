@@ -14,4 +14,4 @@ echo "---> docker-push.sh"
 # Ensure we fail the job if any steps fail
 set -ue -o pipefail
 
-docker push "$CONTAINER_PUSH_REGISTRY/$DOCKER_IMAGE"
+docker push "$CONTAINER_PUSH_REGISTRY/$DOCKER_NAME:$DOCKER_IMAGE_TAG"
