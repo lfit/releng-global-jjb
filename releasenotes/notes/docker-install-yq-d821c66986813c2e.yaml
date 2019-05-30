@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Install yq to be used to read yaml files. In specific, it will be needed
+    to read container-tag.yaml.
