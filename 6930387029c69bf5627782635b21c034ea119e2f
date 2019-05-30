@@ -46,6 +46,30 @@
       "revId": "6930387029c69bf5627782635b21c034ea119e2f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7686d609_9cd98f56",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-30T18:36:10Z",
+      "side": 1,
+      "message": "I don\u0027t understand your answer.  I\u0027m requesting to stop setting the default like this:\n\n    pre_docker_build_script: \u0027\u0027\n\nand start setting it to this:\n\n    pre_docker_build_script: \u0027# pre docker build script goes here\u0027\n\nDitto for post_.\n\nDoes this explain my request better?",
+      "parentUuid": "c309af0c_8d04745d",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 3
+      },
+      "revId": "6930387029c69bf5627782635b21c034ea119e2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
