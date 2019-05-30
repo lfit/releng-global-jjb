@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ff848d6_bc1ff519",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-05-30T06:11:45Z",
+      "side": 1,
+      "message": "type \"which\", pls change to ...\n\n\"Install yq to read container-tag.yaml\"",
+      "range": {
+        "startLine": 16,
+        "startChar": 13,
+        "endLine": 16,
+        "endChar": 17
+      },
+      "revId": "10f038c2398c8028b7dcfb2d7673832d791c7a8d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
