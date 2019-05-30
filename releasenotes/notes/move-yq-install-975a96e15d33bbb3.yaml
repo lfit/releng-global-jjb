@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    Add yq install as part of python-tools-install.sh
+    Allow future scripts to use yq package.

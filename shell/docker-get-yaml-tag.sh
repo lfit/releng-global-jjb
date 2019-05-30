@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -l
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2019 The Linux Foundation and others.
@@ -12,10 +12,6 @@ echo "---> docker-get-yaml-tag.sh"
 # Gets the container tag from a yaml file.
 
 set -eu -o pipefail
-
-# Install yq to read container-tag.yaml
-python -m pip install --user --quiet --upgrade yq
-export PATH="/home/jenkins/.local/bin:$PATH"
 
 cd "$DOCKER_ROOT"
 container_tag_file=container-tag.yaml

@@ -49,6 +49,7 @@ python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 dogpile.cache~=0.6.8  # Version 0.7.[01] seems to break openstackclient
 niet~=1.4.2 # Extract values from yaml
+yq
 EOF
 
     # Use `python -m pip` to ensure we are using the latest version of pip
