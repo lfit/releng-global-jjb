@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "921394e2_954d09db",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-30T18:49:17Z",
+      "side": 1,
+      "message": "If you really want to separate concerns, I think this script (and the get-git-desc script) should only add DOCKER_TAG to env_docker_inject.txt, and let the docker-build script put all the pieces together.  That would save having to pass DOCKER_NAME to here.",
+      "revId": "6b42d304855da626f9821fd17aaec362b736dae8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
