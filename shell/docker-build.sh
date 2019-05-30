@@ -12,8 +12,10 @@ echo "---> docker-build.sh"
 # Docker image build script
 
 set -eu -o pipefail
-
+echo "---> Building image: $CONTAINER_PUSH_REGISTRY/$DOCKER_NAME:$DOCKER_IMAGE_TAG"
 cd "$DOCKER_ROOT"
-# DOCKER_IMAGE variable gets constructed after lf-docker-get-container-tag builder step
+# DOCKER_IMAGE_TAG variable gets constructed after lf-docker-get-container-tag builder step
 # is executed. It constructs the image name and the appropriate tag in the same varaiable.
-docker build "$DOCKER_ARGS" . -t "$DOCKER_IMAGE" | tee "$WORKSPACE/docker_build_log.txt"
+docker_build_command="docker build ${DOCKER_ARGS:-} -t "$CONTAINER_PUSH_REGISTRY/$DOCKER_NAME:$DOCKER_IMAGE_TAG" ."
+echo $docker_build_command
+eval $docker_build_command | tee "$WORKSPACE/docker_build_log.txt"
