@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45fc253f_76567323",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-30T21:02:56Z",
+      "side": 1,
+      "message": "need the push registry URL here also",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 35
+      },
+      "revId": "a2a620c17ae5a2d7637595dcd449802f96b1f0a0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
