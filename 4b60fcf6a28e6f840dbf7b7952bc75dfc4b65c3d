@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "114d562f_e00c01dc",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-30T18:54:09Z",
+      "side": 1,
+      "message": "why is login shell behavior needed here?",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "4b60fcf6a28e6f840dbf7b7952bc75dfc4b65c3d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
