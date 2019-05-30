@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0af74525_435b8a10",
+        "filename": "releasenotes/notes/move-yq-install-975a96e15d33bbb3.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T18:49:32Z",
+      "side": 1,
+      "message": "My bad.. i thought it was to reffer to something we are doing better.. hahah .. let me change it to other.",
+      "parentUuid": "38431962_e9386348",
+      "revId": "c97ac5cf985ce8d9810bfff05dde53bda55628af",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d332a073_4a7a8082",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2019-05-30T18:37:03Z",
       "side": 1,
       "message": "python-tools-install is a curated list so I would recommend pinning the version using ~\u003d so that we don\u0027t get unexpected issues due to new versions in pypi.",
+      "revId": "c97ac5cf985ce8d9810bfff05dde53bda55628af",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e3c2accd_fc53b227",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T18:49:32Z",
+      "side": 1,
+      "message": "Will pin it to 2.7.2 which is the one i tested and latest too",
+      "parentUuid": "d332a073_4a7a8082",
       "revId": "c97ac5cf985ce8d9810bfff05dde53bda55628af",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
