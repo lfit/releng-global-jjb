@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    When calling builder step macros "lf-docker-get-container-tag"
+    and "lf-docker-build", make sure the needed varaibales are also
+    passed explicitly to avoid these variables appear as undefined. 

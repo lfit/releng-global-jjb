@@ -70,6 +70,7 @@
     submodule-timeout: 10
     pre_docker_build_script: ''
     post_docker_build_script: ''
+    docker-use-params-from: ''
     disable-job: 'false'
     docker-root: '$WORKSPACE'
     docker-build-args: ''
@@ -131,8 +132,13 @@
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
       - shell: '{pre_docker_build_script}'
-      - lf-docker-get-container-tag
-      - lf-docker-build
+      - lf-docker-get-container-tag:
+          docker-use-params-from: '{docker-use-params-from}'
+      - lf-docker-build:
+          docker-build-args: '{docker-build-args}'
+          docker-name: '{docker-name}'
+          docker-root: '{docker-root}'
+          container-public-registry: '{container-public-registry}'
       - shell: '{post_docker_build_script}'
       - lf-provide-maven-settings-cleanup
 
@@ -161,8 +167,13 @@
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
       - shell: '{pre_docker_build_script}'
-      - lf-docker-get-container-tag
-      - lf-docker-build
+      - lf-docker-get-container-tag:
+          docker-use-params-from: '{docker-use-params-from}'
+      - lf-docker-build:
+          docker-build-args: '{docker-build-args}'
+          docker-name: '{docker-name}'
+          docker-root: '{docker-root}'
+          container-public-registry: '{container-public-registry}'
       - shell: '{post_docker_build_script}'
       # Provided all steps have already passed, push the docker image
       - lf-docker-push
