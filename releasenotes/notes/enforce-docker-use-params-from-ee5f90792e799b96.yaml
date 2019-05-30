@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Enforce the varaible "docker-use-params-from" to be defined whenever
+    docker-verify and docker-merge call the lf-docker-get-container-tag
+    contitional step.
