@@ -10,7 +10,6 @@
     builders:
       - inject:
           properties-content: |
-            DOCKER_NAME={docker-name}
             DOCKER_ROOT={docker-root}
       - conditional-step:
           condition-kind: regex-match
@@ -37,6 +36,7 @@
       - inject:
           properties-content: |
             DOCKER_ARGS={docker-build-args}
+            DOCKER_NAME={docker-name}
             DOCKER_ROOT={docker-root}
             CONTAINER_PULL_REGISTRY={container-public-registry}
       - shell: !include-raw-escape:
@@ -137,10 +137,10 @@
       - shell: '{pre_docker_build_script}'
       - lf-docker-get-container-tag:
           docker-use-params-from: '{docker-use-params-from}'
-          docker-name: '{docker-name}'
           docker-root: '{docker-root}'
       - lf-docker-build:
           docker-build-args: '{docker-build-args}'
+          docker-name: '{docker-name}'
           docker-root: '{docker-root}'
           container-public-registry: '{container-public-registry}'
       - shell: '{post_docker_build_script}'
@@ -173,10 +173,10 @@
       - shell: '{pre_docker_build_script}'
       - lf-docker-get-container-tag:
           docker-use-params-from: '{docker-use-params-from}'
-          docker-name: '{docker-name}'
           docker-root: '{docker-root}'
       - lf-docker-build:
           docker-build-args: '{docker-build-args}'
+          docker-name: '{docker-name}'
           docker-root: '{docker-root}'
           container-public-registry: '{container-public-registry}'
       - shell: '{post_docker_build_script}'
