@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    When calling builder step macros "lf-docker-get-container-tag",
+    "lf-docker-build" and "lf-docker-push", make sure the needed varaibales
+    are also passed explicitly to avoid these variables appear as undefined.
+
+    Modify scripts to fix variable convention. Remove push regisrty and use
+    if only after docker-push.sh is called.
