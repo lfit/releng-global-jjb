@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9304f36e_5ace0bbd",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-05-30T11:08:00Z",
+      "side": 1,
+      "message": "Set the shebang line to `#!/bin/bash -l` and the .local/bin path will be picked up by the script.\n\nThe pip install should go into python-tools-install.sh in my opinion as this seems like a tool that might be useful in other shell scripts too and we wouldn\u0027t want to have to manage the installation in every single shell file that want\u0027s to use it.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 44
+      },
+      "revId": "a452768c9a2dd7619fed3882cfbab1057d98dc61",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
