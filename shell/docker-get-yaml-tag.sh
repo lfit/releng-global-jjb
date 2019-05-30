@@ -18,7 +18,7 @@ container_tag_file=container-tag.yaml
 
 if [ -f "$container_tag_file" ]
 then
-    image_name=$(yq -r .tag "$container_tag_file")
+    image_build_tag=$(yq -r .tag "$container_tag_file")
 else
     echo "$container_tag_file file not found. Make sure this file exists."
     exit 1
@@ -26,4 +26,4 @@ fi
 
 # Write DOCKER_IMAGE information to a file so it can be injected into the
 # environment for following steps
-echo "DOCKER_IMAGE=$image_name" >> "$WORKSPACE/env_docker_inject.txt"
+echo "DOCKER_IMAGE=$DOCKER_NAME:$image_build_tag" >> "$WORKSPACE/env_docker_inject.txt"

@@ -22,7 +22,7 @@ then
     echo "git describe returned an empty value, make sure a version tag is applied"
     exit 1
 else
-    image_name="$CONTAINER_PUSH_REGISTRY/$DOCKER_NAME:$image_build_tag"
+    image_name="$DOCKER_NAME:$image_build_tag"
 fi
 
 # Write DOCKER_IMAGE information to a file so it can be injected into the

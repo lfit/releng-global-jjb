@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Allow DOCKER_ARGS to be empty in docker-build.sh. This is not a
+    required parameter, it can be empty.
+
+    Remove container reference in docker-get-git-describe.sh. The
+    CONTAINER_PUSH_REGISTRY already gets added in the docker-push script.
+    No need to add it again.
+
+    Rename image_name to image_build_tag in docker-get-yaml-tag to match
+    docker-get-git-describe. Add missing "DOCKER_NAME" in the DOCKER_IMAGE.
