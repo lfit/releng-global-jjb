@@ -94,6 +94,30 @@
       "revId": "6930387029c69bf5627782635b21c034ea119e2f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65a4ba3c_9ad9bc8f",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T19:01:42Z",
+      "side": 1,
+      "message": "I will add this fix in https://gerrit.linuxfoundation.org/infra/#/c/releng/global-jjb/+/15790 since it is more appropriate there..",
+      "parentUuid": "cd78324a_79f66202",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 3
+      },
+      "revId": "6930387029c69bf5627782635b21c034ea119e2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
