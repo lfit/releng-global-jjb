@@ -22,6 +22,30 @@
       "revId": "6930387029c69bf5627782635b21c034ea119e2f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c309af0c_8d04745d",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T18:15:50Z",
+      "side": 1,
+      "message": "If i don\u0027t define them at all, jjb will complain about it becuase we are using the variable in the builder steps.\nI need to make sure they are defined even if its empty.",
+      "parentUuid": "da51448e_19bb4e2e",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 3
+      },
+      "revId": "6930387029c69bf5627782635b21c034ea119e2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
