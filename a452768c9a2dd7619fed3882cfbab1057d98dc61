@@ -22,6 +22,30 @@
       "revId": "a452768c9a2dd7619fed3882cfbab1057d98dc61",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bddbc0f_4be806fa",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T17:43:16Z",
+      "side": 1,
+      "message": "Thansk Thanh.,, i didn\u0027t knew other people might need this tool too.. in that case let me move it there..",
+      "parentUuid": "9304f36e_5ace0bbd",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 44
+      },
+      "revId": "a452768c9a2dd7619fed3882cfbab1057d98dc61",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
