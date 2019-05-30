@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da51448e_19bb4e2e",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-30T09:55:37Z",
+      "side": 1,
+      "message": "Would you please consider setting a valid shell comment in these scripts instead of the empty string?  E.g., \n\n    # pre_docker_build_script\n\nThen the Jenkins will show something in the project configuration.  Today it has a totally empty shell script (text box) which looks like a bug, but really it\u0027s just from this.",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 3
+      },
+      "revId": "6930387029c69bf5627782635b21c034ea119e2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
