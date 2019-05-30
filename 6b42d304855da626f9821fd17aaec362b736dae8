@@ -16,6 +16,24 @@
       "revId": "6b42d304855da626f9821fd17aaec362b736dae8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2d5eff33_856aeeac",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T18:53:02Z",
+      "side": 1,
+      "message": "hmm.. i think that is a good idea.. let me work on that...",
+      "parentUuid": "921394e2_954d09db",
+      "revId": "6b42d304855da626f9821fd17aaec362b736dae8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
