@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9d39f145_7ac6a53d",
+        "filename": "shell/docker-get-git-describe.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T23:08:43Z",
+      "side": 1,
+      "message": "Chris, I noticed i am \"cd-ing\" into DOCKER_ROOT in both the tag script and the docker build step. Not sure why i am i not getting an error from this, but shouldn\u0027t this have failed? \n\nDon\u0027t we need to just do this once in the tagging part?",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 17
+      },
+      "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
