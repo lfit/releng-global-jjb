@@ -8,6 +8,10 @@
 - builder:
     name: lf-docker-get-container-tag
     builders:
+      - inject:
+          properties-content: |
+            DOCKER_NAME={docker-name}
+            DOCKER_ROOT={docker-root}
       - conditional-step:
           condition-kind: regex-match
           regex: git-describe-params
@@ -33,7 +37,6 @@
       - inject:
           properties-content: |
             DOCKER_ARGS={docker-build-args}
-            DOCKER_NAME={docker-name}
             DOCKER_ROOT={docker-root}
             CONTAINER_PULL_REGISTRY={container-public-registry}
       - shell: !include-raw-escape:
@@ -70,6 +73,7 @@
     submodule-timeout: 10
     pre_docker_build_script: ''
     post_docker_build_script: ''
+    docker-use-params-from: ''
     disable-job: 'false'
     docker-root: '$WORKSPACE'
     docker-build-args: ''
@@ -131,8 +135,14 @@
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
       - shell: '{pre_docker_build_script}'
-      - lf-docker-get-container-tag
-      - lf-docker-build
+      - lf-docker-get-container-tag:
+          docker-use-params-from: '{docker-use-params-from}'
+          docker-name: '{docker-name}'
+          docker-root: '{docker-root}'
+      - lf-docker-build:
+          docker-build-args: '{docker-build-args}'
+          docker-root: '{docker-root}'
+          container-public-registry: '{container-public-registry}'
       - shell: '{post_docker_build_script}'
       - lf-provide-maven-settings-cleanup
 
@@ -161,11 +171,18 @@
           global-settings-file: 'global-settings'
           settings-file: '{mvn-settings}'
       - shell: '{pre_docker_build_script}'
-      - lf-docker-get-container-tag
-      - lf-docker-build
+      - lf-docker-get-container-tag:
+          docker-use-params-from: '{docker-use-params-from}'
+          docker-name: '{docker-name}'
+          docker-root: '{docker-root}'
+      - lf-docker-build:
+          docker-build-args: '{docker-build-args}'
+          docker-root: '{docker-root}'
+          container-public-registry: '{container-public-registry}'
       - shell: '{post_docker_build_script}'
       # Provided all steps have already passed, push the docker image
-      - lf-docker-push
+      - lf-docker-push:
+          container-push-registry: '{container-push-registry}'
       - lf-provide-maven-settings-cleanup
 
 #################
