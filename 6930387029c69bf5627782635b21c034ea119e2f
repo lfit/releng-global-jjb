@@ -70,6 +70,30 @@
       "revId": "6930387029c69bf5627782635b21c034ea119e2f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd78324a_79f66202",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T18:54:18Z",
+      "side": 1,
+      "message": "yes... let me do that.. thanks for your example",
+      "parentUuid": "7686d609_9cd98f56",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 3
+      },
+      "revId": "6930387029c69bf5627782635b21c034ea119e2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
