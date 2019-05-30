@@ -22,6 +22,30 @@
       "revId": "98ff6318a0f9d655131e6ac7696fb50b67eec954",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98a1da69_33f2d6b8",
+        "filename": "releasenotes/notes/lf-docker-jobs-fix-variables-2575c6047e5b62cf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-30T18:57:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1b120be1_ddab1fee",
+      "range": {
+        "startLine": 5,
+        "startChar": 65,
+        "endLine": 5,
+        "endChar": 75
+      },
+      "revId": "98ff6318a0f9d655131e6ac7696fb50b67eec954",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
