@@ -22,6 +22,30 @@
       "revId": "fe67fa460493bf9c996c1b9e61ca2abda0c1f80f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7942d616_aa9dcb6e",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-05-31T17:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3253ffc0_7497b123",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 9
+      },
+      "revId": "fe67fa460493bf9c996c1b9e61ca2abda0c1f80f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
