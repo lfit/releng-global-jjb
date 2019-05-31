@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "87af5f99_991ae597",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-31T00:07:30Z",
+      "side": 1,
+      "message": "Please remove/correct this comment",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 1
+      },
+      "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "36272c42_e1bf2f23",
         "filename": "shell/docker-build.sh",
         "patchSetId": 10
@@ -13,6 +36,29 @@
       "writtenOn": "2019-05-30T23:52:14Z",
       "side": 1,
       "message": "Note that \u0027tee\u0027 will only redirect stdout to the file, stderr goes directly to the console.",
+      "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1cf1aa6_5cfef0c3",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-31T00:07:30Z",
+      "side": 1,
+      "message": "Thanks for the change.  At some risk of making this too complicated let me ask your opinion - this script could define some variable like DOCKER_IMAGE_FULL_NAME or such, and you could inject that back into the docker push.  Is that worth it?  Maybe not.",
+      "range": {
+        "startLine": 19,
+        "startChar": 33,
+        "endLine": 19,
+        "endChar": 90
+      },
       "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
