@@ -109,6 +109,69 @@
       "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "46a0199c_c0ae71c2",
+        "filename": "shell/docker-get-git-describe.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-31T00:22:48Z",
+      "side": 1,
+      "message": "Please echo the contents of image_build_tag here!",
+      "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b24a9be0_b6b63785",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-31T00:22:48Z",
+      "side": 1,
+      "message": "I used a tag file with \"1.0\" but yq yielded just digit \"1\" that\u0027s weird can I show you?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 5
+      },
+      "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3623921c_86383247",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-31T00:22:48Z",
+      "side": 1,
+      "message": "please echo the image_build_tag content here!",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
