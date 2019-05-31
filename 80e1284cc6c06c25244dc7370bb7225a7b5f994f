@@ -39,6 +39,30 @@
       "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7bf3fe81_ba9f1b5d",
+        "filename": "shell/docker-get-git-describe.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-31T00:02:39Z",
+      "side": 1,
+      "message": "The script absolutely must cd $DOCKER_ROOT in the BUILD step.  It seems to me it\u0027s rather optional in the tag step since a tag is on the repository, not the directory, but probably best to keep the two scripts parallel.",
+      "parentUuid": "9d39f145_7ac6a53d",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 17
+      },
+      "revId": "80e1284cc6c06c25244dc7370bb7225a7b5f994f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
