@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3253ffc0_7497b123",
+        "filename": "shell/docker-build.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-05-31T13:38:15Z",
+      "side": 1,
+      "message": "One very VERY late request - would you possibly consider echoing the build command to the console?  I suggest this way:\n\n    d_b_cmd\u003d\"docker build ${DOCKER_ARGS:-} -t $CONTAINER_PUSH_REGISTRY/$DOCKER_NAME:$DOCKER_IMAGE_TAG \n    echo $d_b_cmd\n    $(d_b_cmd) | tee \"$WORKSPACE/docker_build_log.txt\"",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 9
+      },
+      "revId": "fe67fa460493bf9c996c1b9e61ca2abda0c1f80f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
