@@ -80,8 +80,12 @@ Executes a docker build task.
         (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override Gerrit file paths which can be
+        used to filter which file modifications will trigger a build.
+    :github_included_regions: Override Github file paths which can be
+        used to filter which file modifications will trigger a build;
+        must match parameter gerrit_trigger_file_paths
+
 
 container-tag.yaml example:
 
@@ -136,8 +140,11 @@ Executes a docker build task and publishes the resulting images to a specified D
         (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override Gerrit file paths which can be
+        used to filter which file modifications will trigger a build.
+    :github_included_regions: Override Github file paths which can be
+        used to filter which file modifications will trigger a build;
+        must match parameter gerrit_trigger_file_paths
 
 container-tag.yaml example:
 
