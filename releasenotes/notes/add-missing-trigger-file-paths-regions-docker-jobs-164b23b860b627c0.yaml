@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Add missing config for triggering on file paths to docker macros and templates,
+    namely gerrit_trigger_file_paths and github_included_regions, to make the verify
+    and merge macros and templates match the behavior of other jobs.

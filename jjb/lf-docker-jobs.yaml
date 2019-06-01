@@ -130,6 +130,10 @@
       - comment-added-contains-event:
           comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
 
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '.*'
+
     builders:
       - lf-infra-pre-build
       - lf-infra-docker-login:
@@ -166,6 +170,10 @@
       - change-merged-event
       - comment-added-contains-event:
           comment-contains-value: remerge$
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '.*'
 
     builders:
       - lf-infra-pre-build
@@ -214,6 +222,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
     name: '{project-name}-docker-verify-{stream}'
@@ -281,6 +290,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
     name: '{project-name}-docker-merge-{stream}'
