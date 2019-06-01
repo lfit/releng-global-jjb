@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "d5f51004_3597f477",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-06-01T19:22:48Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment. If any source file changes in a project built using this job, that requires a re-build of the docker image, so the job needs to fire up. For example, it might be a C/CPP repository.\n\nAre you by any chance thinking of the new o-ran-sc\u0027s ci-management/docker subdirectory?  Sure, I use these macros and templates to build docker images from Dockerfiles stored there, but also for other projects.  For my latest non-ci-mgt job please see https://gerrit.o-ran-sc.org/r/c/ci-management/+/237\n\nI really, really don\u0027t think the default trigger file path should embed any special string like \"docker\"",
+      "parentUuid": "61b858e8_d46d9b4f",
+      "range": {
+        "startLine": 135,
+        "startChar": 18,
+        "endLine": 135,
+        "endChar": 20
+      },
+      "revId": "d88144f9f1d5a04989726ab5755c40db5cbc0803",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2f406466_529ff599",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 4
