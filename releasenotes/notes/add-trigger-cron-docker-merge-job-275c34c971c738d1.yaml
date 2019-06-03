@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add trigger on cron to docker merge macro to support regular rebuilds.
+    This makes the merge macro match the behavior of most other jobs.

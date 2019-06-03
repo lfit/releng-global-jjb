@@ -158,6 +158,7 @@
 
 - docker_merge_common: &docker_merge_common
     name: docker-merge-common
+    cron: ''
 
     scm:
       - lf-infra-gerrit-scm:
@@ -289,6 +290,7 @@
     <<: *docker_merge_common
 
     triggers:
+      - timed: '{obj:cron}'
       - gerrit:
           server-name: '{gerrit-server-name}'
           trigger-on: '{obj:gerrit_merge_triggers}'
@@ -330,6 +332,7 @@
           jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
+      - timed: '{obj:cron}'
       - github
       - pollscm:
           cron: ''
