@@ -15,10 +15,12 @@ set -x  # Enable trace
 virtualenv --quiet "/tmp/v/info"
 # shellcheck source=/tmp/v/info/bin/activate disable=SC1091
 source "/tmp/v/info/bin/activate"
-pip install PyYAML jsonschema rfc3987
+pip install PyYAML jsonschema rfc3987 yamllint
 
 # Cloning global-jjb to get access to needed scripts
 git clone https://github.com/lfit/releng-global-jjb.git
+
+yamllint INFO.yaml
 
 python releng-global-jjb/yaml-verify-schema.py \
     -s releng-global-jjb/info-schema \

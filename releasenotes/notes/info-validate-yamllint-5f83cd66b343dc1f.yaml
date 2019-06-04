@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Add yamllint verification to INFO.yaml files.
