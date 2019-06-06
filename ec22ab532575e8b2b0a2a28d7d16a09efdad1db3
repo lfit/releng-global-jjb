@@ -144,6 +144,29 @@
       "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "196a55f6_ad86cd65",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-06T21:10:13Z",
+      "side": 1,
+      "message": "instead of doing, strip the \u0027/\u0027 and set this in the path. all this can be done in a single line.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 2
+      },
+      "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
