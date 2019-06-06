@@ -27,7 +27,7 @@ conf_images=("$(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
 yaml_images=("$(grep -r 'ZZCI - ' --include \*.yaml jjb \
                | awk -F": " '{print $3}' | sed "s:'::;s:'$::;/^$/d" \
                | sort -u)") || true
-readarray -t images <<< "$(for i in "${conf_images[@}" "${yaml_images[@]}"; do \
+readarray -t images <<< "$(for i in "${conf_images[@]}" "${yaml_images[@]}"; do \
                            echo "$i"; done | sort)"
 
 for image in "${images[@]}"; do
