@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7104d30c_58e9b8ca",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-06-06T20:04:15Z",
+      "side": 1,
+      "message": "Done, I added more explanation on how this works.",
+      "parentUuid": "fb9321f2_cca6ac53",
+      "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f501573f_6e0693f0",
         "filename": "docs/jjb/lf-docker-jobs.rst",
         "patchSetId": 3
