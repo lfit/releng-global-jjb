@@ -23,6 +23,9 @@
           regex: yaml-file-params
           label: '{docker-use-params-from}'
           steps:
+            - inject:
+                properties-content: |
+                  CONTAINER_TAG_FILE_PATH={container-tag-file-path}
             - shell: !include-raw-escape:
                 - ../shell/docker-get-yaml-tag.sh
       - inject:
@@ -69,6 +72,7 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 60
+    container-tag-file-path: "."
     submodule-disable: false
     submodule-recursive: true
     submodule-timeout: 10
@@ -147,6 +151,7 @@
       - lf-docker-get-container-tag:
           docker-use-params-from: '{docker-use-params-from}'
           docker-root: '{docker-root}'
+          container-tag-file-path: '{container-tag-file-path}'
       - lf-docker-build:
           docker-build-args: '{docker-build-args}'
           docker-name: '{docker-name}'
@@ -193,6 +198,7 @@
       - lf-docker-get-container-tag:
           docker-use-params-from: '{docker-use-params-from}'
           docker-root: '{docker-root}'
+          container-tag-file-path: '{container-tag-file-path}'
       - lf-docker-build:
           docker-build-args: '{docker-build-args}'
           docker-name: '{docker-name}'
