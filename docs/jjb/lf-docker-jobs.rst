@@ -21,6 +21,10 @@ lf-docker-get-container-tag
 
 Calls docker-get-git-describe.sh or docker-get-yaml-tag.sh (depending on the
 'docker-use-params-from' condition) to obtain the tag to build.
+If docker-use-params-from: git-describe-params, the tag will be obtained using
+git describe command.
+If docker-use-params-from: yaml-file-params, the tag will be obtained from the
+provided container-tag.yaml file in the tech team repo.
 
 lf-docker-build
 ---------------
@@ -65,6 +69,7 @@ Executes a docker build task.
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :container-tag-file-path: Location of container-tag.yaml. (default: $DOCKER_ROOT)
     :docker-build-args: Additional arguments for the docker build command.
     :docker-root: Path of the Dockerfile within the repo.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
@@ -125,6 +130,7 @@ Executes a docker build task and publishes the resulting images to a specified D
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :container-tag-file-path: Location of container-tag.yaml. (default: $DOCKER_ROOT)
     :cron: Cron schedule when to trigger the job. This parameter also
         supports multiline input via YAML pipe | character in cases where
         one may want to provide more than 1 cron timer. No default. Use

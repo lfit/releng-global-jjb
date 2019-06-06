@@ -14,7 +14,11 @@ echo "---> docker-get-yaml-tag.sh"
 set -eu -o pipefail
 
 cd "$DOCKER_ROOT"
-container_tag_file=container-tag.yaml
+
+# Remove last "/" from CONTAINER_TAG_FILE_PATH if exisist.
+# Let the script add it
+container_tag_file=$( echo "$CONTAINER_TAG_FILE_PATH" | sed 's/\/$//')/container-tag.yaml
+echo "---> Looking for tag in $container_tag_file ..."
 
 if [ -f "$container_tag_file" ]
 then

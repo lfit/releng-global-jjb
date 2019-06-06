@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Allow users to specify a custom location for container-tag.yaml if
+    they are using the yaml-file-params conditional step to extract the
+    docker tag information. This is an optional variable which is set to
+    "." by default.
