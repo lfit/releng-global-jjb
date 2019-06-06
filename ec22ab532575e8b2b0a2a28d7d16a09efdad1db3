@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "78e976c8_70a1b632",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-06-06T20:39:20Z",
+      "side": 1,
+      "message": "so, uh, please point me to this added explanation, and forgive if I\u0027m being blind (again).",
+      "parentUuid": "7104d30c_58e9b8ca",
+      "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f501573f_6e0693f0",
         "filename": "docs/jjb/lf-docker-jobs.rst",
         "patchSetId": 3
