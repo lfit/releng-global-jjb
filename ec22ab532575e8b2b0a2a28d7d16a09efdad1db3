@@ -42,6 +42,29 @@
     },
     {
       "key": {
+        "uuid": "352f177b_ca27ee1b",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-06-06T16:09:29Z",
+      "side": 1,
+      "message": "Let\u0027s mention that . is $WORKSPACE/$DOCKER_ROOT/",
+      "range": {
+        "startLine": 68,
+        "startChar": 62,
+        "endLine": 68,
+        "endChar": 74
+      },
+      "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3c1969e4_e810e730",
         "filename": "jjb/lf-docker-jobs.yaml",
         "patchSetId": 3
