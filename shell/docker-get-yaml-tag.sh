@@ -14,7 +14,16 @@ echo "---> docker-get-yaml-tag.sh"
 set -eu -o pipefail
 
 cd "$DOCKER_ROOT"
-container_tag_file=container-tag.yaml
+
+# Verify if the CONTAINER_TAG_FILE_PATH variable ends with "/"
+# Add "/" if not.
+if [[ "$CONTAINER_TAG_FILE_PATH" = */ ]]
+then
+	container_tag_file="$CONTAINER_TAG_FILE_PATH"container-tag.yaml
+else
+        container_tag_file="$CONTAINER_TAG_FILE_PATH"/container-tag.yaml
+fi
+echo "---> Looking for tag in $container_tag_file ..."
 
 if [ -f "$container_tag_file" ]
 then
