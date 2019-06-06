@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb9321f2_cca6ac53",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-06-06T10:10:29Z",
+      "side": 1,
+      "message": "Maybe here the behavior of docker-get-yaml-tag could be documented, and you could explain that the default location checked for the tag file is next to the Dockerfile in DOCKER_ROOT?",
+      "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f501573f_6e0693f0",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-06-06T10:10:29Z",
+      "side": 1,
+      "message": "Can this possibly default to docker-root ?  That seems like the most useful value, rather than \".\"",
+      "range": {
+        "startLine": 68,
+        "startChar": 63,
+        "endLine": 68,
+        "endChar": 73
+      },
+      "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c1969e4_e810e730",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-06-06T10:10:29Z",
+      "side": 1,
+      "message": "I suggest {docker-root} if that\u0027s possible here",
+      "range": {
+        "startLine": 75,
+        "startChar": 29,
+        "endLine": 75,
+        "endChar": 32
+      },
+      "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "943321f9_5ee82a4b",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-06-06T10:10:29Z",
+      "side": 1,
+      "message": "ohhhh I didn\u0027t realize the script already starts in DOCKER_ROOT.  I was using the template incorrectly, I thought container-tag.yaml had to be present at $REPOSITORY_ROOT.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 3
+      },
+      "revId": "ec22ab532575e8b2b0a2a28d7d16a09efdad1db3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
