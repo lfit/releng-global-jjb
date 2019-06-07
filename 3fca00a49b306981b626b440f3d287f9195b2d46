@@ -46,6 +46,30 @@
       "revId": "3fca00a49b306981b626b440f3d287f9195b2d46",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed0d890a_b577881f",
+        "filename": "shell/openstack-cleanup-orphaned-stacks.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-07T00:59:07Z",
+      "side": 1,
+      "message": "Tim, I think you\u0027re correct that the proper fix is in lftools itself and not here in global-jjb.\n\nWe should have lftools attempting to delete everything and logging out an error of everything that it fails to take care of. The problem we currently have is that we \"fail fast\" by which I mean we fail on the first error, which means if the error happens early in the loop then all the other resources that might be something we can clean-up get ignored until the problem issue gets resolved (many times requiring us to open a ticket with the cloud provider).",
+      "parentUuid": "5446b4e3_b250b860",
+      "range": {
+        "startLine": 90,
+        "startChar": 8,
+        "endLine": 90,
+        "endChar": 60
+      },
+      "revId": "3fca00a49b306981b626b440f3d287f9195b2d46",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
