@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "986097f4_fbdee39e",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-07T02:27:07Z",
+      "side": 1,
+      "message": "typo: exist",
+      "range": {
+        "startLine": 18,
+        "startChar": 50,
+        "endLine": 18,
+        "endChar": 57
+      },
+      "revId": "b2393563da04e8225ed9886f6af9acf16bed9fd5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1822f49f_6d286c5c",
+        "filename": "shell/docker-get-yaml-tag.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-07T02:27:07Z",
+      "side": 1,
+      "message": "I\u0027d use the bash inbuilt substitution its much faster, and this always strips the trailing slash if present. for ex:\n\ncontainer_tag_file\u003d\"${CONTAINER_TAG_FILE_PATH%/}/container-tag.yaml\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 88
+      },
+      "revId": "b2393563da04e8225ed9886f6af9acf16bed9fd5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
