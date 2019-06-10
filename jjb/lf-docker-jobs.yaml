@@ -10,25 +10,14 @@
     builders:
       - inject:
           properties-content: |
+            CONTAINER_TAG_METHOD={container-tag-method}
+            CONTAINER_TAG_YAML_DIR={container-tag-yaml-dir}
             DOCKER_ROOT={docker-root}
-      - conditional-step:
-          condition-kind: regex-match
-          regex: git-describe-params
-          label: '{docker-use-params-from}'
-          steps:
-            - shell: !include-raw-escape:
-                - ../shell/docker-get-git-describe.sh
-      - conditional-step:
-          condition-kind: regex-match
-          regex: yaml-file-params
-          label: '{docker-use-params-from}'
-          steps:
-            - shell: !include-raw-escape:
-                - ../shell/docker-get-yaml-tag.sh
+      - shell: !include-raw-escape:
+          - ../shell/docker-get-container-tag.sh
       - inject:
-          # Import the docker image information from the previous build step
+          # Import the container tag set by this build step
           properties-file: 'env_docker_inject.txt'
-
 
 - builder:
     name: lf-docker-build
@@ -74,11 +63,13 @@
     submodule-timeout: 10
     pre_docker_build_script: '# pre docker build script goes here'
     post_docker_build_script: '# post docker build script goes here'
-    docker-use-params-from: ''
     disable-job: 'false'
     docker-root: '$WORKSPACE'
     docker-build-args: ''
     git-url: '$GIT_URL/$PROJECT'
+    container-tag-method: 'latest'
+    # TODO: how to interpolate value of {docker-root} parameter?
+    container-tag-yaml-dir: ''
 
     #####################
     # Job Configuration #
@@ -145,7 +136,8 @@
           settings-file: '{mvn-settings}'
       - shell: '{pre_docker_build_script}'
       - lf-docker-get-container-tag:
-          docker-use-params-from: '{docker-use-params-from}'
+          container-tag-method: '{container-tag-method}'
+          container-tag-yaml-dir: '{container-tag-yaml-dir}'
           docker-root: '{docker-root}'
       - lf-docker-build:
           docker-build-args: '{docker-build-args}'
@@ -191,7 +183,8 @@
           settings-file: '{mvn-settings}'
       - shell: '{pre_docker_build_script}'
       - lf-docker-get-container-tag:
-          docker-use-params-from: '{docker-use-params-from}'
+          container-tag-method: '{container-tag-method}'
+          container-tag-yaml-dir: '{container-tag-yaml-dir}'
           docker-root: '{docker-root}'
       - lf-docker-build:
           docker-build-args: '{docker-build-args}'
