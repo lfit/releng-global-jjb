@@ -98,7 +98,7 @@ Jenkins Files
 
 global-jjb makes use of the Jenkins Config File Provider plugin to provide some
 default configurations for certain tools. This section details the files to
-define in Jenkins' **Manage Files** configuration.
+define in Jenkins' **Managed Files** configuration (eg: https://jenkins.example.org/configfiles/index).
 
 .. _npmrc:
 
