@@ -22,6 +22,30 @@
       "revId": "3ff4f76063a2f94b6bca9b6f99cafb00888e8671",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ccd56918_6745f51f",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 266
+      },
+      "writtenOn": "2019-06-10T19:24:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3eaff963_16644edd",
+      "range": {
+        "startLine": 101,
+        "startChar": 72,
+        "endLine": 101,
+        "endChar": 80
+      },
+      "revId": "3ff4f76063a2f94b6bca9b6f99cafb00888e8671",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
