@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "8bd07cfa_7cac312a",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-06-10T14:01:20Z",
+      "side": 1,
+      "message": "tech team? This expression is new to me, am I out of date (as usual)?",
+      "range": {
+        "startLine": 27,
+        "startChar": 40,
+        "endLine": 27,
+        "endChar": 49
+      },
+      "revId": "b2393563da04e8225ed9886f6af9acf16bed9fd5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "986097f4_fbdee39e",
         "filename": "shell/docker-get-yaml-tag.sh",
         "patchSetId": 4
