@@ -8,9 +8,10 @@
     project-name: docker-project
     container-public-registry: pub-registry
     container-push-registry: push-registry
+    container-tag-method: yaml-file
+    container-tag-yaml-dir: ''
     docker-build-args: ''
     docker-name: docker-image-name
     docker-root: docker
-    docker-use-params-from: yaml-file-params
     branch: master
     mvn-settings: docker-project-settings
