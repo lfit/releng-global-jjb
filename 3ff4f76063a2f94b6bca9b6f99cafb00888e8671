@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3eaff963_16644edd",
+        "filename": "docs/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-10T19:19:29Z",
+      "side": 1,
+      "message": "example.org",
+      "range": {
+        "startLine": 101,
+        "startChar": 72,
+        "endLine": 101,
+        "endChar": 80
+      },
+      "revId": "3ff4f76063a2f94b6bca9b6f99cafb00888e8671",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
