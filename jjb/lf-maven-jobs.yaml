@@ -1296,6 +1296,138 @@
           white-list-target-branches:
             - '{branch}'
 
+##################
+# Maven Coverity #
+##################
+
+- lf_maven_coverity: &lf_maven_coverity
+    name: lf-maven-coverity
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 60
+    cron: 'H H * * 6'  # run weekly
+    disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
+    java-version: openjdk8
+    mvn-global-settings: global-settings
+    mvn-opts: ''
+    mvn-params: ''
+    mvn-version: mvn35
+    coverity-project-name: ''
+    coverity-token: ''
+    coverity-user-email: ''
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_coverity_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: run-coverity$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: '{disable-job}'
+
+    parameters:
+      - lf-infra-parameters:
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
+      - lf-infra-maven-parameters:
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: '{archive-artifacts}'
+          description: Artifacts to archive to the logs server.
+      - string:
+          name: COVERITY_PROJECT_NAME
+          default: '{coverity-project-name}'
+          description: |
+              Project name in Coverity Scan service.
+      - string:
+          name: COVERITY_TOKEN
+          default: '{coverity-token}'
+          description: |
+              Project token in Coverity Scan service.
+      - string:
+          name: COVERITY_USER_EMAIL
+          default: '{coverity-user-email}'
+          description: |
+              Email of registered user in Coverity Scan service who initiated
+              the submittion.
+
+    triggers:
+      - timed: '{obj:cron}'
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_coverity_triggers}'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/master'
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-maven-coverity:
+          java-version: '{java-version}'
+          mvn-settings: '{mvn-settings}'
+          mvn-version: '{mvn-version}'
+
+    publishers:
+      - lf-jacoco-report
+#      - findbugs
+      - lf-infra-publish
+
+- builder:
+    name: lf-infra-maven-coverity
+    builders:
+      - lf-maven-install:
+          mvn-version: '{mvn-version}'
+      - lf-update-java-alternatives:
+          java-version: '{java-version}'
+      - lf-provide-maven-settings:
+          global-settings-file: global-settings
+          settings-file: '{mvn-settings}'
+      - shell: !include-raw-escape:
+          - ../shell/common-variables.sh
+          - ../shell/maven-coverity.sh
+      - lf-provide-maven-settings-cleanup
+
+- job-template:
+    name: '{project-name}-coverity'
+    id: gerrit-maven-coverity
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_coverity
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: $GERRIT_REFSPEC
+          branch: $GERRIT_BRANCH
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
+          choosing-strategy: default
+
 ################
 # Maven Verify #
 ################

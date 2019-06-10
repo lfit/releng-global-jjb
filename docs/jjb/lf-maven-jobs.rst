@@ -41,6 +41,19 @@ Runs Sonar against a Maven project and pushes results to SonarCloud.
     :sonarcloud-project-organization: SonarCloud project organization.
     :sonarcloud-api-token: SonarCloud API Token.
 
+lf-infra-maven-coverity
+-----------------------
+
+Runs Coverity tool against a Maven project and pushes results to Coverity Scan
+service static code analysis.
+
+:Required Parameters:
+
+    :coverity-project-name: Project name in Coverity Scan service.
+    :coverity-token: Project token in Coverity Scan service.
+    :coverity-user-email: Email of registered user in Coverity Scan service
+        who initiated the submittion.
+
 lf-maven-build
 --------------
 
@@ -489,6 +502,57 @@ SonarCloud Example:
 
 .. literalinclude:: ../../.jjb-test/lf-maven-jobs/maven-sonarcloud.yaml
    :language: yaml
+
+.. _maven-coverity:
+
+Maven Coverity
+--------------
+
+Coverity job which runs 'mvn clean install' then publishes results to Coverity
+Scan service for static code analysis.
+
+:Template Names:
+
+    - {project-name}-coverity
+    - gerrit-maven-coverity
+
+:Comment Trigger: run-coverity
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        be configured in defaults.yaml)
+    :mvn-settings: The name of settings file containing credentials for the project.
+    :coverity-project-name: Project name in Coverity Scan service.
+    :coverity-token: Project token in Coverity Scan service.
+    :coverity-user-email: Email of registered user in Coverity Scan service
+        who initiated the submittion.
+
+:Optional parameters:
+
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :cron: Cron schedule when to trigger the job. This parameter also
+        supports multiline input via YAML pipe | character in cases where
+        one may want to provide more than 1 cron timer.  (default: 'H H * * 6'
+        to run weekly)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :mvn-global-settings: The name of the Maven global settings to use for
+        Maven configuration. (default: global-settings)
+    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-version: Version of maven to use. (default: mvn35)
+    :stream: Keyword that can be used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :gerrit_coverity_triggers: Override Gerrit Triggers.
 
 Maven Verify
 ------------
