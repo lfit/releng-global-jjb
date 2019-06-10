@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9837481_65805d05",
+        "filename": "shell/docker-get-container-tag.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-06-10T15:39:45Z",
+      "side": 1,
+      "message": "You use ${VAR} in situations where it is not required. I find the extra \u0027{}\u0027 distracting when reading code. The extra \u0027\"\u0027s are bad enough.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 2
+      },
+      "revId": "5a8e279e5b2d24c45c3b3c456d7cd4e7cddd388b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
