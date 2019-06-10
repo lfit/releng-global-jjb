@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bfeaa8de_bace0afe",
+        "filename": "shell/docker-get-container-tag.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-06-10T17:06:24Z",
+      "side": 1,
+      "message": "Here is a cleanup of the script to minimize double quotes. I believe our overuse of double quotes is due to a misunderstanding of shellcheck. Three things allowed me to remove the extra double-quotes while still keeping shellcheck happy:\n\n    1. Keep local variables lower-case shellcheck handles upper-case (env vars) differently\n\n    2. Use \u0027[[\u0027 instead of \u0027[\u0027 the use of \u0027[\u0027 has be depreciated for years. The \u0027[\u0027 is supported for compatibility with the \u0027Posix shell (/bin/sh)\n\n    3. Disable globbing (set -f)\n\nI did retain double-quotes on the string constants even though they are not required. To me that make the code more readable in gerrit.\n\n#! /bin/bash\n#SPDX-License-Identifier: EPL-1.0\n##############################################################################\n# Copyright (c) 2019 The Linux Foundation and others.\n#\n# All rights reserved. This program and the accompanying materials\n# are made available under the terms of the Eclipse Public License v1.0\n# which accompanies this distribution, and is available at\n# http://www.eclipse.org/legal/epl-v10.html\n##############################################################################\necho \"---\u003e docker-get-container-tag.sh\"\n# Gets the container tag per $CONTAINER_TAG_METHOD\n# For YAML file use directory $CONTAINER_TAG_YAML_DIR\n# if value is provided, else fall back to $DOCKER_ROOT\n\n#set -feu -o pipefail\n\ntag\u003d\"\"\nif [[ $CONTAINER_TAG_METHOD \u003d\u003d \"latest\" ]]; then\n    tag\u003d\"latest\"\nelif [[ $CONTAINER_TAG_METHOD \u003d \"git-describe\" ]]; then\n    tag\u003d$(git describe)\nelif [[ $CONTAINER_TAG_METHOD \u003d \"yaml-file\" ]]; then\n    # TODO: set default value in JJB?\n    dir\u003d$CONTAINER_TAG_YAML_DIR\n    if [[ -z $dir ]]; then\n        dir\u003d$DOCKER_ROOT\n    fi\n    tag_file\u003d$dir/container-tag.yaml\n    if [[ -f $tag_file ]]; then\n        tag\u003d$(yq -r .tag tag_file)\n    else\n        echo \"File $tag_file not found.\"\n    fi\nelse\n    echo \"Method $CONTAINER_TAG_METHOD not implemented (yet)\"\nfi\n\nif [[ -z $tag ]]; then\n    echo \"Failed to get a container tag using method $CONTAINER_TAG_METHOD\"\n    exit 1\nfi\n\necho \"---\u003e Docker image tag found: $tag\"\n# Write DOCKER_IMAGE_TAG information to a file so it can be injected into the\n# environment for following steps\necho \"DOCKER_IMAGE_TAG\u003d$tag\" \u003e\u003e \"$WORKSPACE/env_docker_inject.txt\"",
+      "revId": "0c085ca11cd5be63afc5fbf7cc7eedfd6f75a2a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
