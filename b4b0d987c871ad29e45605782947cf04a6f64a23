@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "57f670b8_e2c0af04",
+        "filename": "shell/docker-get-container-tag.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-06-10T18:27:17Z",
+      "side": 1,
+      "message": "lets change this to ${CONTAINER_TAG_YAML_DIR:-}\nto avoid this error:\n11:18:03 /tmp/jenkins4871437720832264794.sh: line 25: CONTAINER_TAG_YAML_DIR: unbound variable\n\nWe are anyhow taking care of an empty variable in the script.\n\nTested this in the sandbox.",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 31
+      },
+      "revId": "b4b0d987c871ad29e45605782947cf04a6f64a23",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
