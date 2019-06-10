@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Change parameter names used to specify container tag method,
+    with a new default to use the fixed string 'latest' as a tag.
+    Merge two shell scripts into one instead of using Jenkins
+    conditional steps.
+    Extend to accept a custom directory for the container-tag.yaml
+    if the yaml-file method is used to set the docker tag information;
+    this is an optional variable which is set to empty by default,
+    and falls back to DOCKER_ROOT.
