@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Group {project-name}-releases-verify and {project-name}-releases-merge
+    into {project-name}-gerrit-release-jobs.
+
+    Add test jobs for lf-release-jobs.
