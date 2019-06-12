@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add missing $ to variable tag_file so the yq query can pull
+    the tag from the container-tag.yaml file.

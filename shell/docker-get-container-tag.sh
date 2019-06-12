@@ -25,7 +25,7 @@ elif [[ $CONTAINER_TAG_METHOD == "yaml-file" ]]; then
     dir=${CONTAINER_TAG_YAML_DIR:-$DOCKER_ROOT}
     tag_file=$dir/container-tag.yaml
     if [[ -f $tag_file ]]; then
-        tag=$(yq -r .tag tag_file)
+        tag=$(yq -r .tag "$tag_file")
     else
         echo "File $tag_file not found."
     fi
