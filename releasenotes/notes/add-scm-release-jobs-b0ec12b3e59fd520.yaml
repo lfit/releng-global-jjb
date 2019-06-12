@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Add missing scm block in gerrit-releases-merge job definition.
+
+    Add missing submodule-disable for jobs using lf-infra-gerrit-scm.
+    Update "Optional parameters" documentation for gerrit-releases-merge
+    and gerrit-releases-verify.
