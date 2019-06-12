@@ -70,10 +70,6 @@ Runs:
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :project-pattern: Project to trigger build against. (default: \*\*)
-    :submodule-recursive: Whether to checkout submodules recursively.
-        (default: false)
-    :submodule-timeout: Timeout (in minutes) for checkout operation.
-        (default: 10)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
@@ -120,10 +116,6 @@ is available on the job.
     :gerrit-skip-vote: Skip voting for this job. (default: false)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :project-pattern: Project to trigger build against. (default: \*\*)
-    :submodule-recursive: Whether to checkout submodules recursively.
-        (default: false)
-    :submodule-timeout: Timeout (in minutes) for checkout operation.
-        (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
