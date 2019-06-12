@@ -65,6 +65,7 @@
     disable-job: false
     git-url: '$GIT_URL/$PROJECT'
     project-pattern: '**'
+    submodule-disable: false
     submodule-recursive: true
     submodule-timeout: 10
     gerrit-skip-vote: false
@@ -111,6 +112,7 @@
           git-url: '{git-url}'
           refspec: '$GERRIT_REFSPEC'
           branch: 'master'
+          submodule-disable: '{submodule-disable}'
           submodule-recursive: '{submodule-recursive}'
           submodule-timeout: '{submodule-timeout}'
           choosing-strategy: gerrit
@@ -151,7 +153,9 @@
     build-timeout: 15
     disable-job: false
     project-pattern: '**'
+    submodule-disable: false
     submodule-recursive: true
+    submodule-timeout: 10
 
     gerrit_merge_triggers:
       - change-merged-event
@@ -184,6 +188,17 @@
     <<: *lf_releases_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_releases_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-disable: '{submodule-disable}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          choosing-strategy: default
 
     triggers:
       - gerrit:
