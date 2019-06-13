@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "459e4066_458c62c5",
+        "filename": "releasenotes/notes/add-release-job-groups-f2c239772e622933.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T17:44:49Z",
+      "side": 1,
+      "message": "Is this really a fix? I think this is more of a new feature. Of course I can\u0027t remember what the nero section for that is.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "0f398fa77d17085f8c318c118511c518c36dda1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
