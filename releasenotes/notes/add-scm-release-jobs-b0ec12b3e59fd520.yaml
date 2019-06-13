@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add missing scm block in gerrit-releases-merge job definition.
+    Add missing submodule-disable variable for jobs using lf-infra-gerrit-scm.
+    Update documentation for gerrit-releases-merge and gerrit-releases-verify
+    to remove submodule options as optional parameters.
