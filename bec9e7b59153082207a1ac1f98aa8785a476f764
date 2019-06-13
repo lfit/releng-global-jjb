@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "26cde940_f969bc4e",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "We shouldn\u0027t allow submodules in this job. There\u0027s no point, we\u0027re not going to build code.",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab766fcf_de9dc68f",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "We shouldn\u0027t allow for this either",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5619e73_eeeb9eb9",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "We shouldn\u0027t allow for this either",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f31efd65_94df8ee2",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "We shouldn\u0027t allow submodules in this job. There\u0027s no point, we\u0027re not going to build code.",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b571154_c67d0b90",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "We shouldn\u0027t allow for this either",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2c45522_575f4ba3",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "We shouldn\u0027t allow for this either",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88a4fe4d_589c0023",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Remove the override",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21960401_9047136f",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "This override shouldn\u0027t exist either",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7aabedae_54ba4cdf",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Nor this one",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb706f6f_805e78b8",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Always pass true (we don\u0027t want submodules)",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fae5fcdb_6af10325",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Always pass false",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "baf7fcc1_24adf962",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Hard code 10 (since we have to pass something)",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "008f8989_36bbb20d",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Remove the override",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb5f318d_fc7b974b",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "This override shouldn\u0027t exist either.",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2f3b236_b6fb6b88",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "No need for this",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89e2c381_839c8f9c",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Always pass true (we don\u0027t want submodules)",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "88939df6_fee3e923",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Always pass false",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbe648d8_ecb7aa05",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-13T19:04:39Z",
+      "side": 1,
+      "message": "Hard code 10",
+      "revId": "bec9e7b59153082207a1ac1f98aa8785a476f764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
