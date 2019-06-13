@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add -l to /bin/bash shebang line at top of docker-get-container-tag.sh
+    to make it a login shell, which automatically includes
+    /home/jenkins/.local/bin on the path, because that is where pip
+    installs the yq command.
