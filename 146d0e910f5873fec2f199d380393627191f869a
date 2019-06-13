@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "14dcf291_f2782296",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-13T02:22:11Z",
+      "side": 1,
+      "message": "make the group asciibetically? not done everywhere",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 200,
+        "endChar": 50
+      },
+      "revId": "146d0e910f5873fec2f199d380393627191f869a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
