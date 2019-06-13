@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d147a466_6449d513",
+        "filename": ".jjb-test/lf-release-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-13T02:18:06Z",
+      "side": 1,
+      "message": "this should be self-release-project",
+      "range": {
+        "startLine": 7,
+        "startChar": 13,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "75b2c1e5a50d24a36ddd3d45b0074403ffe48139",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
