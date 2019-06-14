@@ -22,6 +22,30 @@
       "revId": "399ecc9c166796aa9e16c9848e895574bdff1b2a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d0275570_60b31cc0",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-14T13:51:29Z",
+      "side": 1,
+      "message": "The best / correct method to handle this is to add a [jenkins] section to the managed jenkins.ini file. It should point to the local jenkins.",
+      "parentUuid": "471420a0_fac1092c",
+      "range": {
+        "startLine": 207,
+        "startChar": 37,
+        "endLine": 207,
+        "endChar": 45
+      },
+      "revId": "399ecc9c166796aa9e16c9848e895574bdff1b2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
