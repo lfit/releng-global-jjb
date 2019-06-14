@@ -204,7 +204,7 @@ get_minion_options() {
     connection_type=$(get_cfg "$cfg_file" CONNECTION_TYPE "SSH")
     launcher_factory=$(get_launcher_factory "$connection_type")
 
-    OS_PLUGIN_VER="$(lftools jenkins plugins list \
+    OS_PLUGIN_VER="$(lftools jenkins -s $silo plugins list \
         | grep -i 'OpenStack Cloud Plugin' \
         | awk -F':' '{print $2}' | awk -F' ' '{print $1}')"
     if version_ge "$OS_PLUGIN_VER" "2.35"; then
