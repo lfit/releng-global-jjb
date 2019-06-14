@@ -69,6 +69,8 @@ Conditionally calls Maven versions plugin to set, update and commit the maven `v
 :Required Parameters:
 
     :maven-versions-plugin: Whether to call Maven versions plugin or not. (default: false)
+    :version-properties-file: Name and path of the version properties file.
+        (default: version.properties)
     :mvn-version: Version of Maven to execute Sonar with.
     :mvn-pom: Location of pom.xml.
     :mvn-settings: Maven settings.xml file containing credentials to use.
@@ -391,6 +393,8 @@ directory is then used later to deploy to Nexus.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
+    :version-properties-file: Name and path of the version properties file.
+        (default: version.properties)
 
     :gerrit_release_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths which can be used to
