@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "471420a0_fac1092c",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-14T04:03:10Z",
+      "side": 1,
+      "message": "ah, there is no correct way to handle this in a lftools __init__ code.",
+      "range": {
+        "startLine": 207,
+        "startChar": 37,
+        "endLine": 207,
+        "endChar": 45
+      },
+      "revId": "399ecc9c166796aa9e16c9848e895574bdff1b2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
