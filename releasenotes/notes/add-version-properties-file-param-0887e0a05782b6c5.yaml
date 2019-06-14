@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Some ONAP components like DCAEGEN2 do not host a version.properties file
+    in the root of their repos. We need to be able to provide a location and/or
+    different name for the version.properties file for jobs using the
+    lf-maven-versions-plugin builder step.

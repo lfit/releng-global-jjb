@@ -29,7 +29,7 @@
           condition-expression: '{maven-versions-plugin}'
           steps:
             - inject:
-                properties-file: version.properties
+                properties-file: '{version-properties-file}'
             - maven-target:
                 maven-version: '{mvn-version}'
                 pom: '{mvn-pom}'
@@ -815,6 +815,7 @@
     github-url: 'https://github.com'
     java-version: openjdk8
     maven-versions-plugin: false
+    version-properties-file: version.properties
     mvn-central: false
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -883,6 +884,7 @@
           settings-file: '{mvn-settings}'
       - lf-maven-versions-plugin:
           maven-versions-plugin: '{maven-versions-plugin}'
+          version-properties-file: '{version-properties-file}'
           mvn-version: '{mvn-version}'
           mvn-pom: '{mvn-pom}'
           mvn-settings: '{mvn-settings}'
@@ -994,6 +996,7 @@
           settings-file: '{mvn-settings}'
       - lf-maven-versions-plugin:
           maven-versions-plugin: '{maven-versions-plugin}'
+          version-properties-file: '{version-properties-file}'
           mvn-version: '{mvn-version}'
           mvn-pom: '{mvn-pom}'
           mvn-settings: '{mvn-settings}'
