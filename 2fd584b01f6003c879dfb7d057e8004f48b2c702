@@ -39,6 +39,24 @@
       "revId": "2fd584b01f6003c879dfb7d057e8004f48b2c702",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d672c599_866796d0",
+        "filename": "releasenotes/notes/add-version-properties-file-param-0887e0a05782b6c5.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-06-14T23:26:57Z",
+      "side": 1,
+      "message": "Thanks!!! I\u0027m the queen of typos!",
+      "parentUuid": "575993d5_4572ffd2",
+      "revId": "2fd584b01f6003c879dfb7d057e8004f48b2c702",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
