@@ -185,7 +185,7 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: '{jenkins-ssh-release-credential}'
           git-url: '{git-url}'
           refspec: '$GERRIT_REFSPEC'
           branch: '$GERRIT_BRANCH'

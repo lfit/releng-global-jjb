@@ -4,6 +4,7 @@
 
     # General
     jenkins-ssh-credential: test-credential
+    jenkins-ssh-release-credential: test-credential
 
     # Gerrit Infra
     gerrit-server-name: test-server
