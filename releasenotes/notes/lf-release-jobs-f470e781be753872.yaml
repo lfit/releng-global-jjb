@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Allows projects to promote their own builds.
+    Requires setup of accounts and permissions in
+    Gerrit, Jenkins and Nexus. Please refer to the
+    lf-release-jobs documentation for details.
