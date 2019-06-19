@@ -9,7 +9,7 @@ Jenkins will pick this up and then promote the artifact from the staging log
 directory (log_dir) and tag the release with the defined version.
 if a maven_central_url is given artifact will be pushed there as well.
 
-example of a projects release file
+example of a projects release file:
 
 .. code-block:: bash
 
@@ -17,12 +17,57 @@ example of a projects release file
     ---
     distribution_type: 'maven'
     version: '1.0.0'
-    project: 'zzz-test-release'
-    log_dir: 'zzz-test-release-maven-stage-master/17/'
+    project: 'example-test-release'
+    log_dir: 'example-test-release-maven-stage-master/17/'
     maven_central_url: 'oss.sonatype.org'
 
+example of jenkins job to call global-jjb macro: 
+
+.. code-block:: bash
+
+    ---
+    - project:
+        name: '{project-name}-releases-verify'
+        project: 'example-test-release'
+        build-node: centos7-builder-2c-1g
+        project-name: example-test-release
+        jobs:
+          - 'gerrit-releases-verify'
+
+    - project:
+        name: '{project-name}-releases-merge'
+        project: 'example-test-release'
+        build-node: centos7-builder-2c-1g
+        project-name: example-test-release
+        jobs:
+          - 'gerrit-releases-merge'
+
+
+
+Setup Nexus Jenkins and Gerrit:
+
+[nexus]
+1) The Nexus account will need promote priviledges.
+(add pictures)
+
+[gerrit]
+2) A new account in gerrit with direct push rights via All-Projects, we do not want the the general use account to have those.
+(create an lfid, with a project appropriate email log into gerrit with it and add the ssh key.)
+jenkins-{top-level-project}-release-ci jenkins{top-level-project}+lf-jobbuilder@linuxfoundation.org 
+
+[jenkins]
 lftools nexus release is used so there must be a lftoolsini section in jenkins
 configfiles with a [nexus] section for auth.
+example:
+[nexus]
+username=jenkins
+password=redacted
+
+Add a global credential to your jenkins called jenkins-releases and copy the ID: 'Example42411ac011' as its value insert the ssh-key you added to you jenkins
+add this to your global/releng-defaults.yaml as jenkins-ssh-release-credential: 'Example42411ac011'
+
+- :doc:`lftools nexus release <lftools:commands/nexus-release>`
+
 
 Macros
 ======
@@ -60,7 +105,7 @@ Runs:
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+    :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
     :stream: run this job against: master
 
