@@ -9,7 +9,7 @@ Jenkins will pick this up and then promote the artifact from the staging log
 directory (log_dir) and tag the release with the defined version.
 if a maven_central_url is given artifact will be pushed there as well.
 
-example of a projects release file
+example of a projects release file:
 
 .. code-block:: bash
 
@@ -17,12 +17,89 @@ example of a projects release file
     ---
     distribution_type: 'maven'
     version: '1.0.0'
-    project: 'zzz-test-release'
-    log_dir: 'zzz-test-release-maven-stage-master/17/'
+    project: 'example-test-release'
+    log_dir: 'example-test-release-maven-stage-master/17/'
     maven_central_url: 'oss.sonatype.org'
 
-lftools nexus release is used so there must be a lftoolsini section in jenkins
-configfiles with a [nexus] section for auth.
+example of jenkins job to call global-jjb macro:
+
+terse:
+
+.. code-block:: bash
+    ---
+    - project:
+        name: '{project-name}-gerrit-release-jobs'
+        project: 'example-test-release'
+        build-node: centos7-builder-2c-1g
+        project-name: example-test-release
+        jobs:
+          - '{project-name}-gerrit-release-jobs'
+
+verbose:
+.. code-block:: bash
+    - project:
+        name: '{project-name}-releases-verify'
+        project: 'example-test-release'
+        build-node: centos7-builder-2c-1g
+        project-name: example-test-release
+        jobs:
+          - 'gerrit-releases-verify'
+    - project:
+        name: '{project-name}-releases-merge'
+        project: 'example-test-release'
+        build-node: centos7-builder-2c-1g
+        project-name: example-test-release
+        jobs:
+          - 'gerrit-releases-merge'
+
+Setup Nexus Jenkins and Gerrit:
+
+Preliminary:
+[lfid]
+Create an lfid and and an ssh-key 
+RELEASE_USERNAME
+RELEASE_EMAIL
+
+[nexus]
+1) Create a Nexus account called jenkins-promoter with promote priviledges.
+.. image:: ../_static/nexus-promote-privs.png
+
+[gerrit]
+Log into your gerrit with RELEASE_USERNAME, upload the ssh-key you created earlier.
+
+In gerrit create a new group called self-serve-release and give it direct push rights via All-Projects
+push - refs/heads/* (not force)
+Add RELEASE_USERNAME groups self-serve-release and Non-Interactive Users
+
+[jenkins]
+Add a global credential to jenkins called jenkins-releases and set the ID: 'jenkins-releases' as its value insert the ssh-key that you uploaded to gerrit.
+
+Add Global vars in jenkins for all projects using self-serve release
+RELEASE_USERNAME
+RELEASE_EMAIL
+
+Add or edit the managed file in jenkins called lftoolsini, appending a nexus section:
+[nexus]
+username=jenkins
+password=redacted
+
+[ci-management]
+upgrade you projects global-jjb if needed
+add this to your global defaults file (eg: jjb/defaults.yaml) 
+.. code-block:: bash
+
+    jenkins-ssh-release-credential: 'jenkins-releases'
+
+
+TODO:
+Upgrade Notes: (reno)
+add this to your global defaults file (eg: jjb/defaults.yaml) as jenkins-ssh-release-credential: 'jenkins-releases'
+Global vars in jenkins for all projects using self-serve release
+RELEASE_USERNAME
+RELEASE_EMAIL
+
+- :doc:`lftools nexus release <lftools:commands/nexus-release>`
+
 
 Macros
 ======
@@ -60,7 +137,8 @@ Runs:
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+    *put this in yellow*
+    :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
     :stream: run this job against: master
 
