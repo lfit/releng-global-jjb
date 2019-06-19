@@ -1,15 +1,16 @@
 .. _lf-global-jjb-release:
 
-####################
-Releng Release Files
-####################
+#######################
+Self Serve Release Jobs
+#######################
 
-Projects can create a releases directory and then place a release file in it.
-Jenkins will pick this up and then promote the artifact from the staging log
-directory (log_dir) and tag the release with the defined version.
-if a maven_central_url is given artifact will be pushed there as well.
+Self serve release jobs allow a project to create a releases directory and then place a release file in it.
+Jenkins will pick this up and then promote the artifact from the staging logdirectory (log_dir) and tag the release with the defined version.
+maven_central_url is optional
 
-example of a projects release file
+.. note::
+
+    Example of a projects release file:
 
 .. code-block:: bash
 
@@ -17,12 +18,112 @@ example of a projects release file
     ---
     distribution_type: 'maven'
     version: '1.0.0'
-    project: 'zzz-test-release'
-    log_dir: 'zzz-test-release-maven-stage-master/17/'
+    project: 'example-test-release'
+    log_dir: 'example-test-release-maven-stage-master/17/'
     maven_central_url: 'oss.sonatype.org'
 
-lftools nexus release is used so there must be a lftoolsini section in jenkins
-configfiles with a [nexus] section for auth.
+.. note::
+
+    Example of a terse jenkins job to call global-jjb macro:
+
+.. code-block:: none
+
+    - project:
+        name: '{project-name}-gerrit-release-jobs'
+        project: 'example-test-release'
+        build-node: centos7-builder-2c-1g
+        project-name: example-test-release
+        jobs:
+          - '{project-name}-gerrit-release-jobs'
+
+.. note::
+
+    Example of a verbose jenkins job to call global-jjb macro:
+
+.. code-block:: none
+
+    - project:
+        name: '{project-name}-releases-verify'
+        project: 'example-test-release'
+        build-node: centos7-builder-2c-1g
+        project-name: example-test-release
+        jobs:
+          - 'gerrit-releases-verify'
+
+.. code-block:: none
+
+    - project:
+        name: '{project-name}-releases-merge'
+        project: 'example-test-release'
+        build-node: centos7-builder-2c-1g
+        project-name: example-test-release
+        jobs:
+          - 'gerrit-releases-merge'
+
+
+
+
+
+.. note::
+    Release Engineers Please follow the setup guide before adding the job definition:
+
+Setup for LFID Nexus Jenkins and Gerrit:
+========================================
+
+LFID
+====
+
+Create an ``lfid`` and an ``ssh-key``
+
+``RELEASE_USERNAME``
+``RELEASE_EMAIL``
+
+Nexus
+=====
+
+Create a Nexus account called ``'Jenkins Promoter'`` with promote priviledges.
+
+.. image:: ../_static/nexus-promote-privs.png
+
+Gerrit
+======
+
+Log into your gerrit with ``RELEASE_USERNAME``, upload the ``ssh-key`` you created earlier.
+
+In gerrit create a new group called ``self-serve-release`` and give it direct push rights via ``All-Projects``
+``push - refs/heads/* (not force)``
+Add ``RELEASE_USERNAME`` groups ``self-serve-release`` and ``Non-Interactive Users``
+
+Jenkins
+=======
+
+Add a global credential to jenkins called ``jenkins-releases`` and set the ID: ``'jenkins-releases'`` as its value insert the ``ssh-key`` that you uploaded to gerrit.
+
+Add Global vars in jenkins for all projects using self-serve release
+
+``RELEASE_USERNAME``
+``RELEASE_EMAIL``
+
+Add or edit the managed file in jenkins called ``lftoolsini``, appending a nexus section:
+
+.. code-block:: none
+
+    [nexus]
+    username=jenkins
+    password=redacted
+
+Ci-management
+=============
+
+upgrade you projects global-jjb if needed
+add this to your global defaults file (eg: jjb/defaults.yaml)
+
+
+
+.. code-block:: bash
+
+    jenkins-ssh-release-credential: 'jenkins-releases'
+
 
 Macros
 ======
@@ -39,6 +140,10 @@ Job Templates
 Release Merge
 -------------
 
+.. note::
+
+       NEW: ``jenkins-ssh-release-credential: 'jenkins-releases'``
+
 Runs:
 
 - sigul-install
@@ -52,6 +157,7 @@ Runs:
    lftools nexus release --server $NEXUS_URL $STAGING_REPO
 
 
+
 :Template Name:
     - {project-name}-releases-merge
 
@@ -60,7 +166,7 @@ Runs:
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+    :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
     :stream: run this job against: master
 
