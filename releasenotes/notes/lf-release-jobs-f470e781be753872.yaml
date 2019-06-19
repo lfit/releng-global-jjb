@@ -1,0 +1,60 @@
+.. note::
+    Release Engineers Please follow the setup guide before adding the job definition:
+
+Setup for LFID Nexus Jenkins and Gerrit:
+========================================
+
+LFID
+====
+
+Create an ``lfid`` and an ``ssh-key``
+
+``RELEASE_USERNAME``
+``RELEASE_EMAIL``
+
+Nexus
+=====
+
+Create a Nexus account called ``'Jenkins Promoter'`` with promote priviledges.
+
+.. image:: ../_static/nexus-promote-privs.png
+
+Gerrit
+======
+
+Log into your gerrit with ``RELEASE_USERNAME``, upload the ``ssh-key`` you created earlier.
+
+In gerrit create a new group called ``self-serve-release`` and give it direct push rights via ``All-Projects``
+``push - refs/heads/* (not force)``
+Add ``RELEASE_USERNAME`` groups ``self-serve-release`` and ``Non-Interactive Users``
+
+Jenkins
+=======
+
+Add a global credential to jenkins called ``jenkins-releases`` and set the ID: ``'jenkins-releases'`` as its value insert the ``ssh-key`` that you uploaded to gerrit.
+
+Add Global vars in jenkins for all projects using self-serve release
+
+``RELEASE_USERNAME``
+``RELEASE_EMAIL``
+
+Add or edit the managed file in jenkins called ``lftoolsini``, appending a nexus section:
+
+.. code-block:: none
+
+    [nexus]
+    username=jenkins
+    password=redacted
+
+Ci-management
+=============
+
+upgrade you projects global-jjb if needed
+add this to your global defaults file (eg: jjb/defaults.yaml)
+
+
+
+.. code-block:: bash
+
+    jenkins-ssh-release-credential: 'jenkins-releases'
+

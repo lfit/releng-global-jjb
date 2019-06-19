@@ -1,7 +1,7 @@
 .. _lf-global-jjb-info-vote:
 
 #############
-INFO VOTE JOB
+Info Vote Job
 #############
 
 Job counts the votes from the committers against a change
