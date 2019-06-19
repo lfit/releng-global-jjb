@@ -95,6 +95,10 @@ for release_file in $release_files; do
   ########## Merge Part ##############
   if [[ "$JOB_NAME" =~ "merge" ]]; then
     echo "Running merge"
+    #How should I set $$TOPLEVELPROJECT ?
+    git config user.name jenkins-"$TOPLEVELPROJECT"-release-ci
+    git config user.email jenkins-"$TOPLEVELPROJECT"+lf-jobbuilder@linuxfoundation.org
+    #Might need to set the remote here...
     git push origin "v$VERSION"
     lftools nexus release --server "$NEXUS_URL" "$STAGING_REPO"
     if [ "${MAVEN_CENTRAL_URL}" == 'None' ]; then

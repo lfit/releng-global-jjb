@@ -573,7 +573,7 @@
 #######
 # SCM #
 #######
-
+#
 - scm:
     name: lf-infra-gerrit-scm
     scm:
@@ -639,7 +639,6 @@
       - ssh-agent-credentials:
           users:
             - '{jenkins-ssh-credential}'
-
 - wrapper:
     name: lf-infra-wrappers-windows
     wrappers:
