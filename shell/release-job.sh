@@ -95,6 +95,8 @@ for release_file in $release_files; do
   ########## Merge Part ##############
   if [[ "$JOB_NAME" =~ "merge" ]]; then
     echo "Running merge"
+    git config user.name "$RELEASE_USERNAME"
+    git config user.email "$RELEASE_EMAIL"
     git push origin "v$VERSION"
     lftools nexus release --server "$NEXUS_URL" "$STAGING_REPO"
     if [ "${MAVEN_CENTRAL_URL}" == 'None' ]; then
