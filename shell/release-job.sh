@@ -105,6 +105,10 @@ for release_file in $release_files; do
     ########## Merge Part ##############
     if [[ "$JOB_NAME" =~ "merge" ]]; then
         echo "Running merge"
+        gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
+        git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/$PROJECT
+        git config user.name "$RELEASE_USERNAME"
+        git config user.email "$RELEASE_EMAIL"
         git push origin "$VERSION"
         lftools nexus release --server "$NEXUS_URL" "$STAGING_REPO"
         if [ "${MAVEN_CENTRAL_URL}" == 'None' ]; then
