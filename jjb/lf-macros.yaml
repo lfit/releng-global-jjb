@@ -573,7 +573,6 @@
 #######
 # SCM #
 #######
-
 - scm:
     name: lf-infra-gerrit-scm
     scm:
