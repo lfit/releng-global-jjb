@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add missing git-url variable in {project-name}-releases-merge-{stream}
+    job.

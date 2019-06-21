@@ -149,6 +149,7 @@
     build-days-to-keep: 7
     build-timeout: 15
     disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
     project-pattern: '**'
 
     gerrit_merge_triggers:
