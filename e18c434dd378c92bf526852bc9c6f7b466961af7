@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "05866674_d7e19afe",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-21T17:11:34Z",
+      "side": 1,
+      "message": "I don\u0027t think this note needs to be here",
+      "revId": "e18c434dd378c92bf526852bc9c6f7b466961af7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18d1c0a7_bd522b32",
+        "filename": "releasenotes/notes/lf-release-jobs-f470e781be753872.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-21T17:11:34Z",
+      "side": 1,
+      "message": "Dangling white space",
+      "revId": "e18c434dd378c92bf526852bc9c6f7b466961af7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
