@@ -98,7 +98,7 @@
       - lf-releases
 
 - job-template:
-    name: '{project-name}-releases-verify'
+    name: '{project-name}-releases-verify-{stream}'
     id: gerrit-releases-verify
     <<: *lf_releases_common
     # yamllint disable-line rule:key-duplicates
@@ -177,7 +177,7 @@
       - lf-releases
 
 - job-template:
-    name: '{project-name}-releases-merge'
+    name: '{project-name}-releases-merge-{stream}'
     id: gerrit-releases-merge
     <<: *lf_releases_common
     # yamllint disable-line rule:key-duplicates

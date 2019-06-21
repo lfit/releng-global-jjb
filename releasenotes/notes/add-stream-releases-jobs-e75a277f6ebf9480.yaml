@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Add the {stream} name in releases-verify and releases-merge jobs.

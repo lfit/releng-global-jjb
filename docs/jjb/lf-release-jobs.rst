@@ -53,7 +53,7 @@ Runs:
 
 
 :Template Name:
-    - {project-name}-releases-merge
+    - {project-name}-releases-merge-{stream}
 
 :Comment Trigger: remerge
 
@@ -94,7 +94,7 @@ is available on the job.
 
 
 :Template Names:
-    - {project-name}-releases-verify
+    - {project-name}-releases-verify-{stream}
 
 :Comment Trigger: recheck|reverify
 
