@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff5085dd_9c20117a",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "link LFID URL",
+      "range": {
+        "startLine": 76,
+        "startChar": 10,
+        "endLine": 76,
+        "endChar": 18
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "80e9a2fa_c14c7750",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "add an example command (optional)\nex:\nssh-keygen -t rsa -C \"collab-it+odl-release@linuxfoundation.org\"  -f /tmp/odl-release",
+      "range": {
+        "startLine": 76,
+        "startChar": 26,
+        "endLine": 76,
+        "endChar": 37
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2d417de4_58c4e518",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 84,
+        "startChar": 66,
+        "endLine": 84,
+        "endChar": 77
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f942bde_9980340d",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "Would be good to have some more detailed docs here and/or link to the Nexus 2/3 guide",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 45
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "312eca59_d04581c8",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "add reference -\u003e push rights??",
+      "range": {
+        "startLine": 93,
+        "startChar": 78,
+        "endLine": 93,
+        "endChar": 82
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1eb88347_7136137f",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "From what I gather\n\n1. add a push reference\n2. set the ref as refs/heads/*\n3. uncheck the \"force push\" check box?",
+      "range": {
+        "startLine": 94,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 35
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f6c41b0_21c8a98d",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "Add note: this step needs to be done as Admin user, not as the same user in the previous line.\n\nA screenshot would be required.",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 84
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df19e8ac_5f6943ca",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "Jenkins Settings -\u003e Managed files -\u003e Add -\u003e Custom file?",
+      "range": {
+        "startLine": 107,
+        "startChar": 49,
+        "endLine": 107,
+        "endChar": 59
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a85d3eb_9a196d40",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-06-24T10:04:55Z",
+      "side": 1,
+      "message": "jenkins-release",
+      "range": {
+        "startLine": 112,
+        "startChar": 13,
+        "endLine": 112,
+        "endChar": 20
+      },
+      "revId": "4df817fba92b39948d8adc90ca375aeee09d2317",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
