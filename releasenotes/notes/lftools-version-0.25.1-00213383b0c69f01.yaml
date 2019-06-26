@@ -1,0 +1,6 @@
+---
+critical:
+  - |
+    lftools v0.24.0 introduced a major issue which caused the Jenkins cloud
+    configuration merge job for OpenStack clouds to fail. This has been
+    corrected in lftools v0.25.1
