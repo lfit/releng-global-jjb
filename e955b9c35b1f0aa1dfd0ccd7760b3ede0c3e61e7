@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c7a2ce2c_d0649804",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T19:40:40Z",
+      "side": 1,
+      "message": "Ok.... I\u0027ve thought about this a little bit more.\n\nSo, here is the proposal:\n\nValidate that the version string is _either_ \"v${SEMVER}\" _or_ \"${SEMVER}\" fail all other types. That way projects can tag as either SemVer (as ONAP is) or \"v${SEMVER}\" like all of our other projects are (I believe). I still want to put a hard fail on non-semver versions.\n\nSo, the validation should happen before this step and if it passes then everything else in here is fine.",
+      "revId": "e955b9c35b1f0aa1dfd0ccd7760b3ede0c3e61e7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
