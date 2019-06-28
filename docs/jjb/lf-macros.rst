@@ -259,6 +259,17 @@ password=
 
 Then runs ../shell/release-job.sh
 
+lf-release-container
+--------------------
+
+releases lftools.ini (required)
+needed to push to a registry.
+
+[nexus]
+username=
+password=
+
+Then runs ../shell/release-container-job.sh
 
 lf-sigul-sign-dir
 -----------------
