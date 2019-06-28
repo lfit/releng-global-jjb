@@ -11,8 +11,8 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_releases_common: &lf_releases_common
-    name: lf-releases-common
+- lf_release_common: &lf_release_common
+    name: lf-release-common
 
     ######################
     # Default parameters #
@@ -51,8 +51,8 @@
 # RELEASE VERIFY #
 ##################
 
-- lf_releases_verify: &lf_releases_verify
-    name: lf-releases-verify
+- lf_release_verify: &lf_release_verify
+    name: lf-release-verify
 
     ######################
     # Default parameters #
@@ -95,14 +95,14 @@
               variable: SIGUL_PKI
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
-      - lf-releases
+      - lf-release
 
 - job-template:
-    name: '{project-name}-releases-verify-{stream}'
-    id: gerrit-releases-verify
-    <<: *lf_releases_common
+    name: '{project-name}-release-verify-{stream}'
+    id: gerrit-release-verify
+    <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_releases_verify
+    <<: *lf_release_verify
 
     scm:
       - lf-infra-gerrit-scm:
@@ -137,8 +137,8 @@
 # RELEASE MERGE #
 #################
 
-- lf_releases_merge: &lf_releases_merge
-    name: lf-releases-merge
+- lf_release_merge: &lf_release_merge
+    name: lf-release-merge
 
     ######################
     # Default parameters #
@@ -175,14 +175,14 @@
               variable: SIGUL_PKI
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
-      - lf-releases
+      - lf-release
 
 - job-template:
-    name: '{project-name}-releases-merge-{stream}'
-    id: gerrit-releases-merge
-    <<: *lf_releases_common
+    name: '{project-name}-release-merge-{stream}'
+    id: gerrit-release-merge
+    <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_releases_merge
+    <<: *lf_release_merge
 
     scm:
       - lf-infra-gerrit-scm:

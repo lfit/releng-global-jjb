@@ -27,8 +27,8 @@ configfiles with a [nexus] section for auth.
 Macros
 ======
 
-lf-releases
-----------------------
+lf-release
+----------
 
 Release verify and merge jobs are the same except for their scm, trigger, and
 builders definition. This anchor is the common template.
@@ -53,7 +53,7 @@ Runs:
 
 
 :Template Name:
-    - {project-name}-releases-merge-{stream}
+    - {project-name}-release-merge-{stream}
 
 :Comment Trigger: remerge
 
@@ -94,7 +94,7 @@ is available on the job.
 
 
 :Template Names:
-    - {project-name}-releases-verify-{stream}
+    - {project-name}-release-verify-{stream}
 
 :Comment Trigger: recheck|reverify
 

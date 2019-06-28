@@ -1,0 +1,21 @@
+---
+upgrade:
+  - |
+    This change will require to update lf-release-job calls.
+       Update from using:
+         - {project-name}-releases-merge-{stream}
+         - {project-name}-releases-verify-{stream}
+       To:
+         - {project-name}-release-merge-{stream}
+         - {project-name}-release-verify-{stream}
+    No upgrade need to be done if using "{project-name}-gerrit-release-jobs"
+    group.
+
+fixes:
+  - |
+    Using "releases" and "release" in different places is becoming confusing.
+    Standardize to "release" to match lftools command and the majority of the
+    exisiting wording.
+
+    Use "releases" for the list of tech team releases and trggers since it is
+    intuitive there. For example "releases/1.1.1.yaml"
