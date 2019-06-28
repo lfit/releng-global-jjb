@@ -247,8 +247,8 @@ check-info-votes
 
 Calls shell script to validate votes on a change to an INFO.yaml
 
-lf-releases
------------
+lf-release
+----------
 
 releases lftools.ini (required)
 needed to push to nexus.
