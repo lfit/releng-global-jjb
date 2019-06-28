@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f6b7799_a5ab6afa",
+        "filename": "releasenotes/notes/standardize_release_version_job-81eb03ef2c798827.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T22:26:26Z",
+      "side": 1,
+      "message": "Need an upgrade note as well stating that anyone that has already deployed any of these jobs will need to update their job calls.",
+      "revId": "e50e072182f9bb6a4b13a987e8f5c11ab0841689",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
