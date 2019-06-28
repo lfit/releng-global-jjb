@@ -1,6 +1,6 @@
 ---
 - project:
-    name: '{project-name}-releases'
+    name: '{project-name}-release'
     jobs:
       - '{project-name}-gerrit-release-jobs'
 
