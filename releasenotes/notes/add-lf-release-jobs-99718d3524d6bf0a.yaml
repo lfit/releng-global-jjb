@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Introduce lf-release-jobs.
+    '{project-name}-releases-container-verify-{stream}' is used
+    to verify a container availability and release details described
+    in releases-container.yaml.
+    '{project-name}-releases-container-merge-{stream}' is used
+    to release a container.
