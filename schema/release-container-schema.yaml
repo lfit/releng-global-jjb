@@ -1,0 +1,34 @@
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2019 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+---
+$schema: "http://json-schema.org/schema#"
+$id: "https://github.com/lfit/releng-global-jjb/blob/master/release-container-schema"
+
+required:
+  - "project"
+  - "version"
+  - "container-name"
+  - "container-image-tag"
+  - "container-pull-registry"
+  - "container-push-registry"
+
+properties:
+  project:
+    type: "string"
+  version:
+    type: "string"
+  container-name:
+    type: "string"
+  container-image-tag:
+    type: "string"
+  container-pull-registry:
+    type: "string"
+  container-push-registry:
+    type: "string"
