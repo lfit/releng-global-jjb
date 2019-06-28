@@ -1,0 +1,435 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ecbdf8c_1a7c00ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "container",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 6
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84a2cdcf_173786b4",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 136,
+        "startChar": 10,
+        "endLine": 136,
+        "endChar": 16
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6d0979c_04d3f544",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "container",
+      "range": {
+        "startLine": 301,
+        "startChar": 14,
+        "endLine": 301,
+        "endChar": 20
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edc8ae19_553dcb2c",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "container",
+      "range": {
+        "startLine": 302,
+        "startChar": 22,
+        "endLine": 302,
+        "endChar": 28
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d0f699e_96c25bad",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "This path doesn\u0027t match the commit message. The commit message states that it\u0027s releases/$version.yaml I would therefore expect this to be releases/*.yaml\n\nIf it needs to be a separate one for containers it should be releases-container/*.yaml instead",
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80e1b601_99a67ea6",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "container",
+      "range": {
+        "startLine": 54,
+        "startChar": 29,
+        "endLine": 54,
+        "endChar": 35
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a8d1437_6b8bd5dd",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 54,
+        "startChar": 2,
+        "endLine": 54,
+        "endChar": 8
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a767c98c_2d3ee0de",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 77,
+        "startChar": 29,
+        "endLine": 77,
+        "endChar": 35
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ccb1412_bcb3a083",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 77,
+        "startChar": 10,
+        "endLine": 77,
+        "endChar": 16
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afc65941_46c68b58",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 78,
+        "startChar": 10,
+        "endLine": 78,
+        "endChar": 16
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9f45c86_fe2addf4",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 78,
+        "startChar": 24,
+        "endLine": 78,
+        "endChar": 30
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "747c524a_4edc2b57",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 98,
+        "startChar": 22,
+        "endLine": 98,
+        "endChar": 28
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f608dda7_1666bbbe",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 99,
+        "startChar": 55,
+        "endLine": 99,
+        "endChar": 61
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bc1d979_633eeba4",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 101,
+        "startChar": 71,
+        "endLine": 101,
+        "endChar": 77
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72b5deb7_6837d9cf",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 102,
+        "startChar": 42,
+        "endLine": 102,
+        "endChar": 48
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9367c10_43908bab",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "container registry",
+      "range": {
+        "startLine": 105,
+        "startChar": 15,
+        "endLine": 105,
+        "endChar": 24
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8591869_40407299",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "registry",
+      "range": {
+        "startLine": 107,
+        "startChar": 35,
+        "endLine": 107,
+        "endChar": 44
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7618d09d_51e6ff67",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 107,
+        "startChar": 50,
+        "endLine": 107,
+        "endChar": 56
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9bf3b96_7976acd3",
+        "filename": "shell/release-docker-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-06-28T15:55:17Z",
+      "side": 1,
+      "message": "CONTAINER",
+      "range": {
+        "startLine": 108,
+        "startChar": 34,
+        "endLine": 108,
+        "endChar": 40
+      },
+      "revId": "4948a33839aaccc7d28e9b70f2fa6bef552530e9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
