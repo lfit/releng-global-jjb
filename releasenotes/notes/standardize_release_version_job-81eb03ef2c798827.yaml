@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Using "releases" and "release" in different places is becoming confusing.
+    Standardize to "release" to match lftools command and the majority of the
+    exisiting wording.
+
+    Use "releases" for the list of tech team releases and trggers since it is
+    intuitive there. For example "releases/1.1.1.yaml"

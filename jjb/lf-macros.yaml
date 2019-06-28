@@ -272,7 +272,7 @@
       - shell: !include-raw-escape: ../shell/check-info-votes.sh
 
 - builder:
-    name: lf-releases
+    name: lf-release
     builders:
       - config-file-provider:
           files:
