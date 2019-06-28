@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Allow only semantic release versions like "v${SEMVER}" or "${SEMVER}".
+    Fail the script if the version is not valid.
+    Do not append any additional characters to the release version during
+    tag and push steps.
