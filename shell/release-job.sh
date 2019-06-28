@@ -86,8 +86,8 @@ for release_file in $release_files; do
   git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
   git fetch "$PATCH_DIR/$PROJECT.bundle"
   git merge --ff-only FETCH_HEAD
-  git tag -am "$PROJECT $VERSION" "v$VERSION"
-  sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" v"$VERSION" < "$SIGUL_PASSWORD"
+  git tag -am "$PROJECT $VERSION" "$VERSION"
+  sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
   echo "Showing latest signature for $PROJECT:"
   git log --show-signature -n1
 
@@ -95,7 +95,7 @@ for release_file in $release_files; do
   ########## Merge Part ##############
   if [[ "$JOB_NAME" =~ "merge" ]]; then
     echo "Running merge"
-    git push origin "v$VERSION"
+    git push origin "$VERSION"
     lftools nexus release --server "$NEXUS_URL" "$STAGING_REPO"
     if [ "${MAVEN_CENTRAL_URL}" == 'None' ]; then
       echo "No Maven central url specified, not pushing to maven central"

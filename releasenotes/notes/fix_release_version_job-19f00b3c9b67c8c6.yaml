@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Do not append any additional characters to the release version during tagging
+    and pushing steps. Allow the usage of the "$VERSION" variable as it is
+    provided by the user in releases/*.yaml file.
