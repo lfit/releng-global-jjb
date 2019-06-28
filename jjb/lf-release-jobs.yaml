@@ -132,6 +132,93 @@
             unstable: '{gerrit-skip-vote}'
             notbuilt: '{gerrit-skip-vote}'
 
+#########################
+# RELEASE DOCKER VERIFY #
+#########################
+
+- lf_releases_docker_verify: &lf_releases_docker_verify
+    name: lf-releases-docker-verify
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    stream: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
+    project-pattern: '**'
+    gerrit-skip-vote: false
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: 'releases-docker/*.yaml'
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: '{disable-job}'
+
+    builders:
+      - lf-infra-pre-build
+      - config-file-provider:
+          files:
+            - file-id: sigul-config
+              variable: SIGUL_CONFIG
+            - file-id: sigul-password
+              variable: SIGUL_PASSWORD
+            - file-id: sigul-pki
+              variable: SIGUL_PKI
+      - shell: !include-raw-escape: ../shell/sigul-configuration.sh
+      - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - lf-releases-docker
+
+- job-template:
+    name: '{project-name}-releases-docker-verify-{stream}'
+    id: gerrit-releases-docker-verify
+    <<: *lf_releases_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_releases_docker_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: 'master'
+          submodule-disable: true
+          submodule-recursive: false
+          submodule-timeout: 10
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project-pattern}'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/master'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+          skip-vote:
+            successful: '{gerrit-skip-vote}'
+            failed: '{gerrit-skip-vote}'
+            unstable: '{gerrit-skip-vote}'
+            notbuilt: '{gerrit-skip-vote}'
 
 #################
 # RELEASE MERGE #
@@ -183,6 +270,84 @@
     <<: *lf_releases_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_releases_merge
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-disable: true
+          submodule-recursive: false
+          submodule-timeout: 10
+          choosing-strategy: default
+
+    triggers:
+      - gerrit:
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
+          projects:
+            - project-compare-type: 'ANT'
+              project-pattern: '{project-pattern}'
+              branches:
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/master'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
+
+########################
+# RELEASE DOCKER MERGE #
+########################
+
+- lf_releases_docker_merge: &lf_releases_docker_merge
+    name: lf-releases-docker-merge
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    stream: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    disable-job: false
+    git-url: '$GIT_URL/$PROJECT'
+    project-pattern: '**'
+
+    gerrit_trigger_file_paths:
+      - compare-type: ANT
+        pattern: 'releases-docker/*.yaml'
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: remerge$
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: '{disable-job}'
+
+    builders:
+      - lf-infra-pre-build
+      - config-file-provider:
+          files:
+            - file-id: sigul-config
+              variable: SIGUL_CONFIG
+            - file-id: sigul-password
+              variable: SIGUL_PASSWORD
+            - file-id: sigul-pki
+              variable: SIGUL_PKI
+      - shell: !include-raw-escape: ../shell/sigul-configuration.sh
+      - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - lf-releases-docker
+
+- job-template:
+    name: '{project-name}-releases-docker-merge-{stream}'
+    id: gerrit-releases-docker-merge
+    <<: *lf_releases_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_releases_docker_merge
 
     scm:
       - lf-infra-gerrit-scm:
