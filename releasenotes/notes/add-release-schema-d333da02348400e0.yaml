@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add release-schema used to validate the releases yaml file as part of
+    lf-release-jobs.
