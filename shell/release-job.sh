@@ -8,6 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
+echo "---> release-job.sh"
 set -eu -o pipefail
 
 if [ -d "/opt/pyenv" ]; then
@@ -15,6 +16,7 @@ if [ -d "/opt/pyenv" ]; then
   export PYENV_ROOT="/opt/pyenv"
   export PATH="$PYENV_ROOT/bin:$PATH"
 fi
+
 PYTHONPATH=$(pwd)
 export PYTHONPATH
 pyenv local 3.6.4
@@ -22,87 +24,81 @@ export PYENV_VERSION="3.6.4"
 
 pip install --user lftools[nexus] jsonschema niet
 
-echo "########### Start Script release-job.sh ###################################"
+logs_server="${logs_server:-None}"
+maven_central_url="${maven_central_url:-None}"
 
-LOGS_SERVER="${LOGS_SERVER:-None}"
-MAVEN_CENTRAL_URL="${MAVEN_CENTRAL_URL:-None}"
-
-#OPTIONAL
-if grep -q "\.maven_central_url" "$release_file"; then
-  MAVEN_CENTRAL_URL="$(niet ".maven_central_url" "$release_file")"
-fi
-
-if [ "${LOGS_SERVER}" == 'None' ]; then
+if [ "${logs_server}" == 'None' ]; then
   echo "FAILED: log server not found"
   exit 1
 fi
 
-NEXUS_URL="${ODLNEXUSPROXY:-$NEXUS_URL}"
+nexus_url="${ODLNEXUSPROXY:-$nexus_url}"
 
 release_files=$(git diff HEAD^1 --name-only -- "releases/")
-echo "RELEASE FILES ARE AS FOLLOWS: $release_files"
+echo "---> RELEASE FILES ARE AS FOLLOWS: $release_files"
 
 for release_file in $release_files; do
-  echo "This is the release file: $release_file"
-  echo "--> Verifying $release_file Schema."
-  echo "DUMMY CODE:"
-  #Make sure the schema check catches a missing trailing / on log_dir
-  #lftools schema is written, but not the schema file (yet)
-  echo "lftools schema verify [OPTIONS] $release_file $SCHEMAFILE"
+  echo "---> Verifying $release_file Schema."
 
-  VERSION="$(niet ".version" "$release_file")"
-  PROJECT="$(niet ".project" "$release_file")"
-  LOG_DIR="$(niet ".log_dir" "$release_file")"
-
-
-  NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
-  LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
-  PATCH_DIR="$(mktemp -d)"
-
-  pushd "$PATCH_DIR"
-    wget --quiet "${LOGS_URL}"staging-repo.txt.gz
-    STAGING_REPO="$(zcat staging-repo.txt)"
-
-    #INFO
-    echo "INFO:"
-    echo "RELEASE_FILE: $release_file"
-    echo "LOGS_SERVER: $LOGS_SERVER"
-    echo "NEXUS_URL: $NEXUS_URL"
-    echo "NEXUS_PATH: $NEXUS_PATH"
-    echo "ODLNEXUSPROXY: $ODLNEXUSPROXY"
-    echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
-    echo "SILO: $SILO"
-    echo "PROJECT: $PROJECT"
-    echo "STAGING_REPO: $STAGING_REPO"
-    echo "VERSION: $VERSION"
-    echo "PROJECT: $PROJECT"
-    echo "LOG DIR: $LOG_DIR"
-
-    wget --quiet  "${LOGS_URL}"/patches/{"${PROJECT}".bundle,taglist.log.gz}
-    gunzip taglist.log.gz
-    cat "$PATCH_DIR"/taglist.log
-  popd
-
-  git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
-  git fetch "$PATCH_DIR/$PROJECT.bundle"
-  git merge --ff-only FETCH_HEAD
-  git tag -am "$PROJECT $VERSION" "v$VERSION"
-  sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" v"$VERSION" < "$SIGUL_PASSWORD"
-  echo "Showing latest signature for $PROJECT:"
-  git log --show-signature -n1
-
-
-  ########## Merge Part ##############
-  if [[ "$JOB_NAME" =~ "merge" ]]; then
-    echo "Running merge"
-    git push origin "v$VERSION"
-    lftools nexus release --server "$NEXUS_URL" "$STAGING_REPO"
-    if [ "${MAVEN_CENTRAL_URL}" == 'None' ]; then
-      echo "No Maven central url specified, not pushing to maven central"
-    else
-      lftools nexus release --server "$MAVEN_CENTRAL_URL" "$STAGING_REPO"
-    fi
+  # OPTIONAL (TO PUSH TO MAVEN CENTRAL)
+  if grep -q "\.maven_central_url" "$release_file"; then
+    maven_central_url="$(niet ".maven_central_url" "$release_file")"
   fi
 
+  echo "---> lftools command:"
+  # Make sure the schema check catches a missing trailing / on log_dir
+  # lftools schema is written, but not the schema file (yet)
+  echo "lftools schema verify [OPTIONS] $release_file $SCHEMAFILE"
+
+  version="$(niet ".version" "$release_file")"
+  project="$(niet ".project" "$release_file")"
+  log_dir="$(niet ".log_dir" "$release_file")"
+
+  nexus_path="${SILO}/${JENKINS_HOSTNAME}/"
+  logs_url="${logs_server}/${nexus_path}${log_dir}"
+  patch_dir="$(mktemp -d)"
+
+  pushd "$patch_dir"
+    wget --quiet "${logs_url}"staging-repo.txt.gz
+    staging_repo="$(zcat staging-repo.txt)"
+
+    # RELEASE INFORMATION
+    echo "---> RELEASE INFORMATION:"
+    echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
+    echo "LOG_DIR: $log_dir"
+    echo "LOGS_SERVER: $logs_server"
+    echo "NEXUS_PATH: $nexus_path"
+    echo "NEXUS_URL: $nexus_url"
+    echo "ODLNEXUSPROXY: $ODLNEXUSPROXY"
+    echo "PROJECT: $project"
+    echo "RELEASE_FILE: $release_file"
+    echo "SILO: $SILO"
+    echo "STAGING_REPO: $staging_repo"
+    echo "VERSION: $version"
+
+    wget --quiet  "${logs_url}"/patches/{"${project}".bundle,taglist.log.gz}
+    gunzip taglist.log.gz
+    cat "$patch_dir"/taglist.log
+  popd
+
+  git checkout "$(awk '{print $NF}' "$patch_dir/taglist.log")"
+  git fetch "$patch_dir/$project.bundle"
+  git merge --ff-only FETCH_HEAD
+  git tag -am "$project $version" "v$version"
+  sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" v"$version" < "$SIGUL_PASSWORD"
+  echo "---> Showing latest signature for $project:"
+  git log --show-signature -n1
+
+  # MERGE PART (RELEASE ARTIFACTS BY MERGE JOB)
+  if [[ "$JOB_NAME" =~ "merge" ]]; then
+    echo "---> Running merge (Releasing the artifacts)..."
+    git push origin "v$version"
+    lftools nexus release --server "$nexus_url" "$staging_repo"
+    if [ "${maven_central_url}" == 'None' ]; then
+      echo "---> No Maven central url specified, not pushing to maven central"
+    else
+      lftools nexus release --server "$maven_central_url" "$staging_repo"
+    fi
+  fi
 done
-echo "########### End Script release-job.sh ###################################"
+echo "---> end release-job.sh"
