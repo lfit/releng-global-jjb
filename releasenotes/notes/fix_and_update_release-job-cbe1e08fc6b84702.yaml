@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Fix and cleanup release-job.sh.
+    Optional step to prepare to push to Maven Central needs to be executed
+    after fetching a releases/*.yaml file. Avoids failing the job due to this
+    variable appearing empty.
+    Rename local vars using lower caps.
+    Use echo logs similar to how we do in other scripts.
+    Update comment information.
+    Sort release information being displayed in the logs.
