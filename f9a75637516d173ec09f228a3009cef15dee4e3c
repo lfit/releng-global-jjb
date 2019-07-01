@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d87425e5_b8027286",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-01T14:12:14Z",
+      "side": 1,
+      "message": "This is a little curious. You will get an error if nexus_url is unset. How about nexus_url\u003d\"${ODLNEXUSPROXY:-}\" I am surprized shellcheck did not catch this.",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ed83f50_7927b237",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-01T14:12:14Z",
+      "side": 1,
+      "message": "if you use \u0027fgrep\u0027 (--fixed-strings) you don\u0027t have to escape the \u0027.\u0027.\n\nIs this string specific enough that you will never get a false positive? If very may be OK, I am not really aware of the contents of the release_file.",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "845aed27_08833ed2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-01T14:12:14Z",
+      "side": 1,
+      "message": "This might be more readable with: printf \"%-18s: %s\" \"JENKINS_HOSTNAME\" \"$JENKINS_HOSTNAME\"\n(just a nit)",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
