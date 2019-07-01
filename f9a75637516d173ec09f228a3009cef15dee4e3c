@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6f874fe8_735668f2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-01T21:16:59Z",
+      "side": 1,
+      "message": "This is because it should be picking the value from Jenkins I would assume. I am still testing this script but I still need Aric to help me resolve some questions too. \nFor now, until I talk to Aric, I will leave this as is.",
+      "parentUuid": "d87425e5_b8027286",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3ed83f50_7927b237",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9e4f61be_fa98de6b",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-01T21:16:59Z",
+      "side": 1,
+      "message": "This is another that I will like to leave as is .. \n\nThe release file is expected to have content like the one described in Aric\u0027s gerrit:\nhttps://gerrit.linuxfoundation.org/infra/#/c/releng/global-jjb/+/14229/",
+      "parentUuid": "3ed83f50_7927b237",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "845aed27_08833ed2",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2019-07-01T14:12:14Z",
       "side": 1,
       "message": "This might be more readable with: printf \"%-18s: %s\" \"JENKINS_HOSTNAME\" \"$JENKINS_HOSTNAME\"\n(just a nit)",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7df0af1c_39be9f5c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-01T21:16:59Z",
+      "side": 1,
+      "message": "Done\n\nI need to add the \\n too to make sure nothing becomes cramped",
+      "parentUuid": "845aed27_08833ed2",
       "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
