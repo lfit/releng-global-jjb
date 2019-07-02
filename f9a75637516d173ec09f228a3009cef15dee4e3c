@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9215f18b_84e73c92",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-02T16:51:56Z",
+      "side": 1,
+      "message": "If $ODLNEXUSPROXY is unset, the script will exit with an error, because nexus_url has NOT been set. I just checked and \u0027shellcheck\u0027 does not generate an error, although it should (a shell variable is being referenced before it is set)\n\nI think this is what you want: nexus_url\u003d\"${ODLNEXUSPROXY:-$NEXUS_URL}\"",
+      "parentUuid": "6f874fe8_735668f2",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3ed83f50_7927b237",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
