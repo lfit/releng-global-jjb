@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "eaceca4f_df3c6eff",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-02T23:35:30Z",
+      "side": 1,
+      "message": "AAA... I think I understand what you mean.. let me change it",
+      "parentUuid": "9215f18b_84e73c92",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3ed83f50_7927b237",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
