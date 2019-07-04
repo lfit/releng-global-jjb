@@ -37,7 +37,7 @@ if [ "${LOGS_SERVER}" == 'None' ]; then
   exit 1
 fi
 
-NEXUS_URL="${ODLNEXUSPROXY:-$NEXUS_URL}"
+NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
 
 release_files=$(git diff HEAD^1 --name-only -- "releases/")
 echo "RELEASE FILES ARE AS FOLLOWS: $release_files"
