@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "386d1e3f_857ee921",
+        "filename": "releasenotes/notes/add-workaround-javadocs-verify-jobs-2e482db630a6050d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-05T23:04:45Z",
+      "side": 1,
+      "message": "Dangling whitespace",
+      "revId": "19595b54c8cc8f0fabfa40a70b9c3aeac2582c31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
