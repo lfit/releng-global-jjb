@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Tarball the $JAVADOC_DIR as a workaround for javadoc verfiy jobs
+    to avoid uploading a large number of small files. Uploading a large number
+    of small files does not work well with Nexus unpack plugin which
+    fails on 504 gateway timeout.
