@@ -1106,6 +1106,7 @@
     github-url: 'https://github.com'
     java-version: openjdk8
     mvn-global-settings: global-settings
+    mvn-goals: clean install
     mvn-opts: ''
     mvn-params: ''
     mvn-version: mvn35
@@ -1177,6 +1178,7 @@
             - shell: echo 'Using SonarCloud'
             - lf-infra-maven-sonarcloud:
                 java-version: '{java-version}'
+                mvn-goals: '{mvn-goals}'
                 mvn-settings: '{mvn-settings}'
                 mvn-version: '{mvn-version}'
                 sonarcloud-project-key: '{sonarcloud-project-key}'
@@ -1192,6 +1194,7 @@
             - shell: echo 'Using SonarQube'
             - lf-infra-maven-sonar:
                 java-version: '{java-version}'
+                mvn-goals: '{mvn-goals}'
                 mvn-settings: '{mvn-settings}'
                 mvn-version: '{mvn-version}'
 
@@ -1210,7 +1213,9 @@
           java-version: '{java-version}'
       - inject:
           # Switch this to the sonar wrapper when JJB 2.0 is available
-          properties-content: SONAR_HOST_URL=$SONAR_URL
+          properties-content: |
+            SONAR_HOST_URL=$SONAR_URL
+            MAVEN_GOALS={mvn-goals}
       - lf-provide-maven-settings:
           global-settings-file: global-settings
           settings-file: '{mvn-settings}'
@@ -1233,6 +1238,7 @@
             SONAR_HOST_URL=https://sonarcloud.io
             PROJECT_KEY={sonarcloud-project-key}
             PROJECT_ORGANIZATION={sonarcloud-project-organization}
+            MAVEN_GOALS={mvn-goals}
             API_TOKEN={sonarcloud-api-token}
       - lf-provide-maven-settings:
           global-settings-file: global-settings

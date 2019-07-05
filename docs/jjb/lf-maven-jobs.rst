@@ -466,6 +466,8 @@ interest in that kind of support.
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
+    :mvn-goals: The maven goals to perform for the build.
+        (default: clean install)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)

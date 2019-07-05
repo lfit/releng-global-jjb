@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Allow maven goals to be configured in maven-sonar.sh.
+    Set to "clean install" by default.
