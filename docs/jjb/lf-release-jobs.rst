@@ -28,7 +28,7 @@ Macros
 ======
 
 lf-releases
-----------------------
+-----------
 
 Release verify and merge jobs are the same except for their scm, trigger, and
 builders definition. This anchor is the common template.

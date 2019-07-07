@@ -7,7 +7,7 @@ INFO VOTE JOB
 Job counts the votes from the committers against a change
 to the INFO.yaml file
 
-If needed, will also check for a majority of tsc voters
+If needed, will also check for a majority of TSC voters
 (not yet implemented)
 
 Auto-merges the change on a majority vote.
