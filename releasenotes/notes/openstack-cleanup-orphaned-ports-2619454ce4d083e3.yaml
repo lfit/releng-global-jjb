@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Remove orphaned ports from the openstack cloud environment. These orphaned
+    ports are residue of CSIT jobs that needs to be purged, as a part of the
+    openstack cron job. A large number of stale jobs could cause IP address
+    allocation failures.
