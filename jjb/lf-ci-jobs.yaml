@@ -1291,6 +1291,7 @@
     openstack-image-cleanup: true
     openstack-image-cleanup-age: 30
     openstack-image-protect: true
+    openstack-port-cleanup: true
     openstack-server-cleanup: true
     openstack-stack-cleanup: true
     openstack-volume-cleanup: true
@@ -1355,6 +1356,12 @@
           condition-expression: '{openstack-server-cleanup}'
           steps:
             - shell: !include-raw-escape: ../shell/openstack-cleanup-orphaned-servers.sh
+      # Ports
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: '{openstack-port-cleanup}'
+          steps:
+            - shell: !include-raw-escape: ../shell/openstack-cleanup-orphaned-ports.sh
       # Volumes
       - conditional-step:
           condition-kind: boolean-expression
