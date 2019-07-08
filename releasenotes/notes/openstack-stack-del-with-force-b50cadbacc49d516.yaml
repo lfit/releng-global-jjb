@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Delete stacks with the ``--force`` option to ensure that any delete
+    failures does not stop the openstack-cron jobs from continuing.
