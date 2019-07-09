@@ -250,7 +250,7 @@ Calls shell script to validate votes on a change to an INFO.yaml
 lf-releases
 -----------
 
-realises lftools.ini (required)
+releases lftools.ini (required)
 needed to push to nexus.
 
 [nexus]
