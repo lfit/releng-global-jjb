@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c13d69e7_ad50c3b5",
+        "filename": "shell/openstack-cleanup-orphaned-stacks.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-09T03:16:05Z",
+      "side": 1,
+      "message": "set -ue -o pipefail\n\nName a programming language that does not assume unexpected errors should be fatal. An interactive shell cannot use that paradigm, but when it is being used for programming, it should.\n\nPlease keep local/shell variable \u0027lower-case\u0027. It is standard practice (for Unix) and helps \u0027shellcheck\u0027 do a better job.",
+      "revId": "e5dc9ee253527ddc6916922cea9cff57f1a788c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a3268ea_d236e68a",
+        "filename": "shell/openstack-cleanup-orphaned-stacks.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-09T03:16:05Z",
+      "side": 1,
+      "message": "A \u0027lower-case\u0027 env var? The good news is that shellcheck will check for this variable being unset even though it is an env var.",
+      "revId": "e5dc9ee253527ddc6916922cea9cff57f1a788c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "211b6495_63b96216",
+        "filename": "shell/openstack-cleanup-orphaned-stacks.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-09T03:16:05Z",
+      "side": 1,
+      "message": "You don\u0027t need a env var:\n    No env vars: awk -F\u0027/\u0027 arg\u003d$silo \u0027{print arg \"-\" $6 \"-\" $7}\u0027\n    Limit scope: SILO\u003d$silo awk -F\u0027/\u0027 \u0027{print ENVIRON[\"SILO\"] \"-\" $6 \"-\" $7}\u0027\n\nIn case you did not notice, I H8 env vars, but if you want to use them use UPPER_CASE.",
+      "revId": "e5dc9ee253527ddc6916922cea9cff57f1a788c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
