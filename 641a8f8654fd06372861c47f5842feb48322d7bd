@@ -46,6 +46,30 @@
       "revId": "641a8f8654fd06372861c47f5842feb48322d7bd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "715ac05d_d61b60e8",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-09T22:15:34Z",
+      "side": 1,
+      "message": "Not really...we just need to change this line where it tells us better which script is running..",
+      "parentUuid": "21c52bad_3ea5b7d6",
+      "range": {
+        "startLine": 12,
+        "startChar": 11,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "641a8f8654fd06372861c47f5842feb48322d7bd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
