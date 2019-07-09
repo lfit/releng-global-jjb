@@ -22,6 +22,30 @@
       "revId": "641a8f8654fd06372861c47f5842feb48322d7bd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "21c52bad_3ea5b7d6",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-07-09T22:09:53Z",
+      "side": 1,
+      "message": "I know its not consistent with the other openstack scripts. If I change this here would have to change this in rest of the script too :P",
+      "parentUuid": "6ca2eb74_e0b64b7f",
+      "range": {
+        "startLine": 12,
+        "startChar": 11,
+        "endLine": 12,
+        "endChar": 26
+      },
+      "revId": "641a8f8654fd06372861c47f5842feb48322d7bd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
