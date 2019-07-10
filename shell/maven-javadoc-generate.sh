@@ -33,3 +33,14 @@ $MVN clean install javadoc:aggregate \
     $MAVEN_OPTIONS $MAVEN_PARAMS
 
 mv "$WORKSPACE/target/site/apidocs" "$JAVADOC_DIR"
+
+# TODO: Nexus unpack plugin throws a "504 gateway timeout" for jobs archiving
+# large number of small files. Remove the workaround only we move away from
+# using Nexus as the log server.
+if [[ "$JOB_NAME" =~ "javadoc-verify" ]]; then
+    # Tarball the javadoc dir and rm the directory to avoid re-upload into logs
+    pushd "$JAVADOC_DIR"
+    tar cvJf "$WORKSPACE/archives/javadoc.tar.xz" .
+    rm -rf "$JAVADOC_DIR"
+    popd
+fi
