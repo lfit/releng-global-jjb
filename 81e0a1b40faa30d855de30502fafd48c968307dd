@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "383946a5_1b3fc5e5",
+        "filename": ".jjb-test/lf-openstack/lf-stack-create-minimal.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-10T16:18:52Z",
+      "side": 1,
+      "message": "If you\u0027re changing all the single-quotes to double-quotes why not these?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 46
+      },
+      "revId": "81e0a1b40faa30d855de30502fafd48c968307dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6496dd4_4eb9a902",
+        "filename": "releasenotes/notes/lf-whitesource-jobs-bf3c81f9c2ea4b73.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-10T16:18:52Z",
+      "side": 1,
+      "message": "Why modify the indentation on this, but not the rest?",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "81e0a1b40faa30d855de30502fafd48c968307dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
