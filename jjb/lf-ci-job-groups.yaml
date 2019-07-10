@@ -1,6 +1,6 @@
 ---
 - job-group:
-    name: '{project-name}-ci-jobs'
+    name: "{project-name}-ci-jobs"
 
     jobs:
       - gerrit-jenkins-cfg-merge
@@ -11,7 +11,7 @@
       - gerrit-jjb-verify
 
 - job-group:
-    name: '{project-name}-github-ci-jobs'
+    name: "{project-name}-github-ci-jobs"
 
     jobs:
       - github-jenkins-cfg-merge
@@ -22,26 +22,26 @@
       - github-jjb-verify
 
 - job-group:
-    name: '{project-name}-info-yaml-jobs'
+    name: "{project-name}-info-yaml-jobs"
 
     jobs:
       - gerrit-info-yaml-verify
 
 - job-group:
-    name: '{project-name}-github-info-yaml-jobs'
+    name: "{project-name}-github-info-yaml-jobs"
 
     jobs:
       - github-info-yaml-verify
 
 - job-group:
-    name: '{project-name}-packer-jobs'
+    name: "{project-name}-packer-jobs"
 
     jobs:
       - gerrit-packer-merge
       - gerrit-packer-verify
 
 - job-group:
-    name: '{project-name}-github-packer-jobs'
+    name: "{project-name}-github-packer-jobs"
 
     jobs:
       - github-packer-merge

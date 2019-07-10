@@ -25,7 +25,7 @@ for file in "${jjb_files[@]}"; do
          -e '\- wrapper:' \
          -A1 "$file" \
          | grep 'name: ' | awk -F': ' '{print $2}' | sort | uniq \
-         | tr -d "'")
+         | tr -d "'" | tr -d '"')
 
     for item in "${docs_interests[@]}"; do
         if ! grep -q "$item" "docs/${file//.yaml/.rst}"; then

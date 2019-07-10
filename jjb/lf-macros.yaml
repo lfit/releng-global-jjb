@@ -23,11 +23,11 @@
     builders:
       - inject:
           properties-content: |
-              FILE_PATTERNS={file-patterns}
-              SPDX_DISABLE={spdx-disable}
-              LHC_VERSION={lhc-version}
-              LICENSE_EXCLUDE_PATHS={license-exclude-paths}
-              LICENSES_ALLOWED={licenses-allowed}
+            FILE_PATTERNS={file-patterns}
+            SPDX_DISABLE={spdx-disable}
+            LHC_VERSION={lhc-version}
+            LICENSE_EXCLUDE_PATHS={license-exclude-paths}
+            LICENSES_ALLOWED={licenses-allowed}
       - shell: !include-raw-escape:
           - ../shell/license-check.sh
 
@@ -35,15 +35,15 @@
     name: lf-infra-create-netrc
     builders:
       - inject:
-          properties-content: 'SERVER_ID={server-id}'
+          properties-content: "SERVER_ID={server-id}"
       - shell: !include-raw-escape: ../shell/create-netrc.sh
 
 - builder:
     name: lf-infra-docker-login
     builders:
       - lf-provide-maven-settings:
-          global-settings-file: '{global-settings-file}'
-          settings-file: '{settings-file}'
+          global-settings-file: "{global-settings-file}"
+          settings-file: "{settings-file}"
       - shell: !include-raw-escape: ../shell/docker-login.sh
       - lf-provide-maven-settings-cleanup
 
@@ -68,8 +68,8 @@
       - lf-provide-maven-settings-cleanup
       - config-file-provider:
           files:
-            - file-id: 'jenkins-log-archives-settings'
-              variable: 'SETTINGS_FILE'
+            - file-id: "jenkins-log-archives-settings"
+              variable: "SETTINGS_FILE"
       - lf-infra-create-netrc:
           server-id: logs
       - shell: !include-raw:
@@ -81,7 +81,7 @@
       - shell: !include-raw:
           - ../shell/logs-clear-credentials.sh
       - description-setter:
-          regexp: '^Build logs: .*'
+          regexp: "^Build logs: .*"
 
 - builder:
     name: lf-infra-package-listing
@@ -94,23 +94,23 @@
     builders:
       - conditional-step:
           condition-kind: boolean-expression
-          condition-expression: '{openstack}'
+          condition-expression: "{openstack}"
           steps:
             - config-file-provider:
                 files:
                   - file-id: clouds-yaml
-                    target: '$HOME/.config/openstack/clouds.yaml'
+                    target: "$HOME/.config/openstack/clouds.yaml"
             - inject:
                 properties-content: OS_CLOUD={openstack-cloud}
       - config-file-provider:
           files:
-            - file-id: '{packer-cloud-settings}'
+            - file-id: "{packer-cloud-settings}"
               variable: CLOUDENV
       - inject:
           properties-content: |
-              PACKER_PLATFORM={platform}
-              PACKER_TEMPLATE={template}
-              PACKER_VERSION={packer-version}
+            PACKER_PLATFORM={platform}
+            PACKER_TEMPLATE={template}
+            PACKER_VERSION={packer-version}
       - shell: !include-raw-escape:
           - ../shell/packer-install.sh
           - ../shell/packer-build.sh
@@ -122,21 +122,21 @@
     builders:
       - conditional-step:
           condition-kind: boolean-expression
-          condition-expression: '{openstack}'
+          condition-expression: "{openstack}"
           steps:
             - config-file-provider:
                 files:
                   - file-id: clouds-yaml
-                    target: '$HOME/.config/openstack/clouds.yaml'
+                    target: "$HOME/.config/openstack/clouds.yaml"
             - inject:
                 properties-content: OS_CLOUD={openstack-cloud}
       - config-file-provider:
           files:
-            - file-id: '{packer-cloud-settings}'
+            - file-id: "{packer-cloud-settings}"
               variable: CLOUDENV
       - inject:
           properties-content: |
-              PACKER_VERSION={packer-version}
+            PACKER_VERSION={packer-version}
       - shell: !include-raw-escape:
           - ../shell/packer-install.sh
           - ../shell/packer-validate.sh
@@ -148,12 +148,12 @@
     builders:
       - inject:
           properties-content: |
-              PROJECT={project}
-              GERRIT_COMMIT_MESSAGE={gerrit-commit-message}
-              GERRIT_HOST={gerrit-host}
-              GERRIT_TOPIC={gerrit-topic}
-              GERRIT_USER={gerrit-user}
-              REVIEWERS_EMAIL={reviewers-email}
+            PROJECT={project}
+            GERRIT_COMMIT_MESSAGE={gerrit-commit-message}
+            GERRIT_HOST={gerrit-host}
+            GERRIT_TOPIC={gerrit-topic}
+            GERRIT_USER={gerrit-user}
+            REVIEWERS_EMAIL={reviewers-email}
       - shell: !include-raw-escape: ../shell/gerrit-push-patch.sh
 
 - builder:
@@ -165,22 +165,22 @@
 - builder:
     name: lf-jacoco-nojava-workaround
     builders:
-      - shell: 'mkdir -p $WORKSPACE/target/classes $WORKSPACE/jacoco/classes'
+      - shell: "mkdir -p $WORKSPACE/target/classes $WORKSPACE/jacoco/classes"
 
 - builder:
     name: lf-infra-deploy-maven-file
     builders:
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-provide-maven-settings:
-          global-settings-file: '{global-settings-file}'
-          settings-file: '{settings-file}'
+          global-settings-file: "{global-settings-file}"
+          settings-file: "{settings-file}"
       - inject:
           properties-content: |
-              MAVEN_REPO_URL={maven-repo-url}
-              REPO_ID={repo-id}
-              GROUP_ID={group-id}
-              UPLOAD_FILES_PATH={upload-files-dir}
+            MAVEN_REPO_URL={maven-repo-url}
+            REPO_ID={repo-id}
+            GROUP_ID={group-id}
+            UPLOAD_FILES_PATH={upload-files-dir}
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/deploy-maven-file.sh
@@ -191,15 +191,15 @@
     builders:
       - conditional-step:
           condition-kind: boolean-expression
-          condition-expression: '{mvn-central}'
+          condition-expression: "{mvn-central}"
           steps:
             - lf-provide-maven-settings:
-                global-settings-file: '{mvn-global-settings}'
-                settings-file: '{mvn-settings}'
+                global-settings-file: "{mvn-global-settings}"
+                settings-file: "{mvn-settings}"
             - lf-infra-create-netrc:
-                server-id: 'ossrh'
+                server-id: "ossrh"
             - inject:
-                properties-content: 'OSSRH_PROFILE_ID={ossrh-profile-id}'
+                properties-content: "OSSRH_PROFILE_ID={ossrh-profile-id}"
             - shell: !include-raw-escape: ../shell/maven-central.sh
             - lf-provide-maven-settings-cleanup
 
@@ -209,8 +209,8 @@
       # Create a $HOME/.wgetrc to make the Maven download quiet.
       - shell: 'echo "quiet=on" > "$HOME/.wgetrc"'
       - maven-target:
-          maven-version: '{mvn-version}'
-          goals: '--version'
+          maven-version: "{mvn-version}"
+          goals: "--version"
       - shell: 'rm "$HOME/.wgetrc"'
 
 - builder:
@@ -218,10 +218,10 @@
     builders:
       - config-file-provider:
           files:
-            - file-id: '{global-settings-file}'
-              variable: 'GLOBAL_SETTINGS_FILE'
-            - file-id: '{settings-file}'
-              variable: 'SETTINGS_FILE'
+            - file-id: "{global-settings-file}"
+              variable: "GLOBAL_SETTINGS_FILE"
+            - file-id: "{settings-file}"
+              variable: "SETTINGS_FILE"
 
 - builder:
     name: lf-pip-install
@@ -277,7 +277,7 @@
       - config-file-provider:
           files:
             - file-id: lftoolsini
-              target: '$HOME/.config/lftools/lftools.ini'
+              target: "$HOME/.config/lftools/lftools.ini"
       - shell: !include-raw: ../shell/release-job.sh
 
 - builder:
@@ -287,7 +287,7 @@
     builders:
       - conditional-step:
           condition-kind: boolean-expression
-          condition-expression: '{sign-artifacts}'
+          condition-expression: "{sign-artifacts}"
           steps:
             - config-file-provider:
                 files:
@@ -301,8 +301,8 @@
             - shell: !include-raw-escape: ../shell/sigul-install.sh
             - inject:
                 properties-content: |
-                    SIGN_DIR={sign-dir}
-                    SIGN_MODE={sign-mode}
+                  SIGN_DIR={sign-dir}
+                  SIGN_MODE={sign-mode}
             - shell: !include-raw-escape:
                 - ../shell/sigul-sign-dir.sh
             - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
@@ -316,7 +316,6 @@
           docker rmi -f $(docker images -a -q)
           exit 0
 
-
 ##############
 # PARAMETERS #
 ##############
@@ -326,9 +325,9 @@
     parameters:
       - string:
           name: NEXUS_IQ_STAGE
-          default: '{nexus-iq-stage}'
+          default: "{nexus-iq-stage}"
           description: |
-              Stage the policy evaluation will be run against on the Nexus IQ Server.
+            Stage the policy evaluation will be run against on the Nexus IQ Server.
 
 - parameter:
     name: lf-cmake-parameters
@@ -336,22 +335,22 @@
     parameters:
       - string:
           name: BUILD_DIR
-          default: '{build-dir}'
-          description: 'Directory to build the project in.'
+          default: "{build-dir}"
+          description: "Directory to build the project in."
       - string:
           name: CMAKE_OPTS
-          default: '{cmake-opts}'
+          default: "{cmake-opts}"
           description: |
-              Options to pass to CMAKE.
-              Example: -DCMAKE_INSTALL_PREFIX=$WORKSPACE/target/output
+            Options to pass to CMAKE.
+            Example: -DCMAKE_INSTALL_PREFIX=$WORKSPACE/target/output
       - string:
           name: INSTALL_PREFIX
-          default: '{install-prefix}'
-          description: 'Install prefix for C/C++ builds. Example: /usr/local'
+          default: "{install-prefix}"
+          description: "Install prefix for C/C++ builds. Example: /usr/local"
       - string:
           name: MAKE_OPTS
-          default: '{make-opts}'
-          description: 'Options to pass to make. Example: -j8'
+          default: "{make-opts}"
+          description: "Options to pass to make. Example: -j8"
 
 - parameter:
     name: lf-infra-maven-parameters
@@ -360,39 +359,38 @@
           name: M2_HOME
           # Sets an env var for shell scripts to be able to call the dynamically
           # installed maven without having to calculate the M2_HOME themselves.
-          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}'
-          description: 'Maven selector to be used by shell scripts'
+          default: "/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}"
+          description: "Maven selector to be used by shell scripts"
       - string:
           name: MAVEN_OPTS
-          default: '{mvn-opts}'
+          default: "{mvn-opts}"
           description: |
-              Maven Java opts. Example: -Xmx1024m -XX:MaxPermSize=256m
+            Maven Java opts. Example: -Xmx1024m -XX:MaxPermSize=256m
       - string:
           name: MAVEN_PARAMS
-          default: '{mvn-params}'
+          default: "{mvn-params}"
           description: |
-              Maven parameters to pass to the mvn command.
+            Maven parameters to pass to the mvn command.
       - string:
           name: MVN
           # Sets an env var for shell scripts to be able to call the dynamically
           # installed maven without having to calculate the path themselves.
           # yamllint disable-line rule:line-length
-          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn'
-          description: 'Maven selector to be used by shell scripts'
+          default: "/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn"
+          description: "Maven selector to be used by shell scripts"
 
 - parameter:
     name: lf-infra-openstack-parameters
     parameters:
       - string:
           name: OS_CLOUD
-          default: '{os-cloud}'
+          default: "{os-cloud}"
           description: |
-              The name of a cloud configuration in clouds.yaml. OS_CLOUD is a
-              variable name that is significant to openstack client as a
-              environment variable. Please refer to the documentation for
-              further details.
-              https://docs.openstack.org/developer/python-openstackclient/
-
+            The name of a cloud configuration in clouds.yaml. OS_CLOUD is a
+            variable name that is significant to openstack client as a
+            environment variable. Please refer to the documentation for
+            further details.
+            https://docs.openstack.org/developer/python-openstackclient/
 
 - parameter:
     name: lf-infra-parameters
@@ -401,65 +399,65 @@
     parameters:
       - string:
           name: PROJECT
-          default: '{project}'
+          default: "{project}"
           description: |
-              Parameter to identify a SCM project to build. This is typically
-              the project repo path. For example: ofextensions/circuitsw
+            Parameter to identify a SCM project to build. This is typically
+            the project repo path. For example: ofextensions/circuitsw
       - string:
           name: STREAM
-          default: '{stream}'
+          default: "{stream}"
           description: |
-              Stream is often set to the same name as 'branch' but can
-              sometimes be used as a name representing a project's release code
-              name.
+            Stream is often set to the same name as 'branch' but can
+            sometimes be used as a name representing a project's release code
+            name.
       - string:
           name: GERRIT_PROJECT
-          default: '{project}'
+          default: "{project}"
           description: |
-              Gerrit Trigger provided parameter to identify Gerrit project that
-              triggered the build. This is typically the project repo path as
-              exists in Gerrit. For example: ofextensions/circuitsw
+            Gerrit Trigger provided parameter to identify Gerrit project that
+            triggered the build. This is typically the project repo path as
+            exists in Gerrit. For example: ofextensions/circuitsw
 
-              If using Gerrit, in a manual build this should match the PROJECT
-              parameter above.
+            If using Gerrit, in a manual build this should match the PROJECT
+            parameter above.
       - string:
           name: GERRIT_BRANCH
-          default: '{branch}'
+          default: "{branch}"
           description: |
-              Gerrit Trigger provided parameter to identify a Gerrit branch.
+            Gerrit Trigger provided parameter to identify a Gerrit branch.
 
-              If using Gerrit, in a manual build override with the branch to
-              build against.
+            If using Gerrit, in a manual build override with the branch to
+            build against.
       - string:
           name: GERRIT_REFSPEC
-          default: 'refs/heads/{branch}'
+          default: "refs/heads/{branch}"
           description: |
-              Gerrit Trigger provided parameter to identify a refspec to fetch
-              from Gerrit.
+            Gerrit Trigger provided parameter to identify a refspec to fetch
+            from Gerrit.
 
-              If using Gerrit, in a manual build override with a refspec.
-              https://git-scm.com/book/en/v2/Git-Internals-The-Refspec
-              For example: 'refs/heads/master'
+            If using Gerrit, in a manual build override with a refspec.
+            https://git-scm.com/book/en/v2/Git-Internals-The-Refspec
+            For example: 'refs/heads/master'
       - string:
           name: sha1
-          default: 'origin/{branch}'
+          default: "origin/{branch}"
           description: |
-              GitHub PR Trigger provided parameter for specifying the commit
-              to checkout.
+            GitHub PR Trigger provided parameter for specifying the commit
+            to checkout.
 
-              If using GitHub, in a manual build override with a branch path or
-              sha1 hash to a specific commit. For example: 'origin/master'
+            If using GitHub, in a manual build override with a branch path or
+            sha1 hash to a specific commit. For example: 'origin/master'
 
 - parameter:
     name: lf-infra-node-parameters
     parameters:
       - string:
           name: NODE_DIR
-          default: '{node-dir}'
+          default: "{node-dir}"
           description: Path to a Node project directory.
       - string:
           name: NODE_VERSION
-          default: '{node-version}'
+          default: "{node-version}"
           description: Version of NodeJS to install.
 
 - parameter:
@@ -467,15 +465,15 @@
     parameters:
       - string:
           name: TOX_DIR
-          default: '{tox-dir}'
+          default: "{tox-dir}"
           description: |
-              Path to directory containing tox.ini file.
+            Path to directory containing tox.ini file.
       - string:
           name: TOX_ENVS
-          default: '{tox-envs}'
+          default: "{tox-envs}"
           description: |
-              Tox environments to run build against.
-              Example: docs,py2,py3
+            Tox environments to run build against.
+            Example: docs,py2,py3
 
 ##############
 # PROPERTIES #
@@ -487,7 +485,7 @@
       - build-discarder:
           # Allow build data to be stored at a length configured by the
           # downstream project.
-          days-to-keep: '{build-days-to-keep}'
+          days-to-keep: "{build-days-to-keep}"
           # Do not allow artifacts to be stored in Jenkins.
           artifact-num-to-keep: 0
 
@@ -539,7 +537,7 @@
           exclude:
             # Do not clean up *.jenkins-trigger files for jobs that use a
             # properties file as input for triggering another build.
-            - '**/*.jenkins-trigger'
+            - "**/*.jenkins-trigger"
           fail-build: false
 
 - publisher:
@@ -567,7 +565,7 @@
           exclude:
             # Do not clean up *.jenkins-trigger files for jobs that use a
             # properties file as input for triggering another build.
-            - '**/*.jenkins-trigger'
+            - "**/*.jenkins-trigger"
           fail-build: false
 
 #######
@@ -578,35 +576,35 @@
     name: lf-infra-gerrit-scm
     scm:
       - git:
-          credentials-id: '{jenkins-ssh-credential}'
-          url: '{git-url}'
-          refspec: '{refspec}'
+          credentials-id: "{jenkins-ssh-credential}"
+          url: "{git-url}"
+          refspec: "{refspec}"
           branches:
-            - 'refs/heads/{branch}'
+            - "refs/heads/{branch}"
           skip-tag: true
           wipe-workspace: true
           submodule:
-            disable: '{submodule-disable}'
-            recursive: '{submodule-recursive}'
-            timeout: '{submodule-timeout}'
-          choosing-strategy: '{choosing-strategy}'
+            disable: "{submodule-disable}"
+            recursive: "{submodule-recursive}"
+            timeout: "{submodule-timeout}"
+          choosing-strategy: "{choosing-strategy}"
 
 - scm:
     name: lf-infra-github-scm
     scm:
       - git:
-          credentials-id: '{jenkins-ssh-credential}'
-          url: '{url}'
-          refspec: '{refspec}'
+          credentials-id: "{jenkins-ssh-credential}"
+          url: "{url}"
+          refspec: "{refspec}"
           branches:
-            - '{branch}'
+            - "{branch}"
           skip-tag: true
           wipe-workspace: true
           submodule:
-            disable: '{submodule-disable}'
-            recursive: '{submodule-recursive}'
-            timeout: '{submodule-timeout}'
-          choosing-strategy: '{choosing-strategy}'
+            disable: "{submodule-disable}"
+            recursive: "{submodule-recursive}"
+            timeout: "{submodule-timeout}"
+          choosing-strategy: "{choosing-strategy}"
 
 ############
 # WRAPPERS #
@@ -618,8 +616,8 @@
       - mask-passwords
       - timeout:
           type: absolute
-          timeout: '{build-timeout}'
-          timeout-var: 'BUILD_TIMEOUT'
+          timeout: "{build-timeout}"
+          timeout-var: "BUILD_TIMEOUT"
           fail: true
       - timestamps
       - openstack:
@@ -629,19 +627,19 @@
     name: lf-infra-wrappers
     wrappers:
       - lf-infra-wrappers-common:
-          build-timeout: '{build-timeout}'
+          build-timeout: "{build-timeout}"
       - config-file-provider:
           files:
             - file-id: npmrc
-              target: '$HOME/.npmrc'
+              target: "$HOME/.npmrc"
             - file-id: pipconf
-              target: '$HOME/.config/pip/pip.conf'
+              target: "$HOME/.config/pip/pip.conf"
       - ssh-agent-credentials:
           users:
-            - '{jenkins-ssh-credential}'
+            - "{jenkins-ssh-credential}"
 
 - wrapper:
     name: lf-infra-wrappers-windows
     wrappers:
       - lf-infra-wrappers-common:
-          build-timeout: '{build-timeout}'
+          build-timeout: "{build-timeout}"

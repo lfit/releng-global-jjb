@@ -14,7 +14,6 @@
 
     project-name: github-ciman
 
-
 - project:
     name: gerrit-openstack-jobs
     jobs:
@@ -23,8 +22,8 @@
     project-name: gerrit-ciman
 
     jenkins-urls: >
-        https://jenkins.example.org
-        https://jenkins.example.org/sandbox
+      https://jenkins.example.org
+      https://jenkins.example.org/sandbox
 
 - project:
     name: github-openstack-jobs
@@ -34,9 +33,8 @@
     project-name: github-ciman
 
     jenkins-urls: >
-        https://jenkins.example.org
-        https://jenkins.example.org/sandbox
-
+      https://jenkins.example.org
+      https://jenkins.example.org/sandbox
 
 - project:
     name: gerrit-packer-jobs
@@ -75,11 +73,11 @@
 
     throttle-enabled: true
     throttle_categories:
-      - 'cat1'
-      - 'cat2'
+      - "cat1"
+      - "cat2"
     throttle-max-per-node: 3
     throttle-max-total: 2
-    throttle-option: 'category'
+    throttle-option: "category"
 
     project-name: throttle-ciman
 

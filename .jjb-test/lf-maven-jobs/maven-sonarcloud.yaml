@@ -4,11 +4,11 @@
     jobs:
       - gerrit-maven-sonar
 
-    project: 'sonarcloud'
-    project-name: 'sonarcloud'
-    branch: 'master'
-    mvn-settings: 'sonarcloud-settings'
-    mvn-opts: '-Xmx1024m'
+    project: "sonarcloud"
+    project-name: "sonarcloud"
+    branch: "master"
+    mvn-settings: "sonarcloud-settings"
+    mvn-opts: "-Xmx1024m"
     sonarcloud: true
     sonarcloud-project-key: KEY
     sonarcloud-project-organization: ORGANIZATION

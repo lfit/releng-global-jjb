@@ -1,5 +1,4 @@
 ---
-
 ####################
 # COMMON FUNCTIONS #
 ####################
@@ -33,7 +32,7 @@
     #####################
 
     project-type: freestyle
-    node: '{build-node}'
+    node: "{build-node}"
 
     properties:
       - lf-infra-properties:
@@ -41,15 +40,15 @@
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          refspec: 'refs/heads/{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          refspec: "refs/heads/{branch}"
+          stream: "{stream}"
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     publishers:
       - lf-infra-publish
@@ -70,8 +69,8 @@
     build-timeout: 15
     disable-job: false
     git-url: https://github.com
-    github-url: 'https://github.com'
-    project-pattern: '**'
+    github-url: "https://github.com"
+    project-pattern: "**"
     stream: master
     submodule-recursive: true
 
@@ -85,16 +84,16 @@
     # Job Configuration #
     #####################
 
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     builders:
       - lf-infra-pre-build
       - lf-rtd-trigger-build:
-          rtd-build-url: '{rtd-build-url}'
-          rtd-token: '{rtd-token}'
+          rtd-build-url: "{rtd-build-url}"
+          rtd-token: "{rtd-token}"
 
 - job-template:
-    name: '{project-name}-rtd-merge-{stream}'
+    name: "{project-name}-rtd-merge-{stream}"
     id: gerrit-rtd-merge
     <<: *lf_rtd_common
     # yamllint disable-line rule:key-duplicates
@@ -102,20 +101,20 @@
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_merge_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_merge_triggers}"
           projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project-pattern}'
+            - project-compare-type: "ANT"
+              project-pattern: "{project-pattern}"
               branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: '**/{branch}'
-                - branch-compare-type: 'ANT'
-                  branch-pattern: 'refs/tags/**'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+                - branch-compare-type: "ANT"
+                  branch-pattern: "refs/tags/**"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-rtd-merge-{stream}'
+    name: "{project-name}-rtd-merge-{stream}"
     id: github-rtd-merge
     <<: *lf_rtd_common
     # yamllint disable-line rule:key-duplicates
@@ -123,28 +122,28 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     triggers:
-      - timed: 'H H * * *'
+      - timed: "H H * * *"
       - github
       - pollscm:
-          cron: ''
+          cron: ""
       - github-pull-request:
-          trigger-phrase: '^remerge$'
+          trigger-phrase: "^remerge$"
           only-trigger-phrase: true
-          status-context: 'RTD Merge'
+          status-context: "RTD Merge"
           permit-all: true
           github-hooks: true
           org-list:
-            - '{github-org}'
-          white-list: '{obj:github_pr_whitelist}'
-          admin-list: '{obj:github_pr_admin_list}'
-          included-regions: '{obj:github_included_regions}'
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
+          included-regions: "{obj:github_included_regions}"
           white-list-target-branches:
-            - '{branch}'
+            - "{branch}"
 
 #############
 # RTD VERIFY#
@@ -162,9 +161,9 @@
     build-timeout: 15
     disable-job: false
     doc-dir: docs/_build/html
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
-    project-pattern: '**'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    project-pattern: "**"
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -184,15 +183,15 @@
     # Job Configuration #
     #####################
 
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     builders:
       - lf-infra-pre-build
       - lf-rtd-verify:
-          doc-dir: '{doc-dir}'
+          doc-dir: "{doc-dir}"
 
 - job-template:
-    name: '{project-name}-rtd-verify-{stream}'
+    name: "{project-name}-rtd-verify-{stream}"
     id: gerrit-rtd-verify
     concurrent: true
     <<: *lf_rtd_common
@@ -201,34 +200,34 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          branch: '$GERRIT_BRANCH'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: ''  # Leave blank!! A later script will handle fetching
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          branch: "$GERRIT_BRANCH"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "" # Leave blank!! A later script will handle fetching
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project-pattern}'
+            - project-compare-type: "ANT"
+              project-pattern: "{project-pattern}"
               branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
           skip-vote:
-            successful: '{gerrit-skip-vote}'
-            failed: '{gerrit-skip-vote}'
-            unstable: '{gerrit-skip-vote}'
-            notbuilt: '{gerrit-skip-vote}'
+            successful: "{gerrit-skip-vote}"
+            failed: "{gerrit-skip-vote}"
+            unstable: "{gerrit-skip-vote}"
+            notbuilt: "{gerrit-skip-vote}"
 
 - job-template:
-    name: '{project-name}-rtd-verify-{stream}'
+    name: "{project-name}-rtd-verify-{stream}"
     id: github-rtd-verify
     concurrent: true
     <<: *lf_rtd_common
@@ -237,28 +236,28 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^(recheck|reverify)$'
+          trigger-phrase: "^(recheck|reverify)$"
           only-trigger-phrase: false
-          status-context: 'RTD Verify'
+          status-context: "RTD Verify"
           permit-all: true
           github-hooks: true
-          included-regions: '{obj:github_included_regions}'
+          included-regions: "{obj:github_included_regions}"
           white-list-target-branches:
-            - '{branch}'
+            - "{branch}"

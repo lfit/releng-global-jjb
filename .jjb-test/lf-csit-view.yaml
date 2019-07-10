@@ -5,4 +5,4 @@
       - csit-view
 
     view-name: CSIT-1node
-    view-regex: '.*csit-1node.*'
+    view-regex: ".*csit-1node.*"

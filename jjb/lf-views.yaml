@@ -18,14 +18,14 @@
       - find-bugs
 
 - view-template:
-    id: 'common-view'
-    name: '{view-name}'
+    id: "common-view"
+    name: "{view-name}"
 
     ######################
     # Default parameters #
     ######################
 
-    view-description: 'View using common-view template.'
+    view-description: "View using common-view template."
     view-filter-executors: false
     view-filter-queue: false
     view-recurse: false
@@ -35,11 +35,11 @@
     ######################
 
     view-type: list
-    description: '{view-description}'
-    filter-executors: '{view-filter-executors}'
-    filter-queue: '{view-filter-queue}'
-    recurse: '{view-recurse}'
-    regex: '{view-regex}'
+    description: "{view-description}"
+    filter-executors: "{view-filter-executors}"
+    filter-queue: "{view-filter-queue}"
+    recurse: "{view-recurse}"
+    regex: "{view-regex}"
     <<: *lf_view_common_columns
 
 ######################
@@ -47,14 +47,14 @@
 ######################
 
 - view-template:
-    id: 'csit-view'
-    name: '{view-name}'
+    id: "csit-view"
+    name: "{view-name}"
 
     ######################
     # Default parameters #
     ######################
 
-    view-description: 'CSIT jobs.'
+    view-description: "CSIT jobs."
     view-filter-executors: false
     view-filter-queue: false
     view-recurse: false
@@ -64,11 +64,11 @@
     ######################
 
     view-type: list
-    description: '{view-description}'
-    filter-executors: '{view-filter-executors}'
-    filter-queue: '{view-filter-queue}'
-    recurse: '{view-recurse}'
-    regex: '{view-regex}'
+    description: "{view-description}"
+    filter-executors: "{view-filter-executors}"
+    filter-queue: "{view-filter-queue}"
+    recurse: "{view-recurse}"
+    regex: "{view-regex}"
     columns:
       - status
       - weather
@@ -84,8 +84,8 @@
 #########################
 
 - view-template:
-    id: 'project-view'
-    name: '{project-name}'
+    id: "project-view"
+    name: "{project-name}"
 
     ######################
     # Default parameters #
@@ -100,9 +100,9 @@
     ######################
 
     view-type: list
-    description: 'List of jobs for {project-name}.'
-    filter-executors: '{view-filter-executors}'
-    filter-queue: '{view-filter-queue}'
-    recurse: '{view-recurse}'
-    regex: '^{project-name}-.*'
+    description: "List of jobs for {project-name}."
+    filter-executors: "{view-filter-executors}"
+    filter-queue: "{view-filter-queue}"
+    recurse: "{view-recurse}"
+    regex: "^{project-name}-.*"
     <<: *lf_view_common_columns

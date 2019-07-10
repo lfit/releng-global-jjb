@@ -1,5 +1,4 @@
 ---
-
 ###############
 # Node Verify #
 ###############
@@ -15,9 +14,9 @@
     build-days-to-keep: 7
     build-timeout: 10
     disable-job: false
-    git-url: '$GIT_URL/$GERRIT_PROJECT'
-    github-url: 'https://github.com'
-    node-dir: ''
+    git-url: "$GIT_URL/$GERRIT_PROJECT"
+    github-url: "https://github.com"
+    node-dir: ""
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -25,38 +24,38 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*'
+        pattern: ".*"
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - '.*'
+      - ".*"
 
     #####################
     # Job Configuration #
     #####################
 
     project-type: freestyle
-    node: '{build-node}'
+    node: "{build-node}"
     concurrent: true
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
       - lf-infra-node-parameters:
-          node-dir: '{node-dir}'
-          node-version: '{node-version}'
+          node-dir: "{node-dir}"
+          node-version: "{node-version}"
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     builders:
       - shell: !include-raw-escape:
@@ -67,7 +66,7 @@
       - lf-infra-publish
 
 - job-template:
-    name: '{project-name}-node-verify-{stream}'
+    name: "{project-name}-node-verify-{stream}"
     id: gerrit-node-verify
     <<: *lf_node_verify
 
@@ -90,56 +89,56 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: 'origin/$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "origin/$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-node-verify-{stream}'
+    name: "{project-name}-node-verify-{stream}"
     id: github-node-verify
     <<: *lf_node_verify
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^(recheck|reverify)$'
+          trigger-phrase: "^(recheck|reverify)$"
           only-trigger-phrase: false
-          status-context: 'Node Verify'
+          status-context: "Node Verify"
           permit-all: true
           github-hooks: true
-          included-regions: '{obj:github_included_regions}'
+          included-regions: "{obj:github_included_regions}"
           white-list-target-branches:
-            - '{branch}'
+            - "{branch}"
