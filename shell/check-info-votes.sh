@@ -16,17 +16,17 @@ pip="pip3"
 
 # For OPNFV
 if [[ $NODE_NAME =~ "lf-build" ]]; then
-  pip=pip
+    pip=pip
 fi
 
 if [ -d "/opt/pyenv" ]; then
-  echo "---> Setting up pyenv"
-  export PYENV_ROOT="/opt/pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  PYTHONPATH=$(pwd)
-  export PYTHONPATH
-  pyenv local 3.6.4
-  export PYENV_VERSION="3.6.4"
+    echo "---> Setting up pyenv"
+    export PYENV_ROOT="/opt/pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    PYTHONPATH=$(pwd)
+    export PYTHONPATH
+    pyenv local 3.6.4
+    export PYENV_VERSION="3.6.4"
 fi
 
 $pip install --user niet
@@ -39,12 +39,12 @@ lftools infofile check-votes INFO.yaml "$GERRIT_URL" "$ref" > gerrit_comment.txt
 exit_status="$?"
 
 if [[ "$exit_status" -ne 0 ]]; then
-  echo "Vote not yet complete"
-  cat gerrit_comment.txt
-  exit "$exit_status"
+    echo "Vote not yet complete"
+    cat gerrit_comment.txt
+    exit "$exit_status"
 else
-  echo "Vote completed submitting review"
-  ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --verified 1
-  sleep 5
-  ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --submit
+    echo "Vote completed submitting review"
+    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --verified 1
+    sleep 5
+    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --submit
 fi
