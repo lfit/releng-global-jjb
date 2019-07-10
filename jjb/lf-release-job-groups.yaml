@@ -6,5 +6,5 @@
     # for any project using self releases.
 
     jobs:
-      - gerrit-releases-verify
-      - gerrit-releases-merge
+      - gerrit-release-verify
+      - gerrit-release-merge
