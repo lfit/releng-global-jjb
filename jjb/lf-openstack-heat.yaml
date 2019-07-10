@@ -11,7 +11,7 @@
       - config-file-provider:
           files:
             - file-id: clouds-yaml
-              target: '$HOME/.config/openstack/clouds.yaml'
+              target: "$HOME/.config/openstack/clouds.yaml"
       - shell: !include-raw: ../shell/openstack-stack-parameters.sh
       - shell: !include-raw-escape: ../shell/openstack-stack-create.sh
       - shell: !include-raw-escape: ../shell/openstack-stack-copy-ssh-keys.sh
@@ -35,7 +35,7 @@
                 - config-file-provider:
                     files:
                       - file-id: clouds-yaml
-                        target: '$HOME/.config/openstack/clouds.yaml'
+                        target: "$HOME/.config/openstack/clouds.yaml"
                 - shell: |
                     #!/bin/bash -l
                     echo "Deleting $OS_STACK_NAME"

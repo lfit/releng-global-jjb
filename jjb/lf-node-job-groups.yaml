@@ -1,6 +1,6 @@
 ---
 - job-group:
-    name: '{project-name}-github-node-jobs'
+    name: "{project-name}-github-node-jobs"
 
     # Job group containing recommended jobs to deploy for a Node Project.
 
@@ -10,7 +10,7 @@
       - github-node-verify
 
 - job-group:
-    name: '{project-name}-node-jobs'
+    name: "{project-name}-node-jobs"
 
     # Job group containing recommended jobs to deploy for a Node Project.
 

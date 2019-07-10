@@ -2,6 +2,6 @@
 - project:
     name: jenkins-cfg-merge-minimal-test
     jobs:
-      - 'gerrit-jenkins-cfg-merge'
+      - "gerrit-jenkins-cfg-merge"
 
     project-name: ci-management

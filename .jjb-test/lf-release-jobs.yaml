@@ -1,8 +1,8 @@
 ---
 - project:
-    name: '{project-name}-releases'
+    name: "{project-name}-releases"
     jobs:
-      - '{project-name}-gerrit-release-jobs'
+      - "{project-name}-gerrit-release-jobs"
 
     project: self-release/project
     project-name: self-release-project

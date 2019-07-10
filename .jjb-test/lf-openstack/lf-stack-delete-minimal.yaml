@@ -14,4 +14,4 @@
 
     publishers:
       - lf-stack-delete:
-          openstack-cloud: '{openstack-cloud}'
+          openstack-cloud: "{openstack-cloud}"
