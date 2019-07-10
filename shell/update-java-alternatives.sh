@@ -17,6 +17,8 @@ JAVA_ENV_FILE="/tmp/java.env"
 update-java-redhat() {
     if [[ "${SET_JDK_VERSION//[a-zA-Z]/}" = "11" ]]; then
         export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+    elif [[ "${SET_JDK_VERSION//[a-zA-Z]/}" = "12" ]]; then
+        export JAVA_HOME="/usr/lib/jvm/java-12-openjdk"
     else
         export JAVA_HOME="/usr/lib/jvm/java-1.${SET_JDK_VERSION//[a-zA-Z:-]/}.0-openjdk"
     fi

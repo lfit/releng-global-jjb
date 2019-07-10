@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Enable JAVA_HOME to point to openjdk12 install path for CentOS 7.
