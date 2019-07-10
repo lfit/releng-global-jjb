@@ -5,4 +5,4 @@
       - common-view
 
     view-name: Daily
-    view-regex: '.*-daily-.*'
+    view-regex: ".*-daily-.*"

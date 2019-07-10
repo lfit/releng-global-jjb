@@ -17,7 +17,7 @@
           - ../shell/docker-get-container-tag.sh
       - inject:
           # Import the container tag set by this build step
-          properties-file: 'env_docker_inject.txt'
+          properties-file: "env_docker_inject.txt"
 
 - builder:
     name: lf-docker-build
@@ -37,7 +37,7 @@
     builders:
       - inject:
           properties-content: |
-              CONTAINER_PUSH_REGISTRY={container-push-registry}
+            CONTAINER_PUSH_REGISTRY={container-push-registry}
       - shell: !include-raw-escape:
           - ../shell/docker-push.sh
 
@@ -49,7 +49,7 @@
     name: lf-docker-common
 
     project-type: freestyle
-    node: '{build-node}'
+    node: "{build-node}"
 
     ######################
     # Default parameters #
@@ -61,37 +61,37 @@
     submodule-disable: false
     submodule-recursive: true
     submodule-timeout: 10
-    pre_docker_build_script: '# pre docker build script goes here'
-    post_docker_build_script: '# post docker build script goes here'
-    disable-job: 'false'
-    docker-root: '$WORKSPACE'
-    docker-build-args: ''
-    git-url: '$GIT_URL/$PROJECT'
-    container-tag-method: 'latest'
+    pre_docker_build_script: "# pre docker build script goes here"
+    post_docker_build_script: "# post docker build script goes here"
+    disable-job: "false"
+    docker-root: "$WORKSPACE"
+    docker-build-args: ""
+    git-url: "$GIT_URL/$PROJECT"
+    container-tag-method: "latest"
     # TODO: how to interpolate value of {docker-root} parameter?
-    container-tag-yaml-dir: ''
+    container-tag-yaml-dir: ""
 
     #####################
     # Job Configuration #
     #####################
 
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
-          branch: '{branch}'
-          project: '{project}'
-          refspec: 'refs/heads/{branch}'
-          stream: '{stream}'
+          branch: "{branch}"
+          project: "{project}"
+          refspec: "refs/heads/{branch}"
+          stream: "{stream}"
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     publishers:
       - lf-infra-publish
@@ -103,13 +103,13 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-disable: '{submodule-disable}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-disable: "{submodule-disable}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
           choosing-strategy: gerrit
 
     gerrit_verify_triggers:
@@ -123,44 +123,44 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*'
+        pattern: ".*"
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - '.*'
+      - ".*"
 
     builders:
       - lf-infra-pre-build
       - lf-infra-docker-login:
-          global-settings-file: 'global-settings'
-          settings-file: '{mvn-settings}'
-      - shell: '{pre_docker_build_script}'
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
+      - shell: "{pre_docker_build_script}"
       - lf-docker-get-container-tag:
-          container-tag-method: '{container-tag-method}'
-          container-tag-yaml-dir: '{container-tag-yaml-dir}'
-          docker-root: '{docker-root}'
+          container-tag-method: "{container-tag-method}"
+          container-tag-yaml-dir: "{container-tag-yaml-dir}"
+          docker-root: "{docker-root}"
       - lf-docker-build:
-          docker-build-args: '{docker-build-args}'
-          docker-name: '{docker-name}'
-          docker-root: '{docker-root}'
-          container-public-registry: '{container-public-registry}'
-          container-push-registry: '{container-push-registry}'
-      - shell: '{post_docker_build_script}'
+          docker-build-args: "{docker-build-args}"
+          docker-name: "{docker-name}"
+          docker-root: "{docker-root}"
+          container-public-registry: "{container-public-registry}"
+          container-push-registry: "{container-push-registry}"
+      - shell: "{post_docker_build_script}"
       - lf-provide-maven-settings-cleanup
 
 - docker_merge_common: &docker_merge_common
     name: docker-merge-common
-    cron: ''
+    cron: ""
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-disable: '{submodule-disable}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-disable: "{submodule-disable}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
           choosing-strategy: gerrit
 
     gerrit_merge_triggers:
@@ -170,32 +170,32 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*'
+        pattern: ".*"
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - '.*'
+      - ".*"
 
     builders:
       - lf-infra-pre-build
       - lf-infra-docker-login:
-          global-settings-file: 'global-settings'
-          settings-file: '{mvn-settings}'
-      - shell: '{pre_docker_build_script}'
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
+      - shell: "{pre_docker_build_script}"
       - lf-docker-get-container-tag:
-          container-tag-method: '{container-tag-method}'
-          container-tag-yaml-dir: '{container-tag-yaml-dir}'
-          docker-root: '{docker-root}'
+          container-tag-method: "{container-tag-method}"
+          container-tag-yaml-dir: "{container-tag-yaml-dir}"
+          docker-root: "{docker-root}"
       - lf-docker-build:
-          docker-build-args: '{docker-build-args}'
-          docker-name: '{docker-name}'
-          docker-root: '{docker-root}'
-          container-public-registry: '{container-public-registry}'
-          container-push-registry: '{container-push-registry}'
-      - shell: '{post_docker_build_script}'
+          docker-build-args: "{docker-build-args}"
+          docker-name: "{docker-name}"
+          docker-root: "{docker-root}"
+          container-public-registry: "{container-public-registry}"
+          container-push-registry: "{container-push-registry}"
+      - shell: "{post_docker_build_script}"
       # Provided all steps have already passed, push the docker image
       - lf-docker-push:
-          container-push-registry: '{container-push-registry}'
+          container-push-registry: "{container-push-registry}"
       - lf-provide-maven-settings-cleanup
 
 #################
@@ -203,7 +203,7 @@
 #################
 
 - job-template:
-    name: '{project-name}-docker-verify-{stream}'
+    name: "{project-name}-docker-verify-{stream}"
     id: gerrit-docker-verify
     # Job template for Docker verify jobs
     #
@@ -216,18 +216,18 @@
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-docker-verify-{stream}'
+    name: "{project-name}-docker-verify-{stream}"
     id: github-docker-verify
     # Job template for Docker verify jobs
     #
@@ -240,38 +240,38 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^(recheck|reverify)$'
+          trigger-phrase: "^(recheck|reverify)$"
           only-trigger-phrase: false
-          status-context: 'Docker Verify'
+          status-context: "Docker Verify"
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - '{branch}'
-          included-regions: '{obj:github_included_regions}'
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
 
 ################
 # Docker Merge #
 ################
 
 - job-template:
-    name: '{project-name}-docker-merge-{stream}'
+    name: "{project-name}-docker-merge-{stream}"
     id: gerrit-docker-merge
     # Job template for Docker merge jobs
     #
@@ -283,20 +283,20 @@
     <<: *docker_merge_common
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_merge_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_merge_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-docker-merge-{stream}'
+    name: "{project-name}-docker-merge-{stream}"
     id: github-docker-merge
     # Job template for Docker merge jobs
     #
@@ -309,36 +309,36 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: ''
-          branch: 'refs/heads/{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - github
       - pollscm:
-          cron: ''
+          cron: ""
       - github-pull-request:
-          trigger-phrase: '^remerge$'
+          trigger-phrase: "^remerge$"
           only-trigger-phrase: true
-          status-context: 'Docker Merge'
+          status-context: "Docker Merge"
           permit-all: true
           github-hooks: true
           org-list:
-            - '{github-org}'
-          white-list: '{obj:github_pr_whitelist}'
-          admin-list: '{obj:github_pr_admin_list}'
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
           white-list-target-branches:
-            - '{branch}'
-          included-regions: '{obj:github_included_regions}'
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"

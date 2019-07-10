@@ -12,20 +12,20 @@
 
     branch: master
     build-days-to-keep: 7
-    build-dir: '$WORKSPACE/target'
+    build-dir: "$WORKSPACE/target"
     build-timeout: 15
-    cmake-opts: ''
-    cron: '@daily'
+    cmake-opts: ""
+    cron: "@daily"
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
-    install-prefix: '$BUILD_DIR/output'
-    make-opts: ''
-    pre-build: ''
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install-prefix: "$BUILD_DIR/output"
+    make-opts: ""
+    pre-build: ""
     sonar-scanner-version: 3.3.0.1492
-    sonarcloud-api-token: ''
-    sonarcloud-organization: ''
-    sonarcloud-project-key: ''
+    sonarcloud-api-token: ""
+    sonarcloud-organization: ""
+    sonarcloud-project-key: ""
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
@@ -35,33 +35,33 @@
     #####################
 
     project-type: freestyle
-    node: '{build-node}'
-    disabled: '{disable-job}'
+    node: "{build-node}"
+    disabled: "{disable-job}"
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
-          lftools-version: '{lftools-version}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+          lftools-version: "{lftools-version}"
       - lf-cmake-parameters:
-          build-dir: '{build-dir}'
-          cmake-opts: '{cmake-opts}'
-          install-prefix: '{install-prefix}'
-          make-opts: '{make-opts}'
+          build-dir: "{build-dir}"
+          cmake-opts: "{cmake-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     builders:
       - lf-infra-pre-build
-      - shell: '{pre-build}'
+      - shell: "{pre-build}"
       - inject:
           # Switch this to the sonar wrapper when JJB 2.0 is available
           properties-content: |
@@ -77,62 +77,61 @@
       - lf-infra-publish
 
 - job-template:
-    name: '{project-name}-cmake-sonar'
+    name: "{project-name}-cmake-sonar"
     id: gerrit-cmake-sonar
     concurrent: false
     <<: *lf_cmake_sonar
 
     scm:
       - lf-infra-gerrit-scm:
-          branch: '$GERRIT_BRANCH'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          branch: "$GERRIT_BRANCH"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
+          server-name: "{gerrit-server-name}"
           trigger-on:
             - comment-added-contains-event:
                 comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
           projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project}'
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
               branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: '**/{branch}'
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
 
 - job-template:
-    name: '{project-name}-cmake-sonar'
+    name: "{project-name}-cmake-sonar"
     id: github-cmake-sonar
     concurrent: false
     <<: *lf_cmake_sonar
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - timed: '{obj:cron}'
-
+      - timed: "{obj:cron}"
 
 ###############
 # CMAKE STAGE #
@@ -147,91 +146,91 @@
 
     branch: master
     build-days-to-keep: 7
-    build-dir: '$WORKSPACE/target'
+    build-dir: "$WORKSPACE/target"
     build-timeout: 15
-    cmake-opts: ''
-    cron: '@daily'
+    cmake-opts: ""
+    cron: "@daily"
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
-    install-prefix: '$BUILD_DIR/output'
-    make-opts: ''
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install-prefix: "$BUILD_DIR/output"
+    make-opts: ""
     mvn-global-settings: global-settings
-    pre-build: ''
+    pre-build: ""
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-    version: ''
+    version: ""
 
     #####################
     # Job Configuration #
     #####################
 
     project-type: freestyle
-    node: '{build-node}'
-    disabled: '{disable-job}'
+    node: "{build-node}"
+    disabled: "{disable-job}"
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
       - lf-cmake-parameters:
-          build-dir: '{build-dir}'
-          cmake-opts: '{cmake-opts}'
-          install-prefix: '{install-prefix}'
-          make-opts: '{make-opts}'
+          build-dir: "{build-dir}"
+          cmake-opts: "{cmake-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
       - string:
           name: NEXUS_GROUP_ID
-          default: '{nexus-group-id}'
-          description: 'Project Group ID in Nexus to upload to.'
+          default: "{nexus-group-id}"
+          description: "Project Group ID in Nexus to upload to."
       - string:
           name: STAGING_PROFILE_ID
-          default: '{staging-profile-id}'
-          description: 'Nexus staging profile ID.'
+          default: "{staging-profile-id}"
+          description: "Nexus staging profile ID."
       - string:
           name: VERSION
-          default: '{version}'
+          default: "{version}"
           description: |
-              (default: '')
+            (default: '')
 
-              Project version to stage release as. There are 2 methods for
-              using this value:
+            Project version to stage release as. There are 2 methods for
+            using this value:
 
-                  1) Defined explicitly here.
-                  2) Leave this value blank and set /tmp/artifact_version
+                1) Defined explicitly here.
+                2) Leave this value blank and set /tmp/artifact_version
 
-              Use method 2 in conjunction with 'pre-build' configuration to
-              generate the artifact_version automatically from files in the
-              project's repository. For example with pre-build script:
+            Use method 2 in conjunction with 'pre-build' configuration to
+            generate the artifact_version automatically from files in the
+            project's repository. For example with pre-build script:
 
-              #!/bin/bash
-              MAJOR_VERSION="$(grep 'set(OCIO_VERSION_MAJOR' CMakeLists.txt \
-                  | awk '{{print $NF}}' | awk -F')' '{{print $1}}')"
-              MINOR_VERSION="$(grep 'set(OCIO_VERSION_MINOR' CMakeLists.txt \
-                  | awk '{{print $NF}}' | awk -F')' '{{print $1}}')"
-              PATCH_VERSION="$(grep 'set(OCIO_VERSION_PATCH' CMakeLists.txt \
-                  | awk '{{print $NF}}' | awk -F')' '{{print $1}}')"
-              echo "${{MAJOR_VERSION}}.${{MINOR_VERSION}}.${{PATCH_VERSION}}" > /tmp/artifact_version
+            #!/bin/bash
+            MAJOR_VERSION="$(grep 'set(OCIO_VERSION_MAJOR' CMakeLists.txt \
+                | awk '{{print $NF}}' | awk -F')' '{{print $1}}')"
+            MINOR_VERSION="$(grep 'set(OCIO_VERSION_MINOR' CMakeLists.txt \
+                | awk '{{print $NF}}' | awk -F')' '{{print $1}}')"
+            PATCH_VERSION="$(grep 'set(OCIO_VERSION_PATCH' CMakeLists.txt \
+                | awk '{{print $NF}}' | awk -F')' '{{print $1}}')"
+            echo "${{MAJOR_VERSION}}.${{MINOR_VERSION}}.${{PATCH_VERSION}}" > /tmp/artifact_version
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     builders:
       - lf-infra-pre-build
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-infra-create-netrc:
           server-id: staging
-      - shell: '{pre-build}'
+      - shell: "{pre-build}"
       - shell: !include-raw-escape: ../shell/cmake-build.sh
       - shell: !include-raw-escape: ../shell/cmake-stage.sh
       - lf-provide-maven-settings-cleanup
@@ -240,70 +239,69 @@
       - lf-infra-publish
 
 - job-template:
-    name: '{project-name}-cmake-stage-{stream}'
+    name: "{project-name}-cmake-stage-{stream}"
     id: gerrit-cmake-stage
     concurrent: true
     <<: *lf_cmake_stage
 
     scm:
       - lf-infra-gerrit-scm:
-          branch: '$GERRIT_BRANCH'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          branch: "$GERRIT_BRANCH"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
+          server-name: "{gerrit-server-name}"
           trigger-on:
             - comment-added-contains-event:
                 comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
           projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project}'
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
               branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: '**/{branch}'
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
 
 - job-template:
-    name: '{project-name}-cmake-stage-{stream}'
+    name: "{project-name}-cmake-stage-{stream}"
     id: github-cmake-stage
     concurrent: true
     <<: *lf_cmake_stage
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - github-pull-request:
-          trigger-phrase: '^(stage-release)$'
+          trigger-phrase: "^(stage-release)$"
           only-trigger-phrase: true
-          status-context: 'CMake Stage'
+          status-context: "CMake Stage"
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - '{branch}'
-
+            - "{branch}"
 
 ################
 # CMAKE VERIFY #
@@ -318,15 +316,15 @@
 
     branch: master
     build-days-to-keep: 7
-    build-dir: '$WORKSPACE/target'
+    build-dir: "$WORKSPACE/target"
     build-timeout: 15
-    cmake-opts: ''
+    cmake-opts: ""
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
-    install-prefix: '$BUILD_DIR/output'
-    make-opts: ''
-    pre-build: ''
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install-prefix: "$BUILD_DIR/output"
+    make-opts: ""
+    pre-build: ""
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -343,106 +341,106 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*'
+        pattern: ".*"
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - '.*'
+      - ".*"
 
     #####################
     # Job Configuration #
     #####################
 
     project-type: freestyle
-    node: '{build-node}'
-    disabled: '{disable-job}'
+    node: "{build-node}"
+    disabled: "{disable-job}"
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
       - lf-cmake-parameters:
-          build-dir: '{build-dir}'
-          cmake-opts: '{cmake-opts}'
-          install-prefix: '{install-prefix}'
-          make-opts: '{make-opts}'
+          build-dir: "{build-dir}"
+          cmake-opts: "{cmake-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     builders:
-      - shell: '{pre-build}'
+      - shell: "{pre-build}"
       - shell: !include-raw-escape: ../shell/cmake-build.sh
 
     publishers:
       - lf-infra-publish
 
 - job-template:
-    name: '{project-name}-cmake-verify-{stream}'
+    name: "{project-name}-cmake-verify-{stream}"
     id: gerrit-cmake-verify
     concurrent: true
     <<: *lf_cmake_verify
 
     scm:
       - lf-infra-gerrit-scm:
-          branch: '$GERRIT_BRANCH'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          branch: "$GERRIT_BRANCH"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project}'
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
               branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-cmake-verify-{stream}'
+    name: "{project-name}-cmake-verify-{stream}"
     id: github-cmake-verify
     concurrent: true
     <<: *lf_cmake_verify
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^(recheck|reverify)$'
+          trigger-phrase: "^(recheck|reverify)$"
           only-trigger-phrase: false
-          status-context: 'CMake Verify'
+          status-context: "CMake Verify"
           permit-all: true
           github-hooks: true
-          included-regions: '{obj:github_included_regions}'
+          included-regions: "{obj:github_included_regions}"
           white-list-target-branches:
-            - '{branch}'
+            - "{branch}"

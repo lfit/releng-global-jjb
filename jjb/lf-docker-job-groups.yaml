@@ -1,6 +1,6 @@
 ---
 - job-group:
-    name: '{project-name}-gerrit-docker-jobs'
+    name: "{project-name}-gerrit-docker-jobs"
 
     # This job group contains all the recommended jobs that should be deployed
     # for any docker project ci.
@@ -10,7 +10,7 @@
       - gerrit-docker-merge
 
 - job-group:
-    name: '{project-name}-github-docker-jobs'
+    name: "{project-name}-github-docker-jobs"
 
     # This job group contains all the recommended jobs that should be deployed
     # for any docker project ci.

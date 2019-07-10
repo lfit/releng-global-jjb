@@ -9,7 +9,7 @@
     name: lf-maven-build
     builders:
       - inject:
-          properties-content: 'MAVEN_GOALS={mvn-goals}'
+          properties-content: "MAVEN_GOALS={mvn-goals}"
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-build.sh
@@ -26,29 +26,29 @@
     builders:
       - conditional-step:
           condition-kind: boolean-expression
-          condition-expression: '{maven-versions-plugin}'
+          condition-expression: "{maven-versions-plugin}"
           steps:
             - inject:
-                properties-file: '{version-properties-file}'
+                properties-file: "{version-properties-file}"
             - maven-target:
-                maven-version: '{mvn-version}'
-                pom: '{mvn-pom}'
-                goals: 'versions:set versions:update-child-modules versions:commit -B'
+                maven-version: "{mvn-version}"
+                pom: "{mvn-pom}"
+                goals: "versions:set versions:update-child-modules versions:commit -B"
                 properties:
-                  - 'newVersion=${{release_version}}'
-                settings: '{mvn-settings}'
+                  - "newVersion=${{release_version}}"
+                settings: "{mvn-settings}"
                 settings-type: cfp
-                global-settings: 'global-settings'
+                global-settings: "global-settings"
                 global-settings-type: cfp
 
 - builder:
     name: lf-maven-stage
     builders:
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-infra-create-netrc:
-          server-id: '{mvn-staging-id}'
+          server-id: "{mvn-staging-id}"
       # include-raw-escape fails due to JJB bug
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
@@ -66,7 +66,7 @@
             GIT_URL="$GIT_URL"
       - shell: !include-raw-escape: ../shell/update-java-alternatives.sh
       - inject:
-          properties-file: '/tmp/java.env'
+          properties-file: "/tmp/java.env"
 
 ####################
 # COMMON FUNCTIONS #
@@ -91,30 +91,30 @@
     #####################
 
     project-type: freestyle
-    node: '{build-node}'
+    node: "{build-node}"
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
       - lf-infra-maven-parameters:
-          mvn-opts: '{mvn-opts}'
-          mvn-params: '{mvn-params}'
-          mvn-version: '{mvn-version}'
+          mvn-opts: "{mvn-opts}"
+          mvn-params: "{mvn-params}"
+          mvn-version: "{mvn-version}"
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: '{archive-artifacts}'
+          default: "{archive-artifacts}"
           description: Artifacts to archive to the logs server.
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     publishers:
       # TODO: Make email notification work.
@@ -135,29 +135,29 @@
     ######################
 
     branch: master
-    build-days-to-keep: 30  # 30 days for troubleshooting purposes
+    build-days-to-keep: 30 # 30 days for troubleshooting purposes
     build-timeout: 60
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
     java-version: openjdk8
     mvn-global-settings: global-settings
-    mvn-opts: ''
-    mvn-params: ''
+    mvn-opts: ""
+    mvn-params: ""
     mvn-version: mvn35
-    nexus-iq-namespace: ''  # Recommend a trailing dash when set. Example: odl-
-    nexus-iq-stage: 'build'
+    nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
+    nexus-iq-stage: "build"
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
 
     nexus_iq_scan_patterns:
-      - '**/*.ear'
-      - '**/*.jar'
-      - '**/*.tar.gz'
-      - '**/*.war'
-      - '**/*.zip'
+      - "**/*.ear"
+      - "**/*.jar"
+      - "**/*.tar.gz"
+      - "**/*.war"
+      - "**/*.zip"
 
     gerrit_clm_triggers:
       - comment-added-contains-event:
@@ -165,49 +165,49 @@
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
       - lf-infra-maven-parameters:
-          mvn-opts: '{mvn-opts}'
-          mvn-params: '{mvn-params}'
-          mvn-version: '{mvn-version}'
+          mvn-opts: "{mvn-opts}"
+          mvn-params: "{mvn-params}"
+          mvn-version: "{mvn-version}"
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: '{archive-artifacts}'
+          default: "{archive-artifacts}"
           description: Artifacts to archive to the logs server.
       - lf-clm-parameters:
-          nexus-iq-stage: '{nexus-iq-stage}'
+          nexus-iq-stage: "{nexus-iq-stage}"
 
     #####################
     # Job Configuration #
     #####################
 
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     builders:
       - lf-infra-pre-build
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/sonatype-clm.sh
       - lf-provide-maven-settings-cleanup
       - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
       - nexus-iq-policy-evaluator:
-          stage: '{nexus-iq-stage}'
-          application-type: 'manual'
-          application-id: '{nexus-iq-namespace}{project-name}'
-          scan-patterns: '{obj:nexus_iq_scan_patterns}'
+          stage: "{nexus-iq-stage}"
+          application-type: "manual"
+          application-id: "{nexus-iq-namespace}{project-name}"
+          scan-patterns: "{obj:nexus_iq_scan_patterns}"
           fail-build-network-error: true
 
 - job-template:
-    name: '{project-name}-maven-clm-{stream}'
+    name: "{project-name}-maven-clm-{stream}"
     id: gerrit-maven-clm
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -215,27 +215,27 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
     triggers:
       # Build weekly on Saturdays
-      - timed: 'H H * * 6'
+      - timed: "H H * * 6"
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_clm_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_clm_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
+                  branch-pattern: "**/{branch}"
           skip-vote:
             successful: true
             failed: true
@@ -243,7 +243,7 @@
             notbuilt: true
 
 - job-template:
-    name: '{project-name}-maven-clm-{stream}'
+    name: "{project-name}-maven-clm-{stream}"
     id: github-maven-clm
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -251,36 +251,36 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: ''
-          branch: 'refs/heads/{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       # Build weekly on Saturdays
-      - timed: 'H H * * 6'
+      - timed: "H H * * 6"
       - github-pull-request:
-          trigger-phrase: '^run-clm$'
+          trigger-phrase: "^run-clm$"
           only-trigger-phrase: true
-          status-context: 'CLM'
+          status-context: "CLM"
           permit-all: true
           github-hooks: true
           org-list:
-            - '{github-org}'
-          white-list: '{obj:github_pr_whitelist}'
-          admin-list: '{obj:github_pr_admin_list}'
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
           white-list-target-branches:
-            - '{branch}'
+            - "{branch}"
 
 #########################
 # Maven Javadoc Publish #
@@ -294,15 +294,15 @@
     ######################
 
     branch: master
-    build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
+    build-days-to-keep: 30 # 30 days in case a release takes long to get approved.
     build-timeout: 60
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
     java-version: openjdk8
     mvn-global-settings: global-settings
-    mvn-opts: ''
-    mvn-params: ''
+    mvn-opts: ""
+    mvn-params: ""
     mvn-version: mvn35
     stream: master
     submodule-recursive: true
@@ -318,21 +318,21 @@
     # Job Configuration #
     #####################
 
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     builders:
       - lf-infra-pre-build
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-infra-create-netrc:
-          server-id: '{mvn-site-id}'
+          server-id: "{mvn-site-id}"
       - inject:
-          properties-content: 'DEPLOY_PATH={javadoc-path}'
+          properties-content: "DEPLOY_PATH={javadoc-path}"
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-javadoc-generate.sh
@@ -340,38 +340,38 @@
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-javadoc-publish-{stream}-{java-version}'
+    name: "{project-name}-maven-javadoc-publish-{stream}-{java-version}"
     id: gerrit-maven-javadoc-publish
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_javadoc_publish
 
-    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    git-url: "$GIT_URL/$GERRIT_PROJECT"
 
     scm:
       - lf-infra-gerrit-scm:
-          git-url: '{git-url}'
-          refspec: ''
-          branch: '{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          git-url: "{git-url}"
+          refspec: ""
+          branch: "{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_merge_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_merge_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
+                  branch-pattern: "**/{branch}"
 
 - job-template:
-    name: '{project-name}-maven-javadoc-publish-{stream}-{java-version}'
+    name: "{project-name}-maven-javadoc-publish-{stream}-{java-version}"
     id: github-maven-javadoc-publish
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -379,37 +379,37 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: ''
-          branch: '{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github
       - pollscm:
-          cron: ''
+          cron: ""
       - github-pull-request:
-          trigger-phrase: '^remerge$'
+          trigger-phrase: "^remerge$"
           only-trigger-phrase: true
-          status-context: 'Maven Javadoc Publish'
+          status-context: "Maven Javadoc Publish"
           permit-all: true
           github-hooks: true
           org-list:
-            - '{github-org}'
-          white-list: '{obj:github_pr_whitelist}'
-          admin-list: '{obj:github_pr_admin_list}'
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
           white-list-target-branches:
-            - '{branch}'
+            - "{branch}"
 
 ########################
 # Maven Javadoc Verify #
@@ -423,15 +423,15 @@
     ######################
 
     branch: master
-    build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
+    build-days-to-keep: 30 # 30 days in case a release takes long to get approved.
     build-timeout: 60
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
     java-version: openjdk8
     mvn-global-settings: global-settings
-    mvn-opts: ''
-    mvn-params: ''
+    mvn-opts: ""
+    mvn-params: ""
     mvn-version: mvn35
     stream: master
     submodule-recursive: true
@@ -452,24 +452,24 @@
     #####################
 
     concurrent: true
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     builders:
       - lf-infra-pre-build
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-javadoc-generate.sh
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-javadoc-verify-{stream}-{java-version}'
+    name: "{project-name}-maven-javadoc-verify-{stream}-{java-version}"
     id: gerrit-maven-javadoc-verify
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -477,28 +477,28 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
+                  branch-pattern: "**/{branch}"
 
 - job-template:
-    name: '{project-name}-maven-javadoc-verify-{stream}-{java-version}'
+    name: "{project-name}-maven-javadoc-verify-{stream}-{java-version}"
     id: github-maven-javadoc-verify
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -506,30 +506,30 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github-pull-request:
           trigger-phrase: ^(recheck|reverify)$
           only-trigger-phrase: false
-          status-context: 'Maven Javadoc Verify'
+          status-context: "Maven Javadoc Verify"
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - '{branch}'
+            - "{branch}"
 
 ###############
 # Maven Merge #
@@ -543,19 +543,19 @@
     ######################
 
     branch: master
-    build-days-to-keep: 30  # 30 days in case we need to troubleshoot
+    build-days-to-keep: 30 # 30 days in case we need to troubleshoot
     build-timeout: 60
-    cron: '@daily'
+    cron: "@daily"
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
-    mvn-opts: ''
-    mvn-params: '-Dmerge'
+    mvn-opts: ""
+    mvn-params: "-Dmerge"
     mvn-version: mvn35
-    nexus-cut-dirs: 6  # Number of dirs in the Nexus path to remove for wget -r.
+    nexus-cut-dirs: 6 # Number of dirs in the Nexus path to remove for wget -r.
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -568,39 +568,39 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*'
+        pattern: ".*"
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - '.*'
+      - ".*"
 
-    post_build_trigger: ''
+    post_build_trigger: ""
 
     #####################
     # Job Configuration #
     #####################
 
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     builders:
       - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-infra-create-netrc:
-          server-id: '{mvn-snapshot-id}'
+          server-id: "{mvn-snapshot-id}"
       - inject:
           properties-content: |
-              NEXUS_CUT_DIRS={nexus-cut-dirs}
-              NEXUS_REPO={nexus-snapshot-repo}
+            NEXUS_CUT_DIRS={nexus-cut-dirs}
+            NEXUS_REPO={nexus-snapshot-repo}
       - shell: !include-raw-escape: ../shell/maven-fetch-metadata.sh
       - lf-maven-build:
-          mvn-goals: '{mvn-goals}'
+          mvn-goals: "{mvn-goals}"
       - lf-maven-deploy
       - lf-provide-maven-settings-cleanup
 
@@ -608,10 +608,10 @@
       - findbugs
       - lf-jacoco-report
       - lf-infra-publish
-      - trigger-parameterized-builds: '{obj:post_build_trigger}'
+      - trigger-parameterized-builds: "{obj:post_build_trigger}"
 
 - job-template:
-    name: '{project-name}-maven-merge-{stream}'
+    name: "{project-name}-maven-merge-{stream}"
     id: gerrit-maven-merge
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -619,30 +619,30 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_merge_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_merge_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-maven-merge-{stream}'
+    name: "{project-name}-maven-merge-{stream}"
     id: github-maven-merge
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -650,39 +650,39 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: ''
-          branch: 'refs/heads/{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - github
       - pollscm:
-          cron: ''
+          cron: ""
       - github-pull-request:
-          trigger-phrase: '^remerge$'
+          trigger-phrase: "^remerge$"
           only-trigger-phrase: true
-          status-context: 'Maven Merge'
+          status-context: "Maven Merge"
           permit-all: true
           github-hooks: true
           org-list:
-            - '{github-org}'
-          white-list: '{obj:github_pr_whitelist}'
-          admin-list: '{obj:github_pr_admin_list}'
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
           white-list-target-branches:
-            - '{branch}'
-          included-regions: '{obj:github_included_regions}'
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
 
 ##########################
 # Maven Merge for Docker #
@@ -695,32 +695,32 @@
       - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-infra-docker-login:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       # must provide maven settings AFTER docker due to its cleanup
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-infra-create-netrc:
-          server-id: '{mvn-snapshot-id}'
+          server-id: "{mvn-snapshot-id}"
       - inject:
           properties-content: |
-              NEXUS_CUT_DIRS={nexus-cut-dirs}
-              NEXUS_REPO={nexus-snapshot-repo}
-              CONTAINER_PULL_REGISTRY={container-public-registry}
-              CONTAINER_PUSH_REGISTRY={container-snapshot-registry}
+            NEXUS_CUT_DIRS={nexus-cut-dirs}
+            NEXUS_REPO={nexus-snapshot-repo}
+            CONTAINER_PULL_REGISTRY={container-public-registry}
+            CONTAINER_PUSH_REGISTRY={container-snapshot-registry}
       - shell: !include-raw-escape: ../shell/maven-fetch-metadata.sh
       - lf-maven-build:
-          mvn-goals: '{mvn-goals}'
+          mvn-goals: "{mvn-goals}"
       # NO lf-maven-deploy
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-docker-merge-{stream}'
+    name: "{project-name}-maven-docker-merge-{stream}"
     id: gerrit-maven-docker-merge
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -730,29 +730,29 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_merge_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_merge_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-maven-docker-merge-{stream}'
+    name: "{project-name}-maven-docker-merge-{stream}"
     id: github-maven-docker-merge
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -762,38 +762,38 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: ''
-          branch: 'refs/heads/{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github
       - pollscm:
-          cron: ''
+          cron: ""
       - github-pull-request:
-          trigger-phrase: '^remerge$'
+          trigger-phrase: "^remerge$"
           only-trigger-phrase: true
-          status-context: 'Maven Docker Merge'
+          status-context: "Maven Docker Merge"
           permit-all: true
           github-hooks: true
           org-list:
-            - '{github-org}'
-          white-list: '{obj:github_pr_whitelist}'
-          admin-list: '{obj:github_pr_admin_list}'
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
           white-list-target-branches:
-            - '{branch}'
-          included-regions: '{obj:github_included_regions}'
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
 
 ###############
 # Maven Stage #
@@ -807,23 +807,23 @@
     ######################
 
     branch: master
-    build-days-to-keep: 30  # 30 days in case a release takes long to get approved.
+    build-days-to-keep: 30 # 30 days in case a release takes long to get approved.
     build-timeout: 60
-    cron: '@daily'
+    cron: "@daily"
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
     java-version: openjdk8
     maven-versions-plugin: false
     version-properties-file: version.properties
     mvn-central: false
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
-    mvn-opts: ''
-    mvn-params: ''
+    mvn-opts: ""
+    mvn-params: ""
     mvn-version: mvn35
-    ossrh-profile-id: ''
-    mvn-pom: ''
+    ossrh-profile-id: ""
+    mvn-pom: ""
     sign-artifacts: false
     sign-mode: serial
     stream: master
@@ -837,77 +837,77 @@
 
     gerrit_trigger_file_paths:
       - compare-type: ANT
-        pattern: '**'
+        pattern: "**"
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - '.*'
+      - ".*"
 
     #####################
     # Job Configuration #
     #####################
 
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
       - lf-infra-maven-parameters:
-          mvn-opts: '{mvn-opts}'
-          mvn-params: '{mvn-params}'
-          mvn-version: '{mvn-version}'
-          staging-profile-id: '{staging-profile-id}'
+          mvn-opts: "{mvn-opts}"
+          mvn-params: "{mvn-params}"
+          mvn-version: "{mvn-version}"
+          staging-profile-id: "{staging-profile-id}"
       - bool:
           name: MAVEN_VERSIONS_PLUGIN
-          default: '{maven-versions-plugin}'
+          default: "{maven-versions-plugin}"
           description: Use maven-versions-plugin to update pom versions.
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: '{archive-artifacts}'
+          default: "{archive-artifacts}"
           description: Artifacts to archive to the logs server.
       - string:
           name: STAGING_PROFILE_ID
-          default: '{staging-profile-id}'
+          default: "{staging-profile-id}"
           description: Nexus staging profile ID.
 
     builders:
       - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-maven-versions-plugin:
-          maven-versions-plugin: '{maven-versions-plugin}'
-          version-properties-file: '{version-properties-file}'
-          mvn-version: '{mvn-version}'
-          mvn-pom: '{mvn-pom}'
-          mvn-settings: '{mvn-settings}'
+          maven-versions-plugin: "{maven-versions-plugin}"
+          version-properties-file: "{version-properties-file}"
+          mvn-version: "{mvn-version}"
+          mvn-pom: "{mvn-pom}"
+          mvn-settings: "{mvn-settings}"
       - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-build:
-          mvn-goals: '{mvn-goals}'
+          mvn-goals: "{mvn-goals}"
       - lf-sigul-sign-dir:
-          sign-artifacts: '{sign-artifacts}'
-          sign-dir: '$WORKSPACE/m2repo'
-          sign-mode: '{sign-mode}'
+          sign-artifacts: "{sign-artifacts}"
+          sign-dir: "$WORKSPACE/m2repo"
+          sign-mode: "{sign-mode}"
       - lf-maven-stage:
-          mvn-global-settings: '{mvn-global-settings}'
-          mvn-settings: '{mvn-settings}'
-          mvn-staging-id: '{mvn-staging-id}'
+          mvn-global-settings: "{mvn-global-settings}"
+          mvn-settings: "{mvn-settings}"
+          mvn-staging-id: "{mvn-staging-id}"
       - lf-maven-central:
-          mvn-central: '{mvn-central}'
-          mvn-global-settings: '{mvn-global-settings}'
-          mvn-settings: '{mvn-settings}'
-          ossrh-profile-id: '{ossrh-profile-id}'
+          mvn-central: "{mvn-central}"
+          mvn-global-settings: "{mvn-global-settings}"
+          mvn-settings: "{mvn-settings}"
+          ossrh-profile-id: "{ossrh-profile-id}"
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-stage-{stream}'
+    name: "{project-name}-maven-stage-{stream}"
     id: gerrit-maven-stage
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -915,30 +915,30 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_release_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_release_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-maven-stage-{stream}'
+    name: "{project-name}-maven-stage-{stream}"
     id: github-maven-stage
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -946,32 +946,32 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - github-pull-request:
-          trigger-phrase: '^build release$'
+          trigger-phrase: "^build release$"
           only-trigger-phrase: true
-          status-context: 'Maven Release'
+          status-context: "Maven Release"
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - '{branch}'
-          included-regions: '{obj:github_included_regions}'
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
 
 ##########################
 # Maven Stage for Docker #
@@ -984,39 +984,39 @@
       - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-infra-docker-login:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       # must provide maven settings AFTER docker-login due to its cleanup
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-maven-versions-plugin:
-          maven-versions-plugin: '{maven-versions-plugin}'
-          version-properties-file: '{version-properties-file}'
-          mvn-version: '{mvn-version}'
-          mvn-pom: '{mvn-pom}'
-          mvn-settings: '{mvn-settings}'
+          maven-versions-plugin: "{maven-versions-plugin}"
+          version-properties-file: "{version-properties-file}"
+          mvn-version: "{mvn-version}"
+          mvn-pom: "{mvn-pom}"
+          mvn-settings: "{mvn-settings}"
       - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - inject:
           properties-content: |
-              CONTAINER_PULL_REGISTRY={container-public-registry}
-              CONTAINER_PUSH_REGISTRY={container-staging-registry}
+            CONTAINER_PULL_REGISTRY={container-public-registry}
+            CONTAINER_PUSH_REGISTRY={container-staging-registry}
       - lf-maven-build:
-          mvn-goals: '{mvn-goals}'
+          mvn-goals: "{mvn-goals}"
       - lf-sigul-sign-dir:
-          sign-artifacts: '{sign-artifacts}'
-          sign-dir: '$WORKSPACE/m2repo'
-          sign-mode: '{sign-mode}'
+          sign-artifacts: "{sign-artifacts}"
+          sign-dir: "$WORKSPACE/m2repo"
+          sign-mode: "{sign-mode}"
       # NO lf-maven-stage
       # NO lf-maven-central
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-docker-stage-{stream}'
+    name: "{project-name}-maven-docker-stage-{stream}"
     id: gerrit-maven-docker-stage
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1026,30 +1026,30 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_release_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_release_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-maven-docker-stage-{stream}'
+    name: "{project-name}-maven-docker-stage-{stream}"
     id: github-maven-docker-stage
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1059,32 +1059,32 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '{branch}'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - github-pull-request:
-          trigger-phrase: '^build release$'
+          trigger-phrase: "^build release$"
           only-trigger-phrase: true
-          status-context: 'Maven Release'
+          status-context: "Maven Release"
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - '{branch}'
-          included-regions: '{obj:github_included_regions}'
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
 
 ###############
 # Maven Sonar #
@@ -1097,24 +1097,24 @@
     # Default parameters #
     ######################
 
-    branch: master  # Sonar should always be run on master branch
+    branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
     build-timeout: 60
-    cron: 'H H * * 6'  # run weekly
+    cron: "H H * * 6" # run weekly
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: clean install
-    mvn-opts: ''
-    mvn-params: ''
+    mvn-opts: ""
+    mvn-params: ""
     mvn-version: mvn35
-    sonar-mvn-goal: 'sonar:sonar'
+    sonar-mvn-goal: "sonar:sonar"
     sonarcloud: false
-    sonarcloud-project-key: ''
-    sonarcloud-project-organization: ''
-    sonarcloud-api-token: ''
+    sonarcloud-project-key: ""
+    sonarcloud-project-organization: ""
+    sonarcloud-api-token: ""
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -1128,40 +1128,40 @@
     # Job Configuration #
     #####################
 
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     parameters:
       - lf-infra-parameters:
-          project: '{project}'
-          branch: '{branch}'
-          stream: '{stream}'
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
       - lf-infra-maven-parameters:
-          mvn-opts: '{mvn-opts}'
-          mvn-params: '{mvn-params}'
-          mvn-version: '{mvn-version}'
+          mvn-opts: "{mvn-opts}"
+          mvn-params: "{mvn-params}"
+          mvn-version: "{mvn-version}"
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: '{archive-artifacts}'
+          default: "{archive-artifacts}"
           description: Artifacts to archive to the logs server.
       - string:
           name: SONAR_MAVEN_GOAL
-          default: '{sonar-mvn-goal}'
+          default: "{sonar-mvn-goal}"
           description: |
-              Maven goals to pass to the Sonar call. Typically sonar:sonar
-              however to use a specific version of the sonar-maven-plugin we
-              can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
+            Maven goals to pass to the Sonar call. Typically sonar:sonar
+            however to use a specific version of the sonar-maven-plugin we
+            can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_sonar_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_sonar_triggers}"
           projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project}'
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
               branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: '**/master'
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/master"
           skip-vote:
             successful: true
             failed: true
@@ -1173,30 +1173,30 @@
       # With SonarCloud
       - conditional-step:
           condition-kind: boolean-expression
-          condition-expression: '{sonarcloud}'
+          condition-expression: "{sonarcloud}"
           steps:
             - shell: echo 'Using SonarCloud'
             - lf-infra-maven-sonarcloud:
-                java-version: '{java-version}'
-                mvn-goals: '{mvn-goals}'
-                mvn-settings: '{mvn-settings}'
-                mvn-version: '{mvn-version}'
-                sonarcloud-project-key: '{sonarcloud-project-key}'
-                sonarcloud-project-organization: '{sonarcloud-project-organization}'
-                sonarcloud-api-token: '{sonarcloud-api-token}'
+                java-version: "{java-version}"
+                mvn-goals: "{mvn-goals}"
+                mvn-settings: "{mvn-settings}"
+                mvn-version: "{mvn-version}"
+                sonarcloud-project-key: "{sonarcloud-project-key}"
+                sonarcloud-project-organization: "{sonarcloud-project-organization}"
+                sonarcloud-api-token: "{sonarcloud-api-token}"
       # With SonarQube
       - conditional-step:
           condition-kind: not
           condition-operand:
             condition-kind: boolean-expression
-            condition-expression: '{sonarcloud}'
+            condition-expression: "{sonarcloud}"
           steps:
             - shell: echo 'Using SonarQube'
             - lf-infra-maven-sonar:
-                java-version: '{java-version}'
-                mvn-goals: '{mvn-goals}'
-                mvn-settings: '{mvn-settings}'
-                mvn-version: '{mvn-version}'
+                java-version: "{java-version}"
+                mvn-goals: "{mvn-goals}"
+                mvn-settings: "{mvn-settings}"
+                mvn-version: "{mvn-version}"
 
     publishers:
       - lf-jacoco-report
@@ -1208,9 +1208,9 @@
     # Run a Sonar build with Maven
     builders:
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - inject:
           # Switch this to the sonar wrapper when JJB 2.0 is available
           properties-content: |
@@ -1218,7 +1218,7 @@
             MAVEN_GOALS={mvn-goals}
       - lf-provide-maven-settings:
           global-settings-file: global-settings
-          settings-file: '{mvn-settings}'
+          settings-file: "{mvn-settings}"
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-sonar.sh
@@ -1229,9 +1229,9 @@
     # Run a Sonar build with Maven
     builders:
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - inject:
           # Switch this to the sonar wrapper when JJB 2.0 is available
           properties-content: |
@@ -1242,14 +1242,14 @@
             API_TOKEN={sonarcloud-api-token}
       - lf-provide-maven-settings:
           global-settings-file: global-settings
-          settings-file: '{mvn-settings}'
+          settings-file: "{mvn-settings}"
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-sonar.sh
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-sonar'
+    name: "{project-name}-sonar"
     id: gerrit-maven-sonar
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1257,17 +1257,17 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
           refspec: $GERRIT_REFSPEC
           branch: $GERRIT_BRANCH
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
 
 - job-template:
-    name: '{project-name}-sonar'
+    name: "{project-name}-sonar"
     id: github-maven-sonar
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1275,35 +1275,35 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - timed: '{obj:cron}'
+      - timed: "{obj:cron}"
       - github-pull-request:
-          trigger-phrase: '^run-sonar$'
+          trigger-phrase: "^run-sonar$"
           only-trigger-phrase: true
-          status-context: 'Maven Sonar'
+          status-context: "Maven Sonar"
           permit-all: true
           github-hooks: true
           org-list:
-            - '{github-org}'
-          white-list: '{obj:github_pr_whitelist}'
-          admin-list: '{obj:github_pr_admin_list}'
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
           white-list-target-branches:
-            - '{branch}'
+            - "{branch}"
 
 ################
 # Maven Verify #
@@ -1320,13 +1320,13 @@
     build-days-to-keep: 7
     build-timeout: 60
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
-    mvn-opts: ''
-    mvn-params: '-Dstream=$STREAM -Dmaven.source.skip=true'
+    mvn-opts: ""
+    mvn-params: "-Dstream=$STREAM -Dmaven.source.skip=true"
     mvn-version: mvn35
     stream: master
     submodule-recursive: true
@@ -1344,31 +1344,31 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*'
+        pattern: ".*"
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - '.*'
+      - ".*"
 
     #####################
     # Job Configuration #
     #####################
 
     concurrent: true
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     builders:
       - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-maven-build:
-          mvn-goals: '{mvn-goals}'
+          mvn-goals: "{mvn-goals}"
       - lf-provide-maven-settings-cleanup
 
     publishers:
@@ -1377,7 +1377,7 @@
       - lf-infra-publish
 
 - job-template:
-    name: '{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}'
+    name: "{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}"
     id: gerrit-maven-verify
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1385,29 +1385,29 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}'
+    name: "{project-name}-maven-verify-{stream}-{mvn-version}-{java-version}"
     id: github-maven-verify
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1415,31 +1415,31 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^(recheck|reverify)$'
+          trigger-phrase: "^(recheck|reverify)$"
           only-trigger-phrase: false
-          status-context: 'Maven Verify {mvn-version}-{java-version}'
+          status-context: "Maven Verify {mvn-version}-{java-version}"
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - '{branch}'
-          included-regions: '{obj:github_included_regions}'
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
 
 ###########################
 # Maven Verify for Docker #
@@ -1455,25 +1455,25 @@
       - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-infra-docker-login:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       # must provide maven settings AFTER docker due to its cleanup
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - inject:
           properties-content: |
-              CONTAINER_PULL_REGISTRY={container-public-registry}
+            CONTAINER_PULL_REGISTRY={container-public-registry}
       - lf-maven-build:
-          mvn-goals: '{mvn-goals}'
+          mvn-goals: "{mvn-goals}"
       - lf-provide-maven-settings-cleanup
 
 - job-template:
-    name: '{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}'
+    name: "{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}"
     id: gerrit-maven-docker-verify
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1483,29 +1483,29 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: '{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}'
+    name: "{project-name}-maven-docker-verify-{stream}-{mvn-version}-{java-version}"
     id: github-maven-docker-verify
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1515,31 +1515,31 @@
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
       - github:
-          url: '{github-url}/{github-org}/{project}'
+          url: "{github-url}/{github-org}/{project}"
 
     scm:
       - lf-infra-github-scm:
-          url: '{git-clone-url}{github-org}/{project}'
-          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
-          branch: '$sha1'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - github-pull-request:
-          trigger-phrase: '^(recheck|reverify)$'
+          trigger-phrase: "^(recheck|reverify)$"
           only-trigger-phrase: false
-          status-context: 'Maven Docker Verify {mvn-version}-{java-version}'
+          status-context: "Maven Docker Verify {mvn-version}-{java-version}"
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - '{branch}'
-          included-regions: '{obj:github_included_regions}'
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
 
 #############################
 # Maven Verify Dependencies #
@@ -1556,13 +1556,13 @@
     build-days-to-keep: 7
     build-timeout: 60
     disable-job: false
-    git-url: '$GIT_URL/$PROJECT'
-    github-url: 'https://github.com'
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
-    mvn-opts: ''
-    mvn-params: '-Dstream=$STREAM'
+    mvn-opts: ""
+    mvn-params: "-Dstream=$STREAM"
     mvn-version: mvn35
     stream: master
     submodule-recursive: true
@@ -1571,34 +1571,34 @@
 
     gerrit_verify_triggers:
       - comment-added-contains-event:
-          comment-contains-value: 'recheck: [0-9 ]+'
+          comment-contains-value: "recheck: [0-9 ]+"
     gerrit_trigger_file_paths:
       - compare-type: ANT
-        pattern: '**'
+        pattern: "**"
 
     #####################
     # Job Configuration #
     #####################
 
     concurrent: true
-    disabled: '{disable-job}'
+    disabled: "{disable-job}"
 
     builders:
       - lf-infra-pre-build
       - lf-jacoco-nojava-workaround
       - lf-maven-install:
-          mvn-version: '{mvn-version}'
+          mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
-          java-version: '{java-version}'
+          java-version: "{java-version}"
       - lf-provide-maven-settings:
-          global-settings-file: '{mvn-global-settings}'
-          settings-file: '{mvn-settings}'
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - lf-fetch-dependent-patches
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-build-deps.sh
       - lf-maven-build:
-          mvn-goals: '{mvn-goals}'
+          mvn-goals: "{mvn-goals}"
       - lf-provide-maven-settings-cleanup
 
     publishers:
@@ -1607,7 +1607,7 @@
       - lf-infra-publish
 
 - job-template:
-    name: '{project-name}-maven-verify-deps-{stream}-{mvn-version}-{java-version}'
+    name: "{project-name}-maven-verify-deps-{stream}-{mvn-version}-{java-version}"
     id: gerrit-maven-verify-dependencies
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
@@ -1615,23 +1615,23 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
-          git-url: '{git-url}'
-          refspec: '$GERRIT_REFSPEC'
-          branch: '$GERRIT_BRANCH'
-          submodule-recursive: '{submodule-recursive}'
-          submodule-timeout: '{submodule-timeout}'
-          submodule-disable: '{submodule-disable}'
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
           choosing-strategy: gerrit
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
-          trigger-on: '{obj:gerrit_verify_triggers}'
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
             - project-compare-type: ANT
-              project-pattern: '{project}'
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: '**/{branch}'
-              file-paths: '{obj:gerrit_trigger_file_paths}'
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"

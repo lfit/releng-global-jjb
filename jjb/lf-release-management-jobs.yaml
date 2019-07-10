@@ -19,38 +19,37 @@
     #####################
 
     project-type: freestyle
-    node: '{build-node}'
-    disabled: '{disable-job}'
+    node: "{build-node}"
+    disabled: "{disable-job}"
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: '{build-days-to-keep}'
+          build-days-to-keep: "{build-days-to-keep}"
 
     builders:
       - shell: !include-raw-escape: ../shell/release-announce.sh
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: '{build-timeout}'
-          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     publishers:
       - lf-infra-publish
 
-
 - job-template:
-    name: '{project-name}-release-announce'
+    name: "{project-name}-release-announce"
     id: gerrit-release-announce
     <<: *lf_release_announce
 
     triggers:
       - gerrit:
-          server-name: '{gerrit-server-name}'
+          server-name: "{gerrit-server-name}"
           trigger-on:
             - ref-updated-event
           projects:
-            - project-compare-type: 'ANT'
-              project-pattern: '{project-pattern}'
+            - project-compare-type: "ANT"
+              project-pattern: "{project-pattern}"
               branches:
-                - branch-compare-type: 'ANT'
-                  branch-pattern: 'refs/tags/**'
+                - branch-compare-type: "ANT"
+                  branch-pattern: "refs/tags/**"

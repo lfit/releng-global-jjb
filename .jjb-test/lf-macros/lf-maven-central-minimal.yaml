@@ -7,9 +7,9 @@
     #####################
 
     mvn-central: true
-    mvn-global-settings: ''
-    mvn-settings: ''
-    ossrh-profile-id: ''
+    mvn-global-settings: ""
+    mvn-settings: ""
+    ossrh-profile-id: ""
 
     #####################
     # Job configuration #
@@ -17,7 +17,7 @@
 
     builders:
       - lf-maven-central:
-          mvn-central: '{mvn-central}'
-          mvn-global-settings: '{mvn-global-settings}'
-          mvn-settings: '{mvn-settings}'
-          ossrh-profile-id: '{ossrh-profile-id}'
+          mvn-central: "{mvn-central}"
+          mvn-global-settings: "{mvn-global-settings}"
+          mvn-settings: "{mvn-settings}"
+          ossrh-profile-id: "{ossrh-profile-id}"

@@ -8,7 +8,7 @@
 
     openstack-cloud: lf-cloud
     openstack-heat-template: csit-2-instance-type.yaml
-    openstack-heat-template-dir: 'openstack-hot'
+    openstack-heat-template-dir: "openstack-hot"
 
     odl_system_count: 1
     odl_system_flavor: odl-highcpu-4
@@ -24,13 +24,13 @@
     builders:
       - lf-infra-pre-build
       - lf-stack-create:
-          openstack-cloud: '{openstack-cloud}'
-          openstack-heat-template: '{openstack-heat-template}'
-          openstack-heat-template-dir: '{openstack-heat-template-dir}'
+          openstack-cloud: "{openstack-cloud}"
+          openstack-heat-template: "{openstack-heat-template}"
+          openstack-heat-template-dir: "{openstack-heat-template-dir}"
           openstack-heat-parameters: |
-              vm_0_count: '{odl_system_count}'
-              vm_0_flavor: '{odl_system_flavor}'
-              vm_0_image: '{odl_system_image}'
-              vm_1_count: '{tools_system_count}'
-              vm_1_flavor: '{tools_system_flavor}'
-              vm_1_image: '{tools_system_image}'
+            vm_0_count: '{odl_system_count}'
+            vm_0_flavor: '{odl_system_flavor}'
+            vm_0_image: '{odl_system_image}'
+            vm_1_count: '{tools_system_count}'
+            vm_1_flavor: '{tools_system_flavor}'
+            vm_1_image: '{tools_system_image}'
