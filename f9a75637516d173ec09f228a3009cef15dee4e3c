@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "697e01c6_5cbe17ec",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-10T03:20:12Z",
+      "side": 1,
+      "message": "If ODLNEXUSPROXY is unset, then nexus_url (shell var) will be set to NEXUS_URL (env var). If NEXUS_URL is unset, it is an error. No matter what, the value of NEXUS_URL is unchanged.",
+      "parentUuid": "eaceca4f_df3c6eff",
+      "revId": "f9a75637516d173ec09f228a3009cef15dee4e3c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3ed83f50_7927b237",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
