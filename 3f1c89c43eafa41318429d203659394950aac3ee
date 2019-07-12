@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "8dd15590_0df2a98c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-12T17:44:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8045b54_971b6eda",
+      "revId": "3f1c89c43eafa41318429d203659394950aac3ee",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0510b2d0_0e881407",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-12T17:44:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f743fe5_6e20682b",
+      "revId": "3f1c89c43eafa41318429d203659394950aac3ee",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "06f15c37_f6eed4ac",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -48,6 +84,24 @@
       "writtenOn": "2019-07-12T15:08:44Z",
       "side": 1,
       "message": "See comments on line 89. and add a follow on line of:\n\necho \"See https://semver.org/ for more details on SemVer\"",
+      "revId": "3f1c89c43eafa41318429d203659394950aac3ee",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b39371a_5fe0a54f",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-12T17:44:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06f15c37_f6eed4ac",
       "revId": "3f1c89c43eafa41318429d203659394950aac3ee",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
