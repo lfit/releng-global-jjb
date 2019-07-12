@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8045b54_971b6eda",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-12T14:01:21Z",
+      "side": 1,
+      "message": "I have seen this description of a version which seems human readable: v#.#.# or #.#.#",
+      "revId": "3f1c89c43eafa41318429d203659394950aac3ee",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
