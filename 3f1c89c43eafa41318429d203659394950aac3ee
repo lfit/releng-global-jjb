@@ -16,6 +16,41 @@
       "revId": "3f1c89c43eafa41318429d203659394950aac3ee",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f743fe5_6e20682b",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-12T15:08:44Z",
+      "side": 1,
+      "message": "That\u0027s a good point. Let\u0027s do something like this:\n\n# Allowed versions are \"v#.#.#\" or \"#.#.#\" aka SemVer",
+      "parentUuid": "b8045b54_971b6eda",
+      "revId": "3f1c89c43eafa41318429d203659394950aac3ee",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06f15c37_f6eed4ac",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-12T15:08:44Z",
+      "side": 1,
+      "message": "See comments on line 89. and add a follow on line of:\n\necho \"See https://semver.org/ for more details on SemVer\"",
+      "revId": "3f1c89c43eafa41318429d203659394950aac3ee",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
