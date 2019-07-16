@@ -1105,6 +1105,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-version: openjdk8
+    java-opts: ""
     mvn-global-settings: global-settings
     mvn-goals: clean install
     mvn-opts: ""
@@ -1143,6 +1144,11 @@
           name: ARCHIVE_ARTIFACTS
           default: "{archive-artifacts}"
           description: Artifacts to archive to the logs server.
+      - string:
+          name: JAVA_OPTS
+          default: "{java-opts}"
+          description: |
+            Java options. Example: -Xmx1024m
       - string:
           name: SONAR_MAVEN_GOAL
           default: "{sonar-mvn-goal}"

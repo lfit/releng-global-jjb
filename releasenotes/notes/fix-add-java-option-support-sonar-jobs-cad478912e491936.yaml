@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add support for JAVA_OPTIONS in sonar job.
+    Some of the maven build options in the sonar job require to
+    set the JAVA_OPTIONS to specific value for the build to pass
+    This option will help to pass the JAVA_OPTIONS from the template.
