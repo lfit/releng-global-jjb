@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Perform "lftools schema verify" command to validate the release files
+    against schema/release-schema.yaml

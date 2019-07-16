@@ -47,10 +47,7 @@ echo "RELEASE FILES ARE AS FOLLOWS: $release_files"
 for release_file in $release_files; do
     echo "This is the release file: $release_file"
     echo "--> Verifying $release_file Schema."
-    echo "DUMMY CODE:"
-    #Make sure the schema check catches a missing trailing / on log_dir
-    #lftools schema is written, but not the schema file (yet)
-    echo "lftools schema verify [OPTIONS] $release_file $SCHEMAFILE"
+    lftools schema verify $release_file schema/release-schema.yaml
 
     VERSION="$(niet ".version" "$release_file")"
     PROJECT="$(niet ".project" "$release_file")"
