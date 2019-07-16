@@ -46,6 +46,30 @@
       "revId": "f751a3ce363d06513799d329e89a29ed2b5df156",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "053ba558_845970b9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-16T17:35:23Z",
+      "side": 1,
+      "message": "This script is not called in with ci-management repos... this job clones the tech team repo. for example, if the trigger is any files in ccsdk/parent, we will need the files from ci-management (the schema) to be able to validate it. \n\nPlease look into how the verify info job works. is the exact same case:\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-ci-jobs.yaml#L1170\nThe info verify job is added in the tech team repos which means the workspace clones the tech team code not ci-management. \nThe verify job processes a similar build step which has to compare the schema file we have stored in global-jjb. Hence, the clone is needed:\nhttps://github.com/lfit/releng-global-jjb/blob/master/shell/info-file-validate.sh#L20",
+      "parentUuid": "3da7d7e5_9c45fdf0",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 40,
+        "endChar": 81
+      },
+      "revId": "f751a3ce363d06513799d329e89a29ed2b5df156",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
