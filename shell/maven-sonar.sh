@@ -25,7 +25,7 @@ params+=("--settings $SETTINGS_FILE")
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
-$MVN $MAVEN_GOALS \
+_JAVA_OPTIONS=$JAVA_OPTS $MVN $MAVEN_GOALS \
     -e -Dsonar \
     ${params[*]} \
     $MAVEN_OPTIONS $MAVEN_PARAMS
