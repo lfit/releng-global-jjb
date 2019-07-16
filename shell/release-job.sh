@@ -29,11 +29,6 @@ echo "########### Start Script release-job.sh ##################################
 LOGS_SERVER="${LOGS_SERVER:-None}"
 MAVEN_CENTRAL_URL="${MAVEN_CENTRAL_URL:-None}"
 
-#OPTIONAL
-if grep -q "\.maven_central_url" "$release_file"; then
-    MAVEN_CENTRAL_URL="$(niet ".maven_central_url" "$release_file")"
-fi
-
 if [ "${LOGS_SERVER}" == 'None' ]; then
     echo "FAILED: log server not found"
     exit 1
@@ -41,21 +36,24 @@ fi
 
 NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
 
+# Fetch the release-schema.yaml
+wget -q https://github.com/lfit/releng-global-jjb/blob/master/schema/release-schema.yaml
+
 release_files=$(git diff HEAD^1 --name-only -- "releases/")
 echo "RELEASE FILES ARE AS FOLLOWS: $release_files"
 
 for release_file in $release_files; do
-    echo "This is the release file: $release_file"
-    echo "--> Verifying $release_file Schema."
-    echo "DUMMY CODE:"
-    #Make sure the schema check catches a missing trailing / on log_dir
-    #lftools schema is written, but not the schema file (yet)
-    echo "lftools schema verify [OPTIONS] $release_file $SCHEMAFILE"
+    echo "--> Verifying $release_file schema."
+    lftools schema verify $release_file release-schema.yaml
+
+    #OPTIONAL
+    if grep -q "\.maven_central_url" "$release_file"; then
+        MAVEN_CENTRAL_URL="$(niet ".maven_central_url" "$release_file")"
+    fi
 
     VERSION="$(niet ".version" "$release_file")"
     PROJECT="$(niet ".project" "$release_file")"
     LOG_DIR="$(niet ".log_dir" "$release_file")"
-
 
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
     LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
