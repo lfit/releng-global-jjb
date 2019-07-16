@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bcff5cbd_3f9e99ef",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-16T21:44:40Z",
+      "side": 1,
+      "message": "For the description, lets use the full word \"options\"",
+      "range": {
+        "startLine": 1151,
+        "startChar": 17,
+        "endLine": 1151,
+        "endChar": 21
+      },
+      "revId": "a2cf7a2a690b3bad22fc3092c4daf6125f31b53f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a9b2ab8f_7a006e79",
+        "filename": "releasenotes/notes/fix-add-java-option-support-sonar-jobs-cad478912e491936.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-16T21:44:40Z",
+      "side": 1,
+      "message": "require",
+      "range": {
+        "startLine": 5,
+        "startChar": 53,
+        "endLine": 5,
+        "endChar": 61
+      },
+      "revId": "a2cf7a2a690b3bad22fc3092c4daf6125f31b53f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
