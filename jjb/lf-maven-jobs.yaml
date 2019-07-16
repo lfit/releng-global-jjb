@@ -1105,6 +1105,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-version: openjdk8
+    java-opts: ""
     mvn-global-settings: global-settings
     mvn-goals: clean install
     mvn-opts: ""
@@ -1139,6 +1140,7 @@
           mvn-opts: "{mvn-opts}"
           mvn-params: "{mvn-params}"
           mvn-version: "{mvn-version}"
+          java-opts: "{java-opts}"
       - string:
           name: ARCHIVE_ARTIFACTS
           default: "{archive-artifacts}"
