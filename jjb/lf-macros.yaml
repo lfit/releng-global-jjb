@@ -372,6 +372,11 @@
           description: |
             Maven parameters to pass to the mvn command.
       - string:
+          name: JAVA_OPTS
+          default: "{java-opts}"
+          description: |
+            Java opts. Example: -Xmx1024m
+      - string:
           name: MVN
           # Sets an env var for shell scripts to be able to call the dynamically
           # installed maven without having to calculate the path themselves.
