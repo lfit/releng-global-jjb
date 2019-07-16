@@ -22,6 +22,30 @@
       "revId": "f751a3ce363d06513799d329e89a29ed2b5df156",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3da7d7e5_9c45fdf0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-16T14:20:13Z",
+      "side": 1,
+      "message": "Note this would grab HEAD of master, Maybe that is reason ?",
+      "parentUuid": "aa0d7cb4_3d31cbb3",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 40,
+        "endChar": 81
+      },
+      "revId": "f751a3ce363d06513799d329e89a29ed2b5df156",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
