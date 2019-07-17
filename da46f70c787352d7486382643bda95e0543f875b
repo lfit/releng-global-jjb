@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1696d97d_4ae58780",
+        "filename": "shell/maven-sonar.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-17T18:50:56Z",
+      "side": 1,
+      "message": "Are you meaning to set and ENV var of _JAVA_OPTIONS during the run here specifically?\n\nIf so you should make sure that the $JAVA_OPTS is double quoted, if you don\u0027t do that then space separated options are going to word split and become the command instead of $MVN being the command",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 24
+      },
+      "revId": "da46f70c787352d7486382643bda95e0543f875b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
