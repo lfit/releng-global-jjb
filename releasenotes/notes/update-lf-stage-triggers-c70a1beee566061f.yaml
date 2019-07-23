@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Allow gerrit-maven-stage jobs to be triggered
+    using either "stage-release" or "stage-maven-release".
+    Allow gerrit-maven-docker-stage jobs to be triggered
+    using either "stage-release" or "stage-docker-release".
