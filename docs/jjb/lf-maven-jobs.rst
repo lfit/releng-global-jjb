@@ -351,6 +351,8 @@ directory is then used later to deploy to Nexus.
     - gerrit-maven-stage
     - github-maven-stage
 
+:Comment Trigger: "stage-release" or "stage-maven-release"
+
 :Required parameters:
 
     :build-node: The node to run build on.
@@ -420,10 +422,16 @@ registry in the environment variable CONTAINER_PUSH_REGISTRY.
     - gerrit-maven-docker-stage
     - github-maven-docker-stage
 
+:Comment Trigger: "stage-release" or "stage-docker-release"
+
 :Required parameters:
 
     :container-public-registry: Docker registry source with base images.
     :container-staging-registry: Docker registry target for the deploy action.
+
+:Optional parameters:
+
+    :gerrit_release_docker_triggers: Override Gerrit Triggers.
 
 All other required and optional parameters are identical to the Maven Stage job
 described above.
