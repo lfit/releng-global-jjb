@@ -1,0 +1,13 @@
+---
+upgrade:
+  - |
+    Projects using gerrit-maven-docker-stage will need to trigger the job by
+    commenting "stage-docker-release".
+    Projects using github-maven-docker-stage will need to trigger the job by
+    updating the PR request status context to "Docker Release" and phrase
+    "build release"
+fixes:
+  - |
+    Allow lf-maven-docker-stage jobs to be triggered by its own trigger word.
+    "stage-release" triggers both lf-maven-docker-stage and lf-maven-stage but
+    some projects need to build these independently.
