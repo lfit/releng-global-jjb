@@ -833,7 +833,7 @@
 
     gerrit_release_triggers:
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
+          comment-contains-value: '^Patch Set\s+\d+:\s+(stage-release|stage-maven-release)\s*$'
 
     gerrit_trigger_file_paths:
       - compare-type: ANT
@@ -964,7 +964,7 @@
     triggers:
       - timed: "{obj:cron}"
       - github-pull-request:
-          trigger-phrase: "^build release$"
+          trigger-phrase: "^(stage-release|stage-maven-release)$"
           only-trigger-phrase: true
           status-context: "Maven Release"
           permit-all: true
@@ -1077,7 +1077,7 @@
     triggers:
       - timed: "{obj:cron}"
       - github-pull-request:
-          trigger-phrase: "^build release$"
+          trigger-phrase: "^(stage-release|stage-docker-release)$"
           only-trigger-phrase: true
           status-context: "Maven Release"
           permit-all: true
