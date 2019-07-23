@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Allow lf-maven-stage jobs to be triggered
+    using either "stage-release" or "stage-maven-release".
+    Allow lf-maven-docker-stage jobs to be triggered
+    using either "stage-release" or "stage-docker-release".
