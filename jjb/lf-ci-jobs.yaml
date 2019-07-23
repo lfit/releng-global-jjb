@@ -1449,7 +1449,11 @@
           platform: "{platforms}"
           template: "{templates}"
       - description-setter:
-          description: ".*Creating the image:(.*)"
+          regexp: '(\s+.*)(ZZCI\s+.*[0-9]{8}-[0-9]{6}.[0-9]{3})'
+          regexp-for-failed: ""
+          description: 'Image created: \2'
+          description-for-failed: "Image not created"
+          set-for-matrix: true
 
 - job-template:
     name: "{project-name}-packer-merge-{platforms}-{templates}"
