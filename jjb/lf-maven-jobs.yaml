@@ -833,7 +833,7 @@
 
     gerrit_release_triggers:
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
+          comment-contains-value: '^Patch Set\s+\d+:\s+(stage-release|stage-maven-release)\s*$'
 
     gerrit_trigger_file_paths:
       - compare-type: ANT

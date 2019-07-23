@@ -351,6 +351,8 @@ directory is then used later to deploy to Nexus.
     - gerrit-maven-stage
     - github-maven-stage
 
+:Comment Trigger: "stage-release" or "stage-maven-release"
+
 :Required parameters:
 
     :build-node: The node to run build on.
@@ -419,6 +421,8 @@ registry in the environment variable CONTAINER_PUSH_REGISTRY.
     - {project-name}-maven-docker-stage-{stream}
     - gerrit-maven-docker-stage
     - github-maven-docker-stage
+
+:Comment Trigger: "stage-release" or "stage-docker-release"
 
 :Required parameters:
 
