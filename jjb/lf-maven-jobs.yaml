@@ -1015,6 +1015,10 @@
       # NO lf-maven-central
       - lf-provide-maven-settings-cleanup
 
+    gerrit_release_docker_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+stage-docker-release\s*$'
+
 - job-template:
     name: "{project-name}-maven-docker-stage-{stream}"
     id: gerrit-maven-docker-stage
@@ -1039,7 +1043,7 @@
       - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_release_triggers}"
+          trigger-on: "{obj:gerrit_release_docker_triggers}"
           projects:
             - project-compare-type: ANT
               project-pattern: "{project}"
@@ -1079,7 +1083,7 @@
       - github-pull-request:
           trigger-phrase: "^build release$"
           only-trigger-phrase: true
-          status-context: "Maven Release"
+          status-context: "Docker Release"
           permit-all: true
           github-hooks: true
           white-list-target-branches:
