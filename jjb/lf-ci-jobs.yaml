@@ -1449,7 +1449,8 @@
           platform: "{platforms}"
           template: "{templates}"
       - description-setter:
-          description: ".*Creating the image:(.*)"
+          regexp: '(\s+.*)(ZZCI\s+.*\d+-\d+\.\d+)'
+          description: 'Image: \2'
 
 - job-template:
     name: "{project-name}-packer-merge-{platforms}-{templates}"
