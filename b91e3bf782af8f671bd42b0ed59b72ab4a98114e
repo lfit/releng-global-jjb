@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6912185e_fb781446",
+        "filename": "releasenotes/notes/update-docker-stage-trigger-c70a1beee566061f.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-24T17:00:17Z",
+      "side": 1,
+      "message": "I don\u0027t find this very clear. Perhaps, write by modifying the \"status-context:\" line of thier jenkins job to  \"Docker Release\" also, I dont know what is meant by phrase \"build release\" is that meant to be commenting \"build release\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 8,
+        "endChar": 19
+      },
+      "revId": "b91e3bf782af8f671bd42b0ed59b72ab4a98114e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e9c0c82_2aae57c8",
+        "filename": "releasenotes/notes/update-docker-stage-trigger-c70a1beee566061f.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-24T17:00:17Z",
+      "side": 1,
+      "message": "\"Via a gerrit or github comment\"",
+      "range": {
+        "startLine": 11,
+        "startChar": 53,
+        "endLine": 11,
+        "endChar": 76
+      },
+      "revId": "b91e3bf782af8f671bd42b0ed59b72ab4a98114e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1dba83a0_30dc6092",
+        "filename": "releasenotes/notes/update-docker-stage-trigger-c70a1beee566061f.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-24T17:00:17Z",
+      "side": 1,
+      "message": "not clear what this means.",
+      "range": {
+        "startLine": 12,
+        "startChar": 75,
+        "endLine": 13,
+        "endChar": 52
+      },
+      "revId": "b91e3bf782af8f671bd42b0ed59b72ab4a98114e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
