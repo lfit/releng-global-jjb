@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "44117136_7fc56f8f",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-24T18:09:31Z",
+      "side": 1,
+      "message": "I believe the problems is that some projects have specific release requirements\nand so need specific key words. \n\n\"   Allow lf-maven-docker-stage jobs to be triggered by a unique gerrit or\n    github comment.\n    \"stage-release\" was triggering both lf-maven-docker-stage and lf-maven-stage\n    but some LF projects need to trigger lf-maven-stage independently from\n    lf-maven-docker-stage.\"",
+      "parentUuid": "715c2fd6_d129800b",
+      "revId": "b91e3bf782af8f671bd42b0ed59b72ab4a98114e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6912185e_fb781446",
         "filename": "releasenotes/notes/update-docker-stage-trigger-c70a1beee566061f.yaml",
         "patchSetId": 3
