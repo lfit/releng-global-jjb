@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "715c2fd6_d129800b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-07-24T17:08:30Z",
+      "side": 1,
+      "message": "Is there a common \"release\" trigger we are using across all the release related templates?\n\nIt will be less keywords for folks to remember rather than having multiple template specific triggers. Think along the lines of \"recheck\" and \"remerge\" triggers we have.",
+      "revId": "b91e3bf782af8f671bd42b0ed59b72ab4a98114e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6912185e_fb781446",
         "filename": "releasenotes/notes/update-docker-stage-trigger-c70a1beee566061f.yaml",
         "patchSetId": 3
