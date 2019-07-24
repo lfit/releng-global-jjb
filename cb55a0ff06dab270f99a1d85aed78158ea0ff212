@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4679de9b_2a1d93e5",
+        "filename": "releasenotes/notes/update-docker-stage-trigger-c70a1beee566061f.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-24T18:09:31Z",
+      "side": 1,
+      "message": "Why not have the same key word for gerrit and github?\nAlso why drop the note about needing to change the status-context: message?",
+      "range": {
+        "startLine": 7,
+        "startChar": 3,
+        "endLine": 7,
+        "endChar": 62
+      },
+      "revId": "cb55a0ff06dab270f99a1d85aed78158ea0ff212",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
