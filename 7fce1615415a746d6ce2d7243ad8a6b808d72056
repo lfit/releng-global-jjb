@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0a00bc19_c97cbb68",
+        "filename": "releasenotes/notes/update-lf-stage-triggers-c70a1beee566061f.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-07-26T16:14:14Z",
+      "side": 1,
+      "message": "Can you double check the generated release notes and confirm if it\u0027s formatted the way you expect it to?\n\nSee here:\n\nhttps://logs.opendaylight.org/releng/vex-yul-odl-jenkins-1/lf-infra-global-jjb-rtd-verify-any/788/html/release-notes.html#v0-39-1-16",
+      "revId": "7fce1615415a746d6ce2d7243ad8a6b808d72056",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
