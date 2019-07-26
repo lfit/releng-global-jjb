@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add packer image $NAME to the description setting so that the image name
+    is displayed above the job logs URL. This saves a some time from
+    looking for the image name in the jobs logs.
