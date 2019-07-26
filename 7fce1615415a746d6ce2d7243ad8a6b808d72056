@@ -16,6 +16,24 @@
       "revId": "7fce1615415a746d6ce2d7243ad8a6b808d72056",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "855c985d_1e6dd1b3",
+        "filename": "releasenotes/notes/update-lf-stage-triggers-c70a1beee566061f.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-26T16:38:19Z",
+      "side": 1,
+      "message": "Done\n\nThanks for letting me know!",
+      "parentUuid": "0a00bc19_c97cbb68",
+      "revId": "7fce1615415a746d6ce2d7243ad8a6b808d72056",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
