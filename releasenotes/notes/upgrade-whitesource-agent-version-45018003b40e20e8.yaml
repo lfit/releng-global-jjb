@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Upgrade to the WhiteSource Unified Agent version 19.7.1.
