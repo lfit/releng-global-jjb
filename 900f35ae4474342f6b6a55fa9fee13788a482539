@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5bc93239_76b1ab84",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-26T20:07:26Z",
+      "side": 1,
+      "message": "Simplified regex, note the lack of outer ( )\n\nstage-(maven-)?release",
+      "range": {
+        "startLine": 836,
+        "startChar": 55,
+        "endLine": 836,
+        "endChar": 90
+      },
+      "revId": "900f35ae4474342f6b6a55fa9fee13788a482539",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00669704_403d9738",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-26T20:07:26Z",
+      "side": 1,
+      "message": "^stage-(maven-)?release$",
+      "range": {
+        "startLine": 967,
+        "startChar": 27,
+        "endLine": 967,
+        "endChar": 64
+      },
+      "revId": "900f35ae4474342f6b6a55fa9fee13788a482539",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fd09e22_78838e08",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-26T20:07:26Z",
+      "side": 1,
+      "message": "Simplified regex, note the lack of outer ( )\n\nstage-(docker-)?release",
+      "range": {
+        "startLine": 1020,
+        "startChar": 55,
+        "endLine": 1020,
+        "endChar": 91
+      },
+      "revId": "900f35ae4474342f6b6a55fa9fee13788a482539",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13db7f8a_32122e72",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-07-26T20:07:26Z",
+      "side": 1,
+      "message": "^stage-(docker-)?release$",
+      "range": {
+        "startLine": 1084,
+        "startChar": 27,
+        "endLine": 1084,
+        "endChar": 65
+      },
+      "revId": "900f35ae4474342f6b6a55fa9fee13788a482539",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
