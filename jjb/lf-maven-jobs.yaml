@@ -142,6 +142,7 @@
     github-url: "https://github.com"
     java-version: openjdk8
     mvn-global-settings: global-settings
+    mvn-goals: clean install
     mvn-opts: ""
     mvn-params: ""
     mvn-version: mvn35
@@ -194,9 +195,8 @@
       - lf-provide-maven-settings:
           global-settings-file: "{mvn-global-settings}"
           settings-file: "{mvn-settings}"
-      - shell: !include-raw-escape:
-          - ../shell/common-variables.sh
-          - ../shell/sonatype-clm.sh
+      - lf-infra-sonatype-clm:
+          mvn-goals: "{mvn-goals}"
       - lf-provide-maven-settings-cleanup
       - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
       - nexus-iq-policy-evaluator:
@@ -205,6 +205,17 @@
           application-id: "{nexus-iq-namespace}{project-name}"
           scan-patterns: "{obj:nexus_iq_scan_patterns}"
           fail-build-network-error: true
+
+- builder:
+    name: lf-infra-sonatype-clm
+    # Run a CLM scan build with Maven
+    builders:
+      - inject:
+          properties-content: |
+            MAVEN_GOALS={mvn-goals}
+      - shell: !include-raw-escape:
+          - ../shell/common-variables.sh
+          - ../shell/sonatype-clm.sh
 
 - job-template:
     name: "{project-name}-maven-clm-{stream}"
