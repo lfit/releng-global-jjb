@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "118f0da6_d60ad5cd",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-07-27T11:03:59Z",
+      "side": 1,
+      "message": "This parameter is documented below at line 141, why duplicate it?  I don\u0027t think there should be two \"Optional Parameters\" sections.",
+      "range": {
+        "startLine": 119,
+        "startChar": 1,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
