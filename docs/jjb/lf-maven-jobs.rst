@@ -96,6 +96,16 @@ Setup Java alternatives for the Distro.
     :java-version: Version of Java to set as the default Java.
         Eg. openjdk8
 
+lf-infra-sonatype-clm
+---------------------
+
+Runs a Sonatype CLM scan against a Maven project and pushes results to
+Nexus IQ server.
+
+:Optional parameters:
+    :mvn-goals: The maven goals to perform for the build.
+        (default: clean install)
+
 Job Templates
 =============
 
@@ -128,6 +138,8 @@ Produces a CLM scan of the code into Nexus IQ Server.
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
+    :mvn-goals: The maven goals to perform for the build.
+        (default: clean install)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
