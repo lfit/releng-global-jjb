@@ -22,6 +22,30 @@
       "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3a9d64e_5bce5fdc",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-07-27T15:46:38Z",
+      "side": 1,
+      "message": "I think there\u0027s a mix up here and lf-infra-sonatype-clm macro is mistakenly embedded inside of the job-template docs for clm and is inserting itself inside of job-template docs mistakenly.\n\nlf-infra-sonatype-clm is a macro so the docs should be moved to the \"Macros\" section above. The docs repeats because it is a separate function.",
+      "parentUuid": "118f0da6_d60ad5cd",
+      "range": {
+        "startLine": 119,
+        "startChar": 1,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
