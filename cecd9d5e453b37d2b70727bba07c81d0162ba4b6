@@ -46,6 +46,40 @@
       "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c57428b_f2c9e158",
+        "filename": "shell/sonatype-clm.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-28T18:53:00Z",
+      "side": 1,
+      "message": "This statement is a no-op. The only way MAVEN_OPTS is set here is if it was inherited from the parent process (and it will, by default, be inherited by the MVN process). Note also MAVEN_OPTS is not used anywhere in this script.",
+      "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "949e5267_0ae73268",
+        "filename": "shell/sonatype-clm.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-07-28T18:53:00Z",
+      "side": 1,
+      "message": "I am really curious about why you \u0027want to allow word splitting\u0027 in this situation? Allowing it would prevent the parent process from passing args to MVN that contain IFS chars, but I don\u0027t see the upside of that (other than not having see \u0027\"\u0027 everywhere).\n\nWe have complete control over the MAVEN_* variables so I understand why we might not need to worry about \u0027word splitting\u0027. But then we also have complete control over GLOBAL_SETTING_FILE, SETTINGS_FILE \u0026 WORKSPACE.\n\nI am prepared to discover that I am completely completely missing something here, if so, I apologize in advance.",
+      "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
