@@ -64,13 +64,6 @@ lf-infra-jjbini
 
 Provides jenkins_jobs.ini configuration for Jenkins.
 
-lf-infra-jjbini-sandbox
------------------------
-
-Provides jenkins_jobs.ini configuration for Jenkins sandbox.
-
-.. todo:: This needs to be consolidated into lf-infra-jjbini when JJB 2.0 is available
-
 lf-packer-common
 ----------------
 
