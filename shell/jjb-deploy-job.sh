@@ -35,4 +35,5 @@ if [ -z "${JOB_NAME//\*/}" ]; then
     exit 1
 fi
 
+echo "Deploy Job $JOB_NAME to sandbox"
 jenkins-jobs update --jobs-only --recursive --workers 4 jjb/ "$JOB_NAME"
