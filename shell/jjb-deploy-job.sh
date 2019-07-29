@@ -35,4 +35,4 @@ if [ -z "${JOB_NAME//\*/}" ]; then
     exit 1
 fi
 
-jenkins-jobs update --jobs-only --recursive --workers 4 jjb/ "$JOB_NAME"
+jenkins-jobs -s sandbox update --jobs-only --recursive --workers 4 jjb/ "$JOB_NAME"
