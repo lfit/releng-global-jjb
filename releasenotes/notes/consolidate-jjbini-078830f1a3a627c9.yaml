@@ -1,0 +1,5 @@
+---
+deprecations:
+  - |
+    Consolidated lf-infra-jjbini macros with JJB 2.0. This requires renaming
+    any Jenkins managed files "jjbini-sandbox" to "jjbini".

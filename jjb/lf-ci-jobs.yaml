@@ -11,15 +11,6 @@
             - file-id: jjbini
               target: "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
-- builder:
-    name: lf-infra-jjbini-sandbox
-    # TODO: Consolidate this into jjbini when JJB2.0 is available.
-    builders:
-      - config-file-provider:
-          files:
-            - file-id: jjbini-sandbox
-              target: "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
-
 - lf_packer: &lf_packer_common
     name: lf-packer-common
     # Provide configuration common in packer jobs.
@@ -647,7 +638,7 @@
     builders:
       - lf-pip-install:
           pip-packages: jenkins-job-builder
-      - lf-infra-jjbini-sandbox
+      - lf-infra-jjbini
       - shell: !include-raw-escape: ../shell/jjb-deploy-job.sh
 
     publishers:
