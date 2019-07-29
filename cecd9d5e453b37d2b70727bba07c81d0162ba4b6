@@ -49,6 +49,54 @@
     },
     {
       "key": {
+        "uuid": "08be7c17_3b0d7984",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-29T18:24:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "118f0da6_d60ad5cd",
+      "range": {
+        "startLine": 119,
+        "startChar": 1,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "464cd6fa_06ad878b",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-29T18:24:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3a9d64e_5bce5fdc",
+      "range": {
+        "startLine": 119,
+        "startChar": 1,
+        "endLine": 121,
+        "endChar": 32
+      },
+      "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8c57428b_f2c9e158",
         "filename": "shell/sonatype-clm.sh",
         "patchSetId": 3
@@ -66,6 +114,24 @@
     },
     {
       "key": {
+        "uuid": "2c3dbc15_ea0ec405",
+        "filename": "shell/sonatype-clm.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-29T18:24:04Z",
+      "side": 1,
+      "message": "MAVEN_OPTS do not get called in the script but do affect the behavior of maven after being exported. \n\nI do however think this is missing a \"$\" but will address it in a separate patch since it does not belong to my fix. I don\u0027t want to squash several fixes in this Gerrit.",
+      "parentUuid": "8c57428b_f2c9e158",
+      "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "949e5267_0ae73268",
         "filename": "shell/sonatype-clm.sh",
         "patchSetId": 3
@@ -77,6 +143,24 @@
       "writtenOn": "2019-07-28T18:53:00Z",
       "side": 1,
       "message": "I am really curious about why you \u0027want to allow word splitting\u0027 in this situation? Allowing it would prevent the parent process from passing args to MVN that contain IFS chars, but I don\u0027t see the upside of that (other than not having see \u0027\"\u0027 everywhere).\n\nWe have complete control over the MAVEN_* variables so I understand why we might not need to worry about \u0027word splitting\u0027. But then we also have complete control over GLOBAL_SETTING_FILE, SETTINGS_FILE \u0026 WORKSPACE.\n\nI am prepared to discover that I am completely completely missing something here, if so, I apologize in advance.",
+      "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7487ea6e_41132e00",
+        "filename": "shell/sonatype-clm.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-29T18:24:04Z",
+      "side": 1,
+      "message": "I can\u0027t do that since it will translate to \"clean install\" which is not recognized as a goal:\nUnknown lifecycle phase \"clean install\".\n\nEven if the user would not provide the correct goal, the error message will be clear enough what are they doing wrong.",
+      "parentUuid": "949e5267_0ae73268",
       "revId": "cecd9d5e453b37d2b70727bba07c81d0162ba4b6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
