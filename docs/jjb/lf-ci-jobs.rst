@@ -536,7 +536,7 @@ Info YAML Verify
 
 Info YAML Verify job validates that INFO.yaml file changes are kept isolated from
 other file changes. Verifies INFO.yaml files follow the schema defined in
-`global-jjb/info-schema`.
+`lfit/releng-global-jjb/schema/info-schema.yaml`.
 
 :Template Names:
     - {project-name}-info-yaml-verify
