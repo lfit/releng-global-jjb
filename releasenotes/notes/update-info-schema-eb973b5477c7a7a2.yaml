@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Move info-schema to schema/info-schema.yaml to keep schemas
+    consistency.
+  - |
+    Download only needed files for lf-info-yaml-verify
+    rather than cloning the entire repo.

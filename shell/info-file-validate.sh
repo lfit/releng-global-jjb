@@ -17,13 +17,12 @@ virtualenv --quiet "/tmp/v/info"
 source "/tmp/v/info/bin/activate"
 pip install PyYAML jsonschema rfc3987 yamllint
 
-# Cloning global-jjb to get access to needed scripts
-git clone https://github.com/lfit/releng-global-jjb.git
+# Download info-schema.yaml and yaml-verfy-schema.py
+wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/info-schema.yaml \
+https://raw.githubusercontent.com/lfit/releng-global-jjb/master/yaml-verify-schema.py
 
 yamllint INFO.yaml
 
-python releng-global-jjb/yaml-verify-schema.py \
-    -s releng-global-jjb/info-schema \
+python yaml-verify-schema.py \
+    -s info-schema.yaml \
     -y INFO.yaml
-
-rm -rf releng-global-jjb
