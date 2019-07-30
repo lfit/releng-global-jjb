@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Download raw version of release-schema.yaml to compare against
+    release files using lftools. 

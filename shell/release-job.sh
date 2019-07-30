@@ -37,7 +37,7 @@ fi
 NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
 
 # Fetch the release-schema.yaml
-wget -q https://github.com/lfit/releng-global-jjb/blob/master/schema/release-schema.yaml
+wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
 
 release_files=$(git diff HEAD^1 --name-only -- "releases/")
 echo "RELEASE FILES ARE AS FOLLOWS: $release_files"
