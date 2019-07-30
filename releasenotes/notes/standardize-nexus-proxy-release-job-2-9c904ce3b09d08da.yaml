@@ -1,0 +1,12 @@
+---
+upgrade:
+  - |
+    Projects using lf-release-jobs need to make sure they have the global
+    variable NEXUSPROXY added in Jenkins production and Jenkins sandbox
+    servers. The value of this variable should be the URL to the project's
+    Nexus server. Previous commit 118b7cbf171aca498d1a0a3a485bad990ad2e7b6
+    missed this variable.
+fixes:
+  - |
+    Avoid the usage of project specific variables. Do not use ODLNEXUSPROXY
+    var, but instead use a generalized variable.

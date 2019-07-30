@@ -69,7 +69,7 @@ for release_file in $release_files; do
         echo "LOGS_SERVER: $LOGS_SERVER"
         echo "NEXUS_URL: $NEXUS_URL"
         echo "NEXUS_PATH: $NEXUS_PATH"
-        echo "ODLNEXUSPROXY: $ODLNEXUSPROXY"
+        echo "NEXUSPROXY: $NEXUSPROXY"
         echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
         echo "SILO: $SILO"
         echo "PROJECT: $PROJECT"
