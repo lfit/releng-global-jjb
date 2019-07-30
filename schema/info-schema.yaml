@@ -9,7 +9,7 @@
 ##############################################################################
 ---
 $schema: 'http://json-schema.org/schema#'
-$id: 'https://github.com/lfit/releng-global-jjb/blob/master/info-schema'
+$id: 'https://github.com/lfit/releng-global-jjb/blob/master/schema/info-schema'
 
 required:
   - 'project'
