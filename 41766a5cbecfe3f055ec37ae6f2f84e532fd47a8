@@ -22,6 +22,30 @@
       "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fde6906c_4f2b02cf",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T22:29:35Z",
+      "side": 1,
+      "message": "3 spaces?",
+      "parentUuid": "1bee4d5f_db2b9a62",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 85
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
