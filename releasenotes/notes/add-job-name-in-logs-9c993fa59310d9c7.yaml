@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    There is no way on finding out the $JOB_NAME pushed to sandbox with the
+    jjb-deploy command in the logs. The change outputs the $JOB_NAME to the
+    logs, which is useful for debugging purposes.
