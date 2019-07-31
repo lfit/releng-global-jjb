@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4c427ef1_52217c70",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc68fd2f_24331569",
+      "range": {
+        "startLine": 7,
+        "startChar": 35,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f37af0d_b85a3617",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -36,6 +60,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "log directory",
+      "range": {
+        "startLine": 8,
+        "startChar": 73,
+        "endLine": 8,
+        "endChar": 85
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "80d60cfc_4a3a9cca",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f37af0d_b85a3617",
       "range": {
         "startLine": 8,
         "startChar": 73,
@@ -94,6 +142,54 @@
     },
     {
       "key": {
+        "uuid": "ecd0aaaa_5ec6aaaf",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bd708ae_4e67f40f",
+      "range": {
+        "startLine": 9,
+        "startChar": 21,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1d7d97e7_18594e53",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d5cdec4_3124b304",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 1
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0f780434_29102cb1",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -105,6 +201,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "project\u0027s",
+      "range": {
+        "startLine": 13,
+        "startChar": 17,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "66c8f1c0_5346cb59",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0f780434_29102cb1",
       "range": {
         "startLine": 13,
         "startChar": 17,
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "eeacc712_bfd9b725",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "581d5a85_b89e7ba0",
+      "range": {
+        "startLine": 27,
+        "startChar": 23,
+        "endLine": 27,
+        "endChar": 30
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b344aacf_4a855877",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -151,6 +295,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "Jenkins",
+      "range": {
+        "startLine": 41,
+        "startChar": 25,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "af3be921_8e14ff1f",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b344aacf_4a855877",
       "range": {
         "startLine": 41,
         "startChar": 25,
@@ -210,6 +378,30 @@
     },
     {
       "key": {
+        "uuid": "4658d3ff_b8927d9b",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fde6906c_4f2b02cf",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 85
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "72c7c9d9_dcc32c07",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -221,6 +413,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "Stray link, \nShall we put some info on why the link is here? \"Create an LFID here\"",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 46
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f938ad1c_b20dbca6",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "72c7c9d9_dcc32c07",
       "range": {
         "startLine": 88,
         "startChar": 0,
@@ -256,6 +472,30 @@
     },
     {
       "key": {
+        "uuid": "ef975e8d_d53844f4",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfd4f74c_1393c08a",
+      "range": {
+        "startLine": 93,
+        "startChar": 33,
+        "endLine": 93,
+        "endChar": 50
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8966c91e_2a2e30c6",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -267,6 +507,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "Gerrit",
+      "range": {
+        "startLine": 100,
+        "startChar": 14,
+        "endLine": 100,
+        "endChar": 20
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df0835f3_67f927f3",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8966c91e_2a2e30c6",
       "range": {
         "startLine": 100,
         "startChar": 14,
@@ -302,6 +566,30 @@
     },
     {
       "key": {
+        "uuid": "6b1b0acb_7a6512d5",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e5098ca_a46f2bab",
+      "range": {
+        "startLine": 101,
+        "startChar": 11,
+        "endLine": 101,
+        "endChar": 17
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bdfc9db2_10a179fb",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -313,6 +601,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "Gerrit",
+      "range": {
+        "startLine": 103,
+        "startChar": 3,
+        "endLine": 103,
+        "endChar": 9
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7d111d6_55e6bc2f",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdfc9db2_10a179fb",
       "range": {
         "startLine": 103,
         "startChar": 3,
@@ -348,6 +660,30 @@
     },
     {
       "key": {
+        "uuid": "6816ccef_c255b3bc",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "75a20cd0_0c795d5e",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 38
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "71f14c47_129653d2",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -359,6 +695,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "We need to make explicit that self-serve-release is \"Allow\" and Non-Interactive Users and Registered Users is \"Deny\"",
+      "range": {
+        "startLine": 110,
+        "startChar": 25,
+        "endLine": 110,
+        "endChar": 84
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7e1ca1fb_1e4612c2",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "clarified, but we don\u0027t need to explicitly deny Non-Interactive users.",
+      "parentUuid": "71f14c47_129653d2",
       "range": {
         "startLine": 110,
         "startChar": 25,
@@ -417,6 +777,30 @@
     },
     {
       "key": {
+        "uuid": "517f09a0_f5044b13",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2f9b9b1_c2600bbc",
+      "range": {
+        "startLine": 115,
+        "startChar": 52,
+        "endLine": 115,
+        "endChar": 60
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13bb667f_494d04d0",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -428,6 +812,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "Jenkins",
+      "range": {
+        "startLine": 117,
+        "startChar": 19,
+        "endLine": 117,
+        "endChar": 26
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3e64d732_0f164fe2",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13bb667f_494d04d0",
       "range": {
         "startLine": 117,
         "startChar": 19,
@@ -463,6 +871,30 @@
     },
     {
       "key": {
+        "uuid": "a49cc4ab_4cc531a9",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1db513a_09a67857",
+      "range": {
+        "startLine": 129,
+        "startChar": 13,
+        "endLine": 129,
+        "endChar": 29
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "15fbef5d_893b7b54",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -474,6 +906,30 @@
       "writtenOn": "2019-07-31T22:37:17Z",
       "side": 1,
       "message": "Upgrade",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 7
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cb9218fb_fbf2c0bc",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-07-31T23:11:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15fbef5d_893b7b54",
       "range": {
         "startLine": 135,
         "startChar": 0,
