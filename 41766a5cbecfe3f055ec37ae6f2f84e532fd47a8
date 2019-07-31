@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1bee4d5f_db2b9a62",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-07-31T22:17:44Z",
+      "side": 1,
+      "message": "blank line after \u0027.. note::\u0027 and also 3 spaces\n\n.. note::\n\n   Release Engineers, Please follow the setup guide before adding the job definition:",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 85
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
