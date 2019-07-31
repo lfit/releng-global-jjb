@@ -1,0 +1,6 @@
+---
+upgrade:
+  - |
+    Consolidated lf-infra-jjbini macros with JJB 2.0. This requires renaming
+    any Jenkins managed files "jjbini-sandbox" to "jjbini" to switch to the
+    format supported in JJB > 2.0.
