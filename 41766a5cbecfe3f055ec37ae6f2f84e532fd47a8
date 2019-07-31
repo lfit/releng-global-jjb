@@ -2,6 +2,167 @@
   "comments": [
     {
       "key": {
+        "uuid": "cc68fd2f_24331569",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "I would suggest naming this differently from the ssh-credential to identify them as different.\nMaybe \"test-release-credential\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 35,
+        "endLine": 7,
+        "endChar": 51
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2f37af0d_b85a3617",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "log directory",
+      "range": {
+        "startLine": 8,
+        "startChar": 73,
+        "endLine": 8,
+        "endChar": 85
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d5cdec4_3124b304",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Make this lines shorter",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 1
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7bd708ae_4e67f40f",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "optional.",
+      "range": {
+        "startLine": 9,
+        "startChar": 21,
+        "endLine": 9,
+        "endChar": 29
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0f780434_29102cb1",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "project\u0027s",
+      "range": {
+        "startLine": 13,
+        "startChar": 17,
+        "endLine": 13,
+        "endChar": 25
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "581d5a85_b89e7ba0",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Jenkins",
+      "range": {
+        "startLine": 27,
+        "startChar": 23,
+        "endLine": 27,
+        "endChar": 30
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b344aacf_4a855877",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Jenkins",
+      "range": {
+        "startLine": 41,
+        "startChar": 25,
+        "endLine": 41,
+        "endChar": 32
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1bee4d5f_db2b9a62",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 12
@@ -42,6 +203,328 @@
         "startChar": 0,
         "endLine": 68,
         "endChar": 85
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "72c7c9d9_dcc32c07",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Stray link, \nShall we put some info on why the link is here? \"Create an LFID here\"",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 46
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfd4f74c_1393c08a",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "This is a little confusing...we are naming this account Jenkins Promoter but later on adding the user in lftoolsini as \"jenkins-releases\"\nShould these match? We should not add a name in Nexus with spaces. I think this will create issues",
+      "range": {
+        "startLine": 93,
+        "startChar": 33,
+        "endLine": 93,
+        "endChar": 50
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8966c91e_2a2e30c6",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Gerrit",
+      "range": {
+        "startLine": 100,
+        "startChar": 14,
+        "endLine": 100,
+        "endChar": 20
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e5098ca_a46f2bab",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Gerrit",
+      "range": {
+        "startLine": 101,
+        "startChar": 11,
+        "endLine": 101,
+        "endChar": 17
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bdfc9db2_10a179fb",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Gerrit",
+      "range": {
+        "startLine": 103,
+        "startChar": 3,
+        "endLine": 103,
+        "endChar": 9
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "75a20cd0_0c795d5e",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Make sure \"force push\" is not checked.\n\nSince by default is not",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 38
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71f14c47_129653d2",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "We need to make explicit that self-serve-release is \"Allow\" and Non-Interactive Users and Registered Users is \"Deny\"",
+      "range": {
+        "startLine": 110,
+        "startChar": 25,
+        "endLine": 110,
+        "endChar": 84
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "677a359b_8d623676",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Break this line",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 166
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e2f9b9b1_c2600bbc",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "\"releases\" and \"release\" is used differently in many places\nLet\u0027s standardize to use \"release\"",
+      "range": {
+        "startLine": 115,
+        "startChar": 52,
+        "endLine": 115,
+        "endChar": 60
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "13bb667f_494d04d0",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Jenkins",
+      "range": {
+        "startLine": 117,
+        "startChar": 19,
+        "endLine": 117,
+        "endChar": 26
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c1db513a_09a67857",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "This should be  the Nexus user, right? not the jenkins\nI think we need to use the same naming",
+      "range": {
+        "startLine": 129,
+        "startChar": 13,
+        "endLine": 129,
+        "endChar": 29
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "15fbef5d_893b7b54",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Upgrade",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 7
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "000a97c3_d666d86d",
+        "filename": "releasenotes/notes/lf-release-jobs-f470e781be753872.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Requires",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 12
+      },
+      "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7b09729_6a82404a",
+        "filename": "releasenotes/notes/lf-release-jobs-f470e781be753872.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-07-31T22:37:17Z",
+      "side": 1,
+      "message": "Nexus",
+      "range": {
+        "startLine": 6,
+        "startChar": 24,
+        "endLine": 6,
+        "endChar": 29
       },
       "revId": "41766a5cbecfe3f055ec37ae6f2f84e532fd47a8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
