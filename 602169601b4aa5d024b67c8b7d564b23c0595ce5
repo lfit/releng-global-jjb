@@ -16,6 +16,24 @@
       "revId": "602169601b4aa5d024b67c8b7d564b23c0595ce5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe19f1be_81211c14",
+        "filename": "releasenotes/notes/consolidate-jjbini-078830f1a3a627c9.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-07-31T21:48:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0f2307b_728aa5d7",
+      "revId": "602169601b4aa5d024b67c8b7d564b23c0595ce5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
