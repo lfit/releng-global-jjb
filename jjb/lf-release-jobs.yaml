@@ -64,7 +64,6 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
-    project-pattern: "**"
     gerrit-skip-vote: false
 
     gerrit_verify_triggers:
@@ -120,7 +119,7 @@
           trigger-on: "{obj:gerrit_verify_triggers}"
           projects:
             - project-compare-type: "ANT"
-              project-pattern: "{project-pattern}"
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
                   branch-pattern: "**/master"
@@ -148,7 +147,6 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
-    project-pattern: "**"
 
     gerrit_merge_triggers:
       - change-merged-event
@@ -199,7 +197,7 @@
           trigger-on: "{obj:gerrit_merge_triggers}"
           projects:
             - project-compare-type: "ANT"
-              project-pattern: "{project-pattern}"
+              project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
                   branch-pattern: "**/master"
