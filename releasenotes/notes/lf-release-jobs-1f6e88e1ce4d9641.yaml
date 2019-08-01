@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Project pattern was incorrectly set to **
+    must be {project}

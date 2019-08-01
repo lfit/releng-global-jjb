@@ -148,7 +148,7 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
-    project-pattern: "**"
+    project-pattern: "{project}"
 
     gerrit_merge_triggers:
       - change-merged-event
