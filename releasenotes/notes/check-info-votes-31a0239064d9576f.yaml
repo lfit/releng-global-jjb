@@ -1,0 +1,7 @@
+---
+improvements:
+    - |
+      We can now check votes against a Github pull request.
+upgrade:
+    - |
+      lftools.ini requires a [github] section with a valid api token

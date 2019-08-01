@@ -36,22 +36,46 @@ if [ -d "/opt/pyenv" ]; then
     export PYENV_VERSION="3.6.4"
 fi
 
+sudo $pip install --upgrade pip
 $pip install --user niet
 $pip install --user lftools
-$pip install --user lftools[nexus]
 $pip install --user jsonschema
 
 echo "Checking votes:"
-lftools infofile check-votes INFO.yaml "$GERRIT_URL" "$ref" > gerrit_comment.txt
-exit_status="$?"
+# Github
+set +u unset
+if ! [[ -z "$ghprbPullId" ]]; then
+  echo "THIS IS A GITHUB PR"
+  echo "$ghprbPullId"
+  echo "$ghprbGhRepository"
+  org=$(echo "$ghprbGhRepository" | awk -F"/" '{print $1}')
+  repo=$(echo "$ghprbGhRepository" | awk -F"/" '{print $2}')
+  lftools infofile check-votes INFO.yaml $org --github_repo $repo $ghprbPullId
+  exit_status="$?"
+  if [[ "$exit_status" -ne 0 ]]; then
+    echo "Vote not yet complete"
+  else
+    echo "Vote completed submitting pr"
+    lftools github submit-pr $org $repo $ghprbPullId
+  fi
 
-if [[ "$exit_status" -ne 0 ]]; then
+# Gerrit
+else
+  set -u unset
+  echo "THIS IS A GERRIT PATCHSET"
+  ref=$(echo "$GERRIT_REFSPEC" | awk -F"/" '{ print $4 }')
+  change="$(echo "$GERRIT_CHANGE_URL" | awk -F"/" '{print $NF}')"
+  echo "Checking votes:"
+  lftools infofile check-votes INFO.yaml "$GERRIT_URL" "$ref" > gerrit_comment.txt
+  exit_status="$?"
+  #
+  if [[ "$exit_status" -ne 0 ]]; then
     echo "Vote not yet complete"
     cat gerrit_comment.txt
     exit "$exit_status"
-else
+  else
     echo "Vote completed submitting review"
-    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --verified 1
-    sleep 5
-    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --submit
+    ssh -p "$GERRIT_PORT" "$JENKINS_SSH_CREDENTIAL"@"$GERRIT_HOST" gerrit review "$change" --submit
+  fi
 fi
+
