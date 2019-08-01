@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39a9bfd0_4e4227de",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-01T00:18:16Z",
+      "side": 1,
+      "message": "do we need to do a sudo here?",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 5
+      },
+      "revId": "c7433fb77c17828c4c5fbe65af1fb15d9d52e3f1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
