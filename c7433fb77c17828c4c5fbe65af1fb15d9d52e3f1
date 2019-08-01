@@ -22,6 +22,30 @@
       "revId": "c7433fb77c17828c4c5fbe65af1fb15d9d52e3f1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aabb933_2a19774c",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-01T16:50:02Z",
+      "side": 1,
+      "message": "afaik, yes\nBut I dont know if we actually need to upgrade pip, on jenkins.int i need it.",
+      "parentUuid": "39a9bfd0_4e4227de",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 5
+      },
+      "revId": "c7433fb77c17828c4c5fbe65af1fb15d9d52e3f1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
