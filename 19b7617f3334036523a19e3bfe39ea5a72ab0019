@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6678b2bc_cb531b47",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-01T18:11:47Z",
+      "side": 1,
+      "message": "We dont need this new var... all we need to do is fix the trigger directly to:\nproject-pattern: \"{project}\"\nand remove this extra var. \n\nAlso we need the same in the merge",
+      "range": {
+        "startLine": 151,
+        "startChar": 3,
+        "endLine": 151,
+        "endChar": 20
+      },
+      "revId": "19b7617f3334036523a19e3bfe39ea5a72ab0019",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
