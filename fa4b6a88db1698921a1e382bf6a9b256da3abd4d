@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40167927_d2632c58",
+        "filename": "releasenotes/notes/consolidate-jjbini-078830f1a3a627c9.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-02T17:24:03Z",
+      "side": 1,
+      "message": "I feel the details here implies that the reader already knows what to do. Considering it\u0027s not as simple as just renaming the managed file as the macro also needs to be changed. I think the release notes would benefit from more step instructions. I see at least a couple of changes that need to happen here for a successful upgrade:\n\n 1. All instances if lf-infra-jjbini-sandbox macros need to now be replaced with lf-infra-jjbini\n 2. Configuration of jjbini-sandbox Managed File now needs to be imported into jjbini Managed File under a named config section like:\n    [sandbox]\n    ... config details ...\n 3. jjbini-sandbox Managed File can be deleted",
+      "revId": "fa4b6a88db1698921a1e382bf6a9b256da3abd4d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
