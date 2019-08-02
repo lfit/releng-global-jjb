@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc3dd3ca_cb8fcb1e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-02T17:22:47Z",
+      "side": 1,
+      "message": "Probably not needed, but put it in the PATCH_DIR?",
+      "revId": "3ea1116652f0a896eebe82128dbc2942dd3a8876",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc456fee_5a255f78",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-02T17:22:47Z",
+      "side": 1,
+      "message": "This should be functionalized (extra var of merge / no merge?) and called also in place of the code at 117-124",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 8
+      },
+      "revId": "3ea1116652f0a896eebe82128dbc2942dd3a8876",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0537593_e60292ca",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-02T17:22:47Z",
+      "side": 1,
+      "message": "See note on lines 58-65",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 124,
+        "endChar": 11
+      },
+      "revId": "3ea1116652f0a896eebe82128dbc2942dd3a8876",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
