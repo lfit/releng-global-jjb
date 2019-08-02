@@ -124,7 +124,7 @@ git tag -v "$VERSION"
 if [[ "$JOB_NAME" =~ "merge" ]]; then
   echo "Running merge"
   gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
-  git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/$PROJECT
+  git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/$GERRIT_PROJECT
   git config user.name "$RELEASE_USERNAME"
   git config user.email "$RELEASE_EMAIL"
   echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config

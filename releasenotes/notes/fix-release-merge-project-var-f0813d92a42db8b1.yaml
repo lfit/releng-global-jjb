@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Use {GERRIT_PROJECT} when calling Gerrit in release-merge job.
