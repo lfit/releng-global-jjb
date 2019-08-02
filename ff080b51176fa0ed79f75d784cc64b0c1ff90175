@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "170aa416_c27b6e46",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-02T15:40:31Z",
+      "side": 1,
+      "message": "In the case of multiple staging_url\u0027s We don\u0027t actually want to\ncheck out sign and tag and push twice.\nWe only want to run the lftools nexus release --server \"$NEXUS_URL\" \"$STAGING_REPO\"\ntwice. I will fix this.",
+      "range": {
+        "startLine": 58,
+        "startChar": 3,
+        "endLine": 58,
+        "endChar": 76
+      },
+      "revId": "ff080b51176fa0ed79f75d784cc64b0c1ff90175",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
