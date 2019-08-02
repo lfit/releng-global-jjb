@@ -98,8 +98,11 @@ for release_file in $release_files; do
     git merge --ff-only FETCH_HEAD
     git tag -am "$PROJECT $VERSION" "$VERSION"
     sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
+
     echo "Showing latest signature for $PROJECT:"
-    git log --show-signature -n1
+    gpg --import /tmp/onap-pubkey
+    echo "git tag -v "$VERSION""
+    git tag -v "$VERSION"
 
 
     ########## Merge Part ##############
