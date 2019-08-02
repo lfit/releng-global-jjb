@@ -91,8 +91,6 @@
               variable: SIGUL_PASSWORD
             - file-id: sigul-pki
               variable: SIGUL_PKI
-            - file-id: onap-pubkey
-              target: "/tmp/onap-pubkey"
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
       - lf-release
@@ -171,8 +169,6 @@
               variable: SIGUL_PASSWORD
             - file-id: sigul-pki
               variable: SIGUL_PKI
-            - file-id: onap-pubkey
-              target: "/tmp/onap-pubkey"
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
       - lf-release
