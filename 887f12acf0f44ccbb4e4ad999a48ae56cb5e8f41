@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c79c6a17_8db23215",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-02T20:01:34Z",
+      "side": 1,
+      "message": "You\u0027ve removed the definition of onap-pubkey but you\u0027re still using it later. This needs to be generalized to signing-pubkey and SIGNING_PUBKEY. Also we need to add docs related to putting the pubkey into the managed files.",
+      "revId": "887f12acf0f44ccbb4e4ad999a48ae56cb5e8f41",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4017f8b_954202fe",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-02T20:01:34Z",
+      "side": 1,
+      "message": "You\u0027ve removed the definition of onap-pubkey but you\u0027re still using it later. This needs to be generalized to signing-pubkey and SIGNING_PUBKEY. Also we need to add docs related to putting the pubkey into the managed files.",
+      "revId": "887f12acf0f44ccbb4e4ad999a48ae56cb5e8f41",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6dad5018_d156faf4",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-02T20:01:34Z",
+      "side": 1,
+      "message": "gpg --import \"$SIGNING_PUBKEY\"",
+      "revId": "887f12acf0f44ccbb4e4ad999a48ae56cb5e8f41",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
