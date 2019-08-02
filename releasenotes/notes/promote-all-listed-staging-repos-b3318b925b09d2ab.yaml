@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    The self-release jobs does not handle multiple repositories listed in
+    staging-repo.txt file. This fixes the issue by deriving the NEXUS_URL
+    and the STAGING_REPO from each entry in the file. This approach also
+    eliminates the need for having multiple release.yaml files for every
+    staging-repo.
