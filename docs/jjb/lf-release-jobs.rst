@@ -106,6 +106,10 @@ In Gerrit create a new group called ``self-serve-release`` and give it direct pu
 
 Add ``RELEASE_USERNAME`` to group ``self-serve-release`` and group ``Non-Interactive Users``
 
+Give group ``self-serve-release`` Forge Committer rights on ``refs/tags/*``
+Give group ``self-serve-release`` Allow on ``Create Signed Tag``
+Give group ``self-serve-release`` Allow on ``Create Annotated Tag``
+
 Jenkins
 =======
 
