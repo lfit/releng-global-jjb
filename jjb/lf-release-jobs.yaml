@@ -42,7 +42,7 @@
     wrappers:
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
 
     publishers:
       - lf-infra-publish
@@ -91,8 +91,8 @@
               variable: SIGUL_PASSWORD
             - file-id: sigul-pki
               variable: SIGUL_PKI
-            - file-id: onap-pubkey
-              target: "/tmp/onap-pubkey"
+            - file-id: signing-pubkey
+              target: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
       - lf-release
@@ -113,7 +113,7 @@
           submodule-recursive: false
           submodule-timeout: 10
           choosing-strategy: gerrit
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
 
     triggers:
       - gerrit:
@@ -171,8 +171,8 @@
               variable: SIGUL_PASSWORD
             - file-id: sigul-pki
               variable: SIGUL_PKI
-            - file-id: onap-pubkey
-              target: "/tmp/onap-pubkey"
+            - file-id: signing-pubkey
+              target: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
       - lf-release
@@ -186,7 +186,7 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
           git-url: "{git-url}"
           refspec: "$GERRIT_REFSPEC"
           branch: "$GERRIT_BRANCH"
