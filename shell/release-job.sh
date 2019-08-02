@@ -100,7 +100,7 @@ for release_file in $release_files; do
     sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
 
     echo "Showing latest signature for $PROJECT:"
-    gpg --import /tmp/onap-pubkey
+    gpg --import "$SIGNING_PUBKEY"
     echo "git tag -v "$VERSION""
     git tag -v "$VERSION"
 
