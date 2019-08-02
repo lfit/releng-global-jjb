@@ -172,7 +172,7 @@
             - file-id: sigul-pki
               variable: SIGUL_PKI
             - file-id: signing-pubkey
-              target: SIGNING_PUBKEY
+              variable: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
       - lf-release
