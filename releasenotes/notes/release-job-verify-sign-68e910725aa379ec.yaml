@@ -1,4 +1,8 @@
 ---
+upgrade:
+  - |
+    Projects using lf-release-job will need to add the project's signing
+    public key in their Jenkins Settings Files.
 fixes:
   - |
     Allow lf_release_verify and lf_release_merge to verify tag signature.
