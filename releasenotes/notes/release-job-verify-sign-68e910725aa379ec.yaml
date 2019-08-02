@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Allow lf_release_verify and lf_release_merge to verify tag signature.
