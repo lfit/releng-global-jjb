@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7915529d_2d1c9e69",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-03T22:35:49Z",
+      "side": 1,
+      "message": "May not be directly related to this change ... here are something, I have noticed and there is scope for improvement. The verify jobs should be checking and failing on the following:\n\n1. If there are validation errors in the staging repository, fail the job.\n2. If the staging repo is still open and not closed, fail the job.\n\nWithout these checks, we will end failing at the point where we promote the staging repo in the merge job.",
+      "range": {
+        "startLine": 98,
+        "startChar": 8,
+        "endLine": 98,
+        "endChar": 18
+      },
+      "revId": "2a557e77bcfc2556e2eeaf383033e119de91b1b0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
