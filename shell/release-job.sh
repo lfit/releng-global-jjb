@@ -34,6 +34,7 @@ if [ "${LOGS_SERVER}" == 'None' ]; then
     exit 1
 fi
 
+NEXUSPROXY="${NEXUSPROXY:-None}"
 NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
 
 # Fetch the release-schema.yaml
@@ -61,7 +62,8 @@ NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
 LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
 PATCH_DIR="$(mktemp -d)"
 
-wget --quiet -P "$PATCH_DIR" "${LOGS_URL}"staging-repo.txt.gz
+LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
+wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz
 
 nexus_release(){
 for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do

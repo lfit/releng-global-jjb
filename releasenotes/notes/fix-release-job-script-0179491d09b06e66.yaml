@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix the release job script to handle any trailing '/' set on log_dir
+    and also handle unbound variables correctly.
