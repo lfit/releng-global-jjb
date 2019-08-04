@@ -124,7 +124,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**/master"
+                  branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_trigger_file_paths}"
           skip-vote:
             successful: "{gerrit-skip-vote}"
@@ -204,5 +204,5 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**/master"
+                  branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_trigger_file_paths}"

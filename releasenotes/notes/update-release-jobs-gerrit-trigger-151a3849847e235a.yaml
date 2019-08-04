@@ -1,0 +1,6 @@
+---
+issues:
+  - |
+    Update release job template to tigger on any branch name, and not just
+    '**/master'. ODL projects branches are version '4.0.x' which requires
+    passing the branch name to the template.
