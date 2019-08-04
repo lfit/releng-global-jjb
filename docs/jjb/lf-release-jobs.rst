@@ -117,12 +117,12 @@ Add a global credential to Jenkins called ``jenkins-release`` and set the ID: ``
 as its value insert the ``ssh-key`` that you uploaded to Gerrit.
 
 Add Global vars in Jenkins:
-Jenkins configre -> Global properties -> Environment variables
+Jenkins configure -> Global properties -> Environment variables
 
 ``RELEASE_USERNAME = $RELEASE_USERNAME``
 ``RELEASE_EMAIL = $RELEASE_EMAIL``
 
-Jenkins configre -> Managed Files -> Custom File
+Jenkins configure -> Managed Files -> Custom File
 
 id: signing-pubkey
 Name: SIGNING_PUBKEY (optional)
@@ -144,8 +144,8 @@ Jenkins Settings -> Managed files -> Add (or edit) -> Custom file
 Ci-management
 =============
 
-upgrade you projects global-jjb if needed
-add this to your global defaults file (eg: jjb/defaults.yaml)
+Upgrade your projects global-jjb if needed
+add this to your global defaults file (eg: jjb/defaults.yaml).
 
 .. code-block:: bash
 
