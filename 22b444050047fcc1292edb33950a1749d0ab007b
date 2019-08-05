@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "073e2404_0e407729",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-05T13:01:24Z",
+      "side": 1,
+      "message": "The commit message should be more specific and say how the script being improved. The release notes had more details than this.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 30
+      },
+      "revId": "22b444050047fcc1292edb33950a1749d0ab007b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fed29227_2ac1843c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-05T13:01:24Z",
+      "side": 1,
+      "message": "Probably shouldn\u0027t hardcode specific Python version here as it\u0027s prone to failure when the image is updated with a newer Python.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 0
+      },
+      "revId": "22b444050047fcc1292edb33950a1749d0ab007b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b535e2f1_1b79077c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-05T13:01:24Z",
+      "side": 1,
+      "message": "These kinds of variables where it\u0027s getting input from outside of the script shoudl be listed at the top of the script above the \"set -eu ...\" command so that it\u0027s clear upfront what are the expected inputs of the script.\n\nThis comment also applie sto the LOGS_SERVER and MAVEN_CENTRAL_URL above too.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 0
+      },
+      "revId": "22b444050047fcc1292edb33950a1749d0ab007b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
