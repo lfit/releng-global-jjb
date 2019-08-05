@@ -36,7 +36,7 @@
     parameters:
       - lf-infra-parameters:
           project: "{project}"
-          branch: "master"
+          branch: "{branch}"
           stream: "{stream}"
 
     wrappers:
@@ -58,8 +58,6 @@
     # Default parameters #
     ######################
 
-    branch: master
-    stream: master
     build-days-to-keep: 7
     build-timeout: 15
     disable-job: false
@@ -98,7 +96,7 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-release-verify-{stream}"
+    name: "{project-name}-release-verify"
     id: gerrit-release-verify
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
@@ -108,7 +106,7 @@
       - lf-infra-gerrit-scm:
           git-url: "{git-url}"
           refspec: "$GERRIT_REFSPEC"
-          branch: "master"
+          branch: "{branch}"
           submodule-disable: true
           submodule-recursive: false
           submodule-timeout: 10
@@ -124,7 +122,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**/{branch}"
+                  branch-pattern: "**"
               file-paths: "{obj:gerrit_trigger_file_paths}"
           skip-vote:
             successful: "{gerrit-skip-vote}"
@@ -143,8 +141,6 @@
     # Default parameters #
     ######################
 
-    branch: master
-    stream: master
     build-days-to-keep: 7
     build-timeout: 15
     disable-job: false
@@ -178,7 +174,7 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-release-merge-{stream}"
+    name: "{project-name}-release-merge"
     id: gerrit-release-merge
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
@@ -204,5 +200,5 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**/{branch}"
+                  branch-pattern: "**"
               file-paths: "{obj:gerrit_trigger_file_paths}"
