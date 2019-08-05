@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "25778836_06821619",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-05T21:20:38Z",
+      "side": 1,
+      "message": "why are we even changing this?\n\nFor ODL this will not work since the branch and stream are not the same. A more standard way of doing this is\n\n      - lf-infra-parameters:\n          project: \"{project}\"\n          branch: \"{branch}\"\n          refspec: \"refs/heads/{branch}\"\n          stream: \"{stream}\"\n\nLater override what you want from within the builders/scripts.",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 34
+      },
+      "revId": "a782a618263ef9ae830862cb533b41edbbf45a88",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
