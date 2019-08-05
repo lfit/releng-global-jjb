@@ -22,6 +22,30 @@
       "revId": "606342f322faa25ffe9b9fdcc5d06769510b7c9d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb6ef620_3c530c2e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-05T20:07:06Z",
+      "side": 1,
+      "message": "yes in case of this job. \nRemember we are defining PROJECT here:\nhttps://github.com/lfit/releng-global-jjb/blob/master/shell/release-job.sh#L58\n\nWe expect PROJECT to be project name\nand GERRIT_PROJECT to be project path",
+      "parentUuid": "c358dd10_2c1ab372",
+      "range": {
+        "startLine": 134,
+        "startChar": 2,
+        "endLine": 134,
+        "endChar": 84
+      },
+      "revId": "606342f322faa25ffe9b9fdcc5d06769510b7c9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
