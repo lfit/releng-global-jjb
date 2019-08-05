@@ -37,7 +37,7 @@
       - lf-infra-parameters:
           project: "{project}"
           branch: "master"
-          stream: "{stream}"
+          stream: "master"
 
     wrappers:
       - lf-infra-wrappers:
@@ -98,7 +98,7 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-release-verify-{stream}"
+    name: "{project-name}-release-verify"
     id: gerrit-release-verify
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
@@ -124,7 +124,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**/{branch}"
+                  branch-pattern: "**/master"
               file-paths: "{obj:gerrit_trigger_file_paths}"
           skip-vote:
             successful: "{gerrit-skip-vote}"
@@ -178,7 +178,7 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-release-merge-{stream}"
+    name: "{project-name}-release-merge"
     id: gerrit-release-merge
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
@@ -204,5 +204,5 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**/{branch}"
+                  branch-pattern: "**/master"
               file-paths: "{obj:gerrit_trigger_file_paths}"
