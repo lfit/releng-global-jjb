@@ -55,14 +55,13 @@ echo "--> Verifying $release_file schema."
 lftools schema verify $release_file release-schema.yaml
 
 VERSION="$(niet ".version" "$release_file")"
-PROJECT="$(niet ".project" "$release_file")"
 LOG_DIR="$(niet ".log_dir" "$release_file")"
-
 NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
 LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
 PATCH_DIR="$(mktemp -d)"
 
 LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
+echo "wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz"
 wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz
 
 nexus_release(){
@@ -91,12 +90,14 @@ echo "NEXUSPROXY: $NEXUSPROXY"
 echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
 echo "SILO: $SILO"
 echo "PROJECT: $PROJECT"
+echo "PROJECT-DASHED: ${PROJECT//\//-}"
+
 echo "VERSION: $VERSION"
-echo "PROJECT: $PROJECT"
 echo "LOG DIR: $LOG_DIR"
 
 pushd "$PATCH_DIR"
-  wget --quiet  "${LOGS_URL}"/patches/{"${PROJECT}".bundle,taglist.log.gz}
+  echo "wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}"
+  wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}
   gunzip taglist.log.gz
   cat "$PATCH_DIR"/taglist.log
 popd
@@ -111,10 +112,16 @@ if [[ ! $VERSION =~ $allowed_version_regex ]]; then
   exit 1
 fi
 
+if git tag -v "$VERSION"; then
+  echo "Repo already tagged $VERSION"
+  echo "This job has already run exit 0"
+  exit 0
+if
+
 git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
 git fetch "$PATCH_DIR/$PROJECT.bundle"
 git merge --ff-only FETCH_HEAD
-git tag -am "$PROJECT $VERSION" "$VERSION"
+git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
 sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
 
 echo "Showing latest signature for $PROJECT:"
@@ -126,7 +133,7 @@ git tag -v "$VERSION"
 if [[ "$JOB_NAME" =~ "merge" ]]; then
   echo "Running merge"
   gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
-  git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/$GERRIT_PROJECT
+  git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
   git config user.name "$RELEASE_USERNAME"
   git config user.email "$RELEASE_EMAIL"
   echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
