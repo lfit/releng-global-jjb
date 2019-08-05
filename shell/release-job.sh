@@ -55,7 +55,8 @@ echo "--> Verifying $release_file schema."
 lftools schema verify $release_file release-schema.yaml
 
 VERSION="$(niet ".version" "$release_file")"
-PROJECT="$(niet ".project" "$release_file")"
+
+#PROJECT="$(niet ".project" "$release_file")"
 LOG_DIR="$(niet ".log_dir" "$release_file")"
 
 NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
@@ -92,7 +93,6 @@ echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
 echo "SILO: $SILO"
 echo "PROJECT: $PROJECT"
 echo "VERSION: $VERSION"
-echo "PROJECT: $PROJECT"
 echo "LOG DIR: $LOG_DIR"
 
 pushd "$PATCH_DIR"
@@ -126,7 +126,7 @@ git tag -v "$VERSION"
 if [[ "$JOB_NAME" =~ "merge" ]]; then
   echo "Running merge"
   gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
-  git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/$GERRIT_PROJECT
+  git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
   git config user.name "$RELEASE_USERNAME"
   git config user.email "$RELEASE_EMAIL"
   echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
