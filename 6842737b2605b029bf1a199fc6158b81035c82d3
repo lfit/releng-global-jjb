@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "50b68c21_2c4cd6f6",
+        "filename": "releasenotes/notes/lftools-version-0.25.3-01af40e95109127b.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-05T12:56:03Z",
+      "side": 1,
+      "message": "How is this a fix? shouldn\u0027t it be an upgrade notice?",
+      "revId": "6842737b2605b029bf1a199fc6158b81035c82d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
