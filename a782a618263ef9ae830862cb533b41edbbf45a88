@@ -22,6 +22,29 @@
       "revId": "a782a618263ef9ae830862cb533b41edbbf45a88",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f9fc386c_c13e1ed9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-05T23:12:40Z",
+      "side": 1,
+      "message": "I think this will break.. \nonap defines \"project\" as project name not path and the parameters will be passed as name, not path\nproject: \"{project}\"\n\nWe need to have this GERRIT_PROJECT IMO",
+      "range": {
+        "startLine": 136,
+        "startChar": 2,
+        "endLine": 136,
+        "endChar": 84
+      },
+      "revId": "a782a618263ef9ae830862cb533b41edbbf45a88",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
