@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c358dd10_2c1ab372",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-05T19:33:01Z",
+      "side": 1,
+      "message": "we changed this to $GERRIT_PROJECT because we were overwriting $PROJECT\nfrom the release file.\n\nQuestion: Do $PROJECT and $GERRIT_PROJECT ever differ?",
+      "range": {
+        "startLine": 134,
+        "startChar": 2,
+        "endLine": 134,
+        "endChar": 84
+      },
+      "revId": "606342f322faa25ffe9b9fdcc5d06769510b7c9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

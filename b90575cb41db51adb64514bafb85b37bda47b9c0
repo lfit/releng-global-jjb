@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b5f44a1_366c85af",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-05T19:33:01Z",
+      "side": 0,
+      "message": "We should take $PROJECT from gerrit the user might put in the wrong string, and we have the correct one any how.",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 44
+      },
+      "revId": "b90575cb41db51adb64514bafb85b37bda47b9c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
