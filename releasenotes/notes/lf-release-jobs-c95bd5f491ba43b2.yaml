@@ -1,0 +1,14 @@
+---
+fixes:
+  - |
+    The release merge job is a one way operation.
+    Given this, Release jobs should only exist in the format
+    {project-name}-release-verify and
+    {project-name}-release-merge
+    As these jobs trigger from a change to any branch/**
+    These jobs Must Exit 0 if release job has already tagged a repo.
+    Inevitably a release file will be pulled in from master to branch
+    or a remerge will be requested This will again trigger the release jobs.
+    since in this case the repo is already tagged, the job should not report
+    a failure. This is solved by having the verfiy and merge exit 0 when the
+    repo is already tagged
