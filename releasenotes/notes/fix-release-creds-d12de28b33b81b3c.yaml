@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Release creds are only required for promoting the repo, which uses diff ACL
+    as compared to normal user. Therefore dont use the release creds for the
+    verify jobs and the scm sections in both the job templates.
