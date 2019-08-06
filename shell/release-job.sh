@@ -116,10 +116,10 @@ if git tag -v "$VERSION"; then
   echo "Repo already tagged $VERSION"
   echo "This job has already run exit 0"
   exit 0
-if
+fi
 
 git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
-git fetch "$PATCH_DIR/$PROJECT.bundle"
+git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
 git merge --ff-only FETCH_HEAD
 git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
 sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
@@ -145,5 +145,5 @@ fi
 
 # This function: if merge push to nexus. If verify output the proposed push command.
 nexus_release
-
-echo "########### End Script release-job.sh ###################################"
+#
+#echo "########### End Script release-job.sh ###################################"
