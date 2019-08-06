@@ -39,11 +39,6 @@
           branch: "$GERRIT_BRANCH"
           stream: "$GERRIT_BRANCH"
 
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
-
     publishers:
       - lf-infra-publish
 
@@ -102,6 +97,11 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_release_verify
 
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
     scm:
       - lf-infra-gerrit-scm:
           git-url: "{git-url}"
@@ -111,7 +111,7 @@
           submodule-recursive: false
           submodule-timeout: 10
           choosing-strategy: gerrit
-          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
       - gerrit:
@@ -180,9 +180,14 @@
     # yamllint disable-line rule:key-duplicates
     <<: *lf_release_merge
 
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
+
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
           git-url: "{git-url}"
           refspec: "$GERRIT_REFSPEC"
           branch: "$GERRIT_BRANCH"
