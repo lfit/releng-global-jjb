@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Git fetch needs the dashed version git fetch
+    "$PATCH_DIR/${PROJECT//\//-}.bundle". Fix if statement.
