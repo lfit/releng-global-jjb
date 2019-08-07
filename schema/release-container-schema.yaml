@@ -9,7 +9,7 @@
 ##############################################################################
 ---
 $schema: "http://json-schema.org/schema#"
-$id: "https://github.com/lfit/releng-global-jjb/blob/master/release-schema.yaml"
+$id: "https://github.com/lfit/releng-global-jjb/blob/master/release-container-schema.yaml"
 
 required:
   - "distribution_type"
