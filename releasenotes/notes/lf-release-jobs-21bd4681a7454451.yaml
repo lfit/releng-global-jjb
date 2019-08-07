@@ -1,0 +1,22 @@
+---
+features:
+  - |
+    Update release-schema.yaml to require distribution_type.
+  - |
+    Add support for distribution_type "container"
+  - |
+    Add function maven_release_file and container_release_file
+    and the logic to choose the correct one.
+    No functional change to maven_release_file.
+  - |
+    container_release_file downloads log_dir/console.log.gz
+    and parses it to get a list of container name and version.
+    Verifies pulls container and grabs the image_id then
+    performs the merge then tags and pushes the container.
+upgrade:
+  - |
+    release-verify and merge will need to run on a docker build-node
+    for example centos7-docker-8c-8g
+    Lftools will need to be updated so that -v is supported for
+    lftools nexus release
+    
