@@ -9,20 +9,21 @@
 ##############################################################################
 ---
 $schema: "http://json-schema.org/schema#"
-$id: "https://github.com/lfit/releng-global-jjb/blob/master/release-schema"
+$id: "https://github.com/lfit/releng-global-jjb/blob/master/release-container-schema"
 
 required:
   - "distribution_type"
-  - "log_dir"
   - "project"
   - "version"
+  - "log_dir"
 
 properties:
-  log_dir:
-    type: "string"
   project:
     type: "string"
   version:
     type: "string"
+  log_dir:
+    type: "string"
   distribution_type:
     type: "string"
+

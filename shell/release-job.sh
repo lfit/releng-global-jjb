@@ -37,8 +37,6 @@ fi
 NEXUSPROXY="${NEXUSPROXY:-None}"
 NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
 
-# Fetch the release-schema.yaml
-wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
 
 release_files=$(git diff-tree --no-commit-id -r $GERRIT_PATCHSET_REVISION --name-only -- "releases/")
 echo "RELEASE FILES ARE AS FOLLOWS: $release_files"
@@ -51,99 +49,149 @@ else
   echo "RELEASE FILE IS AS FOLLOWS: $release_file"
 fi
 
+#Check if this is a container of maven release: release-container-schema.yaml vs release-schema.yaml
 echo "--> Verifying $release_file schema."
-lftools schema verify $release_file release-schema.yaml
+DISTRIBUTION_TYPE="$(niet ".distribution_type:" "$release_file")"
 
-VERSION="$(niet ".version" "$release_file")"
-LOG_DIR="$(niet ".log_dir" "$release_file")"
-NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
-LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
-PATCH_DIR="$(mktemp -d)"
+if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
 
-LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
-echo "wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz"
-wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz
+  wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
+  RELEASE_SCHEMA="release-schema.yaml" 
+  maven_release_file
 
-nexus_release(){
-for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
-  # extract the domain name from URL
-  NEXUS_URL=$(echo $staging_url | sed -e 's|^[^/]*//||' -e 's|/.*$||')
-  # extract the staging repo from URL
-  STAGING_REPO=${staging_url#*repositories/}
-  echo "Merge will run"
-  echo "lftools nexus release --server https://$NEXUS_URL $STAGING_REPO"
-  if [[ "$JOB_NAME" =~ "merge" ]]; then
-    echo "Promoting $STAGING_REPO on $NEXUS_URL."
-    lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
-  fi
-done
-}
+elif  if [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
 
+  wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-container-schema.yaml
+  RELEASE_SCHEMA="release-container-schema.yaml" 
+  container_release_file
 
-#INFO
-echo "INFO:"
-echo "RELEASE_FILE: $release_file"
-echo "LOGS_SERVER: $LOGS_SERVER"
-echo "NEXUS_URL: $NEXUS_URL"
-echo "NEXUS_PATH: $NEXUS_PATH"
-echo "NEXUSPROXY: $NEXUSPROXY"
-echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
-echo "SILO: $SILO"
-echo "PROJECT: $PROJECT"
-echo "PROJECT-DASHED: ${PROJECT//\//-}"
-
-echo "VERSION: $VERSION"
-echo "LOG DIR: $LOG_DIR"
-
-pushd "$PATCH_DIR"
-  echo "wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}"
-  wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}
-  gunzip taglist.log.gz
-  cat "$PATCH_DIR"/taglist.log
-popd
-
-# Verify allowed versions
-# Allowed versions are "v#.#.#" or "#.#.#" aka SemVer
-allowed_version_regex="^((v?)([0-9]+)\.([0-9]+)\.([0-9]+))$"
-if [[ ! $VERSION =~ $allowed_version_regex ]]; then
-  echo "The version $VERSION is not a semantic valid version"
-  echo "Allowed versions are "v#.#.#" or "#.#.#" aka SemVer"
-  echo "See https://semver.org/ for more details on SemVer"
+else
+  echo "$DISTRIBUTION_TYPE not supported"
   exit 1
 fi
 
-if git tag -v "$VERSION"; then
-  echo "Repo already tagged $VERSION"
-  echo "This job has already run exit 0"
-  exit 0
-fi
+container_release_file(){
+  echo "Not implemented"
 
-git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
-git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
-git merge --ff-only FETCH_HEAD
-git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
-sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
-
-echo "Showing latest signature for $PROJECT:"
-gpg --import "$SIGNING_PUBKEY"
-echo "git tag -v "$VERSION""
-git tag -v "$VERSION"
-
-########## Merge Part ##############
-if [[ "$JOB_NAME" =~ "merge" ]]; then
-  echo "Running merge"
-  gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
-  git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
-  git config user.name "$RELEASE_USERNAME"
-  git config user.email "$RELEASE_EMAIL"
-  echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-  chmod 600 ~/.ssh/config
-  git push origin "$VERSION"
+  LOG_DIR="$(niet ".log_dir" "$release_file")"
+  LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+  PATCH_DIR="$(mktemp -d)"
+  LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
+  lfn_umbrella="$(echo $GERRIT_HOST | awk -F"." '{print $2}')"
+  VERSION="$(niet ".version" "$release_file")"
+  wget -P "$PATCH_DIR" "${LOGS_URL}/"console.log.gz
 
 
-fi
+  while read -d $'\n' name version; do
+    name=$name
+    version=$(echo "$version" | awk '{print $4}' | cut -d "," -f1 )
 
-# This function: if merge push to nexus. If verify output the proposed push command.
-nexus_release
-#
-#echo "########### End Script release-job.sh ###################################"
+    echo "Releasing $name $version as $VERSION"
+    docker pull $DOCKER_REGISTRY:10003/$lfn_umbrella/"$name":"$version"
+    container_image_id="$(docker images | grep $name | awk '{print $3}')"
+    docker tag $container_image_id $DOCKER_REGISTRY:10002/$lfn_umbrella/"$name":"$VERSION"
+    docker push $DOCKER_REGISTRY:10002/$lfn_umbrella/"$name":"$VERSION"
+    echo "#########################"
+  done < <(zcat "$PATCH_DIR"/console.log.gz | grep "DOCKER>" | grep "Tag\ with" | awk -F'"' '{print $2, $3}')
+
+}
+
+maven_release_file(){
+
+  lftools schema verify "$release_file" "$RELEASE_SCHEMA"
+
+  VERSION="$(niet ".version" "$release_file")"
+  LOG_DIR="$(niet ".log_dir" "$release_file")"
+  NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
+  LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+  PATCH_DIR="$(mktemp -d)"
+  
+  LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
+  echo "wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz"
+  wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz
+  
+  nexus_release(){
+  for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
+    # extract the domain name from URL
+    NEXUS_URL=$(echo $staging_url | sed -e 's|^[^/]*//||' -e 's|/.*$||')
+    # extract the staging repo from URL
+    STAGING_REPO=${staging_url#*repositories/}
+    echo "Merge will run"
+    echo "lftools nexus release --server https://$NEXUS_URL $STAGING_REPO"
+    if [[ "$JOB_NAME" =~ "merge" ]]; then
+      echo "Promoting $STAGING_REPO on $NEXUS_URL."
+      lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
+    fi
+  done
+  }
+  
+  
+  #INFO
+  echo "INFO:"
+  echo "RELEASE_FILE: $release_file"
+  echo "LOGS_SERVER: $LOGS_SERVER"
+  echo "NEXUS_URL: $NEXUS_URL"
+  echo "NEXUS_PATH: $NEXUS_PATH"
+  echo "NEXUSPROXY: $NEXUSPROXY"
+  echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
+  echo "SILO: $SILO"
+  echo "PROJECT: $PROJECT"
+  echo "PROJECT-DASHED: ${PROJECT//\//-}"
+  
+  echo "VERSION: $VERSION"
+  echo "LOG DIR: $LOG_DIR"
+  
+  pushd "$PATCH_DIR"
+    echo "wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}"
+    wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}
+    gunzip taglist.log.gz
+    cat "$PATCH_DIR"/taglist.log
+  popd
+  
+  # Verify allowed versions
+  # Allowed versions are "v#.#.#" or "#.#.#" aka SemVer
+  allowed_version_regex="^((v?)([0-9]+)\.([0-9]+)\.([0-9]+))$"
+  if [[ ! $VERSION =~ $allowed_version_regex ]]; then
+    echo "The version $VERSION is not a semantic valid version"
+    echo "Allowed versions are "v#.#.#" or "#.#.#" aka SemVer"
+    echo "See https://semver.org/ for more details on SemVer"
+    exit 1
+  fi
+  
+  if git tag -v "$VERSION"; then
+    echo "Repo already tagged $VERSION"
+    echo "This job has already run exit 0"
+    exit 0
+  fi
+  
+  git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
+  git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
+  git merge --ff-only FETCH_HEAD
+  git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
+  sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
+  
+  echo "Showing latest signature for $PROJECT:"
+  gpg --import "$SIGNING_PUBKEY"
+  echo "git tag -v "$VERSION""
+  git tag -v "$VERSION"
+  
+  ########## Merge Part ##############
+  if [[ "$JOB_NAME" =~ "merge" ]]; then
+    echo "Running merge"
+    gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
+    git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
+    git config user.name "$RELEASE_USERNAME"
+    git config user.email "$RELEASE_EMAIL"
+    echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+    chmod 600 ~/.ssh/config
+    git push origin "$VERSION"
+  
+  
+  fi
+  
+  # This function: if merge push to nexus. If verify output the proposed push command.
+  nexus_release
+  #
+}
+
+echo "########### End Script release-job.sh ###################################"
