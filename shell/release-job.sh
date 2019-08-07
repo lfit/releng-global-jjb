@@ -82,9 +82,47 @@ nexus_release(){
   done
 }
 
+
 container_release_file(){
   echo "---> Processing container release"
-  # Container-release code is addressed in a new feature patchset.
+  local lfn_umbrella
+  lfn_umbrella="$(echo "$GERRIT_HOST" | awk -F"." '{print $2}')"
+
+
+  for namequoted in $(cat $release_file | yq '.containers[].name'); do
+    versionquoted=$(cat $release_file | yq ".containers[] |select(.name=="$namequoted") |.version")
+
+    #Remove extra yaml quotes
+    name="${namequoted#\"}"
+    name="${name%\"}"
+    version="${versionquoted#\"}"
+    version="${version%\"}"
+
+    echo "$name"
+    echo "$version"
+    echo "---> INFO: Merge will release $name $version as $VERSION"
+    #Pull from public, to see if we have already tagged this.
+    if docker pull "$DOCKER_REGISTRY":10003/"$lfn_umbrella"/"$name":"$VERSION"; then
+      echo "---> OK: $VERSION is already released for image $name, Continuing..."
+    else
+      echo "---> OK: $VERSION not found in releases, release will be prepared. Continuing..."
+      docker pull "$DOCKER_REGISTRY":10001/"$lfn_umbrella"/"$name":"$version"
+      container_image_id="$(docker images | grep $name | grep $version | awk '{print $3}')"
+      echo "---> INFO: Merge will run the following commands:"
+      echo "docker tag $container_image_id $DOCKER_REGISTRY:10002/$lfn_umbrella/$name:$VERSION"
+      echo "docker push $DOCKER_REGISTRY:10002/$lfn_umbrella/$name:$VERSION"
+      if [[ "$JOB_NAME" =~ "merge" ]]; then
+      docker tag "$container_image_id" "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
+      docker push "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
+      fi
+      echo "#########################"
+    fi
+  done
+
+  ref="$(niet ".ref" "$release_file")"
+  echo "---> INFO: Merge will tag ref: $ref"
+  git checkout "$ref"
+  tag
 }
 
 maven_release_file(){
@@ -178,7 +216,9 @@ if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
   fi
   maven_release_file
 elif [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
-  # Container-release code is addressed in a new feature patchset.
+  wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-container-schema.yaml
+  RELEASE_SCHEMA="release-container-schema.yaml"
+  verify_schema
   container_release_file
 else
   echo "---> ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
@@ -188,4 +228,3 @@ fi
 ##########################################
 
 echo "########### End Script release-job.sh ###################################"
-
