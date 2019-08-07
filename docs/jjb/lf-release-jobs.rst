@@ -4,13 +4,20 @@
 Self Serve Release Jobs
 #######################
 
-Self serve release jobs allow a project to create a releases directory and then place a release file in it.
+Self serve release jobs allow a project to create a /releases or .releases/ directory and then place a release file in it.
 Jenkins will pick this up and then promote the artifact from the staging log directory (log_dir) and tag the release
-with the defined version. maven_central_url is optional
+with the defined version.
 
 .. note::
 
    Example of a maven release file:
+
+.. note::
+   
+   Release files regex: (releases\/.*\.yaml|\.releases\/.*\.yaml)
+   directory can be .releases/ or releases/
+   file can be ANYTHING.yaml
+
 
 .. code-block:: bash
 
@@ -165,6 +172,7 @@ Runs:
 
 - sigul-install
 - sigul-configuration
+- docker login
 - checkout ref from taglist.log
 - applies the $PROJECT.bundle
 - signs, tags and pushes
@@ -175,7 +183,7 @@ Runs:
 
 
 :Template Name:
-    - {project-name}-release-merge-{stream}
+    - {project-name}-release-merge
 
 :Comment Trigger: remerge
 
@@ -214,9 +222,13 @@ is available on the job.
 - applies the $PROJECT.bundle
 - signs and shows signature
 
+.. code-block:: bash
+
+   lftools nexus release --verify-only --server $NEXUS_URL $STAGING_REPO
+
 
 :Template Names:
-    - {project-name}-release-verify-{stream}
+    - {project-name}-release-verify
 
 :Comment Trigger: recheck|reverify
 
