@@ -76,6 +76,9 @@
 
     builders:
       - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - config-file-provider:
           files:
             - file-id: sigul-config
@@ -159,6 +162,9 @@
 
     builders:
       - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - config-file-provider:
           files:
             - file-id: sigul-config
