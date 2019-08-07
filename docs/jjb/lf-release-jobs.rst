@@ -4,13 +4,29 @@
 Self Serve Release Jobs
 #######################
 
-Self serve release jobs allow a project to create a releases directory and then place a release file in it.
-Jenkins will pick this up and then promote the artifact from the staging log directory (log_dir) and tag the release
-with the defined version. maven_central_url is optional
+Self serve release jobs allow a project to create a releases/ or .releases/ directory and then place a release yaml file in it.
+Jenkins will pick this up and sign the ref extrapolated by log_dir and promote the artifact, whether maven or container.
+
+Maven release jobs can also trigger via "Build with parameters" negating the need for a release file.
+The parameters will need to be filled out in the same was as a release file's would, excepting the speacial
+RELEASE_FILE parameter which will need to be set to False to inform the job that it should not expect a release file.
+The Special Parameters are as follows:
+
+VERSION
+LOG_DIR
+DISTRIBUTION_TYPE
+RELEASE_FILE
 
 .. note::
 
    Example of a maven release file:
+
+.. note::
+
+   Release files regex: (releases\/.*\.yaml|\.releases\/.*\.yaml)
+   directory can be .releases/ or releases/
+   file can be ANYTHING.yaml
+
 
 .. code-block:: bash
 
@@ -30,8 +46,12 @@ with the defined version. maven_central_url is optional
    ---
    distribution_type: 'container'
    version: '1.0.0'
-   project: 'example-project'
-   log_dir: 'example-project-maven-docker-stage-master/17/'
+   project: 'test'
+   containers:
+       - name: test-backend
+         version: 1.0.0-20190806T184921Z
+       - name: test-frontend
+         version: 1.0.0-20190806T184921Z
 
 
 .. note::
@@ -109,7 +129,7 @@ Jenkins
 =======
 
 Add a global credential to Jenkins called ``jenkins-release`` and set the ID: ``'jenkins-release'``
-as its value insert the private portion of the ``ssh-key`` that you created for your Gerrit user.
+as its value insert the private half of the ``ssh-key`` that you created for your Gerrit user.
 
 Add Global vars in Jenkins:
 Jenkins configure -> Global properties -> Environment variables
@@ -161,21 +181,8 @@ Job Templates
 Release Merge
 -------------
 
-Runs:
-
-- sigul-install
-- sigul-configuration
-- checkout ref from taglist.log
-- applies the $PROJECT.bundle
-- signs, tags and pushes
-
-.. code-block:: bash
-
-   lftools nexus release --server $NEXUS_URL $STAGING_REPO
-
-
 :Template Name:
-    - {project-name}-release-merge-{stream}
+    - {project-name}-release-merge
 
 :Comment Trigger: remerge
 
@@ -198,25 +205,15 @@ Runs:
         file modifications will trigger a build.
         **default**::
 
-            - compare-type: ANT
-              pattern: 'releases/*.yaml'
+            - compare-type: REG_EXP
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 
 Release Verify
 ------------------
 
-Release verify job checks the schema and ensures that the staging-repo.txt.gz
-is available on the job.
-
-- sigul-install
-- sigul-configuration
-- checkout ref from taglist.log
-- applies the $PROJECT.bundle
-- signs and shows signature
-
-
 :Template Names:
-    - {project-name}-release-verify-{stream}
+    - {project-name}-release-verify
 
 :Comment Trigger: recheck|reverify
 
@@ -244,5 +241,5 @@ is available on the job.
         file modifications will trigger a build.
         **default**::
 
-            - compare-type: ANT
-              pattern: 'releases/*.yaml'
+            - compare-type: REG_EXP
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
