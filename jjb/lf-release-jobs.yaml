@@ -30,6 +30,7 @@
           project: "{project}"
           branch: "$GERRIT_BRANCH"
           stream: "$GERRIT_BRANCH"
+      - lf-build-with-parameters-maven-release
 
     publishers:
       - lf-infra-publish
@@ -58,7 +59,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+          comment-contains-value: "^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$"
 
     #####################
     # Job Configuration #
@@ -68,6 +69,9 @@
 
     builders:
       - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
       - config-file-provider:
           files:
             - file-id: sigul-config
@@ -116,8 +120,8 @@
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
               file-paths:
-                - compare-type: ANT
-                  pattern: "releases/*.yaml"
+                - compare-type: REG_EXP
+                  pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
@@ -153,6 +157,9 @@
 
     builders:
       - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
       - config-file-provider:
           files:
             - file-id: sigul-config
@@ -201,5 +208,5 @@
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
               file-paths:
-                - compare-type: ANT
-                  pattern: "releases/*.yaml"
+                - compare-type: REG_EXP
+                  pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
