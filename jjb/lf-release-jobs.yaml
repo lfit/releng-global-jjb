@@ -7,6 +7,7 @@
 # http://www.apache.org/licenses/LICENSE-2.0
 ##############################################################################
 ---
+
 ####################
 # COMMON FUNCTIONS #
 ####################
@@ -30,6 +31,8 @@
           project: "{project}"
           branch: "$GERRIT_BRANCH"
           stream: "$GERRIT_BRANCH"
+      - lf-build-with-parameters-maven-release
+
 
     publishers:
       - lf-infra-publish
@@ -116,8 +119,8 @@
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
               file-paths:
-                - compare-type: ANT
-                  pattern: "releases/*.yaml"
+                - compare-type: REG_EXP
+                  pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
@@ -153,6 +156,9 @@
 
     builders:
       - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
       - config-file-provider:
           files:
             - file-id: sigul-config
@@ -173,6 +179,7 @@
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_release_merge
+
 
     wrappers:
       - lf-infra-wrappers:
@@ -201,5 +208,5 @@
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
               file-paths:
-                - compare-type: ANT
-                  pattern: "releases/*.yaml"
+                - compare-type: REG_EXP
+                  pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
