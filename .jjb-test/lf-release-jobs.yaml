@@ -7,3 +7,4 @@
     project: self-release/project
     project-name: self-release-project
     branch: master
+    mvn-settings: gerrit-maven-project-settings
