@@ -178,7 +178,9 @@ if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
   fi
   maven_release_file
 elif [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
-  # Container-release code is addressed in a new feature patchset.
+  wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-container-schema.yaml
+  RELEASE_SCHEMA="release-container-schema.yaml"
+  verify_schema
   container_release_file
 else
   echo "---> ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
@@ -188,4 +190,3 @@ fi
 ##########################################
 
 echo "########### End Script release-job.sh ###################################"
-
