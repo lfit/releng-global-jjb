@@ -17,7 +17,7 @@
     ######################
     # Default parameters #
     ######################
-
+    mvn-global-settings: global-settings
     gerrit_trigger_file_paths:
       - compare-type: ANT
         pattern: "releases/*.yaml"
@@ -76,6 +76,9 @@
 
     builders:
       - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - config-file-provider:
           files:
             - file-id: sigul-config
@@ -159,6 +162,9 @@
 
     builders:
       - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
       - config-file-provider:
           files:
             - file-id: sigul-config
