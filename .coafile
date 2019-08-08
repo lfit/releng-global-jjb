@@ -37,10 +37,3 @@ ignore = .git/**,
     docs/jjb/lf-docker-jobs.rst,
     docs/jjb/lf-macros.rst,
     docs/jjb/lf-maven-jobs.rst
-
-[all.ShellCheck]
-bears = ShellCheckBear,SpaceConsistencyBear
-files = **.sh
-shell = bash
-indent_size = 4
-use_spaces = yeah
