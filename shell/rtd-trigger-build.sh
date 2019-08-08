@@ -28,7 +28,7 @@ last_char=${RTD_BUILD_URL:length-1:1}
 [[ $last_char != "/" ]] && RTD_BUILD_URL="$RTD_BUILD_URL/"; :
 
 json=$(curl -X POST -d "branches=${GERRIT_BRANCH}" -d "token=$RTD_TOKEN" "$RTD_BUILD_URL")
-build_triggered=$(echo $json | jq -r .build_triggered)
+build_triggered=$(echo "$json" | jq -r .build_triggered)
 
 if [ "$build_triggered" != "true" ]; then
     echo "ERROR: Build was not triggered."

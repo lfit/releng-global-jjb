@@ -38,12 +38,12 @@ cd "$build_dir" || exit 1
 eval cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" $cmake_opts ..
 
 /opt/build-wrapper/build-wrapper-linux-x86-64 --out-dir "$WORKSPACE/bw-output" \
-    make $make_opts
+    make "$make_opts"
 
 /opt/sonar-scanner/bin/sonar-scanner \
-    -Dsonar.projectKey=${PROJECT_KEY} \
-    -Dsonar.organization=${PROJECT_ORGANIZATION} \
+    -Dsonar.projectKey="${PROJECT_KEY}" \
+    -Dsonar.organization="${PROJECT_ORGANIZATION}" \
     -Dsonar.sources=. \
     -Dsonar.cfamily.build-wrapper-output="$WORKSPACE/bw-output" \
-    -Dsonar.host.url=${SONAR_HOST_URL} \
-    -Dsonar.login=${API_TOKEN}
+    -Dsonar.host.url="${SONAR_HOST_URL}" \
+    -Dsonar.login="${API_TOKEN}"

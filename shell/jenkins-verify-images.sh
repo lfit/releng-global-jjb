@@ -18,7 +18,7 @@ error=false
 
 for file in jenkins-config/clouds/openstack/*/*; do
   # Set the $IMAGE_NAME variable to the the file's IMAGE_NAME value
-  export "$(grep ^IMAGE_NAME= $file)"
+  export "$(grep ^IMAGE_NAME= "$file")"
   # The image should be listed as active
 
   if ! openstack image list --property name="$IMAGE_NAME" | grep "active"; then
@@ -26,7 +26,7 @@ for file in jenkins-config/clouds/openstack/*/*; do
     error=true
   fi
   # Set the $HARDWARE_ID variable to the the file's HARDWARE_ID value
-  export "$(grep ^HARDWARE_ID= $file)"
+  export "$(grep ^HARDWARE_ID= "$file")"
   # The flavor should be listed. Spaces in grep string ensure complete match.
 
   if ! openstack flavor list | grep " $HARDWARE_ID "; then

@@ -18,6 +18,6 @@ ARCHIVE_PUPPETLINT_DIR="$WORKSPACE/archives/puppet-lint"
 mkdir -p "$ARCHIVE_PUPPETLINT_DIR"
 cd "$WORKSPACE/$PUPPET_DIR"
 
-gem install puppet-lint -v $PUPPET_LINT_VERSION
+gem install puppet-lint -v "$PUPPET_LINT_VERSION"
 echo "---> Running puppet-lint"
 "$BINDIR/puppet-lint" . | tee -a "$ARCHIVE_PUPPETLINT_DIR/puppet-lint.log"

@@ -15,7 +15,7 @@ os_cloud="${OS_CLOUD:-vex}"
 
 set -eux -o pipefail
 
-mapfile -t os_ports < <(openstack --os-cloud "$os_cloud" port list -f value -c ID -c status | egrep DOWN | awk '{print $1}')
+mapfile -t os_ports < <(openstack --os-cloud "$os_cloud" port list -f value -c ID -c status | grep -E DOWN | awk '{print $1}')
 
 if [ ${#os_ports[@]} -eq 0 ]; then
     echo "No orphaned ports found."

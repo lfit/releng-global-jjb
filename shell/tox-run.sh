@@ -33,7 +33,7 @@ set +e  # Allow detox to fail so that we can collect the logs in the next step
 
 PARALLEL="${PARALLEL:-true}"
 if [ "${PARALLEL}" = true ]; then
-    if [ ! -z "$TOX_ENVS" ]; then
+    if [ -n "$TOX_ENVS" ]; then
         detox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/detox.log"
         tox_status="${PIPESTATUS[0]}"
     else
@@ -41,7 +41,7 @@ if [ "${PARALLEL}" = true ]; then
         tox_status="${PIPESTATUS[0]}"
     fi
 else
-    if [ ! -z "$TOX_ENVS" ]; then
+    if [ -n "$TOX_ENVS" ]; then
         tox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/tox.log"
         tox_status="${PIPESTATUS[0]}"
     else
@@ -53,7 +53,7 @@ fi
 # Disable SC2116 as we want to echo a space separated list of TOX_ENVS
 # shellcheck disable=SC2116
 for i in .tox/*/log; do
-    tox_env=$(echo $i | awk -F'/' '{print $2}')
+    tox_env=$(echo "$i" | awk -F'/' '{print $2}')
     cp -r "$i" "$ARCHIVE_TOX_DIR/$tox_env"
 done
 set -e  # Logs collected so re-enable

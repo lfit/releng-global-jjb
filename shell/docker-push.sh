@@ -15,5 +15,5 @@ echo "---> docker-push.sh"
 set -ue -o pipefail
 echo "---> Pushing image: $CONTAINER_PUSH_REGISTRY/$DOCKER_NAME:$DOCKER_IMAGE_TAG"
 docker_push_command="docker push "$CONTAINER_PUSH_REGISTRY/$DOCKER_NAME:$DOCKER_IMAGE_TAG""
-echo $docker_push_command
-eval $docker_push_command
+echo "$docker_push_command"
+eval "$docker_push_command"

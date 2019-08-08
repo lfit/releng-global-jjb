@@ -40,7 +40,7 @@ NEXUS_URL="${NEXUSPROXY:-$NEXUS_URL}"
 # Fetch the release-schema.yaml
 wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
 
-release_files=$(git diff-tree --no-commit-id -r $GERRIT_PATCHSET_REVISION --name-only -- "releases/")
+release_files=$(git diff-tree --no-commit-id -r "$GERRIT_PATCHSET_REVISION" --name-only -- "releases/")
 echo "RELEASE FILES ARE AS FOLLOWS: $release_files"
 
 if (( $(grep -c . <<<"$release_files") > 1 )); then
@@ -52,7 +52,7 @@ else
 fi
 
 echo "--> Verifying $release_file schema."
-lftools schema verify $release_file release-schema.yaml
+lftools schema verify "$release_file" release-schema.yaml
 
 VERSION="$(niet ".version" "$release_file")"
 LOG_DIR="$(niet ".log_dir" "$release_file")"
@@ -61,13 +61,13 @@ LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
 PATCH_DIR="$(mktemp -d)"
 
 LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
-echo "wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz"
+echo "wget -P $PATCH_DIR ${LOGS_URL}/staging-repo.txt.gz"
 wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz
 
 nexus_release(){
 for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
   # extract the domain name from URL
-  NEXUS_URL=$(echo $staging_url | sed -e 's|^[^/]*//||' -e 's|/.*$||')
+  NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
   # extract the staging repo from URL
   STAGING_REPO=${staging_url#*repositories/}
   echo "Merge will run"
@@ -96,7 +96,7 @@ echo "VERSION: $VERSION"
 echo "LOG DIR: $LOG_DIR"
 
 pushd "$PATCH_DIR"
-  echo "wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}"
+  echo "wget ${LOGS_URL}/patches/{${PROJECT//\//-}.bundle,taglist.log.gz}"
   wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}
   gunzip taglist.log.gz
   cat "$PATCH_DIR"/taglist.log
@@ -107,7 +107,7 @@ popd
 allowed_version_regex="^((v?)([0-9]+)\.([0-9]+)\.([0-9]+))$"
 if [[ ! $VERSION =~ $allowed_version_regex ]]; then
   echo "The version $VERSION is not a semantic valid version"
-  echo "Allowed versions are "v#.#.#" or "#.#.#" aka SemVer"
+  echo "Allowed versions are \"v#.#.#\" or \"#.#.#\" aka SemVer"
   echo "See https://semver.org/ for more details on SemVer"
   exit 1
 fi
@@ -126,7 +126,7 @@ sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_
 
 echo "Showing latest signature for $PROJECT:"
 gpg --import "$SIGNING_PUBKEY"
-echo "git tag -v "$VERSION""
+echo "git tag -v $VERSION"
 git tag -v "$VERSION"
 
 ########## Merge Part ##############

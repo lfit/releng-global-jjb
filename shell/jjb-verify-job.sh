@@ -29,7 +29,7 @@ do
 done
 popd
 
-if [ ! -z "$(ls -A archives/job-configs)" ]; then
+if [ -n "$(ls -A archives/job-configs)" ]; then
     tar cJvf archives/job-configs.tar.xz archives/job-configs
     rm -rf archives/job-configs
 fi
