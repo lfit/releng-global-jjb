@@ -10,59 +10,48 @@ with the defined version. maven_central_url is optional
 
 .. note::
 
-   Example of a project's release file:
+   Example of a maven release file:
 
 .. code-block:: bash
 
-   $ cat releases/1.0.0.yaml
+   $ cat releases/maven-1.0.0.yaml
    ---
    distribution_type: 'maven'
    version: '1.0.0'
-   project: 'example-test-release'
-   log_dir: 'example-test-release-maven-stage-master/17/'
-   maven_central_url: 'oss.sonatype.org'
+   project: 'example-project'
+   log_dir: 'example-project-maven-stage-master/17/'
+
+
+   Example of a container release file:
+
+.. code-block:: bash
+
+   $ cat releases/container-1.0.0.yaml
+   ---
+   distribution_type: 'container'
+   version: '1.0.0'
+   project: 'example-project'
+   log_dir: 'example-project-maven-docker-stage-master/17/'
+
 
 .. note::
 
+   Job should be appended under gerrit-maven-stage
    Example of a terse Jenkins job to call global-jjb macro:
 
 .. code-block:: none
 
-   - project:
-       name: '{project-name}-gerrit-release-jobs'
-       project: 'example-test-release'
-       build-node: centos7-builder-2c-1g
-       project-name: example-test-release
-       jobs:
-         - '{project-name}-gerrit-release-jobs'
-
-.. note::
-
-   Example of a verbose Jenkins job to call global-jjb macro:
-
-.. code-block:: none
-
-   - project:
-       name: '{project-name}-releases-verify'
-       project: 'example-test-release'
-       build-node: centos7-builder-2c-1g
-       project-name: example-test-release
-       jobs:
-         - 'gerrit-releases-verify'
-
-.. code-block:: none
-
-   - project:
-       name: '{project-name}-releases-merge'
-       project: 'example-test-release'
-       build-node: centos7-builder-2c-1g
-       project-name: example-test-release
-       jobs:
-         - 'gerrit-releases-merge'
+    - gerrit-maven-stage:
+        sign-artifacts: true
+        build-node: centos7-docker-8c-8g
+        maven-versions-plugin: true
+    - '{project-name}-gerrit-release-jobs':
+        build-node: centos7-docker-8c-8g
 
 .. note::
 
    Release Engineers Please follow the setup guide before adding the job definition:
+
 
 Setup for LFID Nexus Jenkins and Gerrit:
 ========================================
@@ -72,8 +61,8 @@ LFID
 
 Create an ``lfid`` and an ``ssh-key``
 
-``RELEASE_USERNAME``
-``RELEASE_EMAIL``
+``YOUR_RELEASE_USERNAME`` for example: onap-release
+``YOUR_RELEASE_EMAIL`` for example: collab-it+onap-release@linuxfoundation.org
 
 ssh-key example:
 
@@ -82,7 +71,8 @@ ssh-key example:
    ssh-keygen -t rsa -C "collab-it+odl-release@linuxfoundation.org"  -f /tmp/odl-release
 
 
-`Create an LFID <https://identity.linuxfoundation.org>`_
+`Create an LFID with the above values <https://identity.linuxfoundation.org>`_
+
 
 Nexus
 =====
@@ -94,41 +84,46 @@ Create a Nexus account called ``'jenkins-release'`` with promote privileges.
 Gerrit
 ======
 
-Log into your Gerrit with ``RELEASE_USERNAME``, upload the ``ssh-key`` you created earlier.
+Log into your Gerrit with ``YOU_RELEASE_USERNAME``, upload the publick part of the ``ssh-key`` you created earlier.
 Log out of Gerrit and log in again with your normal account for the next steps.
 
+
 In Gerrit create a new group called ``self-serve-release`` and give it direct push rights via ``All-Projects``
-``push - refs/heads/*``
+Add ``YOUR_RELEASE_USERNAME`` to group ``self-serve-release`` and group ``Non-Interactive Users``
 
-1. Add a push reference
-2. Set the ref as refs/heads/*
-3. Make sure "force push" is not checked
 
-Add ``RELEASE_USERNAME`` to group ``self-serve-release`` and group ``Non-Interactive Users``
+In All project, grant group self-serve-release the following:
 
-Give group ``self-serve-release`` Forge Committer rights on ``refs/tags/*``
-Give group ``self-serve-release`` Allow on ``Create Signed Tag``
-Give group ``self-serve-release`` Allow on ``Create Annotated Tag``
+.. code-block:: none
+
+    [access "refs/heads/*"]
+      push = group self-serve-release
+    [access "refs/tags/*"]
+      createTag = group self-serve-release
+      createSignedTag = group self-serve-release
+      forgeCommitter = group self-serve-release
+      push = group self-serve-release
+
 
 Jenkins
 =======
 
 Add a global credential to Jenkins called ``jenkins-release`` and set the ID: ``'jenkins-release'``
-as its value insert the ``ssh-key`` that you uploaded to Gerrit.
+as its value insert the private portion of the ``ssh-key`` that you created for your Gerrit user.
 
 Add Global vars in Jenkins:
 Jenkins configure -> Global properties -> Environment variables
 
-``RELEASE_USERNAME = $RELEASE_USERNAME``
-``RELEASE_EMAIL = $RELEASE_EMAIL``
+``RELEASE_USERNAME = YOUR_RELEASE_USERNAME``
+``RELEASE_EMAIL = YOUR_RELEASE_EMAIL``
 
-Jenkins configure -> Managed Files -> Custom File
+Jenkins configure -> Managed Files -> Add a New Config -> Custom File
 
 id: signing-pubkey
 Name: SIGNING_PUBKEY (optional)
 Comment: SIGNING_PUBKEY (optional)
 
-Content: (ask andy)
+Content: (Ask Andy for the public signing key)
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 
@@ -137,9 +132,9 @@ Jenkins Settings -> Managed files -> Add (or edit) -> Custom file
 
 .. code-block:: none
 
-   [nexus]
+   [nexus.example.com]
    username=jenkins-release
-   password=redacted
+   password=<plaintext password>
 
 Ci-management
 =============
@@ -189,11 +184,11 @@ Runs:
     :build-node: The node to run build on.
     :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
-    :stream: run this job against: master
+    :stream: run this job against: **
 
 :Optional parameters:
 
-    :branch: Git branch to fetch for the build. (default: master)
+    :branch: Git branch to fetch for the build. (default: all)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :project-pattern: Project to trigger build against. (default: \*\*)
@@ -228,13 +223,13 @@ is available on the job.
 :Required Parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
-    :stream: run this job against: master
+    :stream: run this job against: **
 
 :Optional Parameters:
 
-    :branch: Git branch to fetch for the build. (default: master)
+    :branch: Git branch to fetch for the build. (default: all)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-node: The node to run build on.
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
