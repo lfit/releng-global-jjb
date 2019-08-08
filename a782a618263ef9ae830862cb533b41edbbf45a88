@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "9179fa30_5962fa6f",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-08T09:25:25Z",
+      "side": 1,
+      "message": "this results in a dup jobs names with odlparent. I\u0027d think this line should be reverted? \n\nERROR:jenkins_jobs.parser:Duplicate definitions for job \u0027odlparent-release-merge\u0027 specified\nTraceback (most recent call last):\n  File \"/home/abelur/.virtualenvs/jjb/bin/jenkins-jobs\", line 11, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"/home/abelur/.virtualenvs/jjb/lib/python2.7/site-packages/jenkins_jobs/cli/entry.py\", line 165, in main\n    jjb.execute()\n  File \"/home/abelur/.virtualenvs/jjb/lib/python2.7/site-packages/jenkins_jobs/cli/entry.py\", line 146, in execute\n    ext.obj.execute(self.options, self.jjb_config)\n  File \"/home/abelur/.virtualenvs/jjb/lib/python2.7/site-packages/jenkins_jobs/cli/subcommand/test.py\", line 63, in execute\n    options, jjb_config)\n  File \"/home/abelur/.virtualenvs/jjb/lib/python2.7/site-packages/jenkins_jobs/cli/subcommand/update.py\", line 113, in _generate_xmljobs\n    registry, options.names)\n  File \"/home/abelur/.virtualenvs/jjb/lib/python2.7/site-packages/jenkins_jobs/parser.py\", line 390, in expandYaml\n    \"specified\".format(job[\u0027name\u0027]))\n  File \"/home/abelur/.virtualenvs/jjb/lib/python2.7/site-packages/jenkins_jobs/parser.py\", line 176, in _handle_dups\n    raise JenkinsJobsException(message)\njenkins_jobs.errors.JenkinsJobsException: Duplicate definitions for job \u0027odlparent-release-merge\u0027 specified\nDEBUG:jenkins_jobs.cache:Cache written out to \u0027/home/abelur/.cache/jenkins_jobs/cache-host-jobs-http___localhost_8080_.yml\u0027",
+      "range": {
+        "startLine": 177,
+        "startChar": 4,
+        "endLine": 177,
+        "endChar": 40
+      },
+      "revId": "a782a618263ef9ae830862cb533b41edbbf45a88",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f9fc386c_c13e1ed9",
         "filename": "shell/release-job.sh",
         "patchSetId": 14
