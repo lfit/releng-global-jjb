@@ -48,6 +48,23 @@
     },
     {
       "key": {
+        "uuid": "fdfe1133_b6388f1e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-08T20:51:59Z",
+      "side": 1,
+      "message": "Please consider cleaning up extraneous quotes and brackets. I like the idea of echo the relavant command rather than just blindly setting -x. But I have been bitten by this many times(same info in two places). Consider this:\n\nwget\u003d\"wget $LOGS_URL/patches/${PROJECT//\\//-}.{bundle,taglist.log.gz}\"\necho \"Executing: $wget\"\n$wget\n\nI think got this correct, but I could NOT test it. I did run it through shellcheck.",
+      "revId": "a782a618263ef9ae830862cb533b41edbbf45a88",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f9fc386c_c13e1ed9",
         "filename": "shell/release-job.sh",
         "patchSetId": 14
