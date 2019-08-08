@@ -10,7 +10,7 @@ with the defined version. maven_central_url is optional
 
 .. note::
 
-   Example of a project's release file:
+   Example of a maven release file:
 
 .. code-block:: bash
 
@@ -18,51 +18,40 @@ with the defined version. maven_central_url is optional
    ---
    distribution_type: 'maven'
    version: '1.0.0'
-   project: 'example-test-release'
-   log_dir: 'example-test-release-maven-stage-master/17/'
-   maven_central_url: 'oss.sonatype.org'
+   project: 'example-project'
+   log_dir: 'example-project-maven-stage-master/17/'
+
+
+   Example of a container release file:
+
+.. code-block:: bash
+
+   $ cat releases/1.0.0.yaml
+   ---
+   distribution_type: 'container'
+   version: '1.0.0'
+   project: 'example-project'
+   log_dir: 'example-project-maven-docker-stage-master/17/'
+
 
 .. note::
 
+   Job should be appended under gerrit-maven-stage
    Example of a terse Jenkins job to call global-jjb macro:
 
 .. code-block:: none
 
-   - project:
-       name: '{project-name}-gerrit-release-jobs'
-       project: 'example-test-release'
-       build-node: centos7-builder-2c-1g
-       project-name: example-test-release
-       jobs:
-         - '{project-name}-gerrit-release-jobs'
-
-.. note::
-
-   Example of a verbose Jenkins job to call global-jjb macro:
-
-.. code-block:: none
-
-   - project:
-       name: '{project-name}-releases-verify'
-       project: 'example-test-release'
-       build-node: centos7-builder-2c-1g
-       project-name: example-test-release
-       jobs:
-         - 'gerrit-releases-verify'
-
-.. code-block:: none
-
-   - project:
-       name: '{project-name}-releases-merge'
-       project: 'example-test-release'
-       build-node: centos7-builder-2c-1g
-       project-name: example-test-release
-       jobs:
-         - 'gerrit-releases-merge'
+    - gerrit-maven-stage:
+        sign-artifacts: true
+        build-node: centos7-docker-8c-8g
+        maven-versions-plugin: true
+    - '{project-name}-gerrit-release-jobs':
+        build-node: centos7-docker-8c-8g
 
 .. note::
 
    Release Engineers Please follow the setup guide before adding the job definition:
+
 
 Setup for LFID Nexus Jenkins and Gerrit:
 ========================================
@@ -82,7 +71,8 @@ ssh-key example:
    ssh-keygen -t rsa -C "collab-it+odl-release@linuxfoundation.org"  -f /tmp/odl-release
 
 
-`Create an LFID <https://identity.linuxfoundation.org>`_
+`Create an LFID with the above values <https://identity.linuxfoundation.org>`_
+
 
 Nexus
 =====
@@ -137,7 +127,7 @@ Jenkins Settings -> Managed files -> Add (or edit) -> Custom file
 
 .. code-block:: none
 
-   [nexus]
+   [nexus.example.com]
    username=jenkins-release
    password=redacted
 
@@ -189,11 +179,11 @@ Runs:
     :build-node: The node to run build on.
     :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
-    :stream: run this job against: master
+    :stream: run this job against: **
 
 :Optional parameters:
 
-    :branch: Git branch to fetch for the build. (default: master)
+    :branch: Git branch to fetch for the build. (default: all)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :project-pattern: Project to trigger build against. (default: \*\*)
@@ -228,13 +218,13 @@ is available on the job.
 :Required Parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
-    :stream: run this job against: master
+    :stream: run this job against: **
 
 :Optional Parameters:
 
-    :branch: Git branch to fetch for the build. (default: master)
+    :branch: Git branch to fetch for the build. (default: all)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-node: The node to run build on.
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
