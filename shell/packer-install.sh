@@ -38,7 +38,7 @@ version_ge() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1";
 
 if hash packer.io 2>/dev/null; then
     CURRENT_VERSION="$(packer.io --version)"
-    if version_lt $CURRENT_VERSION $PACKER_VERSION; then
+    if version_lt "$CURRENT_VERSION" "$PACKER_VERSION"; then
        echo "Packer version $CURRENT_VERSION installed is less than $PACKER_VERSION available, updating Packer."
        packer_install
     else

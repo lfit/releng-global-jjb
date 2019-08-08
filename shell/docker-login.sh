@@ -79,7 +79,7 @@ set_creds() {
 # Login to the registry
 do_login() {
     docker_version=$( docker -v | awk '{print $3}')
-    if version_lt $docker_version "17.06.0" && \
+    if version_lt "$docker_version" "17.06.0" && \
        "$DOCKERHUB_REGISTRY" == "docker.io" && \
        "$DOCKERHUB_EMAIL:-none" != 'none'
     then
@@ -101,7 +101,7 @@ then
 
         # docker login requests an email address if nothing is passed to it
         # Nexus, however, does not need this and ignores the value
-        set_creds $REGISTRY
+        set_creds "$REGISTRY"
         do_login "$REGISTRY" none
     done
 fi
@@ -109,7 +109,7 @@ fi
 # Login to docker.io after determining if email is needed.
 if [ "${DOCKERHUB_REGISTRY:-none}" != 'none' ]
 then
-    set_creds $DOCKERHUB_REGISTRY
+    set_creds "$DOCKERHUB_REGISTRY"
     if [ "${DOCKERHUB_EMAIL:-none}" != 'none' ]
     then
         do_login "$DOCKERHUB_REGISTRY" "$DOCKERHUB_EMAIL"

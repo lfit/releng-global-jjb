@@ -20,9 +20,9 @@ set +u
 
 if [ -n "${JIRA_URL}" ];
 then
-  BASE_URL=$(echo $JIRA_URL | awk -F'/' '{print $3}')
+  BASE_URL=$(echo "$JIRA_URL" | awk -F'/' '{print $3}')
   JIRA_LINK=$(git rev-list --format=%B --max-count=1 HEAD | grep -io "http[s]*://$BASE_URL/" || true)
-  if [[ ! -z "$JIRA_LINK" ]]
+  if [[ -n "$JIRA_LINK" ]]
   then
     echo 'Remove JIRA URLs from commit message'
     echo 'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>, instead of URLs'

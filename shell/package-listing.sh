@@ -28,7 +28,7 @@ DIFF_PACKAGES=/tmp/packages_diff.txt
 # Swap to creating END_PACKAGES if we are running in a CI job (determined by if
 # we have a workspace env) or if the starting packages listing already exists.
 PACKAGES="${START_PACKAGES}"
-if ( [ "${workspace}" ] || [ -f "${START_PACKAGES}" ] )
+if [ "${workspace}" ] || [ -f "${START_PACKAGES}" ]
 then
     PACKAGES="${END_PACKAGES}"
 fi
@@ -47,7 +47,7 @@ case "${OS_FAMILY}" in
     ;;
 esac
 
-if ( [ -f "${START_PACKAGES}" ] && [ -f "${END_PACKAGES}" ] )
+if [ -f "${START_PACKAGES}" ] && [ -f "${END_PACKAGES}" ]
 then
     # ` || true` Ignore exit code because diff exits 1 when there is a diff
     diff "${START_PACKAGES}" "${END_PACKAGES}" > "${DIFF_PACKAGES}" || true

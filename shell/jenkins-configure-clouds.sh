@@ -69,7 +69,7 @@ get_cfg() {
 export get_cfg
 
 get_cloud_cfg() {
-    if [ -z $1 ]; then
+    if [ -z "$1" ]; then
         >&2 echo "Usage: get_cloud_cfg CFG_DIR"
         exit 1
     fi
@@ -100,7 +100,7 @@ get_cloud_cfg() {
 }
 
 get_launcher_factory() {
-    if [ -z $1 ]; then
+    if [ -z "$1" ]; then
         >&2 echo "Usage: get_launcher_factory JNLP|SSH"
         exit 1
     fi
@@ -118,7 +118,7 @@ get_launcher_factory() {
 }
 
 get_minion_options() {
-    if [ -z $1 ]; then
+    if [ -z "$1" ]; then
         >&2 echo "Usage: get_minion_options CFG_FILE"
         exit 1
     fi
@@ -179,7 +179,7 @@ get_minion_options() {
     hardware_id=$(get_cfg "$cfg_file" HARDWARE_ID "")
     network_id=$(get_cfg "$cfg_file" NETWORK_ID "")
 
-    udi_default="$(get_cfg "$(dirname $cfg_file)/cloud.cfg" USER_DATA_ID "jenkins-init-script")"
+    udi_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" USER_DATA_ID "jenkins-init-script")"
     user_data_id=$(get_cfg "$cfg_file" USER_DATA_ID "$udi_default")
 
     # Handle Sandbox systems that might have a different cap.
@@ -194,7 +194,7 @@ get_minion_options() {
     availability_zone=$(get_cfg "$cfg_file" AVAILABILITY_ZONE "")
     start_timeout=$(get_cfg "$cfg_file" START_TIMEOUT "600000")
 
-    kpn_default="$(get_cfg "$(dirname $cfg_file)/cloud.cfg" KEY_PAIR_NAME "jenkins-ssh")"
+    kpn_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" KEY_PAIR_NAME "jenkins-ssh")"
     key_pair_name=$(get_cfg "$cfg_file" KEY_PAIR_NAME "$kpn_default")
 
     num_executors=$(get_cfg "$cfg_file" NUM_EXECUTORS "1")
@@ -208,7 +208,7 @@ get_minion_options() {
         | grep -i 'OpenStack Cloud Plugin' \
         | awk -F':' '{print $2}' | awk -F' ' '{print $1}')"
     if version_ge "$OS_PLUGIN_VER" "2.35"; then
-        if [ ! -z "$volume_size" ]; then
+        if [ -n "$volume_size" ]; then
             echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
         else
             echo "    new BootSource.Image(\"$image_name\"),"
@@ -230,7 +230,7 @@ get_minion_options() {
         echo "    $retention_time"
 
     else  # SlaveOptions() structure for versions <= 2.34
-        if [ ! -z "$volume_size" ]; then
+        if [ -n "$volume_size" ]; then
             echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
         else
             echo "    new BootSource.Image(\"$image_name\"),"
@@ -253,7 +253,7 @@ get_minion_options() {
 }
 
 get_template_cfg() {
-    if [ -z $2 ]; then
+    if [ -z "$2" ]; then
         >&2 echo "Usage: get_template_cfg CFG_FILE SILO [MINION_PREFIX]"
         exit 1
     fi
@@ -263,7 +263,7 @@ get_template_cfg() {
     local minion_prefix="${3:-}"
 
 
-    template_name=$(basename $cfg_file .cfg)
+    template_name=$(basename "$cfg_file" .cfg)
     labels=$(get_cfg "$cfg_file" LABELS "")
 
     echo "minion_options = new SlaveOptions("
@@ -278,7 +278,7 @@ get_template_cfg() {
     echo ")"
 }
 
-mapfile -t clouds < <(ls -d1 $OS_CLOUD_DIR/*/)
+mapfile -t clouds < <(ls -d1 "$OS_CLOUD_DIR"/*/)
 
 for silo in $silos; do
 
@@ -308,18 +308,18 @@ for silo in $silos; do
     for cloud in "${clouds[@]}"; do
         cfg_dir="${cloud}"
         echo "Processing $cfg_dir"
-        insert_file="$SCRIPT_DIR/$silo/$(basename $cloud)/cloud-cfg.txt"
-        mkdir -p "$(dirname $insert_file)"
+        insert_file="$SCRIPT_DIR/$silo/$(basename "$cloud")/cloud-cfg.txt"
+        mkdir -p "$(dirname "$insert_file")"
         rm -f "$insert_file"
 
         echo "" >> "$insert_file"
         echo "//////////////////////////////////////////////////" >> "$insert_file"
-        echo "// Cloud config for $(basename $cloud)" >> "$insert_file"
+        echo "// Cloud config for $(basename "$cloud")" >> "$insert_file"
         echo "//////////////////////////////////////////////////" >> "$insert_file"
         echo "" >> "$insert_file"
 
-        echo "templates = []" >> $insert_file
-        mapfile -t templates < <(find $cfg_dir -maxdepth 1 -not -type d -not -name "cloud.cfg")
+        echo "templates = []" >> "$insert_file"
+        mapfile -t templates < <(find "$cfg_dir" -maxdepth 1 -not -type d -not -name "cloud.cfg")
         for template in "${templates[@]}"; do
             get_template_cfg "$template" "$silo" "$node_prefix" >> "$insert_file"
             echo "templates.add(template)" >> "$insert_file"

@@ -25,15 +25,15 @@ if [[ -f $pip_list_pre ]]; then
             | tee $pip_list_diffs; then
         echo "No diffs" | tee $pip_list_diffs
     fi
-    mkdir -p $WORKSPACE/archives
-    cp $pip_list_pre $pip_list_post $pip_list_diffs $WORKSPACE/archives
-    rm -rf $pip_list_pre $pip_list_post $pip_list_diffs
-    ls $WORKSPACE/archives
+    mkdir -p "$WORKSPACE/archives"
+    cp "$pip_list_pre" "$pip_list_post" "$pip_list_diffs" "$WORKSPACE/archives"
+    rm -rf "$pip_list_pre" "$pip_list_post" "$pip_list_diffs"
+    ls "$WORKSPACE/archives"
     # Would just like to 'exit 0' here but we can't because the
     # log-deploy.sh script is 'appended' to this file and it would not
     # be executed.
 else
-    pip list > $pip_list_pre
+    pip list > "$pip_list_pre"
     # These 'pip installs' only need to be executed during pre-build
 
     requirements_file=$(mktemp /tmp/requirements-XXXX.txt)
@@ -56,5 +56,5 @@ EOF
     python -m pip install --user --quiet --upgrade pip
     python -m pip install --user --quiet --upgrade setuptools
     python -m pip install --user --quiet --upgrade -r "$requirements_file"
-    rm -rf $requirements_file
+    rm -rf "$requirements_file"
 fi

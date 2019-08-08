@@ -26,7 +26,7 @@ install_gerrit_hook() {
     ssh_port=$(git remote show origin | grep Fetch | grep 'ssh://' \
         | awk -F'/' '{print $3}' | awk -F':' '{print $2}')
 
-    if [ -z $ssh_url ]; then
+    if [ -z "$ssh_url" ]; then
         echo "ERROR: Gerrit SSH URL not found."
         exit 1
     fi

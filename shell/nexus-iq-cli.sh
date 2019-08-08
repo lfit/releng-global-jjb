@@ -15,9 +15,9 @@ echo "---> nexus-iq-cli.sh"
 
 set +x
 CLI_LOCATION="/tmp/nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar"
-wget -nv https://download.sonatype.com/clm/scanner/nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar -O ${CLI_LOCATION}
+wget -nv "https://download.sonatype.com/clm/scanner/nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar" -O "${CLI_LOCATION}"
 echo "-a" > cli-auth.txt
 echo "${CLM_USER}:${CLM_PASSWORD}" >> cli-auth.txt
-java -jar ${CLI_LOCATION} @cli-auth.txt -xc -i ${CLM_PROJECT_NAME} -s https://nexus-iq.wl.linuxfoundation.org -t build .
+java -jar "${CLI_LOCATION}" @cli-auth.txt -xc -i "${CLM_PROJECT_NAME}" -s https://nexus-iq.wl.linuxfoundation.org -t build .
 rm cli-auth.txt
-rm ${CLI_LOCATION}
+rm "${CLI_LOCATION}"

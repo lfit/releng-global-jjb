@@ -49,7 +49,7 @@ for silo in $silos; do
         exit 1
     fi
 
-    mapfile -t vars < <(cat $global_vars)
+    mapfile -t vars < <(cat "$global_vars")
 
     rm -f insert.txt
     for var in "${vars[@]}"; do
@@ -58,8 +58,8 @@ for silo in $silos; do
             continue
         fi
 
-        key=$(echo $var | cut -d\= -f1)
-        value=$(echo $var | cut -d\= -f2)
+        key=$(echo "$var" | cut -d\= -f1)
+        value=$(echo "$var" | cut -d\= -f2)
         echo "    '$key': '$value'," >> insert.txt
     done
 

@@ -45,12 +45,12 @@ set -u
 
 # Remove any leading or trailing quotes surrounding the strings
 # which can cause parse errors when passed as CLI options to commands
-PROJECT="$(echo $PROJECT | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_COMMIT_MESSAGE="$(echo $GERRIT_COMMIT_MESSAGE | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_HOST="$(echo $GERRIT_HOST | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_TOPIC="$(echo $GERRIT_TOPIC | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_USER="$(echo $GERRIT_USER | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-REVIEWERS_EMAIL="$(echo $REVIEWERS_EMAIL | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+PROJECT="$(echo "$PROJECT" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+GERRIT_COMMIT_MESSAGE="$(echo "$GERRIT_COMMIT_MESSAGE" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+GERRIT_HOST="$(echo "$GERRIT_HOST" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+GERRIT_TOPIC="$(echo "$GERRIT_TOPIC" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+GERRIT_USER="$(echo "$GERRIT_USER" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+REVIEWERS_EMAIL="$(echo "$REVIEWERS_EMAIL" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
 
 CHANGE_ID=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
                limit:1 owner:self is:open project:"$PROJECT" \
