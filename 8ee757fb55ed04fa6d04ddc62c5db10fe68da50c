@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "a05d9664_a839be63",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-09T15:43:57Z",
+      "side": 1,
+      "message": "[access \"refs/heads/*\"]\n  push \u003d group self-serve-release\n[access \"refs/tags/*\"]\n  createTag \u003d group self-serve-release\n  createSignedTag \u003d group self-serve-release\n  forgeCommitter \u003d group self-serve-release\n  push \u003d group self-serve-release",
+      "parentUuid": "a1868211_3e605964",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 67
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "41cdf6b6_d5c60091",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2019-08-09T15:20:13Z",
       "side": 1,
       "message": "The private key that corresponds to the public key entered in Gerrit?",
+      "range": {
+        "startLine": 107,
+        "startChar": 24,
+        "endLine": 107,
+        "endChar": 64
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3ec7d77_cfc56ea4",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-09T15:43:57Z",
+      "side": 1,
+      "message": "yeah should specify that this is the private part.",
+      "parentUuid": "41cdf6b6_d5c60091",
       "range": {
         "startLine": 107,
         "startChar": 24,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "f55d6d22_12f51636",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-09T15:43:57Z",
+      "side": 1,
+      "message": "``RELEASE_USERNAME \u003d RELEASE_USERNAME``\n``RELEASE_EMAIL \u003d RELEASE_EMAIL``\n\nIS this more clear? hmm..",
+      "parentUuid": "bbbabdc5_13ff4cad",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 34
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f3f62a23_f477a823",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 1
@@ -105,6 +177,30 @@
       "writtenOn": "2019-08-09T15:20:13Z",
       "side": 1,
       "message": "Managed Files -\u003e Add a New Config -\u003e Custom File",
+      "range": {
+        "startLine": 115,
+        "startChar": 34,
+        "endLine": 115,
+        "endChar": 38
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d89acb21_800e8b99",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-09T15:43:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f3f62a23_f477a823",
       "range": {
         "startLine": 115,
         "startChar": 34,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "5a3bb11d_d4527682",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-09T15:43:57Z",
+      "side": 1,
+      "message": "yeah, it\u0027s hanging as Andy has all the keys...",
+      "parentUuid": "827c0f1d_05a25572",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 36
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "345f616d_e2c3f5fa",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 1
@@ -151,6 +271,30 @@
       "writtenOn": "2019-08-09T15:20:13Z",
       "side": 1,
       "message": "This is unclear what the expected value should be. Something like \"password\u003d\u003cplaintext password\u003e\" might be more clear.",
+      "range": {
+        "startLine": 132,
+        "startChar": 3,
+        "endLine": 132,
+        "endChar": 20
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d9d53c71_c492f229",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-09T15:43:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "345f616d_e2c3f5fa",
       "range": {
         "startLine": 132,
         "startChar": 3,
