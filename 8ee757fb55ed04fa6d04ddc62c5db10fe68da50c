@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "0770b300_a36817f1",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:55:35Z",
+      "side": 1,
+      "message": "Sorry, my question wasn\u0027t very clear. I meant: do they go in All-Projects? It might make sense to move the line about adding RELEASE_USERNAME to the two groups above the permissions changes to All-Projects, so that there aren\u0027t two seemingly-separate parts about changing the All-Projects perms.",
+      "parentUuid": "a05d9664_a839be63",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 67
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "41cdf6b6_d5c60091",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 1
@@ -154,6 +178,30 @@
       "side": 1,
       "message": "``RELEASE_USERNAME \u003d RELEASE_USERNAME``\n``RELEASE_EMAIL \u003d RELEASE_EMAIL``\n\nIS this more clear? hmm..",
       "parentUuid": "bbbabdc5_13ff4cad",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 34
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a10a6ee2_c52cef14",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:55:35Z",
+      "side": 1,
+      "message": "No, that\u0027s less clear if anything. Maybe a code block, so that it looks different than the other references to RELEASE_USERNAME, and then use \"RELEASE_USERNAME \u003d \u003cRELEASE_USERNAME\u003e\". Or perhaps change how it\u0027s referenced elsewhere in the doc.",
+      "parentUuid": "f55d6d22_12f51636",
       "range": {
         "startLine": 111,
         "startChar": 0,
