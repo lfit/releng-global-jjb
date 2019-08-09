@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "6fa4b44b_5851eb5c",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-09T16:49:08Z",
+      "side": 1,
+      "message": "ONAP might have a docker and maven release under the same version. \nShall we name this releases-container?",
+      "range": {
+        "startLine": 29,
+        "startChar": 5,
+        "endLine": 29,
+        "endChar": 28
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a70a3720_bd35b52b",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 1
@@ -13,6 +36,30 @@
       "writtenOn": "2019-08-09T15:20:13Z",
       "side": 1,
       "message": "Should this be Forge Committer Identity?",
+      "range": {
+        "startLine": 99,
+        "startChar": 34,
+        "endLine": 99,
+        "endChar": 49
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2fa21c57_b235b8d7",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-09T16:49:08Z",
+      "side": 1,
+      "message": "yes.. this is Forge Committer Identity",
+      "parentUuid": "a70a3720_bd35b52b",
       "range": {
         "startLine": 99,
         "startChar": 34,
