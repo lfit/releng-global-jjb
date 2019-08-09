@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a70a3720_bd35b52b",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:20:13Z",
+      "side": 1,
+      "message": "Should this be Forge Committer Identity?",
+      "range": {
+        "startLine": 99,
+        "startChar": 34,
+        "endLine": 99,
+        "endChar": 49
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1868211_3e605964",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:20:13Z",
+      "side": 1,
+      "message": "Where are these permissions granted?",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 67
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "41cdf6b6_d5c60091",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:20:13Z",
+      "side": 1,
+      "message": "The private key that corresponds to the public key entered in Gerrit?",
+      "range": {
+        "startLine": 107,
+        "startChar": 24,
+        "endLine": 107,
+        "endChar": 64
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bbbabdc5_13ff4cad",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:20:13Z",
+      "side": 1,
+      "message": "This could be considerably more clear. You\u0027ve been referring to the \u003cproject\u003e-release username as RELEASE_USERNAME, but here it\u0027s $RELEASE_USERNAME (isn\u0027t it? I\u0027m not even sure). It\u0027s also not clear that these are not the literal strings to be entered.",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 34
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3f62a23_f477a823",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:20:13Z",
+      "side": 1,
+      "message": "Managed Files -\u003e Add a New Config -\u003e Custom File",
+      "range": {
+        "startLine": 115,
+        "startChar": 34,
+        "endLine": 115,
+        "endChar": 38
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "827c0f1d_05a25572",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:20:13Z",
+      "side": 1,
+      "message": "This is very confusing, and seems incomplete.",
+      "range": {
+        "startLine": 121,
+        "startChar": 0,
+        "endLine": 122,
+        "endChar": 36
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "345f616d_e2c3f5fa",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-09T15:20:13Z",
+      "side": 1,
+      "message": "This is unclear what the expected value should be. Something like \"password\u003d\u003cplaintext password\u003e\" might be more clear.",
+      "range": {
+        "startLine": 132,
+        "startChar": 3,
+        "endLine": 132,
+        "endChar": 20
+      },
+      "revId": "8ee757fb55ed04fa6d04ddc62c5db10fe68da50c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
