@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e362493_7b92821a",
+        "filename": "releasenotes/notes/lf-release-jobs-21bd4681a7454451.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-12T21:22:28Z",
+      "side": 1,
+      "message": "This paragraph might need some work as it appears as a blob in the release notes. I suggest:\n\n  - |\n    Update release-schema.yaml to require distribution_type.\n  - |\n    Add support for distribution_type \"container\"\n  - |\n    Add function maven_release_file and container_release_file\n    and the logic to choose the correct one. No functional change to maven_release_file.\n  - |\n    container_release_file downloads log_dir/console.log.gz\n    and parses it to get a list of container name and version.\n    Verifies pulls container and grabs the image_id, performs the merge then tags and pushes the container.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d90a1cd8_b1208d6a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-12T21:22:28Z",
+      "side": 1,
+      "message": "Wordy, this word is not needed.",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 21
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "90968c8c_95e0b875",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-12T21:22:28Z",
+      "side": 1,
+      "message": "or",
+      "range": {
+        "startLine": 59,
+        "startChar": 30,
+        "endLine": 59,
+        "endChar": 32
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "791c649c_2c07b9bd",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-12T21:22:28Z",
+      "side": 1,
+      "message": "Must",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 12
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2a50dd50_486ae9e1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-12T21:22:28Z",
+      "side": 1,
+      "message": "Merge will run the following commands:",
+      "range": {
+        "startLine": 156,
+        "startChar": 9,
+        "endLine": 156,
+        "endChar": 24
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
