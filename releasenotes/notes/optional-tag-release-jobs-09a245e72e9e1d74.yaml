@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Allow projects to skip the tagging of the Gerrit repo. Set to "true"
+    by default.
+    There are cases where some projects build different artifacts within
+    a pom.xml located in a subdirectory of a .git repo. In this case, the
+    project wants to make separate releases for their different artifacts
+    but only tag the repo once. Hence, allowing them to skip the tag part.

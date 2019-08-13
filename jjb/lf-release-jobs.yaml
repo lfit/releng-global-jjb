@@ -58,6 +58,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     gerrit-skip-vote: false
+    tag-repo: true
 
     gerrit_verify_triggers:
       - patchset-created-event:
@@ -86,6 +87,8 @@
               variable: SIGUL_PKI
             - file-id: signing-pubkey
               variable: SIGNING_PUBKEY
+      - inject:
+          properties-content: "TAG_REPO={tag-repo}"
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
       - lf-release
@@ -145,6 +148,7 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
+    tag-repo: true
 
     gerrit_merge_triggers:
       - change-merged-event
@@ -169,6 +173,8 @@
               variable: SIGUL_PKI
             - file-id: signing-pubkey
               variable: SIGNING_PUBKEY
+      - inject:
+          properties-content: "TAG_REPO={tag-repo}"
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
       - lf-release
