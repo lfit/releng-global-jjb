@@ -112,22 +112,26 @@ if [[ ! $VERSION =~ $allowed_version_regex ]]; then
   exit 1
 fi
 
-if git tag -v "$VERSION"; then
-  echo "Repo already tagged $VERSION"
-  echo "This job has already run exit 0"
-  exit 0
+if [[ "${TAG_REPO}" == "true" ]] ; then
+  if git tag -v "$VERSION"; then
+    echo "Repo already tagged $VERSION"
+    echo "This job has already run exit 0"
+    exit 0
+  fi
 fi
 
 git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
 git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
 git merge --ff-only FETCH_HEAD
-git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
-sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
 
-echo "Showing latest signature for $PROJECT:"
-gpg --import "$SIGNING_PUBKEY"
-echo "git tag -v $VERSION"
-git tag -v "$VERSION"
+if [[ "${TAG_REPO}" == "true" ]] ; then
+  git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
+  sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
+  echo "Showing latest signature for $PROJECT:"
+  gpg --import "$SIGNING_PUBKEY"
+  echo "git tag -v $VERSION"
+  git tag -v "$VERSION"
+fi
 
 ########## Merge Part ##############
 if [[ "$JOB_NAME" =~ "merge" ]]; then
@@ -138,9 +142,9 @@ if [[ "$JOB_NAME" =~ "merge" ]]; then
   git config user.email "$RELEASE_EMAIL"
   echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   chmod 600 ~/.ssh/config
-  git push origin "$VERSION"
-
-
+  if [[ "${TAG_REPO}" == "true" ]] ; then
+    git push origin "$VERSION"
+  fi
 fi
 
 # This function: if merge push to nexus. If verify output the proposed push command.
