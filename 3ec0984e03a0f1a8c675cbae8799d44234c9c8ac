@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8935e5ca_fa905281",
+        "filename": "releasenotes/notes/lf-release-jobs-21bd4681a7454451.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-13T20:20:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e362493_7b92821a",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d90a1cd8_b1208d6a",
         "filename": "shell/release-job.sh",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2019-08-12T21:22:28Z",
       "side": 1,
       "message": "Wordy, this word is not needed.",
+      "range": {
+        "startLine": 45,
+        "startChar": 8,
+        "endLine": 45,
+        "endChar": 21
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "62744d8e_9e27f6d2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-13T20:20:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d90a1cd8_b1208d6a",
       "range": {
         "startLine": 45,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ac6ae4f2_700d063d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-13T20:20:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90968c8c_95e0b875",
+      "range": {
+        "startLine": 59,
+        "startChar": 30,
+        "endLine": 59,
+        "endChar": 32
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "791c649c_2c07b9bd",
         "filename": "shell/release-job.sh",
         "patchSetId": 4
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "3a946207_0ca570b8",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-13T20:20:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "791c649c_2c07b9bd",
+      "range": {
+        "startLine": 141,
+        "startChar": 8,
+        "endLine": 141,
+        "endChar": 12
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a50dd50_486ae9e1",
         "filename": "shell/release-job.sh",
         "patchSetId": 4
@@ -105,6 +201,30 @@
       "writtenOn": "2019-08-12T21:22:28Z",
       "side": 1,
       "message": "Merge will run the following commands:",
+      "range": {
+        "startLine": 156,
+        "startChar": 9,
+        "endLine": 156,
+        "endChar": 24
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0514928_8d2067db",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-13T20:20:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a50dd50_486ae9e1",
       "range": {
         "startLine": 156,
         "startChar": 9,
