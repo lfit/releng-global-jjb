@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "17a0cea9_40bdbe65",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-14T04:42:22Z",
+      "side": 1,
+      "message": "I don\u0027t think we really need the outer condition here. Why do we need two separate flags here? Isn\u0027t it enough just to check if the repo is already tagged and skip it?",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 39
+      },
+      "revId": "931f0c8e7c43fc27a432ecc146e941c9cb5daca5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
