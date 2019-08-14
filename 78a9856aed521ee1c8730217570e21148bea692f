@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5cb50be3_30509ef0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-08-14T23:59:34Z",
+      "side": 1,
+      "message": "Am I missing something? the two docker pull commands looks the same to me, so they fetch from same source? If succeeds, then don\u0027t do anything, if fails, pull same thing again?\nShould not one of them be Public and the other Community?",
+      "range": {
+        "startLine": 153,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 8
+      },
+      "revId": "78a9856aed521ee1c8730217570e21148bea692f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
