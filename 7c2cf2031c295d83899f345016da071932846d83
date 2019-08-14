@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8d4c7b70_68703a39",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-14T16:30:27Z",
+      "side": 1,
+      "message": "We hard code the port / registry for pull or push, this needs to come in somehow (part of the schema?)",
+      "range": {
+        "startLine": 151,
+        "startChar": 17,
+        "endLine": 151,
+        "endChar": 40
+      },
+      "revId": "7c2cf2031c295d83899f345016da071932846d83",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "584c43eb_cad3d6b2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-14T16:30:27Z",
+      "side": 1,
+      "message": "We hard code the port / registry for pull or push, this needs to come in somehow (part of the schema?)",
+      "range": {
+        "startLine": 158,
+        "startChar": 22,
+        "endLine": 158,
+        "endChar": 44
+      },
+      "revId": "7c2cf2031c295d83899f345016da071932846d83",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56b40530_1404e2af",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-14T16:30:27Z",
+      "side": 1,
+      "message": "We hard code the port / registry for pull or push, this needs to come in somehow (part of the schema?)",
+      "range": {
+        "startLine": 163,
+        "startChar": 37,
+        "endLine": 163,
+        "endChar": 61
+      },
+      "revId": "7c2cf2031c295d83899f345016da071932846d83",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b773744_c3616541",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-14T16:30:27Z",
+      "side": 1,
+      "message": "We hard code the port / registry for pull or push, this needs to come in somehow (part of the schema?)",
+      "range": {
+        "startLine": 164,
+        "startChar": 16,
+        "endLine": 164,
+        "endChar": 40
+      },
+      "revId": "7c2cf2031c295d83899f345016da071932846d83",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
