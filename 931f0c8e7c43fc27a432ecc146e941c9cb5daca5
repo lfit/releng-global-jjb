@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "429674fd_b0d639eb",
+        "filename": "releasenotes/notes/optional-tag-release-jobs-09a245e72e9e1d74.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-14T15:55:59Z",
+      "side": 1,
+      "message": "This makes it sound like we skip by default. reword.",
+      "range": {
+        "startLine": 4,
+        "startChar": 59,
+        "endLine": 5,
+        "endChar": 15
+      },
+      "revId": "931f0c8e7c43fc27a432ecc146e941c9cb5daca5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "17a0cea9_40bdbe65",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -37,6 +60,30 @@
       "side": 1,
       "message": "The intent is that some projects may have artifacts that don\u0027t get tagged at the same time as the release. The primary workflow looks like this (mostly an ONAP example)\n\nProject declares a release -\u003e tag of repo \u0026 release of java artifacts\nProject stages a container release -\u003e stage jobs run and pull released java artifacts into container\nProject declares container release -\u003e job executes and is flagged as don\u0027t tag, it _skips_ this because otherwise it would exit the script before doing any other work since it is already tagged.\n\nGranted the example I just gave doesn\u0027t fully mesh with what you\u0027re seeing here, but the intent for it is the same. Some projects actually have several different artifacts being built in different reactors out of the same project (but different jobs). So they need to tag at a given point in time, but only _one_ of the reactor jobs can actually do the tagging. We need to give them a way to determine which is their lead / fully tagging job, and which is just the artifact release job(s).",
       "parentUuid": "17a0cea9_40bdbe65",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 39
+      },
+      "revId": "931f0c8e7c43fc27a432ecc146e941c9cb5daca5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb2ca7c5_d43ba471",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-14T15:55:59Z",
+      "side": 1,
+      "message": "Hi.\n\nI have thought about this, and Ideally, the same ref that makes the release java artifacts should make the container releases.\n\nIf this is not the case, we can still check if the repo is already tagged, and skip the tagging, continuing to the the container release.\n\nSo as long as we tag when we release the first artifact, and then skip for the next one.\nWe have a tag and release(s).\n\n\nAlso, what is the workflow here? Tagging is set to true.. you release the maven artifact. then you edit jjb to set tagging to false? merge that change, release the container artifact, then set jjb back to tag true?\nI\u0027m not sure that makes sense.\n\nI believe that my patch-set \u0027Add support for distribution_type container\u0027 covers all theses cases. can we discus in that pactset any perceived edge cases?",
+      "parentUuid": "85893000_50a9f07f",
       "range": {
         "startLine": 115,
         "startChar": 0,
