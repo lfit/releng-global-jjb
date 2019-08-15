@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f1f348c_7d427645",
+        "filename": "releasenotes/notes/lf-release-jobs-21bd4681a7454451.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-15T02:42:08Z",
+      "side": 1,
+      "message": "should this be read from a separate file (derived from console log), instead of parsing the console.log.gz?",
+      "range": {
+        "startLine": 12,
+        "startChar": 4,
+        "endLine": 12,
+        "endChar": 59
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3df329c3_98f16571",
         "filename": "releasenotes/notes/lf-release-jobs-21bd4681a7454451.yaml",
         "patchSetId": 11
@@ -48,6 +71,29 @@
     },
     {
       "key": {
+        "uuid": "567b8f8d_578f7951",
+        "filename": "schema/release-container-schema.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-15T02:42:08Z",
+      "side": 1,
+      "message": "move this asciibetically order",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d9d322b6_1282740f",
         "filename": "schema/release-schema.yaml",
         "patchSetId": 11
@@ -64,6 +110,76 @@
         "startChar": 60,
         "endLine": 12,
         "endChar": 74
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9b155b59_03ec3c8a",
+        "filename": "schema/release-schema.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-15T02:42:08Z",
+      "side": 1,
+      "message": "yes, we should not have files without extension in code repos.",
+      "parentUuid": "d9d322b6_1282740f",
+      "range": {
+        "startLine": 12,
+        "startChar": 60,
+        "endLine": 12,
+        "endChar": 74
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e106a675_0fe7a47a",
+        "filename": "schema/release-schema.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-15T02:42:08Z",
+      "side": 1,
+      "message": "this needs to be in sorted order, like its already done above.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 18
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cbff5c2a_57a7dbe1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-15T02:42:08Z",
+      "side": 1,
+      "message": "do we need this variable, since we are getting the Nexus domain from staging-repos and mapping this to lftools.ini directly?",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 46
       },
       "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
@@ -167,6 +283,29 @@
         "startChar": 0,
         "endLine": 63,
         "endChar": 5
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6c8d5eb1_f5c817d8",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-15T02:42:08Z",
+      "side": 1,
+      "message": "this entire block has to go into the loop to print out multiple repos being uploaded.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 24
       },
       "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
