@@ -283,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "0d99ece6_f0679375",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-15T18:29:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbff5c2a_57a7dbe1",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 46
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a8790026_b524c73a",
         "filename": "shell/release-job.sh",
         "patchSetId": 11
@@ -541,6 +565,30 @@
     },
     {
       "key": {
+        "uuid": "3d879f5f_612dc96a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-15T18:29:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6d11cb_9d2319a6",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 24
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a538fb1_41ba7d69",
         "filename": "shell/release-job.sh",
         "patchSetId": 11
@@ -623,6 +671,30 @@
       "side": 1,
       "message": "Should be done as a log.info in lftools schema verify.",
       "parentUuid": "0908e905_376ffceb",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 57
+      },
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "333347fe_396e7b4e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-15T18:29:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3edc2b0_1798eb7b",
       "range": {
         "startLine": 77,
         "startChar": 0,
@@ -808,6 +880,24 @@
       "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea2ada7a_8240ce98",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-15T18:29:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "18277fd4_28cb7115",
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
