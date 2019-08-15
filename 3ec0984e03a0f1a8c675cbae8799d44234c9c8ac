@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "d504fbcf_28bbb0a6",
+        "filename": "releasenotes/notes/lf-release-jobs-21bd4681a7454451.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-15T18:27:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a546c0b4_a8db6e81",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "3ec0984e03a0f1a8c675cbae8799d44234c9c8ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d90a1cd8_b1208d6a",
         "filename": "shell/release-job.sh",
         "patchSetId": 4
