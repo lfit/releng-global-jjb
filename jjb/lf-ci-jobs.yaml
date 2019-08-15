@@ -1834,3 +1834,156 @@
           included-regions: "{obj:github_included_regions}"
           white-list-target-branches:
             - "{branch}"
+################
+# Python Sonar #
+################
+​
+- lf_sonar_common: &lf_sonar_common
+    name: lf-sonar-common
+​
+    ######################
+    # Default parameters #
+    ######################
+​
+    archive-artifacts: >
+      **/*.log
+  
+    branch: master # Sonar should always be run on master branch
+    build-days-to-keep: 7
+    build-timeout: 60
+    cron: "H H * * *" # run daily
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+​
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+​
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - ".*"
+​
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+​
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+​
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+​
+    disabled: "{disable-job}"
+​
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
+​
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-sonar:
+          task:
+          properties:
+          java-opts:
+          additional-arguments:
+    
+    publishers:
+      - lf-infra-publish
+​
+- job-template:
+    name: "{project-name}-sonar"
+    id: gerrit-sonar
+    <<: *lf_sonar_common
+    # yamllint disable-line rule:key-duplicates
+​
+    ######################
+    # Default parameters #
+    ######################
+​
+    gerrit_sonar_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
+​
+    #####################
+    # Job Configuration #
+    #####################
+​
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: $GERRIT_REFSPEC
+          branch: $GERRIT_BRANCH
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+​
+    triggers:
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_sonar_triggers}"
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+​
+- job-template:
+    name: "{project-name}-sonar"
+    id: github-sonar
+    <<: *lf_sonar_common
+    # yamllint disable-line rule:key-duplicates
+​
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+​
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+​
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^run-sonar$"
+          only-trigger-phrase: false
+          status-context: "Python Sonar"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
