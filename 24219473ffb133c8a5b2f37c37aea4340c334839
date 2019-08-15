@@ -71,6 +71,40 @@
     },
     {
       "key": {
+        "uuid": "a8790026_b524c73a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-15T02:32:30Z",
+      "side": 1,
+      "message": "What command needs NEXUSPROXY and MAVEN_CENTRAL_URL to be set ?\nIs it \u0027lftools nexus\u0027?",
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9837e60a_f36f1128",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-15T02:32:30Z",
+      "side": 1,
+      "message": "This variable is unused. It is always overwritted in nexus_release(). You should delete this. Note that NEXUSPROXY is always set (line 37) make the :- useless.",
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7ba6a9d3_e7210083",
         "filename": "shell/release-job.sh",
         "patchSetId": 11
@@ -255,6 +289,23 @@
     },
     {
       "key": {
+        "uuid": "75e582c6_9873886c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-15T02:32:30Z",
+      "side": 1,
+      "message": "Does this needs to be expoted for \u0027lftools nexus\u0027 below?",
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b4671ef0_0b96c3cb",
         "filename": "shell/release-job.sh",
         "patchSetId": 11
@@ -275,6 +326,23 @@
       "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "077a65c0_69cb1f5e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-15T02:32:30Z",
+      "side": 1,
+      "message": "local lfn_umbrella\u003d\"$(echo \"$GERRIT_HOST\" | awk -F\".\" \u0027{print $2}\u0027)\"",
+      "revId": "24219473ffb133c8a5b2f37c37aea4340c334839",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     },
     {
       "key": {
