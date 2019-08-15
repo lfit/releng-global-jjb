@@ -46,6 +46,30 @@
       "revId": "78a9856aed521ee1c8730217570e21148bea692f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75212cbc_052ae0c9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-15T18:28:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "994c2b42_5f2e83fb",
+      "range": {
+        "startLine": 153,
+        "startChar": 0,
+        "endLine": 156,
+        "endChar": 8
+      },
+      "revId": "78a9856aed521ee1c8730217570e21148bea692f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
