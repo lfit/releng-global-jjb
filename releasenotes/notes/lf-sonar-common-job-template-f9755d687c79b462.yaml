@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Add lf-sonar-common job-template to lf-ci-jobs.yaml and add lf-infra-sonar
+    to macros.yaml. The purpose of a new job template is to adopt using jenkins
+    sonar plug-in along with the sonar-project.properties file versus pom.xml.
+    Lastly the new job template will ensure that anything using lf-infra-tox-sonar
+    is unaffected.
