@@ -806,3 +806,22 @@ the base directory is usually the best place to run from.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
+
+
+Sonar
+-----
+
+Runs Jenkins Sonarqube plug-in to review for bugs, code smells,
+and security vulnerabilities.
+
+:Template Names:
+
+    - {project-name}-sonar
+    - gerrit-sonar
+    - github-sonar
+
+:Optional Parameters:
+    :sonar-task: Sonar task to run. (default: "")
+    :sonar-properties: Sonar configuration properties. (default: "")
+    :sonar-java-opts: JVM options. (default: "")
+    :sonar-additional-args: Additional command line arguments. (default: "")

@@ -277,6 +277,17 @@ lf-infra-provide-docker-cleanup
 
 Forcibly removes all of the docker images.
 
+lf-infra-sonar
+---------------
+
+Runs Jenkins Sonar plug-in
+
+:Optional Parameters:
+    :sonar-task: Sonar task to run. (default: "")
+    :sonar-properties: Sonar configuration properties. (default: "")
+    :sonar-java-opts: JVM options. (default: "")
+    :sonar-additional-args: Additional command line arguments. (default: "")
+
 Parameters
 ==========
 
