@@ -316,6 +316,19 @@
           docker rmi -f $(docker images -a -q)
           exit 0
 
+- builder:
+    name: lf-infra-sonar
+    # Run a Sonar Jenkins Plugin
+    builders:
+      - sonar:
+          sonar-name: Sonar
+          scanner-name: SonarQubeScanner
+          task: {sonar-task}
+          project: sonar-project.properties
+          properties: {sonar-properties}
+          java-opts: {sonar-java-opts}
+          additional-arguments: {sonar-additional-args}
+
 ##############
 # PARAMETERS #
 ##############
