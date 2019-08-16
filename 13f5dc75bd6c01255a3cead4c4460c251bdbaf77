@@ -22,6 +22,52 @@
       "revId": "13f5dc75bd6c01255a3cead4c4460c251bdbaf77",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "30a9a4df_ea752210",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-16T23:10:15Z",
+      "side": 1,
+      "message": "This fails since the log is stored in tmp, we need to make sure we pass the full path of the console.log or make sure wget stores it in the root of the repo\n\n22:54:04 2019-08-16 22:54:04 (117 MB/s) - ‘/tmp/tmp.iPxpjgooaw/console.log.gz’ saved [47394/47394]\n22:54:04 \n22:54:04 gzip: console.log.gz: No such file or directory",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 75
+      },
+      "revId": "13f5dc75bd6c01255a3cead4c4460c251bdbaf77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bd11bb79_988a4151",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-16T23:10:15Z",
+      "side": 1,
+      "message": "Please adjust this to also accept .releases/",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 103
+      },
+      "revId": "13f5dc75bd6c01255a3cead4c4460c251bdbaf77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
