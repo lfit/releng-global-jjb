@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98094d01_dce4e7d8",
+        "filename": "releasenotes/notes/lf-release-jobs-21bd4681a7454451.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-16T17:50:21Z",
+      "side": 1,
+      "message": "Please add the actual version where this feature is supported. Is 0.26.0 right?",
+      "range": {
+        "startLine": 20,
+        "startChar": 28,
+        "endLine": 20,
+        "endChar": 35
+      },
+      "revId": "13f5dc75bd6c01255a3cead4c4460c251bdbaf77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
