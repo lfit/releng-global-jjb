@@ -18,9 +18,9 @@
     # Default parameters #
     ######################
 
-    gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: "releases/*.yaml"
+    # This gets ovverwritten if set in -project:
+    # So it seems I should hard code it and remove this bit.
+    #    gerrit_trigger_file_paths:
 
     #####################
     # Job Configuration #
@@ -123,7 +123,9 @@
               branches:
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+              file-paths:
+                - compare-type: ANT
+                  pattern: "releases/*.yaml"
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
@@ -206,4 +208,6 @@
               branches:
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+              file-paths:
+                - compare-type: ANT
+                  pattern: "releases/*.yaml"
