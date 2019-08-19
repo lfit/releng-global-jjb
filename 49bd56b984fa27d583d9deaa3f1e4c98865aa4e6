@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e10ec472_71ee6846",
+        "filename": "releasenotes/notes/lf-release-jobs-843a574d66df6263.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-08-19T20:07:44Z",
+      "side": 1,
+      "message": "AG doesn\u0027t much like trailing whitespace :)",
+      "range": {
+        "startLine": 5,
+        "startChar": 52,
+        "endLine": 5,
+        "endChar": 53
+      },
+      "revId": "49bd56b984fa27d583d9deaa3f1e4c98865aa4e6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f83b2b63_86b8fdcd",
+        "filename": "releasenotes/notes/lf-release-jobs-843a574d66df6263.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-08-19T20:07:44Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 6,
+        "startChar": 21,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "49bd56b984fa27d583d9deaa3f1e4c98865aa4e6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
