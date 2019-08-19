@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bddf3507_e23fc352",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T22:08:19Z",
+      "side": 1,
+      "message": "Your commit message should represent the change as a whole, not just the latest patch set. In this case, it looks like you changed it to describe your latest patch set, which wouldn\u0027t make as much sense in the commit history of global-jjb. You should probably replace it with the previous message, which did a much better job of describing what this change is doing.\n\n(note that it\u0027s ok to revise your commit message as you add or remove things from your change, but in this case it seems like you\u0027re specifically describing one small difference on a patch that needs several more fixes)",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 40
+      },
+      "revId": "80ea823be320fc5444cdacb8bc4efa4a28a55bcb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f685eaca_853ad5fc",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1905,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T22:08:19Z",
+      "side": 1,
+      "message": "This should look like my comment, with the parameters in double quotes.",
+      "range": {
+        "startLine": 1902,
+        "startChar": 0,
+        "endLine": 1905,
+        "endChar": 31
+      },
+      "revId": "80ea823be320fc5444cdacb8bc4efa4a28a55bcb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
