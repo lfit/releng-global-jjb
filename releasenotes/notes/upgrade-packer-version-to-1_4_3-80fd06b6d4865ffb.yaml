@@ -1,0 +1,10 @@
+---
+upgrade:
+  - |
+    Update packer version to 1.4.3.
+    This new packer version fixed an issues in docker
+    image, where its unable to install the packages into
+    docker containers due to checking of wrong container OS.
+    Fix in 1.4.3:
+    builder/docker: Check container os, not host os,
+    when creating container dir default [GH-7939]
