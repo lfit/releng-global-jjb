@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85e19334_f1024418",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1837,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T16:50:58Z",
+      "side": 1,
+      "message": "Need an empty line between the previous job and this one.",
+      "range": {
+        "startLine": 1837,
+        "startChar": 0,
+        "endLine": 1837,
+        "endChar": 16
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "14771463_0c50d39c",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1838,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T16:50:58Z",
+      "side": 1,
+      "message": "Remove the word \"Python\".",
+      "range": {
+        "startLine": 1838,
+        "startChar": 2,
+        "endLine": 1838,
+        "endChar": 8
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c3d839b1_85ecfa11",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1840,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T16:50:58Z",
+      "side": 1,
+      "message": "It looks like your editor is adding zero-width spaces to the blank lines. You may need to tweak your settings, or possibly change editors. Either way, these should be removed.",
+      "range": {
+        "startLine": 1840,
+        "startChar": 0,
+        "endLine": 1840,
+        "endChar": 1
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "496992ac_9397fb48",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1850,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T16:50:58Z",
+      "side": 1,
+      "message": "Not terribly important on a WIP, but just so you know, all trailing whitespace will need to be removed before this is ready to merge.",
+      "range": {
+        "startLine": 1850,
+        "startChar": 0,
+        "endLine": 1850,
+        "endChar": 2
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d9fd16c_8557d11a",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1861,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T16:50:58Z",
+      "side": 1,
+      "message": "Below this should be the Sonar properties. I would suggest giving it its own section, something like this:\n# Sonar properties\nsonar-task: \"\"\nsonar-properties: \"\"\nsonar-java-opts: \"\"\nsonar-additional-args: \"\"",
+      "range": {
+        "startLine": 1861,
+        "startChar": 4,
+        "endLine": 1861,
+        "endChar": 28
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6acee451_4c1774fb",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1901,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T16:50:58Z",
+      "side": 1,
+      "message": "This needs to be able to pass variables to the builder. It should look like this:\n- lf-infra-sonar:\n    sonar-task: \"{sonar-task}\"\n    sonar-properties: \"{sonar-properties}\"\n    sonar-java-opts: \"{sonar-java-opts}\"\n    sonar-additional-args: \"{sonar-additional-args}\"",
+      "range": {
+        "startLine": 1901,
+        "startChar": 6,
+        "endLine": 1901,
+        "endChar": 22
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f16eb767_755fb99d",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-19T16:50:58Z",
+      "side": 1,
+      "message": "These variables all need double quotes around them.",
+      "range": {
+        "startLine": 326,
+        "startChar": 16,
+        "endLine": 326,
+        "endChar": 28
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
