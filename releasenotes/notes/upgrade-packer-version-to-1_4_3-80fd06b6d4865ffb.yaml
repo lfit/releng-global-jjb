@@ -1,0 +1,7 @@
+---
+upgrade:
+  - |
+    Update packer version to 1.4.3.
+    This new packer version fixed an issues in docker
+    image, where its unable to install the packages into
+    docker containers.
