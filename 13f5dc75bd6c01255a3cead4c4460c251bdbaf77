@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "0ef56396_f55b502f",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-19T21:17:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "30a9a4df_ea752210",
+      "range": {
+        "startLine": 89,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 75
+      },
+      "revId": "13f5dc75bd6c01255a3cead4c4460c251bdbaf77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5415426_ba9c9cbb",
         "filename": "shell/release-job.sh",
         "patchSetId": 18
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "6f22f897_1008809d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-19T21:17:58Z",
+      "side": 1,
+      "message": "Yes the log files have different output\n\nOne does it like this:\n[INFO] DOCKER\u003e [onap/externalapi/nbi:5.0.0-20190816T015028Z]: Tag with latest,5.0.0-latest\nThe other does it like this:\n[INFO] DOCKER\u003e [onap/sdc-onboard-backend:latest] \"sdc-onboard-backend\": Tag with 1.5.1-20190806T184921Z,1.5-STAGING-latest (edited)",
+      "parentUuid": "b5415426_ba9c9cbb",
+      "range": {
+        "startLine": 112,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 1
+      },
+      "revId": "13f5dc75bd6c01255a3cead4c4460c251bdbaf77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bd11bb79_988a4151",
         "filename": "shell/release-job.sh",
         "patchSetId": 18
@@ -82,6 +130,30 @@
       "writtenOn": "2019-08-16T23:10:15Z",
       "side": 1,
       "message": "Please adjust this to also accept .releases/",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 103
+      },
+      "revId": "13f5dc75bd6c01255a3cead4c4460c251bdbaf77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc82854b_1ed8dfcf",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-19T21:17:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd11bb79_988a4151",
       "range": {
         "startLine": 140,
         "startChar": 0,
