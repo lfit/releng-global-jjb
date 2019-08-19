@@ -140,6 +140,23 @@
     },
     {
       "key": {
+        "uuid": "e7f5eac7_892b5b09",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1985,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-19T17:21:43Z",
+      "side": 1,
+      "message": "Missing \u0027nl\u0027 at EOF. You editor should be doing this for you.",
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f16eb767_755fb99d",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 1
