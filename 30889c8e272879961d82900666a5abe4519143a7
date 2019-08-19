@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "956ab9ac_ab3c7e13",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-19T20:01:02Z",
+      "side": 1,
+      "message": "Add the Issue information to the footer",
+      "revId": "30889c8e272879961d82900666a5abe4519143a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76be7f93_15018184",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-19T20:01:02Z",
+      "side": 1,
+      "message": "Just remove it, no need to comment it out",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 35
+      },
+      "revId": "30889c8e272879961d82900666a5abe4519143a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb9568d2_d2271943",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-19T20:01:02Z",
+      "side": 1,
+      "message": "I thought we were going to support this as a REG_EXP of \u0027\\.?releases/.*\\.yaml$\u0027 or does the current ANT pattern actually work for that?",
+      "range": {
+        "startLine": 128,
+        "startChar": 27,
+        "endLine": 128,
+        "endChar": 42
+      },
+      "revId": "30889c8e272879961d82900666a5abe4519143a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14e7132f_ac827f04",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-08-19T20:01:02Z",
+      "side": 1,
+      "message": "I thought we were going to support this as a REG_EXP of \u0027\\.?releases/.*\\.yaml$\u0027 or does the current ANT pattern actually work for that?",
+      "range": {
+        "startLine": 211,
+        "startChar": 27,
+        "endLine": 211,
+        "endChar": 42
+      },
+      "revId": "30889c8e272879961d82900666a5abe4519143a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
