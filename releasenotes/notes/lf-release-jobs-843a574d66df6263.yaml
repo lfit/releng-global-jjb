@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Project job sections that define gerrit_trigger_file_paths
+    are overriding ones set in Default parameters of
+    lf_release_common
+    Hard Code gerrit_trigger_file_paths to fix this.

@@ -14,14 +14,6 @@
 - lf_release_common: &lf_release_common
     name: lf-release-common
 
-    ######################
-    # Default parameters #
-    ######################
-
-    gerrit_trigger_file_paths:
-      - compare-type: ANT
-        pattern: "releases/*.yaml"
-
     #####################
     # Job Configuration #
     #####################
@@ -123,7 +115,9 @@
               branches:
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+              file-paths:
+                - compare-type: ANT
+                  pattern: "releases/*.yaml"
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
@@ -206,4 +200,6 @@
               branches:
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+              file-paths:
+                - compare-type: ANT
+                  pattern: "releases/*.yaml"
