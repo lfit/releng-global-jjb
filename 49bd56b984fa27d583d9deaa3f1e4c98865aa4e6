@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "74104e84_8455b095",
+        "filename": "releasenotes/notes/lf-release-jobs-843a574d66df6263.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-19T20:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e10ec472_71ee6846",
+      "range": {
+        "startLine": 5,
+        "startChar": 52,
+        "endLine": 5,
+        "endChar": 53
+      },
+      "revId": "49bd56b984fa27d583d9deaa3f1e4c98865aa4e6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f83b2b63_86b8fdcd",
         "filename": "releasenotes/notes/lf-release-jobs-843a574d66df6263.yaml",
         "patchSetId": 4
@@ -45,6 +69,30 @@
       "revId": "49bd56b984fa27d583d9deaa3f1e4c98865aa4e6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58566ffa_41db0192",
+        "filename": "releasenotes/notes/lf-release-jobs-843a574d66df6263.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-19T20:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f83b2b63_86b8fdcd",
+      "range": {
+        "startLine": 6,
+        "startChar": 21,
+        "endLine": 6,
+        "endChar": 22
+      },
+      "revId": "49bd56b984fa27d583d9deaa3f1e4c98865aa4e6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
