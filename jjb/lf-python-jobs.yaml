@@ -387,11 +387,11 @@
           included-regions: "{obj:github_included_regions}"
 
 ##############
-# Tox Verify #
+# Tox Common #
 ##############
 
-- lf_tox_verify: &lf_tox_verify
-    name: lf-tox-verify
+- lf_tox_common: &lf_tox_common
+    name: lf-tox-common
 
     ######################
     # Default parameters #
@@ -464,7 +464,7 @@
     # Python projects typically use tox to run testing.
     name: "{project-name}-tox-verify-{stream}"
     id: gerrit-tox-verify
-    <<: *lf_tox_verify
+    <<: *lf_tox_common
 
     ######################
     # Default parameters #
@@ -516,7 +516,7 @@
     # Python projects typically use tox to run testing.
     name: "{project-name}-tox-verify-{stream}"
     id: github-tox-verify
-    <<: *lf_tox_verify
+    <<: *lf_tox_common
 
     properties:
       - lf-infra-properties:
@@ -542,6 +542,86 @@
           status-context: "Tox Verify"
           permit-all: true
           github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
+
+- job-template:
+    # Run tox after merge of gerrit change set
+    name: "{project-name}-tox-merge-{stream}"
+    id: gerrit-tox-merge
+    <<: *lf_tox_common
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_merge_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+
+- job-template:
+    # Run tox after merge of github pull request
+    name: "{project-name}-tox-merge-{stream}"
+    id: github-tox-merge
+    <<: *lf_tox_common
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^remerge$"
+          only-trigger-phrase: true
+          status-context: "Tox Merge"
+          permit-all: true
+          github-hooks: true
+          org-list:
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
           white-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
