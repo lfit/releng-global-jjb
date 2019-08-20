@@ -8,6 +8,7 @@
     jobs:
       - gerrit-python-xc-clm
       - gerrit-tox-verify
+      - gerrit-tox-merge
 
 - job-group:
     name: "{project-name}-github-python-jobs"
@@ -18,3 +19,4 @@
     jobs:
       - github-python-xc-clm
       - github-tox-verify
+      - github-tox-merge

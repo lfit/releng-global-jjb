@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Add python tox merge job templates for gerrit and github.
+    These templates are triggered by merge events to test
+    the Python code on the branch that received the merge.
+    Renamed tox-verify macro to tox-common.
