@@ -74,7 +74,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'lf-releng-global-jjb'
-copyright = '2017, The Linux Foundation'
+copyright = '2019, The Linux Foundation'
 author = 'Linux Foundation Releng'
 
 # The version info for the project you're documenting, acts as replacement for
