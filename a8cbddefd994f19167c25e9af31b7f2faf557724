@@ -68,6 +68,30 @@
       "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ac525d1a_6438d120",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 30
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-21T00:57:26Z",
+      "side": 1,
+      "message": "I am not sure why we are getting this issue. In my terminal I run the following which works:\n 2015  export DOCKER_REGISTRY\u003dnexus3.onap.org\n 2016  export lfn_umbrella\u003donap\n 2017  export name\u003dexternalapi/nbi\n 2018  export version\u003d5.0.0-20190816T015028Z\n 2019  docker pull \"$DOCKER_REGISTRY\":10001/\"$lfn_umbrella\"/\"$name\":\"$version\"\n\nBut in Jenkins the pull fails. I am checking if there is an interpreter issue",
+      "parentUuid": "8762b262_fcd4bf0e",
+      "range": {
+        "startLine": 105,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 77
+      },
+      "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
