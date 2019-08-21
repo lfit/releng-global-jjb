@@ -48,6 +48,29 @@
     },
     {
       "key": {
+        "uuid": "2e9eae61_4ed00416",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 30
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-21T00:58:47Z",
+      "side": 1,
+      "message": "This also throws \"invalid reference format\"",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 84
+      },
+      "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8762b262_fcd4bf0e",
         "filename": "shell/release-job.sh",
         "patchSetId": 30
