@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    New templates to build and push Python source and binary distributions
+    to a PyPI server. Includes:
+    ``{project-name}-pypi-merge-{stream}``, ``gerrit-pypi-merge``,
+    ``github-pypi-merge``, ``{project-name}-pypi-release-{stream}``,
+    ``gerrit-pypi-release`` and ``github-pypi-release``.
