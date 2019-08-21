@@ -4,6 +4,9 @@
     jobs:
       - "{project-name}-python-jobs"
       - gerrit-tox-sonar
+      - gerrit-pypi-merge
+      - gerrit-pypi-release-verify
+      - gerrit-pypi-release-merge
 
     project-name: gerrit-python
 
@@ -12,6 +15,9 @@
     jobs:
       - "{project-name}-github-python-jobs"
       - github-tox-sonar
+      - github-pypi-merge
+      - github-pypi-release-verify
+      - github-pypi-release-merge
 
     project-name: github-python
 
