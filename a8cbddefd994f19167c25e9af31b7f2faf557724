@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0508152_2f92977f",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 30
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-21T00:40:44Z",
+      "side": 1,
+      "message": "This is going to be obtained from the releases file right? otherwise the teams will not become self serve since they will need to modify their ci-management yaml file every time they need a new release.\nIs best if we get all this information from the releases file directly and not set it up in the job yaml",
+      "range": {
+        "startLine": 478,
+        "startChar": 0,
+        "endLine": 496,
+        "endChar": 67
+      },
+      "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a04cbce7_e0713f84",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 30
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-21T00:40:44Z",
+      "side": 1,
+      "message": "We need to do this after the for loop because after the checkout HEAD will not point anymore to the change that we are verifying that contains the release file.\nThe proper way to do this is to process the for loop with the images and then after we can run lines 92, 93 and 94",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 5
+      },
+      "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8762b262_fcd4bf0e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 30
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-21T00:40:44Z",
+      "side": 1,
+      "message": "my test is picking the info from the releases file\nbut I am getting a \"invalid reference format\" Investigating still...",
+      "range": {
+        "startLine": 105,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 77
+      },
+      "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
