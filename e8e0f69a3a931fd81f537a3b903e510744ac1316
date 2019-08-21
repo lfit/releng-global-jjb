@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "14fc3483_7a10e86a",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-08-21T15:36:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf885111_301b3fd8",
+      "range": {
+        "startLine": 274,
+        "startChar": 24,
+        "endLine": 274,
+        "endChar": 30
+      },
+      "revId": "e8e0f69a3a931fd81f537a3b903e510744ac1316",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7a0eb2b_7fc6c1fe",
         "filename": "docs/jjb/lf-python-jobs.rst",
         "patchSetId": 1
@@ -83,6 +107,30 @@
       "writtenOn": "2019-08-21T15:20:23Z",
       "side": 1,
       "message": "we\u0027d like to have packages have packages pg signed before they are pushed to the repo. possible using the sigul setup could be used here?",
+      "range": {
+        "startLine": 24,
+        "startChar": 1,
+        "endLine": 24,
+        "endChar": 35
+      },
+      "revId": "e8e0f69a3a931fd81f537a3b903e510744ac1316",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "766980eb_8d15a1c4",
+        "filename": "shell/pypi-publish.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-08-21T15:36:16Z",
+      "side": 1,
+      "message": "I\u0027m sorry but I have no experience with sigul.  Whatever that is lol.  Can you please guide me?",
+      "parentUuid": "fbfeb967_4dc951bd",
       "range": {
         "startLine": 24,
         "startChar": 1,
