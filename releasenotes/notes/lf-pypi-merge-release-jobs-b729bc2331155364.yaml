@@ -1,0 +1,13 @@
+---
+features:
+  - |
+    New templates to build and push Python source and binary distributions
+    to a PyPI server. Includes:
+    ``{project-name}-pypi-verify-{stream}``, ``gerrit-pypi-verify``,
+    ``github-pypi-verify``,
+    ``{project-name}-pypi-merge-{stream}``, ``gerrit-pypi-merge``,
+    ``github-pypi-merge``,
+    ``{project-name}-pypi-release-verify-{stream}``,
+    ``gerrit-pypi-release-verify``, ``github-pypi-release-verify``,
+    ``{project-name}-pypi-release-merge-{stream}``,
+    ``gerrit-pypi-release-merge``, ``github-pypi-release-merge``,
