@@ -18,3 +18,25 @@
     jobs:
       - github-python-xc-clm
       - github-tox-verify
+
+- job-group:
+    name: "{project-name}-gerrit-pypi-jobs"
+
+    # This job group contains all the recommended jobs that should be deployed for
+    # a Gerrit-based Python project to test, build and deploy a library to PyPI.
+
+    jobs:
+      - gerrit-pypi-verify
+      - gerrit-pypi-merge
+      - gerrit-pypi-release
+
+- job-group:
+    name: "{project-name}-github-pypi-jobs"
+
+    # This job group contains all the recommended jobs that should be deployed for
+    # a Github-based Python project to test, build and deploy a library to PyPI.
+
+    jobs:
+      - github-pypi-verify
+      - github-pypi-merge
+      - github-pypi-release
