@@ -115,6 +115,53 @@
       "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "72a3c841_da17e7e2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 30
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-21T01:53:13Z",
+      "side": 1,
+      "message": "Ok.. I made it work!.. the trick is in the way we are running the command. We need to save the command in a variable and then run the command.. \nThis works:\n\ncommand\u003d\"docker pull ${DOCKER_REGISTRY}:10001/${lfn_umbrella}/${name}:${version}\"\neval \"$command\"",
+      "parentUuid": "ac525d1a_6438d120",
+      "range": {
+        "startLine": 105,
+        "startChar": 1,
+        "endLine": 105,
+        "endChar": 77
+      },
+      "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51afcf8e_a348163a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 30
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-21T01:53:13Z",
+      "side": 1,
+      "message": "Not sure if this is an interpreter issue yet, but this fails with a very usless error:\n01:50:14 Build step \u0027Execute shell\u0027 marked build as failure\n\nIn my machine this works fine. Investigating still..",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 95
+      },
+      "revId": "a8cbddefd994f19167c25e9af31b7f2faf557724",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
