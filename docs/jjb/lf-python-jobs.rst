@@ -7,7 +7,7 @@ Job Groups
 
 .. include:: ../job-groups.rst
 
-Below is a list of Maven job groups:
+Below is a list of Python job groups:
 
 .. literalinclude:: ../../jjb/lf-python-job-groups.yaml
    :language: yaml
@@ -25,6 +25,26 @@ Run CLM scanning against a Python project.
 
     :clm-project-name: Project name in Nexus IQ to send results to.
 
+lf-infra-pypi-dist-build
+------------------------
+
+Runs a shell script that creates and uses a Python virtual environment to
+build source and binary distributions after installing required packages.
+Writes distribution files to subdirectory "dist".
+
+No parameters.
+
+lf-infra-pypi-publish
+---------------------
+
+Runs a shell script that creates and uses a Python virtual environment to
+publish distributions to a PyPI index after installing required packages.
+Pushes all distribution files found in subdirectory "dist".
+
+:Required Parameters:
+
+    :pypi-server: PyPI server name; e.g., "staging" or "pypi"
+
 lf-infra-tox-install
 --------------------
 
@@ -34,6 +54,16 @@ Install Tox into a virtualenv.
 
     :python-version: Version of Python to install into the Tox virtualenv.
         Eg. python2 / python3
+
+lf-infra-tox-run
+----------------
+
+Runs a shell script that establishes a Python virtual environment.
+
+:Required Parameters:
+
+    :parallel: Boolean. If true use detox (distributed tox);
+        else use regular tox.
 
 lf-infra-tox-sonar
 ------------------
@@ -168,6 +198,8 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-version: Version of maven to use. (default: mvn35)
+    :parallel: Boolean indicator for tox to run tests in parallel or series.
+       (default: false, in series)
     :stream: Keyword used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -216,6 +248,235 @@ following pyenv variables before running.
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :parallel: Boolean indicator for tox to run tests in parallel or series.
+       (default: false, in series)
+    :python-version: Version of Python to configure as a base in virtualenv.
+        (default: python3)
+    :stream: Keyword representing a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. Empty works if tox.ini is at project root.
+        (default: '')
+    :tox-envs: Tox environments to run. If blank run everything described
+        in tox.ini. (default: '')
+    :gerrit_trigger_file_paths: Override file paths which used to filter which
+        file modifications will trigger a build. Refer to JJB documentation for
+        "file-path" details.
+        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+
+
+PyPI Verify
+-----------
+
+Verify job which runs tox, then builds source and binary distributions.
+Requires a setup.py file at the root of the project source repository.
+
+This job is pyenv aware so if the image contains an installation of pyenv at /opt/pyenv
+it will pick it up and run Python tests with the appropriate Python versions. This job
+will set the following pyenv variables before running.
+
+.. code:: bash
+
+   export PYENV_ROOT="/opt/pyenv"
+   export PATH="$PYENV_ROOT/bin:$PATH"
+
+:Template Names:
+
+    - {project-name}-pypi-verify-{stream}
+    - gerrit-pypi-verify
+    - github-pypi-verify
+
+:Comment Trigger: recheck
+
+:Required Parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
+
+:Optional Parameters:
+
+    :branch: The branch to build against. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :parallel: Boolean indicator for tox to run tests in parallel or series.
+       (default: false, in series)
+    :pre_build_script: Shell script to execute before the tox builder.
+        For example, install prerequisites or move files to the repo root.
+        (default: a string with only a comment)
+    :python-version: Version of Python to configure as a base in virtualenv.
+        (default: python3)
+    :stream: Keyword representing a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. Empty works if tox.ini is at project root.
+        (default: '')
+    :tox-envs: Tox environments to run. If blank run everything described
+        in tox.ini. (default: '')
+    :gerrit_trigger_file_paths: Override file paths which used to filter which
+        file modifications will trigger a build. Refer to JJB documentation for
+        "file-path" details.
+        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+
+
+PyPI Merge
+----------
+
+Merge job which runs tox, builds source and binary distributions, and pushes them to a named
+PyPI index. Requires a setup.py file at the root of the project source repository.  Requires
+a .pypirc configuration file in the Jenkins builder home directory, see sample below.
+
+.. code-block:: bash
+
+    [distutils] # this tells distutils what package indexes you can push to
+    index-servers =
+    staging
+    pypi
+
+    [staging]
+    repository: https://testpypi.python.org/pypi
+    username: your_username
+    password: your_password
+
+    [pypi]
+    repository: https://pypi.python.org/pypi
+    username: your_username
+    password: your_password
+
+This job is pyenv aware so if the image contains an installation of pyenv at /opt/pyenv
+it will pick it up and run Python tests with the appropriate Python versions. This job
+will set the following pyenv variables before running.
+
+.. code:: bash
+
+   export PYENV_ROOT="/opt/pyenv"
+   export PATH="$PYENV_ROOT/bin:$PATH"
+
+:Template Names:
+
+    - {project-name}-pypi-merge-{stream}
+    - gerrit-pypi-merge
+    - github-pypi-merge
+
+:Comment Trigger: pypi-remerge
+
+:Required Parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
+
+:Optional Parameters:
+
+    :branch: The branch to build against. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :parallel: Boolean indicator for tox to run tests in parallel or series.
+       (default: false, in series)
+    :pre_build_script: Shell script to execute before the tox builder.
+        For example, install prerequisites or move files to the repo root.
+        (default: a string with only a comment)
+    :pypi-server: Key for PyPI index server parameters in the .pypirc file.
+        Merge jobs should use a server like testpypi.python.org.  (default: staging)
+    :python-version: Version of Python to configure as a base in virtualenv.
+        (default: python3)
+    :stream: Keyword representing a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. Empty works if tox.ini is at project root.
+        (default: '')
+    :tox-envs: Tox environments to run. If blank run everything described
+        in tox.ini. (default: '')
+    :gerrit_trigger_file_paths: Override file paths which used to filter which
+        file modifications will trigger a build. Refer to JJB documentation for
+        "file-path" details.
+        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+
+
+PyPI Release
+------------
+
+Job which runs tox, builds source and binary distributions, and pushes them to a named
+PyPI index. Requires a setup.py file at the root of the project source repository. Requires
+a .pypirc configuration file in the Jenkins builder home directory, see sample below.
+
+.. code-block:: bash
+
+    [distutils] # this tells distutils what package indexes you can push to
+    index-servers =
+    staging
+    pypi
+
+    [staging]
+    repository: https://testpypi.python.org/pypi
+    username: your_username
+    password: your_password
+
+    [pypi]
+    repository: https://pypi.python.org/pypi
+    username: your_username
+    password: your_password
+
+This job is similar to the PyPI Merge job, but uses different triggers and a different
+default PyPI index name. Unlike common LF practice of releasing artifacts by moving them
+from one place to another, this job re-builds the distribution artifacts.
+
+This job is pyenv aware so if the image contains an installation of pyenv at /opt/pyenv
+it will pick it up and run Python tests with the appropriate Python versions. This job
+will set the following pyenv variables before running.
+
+.. code:: bash
+
+   export PYENV_ROOT="/opt/pyenv"
+   export PATH="$PYENV_ROOT/bin:$PATH"
+
+:Template Names:
+
+    - {project-name}-pypi-release-{stream}
+    - gerrit-pypi-release
+    - github-pypi-release
+
+:Comment Trigger: pypi-release
+
+:Required Parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
+
+:Optional Parameters:
+
+    :branch: The branch to build against. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :parallel: Boolean indicator for tox to run tests in parallel or series.
+       (default: false, in series)
+    :pre_build_script: Shell script to execute before the tox builder.
+        For example, install prerequisites or move files to the repo root.
+        (default: a string with only a comment)
+    :pypi-server: Key for PyPI index server parameters in the .pypirc file.
+        Release jobs should use a server like pypy.org.  (default: pypi)
     :python-version: Version of Python to configure as a base in virtualenv.
         (default: python3)
     :stream: Keyword representing a release code-name.
