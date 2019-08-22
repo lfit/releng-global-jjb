@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fix missing extension in ID for release-schema.yaml.
+  - |
+    Make "distribution_type" mandatory in future release files.

@@ -9,14 +9,17 @@
 ##############################################################################
 ---
 $schema: "http://json-schema.org/schema#"
-$id: "https://github.com/lfit/releng-global-jjb/blob/master/release-schema"
+$id: "https://github.com/lfit/releng-global-jjb/blob/master/release-schema.yaml"
 
 required:
+  - "distribution_type"
   - "log_dir"
   - "project"
   - "version"
 
 properties:
+  distribution_type:
+    type: "string"
   log_dir:
     type: "string"
   project:
