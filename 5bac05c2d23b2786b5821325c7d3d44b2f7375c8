@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ec68cf42_c448dc9a",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 814,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-22T22:04:31Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 814,
+        "startChar": 34,
+        "endLine": 814,
+        "endChar": 42
+      },
+      "revId": "5bac05c2d23b2786b5821325c7d3d44b2f7375c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28f2d76c_fba7679c",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-22T22:04:31Z",
+      "side": 1,
+      "message": "Just one newline at the end.",
+      "range": {
+        "startLine": 828,
+        "startChar": 0,
+        "endLine": 831,
+        "endChar": 0
+      },
+      "revId": "5bac05c2d23b2786b5821325c7d3d44b2f7375c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1aacd52_23244636",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-22T22:04:31Z",
+      "side": 1,
+      "message": "This should include the parameters as well. Although they\u0027re documented for the job template, they should be here as well for users who want to implement this macro in other jobs.",
+      "range": {
+        "startLine": 283,
+        "startChar": 0,
+        "endLine": 283,
+        "endChar": 26
+      },
+      "revId": "5bac05c2d23b2786b5821325c7d3d44b2f7375c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
