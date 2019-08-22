@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cb762acc_94503b1a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 37
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-22T23:17:09Z",
+      "side": 1,
+      "message": "I think we are cramping more changes here than just docker releases. Let\u0027s make this patch docker-releases exclusive. \nI want to suggest isolating the following in a separate patch that we can get merged sooner:\n- Fix to schema/release-schema.yaml\n- The introduction of macro lf-build-with-parameters-maven-release for maven releases.\n- Fixes to the triggers\n\nThat way we can have smaller changes merged and tested.. Let me help you breaking the fixes down in separate patches.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "a2b4015ea32218dee135f63a5c34265c810b0c18",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
