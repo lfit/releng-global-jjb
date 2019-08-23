@@ -46,6 +46,30 @@
       "revId": "437c3e9588113e8370d17bc94315c2872ae3af3f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c64b7ff_8548919e",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-23T22:24:53Z",
+      "side": 1,
+      "message": "Ok, you should probably pull the change-merged-event trigger (and the plain \"github\" trigger) out then. And if there\u0027s nothing protecting releases from unauthorized users, that will definitely need to be changed.",
+      "parentUuid": "4b9f9e74_6b5b95c3",
+      "range": {
+        "startLine": 800,
+        "startChar": 6,
+        "endLine": 800,
+        "endChar": 27
+      },
+      "revId": "437c3e9588113e8370d17bc94315c2872ae3af3f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
