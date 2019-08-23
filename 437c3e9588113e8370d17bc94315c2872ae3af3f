@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0af77bc9_8b04dcd6",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-08-23T19:26:29Z",
+      "side": 1,
+      "message": "Would we want the release job triggered on all merges?",
+      "range": {
+        "startLine": 800,
+        "startChar": 6,
+        "endLine": 800,
+        "endChar": 27
+      },
+      "revId": "437c3e9588113e8370d17bc94315c2872ae3af3f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
