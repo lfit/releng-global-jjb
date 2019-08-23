@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bcbcccbf_77d32dd0",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-23T17:17:04Z",
+      "side": 1,
+      "message": "can we change this to a bool?\n\n      - bool:\n          name: USE_RELEASE_FILE\n          default: true\n          description: |\n              If USE_RELEASE_FILE is disabled then .... blah blah.",
+      "range": {
+        "startLine": 493,
+        "startChar": 1,
+        "endLine": 496,
+        "endChar": 67
+      },
+      "revId": "85287c4125f0cb111e4df46c37fd6d4d523ab08f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
