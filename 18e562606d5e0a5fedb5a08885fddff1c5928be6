@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8746f5fa_177c63ae",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1837,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-08-23T15:28:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "85e19334_f1024418",
+      "range": {
+        "startLine": 1837,
+        "startChar": 0,
+        "endLine": 1837,
+        "endChar": 16
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "14771463_0c50d39c",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-08-19T16:50:58Z",
       "side": 1,
       "message": "Remove the word \"Python\".",
+      "range": {
+        "startLine": 1838,
+        "startChar": 2,
+        "endLine": 1838,
+        "endChar": 8
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "61661d95_57ba2629",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1838,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-08-23T15:28:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14771463_0c50d39c",
       "range": {
         "startLine": 1838,
         "startChar": 2,
@@ -168,6 +216,30 @@
       "writtenOn": "2019-08-19T16:50:58Z",
       "side": 1,
       "message": "These variables all need double quotes around them.",
+      "range": {
+        "startLine": 326,
+        "startChar": 16,
+        "endLine": 326,
+        "endChar": 28
+      },
+      "revId": "18e562606d5e0a5fedb5a08885fddff1c5928be6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1348ff73_b587aa74",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-08-23T15:28:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f16eb767_755fb99d",
       "range": {
         "startLine": 326,
         "startChar": 16,
