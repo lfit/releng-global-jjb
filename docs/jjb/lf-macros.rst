@@ -327,6 +327,12 @@ lf-infra-tox-parameters
 Provides parameters needed by python-tox. Should be used by any jobs that need
 to run `tox <https://tox.readthedocs.io>`.
 
+
+lf-build-with-parameters-maven-release
+--------------------------------------
+
+Provides parameters needed for maven release jobs 'build with parameters'.
+
 Properties
 ==========
 

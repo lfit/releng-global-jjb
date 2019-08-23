@@ -475,6 +475,26 @@
             Tox environments to run build against.
             Example: docs,py2,py3
 
+- parameter:
+    name: lf-build-with-parameters-maven-release
+    parameters:
+      - string:
+          name: VERSION
+          default: ""
+          description: "This is the tag, Example: 1.0.0"
+      - string:
+          name: LOG_DIR
+          default: ""
+          description: "Log dir, example: project-maven-stage-master/17/"
+      - string:
+          name: DISTRIBUTION_TYPE
+          default: ""
+          description: "Set to maven for build with parametes"
+      - string:
+          name: RELEASE_FILE
+          default: "{use-release-file}"
+          description: "Set to False for job built with parameters"
+
 ##############
 # PROPERTIES #
 ##############
