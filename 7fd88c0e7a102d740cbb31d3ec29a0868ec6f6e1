@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "8823a4c5_800bb9fd",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 45
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-23T23:30:53Z",
+      "side": 1,
+      "message": "Sounds good",
+      "parentUuid": "525be0dd_6ea983a1",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 84
+      },
+      "revId": "7fd88c0e7a102d740cbb31d3ec29a0868ec6f6e1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "505dc628_c6bb7c24",
         "filename": "shell/release-job.sh",
         "patchSetId": 45
