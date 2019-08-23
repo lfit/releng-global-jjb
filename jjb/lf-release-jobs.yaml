@@ -30,6 +30,7 @@
           project: "{project}"
           branch: "$GERRIT_BRANCH"
           stream: "$GERRIT_BRANCH"
+      - lf-build-with-parameters-maven-release
 
     publishers:
       - lf-infra-publish

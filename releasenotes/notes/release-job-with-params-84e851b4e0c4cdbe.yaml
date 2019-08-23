@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Add support for "Build with Parameters" for projects
+    that do not want to use a release file for maven builds.
+fixes:
+  - |
+    Restructure shell/release-job.sh into functions.
