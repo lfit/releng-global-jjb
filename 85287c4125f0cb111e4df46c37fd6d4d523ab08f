@@ -22,6 +22,30 @@
       "revId": "85287c4125f0cb111e4df46c37fd6d4d523ab08f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93dce507_e48c198d",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-23T17:56:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bcbcccbf_77d32dd0",
+      "range": {
+        "startLine": 493,
+        "startChar": 1,
+        "endLine": 496,
+        "endChar": 67
+      },
+      "revId": "85287c4125f0cb111e4df46c37fd6d4d523ab08f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
