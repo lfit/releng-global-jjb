@@ -22,6 +22,30 @@
       "revId": "437c3e9588113e8370d17bc94315c2872ae3af3f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b9f9e74_6b5b95c3",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-08-23T19:42:21Z",
+      "side": 1,
+      "message": "In my opinion no.  My thinking is that merge should behave kinda-sorta like a stage job in that it pushes the artifact to a transient, temporary area where it can be retrieved and tested.  The actual publish-to-public is never automatic, is only triggered when a person physically types the characters \"pypy-release\".  The problem of course is that the trigger phrase is not guarded, any old Joe User can do it.",
+      "parentUuid": "0af77bc9_8b04dcd6",
+      "range": {
+        "startLine": 800,
+        "startChar": 6,
+        "endLine": 800,
+        "endChar": 27
+      },
+      "revId": "437c3e9588113e8370d17bc94315c2872ae3af3f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
