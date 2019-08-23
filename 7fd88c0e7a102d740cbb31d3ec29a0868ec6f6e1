@@ -22,6 +22,52 @@
       "revId": "7fd88c0e7a102d740cbb31d3ec29a0868ec6f6e1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "525be0dd_6ea983a1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 45
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-23T23:15:01Z",
+      "side": 1,
+      "message": "If you want to try to verify if a release is actually released, I would suggest trying to pull from 10002 (releases) rather than 10001 (public). The reason for this, I want to avoid the case where ONAP might tag a SNAPSHOT as \"5.0.0\" for example which would not surprise me. In this case, pulling from 10001 will succeed thinking that the image was released, but it was just pulled from snapshots through 10001.\nMaking sure we are pulling from releases and just releases is safer.\n\nAll LF projects use 10002 as \"releases\".",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 84
+      },
+      "revId": "7fd88c0e7a102d740cbb31d3ec29a0868ec6f6e1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "505dc628_c6bb7c24",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 45
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-23T23:15:01Z",
+      "side": 1,
+      "message": "If an image is released, do we just want to pass the job? I think in case of maven, we actually fail it. Wouldn\u0027t it make more sense to fail the job, that way people will avoid merging a releases file for an already released artifact.",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 79
+      },
+      "revId": "7fd88c0e7a102d740cbb31d3ec29a0868ec6f6e1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
