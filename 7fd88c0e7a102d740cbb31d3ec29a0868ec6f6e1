@@ -68,6 +68,30 @@
       "revId": "7fd88c0e7a102d740cbb31d3ec29a0868ec6f6e1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "081a143b_1e309f98",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 45
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-23T23:29:18Z",
+      "side": 1,
+      "message": "For maven AFAIK if it\u0027s released I pass. So that remerge works",
+      "parentUuid": "505dc628_c6bb7c24",
+      "range": {
+        "startLine": 106,
+        "startChar": 0,
+        "endLine": 106,
+        "endChar": 79
+      },
+      "revId": "7fd88c0e7a102d740cbb31d3ec29a0868ec6f6e1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
