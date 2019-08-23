@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    while installing packages using pip install -r requirements,
+    getting conflicts because the version miss-matching.
+    Force reinstalling the required versions to overcome the
+    conflicts
