@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Add pre-build-script parameter to python clm, tox and sonar templates.
+    Gives flexibility to install prerequisite libraries, rearrange the
+    source tree, etc.
