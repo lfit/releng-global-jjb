@@ -95,6 +95,9 @@ IQ Server.
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
+    :pre_build_script: Shell script to execute before the CLM builder.
+        For example, install prerequisites or move files to the repo root.
+        (default: a string with only a comment)
     :stream: Keyword used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -168,6 +171,9 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-version: Version of maven to use. (default: mvn35)
+    :pre_build_script: Shell script to execute before the Sonar builder.
+        For example, install prerequisites or move files to the repo root.
+        (default: a string with only a comment)
     :stream: Keyword used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -216,6 +222,9 @@ following pyenv variables before running.
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :pre_build_script: Shell script to execute before the Tox builder.
+        For example, install prerequisites or move files to the repo root.
+        (default: a string with only a comment)
     :python-version: Version of Python to configure as a base in virtualenv.
         (default: python3)
     :stream: Keyword representing a release code-name.
