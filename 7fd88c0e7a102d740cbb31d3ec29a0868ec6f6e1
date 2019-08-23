@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c2c90240_c9813ff7",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 45
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-23T22:24:15Z",
+      "side": 1,
+      "message": "tested +1 \nThe condition is the right one since we could only run these steps on a docker node and the job will fail anyhow if we would be using a builder. This is explained in the release notes",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 47
+      },
+      "revId": "7fd88c0e7a102d740cbb31d3ec29a0868ec6f6e1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
