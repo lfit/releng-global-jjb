@@ -57,6 +57,6 @@ EOF
     # Use `python -m pip` to ensure we are using the latest version of pip
     python -m pip install --user --quiet --upgrade pip
     python -m pip install --user --quiet --upgrade setuptools
-    python -m pip install --user --quiet --upgrade -r "$requirements_file"
+    python -m pip install --user --quiet --upgrade --force-reinstall -r "$requirements_file"
     rm -rf "$requirements_file"
 fi
