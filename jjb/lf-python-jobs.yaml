@@ -77,6 +77,7 @@
     java-version: openjdk8
     nexus-iq-cli-version: 1.44.0-01
     nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
+    pre_build_script: "# pre-build script goes here"
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -115,6 +116,7 @@
     builders:
       - lf-update-java-alternatives:
           java-version: "{java-version}"
+      - shell: "{pre_build_script}"
       - lf-infra-clm-python:
           clm-project-name: "{nexus-iq-namespace}{project-name}"
 
@@ -223,6 +225,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-version: openjdk8
+    pre_build_script: "# pre-build script goes here"
     python-version: python2
     mvn-global-settings: global-settings
     mvn-settings: "{mvn-settings}"
@@ -275,6 +278,7 @@
       - lf-infra-pre-build
       - lf-infra-tox-install:
           python-version: "{python-version}"
+      - shell: "{pre_build_script}"
       - shell: !include-raw-escape: ../shell/tox-run.sh
       - lf-provide-maven-settings:
           global-settings-file: "{mvn-global-settings}"
@@ -404,6 +408,7 @@
     git-url: "$GIT_URL/$GERRIT_PROJECT"
     github-url: "https://github.com"
     parallel: true
+    pre_build_script: "# pre-build script goes here"
     python-version: python2
     stream: master
     submodule-recursive: true
@@ -455,6 +460,7 @@
       - lf-infra-pre-build
       - lf-infra-tox-install:
           python-version: "{python-version}"
+      - shell: "{pre_build_script}"
       - shell: !include-raw-escape: ../shell/tox-run.sh
 
     publishers:
