@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "12e7aeee_75555533",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-24T02:16:51Z",
+      "side": 1,
+      "message": "this should not be changed unless this file was created today",
+      "revId": "45109be9d5f73b0db4cf1c5da79a60ee9e67b6fa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e9be997_7696bfe5",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-24T02:16:51Z",
+      "side": 1,
+      "message": "is this required?",
+      "revId": "45109be9d5f73b0db4cf1c5da79a60ee9e67b6fa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
