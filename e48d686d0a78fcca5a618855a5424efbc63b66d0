@@ -34,6 +34,24 @@
       "revId": "e48d686d0a78fcca5a618855a5424efbc63b66d0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30db4308_b33ceb75",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-26T21:58:34Z",
+      "side": 1,
+      "message": "I did one more test, if ONAP happens to set this variable as anything else than a bool, jjb takes it as \"false\" \nBy the build error they will actually notice this is not the right way of defining a bool.. \nI think as a next patch we can start getting fancier and write error handling better, but the current code will allow them to undestand they are doing something wrong",
+      "parentUuid": "a488e5bc_a22b193e",
+      "revId": "e48d686d0a78fcca5a618855a5424efbc63b66d0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
