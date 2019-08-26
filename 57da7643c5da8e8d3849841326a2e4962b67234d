@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "250812eb_95aceb08",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-26T07:27:01Z",
+      "side": 1,
+      "message": "It\u0027s not clear on the requirements for this jobs, please elaborate, IMU this might be a copy-paste from the verify jobs and requires an update?\n\nnot sure if we need another validation job that runs after a merge job to validate that the merge job has gone through successfully.",
+      "range": {
+        "startLine": 249,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 80
+      },
+      "revId": "57da7643c5da8e8d3849841326a2e4962b67234d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
