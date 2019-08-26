@@ -48,7 +48,9 @@ lftools[openstack]~=0.26.0
 python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 dogpile.cache~=0.6.8  # Version 0.7.[01] seems to break openstackclient
+more-itertools~=5.0.0
 niet~=1.4.2 # Extract values from yaml
+tox~=3.5.0
 yq~=2.7.2
 EOF
 
