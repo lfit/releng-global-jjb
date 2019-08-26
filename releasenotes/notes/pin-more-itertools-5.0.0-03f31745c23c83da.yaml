@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Pin more-itertools ~= 5.0.0, since version 6.0.0 requires Python 3.4
+    https://github.com/erikrose/more-itertools/releases
+
+    Error:
+    more-itertools requires Python '>=3.4' but the running Python is 2.7.5
