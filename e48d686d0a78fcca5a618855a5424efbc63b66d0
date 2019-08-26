@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "237743e3_633329b1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-26T21:40:33Z",
+      "side": 1,
+      "message": "Assumes that USE_RELEASE_FILE is boolean. If USE_RELEASE_FILE is unset or !\u003d true|false this will be an error.",
+      "revId": "e48d686d0a78fcca5a618855a5424efbc63b66d0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
