@@ -504,7 +504,7 @@
           default: ""
           description: "Set to maven for build with parametes"
       - bool:
-          name: RELEASE_FILE
+          name: USE_RELEASE_FILE
           default: "{use-release-file}"
           description: "Set to False for job built with parameters"
 
