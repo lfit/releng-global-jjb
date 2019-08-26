@@ -16,6 +16,24 @@
       "revId": "e48d686d0a78fcca5a618855a5424efbc63b66d0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a488e5bc_a22b193e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-26T21:41:44Z",
+      "side": 1,
+      "message": "This is a local var defined in:\nhttps://github.com/lfit/releng-global-jjb/blob/master/jjb/lf-release-jobs.yaml#L55\n\nSimilar to Project, branch... is never unset",
+      "parentUuid": "237743e3_633329b1",
+      "revId": "e48d686d0a78fcca5a618855a5424efbc63b66d0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
