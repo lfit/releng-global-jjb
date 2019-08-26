@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Rename "RELEASE_FILE" parameter to "USE_RELEASE_FILE" in release-jobs.
+    This will match the actual varaible default value better and will not
+    collide with the local "release_file" in the script.
+  - |
+    Fix "USE_RELEASE_FILE" if statement. We are now using a bool instead of
+    a string. Changing the if statements to evaluate bools.

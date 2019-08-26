@@ -151,8 +151,7 @@ if [ "${LOGS_SERVER}" == 'None' ]; then
     exit 1
 fi
 
-RELEASE_FILE="${RELEASE_FILE:-True}"
-if [[ "$RELEASE_FILE" == "True" ]]; then
+if $USE_RELEASE_FILE ; then
 
   release_files=$(git diff-tree --no-commit-id -r "$GERRIT_PATCHSET_REVISION" --name-only -- "releases/" ".releases/")
   if (( $(grep -c . <<<"$release_files") > 1 )); then
@@ -165,7 +164,7 @@ if [[ "$RELEASE_FILE" == "True" ]]; then
   fi
 
 else
-  echo "This is job is built with parameters, no release file needed"
+  echo "This job is built with parameters, no release file needed. Continuing..."
   release_file="None"
 fi
 
@@ -211,7 +210,7 @@ echo "DISTRIBUTION_TYPE: $DISTRIBUTION_TYPE"
 if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
   wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
   RELEASE_SCHEMA="release-schema.yaml"
-  if [[ "$RELEASE_FILE" == "True" ]]; then
+  if $USE_RELEASE_FILE ; then
     verify_schema
   fi
   maven_release_file
