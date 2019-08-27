@@ -46,6 +46,30 @@
       "revId": "c9e1fcbf5227544fae2c27a2df48cce01514ee8f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0091e54e_e9b327ff",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2019-08-27T17:19:58Z",
+      "side": 1,
+      "message": "Actually as I see this script is common for all jobs..\nProject related jobs tox verify jobs and all..\nLooks like this script installing the lftools and basic python packages required in the start of the job..\nSo not sure removing this scripts or any package may cause the job failures.",
+      "parentUuid": "4c918008_6dc9f2ef",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 9
+      },
+      "revId": "c9e1fcbf5227544fae2c27a2df48cce01514ee8f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
