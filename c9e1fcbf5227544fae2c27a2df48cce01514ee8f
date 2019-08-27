@@ -22,6 +22,30 @@
       "revId": "c9e1fcbf5227544fae2c27a2df48cce01514ee8f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4c918008_6dc9f2ef",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2019-08-27T14:37:03Z",
+      "side": 1,
+      "message": "if i remove the requirements i got error at\n09:56:59 ---\u003e logs-deploy.sh\n09:56:59 /tmp/jenkins6923421349102619120.sh: line 33: lftools: command not found\n\nthis is related to this ticket https://jira.linuxfoundation.org/browse/RELENG-2074",
+      "parentUuid": "22e19f7e_f9aef9ea",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 9
+      },
+      "revId": "c9e1fcbf5227544fae2c27a2df48cce01514ee8f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
