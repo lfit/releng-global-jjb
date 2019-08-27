@@ -42,14 +42,6 @@ to support multi-branch.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
         (default: $BUILD_DIR/output)
-
-        .. code-block:: bash
-           :caption: Example
-
-           install-prefix: |
-               #!/bin/bash
-               echo "Hello World."
-
     :make-opts: Parameters to pass to make. (default: '')
     :pre-build: Shell script to run before performing build. Useful for
         setting up dependencies. (default: '')
@@ -96,14 +88,6 @@ project into a tar.xz tarball to produce a release candidate.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
         (default: $BUILD_DIR/output)
-
-        .. code-block:: bash
-           :caption: Example
-
-           install-prefix: |
-               #!/bin/bash
-               echo "Hello World."
-
     :make-opts: Parameters to pass to make. (default: '')
     :pre-build: Shell script to run before performing build. Useful for
         setting up dependencies. (default: '')
@@ -162,14 +146,6 @@ Verify job which runs cmake && make && make install to test a project build..
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
         (default: $BUILD_DIR/output)
-
-        .. code-block:: bash
-           :caption: Example
-
-           install-prefix: |
-               #!/bin/bash
-               echo "Hello World."
-
     :make-opts: Parameters to pass to make. (default: '')
     :pre-build: Shell script to run before performing build. Useful for
         setting up dependencies. (default: '')
