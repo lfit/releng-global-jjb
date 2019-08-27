@@ -69,6 +69,24 @@
       "revId": "45109be9d5f73b0db4cf1c5da79a60ee9e67b6fa",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "377e1e56_e1d7670d",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-27T03:43:24Z",
+      "side": 1,
+      "message": "where did you get this error locally or through the job?",
+      "parentUuid": "4f9259a7_c977880d",
+      "revId": "45109be9d5f73b0db4cf1c5da79a60ee9e67b6fa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
