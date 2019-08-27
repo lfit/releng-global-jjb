@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22e19f7e_f9aef9ea",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-27T05:55:29Z",
+      "side": 1,
+      "message": "we should consider removing all these from here and testing it with the jobs, to make sure the real issue in question is being addressed. \n\nIf these dependencies are still required they should be moved to the requirements file for each project that uses this script.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 9
+      },
+      "revId": "c9e1fcbf5227544fae2c27a2df48cce01514ee8f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
