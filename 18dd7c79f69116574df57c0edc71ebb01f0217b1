@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cd9eec34_cc3795d9",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-27T18:32:45Z",
+      "side": 1,
+      "message": "you are going to need to install it before tox is invoked.",
+      "range": {
+        "startLine": 20,
+        "startChar": 3,
+        "endLine": 20,
+        "endChar": 35
+      },
+      "revId": "18dd7c79f69116574df57c0edc71ebb01f0217b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
