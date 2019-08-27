@@ -1,0 +1,4 @@
+---
+upgrade:
+  - |
+    Update lftools version to **v0.26.1**.
