@@ -34,15 +34,15 @@ set +e  # Allow detox to fail so that we can collect the logs in the next step
 PARALLEL="${PARALLEL:-true}"
 if [ "${PARALLEL}" = true ]; then
     if [ -n "$TOX_ENVS" ]; then
-        detox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/detox.log"
+        tox -e "$TOX_ENVS" --parallel auto | tee -a "$ARCHIVE_TOX_DIR/tox.log"
         tox_status="${PIPESTATUS[0]}"
     else
-        detox | tee -a "$ARCHIVE_TOX_DIR/detox.log"
+        tox --parallel auto | tee -a "$ARCHIVE_TOX_DIR/tox.log"
         tox_status="${PIPESTATUS[0]}"
     fi
 else
     if [ -n "$TOX_ENVS" ]; then
-        tox -e "$TOX_ENVS"  | tee -a "$ARCHIVE_TOX_DIR/tox.log"
+        tox -e "$TOX_ENVS" | tee -a "$ARCHIVE_TOX_DIR/tox.log"
         tox_status="${PIPESTATUS[0]}"
     else
         tox | tee -a "$ARCHIVE_TOX_DIR/tox.log"
