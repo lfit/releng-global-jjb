@@ -42,14 +42,6 @@ to support multi-branch.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
         (default: $BUILD_DIR/output)
-
-        .. code-block:: bash
-           :caption: Example
-
-           install-prefix: |
-               #!/bin/bash
-               echo "Hello World."
-
     :make-opts: Parameters to pass to make. (default: '')
     :pre-build: Shell script to run before performing build. Useful for
         setting up dependencies. (default: '')
