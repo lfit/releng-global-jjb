@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "6ae8b081_afdf9d85",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-27T18:41:34Z",
+      "side": 1,
+      "message": "There is no python tests to run. Please don\u0027t call py36 here as it\u0027s completely pointless unless we have real python code to execute.",
+      "range": {
+        "startLine": 12,
+        "startChar": 2,
+        "endLine": 12,
+        "endChar": 6
+      },
+      "revId": "18dd7c79f69116574df57c0edc71ebb01f0217b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cd9eec34_cc3795d9",
         "filename": "tox.ini",
         "patchSetId": 7
@@ -19,6 +42,46 @@
         "endLine": 20,
         "endChar": 35
       },
+      "revId": "18dd7c79f69116574df57c0edc71ebb01f0217b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e588ca0e_274c042c",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-27T18:41:34Z",
+      "side": 1,
+      "message": "This whole testenv section is meaningless in the context of global-jjb. This is not a real python project and has no python code to actually execute tests for so no need to configure the generic testenv setting.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 0
+      },
+      "revId": "18dd7c79f69116574df57c0edc71ebb01f0217b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f5f4c97_ae647f59",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-27T18:41:34Z",
+      "side": 1,
+      "message": "basepython \u003d python3\n\nDo not force us to use Python 3.6 specifically setting python3 is sufficient as it will allow the user to use whatever python 3 version they have installed.",
       "revId": "18dd7c79f69116574df57c0edc71ebb01f0217b1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
