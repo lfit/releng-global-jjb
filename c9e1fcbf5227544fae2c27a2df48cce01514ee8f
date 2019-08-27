@@ -70,6 +70,30 @@
       "revId": "c9e1fcbf5227544fae2c27a2df48cce01514ee8f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c1ecb536_444e29e9",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-08-27T18:37:07Z",
+      "side": 1,
+      "message": "The only things that should be listed here are CLI tools that we need in our scripts, mainly lftools, and openstack client. Everything else here that\u0027s listed appears to be workaround to pin dependencies which may have been fine when there was only a couple of them but it\u0027s starting to get out of hand.",
+      "parentUuid": "0091e54e_e9b327ff",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 9
+      },
+      "revId": "c9e1fcbf5227544fae2c27a2df48cce01514ee8f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
