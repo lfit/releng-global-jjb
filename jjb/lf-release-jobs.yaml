@@ -25,14 +25,6 @@
       - lf-infra-properties:
           build-days-to-keep: 7
 
-    parameters:
-      - lf-infra-parameters:
-          project: "{project}"
-          branch: "$GERRIT_BRANCH"
-          stream: "$GERRIT_BRANCH"
-      - lf-build-with-parameters-maven-release:
-          use-release-file: "{use-release-file}"
-
     publishers:
       - lf-infra-publish
 
@@ -68,6 +60,14 @@
     #####################
 
     disabled: "{disable-job}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "$GERRIT_BRANCH"
+          stream: "$GERRIT_BRANCH"
+      - lf-build-with-parameters-maven-release:
+          use-release-file: "{use-release-file}"
 
     builders:
       - lf-infra-pre-build
@@ -164,6 +164,19 @@
     #####################
 
     disabled: "{disable-job}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "$GERRIT_BRANCH"
+          stream: "$GERRIT_BRANCH"
+      - lf-build-with-parameters-maven-release:
+          use-release-file: "{use-release-file}"
+      - bool:
+          name: DRY_RUN
+          default: false
+          description: |
+              If DRY_RUN is enabled artifacts are not published.
 
     builders:
       - lf-infra-pre-build
