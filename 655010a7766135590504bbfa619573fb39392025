@@ -93,6 +93,23 @@
       "revId": "655010a7766135590504bbfa619573fb39392025",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c47fcfc8_b511d0bb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-28T17:48:39Z",
+      "side": 1,
+      "message": "This is NOT valid bash...\n\n[[ $DRY_RUN ]] \u0026\u0026 return\nif [[ \"$JOB_NAME\" \u003d~ \"merge\" ]]; then\nAlso the quotes are not required inside \u0027[[]]\u0027",
+      "revId": "655010a7766135590504bbfa619573fb39392025",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
