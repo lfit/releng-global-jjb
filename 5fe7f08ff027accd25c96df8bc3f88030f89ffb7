@@ -16,6 +16,24 @@
       "revId": "5fe7f08ff027accd25c96df8bc3f88030f89ffb7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee56d8c9_cddc8b20",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-08-28T18:42:55Z",
+      "side": 1,
+      "message": "its the same result, if dryrun !\u003d false then the code is not run.",
+      "parentUuid": "b07a752a_d81cd63b",
+      "revId": "5fe7f08ff027accd25c96df8bc3f88030f89ffb7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
