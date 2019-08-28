@@ -9,7 +9,7 @@ Jenkins will pick this up and sign the ref extrapolated by log_dir and promote t
 
 Maven release jobs can also trigger via "Build with parameters" negating the need for a release file.
 The parameters will need to be filled out in the same was as a release file's would, excepting the speacial
-USE_RELEASE_FILE parameter which will need to be set to False to inform the job that it should not expect a release file.
+USE_RELEASE_FILE parameter which will need to be set to false to inform the job that it should not expect a release file.
 The Special Parameters are as follows:
 
 GERRIT_BRANCH = master
@@ -68,6 +68,17 @@ USE_RELEASE_FILE = false
         maven-versions-plugin: true
     - '{project-name}-gerrit-release-jobs':
         build-node: centos7-docker-8c-8g
+
+.. note::
+   Example of a merge job only, for projects that build with parameters:
+
+.. code-block:: none
+    - gerrit-maven-stage:
+        sign-artifacts: true
+        build-node: centos7-builder-4c-4g
+        maven-versions-plugin: true
+    - '{project-name}-release-merge'
+        build-node: centos7-builder-4c-4g
 
 .. note::
 
@@ -137,6 +148,11 @@ Jenkins configure -> Global properties -> Environment variables
 
 ``RELEASE_USERNAME = YOUR_RELEASE_USERNAME``
 ``RELEASE_EMAIL = YOUR_RELEASE_EMAIL``
+
+.. note::
+
+    These also need to be added to your global-vars-releng.sh
+    Or they will be overwritten.
 
 Jenkins configure -> Managed Files -> Add a New Config -> Custom File
 
