@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "243363ca_657c46bd",
+        "filename": "releasenotes/notes/lf-release-jobs-d54201d573596a3f.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-08-28T15:54:52Z",
+      "side": 1,
+      "message": "Sonatype",
+      "range": {
+        "startLine": 6,
+        "startChar": 36,
+        "endLine": 6,
+        "endChar": 44
+      },
+      "revId": "ab44403a5dd97dc85a455dbf5c169049c6e00f28",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
