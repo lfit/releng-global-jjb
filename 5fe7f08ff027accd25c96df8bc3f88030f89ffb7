@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b07a752a_d81cd63b",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-08-28T18:31:13Z",
+      "side": 1,
+      "message": "\u0027false\u0027 \u0026 \u0027true\u0027 are builtin commands. Bash allows you to use them as strings but if you use them as boolean it makes your code more robust.\nThe best way is:\n$DRY_RUN \u0026\u0026 return\nNow if $DRY_RUN is anything except \u0027true\u0027 or \u0027false\u0027 it is an error.",
+      "revId": "5fe7f08ff027accd25c96df8bc3f88030f89ffb7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
