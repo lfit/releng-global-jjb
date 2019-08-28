@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7275e0ce_42c8f81f",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-28T17:45:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b500ee65_edca2bc9",
+      "range": {
+        "startLine": 512,
+        "startChar": 10,
+        "endLine": 512,
+        "endChar": 23
+      },
+      "revId": "655010a7766135590504bbfa619573fb39392025",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b0feceb2_f43c1a33",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-08-28T17:21:47Z",
       "side": 1,
       "message": "Adding this here will also add it in the verify job, which i don\u0027t think we need",
+      "range": {
+        "startLine": 510,
+        "startChar": 0,
+        "endLine": 514,
+        "endChar": 64
+      },
+      "revId": "655010a7766135590504bbfa619573fb39392025",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8efa5538_51a80251",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-08-28T17:45:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b0feceb2_f43c1a33",
       "range": {
         "startLine": 510,
         "startChar": 0,
