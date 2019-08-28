@@ -507,6 +507,11 @@
           name: USE_RELEASE_FILE
           default: "{use-release-file}"
           description: "Set to False for job built with parameters"
+      - bool:
+          name: DRY_RUN
+          default: true
+          description: |
+              If DRY_RUN is enabled artifacts are not published.
 
 ##############
 # PROPERTIES #
