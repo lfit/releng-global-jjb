@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Verify both repos before attempting release.
+    We have run into a case where the repo on ODL
+    nexus was good, and the repo on sonotype nexus
+    was missing. Cover this case by running the verify
+    loop over each repo before attempting release.
