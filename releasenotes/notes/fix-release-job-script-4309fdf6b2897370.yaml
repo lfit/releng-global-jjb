@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add DRY_RUN build param to do a test run the job with publishing artifacts.

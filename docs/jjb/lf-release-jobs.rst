@@ -8,8 +8,12 @@ Self serve release jobs allow a project to create a releases/ or .releases/ dire
 Jenkins will pick this up and sign the ref extrapolated by log_dir and promote the artifact, whether maven or container.
 
 Maven release jobs can also trigger via "Build with parameters" negating the need for a release file.
-The parameters will need to be filled out in the same was as a release file's would, excepting the speacial
-USE_RELEASE_FILE parameter which will need to be set to False to inform the job that it should not expect a release file.
+The parameters will need to be filled out in the same was as a release file's would, excepting the special
+USE_RELEASE_FILE and DRY_RUN check boxes. The USE_RELEASE_FILE check box will need to be unchecked, if the job
+is expected to run with a release file, while passing the required information as build parameters.
+Similarly, the DRY_RUN check box will need to be unchecked, if the job needs to be tested while skipping
+repository promotion to Nexus.
+
 The Special Parameters are as follows:
 
 GERRIT_BRANCH = master
@@ -17,6 +21,7 @@ VERSION = 1.0.0
 LOG_DIR = example-project-maven-stage-master/17/
 DISTRIBUTION_TYPE = maven
 USE_RELEASE_FILE = false
+DRY_RUN = false
 
 .. note::
 

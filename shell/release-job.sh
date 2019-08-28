@@ -51,7 +51,7 @@ tag(){
     echo "git tag -v $VERSION"
     git tag -v "$VERSION"
     ########## Merge Part ##############
-    if [[ "$JOB_NAME" =~ "merge" ]]; then
+    if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
       echo "--> INFO: Running merge"
       gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
       git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
@@ -73,12 +73,12 @@ nexus_release(){
     STAGING_REPO=${staging_url#*repositories/}
     echo "Running Nexus Verify"
     lftools nexus release -v --server https://"$NEXUS_URL" "$STAGING_REPO"
+  done
+
+  #Run the loop twice, to catch errors on either nexus repo
+  if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
     echo "Merge will run"
     echo "lftools nexus release --server https://$NEXUS_URL $STAGING_REPO"
-  done
-  #Run the loop twice, to catch errors on either nexus repo
-
-  if [[ "$JOB_NAME" =~ "merge" ]]; then
     for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
       NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
       STAGING_REPO=${staging_url#*repositories/}
@@ -118,8 +118,8 @@ container_release_file(){
       echo "docker tag $container_image_id $DOCKER_REGISTRY:10002/$lfn_umbrella/$name:$VERSION"
       echo "docker push $DOCKER_REGISTRY:10002/$lfn_umbrella/$name:$VERSION"
       if [[ "$JOB_NAME" =~ "merge" ]]; then
-      docker tag "$container_image_id" "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
-      docker push "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
+        docker tag "$container_image_id" "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
+        docker push "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
       fi
       echo "#########################"
     fi
