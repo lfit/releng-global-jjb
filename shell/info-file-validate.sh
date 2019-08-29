@@ -11,11 +11,12 @@
 echo '--> info-file-validate.sh'
 set -e -o pipefail
 set -x  # Enable trace
+PROJECT="${PROJECT:-None}"
 
 virtualenv --quiet "/tmp/v/info"
 # shellcheck source=/tmp/v/info/bin/activate disable=SC1091
 source "/tmp/v/info/bin/activate"
-pip install PyYAML jsonschema rfc3987 yamllint
+pip install PyYAML jsonschema rfc3987 yamllint yq
 
 # Download info-schema.yaml and yaml-verfy-schema.py
 wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/info-schema.yaml \
@@ -26,3 +27,18 @@ yamllint INFO.yaml
 python yaml-verify-schema.py \
     -s info-schema.yaml \
     -y INFO.yaml
+
+
+# Verfiy that there is only one repository and that it matches $PROJECT
+REPO_LIST="$(yq -r '.repositories[]' INFO.yaml)"
+
+while IFS= read -r project; do
+  if [[ "$project" == "$PROJECT" ]]; then
+    echo "$project is valid"
+  else
+    echo "ERROR: $project is invalid"
+    echo "INFO.yaml file may only list one repository"
+    echo "Repository must match $PROJECT"
+    exit 1
+  fi
+done <<< "$REPO_LIST"

@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    INFO validate job checks that repositories matches $PROJECT
+    Catches projects that replace / with - in their INFO file
+    Also ensures that repositories only has one entry.
+    We are not supporting multiple projects with a single INFO.yaml file.
