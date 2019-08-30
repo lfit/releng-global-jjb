@@ -280,7 +280,9 @@ Forcibly removes all of the docker images.
 lf-infra-sonar
 ---------------
 
-Runs Jenkins Sonar plug-in
+Runs Jenkins SonarQube plug-in.
+
+Requires ``SonarQube Scanner for Jenkins``
 
 :Optional Parameters:
     :sonar-task: Sonar task to run. (default: "")

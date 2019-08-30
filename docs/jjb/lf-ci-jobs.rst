@@ -814,6 +814,19 @@ Sonar
 Runs Jenkins Sonarqube plug-in to review for bugs, code smells,
 and security vulnerabilities.
 
+Requires ``SonarQube Scanner for Jenkins``
+
+Plug-in configurations
+    Manage Jenkins --> Configure System --> SonarQube servers
+        - Name: Sonar (fixed)
+        - Server URL: https://sonar.server.org/
+        - Server authentication token: none
+
+    Manage Jenkins --> Global Tool Configuration --> SonarQube Scanner
+        - Name: SonarQube Scanner (fixed)
+        - Install automatically
+        - Select latest version
+
 :Template Names:
 
     - {project-name}-sonar
