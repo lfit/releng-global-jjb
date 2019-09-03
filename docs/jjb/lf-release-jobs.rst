@@ -1,69 +1,69 @@
 .. _lf-global-jjb-release:
 
 #######################
-Self Serve Release Jobs
+Self-Serve Release Jobs
 #######################
 
-Self serve release jobs allow a project to create a releases/ or .releases/ directory and then place a release yaml file in it.
-Jenkins will pick this up and sign the ref extrapolated by log_dir and promote the artifact, whether maven or container.
+Self-serve release jobs allow a project team to direct Jenkins to promote jar files or container images
+from staging areas to release areas.  To trigger the action, create a releases/ or .releases/ directory,
+place a release yaml file in it, and submit the change to Gerrit.  Upon merge of the change, Jenkins will
+sign the reference extrapolated by log_dir and promote the artifact.
 
-Maven release jobs can also trigger via "Build with parameters" negating the need for a release file.
-The parameters will need to be filled out in the same was as a release file's would, excepting the special
-USE_RELEASE_FILE and DRY_RUN check boxes. The USE_RELEASE_FILE check box will need to be unchecked, if the job
-is expected to run with a release file, while passing the required information as build parameters.
-Similarly, the DRY_RUN check box will need to be unchecked, if the job needs to be tested while skipping
-repository promotion to Nexus.
+Release jobs can also be triggered from Jenkins via the "Build with parameters" action, removing the need
+for a release file. The parameters must be filled out in the same way as a release file, except for the
+special USE_RELEASE_FILE and DRY_RUN check boxes. The USE_RELEASE_FILE check box must be unchecked if the
+job is expected to run with a release file, while passing the required information as build parameters.
+Similarly, the DRY_RUN check box must be unchecked if the job needs to be tested while skipping repository
+promotion to Nexus.
 
-The Special Parameters are as follows:
+The special parameters are as follows::
 
-GERRIT_BRANCH = master
-VERSION = 1.0.0
-LOG_DIR = example-project-maven-stage-master/17/
-DISTRIBUTION_TYPE = maven
-USE_RELEASE_FILE = false
-DRY_RUN = false
-
-.. note::
-
-   Example of a maven release file:
+    GERRIT_BRANCH = master
+    VERSION = 1.0.0
+    LOG_DIR = example-project-maven-stage-master/17/
+    DISTRIBUTION_TYPE = maven
+    USE_RELEASE_FILE = false
+    DRY_RUN = false
 
 .. note::
 
-   Release files regex: (releases\/.*\.yaml|\.releases\/.*\.yaml)
-   directory can be .releases/ or releases/
-   file can be ANYTHING.yaml
+   The release files regex is: (releases\/.*\.yaml|\.releases\/.*\.yaml).
+   In words, the directory name can be .releases/ or releases/; the file
+   name can be ANYTHING.yaml.
 
-
-.. code-block:: bash
-
-   $ cat releases/maven-1.0.0.yaml
-   ---
-   distribution_type: 'maven'
-   version: '1.0.0'
-   project: 'example-project'
-   log_dir: 'example-project-maven-stage-master/17/'
-
-
-   Example of a container release file:
+Example of a maven release file:
 
 .. code-block:: bash
 
-   $ cat releases/container-1.0.0.yaml
-   ---
-   distribution_type: 'container'
-   version: '1.0.0'
-   project: 'test'
-   containers:
-       - name: test-backend
-         version: 1.0.0-20190806T184921Z
-       - name: test-frontend
-         version: 1.0.0-20190806T184921Z
+    $ cat releases/maven-1.0.0.yaml
+    ---
+    distribution_type: 'maven'
+    version: '1.0.0'
+    project: 'example-project'
+    log_dir: 'example-project-maven-stage-master/17/'
+
+
+Example of a container release file:
+
+.. code-block:: bash
+
+    $ cat releases/container-1.0.0.yaml
+    ---
+    distribution_type: 'container'
+    version: '1.0.0'
+    project: 'test'
+    containers:
+        - name: test-backend
+          version: 1.0.0-20190806T184921Z
+        - name: test-frontend
+          version: 1.0.0-20190806T184921Z
 
 
 .. note::
 
    Job should be appended under gerrit-maven-stage
-   Example of a terse Jenkins job to call global-jjb macro:
+
+Example of a terse Jenkins job to call the global-jjb macro:
 
 .. code-block:: none
 
@@ -76,7 +76,7 @@ DRY_RUN = false
 
 .. note::
 
-   Release Engineers Please follow the setup guide before adding the job definition:
+   Release Engineers: please follow the setup guide below before adding the job definition.
 
 
 Setup for LFID Nexus Jenkins and Gerrit:
@@ -88,6 +88,7 @@ LFID
 Create an ``lfid`` and an ``ssh-key``
 
 ``YOUR_RELEASE_USERNAME`` for example: onap-release
+
 ``YOUR_RELEASE_EMAIL`` for example: collab-it+onap-release@linuxfoundation.org
 
 ssh-key example:
@@ -110,7 +111,7 @@ Create a Nexus account called ``'jenkins-release'`` with promote privileges.
 Gerrit
 ======
 
-Log into your Gerrit with ``YOU_RELEASE_USERNAME``, upload the publick part of the ``ssh-key`` you created earlier.
+Log into your Gerrit with ``YOU_RELEASE_USERNAME``, upload the public part of the ``ssh-key`` you created earlier.
 Log out of Gerrit and log in again with your normal account for the next steps.
 
 
