@@ -22,6 +22,30 @@
       "revId": "57da7643c5da8e8d3849841326a2e4962b67234d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bbab5cb4_dc210ff1",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-03T11:41:34Z",
+      "side": 1,
+      "message": "Hi Anil, yes this job is 98% identical to the verify job, and was copy/pasted from there then updated for appropriate triggers.  \n\nI believe that the validation/verification/test steps should also be performed after merge, just as is done in the Java/Maven world. Post merge is the first chance to catch the case of two independent parallel change sets that don\u0027t have git conflicts but have behavior/performance conflicts.",
+      "parentUuid": "250812eb_95aceb08",
+      "range": {
+        "startLine": 249,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 80
+      },
+      "revId": "57da7643c5da8e8d3849841326a2e4962b67234d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
