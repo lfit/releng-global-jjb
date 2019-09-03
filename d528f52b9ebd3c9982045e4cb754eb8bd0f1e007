@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "36755c91_e4934d2b",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-03T13:32:49Z",
+      "side": 1,
+      "message": "This only is possible for the super-power-enabled LF RelEng team, right?  We peons in the projects cannot trigger Jenkins jobs like this.  Perhaps document that?",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 3
+      },
+      "revId": "d528f52b9ebd3c9982045e4cb754eb8bd0f1e007",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12ad82f6_69b13ebf",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-03T13:32:49Z",
+      "side": 1,
+      "message": "Just special, not speAcial",
+      "range": {
+        "startLine": 11,
+        "startChar": 100,
+        "endLine": 11,
+        "endChar": 107
+      },
+      "revId": "d528f52b9ebd3c9982045e4cb754eb8bd0f1e007",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48cb72fd_7630120e",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 47
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-03T13:32:49Z",
+      "side": 1,
+      "message": "Is this the container tag?  It might have been better to use keyword \u0027tag\u0027 here, but IDK.",
+      "range": {
+        "startLine": 53,
+        "startChar": 18,
+        "endLine": 53,
+        "endChar": 40
+      },
+      "revId": "d528f52b9ebd3c9982045e4cb754eb8bd0f1e007",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
