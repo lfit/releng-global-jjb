@@ -4,13 +4,14 @@
 Self-Serve Release Jobs
 #######################
 
-Self-serve release jobs allow a project team to direct Jenkins to promote jar files or container
-images from staging areas to release areas.  To trigger the action, create a releases/ or .releases/
-directory, place one or more release yaml files in it, and submit the change to Gerrit.  Upon merge
-of the change, Jenkins will sign the reference(s) extrapolated by log_dir and promote the artifact(s).
+Self-serve release jobs allow a project team to direct Jenkins to promote a jar file or container
+image from a staging area to a release area.  To trigger the action, create a releases/ or .releases/
+directory, add a release yaml file to it, and submit a change set with exactly one release yaml file
+to Gerrit.  Upon merge of the change, Jenkins will sign the reference extrapolated by log_dir and
+promote the artifact.
 
-Release jobs can also be triggered from Jenkins via the "Build with parameters" action, removing the
-need for a release yaml file. The parameters must be filled out in the same way as a release file,
+A release job can also be triggered from Jenkins via the "Build with parameters" action, removing the
+need for a release yaml file. The parameters must be filled out in the same way as a release yaml file,
 except for the special USE_RELEASE_FILE and DRY_RUN check boxes. The USE_RELEASE_FILE check box must
 be unchecked if the job is expected to run with a release file, while passing the required information
 as build parameters. Similarly, the DRY_RUN check box must be unchecked if the job needs to be tested
@@ -27,27 +28,24 @@ The special parameters are as follows::
 
 .. note::
 
-   The release files regex is: (releases\/.*\.yaml|\.releases\/.*\.yaml).
+   The release file regex is: (releases\/.*\.yaml|\.releases\/.*\.yaml).
    In words, the directory name can be ".releases" or "releases"; the file
-   name can be any name with suffix ".yaml".
+   name can be anything with suffix ".yaml".
 
 Example of a maven release file:
 
 .. code-block:: bash
 
-    $ cat releases/maven-1.0.0.yaml
     ---
     distribution_type: 'maven'
     version: '1.0.0'
     project: 'example-project'
     log_dir: 'example-project-maven-stage-master/17/'
 
-
 Example of a container release file:
 
 .. code-block:: bash
 
-    $ cat releases/container-1.0.0.yaml
     ---
     distribution_type: 'container'
     version: '1.0.0'
@@ -111,7 +109,7 @@ Create a Nexus account called ``'jenkins-release'`` with promote privileges.
 Gerrit
 ======
 
-Log into your Gerrit with ``YOU_RELEASE_USERNAME``, upload the public part of the ``ssh-key`` you
+Log into your Gerrit with ``YOUR_RELEASE_USERNAME``, upload the public part of the ``ssh-key`` you
 created earlier. Log out of Gerrit and log in again with your normal account for the next steps.
 
 
