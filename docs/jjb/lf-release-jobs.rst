@@ -4,17 +4,28 @@
 Self-Serve Release Jobs
 #######################
 
-Self-serve release jobs allow a project team to direct Jenkins to promote jar files or container
-images from staging areas to release areas.  To trigger the action, create a releases/ or .releases/
-directory, place one or more release yaml files in it, and submit the change to Gerrit.  Upon merge
-of the change, Jenkins will sign the reference(s) extrapolated by log_dir and promote the artifact(s).
+Self-serve release jobs allow a project team to direct Jenkins to
+promote a jar file or container image from a staging area to a release
+area.  To trigger the action, create a releases/ or .releases/
+directory, add a release yaml file to it, and submit a change set with
+exactly one release yaml file to Gerrit.  Upon merge of the change,
+Jenkins will sign the reference extrapolated by log_dir and promote
+the artifact. The expected format of the release yaml file is shown in
+examples below.
 
-Release jobs can also be triggered from Jenkins via the "Build with parameters" action, removing the
-need for a release yaml file. The parameters must be filled out in the same way as a release file,
-except for the special USE_RELEASE_FILE and DRY_RUN check boxes. The USE_RELEASE_FILE check box must
-be unchecked if the job is expected to run with a release file, while passing the required information
-as build parameters. Similarly, the DRY_RUN check box must be unchecked if the job needs to be tested
-while skipping repository promotion to Nexus.
+The build node for maven and container release jobs must be CentOS,
+which supports the sigul client for accessing a signing server. The
+build node for container release jobs must have Docker installed.
+
+A release job can also be triggered from Jenkins via the "Build with
+parameters" action, removing the need for a release yaml file. The
+parameters must be filled out in the same way as a release yaml file,
+except for the special USE_RELEASE_FILE and DRY_RUN check boxes. The
+USE_RELEASE_FILE check box must be unchecked if the job is expected to
+run with a release file, while passing the required information as
+build parameters. Similarly, the DRY_RUN check box must be unchecked
+if the job needs to be tested while skipping repository promotion to
+Nexus.
 
 The special parameters are as follows::
 
@@ -27,15 +38,15 @@ The special parameters are as follows::
 
 .. note::
 
-   The release files regex is: (releases\/.*\.yaml|\.releases\/.*\.yaml).
+   The release file regex is: (releases\/.*\.yaml|\.releases\/.*\.yaml).
    In words, the directory name can be ".releases" or "releases"; the file
-   name can be any name with suffix ".yaml".
+   name can be anything with suffix ".yaml".
 
 Example of a maven release file:
 
 .. code-block:: bash
 
-    $ cat releases/maven-1.0.0.yaml
+    $ cat releases/1.0.0-maven.yaml
     ---
     distribution_type: 'maven'
     version: '1.0.0'
@@ -43,11 +54,14 @@ Example of a maven release file:
     log_dir: 'example-project-maven-stage-master/17/'
 
 
-Example of a container release file:
+An example of a container release file appears below.  The first
+version string is applied to all released containers.  The
+per-container version strings are used to pull images from the
+container registry.
 
 .. code-block:: bash
 
-    $ cat releases/container-1.0.0.yaml
+    $ cat releases/1.0.0-container.yaml
     ---
     distribution_type: 'container'
     version: '1.0.0'
@@ -111,12 +125,14 @@ Create a Nexus account called ``'jenkins-release'`` with promote privileges.
 Gerrit
 ======
 
-Log into your Gerrit with ``YOU_RELEASE_USERNAME``, upload the public part of the ``ssh-key`` you
-created earlier. Log out of Gerrit and log in again with your normal account for the next steps.
+Log into your Gerrit with ``YOUR_RELEASE_USERNAME``, upload the public
+part of the ``ssh-key`` you created earlier. Log out of Gerrit and log
+in again with your normal account for the next steps.
 
 
-In Gerrit create a new group called ``self-serve-release`` and give it direct push rights via ``All-Projects``
-Add ``YOUR_RELEASE_USERNAME`` to group ``self-serve-release`` and group ``Non-Interactive Users``
+In Gerrit create a new group called ``self-serve-release`` and give it
+direct push rights via ``All-Projects`` Add ``YOUR_RELEASE_USERNAME``
+to group ``self-serve-release`` and group ``Non-Interactive Users``
 
 
 In All project, grant group self-serve-release the following:
@@ -135,8 +151,9 @@ In All project, grant group self-serve-release the following:
 Jenkins
 =======
 
-Add a global credential to Jenkins called ``jenkins-release`` and set the ID: ``'jenkins-release'``
-as its value insert the private half of the ``ssh-key`` that you created for your Gerrit user.
+Add a global credential to Jenkins called ``jenkins-release`` and set
+the ID: ``'jenkins-release'`` as its value insert the private half of
+the ``ssh-key`` that you created for your Gerrit user.
 
 Add Global vars in Jenkins:
 Jenkins configure -> Global properties -> Environment variables
@@ -154,8 +171,9 @@ Content: (Ask Andy for the public signing key)
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
 
-Add or edit the managed file in Jenkins called ``lftoolsini``, appending a nexus section:
-Jenkins Settings -> Managed files -> Add (or edit) -> Custom file
+Add or edit the managed file in Jenkins called ``lftoolsini``,
+appending a nexus section: Jenkins Settings -> Managed files -> Add
+(or edit) -> Custom file
 
 .. code-block:: none
 
@@ -166,8 +184,8 @@ Jenkins Settings -> Managed files -> Add (or edit) -> Custom file
 Ci-management
 =============
 
-Upgrade your project's global-jjb if needed, then add the following to your global defaults
-file (e.g., jjb/defaults.yaml).
+Upgrade your project's global-jjb if needed, then add the following to
+your global defaults file (e.g., jjb/defaults.yaml).
 
 .. code-block:: bash
 
@@ -179,8 +197,8 @@ Macros
 lf-release
 ----------
 
-Release verify and merge jobs are the same except for their scm, trigger, and
-builders definition. This anchor is the common template.
+Release verify and merge jobs are the same except for their scm,
+trigger, and builders definition. This anchor is the common template.
 
 Job Templates
 =============
