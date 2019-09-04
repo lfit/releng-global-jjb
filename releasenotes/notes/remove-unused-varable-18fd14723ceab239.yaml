@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Remove unused the MAVEN_CENTRAL_URL variable. The self-release job is
+    designed to work with any Nexus repository info published in
+    `staging-repo.txt.gz`, which makes the `MAVEN_CENTRAL_URL` redundant,
+    hence remove the unused variable.

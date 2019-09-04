@@ -151,7 +151,6 @@ echo "########### Start Script release-job.sh ##################################
 echo "---> INFO: Setting all VARS"
 
 LOGS_SERVER="${LOGS_SERVER:-None}"
-MAVEN_CENTRAL_URL="${MAVEN_CENTRAL_URL:-None}"
 if [ "${LOGS_SERVER}" == 'None' ]; then
     echo "FAILED: log server not found"
     exit 1
