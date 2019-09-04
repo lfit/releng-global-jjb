@@ -1,0 +1,14 @@
+---
+fixes:
+  - |
+    Release schema verification needs to happen first before we attempt to assign
+    values to the variables. Validate version only after the schema validation has
+    passed and the variables are assigned.
+  - |
+    Organize variable setup into functions. Maven release files expects different
+    variables than container release files.
+  - |
+    Rename "version" variable in container release files to "container_release_tag"
+    which is a better user friendly name given the fact that container versions are
+    rather called tags. Internally, we still process it as "version" to allow reuse
+    of the tag function.

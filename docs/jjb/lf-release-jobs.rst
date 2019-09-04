@@ -54,17 +54,16 @@ Example of a maven release file:
     log_dir: 'example-project-maven-stage-master/17/'
 
 
-An example of a container release file appears below.  The first
-version string is applied to all released containers.  The
-per-container version strings are used to pull images from the
-container registry.
+An example of a container release file appears below.  The container_release_tag
+string is applied to all released containers.  The per-container version
+strings are used to pull images from the container registry.
 
 .. code-block:: bash
 
     $ cat releases/1.0.0-container.yaml
     ---
     distribution_type: 'container'
-    version: '1.0.0'
+    container_release_tag: '1.0.0'
     project: 'test'
     containers:
         - name: test-backend
