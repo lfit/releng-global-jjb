@@ -64,7 +64,7 @@ container registry.
     $ cat releases/1.0.0-container.yaml
     ---
     distribution_type: 'container'
-    version: '1.0.0'
+    container_release_tag: '1.0.0'
     project: 'test'
     containers:
         - name: test-backend
