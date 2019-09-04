@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2085be04_f8f84baa",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-09-04T14:41:37Z",
+      "side": 1,
+      "message": "I\u0027m fine with the wording, but Gerrit is showing the line wrapping on this entire section as being bad. Can you please reflow this this with an 80char max line width?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 45
+      },
+      "revId": "0d27ffe4c48f3edbbd267f73b9fc55ab7832dd72",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
