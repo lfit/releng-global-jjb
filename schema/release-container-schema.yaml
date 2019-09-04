@@ -15,7 +15,7 @@ required:
   - "containers"
   - "distribution_type"
   - "project"
-  - "version"
+  - "container_release_tag"
   - "ref"
 
 properties:
@@ -31,7 +31,7 @@ properties:
     type: "string"
   project:
     type: "string"
-  version:
+  container_release_tag:
     type: "string"
   ref:
     type: "string"
