@@ -22,6 +22,30 @@
       "revId": "2931c633ca10c272b2dcb7d848ad30bcd70589cd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ba37e5c_4aa1be80",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-04T01:41:48Z",
+      "side": 1,
+      "message": "It is useful for some people since we are showing the name of the file and path. \nIn ONAP some people were not able to set the right path until we showed in the docs how.",
+      "parentUuid": "3b95a365_69c30440",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 1
+      },
+      "revId": "2931c633ca10c272b2dcb7d848ad30bcd70589cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
