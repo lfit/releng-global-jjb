@@ -24,9 +24,90 @@ export PYENV_VERSION="3.6.4"
 pip install --user lftools[nexus] jsonschema niet yq
 
 #Functions.
+
+set_variables_common(){
+echo "---> INFO: Setting all common variables"
+LOGS_SERVER="${LOGS_SERVER:-None}"
+MAVEN_CENTRAL_URL="${MAVEN_CENTRAL_URL:-None}"
+if [ "${LOGS_SERVER}" == 'None' ]; then
+    echo "FAILED: log server not found"
+    exit 1
+fi
+NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
+# Verify if using release file or parameters
+if $USE_RELEASE_FILE ; then
+  release_files=$(git diff-tree --no-commit-id -r "$GERRIT_PATCHSET_REVISION" --name-only -- "releases/" ".releases/")
+  if (( $(grep -c . <<<"$release_files") > 1 )); then
+    echo "---> INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
+    echo "---> ERROR: Committing multiple release files in the same commit OR rename/amend of existing files is not supported."
+    exit 1
+  else
+    release_file="$release_files"
+    echo "---> INFO: RELEASE FILE: $release_files"
+  fi
+else
+  echo "This job is built with parameters, no release file needed. Continuing..."
+  release_file="None"
+fi
+
+DISTRIBUTION_TYPE="${DISTRIBUTION_TYPE:-None}"
+if [[ $DISTRIBUTION_TYPE == "None" ]]; then
+  DISTRIBUTION_TYPE="$(niet ".distribution_type" "$release_file")"
+fi
+
+PATCH_DIR="$(mktemp -d)"
+
+# Displaying Release Information (Common variables)
+echo "RELEASE ENVIRONMENT INFO:"
+echo "RELEASE_FILE: $release_file"
+echo "LOGS_SERVER: $LOGS_SERVER"
+echo "NEXUS_PATH: $NEXUS_PATH"
+echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
+echo "SILO: $SILO"
+echo "PROJECT: $PROJECT"
+echo "PROJECT-DASHED: ${PROJECT//\//-}"
+echo "DISTRIBUTION_TYPE: $DISTRIBUTION_TYPE"
+}
+
+set_variables_maven(){
+VERSION="${VERSION:-None}"
+if [[ $VERSION == "None" ]]; then
+  VERSION="$(niet ".version" "$release_file")"
+fi
+LOG_DIR="${LOG_DIR:-None}"
+if [[ $LOG_DIR == "None" ]]; then
+  LOG_DIR="$(niet ".log_dir" "$release_file")"
+fi
+LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
+
+# Continuing displaying Release Information (Maven)
+echo "RELEASE MAVEN INFO:"
+echo "VERSION: $VERSION"
+echo "LOG DIR: $LOG_DIR"
+echo "LOGS URL: $LOGS_URL"
+}
+
+set_variables_container(){
+VERSION="${VERSION:-None}"
+if [[ $VERSION == "None" ]]; then
+  VERSION="$(niet ".container_release_tag" "$release_file")"
+fi
+
+ref="$(niet ".ref" "$release_file")"
+
+# Continuing displaying Release Information (Container)
+echo "RELEASE CONTAINER INFO:"
+echo "CONTAINER_RELEASE_TAG: $VERSION"
+echo "GERRIT_REF_TO_TAG: $ref"
+}
+
 verify_schema(){
   echo "---> INFO: Verifying $release_file schema."
   lftools schema verify "$release_file" "$RELEASE_SCHEMA"
+}
+
+verify_version(){
   # Verify allowed versions
   # Allowed versions are "v#.#.#" or "#.#.#" aka SemVer
   allowed_version_regex="^((v?)([0-9]+)\.([0-9]+)\.([0-9]+))$"
@@ -88,7 +169,6 @@ nexus_release(){
   fi
 }
 
-
 container_release_file(){
   echo "---> Processing container release"
   local lfn_umbrella
@@ -125,7 +205,6 @@ container_release_file(){
     fi
   done
 
-  ref="$(niet ".ref" "$release_file")"
   echo "---> INFO: Merge will tag ref: $ref"
   git checkout "$ref"
   tag
@@ -148,82 +227,29 @@ maven_release_file(){
 }
 
 echo "########### Start Script release-job.sh ###################################"
-echo "---> INFO: Setting all VARS"
 
-LOGS_SERVER="${LOGS_SERVER:-None}"
-MAVEN_CENTRAL_URL="${MAVEN_CENTRAL_URL:-None}"
-if [ "${LOGS_SERVER}" == 'None' ]; then
-    echo "FAILED: log server not found"
-    exit 1
-fi
-
-if $USE_RELEASE_FILE ; then
-
-  release_files=$(git diff-tree --no-commit-id -r "$GERRIT_PATCHSET_REVISION" --name-only -- "releases/" ".releases/")
-  if (( $(grep -c . <<<"$release_files") > 1 )); then
-    echo "---> INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
-    echo "---> ERROR: Committing multiple release files in the same commit OR rename/amend of existing files is not supported."
-    exit 1
-  else
-    release_file="$release_files"
-    echo "---> INFO: RELEASE FILE: $release_files"
-  fi
-
-else
-  echo "This job is built with parameters, no release file needed. Continuing..."
-  release_file="None"
-fi
-
-
-NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
-
-VERSION="${VERSION:-None}"
-if [[ $VERSION == "None" ]]; then
-  VERSION="$(niet ".version" "$release_file")"
-fi
-
-LOG_DIR="${LOG_DIR:-None}"
-if [[ $LOG_DIR == "None" ]]; then
-  LOG_DIR="$(niet ".log_dir" "$release_file")"
-fi
-
-DISTRIBUTION_TYPE="${DISTRIBUTION_TYPE:-None}"
-if [[ $DISTRIBUTION_TYPE == "None" ]]; then
-  DISTRIBUTION_TYPE="$(niet ".distribution_type" "$release_file")"
-fi
-
-####
-LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
-LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
-PATCH_DIR="$(mktemp -d)"
-#INFO
-echo "INFO:"
-echo "RELEASE_FILE: $release_file"
-echo "LOGS_SERVER: $LOGS_SERVER"
-echo "NEXUS_PATH: $NEXUS_PATH"
-echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
-echo "SILO: $SILO"
-echo "PROJECT: $PROJECT"
-echo "PROJECT-DASHED: ${PROJECT//\//-}"
-echo "VERSION: $VERSION"
-echo "LOG DIR: $LOG_DIR"
-echo "LOGS URL: $LOGS_URL"
-echo "DISTRIBUTION_TYPE: $DISTRIBUTION_TYPE"
-#Check if this is a container or maven release: release-container-schema.yaml vs release-schema.yaml
-
-#Logic to determine what we are releasing.
+# Check if this is a container or maven release: release-container-schema.yaml vs release-schema.yaml
+# Logic to determine what we are releasing.
 ##########################################
+
+# Set common environment variables
+set_variables_common
+
 if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
   wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
   RELEASE_SCHEMA="release-schema.yaml"
   if $USE_RELEASE_FILE ; then
     verify_schema
   fi
+  set_variables_maven
+  verify_version
   maven_release_file
 elif [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
   wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-container-schema.yaml
   RELEASE_SCHEMA="release-container-schema.yaml"
   verify_schema
+  set_variables_container
+  verify_version
   container_release_file
 else
   echo "---> ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"

@@ -50,7 +50,7 @@ Example of a container release file:
     $ cat releases/container-1.0.0.yaml
     ---
     distribution_type: 'container'
-    version: '1.0.0'
+    container_release_tag: '1.0.0'
     project: 'test'
     containers:
         - name: test-backend
