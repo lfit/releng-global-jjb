@@ -22,6 +22,29 @@
       "revId": "f68ec0b113ec694ebf0601e257209d1136b853cb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2335f6d_35e22253",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-05T15:13:58Z",
+      "side": 1,
+      "message": "Would it make any sense to split this into files \"release-maven-job.sh\" and \"release-container-job.sh\"?  They need different JSON schemas of course.  And eventually this directory might also have files like release-pypi-job.sh etc. Just wanted to ask.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 3
+      },
+      "revId": "f68ec0b113ec694ebf0601e257209d1136b853cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
