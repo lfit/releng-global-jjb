@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a014e991_2f6ea6b6",
+        "filename": "releasenotes/notes/update-release-vars-functions-375510073d699f8f.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-05T01:18:26Z",
+      "side": 1,
+      "message": "Is actually 3 issues. Small ones. \nThe 2 first points can be squashed into 1, I will do that. \nThe other 2 need to be on their own bullet point.",
+      "parentUuid": "262ac20a_2330ae3e",
+      "revId": "16523880def8dce54f58035f8484f59225215697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ddb49553_d3018cb3",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -53,6 +71,30 @@
       "writtenOn": "2019-09-04T12:03:48Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 2
+      },
+      "revId": "16523880def8dce54f58035f8484f59225215697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bfa03b2_d0b8a2a1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-05T01:18:26Z",
+      "side": 1,
+      "message": "Yes, we need to have these for now. \n\nThe purpose of my change is to move them for now but I am working on making things better in this script overall. I just need to make separate changes. Will revisit this if needed",
+      "parentUuid": "ddb49553_d3018cb3",
       "range": {
         "startLine": 38,
         "startChar": 0,
