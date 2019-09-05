@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a9ff80d_caf8ee53",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-05T01:57:47Z",
+      "side": 1,
+      "message": "would you please change \"first version\" to \"container_release_tag\" ?",
+      "range": {
+        "startLine": 57,
+        "startChar": 59,
+        "endLine": 58,
+        "endChar": 7
+      },
+      "revId": "f68ec0b113ec694ebf0601e257209d1136b853cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
