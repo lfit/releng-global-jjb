@@ -35,16 +35,6 @@ Install Tox into a virtualenv.
     :python-version: Version of Python to install into the Tox virtualenv.
         Eg. python2 / python3
 
-lf-infra-tox-sonar
-------------------
-
-Runs Sonar scanning against a Python project.
-
-:Required Parameters:
-
-    :java-version: Version of Java to use to run Sonar.
-    :mvn-version: Version of Maven to use to run Sonar.
-
 lf-tox-install
 --------------
 
@@ -116,11 +106,11 @@ IQ Server.
 Python Sonar with Tox
 ---------------------
 
-Sonar scans for Python based repos. This job will perform a tox call which
-runs the coverage command to gather tests results. These test results get
-published back into Sonar after running the Sonar goals.
+Sonar scans for Python based repos. This job will invoke tox to run tests
+and gather coverage statistics from test results. Then the job invokes Maven
+with a Sonar goal, which runs a plugin to publish results to a Sonar server.
 
-To get the Sonar coverage results, tox.ini needs to exist and configured
+To get the Sonar coverage results, tox.ini needs to exist and be configured
 with coverage commands to run.
 
 The coverage commands define the code that gets executed by the test suites.
@@ -156,24 +146,29 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
         get configured in defaults.yaml)
-    :mvn-settings: The name of settings file containing credentials for the project.
+    :mvn-settings: The name of the settings file with credentials for the project.
 
 :Optional parameters:
 
+    :branch: Git branch, should be master (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :cron: Cron schedule when to trigger the job. This parameter also
         supports multiline input via YAML pipe | character in cases where
         one may want to provide more than 1 cron timer.  (default: H 11 * * *
         to run once a day)
+    :disable-job: Whether to disable the job (default: false)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :github-url: URL for Github. (default: https://github.com)
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
-        Maven configuration. (default: global-settings)
+    :mvn-goals: The Maven goal to run first. (default: validate)
     :mvn-version: Version of maven to use. (default: mvn35)
     :pre-build-script: Shell script to execute before the Sonar builder.
         For example, install prerequisites or move files to the repo root.
         (default: a string with only a comment)
+    :python-version: Python version (default: python2)
+    :sonar-mvn-goal: The Maven goal to run the Sonar plugin. (default: sonar:sonar)
     :stream: Keyword used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.

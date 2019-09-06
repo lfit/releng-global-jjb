@@ -206,9 +206,9 @@
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
-########################
+#########################
 # Python Sonar with Tox #
-########################
+#########################
 
 - lf_tox_sonar: &lf_tox_sonar
     name: lf-tox_sonar
@@ -225,11 +225,12 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-version: openjdk8
-    pre-build-script: "# pre-build script goes here"
-    python-version: python2
     mvn-global-settings: global-settings
+    mvn-goals: validate
     mvn-settings: "{mvn-settings}"
     mvn-version: mvn35
+    pre-build-script: "# pre-build script goes here"
+    python-version: python2
     sonar-mvn-goal: "sonar:sonar"
     stream: master
     submodule-recursive: true
@@ -283,29 +284,14 @@
       - lf-provide-maven-settings:
           global-settings-file: "{mvn-global-settings}"
           settings-file: "{mvn-settings}"
-      - lf-infra-tox-sonar:
+      - lf-infra-maven-sonar:
           java-version: "{java-version}"
+          mvn-goals: "{mvn-goals}"
           mvn-settings: "{mvn-settings}"
           mvn-version: "{mvn-version}"
 
     publishers:
       - lf-infra-publish
-
-- builder:
-    name: lf-infra-tox-sonar
-    # Run a Sonar build with Maven
-    builders:
-      - lf-maven-install:
-          mvn-version: "{mvn-version}"
-      - lf-update-java-alternatives:
-          java-version: "{java-version}"
-      - inject:
-          # TODO: Switch this to the sonar wrapper when JJB 2.0 is available
-          properties-content: SONAR_HOST_URL=$SONAR_URL
-      - shell: !include-raw-escape:
-          - ../shell/common-variables.sh
-          - ../shell/maven-sonar.sh
-      - lf-provide-maven-settings-cleanup
 
 - job-template:
     name: "{project-name}-tox-sonar"

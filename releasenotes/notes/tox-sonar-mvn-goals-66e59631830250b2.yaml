@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Use existing builder lf-infra-maven sonar, drop incomplete builder
+    lf-tox-maven-sonar, to gain desired behavior of pushing code analysis
+    results to Sonar.  Use trivial goal 'validate' by default.
+    The script maven-sonar.sh calls maven twice, first with build goals
+    and then with Sonar goals.  The incomplete builder did not supply the
+    build goals.
