@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3e29e37b_dce0b7e1",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-07T19:05:32Z",
+      "side": 1,
+      "message": "Tox/coala also complains about \"exactly\" but this change doesn\u0027t address that complaint.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 7
+      },
+      "revId": "27c5340db60c3b595fa3f4c5843a61226b011ee8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9b5762d1_9632fd8b",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 1
