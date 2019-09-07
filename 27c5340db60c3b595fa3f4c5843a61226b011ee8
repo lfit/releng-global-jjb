@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b5762d1_9632fd8b",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-07T19:03:53Z",
+      "side": 1,
+      "message": "An example of a container release file appears below.  Applies the container_release_tag\nstring to all released containers.  Pulls the image from the container registry using the\nspecified per-container version string.",
+      "range": {
+        "startLine": 57,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 4
+      },
+      "revId": "27c5340db60c3b595fa3f4c5843a61226b011ee8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
