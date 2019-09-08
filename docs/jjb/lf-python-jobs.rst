@@ -87,7 +87,7 @@ IQ Server.
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :pre-build-script: Shell script to execute before the CLM builder.
         For example, install prerequisites or move files to the repo root.
-        (default: a string with only a comment)
+        (default: a string with a shell comment)
     :stream: Keyword used to represent a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -106,16 +106,21 @@ IQ Server.
 Python Sonar with Tox
 ---------------------
 
-Sonar scans for Python based repos. This job will invoke tox to run tests
-and gather coverage statistics from test results. Then the job invokes Maven
-with a Sonar goal, which runs a plugin to publish results to a Sonar server.
+Sonar scans for Python based repos. This job invokes tox to run tests and
+gather coverage statistics from the test results, then invokes Maven to
+publish the results to a Sonar server.
 
-To get the Sonar coverage results, tox.ini needs to exist and be configured
-with coverage commands to run.
+To get the Sonar coverage results, file tox.ini must exist and contain coverage
+commands to run.
 
 The coverage commands define the code that gets executed by the test suites.
-It does not guarantee that the code tests executed properly, but it will help
-pointing out the code that is not tested at all.
+Checking coverage does not guarantee that the tests execute properly, but it
+identifies code that is not executed by any test.
+
+This job reuses the Sonar builder used in Java/Maven projects which runs maven
+twice. The first invocation does nothing for Python projects, so the job uses
+the goal 'validate' by default. The second invocation publishes results using
+the goal 'sonar:sonar' by default.
 
 For example:
 
@@ -166,7 +171,7 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     :mvn-version: Version of maven to use. (default: mvn35)
     :pre-build-script: Shell script to execute before the Sonar builder.
         For example, install prerequisites or move files to the repo root.
-        (default: a string with only a comment)
+        (default: a string with a comment)
     :python-version: Python version (default: python2)
     :sonar-mvn-goal: The Maven goal to run the Sonar plugin. (default: sonar:sonar)
     :stream: Keyword used to represent a release code-name.
@@ -219,7 +224,7 @@ following pyenv variables before running.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre-build-script: Shell script to execute before the Tox builder.
         For example, install prerequisites or move files to the repo root.
-        (default: a string with only a comment)
+        (default: a string with a shell comment)
     :python-version: Version of Python to configure as a base in virtualenv.
         (default: python3)
     :stream: Keyword representing a release code-name.

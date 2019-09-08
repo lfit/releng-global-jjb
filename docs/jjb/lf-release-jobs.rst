@@ -8,24 +8,23 @@ Self-serve release jobs allow a project team to direct Jenkins to
 promote a jar file or container image from a staging area to a release
 area.  To trigger the action, create a releases/ or .releases/
 directory, add a release yaml file to it, and submit a change set with
-exactly one release yaml file to Gerrit.  Upon merge of the change,
-Jenkins will sign the reference extrapolated by log_dir and promote
-the artifact. The expected format of the release yaml file is shown in
-examples below.
+one release yaml file to Gerrit.  Upon merge of the change, Jenkins will
+sign the reference extrapolated by log_dir and promote the artifact. The
+expected format of the release yaml file appears in schemas and examples
+below.
 
 The build node for maven and container release jobs must be CentOS,
 which supports the sigul client for accessing a signing server. The
 build node for container release jobs must have Docker installed.
 
-A release job can also be triggered from Jenkins via the "Build with
+A Jenkins user can also trigger a release job via the "Build with
 parameters" action, removing the need for a release yaml file. The
-parameters must be filled out in the same way as a release yaml file,
+user must enter parameters in the same way as a release yaml file,
 except for the special USE_RELEASE_FILE and DRY_RUN check boxes. The
-USE_RELEASE_FILE check box must be unchecked if the job is expected to
+user must uncheck the USE_RELEASE_FILE check box if the job should
 run with a release file, while passing the required information as
-build parameters. Similarly, the DRY_RUN check box must be unchecked
-if the job needs to be tested while skipping repository promotion to
-Nexus.
+build parameters. Similarly, the user must uncheck the DRY_RUN check
+box to test the job while skipping repository promotion to Nexus.
 
 The special parameters are as follows::
 
@@ -42,6 +41,31 @@ The special parameters are as follows::
    In words, the directory name can be ".releases" or "releases"; the file
    name can be anything with suffix ".yaml".
 
+The JSON schema for a maven release job appears below.
+
+.. code-block:: none
+
+    ---
+    $schema: "http://json-schema.org/schema#"
+    $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-schema.yaml"
+
+    required:
+      - "distribution_type"
+      - "log_dir"
+      - "project"
+      - "version"
+
+    properties:
+      distribution_type:
+        type: "string"
+      log_dir:
+        type: "string"
+      project:
+        type: "string"
+      version:
+        type: "string"
+
+
 Example of a maven release file:
 
 .. code-block:: bash
@@ -54,9 +78,43 @@ Example of a maven release file:
     log_dir: 'example-project-maven-stage-master/17/'
 
 
-An example of a container release file appears below.  The container_release_tag
-string is applied to all released containers.  The per-container version
-strings are used to pull images from the container registry.
+The JSON schema for a container release job appears below.
+
+.. code-block:: none
+
+    ---
+    $schema: "http://json-schema.org/schema#"
+    $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-container-schema.yaml"
+
+    required:
+      - "containers"
+      - "distribution_type"
+      - "project"
+      - "container_release_tag"
+      - "ref"
+
+    properties:
+      containers:
+        type: "array"
+        properties:
+          name:
+            type: "string"
+          version:
+            type: "string"
+        additionalProperties: false
+      distribution_type:
+        type: "string"
+      project:
+        type: "string"
+      container_release_tag:
+        type: "string"
+      ref:
+        type: "string"
+
+
+An example of a container release file appears below.  The job applies the
+container_release_tag string to all released containers.  The job uses the
+per-container version strings to pull images from the container registry.
 
 .. code-block:: bash
 
@@ -74,7 +132,7 @@ strings are used to pull images from the container registry.
 
 .. note::
 
-   Job should be appended under gerrit-maven-stage
+   Job should appear under gerrit-maven-stage
 
 Example of a terse Jenkins job to call the global-jjb macro:
 
@@ -186,7 +244,7 @@ Ci-management
 Upgrade your project's global-jjb if needed, then add the following to
 your global defaults file (e.g., jjb/defaults.yaml).
 
-.. code-block:: bash
+.. code-block:: none
 
    jenkins-ssh-release-credential: 'jenkins-release'
 
