@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "34cd224d_90f9ba30",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-09T23:07:54Z",
+      "side": 1,
+      "message": "The `-l` is necessary for Jenkins shell to add `~/.local/bin` to the path which we depend on because of our use of `pip install --user` to install Python based CLI tools such as lftools and openstack. Without this we would need to add `~/.local/bin` to every single file that wants to use `lftools` and `openstack`, but that\u0027s just a birds eye view from global-jjb\u0027s perspective, downstream project might depend further on additional CLI tools that they are installing in their own projects as well.\n\nIn isolation in the context of just this one script this seems fine. This change might break if applied to other scripts so we should definitely test and confirm before blanket removing `-l` in all scripts. One reason I would keep `-l` is for consistency, folks tend to copy/paste scripts from existing scripts to build upon their own scripts, having varing uses means folks might copy from the wrong scripts and we would have to support multiple methods.\n\nOne of the reasons we went with `-l` is it\u0027s a lot easier to tell all our consumers of global-jjb that they need to `#!/bin/bash -l` in their scripts than to tell them to ` PATH\u003d\"$PATH:~/.local/bin\" ` in every single shell script.\n\nWith that said I\u0027m far from the authority on this so if we want to change how we recommend our downstreams consume global-jjb I would recommend detailed documentation of the recommended path and communicating it to the communities so that folks are not surprised if something breaks somewhere.",
+      "parentUuid": "4c1bc7dd_81de55e8",
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a833c845_46075d20",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -119,6 +137,30 @@
       "side": 1,
       "message": "This is a good question.... what happens if an empty string is passed to lftools?  A URL of \"\" make no sense. Now it lftools documented that it does something useful with the \"\" then I am all for it. If BUILD_URL is not set, the script (and the build) stops right here.\n\nSo the answer is I don\u0027t know it this should be quoted or not. The quotes are probably there just to make sure \u0027shellcheck\u0027 does not whine. I am assuming that \"\" not a valid URL for lftools rather than hope that lftools does something reasonable.",
       "parentUuid": "1f12e51e_c04a40bf",
+      "range": {
+        "startLine": 54,
+        "startChar": 47,
+        "endLine": 54,
+        "endChar": 57
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dba2dd1b_6fcd457c",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-09T23:07:54Z",
+      "side": 1,
+      "message": "As long as the script is run inside Jenkins BUILD_URL can be assumed to exist. What I\u0027d be surprised about is that the `set -u` above is not causing this line to fail due to the -u check (Did you test this script in an actual job?).",
+      "parentUuid": "e4ff2427_54a6b7dc",
       "range": {
         "startLine": 54,
         "startChar": 47,
