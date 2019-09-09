@@ -1,0 +1,29 @@
+---
+prelude: >
+  Global job that triggers on any docs changes.
+  Creates docs project if absent on verify.
+  Triggers docs build on merge
+features:
+  - |
+    #    ---
+    #- project:
+    #    name: rtdv2-verify-global
+    #    build-node: centos7-builder-1c-1g
+    #    jobs:
+    #      - 'rtdv2-verify-global'
+    #    stream:
+    #      - master:
+    #          branch: 'master'
+    #      - foo:
+    #          branch: 'stable/{stream}'
+    #
+    #- project:
+    #    name: rtdv2-merge-global
+    #    build-node: centos7-builder-1c-1g
+    #    jobs:
+    #      - 'rtdv2-merge-global'
+    #    stream:
+    #      - master:
+    #          branch: 'master'
+    #      - foo:
+    #          branch: 'stable/{stream}'
