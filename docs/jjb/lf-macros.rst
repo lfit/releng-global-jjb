@@ -242,6 +242,11 @@ lf-rtd-verify
 
 ReadTheDocs verify script.
 
+lf-rtdv2-script
+---------------
+
+ReadTheDocs Version 2 verify and merge script.
+
 check-info-votes
 ----------------
 
