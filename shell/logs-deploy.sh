@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -10,29 +10,48 @@
 ##############################################################################
 echo "---> logs-deploy.sh"
 
-# Ensure we fail the job if any steps fail
-# Disable 'globbing'
-set -euf -o pipefail
+set -eu -o pipefail -o noglob
 
-if [[ -z $"${LOGS_SERVER:-}" ]]; then
-    echo "WARNING: Logging server not set"
+# Add 'lftools' to PATH
+PATH=$PATH:~/.local/bin
+
+if [[ -z ${LOGS_SERVER:-} ]]; then
+    echo "WARNING: Logging server not set: Nothing to do"
 else
     nexus_url="${NEXUSPROXY:-$NEXUS_URL}"
-    nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
+    nexus_path="$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER"
 
-    if [[ -n ${ARCHIVE_ARTIFACTS:-} ]] ; then
-        # Handle multiple search extensions as separate values to '-p|--pattern'
-        # "arg1 arg2" -> (-p arg1 -p arg2)
-        pattern_opts=()
-        for arg in $ARCHIVE_ARTIFACTS; do
-            pattern_opts+=("-p" "$arg")
-        done
-        lftools deploy archives "${pattern_opts[@]}" \
-                "$nexus_url" "$nexus_path" "$WORKSPACE"
+    echo "Archiving 'sudo' log.."
+    os=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+    case $os in
+        fedora|centos|redhat) sudo_log=/var/log/secure   ;;
+        ubuntu)               sudo_log=/var/log/auth.log ;;
+        *)  echo "Unexpected 'operatingsystem': $os"
+            echo "Unable to archive 'sudo' logs"
+            exit
+            ;;
+    esac
+    if ! sudo cp $sudo_log /tmp; then
+        echo "Unable to archive 'sudo' logs ($sudo_log)"
     else
-        lftools deploy archives "$nexus_url" "$nexus_path" "$WORKSPACE"
+        sudo_log=$(basename $sudo_log)
+        sudo chown jenkins:jenkins /tmp/$sudo_log
+        chmod 0644 /tmp/$sudo_log
+        mkdir $WORKSPACE/archives/sudo
+        mv /tmp/$sudo_log $WORKSPACE/archives/sudo/$sudo_log
     fi
-    lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
-    echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
+    # Convert multiple search extensions to list of arguments'
+    # "ext1 ext2" -> "-p ext1 -p ext2"
+    pattern_opts=""
+    for i in ${ARCHIVE_ARTIFACTS:-}; do
+        pattern_opts+="-p $i "
+    done
+
+    # Add 'python env' to PATH
+    PATH=~/.local/bin:$PATH
+    lftools deploy archives $pattern_opts $nexus_url $nexus_path $WORKSPACE
+    lftools deploy logs $nexus_url $nexus_path $BUILD_URL
+
+    echo "Build logs: <a href='$LOGS_SERVER/$nexus_path' > $LOGS_SERVER/$nexus_path</a>"
 fi
