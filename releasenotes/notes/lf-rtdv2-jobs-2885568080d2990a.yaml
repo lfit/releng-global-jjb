@@ -1,0 +1,7 @@
+---
+prelude: >
+  Global job that triggers on any docs changes.
+  Creates docs project if absent on verify.
+  Creates subproject association with master doc project
+  if none exists
+  Triggers docs build on merge
