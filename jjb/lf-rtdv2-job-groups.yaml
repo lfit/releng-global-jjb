@@ -1,0 +1,10 @@
+---
+- job-group:
+    name: "rtdv2-global-{stream}"
+
+    jobs:
+      - rtdv2-verify-global
+      - rtdv2-merge-global
+    stream:
+      - master:
+          branch: "master"
