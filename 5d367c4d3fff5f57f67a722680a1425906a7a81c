@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "a833c845_46075d20",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-09T20:35:07Z",
+      "side": 1,
+      "message": "is this to work around your removal of -l?\nI would prefer to keep the -l as well.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 22
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1f12e51e_c04a40bf",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
