@@ -259,6 +259,13 @@ ReadTheDocs verify script. Installs and runs tox.
     :doc-dir: Document directory.
     :python-version: Python version.
 
+lf-rtdv2-script
+---------------
+
+ReadTheDocs Version 2 verify and merge script.
+Runs tox and then the RTD shell script.
+
+
 check-info-votes
 ----------------
 
