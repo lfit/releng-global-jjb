@@ -218,6 +218,12 @@ Jenkins configure -> Global properties -> Environment variables
 ``RELEASE_USERNAME = YOUR_RELEASE_USERNAME``
 ``RELEASE_EMAIL = YOUR_RELEASE_EMAIL``
 
+
+.. note::
+
+    These also need to be added to your global-vars-releng.sh
+    Or they will be overwritten.
+
 Jenkins configure -> Managed Files -> Add a New Config -> Custom File
 
 id: signing-pubkey
