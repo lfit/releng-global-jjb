@@ -1,0 +1,7 @@
+---
+features:
+  - |
+
+    Archive 'sudo' logs. The log will be located in the 'sudo' sub-directory of
+    the archive. The actual name of the log-file depends on the OS of the
+    builder.
