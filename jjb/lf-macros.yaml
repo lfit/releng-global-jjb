@@ -260,7 +260,9 @@
     name: lf-rtd-verify
     builders:
       - inject:
-          properties-content: DOC_DIR={doc-dir}
+          properties-content: |
+            DOC_DIR={doc-dir}
+            PYTHON={python-version}
       - shell: !include-raw-escape: ../shell/tox-install.sh
       - shell: !include-raw-escape: ../shell/rtd-verify.sh
 
