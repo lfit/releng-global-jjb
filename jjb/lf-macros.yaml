@@ -265,6 +265,15 @@
       - shell: !include-raw-escape: ../shell/rtd-verify.sh
 
 - builder:
+    name: lf-rtdv2-script
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-tox-install:
+        python-version: "python3"
+      - shell: !include-raw-escape: ../shell/tox-run.sh
+      - shell: !include-raw-escape: ../shell/rtdv2.sh
+
+- builder:
     name: check-info-votes
     builders:
       - inject:
