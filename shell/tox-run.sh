@@ -51,4 +51,12 @@ done
 
 echo "Completed tox runs."
 
+
+DOC_DIR="${DOC_DIR:-docs/_build/html}"
+
+if [[ -d "$DOC_DIR" ]]; then 
+    echo "---> Archiving generated docs"
+    mv "$DOC_DIR" archives/
+fi
+
 test "$tox_status" -eq 0 || exit "$tox_status"
