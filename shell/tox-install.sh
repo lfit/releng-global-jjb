@@ -10,12 +10,12 @@
 ##############################################################################
 echo "---> tox-install.sh"
 
-# Ensure we fail the job if any steps fail.
-# DO NOT set -u as virtualenv's activate script has unbound variables
-set -e -o pipefail
+# Ensure we fail the job if any steps fail or variables are missing.
+set -eu -o pipefail
 
+echo "----> pip install"
 # Tox version is pulled in through detox to mitigate version conflict
-python -m pip install --user --quiet --upgrade tox-pyenv
+$PYTHON_VERSION -m pip install --user --upgrade tox-pyenv
 
 echo "----> pip freeze"
-pip freeze
+$PYTHON_VERSION -m pip freeze

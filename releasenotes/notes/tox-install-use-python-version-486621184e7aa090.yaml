@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Revise tox-install.sh script to invoke python using environment variable
+    PYTHON_VERSION instead of hardcoding "python" (with no number suffix),
+    and drop the pip --quiet flag.
+    Extend the RTD template to pass python-version with default python2.
