@@ -265,6 +265,17 @@
       - shell: !include-raw-escape: ../shell/rtd-verify.sh
 
 - builder:
+    name: lf-rtdv2-trigger-build
+    builders:
+      - shell: !include-raw-escape: ../shell/rtdv2-trigger-build.sh
+- builder:
+    name: lf-rtdv2-script
+    builders:
+      - inject:
+          properties-content: DOC_DIR={doc-dir}
+      - shell: !include-raw-escape: ../shell/rtdv2.sh
+
+- builder:
     name: check-info-votes
     builders:
       - inject:
