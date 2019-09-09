@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "156e912c_1e9fe7d9",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-09-09T19:46:13Z",
+      "side": 1,
+      "message": "Dropping the -l is likely not a good idea. IIRC we added that to work around certain issues that Jenkins has and the fact we need most shell scripts to run as if it\u0027s a logged in user.\n\nIt was added in I55947020e2f0cdbb61f9d4e7e88927d9bc304d17",
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f12e51e_c04a40bf",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-09-09T19:46:13Z",
+      "side": 1,
+      "message": "Is there a reason you\u0027re dropping the null case handler if the $BUILD_URL isn\u0027t set?",
+      "range": {
+        "startLine": 54,
+        "startChar": 47,
+        "endLine": 54,
+        "endChar": 57
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
