@@ -240,7 +240,12 @@ Script to trigger a build on http://readthedocs.org
 lf-rtd-verify
 -------------
 
-ReadTheDocs verify script.
+ReadTheDocs verify script. Installs and runs tox.
+
+:Required parameters:
+
+    :doc-dir: Document directory.
+    :python-version: Python version.
 
 check-info-votes
 ----------------

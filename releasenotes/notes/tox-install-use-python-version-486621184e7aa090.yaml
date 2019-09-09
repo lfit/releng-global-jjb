@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Revise tox-install.sh script to invoke python using environment variable
+    PYTHON_VERSION instead of hardcoding "python" (with no number suffix).
+    Extend the RTD template to define and pass value python2.
+    No change to Python job templates, which already pass value python2.
