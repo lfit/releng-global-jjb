@@ -225,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "dc70a30a_3c8aed70",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-10T14:57:22Z",
+      "side": 1,
+      "message": "I agree, we should continue if we cant grab the sudo log, not fail.",
+      "parentUuid": "84fdb180_e40c8139",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 16
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2c80f41f_b78cadfd",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
