@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "12240d4c_9af0ef6b",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-10T00:39:21Z",
+      "side": 1,
+      "message": "Actually customers don\u0027t have to add add ~/.local/bin their PATH. If lftools is properly implemented they could just call it directly: \u0027~/.local/bin/lftools deploy .......\u0027 We just have to tell them that \u0027lftools\u0027 is installed in ~/.local/bin how they execute is their choice. This is Unix and that is how should works.\n\nIf we steer customers away from standard Unix practices we are asking for trouble... There is always 10 ways to do things in Unix, but some of them are possible but just plain wrong.",
+      "parentUuid": "34cd224d_90f9ba30",
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a833c845_46075d20",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -161,6 +179,30 @@
       "side": 1,
       "message": "As long as the script is run inside Jenkins BUILD_URL can be assumed to exist. What I\u0027d be surprised about is that the `set -u` above is not causing this line to fail due to the -u check (Did you test this script in an actual job?).",
       "parentUuid": "e4ff2427_54a6b7dc",
+      "range": {
+        "startLine": 54,
+        "startChar": 47,
+        "endLine": 54,
+        "endChar": 57
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "461e8dc3_ab9dcf2c",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-10T00:39:21Z",
+      "side": 1,
+      "message": "If BUILD_URL is supposed to be set then we want the script to error when it is not.\nshellcheck is not a runtime check and since BUILD_URL is upper-case it will not check if it has already been set in the script. The \u0027-u\u0027 is a runtime check so it will trigger an error at runtime if it is unset. Hopefully lftools would error out if BUILD_URL\u003d\"\", but I don\u0027t want to find out.\n\nIf BUILD_URL is unset then $BUILD_URL should cause an error in lftools (missing argument) and \"$BUILD_URL\" will pass \"\"  as the last argument to lftools. That is why we shouldn\u0027t quote \u0027pattern_opts\u0027 on the previous line.",
+      "parentUuid": "dba2dd1b_6fcd457c",
       "range": {
         "startLine": 54,
         "startChar": 47,
