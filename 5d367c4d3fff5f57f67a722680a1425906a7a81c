@@ -132,6 +132,24 @@
     },
     {
       "key": {
+        "uuid": "d8692b0e_0177c3f8",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-10T15:05:51Z",
+      "side": 1,
+      "message": "noglob is required if not that would simple expand all the patterns into files while calling lftools deploy archives",
+      "parentUuid": "b990dd54_0c03e308",
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a833c845_46075d20",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
