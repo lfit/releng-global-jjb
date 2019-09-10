@@ -22,6 +22,30 @@
       "revId": "2a7ddce438852341da1d629be92d46217515796c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4f8db5f0_ec1e3800",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-10T17:13:38Z",
+      "side": 0,
+      "message": "Yes I removed the quiet flag to make details visible, it was SO silent that it was difficult to debug whether Python 2 or 3 was being used.  Now the versions of tox-pyenv and friends are shown clearly.  The output is only adds a dozen or so lines in the log, I don\u0027t feel it\u0027s significant.",
+      "parentUuid": "d700e2a7_49d93ad1",
+      "range": {
+        "startLine": 18,
+        "startChar": 30,
+        "endLine": 18,
+        "endChar": 39
+      },
+      "revId": "2a7ddce438852341da1d629be92d46217515796c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
