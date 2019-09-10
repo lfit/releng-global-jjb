@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3e6bf93f_401240f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-10T05:06:15Z",
+      "side": 1,
+      "message": "variable?",
+      "range": {
+        "startLine": 9,
+        "startChar": 26,
+        "endLine": 9,
+        "endChar": 35
+      },
+      "revId": "6b85f5d8c27b8d30e1c96901ab7764c926efab7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4eddb67c_6171a067",
         "filename": "docs/jjb/lf-release-jobs.rst",
         "patchSetId": 1
