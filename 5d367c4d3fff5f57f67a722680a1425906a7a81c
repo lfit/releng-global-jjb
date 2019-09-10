@@ -150,6 +150,24 @@
     },
     {
       "key": {
+        "uuid": "45abf2ae_e2baf3ba",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-10T15:08:15Z",
+      "side": 1,
+      "message": "ah, I see that it was already called before,\nI think we should expand all of the switches, or none of them.",
+      "parentUuid": "d8692b0e_0177c3f8",
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a833c845_46075d20",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
