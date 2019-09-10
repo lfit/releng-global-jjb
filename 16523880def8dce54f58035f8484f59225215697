@@ -104,6 +104,30 @@
       "revId": "16523880def8dce54f58035f8484f59225215697",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9414e28b_b7eb225b",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-10T06:25:52Z",
+      "side": 1,
+      "message": "my comments never got addressed here.\n\nThe comment was to refactor the code since we don\u0027t need nested if-else conditions here, which makes the readability harder. \n\nHere is what you can do instead.\n\n    # Verify if using release file or parameters\n    release_files\u003d$(git diff-tree --no-commit-id -r \"$GERRIT_PATCHSET_REVISION\" --name-only -- \"releases/\" \".releases/\")\n    if [[ ${USE_RELEASE_FILE} ]] \u0026\u0026 [[ $(grep -c . \u003c\u003c\u003c\"$release_files\") -gt 1 ]] ; then\n        echo \"---\u003e INFO: RELEASE FILES ARE AS FOLLOWS: $release_files\"\n        echo \"---\u003e ERROR:  Using more than one release file per commit is not supported.\"\n        echo \"---\u003e ERROR:  Rename/amend of existing release files is not supported.\"\n        exit 1\n    elif [[ ${USE_RELEASE_FILE} ]] \u0026\u0026 [[ $(grep -c . \u003c\u003c\u003c\"$release_files\") -eq 1 ]]\n        release_file\u003d\"$release_files\"\n        echo \"---\u003e INFO: RELEASE FILE: $release_files\"\n    else\n        echo \"No release file found. Continuing using Job parameters ...\"\n        release_file\u003d\"None\"\n    fi",
+      "parentUuid": "2bfa03b2_d0b8a2a1",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 2
+      },
+      "revId": "16523880def8dce54f58035f8484f59225215697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
