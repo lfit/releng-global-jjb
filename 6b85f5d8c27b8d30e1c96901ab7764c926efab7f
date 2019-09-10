@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4eddb67c_6171a067",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-10T03:41:24Z",
+      "side": 1,
+      "message": "or?",
+      "range": {
+        "startLine": 225,
+        "startChar": 4,
+        "endLine": 225,
+        "endChar": 6
+      },
+      "revId": "6b85f5d8c27b8d30e1c96901ab7764c926efab7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
