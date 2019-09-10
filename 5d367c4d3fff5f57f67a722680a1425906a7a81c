@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "bc56d5f6_9da602fb",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-10T06:20:04Z",
+      "side": 1,
+      "message": "Using `-l` may have its side effects, since this ends of reading /etc/profile and scripts which a normal user should not require.\n\nHowever, this is something that we have discussed in the past and found it\u0027s not harmful setting this a temp minion nodes, since upstream images are used on the cloud.",
+      "parentUuid": "12240d4c_9af0ef6b",
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a833c845_46075d20",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -117,6 +135,75 @@
       "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03699b6f_f8c6919d",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-10T06:20:04Z",
+      "side": 1,
+      "message": "handle debian?",
+      "range": {
+        "startLine": 28,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 14
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "84fdb180_e40c8139",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-10T06:20:04Z",
+      "side": 1,
+      "message": "So if we are running this script in Suse, the script would simply exit here, the Jenkins jobs would skip the deploy logs/archive to Nexus. Needs to handle default cause correctly.",
+      "range": {
+        "startLine": 31,
+        "startChar": 12,
+        "endLine": 31,
+        "endChar": 16
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c80f41f_b78cadfd",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-10T06:20:04Z",
+      "side": 1,
+      "message": "Its useful to capture the system logs here, but this looks sneaky here, since this script\u0027s function is to simply deploy log/archives to Nexus. \n\nI\u0027d write a separate JJB macro/shell script, similar to what is being done for system stats.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 6
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
