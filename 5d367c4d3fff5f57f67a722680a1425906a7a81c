@@ -91,6 +91,47 @@
     },
     {
       "key": {
+        "uuid": "3f27b270_bd1a493f",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-10T14:09:03Z",
+      "side": 1,
+      "message": "#!/bin/bash is already a work-around since jenkins defaults to sh\n\nbetween \" #!/bin/bash -l \" or \" #!/bin/bash; PATH\u003d\"$PATH:~/.local/bin\" \"\n\n#!/bin/bash -l is our conventional work around, we are using it everywhere.\n\n*fixing* it here, where it _could_ be swapped out, leads us to swapping it everywhere, which means revisiting this workaround in untold number of places. \nThe login shell has afaik yet to fail us, I don\u0027t really see the benefit in changing it in one place.",
+      "parentUuid": "bc56d5f6_9da602fb",
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b990dd54_0c03e308",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-10T14:09:03Z",
+      "side": 1,
+      "message": "Why are you setting noglob?, please explain.",
+      "range": {
+        "startLine": 13,
+        "startChar": 20,
+        "endLine": 13,
+        "endChar": 29
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a833c845_46075d20",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -204,6 +245,29 @@
       "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a607ba57_0f3f6dbd",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-10T14:09:03Z",
+      "side": 1,
+      "message": "deploy.py states that it takes \":pattern: Space-separated list of Globstar patterns of files to\narchive. (optional) \"\n\nI see in the code that passing multiple -p values is allowed (multiple true) But does this actually work? if it does, the output from help in lftools on the matter is not clear.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 8
+      },
+      "revId": "5d367c4d3fff5f57f67a722680a1425906a7a81c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     },
     {
       "key": {
