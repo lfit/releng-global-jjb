@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Import GPG signing key in release jobs before verifying Gerrit tag details.

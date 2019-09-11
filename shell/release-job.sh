@@ -119,6 +119,8 @@ verify_version(){
 }
 
 tag(){
+    # Import public signing key
+    gpg --import "$SIGNING_PUBKEY"
     if git tag -v "$VERSION"; then
         echo "---> OK: Repo already tagged $VERSION Continuting to release"
     else
@@ -126,7 +128,6 @@ tag(){
         git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
         sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
         echo "Showing latest signature for $PROJECT:"
-        gpg --import "$SIGNING_PUBKEY"
         echo "git tag -v $VERSION"
         git tag -v "$VERSION"
 
