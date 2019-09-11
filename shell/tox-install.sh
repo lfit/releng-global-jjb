@@ -16,5 +16,4 @@ set -eux -o pipefail
 
 # Tox version is pulled in through detox to mitigate version conflict
 $PYTHON -m pip install --user --quiet --upgrade tox-pyenv
-
 $PYTHON -m pip freeze

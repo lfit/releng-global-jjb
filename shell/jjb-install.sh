@@ -16,13 +16,14 @@ set -e -o pipefail
 
 # Create a virtualenv in a temporary directoy and write it down to used
 # or cleaned up later; cleanup is done in the script jjb-cleanup.sh.
+
 JJB_VENV="$(mktemp -d)"
 export JJB_VENV
-virtualenv "$JJB_VENV"
+python -m venv "$JJB_VENV"
 echo "JJB_VENV=$JJB_VENV" > "$WORKSPACE/.jjb.properties"
 # shellcheck source=$VENV_DIR/bin/activate disable=SC1091
 source "$JJB_VENV/bin/activate"
 python -m pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
 
 echo "----> pip freeze"
-pip freeze
+python -m pip freeze

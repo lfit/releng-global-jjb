@@ -19,7 +19,7 @@ pip_list_pre=/tmp/pip-list-pre.txt
 pip_list_post=/tmp/pip-list-post.txt
 pip_list_diffs=/tmp/pip-list-diffs.txt
 if [[ -f $pip_list_pre ]]; then
-    pip list > $pip_list_post
+    python -m pip list > $pip_list_post
     echo "Compare pip packages before/after..."
     if diff --suppress-common-lines $pip_list_pre $pip_list_post \
             | tee $pip_list_diffs; then
@@ -33,7 +33,7 @@ if [[ -f $pip_list_pre ]]; then
     # log-deploy.sh script is 'appended' to this file and it would not
     # be executed.
 else
-    pip list > "$pip_list_pre"
+    python -m pip list > "$pip_list_pre"
     # These 'pip installs' only need to be executed during pre-build
 
     requirements_file=$(mktemp /tmp/requirements-XXXX.txt)
