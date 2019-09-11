@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfb22851_35447d7c",
+        "filename": "releasenotes/notes/global-jjb-pip-1c7253ddd6d91665.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T17:51:09Z",
+      "side": 1,
+      "message": "Only Centos? What about ubuntu?  And as I wrote in the Jira issue, why not 3.7?",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 10
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5841e846_2b5b52f7",
+        "filename": "releasenotes/notes/global-jjb-pip-1c7253ddd6d91665.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T17:51:09Z",
+      "side": 1,
+      "message": "only centos?",
+      "range": {
+        "startLine": 10,
+        "startChar": 36,
+        "endLine": 10,
+        "endChar": 42
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "424eb5c6_a8aaea6b",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T17:51:09Z",
+      "side": 1,
+      "message": "I guess it\u0027s safe to assume that venv is already installed?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 1
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea7d0234_95a15377",
+        "filename": "shell/jjb-install.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T17:51:09Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 17,
+        "startChar": 37,
+        "endLine": 17,
+        "endChar": 45
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85bdb741_112beee3",
+        "filename": "shell/jjb-install.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T17:51:09Z",
+      "side": 1,
+      "message": "This is a nice touch, instead of hardwiring /tmp/venv; should this be used everywhere?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 2
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "350e40c2_5f35ceae",
+        "filename": "shell/pip-install.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T17:51:09Z",
+      "side": 1,
+      "message": "I know it adds chattiness but would you consider -x ?",
+      "range": {
+        "startLine": 18,
+        "startChar": 4,
+        "endLine": 18,
+        "endChar": 6
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "812e10fd_e3c12e8b",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T17:51:09Z",
+      "side": 1,
+      "message": "See question above; if you want to use just bare \"python\" then maybe this should be changed also?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
