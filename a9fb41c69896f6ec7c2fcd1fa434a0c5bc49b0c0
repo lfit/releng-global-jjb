@@ -22,6 +22,30 @@
       "revId": "a9fb41c69896f6ec7c2fcd1fa434a0c5bc49b0c0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a36f5c7e_961066cc",
+        "filename": "releasenotes/notes/add-python-tox-merge-template-c965c8b9ab644b20.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T15:14:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce07dfc2_5e88678f",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "a9fb41c69896f6ec7c2fcd1fa434a0c5bc49b0c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
