@@ -29,7 +29,7 @@ set_variables_common(){
     echo "---> INFO: Setting all common variables"
     LOGS_SERVER="${LOGS_SERVER:-None}"
     if [ "${LOGS_SERVER}" == 'None' ]; then
-        echo "FAILED: log server not found"
+        echo "---> FAILED: log server not found"
         exit 1
     fi
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
@@ -45,7 +45,7 @@ set_variables_common(){
           echo "---> INFO: RELEASE FILE: $release_files"
         fi
     else
-        echo "This job is built with parameters, no release file needed. Continuing..."
+        echo "---> This job is built with parameters, no release file needed. Continuing..."
         release_file="None"
     fi
 
@@ -57,7 +57,7 @@ set_variables_common(){
     PATCH_DIR="$(mktemp -d)"
 
     # Displaying Release Information (Common variables)
-    echo "RELEASE ENVIRONMENT INFO:"
+    echo "---> RELEASE ENVIRONMENT INFO:"
     echo "RELEASE_FILE: $release_file"
     echo "LOGS_SERVER: $LOGS_SERVER"
     echo "NEXUS_PATH: $NEXUS_PATH"
@@ -81,7 +81,7 @@ set_variables_maven(){
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
 
     # Continuing displaying Release Information (Maven)
-    echo "RELEASE MAVEN INFO:"
+    echo "---> RELEASE MAVEN INFO:"
     echo "VERSION: $VERSION"
     echo "LOG DIR: $LOG_DIR"
     echo "LOGS URL: $LOGS_URL"
@@ -92,12 +92,15 @@ set_variables_container(){
     if [[ $VERSION == "None" ]]; then
         VERSION="$(niet ".container_release_tag" "$release_file")"
     fi
-
+    CONTAINER_PULL_REGISTRY="$(niet ".container_pull_registry" "$release_file")"
+    CONTAINER_PUSH_REGISTRY="$(niet ".container_push_registry" "$release_file")"
     ref="$(niet ".ref" "$release_file")"
 
     # Continuing displaying Release Information (Container)
-    echo "RELEASE CONTAINER INFO:"
+    echo "---> RELEASE CONTAINER INFO:"
     echo "CONTAINER_RELEASE_TAG: $VERSION"
+    echo "CONTAINER_PULL_REGISTRY: $CONTAINER_PULL_REGISTRY"
+    echo "CONTAINER_PUSH_REGISTRY: $CONTAINER_PUSH_REGISTRY"
     echo "GERRIT_REF_TO_TAG: $ref"
 }
 
@@ -111,9 +114,9 @@ verify_version(){
     # Allowed versions are "v#.#.#" or "#.#.#" aka SemVer
     allowed_version_regex="^((v?)([0-9]+)\.([0-9]+)\.([0-9]+))$"
     if [[ ! $VERSION =~ $allowed_version_regex ]]; then
-        echo "The version $VERSION is not a semantic valid version"
-        echo "Allowed versions are \"v#.#.#\" or \"#.#.#\" aka SemVer"
-        echo "See https://semver.org/ for more details on SemVer"
+        echo "---> The version $VERSION is not a semantic valid version"
+        echo "---> Allowed versions are \"v#.#.#\" or \"#.#.#\" aka SemVer"
+        echo "---> See https://semver.org/ for more details on SemVer"
         exit 1
     fi
 }
@@ -127,13 +130,13 @@ tag(){
         echo "---> INFO: Repo has not yet been tagged $VERSION"
         git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
         sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
-        echo "Showing latest signature for $PROJECT:"
-        echo "git tag -v $VERSION"
+        echo "---> Showing latest signature for $PROJECT:"
+        echo "---> git tag -v $VERSION"
         git tag -v "$VERSION"
 
         ########## Merge Part ##############
         if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
-            echo "--> INFO: Running merge"
+            echo "---> INFO: Running merge, pushing tag"
             gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
             git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
             git config user.name "$RELEASE_USERNAME"
@@ -152,9 +155,9 @@ nexus_release(){
         echo "---> INFO: NEXUS_URL: $NEXUS_URL"
         # extract the staging repo from URL
         STAGING_REPO=${staging_url#*repositories/}
-        echo "Running Nexus Verify"
+        echo "---> Running Nexus Verify"
         lftools nexus release -v --server https://"$NEXUS_URL" "$STAGING_REPO"
-        echo "Merge will run"
+        echo "---> Merge will run:"
         echo "lftools nexus release --server https://$NEXUS_URL $STAGING_REPO"
     done
 
@@ -163,7 +166,7 @@ nexus_release(){
         for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
           NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
           STAGING_REPO=${staging_url#*repositories/}
-          echo "Promoting $STAGING_REPO on $NEXUS_URL."
+          echo "---> Promoting $STAGING_REPO on $NEXUS_URL."
           lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
         done
     fi
@@ -186,19 +189,19 @@ container_release_file(){
         echo "$name"
         echo "$version"
         echo "---> INFO: Merge will release $name $version as $VERSION"
-        #Pull from public, to see if we have already tagged this.
-        if docker pull "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"; then
+        # Attempt to pull from releases registry to see if the image has been released.
+        if docker pull "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"; then
             echo "---> OK: $VERSION is already released for image $name, Continuing..."
         else
             echo "---> OK: $VERSION not found in releases, release will be prepared. Continuing..."
-            docker pull "$DOCKER_REGISTRY":10001/"$lfn_umbrella"/"$name":"$version"
+            docker pull "$CONTAINER_PULL_REGISTRY"/"$lfn_umbrella"/"$name":"$version"
             container_image_id="$(docker images | grep $name | grep $version | awk '{print $3}')"
             echo "---> INFO: Merge will run the following commands:"
-            echo "docker tag $container_image_id $DOCKER_REGISTRY:10002/$lfn_umbrella/$name:$VERSION"
-            echo "docker push $DOCKER_REGISTRY:10002/$lfn_umbrella/$name:$VERSION"
+            echo "docker tag $container_image_id $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
+            echo "docker push $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
             if [[ "$JOB_NAME" =~ "merge" ]]; then
-                docker tag "$container_image_id" "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
-                docker push "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
+                docker tag "$container_image_id" "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
+                docker push "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
             fi
             echo "#########################"
         fi

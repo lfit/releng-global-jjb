@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Update echo commands in release-job.sh for consistency and easy identification.
+  - |
+    Update release-container-schema to require container_pull_registry and
+    container_push_registry. These will be used to pull and push operations for self
+    release containers. Provides future support for DockerHub releases.

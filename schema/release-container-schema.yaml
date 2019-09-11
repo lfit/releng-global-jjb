@@ -16,6 +16,8 @@ required:
   - "distribution_type"
   - "project"
   - "container_release_tag"
+  - "container_pull_registry"
+  - "container_push_registry"
   - "ref"
 
 properties:
@@ -32,6 +34,10 @@ properties:
   project:
     type: "string"
   container_release_tag:
+    type: "string"
+  container_pull_registry:
+    type: "string"
+  container_push_registry:
     type: "string"
   ref:
     type: "string"
