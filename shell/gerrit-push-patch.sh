@@ -31,17 +31,12 @@ echo "---> gerrit-push-patch.sh"
 #   $GERRIT_USER          : Gerrit user
 #   $REVIEWERS_EMAIL      : Reviewers email
 
-# TODO: remove the workaround when v1.26 is available on all images
-# Workaround for git-review bug in v1.24
-# https://storyboard.openstack.org/#!/story/2001081
 set +u  # Allow unbound variables for virtualenv
-virtualenv --quiet "/tmp/v/git-review"
-# shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
-source "/tmp/v/git-review/bin/activate"
-pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade git-review
+python -m venv /tmp/v/venv/
+# shellcheck disable=SC1091
+source /tmp/v/venv/bin/activate
+python -m pip install --quiet --upgrade git-review
 set -u
-# End git-review workaround
 
 # Remove any leading or trailing quotes surrounding the strings
 # which can cause parse errors when passed as CLI options to commands

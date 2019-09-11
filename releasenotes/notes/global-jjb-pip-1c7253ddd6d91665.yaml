@@ -1,0 +1,11 @@
+---
+prelude: >
+    Centos builder are migrating to python3.6 as the default python env.
+    These changes ensure that pip and virtual env will work with the 
+    python3.6 centos images
+    virtualenv must now be called with 'python -m venv'
+    and pip must be called with 'python -m pip'
+upgrade:
+  - |
+    Before upgrading to the python3 centos images you must ensure that all jjb/ scripts follow
+    the above convention.
