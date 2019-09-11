@@ -70,6 +70,30 @@
       "revId": "2a7ddce438852341da1d629be92d46217515796c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b99ff857_e97bb49a",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-11T08:08:24Z",
+      "side": 0,
+      "message": "I agree with Andy, either make a jobs level parameter or put the logs in to a separate folder in $WORKSPACE/archives/pip-install. This reduces the size \u0026 traffic of the console logs, users keep referring to for all jobs. \n\nFor example:\n\npython -m pip install --user --upgrade tox-pyenv --log $WORKSPACE/archives/pip-install/$LOG_FILE",
+      "parentUuid": "00bab0b6_46b43633",
+      "range": {
+        "startLine": 18,
+        "startChar": 30,
+        "endLine": 18,
+        "endChar": 39
+      },
+      "revId": "2a7ddce438852341da1d629be92d46217515796c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
