@@ -27,16 +27,12 @@ REPOS_DIR="$WORKSPACE/.repos"
 
 IFS=" " read -r -a PATCHES <<< "$(echo "$GERRIT_EVENT_COMMENT_TEXT" | grep -E '(recheck:|reverify:)' | awk -F: '{print $2}')"
 
-# Workaround for git-review bug in v1.24
-# https://storyboard.openstack.org/#!/story/2001081
 set +u  # Allow unbound variables for virtualenv
-virtualenv --quiet "/tmp/v/git-review"
-# shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
-source "/tmp/v/git-review/bin/activate"
-pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade git-review
+python -m venv /tmp/v/venv/
+# shellcheck disable=SC1091
+source /tmp/v/venv/bin/activate
+python -m pip install --quiet --upgrade git-review
 set -u
-# End git-review workaround
 
 projects=()
 for patch in $(echo "${PATCHES[@]}"); do
