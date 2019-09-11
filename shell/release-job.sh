@@ -13,7 +13,7 @@ set -eu -o pipefail
 
 #Python bits. Remove when centos 7.7 builder is avaliable.
 if [ -d "/opt/pyenv" ]; then
-    echo "---> Setting up pyenv"
+    echo "INFO: Setting up pyenv"
     export PYENV_ROOT="/opt/pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
 fi
@@ -26,10 +26,10 @@ pip install --user lftools[nexus] jsonschema niet yq
 #Functions.
 
 set_variables_common(){
-    echo "---> INFO: Setting all common variables"
+    echo "INFO: Setting all common variables"
     LOGS_SERVER="${LOGS_SERVER:-None}"
     if [ "${LOGS_SERVER}" == 'None' ]; then
-        echo "FAILED: log server not found"
+        echo "ERROR: log server not found"
         exit 1
     fi
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
@@ -37,15 +37,15 @@ set_variables_common(){
     if $USE_RELEASE_FILE ; then
         release_files=$(git diff-tree --no-commit-id -r "$GERRIT_PATCHSET_REVISION" --name-only -- "releases/" ".releases/")
         if (( $(grep -c . <<<"$release_files") > 1 )); then
-          echo "---> INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
-          echo "---> ERROR: Committing multiple release files in the same commit OR rename/amend of existing files is not supported."
+          echo "INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
+          echo "ERROR: Committing multiple release files in the same commit OR rename/amend of existing files is not supported."
           exit 1
         else
           release_file="$release_files"
-          echo "---> INFO: RELEASE FILE: $release_files"
+          echo "INFO: RELEASE FILE: $release_files"
         fi
     else
-        echo "This job is built with parameters, no release file needed. Continuing..."
+        echo "INFO: This job is built with parameters, no release file needed. Continuing..."
         release_file="None"
     fi
 
@@ -57,15 +57,15 @@ set_variables_common(){
     PATCH_DIR="$(mktemp -d)"
 
     # Displaying Release Information (Common variables)
-    echo "RELEASE ENVIRONMENT INFO:"
-    echo "RELEASE_FILE: $release_file"
-    echo "LOGS_SERVER: $LOGS_SERVER"
-    echo "NEXUS_PATH: $NEXUS_PATH"
-    echo "JENKINS_HOSTNAME: $JENKINS_HOSTNAME"
-    echo "SILO: $SILO"
-    echo "PROJECT: $PROJECT"
-    echo "PROJECT-DASHED: ${PROJECT//\//-}"
-    echo "DISTRIBUTION_TYPE: $DISTRIBUTION_TYPE"
+    printf "\t%-30s\n" RELEASE_ENVIRONMENT_INFO:
+    printf "\t%-30s %s\n" RELEASE_FILE: $release_file
+    printf "\t%-30s %s\n" LOGS_SERVER: $LOGS_SERVER
+    printf "\t%-30s %s\n" NEXUS_PATH: $NEXUS_PATH
+    printf "\t%-30s %s\n" JENKINS_HOSTNAME: $JENKINS_HOSTNAME
+    printf "\t%-30s %s\n" SILO: $SILO
+    printf "\t%-30s %s\n" PROJECT: $PROJECT
+    printf "\t%-30s %s\n" PROJECT-DASHED: ${PROJECT//\//-}
+    printf "\t%-30s %s\n" DISTRIBUTION_TYPE: $DISTRIBUTION_TYPE
 }
 
 set_variables_maven(){
@@ -81,10 +81,10 @@ set_variables_maven(){
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
 
     # Continuing displaying Release Information (Maven)
-    echo "RELEASE MAVEN INFO:"
-    echo "VERSION: $VERSION"
-    echo "LOG DIR: $LOG_DIR"
-    echo "LOGS URL: $LOGS_URL"
+    printf "\t%-30s\n" RELEASE_MAVEN_INFO:
+    printf "\t%-30s %s\n" VERSION: $VERSION
+    printf "\t%-30s %s\n" LOG DIR: $LOG_DIR
+    printf "\t%-30s %s\n" LOGS URL: $LOGS_URL
 }
 
 set_variables_container(){
@@ -92,17 +92,29 @@ set_variables_container(){
     if [[ $VERSION == "None" ]]; then
         VERSION="$(niet ".container_release_tag" "$release_file")"
     fi
-
+    if `grep -q "container_pull_registry" "$release_file"` ; then
+        CONTAINER_PULL_REGISTRY="$(niet ".container_pull_registry" "$release_file")"
+    fi
+    if `grep -q "container_push_registry" "$release_file"` ; then
+        CONTAINER_PUSH_REGISTRY="$(niet ".container_push_registry" "$release_file")"
+    fi
+    # Make sure both pull and push registries are defined
+    if [ -z ${CONTAINER_PULL_REGISTRY+x} ] || [ -z ${CONTAINER_PUSH_REGISTRY+x} ]; then
+        echo "ERROR: CONTAINER_PULL_REGISTRY and CONTAINER_PUSH_REGISTRY need to be defined"
+        exit 1
+    fi
     ref="$(niet ".ref" "$release_file")"
 
     # Continuing displaying Release Information (Container)
-    echo "RELEASE CONTAINER INFO:"
-    echo "CONTAINER_RELEASE_TAG: $VERSION"
-    echo "GERRIT_REF_TO_TAG: $ref"
+    printf "\t%-30s\n" RELEASE_CONTAINER_INFO:
+    printf "\t%-30s %s\n" CONTAINER_RELEASE_TAG: $VERSION
+    printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: $CONTAINER_PULL_REGISTRY
+    printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: $CONTAINER_PUSH_REGISTRY
+    printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: $ref
 }
 
 verify_schema(){
-    echo "---> INFO: Verifying $release_file schema."
+    echo "INFO: Verifying $release_file schema."
     lftools schema verify "$release_file" "$RELEASE_SCHEMA"
 }
 
@@ -111,9 +123,9 @@ verify_version(){
     # Allowed versions are "v#.#.#" or "#.#.#" aka SemVer
     allowed_version_regex="^((v?)([0-9]+)\.([0-9]+)\.([0-9]+))$"
     if [[ ! $VERSION =~ $allowed_version_regex ]]; then
-        echo "The version $VERSION is not a semantic valid version"
-        echo "Allowed versions are \"v#.#.#\" or \"#.#.#\" aka SemVer"
-        echo "See https://semver.org/ for more details on SemVer"
+        echo "INFO: The version $VERSION is not a semantic valid version"
+        echo "INFO: Allowed versions are \"v#.#.#\" or \"#.#.#\" aka SemVer"
+        echo "INFO: See https://semver.org/ for more details on SemVer"
         exit 1
     fi
 }
@@ -122,18 +134,18 @@ tag(){
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
     if git tag -v "$VERSION"; then
-        echo "---> OK: Repo already tagged $VERSION Continuting to release"
+        echo "OK: Repo already tagged $VERSION Continuting to release"
     else
-        echo "---> INFO: Repo has not yet been tagged $VERSION"
+        echo "INFO: Repo has not yet been tagged $VERSION"
         git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
         sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
-        echo "Showing latest signature for $PROJECT:"
-        echo "git tag -v $VERSION"
+        echo "INFO: Showing latest signature for $PROJECT:"
+        echo "INFO: git tag -v $VERSION"
         git tag -v "$VERSION"
 
         ########## Merge Part ##############
         if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
-            echo "--> INFO: Running merge"
+            echo "INFO: Running merge, pushing tag"
             gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
             git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
             git config user.name "$RELEASE_USERNAME"
@@ -149,12 +161,12 @@ nexus_release(){
     for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
         # extract the domain name from URL
         NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
-        echo "---> INFO: NEXUS_URL: $NEXUS_URL"
+        echo "INFO: NEXUS_URL: $NEXUS_URL"
         # extract the staging repo from URL
         STAGING_REPO=${staging_url#*repositories/}
-        echo "Running Nexus Verify"
+        echo "INFO: Running Nexus Verify"
         lftools nexus release -v --server https://"$NEXUS_URL" "$STAGING_REPO"
-        echo "Merge will run"
+        echo "INFO: Merge will run:"
         echo "lftools nexus release --server https://$NEXUS_URL $STAGING_REPO"
     done
 
@@ -163,14 +175,14 @@ nexus_release(){
         for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
           NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
           STAGING_REPO=${staging_url#*repositories/}
-          echo "Promoting $STAGING_REPO on $NEXUS_URL."
+          echo "INFO: Promoting $STAGING_REPO on $NEXUS_URL."
           lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
         done
     fi
 }
 
 container_release_file(){
-    echo "---> Processing container release"
+    echo "INFO: Processing container release"
     local lfn_umbrella
     lfn_umbrella="$(echo "$GERRIT_HOST" | awk -F"." '{print $2}')"
 
@@ -185,35 +197,35 @@ container_release_file(){
 
         echo "$name"
         echo "$version"
-        echo "---> INFO: Merge will release $name $version as $VERSION"
-        #Pull from public, to see if we have already tagged this.
-        if docker pull "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"; then
-            echo "---> OK: $VERSION is already released for image $name, Continuing..."
+        echo "INFO: Merge will release $name $version as $VERSION"
+        # Attempt to pull from releases registry to see if the image has been released.
+        if docker pull "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"; then
+            echo "OK: $VERSION is already released for image $name, Continuing..."
         else
-            echo "---> OK: $VERSION not found in releases, release will be prepared. Continuing..."
-            docker pull "$DOCKER_REGISTRY":10001/"$lfn_umbrella"/"$name":"$version"
+            echo "OK: $VERSION not found in releases, release will be prepared. Continuing..."
+            docker pull "$CONTAINER_PULL_REGISTRY"/"$lfn_umbrella"/"$name":"$version"
             container_image_id="$(docker images | grep $name | grep $version | awk '{print $3}')"
-            echo "---> INFO: Merge will run the following commands:"
-            echo "docker tag $container_image_id $DOCKER_REGISTRY:10002/$lfn_umbrella/$name:$VERSION"
-            echo "docker push $DOCKER_REGISTRY:10002/$lfn_umbrella/$name:$VERSION"
+            echo "INFO: Merge will run the following commands:"
+            echo "docker tag $container_image_id $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
+            echo "docker push $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
             if [[ "$JOB_NAME" =~ "merge" ]]; then
-                docker tag "$container_image_id" "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
-                docker push "$DOCKER_REGISTRY":10002/"$lfn_umbrella"/"$name":"$VERSION"
+                docker tag "$container_image_id" "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
+                docker push "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
             fi
             echo "#########################"
         fi
     done
 
-    echo "---> INFO: Merge will tag ref: $ref"
+    echo "INFO: Merge will tag ref: $ref"
     git checkout "$ref"
     tag
 }
 
 maven_release_file(){
-    echo "---> INFO: wget -P $PATCH_DIR ${LOGS_URL}/staging-repo.txt.gz"
+    echo "INFO: wget -P $PATCH_DIR ${LOGS_URL}/staging-repo.txt.gz"
     wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz
     pushd "$PATCH_DIR"
-        echo "---> INFO: wget ${LOGS_URL}/patches/{${PROJECT//\//-}.bundle,taglist.log.gz}"
+        echo "INFO: wget ${LOGS_URL}/patches/{${PROJECT//\//-}.bundle,taglist.log.gz}"
         wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}
         gunzip taglist.log.gz
         cat "$PATCH_DIR"/taglist.log
@@ -251,7 +263,7 @@ elif [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
     verify_version
     container_release_file
 else
-    echo "---> ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
+    echo "ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
     echo "Must be maven or container"
     exit 1
 fi
