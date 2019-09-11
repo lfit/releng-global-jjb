@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be9ab2a8_8f529469",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-11T17:51:09Z",
+      "side": 1,
+      "message": "you mentioned removing --user, but here it is.  I\u0027m not asking for a change tho, jut please explain, exactly what can this script assume about pyenv or venv?",
+      "range": {
+        "startLine": 18,
+        "startChar": 25,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "f9ec1092904fd5b58aecf96528ad47214d39f3be",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
