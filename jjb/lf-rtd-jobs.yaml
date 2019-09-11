@@ -164,6 +164,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     project-pattern: "**"
+    python-version: python2
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -189,6 +190,7 @@
       - lf-infra-pre-build
       - lf-rtd-verify:
           doc-dir: "{doc-dir}"
+          python-version: "{python-version}"
 
 - job-template:
     name: "{project-name}-rtd-verify-{stream}"

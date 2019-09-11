@@ -7,7 +7,7 @@
     name: lf-infra-tox-install
     builders:
       - inject:
-          properties-content: "PYTHON_VERSION={python-version}"
+          properties-content: "PYTHON={python-version}"
       - shell: !include-raw-escape: ../shell/tox-install.sh
 
 - builder:
