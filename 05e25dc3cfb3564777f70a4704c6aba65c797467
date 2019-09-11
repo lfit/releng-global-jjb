@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "8d61b349_f697a29c",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-11T18:56:37Z",
+      "side": 1,
+      "message": "To complete this thought here\u0027s an example of how things _should_ work with pyenv.\n\n\t$ pyenv global system\n\t$ python --version\n\tPython 2.7.16\n\n\t$ pip --version\n\tpip 19.1.1 from /usr/local/lib/python2.7/site-packages/pip (python 2.7)\n\n\t$ pyenv global 3.7.3\n\n\t$ python --version\n\tPython 3.7.3\n\n\t$ pip --version\n\tpip 19.0.3 from /Users/me/.pyenv/versions/3.7.3/lib/python3.7/site-packages/pip (python 3.7)",
+      "parentUuid": "a34e67d6_70488126",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 14
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ea7d0234_95a15377",
         "filename": "shell/jjb-install.sh",
         "patchSetId": 5
