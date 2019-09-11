@@ -14,11 +14,11 @@ echo "---> node-install.sh"
 # DO NOT set -u as virtualenv's activate script has unbound variables
 set -e -o pipefail
 
-virtualenv --quiet "/tmp/v/python"
-# shellcheck source=/tmp/v/node/bin/activate disable=SC1091
-source "/tmp/v/python/bin/activate"
-pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade nodeenv
+
+python -m venv /tmp/v/venv/
+# shellcheck disable=SC1091
+source /tmp/v/venv/bin/activate
+python -m pip install --quiet --upgrade nodeenv
 
 echo "----> pip freeze"
 pip freeze
