@@ -1,0 +1,13 @@
+---
+upgrade:
+  - |
+    CONTAINER_PULL_REGISTRY and CONTAINER_PUSH_REGISTRY need to be
+    defined in Jenkins global environment varaibles.
+fixes:
+  - |
+    Update echo commands in release-job.sh for easy identification.
+  - |
+    Update release-container-schema to use CONTAINER_PULL_REGISTRY
+    and CONTAINER_PUSH_REGISTRY from Jenkins global variables. These
+    will be used to pull and push operations for self release containers.
+    Can be overwritten in the releases files.
