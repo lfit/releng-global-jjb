@@ -11,17 +11,12 @@
 echo "---> release-job.sh"
 set -eu -o pipefail
 
-#Python bits. Remove when centos 7.7 builder is avaliable.
-if [ -d "/opt/pyenv" ]; then
-    echo "---> Setting up pyenv"
-    export PYENV_ROOT="/opt/pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-fi
-PYTHONPATH=$(pwd)
-export PYTHONPATH
-pyenv local 3.6.4
-export PYENV_VERSION="3.6.4"
-pip install --user lftools[nexus] jsonschema niet yq
+set +u
+python -m venv /tmp/v/venv/
+# shellcheck disable=SC1091
+source /tmp/v/venv/bin/activate
+python -m pip install lftools[nexus] jsonschema niet yq
+set -u
 
 #Functions.
 
