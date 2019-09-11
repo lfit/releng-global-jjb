@@ -71,6 +71,29 @@
     },
     {
       "key": {
+        "uuid": "a34e67d6_70488126",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-11T18:29:57Z",
+      "side": 1,
+      "message": "So the difference between `python -m pip` and `pip` is the -m will run the pip module from the site-packages of the binary version of `python` whereas `pip` will run the version of pip cli that your PATH provides (find it via `which pip`).\n\nUsing `python -m pip` may make sense if you are overriding your default Python through shell PATH configuration but did not provide configuration for pip in the PATH. pyenv can handle all this for us though and have the python, pip, and virtualenv PATHs to the one that is installed via pyenv.\n\nI think the missing component in our scripts is a call to `eval \"$(pyenv init -)\"`. On my laptop I have it configured in my ~/.zshrc and ~/.bashrc but in hindsight we never configured this in our CI systems. Once we add the `eval \"$(pyenv init -)\"` doing `pyenv global 3.6.4` for example will configure the shims appropriately to pick up the right CLI tool versions.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 14
+      },
+      "revId": "05e25dc3cfb3564777f70a4704c6aba65c797467",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ea7d0234_95a15377",
         "filename": "shell/jjb-install.sh",
         "patchSetId": 5
