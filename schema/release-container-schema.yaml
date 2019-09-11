@@ -33,5 +33,9 @@ properties:
     type: "string"
   container_release_tag:
     type: "string"
+  container_pull_registry:
+    type: "string"
+  container_push_registry:
+    type: "string"
   ref:
     type: "string"

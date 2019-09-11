@@ -108,6 +108,10 @@ The JSON schema for a container release job appears below.
         type: "string"
       container_release_tag:
         type: "string"
+      container_pull_registry"
+        type: "string"
+      container_push_registry"
+        type: "string"
       ref:
         type: "string"
 
@@ -122,6 +126,8 @@ per-container version strings to pull images from the container registry.
     ---
     distribution_type: 'container'
     container_release_tag: '1.0.0'
+    container_pull_registry: 'nexus.onap.org:10003"
+    container_push_registry: 'nexus.onap.org:10002"
     project: 'test'
     containers:
         - name: test-backend
