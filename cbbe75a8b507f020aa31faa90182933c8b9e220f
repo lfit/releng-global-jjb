@@ -46,6 +46,29 @@
       "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6aa7a072_91bb9828",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-12T15:27:52Z",
+      "side": 1,
+      "message": "I would like to discuss taking this value from jenkins global-vars, rather than having it be a requirement of the release file.",
+      "range": {
+        "startLine": 95,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 80
+      },
+      "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
