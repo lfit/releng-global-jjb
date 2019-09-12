@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "866860a4_e5b56068",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-12T14:49:41Z",
+      "side": 1,
+      "message": "these arrows are generally used as markers for script names, please use something else here or remove it.",
+      "range": {
+        "startLine": 32,
+        "startChar": 14,
+        "endLine": 32,
+        "endChar": 18
+      },
+      "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
