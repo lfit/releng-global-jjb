@@ -93,6 +93,30 @@
       "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b719183_fb53a7ea",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-12T15:40:32Z",
+      "side": 1,
+      "message": "Okay, what about a case, where we set them in jenkins global-vars,\nand they can be optionally overwritten by the release file?",
+      "parentUuid": "2b8c43dd_bb2cffbb",
+      "range": {
+        "startLine": 95,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 80
+      },
+      "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
