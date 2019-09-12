@@ -22,6 +22,30 @@
       "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a2ce96e0_450e28a7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-12T15:11:21Z",
+      "side": 1,
+      "message": "While making tests, i found that these are actually very helpful to spot information for me and from the feedback I have been getting from the guys in ONAP I have been working with. \nIs there a strong opposition on letting these be here? At least for this job where more devs will be looking into the logs, I want to make information easily visible.",
+      "parentUuid": "866860a4_e5b56068",
+      "range": {
+        "startLine": 32,
+        "startChar": 14,
+        "endLine": 32,
+        "endChar": 18
+      },
+      "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
