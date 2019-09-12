@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Remove quotes from optional var WSS_UNIFIED_AGENT_OPTIONS.
+    When empty, the quotes will cause WS Unified Agent failures.
+  - |
+    Upgrade WS Unified Agent CLI to latest version 19.8.1
