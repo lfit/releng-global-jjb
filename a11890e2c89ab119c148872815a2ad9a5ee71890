@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0ce60208_c135776c",
+        "filename": "releasenotes/notes/release-jobs-container-registries-ece8f67039621d58.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-12T21:32:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8328e568_ae46f567",
+      "range": {
+        "startLine": 10,
+        "startChar": 39,
+        "endLine": 10,
+        "endChar": 47
+      },
+      "revId": "a11890e2c89ab119c148872815a2ad9a5ee71890",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9eac23e3_b92c75c0",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
