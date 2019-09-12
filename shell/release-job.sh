@@ -92,10 +92,10 @@ set_variables_container(){
     if [[ $VERSION == "None" ]]; then
         VERSION="$(niet ".container_release_tag" "$release_file")"
     fi
-    if $(grep -q "container_pull_registry" "$release_file") ; then
+    if grep -q "container_pull_registry" "$release_file" ; then
         CONTAINER_PULL_REGISTRY="$(niet ".container_pull_registry" "$release_file")"
     fi
-    if $(grep -q "container_push_registry" "$release_file") ; then
+    if grep -q "container_push_registry" "$release_file" ; then
         CONTAINER_PUSH_REGISTRY="$(niet ".container_push_registry" "$release_file")"
     fi
     # Make sure both pull and push registries are defined
@@ -187,7 +187,7 @@ container_release_file(){
     lfn_umbrella="$(echo "$GERRIT_HOST" | awk -F"." '{print $2}')"
 
     for namequoted in $(cat $release_file | yq '.containers[].name'); do
-        versionquoted=$(cat $release_file | yq ".containers[] |select(.name=="$namequoted") |.version")
+        versionquoted=$(cat $release_file | yq ".containers[] |select(.name==$namequoted) |.version")
 
         #Remove extra yaml quotes
         name="${namequoted#\"}"
