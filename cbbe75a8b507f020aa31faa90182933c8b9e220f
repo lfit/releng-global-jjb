@@ -69,6 +69,30 @@
       "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b8c43dd_bb2cffbb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-12T15:35:08Z",
+      "side": 1,
+      "message": "I think taking this from the global vars will be a good idea too. But, in case of acumos the pull registry sometimes is snapshots and sometimes is staging.\nNot sure they will be happy setting the values in the global vars. \nAlso, if we set them globally, we will not be able to allow teams to set a dockerhub registry if they wanted to. In case of ONAP, the arm team will find setting this values by themselves useful.",
+      "parentUuid": "6aa7a072_91bb9828",
+      "range": {
+        "startLine": 95,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 80
+      },
+      "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
