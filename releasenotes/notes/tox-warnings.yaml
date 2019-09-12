@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix warnings from tox (shellcheck).

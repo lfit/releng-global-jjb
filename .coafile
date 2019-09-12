@@ -36,7 +36,8 @@ ignore = .git/**,
     docs/jjb/lf-ci-jobs.rst,
     docs/jjb/lf-docker-jobs.rst,
     docs/jjb/lf-macros.rst,
-    docs/jjb/lf-maven-jobs.rst
+    docs/jjb/lf-maven-jobs.rst,
+    docs/jjb/lf-python-jobs.rst
 
 [all.ShellCheck]
 bears = ShellCheckBear,SpaceConsistencyBear
