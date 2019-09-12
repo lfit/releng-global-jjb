@@ -117,6 +117,30 @@
       "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e17e51ee_ec923d05",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-12T15:44:43Z",
+      "side": 1,
+      "message": "I like that... \n\nLet me see what i can do..",
+      "parentUuid": "8b719183_fb53a7ea",
+      "range": {
+        "startLine": 95,
+        "startChar": 4,
+        "endLine": 96,
+        "endChar": 80
+      },
+      "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
