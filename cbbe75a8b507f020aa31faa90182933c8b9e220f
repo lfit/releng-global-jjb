@@ -73,6 +73,47 @@
     },
     {
       "key": {
+        "uuid": "2d9b114f_dacc922d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-12T17:24:13Z",
+      "side": 1,
+      "message": "Because of the \u0027exit 1\u0027 there will also be error message in the log (from Jenkins) becuase the shell exited with bad status.\n\nThe \u0027standard\u0027 way to make this check in bash is : \u0027if [[ -z $LOGS_SERVER ]]; then\u0027 (no quotes required with \u0027[[]]\u0027)\n\nOR just \u0027: $LOGS_SERVER\u0027 (since -u is set) it will look like this:\ndoit: line 3: LOGS_SERVER: unbound variable\n\nI am all for being consistent but lets not use deprecated syntax",
+      "parentUuid": "100c9411_2cb96f8f",
+      "range": {
+        "startLine": 32,
+        "startChar": 14,
+        "endLine": 32,
+        "endChar": 18
+      },
+      "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7fe6d9a4_944632b6",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-12T17:24:13Z",
+      "side": 1,
+      "message": "printf \"\\t%-30s %s\\n\" RELEASE_FILE: $release_file\n\nMore readable, plus it makes it easy to find in the log.",
+      "revId": "cbbe75a8b507f020aa31faa90182933c8b9e220f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6aa7a072_91bb9828",
         "filename": "shell/release-job.sh",
         "patchSetId": 1
