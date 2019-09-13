@@ -329,6 +329,20 @@
           java-opts: "{sonar-java-opts}"
           additional-arguments: "{sonar-additional-args}"
 
+- builder:
+    name: lf-infra-sonar-with-prescan
+    # Run a Sonar Jenkins Plugin
+    builders:
+      - lf-sonar-prescan  # Must be defined by caller
+      - sonar:
+          sonar-name: Sonar
+          scanner-name: SonarQubeScanner
+          task: "{sonar-task}"
+          project: "sonar-project.properties"
+          properties: "{sonar-properties}"
+          java-opts: "{sonar-java-opts}"
+          additional-arguments: "{sonar-additional-args}"
+
 ##############
 # PARAMETERS #
 ##############

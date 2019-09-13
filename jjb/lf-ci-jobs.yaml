@@ -1903,6 +1903,11 @@
           default: "{archive-artifacts}"
           description: Artifacts to archive to the logs server.
 
+    publishers:
+      - lf-infra-publish
+
+- lf_sonar_builders: &lf_sonar_builders
+    name: lf-sonar-builders
     builders:
       - lf-infra-pre-build
       - lf-infra-sonar:
@@ -1911,26 +1916,21 @@
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
 
-    publishers:
-      - lf-infra-publish
+- lf_sonar_builders_prescan: &lf_sonar_builders_prescan
+    name: lf-sonar-builders-prescan
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-sonar-with-prescan:
+          sonar-task: "{sonar-task}"
+          sonar-properties: "{sonar-properties}"
+          sonar-java-opts: "{sonar-java-opts}"
+          sonar-additional-args: "{sonar-additional-args}"
 
-- job-template:
-    name: "{project-name}-sonar"
-    id: gerrit-sonar
-    <<: *lf_sonar_common
-    # yamllint disable-line rule:key-duplicates
-
-    ######################
-    # Default parameters #
-    ######################
-
+- lf_sonar_gerrit_common: &lf_sonar_gerrit_common
+    name: lf-sonar-gerrit-common
     gerrit_sonar_triggers:
       - comment-added-contains-event:
           comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
-
-    #####################
-    # Job Configuration #
-    #####################
 
     scm:
       - lf-infra-gerrit-scm:
@@ -1961,12 +1961,8 @@
             unstable: true
             notbuilt: true
 
-- job-template:
-    name: "{project-name}-sonar"
-    id: github-sonar
-    <<: *lf_sonar_common
-    # yamllint disable-line rule:key-duplicates
-
+- lf_sonar_github_common: &lf_sonar_github_common
+    name: lf-sonar-github-common
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
@@ -1994,3 +1990,39 @@
           white-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
+
+- job-template:
+    name: "{project-name}-sonar"
+    id: gerrit-sonar
+    <<: *lf_sonar_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_builders
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_gerrit_common
+
+- job-template:
+    name: "{project-name}-sonar"
+    id: github-sonar
+    <<: *lf_sonar_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_builders
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_github_common
+
+- job-template:
+    name: "{project-name}-sonar-prescan"
+    id: gerrit-sonar-prescan
+    <<: *lf_sonar_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_builders_prescan
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_gerrit_common
+
+- job-template:
+    name: "{project-name}-sonar-prescan"
+    id: github-sonar-prescan
+    <<: *lf_sonar_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_builders_prescan
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_github_common
