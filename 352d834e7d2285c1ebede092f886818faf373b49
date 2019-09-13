@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4af48c9a_aa2eac9e",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-13T17:07:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "602800bb_633064d4",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7000bc74_24969387",
         "filename": "shell/packer-build.sh",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2019-09-13T15:12:38Z",
       "side": 1,
       "message": "If -e is set it will never get here... you need to:\n\nif packer.io build -color\u003dfalse ..... \u0026\u0026 $UPDATE_CLOUD_IMAGE; then",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76e00c98_6a7effcd",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-13T17:07:51Z",
+      "side": 1,
+      "message": "\"never get here\"?",
+      "parentUuid": "7000bc74_24969387",
       "revId": "352d834e7d2285c1ebede092f886818faf373b49",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "e466e863_9d111387",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-13T17:07:51Z",
+      "side": 1,
+      "message": "NEW_IMAGE_NAME is an env var",
+      "parentUuid": "b88ab2a5_cca6376e",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5bcc6233_2f2eab61",
         "filename": "shell/packer-build.sh",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2019-09-13T15:12:38Z",
       "side": 1,
       "message": "We already know that UPDATE_COUD_IMAGE is true (see if above)",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7df6c08_eb44b343",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-13T17:07:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5bcc6233_2f2eab61",
       "revId": "352d834e7d2285c1ebede092f886818faf373b49",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "503a5108_a619d8e5",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-13T17:07:51Z",
+      "side": 1,
+      "message": "you\u0027ll have to set this after the virtenv creation or end up using set -u/+u around that.",
+      "parentUuid": "a72f9a20_079af7ac",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2db22019_2bab112e",
         "filename": "shell/update-cloud-images.sh",
         "patchSetId": 5
@@ -115,6 +205,24 @@
       "writtenOn": "2019-09-13T15:12:38Z",
       "side": 1,
       "message": "-x is always overkill, a few well placed echos should do the job. Unless this is just there for debug.",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05ce43c9_4426cc2b",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-13T17:07:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2db22019_2bab112e",
       "revId": "352d834e7d2285c1ebede092f886818faf373b49",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
