@@ -45,6 +45,7 @@ else
     echo "Generating Requirements File"
     cat << 'EOF' > "$requirements_file"
 lftools[openstack]~=0.26.2
+python-cinderclient~=4.3.0
 python-heatclient~=1.16.1
 python-openstackclient~=3.16.0
 dogpile.cache~=0.6.8  # Version 0.7.[01] seems to break openstackclient

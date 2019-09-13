@@ -1,0 +1,15 @@
+---
+fixes:
+  - |
+    Pin python-cinderclient to 4.3.0.
+
+    A new version of python-cinderclient 5.0.0 is released which breaks the
+    openstack jobs.
+  - |
+    openstack --os-cloud vex limits show --absolute
+    Error: No module named v1.contrib
+  - |
+    Debug info shows:
+    File "/home/jenkins/.local/lib/python2.7/site-packages/openstackclient/volume/client.py", line 40, in make_client
+    from cinderclient.v1.contrib import list_extensions
+    ImportError: No module named v1.contrib
