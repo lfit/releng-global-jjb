@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f6feb038_446a201d",
+        "filename": ".coafile",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-13T00:54:15Z",
+      "side": 1,
+      "message": "Not sure why we are adding another file to the ignore list but if we\u0027re ignoring all docs files then there\u0027s really no point having WriteGoodLintBear enabled. Maybe we should just turn off the WriteGood linter altogether?",
+      "revId": "0fbbff8e2b2d745a31fc33cea4fccc135d3a181e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
