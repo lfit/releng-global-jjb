@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "602800bb_633064d4",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "remove \u0027|| exit\u0027 (-e is set)",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7000bc74_24969387",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "If -e is set it will never get here... you need to:\n\nif packer.io build -color\u003dfalse ..... \u0026\u0026 $UPDATE_CLOUD_IMAGE; then",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b88ab2a5_cca6376e",
         "filename": "shell/packer-build.sh",
         "patchSetId": 5
@@ -36,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "034845d2_b9d68acb",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "is the -l needed here ?",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a72f9a20_079af7ac",
         "filename": "shell/update-cloud-images.sh",
         "patchSetId": 5
@@ -64,6 +115,29 @@
       "writtenOn": "2019-09-13T15:12:38Z",
       "side": 1,
       "message": "-x is always overkill, a few well placed echos should do the job. Unless this is just there for debug.",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68136717_ec1817e7",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "Pretty sure that read does not include leading/trailng whitspaces (based on IFS)",
+      "range": {
+        "startLine": 39,
+        "startChar": 1,
+        "endLine": 42,
+        "endChar": 67
+      },
       "revId": "352d834e7d2285c1ebede092f886818faf373b49",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
