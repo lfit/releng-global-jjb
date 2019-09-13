@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Run WhiteSource scan jobs weekly on Sunday.
