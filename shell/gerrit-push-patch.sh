@@ -42,7 +42,6 @@ pip install --quiet --upgrade "pip==9.0.3" setuptools
 pip install --quiet --upgrade git-review
 set -u
 # End git-review workaround
-
 # Remove any leading or trailing quotes surrounding the strings
 # which can cause parse errors when passed as CLI options to commands
 PROJECT="$(echo "$PROJECT" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"

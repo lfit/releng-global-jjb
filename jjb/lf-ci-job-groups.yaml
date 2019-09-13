@@ -46,3 +46,17 @@
     jobs:
       - github-packer-merge
       - github-packer-verify
+
+- job-group:
+    name: "{project-name}-openstack-jobs"
+
+    jobs:
+      - gerrit-openstack-update-cloud-image
+      - gerrit-openstack-cron
+
+- job-group:
+    name: "{project-name}-github-openstack-jobs"
+
+    jobs:
+      - github-openstack-update-cloud-image
+      - github-openstack-cron
