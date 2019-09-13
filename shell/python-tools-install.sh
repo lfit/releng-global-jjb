@@ -10,6 +10,42 @@
 ##############################################################################
 echo "---> python-tools-install.sh"
 
+if [ -d "/opt/pyenv" ]; then
+    echo "---> Setting up pyenv"
+    export PYENV_ROOT="/opt/pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    PYTHONPATH="$WORKSPACE"
+    export PYTHONPATH
+    export TOX_TESTENV_PASSENV=PYTHONPATH
+    eval "$(pyenv init -)"
+
+    latest_version=$(pyenv versions \
+      | sed s,*,,g \
+      | awk '/[0-9]+/{ print $1 }' \
+      | sort --version-sort \
+      | awk '/./{line=$0} END{print line}')
+
+    export PYENV_VERSION="$latest_version"
+    export LATEST_VERSION="$latest_version"
+    pyenv local "$latest_version"
+
+    # shellcheck disable=SC2129
+    echo 'export PYENV_ROOT="/opt/.pyenv"' >> ~/.bash_profile
+    # shellcheck disable=SC2016
+    echo 'export LATEST_VERSION="$latest_version"' >> ~/.bash_profile
+    echo 'export TOX_TESTENV_PASSENV=PYTHONPATH' >> ~/.bash_profile
+    # shellcheck disable=SC2016
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+
+    cat << 'EOF' >> ~/.bash_profile
+if command -v pyenv 1>/dev/null 2>&1 ; then
+    eval "$(pyenv init -)" && pyenv local $LATEST_VERSION
+fi
+EOF
+
+
+
+fi
 set -eu -o pipefail
 
 # Generate a list of 'pip' packages pre-build/post-build
@@ -44,15 +80,12 @@ else
 
     echo "Generating Requirements File"
     cat << 'EOF' > "$requirements_file"
-lftools[openstack]~=0.26.2
-python-cinderclient~=4.3.0
-python-heatclient~=1.16.1
-python-openstackclient~=3.16.0
-dogpile.cache~=0.6.8  # Version 0.7.[01] seems to break openstackclient
-more-itertools~=5.0.0
-niet~=1.4.2 # Extract values from yaml
-tox>=3.7.0. # Tox 3.7 or greater is necessary for parallel mode support
-yq~=2.7.2
+lftools[openstack]
+python-heatclient
+python-openstackclient
+niet~=1.4.2
+tox>=3.7.0
+yq
 EOF
 
     # Use `python -m pip` to ensure we are using the latest version of pip
