@@ -1418,6 +1418,7 @@
 
     openstack: true
     openstack-cloud: vex
+    update-cloud-image: false
 
     #####################
     # Job Configuration #
@@ -1430,6 +1431,10 @@
           branch: "{branch}"
       - lf-packer-parameters:
           packer-version: "{packer-version}"
+      - bool:
+          name: UPDATE_CLOUD_IMAGE
+          default: "{update-cloud-image}"
+          description: "Update new built image on the cloud."
 
     builders:
       - lf-infra-packer-build:
@@ -1439,9 +1444,30 @@
           packer-version: "{packer-version}"
           platform: "{platforms}"
           template: "{templates}"
+          update-cloud-image: "{update-cloud-image}"
       - description-setter:
           regexp: '(\s+.*)(ZZCI\s+.*\d+-\d+\.\d+)'
           description: 'Image: \2'
+      # - trigger-builds:
+      #     - project: '{project-name}-openstack-update-cloud-image'
+      #       block: false
+      #       predefined-parameters: |
+      #         GERRIT_BRANCH=$GERRIT_BRANCH
+      #         GERRIT_PROJECT=$GERRIT_PROJECT
+      #         GERRIT_REFSPEC=$GERRIT_REFSPEC
+      #         NEW_IMAGE_NAME=$NEW_IMAGE_NAME
+      #       property-file: variables.jenkins-trigger
+      #       property-file-fail-on-missing: true
+
+    publishers:
+      - lf-infra-publish
+      - trigger-parameterized-builds:
+          - project: "{project-name}-openstack-update-cloud-image"
+            condition: UNSTABLE_OR_BETTER
+            predefined-parameters: |
+              NEW_IMAGE_NAME=$NEW_IMAGE_NAME
+            property-file: variables.jenkins-trigger
+            fail-on-missing: true
 
 - job-template:
     name: "{project-name}-packer-merge-{platforms}-{templates}"
@@ -1686,6 +1712,123 @@
           included-regions: "{obj:github_included_regions}"
           white-list-target-branches:
             - "{branch}"
+
+################################
+# Openstack Update Cloud Image #
+################################
+
+- lf_openstack_cron: &lf_openstack_update_cloud_image
+    name: lf-openstack-update-cloud-image
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 10
+    cron: "@monthly"
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    new-image-name: "all"
+    openstack-cloud: vex
+    stream: master
+    submodule-timeout: 10
+    submodule-disable: false
+    update-cloud-image: false
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+    concurrent: false
+    disabled: "{disable-job}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          stream: "{stream}"
+          branch: "{branch}"
+      - string:
+          name: NEW_IMAGE_NAME
+          default: "{new-image-name}"
+          description: "Name of cloud image to update in Jenkins"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+      # Listed after to override openstack-infra-wrappers clouds.yaml definition
+      - config-file-provider:
+          files:
+            - file-id: clouds-yaml
+              target: "$HOME/.config/openstack/clouds.yaml"
+            - file-id: npmrc
+              target: "$HOME/.npmrc"
+            - file-id: pipconf
+              target: "$HOME/.config/pip/pip.conf"
+
+    builders:
+      - lf-infra-pre-build
+      - inject:
+          properties-content: |
+            OS_CLOUD={openstack-cloud}
+      - shell: |
+          #!/bin/bash
+          echo "Extract the image type for commit message"
+          # echo IMAGE_TYPE=${{NEW_IMAGE_NAME% -*}} >> image-type.txt
+          IMAGE_TYPE=$(echo ${{NEW_IMAGE_NAME}} | tr -d "\'\"\ " | awk -F- '{{ print $2 " " $3 " " $4 }}')
+          echo IMAGE_TYPE=${{IMAGE_TYPE}} >> image-type.txt
+          cat image-type.txt
+      - inject:
+          properties-file: "image-type.txt"
+      - lf-infra-update-packer-images
+      - lf-infra-push-gerrit-patch:
+          project: "{project}"
+          gerrit-user: "{gerrit-user}"
+          gerrit-host: "{gerrit-host}"
+          gerrit-topic: "{gerrit-topic}"
+          gerrit-commit-message: "Update cloud image $IMAGE_TYPE"
+          reviewers-email: "{reviewers-email}"
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: "{project-name}-openstack-update-cloud-image"
+    id: gerrit-openstack-update-cloud-image
+    <<: *lf_openstack_update_cloud_image
+
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: "$GIT_URL/$GERRIT_PROJECT"
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: false
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - timed: "{obj:cron}"
 
 #################
 # Puppet Verify #

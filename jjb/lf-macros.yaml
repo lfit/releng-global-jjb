@@ -111,6 +111,7 @@
             PACKER_PLATFORM={platform}
             PACKER_TEMPLATE={template}
             PACKER_VERSION={packer-version}
+            UPDATE_CLOUD_IMAGE={update-cloud-image}
       - shell: !include-raw-escape:
           - ../shell/packer-install.sh
           - ../shell/packer-build.sh
@@ -142,6 +143,11 @@
           - ../shell/packer-validate.sh
       - shell: !include-raw:
           - ../shell/packer-clear-credentials.sh
+
+- builder:
+    name: lf-infra-update-packer-images
+    builders:
+      - shell: !include-raw: ../shell/update-cloud-images.sh
 
 - builder:
     name: lf-infra-push-gerrit-patch
