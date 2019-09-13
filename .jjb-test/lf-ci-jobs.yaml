@@ -37,6 +37,20 @@
       https://jenkins.example.org/sandbox
 
 - project:
+    name: gerrit-openstack-udpate-cloud-image
+    jobs:
+      - gerrit-openstack-udpate-cloud-image
+
+    project-name: gerrit-ciman
+
+- project:
+    name: github-openstack-udpate-cloud-image
+    jobs:
+      - github-openstack-udpate-cloud-image
+
+    project-name: github-ciman
+
+- project:
     name: gerrit-packer-jobs
     jobs:
       - "{project-name}-packer-jobs"
@@ -65,6 +79,8 @@
     templates:
       - java-builder
       - mininet
+
+    update-cloud-images: false
 
 - project:
     name: throttle-ci-jobs
