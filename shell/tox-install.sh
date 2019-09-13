@@ -15,6 +15,6 @@ echo "---> tox-install.sh"
 set -eux -o pipefail
 
 # Tox version is pulled in through detox to mitigate version conflict
-$PYTHON -m pip install --user --quiet --upgrade tox-pyenv
+$PYTHON -m pip install --user --quiet --upgrade tox-pyenv more-itertools~=5.0.0
 
 $PYTHON -m pip freeze
