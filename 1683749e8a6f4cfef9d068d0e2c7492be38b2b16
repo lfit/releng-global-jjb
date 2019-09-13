@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c60f5e41_9061b517",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-09-13T17:03:00Z",
+      "side": 1,
+      "message": "$SILO saying global-vars-releng.sh is misleading as there is one of these files that matches your each of Jenkins SILOs.",
+      "range": {
+        "startLine": 224,
+        "startChar": 52,
+        "endLine": 224,
+        "endChar": 58
+      },
+      "revId": "1683749e8a6f4cfef9d068d0e2c7492be38b2b16",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
