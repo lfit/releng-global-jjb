@@ -66,6 +66,8 @@
       - java-builder
       - mininet
 
+    update-cloud-images: false
+
 - project:
     name: throttle-ci-jobs
     jobs:
