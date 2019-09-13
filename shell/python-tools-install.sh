@@ -10,6 +10,19 @@
 ##############################################################################
 echo "---> python-tools-install.sh"
 
+if [ -d "/opt/pyenv" ]; then
+    echo "---> Setting up pyenv"
+    export PYENV_ROOT="/opt/pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    PYTHONPATH=$(pwd)
+    export PYTHONPATH
+    export TOX_TESTENV_PASSENV=PYTHONPATH
+    echo 'export PYENV_ROOT="/opt/.pyenv"' >> ~/.bash_profile
+    echo 'export TOX_TESTENV_PASSENV=PYTHONPATH' >> ~/.bash_profile
+    echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
+    echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+    eval "$(pyenv init -)"
+fi
 set -eu -o pipefail
 
 # Generate a list of 'pip' packages pre-build/post-build
@@ -44,15 +57,15 @@ else
 
     echo "Generating Requirements File"
     cat << 'EOF' > "$requirements_file"
-lftools[openstack]~=0.26.2
-python-cinderclient~=4.3.0
-python-heatclient~=1.16.1
-python-openstackclient~=3.16.0
-dogpile.cache~=0.6.8  # Version 0.7.[01] seems to break openstackclient
-more-itertools~=5.0.0
-niet~=1.4.2 # Extract values from yaml
-tox>=3.7.0. # Tox 3.7 or greater is necessary for parallel mode support
-yq~=2.7.2
+lftools[openstack]
+python-cinderclient
+python-heatclient
+python-openstackclient
+dogpile.cache
+more-itertools
+niet
+tox
+yq
 EOF
 
     # Use `python -m pip` to ensure we are using the latest version of pip
