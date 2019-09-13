@@ -1,0 +1,33 @@
+---
+features:
+  - |
+    Add template to update OpenStack cloud images.
+  - |
+    This job finds and updates OpenStack cloud images on the ci-management
+    source repository.
+  - |
+    The job is triggered in two ways:
+  - |
+    1. When a packer merge job completes, the new image name created is passed
+       down to the job.
+    2. Manually trigger the job to update all images.
+  - |
+    When the job is triggered through an upstream packer merge job, this only
+    generates a change request for the new image built.
+  - |
+    When the job is triggered manually, this job finds the latest images on
+    OpenStack cloud and compares them with the images currently used in
+    the source ci-management source repository. If the compared images have
+    newer time stamps are **all** updated through a change request.
+  - |
+    This job requires a Jenkins configuration merge and verify job setup and
+    working on Jenkins.
+upgrade:
+  - |
+    Packer merge jobs have a new build parameter when checked also updates the
+    cloud image.
+  - |
+    **lf-infra-packer-build** macro now requires 1 new variables to be passed.
+  - |
+    #. **update-cloud-image:** Set to true when images need to be updated on
+       Jenkins.

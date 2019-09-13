@@ -650,6 +650,71 @@ Full Example:
 
 .. literalinclude:: ../../.jjb-test/lf-ci-jobs/openstack-cron-full.yaml
 
+.. _gjjb-openstack-update-cloud-image:
+
+OpenStack Update Cloud Image
+----------------------------
+
+This job finds and updates OpenStack cloud images on the ci-management source
+repository.
+
+The job is triggered in two ways:
+
+1. When packer merge job completes, the new image name created is passed
+   down to the job.
+2. When the job is triggered manually to update all new images.
+
+When the job is triggered through an upstream packer merge job, this only
+generates a change request for the new image built.
+
+When the job is triggered manually, this job finds the latest images on
+OpenStack cloud and compares them with the images currently used in the source
+ci-management source repository. If the compared images have newer
+time stamps are **all** updated through a change request.
+
+This job requires a Jenkins configuration merge and verify job setup and
+working on Jenkins.
+
+:Template Names:
+    - {project-name}-openstack-update-cloud-image
+    - gerrit-openstack-update-cloud-image
+    - github-openstack-update-cloud-image
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        be configured in defaults.yaml)
+    :new-image-name: Name of new image name passed from packer merge job or
+        set to 'all' to update all images. (default: all)
+
+:Optional parameters:
+
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 90)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :openstack-cloud: OS_CLOUD setting to pass to openstack client.
+        (default: vex)
+    :stream: Keyword that can be used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :update-cloud-image: Submit a change request to update new built cloud
+        image to Jenkins. (default: false)
+
+Minimal Example:
+
+.. literalinclude:: ../../.jjb-test/lf-ci-jobs/openstack-update-cloud-image-minimal.yaml
+
+Full Example:
+
+.. literalinclude:: ../../.jjb-test/lf-ci-jobs/openstack-update-cloud-image-full.yaml
+
 
 .. _gjjb-packer-merge:
 
@@ -700,6 +765,9 @@ Packer Merge job runs `packer build` to build system images in the cloud.
         (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
+    :update-cloud-image: Submit a change request to update new built cloud
+        image to Jenkins. (default: false)
+
 
 Test an in-progress patch
 ^^^^^^^^^^^^^^^^^^^^^^^^^

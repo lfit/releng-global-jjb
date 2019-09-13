@@ -22,7 +22,7 @@ PACKER_BUILD_LOG="$PACKER_LOGS_DIR/packer-build.log"
 mkdir -p "$PACKER_LOGS_DIR"
 export PATH="${WORKSPACE}/bin:$PATH"
 
-cd packer || exit
+cd packer
 
 # Prioritize the project's own version of vars if available
 platform_file="common-packer/vars/$PACKER_PLATFORM.json"
@@ -40,6 +40,21 @@ packer.io build -color=false \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
     "templates/$PACKER_TEMPLATE.json"
+
+# Extract image name from log and store value in the downstream job
+if [[ $? -eq 0 ]] && [[ ${UPDATE_CLOUD_IMAGE} ]]; then
+
+    NEW_IMAGE_NAME=$(grep -P '(\s+.*image: )(ZZCI\s+.*\d+-\d+\.\d+)' "$PACKER_BUILD_LOG" \
+                  | awk -F': ' '{print $4}')\")
+
+    echo NEW_IMAGE_NAME="$NEW_IMAGE_NAME" >> "$WORKSPACE/variables.prop"
+    echo "NEW_IMAGE_NAME: ${NEW_IMAGE_NAME}"
+
+    # Copy variables.prop to variables.jenkins-trigger so that the end of build
+    # trigger can pick up the file as input for triggering downstream jobs.
+    # Dont tigger downstream job when UPDATE_CLOUD_IMAGE is set to 'false'
+    cp $WORKSPACE/variables.prop $WORKSPACE/variables.jenkins-trigger
+fi
 
 # Retrive the list of cloud providers
 mapfile -t clouds < <(jq -r '.builders[].name' "templates/$PACKER_TEMPLATE.json")
