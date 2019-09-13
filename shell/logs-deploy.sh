@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -10,29 +10,25 @@
 ##############################################################################
 echo "---> logs-deploy.sh"
 
-# Ensure we fail the job if any steps fail
-# Disable 'globbing'
-set -euf -o pipefail
+set -eu -o pipefail -o noglob
 
-if [[ -z $"${LOGS_SERVER:-}" ]]; then
-    echo "WARNING: Logging server not set"
+if [[ -z ${LOGS_SERVER:-} ]]; then
+    echo "WARNING: Logging server not set: Nothing to do"
 else
     nexus_url="${NEXUSPROXY:-$NEXUS_URL}"
-    nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
+    nexus_path="$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER"
 
-    if [[ -n ${ARCHIVE_ARTIFACTS:-} ]] ; then
-        # Handle multiple search extensions as separate values to '-p|--pattern'
-        # "arg1 arg2" -> (-p arg1 -p arg2)
-        pattern_opts=()
-        for arg in $ARCHIVE_ARTIFACTS; do
-            pattern_opts+=("-p" "$arg")
-        done
-        lftools deploy archives "${pattern_opts[@]}" \
-                "$nexus_url" "$nexus_path" "$WORKSPACE"
-    else
-        lftools deploy archives "$nexus_url" "$nexus_path" "$WORKSPACE"
-    fi
-    lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
+    # Convert multiple search extensions to list of arguments'
+    # "ext1 ext2" -> "-p ext1 -p ext2"
+    pattern_opts=""
+    for i in ${ARCHIVE_ARTIFACTS:-}; do
+        pattern_opts+="-p $i "
+    done
 
-    echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
+    # Use lftools from user pyenv
+    lftools=~/.local/bin/lftools
+    $lftools deploy archives $pattern_opts $nexus_url $nexus_path $WORKSPACE
+    $lftools deploy logs $nexus_url $nexus_path $BUILD_URL
+
+    echo "Build logs: <a href='$LOGS_SERVER/$nexus_path' > $LOGS_SERVER/$nexus_path</a>"
 fi
