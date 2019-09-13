@@ -86,7 +86,7 @@
     branch: master
     build-days-to-keep: 30
     build-timeout: 60
-    cron: "@daily"
+    cron: "H H * * 7"
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
