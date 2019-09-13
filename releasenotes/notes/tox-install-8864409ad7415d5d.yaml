@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Pip install pyenv from python2 should force more-itertools to 5.0.0
+    In a fresh python2.7 venv "pip install pyenv" correctly pulls down
+    more-itertools [required: Any, installed: 5.0.0]
+    If for some reason a higher version is already installed this will downgrade
+    more-itertools to a py2 compatible version
