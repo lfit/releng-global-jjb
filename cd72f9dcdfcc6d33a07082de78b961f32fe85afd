@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "50f5d88e_fb0e7dd1",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "set -eu -o pipefail -o noglob",
+      "revId": "cd72f9dcdfcc6d33a07082de78b961f32fe85afd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b60f00f6_3c7515a7",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "If you want more info in log, a couple of well thought echo is much better than just turning on -x.",
+      "revId": "cd72f9dcdfcc6d33a07082de78b961f32fe85afd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15fd4cd3_7e7faa96",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "remove \u0027|| true\u0027",
+      "revId": "cd72f9dcdfcc6d33a07082de78b961f32fe85afd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33f6b922_ba1dc6f4",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "shell variable should be lower case, shellcheck checks for unset variables if they are shell variables (lower-case).",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 52
+      },
+      "revId": "cd72f9dcdfcc6d33a07082de78b961f32fe85afd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2c1c3ea_a20f7dc3",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "now that you have -e you should remove \u0027|| exit\u0027",
+      "revId": "cd72f9dcdfcc6d33a07082de78b961f32fe85afd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9791ebe6_6a4dfcdf",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "This will not work... if previous packer.io fails script will exit.\nif packer.io build -color\u003dfalse -var-file\u003d\"$CLOUDENV\" \\\n    -var-file\u003d\"$platform_file\" \"templates/$PACKER_TEMPLATE.json\" \u0026\u0026 $UPDATE_CLOUD_IMAGE ; then",
+      "revId": "cd72f9dcdfcc6d33a07082de78b961f32fe85afd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c3e7cf1_d0619d82",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-13T15:12:38Z",
+      "side": 1,
+      "message": "We already know that UPDATE_CLOUD_IMAGE is true from the \u0027if\u0027",
+      "revId": "cd72f9dcdfcc6d33a07082de78b961f32fe85afd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
