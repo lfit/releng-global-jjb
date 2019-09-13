@@ -126,6 +126,11 @@ Run `packer build` to build system images.
     :platform: Build platform as found in the vars directory.
     :template: Packer template to build as found in the templates directory.
 
+:Optional parameters:
+
+    :update-cloud-image: Submit a change request to update new built cloud
+        image to Jenkins.
+
 lf-infra-packer-validate
 ------------------------
 
@@ -166,6 +171,13 @@ lf-infra-sysstat
 ----------------
 
 Retrieves system stats.
+
+lf-infra-update-packer-images
+-----------------------------
+
+Find and update the new built cloud image{s} in the ci-management source
+repository.
+
 
 lf-jacoco-nojava-workaround
 ---------------------------
