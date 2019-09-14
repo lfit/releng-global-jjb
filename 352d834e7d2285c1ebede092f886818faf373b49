@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "4b50cfa8_799acc0b",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-14T05:43:20Z",
+      "side": 1,
+      "message": "this is actually not required here:\n\nnoglob - we are not dealing with patterns\n-u|e|pipefail - openstack image list sometimes returns nothing since we are looking for unprotected images, which would potentially set image_name variable unset. if you look at most other openstack cli scripts, this is unused.",
+      "parentUuid": "a72f9a20_079af7ac",
+      "revId": "352d834e7d2285c1ebede092f886818faf373b49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2db22019_2bab112e",
         "filename": "shell/update-cloud-images.sh",
         "patchSetId": 5
