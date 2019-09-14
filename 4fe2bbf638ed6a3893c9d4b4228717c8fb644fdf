@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "30770f74_f66ff2cb",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-14T04:08:51Z",
+      "side": 1,
+      "message": "why is being set to `pwd`, it would translates to $WORKSPACE, this needs to be set by the pyenv?",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 21
+      },
+      "revId": "4fe2bbf638ed6a3893c9d4b4228717c8fb644fdf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6392159c_9b5dd67b",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-14T04:08:51Z",
+      "side": 1,
+      "message": "please re-format this line break to 80 chars",
+      "range": {
+        "startLine": 23,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 126
+      },
+      "revId": "4fe2bbf638ed6a3893c9d4b4228717c8fb644fdf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
