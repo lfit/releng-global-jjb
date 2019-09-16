@@ -1,0 +1,158 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "33fc029e_997bde66",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T15:36:54Z",
+      "side": 1,
+      "message": "Shell variables should be lower-case. It is standard procedure for Unix scripting. Not adhering to this standard hampers shellcheck. This is particularly true for our scripts because we use so many environmental variables.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 52
+      },
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66d2df4a_b26b052b",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T15:36:54Z",
+      "side": 1,
+      "message": "the use of \u0027[]\u0027 is deprecated, please use \u0027[[]]\u0027. The \u0027\"\"\u0027 are not required inside of \u0027[[]]\u0027",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "024f1215_f4898f7c",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T15:36:54Z",
+      "side": 1,
+      "message": "Would the second call to to \u0027packer.io\u0027 override the contents of \"templates/$PACKER_TEMPLATE.json\"?",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c5110de_c87184d6",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T15:36:54Z",
+      "side": 1,
+      "message": "$? will never be set when \u0027-e\u0027 is specified.. (the script exists immediately)",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63963359_1521498a",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T15:36:54Z",
+      "side": 1,
+      "message": "With -e specified the script will exit if the grep fails for any reason (including \u0027no match\u0027)",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "957adbad_cadb6f7d",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T15:36:54Z",
+      "side": 1,
+      "message": "set -eu -o pipefile -o noglob",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5d842cd_802faf8c",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T15:36:54Z",
+      "side": 1,
+      "message": "virtualenv /tmp/v/openstack\nalias pip\u003d/tmp/v/openstack/bin/pip\npip install --upgrade --quiet \"pip\u003c10.0.0\" setuptools\npip install --upgrade --quiet python-openstackclient\npip freeze\nalias openstack\u003d/tmp/v/openstack/bin/openstack\n\nThe \u0027activate\u0027 script should not be used from a script, it breaks with -eu set. It is good coding practice to always fully understand any script that you source.\n\nRather than creating aliases, you could just add \u0027/tmp/v/openstack/bin\u0027 to the beginning of the PATH.\n\nYes, I tested the above \u0027scriptlet\u0027",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 10
+      },
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f4f434c_e6fba320",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T15:36:54Z",
+      "side": 1,
+      "message": "\u0027read\u0027 will remove leading/trailing white space (based on IFS), so these line are not not needed.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 67
+      },
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
