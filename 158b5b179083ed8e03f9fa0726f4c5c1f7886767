@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6821ebc7_9614ae81",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T19:52:19Z",
+      "side": 1,
+      "message": "I would bet that virtualenv and python -m env are equivalent (they call same python function/library).\n\nafter sourcing \u0027activate\u0027, \u0027pip\u0027 and \u0027python\u0027 both come from /tmp/v/venv/bin so\npip install niet\npip install lftools\npip install lftools[nexus]\npip install jsonschema\n\nis all that is needed.\n\nIt is really what I hate about sourcing \u0027activate\u0027 rather than doing an explicit addition to the PATH or executing using full path: /tmp/v/venv/bin/pip or /tmp/v/venv/bin/lftools. Sourcing \u0027activate\u0027 just obfuscates what is really happening and it not meant to be used from a batch script.\n\nThe explicit paths allows allow you to safely call an executable based on python 3 and another based on python 2 from the same script. The PATH change ties the entire script to one python. You actually do that every day, it is way all python executables installed in /bin work. \n\nYes, what is here \u0027will work\u0027. But when I review it, I wonder what the authors intentions are",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "158b5b179083ed8e03f9fa0726f4c5c1f7886767",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
