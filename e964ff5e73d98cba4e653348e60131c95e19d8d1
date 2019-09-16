@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "959ce0ef_96d96b2b",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T17:03:36Z",
+      "side": 1,
+      "message": "cat \u003c\u003c EOF \u003e\u003e ~/.bash_profile\nif command -v pyenv 1\u003e/dev/null 2\u003e\u00261 ; then\n    eval \"$(pyenv init -)\" \u0026\u0026 pyenv local $LATEST_VERSION \nfi\nEOF\n\nA little easier to read.",
+      "revId": "e964ff5e73d98cba4e653348e60131c95e19d8d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0c1d79f2_8ee4e6df",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 6
