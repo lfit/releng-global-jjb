@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c1d79f2_8ee4e6df",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-16T16:25:46Z",
+      "side": 1,
+      "message": "No need to list cinderclient if it\u0027s not being pinned since openstackclient pulls it in.",
+      "revId": "e964ff5e73d98cba4e653348e60131c95e19d8d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65343c54_b9cc420e",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-16T16:25:46Z",
+      "side": 1,
+      "message": "Probably no need to list dogpile either if it\u0027s not being pinned as I think it\u0027s also a dep of openstackclient.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 13
+      },
+      "revId": "e964ff5e73d98cba4e653348e60131c95e19d8d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db662fa5_7e70619a",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-16T16:25:46Z",
+      "side": 1,
+      "message": "I think we should keep the tox\u003e\u003d3.7.0 as it ensures we\u0027re pulling in our minimum required version of tox.",
+      "revId": "e964ff5e73d98cba4e653348e60131c95e19d8d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
