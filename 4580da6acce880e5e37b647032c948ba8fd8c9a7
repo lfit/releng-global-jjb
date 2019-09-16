@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4072a777_b61b4500",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-16T16:28:19Z",
+      "side": 1,
+      "message": "Not a big deal but this should go into the footer block. The last block of text in a commit message (after the last blank line) is a meta-data block which some tools only parse.\n\nIn this case Issue-ID is a field that only LF uses so it\u0027s not really a big deal but something to keep in mind when writing commit messages.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 19
+      },
+      "revId": "4580da6acce880e5e37b647032c948ba8fd8c9a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
