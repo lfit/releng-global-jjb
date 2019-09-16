@@ -19,8 +19,16 @@ if [ -d "/opt/pyenv" ]; then
 fi
 PYTHONPATH=$(pwd)
 export PYTHONPATH
-pyenv local 3.6.4
-export PYENV_VERSION="3.6.4"
+
+latest_version=$(pyenv versions \
+  | sed s,*,,g \
+  | awk '/[0-9]+/{ print $1 }' \
+  | sort --version-sort \
+  | awk '/./{line=$0} END{print line}')
+
+pyenv local "$latest_version"
+
+export PYENV_VERSION="$latest_version"
 pip install --user lftools[nexus] jsonschema niet yq
 
 #Functions.
