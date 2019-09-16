@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Allow java-opts to be defined in WhiteSource scans. This
+    avoids java heap failures.

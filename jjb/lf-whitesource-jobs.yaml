@@ -6,6 +6,8 @@
 - builder:
     name: lf-infra-wss-mvn-clean-install
     builders:
+      - inject:
+          properties-content: JAVA_OPTS={java-opts}
       - conditional-step:
           condition-kind: boolean-expression
           condition-expression: "{mvn-clean-install}"
@@ -90,6 +92,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    java-opts: ""
     java-version: openjdk8
     mvn-clean-install: false
     mvn-global-settings: global-settings
@@ -143,6 +146,7 @@
       - lf-update-java-alternatives:
           java-version: "{java-version}"
       - lf-infra-wss-mvn-clean-install:
+          java-opts: "{java-opts}"
           mvn-clean-install: "{mvn-clean-install}"
           mvn-version: "{mvn-version}"
           mvn-pom: "{mvn-pom}"
