@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dc3f52c0_5863e4cd",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-16T18:50:41Z",
+      "side": 0,
+      "message": "I\u0027d like to see this comment left in for the tox line so that future readers of this file will understand why it is set specifically to this minimal version.",
+      "range": {
+        "startLine": 54,
+        "startChar": 12,
+        "endLine": 54,
+        "endChar": 71
+      },
+      "revId": "511040b5508089fae1959c4f7da5dbd7621886c4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
