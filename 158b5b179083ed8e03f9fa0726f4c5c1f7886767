@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "213f5ded_efa7778c",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T23:34:05Z",
+      "side": 1,
+      "message": "Remove \u0027-l\u0027",
+      "revId": "158b5b179083ed8e03f9fa0726f4c5c1f7886767",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b42dc9a9_58abc85c",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T23:34:05Z",
+      "side": 1,
+      "message": "set -ue -o pipefail\n\nWith changes below, this will work",
+      "revId": "158b5b179083ed8e03f9fa0726f4c5c1f7886767",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6821ebc7_9614ae81",
         "filename": "shell/check-info-votes.sh",
         "patchSetId": 1
@@ -42,6 +76,53 @@
         "startChar": 0,
         "endLine": 23,
         "endChar": 39
+      },
+      "revId": "158b5b179083ed8e03f9fa0726f4c5c1f7886767",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5b73ae2_3aea3399",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T23:34:05Z",
+      "side": 1,
+      "message": "After a little thought (learning more about virtual environment more python2/3) this is what this section should look like:\n# For python3\nalias lf-vevn\u003d\u0027python -m venv\u0027\n# For python2 \nalias lf-vevn\u003d\u0027virtualenv\u0027\n\nThe selection of the alias here could be driven by OS type/version, a single env var that can be set by global-jjb, project or job, or could be output of \u0027python --version\u0027.\n\n$lf-venv /tmp/v/venv\npyenv_bin\u003d/tmp/v/venv/bin\n$pyenv_bin/pip install niet\n$pyenv_bin/pip install lftools\n$pyenv_bin/pip install lftools[nexus]\n$pyenv_bin/pip install jsonschema\n\nThis avoids the \u0027big-bang\u0027 requirement, scripts can be transitioned all-once or one-by-one. This assumes a both python3/python2 version of each tool is available.",
+      "parentUuid": "956245e2_a47502dd",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "158b5b179083ed8e03f9fa0726f4c5c1f7886767",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8915585e_2a375e10",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-16T23:34:05Z",
+      "side": 1,
+      "message": "if ! $pyenv_bin/lftools infofile check-votes INFO.yaml \"$GERRIT_URL\" \"$ref\" \u003e gerrit_comment.txt; then",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 35
       },
       "revId": "158b5b179083ed8e03f9fa0726f4c5c1f7886767",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
