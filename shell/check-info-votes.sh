@@ -25,7 +25,14 @@ if [ -d "/opt/pyenv" ]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     PYTHONPATH=$(pwd)
     export PYTHONPATH
-    pyenv local 3.6.4
+
+    latest_version=$(pyenv versions \
+      | sed s,*,,g \
+      | awk '/[0-9]+/{ print $1 }' \
+      | sort --version-sort \
+      | awk '/./{line=$0} END{print line}')
+    
+    pyenv local "$latest_version"
     export PYENV_VERSION="3.6.4"
 fi
 
