@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4b51f565_fc0b68ce",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 20
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-16T20:47:32Z",
+      "side": 1,
+      "message": "So pyenv is mandatory, not optional; but the code above treats pyenv as optional.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 5
+      },
+      "revId": "0e8d52ba2bb92b8ae71c032bfc9192de3f4fd5d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f8a18fe9_44167099",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 20
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-16T20:47:32Z",
+      "side": 1,
+      "message": "This is probably the wrong way to do globbing?",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 3
+      },
+      "revId": "0e8d52ba2bb92b8ae71c032bfc9192de3f4fd5d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2b8c845_865fa3f0",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 20
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-16T20:47:32Z",
+      "side": 1,
+      "message": "this is almost certainly the wrong pattern to match here",
+      "range": {
+        "startLine": 113,
+        "startChar": 30,
+        "endLine": 113,
+        "endChar": 35
+      },
+      "revId": "0e8d52ba2bb92b8ae71c032bfc9192de3f4fd5d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
