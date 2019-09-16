@@ -22,6 +22,30 @@
       "revId": "158b5b179083ed8e03f9fa0726f4c5c1f7886767",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "956245e2_a47502dd",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-16T19:54:49Z",
+      "side": 1,
+      "message": "I am not going to update this patchset until we have a consensus on \nhttps://jira.linuxfoundation.org/browse/RELENG-2341",
+      "parentUuid": "6821ebc7_9614ae81",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 39
+      },
+      "revId": "158b5b179083ed8e03f9fa0726f4c5c1f7886767",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
