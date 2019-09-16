@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f0c1aeb2_8f7b0dd0",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-16T17:19:25Z",
+      "side": 1,
+      "message": "can this be addressed as a separate change, since it\u0027s not relevant to the scope of change itself?",
+      "parentUuid": "33fc029e_997bde66",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 52
+      },
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "66d2df4a_b26b052b",
         "filename": "shell/packer-build.sh",
         "patchSetId": 9
@@ -36,6 +60,24 @@
       "writtenOn": "2019-09-16T15:36:54Z",
       "side": 1,
       "message": "the use of \u0027[]\u0027 is deprecated, please use \u0027[[]]\u0027. The \u0027\"\"\u0027 are not required inside of \u0027[[]]\u0027",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bcaee23_203a7187",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-16T17:19:25Z",
+      "side": 1,
+      "message": "done for  \u0027[[]]\u0027",
+      "parentUuid": "66d2df4a_b26b052b",
       "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -59,6 +101,24 @@
     },
     {
       "key": {
+        "uuid": "9f493758_8e5f651f",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-16T17:19:25Z",
+      "side": 1,
+      "message": "not from what I understand.",
+      "parentUuid": "024f1215_f4898f7c",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7c5110de_c87184d6",
         "filename": "shell/packer-build.sh",
         "patchSetId": 9
@@ -70,6 +130,24 @@
       "writtenOn": "2019-09-16T15:36:54Z",
       "side": 1,
       "message": "$? will never be set when \u0027-e\u0027 is specified.. (the script exists immediately)",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c9ba395_06498dbe",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-16T17:19:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7c5110de_c87184d6",
       "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -110,6 +188,24 @@
     },
     {
       "key": {
+        "uuid": "2964831f_4d965745",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-16T17:19:25Z",
+      "side": 1,
+      "message": "noglob - is not required for this script.\n-u \u0026 -o pipefile - we are expecting unset variables and manually checking for the empty string when newer images are not available, therefore we really want to the script to stop there, but continue, since that is not a failure condition.",
+      "parentUuid": "957adbad_cadb6f7d",
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b5d842cd_802faf8c",
         "filename": "shell/update-cloud-images.sh",
         "patchSetId": 9
@@ -133,6 +229,30 @@
     },
     {
       "key": {
+        "uuid": "789ffee8_2e2674a1",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-16T17:19:25Z",
+      "side": 1,
+      "message": "I\u0027ve have to defer on your idea of setting the $PATH to use a virtualenv, that\u0027s not the recommended way to use virtualenv. that might work.\n\nhttps://virtualenv.pypa.io/en/stable/userguide/\n\nhowever using workon or source is the standard recommended way, unless you want to spend time on manually setting/unsetting python to use the libs installed with the virtialenv.",
+      "parentUuid": "b5d842cd_802faf8c",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 10
+      },
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6f4f434c_e6fba320",
         "filename": "shell/update-cloud-images.sh",
         "patchSetId": 9
@@ -144,6 +264,30 @@
       "writtenOn": "2019-09-16T15:36:54Z",
       "side": 1,
       "message": "\u0027read\u0027 will remove leading/trailing white space (based on IFS), so these line are not not needed.",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 67
+      },
+      "revId": "c8deb0837cf450a32a6d30e873d5538a8726c80a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c8f12d6_62ad3e29",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-16T17:19:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6f4f434c_e6fba320",
       "range": {
         "startLine": 37,
         "startChar": 0,
