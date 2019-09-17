@@ -307,6 +307,23 @@ Requires ``SonarQube Scanner for Jenkins``
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
 
+lf-infra-sonar-with-prescan
+---------------------------
+
+Runs Jenkins SonarQube plug-in after a pre-scan builder, which is defined by
+the macro's caller.
+
+Requires ``SonarQube Scanner for Jenkins``
+
+:Required Parameters:
+    :lf-sonar-prescan: A builder that will run prior to the Sonar scan.
+
+:Optional Parameters:
+    :sonar-task: Sonar task to run. (default: "")
+    :sonar-properties: Sonar configuration properties. (default: "")
+    :sonar-java-opts: JVM options. (default: "")
+    :sonar-additional-args: Additional command line arguments. (default: "")
+
 Parameters
 ==========
 

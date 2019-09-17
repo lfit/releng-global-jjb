@@ -906,3 +906,33 @@ Plug-in configurations
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
+
+
+Sonar with Prescan
+------------------
+
+The same as the Sonar job above, except the caller also defines a builder
+called ``lf-sonar-prescan``, in which they can put any builders that they want
+to run prior to the Sonar scan.
+
+.. code-block:: yaml
+
+   - builder:
+       name: lf-sonar-prescan
+       builders:
+         - shell: "# Pre-scan shell script"
+
+:Template Names:
+
+    - {project-name}-sonar-prescan
+    - gerrit-sonar-prescan
+    - github-sonar-prescan
+
+:Required Parameters:
+    :lf-sonar-prescan: A builder that will run prior to the Sonar scan.
+
+:Optional Parameters:
+    :sonar-task: Sonar task to run. (default: "")
+    :sonar-properties: Sonar configuration properties. (default: "")
+    :sonar-java-opts: JVM options. (default: "")
+    :sonar-additional-args: Additional command line arguments. (default: "")

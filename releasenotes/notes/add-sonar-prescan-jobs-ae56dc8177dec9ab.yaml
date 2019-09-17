@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add an additonal Sonar job that allows the caller to provide a builder that
+    runs prior to the Sonar scan.
