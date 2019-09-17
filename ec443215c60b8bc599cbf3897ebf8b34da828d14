@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "095aac7f_013ae7a5",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-17T20:24:58Z",
+      "side": 1,
+      "message": "I welcome guidance, I thought I was following recommended procedure.",
+      "parentUuid": "209c292e_7b0c2d93",
+      "revId": "ec443215c60b8bc599cbf3897ebf8b34da828d14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b9d9514a_53a3bcb0",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 22
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "319bbbec_e1c7db7b",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-17T20:24:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b9d9514a_53a3bcb0",
+      "revId": "ec443215c60b8bc599cbf3897ebf8b34da828d14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d1d1ba91_80c64e86",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 22
@@ -50,6 +86,24 @@
       "revId": "ec443215c60b8bc599cbf3897ebf8b34da828d14",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "033f7277_e14f4587",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-17T20:24:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1d1ba91_80c64e86",
+      "revId": "ec443215c60b8bc599cbf3897ebf8b34da828d14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
