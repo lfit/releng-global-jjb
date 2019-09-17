@@ -21,7 +21,7 @@ jar_location="/tmp/wss-unified-agent-${WSS_UNIFIED_AGENT_VERSION}.jar"
 wss_unified_agent_url="https://s3.amazonaws.com/unified-agent/wss-unified-agent-${WSS_UNIFIED_AGENT_VERSION}.jar"
 wget -nv "${wss_unified_agent_url}" -O "${jar_location}"
 echo "---> Running WhiteSource Unified Agent CLI ..."
-java -jar "${jar_location}" -c wss-unified-agent.config \
+java ${JAVA_OPTS:-} -jar "${jar_location}" -c wss-unified-agent.config \
     -product "${WSS_PRODUCT_NAME}" -project "${WSS_PROJECT_NAME}" \
     -projectVersion "${GERRIT_BRANCH}" ${WSS_UNIFIED_AGENT_OPTIONS:-}
 rm "${jar_location}"
