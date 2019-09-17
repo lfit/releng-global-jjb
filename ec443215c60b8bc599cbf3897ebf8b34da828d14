@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "209c292e_7b0c2d93",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-17T17:38:53Z",
+      "side": 1,
+      "message": "What happens if /opt/pyenv does not exist ? should that be an error ?\n\n[[ -d /opt/pyenv ]] || exit 1",
+      "revId": "ec443215c60b8bc599cbf3897ebf8b34da828d14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9d9514a_53a3bcb0",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-17T17:38:53Z",
+      "side": 1,
+      "message": "because you added PYENV_ROOT/bin/ to the PATH you can just \u0027pip install wheel\u0027",
+      "revId": "ec443215c60b8bc599cbf3897ebf8b34da828d14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1d1ba91_80c64e86",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-17T17:38:53Z",
+      "side": 1,
+      "message": "The standard way to do this: \u0027if $BUILD_BDIST_WHEEL; then\u0027\n\nThat enforces this to be a boolean (only valid values are true/false)",
+      "revId": "ec443215c60b8bc599cbf3897ebf8b34da828d14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1dcf2256_11f39665",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-17T17:38:53Z",
+      "side": 1,
+      "message": "What happens if /opt/pyenv does not exist?",
+      "revId": "ec443215c60b8bc599cbf3897ebf8b34da828d14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
