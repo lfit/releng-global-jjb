@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "be71639a_d177791d",
+        "filename": "docs/jjb/lf-whitesource-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-17T16:45:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae6bdfbe_ab386841",
+      "revId": "48cb0a1bdc770cabcf8a7230d2a06a23ef3d6a9a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f44878a_edf438a4",
         "filename": "shell/whitesource-unified-agent-cli.sh",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2019-09-17T04:40:02Z",
       "side": 1,
       "message": "I\u0027m ok with setting this additionally. why not pass this through mvn-opts or mvn-params since these are maven jobs?",
+      "range": {
+        "startLine": 24,
+        "startChar": 7,
+        "endLine": 24,
+        "endChar": 16
+      },
+      "revId": "48cb0a1bdc770cabcf8a7230d2a06a23ef3d6a9a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "91105e88_2b147bb4",
+        "filename": "shell/whitesource-unified-agent-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-17T16:45:53Z",
+      "side": 1,
+      "message": "I consulted this with the WS team. It cannot be passed as you mentioned since the value will not be picked up for this particular agent run. WS told me I should pass it like this. Tested it in the sandbox",
+      "parentUuid": "3f44878a_edf438a4",
       "range": {
         "startLine": 24,
         "startChar": 7,
