@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00fef522_443eb70e",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 34
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T16:01:49Z",
+      "side": 1,
+      "message": "You would still need a -w (all the output from \u0027ls\u0027 will be on one line) but...\nyou will find that shellcheck does not like the \u0027ls\u0027. I don\u0027t really understand why.. This should work and keep shellcheck happy.\n\nfile_count\u003d$(find $dir -maxdepth 1 | wc -l)\n\nActually either -l or -w will work here as the each file from \u0027find\u0027 is output on a separate line.\n\nBTW grep $VERSION does not work with \u0027ls\u0027 but will work with \u0027find\u0027 (because of multiply lines)\n\nYou could also:\nfile_count\u003d$(find $dir -maxdepth 1 -name \\*$VERSION\\* | wc -l)\nI VERSION is at end/beginning of filename then you could remove one of the \u0027\\*\u0027\n\nI can\u0027t begin to remember all these subtleties of scripts so I write little test scripts for this kind of stuff. create a directory in /tmp \u0027touch\u0027 a bunch of files and in a couple of minutes you can fully test.",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 51
+      },
+      "revId": "37fc95905c1f15eb8b96283d91770f8e78d39cee",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
