@@ -99,7 +99,7 @@
           server-name: "{gerrit-server-name}"
           trigger-on:
             - comment-added-contains-event:
-                comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
+                comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
           projects:
             - project-compare-type: "ANT"
               project-pattern: "{project}"

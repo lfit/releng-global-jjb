@@ -1,0 +1,4 @@
+---
+fixes:
+  - Changed the trigger to run sonar from stage-release to run-sonar.
+    This makes it more concistent with the other parts.
