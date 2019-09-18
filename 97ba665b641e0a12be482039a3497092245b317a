@@ -1,0 +1,152 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "44dcc36e_0d0cd01c",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T00:01:14Z",
+      "side": 1,
+      "message": "I don\u0027t think \u0027-l\u0027 is still required here (with the source activate\u0027)",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b948b30d_c5cdd449",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T00:01:14Z",
+      "side": 1,
+      "message": "Why grep -c here and wc -w below. The wc is most common use it\n$(wc -w \u003c\u003c\u003c\"$release_files\")\nNote that even if the git diff find multiple files they will all be on one line\n\nwhy not just $(echo $release_files | wc -w) I know \u0027\u003c\u003c\u003c\u0027 is a cool new operator, so your call",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b55dfc53_e676b317",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T00:01:14Z",
+      "side": 1,
+      "message": "if [[ -z ${VERSION:-} ]]; then\nsimpler way to do this",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 37
+      },
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16d25104_bee6137d",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T00:01:14Z",
+      "side": 1,
+      "message": "I think what you want here is wc -w.\n\nIf there are no files in \u0027dist\u0027 then echo dist/* will output \u0027dist/*\u0027 literally.",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 46
+      },
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27a1542c_16c126fe",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T00:01:14Z",
+      "side": 1,
+      "message": "Quotes not required inside \u0027[[]]\u0027",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "26175c4a_1180b3c6",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T00:01:14Z",
+      "side": 1,
+      "message": "if [[ $JOB_NAME \u003d~ \"merge\" ]] \u0026\u0026 ! $DRY_RUN ; then\n\nGlobbing is disabled inside \u0027[[]]\u0027 so no quoting is necessary. Quoting constants is a personal thing either way is OK.\nDRY_RUN is a boolean bash will enforce that\n\nAlso the \u0027[[]]\u0027 understands \u0027\u0026\u0026\u0027 so this is valid:\niif [[ $JOB_NAME \u003d~ \"merge\" \u0026\u0026 $DRY_RUN \u003d false ]]; then\nbut it still treats DRY_RUN as a string",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f11faa3a_08b94a24",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T00:01:14Z",
+      "side": 1,
+      "message": "git remote set-url origin \"ssh://$RELEASE_USERNAME@$gerrit_ssh:29418/$PROJECT\"\n\nmore readable and less error prone to write",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c24ee59_517bf4f5",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-18T00:01:14Z",
+      "side": 1,
+      "message": "RELEASE_SCHEMA is shell variable keep it lower-case",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
