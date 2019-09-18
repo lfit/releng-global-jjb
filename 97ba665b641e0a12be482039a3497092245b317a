@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e4a6a385_f69427de",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-18T01:57:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44dcc36e_0d0cd01c",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b948b30d_c5cdd449",
         "filename": "shell/pypi-tag-release.sh",
         "patchSetId": 29
@@ -33,6 +51,24 @@
       "revId": "97ba665b641e0a12be482039a3497092245b317a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a5e4d2e_8f673685",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-18T01:57:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b948b30d_c5cdd449",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "c7c4513d_d8d4a5fb",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-18T01:57:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b55dfc53_e676b317",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 37
+      },
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "16d25104_bee6137d",
         "filename": "shell/pypi-tag-release.sh",
         "patchSetId": 29
@@ -70,6 +130,30 @@
       "writtenOn": "2019-09-18T00:01:14Z",
       "side": 1,
       "message": "I think what you want here is wc -w.\n\nIf there are no files in \u0027dist\u0027 then echo dist/* will output \u0027dist/*\u0027 literally.",
+      "range": {
+        "startLine": 86,
+        "startChar": 0,
+        "endLine": 87,
+        "endChar": 46
+      },
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2faf483_29bb26f8",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-18T01:57:02Z",
+      "side": 1,
+      "message": "Rewrote to:\n\n    file_count\u003d$(ls dist | wc -l)\n    vers_count\u003d$(ls dist | grep \"$VERSION\" | wc -l)",
+      "parentUuid": "16d25104_bee6137d",
       "range": {
         "startLine": 86,
         "startChar": 0,
@@ -99,6 +183,24 @@
     },
     {
       "key": {
+        "uuid": "36c8c55e_457e8423",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-18T01:57:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27a1542c_16c126fe",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "26175c4a_1180b3c6",
         "filename": "shell/pypi-tag-release.sh",
         "patchSetId": 29
@@ -113,6 +215,24 @@
       "revId": "97ba665b641e0a12be482039a3497092245b317a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "34083f4b_6f8b22fa",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-18T01:57:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26175c4a_1180b3c6",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -133,6 +253,24 @@
     },
     {
       "key": {
+        "uuid": "69629538_b98ec266",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-18T01:57:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f11faa3a_08b94a24",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6c24ee59_517bf4f5",
         "filename": "shell/pypi-tag-release.sh",
         "patchSetId": 29
@@ -147,6 +285,24 @@
       "revId": "97ba665b641e0a12be482039a3497092245b317a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "981c387e_9fd8716c",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 29
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-18T01:57:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c24ee59_517bf4f5",
+      "revId": "97ba665b641e0a12be482039a3497092245b317a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
