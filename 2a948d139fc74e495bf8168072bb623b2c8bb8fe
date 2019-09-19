@@ -46,6 +46,30 @@
       "revId": "2a948d139fc74e495bf8168072bb623b2c8bb8fe",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a041469d_b246afb9",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-19T16:28:18Z",
+      "side": 1,
+      "message": "You are right.. we will need to address that in a different patch.. this patch should be good to go..",
+      "parentUuid": "a62f91cc_bb1e308f",
+      "range": {
+        "startLine": 527,
+        "startChar": 12,
+        "endLine": 527,
+        "endChar": 18
+      },
+      "revId": "2a948d139fc74e495bf8168072bb623b2c8bb8fe",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
