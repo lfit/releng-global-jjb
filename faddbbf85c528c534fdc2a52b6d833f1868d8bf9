@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3eb28f9c_4962fc82",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "You might not be able to run setup.py with python3, TOX is still be run on python (2).\nThere is a pretty good chance it will work so please try it, then we wont have to come back and fix this when we move TOX to python3",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10c75a61_59309807",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "We need to use python3. In python3 we don\u0027t want to use the virtualenv script. Here is what you want: \u0027python3 -m venv /tmp/v/venv\u0027 Note I am ignoring PYTHON, not sure how it helps",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bfda2bda_f7e2ff91",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "If this line fails because of unset variable, you can do this instead: PATH\u003d/tmp/pypi/bin:$PATH\nThat is all \u0027activate\u0027 is really doing anyway.",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "acbe2b34_f3919144",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "Add comment\n# Execute setup.py in TOX_DIR",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d91f5b85_f1eff065",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "set -eu -o pipefail",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e758af1_6969c8c1",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "python3 \u003d-m venv /tmp/pypi",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25e52faf_961cb8fc",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "If this causes an error, just use PATH\u003d/tmp/pypi/bin:$PATH",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a8d8bed_0488f842",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "set -eu -o pipefail\n\nPlease consider removing the \u0027-x\u0027 and adding echos for whatever you want to see in the log.",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "169c40c8_dbb28437",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "python3 -m venv /tmp/pypi\nAgain ignoring PYTHON",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7663930_2e5b6913",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-19T20:47:00Z",
+      "side": 1,
+      "message": "PATH\u003d/tmp/pypi/bin:$PATH",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
