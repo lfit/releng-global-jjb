@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "c4c5c66f_a0201ec0",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-19T20:51:20Z",
+      "side": 1,
+      "message": "python3 -m venv /tmp/pypi\nand\nvirtualenv -p \"$PYTHON\" /tmp/pypi #(where $PYHON \u003d python3)\nare equivalent.",
+      "parentUuid": "10c75a61_59309807",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bfda2bda_f7e2ff91",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 38
