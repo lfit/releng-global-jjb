@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8ac33ad_ebc917d3",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-09-19T16:20:46Z",
+      "side": 1,
+      "message": "I think we should not give this option...since the job wont do anything if None is selected. \nWe should just guide them to select maven or container.",
+      "range": {
+        "startLine": 527,
+        "startChar": 12,
+        "endLine": 527,
+        "endChar": 18
+      },
+      "revId": "2a948d139fc74e495bf8168072bb623b2c8bb8fe",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
