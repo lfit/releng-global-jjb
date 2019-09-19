@@ -521,10 +521,13 @@
           name: LOG_DIR
           default: ""
           description: "Log dir, example: project-maven-stage-master/17/"
-      - string:
+      - choice:
           name: DISTRIBUTION_TYPE
-          default: ""
-          description: "Set to maven for build with parametes"
+          choices:
+            - None
+            - container
+            - maven
+          description: "Set to maven for build with parameters"
       - bool:
           name: USE_RELEASE_FILE
           default: "{use-release-file}"
