@@ -22,6 +22,30 @@
       "revId": "2a948d139fc74e495bf8168072bb623b2c8bb8fe",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a62f91cc_bb1e308f",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-09-19T16:22:41Z",
+      "side": 1,
+      "message": "According to the code None is necessary for the job to parse the release.yaml file.",
+      "parentUuid": "b8ac33ad_ebc917d3",
+      "range": {
+        "startLine": 527,
+        "startChar": 12,
+        "endLine": 527,
+        "endChar": 18
+      },
+      "revId": "2a948d139fc74e495bf8168072bb623b2c8bb8fe",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
