@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9e2845a6_fb19a5e7",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "This comment is hard to follow.  I think you\u0027re saying, use \"python3 setup.py sdist $bdist\" in the last line of this script, and let you know if it works?",
+      "parentUuid": "3eb28f9c_4962fc82",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "10c75a61_59309807",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 38
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "460d51d9_ed8a3364",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4c5c66f_a0201ec0",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bfda2bda_f7e2ff91",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 38
@@ -86,6 +122,24 @@
       "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b4e153d_a9110d20",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bfda2bda_f7e2ff91",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "0df720d6_df22df65",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "acbe2b34_f3919144",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d91f5b85_f1eff065",
         "filename": "shell/pypi-tag-release.sh",
         "patchSetId": 38
@@ -120,6 +192,24 @@
       "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb04c70c_19e31857",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d91f5b85_f1eff065",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -140,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "44258e67_d2215a44",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0e758af1_6969c8c1",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "25e52faf_961cb8fc",
         "filename": "shell/pypi-tag-release.sh",
         "patchSetId": 38
@@ -154,6 +262,24 @@
       "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6beb0496_2c4d5fdd",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25e52faf_961cb8fc",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -174,6 +300,24 @@
     },
     {
       "key": {
+        "uuid": "84bb6e08_6604aedb",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a8d8bed_0488f842",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "169c40c8_dbb28437",
         "filename": "shell/pypi-upload.sh",
         "patchSetId": 38
@@ -191,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "91fa517b_be590609",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "169c40c8_dbb28437",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7663930_2e5b6913",
         "filename": "shell/pypi-upload.sh",
         "patchSetId": 38
@@ -205,6 +367,24 @@
       "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63dc4c81_5991e899",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-20T00:46:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7663930_2e5b6913",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
