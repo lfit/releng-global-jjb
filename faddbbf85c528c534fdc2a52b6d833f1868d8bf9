@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ef6347e2_4dbeab41",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 346
+      },
+      "writtenOn": "2019-09-20T00:13:57Z",
+      "side": 1,
+      "message": "we have had issues in ORAN when tox is run by python2 despite the code being only python3 compatible. There are certain scenarios that triggered failures, and running tox itself from python3 fixed all of them.",
+      "parentUuid": "3eb28f9c_4962fc82",
+      "revId": "faddbbf85c528c534fdc2a52b6d833f1868d8bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "10c75a61_59309807",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 38
