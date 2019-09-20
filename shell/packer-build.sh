@@ -44,8 +44,8 @@ packer.io build -color=false \
 # Extract image name from log and store value in the downstream job
 if [[ ${UPDATE_CLOUD_IMAGE} ]]; then
 
-    NEW_IMAGE_NAME=$(grep -P '(\s+.*image: )(ZZCI\s+.*\d+-\d+\.\d+)' "$PACKER_BUILD_LOG" \
-                  | awk -F': ' '{print $4}')\")
+    NEW_IMAGE_NAME=$(grep -P '(\s+.*image: )(ZZCI\s+.*\d+-\d+\.\d+)' \
+                          "$PACKER_BUILD_LOG" | awk -F': ' '{print $4}')
 
     echo NEW_IMAGE_NAME="$NEW_IMAGE_NAME" >> "$WORKSPACE/variables.prop"
     echo "NEW_IMAGE_NAME: ${NEW_IMAGE_NAME}"

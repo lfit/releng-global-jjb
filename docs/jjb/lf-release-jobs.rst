@@ -227,8 +227,8 @@ Jenkins configure -> Global properties -> Environment variables
 
 .. note::
 
-    These also need to be added to your global-vars-$SILO.sh
-    or they will be overwritten.
+    Add these variables to your global-vars-$SILO.sh file or they will
+    be overwritten.
 
 Jenkins configure -> Managed Files -> Add a New Config -> Custom File
 
