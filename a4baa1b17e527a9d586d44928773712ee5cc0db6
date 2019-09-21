@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5258f02c_25f20eec",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-21T16:37:47Z",
+      "side": 1,
+      "message": "PS add the shellcheck error this change fixes in the commit message.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 72
+      },
+      "revId": "a4baa1b17e527a9d586d44928773712ee5cc0db6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
