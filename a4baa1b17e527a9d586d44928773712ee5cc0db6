@@ -22,6 +22,30 @@
       "revId": "a4baa1b17e527a9d586d44928773712ee5cc0db6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c31b1fc7_92444c7f",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-21T17:48:21Z",
+      "side": 1,
+      "message": "dint realize the extra quote that is removed.",
+      "parentUuid": "5258f02c_25f20eec",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 72
+      },
+      "revId": "a4baa1b17e527a9d586d44928773712ee5cc0db6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
