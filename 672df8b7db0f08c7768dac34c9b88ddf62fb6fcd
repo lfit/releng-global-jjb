@@ -266,6 +266,24 @@
       "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9fd0bd10_ca833cd3",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T22:18:48Z",
+      "side": 1,
+      "message": "ansible/roles/python-install",
+      "parentUuid": "e651c26b_6535dc6d",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
