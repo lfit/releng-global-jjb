@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "310f371b_0ea1f195",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T21:02:12Z",
+      "side": 1,
+      "message": "yum install python36-pip",
+      "parentUuid": "f2f13a99_722228ab",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ab92c6ff_05b3e796",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 2
