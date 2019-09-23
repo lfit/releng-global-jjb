@@ -10,26 +10,18 @@
 ##############################################################################
 echo "---> tox-run.sh"
 
-# Ensure we fail the job if any steps fail.
-# DO NOT set -u as virtualenv's activate script has unbound variables
-set -e -o pipefail
-
 ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
 mkdir -p "$ARCHIVE_TOX_DIR"
-cd "$WORKSPACE/$TOX_DIR"
+cd "$WORKSPACE/$TOX_DIR" || exit 1
 
 if [ -d "/opt/pyenv" ]; then
     echo "---> Setting up pyenv"
     export PYENV_ROOT="/opt/pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
+    PYTHONPATH="$(pwd)"
+    export PYTHONPATH
+    export TOX_TESTENV_PASSENV=PYTHONPATH
 fi
-
-# Set and pass in PYTHONPATH to circumvent installation bug in tox>=3.2.0
-PYTHONPATH=$(pwd)
-export PYTHONPATH
-export TOX_TESTENV_PASSENV=PYTHONPATH
-
-set +e  # Allow detox to fail so that we can collect the logs in the next step
 
 PARALLEL="${PARALLEL:-true}"
 if [ "${PARALLEL}" = true ]; then
@@ -56,7 +48,6 @@ for i in .tox/*/log; do
     tox_env=$(echo "$i" | awk -F'/' '{print $2}')
     cp -r "$i" "$ARCHIVE_TOX_DIR/$tox_env"
 done
-set -e  # Logs collected so re-enable
 
 echo "Completed tox runs."
 

@@ -19,7 +19,7 @@ pip_list_pre=/tmp/pip-list-pre.txt
 pip_list_post=/tmp/pip-list-post.txt
 pip_list_diffs=/tmp/pip-list-diffs.txt
 if [[ -f $pip_list_pre ]]; then
-    pip list > $pip_list_post
+    python3 -m pip list > $pip_list_post
     echo "Compare pip packages before/after..."
     if diff --suppress-common-lines $pip_list_pre $pip_list_post \
             | tee $pip_list_diffs; then
@@ -33,7 +33,7 @@ if [[ -f $pip_list_pre ]]; then
     # log-deploy.sh script is 'appended' to this file and it would not
     # be executed.
 else
-    pip list > "$pip_list_pre"
+    python3 -m pip list > "$pip_list_pre"
     # These 'pip installs' only need to be executed during pre-build
 
     requirements_file=$(mktemp /tmp/requirements-XXXX.txt)
@@ -44,20 +44,18 @@ else
 
     echo "Generating Requirements File"
     cat << 'EOF' > "$requirements_file"
-lftools[openstack]~=0.26.2
-python-cinderclient~=4.3.0
-python-heatclient~=1.16.1
-python-openstackclient~=3.16.0
-dogpile.cache~=0.6.8  # Version 0.7.[01] seems to break openstackclient
-more-itertools~=5.0.0
-niet~=1.4.2 # Extract values from yaml
-tox>=3.7.0. # Tox 3.7 or greater is necessary for parallel mode support
-yq~=2.7.2
+lftools[openstack]
+python-heatclient
+python-openstackclient
+niet~=1.4.2
+tox>=3.7.0 # Tox 3.7 or greater is necessary for parallel mode support
+yq
 EOF
 
     # Use `python -m pip` to ensure we are using the latest version of pip
-    python -m pip install --user --quiet --upgrade pip
-    python -m pip install --user --quiet --upgrade setuptools
-    python -m pip install --user --quiet --upgrade -r "$requirements_file"
+    python3 -m venv ~/.local
+    python3 -m pip install --user --quiet --upgrade pip
+    python3 -m pip install --user --quiet --upgrade setuptools
+    python3 -m pip install --user --quiet --upgrade -r "$requirements_file"
     rm -rf "$requirements_file"
 fi
