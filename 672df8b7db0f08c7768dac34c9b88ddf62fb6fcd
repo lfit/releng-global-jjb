@@ -109,6 +109,24 @@
     },
     {
       "key": {
+        "uuid": "04776234_80f835cf",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-23T21:33:19Z",
+      "side": 1,
+      "message": "\u0027yum install\u0027 does not create /home/jenkins/.local. It might create /opt/venv.",
+      "parentUuid": "310f371b_0ea1f195",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ab92c6ff_05b3e796",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 2
@@ -227,6 +245,24 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "7acccd3e_c8103078",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e651c26b_6535dc6d",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-23T21:33:19Z",
+      "side": 1,
+      "message": "who creates /opt/pyenv ? Does it contain tox and if so who installed it ? Is is possible that it only gets created on centos ?",
+      "parentUuid": "5d71f943_e9da7d29",
       "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
