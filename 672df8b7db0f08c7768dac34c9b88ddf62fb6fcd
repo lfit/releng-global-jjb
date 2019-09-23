@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "f2f13a99_722228ab",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-23T20:57:39Z",
+      "side": 1,
+      "message": "That is my understanding and that is consistent with the testing I am doing on these commands. What I can\u0027t figure out is who creates the \u0027user\u0027 pyenv ? When I run \"python3 -m pip xxx\" before the \u0027user\u0027 pyenv exists I get: /usr/bin/python3: No module named pip. Also if I do a \u0027pip list\u0027 on my \u0027user\u0027 venv it lists all packages in system as well as the \u0027user\u0027 venv.",
+      "parentUuid": "fb4d8df1_e88862cb",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ab92c6ff_05b3e796",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 2
