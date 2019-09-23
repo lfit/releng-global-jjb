@@ -230,7 +230,7 @@
     mvn-settings: "{mvn-settings}"
     mvn-version: mvn35
     pre-build-script: "# pre-build script goes here"
-    python-version: python2
+    python-version: python3
     sonar-mvn-goal: "sonar:sonar"
     stream: master
     submodule-recursive: true
@@ -395,7 +395,7 @@
     github-url: "https://github.com"
     parallel: true
     pre-build-script: "# pre-build script goes here"
-    python-version: python2
+    python-version: python3
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
