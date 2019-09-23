@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "bd3542de_4b084f64",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T22:59:21Z",
+      "side": 1,
+      "message": "$PYTHON -m pip install --user --quiet --upgrade tox-pyenv\nhttps://pypi.org/project/tox-pyenv/",
+      "parentUuid": "ed33e30a_5c2cf5e2",
+      "revId": "11f991602a2b0c229503e928efcde427a6a81333",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "56f56580_7c72bf9c",
         "filename": "shell/tox-run.sh",
         "patchSetId": 3
