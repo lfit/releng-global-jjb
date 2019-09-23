@@ -16,6 +16,24 @@
       "revId": "11f991602a2b0c229503e928efcde427a6a81333",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2902882b_058c3d4d",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T20:47:12Z",
+      "side": 1,
+      "message": "It was something Eric added and he forgot why, so I kept it there.\n5264e8b3 (Eric Ball               2018-12-14 17:20:49 -0800 27) # Set and pass in PYTHONPATH to circumvent installation bug in tox\u003e\u003d3.2.0\n5264e8b3 (Eric Ball               2018-12-14 17:20:49 -0800 28) PYTHONPATH\u003d$(pwd)\n5264e8b3 (Eric Ball               2018-12-14 17:20:49 -0800 29) export PYTHONPATH\n5264e8b3 (Eric Ball               2018-12-14 17:20:49 -0800 30) export TOX_TESTENV_PASSENV\u003dPYTHONPATH",
+      "parentUuid": "39aa0746_45d6563a",
+      "revId": "11f991602a2b0c229503e928efcde427a6a81333",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
