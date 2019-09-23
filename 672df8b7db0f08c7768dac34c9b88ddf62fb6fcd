@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "b9d91117_402c9fb9",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T20:38:11Z",
+      "side": 1,
+      "message": "pip defaults to installing Python packages to a system directory (such as /usr/local/lib/python3.6). This requires root access.\n\n--user makes pip install packages in your home directory instead, which doesn\u0027t require any special privileges. ~/.local",
+      "parentUuid": "6a39aa5a_aecbbe6d",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "229df228_ed419088",
         "filename": "shell/tox-run.sh",
         "patchSetId": 2
