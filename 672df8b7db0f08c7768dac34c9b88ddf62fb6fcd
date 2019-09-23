@@ -127,6 +127,24 @@
     },
     {
       "key": {
+        "uuid": "5973cdf0_6a0cb75a",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T22:20:56Z",
+      "side": 1,
+      "message": "python3 -m pip \nNo module named pip\nyum install python36-pip\npython3 -m pip\nworks.",
+      "parentUuid": "04776234_80f835cf",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ab92c6ff_05b3e796",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 2
