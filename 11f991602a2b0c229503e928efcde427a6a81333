@@ -57,6 +57,30 @@
       "revId": "11f991602a2b0c229503e928efcde427a6a81333",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56cf687c_4401128f",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-09-23T20:51:52Z",
+      "side": 1,
+      "message": "As the comment states, it was needed due to an issue with certain versions of tox. However, I would certainly recommend testing with it removed, as it very likely is no longer needed.",
+      "parentUuid": "56f56580_7c72bf9c",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 41
+      },
+      "revId": "11f991602a2b0c229503e928efcde427a6a81333",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
