@@ -109,6 +109,24 @@
     },
     {
       "key": {
+        "uuid": "3d9b2557_dcec16c8",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T23:03:55Z",
+      "side": 1,
+      "message": "https://github.com/samstav/tox-pyenv\n\nthe reason lftools is installed has nothing to do with running tox.\nit is used later to push logs.\n\nthe tox run uses pyevn. tox-pyenv make that work with system tox",
+      "parentUuid": "bd3542de_4b084f64",
+      "revId": "11f991602a2b0c229503e928efcde427a6a81333",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "56f56580_7c72bf9c",
         "filename": "shell/tox-run.sh",
         "patchSetId": 3
