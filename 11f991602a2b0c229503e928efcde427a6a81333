@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39aa0746_45d6563a",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-09-23T20:41:47Z",
+      "side": 1,
+      "message": "I\u0027m confused as to what the intent of this is? You haven\u0027t set PYTHONPATH to anything different from what would be in the environment already.",
+      "revId": "11f991602a2b0c229503e928efcde427a6a81333",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
