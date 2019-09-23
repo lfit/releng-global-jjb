@@ -99,6 +99,30 @@
       "revId": "11f991602a2b0c229503e928efcde427a6a81333",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3fc71dd_b240b4df",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T20:53:58Z",
+      "side": 1,
+      "message": "Yeah, I would rather leave it, i dont see how it hurts, we are going to blow away pyenv in the near future once the ansible system python installs are ready so..",
+      "parentUuid": "56cf687c_4401128f",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 41
+      },
+      "revId": "11f991602a2b0c229503e928efcde427a6a81333",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
