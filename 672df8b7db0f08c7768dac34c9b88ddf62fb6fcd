@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9616953_3b907890",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-23T20:01:17Z",
+      "side": 1,
+      "message": "As I understand it there are two Python virtural envs the system one and an optional \u0027user\u0027 venv  which is located in ~/.local. \n\nDoes the \u0027user\u0027 venv already exist when this script runs ? If so, how was it created and was it python2 or python3 ?",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab92c6ff_05b3e796",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-23T20:01:17Z",
+      "side": 1,
+      "message": "where is pip being installed ? /opt/vevn or ~/.local",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "229df228_ed419088",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-23T20:01:17Z",
+      "side": 1,
+      "message": "I appears to use a venv installed in \u0027/opt/pyenv\u0027 who/how is this venv created. It does appear to use the tox from there.",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
