@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ed33e30a_5c2cf5e2",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-23T20:57:39Z",
+      "side": 1,
+      "message": "The reason why it matters is that if /opt/pyenv exists and it has tox installed, then this script will use that tox. That means all the installs done to the \u0027user\u0027 venve in python-tools-install and tox-install  are ignored. If /opt/pyenv does not exist I have no idea how/where it gets tox from.",
+      "parentUuid": "2902882b_058c3d4d",
+      "revId": "11f991602a2b0c229503e928efcde427a6a81333",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "56f56580_7c72bf9c",
         "filename": "shell/tox-run.sh",
         "patchSetId": 3
