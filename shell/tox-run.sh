@@ -12,7 +12,6 @@ echo "---> tox-run.sh"
 
 # Ensure we fail the job if any steps fail.
 # DO NOT set -u as virtualenv's activate script has unbound variables
-set -e -o pipefail
 
 ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
 mkdir -p "$ARCHIVE_TOX_DIR"
@@ -22,14 +21,22 @@ if [ -d "/opt/pyenv" ]; then
     echo "---> Setting up pyenv"
     export PYENV_ROOT="/opt/pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
+    export PYTHONPATH
+    export TOX_TESTENV_PASSENV=PYTHONPATH
+
+    # Choose latest 3.6 python
+    latest_version=$(pyenv versions \
+      | sed s,*,,g \
+      | awk '/[0-9].[6]/{ print $1 }' \
+      | sort --version-sort \
+      | awk '/./{line=$0} END{print line}')
+
+    export LATEST_VERSION="$latest_version"
+    pyenv local "$LATEST_VERSION"
+
 fi
 
-# Set and pass in PYTHONPATH to circumvent installation bug in tox>=3.2.0
-PYTHONPATH=$(pwd)
-export PYTHONPATH
-export TOX_TESTENV_PASSENV=PYTHONPATH
-
-set +e  # Allow detox to fail so that we can collect the logs in the next step
+set -o pipefail # Allow detox to fail so that we can collect the logs in the next step
 
 PARALLEL="${PARALLEL:-true}"
 if [ "${PARALLEL}" = true ]; then
