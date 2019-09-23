@@ -34,6 +34,29 @@
       "revId": "11f991602a2b0c229503e928efcde427a6a81333",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56f56580_7c72bf9c",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-09-23T20:49:00Z",
+      "side": 1,
+      "message": "I see something about it here\nhttps://tox.readthedocs.io/en/latest/config.html\nhonestly I didn\u0027t look too hard at it.\nIts probably a work around that is no longer needed.",
+      "range": {
+        "startLine": 25,
+        "startChar": 1,
+        "endLine": 25,
+        "endChar": 41
+      },
+      "revId": "11f991602a2b0c229503e928efcde427a6a81333",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
