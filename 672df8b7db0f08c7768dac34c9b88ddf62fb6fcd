@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fb4d8df1_e88862cb",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-09-23T20:41:47Z",
+      "side": 1,
+      "message": "My understanding is as follows:\n\nIIRC using --user will cause pip modules to e installed into a ~/.local library install. These take precedence over any system level libraries. In any case it\u0027s not a \"virtualenv\" in the same way as a regular virtualenv is as it utilizes the system level libraries as well.",
+      "parentUuid": "c9616953_3b907890",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ab92c6ff_05b3e796",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 2
@@ -90,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "71b5880b_5bdbc170",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-09-23T20:41:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b9d91117_402c9fb9",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "229df228_ed419088",
         "filename": "shell/tox-run.sh",
         "patchSetId": 2
@@ -122,6 +158,24 @@
       "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d71f943_e9da7d29",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-09-23T20:41:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7acccd3e_c8103078",
+      "revId": "672df8b7db0f08c7768dac34c9b88ddf62fb6fcd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
