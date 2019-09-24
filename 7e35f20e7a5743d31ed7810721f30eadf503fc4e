@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2110939e_34f6f254",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T19:52:26Z",
+      "side": 1,
+      "message": "I don\u0027t see any reason for the \u0027-l\u0027",
+      "revId": "7e35f20e7a5743d31ed7810721f30eadf503fc4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58ab2b69_fd177ef0",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T19:52:26Z",
+      "side": 1,
+      "message": "White space at end",
+      "revId": "7e35f20e7a5743d31ed7810721f30eadf503fc4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ceb64be_f6ae28f6",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T19:52:26Z",
+      "side": 1,
+      "message": "If the \u0027git fetch\u0027 fails, we want to exit (because of -e). Please move git checkout to separate line.",
+      "revId": "7e35f20e7a5743d31ed7810721f30eadf503fc4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41471e8e_5bc7c51a",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T19:52:26Z",
+      "side": 1,
+      "message": "Once this script goes live, do we want the \u0027-x\u0027 ? There are already several \u0027echo\u0027s that make it easy to trace the scripts progress.\nShould add \u0027-u\u0027., also this line should be moved up to line 14 (after \u0027activate\u0027)",
+      "revId": "7e35f20e7a5743d31ed7810721f30eadf503fc4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d1755b1_4810c84e",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T19:52:26Z",
+      "side": 1,
+      "message": "I know it is \u0027nit\u0027 but quoting is NOT required inside of \u0027[[]]\u0027",
+      "revId": "7e35f20e7a5743d31ed7810721f30eadf503fc4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6adb27d9_6b87b65c",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T19:52:26Z",
+      "side": 1,
+      "message": "If the \u0027yq\u0027 return a non-zero status when it sends out \"Not found.\" string, a cleaner way to do this is:\nif lftools rtd project-details \"$umbrella\"-\"$project_dashed\"-test | yq -r \u0027.detail\u0027 \u003e /dev/null; then\n\nChecking error status (if possible) is preferred over parsing output. The next version of \u0027yq\u0027 may decide change message.",
+      "revId": "7e35f20e7a5743d31ed7810721f30eadf503fc4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e1f9977_4ebfd6c9",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T19:52:26Z",
+      "side": 1,
+      "message": "Quoting NOT required inside \u0027[[]]\u0027",
+      "revId": "7e35f20e7a5743d31ed7810721f30eadf503fc4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
