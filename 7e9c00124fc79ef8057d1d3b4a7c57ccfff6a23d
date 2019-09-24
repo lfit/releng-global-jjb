@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23a00bb1_1bb24c05",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T16:51:29Z",
+      "side": 1,
+      "message": "What does this do? Because you are getting python from ~/.local/bin not /opt/pyenv/bin this is not going to change the version of python. Is it possible this works differently on centos ? I am running on ubuntu. The only command I see in /opt/pyenv/bin is pyenv....",
+      "revId": "7e9c00124fc79ef8057d1d3b4a7c57ccfff6a23d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da6ad23c_0f2813ef",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T16:51:29Z",
+      "side": 1,
+      "message": "The comment and the code conflict. Because you are using PIPESTATUS to get status from \u0027tox\u0027 and you are ignoring all errors in the script (no -e), the \u0027set\u0027 is really a no-op anyway.",
+      "revId": "7e9c00124fc79ef8057d1d3b4a7c57ccfff6a23d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68771184_8442995d",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-24T16:51:29Z",
+      "side": 1,
+      "message": "I wasn\u0027t enabled anyway",
+      "revId": "7e9c00124fc79ef8057d1d3b4a7c57ccfff6a23d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
