@@ -22,6 +22,30 @@
       "revId": "da2c59fae05a780a7ecb41acc5edb1b746087c52",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5af096c_ef75018a",
+        "filename": "shell/sudo-logs.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-25T17:18:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff1d93ef_b6111183",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "da2c59fae05a780a7ecb41acc5edb1b746087c52",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
