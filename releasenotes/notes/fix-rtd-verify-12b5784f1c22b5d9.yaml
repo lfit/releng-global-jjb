@@ -1,5 +1,0 @@
----
-fixes:
-  - |
-    Update choosing-strategy from default to gerrit to allow building with
-    specific refspec parameters and while not having to also set the branch to master.
