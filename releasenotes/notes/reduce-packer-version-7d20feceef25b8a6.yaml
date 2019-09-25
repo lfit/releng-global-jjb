@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Change Packer version back to 1.4.2. Packer 1.4.3 frequently has issues
+    setting metadata after a build completes. Packer 1.4.4 is not expected
+    until October, so this change is needed now to fix the broken builds.
