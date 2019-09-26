@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb2fe313_508d409e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-09-26T09:18:29Z",
+      "side": 1,
+      "message": "seems like Jenkins verify is not catching this, exceed commit message line limits?",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 215
+      },
+      "revId": "3521ffe2da5571752d1bdf5508c7f9de2d946b4b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
