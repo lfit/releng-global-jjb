@@ -1,0 +1,8 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Daniel Pono Takamori <dtakamori@contractor.linuxfoundation.org>
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Submitted-by: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Submitted-at: Thu, 26 Sep 2019 05:26:39 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/61842
+Project: releng/global-jjb
+Branch: refs/heads/master
