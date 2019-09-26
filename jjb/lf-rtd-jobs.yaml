@@ -164,7 +164,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     project-pattern: "**"
-    python-version: python2
+    python-version: python3
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
