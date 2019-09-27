@@ -10,6 +10,9 @@
       - gerrit-maven-stage
       - gerrit-maven-verify
       - gerrit-maven-verify-dependencies
+      - gerrit-maven-docker-merge
+      - gerrit-maven-docker-stage
+      - gerrit-maven-docker-verify
 
     project-name: gerrit-maven
     javadoc-path: org.example.project/$STREAM
@@ -28,6 +31,9 @@
       - github-maven-sonar
       - github-maven-stage
       - github-maven-verify
+      - github-maven-docker-merge
+      - github-maven-docker-stage
+      - github-maven-docker-verify
 
     project-name: github-maven
     javadoc-path: org.example.project/$STREAM
