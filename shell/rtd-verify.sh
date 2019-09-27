@@ -30,6 +30,11 @@ fi
 git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
 git submodule update
 
+if [[ $JOB_NAME == "lf-infra-lftools-rtd-verify-any" ]]; then
+    # Install patchset lftools
+    python3 -m pip install --user -e .
+fi
+
 echo "---> Generating docs"
 cd "$WORKSPACE"
 tox -edocs
