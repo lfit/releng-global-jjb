@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "99d23ab8_7718f544",
+        "filename": "jenkins-init-scripts/init.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-30T18:22:05Z",
+      "side": 1,
+      "message": "Ooops, committed wrong version of this file. The \u0027ls\u0027 was there for debug help. Since this script runs as \u0027root\u0027 it needs to chown the file it creates.",
+      "parentUuid": "90ef1536_b7c7ca64",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "72164a11b04319236111cf9b188232a39c8cc99b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60383379_340d16ae",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-09-30T17:42:46Z",
       "side": 1,
       "message": "2019?",
+      "range": {
+        "startLine": 5,
+        "startChar": 16,
+        "endLine": 5,
+        "endChar": 20
+      },
+      "revId": "72164a11b04319236111cf9b188232a39c8cc99b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a1b63c4f_b05b3aa8",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-30T18:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60383379_340d16ae",
       "range": {
         "startLine": 5,
         "startChar": 16,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "ade18d1d_24367e90",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-30T18:22:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b19d06ae_e89d2db1",
+      "range": {
+        "startLine": 83,
+        "startChar": 46,
+        "endLine": 83,
+        "endChar": 53
+      },
+      "revId": "72164a11b04319236111cf9b188232a39c8cc99b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "06abdb44_f50b08d6",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2019-09-30T17:41:46Z",
       "side": 1,
       "message": "If this file will be invoked by non-global-jjb build jobs, what use do they have for this variable?",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 3
+      },
+      "revId": "72164a11b04319236111cf9b188232a39c8cc99b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c209c6ae_59aac663",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-09-30T18:22:05Z",
+      "side": 1,
+      "message": "This should never be executed (note line 1). It is meant to \u0027sourced\u0027 by any script that wants access to the functions it provides.\n\nThis is actually a very important variable and will allow scripts that are run by Jenkins (from /tmp/XXXX) can execute script located in the global-jjb directory. Currently no-one refers to this variable and I am not even it is going to work in all situations. Jenkins/JJB knows where global-jjb is located , but it hides that location by copying files into /tmp before executing them.",
+      "parentUuid": "06abdb44_f50b08d6",
       "range": {
         "startLine": 84,
         "startChar": 0,
