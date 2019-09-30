@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -13,6 +13,12 @@ echo "---> logs-deploy.sh"
 # Ensure we fail the job if any steps fail
 # Disable 'globbing'
 set -euf -o pipefail
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-venv-create lftools[openstack]
+lf-venv-activate
 
 if [[ -z $"${LOGS_SERVER:-}" ]]; then
     echo "WARNING: Logging server not set"

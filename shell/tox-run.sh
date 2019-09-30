@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -9,6 +9,12 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> tox-run.sh"
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-venv-create tox tox-pyenv
+lf-venv-activate
 
 ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
 mkdir -p "$ARCHIVE_TOX_DIR"

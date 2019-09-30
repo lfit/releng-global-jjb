@@ -13,6 +13,15 @@ echo "---> jjb-verify-job.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-git-validate-jira-urls
+lf-check-unicode
+
+lf-venv-create jenkins-job-builder
+lf-venv-activate
+
 jenkins-jobs -l DEBUG test --recursive -o archives/job-configs --config-xml jjb/
 
 # Sort job output into sub-directories. On large Jenkins systems that have
@@ -29,7 +38,9 @@ do
 done
 popd
 
-if [ -n "$(ls -A archives/job-configs)" ]; then
+if [[ -d archives/job-configs ]]; then
+    echo "Archiving job-configs..."
     tar cJvf archives/job-configs.tar.xz archives/job-configs
     rm -rf archives/job-configs
 fi
+
