@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Add lf-env.sh 'library' script in ~jenkins. Sourcing this 'library' script
+    from a bash script provides access to a number of functions. The script is
+    installed by the 'init' script at boot time so that is is accessible from
+    any Jenkins build script. Hopefully over time other functions will be added
+    to this library.
