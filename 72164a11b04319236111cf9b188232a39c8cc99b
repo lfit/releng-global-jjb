@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "90ef1536_b7c7ca64",
+        "filename": "jenkins-init-scripts/init.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-30T17:41:46Z",
+      "side": 1,
+      "message": "I\u0027ve received several suggestions that Jenkins log output should not be verbose, that scripts should use -quiet rather than -verbose options when invoking commands, yet here this adds verbosity.  What is the current thinking?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "72164a11b04319236111cf9b188232a39c8cc99b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b19d06ae_e89d2db1",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-30T17:41:46Z",
+      "side": 1,
+      "message": "variable (typo)",
+      "range": {
+        "startLine": 83,
+        "startChar": 46,
+        "endLine": 83,
+        "endChar": 53
+      },
+      "revId": "72164a11b04319236111cf9b188232a39c8cc99b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06abdb44_f50b08d6",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-09-30T17:41:46Z",
+      "side": 1,
+      "message": "If this file will be invoked by non-global-jjb build jobs, what use do they have for this variable?",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 3
+      },
+      "revId": "72164a11b04319236111cf9b188232a39c8cc99b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
