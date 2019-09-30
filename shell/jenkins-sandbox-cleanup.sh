@@ -11,9 +11,15 @@
 # Deletes all jobs on a Jenkins Sandbox system.
 echo "---> jenkins-sandbox-cleanup.sh"
 
-set -eux -o pipefail
+set -eu -o pipefail
 
-bash -c "/usr/bin/yes 2>/dev/null || true" | jenkins-jobs -s sandbox delete-all
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-create-venv python3
+lf-activate python3
+
+yes | jenkins-jobs -s sandbox delete-all
 
 # Recreate the All default view.
 cat << EOF > all-view.yaml
@@ -22,3 +28,4 @@ cat << EOF > all-view.yaml
     view-type: all
 EOF
 jenkins-jobs -s sandbox update -v all-view.yaml
+
