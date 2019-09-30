@@ -22,7 +22,7 @@ echo "---> gerrit-push-patch.sh"
 # Note: This patch assumes the $WORKSPACE contains the project repo with
 #       the files changed already "git add" and waiting for a "git commit" call.
 #
-# This script requires the following JJB variables to be passed in:
+# This script expects the following environmental variables to be set by JJB:
 #
 #   $PROJECT              : Gerrit project-name
 #   $GERRIT_COMMIT_MESSAGE: Commit message to assign to commit
@@ -31,17 +31,16 @@ echo "---> gerrit-push-patch.sh"
 #   $GERRIT_USER          : Gerrit user
 #   $REVIEWERS_EMAIL      : Reviewers email
 
-# TODO: remove the workaround when v1.26 is available on all images
-# Workaround for git-review bug in v1.24
-# https://storyboard.openstack.org/#!/story/2001081
-set +u  # Allow unbound variables for virtualenv
-virtualenv --quiet "/tmp/v/git-review"
-# shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
-source "/tmp/v/git-review/bin/activate"
-pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade git-review
-set -u
-# End git-review workaround
+set -eu -o pipefail -o noglob
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+python3 -m venv /tmp/v/git-review
+lf-activate /tmp/v/git-review
+pip install --quiet --upgrade pip
+pip install --quiet --upgrade setuptools git-review
+
 # Remove any leading or trailing quotes surrounding the strings
 # which can cause parse errors when passed as CLI options to commands
 PROJECT="$(echo "$PROJECT" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
@@ -51,17 +50,17 @@ GERRIT_TOPIC="$(echo "$GERRIT_TOPIC" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
 GERRIT_USER="$(echo "$GERRIT_USER" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
 REVIEWERS_EMAIL="$(echo "$REVIEWERS_EMAIL" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
 
-CHANGE_ID=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
+change_id=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
                limit:1 owner:self is:open project:"$PROJECT" \
                message: "$GERRIT_COMMIT_MESSAGE" \
                topic: "$GERRIT_TOPIC" | \
                grep 'Change-Id:' | \
                awk '{ print $2 }')
 
-if [ -z "$CHANGE_ID" ]; then
+if [[ -z $change_id ]]; then
    git commit -sm "$GERRIT_COMMIT_MESSAGE"
 else
-   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Change-Id: $CHANGE_ID"
+   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Change-Id: $change_id"
 fi
 
 git status
@@ -72,4 +71,6 @@ REVIEWERS_EMAIL=${REVIEWERS_EMAIL:-"$GERRIT_USER@$GERRIT_HOST"}
 
 # Don't fail the build if this command fails because it's possible that there
 # is no changes since last update.
-git review --yes -t "$GERRIT_TOPIC" --reviewers "$REVIEWERS_EMAIL" || true
+if ! git review --yes -t "$GERRIT_TOPIC" --reviewers "$REVIEWERS_EMAIL" ; then
+    echo "No changes..."
+fi
