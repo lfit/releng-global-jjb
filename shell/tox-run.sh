@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -9,6 +9,11 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> tox-run.sh"
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv tox tox-pyenv
 
 ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
 mkdir -p "$ARCHIVE_TOX_DIR"
@@ -24,6 +29,7 @@ if [ -d "/opt/pyenv" ]; then
 fi
 
 PARALLEL="${PARALLEL:-true}"
+echo "TOX_ENVS = '$TOX_ENVS'"
 if [ "${PARALLEL}" = true ]; then
     if [ -n "$TOX_ENVS" ]; then
         tox -e "$TOX_ENVS" --parallel auto --parallel-live | tee -a "$ARCHIVE_TOX_DIR/tox.log"
@@ -46,17 +52,15 @@ fi
 # shellcheck disable=SC2116
 for i in .tox/*/log; do
     tox_env=$(echo "$i" | awk -F'/' '{print $2}')
+    echo "NOTE: Archiving '$tox_env' logs"
     cp -r "$i" "$ARCHIVE_TOX_DIR/$tox_env"
 done
-
-echo "Completed tox runs."
-
 
 # If docs are generated push them to archives.
 DOC_DIR="${DOC_DIR:-docs/_build/html}"
 if [[ -d "$DOC_DIR" ]]; then
-    echo "---> Archiving generated docs"
-    mv "$DOC_DIR" archives/
+    echo "NOTE: Archiving generated docs"
+    mv "$DOC_DIR archives/"
 fi
 
-test "$tox_status" -eq 0 || exit "$tox_status"
+exit $tox_status

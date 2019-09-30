@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -10,12 +10,10 @@
 ##############################################################################
 echo "---> rtd-verify.sh"
 
-# Ensure we fail the job if any steps fail.
-# DO NOT set -u
-set -xe -o pipefail
+set -eu -o pipefail
 
-echo "---> Fetching project"
-if [ "$GERRIT_PROJECT" != "$PROJECT" ]; then
+echo "INFO: Fetching project"
+if [[ $GERRIT_PROJECT != "$PROJECT" ]]; then
     # Only test projects that are a submodule of docs
     if ! git submodule | grep "$GERRIT_PROJECT"; then
         echo "WARN: Project is not a submodule of docs. This likely means " \
@@ -23,17 +21,26 @@ if [ "$GERRIT_PROJECT" != "$PROJECT" ]; then
             "and should have their own verify job. Quitting job run..."
         exit 0
     fi
-
     cd "docs/submodules/$GERRIT_PROJECT"
 fi
 
 git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
 git submodule update
 
-if [[ $JOB_NAME == "lf-infra-lftools-rtd-verify-any" ]]; then
-    # Install patchset lftools
-    python3 -m pip install --user -e .
-fi
+# I Don't understand need for this code. Both 'builder-rtd-verify-master' &
+# 'lf-infra-lftools-rtd-verify-any' pass without lftools installed. Are we
+# validating the ability to install lftools from the repo? We would NOT want
+# to install lftools from a source repo into a shared venv. I no-one objects,
+# I will remove this code.
+#if [[ $JOB_NAME == "lf-infra-lftools-rtd-verify-any" ]]; then
+#    # Install patchset lftools
+#    python3 -m pip install --user -e .
+#fi
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv tox tox-pyenv
 
 echo "---> Generating docs"
 cd "$WORKSPACE"

@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2018 The Linux Foundation and others.
@@ -12,37 +12,15 @@ echo "---> python-tools-install.sh"
 
 set -eu -o pipefail
 
-# Generate a list of 'pip' packages pre-build/post-build
-# During post-build, perform a diff on the two lists and copy files to archive directory
-echo "Listing pip packages"
-pip_list_pre=/tmp/pip-list-pre.txt
-pip_list_post=/tmp/pip-list-post.txt
-pip_list_diffs=/tmp/pip-list-diffs.txt
-if [[ -f $pip_list_pre ]]; then
-    python3 -m pip list > $pip_list_post
-    echo "Compare pip packages before/after..."
-    if diff --suppress-common-lines $pip_list_pre $pip_list_post \
-            | tee $pip_list_diffs; then
-        echo "No diffs" | tee $pip_list_diffs
-    fi
-    mkdir -p "$WORKSPACE/archives"
-    cp "$pip_list_pre" "$pip_list_post" "$pip_list_diffs" "$WORKSPACE/archives"
-    rm -rf "$pip_list_pre" "$pip_list_post" "$pip_list_diffs"
-    ls "$WORKSPACE/archives"
-    # Would just like to 'exit 0' here but we can't because the
-    # log-deploy.sh script is 'appended' to this file and it would not
-    # be executed.
-else
-    python3 -m pip list > "$pip_list_pre"
-    # These 'pip installs' only need to be executed during pre-build
-
+# We are deprecating 'user' venvs, but for now, many jobs depend on it
+if [[ ! -d ~/.local ]]; then
     requirements_file=$(mktemp /tmp/requirements-XXXX.txt)
 
     # Note: To test lftools master branch change the lftools configuration below in
     #       the requirements file from "lftools[openstack]~=#.##.#" to
     #       git+https://github.com/lfit/releng-lftools.git#egg=lftools[openstack]
 
-    echo "Generating Requirements File"
+    echo "INFO: Generating Requirements File"
     cat << 'EOF' > "$requirements_file"
 lftools[openstack]
 python-heatclient
@@ -53,9 +31,12 @@ yq
 EOF
 
     # Use `python -m pip` to ensure we are using the latest version of pip
+    (
+    PATH=$PATH:~/.local/bin
     python3 -m venv ~/.local
     python3 -m pip install --user --quiet --upgrade pip
     python3 -m pip install --user --quiet --upgrade setuptools
     python3 -m pip install --user --quiet --upgrade --upgrade-strategy eager -r "$requirements_file"
+    )
     rm -rf "$requirements_file"
 fi
