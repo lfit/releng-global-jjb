@@ -53,7 +53,6 @@ yq
 EOF
 
     # Use `python -m pip` to ensure we are using the latest version of pip
-    python3 -m venv ~/.local
     python3 -m pip install --user --quiet --upgrade pip
     python3 -m pip install --user --quiet --upgrade setuptools
     python3 -m pip install --user --quiet --upgrade -r "$requirements_file"

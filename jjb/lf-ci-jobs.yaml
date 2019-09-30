@@ -568,9 +568,7 @@
     builders:
       - lf-infra-jjbini
       - shell: !include-raw-escape:
-          - ../shell/jjb-install.sh
           - ../shell/jenkins-sandbox-cleanup.sh
-          - ../shell/jjb-cleanup.sh
 
 - job-template:
     name: "{project-name}-jenkins-sandbox-cleanup"
@@ -737,9 +735,7 @@
       - inject:
           properties-content: JJB_WORKERS={jjb-workers}
       - shell: !include-raw-escape:
-          - ../shell/jjb-install.sh
           - ../shell/jjb-merge-job.sh
-          - ../shell/jjb-cleanup.sh
 
 - job-template:
     name: "{project-name}-jjb-merge"
@@ -853,10 +849,8 @@
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/git-validate-jira-urls.sh
-          - ../shell/jjb-install.sh
           - ../shell/jjb-verify-job.sh
           - ../shell/jjb-check-unicode.sh
-          - ../shell/jjb-cleanup.sh
       - lf-infra-gpg-verify-git-signature
 
 - job-template:
@@ -960,10 +954,8 @@
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/git-validate-jira-urls.sh
-          - ../shell/jjb-install.sh
           - ../shell/jjb-verify-job.sh
           - ../shell/jjb-check-unicode.sh
-          - ../shell/jjb-cleanup.sh
       - lf-infra-gpg-verify-git-signature
 
 - job-template:
