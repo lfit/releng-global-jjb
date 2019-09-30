@@ -13,6 +13,12 @@ echo "---> jjb-verify-job.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-venv-create python3
+lf-venv-activate python3
+
 jenkins-jobs -l DEBUG test --recursive -o archives/job-configs --config-xml jjb/
 
 # Sort job output into sub-directories. On large Jenkins systems that have
@@ -33,3 +39,4 @@ if [ -n "$(ls -A archives/job-configs)" ]; then
     tar cJvf archives/job-configs.tar.xz archives/job-configs
     rm -rf archives/job-configs
 fi
+
