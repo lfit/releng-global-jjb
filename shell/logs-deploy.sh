@@ -14,8 +14,8 @@ echo "---> logs-deploy.sh"
 # Disable 'globbing'
 set -euf -o pipefail
 
-if [[ -z $"${LOGS_SERVER:-}" ]]; then
-    echo "WARNING: Logging server not set"
+if [[ -z ${LOGS_SERVER:-} ]]; then
+    echo "WARNING: Nexus logging server not set"
 else
     nexus_url="${NEXUSPROXY:-$NEXUS_URL}"
     nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
@@ -40,3 +40,20 @@ else
 
     echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
 fi
+
+if [[ -z ${S3_BUCKET:-} ]]; then
+    echo "WARNING: S3 logging server not set"
+else
+    s3_path="$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER"
+    echo "INFO: S3 path $s3_path"
+
+    pattern_opts=()
+    for arg in $ARCHIVE_ARTIFACTS; do
+        pattern_opts+=("-p" "$arg")
+    done
+    lftools deploy s3 "${pattern_opts[@]}" "$S3_BUCKET" "$s3_path" \
+        "$BUILD_URL" "$WORKSPACE"
+
+    echo "Build logs: <a href=\"https://$S3_BUCKET.s3.amazonaws.com/$s3_path\"></a>"
+fi
+
