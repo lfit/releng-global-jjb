@@ -363,6 +363,7 @@ pyenv variables before running.
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :disable-job: Whether to disable the job (default: false)
     :dist-binary: Whether to build a binary wheel distribution. (default: true)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
@@ -451,6 +452,10 @@ directory, an example appears next.
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :cron: Cron schedule when to trigger the job. Supports daily builds.
+        This parameter also supports multiline input via YAML pipe | character in
+        cases where one may want to provide more than 1 cron timer. (default: empty)
+    :disable-job: Whether to disable the job (default: false)
     :dist-binary: Whether to build a binary wheel distribution. (default: true)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
@@ -559,6 +564,7 @@ An example of a pypi release file appears below.
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :disable-job: Whether to disable the job (default: false)
     :dist-binary: Whether to build a binary wheel distribution. (default: true)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
@@ -642,6 +648,7 @@ The special parameters are as follows::
     :branch: The branch to build against. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :disable-job: Whether to disable the job (default: false)
     :dist-binary: Whether to build a binary wheel distribution. (default: true)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
