@@ -679,6 +679,8 @@
     tox-dir: "."
     tox-envs: ""
 
+    disabled: "{disable-job}"
+
     gerrit_trigger_file_paths:
       - compare-type: ANT
         pattern: ".*"
@@ -836,6 +838,7 @@
     <<: *lf_pypi_common
     <<: *lf_pypi_merge_builders
 
+    cron: ""
     pypi-repo: staging
 
     gerrit_merge_triggers:
@@ -855,6 +858,7 @@
           choosing-strategy: gerrit
 
     triggers:
+      - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
           trigger-on: "{obj:gerrit_merge_triggers}"
@@ -874,6 +878,7 @@
     <<: *lf_pypi_common
     <<: *lf_pypi_merge_builders
 
+    cron: ""
     pypi-repo: staging
 
     properties:
@@ -892,6 +897,7 @@
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
+      - timed: "{obj:cron}"
       - github-pull-request:
           trigger-phrase: "^remerge$"
           only-trigger-phrase: false
@@ -913,12 +919,13 @@
     pypi-repo: pypi
     use-release-file: true
 
-    gerrit_trigger_file_paths:
+    # define once and use twice; jobs MUST NOT override
+    gerrit_release_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
-    # github_included_regions MUST match gerrit_trigger_file_paths
-    github_included_regions:
+    # github_included_regions MUST match gerrit_release_trigger_file_paths
+    github_release_included_regions:
       - 'releases\/.*\.yaml'
       - '.releases\/.*\.yaml'
 
@@ -987,7 +994,7 @@
               branches:
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+              file-paths: "{obj:gerrit_release_trigger_file_paths}"
 
 - job-template:
     name: "{project-name}-pypi-release-verify-{stream}"
@@ -1022,7 +1029,7 @@
           github-hooks: true
           white-list-target-branches:
             - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+          included-regions: "{obj:github_release_included_regions}"
 
 - job-template:
     name: "{project-name}-pypi-release-merge-{stream}"
@@ -1057,7 +1064,7 @@
               branches:
                 - branch-compare-type: "ANT"
                   branch-pattern: "**"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+              file-paths: "{obj:gerrit_release_trigger_file_paths}"
 
 - job-template:
     name: "{project-name}-pypi-release-merge-{stream}"
@@ -1092,4 +1099,4 @@
           github-hooks: true
           white-list-target-branches:
             - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+          included-regions: "{obj:github_release_included_regions}"

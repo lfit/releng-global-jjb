@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    In the PyPI merge template, add cron parameter to support daily build
+    and push to a staging repo, like the maven merge template.
+    In PyPI release templates, change name of gerrit and github trigger
+    file patterns parameter. This avoids accidental overriding by jobs
+    that limit their actions to subdirectories. The release file patterns
+    are hardcoded in a shell script. Remove params from RST doc.
+    In all PyPI templates, add disabled option and disable-job parameter
+    to be consistent with other python templates.
