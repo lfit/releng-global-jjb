@@ -40,3 +40,26 @@ else
 
     echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
 fi
+
+if [[ -z $"${S3_BUCKET:-}" ]]; then
+    echo "WARNING: Logging server not set"
+else
+    s3_key="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
+    echo "INFO: S3 key $s3_key"
+    if [[ -n ${ARCHIVE_ARTIFACTS:-} ]] ; then
+        # Handle multiple search extensions as separate values to '-p|--pattern'
+        # "arg1 arg2" -> (-p arg1 -p arg2)
+        pattern_opts=()
+        for arg in $ARCHIVE_ARTIFACTS; do
+            pattern_opts+=("-p" "$arg")
+        done
+        lftools deploy logs-s3 "${pattern_opts[@]}" \
+            "$S3_BUCKET" "$s3_key" "${BUILD_URL}" "$WORKSPACE"
+    else
+        lftools deploy logs-s3 "$S3_BUCKET" "$s3_key" "${BUILD_URL}" \
+            "$WORKSPACE"
+    fi
+
+    echo "Build logs: <a href=\"https://$S3_BUCKET.s3.amazonaws.com/$WORKSPACE\"></a>"
+fi
+
