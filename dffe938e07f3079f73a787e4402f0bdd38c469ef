@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0925ce30_e14f0881",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-10-01T16:32:15Z",
+      "side": 1,
+      "message": "This should be github_release_included_regions, rather than github_included_regions.",
+      "range": {
+        "startLine": 927,
+        "startChar": 6,
+        "endLine": 927,
+        "endChar": 29
+      },
+      "revId": "dffe938e07f3079f73a787e4402f0bdd38c469ef",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
