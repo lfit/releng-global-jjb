@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8de5a27c_e2bbe727",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-02T19:00:49Z",
+      "side": 1,
+      "message": "I think I might have missed this comment earlier. Should\u0027nt the job be GPG signing the artifacts before they are uploaded. I\u0027d think we could use the sigul setup to work with this job as a future enhancement.",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 40
+      },
+      "revId": "6d0b661360e45fe139ff9689c3ff23f657bad599",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
