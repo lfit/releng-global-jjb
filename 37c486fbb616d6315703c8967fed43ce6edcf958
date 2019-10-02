@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3254962c_cbd8dfb5",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-10-02T23:27:12Z",
+      "side": 1,
+      "message": "Why are all of the functions lf- except the last one which is lf_ ? The mixing of the two styles seems weird.",
+      "revId": "37c486fbb616d6315703c8967fed43ce6edcf958",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "136d418e_66846fff",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-10-02T23:27:12Z",
+      "side": 1,
+      "message": "variable",
+      "range": {
+        "startLine": 74,
+        "startChar": 51,
+        "endLine": 74,
+        "endChar": 58
+      },
+      "revId": "37c486fbb616d6315703c8967fed43ce6edcf958",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
