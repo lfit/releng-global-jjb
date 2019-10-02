@@ -20,15 +20,19 @@ set -eu -o pipefail
 virtualenv -p python3 /tmp/pypi
 PATH=/tmp/pypi/bin:$PATH
 
-pip install twine
+echo "INFO: installing twine to upload distributions"
+pip install -q twine
+
 echo "INFO: cd to tox-dir $TOX_DIR"
 cd "$WORKSPACE/$TOX_DIR"
+
 cmd="twine upload -r $REPOSITORY dist/*"
 if $DRY_RUN; then
     echo "INFO: dry-run is set, echoing command only"
     echo $cmd
 else
-    echo "INFO: uploading distributions"
+    echo "INFO: uploading distributions to repo $REPOSITORY"
     $cmd
 fi
+
 echo "---> pypi-upload.sh ends"

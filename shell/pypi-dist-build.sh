@@ -22,12 +22,14 @@ PATH=/tmp/pypi/bin:$PATH
 bdist=""
 if $BUILD_BDIST_WHEEL; then
     echo "INFO: installing wheel to build binary distribution"
-    pip install wheel
+    pip install -q wheel
     bdist="bdist_wheel"
 fi
 
 echo "INFO: cd to tox-dir $TOX_DIR"
 cd "$WORKSPACE/$TOX_DIR"
+
 echo "INFO: creating distributions"
 python3 setup.py sdist $bdist
+
 echo "---> pypi-dist-build.sh ends"

@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add DRY_RUN parameter to the PyPI verify and merge template common
+    macro because it's required by the pypi_upload.sh script.
+    Adjust verbosity of shell scripts - quiet down pip, add repository
+    name to echo output.
