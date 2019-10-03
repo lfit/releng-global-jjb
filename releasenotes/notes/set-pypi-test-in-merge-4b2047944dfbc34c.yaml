@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Correct doc .pypirc test URL to https://test.pypi.org/legacy/
+    Change doc .pypirc to use API tokens instead of username/password.
+    Use pypi-test as the default repository name in the PyPI merge template
+    (instead of "staging") to match established ONAP practice.
