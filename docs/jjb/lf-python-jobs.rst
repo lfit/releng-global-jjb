@@ -43,7 +43,7 @@ Jenkins server must have a configuration file ".pypirc".
 :Required Parameters:
 
     :pypi-repo: PyPI repository key in .pypirc configuration file;
-        e.g., "staging" or "pypi".
+        e.g., "pypi-test" or "pypi".
 
 lf-infra-tox-install
 --------------------
@@ -396,7 +396,7 @@ PyPI Merge
 Creates and uploads distribution files on merge of a patch set.  Runs
 tox, builds a source distribution and (optionally) a binary
 distribution, and uploads the distribution(s) to a PyPI repository.
-This job should be configured to use a staging PyPI repository like
+This job should be configured to use a test PyPI repository like
 testpypi.python.org, not a public release area like the global PyPI
 repository. Like the verify job, this requires a setup.py file for
 packaging the component.
@@ -412,25 +412,23 @@ pyenv variables before running.
    export PATH="$PYENV_ROOT/bin:$PATH"
 
 
-Requires a .pypirc configuration file in the Jenkins builder home
-directory, an example appears next.
+Requires a .pypirc configuration file in the Jenkins builder home directory,
+an example appears next that uses API tokens. No repository is needed in the
+PyPI section.
 
 .. code-block:: bash
 
     [distutils] # this tells distutils what package indexes you can push to
-    index-servers =
-    staging
-    pypi
+    index-servers = pypi-test pypi
 
-    [staging]
-    repository: https://testpypi.python.org/pypi
-    username: your_username
-    password: your_password
+    [pypi-test]
+    repository: https://test.pypi.org/legacy/
+    username: __token__
+    password: pypi-test-api-token-goes-here
 
     [pypi]
-    repository: https://pypi.python.org/pypi
-    username: your_username
-    password: your_password
+    username: __token__
+    password: pypi-api-token-goes-here
 
 
 :Template Names:
@@ -463,7 +461,7 @@ directory, an example appears next.
     :pre-build-script: Shell script to execute before the tox builder. For
         example, install system prerequisites. (default: a shell comment)
     :pypi-repo: Key for PyPI repository parameters in the .pypirc file.
-        Merge jobs should use a server like testpypi.python.org.  (default: staging)
+        Merge jobs should use a server like testpypi.python.org.  (default: pypi-test)
     :python-version: Python version to invoke pip install of tox-pyenv
         (default: python3)
     :stream: Keyword representing a release code-name.

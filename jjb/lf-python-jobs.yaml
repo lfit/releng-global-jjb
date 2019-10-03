@@ -844,7 +844,7 @@
     <<: *lf_pypi_merge_builders
 
     cron: ""
-    pypi-repo: staging
+    pypi-repo: pypi-test
 
     gerrit_merge_triggers:
       - change-merged-event
@@ -884,7 +884,7 @@
     <<: *lf_pypi_merge_builders
 
     cron: ""
-    pypi-repo: staging
+    pypi-repo: pypi-test
 
     properties:
       - github:
