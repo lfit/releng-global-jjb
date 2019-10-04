@@ -1,0 +1,14 @@
+---
+upgrade:
+  - |
+    Update packer version to 1.4.4.
+
+    The present version 1.4.3 fails on setting the metadata for an images
+    while its being updated onto the cloud.
+
+    This causes the failure:
+
+    Error setting image metadata: Bad request with: Invalid volume: Updating
+    volume metadata is not allowed for volumes in uploading status: 400.
+
+    https://github.com/hashicorp/packer/pull/8016
