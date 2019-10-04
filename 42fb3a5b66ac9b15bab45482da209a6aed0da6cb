@@ -1,0 +1,705 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86e7016d_287ef6be",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Please explain what branch is used.  I see you can create rtd2 jobs for multiple branches, but what exactly happens?  My experience in ONAP and Acumos says, the master branch of all projects is used.  But maybe that experience is all wrong?",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5f4ceb4_4af67caa",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "What\u0027s a project in this context?  Only needs to appear once in the project\u0027s ci-management git repository?",
+      "range": {
+        "startLine": 7,
+        "startChar": 62,
+        "endLine": 7,
+        "endChar": 69
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee3a059a_53415eb0",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Is there any particular requirement for centos7 ?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67e6629a_97c7e13e",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Why did you separate the templates for the verify and merge jobs?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a0d781c_e5559580",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "This is confusing. Where is this config section required?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a176ee3_6463f496",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "In my opinion a verify job should never, ever make any externally visible changes. Verify jobs are very handy to run in the sandbox.  Would you please consider moving that behavior so that the merge job creates the project if it does not exist?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "538404e3_31dc610c",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "please describe what this macro does",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47bc83a9_754e50a4",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "I would add -gerrit- here. I know that old templates omitted -gerrit- but most new ones have it, and that makes the name parallel to the -github- variants.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5cb4976e_d0f6115a",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "I don\u0027t see a config parameter that lets me pass along a (sub)directory name, like tox-dir does for Python templates. \n\nFor various reasons, some project repositories have many modules buried within them, each standalone things, and I\u0027m sure they have docs that they need to publish also.",
+      "range": {
+        "startLine": 78,
+        "startChar": 0,
+        "endLine": 78,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e03dcbc6_07b7588a",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Please document disable-job",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e743bd49_0d0087d0",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Verify job has doc-dir, but merge job does not -- is that by design?",
+      "range": {
+        "startLine": 83,
+        "startChar": 5,
+        "endLine": 83,
+        "endChar": 12
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4ff7611_87c4f045",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Verify job documents parameter git-url but this does not?",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "074f99e7_ba8f1a7c",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "See above re verify jobs making external changes, I\u0027m not a fan",
+      "range": {
+        "startLine": 113,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef6351b3_9939567b",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "See above re -gerrit-",
+      "range": {
+        "startLine": 116,
+        "startChar": 12,
+        "endLine": 116,
+        "endChar": 18
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b120e7d_1d9fa008",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "See above re subdirectory.",
+      "range": {
+        "startLine": 127,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a364740_1a328226",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "already covered under required parameters",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "275c4bf1_2647be67",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Please document disable-job",
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5477b0c1_77f32dfe",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "this is an awkward suffix for a builder \"-script\", it\u0027s actually two scripts.  Would you consider maybe lf-rtdv2-build ?",
+      "range": {
+        "startLine": 278,
+        "startChar": 19,
+        "endLine": 278,
+        "endChar": 25
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f7f9686_9936812e",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "this isn\u0027t common-common, it\u0027s actually gerrit-common; might consider refactoring to make the job easier for the poor lf-releng-er who has to write the github variant.",
+      "range": {
+        "startLine": 2,
+        "startChar": 2,
+        "endLine": 2,
+        "endChar": 17
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1caadf1_37b51563",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Perhaps sort the parameters, move this up?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 3
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0085ef5e_a49fdb4e",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "suggest calling this rtdv2-gerrit-verify-global-{stream}",
+      "range": {
+        "startLine": 65,
+        "startChar": 17,
+        "endLine": 65,
+        "endChar": 23
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31e08f4c_7d2a55b5",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "suggest adding -gerrit-",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 27
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "065cb4e0_2eeaa58b",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "suggest adding -gerrit-",
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f054afd3_f6bfdf5c",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Please add a cron trigger to support daily builds",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d801976_9ba6fef9",
+        "filename": "releasenotes/notes/lf-rtdv2-jobs-2885568080d2990a.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "What is prelude? Maybe this should be \"feature\"?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 7
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "676d7ed9_55f1f5a2",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "This needs to be a login shell to have pip on the path, or something else?",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68a63478_3531ba3a",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "Please put these lines at the top of the script?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 2
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f88d2490_5d403a09",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "What about set -u for undefined variables?",
+      "range": {
+        "startLine": 23,
+        "startChar": 5,
+        "endLine": 23,
+        "endChar": 7
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f8cca4e_5d4ce6a8",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "what happens if cloned from Github? Will this break?  Is this script reusable?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 2
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1c0f27b_9206c46c",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "See above re gerrit",
+      "range": {
+        "startLine": 34,
+        "startChar": 68,
+        "endLine": 34,
+        "endChar": 78
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0ceb200_74148ed5",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-04T20:17:04Z",
+      "side": 1,
+      "message": "maybe this echo should be in the test for merge below?",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 40,
+        "endChar": 3
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
