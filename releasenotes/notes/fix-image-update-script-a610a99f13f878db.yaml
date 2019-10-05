@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fix the auto update image script to compare the image type before updating
+    an the image in the source repository. This fixes the bug that updates
+    images although they are the same flavour but a diffirent type.

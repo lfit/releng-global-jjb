@@ -44,6 +44,9 @@ while read -r line ; do
     # var is unset and update all images on Jenkins to the latest.
     if [[ ${NEW_IMAGE_NAME} != all ]]; then
         new_image=${NEW_IMAGE_NAME}
+        new_image_type="${NEW_IMAGE_NAME% -*}"
+        # get the $new_image_type to check the image type is being compared
+        [[ ${new_image_type} =~ ${image_type} ]] && continue
     else
         new_image=$(openstack image list --long -f value -c Name -c Protected \
             | grep "${image_type}.*False" | tail -n-1 | sed 's/ False//')
