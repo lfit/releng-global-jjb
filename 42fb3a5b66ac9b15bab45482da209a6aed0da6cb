@@ -588,6 +588,47 @@
     },
     {
       "key": {
+        "uuid": "a4a1cb99_124bd980",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-05T00:22:55Z",
+      "side": 1,
+      "message": "Based on what I see, this line could be removed, but that would have to be verified.\nThe source ~/.venv/bin/activate below will add the correct \u0027pip\u0027 to the path.",
+      "parentUuid": "676d7ed9_55f1f5a2",
+      "range": {
+        "startLine": 1,
+        "startChar": 12,
+        "endLine": 1,
+        "endChar": 14
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e455132_d611abee",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-05T00:22:55Z",
+      "side": 1,
+      "message": "Does this install lftools in the venv you just created ? Why this instead of \u0027pip install lftools[openstack]\u0027. Would it install master (HEAD) instead of the latest release ? The \u0027intent\u0027 here is not clear. A comment would quickly clear this up...",
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "68a63478_3531ba3a",
         "filename": "shell/rtdv2.sh",
         "patchSetId": 23
@@ -634,6 +675,30 @@
     },
     {
       "key": {
+        "uuid": "a6fa6b5b_6fd0e916",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-05T00:22:55Z",
+      "side": 1,
+      "message": "Or at least before the any code is executed. Note you could use lf-activate rather than source ~/.venv/bin/activate (it will not fail with -u set). Unfortunately that \u0027lf-activate()\u0027 did not make it into the latest release of global-jjb.\n\nDo you really need -x ? You have several \u0027echo\u0027s\u0027 in the code which should be enough for tracing.",
+      "parentUuid": "68a63478_3531ba3a",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 2
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4f8cca4e_5d4ce6a8",
         "filename": "shell/rtdv2.sh",
         "patchSetId": 23
@@ -645,6 +710,30 @@
       "writtenOn": "2019-10-04T20:17:04Z",
       "side": 1,
       "message": "what happens if cloned from Github? Will this break?  Is this script reusable?",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 2
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f49c043b_eee9628e",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-05T00:22:55Z",
+      "side": 1,
+      "message": "If -u is not set and GERRIT_URL is not set, this will quietly continue. I assume that lftools (below) will not be able to do much with the resulting URL. Hopefully it will exit with a useful error message.",
+      "parentUuid": "4f8cca4e_5d4ce6a8",
       "range": {
         "startLine": 27,
         "startChar": 0,
@@ -680,6 +769,30 @@
     },
     {
       "key": {
+        "uuid": "62b7cef9_a51bba32",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-05T00:22:55Z",
+      "side": 1,
+      "message": "Also line tooo long.",
+      "parentUuid": "b1c0f27b_9206c46c",
+      "range": {
+        "startLine": 34,
+        "startChar": 68,
+        "endLine": 34,
+        "endChar": 78
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f0ceb200_74148ed5",
         "filename": "shell/rtdv2.sh",
         "patchSetId": 23
@@ -697,6 +810,23 @@
         "endLine": 40,
         "endChar": 3
       },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "baba178e_4b6f3cc6",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-05T00:22:55Z",
+      "side": 1,
+      "message": "Not only are \"\" not necessary inside \u0027[[]]\u0027 that can cause problems I.E what if JOB_NAME\u003d\"merge \". Shellcheck knows that \"\" are not required inside of \u0027[[]]\u0027.",
       "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
