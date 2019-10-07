@@ -1,0 +1,8 @@
+---
+upgrade:
+  - |
+    Add sonar-project-file parameter to ci sonar jobs. By enabling the caller
+    to override the default project file name with an empty string, we enable
+    the ability to provide project settings directly in the sonar-properties
+    field. This removes the requirement for a "sonar-project.properties" file
+    in the repo.

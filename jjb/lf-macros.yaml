@@ -334,7 +334,7 @@
           sonar-name: Sonar
           scanner-name: SonarQubeScanner
           task: "{sonar-task}"
-          project: "sonar-project.properties"
+          project: "{sonar-project-file}"
           properties: "{sonar-properties}"
           java-opts: "{sonar-java-opts}"
           additional-arguments: "{sonar-additional-args}"
@@ -348,7 +348,7 @@
           sonar-name: Sonar
           scanner-name: SonarQubeScanner
           task: "{sonar-task}"
-          project: "sonar-project.properties"
+          project: "{sonar-project-file}"
           properties: "{sonar-properties}"
           java-opts: "{sonar-java-opts}"
           additional-arguments: "{sonar-additional-args}"
