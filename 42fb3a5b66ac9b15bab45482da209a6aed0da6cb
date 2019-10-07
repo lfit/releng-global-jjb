@@ -94,6 +94,30 @@
     },
     {
       "key": {
+        "uuid": "a8c115a4_6469e183",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-07T17:47:34Z",
+      "side": 1,
+      "message": "refspec",
+      "parentUuid": "67e6629a_97c7e13e",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5a0d781c_e5559580",
         "filename": "docs/jjb/lf-rtdv2-jobs.rst",
         "patchSetId": 23
@@ -117,6 +141,30 @@
     },
     {
       "key": {
+        "uuid": "5f4b94c9_09c9f8a5",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-07T17:47:34Z",
+      "side": 1,
+      "message": "for rtd api key",
+      "parentUuid": "5a0d781c_e5559580",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a176ee3_6463f496",
         "filename": "docs/jjb/lf-rtdv2-jobs.rst",
         "patchSetId": 23
@@ -128,6 +176,30 @@
       "writtenOn": "2019-10-04T20:17:04Z",
       "side": 1,
       "message": "In my opinion a verify job should never, ever make any externally visible changes. Verify jobs are very handy to run in the sandbox.  Would you please consider moving that behavior so that the merge job creates the project if it does not exist?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 1
+      },
+      "revId": "42fb3a5b66ac9b15bab45482da209a6aed0da6cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f68c892b_da9828b2",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 23
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-07T17:47:34Z",
+      "side": 1,
+      "message": "there is some time between creating the project and being able to run a build on it.\nso we cant do it at merge time",
+      "parentUuid": "2a176ee3_6463f496",
       "range": {
         "startLine": 45,
         "startChar": 0,
