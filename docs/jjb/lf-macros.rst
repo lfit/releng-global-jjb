@@ -301,8 +301,14 @@ Runs Jenkins SonarQube plug-in.
 
 Requires ``SonarQube Scanner for Jenkins``
 
+.. note:: Sonar properties can be set directly in the job definition by
+   setting the sonar-project-file to ``""`` and adding all properties under
+   ``sonar-properties``.
+
 :Optional Parameters:
     :sonar-task: Sonar task to run. (default: "")
+    :sonar-project-file: The filename for the project's properties
+        (default: "sonar-project.properties")
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
@@ -315,11 +321,17 @@ the macro's caller.
 
 Requires ``SonarQube Scanner for Jenkins``
 
+.. note:: Sonar properties can be set directly in the job definition by
+   setting the sonar-project-file to ``""`` and adding all properties under
+   ``sonar-properties``.
+
 :Required Parameters:
     :lf-sonar-prescan: A builder that will run prior to the Sonar scan.
 
 :Optional Parameters:
     :sonar-task: Sonar task to run. (default: "")
+    :sonar-project-file: The filename for the project's properties
+        (default: "sonar-project.properties")
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
