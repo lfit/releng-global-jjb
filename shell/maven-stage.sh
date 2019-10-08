@@ -18,6 +18,10 @@ echo "---> maven-stage.sh"
 # Ensure we fail the job if any steps fail.
 set -xeu -o pipefail
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 TMP_FILE="$(mktemp)"
 lftools deploy nexus-stage "$NEXUS_URL" "$STAGING_PROFILE_ID" "$WORKSPACE/m2repo" | tee "$TMP_FILE"
 staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$TMP_FILE")

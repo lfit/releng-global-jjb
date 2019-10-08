@@ -13,4 +13,8 @@ echo "---> sigul-sign-dir.sh"
 # Ensure we fail the job if any steps fail.
 set -e -o pipefail
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 lftools sign sigul -m "${SIGN_MODE}" "${SIGN_DIR}"

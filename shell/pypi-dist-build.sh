@@ -16,13 +16,12 @@ echo "---> pypi-dist-build.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-virtualenv -p python3 /tmp/pypi
-PATH=/tmp/pypi/bin:$PATH
+# Use the existing venv created by utility-venv.sh
+venv=/tmp/pypi
+PATH=$venv/bin:$PATH
 
 bdist=""
 if $BUILD_BDIST_WHEEL; then
-    echo "INFO: installing wheel to build binary distribution"
-    pip install -q wheel
     bdist="bdist_wheel"
 fi
 

@@ -21,11 +21,8 @@ MAVEN_OPTIONS="$(echo --show-version \
     -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r)"
 echo "$MAVEN_OPTIONS"
 
-# Activates the lftools virtualenv
+# Activates the utility virtualenv
 lftools_activate() {
-    virtualenv --quiet "/tmp/v/lftools"
-    set +u  # Ignore unbound variables in activate
-    # shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
-    source "/tmp/v/lftools/bin/activate"
-    set -u  # Restore unbound variable checking
+    venv=/tmp/virtualenv
+    PATH=$venv/bin:$PATH
 }

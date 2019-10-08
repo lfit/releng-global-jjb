@@ -21,7 +21,9 @@ set -eu -o pipefail
 m2repo_dir="$WORKSPACE/m2repo"
 nexus_repo_url="$NEXUS_URL/content/repositories/$NEXUS_REPO"
 
-lftools_activate
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
 
 echo "-----> Remove metadata files that were not updated"
 set +e  # Temporarily disable to run diff command.

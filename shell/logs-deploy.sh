@@ -14,6 +14,10 @@ echo "---> logs-deploy.sh"
 # Disable 'globbing'
 set -euf -o pipefail
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 if [[ -z $"${LOGS_SERVER:-}" ]]; then
     echo "WARNING: Logging server not set"
 else

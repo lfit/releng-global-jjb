@@ -10,6 +10,10 @@
 ##############################################################################
 echo "---> maven-central.sh"
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 profile_id="${OSSRH_PROFILE_ID:-}"
 
 # Ensure we fail the job if any steps fail.

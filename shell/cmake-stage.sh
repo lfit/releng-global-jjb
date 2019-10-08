@@ -15,8 +15,9 @@ nexus_group_id="${NEXUS_GROUP_ID:-io.aswf.opencolorio}"
 staging_profile_id="${STAGING_PROFILE_ID:-126694cb53ec54}"
 version="${VERSION:-}"
 
-# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
-source "/tmp/v/lftools/bin/activate"
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
 
 set -eux -o pipefail
 
