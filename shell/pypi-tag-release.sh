@@ -13,6 +13,10 @@ echo "---> pypi-tag-release.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 # Functions.
 
 set_variables(){
@@ -131,9 +135,11 @@ tag_gerrit(){
 }
 
 # Main
-virtualenv -p python3 /tmp/pypi
-PATH=/tmp/pypi/bin:$PATH
-pip install lftools jsonschema niet
+
+# Use the existing venv created by utility-venv.sh
+venv=/tmp/pypi
+PATH=$venv/bin:$PATH
+
 set_variables
 if [[ $DISTRIBUTION_TYPE != "pypi" ]]; then
     echo "ERROR: unexpected distribution type $DISTRIBUTION_TYPE"

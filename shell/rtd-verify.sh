@@ -14,6 +14,10 @@ echo "---> rtd-verify.sh"
 # DO NOT set -u
 set -xe -o pipefail
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 echo "---> Fetching project"
 if [ "$GERRIT_PROJECT" != "$PROJECT" ]; then
     # Only test projects that are a submodule of docs

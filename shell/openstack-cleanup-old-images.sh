@@ -11,6 +11,10 @@
 # Removes openstack images older than X days in the cloud
 echo "---> Cleanup old images"
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 os_cloud="${OS_CLOUD:-vex}"
 os_image_cleanup_age="${OS_IMAGE_CLEANUP_AGE:-30}"
 

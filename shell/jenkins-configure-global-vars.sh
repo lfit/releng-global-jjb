@@ -12,11 +12,15 @@
 #
 # Configuration is read from $WORKSPACE/jenkins-config/global-vars-$silo.sh
 #
-# Requirements: lftools must be installed to /tmp/v/lftools
+# Requirements: python-virtualenv.sh
 # Parameters:
 #     jenkins_silos:  Space separated list of Jenkins silos to push global-vars
 #                     configuration to. (default: jenkins)
 echo "---> jenkins-configure-global-vars.sh"
+
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
 
 GROOVY_SCRIPT_FILE="global-jjb/jenkins-admin/set_global_properties.groovy"
 

@@ -11,6 +11,10 @@
 # Scans OpenStack for orphaned volumes
 echo "---> Orphaned volumes"
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 os_cloud="${OS_CLOUD:-vex}"
 
 set -eux -o pipefail

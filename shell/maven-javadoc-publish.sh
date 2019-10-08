@@ -16,6 +16,10 @@ echo "---> maven-javadoc-publish.sh"
 set -e -o pipefail
 set +u
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 JAVADOC_DIR="$WORKSPACE/archives/javadoc"
 
 pushd "$JAVADOC_DIR"

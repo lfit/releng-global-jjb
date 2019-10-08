@@ -11,6 +11,10 @@
 # Scans OpenStack for orphaned servers
 echo "---> Orphaned servers"
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 os_cloud="${OS_CLOUD:-vex}"
 jenkins_urls="${JENKINS_URLS:-}"
 

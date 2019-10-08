@@ -12,7 +12,7 @@
 #
 # Configuration is read from $WORKSPACE/jenkins-config/clouds/openstack/$cloud/cloud.cfg
 #
-# Requirements: lftools must be installed to /tmp/v/lftools
+# Requirements: python-virtualenv.sh
 #
 # Parameters:
 #
@@ -30,6 +30,10 @@
 #    export jenkins_silos=sandbox
 #    bash ./global-jjb/shell/jenkins-configure-clouds.sh
 echo "---> jenkins-configure-clouds.sh"
+
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
 
 if [ ! -d "$WORKSPACE/jenkins-config/clouds" ]; then
     echo "WARN: jenkins-config/clouds does not exist. Skipping cloud management..."

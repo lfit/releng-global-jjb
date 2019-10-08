@@ -10,6 +10,10 @@
 ##############################################################################
 echo "---> Create HEAT stack"
 
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
+
 os_cloud="${OS_CLOUD:-vex}"
 stack_name="${OS_STACK_NAME}"
 stack_template="${OS_STACK_TEMPLATE}"

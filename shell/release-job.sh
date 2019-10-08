@@ -12,11 +12,10 @@ echo "---> release-job.sh"
 set -eu -o pipefail
 
 set +u
-python3 -m venv /tmp/v/venv/
-# shellcheck disable=SC1091
-source /tmp/v/venv/bin/activate
-set -u
-python -m pip install lftools[nexus] jsonschema niet yq
+
+# Reuse the python-virtualenv.sh venv
+venv=/tmp/virtualenv
+PATH=$venv/bin:$PATH
 
 #Functions.
 
