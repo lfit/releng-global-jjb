@@ -134,9 +134,9 @@ tag_gerrit(){
 }
 
 # Main
-virtualenv -p python3 /tmp/pypi
-PATH=/tmp/pypi/bin:$PATH
-pip install lftools jsonschema niet
+VENV=~/.venv
+PATH=$VENV/bin:$PATH
+
 set_variables
 if [[ $DISTRIBUTION_TYPE != "pypi" ]]; then
     echo "ERROR: unexpected distribution type $DISTRIBUTION_TYPE"
