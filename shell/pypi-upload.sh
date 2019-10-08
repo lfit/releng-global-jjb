@@ -17,11 +17,8 @@ echo "---> pypi-upload.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-virtualenv -p python3 /tmp/pypi
-PATH=/tmp/pypi/bin:$PATH
-
-echo "INFO: installing twine to upload distributions"
-pip install -q twine
+VENV=~/.venv
+PATH=$VENV/bin:$PATH
 
 echo "INFO: cd to tox-dir $TOX_DIR"
 cd "$WORKSPACE/$TOX_DIR"

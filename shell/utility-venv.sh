@@ -8,26 +8,31 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-echo "---> pypi-dist-build.sh"
+echo "---> utility-venv.sh"
 
-# Script to create Python source and binary distributions
-# Requires project file "setup.py"
+# Script to create a venv for our utilities
+# Can be used for builds that do not have specific versions set in
+# requirements.txt
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
 VENV=~/.venv
+virtualenv -p python3 $VENV
+
 PATH=$VENV/bin:$PATH
 
-bdist=""
-if $BUILD_BDIST_WHEEL; then
-    bdist="bdist_wheel"
-fi
+# Upgrade any outdated packages via pip
+pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -q -U
 
-echo "INFO: cd to tox-dir $TOX_DIR"
-cd "$WORKSPACE/$TOX_DIR"
+echo "INFO: installing venv utilities"
+pip install jsonschema \
+    lftools \
+    niet \
+    python-heatclient \
+    python-openstackclient \
+    tox \
+    tox-pyenv \
+    twine
 
-echo "INFO: creating distributions"
-python3 setup.py sdist $bdist
-
-echo "---> pypi-dist-build.sh ends"
+echo "---> utility-venv.sh ends"
