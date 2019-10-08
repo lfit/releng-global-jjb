@@ -136,6 +136,10 @@ tag_gerrit(){
 # Main
 virtualenv -p python3 /tmp/pypi
 PATH=/tmp/pypi/bin:$PATH
+
+# Upgrade any outdated packages via pip
+pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -q -U
+
 pip install lftools jsonschema niet
 set_variables
 if [[ $DISTRIBUTION_TYPE != "pypi" ]]; then

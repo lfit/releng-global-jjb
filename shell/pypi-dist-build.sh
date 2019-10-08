@@ -19,6 +19,9 @@ set -eu -o pipefail
 virtualenv -p python3 /tmp/pypi
 PATH=/tmp/pypi/bin:$PATH
 
+# Upgrade any outdated packages via pip
+pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -q -U
+
 bdist=""
 if $BUILD_BDIST_WHEEL; then
     echo "INFO: installing wheel to build binary distribution"

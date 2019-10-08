@@ -20,6 +20,9 @@ set -eu -o pipefail
 virtualenv -p python3 /tmp/pypi
 PATH=/tmp/pypi/bin:$PATH
 
+# Upgrade any outdated packages via pip
+pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -q -U
+
 echo "INFO: installing twine to upload distributions"
 pip install -q twine
 
