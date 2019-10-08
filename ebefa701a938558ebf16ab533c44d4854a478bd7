@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "17cd8bd7_439f9b89",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-08T18:43:41Z",
+      "side": 0,
+      "message": "wheel is always installed, no need to do this?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 1
+      },
+      "revId": "ebefa701a938558ebf16ab533c44d4854a478bd7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "62352e62_c89f45d1",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-08T18:43:41Z",
+      "side": 0,
+      "message": "What about this install step?  I can simply assume that all these are present?  That\u0027s a nice speedup.",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 1
+      },
+      "revId": "ebefa701a938558ebf16ab533c44d4854a478bd7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e79ade0_4ec544e9",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-08T18:43:41Z",
+      "side": 0,
+      "message": "Twine is also installed by default?",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 1
+      },
+      "revId": "ebefa701a938558ebf16ab533c44d4854a478bd7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
