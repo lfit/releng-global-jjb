@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9fff4fc_ac34b56c",
+        "filename": "shell/utility-venv.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-09T17:30:42Z",
+      "side": 1,
+      "message": "Please see Thanh\u0027s comment about avoiding trouble with very long paths and consider using /tmp instead of ~, here\u0027s an example workspace directory name from ORAN that shows how quickly the problem can arise:\n\n/w/workspace/ric-plt-lib-rmr-python-pypi-merge-master",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 12
+      },
+      "revId": "f94f6248a33634e6f2e966064ce2e5b78afee5f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
