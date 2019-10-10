@@ -997,8 +997,8 @@
             - project-compare-type: "ANT"
               project-pattern: "{project}"
               branches:
-                - branch-compare-type: "ANT"
-                  branch-pattern: "**"
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_release_trigger_file_paths}"
 
 - job-template:
@@ -1067,8 +1067,8 @@
             - project-compare-type: "ANT"
               project-pattern: "{project}"
               branches:
-                - branch-compare-type: "ANT"
-                  branch-pattern: "**"
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_release_trigger_file_paths}"
 
 - job-template:
