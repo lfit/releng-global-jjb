@@ -29,9 +29,10 @@ lf-infra-pypi-tag-release
 -------------------------
 
 Checks the format of the release version string and checks the git
-repository for that tag. In a merge job, continues to tag the repository
-and push the tag to the git server. Also installs supporting tools
-including Sigul and lftools.  Sigul requires a CentOS build node.
+repository for that tag. In a merge job, if the tag does not exist,
+adds the tag to the repository, signs the tag, and pushes the tag
+to the git server. Signing requires sigul, which is only available
+on a CentOS build node.
 
 lf-infra-pypi-upload
 --------------------
@@ -331,7 +332,7 @@ PyPI Verify
 
 Verifies a Python library project on creation of a patch set. Runs tox
 then builds a source distribution and (optionally) a binary
-distribution.  The project repository must have a setup.py file with
+distribution. The project repository must have a setup.py file with
 configuration for packaging the component.
 
 The tox runner is pyenv aware so if the image contains an installation
@@ -393,7 +394,7 @@ pyenv variables before running.
 PyPI Merge
 ----------
 
-Creates and uploads distribution files on merge of a patch set.  Runs
+Creates and uploads distribution files on merge of a patch set. Runs
 tox, builds a source distribution and (optionally) a binary
 distribution, and uploads the distribution(s) to a PyPI repository.
 This job should be configured to use a test PyPI repository like
@@ -461,7 +462,7 @@ PyPI section.
     :pre-build-script: Shell script to execute before the tox builder. For
         example, install system prerequisites. (default: a shell comment)
     :pypi-repo: Key for PyPI repository parameters in the .pypirc file.
-        Merge jobs should use a server like testpypi.python.org.  (default: pypi-test)
+        Merge jobs should use a server like testpypi.python.org. (default: pypi-test)
     :python-version: Python version to invoke pip install of tox-pyenv
         (default: python3)
     :stream: Keyword representing a release code-name.
@@ -489,13 +490,13 @@ Verifies a Python library project on creation of a patch set with a
 release yaml file. Runs tox, builds source and (optionally) binary
 distributions, checks the format of the version string, checks that
 the distribution file names contain the release version string, and
-checks that no tag exists in the code repository for the release
+checks if the tag exists in the code repository for the release
 version.
 
 To initiate the release process, create a releases/ or .releases/
 directory at the root of the project repository, add one release yaml
 file to it, and submit a change set with that release yaml file. A
-schema and and an example for the release yaml file appear below.  The
+schema and and an example for the release yaml file appear below. The
 version in the release yaml file must be a valid Semantic Versioning
 (SemVer) string, matching either the pattern "v#.#.#" or "#.#.#" where
 "#" is one or more digits.
@@ -571,7 +572,7 @@ An example of a pypi release file appears below.
         For example, install prerequisites or move files to the repo root.
         (default: a string with a shell comment)
     :pypi-repo: Key for PyPI repository parameters in the .pypirc file.
-        Release jobs should use a server like pypy.org.  (default: pypi)
+        Release jobs should use a server like pypy.org. (default: pypi)
     :python-version: Python version to invoke pip install of tox-pyenv
         (default: python3)
     :stream: Keyword representing a release code-name.
@@ -593,16 +594,17 @@ PyPI Release Merge
 ------------------
 
 Publishes a Python library on merge of a patch set with a release yaml
-file.  Runs tox, builds source and (optionally) binary distributions,
+file. Runs tox, builds source and (optionally) binary distributions,
 checks the format of the version string, checks that the distribution
-file names contain the release version string, checks that no tag
-exists in the code repository for the release version, tags the code
-repository with the release version, pushes the tag to the git server,
-and uploads distributions to a PyPI repository.
+file names contain the release version string, checks if the tag
+exists in the code repository for the release version, then if the tag
+does not exist, tags the code repository with the release version,
+signs the tag and pushes the tag to the git server. Finally this
+uploads the distributions to a PyPI repository.
 
 This job is similar to the PyPI merge job, but is only triggered by
-merge of a release yaml file and checks the version and tag before
-uploading to a public repository such as PyPI.
+merge of a release yaml file, also this checks the version and tag
+before uploading to a public repository such as PyPI.
 
 See the PyPI Release Verify job above for documentation of the release
 yaml file format.
@@ -651,7 +653,7 @@ The special parameters are as follows::
         For example, install prerequisites or move files to the repo root.
         (default: a string with a shell comment)
     :pypi-repo: Key for PyPI repository parameters in the .pypirc file.
-        Release jobs should use a server like pypy.org.  (default: pypi)
+        Release jobs should use a server like pypy.org. (default: pypi)
     :python-version: Python version to invoke pip install of tox-pyenv
         (default: python3)
     :stream: Keyword representing a release code-name.

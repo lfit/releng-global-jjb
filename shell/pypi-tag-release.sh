@@ -92,17 +92,14 @@ verify_dist(){
     fi
 }
 
-# TODO: how to tag Github?
+# sigul is only available on Centos
 tag_gerrit(){
     echo "INFO: Verifying tag $VERSION in repo"
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
-    # Fail if tag exists
     if git tag -v "$VERSION"; then
-        echo "ERROR: Repo already tagged"
-        exit 1
-    else
-        echo "INFO: Repo has not yet been tagged"
+        echo "INFO: Repo already tagged"
+        return 0
     fi
     echo "INFO: Tagging repo"
     git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
@@ -147,5 +144,6 @@ if $USE_RELEASE_FILE; then
 fi
 verify_version
 verify_dist
+# TODO: write tag_github function
 tag_gerrit
 echo "---> pypi-tag-release.sh ends"

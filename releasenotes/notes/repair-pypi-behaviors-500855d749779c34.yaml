@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add missing {branch} parameter to branch-pattern in gerrit trigger
+    blocks in PyPI release-verify and release-merge templates. Jobs
+    were starting on all defined branches, not limited to target.
+    Change pypi-tag-release script to continue if tag exists, not stop.
