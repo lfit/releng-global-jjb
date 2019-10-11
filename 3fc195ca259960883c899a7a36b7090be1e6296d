@@ -324,6 +324,30 @@
     },
     {
       "key": {
+        "uuid": "971bf6e2_9f9812a2",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-11T20:52:34Z",
+      "side": 1,
+      "message": "its not going to work in the same way for github, I will deal with github later.",
+      "parentUuid": "e995b6f0_a1946179",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 3
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8494091a_4b8541cb",
         "filename": "jjb/lf-rtdv2-jobs.yaml",
         "patchSetId": 35
@@ -335,6 +359,30 @@
       "writtenOn": "2019-10-11T19:56:18Z",
       "side": 1,
       "message": "I think this job should support a cron, a time-based trigger, to allow for daily builds. Some projects insist on that.",
+      "range": {
+        "startLine": 144,
+        "startChar": 6,
+        "endLine": 144,
+        "endChar": 15
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f6e4aa3_0dd4aa2d",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-11T20:52:34Z",
+      "side": 1,
+      "message": "that wont work. since its a global job.\nAlso its a waste of resources, ours and RTD\u0027s.\nI would want a project to at least pay for gold membership with RTD before I would consider hammering their servers to rebuild the same thing each day.",
+      "parentUuid": "8494091a_4b8541cb",
       "range": {
         "startLine": 144,
         "startChar": 6,
@@ -462,6 +510,30 @@
     },
     {
       "key": {
+        "uuid": "73c19fd7_cae659ac",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 35
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-11T20:52:34Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "87ae5039_4f64f1dd",
+      "range": {
+        "startLine": 46,
+        "startChar": 9,
+        "endLine": 46,
+        "endChar": 40
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4f3bc9b3_100a7374",
         "filename": "shell/rtdv2.sh",
         "patchSetId": 35
@@ -473,6 +545,30 @@
       "writtenOn": "2019-10-11T19:56:18Z",
       "side": 1,
       "message": "Please put an echo before the sleep so people watching the log know what\u0027s going on",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 14
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84cdbc66_8b33de4f",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 35
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-11T20:52:34Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "4f3bc9b3_100a7374",
       "range": {
         "startLine": 53,
         "startChar": 6,
