@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "95e8bc61_e8d35f84",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-10-11T12:36:43Z",
+      "side": 1,
+      "message": "This code block is a copy paste of the code above with minor changes making several of the code redundant. The code would be a lot cleaner if it was designed with the above code block in mind. I think the conditionals here is a decision of whether to use s3 or nexus so rather than replicating the existing code I\u0027d adapt this to be part of it.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 42
+      },
+      "revId": "f80715e1dd3e6e75e8ab25bfd796f9923fc2b31b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "65ca7acd_37e121b8",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
