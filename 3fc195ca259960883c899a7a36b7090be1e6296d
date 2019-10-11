@@ -1,0 +1,487 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f0c65e7e_62a2d92a",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Please describe what makes this version 2 - what features does this bring that the old version (not marked \"1\") lacks. Is it all about subprojects, or something else?  I know that you all at LF ain\u0027t so big on doc, but this is skinny even for you.",
+      "range": {
+        "startLine": 265,
+        "startChar": 12,
+        "endLine": 265,
+        "endChar": 21
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2e982e3_504651c4",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "RTD v2 shell script?",
+      "range": {
+        "startLine": 266,
+        "startChar": 22,
+        "endLine": 266,
+        "endChar": 25
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39d5f4fb_68af0aef",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Does not need single quotes, pls remove",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b72ce584_9083dc54",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Single quotes not needed",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 1
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f8f4657_63c9f45d",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Pls remove single quotes",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 1
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7996fc27_b0ea2959",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Pls remove single quotes",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 1
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a90b8a7a_14184325",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "pls remove single quotes",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 1
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84c43266_50e6221f",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Ditto",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 1
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8c5039f_ac64bc72",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Where is this stored? Please make clear if we the project peons are supposed to configure this, or you the LF release engineering gods.",
+      "range": {
+        "startLine": 67,
+        "startChar": 16,
+        "endLine": 67,
+        "endChar": 38
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c71833f6_0da9231a",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Is this still true, verify creates a project?",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 49
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7dfeb9b7_5d12212c",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Is this v2 Merge (or v1 merge)?",
+      "range": {
+        "startLine": 91,
+        "startChar": 12,
+        "endLine": 91,
+        "endChar": 17
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b72c02b6_05ea84d6",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Incomplete sentence, if you care.",
+      "range": {
+        "startLine": 144,
+        "startChar": 0,
+        "endLine": 144,
+        "endChar": 44
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffd4fa65_e6298a6b",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "would you consider using suffix -build or -check instead of -script?  -Script is so vague as to be completely useless, further this invokes two scripts (not just one)",
+      "range": {
+        "startLine": 278,
+        "startChar": 19,
+        "endLine": 278,
+        "endChar": 25
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e995b6f0_a1946179",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Why no github jobs?  Does that need something special beyond just cloning? There are plenty of examples to copy if it\u0027s simple.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 3
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8494091a_4b8541cb",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "I think this job should support a cron, a time-based trigger, to allow for daily builds. Some projects insist on that.",
+      "range": {
+        "startLine": 144,
+        "startChar": 6,
+        "endLine": 144,
+        "endChar": 15
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70944365_6dd3af94",
+        "filename": "releasenotes/notes/lf-rtdv2-jobs-2885568080d2990a.yaml",
+        "patchSetId": 35
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Prelude? That was a car once lol.  Maybe this keyword should be \"feature\"?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 7
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8c907de_84659b78",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 35
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Many of the shell scripts have adopted the convention, like loggers, of echoing \"INFO\" at the start of every echo.  I think it\u0027s useful, please consider doing same here.",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 26,
+        "endChar": 24
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f6cae0d_73940936",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 35
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Like here, echo \"INFO: Project ..",
+      "range": {
+        "startLine": 33,
+        "startChar": 10,
+        "endLine": 33,
+        "endChar": 17
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b45f811_dbe96cf6",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 35
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "And here..",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87ae5039_4f64f1dd",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 35
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Limit the number of iterations, maybe 10, so it doesn\u0027t keep trying until the job gets killed after an hour or whatever",
+      "range": {
+        "startLine": 46,
+        "startChar": 9,
+        "endLine": 46,
+        "endChar": 40
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f3bc9b3_100a7374",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 35
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-11T19:56:18Z",
+      "side": 1,
+      "message": "Please put an echo before the sleep so people watching the log know what\u0027s going on",
+      "range": {
+        "startLine": 53,
+        "startChar": 6,
+        "endLine": 53,
+        "endChar": 14
+      },
+      "revId": "3fc195ca259960883c899a7a36b7090be1e6296d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
