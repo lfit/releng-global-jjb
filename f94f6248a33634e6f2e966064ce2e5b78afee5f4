@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "5fa9629a_9a7058b7",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-14T00:37:40Z",
+      "side": 1,
+      "message": "VENV is a shell variable and should be lower-case",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 20
+      },
+      "revId": "f94f6248a33634e6f2e966064ce2e5b78afee5f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea3aa632_e1cdeed0",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-14T00:37:40Z",
+      "side": 1,
+      "message": "VENV is a shell variable and so it should be lower-case.",
+      "range": {
+        "startLine": 139,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 20
+      },
+      "revId": "f94f6248a33634e6f2e966064ce2e5b78afee5f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a34cd99b_e826ff08",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-14T00:37:40Z",
+      "side": 1,
+      "message": "VENV is a shell variable and should be lower-case.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 0
+      },
+      "revId": "f94f6248a33634e6f2e966064ce2e5b78afee5f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b9fff4fc_ac34b56c",
         "filename": "shell/utility-venv.sh",
         "patchSetId": 4
@@ -18,6 +87,70 @@
         "startChar": 0,
         "endLine": 20,
         "endChar": 12
+      },
+      "revId": "f94f6248a33634e6f2e966064ce2e5b78afee5f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5424cec3_7fff3b0a",
+        "filename": "shell/utility-venv.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-14T00:37:40Z",
+      "side": 1,
+      "message": "For Jenkins \u0027~\u0027 is going to point to \u0027/home/jenkins\u0027, so path length is not problem here.\n\nVENV is a shell variable, it should be lower-case.",
+      "parentUuid": "b9fff4fc_ac34b56c",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 12
+      },
+      "revId": "f94f6248a33634e6f2e966064ce2e5b78afee5f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "097fa0a8_5f34e511",
+        "filename": "shell/utility-venv.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-14T00:37:40Z",
+      "side": 1,
+      "message": "The \u0027long-flag\u0027 (--upgrade) provides clarity. Why \u0027xargs -n1\u0027 ? pip is quite capable of handling multiple packages at once. It might even be faster.\nI think this will do what you want...\npip list --outdated | awk \u0027{print $1}\u0027 | xargs -n1 pip install -q --upgrade",
+      "revId": "f94f6248a33634e6f2e966064ce2e5b78afee5f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ff3b4d6_3749fdea",
+        "filename": "shell/utility-venv.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-14T00:37:40Z",
+      "side": 1,
+      "message": "This list of packages gives an error: ERROR: niet 1.7.0 has requirement PyYAML\u003d\u003d5.1, but you\u0027ll have pyyaml 5.1.2 which is incompatible.\n\nOf course \u0027pip\u0027 still returns \u00270\u0027. The way that python-tools-install.sh got around this was with: niet~\u003d1.4.2",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 9
       },
       "revId": "f94f6248a33634e6f2e966064ce2e5b78afee5f4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
