@@ -66,15 +66,14 @@ function lf-activate()
 # Functions that assign Variables
 ################################################################################
 
-# Although these variables are 'shell' variables, they need to be upper-case so
-# 'shellcheck' does check for 'used-before-set' when they are referenced. So if
-# forget to 'source' this file, you will get a 'run-time' error (if you have -u
-# set), otherwise you will get "MAVEN_OPIONS=''.
+# These variables are shell (local) variables and need to be lower-case so
+# Shellcheck knows they are shell variables and will check for
+# 'used-before-set'.
 
 function lf-set-maven-options()
 {
     # shellcheck disable=SC2034  # Disable 'unused-variable' check
-    MAVEN_OPTIONS=$(echo --show-version --batch-mode -Djenkins \
+    maven_options=$(echo --show-version --batch-mode -Djenkins \
         -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn \
         -Dmaven.repo.local=/tmp/r -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r)
 }
