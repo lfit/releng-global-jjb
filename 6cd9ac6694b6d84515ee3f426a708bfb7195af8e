@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "009c9292_81ba1a24",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 39
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-14T15:02:20Z",
+      "side": 1,
+      "message": "Text is good but $var is still not there :/",
+      "range": {
+        "startLine": 60,
+        "startChar": 38,
+        "endLine": 60,
+        "endChar": 43
+      },
+      "revId": "6cd9ac6694b6d84515ee3f426a708bfb7195af8e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
