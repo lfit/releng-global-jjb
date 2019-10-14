@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b6bb2c2_f8b2fdf4",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-14T14:10:27Z",
+      "side": 1,
+      "message": "I don\u0027t see an initialization var\u003d0 above, am I blind?",
+      "range": {
+        "startLine": 55,
+        "startChar": 6,
+        "endLine": 55,
+        "endChar": 20
+      },
+      "revId": "df6c275a2c601b3a9bf8777819158e51f01151af",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1777c11_103d9786",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-14T14:10:27Z",
+      "side": 1,
+      "message": "please echo $var here to indicate how many times it tried",
+      "range": {
+        "startLine": 57,
+        "startChar": 34,
+        "endLine": 57,
+        "endChar": 37
+      },
+      "revId": "df6c275a2c601b3a9bf8777819158e51f01151af",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
