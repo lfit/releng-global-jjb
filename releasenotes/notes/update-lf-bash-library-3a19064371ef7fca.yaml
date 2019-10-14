@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Update to lf-env.sh. Change lf-set-maven-options(): MAVEN_OPTIONS to
+    maven_options to better support shellcheck.
