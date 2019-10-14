@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5ea7d4cc_9f4f998b",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 38
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-14T16:02:52Z",
+      "side": 1,
+      "message": "you can use \u0027integers\u0027 in bash\n\ndeclare -i cnt\u003d0\nfor...\n    ((cnt+\u003d1))\n    if (( cnt \u003e\u003d 20 )); then\n    fi\ndone",
+      "parentUuid": "9b6bb2c2_f8b2fdf4",
+      "range": {
+        "startLine": 55,
+        "startChar": 6,
+        "endLine": 55,
+        "endChar": 20
+      },
+      "revId": "df6c275a2c601b3a9bf8777819158e51f01151af",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d1777c11_103d9786",
         "filename": "shell/rtdv2.sh",
         "patchSetId": 38
