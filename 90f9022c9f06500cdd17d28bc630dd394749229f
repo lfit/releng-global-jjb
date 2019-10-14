@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ba54dc1_b842c3fd",
+        "filename": "shell/rtdv2.sh",
+        "patchSetId": 40
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-14T17:12:55Z",
+      "side": 1,
+      "message": "((cnt+\u003d1))",
+      "revId": "90f9022c9f06500cdd17d28bc630dd394749229f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
