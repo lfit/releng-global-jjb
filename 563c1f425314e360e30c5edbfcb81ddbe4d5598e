@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e37cac35_05175f97",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-14T18:04:11Z",
+      "side": 1,
+      "message": "Does this check really need to be disabled?  I see a variable being set here, and I don\u0027t see any variables being referenced, so at first glance I see no need to defang that one.",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 66
+      },
+      "revId": "563c1f425314e360e30c5edbfcb81ddbe4d5598e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "496d7152_070403d0",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-14T18:04:11Z",
+      "side": 1,
+      "message": "Another dumb question, why use echo?  The rvalue appears to be a static string, I see no values getting interpolated; are you using yet another cool bash trick I have not learned?",
+      "range": {
+        "startLine": 76,
+        "startChar": 18,
+        "endLine": 76,
+        "endChar": 25
+      },
+      "revId": "563c1f425314e360e30c5edbfcb81ddbe4d5598e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
