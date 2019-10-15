@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "88845d56_ab23ba66",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 340
+      },
+      "writtenOn": "2019-10-15T18:33:56Z",
+      "side": 1,
+      "message": "Found the time this morning to knock out the primary patch, if you want to go back and review that one instead, we might get more momentum to get that merged rather than this throwaway patch.",
+      "parentUuid": "934295de_13db41ed",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 3
+      },
+      "revId": "37f63ec522775d0b73fdf00de71e49047d10186e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f50c298a_c8106c16",
         "filename": "shell/pypi-upload.sh",
         "patchSetId": 1
