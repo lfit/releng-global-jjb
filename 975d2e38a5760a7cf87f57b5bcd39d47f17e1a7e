@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1299c6b1_dde0ac8b",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-15T16:29:03Z",
+      "side": 1,
+      "message": "please help me understand why inst this being changed in rest of the files, which also using MAVEN_{OPTS,OPTIONS}?\n\n./jenkins-init-scripts/lf-env.sh:    maven_options\u003d\"--show-version --batch-mode -Djenkins \\\n./releasenotes/notes/update-lf-bash-library-3a19064371ef7fca.yaml:    Update to lf-env.sh. Change lf-set-maven-options(): MAVEN_OPTIONS to\n./shell/maven-build-deps.sh:# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.\n./shell/maven-build-deps.sh:        $MAVEN_OPTIONS $MAVEN_PARAMS\n./shell/maven-javadoc-generate.sh:# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.\n./shell/maven-javadoc-generate.sh:    $MAVEN_OPTIONS $MAVEN_PARAMS\n./shell/common-variables.sh:MAVEN_OPTIONS\u003d\"$(echo --show-version \\\n./shell/common-variables.sh:echo \"$MAVEN_OPTIONS\"\n./shell/maven-javadoc-publish.sh:# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.\n./shell/maven-build.sh:# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.\n./shell/maven-build.sh:    $MAVEN_OPTIONS $MAVEN_PARAMS\n./shell/deploy-maven-file.sh:# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.\n./shell/deploy-maven-file.sh:export MAVEN_OPTIONS\n./shell/deploy-maven-file.sh:                              -p \"$MAVEN_OPTIONS $MAVEN_PARAMS\" \\\n./shell/maven-sonar.sh:# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.\n./shell/maven-sonar.sh:    $MAVEN_OPTIONS $MAVEN_PARAMS\n./shell/maven-sonar.sh:    $MAVEN_OPTIONS $MAVEN_PARAMS\n./shell/sonatype-clm.sh:# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.\n./shell/sonatype-clm.sh:    $MAVEN_OPTIONS $MAVEN_PARAMS\n\nDoes this have anything todo with MAVEN_OPTS?\n./jjb/lf-macros.yaml:          name: MAVEN_OPTS\n./shell/maven-build-deps.sh:export MAVEN_OPTS\n./shell/maven-javadoc-generate.sh:export MAVEN_OPTS\n./shell/maven-build.sh:export MAVEN_OPTS\n./shell/maven-sonar.sh:export MAVEN_OPTS\n./shell/sonatype-clm.sh:export MAVEN_OPTS",
+      "range": {
+        "startLine": 76,
+        "startChar": 4,
+        "endLine": 76,
+        "endChar": 17
+      },
+      "revId": "975d2e38a5760a7cf87f57b5bcd39d47f17e1a7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
