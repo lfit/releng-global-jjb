@@ -16,8 +16,10 @@ echo "---> pypi-dist-build.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-virtualenv -p python3 /tmp/pypi
-PATH=/tmp/pypi/bin:$PATH
+venv=/tmp/pypi
+virtualenv -p python3 $venv
+PATH=$venv/bin:$PATH
+pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -q -U
 
 bdist=""
 if $BUILD_BDIST_WHEEL; then

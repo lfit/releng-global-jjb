@@ -18,7 +18,8 @@ echo "---> pypi-upload.sh"
 set -eu -o pipefail
 
 virtualenv -p python3 /tmp/pypi
-PATH=/tmp/pypi/bin:$PATH
+venv=/tmp/pypi
+PATH=$venv/bin:$PATH
 
 echo "INFO: installing twine to upload distributions"
 pip install -q twine
