@@ -1,0 +1,8 @@
+---
+upgrade:
+  - |
+    Extend lf_tox_sonar with sonarcloud, sonarcloud-project-key,
+    sonarcloud-project-organization, sonarcloud-api-token, tox-dir
+    and tox-envs properties; also with lf-infra-tox-parameters macro.
+    Use new sonarcloud property as guard for conditional builder step,
+    if true use lf-infra-maven-sonarcloud, else use lf-infra-maven-sonar.
