@@ -267,10 +267,15 @@
     pre-build-script: "# pre-build script goes here"
     python-version: python3
     sonar-mvn-goal: "sonar:sonar"
+    sonarcloud: false
+    sonarcloud-project-key: ""
+    sonarcloud-project-organization: ""
+    sonarcloud-api-token: ""
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
+    tox-dir: "."
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -291,6 +296,9 @@
           project: "{project}"
           branch: "{branch}"
           stream: "{stream}"
+      - lf-infra-tox-parameters:
+          tox-dir: "{tox-dir}"
+          tox-envs: "{tox-envs}"
       - string:
           name: ARCHIVE_ARTIFACTS
           default: "{archive-artifacts}"
@@ -320,11 +328,33 @@
       - lf-provide-maven-settings:
           global-settings-file: "{mvn-global-settings}"
           settings-file: "{mvn-settings}"
-      - lf-infra-maven-sonar:
-          java-version: "{java-version}"
-          mvn-goals: "{mvn-goals}"
-          mvn-settings: "{mvn-settings}"
-          mvn-version: "{mvn-version}"
+      # With SonarCloud
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: "{sonarcloud}"
+          steps:
+            - shell: echo 'Using SonarCloud'
+            - lf-infra-maven-sonarcloud:
+                java-version: "{java-version}"
+                mvn-goals: "{mvn-goals}"
+                mvn-settings: "{mvn-settings}"
+                mvn-version: "{mvn-version}"
+                sonarcloud-project-key: "{sonarcloud-project-key}"
+                sonarcloud-project-organization: "{sonarcloud-project-organization}"
+                sonarcloud-api-token: "{sonarcloud-api-token}"
+      # With SonarQube
+      - conditional-step:
+          condition-kind: not
+          condition-operand:
+            condition-kind: boolean-expression
+            condition-expression: "{sonarcloud}"
+          steps:
+            - shell: echo 'Using SonarQube'
+            - lf-infra-maven-sonar:
+                java-version: "{java-version}"
+                mvn-goals: "{mvn-goals}"
+                mvn-settings: "{mvn-settings}"
+                mvn-version: "{mvn-version}"
 
     publishers:
       - lf-infra-publish

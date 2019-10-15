@@ -128,7 +128,7 @@ Python Sonar with Tox
 
 Sonar scans for Python based repos. This job invokes tox to run tests
 and gather coverage statistics from the test results, then invokes
-Maven to publish the results to a Sonar server.
+Maven to publish the results to either a Sonar server or SonarCloud.
 
 To get the Sonar coverage results, file tox.ini must exist and contain
 coverage commands to run.
@@ -137,8 +137,8 @@ The coverage commands define the code that gets executed by the test
 suites.  Checking coverage does not guarantee that the tests execute
 properly, but it identifies code that is not executed by any test.
 
-This job reuses the Sonar builder used in Java/Maven projects which
-runs maven twice. The first invocation does nothing for Python
+This job reuses the Sonar builders used for Java/Maven projects which
+run maven twice. The first invocation does nothing for Python
 projects, so the job uses the goal 'validate' by default. The second
 invocation publishes results using the goal 'sonar:sonar' by default.
 
@@ -196,6 +196,12 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
         (default: a string with a shell comment)
     :python-version: Python version to invoke pip install of tox-pyenv
         (default: python2)
+    :sonarcloud: Whether or not to use SonarCloud ``true|false``.
+        (default: false)
+    :sonarcloud-project-key: SonarCloud project key. (default: '')
+    :sonarcloud-project-organization: SonarCloud project organization.
+        (default: '')
+    :sonarcloud-api-token: SonarCloud API Token. (default: '')
     :sonar-mvn-goal: The Maven goal to run the Sonar plugin. (default: sonar:sonar)
     :stream: Keyword used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -205,6 +211,9 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. The default uses tox.ini at the project root.
+        (default: '.')
     :gerrit_sonar_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths used to filter which file
         modifications trigger a build. Refer to JJB documentation for "file-path" details.
