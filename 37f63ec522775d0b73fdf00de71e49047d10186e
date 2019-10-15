@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "934295de_13db41ed",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-15T17:01:02Z",
+      "side": 1,
+      "message": "Would you please add one line of comment explaining why this is here, the need for latest?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 3
+      },
+      "revId": "37f63ec522775d0b73fdf00de71e49047d10186e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f50c298a_c8106c16",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-15T17:01:02Z",
+      "side": 1,
+      "message": "Since you have defined variable venv, would you please use it on the invocation of virtualenv as you did in the other shell script?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 2
+      },
+      "revId": "37f63ec522775d0b73fdf00de71e49047d10186e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
