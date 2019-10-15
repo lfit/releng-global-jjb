@@ -125,6 +125,18 @@ verify_version(){
     fi
 }
 
+verify_version_match_release(){
+    wget -P /tmp "${LOGS_URL}/"console.log.gz
+    echo "INFO: Comparing version $VERSION with log snippet from maven-stage:"
+    if (zcat /tmp/console.log.gz | grep "Successfully uploaded" | grep "$VERSION"); then
+        echo "INFO: version $VERSION matches maven-stage artifacts"
+    else
+        echo "ERROR: Defined version in release file does not match staging repo artifacts version to be released"
+        echo "       Please make sure maven-stage job selected as candidate and release version are correct"
+        exit 1
+    fi
+}
+
 tag(){
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
@@ -249,6 +261,7 @@ if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
     fi
     set_variables_maven
     verify_version
+    verify_version_match_release
     maven_release_file
 elif [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
     wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-container-schema.yaml

@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Add a verification step to maven releases to make sure the version being
+    defined in the releases file matches the actual version produced by the
+    maven-stage job that created the release candidate. This is to prevent
+    releases being pushed in Nexus with a version different from what the
+    developer intended in the releases file.
