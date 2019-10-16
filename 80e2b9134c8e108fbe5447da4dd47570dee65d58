@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8dd41f01_4f7e0e7b",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-16T15:46:30Z",
+      "side": 1,
+      "message": "there are .rst files outside of the docs folder for some projects, i.e in the doc root, which would get ignored. we should avoid docs prefix AFAIK.",
+      "range": {
+        "startLine": 27,
+        "startChar": 17,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
