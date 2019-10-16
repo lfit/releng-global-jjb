@@ -673,9 +673,9 @@
     pre-build-script: "# pre-build script goes here"
     python-version: python3
     stream: master
+    submodule-disable: false
     submodule-recursive: true
     submodule-timeout: 10
-    submodule-disable: false
     tox-dir: "."
     tox-envs: ""
 
@@ -769,15 +769,6 @@
     <<: *lf_pypi_common
     <<: *lf_pypi_verify_builders
 
-    gerrit_verify_triggers:
-      - patchset-created-event:
-          exclude-drafts: true
-          exclude-trivial-rebase: false
-          exclude-no-code-change: false
-      - draft-published-event
-      - comment-added-contains-event:
-          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
-
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
@@ -792,7 +783,14 @@
     triggers:
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_verify_triggers}"
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: true
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
           projects:
             - project-compare-type: ANT
               project-pattern: "{project}"
@@ -846,11 +844,6 @@
     cron: ""
     pypi-repo: pypi-test
 
-    gerrit_merge_triggers:
-      - change-merged-event
-      - comment-added-contains-event:
-          comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
-
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
@@ -866,7 +859,10 @@
       - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_merge_triggers}"
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
           projects:
             - project-compare-type: ANT
               project-pattern: "{project}"
@@ -969,15 +965,6 @@
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_verify_builders
 
-    gerrit_verify_triggers:
-      - patchset-created-event:
-          exclude-drafts: true
-          exclude-trivial-rebase: false
-          exclude-no-code-change: false
-      - draft-published-event
-      - comment-added-contains-event:
-          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
-
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
@@ -992,7 +979,14 @@
     triggers:
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_verify_triggers}"
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: true
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
           projects:
             - project-compare-type: "ANT"
               project-pattern: "{project}"
@@ -1045,9 +1039,6 @@
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_merge_builders
 
-    gerrit_release_triggers:
-      - change-merged-event
-
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
@@ -1062,7 +1053,10 @@
     triggers:
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_release_triggers}"
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
           projects:
             - project-compare-type: "ANT"
               project-pattern: "{project}"
