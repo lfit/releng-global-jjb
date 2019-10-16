@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "0a2bcff0_52672067",
+        "filename": "shell/jjb-merge-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-16T13:45:48Z",
+      "side": 1,
+      "message": "I guess my preference is that we pick one and do it the same way everywhere.",
+      "parentUuid": "a6b8ff36_6a436ad0",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "fc38a9260547c96d97c8856defebea672eedac3d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b5ecd799_611647fb",
         "filename": "shell/jjb-verify-job.sh",
         "patchSetId": 5
