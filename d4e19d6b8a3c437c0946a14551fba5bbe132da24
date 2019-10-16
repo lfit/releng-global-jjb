@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f37c395e_4a33289c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-16T00:09:23Z",
+      "side": 1,
+      "message": "The \u0027()\u0027 is unnecessary. While you are at it there is a \u0027zgrep\u0027 command so:\nif zgrep \"Successfully uploaded\"/tmp/console.log.gz | grep \"$VERSION\"; then",
+      "revId": "d4e19d6b8a3c437c0946a14551fba5bbe132da24",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
