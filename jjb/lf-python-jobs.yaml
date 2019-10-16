@@ -103,15 +103,15 @@
     ######################
 
     branch: master
-    build-days-to-keep: 30 # 30 days for troubleshooting purposes
+    build-days-to-keep: 30  # 30 days for troubleshooting purposes
     build-timeout: 60
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-version: openjdk8
     nexus-iq-cli-version: 1.44.0-01
-    nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
-    pre-build-script: "# pre-build script goes here"
+    nexus-iq-namespace: ""  # Recommend a trailing dash when set. Example: odl-
+    pre-build-script: "  # pre-build script goes here"
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -158,7 +158,6 @@
     name: "{project-name}-python-clm-{stream}"
     id: gerrit-python-xc-clm
     <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_python_xc_clm
 
     ######################
@@ -207,7 +206,6 @@
     name: "{project-name}-python-clm-{stream}"
     id: github-python-xc-clm
     <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_python_xc_clm
 
     properties:
@@ -251,10 +249,10 @@
     # Default parameters #
     ######################
 
-    branch: master # Sonar should always be run on master branch
+    branch: master  # Sonar should always be run on master branch
     build-days-to-keep: 7
     build-timeout: 60
-    cron: "H H * * *" # run daily
+    cron: "H H * * *"  # run daily
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
@@ -341,6 +339,7 @@
                 mvn-settings: "{mvn-settings}"
                 mvn-version: "{mvn-version}"
                 sonarcloud-project-key: "{sonarcloud-project-key}"
+                # yamllint disable-line rule:line-length
                 sonarcloud-project-organization: "{sonarcloud-project-organization}"
                 sonarcloud-api-token: "{sonarcloud-api-token}"
       # With SonarQube
@@ -364,7 +363,6 @@
     name: "{project-name}-tox-sonar"
     id: gerrit-tox-sonar
     <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_tox_sonar
 
     ######################
@@ -412,7 +410,6 @@
     name: "{project-name}-tox-sonar"
     id: github-tox-sonar
     <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_tox_sonar
 
     properties:
@@ -693,6 +690,8 @@
     # Default parameters #
     ######################
 
+    archive-artifacts: >
+      **/*.log
     branch: master
     build-days-to-keep: 7
     build-timeout: 15
@@ -710,8 +709,6 @@
     tox-dir: "."
     tox-envs: ""
 
-    disabled: "{disable-job}"
-
     gerrit_trigger_file_paths:
       - compare-type: ANT
         pattern: ".*"
@@ -719,6 +716,18 @@
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
       - ".*"
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+    disabled: "{disable-job}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -737,6 +746,25 @@
           default: false
           description: |
             If DRY_RUN is enabled artifacts are not published.
+
+    publishers:
+      - lf-infra-publish
+
+- lf_pypi_common_wrappers: &lf_pypi_common_wrappers
+    name: lf-pypi-common-wrappers
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+- lf_pypi_release_wrappers: &lf_pypi_release_wrappers
+    name: lf-pypi-release-wrappers
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
 
 - lf_pypi_verify_builders: &lf_pypi_verify_builders
     name: lf-pypi-verify-builders
@@ -795,9 +823,8 @@
 - job-template:
     name: "{project-name}-pypi-verify-{stream}"
     id: gerrit-pypi-verify
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_verify_builders
 
     scm:
@@ -821,6 +848,7 @@
                 exclude-no-code-change: false
             - draft-published-event
             - comment-added-contains-event:
+                # yamllint disable-line rule:line-length
                 comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
           projects:
             - project-compare-type: ANT
@@ -833,9 +861,8 @@
 - job-template:
     name: "{project-name}-pypi-verify-{stream}"
     id: github-pypi-verify
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_verify_builders
 
     properties:
@@ -867,9 +894,8 @@
 - job-template:
     name: "{project-name}-pypi-merge-{stream}"
     id: gerrit-pypi-merge
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_merge_builders
 
     cron: ""
@@ -905,9 +931,8 @@
 - job-template:
     name: "{project-name}-pypi-merge-{stream}"
     id: github-pypi-merge
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_merge_builders
 
     cron: ""
@@ -956,6 +981,7 @@
       - compare-type: REG_EXP
         pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
+    # yamllint disable-line rule:line-length
     # github_release_included_regions MUST match gerrit_release_trigger_file_paths
     github_release_included_regions:
       - 'releases\/.*\.yaml'
@@ -990,9 +1016,8 @@
 - job-template:
     name: "{project-name}-pypi-release-verify-{stream}"
     id: gerrit-pypi-release-verify
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_verify_builders
 
@@ -1017,6 +1042,7 @@
                 exclude-no-code-change: false
             - draft-published-event
             - comment-added-contains-event:
+                # yamllint disable-line rule:line-length
                 comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
           projects:
             - project-compare-type: "ANT"
@@ -1029,9 +1055,8 @@
 - job-template:
     name: "{project-name}-pypi-release-verify-{stream}"
     id: github-pypi-release-verify
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_verify_builders
 
@@ -1064,9 +1089,8 @@
 - job-template:
     name: "{project-name}-pypi-release-merge-{stream}"
     id: gerrit-pypi-release-merge
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_release_wrappers
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_merge_builders
 
@@ -1099,9 +1123,8 @@
 - job-template:
     name: "{project-name}-pypi-release-merge-{stream}"
     id: github-pypi-release-merge
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_release_wrappers
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_merge_builders
 

@@ -651,7 +651,7 @@ The special parameters are as follows::
 :Required Parameters:
 
     :build-node: The node to run build on, which must be Centos.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+    :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
 
 :Optional Parameters:
