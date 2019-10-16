@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "a26d97ab_6949b0de",
+        "filename": "shell/jjb-merge-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-16T14:46:39Z",
+      "side": 1,
+      "message": "No reason to hard-code \u0027jenkins\u0027 here. In the unlikely event the user name changes, this will still work. There are some situations where \u0027jenkins\u0027 needs to hard-coded in, but this is not one of them.",
+      "parentUuid": "0a2bcff0_52672067",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 2
+      },
+      "revId": "fc38a9260547c96d97c8856defebea672eedac3d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b5ecd799_611647fb",
         "filename": "shell/jjb-verify-job.sh",
         "patchSetId": 5
