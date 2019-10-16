@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "410b550b_94a147cf",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-10-16T18:00:14Z",
+      "side": 1,
+      "message": "Just a thought, maybe we can further simplify this by just simply searching in the docs directory?\n\n ^docs\\/.*",
+      "revId": "f1d52e3ece57a5dd1efa49fd3416dcf0b1f43387",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
