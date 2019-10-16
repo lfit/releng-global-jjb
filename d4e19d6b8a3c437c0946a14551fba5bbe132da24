@@ -16,6 +16,24 @@
       "revId": "d4e19d6b8a3c437c0946a14551fba5bbe132da24",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a01cd385_cbcf2a3c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-10-16T00:14:44Z",
+      "side": 1,
+      "message": "I don\u0027t mind the parentheses. I think it reads better with them present. But I have no problem with simplifying to zgrep.",
+      "parentUuid": "f37c395e_4a33289c",
+      "revId": "d4e19d6b8a3c437c0946a14551fba5bbe132da24",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
