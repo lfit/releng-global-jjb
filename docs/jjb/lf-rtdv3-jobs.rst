@@ -1,13 +1,55 @@
-.. _lf-global-jjb-rtdv2-jobs:
+.. _lf-global-jjb-rtdv3-jobs:
 
 ##########################
-ReadTheDocs Version:2 Jobs
+ReadTheDocs Version:3 Jobs
 ##########################
 
-This is a global job that only needs to be added once to your project's ci-mangement git repository. It leverages the read the docs v3 api to create projects on the fly, as well as set up subproject associations with the master doc.
+User setup:
+
+To transform your rst documentation into a read the docs page, this job must be configured and
+created as described in Admin setup below. Once this is complete the following files must be
+added to your repository:
+
+.. code-block:: bash
+
+    .readthedocs.yaml
+    tox.ini
+    docs
+    docs/_static
+    docs/_static/logo.png
+    docs/conf.yaml
+    docs/favicon.ico
+    docs/index.rst
+    docs/requirements-docs.txt
+    docs/conf.py
+
+Rather than have you copy and paste these files from a set of docs here, the following repo
+contains a script that will do this for you. Please refer to the explanation presented in:
+https://github.com/lfit-sandbox/test
+This is all currently a beta feature, so feedback is encouraged.
+the script `docs_script.sh` is not needed, you can copy the files by hand if you prefer
+
+Once these files are correctly configured in your repository you can test locally:
+
+.. code-block:: bash
+
+    tox -e docs,docs-linkcheck
+
+
+Admin setup:
+
+This is a global job that only needs to be added once to your project's ci-mangement git
+repository. It leverages the read the docs v3 api to create projects on the fly, as well
+as setting up subproject associations with the master doc.
+
+Jobs will run but skip any actual verification until a .readthedocs.yaml is placed in the
+root of the repository
 
 The master doc must be defined in
 jenkins-config/global-vars-{production|sandbox}.sh
+
+Normally this project is called doc or docs or documentation and all other docs build will
+be set as a subproject of this job.
 
 examples:
 global-vars-sandbox.sh:
@@ -15,7 +57,8 @@ MASTER_RTD_PROJECT=doc-test
 global-vars-production.sh:
 MASTER_RTD_PROJECT=doc
 
-In this way sandbox jobs will create docs with a test suffix and will not stomp on production documentation.
+In this way sandbox jobs will create docs with a test suffix and will not stomp on production
+documentation.
 
 Example job config:
 
@@ -25,10 +68,10 @@ example file: ci-management/jjb/rtd/rtd.yaml
 
     ---
     - project:
-        name: rtdv2-verify-global
+        name: rtdv3-global-verify
         build-node: centos7-builder-1c-1g
         jobs:
-          - rtdv2-verify-global
+          - rtdv3-global-verify
         stream:
           - master:
               branch: master
@@ -36,10 +79,10 @@ example file: ci-management/jjb/rtd/rtd.yaml
               branch: stable/{stream}
 
     - project:
-        name: rtdv2-merge-global
+        name: rtdv3-global-merge
         build-node: centos7-builder-1c-1g
         jobs:
-          - rtdv2-merge-global
+          - rtdv3-global-merge
         stream:
           - master:
               branch: master
@@ -53,10 +96,10 @@ Or add both jobs via a job group:
 
     ---
     - project:
-        name: rtdv2-global
+        name: rtdv3-global
         build-node: centos7-builder-1c-1g
         jobs:
-          - rtdv2-global
+          - rtdv3-global
         stream:
           - master:
               branch: master
@@ -79,7 +122,7 @@ Merge job will trigger a build to update docs.
 Macros
 ======
 
-lf-rtdv2-common
+lf-rtdv3-common
 ---------------
 
 RTD verify and merge jobs are the same except for their scm, trigger, and
@@ -89,13 +132,13 @@ builders definition. This anchor is the common template.
 Job Templates
 =============
 
-ReadTheDocs v2 Merge
+ReadTheDocs v3 Merge
 --------------------
 
 Merge job which triggers a build of the docs to readthedocs.
 
 :Template Names:
-    - rtdv2-merge-global-{stream}
+    - rtdv3-global-merge-{stream}
 
 :Comment Trigger: remerge
 
@@ -128,24 +171,17 @@ Merge job which triggers a build of the docs to readthedocs.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '.*\.css'
-            - compare-type: REG_EXP
-              pattern: '.*\.html'
-            - compare-type: REG_EXP
-              pattern: '.*\.rst'
-            - compare-type: REG_EXP
-              pattern: '.*\/conf.py'
+              pattern: '^docs\/.*'
 
 
-
-ReadTheDocs v2 Verify
+ReadTheDocs v3 Verify
 ---------------------
 
 Verify job which runs a tox build of the docs project.
-Also outputs some info on the build
+Also outputs some info on the build.
 
 :Template Names:
-    - rtdv2-verify-global-{stream}
+    - rtdv3-global-verify-{stream}
 
 :Comment Trigger: recheck|reverify
 
@@ -179,10 +215,4 @@ Also outputs some info on the build
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '.*\.css'
-            - compare-type: REG_EXP
-              pattern: '.*\.html'
-            - compare-type: REG_EXP
-              pattern: '.*\.rst'
-            - compare-type: REG_EXP
-              pattern: '.*\/conf.py'
+              pattern: '^docs\/.*'

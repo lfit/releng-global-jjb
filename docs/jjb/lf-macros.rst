@@ -259,15 +259,16 @@ ReadTheDocs verify script. Installs and runs tox.
     :doc-dir: Document directory.
     :python-version: Python version.
 
-lf-rtdv2-build
+lf-rtdv3-build
 ---------------
 
-ReadTheDocs Version 2 verify and merge scripts.
-This is an update to the read the docs scripts that leverages the new Read the Docs v3 api
+Read the docs scripts that leverage the new Read the Docs v3 api
 `RTD v3 API <https://docs.readthedocs.io/en/stable/api/v3.html>`_
-Runs tox to verify that the docs are good and then runs the RTDv2 shell script.
+Runs tox to verify that the docs are good and then runs the RTDv3 shell script.
 This script handles creating projects as needed, assiging subprojects to the main
 read the docs project and triggering builds to update the documentation.
+Jobs will run but skip verify bits until a .readthedocs.yaml is found in the root
+of their repository.
 
 
 check-info-votes
