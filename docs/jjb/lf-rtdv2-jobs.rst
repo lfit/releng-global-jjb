@@ -4,10 +4,46 @@
 ReadTheDocs Version:2 Jobs
 ##########################
 
+User setup:
+
+To transform your rst documentation into a read the docs page, this job must be configured and created as described in Admin setup below. Once this is complete the following files must be added to your repository:
+
+.. code-block:: bash
+
+    .readthedocs.yaml
+    tox.ini
+    docs
+    docs/_static
+    docs/_static/logo.png
+    docs/conf.yaml
+    docs/favicon.ico
+    docs/index.rst
+    docs/requirements-docs.txt
+    docs/conf.py
+
+Rather than have you copy and paste these files from a set of docs here, I have created a repo containing a script that will do this for you.
+Please refer to the explanation presented in:
+https://github.com/lfit-sandbox/test
+This is all currently a beta feature, so feedback is encouraged.
+the script `docs_script.sh` is not needed, you can copy the files by hand if you prefer
+
+Once these files are correctly configured in your repository you can test locally:
+
+.. code-block:: bash
+
+    tox -e docs,docs-linkcheck
+
+
+Admin setup:
+
 This is a global job that only needs to be added once to your project's ci-mangement git repository. It leverages the read the docs v3 api to create projects on the fly, as well as set up subproject associations with the master doc.
+
+Jobs will run but skip any actual verification until a .readthedocs.yaml is placed in the root of their repository
 
 The master doc must be defined in
 jenkins-config/global-vars-{production|sandbox}.sh
+
+Normally this project is called doc or docs or documentation and all other docs build will be set as a subproject of this job.
 
 examples:
 global-vars-sandbox.sh:
@@ -128,14 +164,7 @@ Merge job which triggers a build of the docs to readthedocs.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '.*\.css'
-            - compare-type: REG_EXP
-              pattern: '.*\.html'
-            - compare-type: REG_EXP
-              pattern: '.*\.rst'
-            - compare-type: REG_EXP
-              pattern: '.*\/conf.py'
-
+              pattern: '^docs\/.*'
 
 
 ReadTheDocs v2 Verify
@@ -179,10 +208,4 @@ Also outputs some info on the build
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '.*\.css'
-            - compare-type: REG_EXP
-              pattern: '.*\.html'
-            - compare-type: REG_EXP
-              pattern: '.*\.rst'
-            - compare-type: REG_EXP
-              pattern: '.*\/conf.py'
+              pattern: '^docs\/.*'

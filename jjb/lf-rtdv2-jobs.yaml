@@ -20,13 +20,7 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*\.css'
-      - compare-type: REG_EXP
-        pattern: '.*\.html'
-      - compare-type: REG_EXP
-        pattern: '.*\.rst'
-      - compare-type: REG_EXP
-        pattern: '.*\/conf.py'
+        pattern: '^docs\/.*'
 
     #####################
     # Job Configuration #
@@ -100,6 +94,10 @@
                 - branch-compare-type: "ANT"
                   branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_trigger_file_paths}"
+              forbidden-file-paths:
+                - compare-type: REG_EXP
+                  pattern: ".*global-jjb.*"
+
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
