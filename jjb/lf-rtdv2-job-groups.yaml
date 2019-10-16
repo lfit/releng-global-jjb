@@ -3,5 +3,5 @@
     name: "rtdv2-global"
 
     jobs:
-      - rtdv2-verify-global
-      - rtdv2-merge-global
+      - rtdv2-global-verify
+      - rtdv2-global-merge

@@ -20,13 +20,7 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*\.css'
-      - compare-type: REG_EXP
-        pattern: '.*\.html'
-      - compare-type: REG_EXP
-        pattern: '.*\.rst'
-      - compare-type: REG_EXP
-        pattern: '.*\/conf.py'
+        pattern: '^docs\/.*'
 
     #####################
     # Job Configuration #
@@ -62,8 +56,8 @@
       - lf-rtdv2-build
 
 - job-template:
-    name: "rtdv2-verify-global-{stream}"
-    id: rtdv2-verify-global
+    name: "rtdv2-global-verify-{stream}"
+    id: rtdv2-global-verify
     <<: *lf_rtdv2_common
     # yamllint disable-line rule:key-duplicates
 
@@ -100,6 +94,10 @@
                 - branch-compare-type: "ANT"
                   branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_trigger_file_paths}"
+              forbidden-file-paths:
+                - compare-type: REG_EXP
+                  pattern: ".*global-jjb.*"
+
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
@@ -107,8 +105,8 @@
             notbuilt: "{gerrit-skip-vote}"
 
 - job-template:
-    name: "rtdv2-merge-global-{stream}"
-    id: rtdv2-merge-global
+    name: "rtdv2-global-merge-{stream}"
+    id: rtdv2-global-merge
     <<: *lf_rtdv2_common
 
     ######################

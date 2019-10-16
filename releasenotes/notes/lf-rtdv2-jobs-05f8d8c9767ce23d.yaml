@@ -1,0 +1,6 @@
+---
+features: >
+  Read-the-docs job will run but skip its verification bits unless the repo has
+  .readthedocs.yaml file in the root of its repository. This allows projects to
+  commit changes to their docs/ dir without having to configure the read the
+  docs builds.
