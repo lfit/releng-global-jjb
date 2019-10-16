@@ -1070,6 +1070,11 @@
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_merge_builders
 
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
+
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
@@ -1108,6 +1113,11 @@
     properties:
       - github:
           url: "{github-url}/{github-org}/{project}"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
 
     scm:
       - lf-infra-github-scm:
