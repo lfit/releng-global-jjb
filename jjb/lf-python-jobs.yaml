@@ -693,6 +693,8 @@
     # Default parameters #
     ######################
 
+    archive-artifacts: >
+      **/*.log
     branch: master
     build-days-to-keep: 7
     build-timeout: 15
@@ -709,7 +711,6 @@
     submodule-timeout: 10
     tox-dir: "."
     tox-envs: ""
-
     disabled: "{disable-job}"
 
     gerrit_trigger_file_paths:
@@ -719,6 +720,17 @@
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
       - ".*"
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -737,6 +749,25 @@
           default: false
           description: |
             If DRY_RUN is enabled artifacts are not published.
+
+    publishers:
+      - lf-infra-publish
+
+- lf_pypi_common_wrappers: &lf_pypi_common_wrappers
+    name: lf-pypi-common-wrappers
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+- lf_pypi_release_wrappers: &lf_pypi_release_wrappers
+    name: lf-pypi-release-wrappers
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
 
 - lf_pypi_verify_builders: &lf_pypi_verify_builders
     name: lf-pypi-verify-builders
@@ -795,9 +826,8 @@
 - job-template:
     name: "{project-name}-pypi-verify-{stream}"
     id: gerrit-pypi-verify
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_verify_builders
 
     scm:
@@ -833,9 +863,8 @@
 - job-template:
     name: "{project-name}-pypi-verify-{stream}"
     id: github-pypi-verify
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_verify_builders
 
     properties:
@@ -867,9 +896,8 @@
 - job-template:
     name: "{project-name}-pypi-merge-{stream}"
     id: gerrit-pypi-merge
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_merge_builders
 
     cron: ""
@@ -905,9 +933,8 @@
 - job-template:
     name: "{project-name}-pypi-merge-{stream}"
     id: github-pypi-merge
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_merge_builders
 
     cron: ""
@@ -990,9 +1017,9 @@
 - job-template:
     name: "{project-name}-pypi-release-verify-{stream}"
     id: gerrit-pypi-release-verify
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
+    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_verify_builders
 
@@ -1029,9 +1056,9 @@
 - job-template:
     name: "{project-name}-pypi-release-verify-{stream}"
     id: github-pypi-release-verify
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_common_wrappers
+    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_verify_builders
 
@@ -1064,9 +1091,9 @@
 - job-template:
     name: "{project-name}-pypi-release-merge-{stream}"
     id: gerrit-pypi-release-merge
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_release_wrappers
+    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_merge_builders
 
@@ -1099,9 +1126,9 @@
 - job-template:
     name: "{project-name}-pypi-release-merge-{stream}"
     id: github-pypi-release-merge
-    <<: *lf_python_common
-    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_common
+    <<: *lf_pypi_release_wrappers
+    # yamllint disable-line rule:key-duplicates
     <<: *lf_pypi_release_common
     <<: *lf_pypi_release_merge_builders
 
