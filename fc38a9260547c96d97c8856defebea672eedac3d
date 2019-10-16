@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ece493f7_c5642ed8",
+        "filename": "shell/jjb-merge-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-16T13:27:07Z",
+      "side": 1,
+      "message": "wait a minute... this actually works...",
+      "parentUuid": "f9a40399_0e33d72a",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 25
+      },
+      "revId": "fc38a9260547c96d97c8856defebea672eedac3d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b5ecd799_611647fb",
         "filename": "shell/jjb-verify-job.sh",
         "patchSetId": 5
