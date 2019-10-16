@@ -268,6 +268,7 @@ This is an update to the read the docs scripts that leverages the new Read the D
 Runs tox to verify that the docs are good and then runs the RTDv2 shell script.
 This script handles creating projects as needed, assiging subprojects to the main
 read the docs project and triggering builds to update the documentation.
+Jobs will run but skip verify bits until a .readthedocs.yaml is places in the root of their repository.
 
 
 check-info-votes
