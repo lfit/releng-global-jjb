@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add missing trigger "remerge" to the PyPI release merge template.
+    Move trigger definitions into PyPI templates, instead of defining
+    four separate trigger definition blocks and using each exactly once.
+    Document the required comment text for the triggers.

@@ -438,7 +438,7 @@ PyPI section.
     - gerrit-pypi-merge
     - github-pypi-merge
 
-:Comment Trigger: pypi-remerge
+:Comment Trigger: remerge
 
 :Required Parameters:
 
@@ -552,6 +552,8 @@ An example of a pypi release file appears below.
     - gerrit-pypi-release-verify
     - github-pypi-release-verify
 
+:Comment Trigger: recheck
+
 :Required Parameters:
 
     :build-node: The node to run build on, which must be Centos.
@@ -632,6 +634,8 @@ The special parameters are as follows::
     - {project-name}-pypi-release-merge-{stream}
     - gerrit-pypi-release-merge
     - github-pypi-release-merge
+
+:Comment Trigger: remerge
 
 :Required Parameters:
 
