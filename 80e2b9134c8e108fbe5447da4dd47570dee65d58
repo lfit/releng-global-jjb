@@ -116,6 +116,30 @@
       "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dd237c1e_6b1643c8",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-16T16:24:10Z",
+      "side": 1,
+      "message": "Totally missed that, it simplifies the job greatly.",
+      "parentUuid": "4a69e09b_9fb86a22",
+      "range": {
+        "startLine": 27,
+        "startChar": 11,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
