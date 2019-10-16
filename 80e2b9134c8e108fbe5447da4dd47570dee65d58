@@ -93,6 +93,29 @@
       "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a69e09b_9fb86a22",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-16T16:07:07Z",
+      "side": 1,
+      "message": "since this is hardcoded, then what is the point in passing $TOX_ENVS?",
+      "range": {
+        "startLine": 27,
+        "startChar": 11,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
