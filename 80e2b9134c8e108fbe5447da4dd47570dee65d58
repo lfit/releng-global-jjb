@@ -22,6 +22,30 @@
       "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "018167c9_d1f8af74",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-16T15:49:28Z",
+      "side": 1,
+      "message": "pardon a dumb question, RST/Sphinx will pull in files above the docs/ folder?  Seems like an anti-pattern to me, but maybe it\u0027s tolerated?",
+      "parentUuid": "8dd41f01_4f7e0e7b",
+      "range": {
+        "startLine": 27,
+        "startChar": 17,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
