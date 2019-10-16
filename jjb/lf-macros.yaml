@@ -277,11 +277,21 @@
 - builder:
     name: lf-rtdv2-build
     builders:
-      - lf-infra-pre-build
-      - lf-infra-tox-install:
-          python-version: "python3"
-      - shell: !include-raw: ../shell/tox-run.sh
-      - shell: !include-raw: ../shell/rtdv2.sh
+      - conditional-step:
+          condition-kind: always
+          condition-operands:
+            condition-kind: file-exists
+            condition-filename: .readthedocs.yaml
+            condition-basedir: workspace
+          steps:
+            - inject:
+                properties-content: |
+                  TOX_ENVS="docs,docs-linkcheck"
+            - lf-infra-pre-build
+            - lf-infra-tox-install:
+                python-version: "python3"
+            - shell: !include-raw: ../shell/tox-run.sh
+            - shell: !include-raw: ../shell/rtdv2.sh
 
 - builder:
     name: check-info-votes
