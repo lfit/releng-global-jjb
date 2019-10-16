@@ -46,6 +46,53 @@
       "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44c850c1_cc5ed06c",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-16T15:58:39Z",
+      "side": 1,
+      "message": "ah my bad, this should not matter we wont have rst files outside of the repo-root/docs, since we dont care about other files this should be fine.",
+      "parentUuid": "018167c9_d1f8af74",
+      "range": {
+        "startLine": 27,
+        "startChar": 17,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6dac5c6_df8181aa",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-16T15:58:39Z",
+      "side": 1,
+      "message": "this would be useful",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 105,
+        "endChar": 43
+      },
+      "revId": "80e2b9134c8e108fbe5447da4dd47570dee65d58",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
