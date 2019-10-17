@@ -34,6 +34,24 @@
       "revId": "f1d52e3ece57a5dd1efa49fd3416dcf0b1f43387",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fe7a8d0_885bf9bd",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-17T03:45:18Z",
+      "side": 1,
+      "message": "I like the idea to simplify the pattern into a single one.",
+      "parentUuid": "c7b5fb19_1ca970fc",
+      "revId": "f1d52e3ece57a5dd1efa49fd3416dcf0b1f43387",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
