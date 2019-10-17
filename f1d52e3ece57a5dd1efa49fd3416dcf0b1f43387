@@ -70,6 +70,24 @@
       "revId": "f1d52e3ece57a5dd1efa49fd3416dcf0b1f43387",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "904cc8aa_cceb001f",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T11:56:33Z",
+      "side": 1,
+      "message": "Are you suggesting to use different triggers for the verify and merge jobs?  But I would vote against that sort of optimization bcos there are sooooo many scenarios here.  For example, if a pic file is removed/renamed but the RST file that uses the pic is not updated, then the verify job would flag the problem of a missing pic before the change is merged.",
+      "parentUuid": "61ef2f1e_5d0455fd",
+      "revId": "f1d52e3ece57a5dd1efa49fd3416dcf0b1f43387",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
