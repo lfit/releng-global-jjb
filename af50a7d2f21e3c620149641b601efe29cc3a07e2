@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f3f6b57_bf908512",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-10-17T00:35:51Z",
+      "side": 1,
+      "message": "This is disabling the rule only for the next line. That means the second and fourth \"\u003c\u003c\" are still yamllint errors. You should either add these comments to the other places that the key is being duplicated, put them all in a block between\n# yamllint disable rule:key-duplicates\n# yamllint enable rule:key-duplicates\n...or just remove the single comments.",
+      "range": {
+        "startLine": 1022,
+        "startChar": 4,
+        "endLine": 1022,
+        "endChar": 47
+      },
+      "revId": "af50a7d2f21e3c620149641b601efe29cc3a07e2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04e29919_7cf46a8a",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-10-17T00:35:51Z",
+      "side": 1,
+      "message": "See comment above.",
+      "range": {
+        "startLine": 1061,
+        "startChar": 4,
+        "endLine": 1061,
+        "endChar": 47
+      },
+      "revId": "af50a7d2f21e3c620149641b601efe29cc3a07e2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45dd3ddf_1c2a5871",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1096,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-10-17T00:35:51Z",
+      "side": 1,
+      "message": "See comment above.",
+      "range": {
+        "startLine": 1096,
+        "startChar": 4,
+        "endLine": 1096,
+        "endChar": 47
+      },
+      "revId": "af50a7d2f21e3c620149641b601efe29cc3a07e2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c133fea1_7f5a5b98",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1131,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-10-17T00:35:51Z",
+      "side": 1,
+      "message": "See comment above.",
+      "range": {
+        "startLine": 1131,
+        "startChar": 4,
+        "endLine": 1131,
+        "endChar": 47
+      },
+      "revId": "af50a7d2f21e3c620149641b601efe29cc3a07e2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
