@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "55248f78_9c18d35a",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-17T04:43:00Z",
+      "side": 1,
+      "message": "is this change required?",
+      "range": {
+        "startLine": 114,
+        "startChar": 22,
+        "endLine": 114,
+        "endChar": 54
+      },
+      "revId": "44c66ab6408497451aa0f7f90cb5c284d4b46be2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
