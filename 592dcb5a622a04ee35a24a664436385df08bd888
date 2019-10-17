@@ -1,0 +1,303 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66024893_701ba99b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "Typo: patteRn",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 10
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7784c2c8_ef1831d7",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "Verify and merge? This is a macro, could be used anywhere, why write the doc like this?",
+      "range": {
+        "startLine": 265,
+        "startChar": 22,
+        "endLine": 265,
+        "endChar": 38
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b509047a_003fd152",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "Nobody reading this cares if it\u0027s an update.  Please just describe what this does.",
+      "range": {
+        "startLine": 266,
+        "startChar": 0,
+        "endLine": 266,
+        "endChar": 24
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef6b61ef_ab153a69",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "typo: placed (or maybe better write \"found\")",
+      "range": {
+        "startLine": 271,
+        "startChar": 64,
+        "endLine": 271,
+        "endChar": 70
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6711938c_041b4ed6",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "perhaps wrap the line to be consistent with length above?",
+      "range": {
+        "startLine": 271,
+        "startChar": 83,
+        "endLine": 271,
+        "endChar": 85
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a6b11ff_695a9e20",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "would you please wrap the lines here?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 5
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e3c254d_cf171863",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "This is kind of strange to read in RST, first person.  Maybe consider rewording?",
+      "range": {
+        "startLine": 24,
+        "startChar": 72,
+        "endLine": 24,
+        "endChar": 91
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b5e9cea_823ba86d",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "pls wrap",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80dc9e20_f1365149",
+        "filename": "docs/jjb/lf-rtdv2-jobs.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "Maybe add a period at the end of the sentence?",
+      "range": {
+        "startLine": 174,
+        "startChar": 30,
+        "endLine": 174,
+        "endChar": 35
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54e50b5c_a60e6d1d",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "Sorry to be so late with this comment, but a better name, more consistent with existing templates, would be \"rtdv2-global-verify-{stream}\u0027",
+      "range": {
+        "startLine": 59,
+        "startChar": 11,
+        "endLine": 59,
+        "endChar": 38
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a30f66f_12860c42",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "Sorry to be so late with this comment too, but a better name, more consistent with existing templates, would be \"rtdv2-global-merge-{stream}\u0027",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 3
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "779ceb4f_ba53c22a",
+        "filename": "releasenotes/notes/lf-rtdv2-jobs-05f8d8c9767ce23d.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "Please insert \"Read-the-docs\" at start of this sentence.",
+      "range": {
+        "startLine": 3,
+        "startChar": 2,
+        "endLine": 3,
+        "endChar": 5
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b53571bd_85c96cb6",
+        "filename": "releasenotes/notes/lf-rtdv2-jobs-05f8d8c9767ce23d.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-17T20:28:02Z",
+      "side": 1,
+      "message": "Trailing whitespace here, pls remove",
+      "range": {
+        "startLine": 4,
+        "startChar": 94,
+        "endLine": 4,
+        "endChar": 97
+      },
+      "revId": "592dcb5a622a04ee35a24a664436385df08bd888",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
