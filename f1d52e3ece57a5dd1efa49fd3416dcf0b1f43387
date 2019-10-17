@@ -52,6 +52,24 @@
       "revId": "f1d52e3ece57a5dd1efa49fd3416dcf0b1f43387",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61ef2f1e_5d0455fd",
+        "filename": "jjb/lf-rtdv2-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-17T03:47:05Z",
+      "side": 1,
+      "message": "help me understand is there a point in triggering the job for a single pic file change? Are we doing any checks on the pic file? or it\u0027s simple going to run the verify job waste of CPU cycles.",
+      "parentUuid": "5fe7a8d0_885bf9bd",
+      "revId": "f1d52e3ece57a5dd1efa49fd3416dcf0b1f43387",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
