@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2d007b29_0876f66d",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T19:52:20Z",
+      "side": 1,
+      "message": "please correct, shell script name is rtdv3.sh",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "776efbcebadcad1045f2abe7d3619416f31e3217",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "996a7649_664a2b44",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T19:52:20Z",
+      "side": 1,
+      "message": "I find this very confusing - you have matched job name on verify but echo merge?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "776efbcebadcad1045f2abe7d3619416f31e3217",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "315d3b78_a648a132",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 14
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T19:52:20Z",
+      "side": 1,
+      "message": "Please echo \"Merge\" or some confirmation?",
+      "revId": "776efbcebadcad1045f2abe7d3619416f31e3217",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
