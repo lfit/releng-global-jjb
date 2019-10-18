@@ -12,34 +12,18 @@ echo "---> check-info-votes.sh"
 set -u unset
 
 ref=$(echo "$GERRIT_REFSPEC" | awk -F"/" '{ print $4 }')
-pip="pip3"
 
-# For OPNFV
-if [[ $NODE_NAME =~ "lf-build" ]]; then
-    pip=pip
-fi
+#lf env stuff
+source ~/lf-env.sh
+venv=$(mktemp -d)
+python3 -m venv "$venv"
+lf-activate "$venv"
 
-if [ -d "/opt/pyenv" ]; then
-    echo "---> Setting up pyenv"
-    export PYENV_ROOT="/opt/pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    PYTHONPATH=$(pwd)
-    export PYTHONPATH
-
-    latest_version=$(pyenv versions \
-      | sed s,*,,g \
-      | awk '/[0-9]+/{ print $1 }' \
-      | sort --version-sort \
-      | awk '/./{line=$0} END{print line}')
-
-    pyenv local "$latest_version"
-    export PYENV_VERSION="3.6.4"
-fi
-
-$pip install --user niet
-$pip install --user lftools
-$pip install --user lftools[nexus]
-$pip install --user jsonschema
+pip install --quiet --upgrade pip
+pip install --user niet
+pip install --user lftools
+pip install --user lftools[nexus]
+pip install --user jsonschema
 
 echo "Checking votes:"
 lftools infofile check-votes INFO.yaml "$GERRIT_URL" "$ref" > gerrit_comment.txt

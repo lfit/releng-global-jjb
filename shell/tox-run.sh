@@ -10,18 +10,15 @@
 ##############################################################################
 echo "---> tox-run.sh"
 
+#lf env stuff
+source ~/lf-env.sh
+venv=$(mktemp -d)
+python3 -m venv "$venv"
+lf-activate "$venv"
+
 ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
 mkdir -p "$ARCHIVE_TOX_DIR"
 cd "$WORKSPACE/$TOX_DIR" || exit 1
-
-if [ -d "/opt/pyenv" ]; then
-    echo "---> Setting up pyenv"
-    export PYENV_ROOT="/opt/pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    PYTHONPATH="$(pwd)"
-    export PYTHONPATH
-    export TOX_TESTENV_PASSENV=PYTHONPATH
-fi
 
 PARALLEL="${PARALLEL:-true}"
 if [ "${PARALLEL}" = true ]; then

@@ -125,7 +125,7 @@ Verify job which runs tox to test the docs project
     :gerrit-skip-vote: Skip voting for this job. (default: false)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :project-pattern: Project to trigger build against. (default: \*\*)
-    :python-version: Python version (default: python2)
+    :python-version: Python version (default: python3)
     :stream: Keyword representing a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.

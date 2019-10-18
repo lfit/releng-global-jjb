@@ -195,7 +195,7 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
         For example, install prerequisites or move files to the repo root.
         (default: a string with a shell comment)
     :python-version: Python version to invoke pip install of tox-pyenv
-        (default: python2)
+        (default: python3)
     :sonarcloud: Whether or not to use SonarCloud ``true|false``.
         (default: false)
     :sonarcloud-project-key: SonarCloud project key. (default: '')
@@ -262,7 +262,7 @@ variables before running.
     :parallel: Boolean indicator for tox to run tests in parallel or series.
        (default: false, in series)
     :python-version: Python version to invoke pip install of tox-pyenv
-        (default: python2)
+        (default: python3)
     :stream: Keyword representing a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -319,7 +319,7 @@ variables before running.
         For example, install prerequisites or move files to the repo root.
         (default: a string with only a comment)
     :python-version: Python version to invoke pip install of tox-pyenv
-        (default: python2)
+        (default: python3)
     :stream: Keyword representing a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
