@@ -1,0 +1,849 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f045f556_38740296",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "since this is no longer limited to pypi, possibly summarize as \"Ensure latest python libs in venv\"  or ?",
+      "range": {
+        "startLine": 7,
+        "startChar": 30,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98e6e0bd_b18c94bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Similar concern here",
+      "range": {
+        "startLine": 9,
+        "startChar": 43,
+        "endLine": 9,
+        "endChar": 47
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa13ca06_9245a9e2",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "/tmp/virtualenv I think\n\nAnd Consider condensing to one line?",
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3504725c_54467cba",
+        "filename": "shell/cmake-stage.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dadae48b_5d93b901",
+        "filename": "shell/common-variables.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "python",
+      "range": {
+        "startLine": 24,
+        "startChar": 16,
+        "endLine": 24,
+        "endChar": 23
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c3515c8_c544e96f",
+        "filename": "shell/common-variables.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "What a strange name for this function.  Consider lf-python-venv-activate or something?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 16
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d3466bd_42b5b157",
+        "filename": "shell/common-variables.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider abbreviating down to one line.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 5
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e86aefe_99d8ea39",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "It\u0027s easy to read this way but verbose, could be abbreviated down to one line:\n\n    PATH\u003d/tmp/virtualenv:$PATH",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8db044e_651b8347",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b02b6ef_cf7b3828",
+        "filename": "shell/jenkins-configure-global-vars.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "483767c6_76fe49af",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55406c94_c63f0420",
+        "filename": "shell/maven-central.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16660d5c_5c940a85",
+        "filename": "shell/maven-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03b8c97e_43e3e0c0",
+        "filename": "shell/maven-javadoc-publish.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14d46b8b_e25eab01",
+        "filename": "shell/maven-stage.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75084f13_6cb6df69",
+        "filename": "shell/openstack-cleanup-old-images.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b77175ee_92d77be7",
+        "filename": "shell/openstack-cleanup-orphaned-servers.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f25383c5_03f8ca9d",
+        "filename": "shell/openstack-cleanup-orphaned-stacks.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bc6f1ee_97f8c66c",
+        "filename": "shell/openstack-cleanup-orphaned-volumes.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "should echo \"openstack-cleanup-orphaned-volumes.sh  .. but I digress",
+      "range": {
+        "startLine": 12,
+        "startChar": 11,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "856efbe2_52d84293",
+        "filename": "shell/openstack-cleanup-orphaned-volumes.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "133c5f6f_6d74d361",
+        "filename": "shell/openstack-stack-create.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c2f27ef_96d3c0dc",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "python",
+      "range": {
+        "startLine": 19,
+        "startChar": 35,
+        "endLine": 19,
+        "endChar": 42
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "714bede8_08eb6cad",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "/tmp/virtualenv ?",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 2
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ab5545c_5cf6c43f",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8007d03a_846881ca",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30f429c3_ea86603f",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "python",
+      "range": {
+        "startLine": 20,
+        "startChar": 35,
+        "endLine": 20,
+        "endChar": 42
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a32ceb0_5cf2dedc",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "This is the third unique path I\u0027ve found :) now I\u0027m getting confused",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 2
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb77dc81_622ec6ee",
+        "filename": "shell/pypi-upload.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "02c653f0_a2422792",
+        "filename": "shell/python-virtualenv.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "the name is python (not \"utility\").\n\nAnd I just want to ask, probably silly, but did you consider naming this \"python3-venv.sh\" just to be 100% crystal clear?  There\u0027s still an awful lot of py2 out there despite the looming end-of-life deadline.",
+      "range": {
+        "startLine": 11,
+        "startChar": 11,
+        "endLine": 11,
+        "endChar": 18
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afab54e0_90419616",
+        "filename": "shell/python-virtualenv.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Wait, other scripts use /tmp/virtualenv (not \"/tmp/pypi\").  Are there TWO?\n\nAnd if you are considering my comment about 3, then maybe the path should have a 3 in it?  IDK",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 1
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bde55e2_efa141b4",
+        "filename": "shell/python-virtualenv.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Please echo this content in an INFO:.\n\nConsider if you want to use pip quiet option.  I actually like the verbose output when trying to diagnose things that go wrong, but I\u0027ve heard you all are trying to reduce the fluff in logs, so IDK what\u0027s right.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 1
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "130df0de_75c98164",
+        "filename": "shell/python-virtualenv.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Is this the new master list of python packages that are available to all CI jobs?  It would be worth calling attention to this prominently, somehow.",
+      "range": {
+        "startLine": 28,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 6
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb7f30bd_4dc27809",
+        "filename": "shell/python-virtualenv.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "python",
+      "range": {
+        "startLine": 38,
+        "startChar": 11,
+        "endLine": 38,
+        "endChar": 18
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b59e16b7_99e17530",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "I know you didn\u0027t touch this, at least I don\u0027t think so, but it\u0027s weird to set -u then two lines later +u, right?",
+      "range": {
+        "startLine": 12,
+        "startChar": 1,
+        "endLine": 14,
+        "endChar": 6
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49073b4c_715a0bf1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a85f7c83_e34112ec",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95f701d1_6b079758",
+        "filename": "shell/sigul-sign-dir.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-18T13:08:21Z",
+      "side": 1,
+      "message": "Consider condensing to one line?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 4
+      },
+      "revId": "84bbc940d6c9ccff97641918c9962f3f8c4a640b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
