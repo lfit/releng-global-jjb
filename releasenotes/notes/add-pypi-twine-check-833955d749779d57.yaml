@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Extend PyPI builder shell script to call twine check, which tests
+    if the distribution's long description will render correctly.
