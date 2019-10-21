@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "a7be0d2b_3c88c635",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-21T20:31:32Z",
+      "side": 1,
+      "message": "This will fail if TOX_DIR is unset.  But the templates default TOX_DIR to \u0027.\u0027 and projects override as needed.  Sure, if the project sets it to the empty string, bad things happen.",
+      "parentUuid": "7247ad73_5ebd25e2",
+      "range": {
+        "startLine": 32,
+        "startChar": 26,
+        "endLine": 32,
+        "endChar": 35
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8bc10ae_bdcd01e5",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 2
