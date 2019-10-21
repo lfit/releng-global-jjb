@@ -19,6 +19,9 @@ set -eu -o pipefail
 virtualenv -p python3 /tmp/pypi
 PATH=/tmp/pypi/bin:$PATH
 
+echo "INFO: installing twine to check distributions"
+pip install -q twine
+
 bdist=""
 if $BUILD_BDIST_WHEEL; then
     echo "INFO: installing wheel to build binary distribution"
@@ -31,5 +34,8 @@ cd "$WORKSPACE/$TOX_DIR"
 
 echo "INFO: creating distributions"
 python3 setup.py sdist $bdist
+
+echo "INFO: checking distributions"
+twine check dist/*
 
 echo "---> pypi-dist-build.sh ends"
