@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "69dfb69b_d1e156de",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-21T20:24:11Z",
+      "side": 1,
+      "message": "Yes \u0027python3 setup.py sdist\u0027 means just build a source distribution. Building a binary is an option, controlled by the $bdist variable.",
+      "parentUuid": "908acc53_559e3123",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 0
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8bc10ae_bdcd01e5",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 2
@@ -36,6 +60,24 @@
       "writtenOn": "2019-10-21T20:20:17Z",
       "side": 1,
       "message": "I assume there is a setup.py in $CWD ?",
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60ced6d5_e9c528ce",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-21T20:24:11Z",
+      "side": 1,
+      "message": "Yes that is the absolute requirement for PyPI jobs, as documented in the RST for these templates.",
+      "parentUuid": "d8bc10ae_bdcd01e5",
       "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
