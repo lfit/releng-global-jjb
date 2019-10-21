@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "8fc6bf43_bd51713a",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-21T20:55:38Z",
+      "side": 1,
+      "message": "With the -u set the script will exit with error if $TOX_DIR is not set",
+      "parentUuid": "a7be0d2b_3c88c635",
+      "range": {
+        "startLine": 32,
+        "startChar": 26,
+        "endLine": 32,
+        "endChar": 35
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8bc10ae_bdcd01e5",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 2
@@ -125,6 +149,24 @@
       "side": 1,
       "message": "Yes that is the absolute requirement for PyPI jobs, as documented in the RST for these templates.",
       "parentUuid": "d8bc10ae_bdcd01e5",
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "db1b5151_49eb5711",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-21T20:55:38Z",
+      "side": 1,
+      "message": "if setup.py does not exist, python3 will return bad status, so we are covered",
+      "parentUuid": "60ced6d5_e9c528ce",
       "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
