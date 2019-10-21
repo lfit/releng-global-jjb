@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "dde6d72a_14e7f42c",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-21T21:32:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "20bf31d3_e93d695a",
+      "range": {
+        "startLine": 83,
+        "startChar": 21,
+        "endLine": 83,
+        "endChar": 37
+      },
+      "revId": "9267a88278e93dc829a79a59dd94e2050e817b98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07f24974_30123df1",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "860cb000_6ecba20d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-21T21:32:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "07f24974_30123df1",
+      "range": {
+        "startLine": 88,
+        "startChar": 21,
+        "endLine": 88,
+        "endChar": 37
+      },
+      "revId": "9267a88278e93dc829a79a59dd94e2050e817b98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "36acb35a_ee7d0ea7",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2019-10-21T20:51:57Z",
       "side": 1,
       "message": "Make every file and folder writable?  This seems a little strange?",
+      "range": {
+        "startLine": 103,
+        "startChar": 8,
+        "endLine": 103,
+        "endChar": 25
+      },
+      "revId": "9267a88278e93dc829a79a59dd94e2050e817b98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67d66b18_3aa9dac1",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-21T21:32:44Z",
+      "side": 1,
+      "message": "Finally someone noticed this! This is to prevent other scripts from adding packages. We need to make sure that packages are added to a venv with correct pip, and correct options (--upgrade). \n\nSince it is a shared venv, I plan to install all necessary packages up front. It would not be hard to add a lf-venv-add() function that adds a new package in the known correct way.",
+      "parentUuid": "36acb35a_ee7d0ea7",
       "range": {
         "startLine": 103,
         "startChar": 8,
@@ -91,6 +163,30 @@
       "revId": "9267a88278e93dc829a79a59dd94e2050e817b98",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "20ddf02b_10e4c27a",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-21T21:32:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "596a34d9_afde4890",
+      "range": {
+        "startLine": 123,
+        "startChar": 18,
+        "endLine": 123,
+        "endChar": 37
+      },
+      "revId": "9267a88278e93dc829a79a59dd94e2050e817b98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -137,6 +233,30 @@
       "revId": "9267a88278e93dc829a79a59dd94e2050e817b98",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15175ee3_64d84b08",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-21T21:32:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "964a00bc_b6e14c33",
+      "range": {
+        "startLine": 140,
+        "startChar": 18,
+        "endLine": 140,
+        "endChar": 37
+      },
+      "revId": "9267a88278e93dc829a79a59dd94e2050e817b98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
