@@ -10,57 +10,271 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 
-# A library of functions for LF/Jenkins bash scripts. In the general case, do
-# NOT set shell variables here. If you want to make a variable available,
-# provide a function that sets the variable: 'function lf_set_foo()
-# {foo=asdf;}'. Any scripts that need access to the variable can call the 'set'
-# function. This keeps the name-space polution to a minimum.
+# A library of functions for LF/Jenkins bash scripts. In the general case, these
+# functions should only use 'local' variables, and should NOT set
+# shell/environment variables. If you want to make a
+# variable available, provide a function that sets the variable: 'function
+# lf_set_foo() {foo=asdf;}'. Any scripts that need access to the variable can
+# call the 'set' function. This keeps the name-space pollution to a minimum.
+
+# Shell variables that are shared between functions
+
+_lf_done_file=".lf-done"
 
 ################################################################################
-# Functions
+#
+# Name:    lf-echo-stderr
+#
+# SYNOPSYS
+#       source ~/lf-env.sh
+#
+#       lf-echo-stderr
+#
+# DESCRIPTION
+#       This function will echo all command line aruments to 'stderr'
+#
+# RETURN VALUE
+#       None
+#
 ################################################################################
 
-# Execute pip from 'user' venv
-function lf-pip() { /home/jenkins/.local/bin/pip "$@" ; }
+function lf-echo-stderr() { echo "$@" 1>&2; }
 
-# Echo all arguments to stderr
-function lf-echoerr() { echo "$@" 1>&2; }
+################################################################################
+#
+# NAME
+#       lf-boolean()
+#
+# SYNOPSYS
+#       # shellcheck disable=SC1090
+#       source ~/lf-env.sh
+#
+#       if lf-boolean $VAR; then
+#           echo "VAR is true"
+#       fi
+#
+# DESCRIPTION
+#       This function will return a BOOLEAN (true or false) based upon the value
+#       of VAR. The value of VAR will be mapped to lower case. If VAR maps to
+#       "true", return true(0). If VAR maps to "false", return false (0).  Any
+#       other values will return false(2) and an error message.
+#
+# RETURN VALUES
+#       true(0), false(1) or false(2)
+#
+################################################################################
 
-# Function to safely evaluate booleans
-# If the boolean equal '' it is an Fatal Error
-# Note the case of boolean will be ignored (always mapped to lower-case)
 function lf-boolean()
 {
-    if [[ $# != 1 ]]; then
-        echo "lf-boolean(): Missing boolean operand"
-        exit 1
+    if (( $# != 1 )); then
+        echo "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} : Missing required argument"
+        return 1
     fi
     local bool
     bool=$(echo "$1" | tr '[:upper:]' '[:lower:]')
-    if [[ -z $bool ]] ; then
-        # Output script name & line number of call to function
-        lf-echoerr "ERROR: $(basename $0) line: ${BASH_LINENO[0]} : A boolean cannot be a empty string" >&2
-        exit 1
-    fi
-    $bool
+    case $bool in
+        true)  return 0 ;;
+        false) return 1 ;;
+        '')
+           lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line:{BASH_LINENO[0]} : A boolean cannot be a empty string" >&2
+           return 2
+           ;;
+        *)
+            lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} : Invalid value for a boolean: '$bool'"
+            return 2
+            ;;
+    esac
 }
 
-# Function to activate a Python Virtual Environment
-# Just validate the path and add 'bin' to the path
-function lf-activate()
+################################################################################
+#
+# NAME
+#       lf-venv-activate()
+#
+# SYNOPSYS
+#       # shellcheck disable=SC1090
+#       source ~/lf-env.sh
+#
+#       lf-venv-activate python2
+#
+# DESCRIPTION
+#       This function will validate existance of 'python' venv. If it exists
+#       'path-to-venv/.bin' will be prepended to the PATH.
+#
+# RETURN VALUES
+#       None
+#
+################################################################################
+
+function lf-venv-activate()
 {
-    if [[ $# != 1 ]]; then
-        echo "lf-activate(): Missing path operand"
-        exit 1
-    fi
-    local venv_path=$1
-    # Validate the path to a VENV
-    if [[ ! -d $venv_path/bin ]]; then
-        lf-echoerr "ERROR: Is '$venv_path' a Python Environment ?"
+    if (( $# != 1 )); then
+        echo "${FUNCNAME[0]}(): Missing path operand"
         return 1
     fi
-    PATH=$venv_path/bin:$PATH
+    local arg=$1
+    local venv
+    if [[ $arg =~ ^python ]] && type $arg > /dev/null ; then
+        venv=~/.venv${arg#python}
+    else
+        venv=$arg
+    fi
+    # Validate the path to a VENV
+    if [[ ! -f $venv/$_lf_done ]]; then
+        lf-echo-stderr "ERROR: Is '$venv' a Python Environment ?"
+        return 1
+    fi
+    echo "${FUNCNAME[0]}(): Adding $venv/bin to PATH"
+    PATH=$venv/bin:$PATH
 }
+
+################################################################################
+#
+# NAME
+#       lf-venv-create()
+#
+# SYNOPSYS
+#       # shellcheck disable=SC1090
+#       source ~/lf-env.sh
+#
+#       lf-venv-create python2
+#       or
+#       lf-venv-create python3.6
+#
+# DESCRIPTION
+#       This function will create a Python Virtual Environment based on the
+#       python specified. The 'python' argument must be in the PATH. The venv
+#       will be located in ~/.venv## where ## comes from the 'python' argument.
+#       I.E. python3 -> ~/.venv3. The resulting venv will be left 'read-only' to
+#       discourage the installation of any other packages (except by
+#       lf-venv-add()).
+#
+# RETURN VALUES
+#       None
+#
+################################################################################
+
+function lf-venv-create()
+{
+    if (( $# != 1 )); then
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Missing Python argument"
+        return 1
+    fi
+    python=$1
+    if ! type $python > /dev/null; then
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
+        return 1
+    fi
+    local venv=~/.venv${python#python}
+    local suffix=$python-$$
+    local pip_log=/tmp/pip_log.$suffix
+    if [[ -f $venv/$_lf_done ]]; then
+        echo "Venv Already Exists: '$venv'"
+        return
+    fi
+    # If the done file does not exist, make sure to clean up
+    if [[ -d $venv ]]; then
+        chmod -R +w $venv
+        rm -rf $venv
+    fi
+
+    echo "Creating '$python' venv ($venv)"
+
+    case $python in
+    python2*)
+        # For Python2, just create venv and install pip
+        virtualenv -p $python $venv > $pip_log || return 1
+        $venv/bin/pip install --upgrade pip > $pip_log || return 1
+        ;;
+    python3*)
+        local pkg_list="git-review jenkins-job-builder lftools[openstack] "
+        pkg_list+="python-heatclient python-openstackclient "
+        pkg_list+="setuptools testresources tox yq"
+        $python -m venv $venv > $pip_log
+        $venv/bin/pip install --upgrade pip > $pip_log || return 1
+        # Redirect errors for now
+        $venv/bin/pip install --upgrade $pkg_list >> $pip_log 2> /dev/null || return 1
+        # Generate list of packages
+        pkg_list=$($venv/bin/pip freeze | awk -F '=' '{print $1}') || return 1
+        # Update all packages, usuaally need to run twice to get all versions
+        # correct.
+        local upgrade_cmd="$venv/bin/pip install --upgrade $pkg_list"
+        if $upgrade_cmd >> $pip_log 2>&1 > /dev/null ; then
+            echo -n "Running 'pip --upgrade' to validate..."
+            $upgrade_cmd >> $pip_log || return 1
+            echo "..OK"
+        fi
+        ;;
+    *)
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: No support for: $python"
+        return 1
+        ;;
+    esac
+
+    touch $venv/$_lf_done
+    # Once this venv is created, make it read-only
+    chmod -R -w $venv
+    # Archive output of 'pip freeze'
+    mkdir -p $WORKSPACE/archives
+    $venv/bin/pip freeze > $WORKSPACE/archives/freeze-log-$python || return 1
+    rm -rf $pip_log
+
+}   # End lf-venv-create()
+
+################################################################################
+#
+# NAME
+#       lf-venv-add()
+#
+# SYNOPSYS
+#       # shellcheck disable=SC1090
+#       source ~/lf-env.sh
+#
+#       lf-venv-add python3 pkg
+#       or
+#       lf-venv-add python2 pkg1 pkg2 pkg3
+#
+# DESCRIPTION
+#       This function will add one or more python packages to an existing venv.
+#       Becuase the venv created by lf-venv-create()
+#
+# RETURN VALUES
+#       None
+#
+################################################################################
+
+function lf-venv-add()
+{
+    if (( $# < 2 )); then
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Missing Package argument"
+        return 1
+    fi
+    python=$1
+    if ! type $python > /dev/null ; then
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
+        return 1
+    fi
+    shift
+    local venv=~/.venv${python#python}
+    if [[ ! -f $venv/$_lf_done ]]; then
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: '$venv' is not a valid venv"
+        return 1
+    fi
+    local pkg_list=$*
+    local pip_log=/tmp/pip_log-$$
+
+    echo "Installing '$pkg_list' into $venv"
+    chmod -R +w $venv
+    rm $venv/$_lf_done
+    $venv/bin/pip install --upgrade $pkg_list > $pip_log || return 1
+    pkg_list=$($venv/bin/pip freeze | awk -F '=' '{print $1}') || return 1
+    $venv/bin/pip install --upgrade $pkg_list > $pip_log || return 1
+    touch $venv/$_lf_done
+    chmod -R -w $venv
+    # Archive output of 'pip freeze'
+    $venv/bin/pip freeze > $WORKSPACE/archives/freeze-log-$python || return 1
+
+} # End lf-venv-add()
 
 ################################################################################
 # Functions that assign Variables
