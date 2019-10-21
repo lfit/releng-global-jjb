@@ -49,6 +49,29 @@
     },
     {
       "key": {
+        "uuid": "7247ad73_5ebd25e2",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-10-21T20:29:44Z",
+      "side": 1,
+      "message": "what happens if tox dir is unset?",
+      "range": {
+        "startLine": 32,
+        "startChar": 26,
+        "endLine": 32,
+        "endChar": 35
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8bc10ae_bdcd01e5",
         "filename": "shell/pypi-dist-build.sh",
         "patchSetId": 2
