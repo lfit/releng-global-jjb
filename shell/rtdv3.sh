@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-echo "---> rtd-verify.sh"
+echo "---> rtdv3.sh"
 set -euo pipefail
 
 project_dashed="${PROJECT////-}"
@@ -33,12 +33,12 @@ if [[ "$JOB_NAME" =~ "verify" ]]; then
     echo "INFO: Project not found, merge will create project https://$rtdproject.readthedocs.io"
   fi
 
-echo "INFO: Merge will run"
-echo "INFO: lftools rtd project-build-trigger $rtdproject $STREAM"
+echo "INFO: Verify job completed"
 
 fi
 
 if [[ "$JOB_NAME" =~ "merge" ]]; then
+echo "INFO: Running merge job"
 
   # This retuns null if project exists.
   project_exists=false

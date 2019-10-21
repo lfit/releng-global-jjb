@@ -1,0 +1,7 @@
+---
+- job-group:
+    name: "rtdv3-global"
+
+    jobs:
+      - rtdv3-global-verify
+      - rtdv3-global-merge

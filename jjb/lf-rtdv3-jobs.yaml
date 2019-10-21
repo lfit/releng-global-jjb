@@ -1,6 +1,6 @@
 ---
-- lf_rtdv2_common: &lf_rtdv2_common
-    name: lf-rtdv2-common
+- lf_rtdv3_common: &lf_rtdv3_common
+    name: lf-rtdv3-common
 
     ######################
     # Default parameters #
@@ -20,13 +20,7 @@
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '.*\.css'
-      - compare-type: REG_EXP
-        pattern: '.*\.html'
-      - compare-type: REG_EXP
-        pattern: '.*\.rst'
-      - compare-type: REG_EXP
-        pattern: '.*\/conf.py'
+        pattern: '^docs\/.*'
 
     #####################
     # Job Configuration #
@@ -59,12 +53,12 @@
           files:
             - file-id: lftoolsini
               target: "$HOME/.config/lftools/lftools.ini"
-      - lf-rtdv2-build
+      - lf-rtdv3-build
 
 - job-template:
-    name: "rtdv2-verify-global-{stream}"
-    id: rtdv2-verify-global
-    <<: *lf_rtdv2_common
+    name: "rtdv3-global-verify-{stream}"
+    id: rtdv3-global-verify
+    <<: *lf_rtdv3_common
     # yamllint disable-line rule:key-duplicates
 
     stream: master
@@ -100,6 +94,10 @@
                 - branch-compare-type: "ANT"
                   branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_trigger_file_paths}"
+              forbidden-file-paths:
+                - compare-type: REG_EXP
+                  pattern: ".*global-jjb.*"
+
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
@@ -107,9 +105,9 @@
             notbuilt: "{gerrit-skip-vote}"
 
 - job-template:
-    name: "rtdv2-merge-global-{stream}"
-    id: rtdv2-merge-global
-    <<: *lf_rtdv2_common
+    name: "rtdv3-global-merge-{stream}"
+    id: rtdv3-global-merge
+    <<: *lf_rtdv3_common
 
     ######################
     # Default parameters #
