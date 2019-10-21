@@ -1,0 +1,14 @@
+---
+fixes:
+  - |
+    Added '|| return 1' to appropriate commands. Functions do not support '-e'
+    and a  function will normally continue after a command fails.
+features:
+  - |
+    Added two new functions: lf-venv-create(), lf-venv-add()
+    Changed name of lf-activate() -> lf-venv-activate()
+    Updated functionality of lf-venv-activate (support for paths & python
+    versions
+other:
+  - |
+    Improved Comments
