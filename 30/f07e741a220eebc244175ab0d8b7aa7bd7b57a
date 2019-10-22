@@ -1,0 +1,9 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+1: Tim Johnson <tijohnson@linuxfoundation.org>
+Code-Review+2: Bengt Thuree <bthuree@linuxfoundation.org>
+Code-Review+2: Anil Belur <abelur@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Tue, 22 Oct 2019 12:07:37 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/62002
+Project: releng/global-jjb
+Branch: refs/heads/master
