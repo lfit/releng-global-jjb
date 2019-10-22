@@ -240,6 +240,30 @@
       "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b78f2fe_83a36bcc",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-22T14:25:42Z",
+      "side": 1,
+      "message": "Sounds promising, which version of twine supports \"upload -s\"?  What GPG key is require?  I\u0027ve been having a HECK of a time getting the ORAN build minions upgraded to a current version of twine, not done yet despite help from DW Talton.",
+      "parentUuid": "6f253ca0_336b825d",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
