@@ -312,6 +312,30 @@
       "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6a9ddfb9_088a6e66",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-22T15:06:26Z",
+      "side": 1,
+      "message": "Yes this script runs in the verify job, the intent of adding \"twine check\" was to find problems then. \n\nThis script ALSO runs in the merge job.  :/",
+      "parentUuid": "0f1297a8_28c927ff",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 18
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
