@@ -264,6 +264,54 @@
       "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46bd56c8_12aace12",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-22T14:40:14Z",
+      "side": 1,
+      "message": "That requires the sigul infra bits in place. Also I\u0027ve tried using the  -s option never works for me with gpg2 on F30. therefore I skip that and sign them manually. for instance the detached signatures for some of the releases can actually be found on the release repo and wont require to move them into the logs. \n\nhttps://files.pythonhosted.org/packages/d8/de/dd3842546398d82a241c5e31e9fe01de5df882234e8ad53c1c5d23f1bdbe/lftools-0.24.0-py2.py3-none-any.whl.asc\n\nI\u0027ve read that \u003c 4% of the packages on pypi are being signed atm. that said we should definetly consider doing that.",
+      "parentUuid": "6b78f2fe_83a36bcc",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 5
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0f1297a8_28c927ff",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-22T14:40:14Z",
+      "side": 1,
+      "message": "that should def be included in the verify jobs instead of the merge jobs.",
+      "parentUuid": "c455d519_df0872ec",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 18
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
