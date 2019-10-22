@@ -193,6 +193,30 @@
       "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c455d519_df0872ec",
+        "filename": "shell/pypi-dist-build.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-22T13:04:30Z",
+      "side": 1,
+      "message": "Twine check doesn\u0027t accept any other arguments.  It\u0027s supposed to return a non-zero code if the long description is not acceptable.  Want to discover this in the verify job, instead of having the merge job fail when the twine upload is performed.",
+      "parentUuid": "8cf41ef1_8985a948",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 18
+      },
+      "revId": "c05d9ff33aae7ac0797c6a7fe462a1aa59629766",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
