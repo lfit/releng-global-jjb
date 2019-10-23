@@ -337,3 +337,179 @@ Release Verify
 
             - compare-type: REG_EXP
               pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+
+
+PyPI Release Merge
+------------------
+
+Publishes Python release artifacts on merge of a patch set with a
+release yaml file. Checks the format of the version string, downloads
+the release artifacts from the PyPI staging repository, uploads the
+release artifacts to the PyPI release repository, tags the git
+repository, signs the tag and pushes the tag to the git server. The
+release verify template accepts neither a branch nor a stream
+parameter.
+
+To use the PyPI self-release process, create a releases/ or .releases/
+directory at the root of the project repository, add one release yaml
+file to it, and submit a change set with that release yaml file. A
+schema and an example for the release yaml file appear below. The
+version in the release yaml file must be a valid Semantic Versioning
+(SemVer) string, matching either the pattern "v#.#.#" or "#.#.#" where
+"#" is one or more digits.
+
+.. note::
+
+   The release file regex is: (releases\/.*\.yaml|\.releases\/.*\.yaml).
+   In words, the directory name can be ".releases" or "releases"; the file
+   name can be anything with suffix ".yaml".
+
+The build node for PyPI release merge jobs must be CentOS, which
+supports the sigul client for accessing a signing server.
+
+The JSON schema for a PyPI release file appears below.
+
+.. code-block:: none
+
+    ---
+    $schema: "http://json-schema.org/schema#"
+    $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-pypi-schema.yaml"
+
+    required:
+      - "distribution_type"
+      - "log_dir"
+      - "pypi_project"
+      - "python_version"
+      - "version"
+
+    properties:
+      distribution_type:
+        type: "string"
+      log_dir:
+        type: "string"
+      pypi_project:
+        type: "string"
+      python_version:
+        type: "string"
+      version:
+        type: "string"
+
+
+The following parameters must appear in the release yaml file.  These
+are not part of the Jenkins job definition to allow independent 
+self-release of a package maintained in a git repository with other
+packages.
+
+:Required Parameters:
+
+    :distribution_type: Must be "pypi".
+    :log_dir: The suffix of the logs URL reported on completion by the
+        Jenkins merge job that created and pushed the distribution files
+        to the staging repository.  For example, use value
+        "example-project-pypi-merge-master/17" for the logs URL
+        https://logs.lf-project.org/production/vex-sjc-lfp-jenkins-prod-1/example-project-pypi-merge-master/17
+    :pypi_project: The PyPI project name at the staging and
+        release repositories, for example "mypackage".
+    :python_version: The Python interpreter version to use for pip
+        "Requires-Python" compatibility checks, for example "3" or "3.7.0".
+    :version: The semantic version string used for the package in the
+        setup.py file.
+
+An example of a pypi release file appears next.
+
+.. code-block:: none
+
+    $ cat releases/mymodule-pypi.yaml
+    ---
+    distribution_type: pypi
+    pypi_project: mymodule
+    python_version: 3.4
+    version: 1.0.0
+
+
+A Jenkins admin user can also trigger this job via the "Build with
+parameters" action, removing the need to merge a release yaml file.
+The user must enter parameters in the same way as a release yaml file,
+except for the special USE_RELEASE_FILE and DRY_RUN check boxes. The
+user must uncheck the USE_RELEASE_FILE check box if the job should run
+without a release file, instead passing the required information as
+build parameters. The user can check the DRY_RUN check box to test the
+job while skipping upload of files to the release repository.
+
+The special parameters are as follows::
+
+    USE_RELEASE_FILE = false
+    DRY_RUN = false
+
+
+:Template Names:
+
+    - {project-name}-pypi-release-merge
+    - gerrit-pypi-release-merge
+    - github-pypi-release-merge
+
+:Comment Trigger: remerge
+
+:Required Parameters:
+
+    :build-node: The node to run build on, which must be Centos.
+    :jenkins-ssh-release-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
+    :project: Git repository name
+    :project-name: Jenkins job name prefix
+
+:Optional Parameters:
+
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :disable-job: Whether to disable the job (default: false)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :pypi-stage-index: Base URL of the PyPI staging repository.
+        (default https://test.pypi.org/simple)
+    :pypi-repo: Key for the PyPI release repository in the .pypirc file,
+        should be the repository pypy.org. (default: pypi)
+    :use-release-file: Whether to use the release file. (default: true)
+
+
+PyPI Release Verify
+-------------------
+
+Verifies a Python library project on creation of a patch set with a
+release yaml file. Checks the contents of the release yaml file,
+checks the format of the version string, and downloads the release
+artifacts from the specified PyPI staging repository. The release
+verify template accepts neither a branch nor a stream parameter.
+
+See the PyPI Release Merge job above for documentation of the release
+yaml file format and an example.
+
+The build node for PyPI release verify jobs must be CentOS, which
+supports the sigul client for accessing a signing server.
+
+:Template Names:
+
+    - {project-name}-pypi-release-verify
+    - gerrit-pypi-release-verify
+    - github-pypi-release-verify
+
+:Comment Trigger: recheck
+
+:Required Parameters:
+
+    :build-node: The node to run build on, which must be Centos.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
+    :project: Git repository name
+    :project-name: Jenkins job name prefix
+
+:Optional Parameters:
+
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :disable-job: Whether to disable the job (default: false)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :pypi-stage-index: Base URL of the PyPI staging repository.
+        (default https://test.pypi.org/simple)
+    :pypi-repo: Key for the PyPI release repository in the .pypirc file,
+        should be the repository pypy.org (default: pypi)
+    :use-release-file: Whether to use the release file. (default: true)
