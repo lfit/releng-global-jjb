@@ -24,23 +24,39 @@
 - job-group:
     name: "{project-name}-gerrit-pypi-jobs"
 
-    # This job group contains all the recommended jobs that should be deployed for
-    # a Gerrit-based Python project to test, build and deploy a library to PyPI.
+    # This job group contains the recommended jobs that should be deployed for
+    # a Gerrit-based Python project to test, build and deploy a package.
 
     jobs:
-      - gerrit-pypi-verify
       - gerrit-pypi-merge
-      - gerrit-pypi-release-verify
-      - gerrit-pypi-release-merge
+      - gerrit-pypi-verify
 
 - job-group:
     name: "{project-name}-github-pypi-jobs"
 
-    # This job group contains all the recommended jobs that should be deployed for
-    # a Github-based Python project to test, build and deploy a library to PyPI.
+    # This job group contains the recommended jobs that should be deployed for
+    # a Github-based Python project to test, build and deploy a package.
 
     jobs:
-      - github-pypi-verify
       - github-pypi-merge
-      - github-pypi-release-verify
+      - github-pypi-verify
+
+- job-group:
+    name: "{project-name}-gerrit-pypi-release-jobs"
+
+    # This job group contains the recommended jobs that should be deployed for
+    # a Gerrit-based Python project to promote a package from staging to pypi.
+
+    jobs:
+      - gerrit-pypi-release-merge
+      - gerrit-pypi-release-verify
+
+- job-group:
+    name: "{project-name}-github-pypi-release-jobs"
+
+    # This job group contains the recommended jobs that should be deployed for
+    # a Github-based Python project to promote a package from staging to pypi.
+
+    jobs:
       - github-pypi-release-merge
+      - github-pypi-release-verify
