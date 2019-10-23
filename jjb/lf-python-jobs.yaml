@@ -11,34 +11,6 @@
       - shell: !include-raw-escape: ../shell/nexus-iq-cli.sh
 
 - builder:
-    name: lf-infra-pypi-tag-release
-    builders:
-      - config-file-provider:
-          files:
-            - file-id: sigul-config
-              variable: SIGUL_CONFIG
-            - file-id: sigul-password
-              variable: SIGUL_PASSWORD
-            - file-id: sigul-pki
-              variable: SIGUL_PKI
-            - file-id: signing-pubkey
-              variable: SIGNING_PUBKEY
-      - shell: !include-raw: ../shell/sigul-configuration.sh
-      - shell: !include-raw: ../shell/sigul-install.sh
-      - shell: !include-raw: ../shell/pypi-tag-release.sh
-
-- builder:
-    name: lf-infra-pypi-upload
-    builders:
-      - config-file-provider:
-          files:
-            - file-id: pypirc
-              target: "$HOME/.pypirc"
-      - inject:
-          properties-content: "REPOSITORY={pypi-repo}"
-      - shell: !include-raw-escape: ../shell/pypi-upload.sh
-
-- builder:
     name: lf-infra-tox-install
     builders:
       - inject:
@@ -740,31 +712,19 @@
       - bool:
           name: BUILD_BDIST_WHEEL
           default: "{dist-binary}"
-          description: "Set to True to build a wheel"
+          description: "Set to True (checked) to build a binary distribution"
       - bool:
           name: DRY_RUN
           default: false
-          description: |
-            If DRY_RUN is enabled artifacts are not published.
-
-    publishers:
-      - lf-infra-publish
-
-- lf_pypi_common_wrappers: &lf_pypi_common_wrappers
-    name: lf-pypi-common-wrappers
+          description: "Set to True (checked) to skip uploading artifacts"
 
     wrappers:
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
-- lf_pypi_release_wrappers: &lf_pypi_release_wrappers
-    name: lf-pypi-release-wrappers
-
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
+    publishers:
+      - lf-infra-publish
 
 - lf_pypi_verify_builders: &lf_pypi_verify_builders
     name: lf-pypi-verify-builders
@@ -789,42 +749,18 @@
       - lf-infra-tox-run:
           parallel: "{parallel}"
       - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
-      - lf-infra-pypi-upload:
-          pypi-repo: "{pypi-repo}"
-
-- lf_pypi_release_verify_builders: &lf_pypi_release_verify_builders
-    name: lf-pypi-release-verify-builders
-
-    builders:
-      - lf-infra-pre-build
-      - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
-      - lf-infra-tox-run:
-          parallel: "{parallel}"
-      - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
-      - lf-infra-pypi-tag-release
-
-- lf_pypi_release_merge_builders: &lf_pypi_release_merge_builders
-    name: lf-pypi-release-merge-builders
-
-    builders:
-      - lf-infra-pre-build
-      - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
-      - lf-infra-tox-run:
-          parallel: "{parallel}"
-      - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
-      - lf-infra-pypi-tag-release
-      - lf-infra-pypi-upload:
-          pypi-repo: "{pypi-repo}"
+      - config-file-provider:
+          files:
+            - file-id: pypirc
+              target: "$HOME/.pypirc"
+      - inject:
+          properties-content: "REPOSITORY={pypi-repo}"
+      - shell: !include-raw-escape: ../shell/pypi-upload.sh
 
 - job-template:
     name: "{project-name}-pypi-verify-{stream}"
     id: gerrit-pypi-verify
     <<: *lf_pypi_common
-    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_verify_builders
 
     scm:
@@ -862,7 +798,6 @@
     name: "{project-name}-pypi-verify-{stream}"
     id: github-pypi-verify
     <<: *lf_pypi_common
-    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_verify_builders
 
     properties:
@@ -895,7 +830,6 @@
     name: "{project-name}-pypi-merge-{stream}"
     id: gerrit-pypi-merge
     <<: *lf_pypi_common
-    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_merge_builders
 
     cron: ""
@@ -932,7 +866,6 @@
     name: "{project-name}-pypi-merge-{stream}"
     id: github-pypi-merge
     <<: *lf_pypi_common
-    <<: *lf_pypi_common_wrappers
     <<: *lf_pypi_merge_builders
 
     cron: ""
@@ -968,188 +901,3 @@
           white-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
-
-- lf_pypi_release_common: &lf_pypi_release_common
-    name: lf-pypi-release-common
-
-    dist-binary: true
-    pypi-repo: pypi
-    use-release-file: true
-
-    # define once and use twice; jobs MUST NOT override
-    gerrit_release_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
-
-    # yamllint disable-line rule:line-length
-    # github_release_included_regions MUST match gerrit_release_trigger_file_paths
-    github_release_included_regions:
-      - 'releases\/.*\.yaml'
-      - '.releases\/.*\.yaml'
-
-    parameters:
-      - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
-      - lf-infra-tox-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
-      - bool:
-          name: BUILD_BDIST_WHEEL
-          default: "{dist-binary}"
-          description: "Set to True to build a wheel"
-      - string:
-          name: VERSION
-          default: ""
-          description: "This is the version, example: 1.0.0"
-      - bool:
-          name: USE_RELEASE_FILE
-          default: "{use-release-file}"
-          description: "Set to False for job built with parameters"
-      - bool:
-          name: DRY_RUN
-          default: false
-          description: |
-            If DRY_RUN is enabled artifacts are not published.
-
-- job-template:
-    name: "{project-name}-pypi-release-verify-{stream}"
-    id: gerrit-pypi-release-verify
-    <<: *lf_pypi_common
-    <<: *lf_pypi_common_wrappers
-    <<: *lf_pypi_release_common
-    <<: *lf_pypi_release_verify_builders
-
-    scm:
-      - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
-          choosing-strategy: gerrit
-
-    triggers:
-      - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on:
-            - patchset-created-event:
-                exclude-drafts: true
-                exclude-trivial-rebase: false
-                exclude-no-code-change: false
-            - draft-published-event
-            - comment-added-contains-event:
-                # yamllint disable-line rule:line-length
-                comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
-          projects:
-            - project-compare-type: "ANT"
-              project-pattern: "{project}"
-              branches:
-                - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_release_trigger_file_paths}"
-
-- job-template:
-    name: "{project-name}-pypi-release-verify-{stream}"
-    id: github-pypi-release-verify
-    <<: *lf_pypi_common
-    <<: *lf_pypi_common_wrappers
-    <<: *lf_pypi_release_common
-    <<: *lf_pypi_release_verify_builders
-
-    properties:
-      - github:
-          url: "{github-url}/{github-org}/{project}"
-
-    scm:
-      - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: ""
-          branch: "refs/heads/{branch}"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
-          choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-
-    triggers:
-      - github-pull-request:
-          trigger-phrase: "^(recheck|reverify)$"
-          only-trigger-phrase: false
-          status-context: "PyPI Release Verify"
-          permit-all: true
-          github-hooks: true
-          white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_release_included_regions}"
-
-- job-template:
-    name: "{project-name}-pypi-release-merge-{stream}"
-    id: gerrit-pypi-release-merge
-    <<: *lf_pypi_common
-    <<: *lf_pypi_release_wrappers
-    <<: *lf_pypi_release_common
-    <<: *lf_pypi_release_merge_builders
-
-    scm:
-      - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
-          choosing-strategy: gerrit
-
-    triggers:
-      - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on:
-            - change-merged-event
-            - comment-added-contains-event:
-                comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
-          projects:
-            - project-compare-type: "ANT"
-              project-pattern: "{project}"
-              branches:
-                - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_release_trigger_file_paths}"
-
-- job-template:
-    name: "{project-name}-pypi-release-merge-{stream}"
-    id: github-pypi-release-merge
-    <<: *lf_pypi_common
-    <<: *lf_pypi_release_wrappers
-    <<: *lf_pypi_release_common
-    <<: *lf_pypi_release_merge_builders
-
-    properties:
-      - github:
-          url: "{github-url}/{github-org}/{project}"
-
-    scm:
-      - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: ""
-          branch: "refs/heads/{branch}"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
-          choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-
-    triggers:
-      - github-pull-request:
-          trigger-phrase: "^(remerge)$"
-          only-trigger-phrase: false
-          status-context: "PyPI Release Merge"
-          permit-all: true
-          github-hooks: true
-          white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_release_included_regions}"
