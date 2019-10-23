@@ -11,34 +11,6 @@
       - shell: !include-raw-escape: ../shell/nexus-iq-cli.sh
 
 - builder:
-    name: lf-infra-pypi-tag-release
-    builders:
-      - config-file-provider:
-          files:
-            - file-id: sigul-config
-              variable: SIGUL_CONFIG
-            - file-id: sigul-password
-              variable: SIGUL_PASSWORD
-            - file-id: sigul-pki
-              variable: SIGUL_PKI
-            - file-id: signing-pubkey
-              variable: SIGNING_PUBKEY
-      - shell: !include-raw: ../shell/sigul-configuration.sh
-      - shell: !include-raw: ../shell/sigul-install.sh
-      - shell: !include-raw: ../shell/pypi-tag-release.sh
-
-- builder:
-    name: lf-infra-pypi-upload
-    builders:
-      - config-file-provider:
-          files:
-            - file-id: pypirc
-              target: "$HOME/.pypirc"
-      - inject:
-          properties-content: "REPOSITORY={pypi-repo}"
-      - shell: !include-raw-escape: ../shell/pypi-upload.sh
-
-- builder:
     name: lf-infra-tox-install
     builders:
       - inject:
@@ -740,12 +712,11 @@
       - bool:
           name: BUILD_BDIST_WHEEL
           default: "{dist-binary}"
-          description: "Set to True to build a wheel"
+          description: "Set to True (checked) to build a binary wheel distribution"
       - bool:
           name: DRY_RUN
           default: false
-          description: |
-            If DRY_RUN is enabled artifacts are not published.
+          description: "Set to True (checked) for job to skip uploading artifacts"
 
     publishers:
       - lf-infra-publish
@@ -789,36 +760,13 @@
       - lf-infra-tox-run:
           parallel: "{parallel}"
       - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
-      - lf-infra-pypi-upload:
-          pypi-repo: "{pypi-repo}"
-
-- lf_pypi_release_verify_builders: &lf_pypi_release_verify_builders
-    name: lf-pypi-release-verify-builders
-
-    builders:
-      - lf-infra-pre-build
-      - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
-      - lf-infra-tox-run:
-          parallel: "{parallel}"
-      - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
-      - lf-infra-pypi-tag-release
-
-- lf_pypi_release_merge_builders: &lf_pypi_release_merge_builders
-    name: lf-pypi-release-merge-builders
-
-    builders:
-      - lf-infra-pre-build
-      - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
-      - lf-infra-tox-run:
-          parallel: "{parallel}"
-      - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
-      - lf-infra-pypi-tag-release
-      - lf-infra-pypi-upload:
-          pypi-repo: "{pypi-repo}"
+      - config-file-provider:
+          files:
+            - file-id: pypirc
+              target: "$HOME/.pypirc"
+      - inject:
+          properties-content: "REPOSITORY={pypi-repo}"
+      - shell: !include-raw-escape: ../shell/pypi-upload.sh
 
 - job-template:
     name: "{project-name}-pypi-verify-{stream}"
@@ -969,12 +917,15 @@
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
-- lf_pypi_release_common: &lf_pypi_release_common
-    name: lf-pypi-release-common
+- lf_pypi_release: &lf_pypi_release
+    name: lf-pypi-release
 
     dist-binary: true
+    pypi-stage-index: https://test.pypi.org/simple
     pypi-repo: pypi
-    use-release-file: true
+    submodule-disable: true
+    submodule-recursive: false
+    submodule-timeout: 10
 
     # define once and use twice; jobs MUST NOT override
     gerrit_release_trigger_file_paths:
@@ -990,36 +941,59 @@
     parameters:
       - lf-infra-parameters:
           project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
-      - lf-infra-tox-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
-      - bool:
-          name: BUILD_BDIST_WHEEL
-          default: "{dist-binary}"
-          description: "Set to True to build a wheel"
+          branch: "$GERRIT_BRANCH"
+          stream: "$GERRIT_BRANCH"
+      - string:
+          name: DISTRIBUTION_TYPE
+          default: "pypi"
+          description: "This is the Jenkins release job distribution type."
+      - string:
+          name: PYPI_PROJECT
+          default: ""
+          description: "This is the PyPI project name."
+      - string:
+          name: PYTHON_VERSION
+          default: ""
+          description: "This is the Python interpreter compatibility version, example: 3.6"
       - string:
           name: VERSION
           default: ""
-          description: "This is the version, example: 1.0.0"
+          description: "This is the module version, example: 1.0.0"
       - bool:
           name: USE_RELEASE_FILE
-          default: "{use-release-file}"
-          description: "Set to False for job built with parameters"
+          default: true
+          description: "Set to False (unchecked) for job built with parameters"
       - bool:
           name: DRY_RUN
           default: false
-          description: |
-            If DRY_RUN is enabled artifacts are not published.
+          description: "Set to True (checked) for job to skip uploading artifacts"
+
+    builders:
+      - lf-infra-pre-build
+      - config-file-provider:
+          files:
+            - file-id: sigul-config
+              variable: SIGUL_CONFIG
+            - file-id: sigul-password
+              variable: SIGUL_PASSWORD
+            - file-id: sigul-pki
+              variable: SIGUL_PKI
+            - file-id: signing-pubkey
+              variable: SIGNING_PUBKEY
+      - shell: !include-raw-escape: ../shell/sigul-configuration.sh
+      - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - inject:
+          properties-content: |
+            PYPI_INDEX={pypi-stage-index}
+            REPOSITORY={pypi-repo}
+      - shell: !include-raw-escape: ../shell/pypi-tag-release.sh
 
 - job-template:
-    name: "{project-name}-pypi-release-verify-{stream}"
+    name: "{project-name}-pypi-release-verify"
     id: gerrit-pypi-release-verify
     <<: *lf_pypi_common
     <<: *lf_pypi_common_wrappers
-    <<: *lf_pypi_release_common
-    <<: *lf_pypi_release_verify_builders
+    <<: *lf_pypi_release
 
     scm:
       - lf-infra-gerrit-scm:
@@ -1049,16 +1023,15 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
+                  branch-pattern: "**"
               file-paths: "{obj:gerrit_release_trigger_file_paths}"
 
 - job-template:
-    name: "{project-name}-pypi-release-verify-{stream}"
+    name: "{project-name}-pypi-release-verify"
     id: github-pypi-release-verify
     <<: *lf_pypi_common
     <<: *lf_pypi_common_wrappers
-    <<: *lf_pypi_release_common
-    <<: *lf_pypi_release_verify_builders
+    <<: *lf_pypi_release
 
     properties:
       - github:
@@ -1087,12 +1060,11 @@
           included-regions: "{obj:github_release_included_regions}"
 
 - job-template:
-    name: "{project-name}-pypi-release-merge-{stream}"
+    name: "{project-name}-pypi-release-merge"
     id: gerrit-pypi-release-merge
     <<: *lf_pypi_common
     <<: *lf_pypi_release_wrappers
-    <<: *lf_pypi_release_common
-    <<: *lf_pypi_release_merge_builders
+    <<: *lf_pypi_release
 
     scm:
       - lf-infra-gerrit-scm:
@@ -1117,16 +1089,15 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
+                  branch-pattern: "**"
               file-paths: "{obj:gerrit_release_trigger_file_paths}"
 
 - job-template:
-    name: "{project-name}-pypi-release-merge-{stream}"
+    name: "{project-name}-pypi-release-merge"
     id: github-pypi-release-merge
     <<: *lf_pypi_common
     <<: *lf_pypi_release_wrappers
-    <<: *lf_pypi_release_common
-    <<: *lf_pypi_release_merge_builders
+    <<: *lf_pypi_release
 
     properties:
       - github:

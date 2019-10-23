@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Refactor PyPI release-verify and release-merge templates to download
+    distribution files from a PyPI staging index and upload the files to a
+    PyPI release index.  Remove all the builders that were previously used.
+    This makes the PyPI release merge templates highly similar to the
+    release-job merge templates.  Revise documentation appropriately.

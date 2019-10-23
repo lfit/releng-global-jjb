@@ -13,13 +13,16 @@ $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-pypi-schema.
 
 required:
   - "distribution_type"
-  - "project"
+  - "pypi_project"
+  - "python_version"
   - "version"
 
 properties:
   distribution_type:
     type: "string"
-  project:
+  pypi_project:
+    type: "string"
+  python_version:
     type: "string"
   version:
     type: "string"

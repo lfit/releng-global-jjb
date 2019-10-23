@@ -9,59 +9,97 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> pypi-tag-release.sh"
-
-# Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-# Functions.
+virtualenv -p python3 /tmp/pypi
+PATH=/tmp/pypi/bin:$PATH
+pipup="python -m pip install -q --upgrade pip"
+echo "INFO: $pipup"
+$pipup
+pipins="python -m pip install -q lftools jsonschema niet twine"
+echo "INFO: $pipins"
+$pipins
 
-set_variables(){
-    echo "INFO: Setting variables"
+#Functions.
+
+set_variables_common(){
+    echo "INFO: Setting all common variables"
+    LOGS_SERVER="${LOGS_SERVER:-None}"
+    if [ "${LOGS_SERVER}" == 'None' ]; then
+        echo "ERROR: log server not found"
+        exit 1
+    fi
+    NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
     # Verify if using release file or parameters
-    if $USE_RELEASE_FILE; then
-        echo "INFO: Checking number of release yaml files"
+    if $USE_RELEASE_FILE ; then
+        # release-job.sh uses $GERRIT_PATCHSET_REVISION which is not available in sandbox
         release_files=$(git diff-tree --no-commit-id -r "$GIT_COMMIT" --name-only -- "releases/" ".releases/")
-        if (( $(echo "$release_files" | wc -w) != 1 )); then
-          echo "ERROR: RELEASE FILES: $release_files"
+        if (( $(grep -c . <<<"$release_files") > 1 )); then
+          echo "INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
           echo "ERROR: Committing multiple release files in the same commit OR rename/amend of existing files is not supported."
           exit 1
         else
           release_file="$release_files"
-          echo "INFO: RELEASE FILE: $release_file"
+          echo "INFO: RELEASE FILE: $release_files"
         fi
     else
-        echo "INFO: This job is built with parameters, no release file"
+        echo "INFO: This job is built with parameters, no release file needed. Continuing..."
         release_file="None"
     fi
 
-    if [[ -z ${DISTRIBUTION_TYPE:-} ]]; then
-        echo "INFO: reading DISTRIBUTION_TYPE from file $release_file"
+    DISTRIBUTION_TYPE="${DISTRIBUTION_TYPE:-None}"
+    if [[ $DISTRIBUTION_TYPE == "None" ]]; then
         DISTRIBUTION_TYPE="$(niet ".distribution_type" "$release_file")"
     fi
-    if [[ -z ${VERSION:-} ]]; then
-        echo "INFO: reading VERSION from file $release_file"
-        VERSION="$(niet ".version" "$release_file")"
-    fi
 
-    # Display Release Information
+    PATCH_DIR="$(mktemp -d)"
+
+    # Displaying Release Information (Common variables)
     printf "\t%-30s\n" RELEASE_ENVIRONMENT_INFO:
     printf "\t%-30s %s\n" RELEASE_FILE: $release_file
+    printf "\t%-30s %s\n" LOGS_SERVER: $LOGS_SERVER
+    printf "\t%-30s %s\n" NEXUS_PATH: $NEXUS_PATH
     printf "\t%-30s %s\n" JENKINS_HOSTNAME: $JENKINS_HOSTNAME
     printf "\t%-30s %s\n" SILO: $SILO
     printf "\t%-30s %s\n" PROJECT: $PROJECT
     printf "\t%-30s %s\n" PROJECT-DASHED: ${PROJECT//\//-}
     printf "\t%-30s %s\n" DISTRIBUTION_TYPE: $DISTRIBUTION_TYPE
+}
+
+set_variables_pypi(){
+    echo "INFO: Setting pypi variables"
+
+    # Jenkins parameters may supply values; if not, read from file
+    if [[ -z ${PYPI_PROJECT:-} ]]; then
+        echo "INFO: reading PYPI_PROJECT from file $release_file"
+        PYPI_PROJECT="$(niet ".pypi_project" "$release_file")"
+    fi
+    if [[ -z ${PYTHON_VERSION:-} ]]; then
+        echo "INFO: reading PYTHON_VERSION from file $release_file"
+        PYTHON_VERSION="$(niet ".python_version" "$release_file")"
+    fi
+    if [[ -z ${VERSION:-} ]]; then
+        echo "INFO: reading VERSION from file $release_file"
+        VERSION="$(niet ".version" "$release_file")"
+    fi
+    # Make sure required values are defined
+    if [ -z ${PYPI_PROJECT+x} ] || [ -z ${PYTHON_VERSION+x} ] || [ -z {$VERSION+x} ]; then
+        echo "ERROR: PYPI_PROJECT, PYTHON_VERSION and VERSION must be defined"
+        exit 1
+    fi
+
+    # Display Release Information
+    printf "\t%-30s\n" RELEASE_PYPI_INFO:
+    printf "\t%-30s %s\n" PYPI_INDEX: $PYPI_INDEX
+    printf "\t%-30s %s\n" PYPI_PROJECT: $PYPI_PROJECT
+    printf "\t%-30s %s\n" PYTHON_VERSION: $PYTHON_VERSION
     printf "\t%-30s %s\n" VERSION: $VERSION
 }
 
 # needs to run in the repository root
 verify_schema(){
-    echo "INFO: Fetching schema"
-    pypi_schema="release-pypi-schema.yaml"
-    wget https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${pypi_schema}
-    echo "INFO: Verifying $release_file against schema $pypi_schema"
-    lftools schema verify "$release_file" "$pypi_schema"
-    echo "INFO: $release_file passed schema verification"
+    echo "INFO: Verifying $release_file schema."
+    lftools schema verify "$release_file" "$RELEASE_SCHEMA"
 }
 
 verify_version(){
@@ -78,22 +116,50 @@ verify_version(){
     fi
 }
 
-verify_dist(){
-    # Verify all file names in dist folder have the expected version string
-    dir="$WORKSPACE/$TOX_DIR/dist"
-    echo "INFO: Listing files in $dir"
-    ls $dir
-    echo "INFO: Checking files in $dir for $VERSION"
-    if unex_files=$(find $dir | grep -v $VERSION | egrep -v "^$dir$"); then
-        echo "ERROR: found unexpected files: $unex_files"
+# calls pip to download binary and source distributions from the specified index,
+# which requires a recent-in-2019 version.  Uploads the files it received.
+pypi_release_file(){
+    tgtdir=dist
+    mkdir $tgtdir
+    pip_pfx="pip download -d $tgtdir --no-deps --python-version $PYTHON_VERSION -i $PYPI_INDEX"
+    module="$PYPI_PROJECT==$VERSION"
+    echo "INFO: downloading binary distribution $PYPI_PROJECT==$VERSION"
+    if ! $pip_pfx $module ; then
+        echo "WARN: failed to download binary distribution"
+    fi
+    echo "INFO: downloading source distribution $PYPI_PROJECT==$VERSION"
+    if ! $pip_pfx --no-binary=:all: $module ; then
+        echo "WARN: failed to download source distribution"
+    fi
+    echo "INFO: Checking files in $tgtdir"
+    filecount=$(ls $tgtdir | wc -l)
+    if [[ $filecount = 0 ]] ; then
+        echo "ERROR: no files downloaded"
         exit 1
     else
-        echo "INFO: All file names have expected string ${VERSION}"
+        echo "INFO: downloaded $filecount distributions:"
+        ls $tgtdir
     fi
+
+    if [[ ! "$JOB_NAME" =~ "merge" ]] ; then
+        echo "INFO: not a merge job, not uploading files"
+        return
+    fi
+
+    cmd="twine upload -r $REPOSITORY $tgtdir/*"
+    if $DRY_RUN; then
+        echo "INFO: dry-run is set, echoing command only"
+        echo "$cmd"
+    else
+        echo "INFO: uploading $filecount distributions to repo $REPOSITORY"
+        $cmd
+    fi
+    tag
 }
 
 # sigul is only available on Centos
-tag_gerrit(){
+# TODO: write tag_github function
+tag(){
     echo "INFO: Verifying tag $VERSION in repo"
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
@@ -130,20 +196,22 @@ tag_gerrit(){
     fi
 }
 
-# Main
-virtualenv -p python3 /tmp/pypi
-PATH=/tmp/pypi/bin:$PATH
-pip install lftools jsonschema niet
-set_variables
-if [[ $DISTRIBUTION_TYPE != "pypi" ]]; then
+# Set common environment variables
+set_variables_common
+
+if [[ "$DISTRIBUTION_TYPE" == "pypi" ]]; then
+    if $USE_RELEASE_FILE ; then
+        echo "INFO: Fetching schema"
+        RELEASE_SCHEMA="release-pypi-schema.yaml"
+        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${RELEASE_SCHEMA}
+        verify_schema
+    fi
+    set_variables_pypi
+    verify_version
+    pypi_release_file
+else
     echo "ERROR: unexpected distribution type $DISTRIBUTION_TYPE"
     exit 1
 fi
-if $USE_RELEASE_FILE; then
-    verify_schema
-fi
-verify_version
-verify_dist
-# TODO: write tag_github function
-tag_gerrit
+
 echo "---> pypi-tag-release.sh ends"
