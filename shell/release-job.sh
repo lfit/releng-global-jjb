@@ -11,12 +11,12 @@
 echo "---> release-job.sh"
 set -eu -o pipefail
 
-set +u
-python3 -m venv /tmp/v/venv/
-# shellcheck disable=SC1091
-source /tmp/v/venv/bin/activate
-set -u
-python -m pip install lftools[nexus] jsonschema niet yq
+echo "INFO: creating virtual environment"
+virtualenv -p python3 /tmp/venv
+PATH=/tmp/venv/bin:$PATH
+pipup="python -m pip install -q --upgrade pip lftools[nexus] jsonschema twine yq"
+echo "INFO: $pipup"
+$pipup
 
 #Functions.
 
@@ -30,7 +30,7 @@ set_variables_common(){
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
     # Verify if using release file or parameters
     if $USE_RELEASE_FILE ; then
-        release_files=$(git diff-tree --no-commit-id -r "$GERRIT_PATCHSET_REVISION" --name-only -- "releases/" ".releases/")
+        release_files=$(git diff-tree --no-commit-id -r "$GIT_COMMIT" --name-only -- "releases/" ".releases/")
         if (( $(grep -c . <<<"$release_files") > 1 )); then
           echo "INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
           echo "ERROR: Committing multiple release files in the same commit OR rename/amend of existing files is not supported."
@@ -46,7 +46,7 @@ set_variables_common(){
 
     DISTRIBUTION_TYPE="${DISTRIBUTION_TYPE:-None}"
     if [[ $DISTRIBUTION_TYPE == "None" ]]; then
-        DISTRIBUTION_TYPE="$(niet ".distribution_type" "$release_file")"
+        DISTRIBUTION_TYPE="$(yq -er .distribution_type "$release_file")"
     fi
 
     PATCH_DIR="$(mktemp -d)"
@@ -64,48 +64,81 @@ set_variables_common(){
 }
 
 set_variables_maven(){
+    # use Jenkins parameter if set; else get value from release file
     VERSION="${VERSION:-None}"
     if [[ $VERSION == "None" ]]; then
-        VERSION="$(niet ".version" "$release_file")"
+        VERSION="$(yq -er .version "$release_file")"
     fi
     LOG_DIR="${LOG_DIR:-None}"
     if [[ $LOG_DIR == "None" ]]; then
-        LOG_DIR="$(niet ".log_dir" "$release_file")"
+        LOG_DIR="$(yq -er .log_dir "$release_file")"
     fi
     LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
 
     # Continuing displaying Release Information (Maven)
     printf "\t%-30s\n" RELEASE_MAVEN_INFO:
-    printf "\t%-30s %s\n" VERSION: $VERSION
-    printf "\t%-30s %s\n" LOG DIR: $LOG_DIR
-    printf "\t%-30s %s\n" LOGS URL: $LOGS_URL
+    printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+    printf "\t%-30s %s\n" LOGS_URL: "$LOGS_URL"
+    printf "\t%-30s %s\n" VERSION: "$VERSION"
 }
 
 set_variables_container(){
     VERSION="${VERSION:-None}"
     if [[ $VERSION == "None" ]]; then
-        VERSION="$(niet ".container_release_tag" "$release_file")"
+        VERSION="$(yq -er .container_release_tag "$release_file")"
     fi
     if grep -q "container_pull_registry" "$release_file" ; then
-        CONTAINER_PULL_REGISTRY="$(niet ".container_pull_registry" "$release_file")"
+        CONTAINER_PULL_REGISTRY="$(yq -er .container_pull_registry "$release_file")"
     fi
     if grep -q "container_push_registry" "$release_file" ; then
-        CONTAINER_PUSH_REGISTRY="$(niet ".container_push_registry" "$release_file")"
+        CONTAINER_PUSH_REGISTRY="$(yq -er .container_push_registry "$release_file")"
     fi
     # Make sure both pull and push registries are defined
     if [ -z ${CONTAINER_PULL_REGISTRY+x} ] || [ -z ${CONTAINER_PUSH_REGISTRY+x} ]; then
         echo "ERROR: CONTAINER_PULL_REGISTRY and CONTAINER_PUSH_REGISTRY need to be defined"
         exit 1
     fi
-    ref="$(niet ".ref" "$release_file")"
+    ref="$(yq -er .ref "$release_file")"
 
     # Continuing displaying Release Information (Container)
     printf "\t%-30s\n" RELEASE_CONTAINER_INFO:
-    printf "\t%-30s %s\n" CONTAINER_RELEASE_TAG: $VERSION
-    printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: $CONTAINER_PULL_REGISTRY
-    printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: $CONTAINER_PUSH_REGISTRY
-    printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: $ref
+    printf "\t%-30s %s\n" CONTAINER_RELEASE_TAG: "$VERSION"
+    printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: "$CONTAINER_PULL_REGISTRY"
+    printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: "$CONTAINER_PUSH_REGISTRY"
+    printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$ref"
+}
+
+set_variables_pypi(){
+    # use Jenkins parameter if set; else get value from release file
+    echo "INFO: Setting pypi variables"
+    LOG_DIR="${LOG_DIR:-None}"
+    if [[ $LOG_DIR == "None" ]]; then
+        LOG_DIR="$(yq -er .log_dir "$release_file")"
+    fi
+    LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+    LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
+    PYPI_PROJECT="${PYPI_PROJECT:-None}"
+    if [[ $PYPI_PROJECT == "None" ]]; then
+        PYPI_PROJECT="$(yq -er .pypi_project "$release_file")"
+    fi
+    PYTHON_VERSION="${PYTHON_VERSION:-None}"
+    if [[ $PYTHON_VERSION == "None" ]]; then
+        PYTHON_VERSION="$(yq -er .python_version "$release_file")"
+    fi
+    VERSION="${VERSION:-None}"
+    if [[ $VERSION == "None" ]]; then
+        VERSION="$(yq -er .version "$release_file")"
+    fi
+
+    # Continuing displaying Release Information (pypi)
+    printf "\t%-30s\n" RELEASE_PYPI_INFO:
+    printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+    printf "\t%-30s %s\n" LOGS_URL: "$LOGS_URL"
+    printf "\t%-30s %s\n" PYPI_INDEX: "$PYPI_INDEX" # from job configuration
+    printf "\t%-30s %s\n" PYPI_PROJECT: "$PYPI_PROJECT"
+    printf "\t%-30s %s\n" PYTHON_VERSION: "$PYTHON_VERSION"
+    printf "\t%-30s %s\n" VERSION: "$VERSION"
 }
 
 verify_schema(){
@@ -114,10 +147,12 @@ verify_schema(){
 }
 
 verify_version(){
-    # Verify allowed versions
-    # Allowed versions are "v#.#.#" or "#.#.#" aka SemVer
+    # Verify allowed patterns "v#.#.#" or "#.#.#" aka SemVer
+    echo "INFO: Verifying version string $VERSION"
     allowed_version_regex="^((v?)([0-9]+)\.([0-9]+)\.([0-9]+))$"
-    if [[ ! $VERSION =~ $allowed_version_regex ]]; then
+    if [[ $VERSION =~ $allowed_version_regex ]]; then
+        echo "INFO: The version $VERSION is a valid semantic version"
+    else
         echo "INFO: The version $VERSION is not a semantic valid version"
         echo "INFO: Allowed versions are \"v#.#.#\" or \"#.#.#\" aka SemVer"
         echo "INFO: See https://semver.org/ for more details on SemVer"
@@ -137,6 +172,21 @@ verify_version_match_release(){
     fi
 }
 
+# check prerequisites to detect mistakes in the release YAML file
+verify_pypi_match_release(){
+    wget -q -P /tmp "${LOGS_URL}/"console.log.gz
+    echo "INFO: Searching for strings >$PYPI_PROJECT< and >$VERSION< in job log"
+    # pypi-upload.sh generates success message with file list
+    if zgrep -i "uploaded" /tmp/console.log.gz | grep "$PYPI_PROJECT" | grep "$VERSION" ; then
+        echo "INFO: found expected strings in job log"
+    else
+        echo "ERROR: failed to find expected strings in job log"
+        exit 1
+    fi
+}
+
+# sigul is only available on Centos
+# TODO: write tag_github function
 tag(){
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
@@ -193,8 +243,8 @@ container_release_file(){
     local lfn_umbrella
     lfn_umbrella="$(echo "$GERRIT_HOST" | awk -F"." '{print $2}')"
 
-    for namequoted in $(cat $release_file | yq '.containers[].name'); do
-        versionquoted=$(cat $release_file | yq ".containers[] |select(.name==$namequoted) |.version")
+    for namequoted in $(yq -er ".containers[].name" $release_file); do
+        versionquoted=$(yq -er ".containers[] | select(.name==$namequoted) | .version" $release_file)
 
         #Remove extra yaml quotes
         name="${namequoted#\"}"
@@ -244,19 +294,62 @@ maven_release_file(){
     tag
 }
 
-echo "########### Start Script release-job.sh ###################################"
+# calls pip to download binary and source distributions from the specified index,
+# which requires a recent-in-2019 version.  Uploads the files it received.
+pypi_release_file(){
+    tgtdir=dist
+    mkdir $tgtdir
+    pip_pfx="pip download -d $tgtdir --no-deps --python-version $PYTHON_VERSION -i $PYPI_INDEX"
+    module="$PYPI_PROJECT==$VERSION"
+    pip_bin="$pip_pfx $module"
+    echo "INFO: downloading binary: $pip_bin"
+    if ! $pip_bin ; then
+        echo "WARN: failed to download binary distribution"
+    fi
+    pip_src="$pip_pfx --no-binary=:all: $module"
+    echo "INFO: downloading source: $pip_src"
+    if ! $pip_src ; then
+        echo "WARN: failed to download source distribution"
+    fi
+    echo "INFO: Checking files in $tgtdir"
+    filecount=$(ls $tgtdir | wc -l)
+    if [[ $filecount = 0 ]] ; then
+        echo "ERROR: no files downloaded"
+        exit 1
+    else
+        # shellcheck disable=SC2046
+        echo "INFO: downloaded $filecount distributions: " $(ls $tgtdir)
+    fi
 
-# Check if this is a container or maven release: release-container-schema.yaml vs release-schema.yaml
-# Logic to determine what we are releasing.
-##########################################
+    if [[ ! "$JOB_NAME" =~ "merge" ]] ; then
+        echo "INFO: not a merge job, not uploading files"
+        return
+    fi
+
+    cmd="twine upload -r $REPOSITORY $tgtdir/*"
+    if $DRY_RUN; then
+        echo "INFO: dry-run is set, echoing command only"
+        echo "$cmd"
+    else
+        echo "INFO: uploading $filecount distributions to repo $REPOSITORY"
+        $cmd
+    fi
+    tag
+}
 
 # Set common environment variables
 set_variables_common
 
+# Determine the type of release:
+#   - container, release-container-schema.yaml
+#   - maven, release-schema.yaml
+#   - pypi,  release-pypi-schema.yaml
+
 if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
-    wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
-    RELEASE_SCHEMA="release-schema.yaml"
     if $USE_RELEASE_FILE ; then
+        RELEASE_SCHEMA="release-schema.yaml"
+        echo "INFO: Fetching schema $RELEASE_SCHEMA"
+        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
         verify_schema
     fi
     set_variables_maven
@@ -264,17 +357,30 @@ if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
     verify_version_match_release
     maven_release_file
 elif [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
-    wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-container-schema.yaml
-    RELEASE_SCHEMA="release-container-schema.yaml"
-    verify_schema
+    if $USE_RELEASE_FILE ; then
+        RELEASE_SCHEMA="release-container-schema.yaml"
+        echo "INFO: Fetching schema $RELEASE_SCHEMA"
+        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${RELEASE_SCHEMA}
+        verify_schema
+    fi
     set_variables_container
     verify_version
     container_release_file
+elif [[ "$DISTRIBUTION_TYPE" == "pypi" ]]; then
+    if $USE_RELEASE_FILE ; then
+        RELEASE_SCHEMA="release-pypi-schema.yaml"
+        echo "INFO: Fetching schema $RELEASE_SCHEMA"
+        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${RELEASE_SCHEMA}
+        verify_schema
+    fi
+    set_variables_pypi
+    verify_version
+    verify_pypi_match_release
+    pypi_release_file
 else
     echo "ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
-    echo "Must be maven or container"
     exit 1
 fi
 ##########################################
 
-echo "########### End Script release-job.sh ###################################"
+echo "---> release-job.sh ends"
