@@ -17,11 +17,12 @@ echo "---> pypi-upload.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+echo "INFO: creating virtual environment"
 virtualenv -p python3 /tmp/pypi
 PATH=/tmp/pypi/bin:$PATH
-
-echo "INFO: installing twine to upload distributions"
-pip install -q twine
+pipup="python -m pip install -q --upgrade twine"
+echo "INFO: $pipup"
+$pipup
 
 echo "INFO: cd to tox-dir $TOX_DIR"
 cd "$WORKSPACE/$TOX_DIR"
@@ -29,10 +30,13 @@ cd "$WORKSPACE/$TOX_DIR"
 cmd="twine upload -r $REPOSITORY dist/*"
 if $DRY_RUN; then
     echo "INFO: dry-run is set, echoing command only"
-    echo $cmd
+    echo "$cmd"
 else
     echo "INFO: uploading distributions to repo $REPOSITORY"
     $cmd
+    # emit message and files on single line for release-job
+    # shellcheck disable=SC2046
+    echo "INFO: successfully uploaded distributions: " $(ls dist)
 fi
 
 echo "---> pypi-upload.sh ends"

@@ -1,0 +1,16 @@
+---
+features:
+  - |
+    Refactor PyPI release-verify and release-merge templates to download
+    distribution files from a PyPI staging index and upload the files to a
+    PyPI release index.  Remove all the builders that were previously used.
+    Call pip upgrade to install latest version of setuptools and twine.
+    Drop the PyPI job groups because the verify & merge templates do not
+    accept the same arguments as release-verify & release-merge templates.
+    Remove stream, branch usage; just one PyPI release job per project now.
+    Extend the PyPI release yaml file schema for log_dir and other values.
+    All this makes the PyPI release ver/mrg templates highly similar to the
+    release-job ver/mrg templates.  Revise documentation appropriately.
+    Move the PyPI release features to the lf-release-jobs.(rst,yaml) files.
+    Extend the release-job.sh script to have pypi release functions, and
+    drop the pypi-tag-release.sh script.

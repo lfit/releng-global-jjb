@@ -3,10 +3,11 @@
     name: gerrit-python-jobs
     jobs:
       - "{project-name}-python-jobs"
-      - gerrit-tox-sonar
       - gerrit-pypi-merge
-      - gerrit-pypi-release-verify
       - gerrit-pypi-release-merge
+      - gerrit-pypi-release-verify
+      - gerrit-pypi-verify
+      - gerrit-tox-sonar
 
     project-name: gerrit-python
 
@@ -14,10 +15,11 @@
     name: github-python-jobs
     jobs:
       - "{project-name}-github-python-jobs"
-      - github-tox-sonar
       - github-pypi-merge
-      - github-pypi-release-verify
       - github-pypi-release-merge
+      - github-pypi-release-verify
+      - github-tox-sonar
+      - github-pypi-verify
 
     project-name: github-python
 
