@@ -53,7 +53,8 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: "^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$"
+          comment-contains-value: |
+            ^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$
 
     #####################
     # Job Configuration #
@@ -240,3 +241,240 @@
               file-paths:
                 - compare-type: REG_EXP
                   pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+
+- lf_pypi_verify_wrappers: &lf_pypi_verify_wrappers
+    name: lf-pypi-verify-wrappers
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+- lf_pypi_release_wrappers: &lf_pypi_release_wrappers
+    name: lf-pypi-release-wrappers
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
+
+- lf_pypi_release: &lf_pypi_release
+    name: lf-pypi-release
+
+    archive-artifacts: >
+      **/*.log
+    build-days-to-keep: 7
+    build-timeout: 15
+    disable-job: false
+    gerrit-skip-vote: false
+    git-url: "$GIT_URL/$PROJECT"
+    pypi-repo: pypi
+    pypi-stage-index: https://test.pypi.org/simple
+    submodule-disable: true
+    submodule-recursive: false
+    submodule-timeout: 10
+    use-release-file: true
+
+    # define once and use twice; jobs MUST NOT override
+    gerrit_release_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+
+    # yamllint disable-line rule:line-length
+    # github_release_included_regions MUST match gerrit_release_trigger_file_paths
+    github_release_included_regions:
+      - 'releases\/.*\.yaml'
+      - '.releases\/.*\.yaml'
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "$GERRIT_BRANCH"
+          stream: "$GERRIT_BRANCH"
+      # accept all items that appear in the release-yaml file
+      - string:
+          name: DISTRIBUTION_TYPE
+          default: "pypi"
+          description: "The Jenkins release job distribution type."
+      - string:
+          name: LOG_DIR
+          default: ""
+          description: "The partial path of logs from the PyPI merge job."
+      - string:
+          name: PYPI_PROJECT
+          default: ""
+          description: "The PyPI project name."
+      - string:
+          name: PYTHON_VERSION
+          default: ""
+          description: "The Python compatibility version, example: 3.6"
+      - string:
+          name: VERSION
+          default: ""
+          description: "The module version, example: 1.0.0"
+      # special parameters for manual use of the Jenkins job
+      - bool:
+          name: USE_RELEASE_FILE
+          default: true
+          description: "Set to False (unchecked) to build with parameters"
+      - bool:
+          name: DRY_RUN
+          default: false
+          description: "Set to True (checked) to skip uploading artifacts"
+
+    builders:
+      - lf-infra-pre-build
+      - config-file-provider:
+          files:
+            - file-id: sigul-config
+              variable: SIGUL_CONFIG
+            - file-id: sigul-password
+              variable: SIGUL_PASSWORD
+            - file-id: sigul-pki
+              variable: SIGUL_PKI
+            - file-id: signing-pubkey
+              variable: SIGNING_PUBKEY
+      - shell: !include-raw-escape: ../shell/sigul-configuration.sh
+      - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - inject:
+          properties-content: |
+            PYPI_INDEX={pypi-stage-index}
+            REPOSITORY={pypi-repo}
+      - shell: !include-raw-escape: ../shell/pypi-release-job.sh
+
+- job-template:
+    name: "{project-name}-pypi-release-verify"
+    id: gerrit-pypi-release-verify
+    <<: *lf_release_common
+    <<: *lf_pypi_verify_wrappers
+    <<: *lf_pypi_release
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: true
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                # yamllint disable-line rule:line-length
+                comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**"
+              file-paths: "{obj:gerrit_release_trigger_file_paths}"
+
+- job-template:
+    name: "{project-name}-pypi-release-verify"
+    id: github-pypi-release-verify
+    <<: *lf_release_common
+    <<: *lf_pypi_verify_wrappers
+    <<: *lf_pypi_release
+
+    properties:
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^(recheck|reverify)$"
+          only-trigger-phrase: false
+          status-context: "PyPI Release Verify"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+          included-regions: "{obj:github_release_included_regions}"
+
+- job-template:
+    name: "{project-name}-pypi-release-merge"
+    id: gerrit-pypi-release-merge
+    <<: *lf_release_common
+    <<: *lf_pypi_release_wrappers
+    <<: *lf_pypi_release
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on:
+            - change-merged-event
+            - comment-added-contains-event:
+                comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**"
+              file-paths: "{obj:gerrit_release_trigger_file_paths}"
+
+- job-template:
+    name: "{project-name}-pypi-release-merge"
+    id: github-pypi-release-merge
+    <<: *lf_release_common
+    <<: *lf_pypi_release_wrappers
+    <<: *lf_pypi_release
+
+    properties:
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^(remerge)$"
+          only-trigger-phrase: false
+          status-context: "PyPI Release Merge"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+          included-regions: "{obj:github_release_included_regions}"

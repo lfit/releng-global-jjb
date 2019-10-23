@@ -16,16 +16,19 @@ echo "---> pypi-dist-build.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+echo "INFO: creating virtual environment"
 virtualenv -p python3 /tmp/pypi
 PATH=/tmp/pypi/bin:$PATH
+pipup="python -m pip install -q --upgrade setuptools wheel"
+echo "INFO: $pipup"
+$pipup
 
 echo "INFO: installing twine to check distributions"
 pip install -q twine
 
 bdist=""
 if $BUILD_BDIST_WHEEL; then
-    echo "INFO: installing wheel to build binary distribution"
-    pip install -q wheel
+    echo "INFO: adding wheel to build binary distribution"
     bdist="bdist_wheel"
 fi
 
