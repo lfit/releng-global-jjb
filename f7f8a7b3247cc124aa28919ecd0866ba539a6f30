@@ -91,6 +91,30 @@
       "revId": "f7f8a7b3247cc124aa28919ecd0866ba539a6f30",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cee6ac45_47f04859",
+        "filename": "shell/pypi-release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-24T16:44:26Z",
+      "side": 1,
+      "message": "Not just similar, darned close to identical bcos I planned it that way :) merging is on my to-do list but the release-job.sh file has a couple problem\n\n1) uses $GERRIT_COMMIT instead of the more portable $GIT_COMMIT, \n2) uses niet AND yq, need to choose one and stick with it\n\nI am reluctant to modify it, in use by so many projects, but I guess I\u0027ll go for it. Need lots of testing after every change and the release jobs are particularly bad to test.",
+      "parentUuid": "e7d9f399_50ea2ce5",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 240,
+        "endChar": 36
+      },
+      "revId": "f7f8a7b3247cc124aa28919ecd0866ba539a6f30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
