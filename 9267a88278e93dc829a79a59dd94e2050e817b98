@@ -260,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "8ccb6c34_e48dc860",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "The \u0027pip freeze\u0027 just generates a list of packages in the venv ($pkg_list). What I discovered is the first \u0027install --update -r $req_list\u0027 would give errors (but return OK status). The first \u0027install --update -r $pkg_list\u0027 was Aric\u0027s suggestion. What I discovered it would typically generate a number of warnings/errors and would often exit with errors. The second one would always return no errors, no warning and exit with OK status. This is also consistent with things I have read about pip on the internet. I saw similar behavior on both centos \u0026 ubuntu.\n\nAll this is the reason that I don\u0027t want to add packages to the venv once it have been created. I would expect to run \u0027install --upgrade -r $pkg_list\u0027 multiple times.",
+      "parentUuid": "1866f118_37db4ee7",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 6
+      },
+      "revId": "9267a88278e93dc829a79a59dd94e2050e817b98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "964a00bc_b6e14c33",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 1
