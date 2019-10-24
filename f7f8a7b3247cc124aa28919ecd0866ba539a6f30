@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7e1c976a_b63cf9cb",
+        "filename": ".jjb-test/lf-python-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-24T13:02:13Z",
+      "side": 1,
+      "message": "asciibetical order",
+      "range": {
+        "startLine": 7,
+        "startChar": 8,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "f7f8a7b3247cc124aa28919ecd0866ba539a6f30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ad5178fa_24965847",
+        "filename": ".jjb-test/lf-python-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-24T13:02:13Z",
+      "side": 1,
+      "message": "asciibetical order",
+      "range": {
+        "startLine": 19,
+        "startChar": 7,
+        "endLine": 19,
+        "endChar": 26
+      },
+      "revId": "f7f8a7b3247cc124aa28919ecd0866ba539a6f30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9af4cf90_64954ab7",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-24T13:02:13Z",
+      "side": 1,
+      "message": "move this on top of PyPi release verify section.",
+      "range": {
+        "startLine": 456,
+        "startChar": 0,
+        "endLine": 513,
+        "endChar": 71
+      },
+      "revId": "f7f8a7b3247cc124aa28919ecd0866ba539a6f30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7d9f399_50ea2ce5",
+        "filename": "shell/pypi-release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-24T13:02:13Z",
+      "side": 1,
+      "message": "most of the code here is similar to whats in shell/release-job.sh. Is it possible to maintain a single file that would be conditionally used for both the job templates.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 240,
+        "endChar": 36
+      },
+      "revId": "f7f8a7b3247cc124aa28919ecd0866ba539a6f30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}

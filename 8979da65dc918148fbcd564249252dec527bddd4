@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d249e0eb_beb7930e",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-24T13:02:13Z",
+      "side": 0,
+      "message": "most of the code here is similar to whats in shell/release-job.sh. Is it possible to maintain a single file that would be conditionally used for both the job templates.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 1
+      },
+      "revId": "8979da65dc918148fbcd564249252dec527bddd4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
