@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "4fec44b4_c76cffb7",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "I will completely rewriting the comments in the next upload. They will be in \u0027man\u0027 format and will include examples.",
+      "parentUuid": "f0773e3f_830c5a15",
+      "range": {
+        "startLine": 78,
+        "startChar": 7,
+        "endLine": 78,
+        "endChar": 13
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "efa836af_a717b009",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 4
@@ -59,6 +83,30 @@
       "writtenOn": "2019-10-24T10:25:43Z",
       "side": 1,
       "message": "Perhaps an example of the python-executable? E.g., should it be \"python3\" not \"/usr/local/blah/blah/python3.7.12345\" ?",
+      "range": {
+        "startLine": 80,
+        "startChar": 32,
+        "endLine": 80,
+        "endChar": 42
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6481e54c_16834bb8",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "I agree it is not clear. The answer is that is can be just python, python2 python3 python3.6 as long that is it found in you PATH. The script will be performing a \u0027type python\u0027 to make sure it is a available in the system. Better comments (with expmples  are coming).",
+      "parentUuid": "efa836af_a717b009",
       "range": {
         "startLine": 80,
         "startChar": 32,
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "7b195563_83b342fb",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "\u0027[[]]\u0027 is based on strings \u0027(())\u0027 is based on integers. These are improvements made to the original \u0027[]\u0027 and \u0027()\u0027 from the Bourne shell. I had just done some arithmetic in another bash script use \u0027(())\u0027 so I was thinking of them. You can perform arithmetic like (($a \u003c $b 9)). In this case, clarity and consistency sez to to \u0027[[]]\u0027.",
+      "parentUuid": "3d7e572c_778c2fc9",
+      "range": {
+        "startLine": 84,
+        "startChar": 7,
+        "endLine": 84,
+        "endChar": 9
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "495737f1_3ba6ac06",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 4
@@ -105,6 +177,30 @@
       "writtenOn": "2019-10-24T10:25:43Z",
       "side": 1,
       "message": "Typo; and maybe clearer to print \"Failed to find executable $python\"",
+      "range": {
+        "startLine": 90,
+        "startChar": 49,
+        "endLine": 90,
+        "endChar": 55
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "199647fd_04eec753",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "Fixed spelling. I wanted to have the function name in the error message. This makes sure it still works even if the function name were to change (as it did several times).",
+      "parentUuid": "495737f1_3ba6ac06",
       "range": {
         "startLine": 90,
         "startChar": 49,
@@ -140,6 +236,30 @@
     },
     {
       "key": {
+        "uuid": "11095c3d_17cf4a8f",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "One of the GR8 thing about bash is that it easy to write little code snippits:\n\u003d\u003d\u003e python\u003dpython3.6\n\u003d\u003d\u003e echo ${python#python}\n3.6\n\nThis string manipulation command can be very powerful. Typically, I only use it for simple tasks such as this. Another feature from ksh.",
+      "parentUuid": "b4d89636_fc1b7111",
+      "range": {
+        "startLine": 93,
+        "startChar": 22,
+        "endLine": 93,
+        "endChar": 38
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "071d430e_c74385f6",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 4
@@ -151,6 +271,30 @@
       "writtenOn": "2019-10-24T10:25:43Z",
       "side": 1,
       "message": "What is local?  My modern zsh doesn\u0027t seem to have this.  What shell - bash? - version is required here?",
+      "range": {
+        "startLine": 94,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 9
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d76e4c9_f78671e6",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "The variable is \u0027local\u0027 to this function.",
+      "parentUuid": "071d430e_c74385f6",
       "range": {
         "startLine": 94,
         "startChar": 4,
@@ -186,6 +330,30 @@
     },
     {
       "key": {
+        "uuid": "c7b175cd_bfd16577",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "The \u0027 rm -f\u0027 does not override the file permissions. Note below that I do a chmod -R -w. We do not want people installing other pkgs in this venv unless they use lf-venv-add().",
+      "parentUuid": "8546cd4a_f1438266",
+      "range": {
+        "startLine": 103,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 2
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b51332ac_087aefe8",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 4
@@ -197,6 +365,30 @@
       "writtenOn": "2019-10-24T10:25:43Z",
       "side": 1,
       "message": "why parentheses here?",
+      "range": {
+        "startLine": 107,
+        "startChar": 34,
+        "endLine": 107,
+        "endChar": 41
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c46fa9f_c0474591",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "Clarity in the output: \nCreating \u0027python3\u0027 venv (/usr/jenkins/.venv3)",
+      "parentUuid": "b51332ac_087aefe8",
       "range": {
         "startLine": 107,
         "startChar": 34,
@@ -255,6 +447,30 @@
     },
     {
       "key": {
+        "uuid": "1fdf3503_16297f9d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "Not familiar with either. I can tell you that \u0027niet\u0027 often causes problems with versioning so I would love to get rid of it. If we agree \u0027yq\u0027 is preferred, I can pass on \u0027niet\u0027. If someone needs it they can install it using lf-venv-add(). That way we \u0027encourage\u0027 them to use \u0027yq\u0027.\n\nAny reason not to remove \u0027niet\u0027?",
+      "parentUuid": "483b315f_2685da9e",
+      "range": {
+        "startLine": 118,
+        "startChar": 48,
+        "endLine": 118,
+        "endChar": 50
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a32ac7d1_2e8d4f7b",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 4
@@ -266,6 +482,30 @@
       "writtenOn": "2019-10-24T10:25:43Z",
       "side": 1,
       "message": "This cmd is hardcoded at line 122, put in a variable at 127, used at 128.  Perhaps this could be harmonized and/or simplified?",
+      "range": {
+        "startLine": 127,
+        "startChar": 0,
+        "endLine": 127,
+        "endChar": 4
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a59deb2c_16acdecc",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "I only did this because line 128 ended up being too long. It would get a little tricky because the value of $pkg_list changes between 122 and here.",
+      "parentUuid": "a32ac7d1_2e8d4f7b",
       "range": {
         "startLine": 127,
         "startChar": 0,
@@ -301,6 +541,30 @@
     },
     {
       "key": {
+        "uuid": "4405f6df_a2d7e36d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "I could just send unwanted output to /dev/null. With the file, if I ever need to debug code at some point in future, I just comment out the \u0027rm $pip_log\u0027",
+      "parentUuid": "ebf7872f_5a838f6a",
+      "range": {
+        "startLine": 146,
+        "startChar": 0,
+        "endLine": 146,
+        "endChar": 2
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f2ffe3fe_b93e3593",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 4
@@ -312,6 +576,30 @@
       "writtenOn": "2019-10-24T10:25:43Z",
       "side": 1,
       "message": "Maybe say \".. in the venv created by function lf-venv-create\".",
+      "range": {
+        "startLine": 150,
+        "startChar": 29,
+        "endLine": 150,
+        "endChar": 46
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bcccebac_c824cb95",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "Improved comments are coming",
+      "parentUuid": "f2ffe3fe_b93e3593",
       "range": {
         "startLine": 150,
         "startChar": 29,
@@ -439,6 +727,30 @@
     },
     {
       "key": {
+        "uuid": "3bb567e9_11a2e285",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "lf-venv-crate() creates the \u0027done\u0027 file at the end so if lf-venv-create() so a problem occurred, the \u0027done\u0027 file would not exist. This is a rare problem, but I have seen this happen before. This case is the reason that I delete the venv if the \u0027done\u0027 file does exist (in lf-venv-crate()). Lack of a done file means the venv could be corrupt.",
+      "parentUuid": "616f3c56_316e1f58",
+      "range": {
+        "startLine": 171,
+        "startChar": 60,
+        "endLine": 171,
+        "endChar": 63
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d5c7ca27_5c3a6315",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 4
@@ -462,6 +774,30 @@
     },
     {
       "key": {
+        "uuid": "62caecfe_e46c82cb",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "Three kinds a variable in bash process:\nenvironmental\nshell\nlocal (local only applies to functions) \n\nA function can create/modify shell and environmental variables (see lf-set-maven-options() below.",
+      "parentUuid": "d5c7ca27_5c3a6315",
+      "range": {
+        "startLine": 174,
+        "startChar": 4,
+        "endLine": 174,
+        "endChar": 9
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "82d80556_553ac72f",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 4
@@ -473,6 +809,30 @@
       "writtenOn": "2019-10-24T10:25:43Z",
       "side": 1,
       "message": "Consider defining the command once in a variable and invoking twice?",
+      "range": {
+        "startLine": 179,
+        "startChar": 0,
+        "endLine": 179,
+        "endChar": 9
+      },
+      "revId": "0b849588ce0f5ab09ff1afceefa1e2efd9af7a47",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dfbf962a_35ea4137",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-24T15:21:45Z",
+      "side": 1,
+      "message": "As long as lines aren\u0027t too long, I am inclined to leave as is.",
+      "parentUuid": "82d80556_553ac72f",
       "range": {
         "startLine": 179,
         "startChar": 0,
