@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a612f3e3_65d2cc07",
+        "filename": "tox.ini",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-25T23:11:54Z",
+      "side": 1,
+      "message": "Don\u0027t think you want the \u0027,\u0027 skipsdist is not part of the envlist",
+      "revId": "3ead21f2b06d82f40ed556d74003f1948ed65b0e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
