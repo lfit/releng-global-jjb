@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22ab1847_318f38f5",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-25T20:46:44Z",
+      "side": 1,
+      "message": "since this is supposed to be a code example, maybe give it a message to echo to stderr?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d899989c_ab23a07a",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-25T20:46:44Z",
+      "side": 1,
+      "message": "true(0) or false(0)?  Please pick one.  Can\u0027t both be the same, right?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 1
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "193cee8b_32f45206",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-25T20:46:44Z",
+      "side": 1,
+      "message": "Since you have switched to python3, I suggest the example here should be 3",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 1
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "897aeefc_28bd1689",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-25T20:46:44Z",
+      "side": 1,
+      "message": "dot bin or just bin?",
+      "range": {
+        "startLine": 102,
+        "startChar": 22,
+        "endLine": 102,
+        "endChar": 25
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e3d4b81_0e73a496",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-25T20:46:44Z",
+      "side": 1,
+      "message": "I don\u0027t see this if condition testing for a \"done\" file, seems to check a dir (?)?",
+      "range": {
+        "startLine": 175,
+        "startChar": 13,
+        "endLine": 175,
+        "endChar": 22
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba3e928d_11f1a956",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-25T20:46:44Z",
+      "side": 1,
+      "message": "I see the echo -n for no newline, followed by OK. But this upgrade cmd just redirects stdout, not stderr, so if anything at all is printed, I think the output on the screen will likely not be so neat as this suggests?",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 7
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "953af476_9e7ed7d8",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-25T20:46:44Z",
+      "side": 1,
+      "message": "typo - partial sentence - is something missing here?",
+      "range": {
+        "startLine": 239,
+        "startChar": 8,
+        "endLine": 239,
+        "endChar": 15
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
