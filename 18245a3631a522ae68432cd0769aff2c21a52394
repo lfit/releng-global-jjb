@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9a0c7faf_a1d784e1",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-26T16:01:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22ab1847_318f38f5",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d899989c_ab23a07a",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 8
@@ -45,6 +69,30 @@
       "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "298454ea_a5d07995",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-26T16:01:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d899989c_ab23a07a",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 1
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -94,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "34685819_433ca3d3",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-26T16:01:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "897aeefc_28bd1689",
+      "range": {
+        "startLine": 102,
+        "startChar": 22,
+        "endLine": 102,
+        "endChar": 25
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e3d4b81_0e73a496",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 8
@@ -117,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "bdc23fe2_2a322a9d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-26T16:01:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e3d4b81_0e73a496",
+      "range": {
+        "startLine": 175,
+        "startChar": 13,
+        "endLine": 175,
+        "endChar": 22
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3e928d_11f1a956",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 8
@@ -137,6 +233,30 @@
       "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1244ded3_09d42e5d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-26T16:01:21Z",
+      "side": 1,
+      "message": "stderr goes to file, yes, stderr would go to log but that would likely cause an error and the \"..OK\" will never print. So yes if there is an error condition it won\u0027t be so pretty, in the 99% case it will be.",
+      "parentUuid": "ba3e928d_11f1a956",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 204,
+        "endChar": 7
+      },
+      "revId": "18245a3631a522ae68432cd0769aff2c21a52394",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
