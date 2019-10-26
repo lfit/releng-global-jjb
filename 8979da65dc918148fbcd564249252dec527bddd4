@@ -22,6 +22,30 @@
       "revId": "8979da65dc918148fbcd564249252dec527bddd4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04693cae_4a5c8f50",
+        "filename": "shell/pypi-tag-release.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-26T13:10:15Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "d249e0eb_beb7930e",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 1
+      },
+      "revId": "8979da65dc918148fbcd564249252dec527bddd4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
