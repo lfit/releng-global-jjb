@@ -72,7 +72,8 @@ function lf-activate()
 
 function lf-set-maven-options()
 {
-    # shellcheck disable=SC2034  # Disable 'unused-variable' check
+    # Disable 'unused-variable' check
+    # shellcheck disable=SC2034
     maven_options="--show-version --batch-mode -Djenkins \
         -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn \
         -Dmaven.repo.local=/tmp/r -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r"

@@ -116,7 +116,8 @@ The JSON schema for a container release job appears below.
         type: "string"
 
 
-An example of a container release file appears below.  The job applies the
+An example of a container release file appears below.  The job tags the
+git repository at the specified commit reference. The job applies the
 container_release_tag string to all released containers.  The job uses the
 per-container version strings to pull images from the container registry.
 
@@ -129,6 +130,7 @@ per-container version strings to pull images from the container registry.
     container_pull_registry: 'nexus.onap.org:10003"
     container_push_registry: 'nexus.onap.org:10002"
     project: 'test'
+    ref: d1b9cd2dd345fbeec0d3e2162e008358b8b663b2
     containers:
         - name: test-backend
           version: 1.0.0-20190806T184921Z
@@ -136,20 +138,19 @@ per-container version strings to pull images from the container registry.
           version: 1.0.0-20190806T184921Z
 
 
-.. note::
-
-   Job should appear under gerrit-maven-stage
-
-Example of a terse Jenkins job to call the global-jjb macro:
+Example of a Jenkins job configuration that uses the global-jjb
+templates for Gerrit:
 
 .. code-block:: none
 
-    - gerrit-maven-stage:
-        sign-artifacts: true
-        build-node: centos7-docker-8c-8g
-        maven-versions-plugin: true
-    - '{project-name}-gerrit-release-jobs':
-        build-node: centos7-docker-8c-8g
+- project:
+    name: my-project-release
+    project: my-project
+    project-name: my-project
+    build-node: centos7-docker-4c-4g
+    mvn-settings: my-project-settings
+    jobs:
+      - '{project-name}-gerrit-release-jobs'
 
 .. note::
 
