@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e49f889c_ca37166e",
+        "filename": "shell/jjb-merge-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-28T19:13:04Z",
+      "side": 1,
+      "message": "Since you have renamed to lf-venv-* like lf-venv-create this code is slightly outdated.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 1
+      },
+      "revId": "482aa18938eff3e15a4e2c2c48a033fb2782e3c5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
