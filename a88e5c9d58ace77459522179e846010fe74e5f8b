@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9afc12cd_00c37736",
+        "filename": "tox.ini",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-28T16:19:19Z",
+      "side": 1,
+      "message": "This will NOT work (just delete\u0027,\u0027). skipdist is not part of \u0027envlist\u0027",
+      "revId": "a88e5c9d58ace77459522179e846010fe74e5f8b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
