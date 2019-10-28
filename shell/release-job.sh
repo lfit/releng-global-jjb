@@ -78,8 +78,8 @@ set_variables_maven(){
     # Continuing displaying Release Information (Maven)
     printf "\t%-30s\n" RELEASE_MAVEN_INFO:
     printf "\t%-30s %s\n" VERSION: $VERSION
-    printf "\t%-30s %s\n" LOG DIR: $LOG_DIR
-    printf "\t%-30s %s\n" LOGS URL: $LOGS_URL
+    printf "\t%-30s %s\n" LOG_DIR: $LOG_DIR
+    printf "\t%-30s %s\n" LOGS_URL: $LOGS_URL
 }
 
 set_variables_container(){

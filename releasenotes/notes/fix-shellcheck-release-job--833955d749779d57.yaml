@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add missing underscore in two echo commands in release-job.sh.
+    Move comment for shellcheck disable to new line in lf-env.sh.
+    Extend documentation of the container self-release process.
+    Exclude lf-rtdv3.rst from WriteGoodBear coala processing.
