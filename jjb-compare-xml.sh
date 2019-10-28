@@ -13,7 +13,7 @@
 # from global-jjb's origin/master branch.
 
 test_dir=$(mktemp -d)
-script_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+script_dir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/jjb
 expected_xml_dir="$(mktemp -d -t gjjb-XXXXXXXX)"
 
 echo "Script Directory: $script_dir"
