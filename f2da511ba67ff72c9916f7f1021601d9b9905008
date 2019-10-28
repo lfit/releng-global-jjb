@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cf006557_8e5dad4d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-10-28T19:08:51Z",
+      "side": 1,
+      "message": "This is our basic JJB test. It uses the version of JJB defined below and simply sees if it passes a `jenkins-jobs test` with that version of jjb.",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 13
+      },
+      "revId": "f2da511ba67ff72c9916f7f1021601d9b9905008",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44c51572_35ad0d37",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-10-28T19:08:51Z",
+      "side": 1,
+      "message": "This compares our expected XML files defined in .jjb-test to see if the version of jjb is generating the same XML. Useful for catching potential issues when JJB version is updated and changed the XML format it was producing previously.",
+      "revId": "f2da511ba67ff72c9916f7f1021601d9b9905008",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c31b9934_909925aa",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-10-28T19:08:51Z",
+      "side": 1,
+      "message": "Same as \"jjb\" above except tests against the latest and greatest version of JJB. Useful to flag potential issues with latest upstream JJB before we migrate LF projects to newer versions.",
+      "revId": "f2da511ba67ff72c9916f7f1021601d9b9905008",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de21610c_b8e6375c",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-10-28T19:08:51Z",
+      "side": 1,
+      "message": "Simple python script to make sure all locations that we are defining our \"supported\" jjb-version is in sync. This needs to be maintained when we add a jjb-version to a new file unfortunately but is a way we can make sure we don\u0027t miss a spot when version bumping our docs.",
+      "revId": "f2da511ba67ff72c9916f7f1021601d9b9905008",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
