@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    By default, the lf-venv-create() function only installs/upgrades 'pip' and
+    and base packages that need to be tied to a specific version like. Right now
+    that is only "jenkins-job-builder==2.8.0".  The current version of
+    lf-venv-create() supports being called twice but that functionality has NOT
+    yet been thoroughly tested. RELENG-2508 has been created for that work.
