@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Change pip's upgrade-strategy to "eager" for python-tools-install.sh.
+    Pip changed its default upgrade-strategy to "only-if-required", which
+    is not correctly upgrading requests (and potentially other packages
+    in the future) to meet other packages' requirements. This results in
+    errors in the build log. By using the upgrade-strategy "eager", pip
+    is able to properly install what is needed.
