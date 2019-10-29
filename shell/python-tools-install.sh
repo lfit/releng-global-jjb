@@ -56,6 +56,6 @@ EOF
     python3 -m venv ~/.local
     python3 -m pip install --user --quiet --upgrade pip
     python3 -m pip install --user --quiet --upgrade setuptools
-    python3 -m pip install --user --quiet --upgrade -r "$requirements_file"
+    python3 -m pip install --user --quiet --upgrade --upgrade-strategy eager -r "$requirements_file"
     rm -rf "$requirements_file"
 fi
