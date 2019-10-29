@@ -132,23 +132,25 @@ function lf-venv-activate()
 ################################################################################
 #
 # NAME
-#       lf-venv-create()
+#   lf-venv-create python [package]...
 #
 # SYNOPSIS
-#       # shellcheck disable=SC1090
-#       source ~/lf-env.sh
+#   # shellcheck disable=SC1090
+#   source ~/lf-env.sh
 #
-#       lf-venv-create python2
-#       or
-#       lf-venv-create python3.6
+#   lf-venv-create python3 tox tox-pyenv virtualenv
+#   lf-venv-create python3.6
 #
 # DESCRIPTION
-#       This function will create a Python Virtual Environment based on the
-#       python specified. The 'python' argument must be in the PATH. The venv
-#       will be located in ~/.venv## where ## comes from the 'python' argument.
-#       I.E. python3 -> ~/.venv3. The resulting venv will be left 'read-only' to
-#       discourage the installation of any other packages (except by
-#       lf-venv-add()).
+#   This function will create/update a Python Virtual Environment (venv) based
+#   on the python specified. The 'python' argument must be in the PATH. The venv
+#   will be located in ~/.venv## where ## comes from the 'python' argument.
+#   I.E. python3 -> ~/.venv3. The resulting venv will be left 'read-only' to
+#   discourage the installation of any other packages (except by
+#   lf-venv-create()). By default, only versioned packages will be installed, so
+#   any required packages need to be specified.  By default the 'pip install
+#   --upgrade' will be run multiple times. Sometimes pip needs that to get the
+#   versioning correct.
 #
 # RETURN VALUES
 #       None
@@ -157,15 +159,17 @@ function lf-venv-activate()
 
 function lf-venv-create()
 {
-    if (( $# != 1 )); then
+    if (( $# < 1 )); then
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Missing Python argument"
         return 1
     fi
     python=$1
+    shift
     if ! type $python > /dev/null; then
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
         return 1
     fi
+    local pkg_list="$* "
     local venv=~/.venv${python#python}
     local suffix=$python-$$
     local pip_log=/tmp/pip_log.$suffix
@@ -182,29 +186,26 @@ function lf-venv-create()
     echo "Creating '$python' venv ($venv)"
 
     case $python in
-    python2*)
+    python2*|python)
         # For Python2, just create venv and install pip
         virtualenv -p $python $venv > $pip_log || return 1
         $venv/bin/pip install --upgrade pip > $pip_log || return 1
+        $venv/bin/pip install --upgrade $pkg_list > $pip_log || return 1
         ;;
     python3*)
-        local pkg_list="git-review jenkins-job-builder lftools[openstack] "
-        pkg_list+="python-heatclient python-openstackclient "
-        pkg_list+="setuptools testresources tox yq"
+        # Include any packages that are tied to a specific version
+        pkg_list+="jenkins-job-builder==2.8.0 "
         $python -m venv $venv > $pip_log
         $venv/bin/pip install --upgrade pip > $pip_log || return 1
         # Redirect errors for now
         $venv/bin/pip install --upgrade $pkg_list >> $pip_log 2> /dev/null || return 1
         # Generate list of packages
         pkg_list=$($venv/bin/pip freeze | awk -F '=' '{print $1}') || return 1
-        # Update all packages, usuaally need to run twice to get all versions
-        # correct.
-        local upgrade_cmd="$venv/bin/pip install --upgrade $pkg_list"
-        if $upgrade_cmd >> $pip_log 2>&1 > /dev/null ; then
-            echo -n "Running 'pip --upgrade' to validate..."
-            $upgrade_cmd >> $pip_log || return 1
-            echo "..OK"
-        fi
+        # Update all packages, may need to run twice to get all versions
+        # synced up. Ignore exit status on first try
+        $venv/bin/pip install --upgrade $pkg_list >> $pip_log || true
+        echo "Running 'pip --upgrade' to validate..."
+        $venv/bin/pip install --upgrade $pkg_list >> $pip_log || return 1
         ;;
     *)
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: No support for: $python"
