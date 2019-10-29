@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ebad6138_036f007c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-29T17:37:17Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed based on looking at the script. But it would need to be tested.",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28cc73ff_79164e78",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-29T17:37:17Z",
+      "side": 1,
+      "message": "Sigh, but it is better than trying to use the \u0027user\u0027 venv.",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ebfaeae_89d4949c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-29T17:37:17Z",
+      "side": 1,
+      "message": "Use \u0027[[]]\u0027 for a number of reasons, not the least of which is that you don\u0027t need to use double quotes. \nif [[ $LOG_SERVER \u003d\u003d \"None\" ]]; then",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b333b93_44ef2dd0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-29T17:37:17Z",
+      "side": 1,
+      "message": "Is LOGS_URL a global or a shell variable. Based on my search it is a shell variable and should be lower-case.",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4144cef_59fe047a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-29T17:37:17Z",
+      "side": 1,
+      "message": "\"$LOGS_URL/console.log.gz\" is a little more readable. Don\u0027t need to know all the characters that cannot be a part of a variable, but you should know \u0027/\u0027 is one of them.",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b33db673_d7151d3e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-29T17:37:17Z",
+      "side": 1,
+      "message": "I think some/all of these variables could/should be \u0027local\u0027",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
