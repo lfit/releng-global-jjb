@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f0eb80b_a57e3bdc",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-29T17:06:37Z",
+      "side": 1,
+      "message": "Sorry to disappoint but after some thought I don\u0027t think this change does what you want. This does install an updated version of \u0027virtualenv\u0027 in the \u0027user\u0027 venv. But when you access it from tox-run the \u0027-l\u0027 is used which adds ~/.local/bin to the END of the PATH the first \u0027virtualenv\u0027 in the PATH will be the system one. I validated this by adding a \u0027type virtualenv\u0027 to tox-run.sh. It also might be getting \u0027virtualenv\u0027 from /opt/pyenv/bin.",
+      "revId": "877f9953730f1eb5b16ccf9ef0341bac768c1ced",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
