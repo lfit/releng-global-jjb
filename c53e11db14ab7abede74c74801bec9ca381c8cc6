@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "856956d5_f82ac93f",
+        "filename": "releasenotes/notes/pypi-refactor-release-833955d759789d57.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-29T18:19:20Z",
+      "side": 1,
+      "message": "Sorry, missed this. Since we are mostly refactoring the code here, we should be at least separating the specifics of what is the new \"feature\" here with what is being fixed.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 8
+      },
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ebad6138_036f007c",
         "filename": "shell/release-job.sh",
         "patchSetId": 23
