@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a468a5a6_930cb913",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-29T17:50:21Z",
+      "side": 1,
+      "message": "My experience here is that programs installed by pip and invoked directly, for example yq, are only found if the shell is a login shell.  Pretty weird, and my analysis is probably faulty, this is just what I observed in the sandbox. But with the creation and use of the venv right here, this old experience probably no longer applies.",
+      "parentUuid": "ebad6138_036f007c",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "28cc73ff_79164e78",
         "filename": "shell/release-job.sh",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2019-10-29T17:37:17Z",
       "side": 1,
       "message": "Sigh, but it is better than trying to use the \u0027user\u0027 venv.",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "441aabb4_5464dc6c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-29T17:50:21Z",
+      "side": 1,
+      "message": "I will be happy to switch to your new and shiny lf-venv-create lf-venv-add lf-venv-activate just as soon as it\u0027s released.",
+      "parentUuid": "28cc73ff_79164e78",
       "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ecaedc9e_eca84a21",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-29T17:50:21Z",
+      "side": 1,
+      "message": "I\u0027ll be happy to tweak this.. altho at a loss of two +2 votes!  :|",
+      "parentUuid": "1ebfaeae_89d4949c",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3b333b93_44ef2dd0",
         "filename": "shell/release-job.sh",
         "patchSetId": 23
@@ -64,6 +118,24 @@
       "writtenOn": "2019-10-29T17:37:17Z",
       "side": 1,
       "message": "Is LOGS_URL a global or a shell variable. Based on my search it is a shell variable and should be lower-case.",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21e471ee_b66f0617",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-29T17:50:21Z",
+      "side": 1,
+      "message": "LOGS_URL gets set in this function and used in another function.  Communication via global variables, not pretty, but simply emulating the existing code.  Should it be rewritten from scratch?  Well, uh, ummm..",
+      "parentUuid": "3b333b93_44ef2dd0",
       "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "29f61483_309745f9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-29T17:50:21Z",
+      "side": 1,
+      "message": "Also happy to tweak.  Not happy to lose my plus twos lol",
+      "parentUuid": "a4144cef_59fe047a",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b33db673_d7151d3e",
         "filename": "shell/release-job.sh",
         "patchSetId": 23
@@ -98,6 +188,24 @@
       "writtenOn": "2019-10-29T17:37:17Z",
       "side": 1,
       "message": "I think some/all of these variables could/should be \u0027local\u0027",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23485f93_771a1d77",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-29T17:50:21Z",
+      "side": 1,
+      "message": "Basically every single variable here should be local.",
+      "parentUuid": "b33db673_d7151d3e",
       "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
