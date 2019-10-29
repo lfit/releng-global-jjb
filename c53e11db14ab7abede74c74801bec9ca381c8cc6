@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "73225775_12a903c0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-29T18:07:03Z",
+      "side": 1,
+      "message": "You experience is essentially correct. The -l adds ~/.local/bin to the END of you PATH (not a coincidence, it is on purpose).\nWhen it comes to python packages it is your responsibility to know which python package is being called. The shared venvs will make that a little more predictable. Since you are installing \u0027yq\u0027 in your temp venv and added that to the beginning of your PATH, you will get it from there. If you don\u0027t need the -l, you should remove it, but you would have to test that.",
+      "parentUuid": "a468a5a6_930cb913",
+      "revId": "c53e11db14ab7abede74c74801bec9ca381c8cc6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "28cc73ff_79164e78",
         "filename": "shell/release-job.sh",
         "patchSetId": 23
