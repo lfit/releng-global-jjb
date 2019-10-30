@@ -17,9 +17,40 @@
 # lf_set_foo() {foo=asdf;}'. Any scripts that need access to the variable can
 # call the 'set' function. This keeps the name-space pollution to a minimum.
 
-# Shell variables that are shared between functions
+################################################################################
+#
+# Private variables & functions are used by functions defined in this
+# library. Note they are all prefixed with '_lf' to minimize chance of name
+# conflict
+#
+################################################################################
 
-_lf_done_file=".lf-done"
+declare _lf_done_file=".lf-done"
+declare -A _lf_existing_pkgs
+
+################################################################################
+#
+# _lf-update-package-list()
+#
+#   Add packages to list of existing packages that have already been installed.
+#   Update 'new_pkg_count' to indicate the number of new packages that have been
+#   added to the list.
+#
+################################################################################
+
+function _lf-update-package-list()
+{
+    local new_list="$*"
+    for i in $new_list; do
+        # If the package is not already in list, add it
+        if [[ -z ${_lf_existing_pkgs[$i]-} ]]; then
+            _lf_existing_pkgs[$i]=$i
+            ((new_pkg_count += 1))
+        fi
+    done
+}
+
+##############  End of Private functions/variables  ############################
 
 ################################################################################
 #
@@ -173,17 +204,22 @@ function lf-venv-create()
     local venv=~/.venv${python#python}
     local suffix=$python-$$
     local pip_log=/tmp/pip_log.$suffix
-    if [[ -f $venv/$_lf_done_file ]]; then
-        echo "Venv Already Exists: '$venv'"
-        return
-    fi
-    # Make sure noting is left over
-    if [[ -d $venv ]]; then
-        chmod -R +w $venv
-        rm -rf $venv
-    fi
 
-    echo "Creating '$python' venv ($venv)"
+    local -i new_pkg_count=0
+    _lf-update-package-list "$*"
+    if [[ -f $venv/$_lf_done_file ]]; then
+         if ((new_pkg_count == 0)); then
+             echo "The '$python' venv already exists and nothing new to install"
+             return
+         else
+              echo -n "The '$python' venv already exists. "
+              echo "Installing $new_pkg_count new packages"
+         fi
+         chmod -R +w $venv
+         rm $venv/$_lf_done_file
+    else
+        echo "Creating '$python' venv ($venv)"
+    fi
 
     case $python in
     python2*)
@@ -203,7 +239,7 @@ function lf-venv-create()
         pkg_list=$($venv/bin/pip freeze | awk -F '=' '{print $1}') || return 1
         # Update all packages, may need to run twice to get all versions
         # synced up. Ignore exit status on first try
-        $venv/bin/pip install --upgrade $pkg_list >> $pip_log || true
+        $venv/bin/pip install --upgrade $pkg_list >> $pip_log 2> /dev/null || true
         echo "Running 'pip --upgrade' to validate..."
         $venv/bin/pip install --upgrade $pkg_list >> $pip_log || return 1
         ;;
@@ -222,62 +258,6 @@ function lf-venv-create()
     rm -rf $pip_log
 
 }   # End lf-venv-create()
-
-################################################################################
-#
-# NAME
-#   lf-venv-add()
-#
-# SYNOPSIS
-#   # shellcheck disable=SC1090
-#   source ~/lf-env.sh
-#
-#   lf-venv-add python3 pkg
-#   or
-#   lf-venv-add python2 pkg1 pkg2 pkg3
-#
-# DESCRIPTION
-#   This function will add one or more python packages to an existing venv.
-#   Attempts to add packages directly (pip) will result in errors because
-#   the venv does not have 'write' permission.
-#
-# RETURN VALUES
-#   None
-#
-################################################################################
-
-function lf-venv-add()
-{
-    if (( $# < 2 )); then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Missing Package argument"
-        return 1
-    fi
-    python=$1
-    if ! type $python > /dev/null ; then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
-        return 1
-    fi
-    shift
-    local venv=~/.venv${python#python}
-    if [[ ! -f $venv/$_lf_done_file ]]; then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: '$venv' is not a valid venv"
-        return 1
-    fi
-    local pkg_list=$*
-    local pip_log=/tmp/pip_log-$$
-
-    echo "Installing '$pkg_list' into $venv"
-    chmod -R +w $venv
-    rm $venv/$_lf_done_file
-    $venv/bin/pip install --upgrade $pkg_list > $pip_log || return 1
-    pkg_list=$($venv/bin/pip freeze | awk -F '=' '{print $1}') || return 1
-    $venv/bin/pip install --upgrade $pkg_list > $pip_log || return 1
-    touch $venv/$_lf_done_file
-    chmod -R -w $venv
-    # Archive output of 'pip freeze'
-    $venv/bin/pip freeze > $WORKSPACE/archives/freeze-log-$python || return 1
-
-} # End lf-venv-add()
 
 ################################################################################
 # Functions that assign Variables

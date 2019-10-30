@@ -1,0 +1,20 @@
+---
+features:
+  - |
+    Added new 'private' function '_lf-update-package-list()' that is used by
+    lf-venv-create().
+    Added support for efficiently calling lf-venv-create(). A package-list is
+    kept of all packages that have been installed. If secondary calls to
+    lf-venv-create() do not request any new packages, it will immediately
+    return.
+deprecatons:
+  - |
+    The lf-venv-add() function has been removed.
+fixes:
+  - |
+    The 'pip install' command still generate version 'errors' (to sdterr) even
+    though it does not return 'bad status'.  The 'pip install --update' command
+    is called three times to get the versions of all the packages in sync. The
+    first two calls to 'pip install --upgrade' redirect stderr to /dev/null. So
+    if there are any version conflicts in the final 'pip install' they will be
+    visible in the log.
