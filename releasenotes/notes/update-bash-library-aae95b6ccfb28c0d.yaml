@@ -1,0 +1,17 @@
+---
+features:
+  - |
+    Created new function lf-activate-venv(). This function creates a venv in
+    /tmp and prepends the bin directory to the PATH. The 'pip install' command
+    now specifies: '--upgrade-strategy eager'. lf-activate-venv() supports an
+    optional --python flag to specify which python to use to create the venv,
+    the default is python3.
+
+    Two new functions: lf-git-validate-jira-urls() and lf-jjb-check-ascii().
+    They will be used to replace the git-validate-jira-urls.sh &
+    jjb-check-unicode.sh scripts at some point. For now, they are not being
+    used.
+other:
+  - |
+    The lf-venv-add(), lf-venv-create() & lf-venv-activate functions have been
+    removed. No-one is accessing it yet.
