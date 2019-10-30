@@ -1,0 +1,29 @@
+---
+features:
+  - |
+    The 'lf-venv-create()' functionality has changed. The 'venv' is created in
+    '/tmp' and no-longer supports being shared. The 'lf-tmp-venv' variable will
+    contain the path to the new venv. The 'lf-tmp-venv' variable is used by
+    'lf-venv-activate()' function to set the PATH.
+    
+    For 'lf-venv-create(), the 'python' command argument on the command line is
+    no longer supported. It has been replaced with the optional '--python
+    python' flag. By default the venv will be created with 'python3'.
+
+    The 'lf-venv-create()' allows a default version to be specified for a
+    package. If a 'versioned' package is specified on the command line, the
+    'version' directive will be appended when passing package 'pip install'. If
+    a package version is specified on the command line, that will take
+    precedence.  Currently the only versioned package is jenkins-job-builder. It
+    defaults to 'JJB_VERSION' from the environment.
+
+    Two new functions: lf-git-validate-jira-urls() and lf-check-unicode().  They
+    will be used to replace jjb-check-unicode.sh & git-validate-jira-urls.sh
+    scripts at some point. For now that are not being used.
+fixes:
+  - |
+    The 'pip install' command now specifies: '--upgrade-strategy eager'.
+other:
+  - |
+    The lf-venv-add() function has been removed. No-one is accessing it yet.
+   
