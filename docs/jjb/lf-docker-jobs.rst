@@ -54,7 +54,8 @@ Executes a docker build task.
     - gerrit-docker-verify
     - github-docker-verify
 
-:Comment Trigger: recheck|reverify
+:Comment Trigger: Post a comment "reverify" to launch this job manually.
+    Do not include any other text or vote ("+1") in the same comment.
 
 :Required parameters:
 
@@ -116,7 +117,8 @@ Executes a docker build task and publishes the resulting images to a specified D
     - gerrit-docker-merge
     - github-docker-merge
 
-:Comment Trigger: remerge
+:Comment Trigger: Post a comment "remerge" to launch this job manually.
+    Do not include any other text or vote ("+1") in the same comment.
 
 :Required parameters:
 

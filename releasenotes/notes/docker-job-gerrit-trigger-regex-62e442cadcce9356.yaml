@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Update the gerrit trigger regexes for the docker job templates
+    to use the shorter and more readable versions of the regexes
+    used in other verify and merge job templates.
+    Clarify documentation for comment triggers.
