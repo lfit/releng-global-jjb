@@ -281,7 +281,8 @@ This template supports Maven and Container release jobs.
 
 :Template Name: {project-name}-release-merge
 
-:Comment Trigger: remerge
+:Comment Trigger: Post a comment "remerge" to launch this job manually.
+    Do not include any other text or vote ("+1") in the same comment.
 
 :Required parameters:
 
@@ -312,7 +313,8 @@ This template supports Maven and Container release jobs.
 
 :Template Name: {project-name}-release-verify
 
-:Comment Trigger: recheck|reverify
+:Comment Trigger: Post a comment "reverify" to launch this job manually.
+    Do not include any other text or vote ("+1") in the same comment.
 
 :Required Parameters:
 
@@ -355,7 +357,8 @@ template accepts neither a branch nor a stream parameter.
     - gerrit-pypi-release-merge
     - github-pypi-release-merge
 
-:Comment Trigger: remerge
+:Comment Trigger: Post a comment "remerge" to launch this job manually.
+    Do not include any other text or vote ("+1") in the same comment.
 
 :Required Parameters:
 
@@ -393,7 +396,8 @@ verify template accepts neither a branch nor a stream parameter.
     - gerrit-pypi-release-verify
     - github-pypi-release-verify
 
-:Comment Trigger: recheck
+:Comment Trigger: Post a comment "reverify" to launch this job manually.
+    Do not include any other text or vote ("+1") in the same comment.
 
 :Required Parameters:
 
