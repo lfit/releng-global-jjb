@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c8ba5757_5909574f",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-10-31T03:25:09Z",
+      "side": 1,
+      "message": "this is effectively the same as the previous one, except the quotes are missing, which could be a potential cause for this not work as expected.",
+      "range": {
+        "startLine": 56,
+        "startChar": 34,
+        "endLine": 57,
+        "endChar": 78
+      },
+      "revId": "515b63742146d50a9989ccc6e1507b49946cef3d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
