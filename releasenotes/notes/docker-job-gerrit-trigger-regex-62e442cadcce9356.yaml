@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Update the gerrit trigger regex for the docker verify jobs templates
+    to use the shorter and more readable version of the regex
+    used in other verify job templates.
