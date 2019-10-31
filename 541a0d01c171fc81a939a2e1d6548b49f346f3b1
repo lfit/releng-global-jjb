@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "cbb209de_f8366d35",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-31T20:48:24Z",
+      "side": 1,
+      "message": "The primary reason for a \u0027shared\u0027 venv is to better control the packages versions across all jobs. We don\u0027t want everyone installing different versions of packages. My assumption is that in the general case, if a package needs to be tied to a version, it should always be installed (like jenkins-job-builder). Past that point all versions of packages is driven by \u0027pip --update\u0027. If you were to try to install jenkins-job-builder with any version other than 2.8.0, \u0027pip\u0027 will give an error. If we want to support everyone \u0027doing their own thing\u0027 we could, but that is s different approach: \u0027lf-venv-tmp-create()\u0027.\n\nI am currently looking at situation where they want to install \u0027lftools\u0027 from a source repo (using setup.py). I don\u0027t think we want a \u0027special version\u0027 of \u0027lftools\u0027 installed in a shared venv, That should be installed in a temp venv that is not shared.",
+      "parentUuid": "ed49fc61_f24af886",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 2
+      },
+      "revId": "541a0d01c171fc81a939a2e1d6548b49f346f3b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e79ecdaa_b9179dcc",
         "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
         "patchSetId": 1
