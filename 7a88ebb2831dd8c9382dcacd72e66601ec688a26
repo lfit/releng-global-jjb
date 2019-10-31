@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53bab2df_f9817285",
+        "filename": "releasenotes/notes/docker-job-gerrit-trigger-regex-62e442cadcce9356.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-31T13:55:49Z",
+      "side": 1,
+      "message": "and merge",
+      "range": {
+        "startLine": 4,
+        "startChar": 51,
+        "endLine": 4,
+        "endChar": 57
+      },
+      "revId": "7a88ebb2831dd8c9382dcacd72e66601ec688a26",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
