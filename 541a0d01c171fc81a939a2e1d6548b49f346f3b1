@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74f55018_59de97be",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-31T00:00:34Z",
+      "side": 1,
+      "message": "how do you manage different versions?  if package a\u003d\u003d1.0 is installed and my script calls for a\u003d\u003d1.0.1, what happens?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 2
+      },
+      "revId": "541a0d01c171fc81a939a2e1d6548b49f346f3b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e79ecdaa_b9179dcc",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-31T00:00:34Z",
+      "side": 1,
+      "message": "Please explain why you feel the need to keep a separate package list? Pip seems to know pretty darned well what\u0027s installed and what is not.  When using a venv if I run pip install foo twice, the second time it does basically nothing, just says, requirement already met, and takes about zero time.",
+      "range": {
+        "startLine": 6,
+        "startChar": 62,
+        "endLine": 6,
+        "endChar": 69
+      },
+      "revId": "541a0d01c171fc81a939a2e1d6548b49f346f3b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1e02aaf_bcf5c538",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-31T00:00:34Z",
+      "side": 1,
+      "message": "deprecations ?  (spelling)  but removal seems a LOT stronger than a deprecation.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 11
+      },
+      "revId": "541a0d01c171fc81a939a2e1d6548b49f346f3b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
