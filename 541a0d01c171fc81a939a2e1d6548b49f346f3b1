@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ba646775_cd0e237a",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-31T14:46:21Z",
+      "side": 1,
+      "message": "I had same concern, but as it turns out, pip handles this case, it will issue error message and exit with a bad status, and so will lf-venv-create().",
+      "parentUuid": "74f55018_59de97be",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 2
+      },
+      "revId": "541a0d01c171fc81a939a2e1d6548b49f346f3b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e79ecdaa_b9179dcc",
         "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "f2da2ef9_9baa2c22",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-31T14:46:21Z",
+      "side": 1,
+      "message": "I considered doing that and it would be easy to just ask pip what is already installed. It would also catch the case where \u0027b\u0027 got installed only because it was a dependency of \u0027a\u0027. With the current implementation, it would install \u0027b\u0027 again.\nI was concerned about the time it would take to search a much longer list of packages. If you install all the packages it can approache 100. Given the efficient process I am using to search, it would probably not be a problem. It would allow me to discard a global variable: \u0027_lf_existing_pkgs\u0027 Note the search would still have to be performed even if lf-venv-create() has nothing to do and will just be returning.",
+      "parentUuid": "e79ecdaa_b9179dcc",
+      "range": {
+        "startLine": 6,
+        "startChar": 62,
+        "endLine": 6,
+        "endChar": 69
+      },
+      "revId": "541a0d01c171fc81a939a2e1d6548b49f346f3b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d1e02aaf_bcf5c538",
         "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2019-10-31T00:00:34Z",
       "side": 1,
       "message": "deprecations ?  (spelling)  but removal seems a LOT stronger than a deprecation.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 11
+      },
+      "revId": "541a0d01c171fc81a939a2e1d6548b49f346f3b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a9d2fb7_0736e83a",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-10-31T14:46:21Z",
+      "side": 1,
+      "message": "I could probably find a better \u0027heading\u0027 for this.",
+      "parentUuid": "d1e02aaf_bcf5c538",
       "range": {
         "startLine": 10,
         "startChar": 0,
