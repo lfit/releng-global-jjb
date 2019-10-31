@@ -53,8 +53,8 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: |
-            ^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$
+          # yamllint disable-line rule:line-length
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
 
     #####################
     # Job Configuration #
@@ -158,7 +158,7 @@
     gerrit_merge_triggers:
       - change-merged-event
       - comment-added-contains-event:
-          comment-contains-value: remerge$
+          comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
 
     #####################
     # Job Configuration #

@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Change the comment-added-contains-event strings for the release-verify and
+    release-merge templates to the same regexes used in other verify and merge
+    templates, instead of custom versions that didn't seem to work;
+    verify now uses '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
+    merge now uses  '^Patch Set\s+\d+:\s+remerge\s*$'
