@@ -119,7 +119,7 @@
           exclude-no-code-change: false
       - draft-published-event
       - comment-added-contains-event:
-          comment-contains-value: '^Patch Set[ ]+[0-9]+:([ ]+|[\n]+)(recheck|reverify)$'
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)$'
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
