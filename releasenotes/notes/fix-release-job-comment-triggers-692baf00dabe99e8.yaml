@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Change the comment-added-contains-event string for the release-verify and
+    release-merge templates to the same regex used in other verify and merge
+    templates, instead of a custom one that didn't seem to work.
