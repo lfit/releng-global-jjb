@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ed49fc61_f24af886",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-31T17:27:05Z",
+      "side": 1,
+      "message": "I don\u0027t understand your reply.  I thought I was sketching a perfectly valid use case.  Consider: Script 1 creates venv \"3\" and calls your fn to add package P at version 1.0.1.  Script 2 comes along in the same build, reuses venv \"3\" and calls your fn to add package P at version 1.0.2.  You say this is an error!?   That would be a difficult situation.",
+      "parentUuid": "ba646775_cd0e237a",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 2
+      },
+      "revId": "541a0d01c171fc81a939a2e1d6548b49f346f3b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e79ecdaa_b9179dcc",
         "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
         "patchSetId": 1
