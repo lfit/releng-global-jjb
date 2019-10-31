@@ -22,6 +22,30 @@
       "revId": "8a1643d7a17c382330d8d610f9f0fa229d632838",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a29cc32_e867fdca",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-31T20:36:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1e348625_1d836e46",
+      "range": {
+        "startLine": 57,
+        "startChar": 18,
+        "endLine": 59,
+        "endChar": 0
+      },
+      "revId": "8a1643d7a17c382330d8d610f9f0fa229d632838",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
