@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de752e76_40315286",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-10-31T12:10:03Z",
+      "side": 1,
+      "message": "Suggest you update this triggering comment at the same time.  Aim for consistency across jobs:\n\n   \u0027^Patch Set\\s+\\d+:\\s+remerge\\s*$\u0027",
+      "range": {
+        "startLine": 169,
+        "startChar": 0,
+        "endLine": 169,
+        "endChar": 3
+      },
+      "revId": "9d54082f88b86d70b6f47aaf518835cba6d474a9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
