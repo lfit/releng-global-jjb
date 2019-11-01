@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Use compare-type REG_EXP (not ANT) in lf_pypi_common to match
+    the regular expression .*, which isn't a valid ANT pattern.

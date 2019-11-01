@@ -682,7 +682,7 @@
     tox-envs: ""
 
     gerrit_trigger_file_paths:
-      - compare-type: ANT
+      - compare-type: REG_EXP
         pattern: ".*"
 
     # github_included_regions MUST match gerrit_trigger_file_paths
