@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa2cbc45_b6df1fc7",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-01T08:18:02Z",
+      "side": 1,
+      "message": "so you\u0027re gonna set up TWO pyenvs in this script?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 3
+      },
+      "revId": "15b190862121ac036bf0a1dc0bc33379a6b8b1a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
