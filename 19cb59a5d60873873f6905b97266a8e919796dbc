@@ -22,6 +22,30 @@
       "revId": "19cb59a5d60873873f6905b97266a8e919796dbc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af53b310_a2e6ef6f",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-01T20:18:08Z",
+      "side": 0,
+      "message": "Yes, I agree that this is also wrong.  But I didn\u0027t observe an xc-clm job failing to start on a comment, so I didn\u0027t touch this block.  Glad to do so.",
+      "parentUuid": "663b8677_af43fe37",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 94,
+        "endChar": 21
+      },
+      "revId": "19cb59a5d60873873f6905b97266a8e919796dbc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
