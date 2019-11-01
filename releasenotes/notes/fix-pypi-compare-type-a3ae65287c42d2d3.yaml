@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+
+    Change compare-type to REG_EXP in macros lf_python_clm_xc and
+    lf_pypi_common for config parameter gerrit_trigger_file_paths
+    with the regular expression .*
+    Previously was ANT, which didn't match anything with pattern .*
+    so recheck/reverify comment triggers did not work.
+    Clarify documentation of comment triggers for python jobs.

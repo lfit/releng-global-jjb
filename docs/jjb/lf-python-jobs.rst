@@ -65,7 +65,9 @@ to access Nexus IQ Server.
     - gerrit-python-xc-clm
     - github-python-xc-clm
 
-:Comment Trigger: run-clm
+:Comment Trigger: **run-clm** post a comment with the trigger to launch
+    this job manually. Do not include any additional text or vote in the
+    same comment.
 
 :Required parameters:
 
@@ -147,7 +149,9 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     - gerrit-tox-sonar
     - github-tox-sonar
 
-:Comment Trigger: run-sonar
+:Comment Trigger: **run-sonar** post a comment with the trigger to launch
+    this job manually. Do not include any additional text or vote in the
+    same comment.
 
 :Required parameters:
 
@@ -229,7 +233,9 @@ variables before running.
     - gerrit-tox-verify
     - github-tox-verify
 
-:Comment Trigger: recheck|reverify
+:Comment Trigger: **recheck|reverify** post a comment with one of the
+    triggers to launch this job manually. Do not include any additional
+    text or vote in the same comment.
 
 :Required Parameters:
 
@@ -288,7 +294,9 @@ variables before running.
     - gerrit-tox-merge
     - github-tox-merge
 
-:Comment Trigger: remerge
+:Comment Trigger: **remerge** post a comment with the trigger to launch
+    this job manually. Do not include any additional text or vote in the
+    same comment.
 
 :Required Parameters:
 
@@ -349,7 +357,9 @@ pyenv variables before running.
     - gerrit-pypi-verify
     - github-pypi-verify
 
-:Comment Trigger: recheck
+:Comment Trigger: **recheck|reverify** post a comment with one of the
+    triggers to launch this job manually. Do not include any additional
+    text or vote in the same comment.
 
 :Required Parameters:
 
@@ -439,7 +449,9 @@ the repository key-value pair is optional, it defaults to pypi.org.
     - gerrit-pypi-merge
     - github-pypi-merge
 
-:Comment Trigger: remerge
+:Comment Trigger: **remerge** post a comment with the trigger to launch
+    this job manually. Do not include any additional text or vote in the
+    same comment.
 
 :Required Parameters:
 
