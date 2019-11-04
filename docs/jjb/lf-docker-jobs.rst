@@ -55,7 +55,7 @@ Executes a docker build task.
     - github-docker-verify
 
 :Comment Trigger: **recheck|reverify** post a comment with one of the
-    triggers to launch this job manually. Do not include any additional
+    triggers to launch this job manually. Do not include any other
     text or vote in the same comment.
 
 :Required parameters:
@@ -119,7 +119,7 @@ Executes a docker build task and publishes the resulting images to a specified D
     - github-docker-merge
 
 :Comment Trigger: **remerge** post a comment with the trigger to launch
-    this job manually. Do not include any additional text or vote in the
+    this job manually. Do not include any other text or vote in the
     same comment.
 
 :Required parameters:

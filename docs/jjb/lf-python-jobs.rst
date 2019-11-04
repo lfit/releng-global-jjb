@@ -66,7 +66,7 @@ to access Nexus IQ Server.
     - github-python-xc-clm
 
 :Comment Trigger: **run-clm** post a comment with the trigger to launch
-    this job manually. Do not include any additional text or vote in the
+    this job manually. Do not include any other text or vote in the
     same comment.
 
 :Required parameters:
@@ -150,7 +150,7 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     - github-tox-sonar
 
 :Comment Trigger: **run-sonar** post a comment with the trigger to launch
-    this job manually. Do not include any additional text or vote in the
+    this job manually. Do not include any other text or vote in the
     same comment.
 
 :Required parameters:
@@ -234,7 +234,7 @@ variables before running.
     - github-tox-verify
 
 :Comment Trigger: **recheck|reverify** post a comment with one of the
-    triggers to launch this job manually. Do not include any additional
+    triggers to launch this job manually. Do not include any other
     text or vote in the same comment.
 
 :Required Parameters:
@@ -295,7 +295,7 @@ variables before running.
     - github-tox-merge
 
 :Comment Trigger: **remerge** post a comment with the trigger to launch
-    this job manually. Do not include any additional text or vote in the
+    this job manually. Do not include any other text or vote in the
     same comment.
 
 :Required Parameters:
@@ -358,7 +358,7 @@ pyenv variables before running.
     - github-pypi-verify
 
 :Comment Trigger: **recheck|reverify** post a comment with one of the
-    triggers to launch this job manually. Do not include any additional
+    triggers to launch this job manually. Do not include any other
     text or vote in the same comment.
 
 :Required Parameters:
@@ -450,7 +450,7 @@ the repository key-value pair is optional, it defaults to pypi.org.
     - github-pypi-merge
 
 :Comment Trigger: **remerge** post a comment with the trigger to launch
-    this job manually. Do not include any additional text or vote in the
+    this job manually. Do not include any other text or vote in the
     same comment.
 
 :Required Parameters:
