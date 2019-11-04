@@ -22,6 +22,30 @@
       "revId": "15b190862121ac036bf0a1dc0bc33379a6b8b1a3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b282070d_908d9943",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-04T22:10:54Z",
+      "side": 1,
+      "message": "The lf-venv-create creates a venv containing tox and tox-pyenv. When tox is run is uses \u0027tox-pyenv\u0027 to perform the tox runs on multiple versions of python. There is another script tox-install.sh that also installs tox \u0026 tox-pyenv in ~/.local. This will be going away at some point.\n\nI would also like to update tox to use venv instead of pyenv, but that is another project.",
+      "parentUuid": "fa2cbc45_b6df1fc7",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 3
+      },
+      "revId": "15b190862121ac036bf0a1dc0bc33379a6b8b1a3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
