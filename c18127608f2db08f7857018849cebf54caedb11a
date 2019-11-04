@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2ce03b18_632c8735",
+        "filename": "shell/jenkins-sandbox-cleanup.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-04T22:10:54Z",
+      "side": 1,
+      "message": "Because we changed the path (with lf-activate) pip is now $venv/bin/pip and pip and that is based on python3.",
+      "parentUuid": "862b9807_1227367d",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 2
+      },
+      "revId": "c18127608f2db08f7857018849cebf54caedb11a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1e0d9f29_541d2919",
         "filename": "shell/jjb-merge-job.sh",
         "patchSetId": 6
