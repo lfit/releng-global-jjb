@@ -187,7 +187,7 @@ An example of a PyPI release file appears below.
     ---
     distribution_type: pypi
     pypi_project: mypackage
-    python_version: 3.4
+    python_version: '3.4'
     version: 1.0.0
 
 
@@ -207,7 +207,8 @@ packages.
     :pypi_project: The PyPI project name at the staging and
         release repositories, for example "mypackage".
     :python_version: The Python interpreter version to use for pip
-        "Requires-Python" compatibility checks, for example "3" or "3.7.0".
+        "Requires-Python" compatibility checks, for example '3', '3.7' or 3.7.4.
+        Valid decimal values such as 3 and 3.7 must be quoted.
     :version: The semantic version string used for the package in the
         setup.py file.
 
