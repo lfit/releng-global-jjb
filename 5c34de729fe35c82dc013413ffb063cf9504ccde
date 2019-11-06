@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "18df1e42_a52caf51",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-06T20:19:55Z",
+      "side": 1,
+      "message": "I ran tox manually and it does not.",
+      "parentUuid": "90ad911a_f6b3f48c",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9680d9d5_eb01df4d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "17cc66ce_1bd01029",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-06T20:19:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9680d9d5_eb01df4d",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 9,
+        "endChar": 53
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fdafc514_831ee0b6",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 7
@@ -59,6 +107,30 @@
       "writtenOn": "2019-11-06T19:04:46Z",
       "side": 1,
       "message": "I\u0027m trying to understand the point of keeping this function separate.  It seems that it can ONLY work if a shell script first calls lf-create-venv, and then immediately this.  But, why make that shell script do the extra work? Why not just extend the path in lf-create-venv and be done with it? Unlike in the previous design, there is no scenario where I can call lf-create-venv twice (or three times ..) and only then finally call the lf-venv-activate, right?",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 1
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "580d24b1_127c150f",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-06T20:19:55Z",
+      "side": 1,
+      "message": "Using functions to set environmental variable is generally a no-no. Running a command from a shell runs in a sub-shell and CANNOT change the environment of the parent (unlike other so-called operating systems).  Because a function runs in the parent process, it can set both shell and env variables.\n\nIn general when you run a command you do NOT expect it to changes your environment. The reason I chose \u0027activate\u0027 that is similar to the \u0027activate\u0027 script from Python venv that also mucks with you environment. Also now we are only calling lf-create-venv() once so I would not have to worry about adding the bin directory to the PATH twice.\n\nYou are breaking me down here. I would feel better if I renamed lf-venv-create() to \u0027lf-venv-activate(). I could make lf_tmp_venv a local variable.\n\nDon\u0027t tell anyone I let you change my mind... I am always right!",
+      "parentUuid": "fdafc514_831ee0b6",
       "range": {
         "startLine": 107,
         "startChar": 0,
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "5e23dc7c_d7467168",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-06T20:19:55Z",
+      "side": 1,
+      "message": "It created in /tmp and will be lost when the VM estarts.",
+      "parentUuid": "722ab0ae_10b8909b",
+      "range": {
+        "startLine": 147,
+        "startChar": 32,
+        "endLine": 147,
+        "endChar": 41
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f14934c1_48a76b11",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 7
@@ -114,6 +210,30 @@
       "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b2d981c_d5633d71",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-06T20:19:55Z",
+      "side": 1,
+      "message": "Yup. A job might have another script that also needs to create a venv and we don\u0027t want them dancing on each other. Another way would have been to use \u0027$$\u0027 (process ID).",
+      "parentUuid": "f14934c1_48a76b11",
+      "range": {
+        "startLine": 172,
+        "startChar": 38,
+        "endLine": 172,
+        "endChar": 42
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -160,6 +280,30 @@
       "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fa57431_356b6366",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-06T20:19:55Z",
+      "side": 1,
+      "message": "Although this is new code here, I stole this code from a script shell/jjb-check-unicode.sh. By making this function available, we can delete that file. One less file, less YAML to execute the file. Before this Bash Library the only way to share code like this was to put it in a separate script and call it with yaml/jjb/jenkins. Any number of scripts can now call this function.",
+      "parentUuid": "b31c7ee2_3cf663bd",
+      "range": {
+        "startLine": 293,
+        "startChar": 0,
+        "endLine": 293,
+        "endChar": 4
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
