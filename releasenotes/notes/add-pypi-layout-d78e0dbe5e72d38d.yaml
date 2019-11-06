@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Extend PyPI documentation in lf-python-jobs.rst with recommended
+    directory layout.
