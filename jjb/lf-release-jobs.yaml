@@ -342,6 +342,8 @@
               variable: SIGUL_PKI
             - file-id: signing-pubkey
               variable: SIGNING_PUBKEY
+            - file-id: pypirc
+              target: "$HOME/.pypirc"
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
       - inject:

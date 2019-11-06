@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add .pypirc config file provider to builders in release job.
+    Extend PyPI documentation with recommended directory layout.
