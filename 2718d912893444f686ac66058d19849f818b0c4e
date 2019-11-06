@@ -145,6 +145,241 @@
     },
     {
       "key": {
+        "uuid": "e82ec0ff_9bace6d6",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "Well this is a fatal error, not just a warning, right?  How about say so.",
+      "range": {
+        "startLine": 24,
+        "startChar": 10,
+        "endLine": 24,
+        "endChar": 17
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2510144b_2e88e101",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "How about echoing this command before it\u0027s run?",
+      "range": {
+        "startLine": 36,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 3
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfc9bea8_a3fb8d10",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "echo \"--\u003e logs-deploy.sh ends\"",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4c098ac_a648826e",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "insert \"INFO: \"",
+      "range": {
+        "startLine": 23,
+        "startChar": 9,
+        "endLine": 23,
+        "endChar": 11
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb7ccd53_b6158047",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "Why create a requirements file to use only below, then delete immediately? why not just feed the list of packages to pip install?  the list is short, it\u0027s not like you cannot fit it in a shell string.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 4
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d402a2e_8380a80f",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "why is niet pinned at such an old version?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 11
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "909b47f8_21ee4256",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "echo \"--\u003e python-tools-install.sh ends\"",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0910937b_8c78362b",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "Most scripts echo \"INFO:\" then their message. This one uses arrows.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da4de3b0_16e42ad1",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "maybe \"INFO: \"",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b192ecae_1ee87f22",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "Remove don\u0027t comment out, that\u0027s what you all tell us, right?  lol",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 3
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6a2843d_0bfe907d",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:57:40Z",
+      "side": 1,
+      "message": "echo \"---\u003e rtd-verify.sh ends\"",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "12ad55d2_1b5fa42d",
         "filename": "shell/tox-run.sh",
         "patchSetId": 11
