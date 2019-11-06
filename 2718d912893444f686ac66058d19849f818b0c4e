@@ -1,0 +1,250 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a426c54b_b85102cf",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "Environment variables is correct, but they are not exactly set by JJB, they\u0027re set by Jenkins, probably a combination of inject blocks plus the scm git plugin.",
+      "range": {
+        "startLine": 25,
+        "startChar": 66,
+        "endLine": 25,
+        "endChar": 76
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37c7126a_22aed9b6",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "Please add:\n\n    echo \"--\u003e gerrit-push-patch.sh\"",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9ca0c06_940a2395",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "Please consider echoing out the $change_id",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 7
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95e47ded_3f02364b",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "insert \"INFO: \"",
+      "range": {
+        "startLine": 73,
+        "startChar": 10,
+        "endLine": 73,
+        "endChar": 12
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1de7afb8_34d92f0a",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "Please add:\n\n    echo \"--\u003e gerrit-push-patch.sh ends\"",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "420f426d_2e5d010b",
+        "filename": "shell/jenkins-sandbox-cleanup.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "Ahhh the infamous \"extraneous whitespace\" problem.  Naughty.  Please add instead:\n\n    echo \"--\u003e jenkins-sandbox-cleanup.sh ends\"",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c2df719_80078212",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "this is baffling at first glance. what URLs are being validated?  Where does this magic come from?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 1
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12ad55d2_1b5fa42d",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "Please, oh dear gracious PLEASE, echo out the $TOX_ENVS here.",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "639d53ef_ff56d914",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "How about an echo here of $tox_env",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 4
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbc211c0_5b7eade9",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 3
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cb16259_20de8874",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "Please be consistent this should be INFO:",
+      "range": {
+        "startLine": 64,
+        "startChar": 9,
+        "endLine": 64,
+        "endChar": 14
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3e56b1b_c9b95b90",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T18:52:11Z",
+      "side": 1,
+      "message": "please add:\n\n   echo \"---\u003e tox-run.sh ends\"",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
