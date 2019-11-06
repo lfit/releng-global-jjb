@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c6925688_484ef09c",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-06T19:27:14Z",
+      "side": 1,
+      "message": "This would be another reason not to use a \u0027shared\u0027 python venv. If you create you own venv you control it.",
+      "range": {
+        "startLine": 350,
+        "startChar": 43,
+        "endLine": 352,
+        "endChar": 22
+      },
+      "revId": "3209ee1d6539d7ef9e198f33e2320a7bc1fd54e7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86104e3e_28d9e5ee",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-06T19:27:14Z",
+      "side": 1,
+      "message": "Does tox runner set these variables or expect them to be set? The tox-run.sh sets them before calling \u0027tox\u0027:\nif [ -d \"/opt/pyenv\" ]; then\n    echo \"---\u003e Setting up pyenv\"\n    export PYENV_ROOT\u003d\"/opt/pyenv\"\n    export PATH\u003d\"$PYENV_ROOT/bin:$PATH\"\n    PYTHONPATH\u003d\"$(pwd)\"\n    export PYTHONPATH\n    export TOX_TESTENV_PASSENV\u003dPYTHONPATH\nfi\n\nI have always suspected that some (most) of the above env variables are not required, but have never tested that theory.",
+      "range": {
+        "startLine": 354,
+        "startChar": 0,
+        "endLine": 362,
+        "endChar": 38
+      },
+      "revId": "3209ee1d6539d7ef9e198f33e2320a7bc1fd54e7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
