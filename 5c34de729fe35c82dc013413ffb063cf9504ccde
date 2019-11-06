@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "90ad911a_f6b3f48c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T19:04:46Z",
+      "side": 1,
+      "message": "definitely update update. \n\ndoes coala check for repeated words?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9680d9d5_eb01df4d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T19:04:46Z",
+      "side": 1,
+      "message": "why the quotes? Are the venvs truly temporary or only \u0027temporary\u0027, whatever that means?",
+      "range": {
+        "startLine": 9,
+        "startChar": 42,
+        "endLine": 9,
+        "endChar": 53
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fdafc514_831ee0b6",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T19:04:46Z",
+      "side": 1,
+      "message": "I\u0027m trying to understand the point of keeping this function separate.  It seems that it can ONLY work if a shell script first calls lf-create-venv, and then immediately this.  But, why make that shell script do the extra work? Why not just extend the path in lf-create-venv and be done with it? Unlike in the previous design, there is no scenario where I can call lf-create-venv twice (or three times ..) and only then finally call the lf-venv-activate, right?",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 1
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "722ab0ae_10b8909b",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T19:04:46Z",
+      "side": 1,
+      "message": "what is temporary?  is it removed automatically?",
+      "range": {
+        "startLine": 147,
+        "startChar": 32,
+        "endLine": 147,
+        "endChar": 41
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f14934c1_48a76b11",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T19:04:46Z",
+      "side": 1,
+      "message": "oh this is a directory name pattern?",
+      "range": {
+        "startLine": 172,
+        "startChar": 38,
+        "endLine": 172,
+        "endChar": 42
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "025d32d7_b235070b",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T19:04:46Z",
+      "side": 1,
+      "message": "Maybe the name of this function should be lf-check-jjb-unicode or something? It sure ain\u0027t a general-purpose non-ASCII finder.",
+      "range": {
+        "startLine": 264,
+        "startChar": 13,
+        "endLine": 264,
+        "endChar": 20
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b31c7ee2_3cf663bd",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-06T19:04:46Z",
+      "side": 1,
+      "message": "How about, all files in jjb/ are ASCII? \n\nAnd in this day and age of UTF-8, I\u0027m guessing the char set isn\u0027t ASCII anymore, but something a lot larger. They just have to be printable.  But that\u0027s just picking a nit.",
+      "range": {
+        "startLine": 293,
+        "startChar": 0,
+        "endLine": 293,
+        "endChar": 4
+      },
+      "revId": "5c34de729fe35c82dc013413ffb063cf9504ccde",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
