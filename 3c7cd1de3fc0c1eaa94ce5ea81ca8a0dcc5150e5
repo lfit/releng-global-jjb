@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "b4cbede1_47cb20b1",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "FWIW I preferred the name lf-venv-activate because it moves nicely from general to specific. (LF namespace, venv object, activate verb). Are there other actions (verbs) to define? If not, maybe it doesn\u0027t matter.",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 20
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1c51d58c_2b2f089b",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 8
@@ -13,6 +36,30 @@
       "writtenOn": "2019-11-07T08:10:10Z",
       "side": 1,
       "message": "Just do `lf-activate-venv lftools`, handle pyhton3|2 internally",
+      "range": {
+        "startLine": 99,
+        "startChar": 21,
+        "endLine": 99,
+        "endChar": 31
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "17d536af_28ddc054",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "I think Tim is trying to offer the invoking script control over whether 2 or 3 is desired. How could the function possibly handle THAT internally?",
+      "parentUuid": "1c51d58c_2b2f089b",
       "range": {
         "startLine": 99,
         "startChar": 21,
@@ -45,6 +92,167 @@
       "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4caa9232_b105a2f5",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "Skip the word \"Temporary\" it\u0027s confusing.  EVERYTHING in a build minion is temporary. Maybe instead state that it\u0027s unique to this invocation -- that the next invocation gets a new unique environment cos each invocation creates a new unique path for the venv.",
+      "range": {
+        "startLine": 105,
+        "startChar": 32,
+        "endLine": 105,
+        "endChar": 41
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a3ba0e7_14813637",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "create AND ACTIVATE (put on path) ..",
+      "range": {
+        "startLine": 105,
+        "startChar": 23,
+        "endLine": 105,
+        "endChar": 29
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f161c9bf_bdb0b9ea",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "... where XXX is replaced at runtime by a unique token.",
+      "range": {
+        "startLine": 108,
+        "startChar": 15,
+        "endLine": 108,
+        "endChar": 19
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ff142dc_c5f2f2c7",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "controlled or default ?",
+      "range": {
+        "startLine": 112,
+        "startChar": 25,
+        "endLine": 112,
+        "endChar": 32
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61f4d1b8_0f6e11d9",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "Is this still needed?",
+      "range": {
+        "startLine": 121,
+        "startChar": 32,
+        "endLine": 121,
+        "endChar": 43
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59b53212_94c9f511",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "this def looks outdated.",
+      "range": {
+        "startLine": 122,
+        "startChar": 3,
+        "endLine": 122,
+        "endChar": 45
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "17f22c16_884f079d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T13:02:10Z",
+      "side": 1,
+      "message": "why is this in quotes?  Do the quotes change the meaning of top?",
+      "range": {
+        "startLine": 237,
+        "startChar": 25,
+        "endLine": 237,
+        "endChar": 30
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
