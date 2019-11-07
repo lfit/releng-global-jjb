@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4b077e4_07020d08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T15:58:33Z",
+      "side": 1,
+      "message": "I think the name in code is now lf-jjb-check-unicode",
+      "range": {
+        "startLine": 13,
+        "startChar": 32,
+        "endLine": 13,
+        "endChar": 48
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48461c48_3c0e8b16",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T15:58:33Z",
+      "side": 1,
+      "message": "Please update the release notes to match reality.",
+      "range": {
+        "startLine": 4,
+        "startChar": 9,
+        "endLine": 4,
+        "endChar": 22
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b30d451c_942f2efc",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T15:58:33Z",
+      "side": 1,
+      "message": "Is this variable still defined?",
+      "range": {
+        "startLine": 5,
+        "startChar": 48,
+        "endLine": 6,
+        "endChar": 37
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "73206e68_216d04c9",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T15:58:33Z",
+      "side": 1,
+      "message": "If not, please correct release note for this function?",
+      "range": {
+        "startLine": 7,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 23
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbb4368a_eed846a9",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T15:58:33Z",
+      "side": 1,
+      "message": "lf-jjb-check-unicode",
+      "range": {
+        "startLine": 20,
+        "startChar": 55,
+        "endLine": 20,
+        "endChar": 71
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
