@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0efb8acf_7bc2a412",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a426c54b_b85102cf",
+      "range": {
+        "startLine": 25,
+        "startChar": 66,
+        "endLine": 25,
+        "endChar": 76
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "37c7126a_22aed9b6",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 11
@@ -39,6 +63,24 @@
       "revId": "2718d912893444f686ac66058d19849f818b0c4e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "402e1042_30898b60",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37c7126a_22aed9b6",
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -317,6 +359,30 @@
     },
     {
       "key": {
+        "uuid": "816ac9db_f7c69208",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0910937b_8c78362b",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 1
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da4de3b0_16e42ad1",
         "filename": "shell/rtd-verify.sh",
         "patchSetId": 11
@@ -340,6 +406,30 @@
     },
     {
       "key": {
+        "uuid": "86f6bb30_38c2c338",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T01:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da4de3b0_16e42ad1",
+      "range": {
+        "startLine": 15,
+        "startChar": 6,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b192ecae_1ee87f22",
         "filename": "shell/rtd-verify.sh",
         "patchSetId": 11
@@ -351,6 +441,30 @@
       "writtenOn": "2019-11-06T18:57:40Z",
       "side": 1,
       "message": "Remove don\u0027t comment out, that\u0027s what you all tell us, right?  lol",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 3
+      },
+      "revId": "2718d912893444f686ac66058d19849f818b0c4e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d30bafc_20209241",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T01:45:01Z",
+      "side": 1,
+      "message": "I left it because I need to author to buy-in to removing it. Just because I can see no reason to keep it, does not mean there in not one.",
+      "parentUuid": "b192ecae_1ee87f22",
       "range": {
         "startLine": 29,
         "startChar": 0,
