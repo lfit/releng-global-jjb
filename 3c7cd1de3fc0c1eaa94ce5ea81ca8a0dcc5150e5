@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9c561725_3d718ae2",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T15:50:25Z",
+      "side": 1,
+      "message": "When we had create \u0026 activate I used the lf-venv- prefix. But in general I prefer verb-noun for function name. Either way a nit. Not gonna change it now (a full set of tests takes several hours). All the changes I am making are all comments. I only plan minimal testing.",
+      "parentUuid": "b4cbede1_47cb20b1",
+      "range": {
+        "startLine": 89,
+        "startChar": 4,
+        "endLine": 89,
+        "endChar": 20
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c51d58c_2b2f089b",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 8
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "I think Tim is trying to offer the invoking script control over whether 2 or 3 is desired. How could the function possibly handle THAT internally?",
       "parentUuid": "1c51d58c_2b2f089b",
+      "range": {
+        "startLine": 99,
+        "startChar": 21,
+        "endLine": 99,
+        "endChar": 31
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a7ca4264_fafe8683",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T15:50:25Z",
+      "side": 1,
+      "message": "In generate, the python version should be controlled by the function. This options allows caller to override. I already have a specific request for supporting python2. I will remove the \u0027-p python3\u0027 example as it is the default anyway.",
+      "parentUuid": "17d536af_28ddc054",
       "range": {
         "startLine": 99,
         "startChar": 21,
@@ -141,6 +189,30 @@
     },
     {
       "key": {
+        "uuid": "7073df99_2d800ac3",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T15:50:25Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "4caa9232_b105a2f5",
+      "range": {
+        "startLine": 105,
+        "startChar": 32,
+        "endLine": 105,
+        "endChar": 41
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f161c9bf_bdb0b9ea",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 8
@@ -161,6 +233,30 @@
       "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3780e093_6fdc51e4",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T15:50:25Z",
+      "side": 1,
+      "message": "XXXX is a directive to mktemp(), but I think \u0027####\u0027 is more readable.",
+      "parentUuid": "f161c9bf_bdb0b9ea",
+      "range": {
+        "startLine": 108,
+        "startChar": 15,
+        "endLine": 108,
+        "endChar": 19
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -187,6 +283,30 @@
     },
     {
       "key": {
+        "uuid": "4a31ffe1_ffc58fe5",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T15:50:25Z",
+      "side": 1,
+      "message": "It is the version by default. If the caller specifies version jenking-job-builder\u003d\u003d1.8.0 that version will be installed.",
+      "parentUuid": "3ff142dc_c5f2f2c7",
+      "range": {
+        "startLine": 112,
+        "startChar": 25,
+        "endLine": 112,
+        "endChar": 32
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "61f4d1b8_0f6e11d9",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 8
@@ -207,6 +327,30 @@
       "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c82ab559_b3350207",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T15:50:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61f4d1b8_0f6e11d9",
+      "range": {
+        "startLine": 121,
+        "startChar": 32,
+        "endLine": 121,
+        "endChar": 43
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -233,6 +377,30 @@
     },
     {
       "key": {
+        "uuid": "fb33cb07_403bf39c",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T15:50:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "59b53212_94c9f511",
+      "range": {
+        "startLine": 122,
+        "startChar": 3,
+        "endLine": 122,
+        "endChar": 45
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "17f22c16_884f079d",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 8
@@ -253,6 +421,30 @@
       "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edeb65ac_3c516621",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-07T15:50:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17f22c16_884f079d",
+      "range": {
+        "startLine": 237,
+        "startChar": 25,
+        "endLine": 237,
+        "endChar": 30
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
