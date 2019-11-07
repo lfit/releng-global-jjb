@@ -1,0 +1,40 @@
+---
+- job:
+    name: k8s-create-test
+
+    parameters:
+      - lf-kubernetes-create:
+          base-image: Fedora Atomic 29 [2019-08-20]
+          boot-volume-size: 8
+          cluster-settle-time: 1m
+          docker-volume-size: 10
+          fixed-network: ecompci
+          fixed-subnet: ecompci-subnet1
+          keypair: dwt2-key
+          kubernetes-version: v1.16.0
+          master-count: 1
+          master-flavor: v2-standard-1
+          node-count: 2
+          node-flavor: v2-highcpu-8
+          openstack-cloud: vex
+
+    #####################
+    # Job configuration #
+    #####################
+
+    builders:
+      - lf-infra-pre-build
+      - lf-kubernetes-create:
+          openstack-cloud: "{openstack-cloud}"
+          base-image: "{base-image}"
+          boot-volume-size: "{boot-volume-size}"
+          cluster-settle-time: "{cluster-settle-time}"
+          docker-volume-size: "{docker-volume-size}"
+          fixed-network: "{fixed-network}"
+          fixed-subnet: "{fixed-subnet}"
+          keypair: "{keypair}"
+          kubernetes-version: "{kubernetes-version}"
+          master-count: "{master-count}"
+          master-flavor: "{master-flavor}"
+          node-count: "{node-count}"
+          node-flavor: "{node-flavor}"
