@@ -1,7 +1,0 @@
----
-fixes:
-  - |
-    Fix rtd merge job to handle case of a new tag upload. When a new tag is
-    pushed this sets the gerrit event type to "ref-updated", and sets the
-    `branch=*` which is invalid. The change handles the case of tag update
-    and builds against the appropriate branch for that tag.
