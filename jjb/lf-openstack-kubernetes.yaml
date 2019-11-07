@@ -1,0 +1,54 @@
+---
+- builder:
+    name: lf-kubernetes-create
+    builders:
+      - inject:
+          properties-content: |
+            OS_CLOUD={openstack-cloud}
+            FIXED_NETWORK={fixed-network}
+            FIXED_SUBNET={fixed-subnet}
+            CLUSTER_NAME=$SILO-$JOB_NAME-$BUILD_NUMBER
+            CLUSTER_TEMPLATE_NAME=$SILO-$JOB_NAME-$BUILD_NUMBER-template
+            BASE_IMAGE={base-image}
+            KEYPAIR={keypair}
+            MASTER_FLAVOR={master-flavor}
+            NODE_FLAVOR={node-flavor}
+            MASTER_COUNT={master-count}
+            NODE_COUNT={node-count}
+            BOOT_VOLUME_SIZE={boot-volume-size}
+            DOCKER_VOLUME_SIZE={docker-volume-size}
+            KUBERNETES_VERSION={kubernetes-version}
+            CLUSTER_SETTLE_TIME={cluster-settle-time}
+      - config-file-provider:
+          files:
+            - file-id: clouds-yaml
+              target: "$HOME/.config/openstack/clouds.yaml"
+      - shell: !include-raw: ../shell/openstack-kubernetes-create.sh
+
+- publisher:
+    name: lf-kubernetes-delete
+    publishers:
+      - postbuildscript:
+          builders:
+            - role: BOTH
+              build-on:
+                - ABORTED
+                - FAILURE
+                - SUCCESS
+                - UNSTABLE
+              build-steps:
+                - inject:
+                    properties-content: |
+                      CLUSTER_NAME=$SILO-$JOB_NAME-$BUILD_NUMBER
+                      CLUSTER_TEMPLATE_NAME=$SILO-$JOB_NAME-$BUILD_NUMBER-template
+                - config-file-provider:
+                    files:
+                      - file-id: clouds-yaml
+                        target: "$HOME/.config/openstack/clouds.yaml"
+                - shell: |
+                    #!/bin/bash -l
+                    echo "Deleting $CLUSTER_NAME"
+                    lftools openstack --os-cloud "$OS_CLOUD" coe cluster delete "$CLUSTER_NAME"
+                    sleep 5m
+                    lftools openstack --os-cloud "$OS_CLOUD" coe cluster delete "$CLUSTER_TEMPLATE_NAME"
+          mark-unstable-if-failed: false
