@@ -25,6 +25,213 @@
     },
     {
       "key": {
+        "uuid": "a9ea7a9b_932d8b49",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "the usage message suggests that -p py shall precede package names; is that right?",
+      "range": {
+        "startLine": 101,
+        "startChar": 32,
+        "endLine": 101,
+        "endChar": 48
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6c044c1_fd7ad5ff",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "In the python2 case, virtualenv is not installed; is that a problem?",
+      "range": {
+        "startLine": 109,
+        "startChar": 39,
+        "endLine": 109,
+        "endChar": 49
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74d42b81_f8a1f2d6",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "This only applies to Python3, right?",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 1
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a686f0ff_f9a86ad8",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "would you please explain where $JJB_VERSION comes from?  Here it looks like magic.",
+      "range": {
+        "startLine": 116,
+        "startChar": 33,
+        "endLine": 116,
+        "endChar": 45
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d7a20ff_0fb60f9b",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "Is an empty package list tolerated?  That seems kind of silly.  Why activate if nothing is installed?",
+      "range": {
+        "startLine": 156,
+        "startChar": 7,
+        "endLine": 156,
+        "endChar": 38
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5a6afbe_85ef9fa1",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "Same as question above re empty package list.",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 6
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3e16dd6_0c91e410",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "I would drop all the single quotes in this message",
+      "range": {
+        "startLine": 247,
+        "startChar": 58,
+        "endLine": 247,
+        "endChar": 79
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0cbd1419_a3e003e7",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "if this checks ASCII then the function name should be lf-jjb-check-ascii.  If this checks printable unicode then the message should emit \"non-printable\".  Please make consistent.",
+      "range": {
+        "startLine": 251,
+        "startChar": 55,
+        "endLine": 251,
+        "endChar": 60
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb4265c5_de4409ce",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-07T16:04:36Z",
+      "side": 1,
+      "message": "Unicode?",
+      "range": {
+        "startLine": 254,
+        "startChar": 24,
+        "endLine": 254,
+        "endChar": 29
+      },
+      "revId": "68efd8b92e98f05c464537f301fd0a850bf16eca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "48461c48_3c0e8b16",
         "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
         "patchSetId": 9
