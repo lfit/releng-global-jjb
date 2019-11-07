@@ -47,6 +47,8 @@ else
 lftools[openstack]
 python-heatclient
 python-openstackclient
+python-magnumclient
+kubernetes
 niet~=1.4.2
 tox>=3.7.0 # Tox 3.7 or greater is necessary for parallel mode support
 yq
