@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c51d58c_2b2f089b",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-11-07T08:10:10Z",
+      "side": 1,
+      "message": "Just do `lf-activate-venv lftools`, handle pyhton3|2 internally",
+      "range": {
+        "startLine": 99,
+        "startChar": 21,
+        "endLine": 99,
+        "endChar": 31
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c578affa_31778368",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-11-07T08:10:10Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 101,
+        "startChar": 41,
+        "endLine": 101,
+        "endChar": 48
+      },
+      "revId": "3c7cd1de3fc0c1eaa94ce5ea81ca8a0dcc5150e5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
