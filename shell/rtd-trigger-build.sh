@@ -30,6 +30,7 @@ last_char=${RTD_BUILD_URL:length-1:1}
 # Handle case for gerrit event type is ref-updated when new tag are pushed
 [[ $GERRIT_EVENT_TYPE =~ "ref-updated" ]] && GERRIT_BRANCH=${GERRIT_REFNAME##*/}
 
+echo "INFO: Posting request for branch $GERRIT_BRANCH to URL $RTD_BUILD_URL"
 json=$(curl -X POST -d "branches=${GERRIT_BRANCH}" -d "token=$RTD_TOKEN" "$RTD_BUILD_URL")
 build_triggered=$(echo "$json" | jq -r .build_triggered)
 
