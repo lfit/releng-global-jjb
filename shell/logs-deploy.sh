@@ -36,3 +36,4 @@ else
 
     echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
 fi
+echo "Final Uptime: $(cat /proc/uptime | awk '{print $1}')"
