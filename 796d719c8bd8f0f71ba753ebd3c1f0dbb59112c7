@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19b23cff_ee884d99",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-08T02:04:29Z",
+      "side": 1,
+      "message": ".. and install the specified packages in the new venv.",
+      "range": {
+        "startLine": 105,
+        "startChar": 70,
+        "endLine": 105,
+        "endChar": 71
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a70a9651_7eaa070a",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-08T02:04:29Z",
+      "side": 1,
+      "message": "I still would vastly prefer to see an error if this is called with zero packages.  It\u0027s a meaningless action and probably indicates a script problem.",
+      "range": {
+        "startLine": 156,
+        "startChar": 7,
+        "endLine": 156,
+        "endChar": 38
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b4750ef_fdf70e32",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-08T02:04:29Z",
+      "side": 1,
+      "message": "Please consider duplicating line 171, echo of packages, to here.  Or maybe move line 171 up to about 149 so it\u0027s printed before the case?",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 9
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9dc0e4a6_3df88f0d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-08T02:04:29Z",
+      "side": 1,
+      "message": "See above re zero packages",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 6
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a10d701_8fd15c92",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-08T02:04:29Z",
+      "side": 1,
+      "message": "Why does this not start with ${FUNCNAME} ?  Pls be consistent",
+      "range": {
+        "startLine": 171,
+        "startChar": 12,
+        "endLine": 171,
+        "endChar": 19
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ddee8ba0_2db579be",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-08T02:04:29Z",
+      "side": 1,
+      "message": "Is there such a thing as a non-printable ascii character??  I guess control sequences?  Still it\u0027s kinda confusing, cos what about non-printable UTF-32 characters, are they ok?",
+      "range": {
+        "startLine": 234,
+        "startChar": 40,
+        "endLine": 234,
+        "endChar": 59
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
