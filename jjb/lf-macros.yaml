@@ -79,6 +79,8 @@
       - shell: !include-raw:
           - ../shell/sudo-logs.sh
       - shell: !include-raw:
+          - ../shell/build-cost.sh
+      - shell: !include-raw:
           - ../shell/logs-deploy.sh
       - shell: !include-raw:
           - ../shell/logs-clear-credentials.sh
