@@ -36,8 +36,5 @@
                     files:
                       - file-id: clouds-yaml
                         target: "$HOME/.config/openstack/clouds.yaml"
-                - shell: |
-                    #!/bin/bash -l
-                    echo "Deleting $OS_STACK_NAME"
-                    lftools openstack --os-cloud "$OS_CLOUD" stack delete "$OS_STACK_NAME"
+                - shell: !include-raw-escape: ../shell/openstack-stack-delete.sh
           mark-unstable-if-failed: false
