@@ -1,0 +1,18 @@
+---
+features:
+  - |
+    Generate Job cost information
+    Each job it will archive a CSV file (cost.csv). It will contain a single
+    CSV record containing the following fields:
+        JobName , BuildNumber , Date , InstanceType , Uptime , Cost1 , Cost2
+    
+    The Date field can be sorted as a string and is readable by you favorite
+    spreadsheet. The Date/Time is GMT.
+
+    The uptime is uptime of the build agent (secs)
+    
+    The Cost1 field is the cost($$) of the build node & Cost2 is cost
+    associated with the stack. If the job is not a Openstack job, then Cost2
+    is '0'.
+
+    The project cost file will based on the year (cost-2019.csv).
