@@ -408,7 +408,6 @@
     disable-job: false
     git-url: "$GIT_URL/$GERRIT_PROJECT"
     github-url: "https://github.com"
-    openstack-cloud: vex
     submodule-timeout: 10
     submodule-disable: false
 
@@ -466,8 +465,6 @@
 
     builders:
       - lf-infra-pre-build
-      - inject:
-          properties-content: OS_CLOUD={openstack-cloud}
       - shell: !include-raw-escape: ../shell/jenkins-verify-images.sh
 
     publishers:

@@ -1,0 +1,13 @@
+---
+fixes:
+  - |
+    Multi-cloud image validation was not properly working as we force set the
+    OS_CLOUD environment variable before validation of images. This has been
+    rectified to dynamicaly modify the OS_CLOUD variable based upon the
+    cloud.cfg that will be used to define the cloud in Jenkins.
+  - |
+    We now validate that a cloud.cfg file exists for any defined OpenStack
+    cloud.
+  - |
+    Removes undocumented, and now unneeded, openstack-cloud variable from the
+    jenkins-cfg-verify job definition
