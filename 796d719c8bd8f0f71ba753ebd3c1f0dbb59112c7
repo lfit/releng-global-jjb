@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "47af1e4d_96eb676b",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-08T15:20:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19b23cff_ee884d99",
+      "range": {
+        "startLine": 105,
+        "startChar": 70,
+        "endLine": 105,
+        "endChar": 71
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a70a9651_7eaa070a",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 10
@@ -45,6 +69,30 @@
       "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bcc19a35_cb458ccf",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-08T15:20:16Z",
+      "side": 1,
+      "message": "I added a WARNING: message, but I still return 0. Someone might actually want to do this. This is Unix you get GR8 flexibility which means you have the ability to shoot yourself in the foot (but in this case not quietly).",
+      "parentUuid": "a70a9651_7eaa070a",
+      "range": {
+        "startLine": 156,
+        "startChar": 7,
+        "endLine": 156,
+        "endChar": 38
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "0098b338_1573c5f0",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-08T15:20:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8b4750ef_fdf70e32",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 9
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9dc0e4a6_3df88f0d",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 10
@@ -91,6 +163,30 @@
       "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "214fcbc1_a675e18a",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-08T15:20:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9dc0e4a6_3df88f0d",
+      "range": {
+        "startLine": 170,
+        "startChar": 0,
+        "endLine": 170,
+        "endChar": 6
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "93b3443d_1c6da3f2",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-08T15:20:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4a10d701_8fd15c92",
+      "range": {
+        "startLine": 171,
+        "startChar": 12,
+        "endLine": 171,
+        "endChar": 19
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ddee8ba0_2db579be",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 10
@@ -137,6 +257,30 @@
       "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b5ef488_d94a177c",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-08T15:20:16Z",
+      "side": 1,
+      "message": "Google sez: \"Originally based on the English alphabet, ASCII encodes 128 specified characters into seven-bit integers as shown by the ASCII chart above. Ninety-five of the encoded characters are printable: these include the digits 0 to 9, lowercase letters a to z, uppercase letters A to Z, and punctuation symbols.\"\n\nThe RE looks for ascii printable \u0026 whitespace (tab \u0026 NL are not printable, but space is).\n\nSo UTF-32 definitely not allowed.",
+      "parentUuid": "ddee8ba0_2db579be",
+      "range": {
+        "startLine": 234,
+        "startChar": 40,
+        "endLine": 234,
+        "endChar": 59
+      },
+      "revId": "796d719c8bd8f0f71ba753ebd3c1f0dbb59112c7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
