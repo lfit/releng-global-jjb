@@ -466,8 +466,6 @@
 
     builders:
       - lf-infra-pre-build
-      - inject:
-          properties-content: OS_CLOUD={openstack-cloud}
       - shell: !include-raw-escape: ../shell/jenkins-verify-images.sh
 
     publishers:
