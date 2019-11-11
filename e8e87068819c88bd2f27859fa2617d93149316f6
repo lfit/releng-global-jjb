@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2c7108b_af0323fd",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "I would write this as:\n\n   [package ..]\n\nindicating that additional packages are optional, and as many as you like may appear",
+      "range": {
+        "startLine": 89,
+        "startChar": 58,
+        "endLine": 89,
+        "endChar": 62
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "58c0f9d1_1046b994",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "should be builder",
+      "range": {
+        "startLine": 97,
+        "startChar": 33,
+        "endLine": 97,
+        "endChar": 38
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bb7446e_d1cd719e",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "insert word \"be\"",
+      "range": {
+        "startLine": 106,
+        "startChar": 14,
+        "endLine": 106,
+        "endChar": 23
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "faf90718_95dc262e",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "Thank you for adding this warning",
+      "range": {
+        "startLine": 157,
+        "startChar": 0,
+        "endLine": 157,
+        "endChar": 4
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b234bec8_401844bd",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "Thanks again",
+      "range": {
+        "startLine": 175,
+        "startChar": 0,
+        "endLine": 175,
+        "endChar": 5
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afad02e2_f71f33e6",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "Might help to mention dependency on env var $JIRA_URL",
+      "range": {
+        "startLine": 206,
+        "startChar": 0,
+        "endLine": 206,
+        "endChar": 1
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b9cdb03e_a8f32f58",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "it would help to explain, is is OK to find Jira URLs, or an Failure?  I had to read the code to know for sure",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 1
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "907c2350_65bd0bf2",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "tiny typo: venv",
+      "range": {
+        "startLine": 7,
+        "startChar": 72,
+        "endLine": 7,
+        "endChar": 76
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0593ea8_85e4ab31",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "wait, $JJB_VERSION specifies which Python to use?  I thought it specified which jenkins-job-builder package to request from pip.\n\nAnd I would write just \"environment variable\" (not environmental ..)",
+      "range": {
+        "startLine": 8,
+        "startChar": 47,
+        "endLine": 8,
+        "endChar": 58
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "223bb78f_7ac833b3",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "would you please consider listing these scripts in the same respective order as the new functions?",
+      "range": {
+        "startLine": 12,
+        "startChar": 33,
+        "endLine": 13,
+        "endChar": 29
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd8e870b_71899ddc",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-11T01:13:37Z",
+      "side": 1,
+      "message": "same typo as above",
+      "range": {
+        "startLine": 17,
+        "startChar": 26,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
