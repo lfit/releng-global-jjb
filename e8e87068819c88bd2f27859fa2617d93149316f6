@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "a90d7ccf_b8abef86",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-11T03:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7bb7446e_d1cd719e",
+      "range": {
+        "startLine": 106,
+        "startChar": 14,
+        "endLine": 106,
+        "endChar": 23
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "faf90718_95dc262e",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 12
@@ -140,6 +164,30 @@
     },
     {
       "key": {
+        "uuid": "2b0cf6e9_25340d99",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-11T03:26:51Z",
+      "side": 1,
+      "message": "It does not require it be set. If it is not set function quietly returns 0.",
+      "parentUuid": "afad02e2_f71f33e6",
+      "range": {
+        "startLine": 206,
+        "startChar": 0,
+        "endLine": 206,
+        "endChar": 1
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b9cdb03e_a8f32f58",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 12
@@ -183,6 +231,30 @@
       "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e0d98f7_0ce46711",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-11T03:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "907c2350_65bd0bf2",
+      "range": {
+        "startLine": 7,
+        "startChar": 72,
+        "endLine": 7,
+        "endChar": 76
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -232,6 +304,30 @@
     },
     {
       "key": {
+        "uuid": "4df752ee_84d0766a",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-11T03:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "223bb78f_7ac833b3",
+      "range": {
+        "startLine": 12,
+        "startChar": 33,
+        "endLine": 13,
+        "endChar": 29
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cd8e870b_71899ddc",
         "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
         "patchSetId": 12
@@ -252,6 +348,30 @@
       "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ce96f9f_369f7224",
+        "filename": "releasenotes/notes/update-bash-library-aae95b6ccfb28c0d.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-11T03:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd8e870b_71899ddc",
+      "range": {
+        "startLine": 17,
+        "startChar": 26,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "e8e87068819c88bd2f27859fa2617d93149316f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
