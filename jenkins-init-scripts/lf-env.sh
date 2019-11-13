@@ -145,7 +145,7 @@ function lf-activate-venv()
         return 1
     fi
 
-    echo "${FUNCNAME[0]}(): Creating '$python' venv ($lf_tmp_venv)"
+    echo "${FUNCNAME[0]}(): INFO: Creating '$python' venv ($lf_tmp_venv)"
 
     case $python in
         python2*)
@@ -176,7 +176,6 @@ function lf-activate-venv()
             return 0
         fi
         echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
-        echo "Installing: $pkg_list"
         $lf_tmp_venv/bin/pip install --upgrade --quiet --upgrade-strategy eager \
                              $pkg_list || return 1
         ;;
@@ -185,7 +184,7 @@ function lf-activate-venv()
         return 1
         ;;
     esac
-    echo "${FUNCNAME[0]}(): Adding $lf_tmp_venv/bin to PATH"
+    echo "${FUNCNAME[0]}(): INFO: Adding $lf_tmp_venv/bin to PATH"
     PATH=$lf_tmp_venv/bin:$PATH
     return 0
 
