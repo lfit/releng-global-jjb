@@ -240,6 +240,51 @@ The JSON schema for a PyPI release file appears below.
         type: "string"
 
 
+PackageCloud Release Files
+--------------------------
+
+An example of a PackageCloud release file appears below.
+
+.. code-block:: none
+
+    $ cat releases/packagecloud-release.yaml
+    ---
+    distribution_type: packagecloud
+    package_name:
+        - name: 'tree-1.6.0-10.el7.x86_64.rpm'
+        - name: 'test.rpm'
+
+The following parameters must appear in the PackageCloud release yaml file.
+These are not part of the Jenkins job definition to allow independent
+self-release of a package maintained in a git repository with other
+packages.
+
+:Required Parameters:
+
+    :distribution_type: Must be "packagecloud".
+    :package_name: A list of names that specify the packages to promote.
+
+The JSON schema for a PackageCloud release file appears below.
+
+.. code-block:: none
+
+    ---
+    $schema: "http://json-schema.org/schema#"
+    $id: "https://github.com/lfit/releng-global-jjb/blob/master/packagecloud-release-schema"
+
+    required:
+      - "package_name"
+      - "distribution_type"
+
+    properties:
+      package_name:
+        type: "array"
+        properties:
+          name:
+            type: "string"
+    distribution_type:
+      type: "string"
+
 Jenkins Jobs
 ------------
 

@@ -336,6 +336,26 @@ pypi_release_file(){
     tag
 }
 
+packagecloud_verify(){
+    echo "INFO: ---> Verifying $1 exists in staging..."
+    if [[ $1 == $(curl --netrc-file ~/.packagecloud_api --silent https://packagecloud.io/api/v1/repos/o-ran-sc/staging/search?q=$1 | jq -r .[].filename) ]] ; then
+        echo "INFO: $1 exists in staging!"
+        echo "INFO: Existing package location: https://packagecloud.io$(curl --netrc-file ~/.netrc --silent https://packagecloud.io/api/v1/repos/o-ran-sc/staging/search?q=$1 | jq -r .[].package_html_url)"
+    else
+        echo "ERROR: $package_name does not exist in staging"
+        exit 1
+    fi
+}
+
+packagecloud_promote(){
+    echo "INFO: ---> Preparing to promote $1..."
+    promote_url="https://packagecloud.io$(curl --netrc-file ~/.packagecloud_api --silent https://packagecloud.io/api/v1/repos/o-ran-sc/staging/search?q=$1 | jq -r .[].promote_url)"
+    echo "INFO: Promoting $1 from staging to release"
+    curl --netrc-file ~/.packagecloud_api -X POST -F destination=o-ran-sc/release $promote_url | echo "INFO: Promoted package location: https://packagecloud.io$(jq -r .package_html_url)"
+}
+
+##############################  End Function Declarations  ################################
+
 # Set common environment variables
 set_variables_common
 
@@ -367,15 +387,28 @@ elif [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
     container_release_file
 elif [[ "$DISTRIBUTION_TYPE" == "pypi" ]]; then
     if $USE_RELEASE_FILE ; then
-        RELEASE_SCHEMA="release-pypi-schema.yaml"
-        echo "INFO: Fetching schema $RELEASE_SCHEMA"
-        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${RELEASE_SCHEMA}
+        release_schema="release-pypi-schema.yaml"
+        echo "info: fetching schema $release_schema"
+        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
         verify_schema
     fi
     set_variables_pypi
     verify_version
     verify_pypi_match_release
     pypi_release_file
+elif [[ "$DISTRIBUTION_TYPE" == "packagecloud" ]]; then
+    release_schema="release-packagecloud-schema.yaml"
+    package_name=$(cat $release_file | yq -r '.package_name')
+    echo "INFO: fetching schema $release_schema"
+    wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+    verify_schema
+    for name in $(cat $release_file | yq -r '.package_name[].name'); do
+        package_name=$name
+        packagecloud_verify $package_name
+        if [[ ! "$JOB_NAME" =~ "merge" ]] ; then
+            packagecloud_promote $package_name
+        fi
+    done
 else
     echo "ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
     exit 1
