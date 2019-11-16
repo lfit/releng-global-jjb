@@ -13,6 +13,14 @@ echo "---> jjb-verify-job.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-git-validate-jira-urls
+lf-jjb-check-ascii
+
+lf-activate-venv jenkins-job-builder
+
 jenkins-jobs -l DEBUG test --recursive -o archives/job-configs --config-xml jjb/
 
 # Sort job output into sub-directories. On large Jenkins systems that have
