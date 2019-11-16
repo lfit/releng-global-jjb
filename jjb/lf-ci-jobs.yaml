@@ -849,11 +849,7 @@
       - lf-infra-pre-build
       - lf-infra-jjbini
       - shell: !include-raw-escape:
-          - ../shell/git-validate-jira-urls.sh
-          - ../shell/jjb-install.sh
           - ../shell/jjb-verify-job.sh
-          - ../shell/jjb-check-unicode.sh
-          - ../shell/jjb-cleanup.sh
       - lf-infra-gpg-verify-git-signature
 
 - job-template:
@@ -956,11 +952,7 @@
           git cherry-pick FETCH_HEAD
       - lf-infra-jjbini
       - shell: !include-raw-escape:
-          - ../shell/git-validate-jira-urls.sh
-          - ../shell/jjb-install.sh
           - ../shell/jjb-verify-job.sh
-          - ../shell/jjb-check-unicode.sh
-          - ../shell/jjb-cleanup.sh
       - lf-infra-gpg-verify-git-signature
 
 - job-template:
