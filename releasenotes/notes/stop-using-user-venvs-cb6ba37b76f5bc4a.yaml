@@ -1,0 +1,4 @@
+---
+fixes:
+    Removed dependency on 'user' venv created by python-tools-install.sh from
+    the builder-jjb-verify job. It will call lf-acitivate-venv() instead.
