@@ -13,23 +13,30 @@ echo "---> jjb-verify-job.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-git-validate-jira-urls
+lf-jjb-check-ascii
+
+lf-activate-venv jenkins-job-builder
+
 jenkins-jobs -l DEBUG test --recursive -o archives/job-configs --config-xml jjb/
 
 # Sort job output into sub-directories. On large Jenkins systems that have
 # many jobs archiving so many files into the same directory makes NGINX return
 # the directory list slow.
 pushd archives/job-configs
-for letter in {a..z}
-do
-    if [[ $(ls "$letter"* > /dev/null 2>&1) -eq 0 ]]
-    then
+for letter in {a..z}; do
+    if ls "$letter"* > /dev/null 2>&1; then
         mkdir "$letter"
-        find . -maxdepth 1 -type f -name "$letter*" -exec mv {} "$letter" \;
+        mv $letter?* $letter
     fi
 done
 popd
 
-if [ -n "$(ls -A archives/job-configs)" ]; then
-    tar cJvf archives/job-configs.tar.xz archives/job-configs
+if [[ -d archives/job-configs ]]; then
+    echo "Archiving $(find . -name \*.xml | wc -l) job-configs..."
+    tar cJf archives/job-configs.tar.xz archives/job-configs
     rm -rf archives/job-configs
 fi
