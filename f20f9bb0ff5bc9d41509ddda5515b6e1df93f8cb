@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "380af0d7_8e11b35c",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-16T17:15:41Z",
+      "side": 1,
+      "message": "The $letter?* is a subset of $letter* from above, so it won\u0027t be a problem. If the number of files is large the (find ... -exec) would be a bad choice. We generally don\u0027t have to worry about things like number of files in a dir in any well-written Unix tool and any GNU tool meets that standard. Lot\u0027s of opensource tools do not meet that standard.",
+      "parentUuid": "cf1e49e6_25672477",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 5
+      },
+      "revId": "f20f9bb0ff5bc9d41509ddda5515b6e1df93f8cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7c6283_e5842bec",
         "filename": "shell/jjb-verify-job.sh",
         "patchSetId": 1
@@ -68,6 +92,47 @@
       "revId": "f20f9bb0ff5bc9d41509ddda5515b6e1df93f8cb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc4fd5e7_5c5f7d4e",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-16T17:15:41Z",
+      "side": 1,
+      "message": "Pretty stupid on my part, we already know the directory exists (note pushd above). What really took me back was the -n in the previous \u0027if\u0027. So I think the cleanest is:\n    if [[ $(ls -A archives/job-configs) ]]; then",
+      "parentUuid": "df7c6283_e5842bec",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 6
+      },
+      "revId": "f20f9bb0ff5bc9d41509ddda5515b6e1df93f8cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fb341268_2febf68b",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-16T17:15:41Z",
+      "side": 1,
+      "message": "We both missed the \u0027.\u0027 here... it should be \u0027archives/job-configs\u0027",
+      "revId": "f20f9bb0ff5bc9d41509ddda5515b6e1df93f8cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
