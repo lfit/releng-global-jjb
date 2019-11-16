@@ -240,6 +240,55 @@ The JSON schema for a PyPI release file appears below.
         type: "string"
 
 
+PackageCloud Release Files
+--------------------------
+
+An example of a PackageCloud release file appears below.
+
+.. code-block:: none
+
+    $ cat releases/packagecloud-release.yaml
+    ---
+    distribution_type: packagecloud
+    package_name:
+        - name: 'tree-1.6.0-10.el7.x86_64.rpm'
+        - name: 'test.rpm'
+
+The following parameters must appear in the PackageCloud release yaml file.
+These are not part of the Jenkins job definition to allow independent
+self-release of a package maintained in a git repository with other
+packages.
+
+:Required Parameters:
+
+    :distribution_type: Must be "packagecloud".
+    :package_name: A list of names that specify the packages to promote.
+        (Found via jenkins log when using gem to initally push package up eg.
+        "Pushing /path/of/package/name-of-package.rpm... success!"
+        OR using rest api call with generated token from packagecloud.io
+        "curl https://packagecloud.io/api/v1/repos/test_user/test_repo/search?q= | yq -r .[].filename"
+
+The JSON schema for a PackageCloud release file appears below.
+
+.. code-block:: none
+
+    ---
+    $schema: "http://json-schema.org/schema#"
+    $id: "https://github.com/lfit/releng-global-jjb/blob/master/packagecloud-release-schema"
+
+    required:
+      - "package_name"
+      - "distribution_type"
+
+    properties:
+      package_name:
+        type: "array"
+        properties:
+          name:
+            type: "string"
+    distribution_type:
+      type: "string"
+
 Jenkins Jobs
 ------------
 
@@ -415,6 +464,71 @@ verify template accepts neither a branch nor a stream parameter.
     :pypi-repo: Key for the PyPI release repository in the .pypirc file,
         should be the repository pypy.org (default: pypi)
     :use-release-file: Whether to use the release file. (default: true)
+
+
+PackageCloud Release Verify
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This template supports PackageCloud release jobs.
+
+:Template Name: {project-name}-packagecloud-verify
+
+:Comment Trigger: recheck|reverify
+
+:Required Parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally set
+        in defaults.yaml)
+    :project: Git repository name
+    :project-name: Jenkins job name prefix
+
+:Optional Parameters:
+
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-node: The node to run build on.
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :gerrit-skip-vote: Skip voting for this job. (default: false)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+
+    :gerrit_verify_triggers: Override Gerrit Triggers.
+    :gerrit_trigger_file_paths: Override file paths filter which checks which
+        file modifications will trigger a build.
+        **default**::
+
+            - compare-type: REG_EXP
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+
+
+PackageCloud Release Merge
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This template supports PackageCloud release jobs.
+
+:template name: {project-name}-packagecloud-merge
+
+:comment trigger: remerge
+
+:required parameters:
+
+    :build-node: the node to run build on.
+    :jenkins-ssh-release-credential: credential to use for ssh. (generally set
+        in defaults.yaml)
+    :project: git repository name
+    :project-name: jenkins job name prefix
+
+:optional parameters:
+
+    :build-days-to-keep: days to keep build logs in jenkins. (default: 7)
+    :build-timeout: timeout in minutes before aborting build. (default: 15)
+
+    :gerrit_merge_triggers: override gerrit triggers.
+    :gerrit_trigger_file_paths: override file paths filter which checks which
+        file modifications will trigger a build.
+        **default**::
+
+            - compare-type: reg_exp
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 
 Setup for LFID, Nexus, Jenkins and Gerrit
