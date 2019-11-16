@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e26fc981_7a6a926c",
+        "filename": "releasenotes/notes/stop-using-user-venvs-cb6ba37b76f5bc4a.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-16T11:16:41Z",
+      "side": 1,
+      "message": "This needs to start with \"fixes:\" or some other reno command, right?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 18
+      },
+      "revId": "f20f9bb0ff5bc9d41509ddda5515b6e1df93f8cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf1e49e6_25672477",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-16T11:16:41Z",
+      "side": 1,
+      "message": "the previous version was robust to VERY large numbers of files. This one relies on the shell globber which could, in a bad case, hit the shell line length limit.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 5
+      },
+      "revId": "f20f9bb0ff5bc9d41509ddda5515b6e1df93f8cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df7c6283_e5842bec",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-16T11:16:41Z",
+      "side": 1,
+      "message": "This line just checks if job-configs is a directory.  The previous test looked for a non-empty directory.  Sure you want to change that?",
+      "range": {
+        "startLine": 38,
+        "startChar": 0,
+        "endLine": 38,
+        "endChar": 6
+      },
+      "revId": "f20f9bb0ff5bc9d41509ddda5515b6e1df93f8cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
