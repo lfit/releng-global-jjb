@@ -361,13 +361,13 @@ pyenv variables before running.
    export PYENV_ROOT="/opt/pyenv"
    export PATH="$PYENV_ROOT/bin:$PATH"
 
-Installable package projects should consider using a directory layout
-like the one shown below. All Python files are below a directory, and
-the package source files are nested in a subdirectory. This layout
-allows straightforward build-job triggers using the directory paths so
-Jenkins jobs are triggered appropriately. For example, a PyPI merge
-job should not be triggered by a non-Python change, because the job
-cannot upload the same package twice.
+Installable package projects should use the directory layout shown
+below. All Python files are in a repo subdirectory separate from
+non-Python files like documentation. This layout allows highly
+specific build-job triggers in Jenkins using the subdirectory
+paths. For example, a PyPI merge job should not run on a non-Python
+file change such as documentation, because the job cannot upload the
+same package twice.
 
 .. code-block:: bash
 

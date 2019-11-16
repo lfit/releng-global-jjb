@@ -208,7 +208,7 @@ packages.
         release repositories, for example "mypackage".
     :python_version: The Python interpreter version to use for pip
         "Requires-Python" compatibility checks, for example '3', '3.7' or 3.7.4.
-        Valid decimal values such as 3 and 3.7 must be quoted.
+        Put valid decimal values such as 3 or 3.7 in quotes to pass schema validation.
     :version: The semantic version string used for the package in the
         setup.py file.
 
