@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add support for automation of promoting packagecloud packages.
