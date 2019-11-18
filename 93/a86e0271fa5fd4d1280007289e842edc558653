@@ -1,0 +1,8 @@
+Code-Review+2: Vanessa Rene Valderrama <vvalderrama@linuxfoundation.org>
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Submitted-by: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Submitted-at: Mon, 18 Nov 2019 18:08:17 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/62318
+Project: releng/global-jjb
+Branch: refs/heads/master
