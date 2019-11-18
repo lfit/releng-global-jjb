@@ -85,5 +85,7 @@ echo "INFO: Running merge job"
     fi
   fi
 
+  # api v3 method does not update latest whith stream.
   lftools rtd project-build-trigger "$rtdproject" "$STREAM"
+  lftools rtd project-build-trigger "$rtdproject" latest
 fi
