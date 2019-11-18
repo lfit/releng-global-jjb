@@ -86,4 +86,5 @@ echo "INFO: Running merge job"
   fi
 
   lftools rtd project-build-trigger "$rtdproject" "$STREAM"
+  lftools rtd project-build-trigger "$rtdproject" latest
 fi
