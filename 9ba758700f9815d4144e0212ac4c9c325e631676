@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "62004708_74f3c42e",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-18T16:47:18Z",
+      "side": 1,
+      "message": "It might be nice to add a comment here (from the commit message)",
+      "range": {
+        "startLine": 88,
+        "startChar": 2,
+        "endLine": 89,
+        "endChar": 56
+      },
+      "revId": "9ba758700f9815d4144e0212ac4c9c325e631676",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
