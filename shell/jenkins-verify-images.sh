@@ -44,7 +44,8 @@ for cloud in jenkins-config/clouds/openstack/*; do
   # Verify that we have a cloud config file
   if [ -f "$cloud/cloud.cfg" ]; then
     # Get the OS_CLOUD variable from cloud config and export it
-    OS_CLOUD=$(grep ^CLOUD_CREDENTIAL_ID= "$cloud/cloud.cfg" | cut -d'=' -f2)
+    os_cloud=$(grep ^OS_CLOUD= "$cloud/cloud.cfg" | cut -d'=' -f2)
+    OS_CLOUD="${os_cloud:-vex}"
     export OS_CLOUD
 
     verify_images "$cloud"
