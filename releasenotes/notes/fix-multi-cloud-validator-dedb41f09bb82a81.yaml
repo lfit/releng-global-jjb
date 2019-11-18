@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Change multi-cloud image validation to look for an OS_CLOUD variable in the
+    cloud.cfg instead of overloading CLOUD_CREDENTIAL_ID as that variable
+    does not usually point to an ID that is in the openstack clouds.yaml file.
