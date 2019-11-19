@@ -184,6 +184,24 @@
     },
     {
       "key": {
+        "uuid": "e0cc5cf2_2ecd18cb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T21:39:28Z",
+      "side": 1,
+      "message": "When you chose not to address the echo I took another look at this. I now understand what this is doing and it does make sense. The shell does not connect stdout of the curl to stdin for echo, it connects the stdout of curl to the stdin for the $(jq .packackage_html_url) which is really cool (not sure how bash figures out to do this). You still can/should extend this command over multiple lines:\ncurl --netrc-file ~/.packagecloud_api -X POST -F destination\u003do-ran-sc/release $promote_url \\\n   | echo \"INFO: Promoted package location: https://packagecloud.io$(jq -r .package_html_url)\"\nThis does not change the functionality but does improve readability.",
+      "parentUuid": "56f8da42_1ddc5b3c",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "922acda4_1470ceb4",
         "filename": "shell/release-job.sh",
         "patchSetId": 3
