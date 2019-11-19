@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "6b81270c_40a25ec4",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T18:42:56Z",
+      "side": 1,
+      "message": "@Aric, I made the verify exit 1 and echo the error message",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "71753912_af1c1654",
         "filename": "shell/release-job.sh",
         "patchSetId": 3
@@ -19,6 +36,47 @@
         "endLine": 354,
         "endChar": 153
       },
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf2cba50_ac53debc",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T18:42:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71753912_af1c1654",
+      "range": {
+        "startLine": 354,
+        "startChar": 149,
+        "endLine": 354,
+        "endChar": 153
+      },
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ca2a5d77_998de9a0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T18:42:56Z",
+      "side": 1,
+      "message": "Added the if job_name part, and removed the status code conditional.",
       "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
