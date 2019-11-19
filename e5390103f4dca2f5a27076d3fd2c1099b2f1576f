@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71753912_af1c1654",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-11-19T18:36:47Z",
+      "side": 1,
+      "message": "bad paste",
+      "range": {
+        "startLine": 354,
+        "startChar": 149,
+        "endLine": 354,
+        "endChar": 153
+      },
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
