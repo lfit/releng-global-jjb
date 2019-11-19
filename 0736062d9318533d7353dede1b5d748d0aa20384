@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b9e7a4c5_b6c718e8",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T23:46:45Z",
+      "side": 1,
+      "message": "Not sure this is doing anything usefull",
+      "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9c711b8b_f6a247e8",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T23:46:45Z",
+      "side": 1,
+      "message": "# shellcheck disable\u003dSC1090\nsource ~/lf-env.sh\n\nlf-activate-venv lftools[openstack] kubernetes python-magnumclient\n\nI might be missing a couple of packages. You delete the -l from the shebang line\n\nWhy should you make this change:\n    1. we want to move away from user venv\n    2. we want to move away from \u0027-l\u0027\n    3. we don\u0027t want to install packages with python-tools-install because it runs for all builds even ones that don\u0027t need/want kubernetes \u0026 python-magnumclient",
+      "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
