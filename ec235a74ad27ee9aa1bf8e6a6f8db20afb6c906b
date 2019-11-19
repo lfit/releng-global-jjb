@@ -22,6 +22,30 @@
       "revId": "ec235a74ad27ee9aa1bf8e6a6f8db20afb6c906b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4337c7ba_cf66bc78",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T18:23:15Z",
+      "side": 1,
+      "message": "The packagecloud_verify function will echo the verification of the package, and the pakcagecloud_promote function will echo what package its promoting.",
+      "parentUuid": "5b9e8e3b_d7202226",
+      "range": {
+        "startLine": 406,
+        "startChar": 0,
+        "endLine": 410,
+        "endChar": 10
+      },
+      "revId": "ec235a74ad27ee9aa1bf8e6a6f8db20afb6c906b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
