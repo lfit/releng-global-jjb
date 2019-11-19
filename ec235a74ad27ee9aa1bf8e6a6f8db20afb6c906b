@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b9e8e3b_d7202226",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-11-19T17:26:06Z",
+      "side": 1,
+      "message": "Since we exit on failure not sure it will make it here.\n\nAlso you need to echo what would be promoted on verify \necho \"INFO: merge will run packagecloud_promote $package_name\"\nand only run  packagecoud_promote\nif [[ ! \"$JOB_NAME\" \u003d~ \"merge\" ]]",
+      "range": {
+        "startLine": 406,
+        "startChar": 0,
+        "endLine": 410,
+        "endChar": 10
+      },
+      "revId": "ec235a74ad27ee9aa1bf8e6a6f8db20afb6c906b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
