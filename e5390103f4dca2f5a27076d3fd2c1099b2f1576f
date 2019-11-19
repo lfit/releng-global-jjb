@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "e4e82597_33de22ae",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T18:52:49Z",
+      "side": 1,
+      "message": "Adding this would be optional (outside scope of you the current change)\n# shellcheck disable\u003dSC1090\nsource ~/lf-env.sh\n\nlf-activate-venv lftools[nexus] jsonschema niet twine yq\n\nThen you could/should remove the \u0027-l\u0027 from the she-bang",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 0
+      },
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6b81270c_40a25ec4",
         "filename": "shell/release-job.sh",
         "patchSetId": 3
@@ -63,6 +86,74 @@
       "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d667ec5_d1a88937",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T18:52:49Z",
+      "side": 1,
+      "message": "Not sure what you are up to with this curl | echo \"INFO\"\n\nPolicy is to keep lines under 80 chars, probably not realistic but at least keep it under 100.\ncurl \".....\" \\\n    | echo",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "922acda4_1470ceb4",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T18:52:49Z",
+      "side": 1,
+      "message": "When you have a bunch of functions at the top of a script a script (GR8 practice) it is kinda nice to have a big comment to help you find when \u0027real code starts.\n\n##############################  End Function Declarations  ################################",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "721ca27b_6300def0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T18:52:49Z",
+      "side": 1,
+      "message": "A switch statement is really much more readable that multiple if-then-else. But it was already here so just leave it.",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a35e6535_4a11476d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T18:52:49Z",
+      "side": 1,
+      "message": "lower-case distribution_type does not appear to be defined anywhere\nAlso, you do NOT need to quote variables inside of \u0027[[]]\u0027. It is general practice to still quote string constants even though they are inside \u0027[[]]\u0027.",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     },
     {
       "key": {
