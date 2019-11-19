@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "36d7b7e5_56b55019",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T19:15:44Z",
+      "side": 1,
+      "message": "This will need to be part of a new change.",
+      "parentUuid": "e4e82597_33de22ae",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 0
+      },
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6b81270c_40a25ec4",
         "filename": "shell/release-job.sh",
         "patchSetId": 3
@@ -39,6 +63,24 @@
       "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b04a942_75be0949",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T19:15:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b81270c_40a25ec4",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -106,6 +148,24 @@
     },
     {
       "key": {
+        "uuid": "457f379a_641a08a9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T19:15:44Z",
+      "side": 1,
+      "message": "This is the actual restapi call to promote a package, I could remove the echo, but then it outputs a json of information about the promoted package",
+      "parentUuid": "7d667ec5_d1a88937",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "922acda4_1470ceb4",
         "filename": "shell/release-job.sh",
         "patchSetId": 3
@@ -117,6 +177,24 @@
       "writtenOn": "2019-11-19T18:52:49Z",
       "side": 1,
       "message": "When you have a bunch of functions at the top of a script a script (GR8 practice) it is kinda nice to have a big comment to help you find when \u0027real code starts.\n\n##############################  End Function Declarations  ################################",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1429c200_58472e92",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T19:15:44Z",
+      "side": 1,
+      "message": "This will likely need to be part of that other new change",
+      "parentUuid": "922acda4_1470ceb4",
       "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -157,6 +235,24 @@
     },
     {
       "key": {
+        "uuid": "4a2cb0f5_787b2c31",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T19:15:44Z",
+      "side": 1,
+      "message": "I am not sure who wrote the pypi piece, but this will also need to be part of the other new change.",
+      "parentUuid": "a35e6535_4a11476d",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ca2a5d77_998de9a0",
         "filename": "shell/release-job.sh",
         "patchSetId": 3
@@ -171,6 +267,24 @@
       "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf985ebd_b7d80da2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-19T19:15:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca2a5d77_998de9a0",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
