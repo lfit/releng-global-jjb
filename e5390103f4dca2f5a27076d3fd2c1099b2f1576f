@@ -166,6 +166,24 @@
     },
     {
       "key": {
+        "uuid": "56f8da42_1ddc5b3c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T19:29:49Z",
+      "side": 1,
+      "message": "I think the output from the curl will be sent to stdin for echo and echo will discard it. The echo will still echo the string you specified. I have not of testing this other than:\n\u003d\u003d\u003e ls | echo string\nYou will NOT see the output of the \u0027ls\u0027\nMaybe what you want is two commands:\ncurl --netrc-file ~/.packagecloud_api -X POST -F destination\u003do-ran-sc/release $promote_url \u003e /dev/null\necho \"INFO: Promoted package location: https://packagecloud.io$(jq -r .package_html_url)\"",
+      "parentUuid": "457f379a_641a08a9",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "922acda4_1470ceb4",
         "filename": "shell/release-job.sh",
         "patchSetId": 3
@@ -218,6 +236,24 @@
     },
     {
       "key": {
+        "uuid": "3699b177_acf1993c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T19:29:49Z",
+      "side": 1,
+      "message": "just a comment, definitely outside the scope if your current change",
+      "parentUuid": "721ca27b_6300def0",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a35e6535_4a11476d",
         "filename": "shell/release-job.sh",
         "patchSetId": 3
@@ -247,6 +283,24 @@
       "side": 1,
       "message": "I am not sure who wrote the pypi piece, but this will also need to be part of the other new change.",
       "parentUuid": "a35e6535_4a11476d",
+      "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "209e6d7a_d70f95ec",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-19T19:29:49Z",
+      "side": 1,
+      "message": "distribution_type is and undefined variable, I think you want DISTRIBUTION_TYPE",
+      "parentUuid": "4a2cb0f5_787b2c31",
       "revId": "e5390103f4dca2f5a27076d3fd2c1099b2f1576f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
