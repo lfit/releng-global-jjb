@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1213736_9a9ce921",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-20T23:11:32Z",
+      "side": 1,
+      "message": "These are pretty small functions but if you want to be extra safe:\nlocal promote_url\u003d\"https://packagecloud.io$(curl......\nThat makes promote_url local to this function.",
+      "revId": "044ae50cf2266dfb5cc9de0f96deca1f30d893ba",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56ac4d6e_78cb2e6a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-20T23:11:32Z",
+      "side": 1,
+      "message": "INFO: (all-caps) is commonly used in output to console log",
+      "revId": "044ae50cf2266dfb5cc9de0f96deca1f30d893ba",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1f375fa_b645f0cf",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-20T23:11:32Z",
+      "side": 1,
+      "message": "Two other ways to do this:\nif [[  $JOB_NAME \u003d~ \"merge\" \u0026\u0026 $DRY_RUN \u003d\u003d \"false\" ]]; then\nif [[  $JOB_NAME \u003d~ \"merge\" ]] \u0026\u0026 ! $DRY_RUN; then\nThe \u0027[[]]\u0027 does not require quoting and it also supports \u0027\u0026\u0026\u0027",
+      "revId": "044ae50cf2266dfb5cc9de0f96deca1f30d893ba",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
