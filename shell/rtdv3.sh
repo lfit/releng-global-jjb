@@ -86,6 +86,15 @@ echo "INFO: Running merge job"
   fi
 
   # api v3 method does not update latest whith stream.
+  # allow projects to set change their landing page from latest to branch_name
+
+  current_version="$(lftools rtd project-details "$rtdproject" | yq -r .default_version)"
+  defaultversion="$DEFAULT_VERSION"
+  if [[ $current_version != "$defaultversion" ]]; then
+    echo "INFO: Setting rtd landing page to $defaultversion"
+    lftools rtd project-update PROJECT_NAME default_version="$defaultversion"
+  fi 
+
   lftools rtd project-build-trigger "$rtdproject" "$STREAM"
-  lftools rtd project-build-trigger "$rtdproject" latest
+  lftools rtd project-build-trigger "$rtdproject" "$defaultversion"
 fi

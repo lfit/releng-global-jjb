@@ -8,6 +8,7 @@
 
     branch: master
     stream: master
+    default-version: latest
     disabled: "{disable-job}"
     build-days-to-keep: 7
     build-timeout: 15

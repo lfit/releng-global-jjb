@@ -286,6 +286,7 @@
             - inject:
                 properties-content: |
                   TOX_ENVS=docs,docs-linkcheck
+                  DEFAULT_VERSION={default-version}
             - lf-infra-pre-build
             - lf-infra-tox-install:
                 python-version: "python3"
