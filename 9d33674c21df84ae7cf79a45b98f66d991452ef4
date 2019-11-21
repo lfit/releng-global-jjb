@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0c2e73d3_9c50c75d",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-11-21T17:45:51Z",
+      "side": 1,
+      "message": "Can you add to the docs, how a user finds their package name.",
+      "range": {
+        "startLine": 254,
+        "startChar": 17,
+        "endLine": 254,
+        "endChar": 45
+      },
+      "revId": "9d33674c21df84ae7cf79a45b98f66d991452ef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
