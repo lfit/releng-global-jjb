@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "77391426_f5ad87e9",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-21T18:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c2e73d3_9c50c75d",
+      "range": {
+        "startLine": 254,
+        "startChar": 17,
+        "endLine": 254,
+        "endChar": 45
+      },
+      "revId": "9d33674c21df84ae7cf79a45b98f66d991452ef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4bba2e84_cf4c629d",
         "filename": "shell/release-job.sh",
         "patchSetId": 11
@@ -39,6 +63,24 @@
       "revId": "9d33674c21df84ae7cf79a45b98f66d991452ef4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fee7921e_817ce868",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-11-21T18:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4bba2e84_cf4c629d",
+      "revId": "9d33674c21df84ae7cf79a45b98f66d991452ef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
