@@ -22,6 +22,23 @@
       "revId": "9d33674c21df84ae7cf79a45b98f66d991452ef4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bba2e84_cf4c629d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-21T18:02:32Z",
+      "side": 1,
+      "message": "I gave you two options and you chose a third, which will break the logic\na: if [[  $JOB_NAME \u003d~ \"merge\" \u0026\u0026 $DRY_RUN \u003d\u003d \"false\" ]]; then\nb: if [[  $JOB_NAME \u003d~ \"merge\" ]] \u0026\u0026 ! $DRY_RUN; then\n\nin b the value of DRY_RUN is executed (true and false are builtins that return 0 or 1). in your \u0027if\u0027 the ! $DRY_RUN is checking for an empty string. I like \u0027b\u0027 is better than \u0027a\u0027 because $DRY_RUN \u003d\u003d false means any value other than false is true I.E. False, FALSE or dog are all true. With \u0027b\u0027 any value other than true || false is an error.",
+      "revId": "9d33674c21df84ae7cf79a45b98f66d991452ef4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
