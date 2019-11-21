@@ -276,21 +276,11 @@
 
 - builder:
     name: lf-rtdv3-build
-
     builders:
-      - conditional-step:
-          condition-kind: file-exists
-          condition-filename: .readthedocs.yaml
-          on-evaluation-failure: dont-run
-          steps:
-            - inject:
-                properties-content: |
-                  TOX_ENVS=docs,docs-linkcheck
-            - lf-infra-pre-build
-            - lf-infra-tox-install:
-                python-version: "python3"
-            - shell: !include-raw: ../shell/tox-run.sh
-            - shell: !include-raw: ../shell/rtdv3.sh
+      - inject:
+          properties-content: |
+            DEFAULT_VERSION={default-version}
+      - shell: !include-raw: ../shell/rtdv3.sh
 
 - builder:
     name: check-info-votes
