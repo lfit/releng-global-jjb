@@ -1,0 +1,19 @@
+---
+prelude: >
+    This release supports breaking changes in the upstream OpenStack Jenkins
+    plugin. Version 2.47+ of the OpenStack Cloud plugin for Jenkins adds two new
+    SlaveOptions params, node_properties and config_drive. Failure to send
+    these params results in a failed request.
+features:
+  - |
+    Add support for these new parameters, node_properties and config_drive. Add
+    a new function test_version, which will do a numerical (float) comparison
+    between installed plugin versions and user-supplied test version numbers.
+upgrade:
+  - |
+    If you are using the INSTANCE_MIN_CAPMAX paramater in your cloud configs,
+    you will need to change it to INSTANCE_MIN when using v2.47+ of the plugin.
+deprecations:
+  - |
+    Deprecated the config option INSTANCE_MIN_CAPMAX, replaced with INSTANCE_MIN
+    when using v2.47+ of the OpenStack plugin.
