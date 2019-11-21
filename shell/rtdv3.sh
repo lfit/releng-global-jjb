@@ -12,7 +12,7 @@ echo "---> rtdv3.sh"
 set -euo pipefail
 
 project_dashed="${PROJECT////-}"
-umbrella="$(echo "$GERRIT_URL" | awk -F"." '{print $2}')"
+umbrella=$(echo "$GERRIT_URL" | awk -F'.' '{print $2}')
 if [[ "$SILO" == "sandbox" ]]; then
   rtdproject="$umbrella-$project_dashed-test"
 else
@@ -24,8 +24,8 @@ masterproject="$umbrella-$MASTER_RTD_PROJECT"
 
 echo "INFO:"
 echo "INFO: Project: $PROJECT"
-echo "INFO: Read the Docs Project: https://$rtdproject.readthedocs.io"
-echo "INFO: Read the Docs master Project: https://$masterproject.readthedocs.io"
+echo "INFO: Read the Docs Sub Project: https://$rtdproject.readthedocs.io"
+echo "INFO: Read the Docs Master Project: https://$masterproject.readthedocs.io"
 
 
 if [[ "$JOB_NAME" =~ "verify" ]]; then
@@ -38,7 +38,7 @@ echo "INFO: Verify job completed"
 fi
 
 if [[ "$JOB_NAME" =~ "merge" ]]; then
-echo "INFO: Running merge job"
+echo "INFO: Performing merge action"
 
   # This retuns null if project exists.
   project_exists=false
@@ -76,16 +76,33 @@ echo "INFO: Running merge job"
     done < <(lftools rtd subproject-list "$masterproject")
 
     if $subproject_exists; then
-      echo "INFO: subproject relationship already created"
+      echo "INFO: subproject $rtdproject relationship already created"
     else
-      echo "INFO: Need to create subproject relationship"
+      echo "INFO: Creating subproject relationship"
       lftools rtd subproject-create "$masterproject" "$rtdproject"
       echo "INFO sleeping for 10 seconds"
       sleep 10
     fi
   fi
 
-  # api v3 method does not update latest whith stream.
-  lftools rtd project-build-trigger "$rtdproject" "$STREAM"
-  lftools rtd project-build-trigger "$rtdproject" latest
+  # api v3 method does not update /latest/ when master is triggered.
+  # Also, when we build anything other than master we want to trigger /stable/ as well.
+  # allow projects to change their landing page from latest to branch_name
+
+  current_version="$(lftools rtd project-details "$rtdproject" | yq -r .default_version)"
+  default_version="${DEFAULT_VERSION:-}"
+  echo "INFO: current default version $current_version"
+  if [[ $current_version != "$default_version" ]]; then
+    echo "INFO: Setting rtd landing page to $default_version"
+    lftools rtd project-update "$rtdproject" default_version="$default_version"
+  fi
+
+  lftools rtd project-build-trigger "$rtdproject" "$GERRIT_BRANCH"
+  if [[ $GERRIT_BRANCH == "master" ]]; then
+    echo "INFO: triggering latest"
+    lftools rtd project-build-trigger "$rtdproject" latest
+  else
+    echo "INFO: triggering stable"
+    lftools rtd project-build-trigger "$rtdproject" stable
+  fi
 fi
