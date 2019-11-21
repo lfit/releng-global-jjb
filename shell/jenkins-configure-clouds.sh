@@ -174,11 +174,11 @@ get_minion_options() {
     flavors["v2-standard-16"]="9e4b01cd-6744-4120-aafe-1b5e17584919"
     flavors["v2-standard-360"]="f0d27f44-a410-4f0f-9781-d722f5b5489e"
 
+
     image_name=$(get_cfg "$cfg_file" IMAGE_NAME "")
     volume_size=$(get_cfg "$cfg_file" VOLUME_SIZE "")
     hardware_id=$(get_cfg "$cfg_file" HARDWARE_ID "")
     network_id=$(get_cfg "$cfg_file" NETWORK_ID "")
-
     udi_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" USER_DATA_ID "jenkins-init-script")"
     user_data_id=$(get_cfg "$cfg_file" USER_DATA_ID "$udi_default")
 
@@ -187,22 +187,24 @@ get_minion_options() {
     if [ "$silo" == "sandbox" ]; then
         instance_cap=$(get_cfg "$cfg_file" SANDBOX_CAP "null")
     fi
-    min_instance_cap=$(get_cfg "$cfg_file" MIN_INSTANCE_CAP "null")
 
-    floating_ip_pool=$(get_cfg "$cfg_file" FLOATING_IP_POOL "")
+    instance_min=$(get_cfg "$cfg_file" instance_min "null")
+    floating_ip_pool=$(get_cfg "$cfg_file" FLOATING_IP_POOL "null")
     security_groups=$(get_cfg "$cfg_file" SECURITY_GROUPS "default")
     availability_zone=$(get_cfg "$cfg_file" AVAILABILITY_ZONE "")
     start_timeout=$(get_cfg "$cfg_file" START_TIMEOUT "600000")
-
     kpn_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" KEY_PAIR_NAME "jenkins-ssh")"
     key_pair_name=$(get_cfg "$cfg_file" KEY_PAIR_NAME "$kpn_default")
-
     num_executors=$(get_cfg "$cfg_file" NUM_EXECUTORS "1")
-    jvm_options=$(get_cfg "$cfg_file" JVM_OPTIONS "")
+    jvm_options=$(get_cfg "$cfg_file" JVM_OPTIONS "null")
     fs_root=$(get_cfg "$cfg_file" FS_ROOT "/w")
-    retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
     connection_type=$(get_cfg "$cfg_file" CONNECTION_TYPE "SSH")
     launcher_factory=$(get_launcher_factory "$connection_type")
+    node_properties=$(get_cfg "$cfg_file" NODE_PROPERTIES, "null")
+    retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
+    config_drive=$(get_cfg "$cfg_file" CONFIG_DRIVE, "null")
+
+
 
     OS_PLUGIN_VER="$(lftools jenkins plugins list \
         | grep -i 'OpenStack Cloud Plugin' \
@@ -217,7 +219,7 @@ get_minion_options() {
         echo "    \"$network_id\","
         echo "    \"$user_data_id\","
         echo "    $instance_cap,"
-        echo "    $min_instance_cap,"
+        echo "    $instance_min,"
         echo "    \"$floating_ip_pool\","
         echo "    \"$security_groups\","
         echo "    \"$availability_zone\","
@@ -227,7 +229,9 @@ get_minion_options() {
         echo "    \"$jvm_options\","
         echo "    \"$fs_root\","
         echo "    $launcher_factory,"
-        echo "    $retention_time"
+        echo "    $node_properties,"
+        echo "    $retention_time",
+        echo "    $config_drive"
 
     else  # SlaveOptions() structure for versions <= 2.34
         if [ -n "$volume_size" ]; then
