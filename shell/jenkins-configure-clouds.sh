@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/usr/local/bin/bash -l
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2018 The Linux Foundation and others.
@@ -43,9 +43,24 @@ mkdir -p "$SCRIPT_DIR"
 
 silos="${jenkins_silos:-jenkins}"
 
+
 set -eu -o pipefail
 
-version_ge() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"; }
+os_plugin_version="$(lftools jenkins plugins list \
+  | grep -i 'OpenStack Cloud Plugin')"
+
+testversion() {
+    local current_val="$1" operator="$2" test_value="$3"
+    awk -vv1="$current_val" -vv2="$test_value" 'BEGIN {
+      split(v1, a, /\:/);
+      if (a[2] == '$test_value') {
+        exit (a[2] == '$test_value') ? 0 : 1
+      }
+      else {
+        exit (a[2] '$operator' '$test_value') ? 0 : 1
+      }
+    }'
+}
 
 get_cfg() {
     if [ -z ${3+x} ]; then
@@ -67,6 +82,7 @@ get_cfg() {
     echo "$cfg"
 }
 export get_cfg
+
 
 get_cloud_cfg() {
     if [ -z "$1" ]; then
@@ -99,6 +115,7 @@ get_cloud_cfg() {
     echo ")"
 }
 
+
 get_launcher_factory() {
     if [ -z "$1" ]; then
         >&2 echo "Usage: get_launcher_factory JNLP|SSH"
@@ -116,6 +133,7 @@ get_launcher_factory() {
         exit 1
     fi
 }
+
 
 get_minion_options() {
     if [ -z "$1" ]; then
@@ -174,82 +192,72 @@ get_minion_options() {
     flavors["v2-standard-16"]="9e4b01cd-6744-4120-aafe-1b5e17584919"
     flavors["v2-standard-360"]="f0d27f44-a410-4f0f-9781-d722f5b5489e"
 
+
     image_name=$(get_cfg "$cfg_file" IMAGE_NAME "")
     volume_size=$(get_cfg "$cfg_file" VOLUME_SIZE "")
     hardware_id=$(get_cfg "$cfg_file" HARDWARE_ID "")
     network_id=$(get_cfg "$cfg_file" NETWORK_ID "")
-
     udi_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" USER_DATA_ID "jenkins-init-script")"
     user_data_id=$(get_cfg "$cfg_file" USER_DATA_ID "$udi_default")
 
     # Handle Sandbox systems that might have a different cap.
-    instance_cap=$(get_cfg "$cfg_file" INSTANCE_CAP "null")
     if [ "$silo" == "sandbox" ]; then
         instance_cap=$(get_cfg "$cfg_file" SANDBOX_CAP "null")
+    else
+        instance_cap=$(get_cfg "$cfg_file" INSTANCE_CAP "null")
     fi
-    min_instance_cap=$(get_cfg "$cfg_file" MIN_INSTANCE_CAP "null")
 
-    floating_ip_pool=$(get_cfg "$cfg_file" FLOATING_IP_POOL "")
+    floating_ip_pool=$(get_cfg "$cfg_file" FLOATING_IP_POOL "null")
     security_groups=$(get_cfg "$cfg_file" SECURITY_GROUPS "default")
     availability_zone=$(get_cfg "$cfg_file" AVAILABILITY_ZONE "")
     start_timeout=$(get_cfg "$cfg_file" START_TIMEOUT "600000")
-
     kpn_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" KEY_PAIR_NAME "jenkins-ssh")"
     key_pair_name=$(get_cfg "$cfg_file" KEY_PAIR_NAME "$kpn_default")
-
     num_executors=$(get_cfg "$cfg_file" NUM_EXECUTORS "1")
-    jvm_options=$(get_cfg "$cfg_file" JVM_OPTIONS "")
+    jvm_options=$(get_cfg "$cfg_file" JVM_OPTIONS "null")
     fs_root=$(get_cfg "$cfg_file" FS_ROOT "/w")
-    retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
     connection_type=$(get_cfg "$cfg_file" CONNECTION_TYPE "SSH")
     launcher_factory=$(get_launcher_factory "$connection_type")
+    node_properties=$(get_cfg "$cfg_file" NODE_PROPERTIES, "null")
+    retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
+    config_drive=$(get_cfg "$cfg_file" CONFIG_DRIVE, "null")
 
-    OS_PLUGIN_VER="$(lftools jenkins plugins list \
-        | grep -i 'OpenStack Cloud Plugin' \
-        | awk -F':' '{print $2}' | awk -F' ' '{print $1}')"
-    if version_ge "$OS_PLUGIN_VER" "2.35"; then
-        if [ -n "$volume_size" ]; then
-            echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
-        else
-            echo "    new BootSource.Image(\"$image_name\"),"
-        fi
-        echo "    \"${flavors[${hardware_id}]}\","
-        echo "    \"$network_id\","
-        echo "    \"$user_data_id\","
-        echo "    $instance_cap,"
-        echo "    $min_instance_cap,"
-        echo "    \"$floating_ip_pool\","
-        echo "    \"$security_groups\","
-        echo "    \"$availability_zone\","
-        echo "    $start_timeout,"
-        echo "    \"$key_pair_name\","
-        echo "    $num_executors,"
-        echo "    \"$jvm_options\","
-        echo "    \"$fs_root\","
-        echo "    $launcher_factory,"
-        echo "    $retention_time"
 
-    else  # SlaveOptions() structure for versions <= 2.34
-        if [ -n "$volume_size" ]; then
-            echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
-        else
-            echo "    new BootSource.Image(\"$image_name\"),"
-        fi
-        echo "    \"${flavors[${hardware_id}]}\","
-        echo "    \"$network_id\","
-        echo "    \"$user_data_id\","
-        echo "    $instance_cap,"
-        echo "    \"$floating_ip_pool\","
-        echo "    \"$security_groups\","
-        echo "    \"$availability_zone\","
-        echo "    $start_timeout,"
-        echo "    \"$key_pair_name\","
-        echo "    $num_executors,"
-        echo "    \"$jvm_options\","
-        echo "    \"$fs_root\","
-        echo "    $launcher_factory,"
-        echo "    $retention_time"
+    if [ -n "$volume_size" ]; then
+        echo "    new BootSource.VolumeFromImage(\"$image_name\", $volume_size),"
+    else
+        echo "    new BootSource.Image(\"$image_name\"),"
     fi
+
+    echo "    \"${flavors[${hardware_id}]}\","
+    echo "    \"$network_id\","
+    echo "    \"$user_data_id\","
+    echo "    $instance_cap,"
+
+    # Handle specifying the minimum instance count across different versions
+    if [ testversion "$os_plugin_version" '>=' '2.47' ]
+    then
+        instance_min=$(get_cfg "$cfg_file" INSTANCE_MIN "null")
+        echo "    $instance_min,"
+    fi
+    if [ testversion "$os_plugin_version" '>' '2.33' && testversion "$os_plugin_version" '<=' '2.46.1']
+    then
+        instance_min=$(get_cfg "$cfg_file" INSTANCE_MIN_CAPMAX "null")
+        echo "    $instance_min,"
+    fi
+
+    echo "    \"$floating_ip_pool\","
+    echo "    \"$security_groups\","
+    echo "    \"$availability_zone\","
+    echo "    $start_timeout,"
+    echo "    \"$key_pair_name\","
+    echo "    $num_executors,"
+    echo "    \"$jvm_options\","
+    echo "    \"$fs_root\","
+    echo "    $launcher_factory,"
+    echo "    $node_properties,"
+    echo "    $retention_time",
+    echo "    $config_drive"
 }
 
 get_template_cfg() {
@@ -277,6 +285,7 @@ get_template_cfg() {
     echo "    minion_options,"
     echo ")"
 }
+
 
 mapfile -t clouds < <(ls -d1 "$OS_CLOUD_DIR"/*/)
 
