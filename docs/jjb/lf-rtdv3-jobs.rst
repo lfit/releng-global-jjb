@@ -36,6 +36,15 @@ Once these files are correctly configured in your repository you can test locall
     tox -e docs,docs-linkcheck
 
 
+Release instructions:
+
+Once you branch your project, the next read the docs build will create a new landing point for your documentation.
+This landing point is called /stable/ and is selectable as a version in the bottom right corner of the all read the docs pages.
+Once all project have /stable/ documentation, the process to release to documentation (That is to change the default landing point
+of your docs from /latest/ to /stable/ is by changing the default-version in the jenkins job config, described below.
+
+
+
 Admin setup:
 
 This is a global job that only needs to be added once to your project's ci-mangement git
@@ -70,6 +79,7 @@ example file: ci-management/jjb/rtd/rtd.yaml
     - project:
         name: rtdv3-global-verify
         build-node: centos7-builder-1c-1g
+        default-version: latest
         jobs:
           - rtdv3-global-verify
         stream:
@@ -80,6 +90,7 @@ example file: ci-management/jjb/rtd/rtd.yaml
 
     - project:
         name: rtdv3-global-merge
+        default-version: latest
         build-node: centos7-builder-1c-1g
         jobs:
           - rtdv3-global-merge
@@ -97,6 +108,7 @@ Or add both jobs via a job group:
     ---
     - project:
         name: rtdv3-global
+        default-version: latest
         build-node: centos7-builder-1c-1g
         jobs:
           - rtdv3-global
@@ -118,6 +130,7 @@ Job requires an lftools config section, this is to provide api access to read th
 Merge Job will create a project on read the docs if none exist.
 Merge Job will assign a project as a subproject of the master project.
 Merge job will trigger a build to update docs.
+Merge job will change the default version if needed.
 
 Macros
 ======
@@ -145,6 +158,7 @@ Merge job which triggers a build of the docs to readthedocs.
 :Required parameters:
 
     :build-node: The node to run build on.
+    :default-version: default page to redirect to for documentation (default /latest/)
     :jenkins-ssh-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
 
