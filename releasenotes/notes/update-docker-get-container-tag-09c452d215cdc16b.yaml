@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Make shell script builder step customizable in lf-docker-get-container-tag.
+    This will allow ONAP to call their own script. Set to default to
+    "../shell/docker-get-container-tag.sh" which is what teams were already using.

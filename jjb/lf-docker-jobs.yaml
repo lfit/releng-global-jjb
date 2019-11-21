@@ -13,8 +13,7 @@
             CONTAINER_TAG_METHOD={container-tag-method}
             CONTAINER_TAG_YAML_DIR={container-tag-yaml-dir}
             DOCKER_ROOT={docker-root}
-      - shell: !include-raw-escape:
-          - ../shell/docker-get-container-tag.sh
+      - shell: !include-raw-escape: "{docker-get-container-tag-script}"
       - inject:
           # Import the container tag set by this build step
           properties-file: "env_docker_inject.txt"
@@ -64,6 +63,7 @@
     pre_docker_build_script: "# pre docker build script goes here"
     post_docker_build_script: "# post docker build script goes here"
     disable-job: "false"
+    docker-get-container-tag-script: "../shell/docker-get-container-tag.sh"
     docker-root: "$WORKSPACE"
     docker-build-args: ""
     git-url: "$GIT_URL/$PROJECT"
@@ -139,6 +139,7 @@
           container-tag-method: "{container-tag-method}"
           container-tag-yaml-dir: "{container-tag-yaml-dir}"
           docker-root: "{docker-root}"
+          docker-get-container-tag-script: "{docker-get-container-tag-script}"
       - lf-docker-build:
           docker-build-args: "{docker-build-args}"
           docker-name: "{docker-name}"
@@ -186,6 +187,7 @@
           container-tag-method: "{container-tag-method}"
           container-tag-yaml-dir: "{container-tag-yaml-dir}"
           docker-root: "{docker-root}"
+          docker-get-container-tag-script: "{docker-get-container-tag-script}"
       - lf-docker-build:
           docker-build-args: "{docker-build-args}"
           docker-name: "{docker-name}"
