@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "885c1e68_60965984",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-21T03:06:46Z",
+      "side": 1,
+      "message": "That is a hard one, this script would not depend lf-infra-pre-build (and -l), but there are still others that do. Getting rid of python-tools-install.sh is going to take awhile. It needs to happen but it will take some time. For now we just need to stop adding more dependencies on it.",
+      "parentUuid": "2aa6a10d_c7f839df",
+      "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07afb632_d41fc885",
         "filename": "shell/openstack-kubernetes-create.sh",
         "patchSetId": 15
@@ -89,6 +107,30 @@
       "side": 1,
       "message": "It will have to be in a function so it rechecks ever time, but fine by me.",
       "parentUuid": "07afb632_d41fc885",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 2
+      },
+      "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8700611b_c4cecce7",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-21T03:06:46Z",
+      "side": 1,
+      "message": "It wouldn\u0027t have to be in a function, just $($os_cmd)",
+      "parentUuid": "6f4636b4_1eb3a477",
       "range": {
         "startLine": 62,
         "startChar": 0,
