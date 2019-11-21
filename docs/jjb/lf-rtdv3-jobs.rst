@@ -70,6 +70,7 @@ example file: ci-management/jjb/rtd/rtd.yaml
     - project:
         name: rtdv3-global-verify
         build-node: centos7-builder-1c-1g
+        default-version: latest
         jobs:
           - rtdv3-global-verify
         stream:
@@ -80,6 +81,7 @@ example file: ci-management/jjb/rtd/rtd.yaml
 
     - project:
         name: rtdv3-global-merge
+        default-version: latest
         build-node: centos7-builder-1c-1g
         jobs:
           - rtdv3-global-merge
@@ -97,6 +99,7 @@ Or add both jobs via a job group:
     ---
     - project:
         name: rtdv3-global
+        default-version: latest
         build-node: centos7-builder-1c-1g
         jobs:
           - rtdv3-global
@@ -145,12 +148,15 @@ Merge job which triggers a build of the docs to readthedocs.
 :Required parameters:
 
     :build-node: The node to run build on.
+    :default-version: default page to redirect to for documentation
+    (default /latest/)
     :jenkins-ssh-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
 
 :Optional parameters:
 
     :branch: Git branch to fetch for the build. (default: master)
+
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :project-pattern: Project to trigger build against. (default: \*\*)
