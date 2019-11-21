@@ -27,7 +27,8 @@ If container-tag-method: yaml-file, the tag is obtained using
 the yq command, which requires that the repository has a YAML file named
 'container-tag.yaml'. The script checks the docker-root directory by
 default or the directory specified by parameter container-tag-yaml-dir.
-An example file appears below.
+An example file appears below. Optionally, teams can call their own script to
+handle the docker tagging differently.
 
 
 lf-docker-build
@@ -79,6 +80,8 @@ Executes a docker build task.
         (default: latest)
     :container-tag-yaml-dir: Directory with container-tag.yaml. (default: $DOCKER_ROOT)
     :docker-build-args: Additional arguments for the docker build command.
+    :docker-get-container-tag-script: Pointer to script to handle docker tags.
+        (default: ../shell/docker-get-container-tag.sh)
     :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre_docker_build_script: Build script to execute before the main verify
@@ -148,6 +151,8 @@ Executes a docker build task and publishes the resulting images to a specified D
         one may want to provide more than 1 cron timer. No default. Use
         '@daily' to run daily or 'H H * * 0' to run weekly.
     :docker-build-args: Additional arguments for the docker build command.
+    :docker-get-container-tag-script: Pointer to script to handle docker tags.
+        (default: ../shell/docker-get-container-tag.sh)
     :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre_docker_build_script: Build script to execute before the main merge
