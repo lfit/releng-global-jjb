@@ -1,0 +1,12 @@
+---
+features:
+  - |
+    Project can now set their default docs landing page
+    used for self serve release of docs.
+    By default landing page is /latest/ on release landing page should
+    generally be set to /stable/
+upgrade:
+  - |
+    default-version is now an optional parameter
+    'latest' is the default behavior
+    change to 'stable' when docs are released
