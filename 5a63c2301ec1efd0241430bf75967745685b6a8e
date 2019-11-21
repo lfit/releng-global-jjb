@@ -22,6 +22,30 @@
       "revId": "5a63c2301ec1efd0241430bf75967745685b6a8e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cb839c58_e90531b7",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 340
+      },
+      "writtenOn": "2019-11-21T04:43:44Z",
+      "side": 1,
+      "message": "Good catch, thanks! (from a global search and replace).\n\nA bigger issue is the if version test. Here\u0027s what I\u0027ll do:\n\nSince 2.46.1 and lower can\u0027t use these extra params, the first block is thrown out (after I commit the fix, should be 2.47).\n\nI\u0027ll keep the original param for everything 2.46.1 and below, and as part as the support for 2.47+ we\u0027ll move to the new param (and note the change in the release docs of course).\n\nSince everyone using 2.47+ will have to touch their configs in order for this to work, it\u0027s a trivial issue at that point.",
+      "parentUuid": "b01fe672_6c56fdd3",
+      "range": {
+        "startLine": 191,
+        "startChar": 0,
+        "endLine": 191,
+        "endChar": 59
+      },
+      "revId": "5a63c2301ec1efd0241430bf75967745685b6a8e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
