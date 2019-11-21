@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    Project can now set their default docs landing page
+    used for self serve release of docs.
+upgrade:
+  - |
+    default-version is now a required parameter
+    set to latest for default behavior
+    change to branch-name when docs are released

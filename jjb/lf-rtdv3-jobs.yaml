@@ -8,6 +8,7 @@
 
     branch: master
     stream: master
+    default-version: "{default-version}"
     disabled: "{disable-job}"
     build-days-to-keep: 7
     build-timeout: 15
@@ -49,11 +50,25 @@
       - lf-infra-publish
 
     builders:
-      - config-file-provider:
-          files:
-            - file-id: lftoolsini
-              target: "$HOME/.config/lftools/lftools.ini"
-      - lf-rtdv3-build
+      - conditional-step:
+          condition-kind: file-exists
+          condition-filename: .readthedocs.yaml
+          on-evaluation-failure: dont-run
+          steps:
+            - config-file-provider:
+                files:
+                  - file-id: lftoolsini
+                    target: "$HOME/.config/lftools/lftools.ini"
+            - lf-infra-pre-build
+            - lf-infra-tox-install:
+                python-version: "python3"
+            - inject:
+                properties-content: |
+                  TOX_ENVS=docs,docs-linkcheck
+            - lf-infra-tox-run:
+                parallel: "true"
+            - lf-rtdv3-build:
+                default-version: "{default-version}"
 
 - job-template:
     name: "rtdv3-global-verify-{stream}"
