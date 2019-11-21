@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "2aa6a10d_c7f839df",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 340
+      },
+      "writtenOn": "2019-11-21T01:09:13Z",
+      "side": 1,
+      "message": "Agreed. Should we update the lf-infra-pre-build macro at some point to reflect this change in venv too?",
+      "parentUuid": "9c711b8b_f6a247e8",
+      "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "07afb632_d41fc885",
         "filename": "shell/openstack-kubernetes-create.sh",
         "patchSetId": 15
@@ -47,6 +65,30 @@
       "writtenOn": "2019-11-19T23:57:41Z",
       "side": 1,
       "message": "You repeatedly reuse same openstack, how about:\nos_cmd\u003d\"openstack --os-cloud $os_cloud coe cluster show $cluster_uuid -c status -f value\"\nwhile [[ $($os_cmd) \u003d\u003d \"CREATE_IN_PROGRESS\" ]]; do\n\nThen you can reuse $os_cmd on following: if [[ $($os_cmd) \u003d\u003d \"CREATE_COMPLETE\" ]]; then\nSolve the \u0027long-line\u0027 problems and makes it more readable.",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 2
+      },
+      "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f4636b4_1eb3a477",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 340
+      },
+      "writtenOn": "2019-11-21T01:09:13Z",
+      "side": 1,
+      "message": "It will have to be in a function so it rechecks ever time, but fine by me.",
+      "parentUuid": "07afb632_d41fc885",
       "range": {
         "startLine": 62,
         "startChar": 0,
