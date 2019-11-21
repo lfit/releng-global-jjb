@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "318a187d_91f7d379",
+        "filename": "shell/openstack-stack-cost.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-11-21T20:05:59Z",
+      "side": 1,
+      "message": "Perhaps we should build this directly into lftools rather than a standalone one off script in global-jjb? We do have other openstack commands in lftools already. I\u0027m thinking something like:\n\n    lftools openstack stack cost \u003cstack\u003e",
+      "revId": "d624e4a3d52ffb62579238d72a140c77e9b240b2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
