@@ -11,6 +11,7 @@
 echo "---> rtdv3.sh"
 set -euo pipefail
 
+DEFAULT_VERSION=${DEFAULT_VERSION:-latest}
 project_dashed="${PROJECT////-}"
 umbrella="$(echo "$GERRIT_URL" | awk -F"." '{print $2}')"
 if [[ "$SILO" == "sandbox" ]]; then
@@ -85,7 +86,21 @@ echo "INFO: Running merge job"
     fi
   fi
 
-  # api v3 method does not update latest whith stream.
+  # api v3 method does not update /latest/ when master is triggered.
+  # Also, when we build anything other than master we want to trigger /stable/ as well.
+  # allow projects to set change their landing page from latest to branch_name
+
+  current_version="$(lftools rtd project-details "$rtdproject" | yq -r .default_version)"
+  default_version="$DEFAULT_VERSION"
+  if [[ $current_version != "$default_version" ]]; then
+    echo "INFO: Setting rtd landing page to $default_version"
+    lftools rtd project-update "$rtdproject" default_version="$default_version"
+  fi
+
   lftools rtd project-build-trigger "$rtdproject" "$STREAM"
-  lftools rtd project-build-trigger "$rtdproject" latest
+  if [[ $STREAM == "master" ]]; then
+    lftools rtd project-build-trigger "$rtdproject" latest
+  else
+    lftools rtd project-build-trigger "$rtdproject" stable
+  fi
 fi
