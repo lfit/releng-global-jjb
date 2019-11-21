@@ -140,6 +140,30 @@
       "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27b78e69_88a39c3a",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 340
+      },
+      "writtenOn": "2019-11-21T04:49:56Z",
+      "side": 1,
+      "message": "That will only evaluate the first time as a variable though, right? E.g.\n\nmydate\u003d$(date)\n\nwhile [ 1 \u003d\u003d 1 ]\ndo\n\techo \"$mydate\"\n\tsleep 1\ndone\n\n\nvs.\n\n\nfunction mydate {\n\techo \"$(date)\"\n}\n\n\nwhile [ 1 \u003d\u003d 1 ]\ndo\n\tmydate\n\tsleep 1\ndone",
+      "parentUuid": "8700611b_c4cecce7",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 80,
+        "endChar": 2
+      },
+      "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
