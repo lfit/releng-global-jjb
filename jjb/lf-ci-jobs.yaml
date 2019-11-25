@@ -734,9 +734,7 @@
       - inject:
           properties-content: JJB_WORKERS={jjb-workers}
       - shell: !include-raw-escape:
-          - ../shell/jjb-install.sh
           - ../shell/jjb-merge-job.sh
-          - ../shell/jjb-cleanup.sh
 
 - job-template:
     name: "{project-name}-jjb-merge"
