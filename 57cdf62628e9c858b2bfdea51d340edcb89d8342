@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe0cd51a_7c5fa3a1",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-25T21:44:37Z",
+      "side": 1,
+      "message": "Is this a pointer or an actual script content pulled in via !include-raw-escape?",
+      "range": {
+        "startLine": 83,
+        "startChar": 38,
+        "endLine": 83,
+        "endChar": 45
+      },
+      "revId": "57cdf62628e9c858b2bfdea51d340edcb89d8342",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9929c25f_89a5232b",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-25T21:44:37Z",
+      "side": 1,
+      "message": "This fails to document the contract that the script must implement!",
+      "range": {
+        "startLine": 154,
+        "startChar": 0,
+        "endLine": 155,
+        "endChar": 1
+      },
+      "revId": "57cdf62628e9c858b2bfdea51d340edcb89d8342",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2486f297_fa3ed0c0",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-25T21:44:37Z",
+      "side": 1,
+      "message": "I am not at all convinced that the include-raw-escape should be deferred to here.  I think I got this wrong in my original sketch.  Probably this should accept an actual script content.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 1
+      },
+      "revId": "57cdf62628e9c858b2bfdea51d340edcb89d8342",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "182e13de_2d4e3c23",
+        "filename": "releasenotes/notes/update-docker-get-container-tag-09c452d215cdc16b.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-25T21:44:37Z",
+      "side": 1,
+      "message": "this was not a fix!!  \nthis is a new feature.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "57cdf62628e9c858b2bfdea51d340edcb89d8342",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
