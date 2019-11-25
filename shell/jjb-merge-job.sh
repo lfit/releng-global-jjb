@@ -15,4 +15,9 @@ workers="${JJB_WORKERS:-0}"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv jenkins-job-builder
+
 jenkins-jobs update --recursive --delete-old --workers "$workers" jjb/
