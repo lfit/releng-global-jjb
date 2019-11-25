@@ -540,8 +540,8 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-packagecloud-verify"
-    id: gerrit-packagecloud-verify
+    name: "{project-name}-packagecloud-release-verify"
+    id: gerrit-packagecloud-release-verify
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packagecloud_verify
@@ -631,8 +631,8 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-packagecloud-merge"
-    id: gerrit-packagecloud-merge
+    name: "{project-name}-packagecloud-release-merge"
+    id: gerrit-packagecloud-release-merge
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packagecloud_merge
