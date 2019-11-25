@@ -472,7 +472,7 @@ PackageCloud Release Verify
 
 This template supports PackageCloud release jobs.
 
-:Template Name: {project-name}-packagecloud-verify
+:Template Name: {project-name}-packagecloud-release-verify
 
 :Comment Trigger: recheck|reverify
 
@@ -506,7 +506,7 @@ PackageCloud Release Merge
 
 This template supports PackageCloud release jobs.
 
-:template name: {project-name}-packagecloud-merge
+:template name: {project-name}-packagecloud-release-merge
 
 :comment trigger: remerge
 
