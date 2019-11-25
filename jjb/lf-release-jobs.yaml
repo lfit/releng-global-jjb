@@ -541,7 +541,7 @@
 
 - job-template:
     name: "{project-name}-packagecloud-verify"
-    id: gerrit-packagecloud-verify
+    id: gerrit-packagecloud-release-verify
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_packagecloud_verify
