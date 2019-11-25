@@ -493,8 +493,8 @@
 # PackageCloud RELEASE VERIFY #
 ###############################
 
-- lf_packagecloud_verify: &lf_packagecloud_verify
-    name: lf-packagecloud-verify
+- lf_packagecloud_release_verify: &lf_packagecloud_release_verify
+    name: lf-packagecloud-release-verify
 
     ######################
     # Default parameters #
@@ -540,11 +540,11 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-packagecloud-verify"
-    id: gerrit-packagecloud-verify
+    name: "{project-name}-packagecloud-release-verify"
+    id: gerrit-packagecloud-release-verify
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_packagecloud_verify
+    <<: *lf_packagecloud_release_verify
 
     wrappers:
       - lf-infra-wrappers:
@@ -585,8 +585,8 @@
 # PackageCloud RELEASE MERGE #
 ##############################
 
-- lf_packagecloud_merge: &lf_packagecloud_merge
-    name: lf-packagecloud-merge
+- lf_packagecloud_release_merge: &lf_packagecloud_release_merge
+    name: lf-packagecloud-release-merge
 
     ######################
     # Default parameters #
@@ -631,11 +631,11 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-packagecloud-merge"
-    id: gerrit-packagecloud-merge
+    name: "{project-name}-packagecloud-release-merge"
+    id: gerrit-packagecloud-release-merge
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
-    <<: *lf_packagecloud_merge
+    <<: *lf_packagecloud_release_merge
 
     wrappers:
       - lf-infra-wrappers:
