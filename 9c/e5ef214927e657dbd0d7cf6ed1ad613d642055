@@ -1,0 +1,8 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+2: Eric Ball <eball@linuxfoundation.org>
+Code-Review+2: Aric Gardner <agardner@linuxfoundation.org>
+Submitted-by: Houa Yang <hyang@contractor.linuxfoundation.org>
+Submitted-at: Tue, 26 Nov 2019 21:04:11 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/62412
+Project: releng/global-jjb
+Branch: refs/heads/master
