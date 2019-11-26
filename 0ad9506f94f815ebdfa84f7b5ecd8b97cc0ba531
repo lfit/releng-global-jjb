@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e9f5c26c_0f546852",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "please don\u0027t use unnecessary quotes like this.",
+      "range": {
+        "startLine": 254,
+        "startChar": 16,
+        "endLine": 254,
+        "endChar": 46
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "991d0ed4_4152d713",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "This block of text is pretty confusing.",
+      "range": {
+        "startLine": 266,
+        "startChar": 8,
+        "endLine": 268,
+        "endChar": 72
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48c11bf2_35b02849",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "The indentation looks wrong here",
+      "range": {
+        "startLine": 290,
+        "startChar": 4,
+        "endLine": 290,
+        "endChar": 21
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "717563f4_a117d06a",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "This is a macro, not a template; should it possibly be named lf_packagecloud_release_common or ?",
+      "range": {
+        "startLine": 496,
+        "startChar": 27,
+        "endLine": 496,
+        "endChar": 49
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dff670c6_c9beebfb",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "Same comment re naming as above. Also, why define a macro that\u0027s only used in a single template?",
+      "range": {
+        "startLine": 588,
+        "startChar": 0,
+        "endLine": 588,
+        "endChar": 3
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97edcb02_c23490a0",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "Can all this common stuff be factored out?",
+      "range": {
+        "startLine": 595,
+        "startChar": 3,
+        "endLine": 599,
+        "endChar": 26
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14c4482a_e69f21f3",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "These parameters are common to both release-verify and release-merge, right?",
+      "range": {
+        "startLine": 612,
+        "startChar": 4,
+        "endLine": 623,
+        "endChar": 62
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afd72218_4e6183f9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "Please remove the ---\u003e that\u0027s not in any other INFO log output here, why not just be consistent?",
+      "range": {
+        "startLine": 340,
+        "startChar": 16,
+        "endLine": 340,
+        "endChar": 20
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00ffd50c_fea86f31",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "Pls see above",
+      "range": {
+        "startLine": 356,
+        "startChar": 16,
+        "endLine": 356,
+        "endChar": 20
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28493648_ecc793a3",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:54:29Z",
+      "side": 1,
+      "message": "Oh goodness gracious no, you cannot hardcode o-ran-sc/release in global-jjb!",
+      "range": {
+        "startLine": 362,
+        "startChar": 20,
+        "endLine": 362,
+        "endChar": 36
+      },
+      "revId": "0ad9506f94f815ebdfa84f7b5ecd8b97cc0ba531",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
