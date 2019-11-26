@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a6cbd105_64256a11",
+        "filename": "jjb/lf-openstack-kubernetes.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-11-26T00:59:39Z",
+      "side": 1,
+      "message": "I think we can have this in a separate script and call it here.. but not urgent\nI\u0027ll let others comment on it",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 105
+      },
+      "revId": "e138a50dbef53b6612527df3c3fed9841c8a3ec2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "60817633_c49a1eb6",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-11-26T00:59:39Z",
+      "side": 1,
+      "message": "We normally display the name of the script here like \necho \"---\u003e openstack-kubernetes-create.sh\"\n\nCan we add it here too?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 39
+      },
+      "revId": "e138a50dbef53b6612527df3c3fed9841c8a3ec2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
