@@ -131,7 +131,7 @@
                   branch-pattern: "**"
               file-paths:
                 - compare-type: REG_EXP
-                  pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+                  pattern: '(releases\/maven.*\.yaml|\.releases\/maven.*\.yaml)'
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
@@ -240,7 +240,7 @@
                   branch-pattern: "**"
               file-paths:
                 - compare-type: REG_EXP
-                  pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+                  pattern: '(releases\/maven.*\.yaml|\.releases\/maven.*\.yaml)'
 
 ################
 # PyPI RELEASE #
@@ -286,13 +286,13 @@
     # define once and use twice; jobs MUST NOT override
     gerrit_release_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+        pattern: '(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)'
 
     # yamllint disable-line rule:line-length
     # github_release_included_regions MUST match gerrit_release_trigger_file_paths
     github_release_included_regions:
-      - 'releases\/.*\.yaml'
-      - '.releases\/.*\.yaml'
+      - 'releases\/pypi.*\.yaml'
+      - '.releases\/pypi.*\.yaml'
 
     parameters:
       - lf-infra-parameters:
@@ -574,7 +574,8 @@
                   branch-pattern: "**"
               file-paths:
                 - compare-type: REG_EXP
-                  pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+                  pattern: '(releases\/packagecloud.*\.yaml|\.releases\
+                           /packagecloud.*\.yaml)'
           skip-vote:
             successful: "{gerrit-skip-vote}"
             failed: "{gerrit-skip-vote}"
@@ -665,4 +666,5 @@
                   branch-pattern: "**"
               file-paths:
                 - compare-type: REG_EXP
-                  pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+                  pattern: '(releases\/packagecloud.*\.yaml|\.releases\
+                           /packagecloud.*\.yaml)'
