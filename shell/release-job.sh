@@ -411,8 +411,7 @@ elif [[ "$DISTRIBUTION_TYPE" == "packagecloud" ]]; then
     package_name=$(yq -r '.package_name' $release_file)
     username_repo="o-ran-sc/staging"
     echo "INFO: Fetching schema $RELEASE_SCHEMA"
-    wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/\
-        schema/${RELEASE_SCHEMA}
+    wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${RELEASE_SCHEMA}
     verify_schema
     for name in $(yq -r '.package_name[].name' $release_file); do
         package_name=$name
