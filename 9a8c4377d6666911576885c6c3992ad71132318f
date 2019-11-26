@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab6e4677_cef7249c",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:32:45Z",
+      "side": 1,
+      "message": "please explain what are valid values here -- probably only the branch names, right?",
+      "range": {
+        "startLine": 152,
+        "startChar": 0,
+        "endLine": 152,
+        "endChar": 1
+      },
+      "revId": "9a8c4377d6666911576885c6c3992ad71132318f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ab99f46_11a632d0",
+        "filename": "releasenotes/notes/lf-rtdv3-jobs-b89edbf358caf261.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:32:45Z",
+      "side": 1,
+      "message": "This release note doesn\u0027t mention the magic behavior for master branch",
+      "revId": "9a8c4377d6666911576885c6c3992ad71132318f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a42917db_f387aa30",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:32:45Z",
+      "side": 1,
+      "message": "Would you please fix this typo?",
+      "range": {
+        "startLine": 89,
+        "startChar": 41,
+        "endLine": 89,
+        "endChar": 46
+      },
+      "revId": "9a8c4377d6666911576885c6c3992ad71132318f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9a29549_f40c7556",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:32:45Z",
+      "side": 1,
+      "message": "set or change?",
+      "range": {
+        "startLine": 90,
+        "startChar": 22,
+        "endLine": 90,
+        "endChar": 32
+      },
+      "revId": "9a8c4377d6666911576885c6c3992ad71132318f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "898bf3fb_ae057c60",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-26T15:32:45Z",
+      "side": 1,
+      "message": "why is there magic here for master?  Is this documented anywhere?",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 2
+      },
+      "revId": "9a8c4377d6666911576885c6c3992ad71132318f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
