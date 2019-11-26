@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ed335bb7_1a798f7b",
+        "filename": "jjb/lf-openstack-kubernetes.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 340
+      },
+      "writtenOn": "2019-11-26T01:04:20Z",
+      "side": 1,
+      "message": "We sure can if we want to go that way. I\u0027m just stealing from the lf-stack-create macro which has their cleanup bits just like this.",
+      "parentUuid": "a6cbd105_64256a11",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 105
+      },
+      "revId": "e138a50dbef53b6612527df3c3fed9841c8a3ec2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "60817633_c49a1eb6",
         "filename": "shell/openstack-kubernetes-create.sh",
         "patchSetId": 17
