@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "b24cc7cf_72eced30",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 340
+      },
+      "writtenOn": "2019-11-26T00:18:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "885c1e68_60965984",
+      "revId": "0736062d9318533d7353dede1b5d748d0aa20384",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "07afb632_d41fc885",
         "filename": "shell/openstack-kubernetes-create.sh",
         "patchSetId": 15
