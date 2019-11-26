@@ -49,7 +49,8 @@ For example, the parameters for a Maven release are as follows::
 Maven Release Files
 -------------------
 
-An example of a maven release file appears below.
+An example of a maven release file appears below. Name of release file
+must start with "maven". eg. releases/maven-1.0.0-test.yaml
 
 .. code-block:: none
 
@@ -179,11 +180,12 @@ The JSON schema for a container release file appears below.
 PyPI Release Files
 ------------------
 
-An example of a PyPI release file appears below.
+An example of a PyPI release file appears below. Name of the release file must
+start with "pypi". eg. releases/pypi-1.0.0-mypackage.yaml
 
 .. code-block:: none
 
-    $ cat releases/pypi-release.yaml
+    $ cat releases/pypi-1.0.0-mypackage.yaml
     ---
     distribution_type: pypi
     pypi_project: mypackage
@@ -243,11 +245,12 @@ The JSON schema for a PyPI release file appears below.
 PackageCloud Release Files
 --------------------------
 
-An example of a PackageCloud release file appears below.
+An example of a PackageCloud release file appears below. Name of release file
+must start with "packagecloud". eg. releases/packagecloud-1.6.0-tree.yaml
 
 .. code-block:: none
 
-    $ cat releases/packagecloud-release.yaml
+    $ cat releases/packagecloud-1.6.0-tree.yaml
     ---
     distribution_type: packagecloud
     package_name:
@@ -387,7 +390,7 @@ This template supports Maven and Container release jobs.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+              pattern: '(releases\/maven.*\.yaml|\.releases\/maven.*\.yaml)'
 
 
 PyPI Release Merge
@@ -428,6 +431,12 @@ template accepts neither a branch nor a stream parameter.
         should be the repository pypy.org. (default: pypi)
     :use-release-file: Whether to use the release file. (default: true)
 
+    :gerrit_trigger_file_paths: Override file paths filter which checks which
+        file modifications will trigger a build.
+        **default**::
+
+            - compare-type: REG_EXP
+              pattern: '(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)'
 
 PyPI Release Verify
 ~~~~~~~~~~~~~~~~~~~
@@ -466,6 +475,12 @@ verify template accepts neither a branch nor a stream parameter.
         should be the repository pypy.org (default: pypi)
     :use-release-file: Whether to use the release file. (default: true)
 
+    :gerrit_trigger_file_paths: Override file paths filter which checks which
+        file modifications will trigger a build.
+        **default**::
+
+            - compare-type: REG_EXP
+              pattern: '(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)'
 
 PackageCloud Release Verify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -498,7 +513,7 @@ This template supports PackageCloud release jobs.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+              pattern: '(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)'
 
 
 PackageCloud Release Merge
@@ -529,7 +544,7 @@ This template supports PackageCloud release jobs.
         **default**::
 
             - compare-type: reg_exp
-              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+              pattern: '(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)'
 
 
 Setup for LFID, Nexus, Jenkins and Gerrit
