@@ -93,6 +93,30 @@
       "revId": "511b04429dceec089099eac83c408c97d85652cd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5fcb63bf_eca4d73c",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-11-27T15:50:06Z",
+      "side": 1,
+      "message": "for cloud in jenkins-config/clouds/openstack/*; do\n    if [[ -f $cloud/cloud.cfg ]]; then\n        # Get the OS_CLOUD variable from cloud config\n        if ! os_cloud\u003d$(egrep \"^OS_CLOUD\u003d\" $cloud/cloud.cfg | cut -d\u0027\u003d\u0027 -f2); then\n            os_cloud\u003d\"vex\"\n        fi\n        OS_CLOUD\u003d$os_cloud verify_images \"$cloud\"\n    else\n        echo \"ERROR: No cloud.cfg for $cloud\"\n        error\u003dtrue\n    fi\ndone\n\nAlways limit scope of env var when possible. Note I added \"\" around RE for egrep. I did not test this, but I bet it is pretty close",
+      "parentUuid": "be66137d_56434b17",
+      "range": {
+        "startLine": 47,
+        "startChar": 23,
+        "endLine": 47,
+        "endChar": 41
+      },
+      "revId": "511b04429dceec089099eac83c408c97d85652cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
