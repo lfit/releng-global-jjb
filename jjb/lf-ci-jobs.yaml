@@ -565,9 +565,7 @@
     builders:
       - lf-infra-jjbini
       - shell: !include-raw-escape:
-          - ../shell/jjb-install.sh
           - ../shell/jenkins-sandbox-cleanup.sh
-          - ../shell/jjb-cleanup.sh
 
 - job-template:
     name: "{project-name}-jenkins-sandbox-cleanup"

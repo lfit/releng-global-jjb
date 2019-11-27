@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Removed dependency on 'user' venv created by python-tools-install.sh from
+    the sandbox cleanup job. It will call lf-acitivate-venv() instead. Removed
+    references to jjb-install.sh & jjb-cleanup.sh.
