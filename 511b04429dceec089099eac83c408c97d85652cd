@@ -69,6 +69,30 @@
       "revId": "511b04429dceec089099eac83c408c97d85652cd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07001f5e_edc4c98d",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-27T15:41:12Z",
+      "side": 1,
+      "message": "Yes I understand that the grep finds nothing and triggers the pipe fail.  I\u0027m trying to ask, why not do something like:\n\n    os_cloud\u003d$(grep ^OS_CLOUD\u003d \"$cloud/cloud.cfg\")\n    os_cloud\u003d\"${os_cloud:-vex}\"\n    os_cloud\u003d$(echo $os_cloud | cut -d\u0027\u003d\u0027 -f2)\n\nOr something along those lines.  But Tim Johnson, the shell script wizard, can probably teach me how to do this in 7 characters :D",
+      "parentUuid": "be66137d_56434b17",
+      "range": {
+        "startLine": 47,
+        "startChar": 23,
+        "endLine": 47,
+        "endChar": 41
+      },
+      "revId": "511b04429dceec089099eac83c408c97d85652cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
