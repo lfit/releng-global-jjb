@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix grep OS_CLOUD terminates jenkins-verify-images.sh if not found.
+
