@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2c73f28d_28490796",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-27T14:14:29Z",
+      "side": 1,
+      "message": "This issue is private, not much value in having it in a gerrit commit :(",
+      "range": {
+        "startLine": 17,
+        "startChar": 10,
+        "endLine": 17,
+        "endChar": 18
+      },
+      "revId": "511b04429dceec089099eac83c408c97d85652cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98c8282f_1921eaee",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-11-27T14:14:29Z",
+      "side": 1,
+      "message": "Thanks for the patch, but is there a way to write this that avoids repeating the same code twice? Why not do the grep, then test the result for -z and default it to vex up here, instead?",
+      "range": {
+        "startLine": 47,
+        "startChar": 23,
+        "endLine": 47,
+        "endChar": 41
+      },
+      "revId": "511b04429dceec089099eac83c408c97d85652cd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
