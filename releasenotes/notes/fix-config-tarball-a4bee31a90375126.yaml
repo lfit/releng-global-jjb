@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    A Job Config Tarall is added to the archive.  The directory layout changed
+    and as a result the code that sorted/reformated the layout and generated the
+    tarball was broken.
+
+    The prefix path of the tarball is now 'job-configs'.
