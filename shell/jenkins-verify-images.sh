@@ -39,16 +39,14 @@ verify_images()
   done
 }
 
+echo "Verifying that cloud has a master configuration file"
 for cloud in jenkins-config/clouds/openstack/*; do
-  echo "Verifying that cloud has a master configuration file"
-  # Verify that we have a cloud config file
-  if [ -f "$cloud/cloud.cfg" ]; then
-    # Get the OS_CLOUD variable from cloud config and export it
-    os_cloud=$(grep ^OS_CLOUD= "$cloud/cloud.cfg" | cut -d'=' -f2)
-    OS_CLOUD="${os_cloud:-vex}"
-    export OS_CLOUD
-
-    verify_images "$cloud"
+  if [[ -f $cloud/cloud.cfg ]]; then
+    # Get the OS_CLOUD variable from cloud config
+    if ! os_cloud=$(egrep "^OS_CLOUD=" "$cloud/cloud.cfg" | cut -d'=' -f2); then
+      os_cloud="vex"
+    fi
+    OS_CLOUD=$os_cloud verify_images "$cloud"
   else
     echo "ERROR: No cloud.cfg for $cloud"
     error=true
