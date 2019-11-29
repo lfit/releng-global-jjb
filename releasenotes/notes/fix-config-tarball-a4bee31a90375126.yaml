@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Currently a Job Config Tarball is added to the archive.  The directory
+    layout created by 'jenkins-jobs test' has changed and as a result the code
+    that sorted/reformated the directory and generated the tarball was broken.
+
+    The prefix path of the tarball is now 'job-configs'. The number of log
+    messages has been improved and greatly reduced. The tarball generated
+    contains directory names with spaces and upper-case characters.
