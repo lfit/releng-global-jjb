@@ -11,7 +11,7 @@
 echo "---> jjb-verify-job.sh"
 
 # Ensure we fail the job if any steps fail.
-set -eu -o pipefail
+set -euo pipefail
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
@@ -23,21 +23,27 @@ lf-activate-venv jenkins-job-builder
 
 jenkins-jobs -l DEBUG test --recursive -o archives/job-configs --config-xml jjb/
 
-# Sort job output into sub-directories. On large Jenkins systems that have
-# many jobs archiving so many files into the same directory makes NGINX return
-# the directory list slow.
-pushd archives/job-configs
-for letter in {a..z}
-do
-    if [[ $(ls "$letter"* > /dev/null 2>&1) -eq 0 ]]
-    then
-        mkdir "$letter"
-        find . -maxdepth 1 -type f -name "$letter*" -exec mv {} "$letter" \;
+cd archives/job-configs
+# Recursively delete directories containing view configs
+# Some directory names may containing spaces
+(   IFS=''
+    for i in $(fgrep -rl hudson.model.ListView | awk -F'/' '{print $1}'); do
+        rm -rf $i
+    done
+)
+# NGINX is very sluggish with directories containing large numbers of objects
+# Add another directory level base alphabetized directory names {a..z}
+for letter in {a..z}; do
+    if ls -d $letter* > /dev/null 2>&1; then
+        mkdir .tmp
+        mv $letter* .tmp
+        mv .tmp $letter
     fi
 done
-popd
 
-if [ -n "$(ls -A archives/job-configs)" ]; then
-    tar cJvf archives/job-configs.tar.xz archives/job-configs
-    rm -rf archives/job-configs
-fi
+cd ..
+echo "INFO: Archiving $(find job-configs -name \*.xml | wc -l) job configurations"
+tar -cJf job-configs.tar.xz job-configs
+
+rm -rf job-configs
+cd ..
