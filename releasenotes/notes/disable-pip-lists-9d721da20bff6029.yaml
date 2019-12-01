@@ -1,0 +1,5 @@
+---
+other:
+  - |
+    Disable generation of pip package lists during builds: packages_end.txt.gz,
+    packages_start.txt.gz & packages_diff.txt.gz. They are no longer valid.
