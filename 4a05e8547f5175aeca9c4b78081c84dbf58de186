@@ -39,6 +39,30 @@
       "revId": "4a05e8547f5175aeca9c4b78081c84dbf58de186",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "28e0a1e2_be4006a4",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-12-01T22:25:40Z",
+      "side": 1,
+      "message": "OS_CLOUD is not set everywhere, so this is a default.",
+      "parentUuid": "b3c13578_f5f54faa",
+      "range": {
+        "startLine": 47,
+        "startChar": 6,
+        "endLine": 47,
+        "endChar": 20
+      },
+      "revId": "4a05e8547f5175aeca9c4b78081c84dbf58de186",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
