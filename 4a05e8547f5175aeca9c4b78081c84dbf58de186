@@ -63,6 +63,30 @@
       "revId": "4a05e8547f5175aeca9c4b78081c84dbf58de186",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9709ff87_6e0083fb",
+        "filename": "shell/jenkins-verify-images.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-02T14:48:44Z",
+      "side": 1,
+      "message": "OS_CLOUD should be set and if it is not there is a configuration error. What will happen now is this error will be quietly ignored, which not what we want. This should at the very least generate a ERROR message, but I think this script should return an error the makes the build fail. \u0027vex\u0027 is a good default now, but it won\u0027t be forever.\n\nNo reason to fix this for now, this practice is duplicated in many places in our build scripts. Going forward I think this is a bad practice.",
+      "parentUuid": "28e0a1e2_be4006a4",
+      "range": {
+        "startLine": 47,
+        "startChar": 6,
+        "endLine": 47,
+        "endChar": 20
+      },
+      "revId": "4a05e8547f5175aeca9c4b78081c84dbf58de186",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
