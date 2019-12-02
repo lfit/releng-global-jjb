@@ -49,8 +49,7 @@ For example, the parameters for a Maven release are as follows::
 Maven Release Files
 -------------------
 
-An example of a maven release file appears below. Name of release file
-must start with "maven". eg. releases/maven-1.0.0-test.yaml
+An example of a maven release file appears below.
 
 .. code-block:: none
 
@@ -187,7 +186,6 @@ start with "pypi". eg. releases/pypi-1.0.0-mypackage.yaml
 
     $ cat releases/pypi-1.0.0-mypackage.yaml
     ---
-    distribution_type: pypi
     pypi_project: mypackage
     python_version: '3.4'
     version: 1.0.0
@@ -200,7 +198,6 @@ packages.
 
 :Required Parameters:
 
-    :distribution_type: Must be "pypi".
     :log_dir: The suffix of the logs URL reported on completion by the
         Jenkins merge job that created and pushed the distribution files
         to the staging repository.  For example, use value
@@ -223,15 +220,12 @@ The JSON schema for a PyPI release file appears below.
     $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-pypi-schema.yaml"
 
     required:
-      - "distribution_type"
       - "log_dir"
       - "pypi_project"
       - "python_version"
       - "version"
 
     properties:
-      distribution_type:
-        type: "string"
       log_dir:
         type: "string"
       pypi_project:
@@ -252,10 +246,9 @@ must start with "packagecloud". eg. releases/packagecloud-1.6.0-tree.yaml
 
     $ cat releases/packagecloud-1.6.0-tree.yaml
     ---
-    distribution_type: packagecloud
     package_name:
-        - name: 'tree-1.6.0-10.el7.x86_64.rpm'
-        - name: 'test.rpm'
+        - name: tree-1.6.0-10.el7.x86_64.rpm
+        - name: test.rpm
 
 The following parameters must appear in the PackageCloud release yaml file.
 These are not part of the Jenkins job definition to allow independent
@@ -264,11 +257,10 @@ packages.
 
 :Required Parameters:
 
-    :distribution_type: Must be "packagecloud".
     :package_name: A list of names that specify the packages to promote.
-        (Found via jenkins log when using gem to initally push package up eg.
+        (Found in jenkins console log when using gem to push package eg.
         "Pushing /path/of/package/name-of-package.rpm... success!"
-        OR using rest api call with generated token from packagecloud.io
+        OR using rest api call to query packagecloud.io repo
         "curl https://packagecloud.io/api/v1/repos/test_user/test_repo/search?q=
         | yq -r .[].filename"
 
@@ -282,7 +274,6 @@ The JSON schema for a PackageCloud release file appears below.
 
     required:
       - "package_name"
-      - "distribution_type"
 
     properties:
       package_name:
@@ -290,8 +281,6 @@ The JSON schema for a PackageCloud release file appears below.
         properties:
           name:
             type: "string"
-    distribution_type:
-      type: "string"
 
 Jenkins Jobs
 ------------
@@ -390,7 +379,7 @@ This template supports Maven and Container release jobs.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '(releases\/maven.*\.yaml|\.releases\/maven.*\.yaml)'
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 
 PyPI Release Merge
