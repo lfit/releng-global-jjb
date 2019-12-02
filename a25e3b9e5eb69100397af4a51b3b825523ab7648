@@ -168,6 +168,30 @@
       "revId": "a25e3b9e5eb69100397af4a51b3b825523ab7648",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15264747_ed190ca7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-02T17:37:10Z",
+      "side": 1,
+      "message": "If you look at my earlier comments, it should be \u0027release_type\u0027 (a shell variable) not RELEASE_TYPE (env var). Then shellcheck would have marked the misspelling as an error.",
+      "parentUuid": "e862857e_8ac98efd",
+      "range": {
+        "startLine": 429,
+        "startChar": 31,
+        "endLine": 429,
+        "endChar": 43
+      },
+      "revId": "a25e3b9e5eb69100397af4a51b3b825523ab7648",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
