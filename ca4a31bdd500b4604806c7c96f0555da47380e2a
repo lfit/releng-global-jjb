@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38666eb0_88a0ad4f",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-02T23:43:36Z",
+      "side": 1,
+      "message": "this mv does not handle only files and not the same as find. This will fail each time when you try to move a directory into itself? have you even tested this?",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 23
+      },
+      "revId": "ca4a31bdd500b4604806c7c96f0555da47380e2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2f9c145f_6e8a002b",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-02T23:43:36Z",
+      "side": 1,
+      "message": "preserve the verbosity it\u0027s just one additional like.",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 8
+      },
+      "revId": "ca4a31bdd500b4604806c7c96f0555da47380e2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cdb835a2_fd7878a6",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-02T23:43:36Z",
+      "side": 1,
+      "message": "why are you moving this out of archive dir? this needs to get archived.",
+      "range": {
+        "startLine": 40,
+        "startChar": 9,
+        "endLine": 40,
+        "endChar": 27
+      },
+      "revId": "ca4a31bdd500b4604806c7c96f0555da47380e2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
