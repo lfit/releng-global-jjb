@@ -12,15 +12,12 @@ $schema: "http://json-schema.org/schema#"
 $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-pypi-schema.yaml"
 
 required:
-  - "distribution_type"
   - "log_dir"
   - "pypi_project"
   - "python_version"
   - "version"
 
 properties:
-  distribution_type:
-    type: "string"
   log_dir:
     type: "string"
   pypi_project:
