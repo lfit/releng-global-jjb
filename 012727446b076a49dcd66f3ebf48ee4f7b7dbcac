@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2fb92e3c_77e8622a",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "Please write \"For example,\" instead of \"eg.\"",
+      "range": {
+        "startLine": 183,
+        "startChar": 19,
+        "endLine": 183,
+        "endChar": 21
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06d5bb4a_431ab27e",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "This seems to be missing log_dir ?",
+      "range": {
+        "startLine": 190,
+        "startChar": 0,
+        "endLine": 190,
+        "endChar": 1
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48f317e9_7ce93a42",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "Please write \"For example,\"   (not \u0027eg.\u0027)",
+      "range": {
+        "startLine": 243,
+        "startChar": 32,
+        "endLine": 243,
+        "endChar": 34
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86aed868_d52744bb",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "what account name?  if this is packagecloud, would you please using pc-account-name for clarity?",
+      "range": {
+        "startLine": 509,
+        "startChar": 4,
+        "endLine": 509,
+        "endChar": 16
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe82b62d_d6b997dc",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "here also I would lean towards \u0027pc-source-repo\u0027 for clarity",
+      "range": {
+        "startLine": 510,
+        "startChar": 4,
+        "endLine": 510,
+        "endChar": 15
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e607694e_def30bcd",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "promoted ?",
+      "range": {
+        "startLine": 533,
+        "startChar": 52,
+        "endLine": 533,
+        "endChar": 61
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9342e1a7_95b3e6a5",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "do you really want to hardcode \u0027staging\u0027 here? I think at the very least you should define a constant in this shell script.",
+      "range": {
+        "startLine": 342,
+        "startChar": 50,
+        "endLine": 342,
+        "endChar": 57
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7aff5608_84817e90",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "staging repeated here, should be parameterized",
+      "range": {
+        "startLine": 358,
+        "startChar": 59,
+        "endLine": 358,
+        "endChar": 66
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f33c0424_3f869489",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T21:21:26Z",
+      "side": 1,
+      "message": "Similar comment applies to \u0027release\u0027 this is the convention that O-RAN-SC adopted but others may want other value.",
+      "range": {
+        "startLine": 362,
+        "startChar": 24,
+        "endLine": 362,
+        "endChar": 31
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
