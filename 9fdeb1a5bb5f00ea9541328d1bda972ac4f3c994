@@ -1,0 +1,625 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f93f0b95_ae6c5383",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 59,
+        "startChar": 4,
+        "endLine": 59,
+        "endChar": 28
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b7a1d21_a72995ef",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 87,
+        "startChar": 6,
+        "endLine": 87,
+        "endChar": 27
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b31a0d5_378620ee",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 93,
+        "startChar": 6,
+        "endLine": 94,
+        "endChar": 22
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c127b49_85934a58",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 112,
+        "startChar": 4,
+        "endLine": 112,
+        "endChar": 32
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9ddd21f_f8910c61",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 129,
+        "startChar": 4,
+        "endLine": 129,
+        "endChar": 44
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9695d68_806ffb0d",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 152,
+        "startChar": 6,
+        "endLine": 152,
+        "endChar": 27
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4ed2bce_b4545371",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Remove",
+      "range": {
+        "startLine": 166,
+        "startChar": 6,
+        "endLine": 167,
+        "endChar": 21
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ac46a20_ff942b5b",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 190,
+        "startChar": 4,
+        "endLine": 190,
+        "endChar": 27
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e3925e4_9a106bb9",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 203,
+        "startChar": 4,
+        "endLine": 203,
+        "endChar": 39
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1073efd9_70d2de38",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 226,
+        "startChar": 6,
+        "endLine": 226,
+        "endChar": 27
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22628c86_8e21896d",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 233,
+        "startChar": 6,
+        "endLine": 234,
+        "endChar": 22
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7ffef60_bb2ec7f7",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "See below - remove",
+      "range": {
+        "startLine": 255,
+        "startChar": 3,
+        "endLine": 255,
+        "endChar": 35
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "765e5705_dde6b562",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "This parameter should be removed. The file name pattern covers it 100.000%",
+      "range": {
+        "startLine": 267,
+        "startChar": 4,
+        "endLine": 267,
+        "endChar": 47
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d85aa76_aff95ed0",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 285,
+        "startChar": 6,
+        "endLine": 285,
+        "endChar": 27
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe71b91e_50db58ee",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "remove",
+      "range": {
+        "startLine": 293,
+        "startChar": 5,
+        "endLine": 294,
+        "endChar": 22
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3bfc8ed_1f4309a7",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "incorrect",
+      "range": {
+        "startLine": 393,
+        "startChar": 14,
+        "endLine": 393,
+        "endChar": 66
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3de95e5a_7af4312b",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "incorrect",
+      "range": {
+        "startLine": 439,
+        "startChar": 14,
+        "endLine": 439,
+        "endChar": 64
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f6b6a45c_fddf84a4",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Incorrect",
+      "range": {
+        "startLine": 483,
+        "startChar": 13,
+        "endLine": 483,
+        "endChar": 65
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d1b13cd_1e76e4ab",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "incorrect",
+      "range": {
+        "startLine": 516,
+        "startChar": 13,
+        "endLine": 516,
+        "endChar": 65
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b2b4abd_00499869",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 547,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Incorrect",
+      "range": {
+        "startLine": 547,
+        "startChar": 14,
+        "endLine": 547,
+        "endChar": 66
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85679193_14a20e79",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "I thought the pattern was going to have the release type?",
+      "range": {
+        "startLine": 134,
+        "startChar": 18,
+        "endLine": 134,
+        "endChar": 69
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56e68eb1_37350d53",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "No release type in file name?",
+      "range": {
+        "startLine": 243,
+        "startChar": 17,
+        "endLine": 243,
+        "endChar": 70
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b060d73f_8d35ec8d",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "No release type in name?",
+      "range": {
+        "startLine": 294,
+        "startChar": 7,
+        "endLine": 295,
+        "endChar": 29
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "314a005f_ae8824d4",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "No release type in file name?",
+      "range": {
+        "startLine": 588,
+        "startChar": 18,
+        "endLine": 588,
+        "endChar": 70
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a0ee018_9258c653",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 632,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Release type in file name?",
+      "range": {
+        "startLine": 632,
+        "startChar": 17,
+        "endLine": 632,
+        "endChar": 70
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6190f9c_4026cf1e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "This should go away, in my opinion",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 4
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08228dcf_8422e0ef",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-02T18:26:02Z",
+      "side": 1,
+      "message": "Thank you for parameterizing this",
+      "range": {
+        "startLine": 362,
+        "startChar": 20,
+        "endLine": 362,
+        "endChar": 22
+      },
+      "revId": "9fdeb1a5bb5f00ea9541328d1bda972ac4f3c994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
