@@ -30,7 +30,7 @@ set_variables_common(){
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
     # Verify if using release file or parameters
     if $USE_RELEASE_FILE ; then
-        release_files=$(git diff-tree --no-commit-id -r "$GIT_COMMIT" --name-only -- "releases/" ".releases/")
+        release_files=$(git diff-tree -m --no-commit-id -r "$GIT_COMMIT" --name-only -- "releases/" ".releases/")
         if (( $(grep -c . <<<"$release_files") > 1 )); then
           echo "INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
           echo "ERROR: Committing multiple release files in the same commit OR rename/amend of existing files is not supported."
@@ -142,7 +142,7 @@ set_variables_pypi(){
 
 verify_schema(){
     echo "INFO: Verifying $release_file schema."
-    lftools schema verify "$release_file" "$RELEASE_SCHEMA"
+    lftools schema verify "$release_file" "$release_schema"
 }
 
 verify_version(){
@@ -337,29 +337,29 @@ pypi_release_file(){
 }
 
 packagecloud_verify(){
-    echo "INFO: ---> Verifying $1 exists in staging..."
+    echo "INFO: Verifying $1 exists in staging..."
     if [[ $1 == $(curl --netrc-file ~/packagecloud_api --silent \
-        https://packagecloud.io/api/v1/repos/"$2"/search?q="$1" \
+        https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
         | yq -r .[].filename) ]]; then
         echo "INFO: $1 exists in staging!"
         echo "INFO: Existing package location: https://packagecloud.io$(curl \
             --netrc-file ~/packagecloud_api --silent \
-            https://packagecloud.io/api/v1/repos/"$2"/search?q="$1" \
+            https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
             | yq -r .[].package_html_url)"
     else
-        echo "ERROR: $package_name does not exist in staging"
+        echo "ERROR: $1 does not exist in staging"
         exit 1
     fi
 }
 
 packagecloud_promote(){
-    echo "INFO: ---> Preparing to promote $1..."
+    echo "INFO: Preparing to promote $1..."
     promote_url="https://packagecloud.io$(curl --netrc-file ~/packagecloud_api \
-        --silent https://packagecloud.io/api/v1/repos/"$2"/search?q="$1" \
+        --silent https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
         | yq -r .[].promote_url)"
     echo "INFO: Promoting $1 from staging to release"
     curl --netrc-file ~/packagecloud_api -X POST -F \
-        destination=o-ran-sc/release "$promote_url" \
+        destination="$2/release" "$promote_url" \
         | echo "INFO: Promoted package location: \
         https://packagecloud.io$(yq -r .package_html_url)"
 }
@@ -374,55 +374,66 @@ set_variables_common
 #   - maven, release-schema.yaml
 #   - pypi,  release-pypi-schema.yaml
 
-if [[ "$DISTRIBUTION_TYPE" == "maven" ]]; then
-    if $USE_RELEASE_FILE ; then
-        RELEASE_SCHEMA="release-schema.yaml"
-        echo "INFO: Fetching schema $RELEASE_SCHEMA"
-        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/release-schema.yaml
-        verify_schema
-    fi
-    set_variables_maven
-    verify_version
-    verify_version_match_release
-    maven_release_file
-elif [[ "$DISTRIBUTION_TYPE" == "container" ]]; then
-    if $USE_RELEASE_FILE ; then
-        RELEASE_SCHEMA="release-container-schema.yaml"
-        echo "INFO: Fetching schema $RELEASE_SCHEMA"
-        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${RELEASE_SCHEMA}
-        verify_schema
-    fi
-    set_variables_container
-    verify_version
-    container_release_file
-elif [[ "$DISTRIBUTION_TYPE" == "pypi" ]]; then
-    if $USE_RELEASE_FILE ; then
-        RELEASE_SCHEMA="release-pypi-schema.yaml"
-        echo "INFO: Fetching schema $RELEASE_SCHEMA"
-        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${RELEASE_SCHEMA}
-        verify_schema
-    fi
-    set_variables_pypi
-    verify_version
-    verify_pypi_match_release
-    pypi_release_file
-elif [[ "$DISTRIBUTION_TYPE" == "packagecloud" ]]; then
-    RELEASE_SCHEMA="release-packagecloud-schema.yaml"
-    package_name=$(yq -r '.package_name' $release_file)
-    username_repo="o-ran-sc/staging"
-    echo "INFO: Fetching schema $RELEASE_SCHEMA"
-    wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${RELEASE_SCHEMA}
-    verify_schema
-    for name in $(yq -r '.package_name[].name' $release_file); do
-        package_name=$name
-        packagecloud_verify "$package_name" "$username_repo"
-        if [[ "$JOB_NAME" =~ "merge" ]] && ! $DRY_RUN; then
-            packagecloud_promote "$package_name" "$username_repo"
+case $DISTRIBUTION_TYPE in
+
+    maven)
+        if $USE_RELEASE_FILE ; then
+            release_schema="release-schema.yaml"
+            echo "INFO: Fetching schema $release_schema"
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/$release_schema
+            verify_schema
         fi
-    done
-else
-    echo "ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
-    exit 1
-fi
+        set_variables_maven
+        verify_version
+        verify_version_match_release
+        maven_release_file
+        ;;
+
+    container)
+        if $USE_RELEASE_FILE ; then
+            release_schema="release-container-schema.yaml"
+            echo "INFO: Fetching schema $release_schema"
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            verify_schema
+        fi
+        set_variables_container
+        verify_version
+        container_release_file
+        ;;
+
+    pypi)
+        if $USE_RELEASE_FILE ; then
+            release_schema="release-pypi-schema.yaml"
+            echo "INFO: Fetching schema $release_schema"
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            verify_schema
+        fi
+        set_variables_pypi
+        verify_version
+        verify_pypi_match_release
+        pypi_release_file
+        ;;
+
+    packagecloud)
+        release_schema="release-packagecloud-schema.yaml"
+        package_name=$(yq -r '.package_name' $release_file)
+        packagecloud_account=$(cat "$ACCOUNT_NAME_FILE")
+        echo "INFO: Fetching schema $release_schema"
+        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+        verify_schema
+        for name in $(yq -r '.package_name[].name' $release_file); do
+            package_name=$name
+            packagecloud_verify "$package_name" "$packagecloud_account"
+            if [[ "$JOB_NAME" =~ "merge" ]] && ! $DRY_RUN; then
+                packagecloud_promote "$package_name" "$packagecloud_account"
+            fi
+        done
+        ;;
+
+    *)
+        echo "ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
+        exit 1
+        ;;
+esac
 
 echo "---> release-job.sh ends"
