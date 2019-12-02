@@ -254,8 +254,8 @@ must start with "packagecloud". eg. releases/packagecloud-1.6.0-tree.yaml
     ---
     distribution_type: packagecloud
     package_name:
-        - name: 'tree-1.6.0-10.el7.x86_64.rpm'
-        - name: 'test.rpm'
+        - name: tree-1.6.0-10.el7.x86_64.rpm
+        - name: test.rpm
 
 The following parameters must appear in the PackageCloud release yaml file.
 These are not part of the Jenkins job definition to allow independent
@@ -266,9 +266,9 @@ packages.
 
     :distribution_type: Must be "packagecloud".
     :package_name: A list of names that specify the packages to promote.
-        (Found via jenkins log when using gem to initally push package up eg.
+        (Found in jenkins console log when using gem to push package eg.
         "Pushing /path/of/package/name-of-package.rpm... success!"
-        OR using rest api call with generated token from packagecloud.io
+        OR using rest api call to query packagecloud.io repo
         "curl https://packagecloud.io/api/v1/repos/test_user/test_repo/search?q=
         | yq -r .[].filename"
 
@@ -290,8 +290,8 @@ The JSON schema for a PackageCloud release file appears below.
         properties:
           name:
             type: "string"
-    distribution_type:
-      type: "string"
+      distribution_type:
+        type: "string"
 
 Jenkins Jobs
 ------------
@@ -390,7 +390,7 @@ This template supports Maven and Container release jobs.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '(releases\/maven.*\.yaml|\.releases\/maven.*\.yaml)'
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 
 PyPI Release Merge
@@ -436,7 +436,7 @@ template accepts neither a branch nor a stream parameter.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)'
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 PyPI Release Verify
 ~~~~~~~~~~~~~~~~~~~
@@ -480,7 +480,7 @@ verify template accepts neither a branch nor a stream parameter.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)'
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 PackageCloud Release Verify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -513,7 +513,7 @@ This template supports PackageCloud release jobs.
         **default**::
 
             - compare-type: REG_EXP
-              pattern: '(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)'
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 
 PackageCloud Release Merge
@@ -544,7 +544,7 @@ This template supports PackageCloud release jobs.
         **default**::
 
             - compare-type: reg_exp
-              pattern: '(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)'
+              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 
 Setup for LFID, Nexus, Jenkins and Gerrit
