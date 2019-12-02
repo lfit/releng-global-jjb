@@ -163,6 +163,23 @@
     },
     {
       "key": {
+        "uuid": "8f270ef4_26b7a9db",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-02T22:55:21Z",
+      "side": 1,
+      "message": "promote_url is only used inside this function. It should be a local variable.\nlocal promote_url\u003d\"https://packagecloud.io$(curl --netrc-file ~/packagecloud_api \\\n\nThis is a big enough script that we need to be concerned about name-space conflicts.\nThen the scope of \u0027promote_url\u0027 is limited to this function.",
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7aff5608_84817e90",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -203,6 +220,23 @@
         "endLine": 362,
         "endChar": 31
       },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afc0e106_6fea1123",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-02T22:55:21Z",
+      "side": 1,
+      "message": "Is RELEASE_SCHEMA a shell variable or a env variable. Looking at the way it is used it looks like it is a shell variable and should be lower-case.",
       "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
