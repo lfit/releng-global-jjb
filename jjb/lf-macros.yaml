@@ -306,6 +306,11 @@
           files:
             - file-id: lftoolsini
               target: "$HOME/.config/lftools/lftools.ini"
+      - inject:
+          properties-content: |
+            ACCOUNT_NAME={packagecloud-account}
+            SOURCE_REPO={source-repo}
+            DESTINATION_REPO={destination-repo}
       - shell: !include-raw: ../shell/release-job.sh
 
 - builder:
