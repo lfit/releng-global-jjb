@@ -1,0 +1,11 @@
+---
+prelude: >
+    A project many need more than one type of release job
+    this patch changes the tigger to match on release file name
+    for pypi and packagecloud release jobs.
+features:
+  - |
+    Release jobs now support non-ff merges.
+issues:
+  - |
+    Release jobs still trigger when a release file is deleted.
