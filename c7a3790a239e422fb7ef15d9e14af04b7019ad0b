@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bd9b2fe9_ec01c5b8",
+        "filename": "releasenotes/notes/release-job-1d9b641b8f2c5259.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2019-12-03T17:23:59Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 4,
+        "startChar": 25,
+        "endLine": 4,
+        "endChar": 31
+      },
+      "revId": "c7a3790a239e422fb7ef15d9e14af04b7019ad0b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    }
+  ]
+}
