@@ -240,6 +240,29 @@
       "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f69ab5b_721ff5b4",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-03T12:16:08Z",
+      "side": 1,
+      "message": "Should be $RELEASE_SCHEMA, not a hardwired string",
+      "range": {
+        "startLine": 383,
+        "startChar": 91,
+        "endLine": 383,
+        "endChar": 100
+      },
+      "revId": "012727446b076a49dcd66f3ebf48ee4f7b7dbcac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
