@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2266c06a_8ef750b7",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-03T03:25:48Z",
+      "side": 1,
+      "message": "Yes it is tested https://logs.opendaylight.org/sandbox/vex-yul-odl-jenkins-2/builder-jjb-verify/6/. It will never attempt to move a object to itself (note I first move $letter* dirs to .tmp).  With this code \u0027mv\u0027 will get called 10\u0027s of times not 1000\u0027s of times as the \u0027find -exec\u0027 would (if it worked). I don\u0027t really understand what the old code is doing (I rarely use \u0027find -exec\u0027), all I know is that the resulting tarball is not what is expected.",
+      "parentUuid": "38666eb0_88a0ad4f",
+      "range": {
+        "startLine": 33,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 23
+      },
+      "revId": "ca4a31bdd500b4604806c7c96f0555da47380e2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2f9c145f_6e8a002b",
         "filename": "shell/jjb-verify-job.sh",
         "patchSetId": 2
@@ -59,6 +83,54 @@
       "writtenOn": "2019-12-02T23:43:36Z",
       "side": 1,
       "message": "why are you moving this out of archive dir? this needs to get archived.",
+      "range": {
+        "startLine": 40,
+        "startChar": 9,
+        "endLine": 40,
+        "endChar": 27
+      },
+      "revId": "ca4a31bdd500b4604806c7c96f0555da47380e2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2308505a_02169e38",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-03T03:25:48Z",
+      "side": 1,
+      "message": "It generates over 4000 lines of useless output to the log (one for each file and directory in the tarball). The summary tells you how many config files are in the tarball.",
+      "parentUuid": "2f9c145f_6e8a002b",
+      "range": {
+        "startLine": 40,
+        "startChar": 5,
+        "endLine": 40,
+        "endChar": 8
+      },
+      "revId": "ca4a31bdd500b4604806c7c96f0555da47380e2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a297fe8d_cf55a9cf",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-03T03:25:48Z",
+      "side": 1,
+      "message": "At this time the CWD is the \u0027archive\u0027 dir, so the tarball is here. Note I delete the job-configs directory below. The tarball does appear in the archive.",
+      "parentUuid": "cdb835a2_fd7878a6",
       "range": {
         "startLine": 40,
         "startChar": 9,
