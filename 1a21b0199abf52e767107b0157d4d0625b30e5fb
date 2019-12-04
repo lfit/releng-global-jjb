@@ -22,6 +22,30 @@
       "revId": "1a21b0199abf52e767107b0157d4d0625b30e5fb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d3e4295c_33153ec4",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-04T15:41:52Z",
+      "side": 1,
+      "message": "I will remove this code.",
+      "parentUuid": "2a5eaf89_607af363",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 34,
+        "endChar": 1
+      },
+      "revId": "1a21b0199abf52e767107b0157d4d0625b30e5fb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
