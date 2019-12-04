@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5c8e081f_ea119531",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-04T15:41:52Z",
+      "side": 1,
+      "message": "Using pushd/popd vrs cd is matter a style. I personally don\u0027t like pushd/popd in scripts because changing dirs in script is best kept to a minimum, and never \u0027cd\u0027 in a function. When you do need to change dirs, keep it simple, cd foo \u0026 cd - or (cd foo ; cmd). You can use pushd/popd but you should never take advantage of it\u0027s full functionality in a script. I also don\u0027t like the fact that pushd/popd pollute the log. Given all that, when I review scripts that contain pushd/popd, I might comment on it, but as long as they keep it simple, I realize it is a style issue.\n\nWhen I talk to people about why they use pushd/popd it is usually because they don\u0027t know about \u0027cd -\u0027 or (cd foo ; cmd) and they just copied the pushd/popd from another script.",
+      "parentUuid": "1c2feda2_97f160c8",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 23
+      },
+      "revId": "ca4a31bdd500b4604806c7c96f0555da47380e2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "38666eb0_88a0ad4f",
         "filename": "shell/jjb-verify-job.sh",
         "patchSetId": 2
