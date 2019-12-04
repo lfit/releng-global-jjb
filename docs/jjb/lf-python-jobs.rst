@@ -392,7 +392,7 @@ same package twice.
     │   └── tox.ini
     │
     ├── releases/
-    │   └── release-helloworld.yaml
+    │   └── pypi-helloworld.yaml
     │
     ├── .gitignore
     ├── LICENSE
