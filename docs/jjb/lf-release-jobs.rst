@@ -390,7 +390,7 @@ Publishes a Python package on merge of a patch set with a release yaml
 file. Checks the format of the version string, downloads the package
 artifacts from the PyPI staging repository, uploads the package
 artifacts to the PyPI release repository, tags the git repository,
-signs the tag and pushes the tag to the git server. The release verify
+signs the tag and pushes the tag to the git server. The release merge
 template accepts neither a branch nor a stream parameter.
 
 :Template Names:
