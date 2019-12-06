@@ -167,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "d88fdb13_13563238",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-06T15:50:48Z",
+      "side": 1,
+      "message": "The project cost file is a text file and I did not want to let it grow unbounded. It is a CSV file for a reason, analysis and report generation is left to excel and/or Linux shell tools/scripts. It would easy to slice and dice the file any way you want.",
+      "parentUuid": "548eacaa_b8443944",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 1
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3c7dbf9b_06fa5695",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 13
@@ -226,6 +250,30 @@
       "side": 1,
       "message": "But you sort all individual files on date order...\nThen you sort the contents of the project_cost_file...\nDo we need to sort on both places, or just one of them (project_cost_file)",
       "parentUuid": "be0b452a_97aebf03",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 3
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d30b86e_cd407181",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-06T15:50:48Z",
+      "side": 1,
+      "message": "Not need to sort the \u0027cost-file-list\u0027, it only contains file names",
+      "parentUuid": "79d9be72_a45675e5",
       "range": {
         "startLine": 48,
         "startChar": 0,
