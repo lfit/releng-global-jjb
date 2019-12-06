@@ -22,6 +22,30 @@
       "revId": "9a198215483631d1e052458ff68f728b2eb1ab20",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e54c47b2_2c842f1c",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-12-06T19:34:22Z",
+      "side": 0,
+      "message": "There should only be one version of this job on a given Jenkins machine. ODL would have \"builder-gerrit-branch-lock\", and that job would process branch locks for all projects. How would having a stream affect how this works?",
+      "parentUuid": "48fbc5a2_7134c8a4",
+      "range": {
+        "startLine": 113,
+        "startChar": 40,
+        "endLine": 113,
+        "endChar": 48
+      },
+      "revId": "9a198215483631d1e052458ff68f728b2eb1ab20",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
