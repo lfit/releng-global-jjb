@@ -214,6 +214,30 @@
     },
     {
       "key": {
+        "uuid": "79d9be72_a45675e5",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-06T05:13:05Z",
+      "side": 1,
+      "message": "But you sort all individual files on date order...\nThen you sort the contents of the project_cost_file...\nDo we need to sort on both places, or just one of them (project_cost_file)",
+      "parentUuid": "be0b452a_97aebf03",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 3
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "218c80e1_ae334714",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 13
