@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cab4121f_1a558849",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-06T01:31:22Z",
+      "side": 1,
+      "message": "It lies....",
+      "parentUuid": "d5000665_cd5f34f7",
+      "range": {
+        "startLine": 25,
+        "startChar": 42,
+        "endLine": 27,
+        "endChar": 39
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "87692c57_43293bf8",
         "filename": "shell/job-cost.sh",
         "patchSetId": 13
@@ -36,6 +60,30 @@
       "writtenOn": "2019-12-06T00:30:21Z",
       "side": 1,
       "message": "stack_cost might be a number, or \u0027Unknown\u0027.\nPerhaps better to set stack_cost to 0 if it is \u0027total: Unknown\u0027",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 8
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8fcde355_49029c77",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-06T01:31:22Z",
+      "side": 1,
+      "message": "I changed the logic (shared between here and openstack-stack-delete.sh) when dealing with errors and I clearly messed it up. The fix for this comment  will be in openstack-stack-delete.sh.",
+      "parentUuid": "87692c57_43293bf8",
       "range": {
         "startLine": 31,
         "startChar": 0,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "809feec3_327eb060",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-06T01:31:22Z",
+      "side": 1,
+      "message": "The problem is at the end of the year....if this script runs at 01:00 New years day (2020) it will probably get some job cost records with a 2019 date. But I really like not looking at the data in each job file. The code here is soo simple.\n\nI was hoping for another opinion about how important it would be be make this work \u0027right\u0027 (all 2019 records end up in cost-2019)",
+      "parentUuid": "92773b8e_3edaee78",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 1
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3c7dbf9b_06fa5695",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 13
@@ -82,6 +154,30 @@
       "writtenOn": "2019-12-06T00:30:21Z",
       "side": 1,
       "message": "Why do we sort this one? Should not matter which order the files are in or?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 3
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be0b452a_97aebf03",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-06T01:31:22Z",
+      "side": 1,
+      "message": "If everything works right, this should be a no-op. But the creation of the job cost files is asynchronous and the timestamp is created before the archive runs, so it is theoretically possible. I should verify, but I am betting sort runs very fast because the file will already be 99.99% sorted. I estimate the number number of records to be in the 10-50K range for Opendaylight for the year, so that might be a bad bet.\n\nThis script is going to run by cron, if the sort runs quickly I might run it once per hr., otherwise we may only run it once per day.",
+      "parentUuid": "3c7dbf9b_06fa5695",
       "range": {
         "startLine": 48,
         "startChar": 0,
