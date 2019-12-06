@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "86bb2a14_1749e207",
+        "filename": "shell/gerrit-branch-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-06T10:36:38Z",
+      "side": 1,
+      "message": "The commit message does not mention this part, looks like it this was the bug that is being fixed here?",
+      "range": {
+        "startLine": 42,
+        "startChar": 4,
+        "endLine": 42,
+        "endChar": 18
+      },
+      "revId": "906a81d6f7e7c917884bdce6a3c2a4fa17f20f2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a7332bc_55093be1",
+        "filename": "shell/gerrit-branch-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-06T10:36:38Z",
+      "side": 1,
+      "message": "There is scope for extendeding this job and made more generic tasks, and could potentially to handle the following:\n\n1. For code freeze, branch lock/unlock is done generally during the releases (blocking registered users, requires only exclusive + submit permission) \n2. version bumping requires during, requires adding/removing \"submit\", \"label-verified\" and \"code-review\" (for release engineering team member and disable for registered-users)\n3. supercommitter rights, requires labels: label-verified, code-reivew +2, submit, and remove-reviewer permissions (for special release engineering team activities used for MRI version bumping)",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 10
+      },
+      "revId": "906a81d6f7e7c917884bdce6a3c2a4fa17f20f2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
