@@ -107,10 +107,13 @@ Job Templates
 Gerrit Branch Lock
 ------------------
 
-Job submits a patch to lock or unlock a project's branch.
+Job submits a patch to lock or unlock a project's branch. This should only be
+loaded once, as "ci-management-gerrit-branch-lock" (or "ci-management"
+equivalent). That job will process lock/unlock requests for all projects and
+all branches.
 
 :Template Names:
-    - {project-name}-gerrit-branch-lock-{stream}
+    - {project-name}-gerrit-branch-lock
     - gerrit-branch-lock
 
 :Comment Trigger:
@@ -126,14 +129,9 @@ Job submits a patch to lock or unlock a project's branch.
 
 :Optional parameters:
 
-    :branch: Git branch to build against. (default: master)
     :git-url: URL to clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
-    :stream: Keyword that can be used to represent a release code-name.
-        Often the same as the branch. (default: master)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
-    :submodule-disable: Disable submodule checkout operation.
-        (default: false)
     :gerrit_merge_triggers: Override Gerrit Triggers.
 
 .. _lf-global-jjb-jenkins-cfg-merge:
