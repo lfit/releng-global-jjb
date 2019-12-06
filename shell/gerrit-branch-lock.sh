@@ -39,6 +39,7 @@ install_gerrit_hook
 # Groups must be mapped in the groups file before they can be used
 if ! grep 'Registered Users'; then
     echo -e "global:Registered-Users\tRegistered Users" >> groups
+    git add groups
 fi
 
 mode=$(echo "$GERRIT_EVENT_COMMENT_TEXT" | grep branch | awk '{print $1}')
