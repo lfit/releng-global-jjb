@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add gerrit-branch-lock to gerrit ci-jobs, and make it so that it can be
+    triggered from any change, for any branch.
