@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Extend logs-deploy.sh with echo statements to show config/parameter values.

@@ -19,6 +19,7 @@ if [[ -z $"${LOGS_SERVER:-}" ]]; then
 else
     nexus_url="${NEXUSPROXY:-$NEXUS_URL}"
     nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
+    echo "INFO: Nexus URL $nexus_url path $nexus_path"
 
     if [[ -n ${ARCHIVE_ARTIFACTS:-} ]] ; then
         # Handle multiple search extensions as separate values to '-p|--pattern'
@@ -27,11 +28,14 @@ else
         for arg in $ARCHIVE_ARTIFACTS; do
             pattern_opts+=("-p" "$arg")
         done
+        echo "INFO: archiving workspace using pattern(s): $ARCHIVE_ARTIFACTS"
         lftools deploy archives "${pattern_opts[@]}" \
                 "$nexus_url" "$nexus_path" "$WORKSPACE"
     else
+        echo "INFO: archiving workspace"
         lftools deploy archives "$nexus_url" "$nexus_path" "$WORKSPACE"
     fi
+    echo "INFO: archiving logs"
     lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
     echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
