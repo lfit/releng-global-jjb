@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d5000665_cd5f34f7",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-06T00:30:21Z",
+      "side": 1,
+      "message": "Is this comment true?\nThink openstack-stack-delete.sh creates the stack-cost file, and I don\u0027t see it calling openstack-stack-cost.py",
+      "range": {
+        "startLine": 25,
+        "startChar": 42,
+        "endLine": 27,
+        "endChar": 39
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87692c57_43293bf8",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-06T00:30:21Z",
+      "side": 1,
+      "message": "stack_cost might be a number, or \u0027Unknown\u0027.\nPerhaps better to set stack_cost to 0 if it is \u0027total: Unknown\u0027",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 8
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92773b8e_3edaee78",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-06T00:30:21Z",
+      "side": 1,
+      "message": "Seems to be two questions here. \nPerhaps rephrase to use Limit, or constriction or something",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 1
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c7dbf9b_06fa5695",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-06T00:30:21Z",
+      "side": 1,
+      "message": "Why do we sort this one? Should not matter which order the files are in or?",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 3
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "218c80e1_ae334714",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-06T00:30:21Z",
+      "side": 1,
+      "message": "If we remove the individual cost.csv, shouldn\u0027t we also remove the temp files (cost-file-list)",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 1
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
