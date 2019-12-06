@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "548eacaa_b8443944",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 13
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-06T05:10:41Z",
+      "side": 1,
+      "message": "And in Australia we have tax year from July-June...\nBut I agree, I would prefere to have a file with 2019 only contain 2019 records.\nEven if there is only a small number coming from 2020...\nHence, if you run this job at Jan 1, but the record is from Dec 31, it should be under Dec 31.\nSame for Oct 1, but record is from 30 Sep...\nBut of course, then we need to check number of days per month, and also leap year...",
+      "parentUuid": "809feec3_327eb060",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 1
+      },
+      "revId": "6c0d459a86afd73ba224144c15ad82ab418f1be5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3c7dbf9b_06fa5695",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 13
