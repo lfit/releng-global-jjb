@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    New script has been added: scrape-job-cost. This script will be executed by
+    cron as nexus on the Nexus Server for each project. It will extract cost
+    data from the nexus directory for each Jenkins Builder (production &
+    sandbox). The cost data for each builder will be appended to separate cost
+    files located in ~nexus/cost on the nexus server. The files will be named
+    sandbox-YYYY.csv and production-YYYY.csv.
