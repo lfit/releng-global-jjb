@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e170a019_14e0fd8d",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-10T20:29:50Z",
+      "side": 1,
+      "message": "Do these have to be identical?",
+      "range": {
+        "startLine": 45,
+        "startChar": 4,
+        "endLine": 46,
+        "endChar": 32
+      },
+      "revId": "bcda91cdd62bd80d69b4193f086740e9576e15ad",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1440d4b3_2d8cbfcd",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-10T20:29:50Z",
+      "side": 1,
+      "message": "Would you please wrap/fill these paragraphs to make reviewing easier?",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 4
+      },
+      "revId": "bcda91cdd62bd80d69b4193f086740e9576e15ad",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4554dc8b_8b0c3256",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-10T20:29:50Z",
+      "side": 1,
+      "message": "Extra word \"the\" could be removed",
+      "range": {
+        "startLine": 52,
+        "startChar": 100,
+        "endLine": 52,
+        "endChar": 102
+      },
+      "revId": "bcda91cdd62bd80d69b4193f086740e9576e15ad",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edf93b08_6dac24ca",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-10T20:29:50Z",
+      "side": 1,
+      "message": "to or the?",
+      "range": {
+        "startLine": 54,
+        "startChar": 23,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "bcda91cdd62bd80d69b4193f086740e9576e15ad",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9aa5982a_711c96bf",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-10T20:29:50Z",
+      "side": 1,
+      "message": "Open parenthesis without close?",
+      "range": {
+        "startLine": 54,
+        "startChar": 40,
+        "endLine": 54,
+        "endChar": 43
+      },
+      "revId": "bcda91cdd62bd80d69b4193f086740e9576e15ad",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cc36dd4_3e045e27",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-10T20:29:50Z",
+      "side": 1,
+      "message": "Is this required or optional?  If it has a useful default, then I think it\u0027s optional, right?",
+      "range": {
+        "startLine": 182,
+        "startChar": 0,
+        "endLine": 182,
+        "endChar": 1
+      },
+      "revId": "bcda91cdd62bd80d69b4193f086740e9576e15ad",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
