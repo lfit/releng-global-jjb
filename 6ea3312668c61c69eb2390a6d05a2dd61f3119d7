@@ -75,6 +75,23 @@
       "revId": "6ea3312668c61c69eb2390a6d05a2dd61f3119d7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c134047e_820a9b40",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T23:57:46Z",
+      "side": 1,
+      "message": "Is it too late to rename this \"env-docker-inject.txt\"\n\nA hate seeing bad examples, people copy them and also use them as excuse for not following standard practice.",
+      "revId": "6ea3312668c61c69eb2390a6d05a2dd61f3119d7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
