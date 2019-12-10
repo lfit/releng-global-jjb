@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "b8cb2e75_e0d9f0a6",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-10T01:02:18Z",
+      "side": 1,
+      "message": "set stream to \"\" here, or it takes an some random value such as \"[OrderedDict([(\u0027sodium\u0027, OrderedDict([(\u0027branch\u0027, \u0027stable/sodium\u0027), (\u0027integration-test\u0027, \u0027sodium\u0027)]))]), OrderedDict([(\u0027neon\u0027, OrderedDict([(\u0027branch\u0027, \u0027stable/neon\u0027), (\u0027integration-test\u0027, \u0027neon\u0027)]))])]\" in the job. \n\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/autorelease-gerrit-branch-lock/build?delay\u003d0sec",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 28
+      },
+      "revId": "906a81d6f7e7c917884bdce6a3c2a4fa17f20f2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "86bb2a14_1749e207",
         "filename": "shell/gerrit-branch-lock.sh",
         "patchSetId": 2
@@ -84,6 +107,30 @@
       "side": 1,
       "message": "RELENG-1236 is for making a single gerrit-branch-lock job that works for an entire project, which this change accomplishes. If you\u0027d like to extend the scope and add tasks, I think it would be best to open new Jira issues.",
       "parentUuid": "7a7332bc_55093be1",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 10
+      },
+      "revId": "906a81d6f7e7c917884bdce6a3c2a4fa17f20f2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e9f65f2_b516d8fe",
+        "filename": "shell/gerrit-branch-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-10T01:02:18Z",
+      "side": 1,
+      "message": "Fair enough, we can open a Jira for these improvements and work through that.",
+      "parentUuid": "92e97a38_32e414f5",
       "range": {
         "startLine": 47,
         "startChar": 0,

@@ -46,6 +46,30 @@
       "revId": "9a198215483631d1e052458ff68f728b2eb1ab20",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d69ff733_2b4d3b6c",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-10T01:02:18Z",
+      "side": 0,
+      "message": "Having one version is fine, as long as the conditions are handled in the code.\n\nSo the $STREAM and $BRANCH are not the same for projects SM and MRI projects, check the links below. not sure if we are handling this in the code and this is required for the SM projects.\n\nhttps://github.com/opendaylight/releng-builder/blob/master/jjb/yangtools/yangtools.yaml#L39\nhttps://github.com/opendaylight/releng-builder/blob/master/jjb/usc/usc.yaml#L32",
+      "parentUuid": "e54c47b2_2c842f1c",
+      "range": {
+        "startLine": 113,
+        "startChar": 40,
+        "endLine": 113,
+        "endChar": 48
+      },
+      "revId": "9a198215483631d1e052458ff68f728b2eb1ab20",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
