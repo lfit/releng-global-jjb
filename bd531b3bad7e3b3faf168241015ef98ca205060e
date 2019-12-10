@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cf6f1aea_e66e1109",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T17:03:45Z",
+      "side": 1,
+      "message": "The job-configs directory was just created by \u0027jenkins-jobs test\u0027 (on line 23). If the .tmp dir exists, the job will fail. All the directories in this dir are either job names or view names. If a job were named \u0027a\u0027 then it would get moved to .tmp and \u0027a\u0027 would now be a sub-dir of the new \u0027a\u0027.\n\nThanh decided to rearrange the directories but his code was broken when the output of jenkins-jobs changed (6 months ago). Even before his code was broken, the basic concept was problematic. Personally I would vote to just remove all the view configs (no need to archive them and their names don\u0027t meet linux standards) and leave the rest of the directory structure unchanged. That is the most maintainable solution.",
+      "parentUuid": "16592cf2_4bee8aaa",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 2
+      },
+      "revId": "bd531b3bad7e3b3faf168241015ef98ca205060e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "92e4a7c5_872fe458",
         "filename": "shell/jjb-verify-job.sh",
         "patchSetId": 9
@@ -36,6 +60,30 @@
       "writtenOn": "2019-12-10T01:32:29Z",
       "side": 1,
       "message": "No issues with old existing job-configs.tar.xz?",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 3
+      },
+      "revId": "bd531b3bad7e3b3faf168241015ef98ca205060e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "139cb5d3_035c7dd0",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T17:03:45Z",
+      "side": 1,
+      "message": "It will overwrite it if it has permission, otherwise it will fail. Which would be totally unexpected and is why we set \u0027-e\u0027.",
+      "parentUuid": "92e4a7c5_872fe458",
       "range": {
         "startLine": 42,
         "startChar": 0,
