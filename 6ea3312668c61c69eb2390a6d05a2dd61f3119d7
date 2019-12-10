@@ -34,6 +34,47 @@
       "revId": "6ea3312668c61c69eb2390a6d05a2dd61f3119d7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ee77680_0324025e",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T22:46:59Z",
+      "side": 1,
+      "message": "In that case it should remain a UPPER_CASE. Variables specified in YAML \u0027properties content:\u0027 are actually env vars (they are added to environment of the process that calls the shell script, which inherits the environment from it\u0027s parent). The file should still be named \u0027env-docker-inject.txt\u0027",
+      "parentUuid": "c99dd5fb_6a7dcff0",
+      "revId": "6ea3312668c61c69eb2390a6d05a2dd61f3119d7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b307179e_9037efb0",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T22:46:59Z",
+      "side": 1,
+      "message": "All these variables will be env variables when the script is called.",
+      "range": {
+        "startLine": 13,
+        "startChar": 12,
+        "endLine": 15,
+        "endChar": 37
+      },
+      "revId": "6ea3312668c61c69eb2390a6d05a2dd61f3119d7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
