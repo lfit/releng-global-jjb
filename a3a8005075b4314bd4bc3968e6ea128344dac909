@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "6de7cc6b_086afc3b",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T04:12:07Z",
+      "side": 1,
+      "message": "That would be helpful as the sort and the \u0027grep\u0027 are making assumptions about the layout of the record.",
+      "parentUuid": "4c975338_2068561a",
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a79e8e22_e0f190fd",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "f4e4a41f_93e9a0b6",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T04:12:07Z",
+      "side": 1,
+      "message": "If you look, you will notice there are multiple \u0027echo -n\u0027 here. The end result (if there are no errors), is a single line of output to the log. The crontab will redirect stdout/stderr to a single file that is located where anyone can view it. Here is what the output looks like:\n\u00272019-12-09 20:02 Records: 5 cost-2019.csv: 5 Sorting: cost-2019.csv Complete 0 Secs\u0027\n\u00272019-12-09 07:36 Records: 7 cost-2018.csv: 2 cost-2019.csv: 5 Sorting: cost-2018.csv cost-2019.csv Complete 0 SECONDS\u0027",
+      "parentUuid": "a79e8e22_e0f190fd",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 3
+      },
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f830b100_af4209ed",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 1
@@ -53,6 +95,30 @@
       "writtenOn": "2019-12-10T01:13:34Z",
       "side": 1,
       "message": "I am scared of just deleting them like this.\nPossible to archive them to a zip file with last years time stamp?\nAnd delete any archives older than 1-2 years?",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 4
+      },
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40ff549c_1bfc62b0",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T04:12:07Z",
+      "side": 1,
+      "message": "The data is not really important and we have already copied the contents to the project cost file. Also these directories are well backed up.\n\nOr I could just rename the file say .cost.csv or cost.csv-save.",
+      "parentUuid": "f830b100_af4209ed",
       "range": {
         "startLine": 69,
         "startChar": 0,
