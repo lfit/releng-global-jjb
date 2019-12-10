@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "f0a36a58_c8429202",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-10T23:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6de7cc6b_086afc3b",
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a79e8e22_e0f190fd",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 1
@@ -84,6 +102,30 @@
     },
     {
       "key": {
+        "uuid": "86dc6f0f_ef2cd099",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-10T23:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4e4a41f_93e9a0b6",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 3
+      },
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f830b100_af4209ed",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 1
@@ -128,6 +170,30 @@
       "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9905d61c_5a1f4f6e",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-10T23:14:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40ff549c_1bfc62b0",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 4
+      },
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
