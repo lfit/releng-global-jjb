@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "48f9f276_6af0e06e",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-10T21:02:51Z",
+      "side": 1,
+      "message": "A shell variable should be lower-case. Is another script going to source \u0027env_docker_inject.txt\u0027? BTW shell variables should use \u0027_\u0027 but files/dirs should use \u0027-\u0027.",
+      "revId": "6ea3312668c61c69eb2390a6d05a2dd61f3119d7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
