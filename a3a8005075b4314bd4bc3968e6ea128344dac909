@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c975338_2068561a",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-10T01:13:34Z",
+      "side": 1,
+      "message": "Possible to add a sample cost.csv so we can see what the structure of this one is?",
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a79e8e22_e0f190fd",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-10T01:13:34Z",
+      "side": 1,
+      "message": "Perhaps put all echo statement to a specific log file?\nSince run from cron, all outputs should go to mail, easier if they are on a file or?\nIf on a file, ensure it has a proper syntax though \"\u003cDate\u003e \u003cType\u003e \u003cMessage\u003e\" or something",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 3
+      },
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f830b100_af4209ed",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-10T01:13:34Z",
+      "side": 1,
+      "message": "I am scared of just deleting them like this.\nPossible to archive them to a zip file with last years time stamp?\nAnd delete any archives older than 1-2 years?",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 4
+      },
+      "revId": "a3a8005075b4314bd4bc3968e6ea128344dac909",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
