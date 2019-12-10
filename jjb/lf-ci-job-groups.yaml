@@ -9,6 +9,7 @@
       - gerrit-jjb-deploy-job
       - gerrit-jjb-merge
       - gerrit-jjb-verify
+      - gerrit-branch-lock
 
 - job-group:
     name: "{project-name}-github-ci-jobs"
