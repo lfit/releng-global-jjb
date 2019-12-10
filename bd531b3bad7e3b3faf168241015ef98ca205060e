@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "16592cf2_4bee8aaa",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-10T01:32:29Z",
+      "side": 1,
+      "message": "Are we sure there is no .tmp file already? \nPerhaps better to use mktemp?\nNo chance of directory name {a..z} already exists?",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 2
+      },
+      "revId": "bd531b3bad7e3b3faf168241015ef98ca205060e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92e4a7c5_872fe458",
+        "filename": "shell/jjb-verify-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2019-12-10T01:32:29Z",
+      "side": 1,
+      "message": "No issues with old existing job-configs.tar.xz?",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 3
+      },
+      "revId": "bd531b3bad7e3b3faf168241015ef98ca205060e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
