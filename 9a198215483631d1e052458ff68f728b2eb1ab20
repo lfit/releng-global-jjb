@@ -70,6 +70,30 @@
       "revId": "9a198215483631d1e052458ff68f728b2eb1ab20",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce3b1d14_263830b6",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-12-10T17:32:58Z",
+      "side": 0,
+      "message": "This job only affects branches. It\u0027s not concerned with streams at all.",
+      "parentUuid": "d69ff733_2b4d3b6c",
+      "range": {
+        "startLine": 113,
+        "startChar": 40,
+        "endLine": 113,
+        "endChar": 48
+      },
+      "revId": "9a198215483631d1e052458ff68f728b2eb1ab20",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }

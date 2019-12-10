@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0f91e5e6_ff9d78f0",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-12-10T17:32:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b8cb2e75_e0d9f0a6",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 202,
+        "endChar": 28
+      },
+      "revId": "906a81d6f7e7c917884bdce6a3c2a4fa17f20f2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "86bb2a14_1749e207",
         "filename": "shell/gerrit-branch-lock.sh",
         "patchSetId": 2
@@ -140,6 +164,30 @@
       "revId": "906a81d6f7e7c917884bdce6a3c2a4fa17f20f2f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1944283a_f598ca51",
+        "filename": "shell/gerrit-branch-lock.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2019-12-10T17:32:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3e9f65f2_b516d8fe",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 10
+      },
+      "revId": "906a81d6f7e7c917884bdce6a3c2a4fa17f20f2f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
