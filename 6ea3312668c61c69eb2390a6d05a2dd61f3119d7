@@ -16,6 +16,24 @@
       "revId": "6ea3312668c61c69eb2390a6d05a2dd61f3119d7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c99dd5fb_6a7dcff0",
+        "filename": "docs/jjb/lf-docker-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-10T22:33:20Z",
+      "side": 1,
+      "message": "The file content is pulled in as a Jenkins properties file, see lf-docker-jobs.yaml:\n\n      - inject:\n          # Import the container tag set by this build step\n          properties-file: \"env_docker_inject.txt\"",
+      "parentUuid": "48f9f276_6af0e06e",
+      "revId": "6ea3312668c61c69eb2390a6d05a2dd61f3119d7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
