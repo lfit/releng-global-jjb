@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Require docker-get-container-tag-script as content, not a file path.
+    Remove the use of !include-raw-escape in the macro.

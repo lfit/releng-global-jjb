@@ -19,16 +19,42 @@ Macros
 lf-docker-get-container-tag
 ---------------------------
 
-Chooses a container tag to label the image based on the 'container-tag-method'
-parameter.  If container-tag-method: latest, the tag 'latest' is used.
-If container-tag-method: git-describe, the tag is obtained using
-the git describe command, which requires that the repository has a git tag.
-If container-tag-method: yaml-file, the tag is obtained using
-the yq command, which requires that the repository has a YAML file named
-'container-tag.yaml'. The script checks the docker-root directory by
-default or the directory specified by parameter container-tag-yaml-dir.
-An example file appears below. Optionally, teams can call their own script to
-handle the docker tagging differently.
+Chooses a tag to label the container image based on the
+'container-tag-method' parameter using the global-jjb script
+docker-get-container-tag.sh. Use one of the following methods:
+
+If container-tag-method: latest, the literal string 'latest' is used.
+
+If container-tag-method: git-describe, the tag is obtained using the
+git describe command on the repository, which requires that the repository
+has a git tag. For example, if the most recent tag is 'v0.48.1', this
+method yields a string like 'v0.48.1' or 'v0.48.1-25-gaee2dcb'.
+
+If container-tag-method: yaml-file, the tag is obtained from the YAML file
+'container-tag.yaml' in the docker-root directory using the top-level entry
+'tag'. Alternately specify the directory with the YAML file in parameter
+'container-tag-yaml-dir'. An example file appears next.
+
+Example container-tag.yaml file:
+
+.. code-block:: yaml
+
+   ---
+   tag: 1.0.0
+
+
+Optionally, teams can supply their own script to choose the docker
+tag. Pass the shell script in optional configuration parameter
+'docker-get-container-tag-script' which by default has the contents
+of file docker-get-container-tag.sh. The script must create the file
+'env_docker_inject.txt' in the workspace with a line that assigns a
+value to shell variable DOCKER_IMAGE_TAG, as shown next.
+
+Example env_docker_inject.txt file:
+
+.. code-block:: shell
+
+    DOCKER_IMAGE_TAG=1.0.0
 
 
 lf-docker-build
@@ -80,8 +106,8 @@ Executes a docker build task.
         (default: latest)
     :container-tag-yaml-dir: Directory with container-tag.yaml. (default: $DOCKER_ROOT)
     :docker-build-args: Additional arguments for the docker build command.
-    :docker-get-container-tag-script: Pointer to script to handle docker tags.
-        (default: ../shell/docker-get-container-tag.sh)
+    :docker-get-container-tag-script: Script to choose docker tag.
+        (default: contents of ../shell/docker-get-container-tag.sh)
     :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre_docker_build_script: Build script to execute before the main verify
@@ -151,8 +177,8 @@ Executes a docker build task and publishes the resulting images to a specified D
         one may want to provide more than 1 cron timer. No default. Use
         '@daily' to run daily or 'H H * * 0' to run weekly.
     :docker-build-args: Additional arguments for the docker build command.
-    :docker-get-container-tag-script: Pointer to script to handle docker tags.
-        (default: ../shell/docker-get-container-tag.sh)
+    :docker-get-container-tag-script: Script to choose docker tag.
+        (default: contents of ../shell/docker-get-container-tag.sh)
     :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre_docker_build_script: Build script to execute before the main merge
