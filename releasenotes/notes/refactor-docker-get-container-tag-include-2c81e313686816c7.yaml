@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Revise the lf-docker-get-container-tag macro to use include-raw,
+    not include-raw-escape, to silence JJB warning.
+    Improve documentation of lf-docker-get-container-tag macro.
