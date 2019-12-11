@@ -21,10 +21,9 @@ $pipup
 #Functions.
 
 set_variables_common(){
-    echo "INFO: Setting all common variables"
-    LOGS_SERVER="${LOGS_SERVER:-None}"
-    if [ "${LOGS_SERVER}" == 'None' ]; then
-        echo "ERROR: log server not found"
+    echo "INFO: Setting common variables"
+    if [[ -z ${LOGS_SERVER:-} ]]; then
+        echo "ERROR: LOGS_SERVER not defined"
         exit 1
     fi
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
@@ -40,12 +39,11 @@ set_variables_common(){
           echo "INFO: RELEASE FILE: $release_files"
         fi
     else
-        echo "INFO: This job is built with parameters, no release file needed. Continuing..."
+        echo "INFO: This job is built with parameters, no release file needed."
         release_file="None"
     fi
 
-    DISTRIBUTION_TYPE="${DISTRIBUTION_TYPE:-None}"
-    if [[ $DISTRIBUTION_TYPE == "None" ]]; then
+    if [[ -z ${DISTRIBUTION_TYPE:-} ]]; then
         DISTRIBUTION_TYPE="$(niet ".distribution_type" "$release_file")"
     fi
 
@@ -64,12 +62,18 @@ set_variables_common(){
 }
 
 set_variables_maven(){
-    VERSION="${VERSION:-None}"
-    if [[ $VERSION == "None" ]]; then
+    echo "INFO: Setting maven variables"
+    if [[ -z ${VERSION:-} ]]; then
         VERSION="$(niet ".version" "$release_file")"
     fi
-    LOG_DIR="${LOG_DIR:-None}"
-    if [[ $LOG_DIR == "None" ]]; then
+    if [[ -z ${GIT_TAG:-} ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG="$(niet ".git_tag" "$release_file")"
+        else
+            GIT_TAG="$VERSION"
+        fi
+   fi
+    if [[ -z ${LOG_DIR:-} ]]; then
         LOG_DIR="$(niet ".log_dir" "$release_file")"
     fi
     LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
@@ -78,15 +82,23 @@ set_variables_maven(){
     # Continuing displaying Release Information (Maven)
     printf "\t%-30s\n" RELEASE_MAVEN_INFO:
     printf "\t%-30s %s\n" VERSION: $VERSION
+    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
     printf "\t%-30s %s\n" LOG_DIR: $LOG_DIR
     printf "\t%-30s %s\n" LOGS_URL: $LOGS_URL
 }
 
 set_variables_container(){
-    VERSION="${VERSION:-None}"
-    if [[ $VERSION == "None" ]]; then
+    echo "INFO: Setting container variables"
+    if [[ -z ${VERSION:-} ]]; then
         VERSION="$(niet ".container_release_tag" "$release_file")"
     fi
+    if [[ -z ${GIT_TAG:-} ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG="$(niet ".git_tag" "$release_file")"
+        else
+            GIT_TAG="$VERSION"
+        fi
+   fi
     if grep -q "container_pull_registry" "$release_file" ; then
         CONTAINER_PULL_REGISTRY="$(niet ".container_pull_registry" "$release_file")"
     fi
@@ -106,29 +118,32 @@ set_variables_container(){
     printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: $CONTAINER_PULL_REGISTRY
     printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: $CONTAINER_PUSH_REGISTRY
     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: $ref
+    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
 }
 
 set_variables_pypi(){
-    # use Jenkins parameter if set; else get value from release file
     echo "INFO: Setting pypi variables"
-    LOG_DIR="${LOG_DIR:-None}"
-    if [[ $LOG_DIR == "None" ]]; then
-        LOG_DIR="$(yq -er .log_dir "$release_file")"
+    if [[ -z ${LOG_DIR:-} ]]; then
+        LOG_DIR="$(niet ".log_dir" "$release_file")"
     fi
     LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
-    PYPI_PROJECT="${PYPI_PROJECT:-None}"
-    if [[ $PYPI_PROJECT == "None" ]]; then
-        PYPI_PROJECT="$(yq -er .pypi_project "$release_file")"
+    if [[ -z ${PYPI_PROJECT:-} ]]; then
+        PYPI_PROJECT="$(niet ".pypi_project" "$release_file")"
     fi
-    PYTHON_VERSION="${PYTHON_VERSION:-None}"
-    if [[ $PYTHON_VERSION == "None" ]]; then
-        PYTHON_VERSION="$(yq -er .python_version "$release_file")"
+    if [[ -z ${PYTHON_VERSION:-} ]]; then
+        PYTHON_VERSION="$(niet ".python_version" "$release_file")"
     fi
-    VERSION="${VERSION:-None}"
-    if [[ $VERSION == "None" ]]; then
-        VERSION="$(yq -er .version "$release_file")"
+    if [[ -z ${VERSION:-} ]]; then
+        VERSION="$(niet ".version" "$release_file")"
     fi
+    if [[ -z ${GIT_TAG:-} ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG="$(niet ".git_tag" "$release_file")"
+        else
+            GIT_TAG="$VERSION"
+        fi
+   fi
 
     # Continuing displaying Release Information (pypi)
     printf "\t%-30s\n" RELEASE_PYPI_INFO:
@@ -138,10 +153,11 @@ set_variables_pypi(){
     printf "\t%-30s %s\n" PYPI_PROJECT: "$PYPI_PROJECT"
     printf "\t%-30s %s\n" PYTHON_VERSION: "$PYTHON_VERSION"
     printf "\t%-30s %s\n" VERSION: "$VERSION"
+    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
 }
 
 verify_schema(){
-    echo "INFO: Verifying $release_file schema."
+    echo "INFO: Verifying $release_file against schema $release_schema"
     lftools schema verify "$release_file" "$release_schema"
 }
 
@@ -153,15 +169,15 @@ verify_version(){
         echo "INFO: The version $VERSION is a valid semantic version"
     else
         echo "INFO: The version $VERSION is not a semantic valid version"
-        echo "INFO: Allowed versions are \"v#.#.#\" or \"#.#.#\" aka SemVer"
+        echo "INFO: Allowed versions are \"v#.#.#\" or \"#.#.#\""
         echo "INFO: See https://semver.org/ for more details on SemVer"
         exit 1
     fi
 }
 
 verify_version_match_release(){
+    echo "INFO: Comparing version $VERSION with log snippet from maven-stage"
     wget -P /tmp "${LOGS_URL}/"console.log.gz
-    echo "INFO: Comparing version $VERSION with log snippet from maven-stage:"
     if zgrep "Successfully uploaded" /tmp/console.log.gz | grep "$VERSION"; then
         echo "INFO: version $VERSION matches maven-stage artifacts"
     else
@@ -173,8 +189,8 @@ verify_version_match_release(){
 
 # check prerequisites to detect mistakes in the release YAML file
 verify_pypi_match_release(){
+    echo "INFO: Searching for project $PYPI_PROJECT and version $VERSION in job log"
     wget -q -P /tmp "${LOGS_URL}/"console.log.gz
-    echo "INFO: Searching for strings >$PYPI_PROJECT< and >$VERSION< in job log"
     # pypi-upload.sh generates success message with file list
     if zgrep -i "uploaded" /tmp/console.log.gz | grep "$PYPI_PROJECT" | grep "$VERSION" ; then
         echo "INFO: found expected strings in job log"
@@ -185,19 +201,25 @@ verify_pypi_match_release(){
 }
 
 # sigul is only available on Centos
-# TODO: write tag_github function
-tag(){
+# TODO: write tag-github-repo function
+tag-gerrit-repo(){
+    echo "INFO: tag gerrit with $GIT_TAG"
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
-    if git tag -v "$VERSION"; then
-        echo "OK: Repo already tagged $VERSION Continuting to release"
+    if type=$(git cat-file -t "$GIT_TAG"); then
+        if [[ $type == "tag" ]]; then
+            echo "INFO: Repo already has signed tag $GIT_TAG, nothing to do"
+        else
+            echo "ERROR: Repo has lightweight tag $GIT_TAG, blocks push of signed tag"
+            exit 1
+        fi
     else
-        echo "INFO: Repo has not yet been tagged $VERSION"
-        git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
-        sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
+        echo "INFO: Repo has not yet been tagged $GIT_TAG"
+        git tag -am "${PROJECT//\//-} $GIT_TAG" "$GIT_TAG"
+        sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"
         echo "INFO: Showing latest signature for $PROJECT:"
-        echo "INFO: git tag -v $VERSION"
-        git tag -v "$VERSION"
+        echo "INFO: git tag -v $GIT_TAG"
+        git tag -v "$GIT_TAG"
 
         ########## Merge Part ##############
         if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
@@ -208,12 +230,13 @@ tag(){
             git config user.email "$RELEASE_EMAIL"
             echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
             chmod 600 ~/.ssh/config
-            git push origin "$VERSION"
+            git push origin "$GIT_TAG"
         fi
     fi
 }
 
 nexus_release(){
+    echo "INFO: Processing nexus release"
     for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
         # extract the domain name from URL
         NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
@@ -240,7 +263,7 @@ nexus_release(){
 container_release_file(){
     echo "INFO: Processing container release"
     local lfn_umbrella
-    lfn_umbrella="$(echo "$GERRIT_HOST" | awk -F"." '{print $2}')"
+    lfn_umbrella="$(echo "$GERRIT_URL" | awk -F"." '{print $2}')"
 
     for namequoted in $(cat $release_file | yq '.containers[].name'); do
         versionquoted=$(cat $release_file | yq ".containers[] |select(.name==$namequoted) |.version")
@@ -256,9 +279,9 @@ container_release_file(){
         echo "INFO: Merge will release $name $version as $VERSION"
         # Attempt to pull from releases registry to see if the image has been released.
         if docker pull "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"; then
-            echo "OK: $VERSION is already released for image $name, Continuing..."
+            echo "INFO: $VERSION is already released for image $name, Continuing..."
         else
-            echo "OK: $VERSION not found in releases, release will be prepared. Continuing..."
+            echo "INFO: $VERSION not found in releases, release will be prepared. Continuing..."
             docker pull "$CONTAINER_PULL_REGISTRY"/"$lfn_umbrella"/"$name":"$version"
             container_image_id="$(docker images | grep $name | grep $version | awk '{print $3}')"
             echo "INFO: Merge will run the following commands:"
@@ -274,10 +297,11 @@ container_release_file(){
 
     echo "INFO: Merge will tag ref: $ref"
     git checkout "$ref"
-    tag
+    tag-gerrit-repo
 }
 
 maven_release_file(){
+    echo "INFO: Processing maven release"
     echo "INFO: wget -P $PATCH_DIR ${LOGS_URL}/staging-repo.txt.gz"
     wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz
     pushd "$PATCH_DIR"
@@ -290,12 +314,13 @@ maven_release_file(){
     git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
     git merge --ff-only FETCH_HEAD
     nexus_release
-    tag
+    tag-gerrit-repo
 }
 
 # calls pip to download binary and source distributions from the specified index,
 # which requires a recent-in-2019 version.  Uploads the files it received.
 pypi_release_file(){
+    echo "INFO: Processing pypi release"
     tgtdir=dist
     mkdir $tgtdir
     pip_pfx="pip download -d $tgtdir --no-deps --python-version $PYTHON_VERSION -i $PYPI_INDEX"
@@ -333,7 +358,7 @@ pypi_release_file(){
         echo "INFO: uploading $filecount distributions to repo $REPOSITORY"
         $cmd
     fi
-    tag
+    tag-gerrit-repo
 }
 
 packagecloud_verify(){

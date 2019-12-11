@@ -1,0 +1,16 @@
+---
+features:
+  - |
+    Extend tag feature of release jobs:
+    Extend release-yaml schema files to allow git_tag entry.
+    Extend lf-build-with-parameters-maven-release macro with GIT_TAG.
+    Extend release-job.sh:
+      * detect and use optional git_tag string.
+      * detect and reject an existing lightweight tag that blocks
+        push of a gpg-signed tag.
+      * change GERRIT_HOST to GERRIT_URL in method for obtaining LF
+        umbrella project to allow testing in the sandbox.
+      * rename function from tag to tag-gerrit-repo.
+      * simplify tests for presence of Jenkins parameter values
+      * show more details about steps as INFO statements
+    Include schema file contents into documentation; remove the copies.
