@@ -309,6 +309,10 @@
           default: ""
           description: "The partial path of logs from the PyPI merge job."
       - string:
+          name: GIT_TAG
+          default: ""
+          description: "Tag to push to git repo; optional, defaults to VERSION."
+      - string:
           name: PYPI_PROJECT
           default: ""
           description: "The PyPI project name."

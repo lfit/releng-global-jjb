@@ -18,6 +18,8 @@ required:
   - "version"
 
 properties:
+  git_tag:
+    type: "string"
   log_dir:
     type: "string"
   pypi_project:
