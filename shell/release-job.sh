@@ -68,6 +68,14 @@ set_variables_maven(){
     if [[ $VERSION == "None" ]]; then
         VERSION="$(niet ".version" "$release_file")"
     fi
+    GIT_TAG="${GIT_TAG:-None}"
+    if [[ $GIT_TAG == "None" ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG="$(niet ".git_tag" "$release_file")"
+        else
+            GIT_TAG="$VERSION"
+        fi
+   fi
     LOG_DIR="${LOG_DIR:-None}"
     if [[ $LOG_DIR == "None" ]]; then
         LOG_DIR="$(niet ".log_dir" "$release_file")"
@@ -78,6 +86,7 @@ set_variables_maven(){
     # Continuing displaying Release Information (Maven)
     printf "\t%-30s\n" RELEASE_MAVEN_INFO:
     printf "\t%-30s %s\n" VERSION: $VERSION
+    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
     printf "\t%-30s %s\n" LOG_DIR: $LOG_DIR
     printf "\t%-30s %s\n" LOGS_URL: $LOGS_URL
 }
@@ -87,6 +96,14 @@ set_variables_container(){
     if [[ $VERSION == "None" ]]; then
         VERSION="$(niet ".container_release_tag" "$release_file")"
     fi
+    GIT_TAG="${GIT_TAG:-None}"
+    if [[ $GIT_TAG == "None" ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG="$(niet ".git_tag" "$release_file")"
+        else
+            GIT_TAG="$VERSION"
+        fi
+   fi
     if grep -q "container_pull_registry" "$release_file" ; then
         CONTAINER_PULL_REGISTRY="$(niet ".container_pull_registry" "$release_file")"
     fi
@@ -106,6 +123,7 @@ set_variables_container(){
     printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: $CONTAINER_PULL_REGISTRY
     printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: $CONTAINER_PUSH_REGISTRY
     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: $ref
+    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
 }
 
 set_variables_pypi(){
@@ -129,6 +147,14 @@ set_variables_pypi(){
     if [[ $VERSION == "None" ]]; then
         VERSION="$(yq -er .version "$release_file")"
     fi
+    GIT_TAG="${GIT_TAG:-None}"
+    if [[ $GIT_TAG == "None" ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG="$(niet ".git_tag" "$release_file")"
+        else
+            GIT_TAG="$VERSION"
+        fi
+   fi
 
     # Continuing displaying Release Information (pypi)
     printf "\t%-30s\n" RELEASE_PYPI_INFO:
@@ -138,6 +164,7 @@ set_variables_pypi(){
     printf "\t%-30s %s\n" PYPI_PROJECT: "$PYPI_PROJECT"
     printf "\t%-30s %s\n" PYTHON_VERSION: "$PYTHON_VERSION"
     printf "\t%-30s %s\n" VERSION: "$VERSION"
+    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
 }
 
 verify_schema(){
@@ -187,17 +214,23 @@ verify_pypi_match_release(){
 # sigul is only available on Centos
 # TODO: write tag_github function
 tag(){
+    echo "INFO: tag with $GIT_TAG"
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
-    if git tag -v "$VERSION"; then
-        echo "OK: Repo already tagged $VERSION Continuting to release"
+    if type=$(git cat-file -t "$GIT_TAG"); then
+        if [[ $type == "tag" ]]; then
+            echo "INFO: Repo already has signed tag $GIT_TAG, nothing to do"
+        else
+            echo "ERROR: Repo has lightweight tag $GIT_TAG, blocks push of signed tag"
+            exit 1
+        fi
     else
-        echo "INFO: Repo has not yet been tagged $VERSION"
-        git tag -am "${PROJECT//\//-} $VERSION" "$VERSION"
-        sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$VERSION" < "$SIGUL_PASSWORD"
+        echo "INFO: Repo has not yet been tagged $GIT_TAG"
+        git tag -am "${PROJECT//\//-} $GIT_TAG" "$GIT_TAG"
+        sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"
         echo "INFO: Showing latest signature for $PROJECT:"
-        echo "INFO: git tag -v $VERSION"
-        git tag -v "$VERSION"
+        echo "INFO: git tag -v $GIT_TAG"
+        git tag -v "$GIT_TAG"
 
         ########## Merge Part ##############
         if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
@@ -208,7 +241,7 @@ tag(){
             git config user.email "$RELEASE_EMAIL"
             echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
             chmod 600 ~/.ssh/config
-            git push origin "$VERSION"
+            git push origin "$GIT_TAG"
         fi
     fi
 }
@@ -240,7 +273,7 @@ nexus_release(){
 container_release_file(){
     echo "INFO: Processing container release"
     local lfn_umbrella
-    lfn_umbrella="$(echo "$GERRIT_HOST" | awk -F"." '{print $2}')"
+    lfn_umbrella="$(echo "$GERRIT_URL" | awk -F"." '{print $2}')"
 
     for namequoted in $(cat $release_file | yq '.containers[].name'); do
         versionquoted=$(cat $release_file | yq ".containers[] |select(.name==$namequoted) |.version")
@@ -256,9 +289,9 @@ container_release_file(){
         echo "INFO: Merge will release $name $version as $VERSION"
         # Attempt to pull from releases registry to see if the image has been released.
         if docker pull "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"; then
-            echo "OK: $VERSION is already released for image $name, Continuing..."
+            echo "INFO: $VERSION is already released for image $name, Continuing..."
         else
-            echo "OK: $VERSION not found in releases, release will be prepared. Continuing..."
+            echo "INFO: $VERSION not found in releases, release will be prepared. Continuing..."
             docker pull "$CONTAINER_PULL_REGISTRY"/"$lfn_umbrella"/"$name":"$version"
             container_image_id="$(docker images | grep $name | grep $version | awk '{print $3}')"
             echo "INFO: Merge will run the following commands:"

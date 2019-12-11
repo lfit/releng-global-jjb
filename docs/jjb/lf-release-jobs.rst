@@ -3,29 +3,31 @@
 Self-Serve Release Jobs
 =======================
 
-Self-serve release jobs allow project committers to direct Jenkins to
-promote a jar file, container image or Python package from a staging
-area to a release area.
+Self-serve release jobs allow project committers to promote a jar
+file, container image, Python package or PackageCloud artifact from a
+staging area to a release area. The process is controlled by a release
+yaml file, and the promotion is done upon merge of that file.
 
 To use the self-release process, create a releases/ or .releases/
 directory at the root of the project repository, add one release yaml
 file to it, and submit a change set with that release yaml file.  The
 required contents of the release yaml file are different for each type
-of release, see the schemas and examples shown below.  The version in
-the release yaml file must be a valid Semantic Versioning (SemVer)
-string, matching either the pattern "v#.#.#" or "#.#.#" where "#" is
-one or more digits.  Upon merge of the change, Jenkins will sign the
-reference extrapolated by log_dir and promote the artifact.
+of release, see the schemas and examples shown below.  The version
+string in the release yaml file must be a valid Semantic Versioning
+(SemVer) string, matching either the pattern "v#.#.#" or "#.#.#" where
+"#" is one or more digits.  Upon merge of the change, a Jenkins job
+promotes the artifact and pushes a gpg-signed tag to the repository.
 
 .. note::
 
    The release file regex is: (releases\/.*\.yaml|\.releases\/.*\.yaml).
    In words, the directory name can be ".releases" or "releases"; the file
-   name can be anything with suffix ".yaml".
+   name can be anything with suffix ".yaml". However, some release
+   jobs require a specific prefix on the file, as described below.
 
 The build node for all release jobs must be CentOS, which supports the
-sigul client for accessing a signing server. The build node for
-container release jobs must have Docker installed.
+sigul client for accessing a signing server to sign a tag. The build
+node for container release jobs must have Docker installed.
 
 A Jenkins admin user can also trigger a release job via the "Build
 with parameters" action, removing the need to create and merge a
@@ -74,29 +76,15 @@ The following parameters must appear in a maven release yaml file.
     :project: The name of the project.
     :version: The semantic version string used for the artifact.
 
+:Optional Parameters:
+
+    :git_tag: The tag string to sign and push to the Git repository.
+       (default: the semantic version string)
+
 The JSON schema for a maven release file appears below.
 
-.. code-block:: none
-
-    ---
-    $schema: "http://json-schema.org/schema#"
-    $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-schema.yaml"
-
-    required:
-      - "distribution_type"
-      - "log_dir"
-      - "project"
-      - "version"
-
-    properties:
-      distribution_type:
-        type: "string"
-      log_dir:
-        type: "string"
-      project:
-        type: "string"
-      version:
-        type: "string"
+.. literalinclude:: ../../schema/release-schema.yaml
+   :language: yaml
 
 
 Container Release Files
@@ -138,42 +126,15 @@ The following parameters must appear in a container release yaml file.
         Docker images in the container-pull registry to promote to the
         container-push registry.
 
+:Optional Parameters:
+
+    :git_tag: The tag string to sign and push to the Git repository.
+       (default: the semantic version string)
+
 The JSON schema for a container release file appears below.
 
-.. code-block:: none
-
-    ---
-    $schema: "http://json-schema.org/schema#"
-    $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-container-schema.yaml"
-
-    required:
-      - "containers"
-      - "distribution_type"
-      - "project"
-      - "container_release_tag"
-      - "ref"
-
-    properties:
-      containers:
-        type: "array"
-        properties:
-          name:
-            type: "string"
-          version:
-            type: "string"
-        additionalProperties: false
-      distribution_type:
-        type: "string"
-      project:
-        type: "string"
-      container_release_tag:
-        type: "string"
-      container_pull_registry"
-        type: "string"
-      container_push_registry"
-        type: "string"
-      ref:
-        type: "string"
+.. literalinclude:: ../../schema/release-container-schema.yaml
+   :language: yaml
 
 
 PyPI Release Files
@@ -212,29 +173,15 @@ packages.
     :version: The semantic version string used for the package in the
         setup.py file.
 
+:Optional Parameters:
+
+    :git_tag: The tag string to sign and push to the Git repository.
+       (default: the semantic version string)
+
 The JSON schema for a PyPI release file appears below.
 
-.. code-block:: none
-
-    ---
-    $schema: "http://json-schema.org/schema#"
-    $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-pypi-schema.yaml"
-
-    required:
-      - "log_dir"
-      - "pypi_project"
-      - "python_version"
-      - "version"
-
-    properties:
-      log_dir:
-        type: "string"
-      pypi_project:
-        type: "string"
-      python_version:
-        type: "string"
-      version:
-        type: "string"
+.. literalinclude:: ../../schema/release-pypi-schema.yaml
+   :language: yaml
 
 
 PackageCloud Release Files
@@ -265,23 +212,12 @@ packages.
         "curl https://packagecloud.io/api/v1/repos/test_user/test_repo/search?q=
         | yq -r .[].filename"
 
+
 The JSON schema for a PackageCloud release file appears below.
 
-.. code-block:: none
+.. literalinclude:: ../../schema/release-packagecloud-schema.yaml
+   :language: yaml
 
-    ---
-    $schema: "http://json-schema.org/schema#"
-    $id: "https://github.com/lfit/releng-global-jjb/blob/master/packagecloud-release-schema"
-
-    required:
-      - "package_name"
-
-    properties:
-      package_name:
-        type: "array"
-        properties:
-          name:
-            type: "string"
 
 Jenkins Jobs
 ------------
@@ -509,7 +445,10 @@ This template supports PackageCloud release jobs.
 PackageCloud Release Merge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This template supports PackageCloud release jobs.
+This template supports PackageCloud release jobs. However, unlike the
+other release jobs, this job cannot be triggered solely from Jenkins
+(a release yaml file is required), and further this job does not push
+a signed tag to the git repository.
 
 :template name: {project-name}-packagecloud-release-merge
 

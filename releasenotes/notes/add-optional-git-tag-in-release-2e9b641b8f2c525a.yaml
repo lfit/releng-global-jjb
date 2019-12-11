@@ -1,0 +1,11 @@
+---
+features:
+  - |
+    Accept optional git tag string to use in release-job tag step.
+    Extend release-job.sh to check and use optional git_tag entry.
+    Extend release-yaml schema files to allow git_tag entry.
+    Detect and reject an existing lightweight tag that blocks
+    push of a signed tag, RELENG-2568.
+    Change GERRIT_HOST to GERRIT_URL in method for obtaining LF
+    umbrella project to allow testing in the sandbox.
+    Include schema file contents into documentation, remove the copies.

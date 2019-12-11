@@ -27,15 +27,17 @@ properties:
       version:
         type: "string"
     additionalProperties: false
-  distribution_type:
-    type: "string"
-  project:
-    type: "string"
   container_release_tag:
     type: "string"
   container_pull_registry:
     type: "string"
   container_push_registry:
+    type: "string"
+  distribution_type:
+    type: "string"
+  git_tag:
+    type: "string"
+  project:
     type: "string"
   ref:
     type: "string"
