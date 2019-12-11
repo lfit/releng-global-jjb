@@ -536,11 +536,15 @@
       - string:
           name: VERSION
           default: ""
-          description: "This is the tag, Example: 1.0.0"
+          description: "Version to release, for example: 1.0.0"
+      - string:
+          name: GIT_TAG
+          default: ""
+          description: "Tag to push to git repo; optional, defaults to VERSION"
       - string:
           name: LOG_DIR
           default: ""
-          description: "Log dir, example: project-maven-stage-master/17/"
+          description: "Log dir, for example: project-maven-stage-master/17/"
       - choice:
           name: DISTRIBUTION_TYPE
           choices:

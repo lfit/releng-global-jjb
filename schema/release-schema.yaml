@@ -20,6 +20,8 @@ required:
 properties:
   distribution_type:
     type: "string"
+  git_tag:
+    type: "string"
   log_dir:
     type: "string"
   project:
