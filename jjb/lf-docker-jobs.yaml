@@ -13,7 +13,7 @@
             CONTAINER_TAG_METHOD={container-tag-method}
             CONTAINER_TAG_YAML_DIR={container-tag-yaml-dir}
             DOCKER_ROOT={docker-root}
-      - shell: !include-raw-escape: "{docker-get-container-tag-script}"
+      - shell: !include-raw: "{docker-get-container-tag-script}"
       - inject:
           # Import the container tag set by this build step
           properties-file: "env_docker_inject.txt"
