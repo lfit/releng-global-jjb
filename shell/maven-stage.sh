@@ -22,6 +22,16 @@ TMP_FILE="$(mktemp)"
 lftools deploy nexus-stage "$NEXUS_URL" "$STAGING_PROFILE_ID" "$WORKSPACE/m2repo" | tee "$TMP_FILE"
 staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$TMP_FILE")
 
+# Allow time between uploads and verify
+sleep 5
+
+echo "INFO: Verify Nexus staging repository ("$staging_repo")"
+lftools nexus release -v --server "$NEXUS_URL" "$staging_repo"
+
+if [[ "$?" -eq 0 ]]; then
+    echo "INFO: $staging_repo is closed and verified successful"
+fi
+
 # Store repo info to a file in archives
 mkdir -p "$WORKSPACE/archives"
 echo "$staging_repo ${NEXUS_URL}/content/repositories/$staging_repo" | tee -a "$WORKSPACE/archives/staging-repo.txt"

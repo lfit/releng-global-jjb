@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add step to verify Nexus staging repository is closed correctly or
+    fail the staging job, when the repository is still open. This allows
+    projects to address the validation failures earlier during maven-stage
+    phase, instead of waiting to catch them while running the self-release job.
