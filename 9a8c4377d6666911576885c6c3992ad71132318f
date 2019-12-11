@@ -42,6 +42,23 @@
     },
     {
       "key": {
+        "uuid": "b8411cd3_6c78e4a3",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-11T23:44:26Z",
+      "side": 1,
+      "message": "You have nested \u0027\"\u0027 here. I think you should remove the outer ones:\numbrella\u003d$(echo \"$GERRIT_URL\" | awk -F\".\" \u0027{print $2}\u0027)\nshellcheck will accept this.",
+      "revId": "9a8c4377d6666911576885c6c3992ad71132318f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a42917db_f387aa30",
         "filename": "shell/rtdv3.sh",
         "patchSetId": 6

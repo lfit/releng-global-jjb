@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f8e2e2f_9ad93006",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-11T23:44:26Z",
+      "side": 1,
+      "message": "With the nested \"\u0027s I am not sure what bash is doing, how about\numbrella\u003d$(echo \"$GERRIT_URL\" | awk -F\u0027.\u0027 \u0027{print $2}\u0027)\nThe argument for \u0027-F\u0027 is char, not a string.",
+      "revId": "738a44e79c3c952e7e4ec5e0a870f32040ab801d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06b01a20_81376ff1",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-11T23:44:26Z",
+      "side": 1,
+      "message": "I really prefer \u0027while $project_exists; do\u0027\n\nthis expression is true when project_exists is true, false when project_exists is false and anything else is an error.\n\nWith \u0027while $projects_exists \u003d\u003d \"false\"\u0027\nthis expression if true project_exists is false. It it is true, False, FALSE, \"\" or poo it is false... it is certainly more fault tolerant.\n\nThis is existing code, not asking for you to change it now.",
+      "revId": "738a44e79c3c952e7e4ec5e0a870f32040ab801d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "adf64bc9_fc69b423",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-11T23:44:26Z",
+      "side": 1,
+      "message": "default_version\u003d${DEFAULT_VERSION:-latest}\n\nthen you can delete line 14.",
+      "revId": "738a44e79c3c952e7e4ec5e0a870f32040ab801d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
