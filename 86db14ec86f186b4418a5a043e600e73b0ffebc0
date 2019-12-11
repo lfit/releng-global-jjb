@@ -73,6 +73,23 @@
     },
     {
       "key": {
+        "uuid": "8ade18b1_ea825715",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-11T22:36:28Z",
+      "side": 1,
+      "message": "The function named \u0027tag\u0027 is just too short, I wanted to find were tag() was being referenced and I got 125 hits in \u0027tag\u0027 assign-tag, make-tag, apply-tag whatever is OK. In people often use \u0027-\u0027 in function names (like file names), not suggesting change the names, just a note. There is actually some (small) justification for that, but I will not bore you with the details (unless you ask).\n\nGIT_TAG in an env var set by Jenkins/JJB. You are assigning this is many places. How about creating a shell variable git_tag that get assigned and not change the value of GIT_TAG. What you are doing is probably OK in small script with no functions, but it does not scale well. The git_tag variable is not used as a env var, it is only passed as an argument to echo \u0026 git.\n\nI know you are inheriting this script, but the code around GIT_TAG is mostly new.",
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "39815a2f_ef6b08f5",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -84,6 +101,69 @@
       "writtenOn": "2019-12-11T21:05:47Z",
       "side": 1,
       "message": "i did not review this script but trust the author",
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9401b71e_dd56039f",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-11T22:36:28Z",
+      "side": 1,
+      "message": "if [[ -z ${GIT_TAG:-} ]]; then\n\nA simplified way to do same thing",
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da6fda2e_3f7fa5eb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-11T22:36:28Z",
+      "side": 1,
+      "message": "if [[ -z ${GIT_TAG:-} ]]; then",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 37
+      },
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3460808d_eaaf9f69",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-11T22:36:28Z",
+      "side": 1,
+      "message": "if [[ -z ${GIT_TAG:-} ]]; then",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 37
+      },
       "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
