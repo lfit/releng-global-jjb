@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f319fa6_00510247",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-11T21:18:33Z",
+      "side": 1,
+      "message": "I don\u0027t know why the LF wrote the pattern originally to allow a leading \"v\" character, but that\u0027s out of scope for this changeset.",
+      "parentUuid": "d656a3ea_4dd84fed",
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "39815a2f_ef6b08f5",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
