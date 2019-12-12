@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "f6a3d35d_5ad0d190",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-12T01:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9401b71e_dd56039f",
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6fda2e_3f7fa5eb",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -165,6 +183,30 @@
     },
     {
       "key": {
+        "uuid": "469ec2c9_2dec2d78",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-12T01:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da6fda2e_3f7fa5eb",
+      "range": {
+        "startLine": 99,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 37
+      },
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3460808d_eaaf9f69",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -185,6 +227,30 @@
       "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b538bc94_8af5b2e7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-12T01:40:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3460808d_eaaf9f69",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 151,
+        "endChar": 37
+      },
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
