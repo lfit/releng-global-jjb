@@ -218,8 +218,8 @@ function lf-git-validate-jira-urls()
         base_url=$(echo "$JIRA_URL" | awk -F'/' '{print $3}')
         jira_link=$(git rev-list --format=%B --max-count=1 HEAD | grep -io "http[s]*://$base_url/" || true)
         if [[ -n $jira_link ]]; then
-            lf-echo-error 'Remove JIRA URLs from commit message'
-            lf-echo-error 'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>, instead of URLs'
+            lf-echo-stderr 'ERROR: JIRA URL found in commit message'
+            lf-echo-stderr 'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>, instead of URLs'
             return 1
         fi
     fi
@@ -250,12 +250,12 @@ function lf-git-validate-jira-urls()
 function lf-jjb-check-ascii()
 {
     if [[ ! -d "jjb" ]]; then
-        lf-echo-error "${FUNCNAME[0]}(): ERROR: missing jjb directory"
-        lf-echo-error "This function can only be run from top of global-jjb directory"
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: missing jjb directory"
+        lf-echo-stderr "This function can only be run from top of global-jjb directory"
         return 1
     fi
     if LC_ALL=C grep -I -r '[^[:print:][:space:]]' jjb/; then
-        lf-echo-error "${FUNCNAME[0]}(): ERROR: Found YAML files containing non-printable characters."
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Found YAML files containing non-printable characters."
         return 1
     fi
     echo "${FUNCNAME[0]}(): INFO: All JJB YAML files contain only printable ASCII characters"
