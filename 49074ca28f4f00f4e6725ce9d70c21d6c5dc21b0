@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38d54e55_359f3c4d",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-12T21:07:12Z",
+      "side": 1,
+      "message": "this sets DEFAULT_VERSION to the empty string if the environment variable is not defined at this point.  I think you should simply use $DEFAULT_VERSION and if it\u0027s not set, that will stop the script right there.",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 2
+      },
+      "revId": "49074ca28f4f00f4e6725ce9d70c21d6c5dc21b0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
