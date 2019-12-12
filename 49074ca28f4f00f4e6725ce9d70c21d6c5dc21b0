@@ -22,6 +22,30 @@
       "revId": "49074ca28f4f00f4e6725ce9d70c21d6c5dc21b0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e421831_79f648dd",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 19
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-12-12T21:08:55Z",
+      "side": 1,
+      "message": "Tried that first, fails tox -e coala",
+      "parentUuid": "38d54e55_359f3c4d",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 2
+      },
+      "revId": "49074ca28f4f00f4e6725ce9d70c21d6c5dc21b0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
