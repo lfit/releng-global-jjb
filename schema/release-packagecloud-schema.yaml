@@ -13,10 +13,24 @@ $id: "https://github.com/lfit/releng-global-jjb/blob/master/release-packagecloud
 
 required:
   - "package_name"
+  - "packages"
+  - "ref"
+  - "log_dir"
+  - "version"
 
 properties:
   package_name:
+    type: "string"
+  packages:
     type: "array"
     properties:
       name:
         type: "string"
+  git_tag:
+    type: "string"
+  ref:
+    type: "string"
+  log_dir:
+    type: "string"
+  version:
+    type: "string"

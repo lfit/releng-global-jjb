@@ -158,6 +158,38 @@ set_variables_pypi(){
     printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
 }
 
+set_variables_packagecloud(){
+     echo "INFO: Setting packagecloud variables"
+     if [[ -z ${VERSION:-} ]]; then
+         VERSION="$(niet ".version" "$release_file")"
+     fi
+     if [[ -z ${GIT_TAG:-} ]]; then
+         if grep -q "git_tag" "$release_file" ; then
+             GIT_TAG="$(niet ".git_tag" "$release_file")"
+         else
+             GIT_TAG="$VERSION"
+         fi
+     fi
+     if [[ -z ${LOG_DIR:-} ]]; then
+         LOG_DIR="$(niet ".log_dir" "$release_file")"
+     fi
+     if [[ -z ${REF:-} ]]; then
+         REF="$(niet ".ref" "$release_file")"
+     fi
+     if [[ -z ${PACKAGE_NAME:-} ]]; then
+         PACKAGE_NAME="$(niet ".package_name" "$release_file")"
+     fi
+     logs_url="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+     logs_url=${logs_url%/}  # strip any trailing '/'
+
+     printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
+     printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+     printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
+     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
+     printf "\t%-30s %s\n" VERSION: "$VERSION"
+     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+}
+
 verify_schema(){
     echo "INFO: Verifying $release_file against schema $release_schema"
     lftools schema verify "$release_file" "$release_schema"
@@ -197,6 +229,18 @@ verify_pypi_match_release(){
     echo "INFO: Searching for uploaded step, project $PYPI_PROJECT and version $VERSION in job log"
     # pypi-upload.sh generates success message with file list
     if zgrep -i "uploaded" /tmp/console.log.gz | grep "$PYPI_PROJECT" | grep "$VERSION" ; then
+        echo "INFO: found expected strings in job log"
+    else
+        echo "ERROR: failed to find expected strings in job log"
+        exit 1
+    fi
+}
+
+verify_packagecloud_match_release(){
+    echo "INFO: Fetching console log from $logs_url"
+    wget -q -P /tmp "${logs_url}/"console.log.gz
+    echo "INFO: Searching for uploaded step and version $VERSION in job log"
+    if zgrep "Successfully uploaded" /tmp/console.log.gz | grep "$PACKAGE_NAME" | grep "$VERSION"; then
         echo "INFO: found expected strings in job log"
     else
         echo "ERROR: failed to find expected strings in job log"
@@ -391,6 +435,8 @@ packagecloud_promote(){
         destination="$2/release" "$promote_url" \
         | echo "INFO: Promoted package location: \
         https://packagecloud.io$(yq -r .package_html_url)"
+    git checkout "$REF"
+    tag-gerrit-repo
 }
 
 ##############################  End Function Declarations  ################################
@@ -444,17 +490,20 @@ case $DISTRIBUTION_TYPE in
         ;;
 
     packagecloud)
-        release_schema="release-packagecloud-schema.yaml"
-        package_name=$(yq -r '.package_name' $release_file)
-        packagecloud_account=$(cat "$ACCOUNT_NAME_FILE")
-        echo "INFO: Fetching schema $release_schema"
-        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
-        verify_schema
-        for name in $(yq -r '.package_name[].name' $release_file); do
-            package_name=$name
-            packagecloud_verify "$package_name" "$packagecloud_account"
+        if $USE_RELEASE_FILE ; then
+            release_schema="release-packagecloud-schema.yaml"
+            packagecloud_account=$(cat "$ACCOUNT_NAME_FILE")
+            echo "INFO: Fetching schema $release_schema"
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            verify_schema
+        fi
+        set_variables_packagecloud
+        verify_packagecloud_match_release
+        for name in $(yq -r '.packages[].name' $release_file); do
+            package=$name
+            packagecloud_verify "$package" "$packagecloud_account"
             if [[ "$JOB_NAME" =~ "merge" ]] && ! $DRY_RUN; then
-                packagecloud_promote "$package_name" "$packagecloud_account"
+                packagecloud_promote "$package" "$packagecloud_account"
             fi
         done
         ;;
