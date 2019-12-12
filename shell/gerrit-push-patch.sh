@@ -59,9 +59,9 @@ CHANGE_ID=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
                awk '{ print $2 }')
 
 if [ -z "$CHANGE_ID" ]; then
-   git commit -sm "$GERRIT_COMMIT_MESSAGE"
+   git commit -sm "$GERRIT_COMMIT_MESSAGE\n\n$JOB"
 else
-   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Change-Id: $CHANGE_ID"
+   git commit -sm "$GERRIT_COMMIT_MESSAGE\n\n$JOB" -m "Change-Id: $CHANGE_ID"
 fi
 
 git status

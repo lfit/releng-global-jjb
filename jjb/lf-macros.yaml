@@ -162,6 +162,7 @@
             GERRIT_TOPIC={gerrit-topic}
             GERRIT_USER={gerrit-user}
             REVIEWERS_EMAIL={reviewers-email}
+            JOB=$JOB_NAME/$BUILD_NUMBER
       - shell: !include-raw-escape: ../shell/gerrit-push-patch.sh
 
 - builder:
