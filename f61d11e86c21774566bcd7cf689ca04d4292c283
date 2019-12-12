@@ -22,6 +22,30 @@
       "revId": "f61d11e86c21774566bcd7cf689ca04d4292c283",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3d00933_6c499577",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-12T13:25:37Z",
+      "side": 1,
+      "message": "This Jenkins parameter is defined to support non-release-yaml file actions via Jenkins. I\u0027m not sure that variable interpolation works here.  To make that work, I think the shell script might have to be revised to use double-dollar; e.g., $$GIT_TAG?  Better off not adding that level of complexity.",
+      "parentUuid": "2f2ca3a1_7c8f7898",
+      "range": {
+        "startLine": 542,
+        "startChar": 19,
+        "endLine": 542,
+        "endChar": 21
+      },
+      "revId": "f61d11e86c21774566bcd7cf689ca04d4292c283",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
