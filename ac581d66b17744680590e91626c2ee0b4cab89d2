@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "ce986273_2b382d03",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-12-12T22:35:58Z",
+      "side": 1,
+      "message": "Considering there\u0027s nothing to configure here and all the environment variables are available to the shell script. I think we should just directly put this in the shell script instead and do not touch this file.",
+      "range": {
+        "startLine": 165,
+        "startChar": 0,
+        "endLine": 165,
+        "endChar": 39
+      },
+      "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "85c65e75_ab27a92f",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 1
@@ -18,6 +41,53 @@
         "startChar": 45,
         "endLine": 62,
         "endChar": 49
+      },
+      "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2b08e7fb_a31e4751",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-12-12T22:35:58Z",
+      "side": 1,
+      "message": "As mentioned in the other file instead of passing $JOB from the macro. I think we should define $JOB directly in this file. It makes the code less complicated and $JOB isn\u0027t configurable by the user of the macro anyway.\n\nMaybe treat this as footer detail so something like:\n\n Job: $JOB",
+      "parentUuid": "85c65e75_ab27a92f",
+      "range": {
+        "startLine": 62,
+        "startChar": 45,
+        "endLine": 62,
+        "endChar": 49
+      },
+      "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50026820_ed982408",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2019-12-12T22:35:58Z",
+      "side": 1,
+      "message": "I think we should put it in the footer here next to \"Job: $JOB\\n$Change-Id: $CHANGE_ID\" I imagine it would produce and output like:\n\n Job: Job-Name/123\n Change-Id: abc123...",
+      "range": {
+        "startLine": 64,
+        "startChar": 54,
+        "endLine": 64,
+        "endChar": 77
       },
       "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
