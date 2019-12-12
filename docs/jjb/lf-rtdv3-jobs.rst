@@ -4,6 +4,32 @@
 ReadTheDocs Version:3 Jobs
 ##########################
 
+ReadTheDocs V3 jobs support documentation that is structured as a
+master documentation project plus a sub-project for each software
+component.  The master project files are usually maintained in a
+"docs" git repository and should contain an index with links to all
+the sub-projects. Each sub-project must maintain its documentation
+files in a "docs" subdirectory within that software component's git
+repository.
+
+The RTDv3 Jenkins jobs publish documentation by triggering builds at
+ReadTheDocs.io. That build process clones the appropriate repository
+and transforms Real Simple Text (RST) and other files into HTML.
+Master project builds are performed separately from sub-project
+builds.
+
+The ReadTheDocs site supports multiple versions of documentation for
+the master project and every sub-project.  Every project should have a
+development branch that's published at ReadTheDocs under the title
+"latest"; in git this is usually the "master" branch.  Most projects
+also declare releases periodically.  ReadTheDocs automatically detects
+the creation of git branches and git tags, and publishes the most
+recent one under the title "stable."  For more details please see
+`ReadTheDocs Versions
+<https://docs.readthedocs.io/en/stable/versions.html>`_.  Teams can
+control this process using Jenkins job configuration parameters as
+discussed below.
+
 User setup:
 
 To transform your rst documentation into a read the docs page, this job must be configured and
