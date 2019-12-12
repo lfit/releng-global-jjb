@@ -183,6 +183,24 @@
       "revId": "738a44e79c3c952e7e4ec5e0a870f32040ab801d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41556ce6_c0500f68",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-12T17:54:24Z",
+      "side": 1,
+      "message": "My comment was directly related to the script itself. When you look a the bigger picture, I agree with Chris on this, if you want to set default in Yaml/JJB great but the script should exit if it is not set. If anyone calls the script at some point and forgets the set the default, the problem will be immediately found and easily fixed.",
+      "parentUuid": "55eee4b3_4438d224",
+      "revId": "738a44e79c3c952e7e4ec5e0a870f32040ab801d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
