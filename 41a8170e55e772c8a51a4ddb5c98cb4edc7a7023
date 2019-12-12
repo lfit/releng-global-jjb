@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d177f799_a158c2d4",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-12T21:13:41Z",
+      "side": 1,
+      "message": "Was this update missed out in the orignal CR 1bd8330647017cab07b6a2615130d588f5794610. So this is problably a bug in the latest release of global-jjb?",
+      "range": {
+        "startLine": 253,
+        "startChar": 8,
+        "endLine": 253,
+        "endChar": 22
+      },
+      "revId": "41a8170e55e772c8a51a4ddb5c98cb4edc7a7023",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
