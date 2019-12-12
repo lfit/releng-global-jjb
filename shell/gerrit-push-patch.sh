@@ -50,6 +50,7 @@ GERRIT_HOST="$(echo "$GERRIT_HOST" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
 GERRIT_TOPIC="$(echo "$GERRIT_TOPIC" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
 GERRIT_USER="$(echo "$GERRIT_USER" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
 REVIEWERS_EMAIL="$(echo "$REVIEWERS_EMAIL" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+job=$JOB_NAME/$BUILD_NUMBER
 
 CHANGE_ID=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
                limit:1 owner:self is:open project:"$PROJECT" \
@@ -59,9 +60,9 @@ CHANGE_ID=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
                awk '{ print $2 }')
 
 if [ -z "$CHANGE_ID" ]; then
-   git commit -sm "$GERRIT_COMMIT_MESSAGE"
+   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Job: ${job}"
 else
-   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Change-Id: $CHANGE_ID"
+   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Job: ${job}\nChange-Id: $CHANGE_ID"
 fi
 
 git status
