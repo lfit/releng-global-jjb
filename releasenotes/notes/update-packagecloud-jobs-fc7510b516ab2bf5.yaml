@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add set_variables_packagecloud. Update lf-packagecloud-release-common
+    to include sigul. Add git_tag and ref to release-packagecloud-schema.
