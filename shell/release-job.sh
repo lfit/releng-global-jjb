@@ -46,102 +46,102 @@ set_variables_common(){
     # Jenkins parameter drop-down defaults DISTRIBUTION_TYPE to None
     DISTRIBUTION_TYPE="${DISTRIBUTION_TYPE:-None}"
     if [[ $DISTRIBUTION_TYPE == "None" ]]; then
-        DISTRIBUTION_TYPE="$(niet ".distribution_type" "$release_file")"
+        DISTRIBUTION_TYPE=$(niet ".distribution_type" "$release_file")
     fi
 
-    PATCH_DIR="$(mktemp -d)"
+    PATCH_DIR=$(mktemp -d)
 
     # Displaying Release Information (Common variables)
     printf "\t%-30s\n" RELEASE_ENVIRONMENT_INFO:
-    printf "\t%-30s %s\n" RELEASE_FILE: $release_file
-    printf "\t%-30s %s\n" LOGS_SERVER: $LOGS_SERVER
-    printf "\t%-30s %s\n" NEXUS_PATH: $NEXUS_PATH
-    printf "\t%-30s %s\n" JENKINS_HOSTNAME: $JENKINS_HOSTNAME
-    printf "\t%-30s %s\n" SILO: $SILO
-    printf "\t%-30s %s\n" PROJECT: $PROJECT
-    printf "\t%-30s %s\n" PROJECT-DASHED: ${PROJECT//\//-}
-    printf "\t%-30s %s\n" DISTRIBUTION_TYPE: $DISTRIBUTION_TYPE
+    printf "\t%-30s %s\n" RELEASE_FILE: "$release_file"
+    printf "\t%-30s %s\n" LOGS_SERVER: "$LOGS_SERVER"
+    printf "\t%-30s %s\n" NEXUS_PATH: "$NEXUS_PATH"
+    printf "\t%-30s %s\n" JENKINS_HOSTNAME: "$JENKINS_HOSTNAME"
+    printf "\t%-30s %s\n" SILO: "$SILO"
+    printf "\t%-30s %s\n" PROJECT: "$PROJECT"
+    printf "\t%-30s %s\n" PROJECT-DASHED: "${PROJECT//\//-}"
+    printf "\t%-30s %s\n" DISTRIBUTION_TYPE: "$DISTRIBUTION_TYPE"
 }
 
 set_variables_maven(){
     echo "INFO: Setting maven variables"
     if [[ -z ${VERSION:-} ]]; then
-        VERSION="$(niet ".version" "$release_file")"
+        VERSION=$(niet ".version" "$release_file")
     fi
     if [[ -z ${GIT_TAG:-} ]]; then
         if grep -q "git_tag" "$release_file" ; then
-            GIT_TAG="$(niet ".git_tag" "$release_file")"
+            GIT_TAG=$(niet ".git_tag" "$release_file")
         else
             GIT_TAG="$VERSION"
         fi
     fi
     if [[ -z ${LOG_DIR:-} ]]; then
-        LOG_DIR="$(niet ".log_dir" "$release_file")"
+        LOG_DIR=$(niet ".log_dir" "$release_file")
     fi
     LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
 
     # Continuing displaying Release Information (Maven)
     printf "\t%-30s\n" RELEASE_MAVEN_INFO:
-    printf "\t%-30s %s\n" VERSION: $VERSION
-    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
-    printf "\t%-30s %s\n" LOG_DIR: $LOG_DIR
-    printf "\t%-30s %s\n" LOGS_URL: $LOGS_URL
+    printf "\t%-30s %s\n" VERSION: "$VERSION"
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+    printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+    printf "\t%-30s %s\n" LOGS_URL: "$LOGS_URL"
 }
 
 set_variables_container(){
     echo "INFO: Setting container variables"
     if [[ -z ${VERSION:-} ]]; then
-        VERSION="$(niet ".container_release_tag" "$release_file")"
+        VERSION=$(niet ".container_release_tag" "$release_file")
     fi
     if [[ -z ${GIT_TAG:-} ]]; then
         if grep -q "git_tag" "$release_file" ; then
-            GIT_TAG="$(niet ".git_tag" "$release_file")"
+            GIT_TAG=$(niet ".git_tag" "$release_file")
         else
             GIT_TAG="$VERSION"
         fi
    fi
     if grep -q "container_pull_registry" "$release_file" ; then
-        CONTAINER_PULL_REGISTRY="$(niet ".container_pull_registry" "$release_file")"
+        CONTAINER_PULL_REGISTRY=$(niet ".container_pull_registry" "$release_file")
     fi
     if grep -q "container_push_registry" "$release_file" ; then
-        CONTAINER_PUSH_REGISTRY="$(niet ".container_push_registry" "$release_file")"
+        CONTAINER_PUSH_REGISTRY=$(niet ".container_push_registry" "$release_file")
     fi
     # Make sure both pull and push registries are defined
     if [ -z ${CONTAINER_PULL_REGISTRY+x} ] || [ -z ${CONTAINER_PUSH_REGISTRY+x} ]; then
         echo "ERROR: CONTAINER_PULL_REGISTRY and CONTAINER_PUSH_REGISTRY need to be defined"
         exit 1
     fi
-    ref="$(niet ".ref" "$release_file")"
+    ref=$(niet ".ref" "$release_file")
 
     # Continuing displaying Release Information (Container)
     printf "\t%-30s\n" RELEASE_CONTAINER_INFO:
-    printf "\t%-30s %s\n" CONTAINER_RELEASE_TAG: $VERSION
-    printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: $CONTAINER_PULL_REGISTRY
-    printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: $CONTAINER_PUSH_REGISTRY
-    printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: $ref
-    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
+    printf "\t%-30s %s\n" CONTAINER_RELEASE_TAG: "$VERSION"
+    printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: "$CONTAINER_PULL_REGISTRY"
+    printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: "$CONTAINER_PUSH_REGISTRY"
+    printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$ref"
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
 set_variables_pypi(){
     echo "INFO: Setting pypi variables"
     if [[ -z ${LOG_DIR:-} ]]; then
-        LOG_DIR="$(niet ".log_dir" "$release_file")"
+        LOG_DIR=$(niet ".log_dir" "$release_file")
     fi
     LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
     if [[ -z ${PYPI_PROJECT:-} ]]; then
-        PYPI_PROJECT="$(niet ".pypi_project" "$release_file")"
+        PYPI_PROJECT=$(niet ".pypi_project" "$release_file")
     fi
     if [[ -z ${PYTHON_VERSION:-} ]]; then
-        PYTHON_VERSION="$(niet ".python_version" "$release_file")"
+        PYTHON_VERSION=$(niet ".python_version" "$release_file")
     fi
     if [[ -z ${VERSION:-} ]]; then
-        VERSION="$(niet ".version" "$release_file")"
+        VERSION=$(niet ".version" "$release_file")
     fi
     if [[ -z ${GIT_TAG:-} ]]; then
         if grep -q "git_tag" "$release_file" ; then
-            GIT_TAG="$(niet ".git_tag" "$release_file")"
+            GIT_TAG=$(niet ".git_tag" "$release_file")
         else
             GIT_TAG="$VERSION"
         fi
@@ -155,7 +155,39 @@ set_variables_pypi(){
     printf "\t%-30s %s\n" PYPI_PROJECT: "$PYPI_PROJECT"
     printf "\t%-30s %s\n" PYTHON_VERSION: "$PYTHON_VERSION"
     printf "\t%-30s %s\n" VERSION: "$VERSION"
-    printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+}
+
+set_variables_packagecloud(){
+     echo "INFO: Setting packagecloud variables"
+     if [[ -z ${VERSION:-} ]]; then
+         VERSION=$(niet ".version" "$release_file")
+     fi
+     if [[ -z ${GIT_TAG:-} ]]; then
+         if grep -q "git_tag" $release_file ; then
+             GIT_TAG=$(niet ".git_tag" "$release_file")
+         else
+             GIT_TAG="$VERSION"
+         fi
+     fi
+     if [[ -z ${LOG_DIR:-} ]]; then
+         LOG_DIR=$(niet ".log_dir" "$release_file")
+     fi
+     if [[ -z ${REF:-} ]]; then
+         REF=$(niet ".ref" "$release_file")
+     fi
+     if [[ -z ${PACKAGE_NAME:-} ]]; then
+         PACKAGE_NAME=$(niet ".package_name" "$release_file")
+     fi
+     logs_url="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+     logs_url=${logs_url%/}  # strip any trailing '/'
+
+     printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
+     printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+     printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
+     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
+     printf "\t%-30s %s\n" VERSION: "$VERSION"
+     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
 verify_schema(){
@@ -197,6 +229,18 @@ verify_pypi_match_release(){
     echo "INFO: Searching for uploaded step, project $PYPI_PROJECT and version $VERSION in job log"
     # pypi-upload.sh generates success message with file list
     if zgrep -i "uploaded" /tmp/console.log.gz | grep "$PYPI_PROJECT" | grep "$VERSION" ; then
+        echo "INFO: found expected strings in job log"
+    else
+        echo "ERROR: failed to find expected strings in job log"
+        exit 1
+    fi
+}
+
+verify_packagecloud_match_release(){
+    echo "INFO: Fetching console log from $logs_url"
+    wget -q -P /tmp "${logs_url}/"console.log.gz
+    echo "INFO: Searching for uploaded step, package name $PACKAGE_NAME and version $VERSION in job log"
+    if zgrep "Successfully uploaded" /tmp/console.log.gz | grep "$PACKAGE_NAME" | grep "$VERSION"; then
         echo "INFO: found expected strings in job log"
     else
         echo "ERROR: failed to find expected strings in job log"
@@ -287,7 +331,7 @@ container_release_file(){
         else
             echo "INFO: $VERSION not found in releases, release will be prepared. Continuing..."
             docker pull "$CONTAINER_PULL_REGISTRY"/"$lfn_umbrella"/"$name":"$version"
-            container_image_id="$(docker images | grep $name | grep $version | awk '{print $3}')"
+            container_image_id=$(docker images | grep "$name" | grep "$version" | awk '{print $3}')
             echo "INFO: Merge will run the following commands:"
             echo "docker tag $container_image_id $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
             echo "docker push $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
@@ -391,6 +435,8 @@ packagecloud_promote(){
         destination="$2/release" "$promote_url" \
         | echo "INFO: Promoted package location: \
         https://packagecloud.io$(yq -r .package_html_url)"
+    git checkout "$REF"
+    tag-gerrit-repo
 }
 
 ##############################  End Function Declarations  ################################
@@ -444,17 +490,20 @@ case $DISTRIBUTION_TYPE in
         ;;
 
     packagecloud)
-        release_schema="release-packagecloud-schema.yaml"
-        package_name=$(yq -r '.package_name' $release_file)
-        packagecloud_account=$(cat "$ACCOUNT_NAME_FILE")
-        echo "INFO: Fetching schema $release_schema"
-        wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
-        verify_schema
-        for name in $(yq -r '.package_name[].name' $release_file); do
-            package_name=$name
-            packagecloud_verify "$package_name" "$packagecloud_account"
+        if $USE_RELEASE_FILE ; then
+            release_schema="release-packagecloud-schema.yaml"
+            packagecloud_account=$(cat "$ACCOUNT_NAME_FILE")
+            echo "INFO: Fetching schema $release_schema"
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            verify_schema
+        fi
+        set_variables_packagecloud
+        verify_packagecloud_match_release
+        for name in $(yq -r '.packages[].name' $release_file); do
+            package=$name
+            packagecloud_verify "$package" "$packagecloud_account"
             if [[ "$JOB_NAME" =~ "merge" ]] && ! $DRY_RUN; then
-                packagecloud_promote "$package_name" "$packagecloud_account"
+                packagecloud_promote "$package" "$packagecloud_account"
             fi
         done
         ;;
