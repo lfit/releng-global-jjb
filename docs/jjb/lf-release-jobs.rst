@@ -199,6 +199,9 @@ must start with "packagecloud". For example releases/packagecloud-1.6-tree.yaml
     package_name:
         - name: tree-1.6.0-10.el7.x86_64.rpm
         - name: test.rpm
+    ref: 5555cd2dd345fbeec0d3e2162e00835852342cda
+    log_dir: example-project-packagecloud-merge/21
+    version: 1.6.0
 
 The following parameters must appear in the PackageCloud release yaml file.
 These are not part of the Jenkins job definition to allow independent
@@ -213,7 +216,18 @@ packages.
         OR using rest api call to query packagecloud.io repo
         "curl https://packagecloud.io/api/v1/repos/test_user/test_repo/search?q=
         | yq -r .[].filename"
+    :ref: The git commit reference (SHA-1 code) to tag with the version string.
+    :log_dir: The suffix of the logs URL reported on completion by the
+        Jenkins merge job that created and pushed the distribution files
+        to the staging repository. For example, use value
+        "example-project-packagecloud-merge-/21" for the logs URL
+        https://logs.lf-project.org/production/vex-sjc-lfp-jenkins-prod-1/example-project-packagecloud-merge/21
+    :version: The semantic version string used for the package.
 
+:Optional Parameters:
+
+    :git_tag: The tag string to sign and push to the Git repository.
+       (default: the semantic version string)
 
 The JSON schema for a PackageCloud release file appears below.
 
