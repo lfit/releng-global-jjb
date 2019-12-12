@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6a48b5f_9ba5baa0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-12T11:30:38Z",
+      "side": 1,
+      "message": "why the extra indent here? 4 ws are good enough.",
+      "range": {
+        "startLine": 49,
+        "startChar": 8,
+        "endLine": 49,
+        "endChar": 12
+      },
+      "revId": "c0e02fffc07b19b2c042c71779531557e7b51183",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0f300de_39e6c1bc",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-12T11:30:38Z",
+      "side": 1,
+      "message": "indent",
+      "range": {
+        "startLine": 77,
+        "startChar": 3,
+        "endLine": 77,
+        "endChar": 5
+      },
+      "revId": "c0e02fffc07b19b2c042c71779531557e7b51183",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
