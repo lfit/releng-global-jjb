@@ -158,6 +158,21 @@ set_variables_pypi(){
     printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
 }
 
+set_variables_packagecloud(){
+    if [[ -z ${GIT_TAG:-} ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG="$(niet ".git_tag" "$release_file")"
+        else
+            GIT_TAG="$VERSION"
+        fi
+     fi
+     ref="$(niet ".ref" "$release_file")"
+
+     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: $ref
+     printf "\t%-30s %s\n" GIT_TAG: $GIT_TAG
+
+}
+
 verify_schema(){
     echo "INFO: Verifying $release_file against schema $release_schema"
     lftools schema verify "$release_file" "$release_schema"
@@ -391,6 +406,8 @@ packagecloud_promote(){
         destination="$2/release" "$promote_url" \
         | echo "INFO: Promoted package location: \
         https://packagecloud.io$(yq -r .package_html_url)"
+    git checkout "$ref"
+    tag-gerrit-repo
 }
 
 ##############################  End Function Declarations  ################################
@@ -450,6 +467,7 @@ case $DISTRIBUTION_TYPE in
         echo "INFO: Fetching schema $release_schema"
         wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
         verify_schema
+        set_variables_packagecloud
         for name in $(yq -r '.package_name[].name' $release_file); do
             package_name=$name
             packagecloud_verify "$package_name" "$packagecloud_account"

@@ -542,6 +542,18 @@
       - lf-infra-pre-build
       - config-file-provider:
           files:
+            - file-id: sigul-config
+              variable: SIGUL_CONFIG
+            - file-id: sigul-password
+              variable: SIGUL_PASSWORD
+            - file-id: sigul-pki
+              variable: SIGUL_PKI
+            - file-id: signing-pubkey
+              variable: SIGNING_PUBKEY
+      - shell: !include-raw-escape: ../shell/sigul-configuration.sh
+      - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - config-file-provider:
+          files:
             - file-id: "packagecloud_api"
               target: "$HOME/packagecloud_api"
             - file-id: packagecloud-account
