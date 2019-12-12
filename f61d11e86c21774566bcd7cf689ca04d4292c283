@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2f2ca3a1_7c8f7898",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-12T12:53:00Z",
+      "side": 1,
+      "message": "missed this could have been set to $VERSION, if this is the default",
+      "range": {
+        "startLine": 542,
+        "startChar": 19,
+        "endLine": 542,
+        "endChar": 21
+      },
+      "revId": "f61d11e86c21774566bcd7cf689ca04d4292c283",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
