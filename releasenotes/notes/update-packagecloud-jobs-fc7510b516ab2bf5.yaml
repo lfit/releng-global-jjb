@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Extend packagecloud release:
+      Release additionally requires log directory, ref and version.
+      Add set_variables_packagecloud & verify_packagecloud_match_release
+      to allow tagging the git repo.
+      Update packagecloud jobs to include sigul signing.
