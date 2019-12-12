@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a0921a7a_9bc9dc2b",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 20
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-12T21:26:34Z",
+      "side": 1,
+      "message": "sorry Aric I botched the punctuation.  I must drive Tim nuts :)  This should be a hyphen, which is what is used in the jjb as the configuration parameter (default-version).  So maybe it should say \n\n    DEFAULT_VERSION (default-version) value cannot be empty",
+      "range": {
+        "startLine": 94,
+        "startChar": 26,
+        "endLine": 94,
+        "endChar": 27
+      },
+      "revId": "23a930fcb465e1afa9d1898bcdacdbe2a036302b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
