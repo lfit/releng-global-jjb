@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "85c65e75_ab27a92f",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2019-12-12T21:17:54Z",
+      "side": 1,
+      "message": "where are you getting $JOB from, should this not be $JOB_NAME\n\nex: $JOB_NAME-$BUILD_NUMBER",
+      "range": {
+        "startLine": 62,
+        "startChar": 45,
+        "endLine": 62,
+        "endChar": 49
+      },
+      "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
