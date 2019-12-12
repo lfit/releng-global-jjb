@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "cb22e183_b15065d7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-12T00:08:04Z",
+      "side": 1,
+      "message": "Thank you for flagging use of GIT_TAG, yes it is SUPPOSED to be an env var set by Jenkins but I forgot to add that parameter in the YAML!\n\nYour points are completely fair but I was trying to make the new code match the style of the existing code.  I\u0027m reluctant to rewrite from scratch.",
+      "parentUuid": "8ade18b1_ea825715",
+      "revId": "86db14ec86f186b4418a5a043e600e73b0ffebc0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "39815a2f_ef6b08f5",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
