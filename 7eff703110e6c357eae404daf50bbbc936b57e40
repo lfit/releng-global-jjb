@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a16360d_52ed2e89",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 18
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-12T20:21:50Z",
+      "side": 1,
+      "message": "I thought we decided that it should be an error if DEFAULT_VERSION was not set ?\nTo continue from here with default_version set to \"\" seems to be asking for trouble that is going to hard to debug.",
+      "revId": "7eff703110e6c357eae404daf50bbbc936b57e40",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
