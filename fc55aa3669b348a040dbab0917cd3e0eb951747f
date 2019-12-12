@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18c6e919_9056c47e",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 21
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-12T22:06:21Z",
+      "side": 1,
+      "message": "I would prefer replace all above with:\ndefault_ver\u003d$DEFAULT_VERSION\nDon\u0027t know how much you have to change the name of the shell variable to keep shellcheck from helping.\nPLEASE do NOT make that change, time to get on with our lives!",
+      "range": {
+        "startLine": 93,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 38
+      },
+      "revId": "fc55aa3669b348a040dbab0917cd3e0eb951747f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
