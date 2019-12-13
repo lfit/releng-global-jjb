@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "4f0edb46_cacebd5a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-13T23:04:11Z",
+      "side": 1,
+      "message": "There are two variables REF (looks like it is a environmental variable (set by JJB/YAML) and ref. You set REF here but below you reference \u0027ref\u0027.",
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ff5fd40_704aaf21",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -18,6 +35,53 @@
         "startChar": 0,
         "endLine": 178,
         "endChar": 2
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5e2e8cb_eea1c5a2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-13T23:04:11Z",
+      "side": 1,
+      "message": "To be consistent, I think you should set the \u0027environmental\u0027 variable PACKAGE_NAME with the package_name from the release_yaml file",
+      "parentUuid": "0ff5fd40_704aaf21",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 2
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f17cee0e_dd2174f0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-13T23:04:11Z",
+      "side": 1,
+      "message": "Is LOGS_URL environmental variable or a shell variable? Based on the code, it looks like it is a shell variable and needs to be lower-case",
+      "range": {
+        "startLine": 179,
+        "startChar": 5,
+        "endLine": 180,
+        "endChar": 53
       },
       "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
@@ -65,6 +129,23 @@
         "endLine": 185,
         "endChar": 6
       },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "357ffa6d_5281ec88",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-13T23:04:11Z",
+      "side": 1,
+      "message": "Just a nit but standard practice is to name functions (and files) with \u0027-\u0027. \u0027_\u0027 is for variables. Don\u0027t change existing functions, but don\u0027t use \u0027_\u0027 in new functions.",
       "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
