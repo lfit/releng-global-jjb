@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3081b18c_1e125cfb",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T20:26:31Z",
+      "side": 1,
+      "message": "This open parenthesis is not closed.  Suggest removing it entirely.",
+      "range": {
+        "startLine": 214,
+        "startChar": 8,
+        "endLine": 214,
+        "endChar": 9
+      },
+      "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49037a86_e932e8c8",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T20:26:31Z",
+      "side": 1,
+      "message": "I notice now for the first time all the quotes around the shell commands.  They look totally strange to me all of a sudden.  How did I miss that previously?  Tim?",
+      "range": {
+        "startLine": 164,
+        "startChar": 17,
+        "endLine": 164,
+        "endChar": 18
+      },
+      "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76fef0b9_f7342b09",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T20:26:31Z",
+      "side": 1,
+      "message": "ref should use similar pattern as above, so someday it can be supplied as a Jenkins parameter. Don\u0027t follow the container example, that is sorely deficient.  Suggest:\n\n     if [[ -z ${REF:-} ]]; then\n         REF\u003d\"$(niet \".ref\" \"$release_file\")\"\n     fi",
+      "range": {
+        "startLine": 178,
+        "startChar": 4,
+        "endLine": 178,
+        "endChar": 41
+      },
+      "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96543375_28b3de5f",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T20:26:31Z",
+      "side": 1,
+      "message": "Please add code similar to above:\n\n    if $USE_RELEASE_FILE ; then\n    ...\n\nto keep consistent.  I know, I know, Open Daylight isn\u0027t asking for Jenkins parameters for these today.  But you\u0027re 90% of the way.",
+      "range": {
+        "startLine": 486,
+        "startChar": 8,
+        "endLine": 486,
+        "endChar": 27
+      },
+      "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
