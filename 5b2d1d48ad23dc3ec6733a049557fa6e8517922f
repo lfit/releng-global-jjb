@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "41a560ae_d7b05b06",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-13T21:11:12Z",
+      "side": 1,
+      "message": "My vim linter basically says \"Double quote to prevent globbing and word splitting.\"",
+      "parentUuid": "49037a86_e932e8c8",
+      "range": {
+        "startLine": 164,
+        "startChar": 17,
+        "endLine": 164,
+        "endChar": 18
+      },
+      "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "76fef0b9_f7342b09",
         "filename": "shell/release-job.sh",
         "patchSetId": 4
