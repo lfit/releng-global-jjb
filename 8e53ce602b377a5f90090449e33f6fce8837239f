@@ -16,6 +16,24 @@
       "revId": "8e53ce602b377a5f90090449e33f6fce8837239f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d349a0cc_6fce1f44",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2019-12-13T23:41:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e7cc34b9_7ff27fd0",
+      "revId": "8e53ce602b377a5f90090449e33f6fce8837239f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
