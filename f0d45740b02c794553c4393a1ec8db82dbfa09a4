@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ff5fd40_704aaf21",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T22:27:01Z",
+      "side": 1,
+      "message": "To be consistent, I think you should set a variable PACKAGE_NAME with the package_name from the release_yaml file",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 2
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc602e11_c46edadb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T22:27:01Z",
+      "side": 1,
+      "message": "Please echo the package name here also",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 11
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3644edfc_af34acec",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T22:27:01Z",
+      "side": 1,
+      "message": "Please echo the $VERSION here also",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 6
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d89d3e3_d380e348",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T22:27:01Z",
+      "side": 1,
+      "message": "Is it possible to grep for $PACKAGE_NAME also?",
+      "range": {
+        "startLine": 237,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 4
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d7f01716_ad1b5527",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T22:27:01Z",
+      "side": 1,
+      "message": "why is package_name queried and assigned here?  It\u0027s overwritten down at line 499.  this looks wrong",
+      "range": {
+        "startLine": 490,
+        "startChar": 0,
+        "endLine": 490,
+        "endChar": 7
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bc7a75c_1f2df392",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T22:27:01Z",
+      "side": 1,
+      "message": "this is the individual artifact name, not the top-level package_name setting; confusing to use that name twice for different values.",
+      "range": {
+        "startLine": 499,
+        "startChar": 12,
+        "endLine": 499,
+        "endChar": 24
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c110196a_629facfa",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T22:27:01Z",
+      "side": 1,
+      "message": "Please add:\n\n    echo \"INFO: Promoting artifact $package_name\"\n\nor something like that.  But pls see comment above re the variable name.",
+      "range": {
+        "startLine": 502,
+        "startChar": 0,
+        "endLine": 502,
+        "endChar": 4
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
