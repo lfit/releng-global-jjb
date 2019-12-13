@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e7cc34b9_7ff27fd0",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-13T18:54:20Z",
+      "side": 1,
+      "message": "This is a shell variable needs to be lower-case so that shellcheck knows that it is a shell variable.\n\nYes, the previous 5 lines have same problem, but they are not a part of this fix.",
+      "revId": "8e53ce602b377a5f90090449e33f6fce8837239f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
