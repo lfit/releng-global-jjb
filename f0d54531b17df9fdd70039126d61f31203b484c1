@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "32573649_d0119698",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T11:34:06Z",
+      "side": 1,
+      "message": "does it make sense to merge the two blocks of config-file-provider?  If they must be separate, then I botched this in macro lf_pypi_release, and you might want to fix it there.  :/",
+      "range": {
+        "startLine": 555,
+        "startChar": 0,
+        "endLine": 555,
+        "endChar": 2
+      },
+      "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27fbf068_4e4f2f2e",
+        "filename": "releasenotes/notes/update-packagecloud-jobs-fc7510b516ab2bf5.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T11:34:06Z",
+      "side": 1,
+      "message": "Perhaps you can please start with the requirement, maybe:\n\n    Extend package cloud release to require log directory and to tag the git repo.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "821498c4_78aa05a4",
+        "filename": "schema/release-packagecloud-schema.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T11:34:06Z",
+      "side": 1,
+      "message": "what about version ?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ea3c451_7635ded7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-13T11:34:06Z",
+      "side": 1,
+      "message": "VERSION is not set.",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 2
+      },
+      "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
