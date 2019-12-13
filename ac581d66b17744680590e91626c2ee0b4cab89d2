@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f68ffe8_ea30e862",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2019-12-13T18:43:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ce986273_2b382d03",
+      "range": {
+        "startLine": 165,
+        "startChar": 0,
+        "endLine": 165,
+        "endChar": 39
+      },
+      "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "85c65e75_ab27a92f",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 1
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "ef347ce4_fe7d32b7",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2019-12-13T18:43:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b08e7fb_a31e4751",
+      "range": {
+        "startLine": 62,
+        "startChar": 45,
+        "endLine": 62,
+        "endChar": 49
+      },
+      "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "50026820_ed982408",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 1
@@ -92,6 +140,30 @@
       "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e88a056_3bc666e5",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 82
+      },
+      "writtenOn": "2019-12-13T18:43:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50026820_ed982408",
+      "range": {
+        "startLine": 64,
+        "startChar": 54,
+        "endLine": 64,
+        "endChar": 77
+      },
+      "revId": "ac581d66b17744680590e91626c2ee0b4cab89d2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
