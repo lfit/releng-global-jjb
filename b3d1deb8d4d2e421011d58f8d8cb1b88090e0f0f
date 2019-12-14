@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf1c04ad_49a9e3da",
+        "filename": "releasenotes/notes/get-job-cost-be3f4061e9cbdc90.yaml",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-12-14T16:34:18Z",
+      "side": 1,
+      "message": "Please add an upgrade note stating the required minimum version of lf-tools that this needs (unless global-jjb is already defaulting to that minimum or greater).",
+      "revId": "b3d1deb8d4d2e421011d58f8d8cb1b88090e0f0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
