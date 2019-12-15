@@ -86,7 +86,8 @@ function lf-boolean()
 ################################################################################
 #
 # NAME
-#   lf-activate-venv [-p|--python python] [package]...
+#   lf-activate-venv [-p|--python python] [--no-path]
+#                    [--system-site-packages] [package]...
 #
 # SYNOPSIS
 #   # shellcheck disable=SC1090
@@ -102,8 +103,9 @@ function lf-boolean()
 #
 # DESCRIPTION
 #   This function will create a new Python Virtual Environment (venv) and
-#   install the specified packages in the new venv.  The bin directory from the
-#   venv will be prepended to the PATH.
+#   install the specified packages in the new venv.  The venv will be installed
+#   in $lf_venv and by default, the $lf_venv/bin directory will be prepended
+#   to the PATH.
 #
 #   By default all packages are installed with '--upgrade-strategy eager'.
 #   The venv will always contain pip & virtualenv.
@@ -115,9 +117,15 @@ function lf-boolean()
 #       Package                  Version
 #       jenkins-job-builder      $JJB_VERSION
 #
-#   If the --python option is specified, that python executable will be used to
-#   create the venv. The --python option must be in the PATH. The venv will be
-#   located in '/tmp/venv-####'.
+#   If the --python flag is specified, the specified python executable will be
+#   used to create the venv. The --python option must be in the PATH. The venv
+#   will be located in $lf_venv (/tmp/venv-####).
+#
+#   If the --no-path flag is specified, $lf_venv/bin will not be prepended to
+#   the PATH.
+#
+#   If the --system-site-packages flag is specified, the --system-site-packages
+#   flag will be passed to the inital 'pip install' (python3* only).
 #
 # RETURN VALUES
 #   OK: 0
@@ -127,15 +135,18 @@ function lf-boolean()
 
 function lf-activate-venv()
 {
-    local lf_tmp_venv
-    lf_tmp_venv=$(mktemp -d /tmp/venv-XXXX)
+    lf_venv=$(mktemp -d /tmp/venv-XXXX)
     local python=python3
     local options
-    options=$(getopt -o 'p:' -l 'python:' -n "${FUNCNAME[0]}" -- "$@" )
+    local set_path=true
+    local install_args=""
+    options=$(getopt -o 'p:' -l 'no-path,python:,system-site-packages' -n "${FUNCNAME[0]}" -- "$@" )
     eval set -- "$options"
     while true; do
         case $1 in
-            -p|--python) python=$2; shift 2 ;;
+            --no-path) set_path=false ; shift   ;;
+            -p|--python)  python=$2      ; shift 2 ;;
+            --system-site-packages) install_args="--system-site-packages" ; shift ;;
             --) shift; break ;;
             *)  lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown switch '$1'." ; return 1 ;;
         esac
@@ -145,20 +156,20 @@ function lf-activate-venv()
         return 1
     fi
 
-    echo "${FUNCNAME[0]}(): INFO: Creating '$python' venv ($lf_tmp_venv)"
+    echo "${FUNCNAME[0]}(): INFO: Creating '$python' venv ($lf_venv)"
 
     case $python in
         python2*)
         local pkg_list="$*"
         # For Python2, just create venv and install pip
-        virtualenv -p $python $lf_tmp_venv || return 1
-        $lf_tmp_venv/bin/pip install --upgrade --quiet pip || return 1
+        virtualenv -p $python $lf_venv || return 1
+        $lf_venv/bin/pip install --upgrade --quiet pip || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"
             return 0
         fi
         echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
-        $lf_tmp_venv/bin/pip install --upgrade --quiet $pkg_list || return 1
+        $lf_venv/bin/pip install --upgrade --quiet $pkg_list || return 1
         ;;
     python3*)
         local pkg_list=""
@@ -169,14 +180,14 @@ function lf-activate-venv()
                 *)                   pkg_list+="$arg " ;;
             esac
         done
-        $python -m venv $lf_tmp_venv || return 1
-        $lf_tmp_venv/bin/pip install --upgrade --quiet pip virtualenv || return 1
+        $python -m venv $install_args $lf_venv || return 1
+        $lf_venv/bin/pip install --upgrade --quiet pip virtualenv || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"
             return 0
         fi
         echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
-        $lf_tmp_venv/bin/pip install --upgrade --quiet --upgrade-strategy eager \
+        $lf_venv/bin/pip install --upgrade --quiet --upgrade-strategy eager \
                              $pkg_list || return 1
         ;;
     *)
@@ -184,9 +195,13 @@ function lf-activate-venv()
         return 1
         ;;
     esac
-    echo "${FUNCNAME[0]}(): INFO: Adding $lf_tmp_venv/bin to PATH"
-    PATH=$lf_tmp_venv/bin:$PATH
-    return 0
+    if $set_path; then
+        echo "${FUNCNAME[0]}(): INFO: Adding $lf_venv/bin to PATH"
+        PATH=$lf_venv/bin:$PATH
+        return 0
+    else
+        echo "${FUNCNAME[0]}(): INFO: Path not set, 'lf_venv' set to $lf_venv"
+    fi
 
 }   # End lf-activate-venv()
 
