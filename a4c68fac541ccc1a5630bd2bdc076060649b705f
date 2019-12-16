@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4e137f9f_b1664247",
+        "filename": "releasenotes/notes/get-job-cost-be3f4061e9cbdc90.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-12-16T19:24:14Z",
+      "side": 1,
+      "message": "This should be in an upgrade: (or is it upgrades: ?) section not part of the features. It needs to be explicitly called out as something to be considered during an upgrade of global-jjb.",
+      "revId": "a4c68fac541ccc1a5630bd2bdc076060649b705f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
