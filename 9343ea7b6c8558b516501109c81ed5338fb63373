@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29cc1fda_c3c7f9d8",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-16T15:31:33Z",
+      "side": 1,
+      "message": "well, MOST of the script is indented 2 spaces :/",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 72,
+        "endChar": 8
+      },
+      "revId": "9343ea7b6c8558b516501109c81ed5338fb63373",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eaec91f3_7f04f888",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 23
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-16T15:31:33Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 94,
+        "startChar": 2,
+        "endLine": 94,
+        "endChar": 6
+      },
+      "revId": "9343ea7b6c8558b516501109c81ed5338fb63373",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
