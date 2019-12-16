@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e6c58801_1a11a8c5",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-16T18:50:22Z",
+      "side": 1,
+      "message": "pls echo package $PACKAGE_NAME here also",
+      "range": {
+        "startLine": 242,
+        "startChar": 48,
+        "endLine": 242,
+        "endChar": 55
+      },
+      "revId": "44e348668a266d924e5730493700604ed260115e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
