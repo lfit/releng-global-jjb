@@ -22,6 +22,30 @@
       "revId": "3ce4061eb2d319a4fc6537b39d7e8cd34eee540b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3d72847_9febe5d7",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2019-12-16T15:10:41Z",
+      "side": 1,
+      "message": "The whole script is indented 2 spaces.",
+      "parentUuid": "d4604fa9_217fa410",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 113,
+        "endChar": 2
+      },
+      "revId": "3ce4061eb2d319a4fc6537b39d7e8cd34eee540b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
