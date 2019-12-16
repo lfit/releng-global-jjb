@@ -16,6 +16,24 @@
       "revId": "a4c68fac541ccc1a5630bd2bdc076060649b705f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a6a9e91_f6337073",
+        "filename": "releasenotes/notes/get-job-cost-be3f4061e9cbdc90.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-12-16T20:30:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e137f9f_b1664247",
+      "revId": "a4c68fac541ccc1a5630bd2bdc076060649b705f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
