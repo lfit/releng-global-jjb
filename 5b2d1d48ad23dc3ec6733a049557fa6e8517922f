@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "77298c46_882924a3",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3081b18c_1e125cfb",
+      "range": {
+        "startLine": 214,
+        "startChar": 8,
+        "endLine": 214,
+        "endChar": 9
+      },
+      "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49037a86_e932e8c8",
         "filename": "shell/release-job.sh",
         "patchSetId": 4
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "47ec3a45_09d2fef5",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "41a560ae_d7b05b06",
+      "range": {
+        "startLine": 164,
+        "startChar": 17,
+        "endLine": 164,
+        "endChar": 18
+      },
+      "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "76fef0b9_f7342b09",
         "filename": "shell/release-job.sh",
         "patchSetId": 4
@@ -115,6 +163,30 @@
       "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7d2c29a_4eac2dc0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "96543375_28b3de5f",
+      "range": {
+        "startLine": 486,
+        "startChar": 8,
+        "endLine": 486,
+        "endChar": 27
+      },
+      "revId": "5b2d1d48ad23dc3ec6733a049557fa6e8517922f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ae06a004_5974d018",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4f0edb46_cacebd5a",
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0ff5fd40_704aaf21",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -66,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "2fc1b0a1_24879710",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "I think this is fine. I can create a \"packages\" variable for individual packages.",
+      "parentUuid": "e5e2e8cb_eea1c5a2",
+      "range": {
+        "startLine": 178,
+        "startChar": 0,
+        "endLine": 178,
+        "endChar": 2
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f17cee0e_dd2174f0",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -86,6 +128,30 @@
       "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bbadbba_429f2c29",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "For the record, I was was just following how the other functions are currently setup.",
+      "parentUuid": "f17cee0e_dd2174f0",
+      "range": {
+        "startLine": 179,
+        "startChar": 5,
+        "endLine": 180,
+        "endChar": 53
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -112,6 +178,30 @@
     },
     {
       "key": {
+        "uuid": "57513ce6_b6d67bf2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc602e11_c46edadb",
+      "range": {
+        "startLine": 183,
+        "startChar": 0,
+        "endLine": 183,
+        "endChar": 11
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3644edfc_af34acec",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -135,6 +225,30 @@
     },
     {
       "key": {
+        "uuid": "5de15398_61155eab",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3644edfc_af34acec",
+      "range": {
+        "startLine": 185,
+        "startChar": 0,
+        "endLine": 185,
+        "endChar": 6
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "357ffa6d_5281ec88",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -149,6 +263,24 @@
       "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6a9bd2f_ba998986",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "357ffa6d_5281ec88",
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -175,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "22eaaf2f_23d080e8",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0d89d3e3_d380e348",
+      "range": {
+        "startLine": 237,
+        "startChar": 0,
+        "endLine": 237,
+        "endChar": 4
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d7f01716_ad1b5527",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -195,6 +351,30 @@
       "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2bb6820_9263231b",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "I thought I had removed this previously. It will be removed on next patchset",
+      "parentUuid": "d7f01716_ad1b5527",
+      "range": {
+        "startLine": 490,
+        "startChar": 0,
+        "endLine": 490,
+        "endChar": 7
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -221,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "a301530c_e374d3d4",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8bc7a75c_1f2df392",
+      "range": {
+        "startLine": 499,
+        "startChar": 12,
+        "endLine": 499,
+        "endChar": 24
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c110196a_629facfa",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -241,6 +445,30 @@
       "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "369ae636_33451b6e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "This is done via the function line 385.",
+      "parentUuid": "c110196a_629facfa",
+      "range": {
+        "startLine": 502,
+        "startChar": 0,
+        "endLine": 502,
+        "endChar": 4
+      },
+      "revId": "f0d45740b02c794553c4393a1ec8db82dbfa09a4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

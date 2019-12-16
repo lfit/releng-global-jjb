@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7920cbf4_8acef51f",
+        "filename": "jjb/lf-release-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32573649_d0119698",
+      "range": {
+        "startLine": 555,
+        "startChar": 0,
+        "endLine": 555,
+        "endChar": 2
+      },
+      "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "27fbf068_4e4f2f2e",
         "filename": "releasenotes/notes/update-packagecloud-jobs-fc7510b516ab2bf5.yaml",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc72557f_46199129",
+        "filename": "releasenotes/notes/update-packagecloud-jobs-fc7510b516ab2bf5.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "27fbf068_4e4f2f2e",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 17
+      },
+      "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "b845d471_94c58fe4",
+        "filename": "schema/release-packagecloud-schema.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "821498c4_78aa05a4",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 1
+      },
+      "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ea3c451_7635ded7",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -91,6 +163,30 @@
       "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45d57002_ba7d427e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-16T18:30:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ea3c451_7635ded7",
+      "range": {
+        "startLine": 167,
+        "startChar": 0,
+        "endLine": 167,
+        "endChar": 2
+      },
+      "revId": "f0d54531b17df9fdd70039126d61f31203b484c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
