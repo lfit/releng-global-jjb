@@ -1,0 +1,8 @@
+#! /bin/bash 
+
+if git review > stdout.log ; then
+    echo ####
+    cat stdout.log
+    echo ####
+fi
+
