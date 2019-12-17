@@ -412,15 +412,28 @@
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - github-pull-request:
-          trigger-phrase: "^(remerge)$"
-          only-trigger-phrase: false
-          status-context: "PyPI Release Merge"
-          permit-all: true
-          github-hooks: true
-          white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_release_included_regions}"
+      - generic-webhook-trigger:
+          post-content-params:
+            - type: JSONPath
+              key: repo_name
+              value: $.repository.name
+            - type: JSONPath
+              key: reference
+              value: $.ref
+              regex-filter: push {project} refs\/heads\/master
+              default-value: $X_GitHub_Event $repo_name $reference
+            - type: JSONPath
+              key: modifiedfile
+              value: $.commits[0].modified[0]
+          regex-filter-text: $modifiedfile
+          regex-filter-expression: "{obj:github_release_included_regions}"
+          header-params:
+            - key: X-Github-Event
+          print-post-content: true
+          print-contrib-var: true
+          cause: RELEASE FILE MERGED
+          token: foobar
+          silent-response: false
 
 - job-template:
     name: "{project-name}-pypi-release-verify"
