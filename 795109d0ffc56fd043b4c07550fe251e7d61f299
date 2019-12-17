@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "544fca33_960862b7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-17T19:51:17Z",
+      "side": 1,
+      "message": "You have \u0027nested\u0027 double quotes, no need to quote $().\n\nDon\u0027t assume that \u0027too much\u0027 quoting can\u0027t hurt, either too much or too little quoting can cause problems. If you are unsure, don\u0027t put in any quotes and only add quotes requested by \u0027shellcheck\u0027.",
+      "revId": "795109d0ffc56fd043b4c07550fe251e7d61f299",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a04d7728_ef5809a0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-17T19:51:17Z",
+      "side": 1,
+      "message": "You have \u0027nested\u0027 double quotes",
+      "revId": "795109d0ffc56fd043b4c07550fe251e7d61f299",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
