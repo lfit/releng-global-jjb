@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "879b358b_0ba483bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-12-18T21:09:44Z",
+      "side": 1,
+      "message": "How is this an \"example\" you\u0027re actively switching out one triggering mechanism for another.",
+      "revId": "1a3af36100080c94648fcfa2d26fb0411ac74e77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6dff264a_e39993ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2019-12-18T21:09:44Z",
+      "side": 1,
+      "message": "Is this any different from what we presently have with the GitHub triggers? AFAIK we can\u0027t retrigger any merges at all with a comment on any of the current breed of GitHub triggering mechanisms.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 23
+      },
+      "revId": "1a3af36100080c94648fcfa2d26fb0411ac74e77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
