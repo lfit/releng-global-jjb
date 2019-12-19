@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7daf4b7e_fc4e95e4",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T19:16:04Z",
+      "side": 1,
+      "message": "Hmm, well, I see you removed the INNER quotes. I think what Tim J was trying to suggest was to use this:\n\n     VERSION\u003d$(niet \".version\" \"$release_file\")\n\nThis removes the outer quotes but preserves the inner quotes.",
+      "range": {
+        "startLine": 164,
+        "startChar": 18,
+        "endLine": 164,
+        "endChar": 51
+      },
+      "revId": "42737624ac0d44e9240928e0ac0934f22d4e6f9e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54f101cd_9d2c190d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T19:16:04Z",
+      "side": 1,
+      "message": "See comment above inner/outer",
+      "range": {
+        "startLine": 180,
+        "startChar": 22,
+        "endLine": 180,
+        "endChar": 61
+      },
+      "revId": "42737624ac0d44e9240928e0ac0934f22d4e6f9e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
