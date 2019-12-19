@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "be739d55_c025b17b",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T11:52:42Z",
+      "side": 1,
+      "message": "would you mind adding a note that this is automagically installed onto build minion images by init scripts before the Jenkins log begins? In other words, the install is invisible :/",
+      "revId": "89b0980e5bb2754479bf26c4ae9447c28b1b5eb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cb854cb_a876f974",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T11:52:42Z",
+      "side": 1,
+      "message": "Why document $lf_venv?  It does not seem to be accepted as an argument here.  The lower case suggests to me an internal shell variable, and I see that in the function.  If you had written $LF_VENV then I would expect an environment variable is exported that other shell scripts can (should? must??) use.",
+      "range": {
+        "startLine": 107,
+        "startChar": 7,
+        "endLine": 107,
+        "endChar": 15
+      },
+      "revId": "89b0980e5bb2754479bf26c4ae9447c28b1b5eb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bede981_be9bf526",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T11:52:42Z",
+      "side": 1,
+      "message": "why is this value shown in parentheses? why is $python in single quotes?",
+      "range": {
+        "startLine": 159,
+        "startChar": 58,
+        "endLine": 159,
+        "endChar": 68
+      },
+      "revId": "89b0980e5bb2754479bf26c4ae9447c28b1b5eb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fff213e8_0b496641",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T11:52:42Z",
+      "side": 1,
+      "message": "why report that lf_venv is set, just as the function ends and (I guess) this variable and value cease to exist? it seems totally irrelevant",
+      "range": {
+        "startLine": 203,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 1
+      },
+      "revId": "89b0980e5bb2754479bf26c4ae9447c28b1b5eb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
