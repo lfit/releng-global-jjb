@@ -1,0 +1,28 @@
+#! /bin/bash
+
+set -eufo pipefail
+
+if ! change_id=$(git show | grep Change-Id: | awk '{print $2}'); then
+    echo "Unable the get Change-Id"
+    exit 1
+fi
+# Download review branch from gerrit and get the SHA
+git review -d $change_id
+gerrit_commit=$(git rev-parse HEAD)
+gerrit_branch=$(git rev-parse --abbrev-ref HEAD)
+
+# Get the SHA for the current master branch
+git checkout master
+master_commit=$(git rev-parse HEAD)
+
+# Deleted the review branch
+git branch -D $gerrit_branch
+
+echo "Master Commit: $master_commit"
+echo "Gerrit Commit: $gerrit_commit"
+
+if [[ $master_commit == $gerrit_commit ]]; then
+     echo "INFO: No new changes"
+else
+    git review
+fi
