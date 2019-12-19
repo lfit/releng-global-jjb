@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81fe346e_cba64229",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T19:21:30Z",
+      "side": 1,
+      "message": "Thanks for educating me. Perhaps it\u0027s worth writing something like:\n\n    This function assigns the path of the virtual environment to variable lf_venv for use by the caller; e.g., echo \"$lf_venv\"",
+      "range": {
+        "startLine": 110,
+        "startChar": 4,
+        "endLine": 110,
+        "endChar": 15
+      },
+      "revId": "89aed79e74ff46c14fdc584b9cc1ca4be481041e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "baebaf1e_e43d9562",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T19:21:30Z",
+      "side": 1,
+      "message": "Perhaps instead of unusual quotation just be verbose:\n\n    .. INFO: Creating python version $python venv at path $lf_venv",
+      "range": {
+        "startLine": 162,
+        "startChar": 44,
+        "endLine": 162,
+        "endChar": 52
+      },
+      "revId": "89aed79e74ff46c14fdc584b9cc1ca4be481041e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "226ae474_7b6b0473",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-19T19:21:30Z",
+      "side": 1,
+      "message": "Gotcha, no don\u0027t call unset.\n\nAnyhow, here again I\u0027m not a fan of this quotation; above you used () here you use :(space)",
+      "range": {
+        "startLine": 206,
+        "startChar": 52,
+        "endLine": 206,
+        "endChar": 61
+      },
+      "revId": "89aed79e74ff46c14fdc584b9cc1ca4be481041e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
