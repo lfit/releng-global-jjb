@@ -18,7 +18,8 @@ source ~/lf-env.sh
 
 lf-activate-venv jenkins-job-builder
 
-yes | jenkins-jobs -s sandbox delete-all
+# jenkins-jobs does not always open 'stdin' which may cause 'yes' to fail
+(yes || true) | jenkins-jobs -s sandbox delete-all
 
 # Recreate the All default view.
 cat << 'EOF' > all-view.yaml
