@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "f2b17231_6ea49097",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-19T16:45:40Z",
+      "side": 1,
+      "message": "Ahh the magic of \u0027getopt\u0027. Getopt rearranges the arguments so that all flags come first, followed by the arguments (packages) (after the \u0027--\u0027. (note the \u0027eval set above\u0027). \u0027getop\u0027 is a standalone command NOT the same as \u0027getopts\u0027 the bash builtin (pathetic).",
+      "parentUuid": "74c06ae0_53af332c",
+      "range": {
+        "startLine": 145,
+        "startChar": 0,
+        "endLine": 145,
+        "endChar": 6
+      },
+      "revId": "efafad62e1b9f19274965b0f27c113e8f97cee7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "308416a3_9bdd75dc",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 2
@@ -71,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "0edd4f11_5714309d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-19T16:45:40Z",
+      "side": 1,
+      "message": "It marks the end of all the \u0027flags\u0027, all that is left now are the argument (packages). Note that all this loop is expecting is flags (\u0027--\u0027).",
+      "parentUuid": "308416a3_9bdd75dc",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 5
+      },
+      "revId": "efafad62e1b9f19274965b0f27c113e8f97cee7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e876f132_fc60aa28",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 2
@@ -82,6 +130,30 @@
       "writtenOn": "2019-12-19T04:38:30Z",
       "side": 1,
       "message": "Weird indentation",
+      "range": {
+        "startLine": 162,
+        "startChar": 0,
+        "endLine": 162,
+        "endChar": 1
+      },
+      "revId": "efafad62e1b9f19274965b0f27c113e8f97cee7f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e8c361b_384fc5f8",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-19T16:45:40Z",
+      "side": 1,
+      "message": "YUP",
+      "parentUuid": "e876f132_fc60aa28",
       "range": {
         "startLine": 162,
         "startChar": 0,
