@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "d5b30c2e_faa3d73f",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-19T17:09:20Z",
+      "side": 1,
+      "message": "lf_venv was \u0027local\u0027 to lf-activate-venv(). NOte line 138 below)  With this version it is now a shell variable, which gives the caller of this function access to it. This was changed because of the addition of the --no-path option.",
+      "parentUuid": "6cb854cb_a876f974",
+      "range": {
+        "startLine": 107,
+        "startChar": 7,
+        "endLine": 107,
+        "endChar": 15
+      },
+      "revId": "89b0980e5bb2754479bf26c4ae9447c28b1b5eb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0bede981_be9bf526",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 3
@@ -65,6 +89,30 @@
     },
     {
       "key": {
+        "uuid": "6882810f_51344c4e",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-19T17:09:20Z",
+      "side": 1,
+      "message": "They are treated as literals, so they are my feeble attempt to make the output more readable.",
+      "parentUuid": "0bede981_be9bf526",
+      "range": {
+        "startLine": 159,
+        "startChar": 58,
+        "endLine": 159,
+        "endChar": 68
+      },
+      "revId": "89b0980e5bb2754479bf26c4ae9447c28b1b5eb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fff213e8_0b496641",
         "filename": "jenkins-init-scripts/lf-env.sh",
         "patchSetId": 3
@@ -76,6 +124,30 @@
       "writtenOn": "2019-12-19T11:52:42Z",
       "side": 1,
       "message": "why report that lf_venv is set, just as the function ends and (I guess) this variable and value cease to exist? it seems totally irrelevant",
+      "range": {
+        "startLine": 203,
+        "startChar": 0,
+        "endLine": 203,
+        "endChar": 1
+      },
+      "revId": "89b0980e5bb2754479bf26c4ae9447c28b1b5eb0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9355a3fb_9767e320",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-19T17:09:20Z",
+      "side": 1,
+      "message": "lf_vevn was local but now it is a shell variable. This is only echoed when --no-path is not set I am telling the caller that lf_venv points the head of the venv.  Since venv/bin is not in their path, they could call an executable with $lf_venv/bin/lftools.\n\nI suppose I could do a \u0027unset lf_venv\u0027 when we are adding venv/bin to the PATH, but I don\u0027t want to do it here. I expect the caller to use this variable.",
+      "parentUuid": "fff213e8_0b496641",
       "range": {
         "startLine": 203,
         "startChar": 0,
