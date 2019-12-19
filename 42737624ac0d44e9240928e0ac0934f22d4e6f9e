@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "54a873c5_fb56dc02",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:24:20Z",
+      "side": 1,
+      "message": "I\u0027ve removed the outside quotes and put back the quotes on the inside.",
+      "parentUuid": "39ba97e3_620b25c0",
+      "range": {
+        "startLine": 164,
+        "startChar": 18,
+        "endLine": 164,
+        "endChar": 51
+      },
+      "revId": "42737624ac0d44e9240928e0ac0934f22d4e6f9e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "54f101cd_9d2c190d",
         "filename": "shell/release-job.sh",
         "patchSetId": 8
