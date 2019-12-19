@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "39ba97e3_620b25c0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2019-12-19T19:22:49Z",
+      "side": 1,
+      "message": "Chris has it right, with your change, you still have nested quotes. I am kinda surprised that shellcheck does not catch this.",
+      "parentUuid": "7daf4b7e_fc4e95e4",
+      "range": {
+        "startLine": 164,
+        "startChar": 18,
+        "endLine": 164,
+        "endChar": 51
+      },
+      "revId": "42737624ac0d44e9240928e0ac0934f22d4e6f9e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "54f101cd_9d2c190d",
         "filename": "shell/release-job.sh",
         "patchSetId": 8
