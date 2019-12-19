@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9042b5df_1235de0a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "This is out of scope for this particular change. I can create a new change for these, so there is no confusion.",
+      "parentUuid": "5e56e966_1b28d583",
+      "range": {
+        "startLine": 49,
+        "startChar": 26,
+        "endLine": 49,
+        "endChar": 72
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8a569d6a_6757cf93",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -45,6 +69,30 @@
       "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1c95b18_0bf326d1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8a569d6a_6757cf93",
+      "range": {
+        "startLine": 52,
+        "startChar": 14,
+        "endLine": 52,
+        "endChar": 28
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "9b019227_7cfd0331",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1163d500_7591055d",
+      "range": {
+        "startLine": 69,
+        "startChar": 17,
+        "endLine": 69,
+        "endChar": 52
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae0578b0_0c439760",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -91,6 +163,30 @@
       "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ec334ff_1d44dbd2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ae0578b0_0c439760",
+      "range": {
+        "startLine": 73,
+        "startChar": 20,
+        "endLine": 73,
+        "endChar": 56
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "59e3f2f2_5e625749",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4310f63c_27f65368",
+      "range": {
+        "startLine": 79,
+        "startChar": 16,
+        "endLine": 79,
+        "endChar": 52
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f2996801_26c0f5e6",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -137,6 +257,30 @@
       "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5648a451_103f2d32",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f2996801_26c0f5e6",
+      "range": {
+        "startLine": 95,
+        "startChar": 16,
+        "endLine": 95,
+        "endChar": 66
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "25bdd0b3_a95f164f",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "64a6a89f_a81e05e0",
+      "range": {
+        "startLine": 99,
+        "startChar": 20,
+        "endLine": 99,
+        "endChar": 56
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc40b7ab_8fe796c7",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -183,6 +351,30 @@
       "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96419f69_4b2652bb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bc40b7ab_8fe796c7",
+      "range": {
+        "startLine": 105,
+        "startChar": 32,
+        "endLine": 105,
+        "endChar": 84
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "f0e54d13_6519a772",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "60d03398_2a35b6da",
+      "range": {
+        "startLine": 108,
+        "startChar": 32,
+        "endLine": 108,
+        "endChar": 84
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e6048687_6036d70c",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -229,6 +445,30 @@
       "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9b9b4cc_60e3ae6e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e6048687_6036d70c",
+      "range": {
+        "startLine": 115,
+        "startChar": 8,
+        "endLine": 115,
+        "endChar": 40
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "12d428b8_6a0b2584",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6b984bb1_b164686b",
+      "range": {
+        "startLine": 129,
+        "startChar": 16,
+        "endLine": 129,
+        "endChar": 52
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7fa6f57c_e636d14a",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -275,6 +539,30 @@
       "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1dae1e1_d0bd84db",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7fa6f57c_e636d14a",
+      "range": {
+        "startLine": 134,
+        "startChar": 22,
+        "endLine": 134,
+        "endChar": 62
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -301,6 +589,30 @@
     },
     {
       "key": {
+        "uuid": "f27bf436_403b16b6",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "931bd7de_ef71ba91",
+      "range": {
+        "startLine": 137,
+        "startChar": 23,
+        "endLine": 137,
+        "endChar": 66
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c1590210_3c090f9d",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -324,6 +636,30 @@
     },
     {
       "key": {
+        "uuid": "82198025_9cf26abb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c1590210_3c090f9d",
+      "range": {
+        "startLine": 140,
+        "startChar": 16,
+        "endLine": 140,
+        "endChar": 52
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "720c3a08_9347f3a5",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -344,6 +680,30 @@
       "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "75cc112f_6510b49f",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2019-12-19T19:39:19Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "720c3a08_9347f3a5",
+      "range": {
+        "startLine": 144,
+        "startChar": 20,
+        "endLine": 144,
+        "endChar": 56
+      },
+      "revId": "6ae164b28f1b830a442c37d3b4f4fd925d86c2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
