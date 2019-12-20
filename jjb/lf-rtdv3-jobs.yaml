@@ -17,6 +17,7 @@
     submodule-recursive: true
     submodule-disable: false
     submodule-timeout: 10
+    tox-dir: "."
     gerrit-skip-vote: false
 
     gerrit_trigger_file_paths:
@@ -65,6 +66,7 @@
             - inject:
                 properties-content: |
                   TOX_ENVS=docs,docs-linkcheck
+                  TOX_ENVS={tox-envs}
             - lf-infra-tox-run:
                 parallel: "true"
             - lf-rtdv3-build:

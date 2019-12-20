@@ -137,6 +137,7 @@ example file: ci-management/jjb/rtd/rtd.yaml
        name: rtdv3-global-verify
        build-node: centos7-builder-1c-1g
        default-version: latest
+       tox-dir: "."
        jobs:
          - rtdv3-global-verify
        stream:
@@ -166,6 +167,7 @@ Or add both jobs via a job group:
    - project:
        name: rtdv3-global
        default-version: latest
+       tox-dir: "."
        build-node: centos7-builder-1c-1g
        jobs:
          - rtdv3-global
@@ -279,7 +281,7 @@ Also outputs some info on the build.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
-
+    :tox-dir: Directory containing the project's read the docs tox.ini
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
         file modifications will trigger a build.
