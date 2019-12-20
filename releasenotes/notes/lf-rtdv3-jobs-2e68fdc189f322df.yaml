@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Make tox-dir configurable
+    default is "."
+    can now be set to "docs/"
