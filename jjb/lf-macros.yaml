@@ -282,7 +282,7 @@
       - inject:
           properties-content: |
             DEFAULT_VERSION={default-version}
-      - shell: !include-raw: ../shell/rtdv3.sh
+      - shell: !include-raw-escape: ../shell/rtdv3.sh
 
 - builder:
     name: check-info-votes

@@ -56,6 +56,14 @@ explanation presented in: https://github.com/lfit-sandbox/test. This is all
 currently a beta feature, so feedback is encouraged. The script
 `docs_script.sh` is not needed, you can copy the files by hand if you prefer.
 
+The default location of the tox.ini file is in the git repository root
+directory. Optionally your documentation lead may decide to store all tox files
+within the required "docs" subdirectory by setting configuration option
+"tox-dir" to value "docs/" as discussed below.
+
+If your project's tox dir is "docs/" and not "." the tox.ini must be
+reconfigured with the correct relative paths.
+
 Once these files are correctly configured in your repository you can test
 locally:
 
@@ -137,6 +145,7 @@ example file: ci-management/jjb/rtd/rtd.yaml
        name: rtdv3-global-verify
        build-node: centos7-builder-1c-1g
        default-version: latest
+       tox-dir: "."
        jobs:
          - rtdv3-global-verify
        stream:
@@ -166,6 +175,7 @@ Or add both jobs via a job group:
    - project:
        name: rtdv3-global
        default-version: latest
+       tox-dir: "."
        build-node: centos7-builder-1c-1g
        jobs:
          - rtdv3-global
@@ -279,7 +289,7 @@ Also outputs some info on the build.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
-
+    :tox-dir: Directory containing the project's read the docs tox.ini
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
         file modifications will trigger a build.
