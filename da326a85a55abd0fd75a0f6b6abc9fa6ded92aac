@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b1ab4e26_5c56b050",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-20T22:26:08Z",
+      "side": 1,
+      "message": "if this is the default, why set it?",
+      "range": {
+        "startLine": 140,
+        "startChar": 6,
+        "endLine": 140,
+        "endChar": 19
+      },
+      "revId": "da326a85a55abd0fd75a0f6b6abc9fa6ded92aac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d70631b_5197b17c",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-20T22:26:08Z",
+      "side": 1,
+      "message": "Please use a different value here as an example and explain the implication",
+      "range": {
+        "startLine": 170,
+        "startChar": 16,
+        "endLine": 170,
+        "endChar": 19
+      },
+      "revId": "da326a85a55abd0fd75a0f6b6abc9fa6ded92aac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
