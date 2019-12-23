@@ -1,0 +1,15 @@
+---
+upgrade:
+  - |
+    Projects using macros lf-maven-javadoc-publish or lf-maven-javadoc-verify
+    (i.e., using job templates gerrit-maven-javadoc-publish, github-maven-javadoc-publish,
+    gerrit-maven-javadoc-verify or github-maven-javadoc-verify) must ensure the
+    maven -f option is not used in config parameter mvn-opts or mvn-params.
+features:
+  - |
+    Generate javadoc from a project in a subdirectory.
+    Extend maven-javadoc publish and javadoc-verify templates with mvn-subdir
+    configuration parameter, defaults to '.' to keep existing behavior.
+    Extend maven-javadoc-generate.sh script to invoke mvn with the -f option
+    and use the subdir name when archiving the generated HTML.
+    Document the new configuration parameter.

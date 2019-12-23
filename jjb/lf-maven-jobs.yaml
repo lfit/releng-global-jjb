@@ -314,6 +314,7 @@
     mvn-global-settings: global-settings
     mvn-opts: ""
     mvn-params: ""
+    mvn-subdir: "."
     mvn-version: mvn35
     stream: master
     submodule-recursive: true
@@ -343,7 +344,9 @@
       - lf-infra-create-netrc:
           server-id: "{mvn-site-id}"
       - inject:
-          properties-content: "DEPLOY_PATH={javadoc-path}"
+          properties-content: |
+            DEPLOY_PATH={javadoc-path}
+            MAVEN_SUBDIR={mvn-subdir}
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-javadoc-generate.sh
@@ -443,6 +446,7 @@
     mvn-global-settings: global-settings
     mvn-opts: ""
     mvn-params: ""
+    mvn-subdir: "."
     mvn-version: mvn35
     stream: master
     submodule-recursive: true
@@ -474,6 +478,9 @@
       - lf-provide-maven-settings:
           global-settings-file: "{mvn-global-settings}"
           settings-file: "{mvn-settings}"
+      - inject:
+          properties-content: |
+            MAVEN_SUBDIR={mvn-subdir}
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-javadoc-generate.sh

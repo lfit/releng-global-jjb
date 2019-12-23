@@ -165,7 +165,9 @@ Maven JavaDoc Publish
 
 Produces and publishes javadocs for a Maven project.
 
-Expects javadocs to be available in $WORKSPACE/target/site/apidocs
+Expects javadocs to be available in $WORKSPACE/target/site/apidocs, unless
+the mvn-subdir parameter is supplied, in which case expects javadocs to be
+available in $WORKSPACE/{mvn-subdir}/target/site/apidocs.
 
 :Template Names:
 
@@ -196,6 +198,8 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+        Must not include a "-f" option; see parameter mvn-subdir below.
+    :mvn-subdir: Subdirectory supplied as argument to -f option (default: '.')
     :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -213,7 +217,9 @@ Maven JavaDoc Verify
 
 Produces javadocs for a Maven project.
 
-Expects javadocs to be available in $WORKSPACE/target/site/apidocs
+Expects javadocs to be available in $WORKSPACE/target/site/apidocs, unless
+the mvn-subdir parameter is supplied, in which case expects javadocs to be
+available in $WORKSPACE/{mvn-subdir}/target/site/apidocs.
 
 :Template Names:
 
@@ -241,6 +247,8 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+        Must not include a "-f" option; see parameter mvn-subdir.
+    :mvn-subdir: Subdirectory supplied as argument to -f option (default: '.')
     :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
