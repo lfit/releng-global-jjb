@@ -140,7 +140,7 @@ Produces a CLM scan of the code into Nexus IQ Server.
         Maven configuration. (default: global-settings)
     :mvn-goals: The maven goals to perform for the build.
         (default: clean install)
-    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :nexus-iq-namespace: Insert a namespace to project AppID for projects that
@@ -165,7 +165,9 @@ Maven JavaDoc Publish
 
 Produces and publishes javadocs for a Maven project.
 
-Expects javadocs to be available in $WORKSPACE/target/site/apidocs
+Expects javadocs to be available in $WORKSPACE/target/site/apidocs, unless
+the mvn-dir parameter is supplied, in which case expects javadocs to be
+available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
 
 :Template Names:
 
@@ -192,10 +194,12 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
+    :mvn-dir: Directory supplied as argument to -f option (default: '.')
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
-    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+        Must not include a "-f" option; see parameter mvn-dir.
     :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -213,7 +217,9 @@ Maven JavaDoc Verify
 
 Produces javadocs for a Maven project.
 
-Expects javadocs to be available in $WORKSPACE/target/site/apidocs
+Expects javadocs to be available in $WORKSPACE/target/site/apidocs, unless
+the mvn-dir parameter is supplied, in which case expects javadocs to be
+available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
 
 :Template Names:
 
@@ -237,10 +243,12 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
+    :mvn-dir: Directory supplied as argument to -f option (default: '.')
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
-    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+        Must not include a "-f" option; see parameter mvn-dir.
     :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -302,7 +310,7 @@ This job uses the following strategy to deploy jobs to Nexus:
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
-    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :nexus-cut-dirs: Number of directories to cut from file path for `wget -r`.
@@ -393,7 +401,7 @@ directory is then used later to deploy to Nexus.
     :maven-versions-plugin: Whether to call Maven versions plugin or not. (default: false)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
-    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :ossrh-profile-id: Profile ID for project as provided by OSSRH.
@@ -488,7 +496,7 @@ interest in that kind of support.
         Maven configuration. (default: global-settings)
     :mvn-goals: The maven goals to perform for the build.
         (default: clean install)
-    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :sonar-mvn-goals: Maven goals to run for sonar analysis.
@@ -545,7 +553,7 @@ Verify job which runs mvn clean install to test a project build..
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
-    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
@@ -614,7 +622,7 @@ via comment trigger.
     :java-version: Version of Java to use for the build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
-    :mvn-opts: Sets MAVEN_OPTS. (default: '')
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.

@@ -11,9 +11,9 @@
 echo "---> maven-javadoc-generate.sh"
 # Generates javadoc in a Maven project.
 
-# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.
 # Ensure we fail the job if any steps fail.
-set -xe -o pipefail
+# DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.
+set -e -o pipefail
 set +u
 
 JAVADOC_DIR="$WORKSPACE/archives/javadoc"
@@ -30,9 +30,10 @@ $MVN clean install javadoc:aggregate \
     -Dfindbugs.skip=true \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
+    -f "$MAVEN_DIR" \
     $MAVEN_OPTIONS $MAVEN_PARAMS
 
-mv "$WORKSPACE/target/site/apidocs" "$JAVADOC_DIR"
+mv "$WORKSPACE/$MAVEN_DIR/target/site/apidocs" "$JAVADOC_DIR"
 
 # TODO: Nexus unpack plugin throws a "504 gateway timeout" for jobs archiving
 # large number of small files. Remove the workaround only we move away from
