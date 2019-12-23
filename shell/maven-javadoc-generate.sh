@@ -21,6 +21,11 @@ mkdir -p "$WORKSPACE/archives"
 
 export MAVEN_OPTS
 
+# Warn if -f occurs in options or params but don't fail
+if [[ $MAVEN_OPTIONS =~ "-f" || $MAVEN_PARAMS =~ "-f" ]]; then
+    echo "WARNING: -f in MAVEN_OPTIONS or MAVEN_PARAMS conflicts with MAVEN_DIR"
+fi
+
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
 $MVN clean install javadoc:aggregate \
@@ -30,9 +35,10 @@ $MVN clean install javadoc:aggregate \
     -Dfindbugs.skip=true \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
+    -f "$MAVEN_DIR" \
     $MAVEN_OPTIONS $MAVEN_PARAMS
 
-mv "$WORKSPACE/target/site/apidocs" "$JAVADOC_DIR"
+mv "$WORKSPACE/$MAVEN_DIR/target/site/apidocs" "$JAVADOC_DIR"
 
 # TODO: Nexus unpack plugin throws a "504 gateway timeout" for jobs archiving
 # large number of small files. Remove the workaround only we move away from

@@ -311,6 +311,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-version: openjdk8
+    mvn-dir: "."
     mvn-global-settings: global-settings
     mvn-opts: ""
     mvn-params: ""
@@ -343,7 +344,9 @@
       - lf-infra-create-netrc:
           server-id: "{mvn-site-id}"
       - inject:
-          properties-content: "DEPLOY_PATH={javadoc-path}"
+          properties-content: |
+            DEPLOY_PATH={javadoc-path}
+            MAVEN_DIR={mvn-dir}
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-javadoc-generate.sh
@@ -440,6 +443,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-version: openjdk8
+    mvn-dir: "."
     mvn-global-settings: global-settings
     mvn-opts: ""
     mvn-params: ""
@@ -474,6 +478,9 @@
       - lf-provide-maven-settings:
           global-settings-file: "{mvn-global-settings}"
           settings-file: "{mvn-settings}"
+      - inject:
+          properties-content: |
+            MAVEN_DIR={mvn-dir}
       - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-javadoc-generate.sh
