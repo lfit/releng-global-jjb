@@ -30,9 +30,10 @@ $MVN clean install javadoc:aggregate \
     -Dfindbugs.skip=true \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
+    -f "$MAVEN_DIR" \
     $MAVEN_OPTIONS $MAVEN_PARAMS
 
-mv "$WORKSPACE/target/site/apidocs" "$JAVADOC_DIR"
+mv "$WORKSPACE/$MAVEN_DIR/target/site/apidocs" "$JAVADOC_DIR"
 
 # TODO: Nexus unpack plugin throws a "504 gateway timeout" for jobs archiving
 # large number of small files. Remove the workaround only we move away from
