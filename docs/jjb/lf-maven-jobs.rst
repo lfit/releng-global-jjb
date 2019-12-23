@@ -165,7 +165,9 @@ Maven JavaDoc Publish
 
 Produces and publishes javadocs for a Maven project.
 
-Expects javadocs to be available in $WORKSPACE/target/site/apidocs
+Expects javadocs to be available in $WORKSPACE/target/site/apidocs, unless
+the mvn-dir parameter is supplied, in which case expects javadocs to be
+available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
 
 :Template Names:
 
@@ -192,10 +194,12 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
+    :mvn-dir: Directory supplied as argument to -f option (default: '.')
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+        Must not include a "-f" option; see parameter mvn-dir.
     :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
@@ -213,7 +217,9 @@ Maven JavaDoc Verify
 
 Produces javadocs for a Maven project.
 
-Expects javadocs to be available in $WORKSPACE/target/site/apidocs
+Expects javadocs to be available in $WORKSPACE/target/site/apidocs, unless
+the mvn-dir parameter is supplied, in which case expects javadocs to be
+available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
 
 :Template Names:
 
@@ -237,10 +243,12 @@ Expects javadocs to be available in $WORKSPACE/target/site/apidocs
     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
+    :mvn-dir: Directory supplied as argument to -f option (default: '.')
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS. (default: '')
     :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+        Must not include a "-f" option; see parameter mvn-dir.
     :mvn-version: Version of maven to use. (default: mvn35)
     :stream: Keyword that can be used to represent a release code-name.
         Often the same as the branch. (default: master)
