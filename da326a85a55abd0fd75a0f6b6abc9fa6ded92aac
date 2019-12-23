@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7694b0c1_2b37e1f1",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2019-12-23T14:48:37Z",
+      "side": 1,
+      "message": "Maybe add this paragraph:\n\n    The default location of the tox.ini file is in the git repository root directory. Optionally you can store that file within the required \"docs\" subdirectory by setting configuration option \"tox-dir\" to value \"docs\" as discussed below.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 6
+      },
+      "revId": "da326a85a55abd0fd75a0f6b6abc9fa6ded92aac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b1ab4e26_5c56b050",
         "filename": "docs/jjb/lf-rtdv3-jobs.rst",
         "patchSetId": 3
