@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Generate javadoc from a project in a subdirectory.
+    Extend maven-javadoc publish and verify templates with mvn-subdir
+    configuration parameter, defaults to '.' to keep existing behavior.
+    Extend maven-javadoc-generate.sh script to invoke mvn with -f option
+    and use the subdir name when archiving the generated HTML.
+    Document the new configuration parameter.
