@@ -20,7 +20,7 @@ echo "---> gerrit-push-patch.sh"
 # will update the existing patch.
 #
 # Note: This patch assumes the $WORKSPACE contains the project repo with
-#       the files changed already "git add" and waiting for a "git commit" call.
+#       'Changes to be committed'.
 #
 # This script requires the following JJB variables to be passed in:
 #
@@ -34,43 +34,62 @@ echo "---> gerrit-push-patch.sh"
 # TODO: remove the workaround when v1.26 is available on all images
 # Workaround for git-review bug in v1.24
 # https://storyboard.openstack.org/#!/story/2001081
-set +u  # Allow unbound variables for virtualenv
-virtualenv --quiet "/tmp/v/git-review"
-# shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
-source "/tmp/v/git-review/bin/activate"
-pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade git-review
-set -u
-# End git-review workaround
-# Remove any leading or trailing quotes surrounding the strings
-# which can cause parse errors when passed as CLI options to commands
-PROJECT="$(echo "$PROJECT" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_COMMIT_MESSAGE="$(echo "$GERRIT_COMMIT_MESSAGE" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_HOST="$(echo "$GERRIT_HOST" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_TOPIC="$(echo "$GERRIT_TOPIC" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_USER="$(echo "$GERRIT_USER" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-REVIEWERS_EMAIL="$(echo "$REVIEWERS_EMAIL" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+
+set -eufo pipefail
+
+# No reason to continue if there are no 'Changes to be committed'
+# Look for: new, modified or deleted
+modified_list=$(git status --porcelain | egrep "^A |^M |^D " | awk '{print $2}')
+if [[ -z $modified_list ]]; then
+    echo "INFO: Nothing to commit"
+    exit 0
+fi
+
+echo "INFO: Committing: $modified_list"
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+# DEBUG no longer installing setuptools
+lf-activate-venv git-review
+
+# DEBUG
+pip --version
+type git-review
+git-review --version
+echo "####  DEBUG  ####"
+git status
+echo "####  DEBUG  ####"
+git diff
+echo "####  DEBUG  ####"
+
 job=$JOB_NAME/$BUILD_NUMBER
 
-CHANGE_ID=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
-               limit:1 owner:self is:open project:"$PROJECT" \
-               message: "$GERRIT_COMMIT_MESSAGE" \
-               topic: "$GERRIT_TOPIC" | \
-               grep 'Change-Id:' | \
-               awk '{ print $2 }')
+set -x #DEBUG
+change_id=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST"     \
+            gerrit query limit: 1  owner: self  is: open \
+                project: "$PROJECT"                      \
+                message: "$GERRIT_COMMIT_MESSAGE"        \
+                topic:   "$GERRIT_TOPIC"                 \
+            | grep 'Change-Id:' | awk '{ print $2 }')
 
-if [ -z "$CHANGE_ID" ]; then
-   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Job: ${job}"
+if [[ -z $change_id ]]; then
+    message="Job: $job"
 else
-   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Job: ${job}\nChange-Id: $CHANGE_ID"
+    message="Job: $job\nChange-Id: $change_id"
 fi
+git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "$message"
+git show # DEBUG
 
 git status
 git remote add gerrit "ssh://$GERRIT_USER@$GERRIT_HOST:29418/$PROJECT.git"
 
-# if the reviewers email is empty then use a default
-REVIEWERS_EMAIL=${REVIEWERS_EMAIL:-"$GERRIT_USER@$GERRIT_HOST"}
+# If the reviewers email is empty then use a default
+reviewers_email=${REVIEWERS_EMAIL:-$GERRIT_USER@$GERRIT_HOST}
 
-# Don't fail the build if this command fails because it's possible that there
-# is no changes since last update.
-git review --yes -t "$GERRIT_TOPIC" --reviewers "$REVIEWERS_EMAIL" || true
+# Since the Job Number is included in the commit message, the 'git review' will
+# not fail because 'no new changes'. Let the build fail if 'git review' fails
+# DEBUG
+git review --yes -t "$GERRIT_TOPIC" --reviewers "$reviewers_email" --dry-run
+#git review --yes -t "$GERRIT_TOPIC" --reviewers "$reviewers_email"
+exit 1 # DEBUG
