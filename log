@@ -1,0 +1,804 @@
+coala installed: alabaster==0.7.12,appdirs==1.4.3,astroid==1.6.6,attrs==19.3.0,autoflake==0.6.6,autopep8==1.4.4,Babel==2.8.0,bandit==1.6.2,certifi==2019.11.28,chardet==3.0.4,click==6.6,cmakelint==1.4.1,coala==0.11.0,coala-bears==0.11.1,coala-utils==0.6.7,colorama==0.3.9,colorlog==2.10.0,cppclean==0.12,cpplint==1.4.4,decorator==4.4.1,dennis==0.9,dependency-management==0.4.0,docopt==0.6.2,docutils==0.15.2,eradicate==0.1.6,future==0.18.2,gitdb2==2.0.6,GitPython==3.0.5,guess-language-spirit==0.5.3,html-linter==0.3.0,idna==2.8,imagesize==1.2.0,importlib-metadata==1.3.0,ipython-genutils==0.2.0,isort==4.3.21,Jinja2==2.10.3,jsonschema==3.2.0,jupyter-core==4.6.1,lazy-object-proxy==1.4.3,libclang-py3==3.4.0,mando==0.3.3,MarkupSafe==1.1.1,mccabe==0.6.1,more-itertools==8.0.2,munkres3==1.0.5.5,mypy-lang==0.4.6,nbformat==4.4.0,nltk==3.4.5,nodeenv==1.3.4,numpy==1.18.1,packaging==20.0,pbr==5.4.4,polib==1.1.0,proselint==0.7.0,pycodestyle==2.5.0,pydocstyle==1.1.1,pyflakes==1.4.0,Pygments==2.5.2,pylint==1.9.5,pyparsing==2.4.6,PyPrint==0.2.6,pyroma==2.2,pyrsistent==0.15.7,pytz==2019.3,PyYAML==3.13,radon==1.4.0,requests==2.22.0,restructuredtext-lint==1.0.1,rstcheck==2.2,safety==0.5.1,sarge==0.1.5.post0,scspell3k==2.2,six==1.13.0,smmap2==2.0.5,snowballstemmer==2.0.0,Sphinx==1.4.9,stevedore==1.31.0,template-remover==0.1.9,termcolor==1.1.0,traitlets==4.3.3,unidiff==0.5.5,urllib3==1.25.7,vulture==0.10,wrapt==1.11.2,yamllint==1.6.1,yapf==0.14.0,zipp==0.6.0
+coala run-test-pre: PYTHONHASHSEED='426496438'
+coala run-test: commands[0] | nodeenv -p
+ * Install prebuilt node (13.6.0) ..... done.
+coala run-test: commands[1] | npm install --global remark-cli remark-lint write-good
+/home/tijohnson/VE/releng-2633/2633/.tox/coala/bin/remark -> /home/tijohnson/VE/releng-2633/2633/.tox/coala/lib/node_modules/remark-cli/cli.js
+/home/tijohnson/VE/releng-2633/2633/.tox/coala/bin/write-good -> /home/tijohnson/VE/releng-2633/2633/.tox/coala/lib/node_modules/write-good/bin/write-good.js
+/home/tijohnson/VE/releng-2633/2633/.tox/coala/bin/writegood -> /home/tijohnson/VE/releng-2633/2633/.tox/coala/lib/node_modules/write-good/bin/write-good.js
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@2.1.2 (node_modules/remark-cli/node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@2.1.2: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+
++ remark-cli@7.0.1
++ remark-lint@6.0.5
++ write-good@1.0.2
+updated 3 packages in 9.872s
+coala run-test: commands[2] | coala --non-interactive
+Executing section all...
+Executing section all.GitCommit...
+[nltk_data] Downloading package punkt to /home/tijohnson/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package maxent_treebank_pos_tagger to
+[nltk_data]     /home/tijohnson/nltk_data...
+[nltk_data]   Package maxent_treebank_pos_tagger is already up-to-
+[nltk_data]       date!
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     /home/tijohnson/nltk_data...
+[nltk_data]   Package averaged_perceptron_tagger is already up-to-
+[nltk_data]       date!
+Executing section all.Groovy...
+Executing section all.MarkDown...
+[33m[WARNING][0m[10:09:44] No files matching '/home/tijohnson/VE/releng-2633/2633/**.markdown' were found.[0m
+Executing section all.reStructuredText...
+Executing section cli...
+ensure-documented run-test-pre: PYTHONHASHSEED='426496438'
+ensure-documented run-test: commands[0] | ./ensure-documented.sh
+jjb installed: certifi==2019.11.28,chardet==3.0.4,fasteners==0.15,idna==2.8,jenkins-job-builder==2.8.0,Jinja2==2.10.3,MarkupSafe==1.1.1,monotonic==1.5,multi-key-dict==2.0.3,pbr==5.4.4,python-jenkins==1.6.0,PyYAML==3.13,requests==2.22.0,six==1.13.0,stevedore==1.31.0,urllib3==1.25.7
+jjb run-test-pre: PYTHONHASHSEED='426496438'
+jjb run-test: commands[0] | jenkins-jobs test --recursive -o /home/tijohnson/VE/releng-2633/2633/archives/job-configs /home/tijohnson/VE/releng-2633/2633/jjb:/home/tijohnson/VE/releng-2633/2633/.jjb-test
+INFO:jenkins_jobs.config:Will use anonymous access to Jenkins if needed.
+INFO:jenkins_jobs.cli.subcommand.update:Updating jobs in ['/home/tijohnson/VE/releng-2633/2633/jjb', '/home/tijohnson/VE/releng-2633/2633/.jjb-test', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-ci-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-docker-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-macros', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-maven-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-openstack'] ([])
+INFO:jenkins_jobs.local_yaml:Lazy loading of file template 'ScalarNode(tag='!include-raw:', value='{docker-get-container-tag-script}')' enabled
+INFO:jenkins_jobs.builder:Number of jobs generated:  89
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+INFO:jenkins_jobs.builder:Number of views generated:  9
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+WARNING:jenkins_jobs.builder:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+jjb-compare-xml installed: certifi==2019.11.28,chardet==3.0.4,fasteners==0.15,idna==2.8,jenkins-job-builder==3.2.0,Jinja2==2.10.3,MarkupSafe==1.1.1,monotonic==1.5,multi-key-dict==2.0.3,pbr==5.4.4,python-jenkins==1.6.0,PyYAML==5.3,requests==2.22.0,six==1.13.0,stevedore==1.31.0,urllib3==1.25.7
+jjb-compare-xml run-test-pre: PYTHONHASHSEED='426496438'
+jjb-compare-xml run-test: commands[0] | ./jjb-compare-xml.sh
+Script Directory: /home/tijohnson/VE/releng-2633/2633/jjb
+Test Directory: /tmp/tmp.QP7pO9YE3L
+Expected XML Directory: /tmp/gjjb-IYU429rK
+tijohnson@gerrit.linuxfoundation.org: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Preparing /tmp/tmp.WMjt1dG6Ss (identifier tmp.WMjt1dG6Ss)
+HEAD is now at 7252205 Migrate shellcheck hook to pre-commit
+/tmp/tmp.WMjt1dG6Ss /home/tijohnson/VE/releng-2633/2633
+Generating expected XML.
+/home/tijohnson/VE/releng-2633/2633
+Generating test XML.
+INFO:jenkins_jobs.config:Will use anonymous access to Jenkins if needed.
+WARNING:jenkins_jobs.cli.subcommand.test:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+INFO:jenkins_jobs.cli.subcommand.update:Updating jobs in ['/home/tijohnson/VE/releng-2633/2633/jjb', '/home/tijohnson/VE/releng-2633/2633/.jjb-test', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-ci-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-docker-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-macros', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-maven-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-openstack'] ([])
+INFO:jenkins_jobs.local_yaml:Lazy loading of file template 'ScalarNode(tag='!include-raw:', value='{docker-get-container-tag-script}')' enabled
+INFO:root:Caching type properties of properties = jenkins_jobs.modules.properties:Properties
+INFO:root:Caching type parameters of parameters = jenkins_jobs.modules.parameters:Parameters
+INFO:root:Caching type scm of scm = jenkins_jobs.modules.scm:SCM
+INFO:root:Caching type triggers of triggers = jenkins_jobs.modules.triggers:Triggers
+INFO:root:Caching type builders of builders = jenkins_jobs.modules.builders:Builders
+INFO:root:Caching type publishers of publishers = jenkins_jobs.modules.publishers:Publishers
+INFO:root:Caching type wrappers of wrappers = jenkins_jobs.modules.wrappers:Wrappers
+INFO:jenkins_jobs.builder:Number of jobs generated:  89
+INFO:jenkins_jobs.builder:Number of views generated:  9
+cmp: /tmp/gjjb-IYU429rK/builder-jenkins-cfg-merge: No such file or directory
+Differences detected in builder-jenkins-cfg-merge
+diff: /tmp/gjjb-IYU429rK/builder-jenkins-cfg-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/ci-jobs: No such file or directory
+Differences detected in ci-jobs
+diff: /tmp/gjjb-IYU429rK/ci-jobs: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/ci-management-jenkins-cfg-merge: No such file or directory
+Differences detected in ci-management-jenkins-cfg-merge
+diff: /tmp/gjjb-IYU429rK/ci-management-jenkins-cfg-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/ci-management-jenkins-cfg-verify: No such file or directory
+Differences detected in ci-management-jenkins-cfg-verify
+diff: /tmp/gjjb-IYU429rK/ci-management-jenkins-cfg-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/ci-management-openstack-cron: No such file or directory
+Differences detected in ci-management-openstack-cron
+diff: /tmp/gjjb-IYU429rK/ci-management-openstack-cron: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/ciman-full-openstack-cron: No such file or directory
+Differences detected in ciman-full-openstack-cron
+diff: /tmp/gjjb-IYU429rK/ciman-full-openstack-cron: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/ciman-full-openstack-update-cloud-image: No such file or directory
+Differences detected in ciman-full-openstack-update-cloud-image
+diff: /tmp/gjjb-IYU429rK/ciman-full-openstack-update-cloud-image: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/ciman-minimal-openstack-update-cloud-image: No such file or directory
+Differences detected in ciman-minimal-openstack-update-cloud-image
+diff: /tmp/gjjb-IYU429rK/ciman-minimal-openstack-update-cloud-image: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/CSIT-1node: No such file or directory
+Differences detected in CSIT-1node
+diff: /tmp/gjjb-IYU429rK/CSIT-1node: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/Daily: No such file or directory
+Differences detected in Daily
+diff: /tmp/gjjb-IYU429rK/Daily: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/docker-project-docker-merge-latest: No such file or directory
+Differences detected in docker-project-docker-merge-latest
+diff: /tmp/gjjb-IYU429rK/docker-project-docker-merge-latest: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/docker-project-docker-verify-latest: No such file or directory
+Differences detected in docker-project-docker-verify-latest
+diff: /tmp/gjjb-IYU429rK/docker-project-docker-verify-latest: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-gerrit-branch-lock: No such file or directory
+Differences detected in gerrit-ciman-gerrit-branch-lock
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-gerrit-branch-lock: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-jenkins-cfg-merge: No such file or directory
+Differences detected in gerrit-ciman-jenkins-cfg-merge
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-jenkins-cfg-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-jenkins-cfg-verify: No such file or directory
+Differences detected in gerrit-ciman-jenkins-cfg-verify
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-jenkins-cfg-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-jenkins-sandbox-cleanup: No such file or directory
+Differences detected in gerrit-ciman-jenkins-sandbox-cleanup
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-jenkins-sandbox-cleanup: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-jjb-deploy-job: No such file or directory
+Differences detected in gerrit-ciman-jjb-deploy-job
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-jjb-deploy-job: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-jjb-merge: No such file or directory
+Differences detected in gerrit-ciman-jjb-merge
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-jjb-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-jjb-verify: No such file or directory
+Differences detected in gerrit-ciman-jjb-verify
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-jjb-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-openstack-cron: No such file or directory
+Differences detected in gerrit-ciman-openstack-cron
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-openstack-cron: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-merge-centos-java-builder: No such file or directory
+Differences detected in gerrit-ciman-packer-merge-centos-java-builder
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-merge-centos-java-builder: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-merge-centos-mininet: No such file or directory
+Differences detected in gerrit-ciman-packer-merge-centos-mininet
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-merge-centos-mininet: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-merge-ubuntu1604-java-builder: No such file or directory
+Differences detected in gerrit-ciman-packer-merge-ubuntu1604-java-builder
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-merge-ubuntu1604-java-builder: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-merge-ubuntu1604-mininet: No such file or directory
+Differences detected in gerrit-ciman-packer-merge-ubuntu1604-mininet
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-merge-ubuntu1604-mininet: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-verify: No such file or directory
+Differences detected in gerrit-ciman-packer-verify
+diff: /tmp/gjjb-IYU429rK/gerrit-ciman-packer-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-docker-maven-docker-merge-master: No such file or directory
+Differences detected in gerrit-maven-docker-maven-docker-merge-master
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-docker-maven-docker-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-docker-maven-docker-stage-master: No such file or directory
+Differences detected in gerrit-maven-docker-maven-docker-stage-master
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-docker-maven-docker-stage-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-docker-maven-docker-verify-master-mvn35-openjdk8: No such file or directory
+Differences detected in gerrit-maven-docker-maven-docker-verify-master-mvn35-openjdk8
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-docker-maven-docker-verify-master-mvn35-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-maven-clm-master: No such file or directory
+Differences detected in gerrit-maven-maven-clm-master
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-maven-clm-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-maven-javadoc-publish-master-openjdk8: No such file or directory
+Differences detected in gerrit-maven-maven-javadoc-publish-master-openjdk8
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-maven-javadoc-publish-master-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-maven-javadoc-verify-master-openjdk8: No such file or directory
+Differences detected in gerrit-maven-maven-javadoc-verify-master-openjdk8
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-maven-javadoc-verify-master-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-maven-merge-master: No such file or directory
+Differences detected in gerrit-maven-maven-merge-master
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-maven-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-maven-stage-master: No such file or directory
+Differences detected in gerrit-maven-maven-stage-master
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-maven-stage-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-maven-verify-deps-master-mvn35-openjdk8: No such file or directory
+Differences detected in gerrit-maven-maven-verify-deps-master-mvn35-openjdk8
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-maven-verify-deps-master-mvn35-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-maven-verify-master-mvn35-openjdk8: No such file or directory
+Differences detected in gerrit-maven-maven-verify-master-mvn35-openjdk8
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-maven-verify-master-mvn35-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-sonar: No such file or directory
+Differences detected in gerrit-maven-sonar
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-sonar: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-maven-versions-plugin-maven-stage-master: No such file or directory
+Differences detected in gerrit-maven-versions-plugin-maven-stage-master
+diff: /tmp/gjjb-IYU429rK/gerrit-maven-versions-plugin-maven-stage-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-node-node-verify-master: No such file or directory
+Differences detected in gerrit-node-node-verify-master
+diff: /tmp/gjjb-IYU429rK/gerrit-node-node-verify-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-python-pypi-merge-master: No such file or directory
+Differences detected in gerrit-python-pypi-merge-master
+diff: /tmp/gjjb-IYU429rK/gerrit-python-pypi-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-python-pypi-release-merge: No such file or directory
+Differences detected in gerrit-python-pypi-release-merge
+diff: /tmp/gjjb-IYU429rK/gerrit-python-pypi-release-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-python-pypi-release-verify: No such file or directory
+Differences detected in gerrit-python-pypi-release-verify
+diff: /tmp/gjjb-IYU429rK/gerrit-python-pypi-release-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-python-pypi-verify-master: No such file or directory
+Differences detected in gerrit-python-pypi-verify-master
+diff: /tmp/gjjb-IYU429rK/gerrit-python-pypi-verify-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-python-python-clm-master: No such file or directory
+Differences detected in gerrit-python-python-clm-master
+diff: /tmp/gjjb-IYU429rK/gerrit-python-python-clm-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-python-tox-merge-master: No such file or directory
+Differences detected in gerrit-python-tox-merge-master
+diff: /tmp/gjjb-IYU429rK/gerrit-python-tox-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-python-tox-sonar: No such file or directory
+Differences detected in gerrit-python-tox-sonar
+diff: /tmp/gjjb-IYU429rK/gerrit-python-tox-sonar: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-python-tox-verify-master: No such file or directory
+Differences detected in gerrit-python-tox-verify-master
+diff: /tmp/gjjb-IYU429rK/gerrit-python-tox-verify-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-rtd-rtd-merge-master: No such file or directory
+Differences detected in gerrit-rtd-rtd-merge-master
+diff: /tmp/gjjb-IYU429rK/gerrit-rtd-rtd-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/gerrit-rtd-rtd-verify-master: No such file or directory
+Differences detected in gerrit-rtd-rtd-verify-master
+diff: /tmp/gjjb-IYU429rK/gerrit-rtd-rtd-verify-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-jenkins-cfg-merge: No such file or directory
+Differences detected in github-ciman-jenkins-cfg-merge
+diff: /tmp/gjjb-IYU429rK/github-ciman-jenkins-cfg-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-jenkins-cfg-verify: No such file or directory
+Differences detected in github-ciman-jenkins-cfg-verify
+diff: /tmp/gjjb-IYU429rK/github-ciman-jenkins-cfg-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-jenkins-sandbox-cleanup: No such file or directory
+Differences detected in github-ciman-jenkins-sandbox-cleanup
+diff: /tmp/gjjb-IYU429rK/github-ciman-jenkins-sandbox-cleanup: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-jjb-deploy-job: No such file or directory
+Differences detected in github-ciman-jjb-deploy-job
+diff: /tmp/gjjb-IYU429rK/github-ciman-jjb-deploy-job: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-jjb-merge: No such file or directory
+Differences detected in github-ciman-jjb-merge
+diff: /tmp/gjjb-IYU429rK/github-ciman-jjb-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-jjb-verify: No such file or directory
+Differences detected in github-ciman-jjb-verify
+diff: /tmp/gjjb-IYU429rK/github-ciman-jjb-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-openstack-cron: No such file or directory
+Differences detected in github-ciman-openstack-cron
+diff: /tmp/gjjb-IYU429rK/github-ciman-openstack-cron: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-packer-merge-centos-java-builder: No such file or directory
+Differences detected in github-ciman-packer-merge-centos-java-builder
+diff: /tmp/gjjb-IYU429rK/github-ciman-packer-merge-centos-java-builder: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-packer-merge-centos-mininet: No such file or directory
+Differences detected in github-ciman-packer-merge-centos-mininet
+diff: /tmp/gjjb-IYU429rK/github-ciman-packer-merge-centos-mininet: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-packer-merge-ubuntu1604-java-builder: No such file or directory
+Differences detected in github-ciman-packer-merge-ubuntu1604-java-builder
+diff: /tmp/gjjb-IYU429rK/github-ciman-packer-merge-ubuntu1604-java-builder: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-packer-merge-ubuntu1604-mininet: No such file or directory
+Differences detected in github-ciman-packer-merge-ubuntu1604-mininet
+diff: /tmp/gjjb-IYU429rK/github-ciman-packer-merge-ubuntu1604-mininet: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-ciman-packer-verify: No such file or directory
+Differences detected in github-ciman-packer-verify
+diff: /tmp/gjjb-IYU429rK/github-ciman-packer-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-docker-maven-docker-merge-master: No such file or directory
+Differences detected in github-maven-docker-maven-docker-merge-master
+diff: /tmp/gjjb-IYU429rK/github-maven-docker-maven-docker-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-docker-maven-docker-stage-master: No such file or directory
+Differences detected in github-maven-docker-maven-docker-stage-master
+diff: /tmp/gjjb-IYU429rK/github-maven-docker-maven-docker-stage-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-docker-maven-docker-verify-master-mvn35-openjdk8: No such file or directory
+Differences detected in github-maven-docker-maven-docker-verify-master-mvn35-openjdk8
+diff: /tmp/gjjb-IYU429rK/github-maven-docker-maven-docker-verify-master-mvn35-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-maven-clm-master: No such file or directory
+Differences detected in github-maven-maven-clm-master
+diff: /tmp/gjjb-IYU429rK/github-maven-maven-clm-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-maven-javadoc-publish-master-openjdk8: No such file or directory
+Differences detected in github-maven-maven-javadoc-publish-master-openjdk8
+diff: /tmp/gjjb-IYU429rK/github-maven-maven-javadoc-publish-master-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-maven-javadoc-verify-master-openjdk8: No such file or directory
+Differences detected in github-maven-maven-javadoc-verify-master-openjdk8
+diff: /tmp/gjjb-IYU429rK/github-maven-maven-javadoc-verify-master-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-maven-merge-master: No such file or directory
+Differences detected in github-maven-maven-merge-master
+diff: /tmp/gjjb-IYU429rK/github-maven-maven-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-maven-stage-master: No such file or directory
+Differences detected in github-maven-maven-stage-master
+diff: /tmp/gjjb-IYU429rK/github-maven-maven-stage-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-maven-verify-master-mvn35-openjdk8: No such file or directory
+Differences detected in github-maven-maven-verify-master-mvn35-openjdk8
+diff: /tmp/gjjb-IYU429rK/github-maven-maven-verify-master-mvn35-openjdk8: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-maven-sonar: No such file or directory
+Differences detected in github-maven-sonar
+diff: /tmp/gjjb-IYU429rK/github-maven-sonar: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-node-node-verify-master: No such file or directory
+Differences detected in github-node-node-verify-master
+diff: /tmp/gjjb-IYU429rK/github-node-node-verify-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-python-pypi-merge-master: No such file or directory
+Differences detected in github-python-pypi-merge-master
+diff: /tmp/gjjb-IYU429rK/github-python-pypi-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-python-pypi-release-merge: No such file or directory
+Differences detected in github-python-pypi-release-merge
+diff: /tmp/gjjb-IYU429rK/github-python-pypi-release-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-python-pypi-release-verify: No such file or directory
+Differences detected in github-python-pypi-release-verify
+diff: /tmp/gjjb-IYU429rK/github-python-pypi-release-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-python-pypi-verify-master: No such file or directory
+Differences detected in github-python-pypi-verify-master
+diff: /tmp/gjjb-IYU429rK/github-python-pypi-verify-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-python-python-clm-master: No such file or directory
+Differences detected in github-python-python-clm-master
+diff: /tmp/gjjb-IYU429rK/github-python-python-clm-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-python-tox-merge-master: No such file or directory
+Differences detected in github-python-tox-merge-master
+diff: /tmp/gjjb-IYU429rK/github-python-tox-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-python-tox-sonar: No such file or directory
+Differences detected in github-python-tox-sonar
+diff: /tmp/gjjb-IYU429rK/github-python-tox-sonar: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-python-tox-verify-master: No such file or directory
+Differences detected in github-python-tox-verify-master
+diff: /tmp/gjjb-IYU429rK/github-python-tox-verify-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-rtd-rtd-merge-master: No such file or directory
+Differences detected in github-rtd-rtd-merge-master
+diff: /tmp/gjjb-IYU429rK/github-rtd-rtd-merge-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/github-rtd-rtd-verify-master: No such file or directory
+Differences detected in github-rtd-rtd-verify-master
+diff: /tmp/gjjb-IYU429rK/github-rtd-rtd-verify-master: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/maven: No such file or directory
+Differences detected in maven
+diff: /tmp/gjjb-IYU429rK/maven: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/maven-docker: No such file or directory
+Differences detected in maven-docker
+diff: /tmp/gjjb-IYU429rK/maven-docker: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/node: No such file or directory
+Differences detected in node
+diff: /tmp/gjjb-IYU429rK/node: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/project-view-test: No such file or directory
+Differences detected in project-view-test
+diff: /tmp/gjjb-IYU429rK/project-view-test: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/python: No such file or directory
+Differences detected in python
+diff: /tmp/gjjb-IYU429rK/python: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/rtd: No such file or directory
+Differences detected in rtd
+diff: /tmp/gjjb-IYU429rK/rtd: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/self-release-project-release-merge: No such file or directory
+Differences detected in self-release-project-release-merge
+diff: /tmp/gjjb-IYU429rK/self-release-project-release-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/self-release-project-release-verify: No such file or directory
+Differences detected in self-release-project-release-verify
+diff: /tmp/gjjb-IYU429rK/self-release-project-release-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/sonarcloud-sonar: No such file or directory
+Differences detected in sonarcloud-sonar
+diff: /tmp/gjjb-IYU429rK/sonarcloud-sonar: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/throttle-ciman-gerrit-branch-lock: No such file or directory
+Differences detected in throttle-ciman-gerrit-branch-lock
+diff: /tmp/gjjb-IYU429rK/throttle-ciman-gerrit-branch-lock: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/throttle-ciman-jenkins-cfg-merge: No such file or directory
+Differences detected in throttle-ciman-jenkins-cfg-merge
+diff: /tmp/gjjb-IYU429rK/throttle-ciman-jenkins-cfg-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/throttle-ciman-jenkins-cfg-verify: No such file or directory
+Differences detected in throttle-ciman-jenkins-cfg-verify
+diff: /tmp/gjjb-IYU429rK/throttle-ciman-jenkins-cfg-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/throttle-ciman-jenkins-sandbox-cleanup: No such file or directory
+Differences detected in throttle-ciman-jenkins-sandbox-cleanup
+diff: /tmp/gjjb-IYU429rK/throttle-ciman-jenkins-sandbox-cleanup: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/throttle-ciman-jjb-deploy-job: No such file or directory
+Differences detected in throttle-ciman-jjb-deploy-job
+diff: /tmp/gjjb-IYU429rK/throttle-ciman-jjb-deploy-job: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/throttle-ciman-jjb-merge: No such file or directory
+Differences detected in throttle-ciman-jjb-merge
+diff: /tmp/gjjb-IYU429rK/throttle-ciman-jjb-merge: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/throttle-ciman-jjb-verify: No such file or directory
+Differences detected in throttle-ciman-jjb-verify
+diff: /tmp/gjjb-IYU429rK/throttle-ciman-jjb-verify: No such file or directory
+cmp: /tmp/gjjb-IYU429rK/whitesource-scan-project-whitesource-scan-master: No such file or directory
+Differences detected in whitesource-scan-project-whitesource-scan-master
+diff: /tmp/gjjb-IYU429rK/whitesource-scan-project-whitesource-scan-master: No such file or directory
+Checking for double curly braces...
+No double curly braces found.
+WARN: Differences detected. Check above for jobs that have been changed.
+jjb-latest installed: certifi==2019.11.28,chardet==3.0.4,fasteners==0.15,idna==2.8,jenkins-job-builder==3.2.0,Jinja2==2.10.3,MarkupSafe==1.1.1,monotonic==1.5,multi-key-dict==2.0.3,pbr==5.4.4,python-jenkins==1.6.0,PyYAML==5.3,requests==2.22.0,six==1.13.0,stevedore==1.31.0,urllib3==1.25.7
+jjb-latest run-test-pre: PYTHONHASHSEED='426496438'
+jjb-latest run-test: commands[0] | jenkins-jobs test --recursive -o /home/tijohnson/VE/releng-2633/2633/archives/job-configs /home/tijohnson/VE/releng-2633/2633/jjb:/home/tijohnson/VE/releng-2633/2633/.jjb-test
+INFO:jenkins_jobs.config:Will use anonymous access to Jenkins if needed.
+WARNING:jenkins_jobs.cli.subcommand.test:(Deprecated) The default output behavior of `jenkins-jobs test` when given the --output flag will change in JJB 3.0. Instead of writing jobs to OUTPUT/jobname; they will be written to OUTPUT/jobname/config.xml. The new behavior can be enabled by the passing `--config-xml` parameter.
+INFO:jenkins_jobs.cli.subcommand.update:Updating jobs in ['/home/tijohnson/VE/releng-2633/2633/jjb', '/home/tijohnson/VE/releng-2633/2633/.jjb-test', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-ci-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-docker-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-macros', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-maven-jobs', '/home/tijohnson/VE/releng-2633/2633/.jjb-test/lf-openstack'] ([])
+INFO:jenkins_jobs.local_yaml:Lazy loading of file template 'ScalarNode(tag='!include-raw:', value='{docker-get-container-tag-script}')' enabled
+INFO:root:Caching type properties of properties = jenkins_jobs.modules.properties:Properties
+INFO:root:Caching type parameters of parameters = jenkins_jobs.modules.parameters:Parameters
+INFO:root:Caching type scm of scm = jenkins_jobs.modules.scm:SCM
+INFO:root:Caching type triggers of triggers = jenkins_jobs.modules.triggers:Triggers
+INFO:root:Caching type builders of builders = jenkins_jobs.modules.builders:Builders
+INFO:root:Caching type publishers of publishers = jenkins_jobs.modules.publishers:Publishers
+INFO:root:Caching type wrappers of wrappers = jenkins_jobs.modules.wrappers:Wrappers
+INFO:jenkins_jobs.builder:Number of jobs generated:  89
+INFO:jenkins_jobs.builder:Number of views generated:  9
+jjb-version run-test-pre: PYTHONHASHSEED='426496438'
+jjb-version run-test: commands[0] | python /home/tijohnson/VE/releng-2633/2633/check_jjb_version.py
+JJB version in jjb/lf-ci-jobs.yaml: 2.8.0
+JJB version in tox.ini: 2.8.0
+license installed: attrs==19.3.0,beautifulsoup4==4.8.2,bs4==0.0.1,certifi==2019.11.28,chardet==3.0.4,Click==7.0,defusedxml==0.6.0,Deprecated==1.2.7,dnspython==1.16.0,docker==4.1.0,email-validator==1.0.5,httplib2==0.15.0,idna==2.8,importlib-metadata==1.3.0,jsonschema==3.2.0,lftools==0.29.1,lxml==4.4.2,more-itertools==8.0.2,multi-key-dict==2.0.3,oauth2client==4.1.3,pbr==5.4.4,pyasn1==0.4.8,pyasn1-modules==0.2.8,pygerrit2==2.0.9,PyGithub==1.45,PyJWT==1.7.1,pyrsistent==0.15.7,python-jenkins==1.6.0,PyYAML==5.3,requests==2.22.0,rsa==4.0,ruamel.yaml==0.16.5,ruamel.yaml.clib==0.2.0,six==1.13.0,soupsieve==1.9.5,tqdm==4.41.1,urllib3==1.25.7,websocket-client==0.57.0,wrapt==1.11.2,xdg==3.0.2,zipp==0.6.0
+license run-test-pre: PYTHONHASHSEED='426496438'
+license run-test: commands[0] | lftools license check-dir -r .+ shell
+Scan completed did not detect any files missing license headers.
+pre-commit installed: aspy.yaml==1.3.0,cfgv==2.0.1,identify==1.4.9,importlib-metadata==1.3.0,importlib-resources==1.0.2,more-itertools==8.0.2,nodeenv==1.3.4,pre-commit==1.21.0,PyYAML==5.3,six==1.13.0,toml==0.10.0,virtualenv==16.7.9,zipp==0.6.0
+pre-commit run-test-pre: PYTHONHASHSEED='426496438'
+pre-commit run-test: commands[0] | pre-commit run --all-files
+Trim Trailing Whitespace.................................................Passed
+prettier.................................................................Passed
+Test shell scripts with shellcheck.......................................Failed
+- hook id: shellcheck
+- exit code: 1
+
+In jenkins-init-scripts/lf-env.sh line 1:
+#!/usr/bin/no-execute
+^-- SC1008: This shebang was unrecognized. Note that ShellCheck only handles sh/bash/dash/ksh.
+
+
+In shell/gerrit-push-patch.sh line 45:
+echo -e "INFO: Staged for commit:\n$staged_commits\n"
+                                 ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+                                                  ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/gerrit-push-patch.sh line 56:
+                   topic: "$GERRIT_TOPIC")
+                           ^-- SC2029: Note that, unescaped, this expands on the client side.
+
+
+In shell/gerrit-push-patch.sh line 63:
+    message="Job: $job\nChange-Id: $change_id"
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 55:
+    printf "\t%-30s\n" RELEASE_ENVIRONMENT_INFO:
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                   ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 56:
+    printf "\t%-30s %s\n" RELEASE_FILE: "$release_file"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 57:
+    printf "\t%-30s %s\n" LOGS_SERVER: "$LOGS_SERVER"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 58:
+    printf "\t%-30s %s\n" NEXUS_PATH: "$NEXUS_PATH"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 59:
+    printf "\t%-30s %s\n" JENKINS_HOSTNAME: "$JENKINS_HOSTNAME"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 60:
+    printf "\t%-30s %s\n" SILO: "$SILO"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 61:
+    printf "\t%-30s %s\n" PROJECT: "$PROJECT"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 62:
+    printf "\t%-30s %s\n" PROJECT-DASHED: "${PROJECT//\//-}"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 63:
+    printf "\t%-30s %s\n" DISTRIBUTION_TYPE: "$DISTRIBUTION_TYPE"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 85:
+    printf "\t%-30s\n" RELEASE_MAVEN_INFO:
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                   ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 86:
+    printf "\t%-30s %s\n" VERSION: "$VERSION"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 87:
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 88:
+    printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 89:
+    printf "\t%-30s %s\n" LOGS_URL: "$LOGS_URL"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 118:
+    printf "\t%-30s\n" RELEASE_CONTAINER_INFO:
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                   ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 119:
+    printf "\t%-30s %s\n" CONTAINER_RELEASE_TAG: "$VERSION"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 120:
+    printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: "$CONTAINER_PULL_REGISTRY"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 121:
+    printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: "$CONTAINER_PUSH_REGISTRY"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 122:
+    printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$ref"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 123:
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 151:
+    printf "\t%-30s\n" RELEASE_PYPI_INFO:
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                   ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 152:
+    printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 153:
+    printf "\t%-30s %s\n" LOGS_URL: "$LOGS_URL"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 154:
+    printf "\t%-30s %s\n" PYPI_INDEX: "$PYPI_INDEX" # from job configuration
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 155:
+    printf "\t%-30s %s\n" PYPI_PROJECT: "$PYPI_PROJECT"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 156:
+    printf "\t%-30s %s\n" PYTHON_VERSION: "$PYTHON_VERSION"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 157:
+    printf "\t%-30s %s\n" VERSION: "$VERSION"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 158:
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+            ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                      ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 185:
+     printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
+             ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                       ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 186:
+     printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+             ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                       ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 187:
+     printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
+             ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                       ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 188:
+     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
+             ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                       ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 189:
+     printf "\t%-30s %s\n" VERSION: "$VERSION"
+             ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                       ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 190:
+     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+             ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                       ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/release-job.sh line 201:
+    allowed_version_regex="^((v?)([0-9]+)\.([0-9]+)\.([0-9]+))$"
+                                         ^-- SC1117: Backslash is literal in "\.". Prefer explicit escaping: "\\.".
+                                                   ^-- SC1117: Backslash is literal in "\.". Prefer explicit escaping: "\\.".
+
+
+In shell/release-job.sh line 243:
+    if  zgrep -E "Pushing.*$PACKAGE_NAME.*$VERSION.*success\!" /tmp/console.log.gz; then
+                                                           ^-- SC1117: Backslash is literal in "\!". Prefer explicit escaping: "\\!".
+
+
+In shell/release-job.sh line 279:
+            echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+                                     ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+                                       ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+                                                                 ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/packer-install.sh line 34:
+version_gt() { test "$(echo "$@" | tr " " "\n" | sort -V | head -n 1)" != "$1"; }
+                                           ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/packer-install.sh line 35:
+version_le() { test "$(echo "$@" | tr " " "\n" | sort -V | head -n 1)" == "$1"; }
+                                           ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/packer-install.sh line 36:
+version_lt() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" != "$1"; }
+                                           ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/packer-install.sh line 37:
+version_ge() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"; }
+                                           ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/sigul-install.sh line 39:
+echo -e "$SIGUL_BRIDGE_IP\t$BRIDGE_HOST" >> hosts
+                         ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+
+
+In shell/comment-to-gerrit.sh line 21:
+      "gerrit review -p $GERRIT_PROJECT \
+                        ^-- SC2029: Note that, unescaped, this expands on the client side.
+
+
+In shell/maven-fetch-metadata.sh line 16:
+file_path=$(echo "$MAVEN_PARAMS" | grep -Eo "\-f \S+" | awk '{ print $2 }')
+                                             ^-- SC1117: Backslash is literal in "\-". Prefer explicit escaping: "\\-".
+                                                 ^-- SC1117: Backslash is literal in "\S". Prefer explicit escaping: "\\S".
+
+
+In shell/check-info-votes.sh line 56:
+    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --submit
+                                                                ^-- SC2029: Note that, unescaped, this expands on the client side.
+
+
+In shell/docker-login.sh line 51:
+version_lt() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" != "$1"; }
+                                           ^-- SC1117: Backslash is literal in "\n". Prefer explicit escaping: "\\n".
+
+
+In shell/gerrit-branch-lock.sh line 41:
+    echo -e "global:Registered-Users\tRegistered Users" >> groups
+                                    ^-- SC1117: Backslash is literal in "\t". Prefer explicit escaping: "\\t".
+
+ERROR: InvocationError for command /home/tijohnson/VE/releng-2633/2633/.tox/pre-commit/bin/pre-commit run --all-files (exited with code 1)
+___________________________________ summary ____________________________________
+  coala: commands succeeded
+  ensure-documented: commands succeeded
+  jjb: commands succeeded
+  jjb-compare-xml: commands succeeded
+  jjb-latest: commands succeeded
+  jjb-version: commands succeeded
+  license: commands succeeded
+ERROR:   pre-commit: commands failed
