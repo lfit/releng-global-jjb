@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40839e13_73a8cb26",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-06T16:36:11Z",
+      "side": 1,
+      "message": "I feel really bad for marking this twice in a row but that word just seems to hate you \n\ndocumentation",
+      "range": {
+        "startLine": 60,
+        "startChar": 27,
+        "endLine": 60,
+        "endChar": 38
+      },
+      "revId": "d7accb1a2e90d9bde9f27ee215cad03319d11ba0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
