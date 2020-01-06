@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "78dbd0a0_61ee4715",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-06T15:33:49Z",
+      "side": 1,
+      "message": "It is not just the tox.ini file, it is where paths are based on. Any paths in tox.ini would be relative \u0027tox-dir\u0027.",
+      "revId": "2b689262dc361c3a6a55b30e01456822775b0057",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9fcd9255_6fc108f3",
         "filename": "docs/jjb/lf-rtdv3-jobs.rst",
         "patchSetId": 4
@@ -19,6 +36,23 @@
         "endLine": 60,
         "endChar": 81
       },
+      "revId": "2b689262dc361c3a6a55b30e01456822775b0057",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dcddb929_fda79c65",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-06T15:33:49Z",
+      "side": 1,
+      "message": "The diff between include-raw-escape \u0026 include-raw-escape is not really clear to me.",
       "revId": "2b689262dc361c3a6a55b30e01456822775b0057",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
