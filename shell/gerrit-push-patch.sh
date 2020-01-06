@@ -11,66 +11,69 @@
 echo "---> gerrit-push-patch.sh"
 # Push a change to Gerrit if files modified in repository.
 #
-# The script requires to install the minimum version 1.25 of git-review using
-# virtualenv and pip install which supports `--reviewers` option.
+# Need to use git-review >= 1.28 to be compatible with Gerrit 3
 #
 # The script allows a job to push a patch to Gerrit in an automated fashion.
 # This is meant for tasks that creates the same patch regularly and needs the
 # ability to detect if an unreviewed patch already exists. In which case it
 # will update the existing patch.
 #
-# Note: This patch assumes the $WORKSPACE contains the project repo with
-#       the files changed already "git add" and waiting for a "git commit" call.
+# Note: This script expects $WORKSPACE to point to a project git repo that
+# may contain staged commits. This script will exit with OK status if no
+# staged commits are present, otherwise the staged commits will be commited and
+# a gerrit review will be created.
 #
-# This script requires the following JJB variables to be passed in:
+# This script expects the following environment variables to be set in the
+# JJB configuration
 #
-#   $PROJECT              : Gerrit project-name
-#   $GERRIT_COMMIT_MESSAGE: Commit message to assign to commit
-#   $GERRIT_HOST          : Gerrit hostname
-#   $GERRIT_TOPIC         : Gerrit topic, please make a unique topic
-#   $GERRIT_USER          : Gerrit user
-#   $REVIEWERS_EMAIL      : Reviewers email
+#   PROJECT              : Gerrit project-name
+#   GERRIT_COMMIT_MESSAGE: Commit message to assign to commit
+#   GERRIT_HOST          : Gerrit hostname
+#   GERRIT_TOPIC         : Gerrit topic, please make a unique topic
+#   GERRIT_USER          : Gerrit user
+#   REVIEWERS_EMAIL      : Reviewers email
 
-# TODO: remove the workaround when v1.26 is available on all images
-# Workaround for git-review bug in v1.24
-# https://storyboard.openstack.org/#!/story/2001081
-set +u  # Allow unbound variables for virtualenv
-virtualenv --quiet "/tmp/v/git-review"
-# shellcheck source=/tmp/v/git-review/bin/activate disable=SC1091
-source "/tmp/v/git-review/bin/activate"
-pip install --quiet --upgrade "pip==9.0.3" setuptools
-pip install --quiet --upgrade git-review
-set -u
-# End git-review workaround
-# Remove any leading or trailing quotes surrounding the strings
-# which can cause parse errors when passed as CLI options to commands
-PROJECT="$(echo "$PROJECT" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_COMMIT_MESSAGE="$(echo "$GERRIT_COMMIT_MESSAGE" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_HOST="$(echo "$GERRIT_HOST" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_TOPIC="$(echo "$GERRIT_TOPIC" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-GERRIT_USER="$(echo "$GERRIT_USER" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-REVIEWERS_EMAIL="$(echo "$REVIEWERS_EMAIL" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
-job=$JOB_NAME/$BUILD_NUMBER
+set -eufo pipefail
 
-CHANGE_ID=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
-               limit:1 owner:self is:open project:"$PROJECT" \
-               message: "$GERRIT_COMMIT_MESSAGE" \
-               topic: "$GERRIT_TOPIC" | \
-               grep 'Change-Id:' | \
-               awk '{ print $2 }')
-
-if [ -z "$CHANGE_ID" ]; then
-   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Job: ${job}"
-else
-   git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "Job: ${job}\nChange-Id: $CHANGE_ID"
+# No reason to continue if there are no staged commits
+staged_commits=$(git diff --cached --name-only)
+if [[ -z $staged_commits ]]; then
+    echo "INFO: Nothing to commit"
+    exit 0
 fi
 
-git status
+echo -e "INFO: Staged for commit:\n$staged_commits\n"
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv "git-review>=1.28"
+
+# Query for a pre-existing gerrit review
+query_result=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST"                   \
+               gerrit query limit:1 owner:self is:open project:"$PROJECT" \
+                   message: "$GERRIT_COMMIT_MESSAGE"                      \
+                   topic: "$GERRIT_TOPIC")
+
+# Extract the change_id from the query_result
+job=$JOB_NAME/$BUILD_NUMBER
+# If available, add change_id to commit message
+if change_id=$(echo $query_result | grep 'Change-Id:' | awk '{print $2}'); then
+    echo "NOTE: Found gerrit review: $change_id"
+    message="Job: $job\nChange-Id: $change_id"
+else
+    echo "NOTE: No gerrit review found"
+    message="Job: $job"
+fi
+git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "$message"
+
 git remote add gerrit "ssh://$GERRIT_USER@$GERRIT_HOST:29418/$PROJECT.git"
 
-# if the reviewers email is empty then use a default
-REVIEWERS_EMAIL=${REVIEWERS_EMAIL:-"$GERRIT_USER@$GERRIT_HOST"}
+# If the reviewers email is unset/empty then use a default
+reviewers_email=${REVIEWERS_EMAIL:-$GERRIT_USER@$GERRIT_HOST}
 
-# Don't fail the build if this command fails because it's possible that there
-# is no changes since last update.
-git review --yes -t "$GERRIT_TOPIC" --reviewers "$REVIEWERS_EMAIL" || true
+#git review --yes -t "$GERRIT_TOPIC" --reviewers "$reviewers_email"
+# DEBUG
+git review --yes -t "$GERRIT_TOPIC" --reviewers "$reviewers_email" --dry-run
+echo "DEBUG: End"
+exit 1
