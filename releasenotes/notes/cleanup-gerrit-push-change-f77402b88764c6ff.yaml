@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Removed broken code that removed leading/trailing whitespace from
+    variables. Use lf-acitvate-venv() to instll openstack. Enabled 'set -euf
+    pipefail' and updated code to handle errors. Updated out of date
+    comments. Some minor cleanup of code for clarity.    
