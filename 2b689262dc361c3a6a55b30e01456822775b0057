@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fcd9255_6fc108f3",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-06T15:22:20Z",
+      "side": 1,
+      "message": "good old trailing whitespace\n\nwelcome back :)",
+      "range": {
+        "startLine": 60,
+        "startChar": 80,
+        "endLine": 60,
+        "endChar": 81
+      },
+      "revId": "2b689262dc361c3a6a55b30e01456822775b0057",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
