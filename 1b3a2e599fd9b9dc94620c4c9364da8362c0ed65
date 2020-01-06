@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd76a9f1_891cdd9c",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-06T16:27:18Z",
+      "side": 1,
+      "message": "should be \"documentation\"",
+      "range": {
+        "startLine": 60,
+        "startChar": 27,
+        "endLine": 60,
+        "endChar": 38
+      },
+      "revId": "1b3a2e599fd9b9dc94620c4c9364da8362c0ed65",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3a35306_e3c22930",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-06T16:27:18Z",
+      "side": 1,
+      "message": "there is no trailing slash here",
+      "range": {
+        "startLine": 62,
+        "startChar": 20,
+        "endLine": 62,
+        "endChar": 24
+      },
+      "revId": "1b3a2e599fd9b9dc94620c4c9364da8362c0ed65",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b11cc2dd_b930ae47",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-06T16:27:18Z",
+      "side": 1,
+      "message": "trailing slash?",
+      "range": {
+        "startLine": 64,
+        "startChar": 29,
+        "endLine": 64,
+        "endChar": 34
+      },
+      "revId": "1b3a2e599fd9b9dc94620c4c9364da8362c0ed65",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e40935a2_a6dfe4be",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-06T16:27:18Z",
+      "side": 1,
+      "message": "probably should be \"project\u0027s\"",
+      "range": {
+        "startLine": 64,
+        "startChar": 8,
+        "endLine": 64,
+        "endChar": 16
+      },
+      "revId": "1b3a2e599fd9b9dc94620c4c9364da8362c0ed65",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
