@@ -16,6 +16,24 @@
       "revId": "8a6e9901e6e3fb1f431b50859d8012207a563eff",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf5538f0_f297a517",
+        "filename": "releasenotes/notes/extend-javadoc-maven-subdir-7324879c369a9d8b.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-07T01:38:09Z",
+      "side": 1,
+      "message": "I\u0027ll be glad to write an upgrade note in these release notes, but please note the old Javadoc job would invariably have failed if the maven options had included -f -- the target directory would not have been found.",
+      "parentUuid": "6ada78c5_9f3ab99c",
+      "revId": "8a6e9901e6e3fb1f431b50859d8012207a563eff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
