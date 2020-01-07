@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6ada78c5_9f3ab99c",
+        "filename": "releasenotes/notes/extend-javadoc-maven-subdir-7324879c369a9d8b.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-07T00:17:05Z",
+      "side": 1,
+      "message": "Since this now sets -f we also need an upgrade: note that states that all current calls to this be inspected for options which may be passing a -f configuration and updated",
+      "revId": "8a6e9901e6e3fb1f431b50859d8012207a563eff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
