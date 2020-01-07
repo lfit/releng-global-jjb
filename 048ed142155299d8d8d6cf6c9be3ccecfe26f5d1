@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9c47206_84453fd3",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-07T13:10:09Z",
+      "side": 1,
+      "message": "I don\u0027t understand the single quotes.  Air quotes?  Perhaps this:\n\n    changes already added to the git index and ready to be committed.",
+      "range": {
+        "startLine": 23,
+        "startChar": 7,
+        "endLine": 23,
+        "endChar": 34
+      },
+      "revId": "048ed142155299d8d8d6cf6c9be3ccecfe26f5d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a7d1862_544b934b",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-07T13:10:09Z",
+      "side": 1,
+      "message": "why is DEBUG here?",
+      "range": {
+        "startLine": 53,
+        "startChar": 2,
+        "endLine": 53,
+        "endChar": 7
+      },
+      "revId": "048ed142155299d8d8d6cf6c9be3ccecfe26f5d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bac75105_a2f18618",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-07T13:10:09Z",
+      "side": 1,
+      "message": "should this really be committed?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 5
+      },
+      "revId": "048ed142155299d8d8d6cf6c9be3ccecfe26f5d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a237ad77_d5f84b23",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-07T13:10:09Z",
+      "side": 1,
+      "message": "should this really be committed?",
+      "range": {
+        "startLine": 82,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 2
+      },
+      "revId": "048ed142155299d8d8d6cf6c9be3ccecfe26f5d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
