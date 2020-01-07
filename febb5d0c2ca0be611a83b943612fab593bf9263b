@@ -16,6 +16,24 @@
       "revId": "febb5d0c2ca0be611a83b943612fab593bf9263b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "36ea01e6_80691372",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-07T15:09:47Z",
+      "side": 1,
+      "message": "That\u0027s not a bad idea, check MAVEN_OPTIONS and MAVEN_PARAMS for string \u0027-f\u0027.  But it\u0027s a bit prone to error, it could appear as the first option (so cannot require leading space), cannot require space after -f because maven accepts \"-f.\" as a valid argument.  And if one of the embedded strings is \"strongly-force\" then we would get a false positive :/",
+      "parentUuid": "f901e9be_3419ca76",
+      "revId": "febb5d0c2ca0be611a83b943612fab593bf9263b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
