@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f901e9be_3419ca76",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-07T14:54:38Z",
+      "side": 1,
+      "message": "What would maven do it \u0027-f\u0027 were specified MAVEN_OPTS \u0026 the command line? Would it make sense to verify that MAVEN_OPTS does not contain a \u0027-f\u0027 flag?",
+      "revId": "febb5d0c2ca0be611a83b943612fab593bf9263b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
