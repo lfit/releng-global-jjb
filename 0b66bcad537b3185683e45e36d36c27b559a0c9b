@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d08fbbf1_1cbf0314",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-08T16:00:39Z",
+      "side": 1,
+      "message": "I don\u0027t have a man page page for \u0027maven\u0027 in front of me but I assume that list of flags is VERY long and it also also supports \u0027long\u0027 parameters. What if there was a \u0027--format\u0027  option ? That would trigger this check. Just search for \" -f \" and you should be good. RE\u0027s that are too generalized is a very common coding error.\n\nWarning messages when minor errors are found is very useful when a command in run interactively from the command line. But it the command is executed from a script, a warning is pretty useless. The only only time the output is read is during development of this script. If you are not going to issue an ERROR, this code is really a waste of time. If some other person were to add a \u0027-f\u0027 option in a YAML file they probably would not see the output. I am betting the warnings will be there in the log for weeks or months before anyone notices it. Ideally, with the error, the problem will be found before the yaml change is committed.\n\nIt would help if you echo\u0027d MAVEN_OPTIONS \u0026 MAVEN_PARAMS so that one could see which one contained the \u0027-f\u0027",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 2
+      },
+      "revId": "0b66bcad537b3185683e45e36d36c27b559a0c9b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
