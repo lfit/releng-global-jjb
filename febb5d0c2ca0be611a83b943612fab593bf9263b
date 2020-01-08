@@ -52,6 +52,24 @@
       "revId": "febb5d0c2ca0be611a83b943612fab593bf9263b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4d43fa0_12ec9f2f",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-08T13:41:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ede550a3_f9a45def",
+      "revId": "febb5d0c2ca0be611a83b943612fab593bf9263b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
