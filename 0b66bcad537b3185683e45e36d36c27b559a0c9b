@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9961b829_876d6d5f",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-08T16:33:52Z",
+      "side": 1,
+      "message": "Can anyone explain this line?  MAVEN_OPTS is not set nor referenced in this script.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 17
+      },
+      "revId": "0b66bcad537b3185683e45e36d36c27b559a0c9b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d08fbbf1_1cbf0314",
         "filename": "shell/maven-javadoc-generate.sh",
         "patchSetId": 5
@@ -37,6 +60,30 @@
       "side": 1,
       "message": "I tried to explain the pitfalls in an earlier comment.  I would *love* to search for space, hyphen, f, space.  But maven allows the argument usage \"-fdir\" to supply \"dir\" to the -f option, so I cannot assume a trailing space.  Similarly the argument might be the first one in mvn-opts or mvn-params so I cannot assume a leading space. \n\nTo your other point, Maven 3.6 supports the following -f* options:\n\n   -fae,--fail-at-end\n   -ff,--fail-fast\n   -fn,--fail-never\n\nThis message is my attempt to address your earlier comment, and to reduce the difficulty of debugging problems here for projects that already use -f.",
       "parentUuid": "d08fbbf1_1cbf0314",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 2
+      },
+      "revId": "0b66bcad537b3185683e45e36d36c27b559a0c9b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "732049a1_2c7b7d17",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-08T16:33:52Z",
+      "side": 1,
+      "message": "I\u0027ll be glad to add some echo lines tho.",
+      "parentUuid": "ffbfcb98_f4ff8dd9",
       "range": {
         "startLine": 24,
         "startChar": 0,
