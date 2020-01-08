@@ -22,6 +22,30 @@
       "revId": "0b66bcad537b3185683e45e36d36c27b559a0c9b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffbfcb98_f4ff8dd9",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-08T16:11:09Z",
+      "side": 1,
+      "message": "I tried to explain the pitfalls in an earlier comment.  I would *love* to search for space, hyphen, f, space.  But maven allows the argument usage \"-fdir\" to supply \"dir\" to the -f option, so I cannot assume a trailing space.  Similarly the argument might be the first one in mvn-opts or mvn-params so I cannot assume a leading space. \n\nTo your other point, Maven 3.6 supports the following -f* options:\n\n   -fae,--fail-at-end\n   -ff,--fail-fast\n   -fn,--fail-never\n\nThis message is my attempt to address your earlier comment, and to reduce the difficulty of debugging problems here for projects that already use -f.",
+      "parentUuid": "d08fbbf1_1cbf0314",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 2
+      },
+      "revId": "0b66bcad537b3185683e45e36d36c27b559a0c9b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
