@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc952958_3b3e52ef",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-09T21:43:19Z",
+      "side": 0,
+      "message": "why have you removed this line?",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 13
+      },
+      "revId": "ff33e05030b95c28f28f1317f6ac713080e8a5fa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
