@@ -18,22 +18,22 @@
 # 4. Update the image{s} in the config files and yaml files
 # 5. Push the change to Gerrit
 
-virtualenv "/tmp/v/openstack"
-# shellcheck source=/tmp/v/openstack/bin/activate disable=SC1091
-source "/tmp/v/openstack/bin/activate"
-pip install --upgrade --quiet "pip<10.0.0" setuptools
-pip install --upgrade --quiet python-openstackclient
-pip freeze
+echo "---> update-cloud-images.sh"
 
-set -e
+set -euf -o pipefail
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv python-openstackclient
 
 mkdir -p "$WORKSPACE/archives"
 echo "List of images used on the source repository:"
-grep -Er '(_system_image:|IMAGE_NAME)' \
---exclude-dir="global-jjb" --exclude-dir="common-packer" \
-| grep  ZZCI | awk -F: -e '{print $3}' \
-| grep '\S' | tr -d \'\" | sort -n | uniq \
-| tee "$WORKSPACE/archives/used_image_list.txt"
+grep -Er '(_system_image:|IMAGE_NAME)'                       \
+    --exclude-dir="global-jjb" --exclude-dir="common-packer" \
+    | grep  ZZCI | awk -F: -e '{print $3}'                   \
+    | grep '\S' | tr -d \'\" | sort -n | uniq                \
+    | tee "$WORKSPACE/archives/used_image_list.txt"
 
 while read -r line ; do
     image_in_use="${line}"
@@ -42,34 +42,35 @@ while read -r line ; do
     image_type="${line% -*}"
     # Get the latest images available on the cloud, when $NEW_IMAGE_NAME env
     # var is unset and update all images on Jenkins to the latest.
-    if [[ ${NEW_IMAGE_NAME} != all ]]; then
+    if [[ $NEW_IMAGE_NAME != all ]]; then
         new_image=${NEW_IMAGE_NAME}
         new_image_type="${NEW_IMAGE_NAME% -*}"
         # get the $new_image_type to check the image type is being compared
         [[ ${new_image_type} =~ ${image_type} ]] && continue
     else
         new_image=$(openstack image list --long -f value -c Name -c Protected \
-            | grep "${image_type}.*False" | tail -n-1 | sed 's/ False//')
+            | grep "${image_type}.*False" | tail -n-1 | sed 's/ False//')   \
+            || true
     fi
-    [[ -z ${new_image} ]] && continue
+    [[ -z $new_image ]] && continue
 
-    # strip the timestamp from the image name amd compare
+    # strip the timestamp from the image name
     new_image_isotime=${new_image##*- }
     image_in_use_isotime=${image_in_use##*- }
-    # compare timestamps
+    # Remove '-' & '.' from the timestamp and perform numeric compare
     if [[ ${new_image_isotime//[\-\.]/} -gt ${image_in_use_isotime//[\-\.]/} ]]; then
         # generate a patch to be submited to Gerrit
-        echo "Update old image: ${image_in_use} with new image: ${new_image}"
-        grep -rlE '(_system_image:|IMAGE_NAME)' | xargs sed -i "s/${image_in_use}/${new_image}/"
+        echo "Update old image: $image_in_use with new image: $new_image"
+        grep -rlE '(_system_image:|IMAGE_NAME)' \
+            | xargs sed -i "s/${image_in_use}/${new_image}/"
         # When the script is triggered by upstream packer-merge job
         # update only the requested image and break the loop
-        [[ ${NEW_IMAGE_NAME} != all ]] && break
+        [[ $NEW_IMAGE_NAME != all ]] && break
     else
-        echo "No new image to update: ${new_image}"
+        echo "No new image to update: $new_image"
     fi
 done < "$WORKSPACE/archives/used_image_list.txt"
 
-git remote -v
-git status
 git diff > "$WORKSPACE/archives/new-images-patchset.diff"
 git add -u
+git status
