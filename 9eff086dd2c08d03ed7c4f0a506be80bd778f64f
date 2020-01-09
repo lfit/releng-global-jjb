@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5c12b6c4_b24435da",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-01-09T16:28:15Z",
+      "side": 1,
+      "message": "does this mean, cannot be used with a non default mvn-dir of \".\" ?",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 62
+      },
+      "revId": "9eff086dd2c08d03ed7c4f0a506be80bd778f64f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
