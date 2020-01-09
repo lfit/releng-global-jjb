@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5bc80d3f_cbe12ddf",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-09T06:37:24Z",
+      "side": 1,
+      "message": "Just a warning may not be all that helpful. I think the better way to handle this is \n\n1. Check $MAVEN_{OPTIONS,PARAMS} for `-f` being inculded\n2. if its inlcuded skip that arg being passed to `mvn clean install`",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 0
+      },
+      "revId": "6429e895cc2b21fd7117b6233e06ba739bc19c0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
