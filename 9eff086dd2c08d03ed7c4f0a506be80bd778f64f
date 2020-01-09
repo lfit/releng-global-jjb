@@ -22,6 +22,30 @@
       "revId": "9eff086dd2c08d03ed7c4f0a506be80bd778f64f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96c28633_08824ea0",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-09T16:35:48Z",
+      "side": 1,
+      "message": "Not at all sure I understand your question Aric. This new parameter mvn-dir allows a first-class way of specifying in JJB the (sub-)directory with the Java project.  Previously this could be done by adding \"-f dirname\" to either mvn-opts or mvn-params, but it\u0027s difficult to parse that out reliably in a shell script, and the javadoc shell script needs the directory name. \n\nBut in reading this again, I think I need to add the same caution below mvn-opts, because -f could be used there also.",
+      "parentUuid": "5c12b6c4_b24435da",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 62
+      },
+      "revId": "9eff086dd2c08d03ed7c4f0a506be80bd778f64f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
