@@ -46,6 +46,30 @@
       "revId": "9eff086dd2c08d03ed7c4f0a506be80bd778f64f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e768e4e_5c462f03",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-09T16:43:59Z",
+      "side": 1,
+      "message": "Nope, I take that back.  mvn-opts is a pass-thru to MAVEN_OPTS which allows JVM arguments to set memory size etc., not arguments parsed by maven itself.",
+      "parentUuid": "96c28633_08824ea0",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 62
+      },
+      "revId": "9eff086dd2c08d03ed7c4f0a506be80bd778f64f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
