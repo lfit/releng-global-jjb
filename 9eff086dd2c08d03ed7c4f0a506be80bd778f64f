@@ -94,6 +94,30 @@
       "revId": "9eff086dd2c08d03ed7c4f0a506be80bd778f64f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4b097ec_cca13472",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-09T17:20:27Z",
+      "side": 1,
+      "message": "Yes, any *javadoc* jobs that currently have -f in mvn-params will have to change their config.  But I believe with 99% certainty that there are no such jobs, because if any team used -f, the javadoc job invariably failed when it attempted to find the generated docs at the top level target/ directory.",
+      "parentUuid": "2987d03b_974242c8",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 62
+      },
+      "revId": "9eff086dd2c08d03ed7c4f0a506be80bd778f64f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
