@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    The update-cloud-images.sh script was using virtualenv to install openstack
+    which fails because the latest version of openstack requires python3.  It
+    fails quietly because that is no error handling in the script (all errors
+    are ignored). The script now uses lf-activate-venv() and it runs with 'set
+    -euo pipefail'.
+
