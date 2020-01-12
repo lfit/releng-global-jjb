@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38381638_beaac010",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-12T00:06:55Z",
+      "side": 1,
+      "message": "this comment needs to be updated",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 65
+      },
+      "revId": "2fba565bff85dfba05088f3edd64ead9feb31443",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0186767d_fe4c5520",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-12T00:06:55Z",
+      "side": 1,
+      "message": "environment?",
+      "range": {
+        "startLine": 27,
+        "startChar": 36,
+        "endLine": 27,
+        "endChar": 49
+      },
+      "revId": "2fba565bff85dfba05088f3edd64ead9feb31443",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37f909c6_d67ec53b",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-12T00:06:55Z",
+      "side": 1,
+      "message": "As I\u0027ve already mentioned this a few times, please separate out the cosmetic changes and the actual functionality, make them separate changes, under the same Gerrit topic. \n\nIf we end up revert the functionality/CR, will loose all the cosmetic changes aswell.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 19
+      },
+      "revId": "2fba565bff85dfba05088f3edd64ead9feb31443",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0509bcd_34ee1b25",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-12T00:06:55Z",
+      "side": 1,
+      "message": "cosmetic",
+      "range": {
+        "startLine": 62,
+        "startChar": 0,
+        "endLine": 69,
+        "endChar": 0
+      },
+      "revId": "2fba565bff85dfba05088f3edd64ead9feb31443",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2546e7c2_5b5c1a12",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-12T00:06:55Z",
+      "side": 1,
+      "message": "why have you commented this out and added dry-run??",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 6
+      },
+      "revId": "2fba565bff85dfba05088f3edd64ead9feb31443",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

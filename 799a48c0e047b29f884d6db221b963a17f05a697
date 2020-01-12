@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "82ca095c_3055f554",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-12T00:06:55Z",
+      "side": 0,
+      "message": "Adding the email discussion here for ref:\n\nThe version of git-review on the latest EL7 images available is on `1.24-5.el7`. If I am correct, we actually need to be on version \u003d\u003e 1.28.0. Because if you\u0027re on v1.26 of git-review you\u0027ll run into issues pushing changes to the LF Gerrit. since the magic ref that it\u0027s defaulting to looks to have been dropped in Gerrit 3.x. Now we should be updating your git-review (current is 1.28). \n\nhttps://centos.pkgs.org/7/epel-x86_64/git-review-1.24-5.el7.noarch.rpm.html\n\nThe better way for going about installing git-review would be from Pypi\n\nAre you planning on handling the git-review via pypi elsewhere?",
+      "range": {
+        "startLine": 42,
+        "startChar": 30,
+        "endLine": 42,
+        "endChar": 40
+      },
+      "revId": "799a48c0e047b29f884d6db221b963a17f05a697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
