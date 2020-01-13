@@ -12,8 +12,9 @@ echo "---> maven-javadoc-generate.sh"
 # Generates javadoc in a Maven project.
 
 # Ensure we fail the job if any steps fail.
+# Use -x to echo these few commands without extra code.
 # DO NOT enable -u because $MAVEN_PARAMS and $MAVEN_OPTIONS could be unbound.
-set -e -o pipefail
+set -xe -o pipefail
 set +u
 
 JAVADOC_DIR="$WORKSPACE/archives/javadoc"

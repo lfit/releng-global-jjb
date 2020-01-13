@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Restore -x to maven-javadoc-generate.sh so it resumes its chattiness,
+    mistakenly removed that bash option in the upgrade that added mvn-dir.
