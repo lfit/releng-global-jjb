@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a6105fe_b05beabd",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-13T16:39:53Z",
+      "side": 1,
+      "message": "Setting -x not the best way to improve the information in the log. Think about about you really need in the log and restrict the output to that. I would make the case that most of the \u0027set -x\u0027 in our scripts are overkill that just pollutes the log. Maybe set -x for the call the MVN ?\n(set -x\n    $MVN ....\n       ....\n)",
+      "revId": "58099d0b8b066940e03b3a3bb60600fc28ed060f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
