@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    The jjb-deploy-job.sh was 'activating' a venv that was created by
+    pip-install.sh in /tmp/v. This venv was based on python2. Now
+    jjb-deploy-job.sh calls lf-activate-venv() to install jenkins-jobs in a
+    venv based on python3.
+upgrade:
+  - |
+    The lf-pip-install builder macro has been deleted. At some point we will
+    also be deleting shell/pip-install.sh.
