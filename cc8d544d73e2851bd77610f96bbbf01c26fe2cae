@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b5e81c1_93a883a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-13T23:33:07Z",
+      "side": 1,
+      "message": "maybe this first word isn\u0027t the most descriptive for this change?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "cc8d544d73e2851bd77610f96bbbf01c26fe2cae",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
