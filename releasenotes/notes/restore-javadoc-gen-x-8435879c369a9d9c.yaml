@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Restore shell -x behavior to maven command in maven-javadoc-generate.sh
+    for debug details in log.

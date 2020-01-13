@@ -23,7 +23,9 @@ export MAVEN_OPTS
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
-$MVN clean install javadoc:aggregate \
+# Use -x via subshell to show all parameter values in the log
+(set -x
+  $MVN clean install javadoc:aggregate \
     -e -Pq -Dmaven.javadoc.skip=false \
     -DskipTests=true \
     -Dcheckstyle.skip=true \
@@ -31,7 +33,8 @@ $MVN clean install javadoc:aggregate \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
     -f "$MAVEN_DIR" \
-    $MAVEN_OPTIONS $MAVEN_PARAMS
+    $MAVEN_OPTIONS $MAVEN_PARAMS \
+)
 
 mv "$WORKSPACE/$MAVEN_DIR/target/site/apidocs" "$JAVADOC_DIR"
 
@@ -41,7 +44,9 @@ mv "$WORKSPACE/$MAVEN_DIR/target/site/apidocs" "$JAVADOC_DIR"
 if [[ "$JOB_NAME" =~ "javadoc-verify" ]]; then
     # Tarball the javadoc dir and rm the directory to avoid re-upload into logs
     pushd "$JAVADOC_DIR"
-    tar cvJf "$WORKSPACE/archives/javadoc.tar.xz" .
+    tarball="$WORKSPACE/archives/javadoc.tar.xz"
+    echo "INFO: archiving $JAVADOC_DIR as $tarball"
+    tar cvJf "$tarball" .
     rm -rf "$JAVADOC_DIR"
     popd
 fi
