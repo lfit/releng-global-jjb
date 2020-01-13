@@ -234,13 +234,6 @@
               variable: "SETTINGS_FILE"
 
 - builder:
-    name: lf-pip-install
-    builders:
-      - inject:
-          properties-content: PIP_PACKAGES={pip-packages}
-      - shell: !include-raw-escape: ../shell/pip-install.sh
-
-- builder:
     name: lf-provide-maven-settings-cleanup
     builders:
       - shell: |
