@@ -630,8 +630,6 @@
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     builders:
-      - lf-pip-install:
-          pip-packages: jenkins-job-builder
       - lf-infra-jjbini
       - shell: !include-raw-escape: ../shell/jjb-deploy-job.sh
 

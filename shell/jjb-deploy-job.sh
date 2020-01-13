@@ -14,10 +14,13 @@
 echo "---> jjb-deploy-job.sh"
 
 # Ensure we fail the job if any steps fail.
-set -e -o pipefail
+set -uef -o pipefail
 
-# shellcheck source=/tmp/v/jenkins-job-builder/bin/activate disable=SC1091
-source "/tmp/v/jenkins-job-builder/bin/activate"
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+# Version controlled by JJB_VERSION
+lf-activate-venv jenkins-job-builder
 
 # Fetch patch if gerrit project matches the jjb-deploy project
 if [ "${GERRIT_PROJECT}" == "${PROJECT}" ]; then
