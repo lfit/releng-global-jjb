@@ -1,4 +1,4 @@
-#!/bin/bash -l
+#!/bin/bash
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
 # Copyright (c) 2017 The Linux Foundation and others.
@@ -23,7 +23,9 @@ export MAVEN_OPTS
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
-$MVN clean install javadoc:aggregate \
+# Use -x via subshell to show maven invocation details in the log
+(set -x
+  $MVN clean install javadoc:aggregate \
     -e -Pq -Dmaven.javadoc.skip=false \
     -DskipTests=true \
     -Dcheckstyle.skip=true \
@@ -31,17 +33,20 @@ $MVN clean install javadoc:aggregate \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
     -f "$MAVEN_DIR" \
-    $MAVEN_OPTIONS $MAVEN_PARAMS
+    $MAVEN_OPTIONS $MAVEN_PARAMS \
+)
 
 mv "$WORKSPACE/$MAVEN_DIR/target/site/apidocs" "$JAVADOC_DIR"
 
 # TODO: Nexus unpack plugin throws a "504 gateway timeout" for jobs archiving
-# large number of small files. Remove the workaround only we move away from
+# large number of small files. Remove the workaround when we move away from
 # using Nexus as the log server.
 if [[ "$JOB_NAME" =~ "javadoc-verify" ]]; then
     # Tarball the javadoc dir and rm the directory to avoid re-upload into logs
+    tarball="$WORKSPACE/archives/javadoc.tar.xz"
+    echo "INFO: archiving $JAVADOC_DIR as $tarball"
     pushd "$JAVADOC_DIR"
-    tar cvJf "$WORKSPACE/archives/javadoc.tar.xz" .
-    rm -rf "$JAVADOC_DIR"
+    tar cvJf "$tarball" .
     popd
+    rm -rf "$JAVADOC_DIR"
 fi

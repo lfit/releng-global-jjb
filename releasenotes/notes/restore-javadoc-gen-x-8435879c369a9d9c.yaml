@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Revise shell script maven-javadoc-generate.sh to
+    drop unnecessary -l for login shell;
+    restore shell -x behavior to maven command for debug details in log;
+    add info output when creating tarball in verify path.
