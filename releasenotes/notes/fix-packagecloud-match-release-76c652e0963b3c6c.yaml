@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Fix zgrep pattern for verify_packagecloud_match_release function. Function
+    was looking for "Successfully Uploaded" pattern, which is not the correct
+    response when using packagecloud gem to push packages to packagecloud.
+
+    Fix lf-release docs example to reflect changes to package_name. Package_name
+    should not include the version in the name.
