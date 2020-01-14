@@ -240,7 +240,7 @@ verify_packagecloud_match_release(){
     echo "INFO: Fetching console log from $logs_url"
     wget -q -P /tmp "${logs_url}/"console.log.gz
     echo "INFO: Searching for uploaded step, package name $PACKAGE_NAME and version $VERSION in job log"
-    if zgrep "Successfully uploaded" /tmp/console.log.gz | grep "$PACKAGE_NAME" | grep "$VERSION"; then
+    if  zgrep -E "Pushing.*success\!" /tmp/console.log.gz | grep "$PACKAGE_NAME" | grep "$VERSION"; then
         echo "INFO: found expected strings in job log"
     else
         echo "ERROR: failed to find expected strings in job log"
