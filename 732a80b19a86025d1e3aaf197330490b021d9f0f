@@ -22,6 +22,30 @@
       "revId": "732a80b19a86025d1e3aaf197330490b021d9f0f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46d3008f_64cc3964",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-14T18:22:12Z",
+      "side": 1,
+      "message": "I thought that package name has just words (no version) and therefore I added a grep for version to be confident the job is promoting a package that was also built by Jenkins.  In the RST, the example looks suspect to me:\n\n    package_name: tree-1.6.0\n\nI believe the package_name is just \"tree\" and the version is \"1.6.0\".  So my assumption was that the package name would remain constant, and the version would vary over time.\n \nDoes this answer your question?",
+      "parentUuid": "e9cc8678_e0adb54a",
+      "range": {
+        "startLine": 243,
+        "startChar": 89,
+        "endLine": 243,
+        "endChar": 97
+      },
+      "revId": "732a80b19a86025d1e3aaf197330490b021d9f0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
