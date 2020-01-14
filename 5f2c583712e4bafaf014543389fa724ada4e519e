@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f9dda16_7b483666",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-14T22:21:24Z",
+      "side": 1,
+      "message": "I think this line could be re-written to use awk or `zgrep -E \"Pushing.*$PACKAGE_NAME-$VERSION.*success\\!\"` and minimize the number of times the output is being piped and grepped?",
+      "range": {
+        "startLine": 243,
+        "startChar": 7,
+        "endLine": 243,
+        "endChar": 37
+      },
+      "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
