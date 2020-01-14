@@ -118,6 +118,30 @@
       "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d37d6341_d5feeed9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-14T22:58:21Z",
+      "side": 1,
+      "message": "@Tim How is this more restrictive? I\u0027ve added the output that Houa has provided\n\n$ PACKAGE_NAME\u003drmr \u0026\u0026 VERSION\u003d1.11.2 \u0026\u0026 if zgrep -E \"Pushing.*$PACKAGE_NAME.*$VERSION.*success\\!\"  ./test.txt; then echo \"yes\"; fi\n12:40:53 Pushing ./export-packages-22084/rmr_1.11.2_amd64.deb... success!\n12:40:53 Pushing ./export-packages-22084/rmr-dev_1.11.2_amd64.deb... success!\n12:40:53 Pushing ./export-packages-22084/rmr-devel-1.11.2-x86_64.rpm... success!\n12:40:53 Pushing ./export-packages-22084/rmr-1.11.2-x86_64.rpm... success!\nyes",
+      "parentUuid": "f3c2987e_deec3d7c",
+      "range": {
+        "startLine": 243,
+        "startChar": 7,
+        "endLine": 243,
+        "endChar": 37
+      },
+      "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
