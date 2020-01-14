@@ -142,6 +142,30 @@
       "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6b69818_3c0dbc6b",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-01-14T23:02:19Z",
+      "side": 1,
+      "message": "I\u0027ve verified this should work fine.\nif  zgrep -E \"Pushing.*$PACKAGE_NAME.*$VERSION.*success\\!\" /tmp/console.log.gz;\n\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/ric-plt-lib-rmr-packagecloud-release-verify/8/console",
+      "parentUuid": "d37d6341_d5feeed9",
+      "range": {
+        "startLine": 243,
+        "startChar": 7,
+        "endLine": 243,
+        "endChar": 37
+      },
+      "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
