@@ -94,6 +94,30 @@
       "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3c2987e_deec3d7c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-01-14T22:44:55Z",
+      "side": 1,
+      "message": "$package_name \u003d rmr \u0026 $version \u003d 1.11.2\n\nThis what zgrep looks like:\n\n12:40:53 INFO: Searching for uploaded step, package name rmr and version 1.11.2 in job log\n12:40:53 Pushing ./export-packages-22084/rmr_1.11.2_amd64.deb... success!\n12:40:53 Pushing ./export-packages-22084/rmr-dev_1.11.2_amd64.deb... success!\n12:40:53 Pushing ./export-packages-22084/rmr-devel-1.11.2-x86_64.rpm... success!\n12:40:53 Pushing ./export-packages-22084/rmr-1.11.2-x86_64.rpm... success!\n12:40:53 INFO: found expected strings in job log",
+      "parentUuid": "47a4c21a_dc6177db",
+      "range": {
+        "startLine": 243,
+        "startChar": 7,
+        "endLine": 243,
+        "endChar": 37
+      },
+      "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
