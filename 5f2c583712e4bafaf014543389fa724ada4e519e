@@ -46,6 +46,30 @@
       "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aecac75f_b9759476",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-14T22:36:37Z",
+      "side": 1,
+      "message": "@Chris: If you look at many of the older scripts in the LF/releng repos, we\u0027ve always tried to optimize the performance. YES, if you are trying to save a few CPU cycles you are still saving some resource and costs in the long term, with writing better code. Note: these scripts in global-jjb are actually pulled many upstream projects.\n\nHow is using a simple regex \"zgrep -E \"Pushing.*$PACKAGE_NAME-$VERSION.*success\\!\" is any more complicated to read as compared to extra greps and pipes?",
+      "parentUuid": "31e5a3a5_a37399e9",
+      "range": {
+        "startLine": 243,
+        "startChar": 7,
+        "endLine": 243,
+        "endChar": 37
+      },
+      "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
