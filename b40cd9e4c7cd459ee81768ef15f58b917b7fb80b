@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "19526b36_66e92adc",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-14T19:32:59Z",
+      "side": 1,
+      "message": "this looks like a bad example, would anyone ever release a package file without a version string embedded in the name?",
+      "range": {
+        "startLine": 202,
+        "startChar": 7,
+        "endLine": 202,
+        "endChar": 24
+      },
+      "revId": "b40cd9e4c7cd459ee81768ef15f58b917b7fb80b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
