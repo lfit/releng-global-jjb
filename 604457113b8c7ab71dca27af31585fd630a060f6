@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4975575b_62360d7e",
+        "filename": "docs/jjb/lf-release-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-14T19:59:15Z",
+      "side": 1,
+      "message": "This is contrary to typical usage.  I suggest instead the following which I based on working code in ric-plt/lib/rmr. That has plain and development packages, built for Debian and CentOS.  Combined that yields *four* package file:\n\n    - name: tree_1.11.2_amd64.deb\n    - name: tree-dev_1.11.2_amd64.deb\n    - name: tree-devel-1.11.2-1.x86_64.rpm\n    - name: tree-1.11.2-1.x86_64.rpm",
+      "range": {
+        "startLine": 202,
+        "startChar": 8,
+        "endLine": 202,
+        "endChar": 37
+      },
+      "revId": "604457113b8c7ab71dca27af31585fd630a060f6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
