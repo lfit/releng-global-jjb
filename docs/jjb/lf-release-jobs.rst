@@ -196,10 +196,10 @@ must start with "packagecloud". For example releases/packagecloud-1.6-tree.yaml
 
     $ cat releases/packagecloud-1.6-tree.yaml
     ---
-    package_name: tree-1.6.0
+    package_name: tree
     packages:
         - name: tree-1.6.0-10.el7.x86_64.rpm
-        - name: test.rpm
+        - name: testpackage-1.6.0.rpm
     ref: 5555cd2dd345fbeec0d3e2162e00835852342cda
     log_dir: example-project-packagecloud-merge/21
     version: 1.6.0
