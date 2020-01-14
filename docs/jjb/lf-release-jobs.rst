@@ -196,7 +196,7 @@ must start with "packagecloud". For example releases/packagecloud-1.6-tree.yaml
 
     $ cat releases/packagecloud-1.6-tree.yaml
     ---
-    package_name: tree-1.6.0
+    package_name: tree
     packages:
         - name: tree-1.6.0-10.el7.x86_64.rpm
         - name: test.rpm
