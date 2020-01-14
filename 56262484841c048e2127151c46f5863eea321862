@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a904d30_fd070e0b",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-14T00:54:39Z",
+      "side": 0,
+      "message": "Should not remove builders unless notifiying the community, if this is already in use in various projects. The proper way is to notify the that use of this builder is deprecated and will be removed from x.y.z release.",
+      "range": {
+        "startLine": 237,
+        "startChar": 0,
+        "endLine": 241,
+        "endChar": 59
+      },
+      "revId": "56262484841c048e2127151c46f5863eea321862",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
