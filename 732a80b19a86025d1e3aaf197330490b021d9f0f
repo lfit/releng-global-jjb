@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e9cc8678_e0adb54a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-01-14T18:06:10Z",
+      "side": 1,
+      "message": "@chris, when pushing packages up to packagecloud via the merge job that you guys use, there isn\u0027t an output of $VERSION anywhere other than in the package name. Is there a case when the version of the package is not the version of the release? Also if that is not the case, it seems a bit redundant to grep the package name and the version, if package name will always include the version of the release as well.",
+      "range": {
+        "startLine": 243,
+        "startChar": 89,
+        "endLine": 243,
+        "endChar": 97
+      },
+      "revId": "732a80b19a86025d1e3aaf197330490b021d9f0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
