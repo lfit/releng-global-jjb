@@ -22,6 +22,30 @@
       "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31e5a3a5_a37399e9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-14T22:26:33Z",
+      "side": 1,
+      "message": "I disagree here Anil. The pattern isn\u0027t simple (name, hyphen, semver).  Here are four valid variants:\n\n        - name: tree_1.6.0_amd64.deb\n        - name: tree-dev_1.6.0_amd64.deb\n        - name: tree-devel-1.6.0-1.x86_64.rpm\n        - name: tree-1.6.0-1.x86_64.rpm\n\nThe extra greps are easy to understand and cost what, maybe a few milliseconds?",
+      "parentUuid": "7f9dda16_7b483666",
+      "range": {
+        "startLine": 243,
+        "startChar": 7,
+        "endLine": 243,
+        "endChar": 37
+      },
+      "revId": "5f2c583712e4bafaf014543389fa724ada4e519e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
