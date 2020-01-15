@@ -39,7 +39,7 @@ set -u
 # End git-review workaround
 
 projects=()
-for patch in $(echo "${PATCHES[@]}"); do
+for patch in "${PATCHES[@]}"; do
     json=$(curl -s "$GERRIT_URL/changes/$patch" | sed -e "s/)]}'//")
     project=$(echo "$json" | jq -r '.project')
     branch=$(echo "$json" | jq -r '.branch')
