@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Revise shell script maven-javadoc-generate.sh to supply -f
+    argument to maven with argument translated by call to readlink.
+    This works around the javadoc:aggregate behavior of silently
+    doing nothing if invoked "-f ."
