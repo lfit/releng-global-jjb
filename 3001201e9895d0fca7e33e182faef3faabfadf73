@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7b183032_1b750868",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T21:29:45Z",
+      "side": 1,
+      "message": "FYI I would a bet cold beer that MAVEN_OPTS is already a environment variable (that is the only way to pass a variable to a script in Jenkins).\n\nJust leave it....",
+      "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f0ff9bc_fe3eec63",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T21:29:45Z",
+      "side": 1,
+      "message": "The preferred term is \u0027absolute\u0027 path (vrs relative path). I think readlink man page sez \u0027cononicalize\u0027 but that is rarely used.\n\n# Maven expects an absolute path with -f flag",
+      "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c93faea_3d7130af",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T21:29:45Z",
+      "side": 1,
+      "message": "Why the \u0027_\u0027 it is just a shell variable like JAVADOC_DIR (which should NOT be upper_case)",
+      "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
