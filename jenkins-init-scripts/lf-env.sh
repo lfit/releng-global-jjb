@@ -1,4 +1,5 @@
 #!/usr/bin/no-execute
+# shellcheck shell=bash
 
 # SPDX-License-Identifier: EPL-1.0
 ##############################################################################
