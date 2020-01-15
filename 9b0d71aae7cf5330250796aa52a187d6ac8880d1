@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "74735832_0d98eca4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-15T12:13:00Z",
+      "side": 1,
+      "message": "Is this comment valid here? you have not removed the script from the repo.\n\nif this script is not required, then you\u0027ll need to confirm no one else is using it direclty in any of the downstream projects directly.",
+      "range": {
+        "startLine": 11,
+        "startChar": 30,
+        "endLine": 11,
+        "endChar": 69
+      },
+      "revId": "9b0d71aae7cf5330250796aa52a187d6ac8880d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b157cdb_32f7e7b7",
+        "filename": "shell/jjb-deploy-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-15T12:13:00Z",
+      "side": 1,
+      "message": "set the minimum supported version of JJB here.",
+      "range": {
+        "startLine": 22,
+        "startChar": 17,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "9b0d71aae7cf5330250796aa52a187d6ac8880d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
