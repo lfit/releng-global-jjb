@@ -58,8 +58,8 @@ for silo in $silos; do
             continue
         fi
 
-        key=$(echo "$var" | cut -d\= -f1)
-        value=$(echo "$var" | cut -d\= -f2)
+        key=$(echo "$var" | cut -d= -f1)
+        value=$(echo "$var" | cut -d= -f2)
         echo "    '$key': '$value'," >> insert.txt
     done
 
