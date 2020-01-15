@@ -25,8 +25,8 @@ fi
 
 # Create the jenkins user last so that hopefully we DO NOT have to deal with
 # guard files
-$jjb_init_scripts/create-jenkins-user.sh
+"$jjb_init_scripts/create-jenkins-user.sh"
 
-cp $jjb_init_scripts/lf-env.sh ~jenkins/
+cp "$jjb_init_scripts/lf-env.sh" ~jenkins/
 chmod 644 ~jenkins/lf-env.sh
 chown jenkins:jenkins ~jenkins/lf-env.sh

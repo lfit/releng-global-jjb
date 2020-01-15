@@ -55,5 +55,5 @@ do_config() {
     auth_token=$(echo -n "$USER":"$PASS" | openssl base64)
 
     # Write .npmrc
-    echo '//'$NPM_REGISTRY':_auth'$auth_token >> $HOME/.npmrc
+    echo "//$NPM_REGISTRY:_auth$auth_token" >> "$HOME/.npmrc"
 }
