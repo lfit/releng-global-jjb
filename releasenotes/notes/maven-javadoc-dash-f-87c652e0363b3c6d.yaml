@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Revise shell script maven-javadoc-generate.sh to supply -f
+    argument to maven only if the MAVEN_DIR env var is not the
+    default value "." to work around javadoc:aggregate behavior
+    of silently doing nothing when invoked "-f ."
