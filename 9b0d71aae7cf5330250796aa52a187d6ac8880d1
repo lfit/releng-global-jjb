@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7721e162_918a7c29",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T15:14:53Z",
+      "side": 1,
+      "message": "I am keeping a list of deprecated files that are no longer referenced by global-jjb.  I have a number of ci-management repos that I use to search for references (that I how I found out that Akraino was referencing lf-pip-install macro). Yes, I will need final confirmation before I can delete the file. \nNot only is this file not needed it is not wanted, as it creates a venv based on python2.",
+      "parentUuid": "74735832_0d98eca4",
+      "range": {
+        "startLine": 11,
+        "startChar": 30,
+        "endLine": 11,
+        "endChar": 69
+      },
+      "revId": "9b0d71aae7cf5330250796aa52a187d6ac8880d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1b157cdb_32f7e7b7",
         "filename": "shell/jjb-deploy-job.sh",
         "patchSetId": 5
@@ -45,6 +69,30 @@
       "revId": "9b0d71aae7cf5330250796aa52a187d6ac8880d1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4998db3_86ec6d67",
+        "filename": "shell/jjb-deploy-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T15:14:53Z",
+      "side": 1,
+      "message": "The version of jenkins-job-builder is controlled by JJB_VERSION, which is specified in jjb/lf-ci-jobs.yaml. If you don\u0027t specify the version in the call to lf-activate-venv it will set it to JJB_VERSION.",
+      "parentUuid": "1b157cdb_32f7e7b7",
+      "range": {
+        "startLine": 22,
+        "startChar": 17,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "9b0d71aae7cf5330250796aa52a187d6ac8880d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
