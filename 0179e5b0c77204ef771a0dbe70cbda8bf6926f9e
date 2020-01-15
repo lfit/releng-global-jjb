@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "42de98d2_e29a2997",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T20:46:33Z",
+      "side": 1,
+      "message": "maven_dir\u003d$(readlink -f $MAVEN_DIR)\n\n --settings \"$SETTINGS_FILE\" \\\t\n -f \"$maven_dir\" \\\n $MAVEN_OPTIONS $MAVEN_PARAMS",
+      "revId": "0179e5b0c77204ef771a0dbe70cbda8bf6926f9e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d9fefc8_29f7fbce",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T20:46:33Z",
+      "side": 1,
+      "message": "You should remove the \u0027\\\u0027 I am kinda surprised it works.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 1
+      },
+      "revId": "0179e5b0c77204ef771a0dbe70cbda8bf6926f9e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
