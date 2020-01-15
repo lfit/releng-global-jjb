@@ -21,18 +21,26 @@ mkdir -p "$WORKSPACE/archives"
 
 export MAVEN_OPTS
 
+# Supply -f argument only if the MAVEN_DIR value is not the default
+# because javadoc:aggregate fails silently on argument "-f ."
+if [[ "$MAVEN_DIR" == "." ]]; then
+    dashf=""
+else
+    dashf="-f $MAVEN_DIR"
+fi
+
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
 # Use -x via subshell to show maven invocation details in the log
+# Do not put $dashf into quotes
 (set -x
-  $MVN clean install javadoc:aggregate \
+  $MVN clean install javadoc:aggregate $dashf \
     -e -Pq -Dmaven.javadoc.skip=false \
     -DskipTests=true \
     -Dcheckstyle.skip=true \
     -Dfindbugs.skip=true \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
-    -f "$MAVEN_DIR" \
     $MAVEN_OPTIONS $MAVEN_PARAMS \
 )
 
