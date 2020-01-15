@@ -50,6 +50,23 @@
       "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dd6da96b_1d3a94df",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 269
+      },
+      "writtenOn": "2020-01-15T22:30:33Z",
+      "side": 1,
+      "message": "I noticed the quotations were removed.. possible issue with space in paths if not correctly escaped.\n\ncd \"/path/path/path/A Folder/file\"\ncd /path/path/path/A\\ Folder/file",
+      "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
