@@ -9,3 +9,8 @@ repos:
     rev: 1.18.2
     hooks:
       - id: prettier
+
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 1.11.2
+    hooks:
+      - id: shellcheck
