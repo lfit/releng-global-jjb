@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91c41699_e3a17314",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-15T12:09:14Z",
+      "side": 1,
+      "message": "Dont add the script file name in here. this is aleady available in the CR, instead I\u0027d call this \"Clean up gerrit push change script\"",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 35
+      },
+      "revId": "bff6b12130c4931660fd9d276415bc4a0ce6d500",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b05a2e7_1405a2f3",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-15T12:09:14Z",
+      "side": 1,
+      "message": "change this back to \"change_id\", query result is too generic, much easier to understand that the  expected output is a change id",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 12
+      },
+      "revId": "bff6b12130c4931660fd9d276415bc4a0ce6d500",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
