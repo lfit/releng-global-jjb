@@ -22,6 +22,30 @@
       "revId": "799a48c0e047b29f884d6db221b963a17f05a697",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec05d619_6383e188",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T15:55:47Z",
+      "side": 0,
+      "message": "lf-activate-vevn() is based on pypi. It always grabs the latest version (--upgrade), which at this time is 1.28. Since gerrit needs \u003e\u003d1.28 I specify that in the call to lf-activate-venv().",
+      "parentUuid": "82ca095c_3055f554",
+      "range": {
+        "startLine": 42,
+        "startChar": 30,
+        "endLine": 42,
+        "endChar": 40
+      },
+      "revId": "799a48c0e047b29f884d6db221b963a17f05a697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

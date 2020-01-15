@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e086377c_c6705faa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T15:55:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91c41699_e3a17314",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 35
+      },
+      "revId": "bff6b12130c4931660fd9d276415bc4a0ce6d500",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b05a2e7_1405a2f3",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2020-01-15T12:09:14Z",
       "side": 1,
       "message": "change this back to \"change_id\", query result is too generic, much easier to understand that the  expected output is a change id",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 12
+      },
+      "revId": "bff6b12130c4931660fd9d276415bc4a0ce6d500",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "440eeb97_2dfe7954",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-15T15:55:47Z",
+      "side": 1,
+      "message": "Note I have broken up the previous command into two parts. The first part is just the query and if it fails the script will exit. The query should always succeed even if there is no change_id.\nThe second part extracts the change_id from the query_string, the return status drives which message to pass to git commit.\n\nI did not want to ignore the status from the query. I would be glad to change the query_result name if you can think of something better. I initially called it \u0027query\u0027 and rejected that for \u0027query_result\u0027. I updated the comments, maybe that will make it more clear.",
+      "parentUuid": "4b05a2e7_1405a2f3",
       "range": {
         "startLine": 53,
         "startChar": 0,
