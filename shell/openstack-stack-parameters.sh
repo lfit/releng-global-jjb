@@ -23,6 +23,6 @@ EOF
 echo "OpenStack Heat parameters generated"
 echo "-----------------------------------"
 echo "parameters:" > "$stack_parameters"
-cat "$tmp_params" | sed 's/^/    /' >> "$stack_parameters"
+sed 's/^/    /' >> "$stack_parameters" "$tmp_params"
 cat "$stack_parameters"
 rm "$tmp_params"
