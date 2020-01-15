@@ -313,8 +313,8 @@ container_release_file(){
     local lfn_umbrella
     lfn_umbrella="$(echo "$GERRIT_URL" | awk -F"." '{print $2}')"
 
-    for namequoted in $(cat $release_file | yq '.containers[].name'); do
-        versionquoted=$(cat $release_file | yq ".containers[] |select(.name==$namequoted) |.version")
+    for namequoted in $(yq '.containers[].name' $release_file); do
+        versionquoted=$(yq ".containers[] |select(.name==$namequoted) |.version" $release_file)
 
         #Remove extra yaml quotes
         name="${namequoted#\"}"

@@ -39,7 +39,7 @@ else
 fi
 
 # Retrieve the current uptime (in seconds)
-uptime=$(cat /proc/uptime | awk '{print $1}')
+uptime=$(awk '{print $1}' /proc/uptime)
 # Convert to integer by truncating fractional part' and round up by one
 ((uptime=${uptime%\.*}+1))
 
