@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Supress unwanted console log warning. `WARNING: The scripts easy_install
+    and easy_install-3.6 are installed in '/home/jenkins/.local/bin' which
+    is not on PATH.`
