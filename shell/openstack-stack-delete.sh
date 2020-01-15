@@ -18,7 +18,7 @@ source ~/lf-env.sh
 lf-activate-venv lftools[openstack] python-openstackclient
 
 echo "INFO: Retrieving stack cost for: $OS_STACK_NAME"
-if ! lftools openstack --os-cloud $OS_CLOUD stack cost $OS_STACK_NAME > stack-cost; then
+if ! lftools openstack --os-cloud "$OS_CLOUD" stack cost "$OS_STACK_NAME" > stack-cost; then
     echo "WARNING: Unable to get stack costs, continuing anyway"
     echo "total: 0" > stack-cost
 else

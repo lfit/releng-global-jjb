@@ -20,8 +20,13 @@ echo "---> whitesource-unified-agent-cli.sh"
 jar_location="/tmp/wss-unified-agent-${WSS_UNIFIED_AGENT_VERSION}.jar"
 wss_unified_agent_url="https://s3.amazonaws.com/unified-agent/wss-unified-agent-${WSS_UNIFIED_AGENT_VERSION}.jar"
 wget -nv "${wss_unified_agent_url}" -O "${jar_location}"
+
 echo "---> Running WhiteSource Unified Agent CLI ..."
+
+# WSS_UNIFIED_AGENT_OPTIONS & JAVA_OPTS are expected to be unquoted
+# shellcheck disable=SC2086
 java ${JAVA_OPTS:-} -jar "${jar_location}" -c wss-unified-agent.config \
     -product "${WSS_PRODUCT_NAME}" -project "${WSS_PROJECT_NAME}" \
     -projectVersion "${GERRIT_BRANCH}" ${WSS_UNIFIED_AGENT_OPTIONS:-}
+
 rm "${jar_location}"

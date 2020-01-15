@@ -159,7 +159,7 @@ function lf-activate-venv()
             *)  lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown switch '$1'." ; return 1 ;;
         esac
     done
-    if ! type $python > /dev/null; then
+    if ! type "$python" > /dev/null; then
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
         return 1
     fi
@@ -170,14 +170,16 @@ function lf-activate-venv()
     python2*)
         local pkg_list="$*"
         # For Python2, just create venv and install pip
-        virtualenv -p $python $lf_venv || return 1
-        $lf_venv/bin/pip install --upgrade --quiet pip || return 1
+        virtualenv -p "$python" "$lf_venv" || return 1
+        "$lf_venv/bin/pip" install --upgrade --quiet pip || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"
             return 0
         fi
         echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
-        $lf_venv/bin/pip install --upgrade --quiet $pkg_list || return 1
+        # $pkg_list is expected to be unquoted
+        # shellcheck disable=SC2086
+        "$lf_venv/bin/pip" install --upgrade --quiet $pkg_list || return 1
         ;;
     python3*)
         local pkg_list=""
@@ -188,14 +190,16 @@ function lf-activate-venv()
                 *)                   pkg_list+="$arg " ;;
             esac
         done
-        $python -m venv $install_args $lf_venv || return 1
-        $lf_venv/bin/pip install --upgrade --quiet pip virtualenv || return 1
+        $python -m venv "$install_args" "$lf_venv" || return 1
+        "$lf_venv/bin/pip" install --upgrade --quiet pip virtualenv || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"
             return 0
         fi
         echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
-        $lf_venv/bin/pip install --upgrade --quiet --upgrade-strategy eager \
+        # $pkg_list is expected to be unquoted
+        # shellcheck disable=SC2086
+        "$lf_venv/bin/pip" install --upgrade --quiet --upgrade-strategy eager \
                              $pkg_list || return 1
         ;;
     *)

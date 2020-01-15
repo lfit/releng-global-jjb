@@ -17,24 +17,24 @@ function copy_log()
 {
     case $os in
         fedora|centos|redhat|ubuntu|debian)
-            if ! sudo cp $sudo_log /tmp; then
+            if ! sudo cp "$sudo_log" /tmp; then
                 echo "Unable to archive 'sudo' logs ($sudo_log)"
                 return
             fi
             ;;
         suse)
             # Do I need 'sudo' to run 'journalctl'?
-            journalctl | grep sudo > $sudo_log
+            journalctl | grep sudo > "$sudo_log"
             ;;
         *)  echo "Unexpected 'operatingsystem': $os"
             exit 1
             ;;
     esac
-    sudo_log=$(basename $sudo_log)
-    sudo chown jenkins:jenkins /tmp/$sudo_log
-    chmod 0644 /tmp/$sudo_log
-    mkdir -p $WORKSPACE/archives/sudo
-    mv /tmp/$sudo_log $WORKSPACE/archives/sudo/$sudo_log
+    sudo_log=$(basename "$sudo_log")
+    sudo chown jenkins:jenkins "/tmp/$sudo_log"
+    chmod 0644 "/tmp/$sudo_log"
+    mkdir -p "$WORKSPACE/archives/sudo"
+    mv "/tmp/$sudo_log" "$WORKSPACE/archives/sudo/$sudo_log"
 
 }    # End copy_log()
 

@@ -53,7 +53,7 @@ if [[ ${UPDATE_CLOUD_IMAGE} ]]; then
     # Copy variables.prop to variables.jenkins-trigger so that the end of build
     # trigger can pick up the file as input for triggering downstream jobs.
     # Dont tigger downstream job when UPDATE_CLOUD_IMAGE is set to 'false'
-    cp $WORKSPACE/variables.prop $WORKSPACE/variables.jenkins-trigger
+    cp "$WORKSPACE/variables.prop" "$WORKSPACE/variables.jenkins-trigger"
 fi
 
 # Retrive the list of cloud providers
