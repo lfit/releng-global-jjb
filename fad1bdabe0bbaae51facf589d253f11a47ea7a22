@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f26c99c_4b44710d",
+        "filename": "releasenotes/notes/cleanup-gerrit-push-change-f77402b88764c6ff.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-16T18:59:28Z",
+      "side": 1,
+      "message": "Please fix typo \u0027install\u0027",
+      "range": {
+        "startLine": 5,
+        "startChar": 41,
+        "endLine": 5,
+        "endChar": 47
+      },
+      "revId": "fad1bdabe0bbaae51facf589d253f11a47ea7a22",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3428078f_7759d38b",
+        "filename": "releasenotes/notes/cleanup-gerrit-push-change-f77402b88764c6ff.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-16T18:59:28Z",
+      "side": 1,
+      "message": "Please fix typo \u0027activate\u0027 here and in commit message.",
+      "range": {
+        "startLine": 5,
+        "startChar": 22,
+        "endLine": 5,
+        "endChar": 30
+      },
+      "revId": "fad1bdabe0bbaae51facf589d253f11a47ea7a22",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
