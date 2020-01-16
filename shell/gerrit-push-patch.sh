@@ -44,11 +44,17 @@ set -u
 # End git-review workaround
 # Remove any leading or trailing quotes surrounding the strings
 # which can cause parse errors when passed as CLI options to commands
+# shellcheck disable=SC2001
 PROJECT="$(echo "$PROJECT" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+# shellcheck disable=SC2001
 GERRIT_COMMIT_MESSAGE="$(echo "$GERRIT_COMMIT_MESSAGE" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+# shellcheck disable=SC2001
 GERRIT_HOST="$(echo "$GERRIT_HOST" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+# shellcheck disable=SC2001
 GERRIT_TOPIC="$(echo "$GERRIT_TOPIC" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+# shellcheck disable=SC2001
 GERRIT_USER="$(echo "$GERRIT_USER" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
+# shellcheck disable=SC2001
 REVIEWERS_EMAIL="$(echo "$REVIEWERS_EMAIL" | sed "s/^\([\"']\)\(.*\)\1\$/\2/g")"
 job=$JOB_NAME/$BUILD_NUMBER
 
