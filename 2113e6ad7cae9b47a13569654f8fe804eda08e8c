@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6310f949_cfc94a82",
+        "filename": "releasenotes/notes/update-jjb-deploy-job-0802fb0d7e47726d.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-16T01:39:02Z",
+      "side": 1,
+      "message": "So, removal is a lot stronger than deprecation.  Is there an appropriate section/title for total removal here?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 12
+      },
+      "revId": "2113e6ad7cae9b47a13569654f8fe804eda08e8c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
