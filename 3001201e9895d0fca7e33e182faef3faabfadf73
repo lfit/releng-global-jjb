@@ -121,6 +121,24 @@
       "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fd426a2a_8bcb5ef6",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-16T03:53:50Z",
+      "side": 1,
+      "message": "Anyone who puts spaces in paths on Unix deserves to be hanged. Even if it were properly quoted in a script in one place, it would just blow up somewhere else (it takes more than quoting variables to make scripts work with white-space). Use a file browser if you must, just don\u0027t create paths that contain white-space.\n\nThe lint tools are going to require quotes so you will need the quotes anyway.\n\nHow about this: -f \"$(readlink -f \"$MAVEN_DIR\")\" (no need for an extra variable)",
+      "parentUuid": "dd6da96b_1d3a94df",
+      "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
