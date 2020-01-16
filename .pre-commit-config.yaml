@@ -1,11 +1,11 @@
 ---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.2.1
+    rev: v2.4.0
     hooks:
       - id: trailing-whitespace
 
   - repo: https://github.com/prettier/prettier
-    rev: 1.18.2
+    rev: 1.19.1
     hooks:
       - id: prettier
