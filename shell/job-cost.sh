@@ -47,10 +47,10 @@ instance_type=$(curl -s http://169.254.169.254/latest/meta-data/instance-type)
 
 echo "INFO: Retrieving Pricing Info for: $instance_type"
 url="https://pricing.vexxhost.net/v1/pricing/$instance_type/cost?seconds=$uptime"
-jason_block=$(curl -s "$url")
+json_block=$(curl -s "$url")
 
-cost=$(jq .cost <<< "$jason_block")
-resource=$(jq .resource <<< "$jason_block" | tr -d '"')
+cost=$(jq .cost <<< "$json_block")
+resource=$(jq .resource <<< "$json_block" | tr -d '"')
 
 # Archive the cost date
 mkdir -p "$WORKSPACE/archives/cost"
