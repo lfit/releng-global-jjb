@@ -46,6 +46,30 @@
       "revId": "2113e6ad7cae9b47a13569654f8fe804eda08e8c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0fb175d_af917007",
+        "filename": "releasenotes/notes/update-jjb-deploy-job-0802fb0d7e47726d.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-16T15:35:38Z",
+      "side": 1,
+      "message": "Moved the comments about the deletion of the macro to \u0027upgrade:\u0027 section",
+      "parentUuid": "fd2e6cde_c6da421d",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 12
+      },
+      "revId": "2113e6ad7cae9b47a13569654f8fe804eda08e8c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
