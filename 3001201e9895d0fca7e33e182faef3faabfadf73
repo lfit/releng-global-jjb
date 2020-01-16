@@ -139,6 +139,24 @@
       "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a64db190_8be034c3",
+        "filename": "shell/maven-javadoc-generate.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-16T11:24:26Z",
+      "side": 1,
+      "message": "I *could* embed the readlink in the maven invocation, but putting it above gives me a slightly better chance to explain why in a detailed comment. Cost of extra variables is approximately zero :)",
+      "parentUuid": "fd426a2a_8bcb5ef6",
+      "revId": "3001201e9895d0fca7e33e182faef3faabfadf73",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
