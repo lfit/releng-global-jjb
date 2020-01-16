@@ -327,11 +327,14 @@ for silo in $silos; do
         mkdir -p "$(dirname "$insert_file")"
         rm -f "$insert_file"
 
-        echo "" >> "$insert_file"
-        echo "//////////////////////////////////////////////////" >> "$insert_file"
-        echo "// Cloud config for $(basename "$cloud")" >> "$insert_file"
-        echo "//////////////////////////////////////////////////" >> "$insert_file"
-        echo "" >> "$insert_file"
+        {
+            echo ""
+            echo "//////////////////////////////////////////////////"
+            echo "// Cloud config for $(basename "$cloud")"
+            echo "//////////////////////////////////////////////////"
+            echo ""
+        } >> "$insert_file"
+
 
         echo "templates = []" >> "$insert_file"
         mapfile -t templates < <(find "$cfg_dir" -maxdepth 1 -not -type d -not -name "cloud.cfg")
