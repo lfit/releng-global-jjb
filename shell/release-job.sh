@@ -384,6 +384,7 @@ pypi_release_file(){
         echo "WARN: failed to download source distribution"
     fi
     echo "INFO: Checking files in $tgtdir"
+    # shellcheck disable=SC2012
     filecount=$(ls $tgtdir | wc -l)
     if [[ $filecount = 0 ]] ; then
         echo "ERROR: no files downloaded"
