@@ -93,6 +93,30 @@
       "revId": "9b0d71aae7cf5330250796aa52a187d6ac8880d1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7096eb5d_f373dd78",
+        "filename": "shell/jjb-deploy-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-16T15:39:27Z",
+      "side": 1,
+      "message": "might be worth a comment here, that the version is set by JJB_VERSION, for the next person who comes along wondering exactly what version is installed.",
+      "parentUuid": "f4998db3_86ec6d67",
+      "range": {
+        "startLine": 22,
+        "startChar": 17,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "9b0d71aae7cf5330250796aa52a187d6ac8880d1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
