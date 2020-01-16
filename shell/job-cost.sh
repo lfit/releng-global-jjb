@@ -29,7 +29,7 @@ fi
 if [[ -f stack-cost ]]; then
     echo "DEBUG: $(cat stack-cost)"
     echo "INFO: Retrieving Stack Cost..."
-    if ! stack_cost=$(fgrep "total: " stack-cost | awk '{print $2}'); then
+    if ! stack_cost=$(grep -F "total: " stack-cost | awk '{print $2}'); then
         echo "ERROR: Unable to retrieve Stack Cost, continuing anyway"
         stack_cost=0
     fi

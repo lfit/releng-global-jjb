@@ -43,7 +43,7 @@ echo "Verifying that cloud has a master configuration file"
 for cloud in jenkins-config/clouds/openstack/*; do
   if [[ -f $cloud/cloud.cfg ]]; then
     # Get the OS_CLOUD variable from cloud config
-    if ! os_cloud=$(egrep "^OS_CLOUD=" "$cloud/cloud.cfg" | cut -d'=' -f2); then
+    if ! os_cloud=$(grep -E "^OS_CLOUD=" "$cloud/cloud.cfg" | cut -d'=' -f2); then
       os_cloud="vex"
     fi
     OS_CLOUD=$os_cloud verify_images "$cloud"
