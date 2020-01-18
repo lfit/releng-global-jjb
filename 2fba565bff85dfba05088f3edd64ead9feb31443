@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "55d0d620_a5d9a737",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-01-18T23:54:31Z",
+      "side": 1,
+      "message": "I\u0027ll have to disagree, its better to separate the changes (indents, variable rename) with the actually functionality (install git-review with lf-env-*). Based on past experience, if you\u0027ll we want to move to diff approach for whatever or even hit a bug that needs to be fixed overnight, then entire change needs has to reworked, and cannot be reverted. If the changes are incremental and sepearted out into diff CR anyone from the team can revert the CR and provide a hot fix on global-jjb. \n\nYou can still stack up all these changes on top of each other under the same topic if you like.",
+      "parentUuid": "78419af5_cdb4493c",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 19
+      },
+      "revId": "2fba565bff85dfba05088f3edd64ead9feb31443",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0509bcd_34ee1b25",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 3
