@@ -167,6 +167,30 @@
     },
     {
       "key": {
+        "uuid": "7aec9887_300bedcb",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-19T01:02:23Z",
+      "side": 1,
+      "message": "You are not looking at latest changes.\nI just uploaded a new patch set (13) and I backed out all changes for cleanup/clarity. All changes are part of the same fix and would need to be merged/reverted at the same time.\nAdding the error handling required a great deal code changes.\nIt still contains the --dry-run on the call to \u0027git review\u0027. That will have to be deleted.",
+      "parentUuid": "55d0d620_a5d9a737",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 19
+      },
+      "revId": "2fba565bff85dfba05088f3edd64ead9feb31443",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0509bcd_34ee1b25",
         "filename": "shell/gerrit-push-patch.sh",
         "patchSetId": 3
