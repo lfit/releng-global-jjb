@@ -23,7 +23,7 @@ export MAVEN_OPTS
 
 # use absolute path as workaround for javadoc:aggregate
 # silent failure on relative path, for example "-f ."
-maven_dir_abs=$(readlink -f $MAVEN_DIR)
+maven_dir_abs=$(readlink -f "$MAVEN_DIR")
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
