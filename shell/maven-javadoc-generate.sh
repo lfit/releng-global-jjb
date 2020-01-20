@@ -21,19 +21,23 @@ mkdir -p "$WORKSPACE/archives"
 
 export MAVEN_OPTS
 
+# use absolute path as workaround for javadoc:aggregate
+# silent failure on relative path, for example "-f ."
+maven_dir_abs=$(readlink -f $MAVEN_DIR)
+
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
 # Use -x via subshell to show maven invocation details in the log
 (set -x
   $MVN clean install javadoc:aggregate \
+    -f "$maven_dir_abs" \
     -e -Pq -Dmaven.javadoc.skip=false \
     -DskipTests=true \
     -Dcheckstyle.skip=true \
     -Dfindbugs.skip=true \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
-    -f "$MAVEN_DIR" \
-    $MAVEN_OPTIONS $MAVEN_PARAMS \
+    $MAVEN_OPTIONS $MAVEN_PARAMS
 )
 
 mv "$WORKSPACE/$MAVEN_DIR/target/site/apidocs" "$JAVADOC_DIR"
