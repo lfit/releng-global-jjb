@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "161cfbe1_0984cdf4",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-21T16:31:41Z",
+      "side": 1,
+      "message": "perhaps 2020",
+      "range": {
+        "startLine": 4,
+        "startChar": 16,
+        "endLine": 4,
+        "endChar": 20
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ab7afaa_2afe31b1",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-21T16:31:41Z",
+      "side": 1,
+      "message": "why are quotes necessary?",
+      "range": {
+        "startLine": 14,
+        "startChar": 42,
+        "endLine": 14,
+        "endChar": 49
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "748f45eb_6d1c6700",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-21T16:31:41Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 19,
+        "startChar": 52,
+        "endLine": 19,
+        "endChar": 61
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28e8b790_76e36bae",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-21T16:31:41Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 22,
+        "startChar": 7,
+        "endLine": 22,
+        "endChar": 9
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "daf81ff0_29a607e1",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-21T16:31:41Z",
+      "side": 1,
+      "message": "possibly validate the proj_dir exists?",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 2
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f108d5e_ee75c760",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-21T16:31:41Z",
+      "side": 1,
+      "message": "consider grouping the constant assignments together? I see one up at line 32, another here",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 1
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "91a58633_1733c4fb",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-21T16:31:41Z",
+      "side": 1,
+      "message": "maybe for debugging you want to guard this, so you can run the script without having it make changes?",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 5
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6c122ba6_f71b72e2",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-21T16:31:41Z",
+      "side": 1,
+      "message": "what assigns to SECONDS ?",
+      "range": {
+        "startLine": 107,
+        "startChar": 16,
+        "endLine": 107,
+        "endChar": 23
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
