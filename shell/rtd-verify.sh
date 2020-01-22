@@ -32,7 +32,7 @@ git submodule update
 
 if [[ $JOB_NAME == "lf-infra-lftools-rtd-verify-any" ]]; then
     # Install patchset lftools
-    python3 -m pip install --user -e .
+    python3 -m pip install -e .
 fi
 
 echo "---> Generating docs"
