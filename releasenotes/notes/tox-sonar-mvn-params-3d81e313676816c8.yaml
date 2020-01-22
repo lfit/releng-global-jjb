@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Extend macro lf_tox_sonar with parameters macro lf-infra-maven-parameters
+    so job definitions can configure mvn-opts, mvn-params and mvn-version
+    values. Default values are defined so existing jobs are not affected.
+    This change makes the python-tox sonar template consistent with the
+    maven sonar template.
+
+    Extend the PyPI package structure recommendation with a way to share
+    the docs/ folder.

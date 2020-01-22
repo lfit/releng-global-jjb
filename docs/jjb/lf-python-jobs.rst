@@ -369,12 +369,17 @@ paths. For example, a PyPI merge job should not run on a non-Python
 file change such as documentation, because the job cannot upload the
 same package twice.
 
+To make the document files available for building a Python package
+long description in setup.py, add a symbolic link "docs" in the
+package subdirectory pointing to the top-level docs directory.
+
 .. code-block:: bash
 
     git-repo-name/
     │
     ├── docs/
-    │   └── index.rst
+    │   ├── index.rst
+    │   └── release-notes.rst
     │
     ├── helloworld-package/
     │   │
@@ -399,10 +404,10 @@ same package twice.
     └── README.md
 
 
-Use of these templates requires a .pypirc configuration file in the
-Jenkins builder home directory. An example appears next that uses API
-tokens. Note that in the [pypi] entry the repository key-value pair is
-optional, it defaults to pypi.org.
+Jobs built from the PyPI templates depend on a .pypirc configuration file
+in the Jenkins builder home directory. An example appears next that uses
+API tokens. Note that in the [pypi] entry the repository key-value pair
+is optional, it defaults to pypi.org.
 
 .. code-block:: bash
 
@@ -434,6 +439,7 @@ optional, it defaults to pypi.org.
     :build-node: The node to run the build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
+    :mvn-settings: The settings file with credentials for the project
     :project: Git repository name
     :project-name: Jenkins job name prefix
 
@@ -448,6 +454,9 @@ optional, it defaults to pypi.org.
     :disable-job: Whether to disable the job (default: false)
     :dist-binary: Whether to build a binary wheel distribution. (default: true)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
+    :mvn-params: Additional mvn parameters to pass to the CLI. (default: '')
+    :mvn-version: Version of maven to use. (default: mvn35)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
        (default: false, in series)
     :pre-build-script: Shell script to execute before the tox builder. For
@@ -507,6 +516,7 @@ pyenv variables before running.
     :build-node: The node to run the build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally set
         in defaults.yaml)
+    :mvn-settings: The settings file with credentials for the project
     :project: Git repository name
     :project-name: Jenkins job name prefix
 
@@ -518,6 +528,9 @@ pyenv variables before running.
     :disable-job: Whether to disable the job (default: false)
     :dist-binary: Whether to build a binary wheel distribution. (default: true)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
+    :mvn-params: Additional mvn parameters to pass to the CLI. (default: '')
+    :mvn-version: Version of maven to use. (default: mvn35)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
        (default: false, in series)
     :pre-build-script: Shell script to execute before the tox builder. For

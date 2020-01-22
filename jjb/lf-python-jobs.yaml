@@ -215,7 +215,7 @@
 #########################
 
 - lf_tox_sonar: &lf_tox_sonar
-    name: lf-tox_sonar
+    name: lf-tox-sonar
 
     ######################
     # Default parameters #
@@ -231,6 +231,8 @@
     java-version: openjdk8
     mvn-global-settings: global-settings
     mvn-goals: validate
+    mvn-opts: ""
+    mvn-params: ""
     mvn-settings: "{mvn-settings}"
     mvn-version: mvn35
     parallel: true
@@ -267,6 +269,10 @@
           project: "{project}"
           branch: "{branch}"
           stream: "{stream}"
+      - lf-infra-maven-parameters:
+          mvn-opts: "{mvn-opts}"
+          mvn-params: "{mvn-params}"
+          mvn-version: "{mvn-version}"
       - lf-infra-tox-parameters:
           tox-dir: "{tox-dir}"
           tox-envs: "{tox-envs}"
