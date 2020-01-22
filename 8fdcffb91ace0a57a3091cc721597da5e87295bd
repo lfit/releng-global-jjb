@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7d1caa62_3903a1bc",
+        "filename": "releasenotes/notes/scrape-job-cost-2a43bea721775985.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-22T17:55:17Z",
+      "side": 1,
+      "message": "actually scrape-job-cost (singular)",
+      "range": {
+        "startLine": 4,
+        "startChar": 41,
+        "endLine": 4,
+        "endChar": 42
+      },
+      "revId": "8fdcffb91ace0a57a3091cc721597da5e87295bd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
