@@ -16,6 +16,24 @@
       "revId": "8a2651316c6c2f121a32d1121dd3ff7dc0e8ac24",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5109ead9_7663a023",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-01-22T21:10:10Z",
+      "side": 1,
+      "message": "pip 20.0.1 now defaults to --user",
+      "parentUuid": "e3fd2450_b05a6a30",
+      "revId": "8a2651316c6c2f121a32d1121dd3ff7dc0e8ac24",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
