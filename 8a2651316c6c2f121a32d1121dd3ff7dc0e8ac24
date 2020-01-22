@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e3fd2450_b05a6a30",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-22T20:55:37Z",
+      "side": 1,
+      "message": "I don\u0027t think this is not going to do what you want/expect. \n--user always installs in ~/.local\nwithout it I would expect it to to install in the venv where $PYTHON is installed\nI don\u0027t where the $PYTHON comes from in this case... I suspect it is the system one.",
+      "revId": "8a2651316c6c2f121a32d1121dd3ff7dc0e8ac24",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
