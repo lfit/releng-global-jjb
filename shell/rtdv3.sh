@@ -11,6 +11,22 @@
 echo "---> rtdv3.sh"
 set -euo pipefail
 
+watchbuild(){
+  echo "INFO: Running build against branch $1"
+  buildid=$(lftools rtd project-build-trigger "$rtdproject" "$1" | jq '.build.id')
+  result=null
+  while [ $result == null ]; do
+    sleep 10
+    result=$(lftools rtd project-build-details "$rtdproject" "$buildid"  | jq '.success')
+    echo "INFO Current result of running build $result"
+    if [[ $result == failed ]]; then
+      echo "INFO: read the docs build completed with status: $result"
+      exit 1
+    fi
+  done
+  echo "INFO: read the docs build completed with status: $result"
+}
+
 project_dashed="${PROJECT////-}"
 umbrella=$(echo "$GERRIT_URL" | awk -F'.' '{print $2}')
 if [[ "$SILO" == "sandbox" ]]; then
@@ -102,12 +118,31 @@ echo "INFO: Performing merge action"
     lftools rtd project-update "$rtdproject" default_version="$default_version"
   fi
 
-  lftools rtd project-build-trigger "$rtdproject" "$GERRIT_BRANCH"
   if [[ $GERRIT_BRANCH == "master" ]]; then
-    echo "INFO: triggering latest"
-    lftools rtd project-build-trigger "$rtdproject" latest
+    echo "INFO: triggering $rtdproject latest"
+    watchbuild latest
   else
-    echo "INFO: triggering stable"
-    lftools rtd project-build-trigger "$rtdproject" stable
+
+    #read the docs only understands lower case branch names
+    branch=$(echo "$GERRIT_BRANCH" | tr '[:upper:]' '[:lower:]')
+    echo "INFO: Checking if read the docs has seen branch $branch"
+
+    #if this is 404. then run discover branch
+    if ! lftools rtd project-version-details "$rtdproject" "$branch" | jq '.active'; then
+      echo "INFO: read the docs has not seen branch $branch for project $rtdproject"
+      echo "INFO: triggering $rtdproject latest to instantiate new branch discovery"
+      watchbuild latest
+    fi
+
+    echo "INFO: triggering $rtdproject $branch"
+    watchbuild "$branch"
+
+    #Make newly discovered branches visible in the u/i
+    isactive=$(lftools rtd project-version-details "$rtdproject" "$branch" | jq '.active')
+    if [[ "$isactive" == false ]]; then
+      echo "INFO: Marking $branch as active for project $rtdproject"
+      lftools rtd project-version-update "$rtdproject" "$branch" true
+    fi
+
   fi
 fi
