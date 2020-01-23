@@ -18,9 +18,9 @@ set -eux -o pipefail
 
 
 if [[ $PYTHON == "python2" ]]; then
-    $PYTHON -m pip install --quiet --upgrade tox tox-pyenv virtualenv more-itertools~=5.0.0
+    $PYTHON -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv more-itertools~=5.0.0
 else
-    $PYTHON -m pip install --quiet --upgrade tox tox-pyenv virtualenv
+    $PYTHON -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv
 fi
 
 
