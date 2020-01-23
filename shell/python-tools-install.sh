@@ -40,3 +40,6 @@ EOF
     rm -rf "$requirements_file"
     touch /tmp/pre-build-complete
 fi
+
+# emit versions to log
+$PYTHON -m pip freeze
