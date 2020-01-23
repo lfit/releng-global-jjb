@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Revise python-tools-install.sh to drop creation of virtualenv
+    in ~/.local.  That is NOT a Python virtualenv and should not be
+    created as such.  Using `--user` installs python modules into
+    ~/.local/lib/PYTHON_VERSION/site-packages.  Making ~/.local a
+    virtualenv messes with the paths in site-packages.
+
+    Invoke pip freeze to output installed versions.
