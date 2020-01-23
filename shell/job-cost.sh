@@ -8,7 +8,7 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-echo "---> build-cost.sh"
+echo "---> job-cost.sh"
 
 set -euf -o pipefail
 
@@ -49,8 +49,16 @@ echo "INFO: Retrieving Pricing Info for: $instance_type"
 url="https://pricing.vexxhost.net/v1/pricing/$instance_type/cost?seconds=$uptime"
 json_block=$(curl -s "$url")
 
-cost=$(jq .cost <<< "$json_block")
-resource=$(jq .resource <<< "$json_block" | tr -d '"')
+if jq <<< "$json_block"
+then
+  cost=$(jq .cost <<< "$json_block")
+  resource=$(jq .resource <<< "$json_block" | tr -d '"')
+else
+  echo "ERROR: EC2 pricing returned invalid json"
+  cost=0
+  resource=0
+fi
+
 
 # Archive the cost date
 mkdir -p "$WORKSPACE/archives/cost"
