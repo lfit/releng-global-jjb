@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "41da3356_0e9c0373",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-01-23T17:24:45Z",
+      "side": 1,
+      "message": "Seems like this line of code is creating a venv in ~/.local Why?",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 56,
+        "endChar": 28
+      },
+      "revId": "eeeb5656c1c3aec9ad08918b916263c81ec626b9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
