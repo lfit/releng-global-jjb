@@ -11,6 +11,22 @@
 echo "---> rtdv3.sh"
 set -euo pipefail
 
+watchbuild(){
+  echo "INFO: Running build against branch $branch"
+  buildid=$(lftools rtd project-build-trigger o-ran-sc-doc $branch | jq '.build.id')
+  sleep 1
+  result=null
+  while [ $result == null ]; do
+    sleep 3
+    result=$(lftools rtd project-build-details o-ran-sc-doc "$buildid"  | jq '.success')
+    echo "INFO Current result of running build $result"
+    if [[ $result == failed ]]; then
+      echo "Build Failed"
+      exit 1
+    fi
+  done
+}
+
 project_dashed="${PROJECT////-}"
 umbrella=$(echo "$GERRIT_URL" | awk -F'.' '{print $2}')
 if [[ "$SILO" == "sandbox" ]]; then
@@ -102,12 +118,25 @@ echo "INFO: Performing merge action"
     lftools rtd project-update "$rtdproject" default_version="$default_version"
   fi
 
-  lftools rtd project-build-trigger "$rtdproject" "$GERRIT_BRANCH"
   if [[ $GERRIT_BRANCH == "master" ]]; then
     echo "INFO: triggering latest"
-    lftools rtd project-build-trigger "$rtdproject" latest
+    branch="latest"
+    watchbuild
+
   else
-    echo "INFO: triggering stable"
-    lftools rtd project-build-trigger "$rtdproject" stable
+
+    echo "INFO: Checking if read the docs has seen branch $GERRIT_BRANCH"
+    #read the docs only understands lower case branch names
+    branch=$("$GERRIT_BRANCH" | tr '[:upper:]' '[:lower:]')
+    #if this is 404. then build master for branch discovery
+    if ! lftools rtd project-version-details o-ran-sc-doc "$branch" | jq '.active'; then
+        branch="latest"
+        watchbuild
+    fi
+    isactive=$(lftools rtd project-version-details o-ran-sc-doc amber | jq '.active')
+    if [[ "$isactive" == false ]]; then
+      lftools rtd project-version-update o-ran-sc-doc amber true
+    fi
+    watchbuild
   fi
 fi
