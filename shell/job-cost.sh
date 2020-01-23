@@ -8,49 +8,68 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-echo "---> build-cost.sh"
+echo "---> job-cost.sh"
 
 set -euf -o pipefail
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv python-openstackclient
-
-if [[ -z ${JOB_NAME:-} ]]; then
-    lf-echo-error "Required Env Variable Unset/Empty: JOB_NAME"
-    exit 1
-fi
-
-# Get the cost of the Openstack agents. The 'stack-cost' file is created when
-# the 'lftools openstack stack cost' command is called from
-# 'openstack-stack-delete.sh' script. The 'stack-cost' file will only be created
-# if this is an openstack job.
-if [[ -f stack-cost ]]; then
-    echo "DEBUG: $(cat stack-cost)"
-    echo "INFO: Retrieving Stack Cost..."
-    if ! stack_cost=$(grep -F "total: " stack-cost | awk '{print $2}'); then
-        echo "ERROR: Unable to retrieve Stack Cost, continuing anyway"
-        stack_cost=0
-    fi
-else
-    echo "INFO: No Stack..."
-    stack_cost=0
-fi
-
 # Retrieve the current uptime (in seconds)
 uptime=$(awk '{print $1}' /proc/uptime)
 # Convert to integer by truncating fractional part' and round up by one
 ((uptime=${uptime%\.*}+1))
 
+# EC2 and OpenStack have simiar metadata APIs at this IP
+# AWS docs: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
+# Nova docs: https://docs.openstack.org/nova/latest/user/metadata.html
 instance_type=$(curl -s http://169.254.169.254/latest/meta-data/instance-type)
 
 echo "INFO: Retrieving Pricing Info for: $instance_type"
 url="https://pricing.vexxhost.net/v1/pricing/$instance_type/cost?seconds=$uptime"
 json_block=$(curl -s "$url")
 
-cost=$(jq .cost <<< "$json_block")
-resource=$(jq .resource <<< "$json_block" | tr -d '"')
+# check if JSON returned and can be parsed
+if jq <<< "$json_block"; then
+    cost=$(jq .cost <<< "$json_block")
+    resource=$(jq .resource <<< "$json_block" | tr -d '"')
+else
+    echo "ERROR: Pricing API returned invalid json"
+    cost=0
+    resource=0
+fi
+
+# Check if on AWS or OpenStack based on bios_vendor
+if grep -qvi amazon /sys/devices/virtual/dmi/id/bios_vendor ; then
+    # Calculate OpenStack job cost
+
+    lf-activate-venv python-openstackclient
+
+    if [[ -z ${JOB_NAME:-} ]]; then
+        lf-echo-error "Required Env Variable Unset/Empty: JOB_NAME"
+        exit 1
+    fi
+
+    # Get the cost of the Openstack agents. The 'stack-cost' file is created when
+    # the 'lftools openstack stack cost' command is called from
+    # 'openstack-stack-delete.sh' script. The 'stack-cost' file will only be created
+    # if this is an openstack job.
+    if [[ -f stack-cost ]]; then
+        echo "DEBUG: $(cat stack-cost)"
+        echo "INFO: Retrieving Stack Cost..."
+        if ! stack_cost=$(grep -F "total: " stack-cost | awk '{print $2}'); then
+            echo "ERROR: Unable to retrieve Stack Cost, continuing anyway"
+            stack_cost=0
+        fi
+    else
+        echo "INFO: No Stack..."
+        stack_cost=0
+    fi
+else
+    # Calculate AWS job cost
+    echo "INFO: AWS EC2 pricing unavailable"
+    stack_cost=0
+fi
 
 # Archive the cost date
 mkdir -p "$WORKSPACE/archives/cost"
