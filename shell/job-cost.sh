@@ -8,12 +8,18 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-echo "---> build-cost.sh"
+echo "---> job-cost.sh"
 
 set -euf -o pipefail
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
+
+# AWS job cost not supported, exit
+if grep -qi amazon /sys/devices/virtual/dmi/id/bios_vendor ; then
+  echo "INFO: Not able to calculate job cost on AWS"
+  exit 0
+fi
 
 lf-activate-venv python-openstackclient
 
@@ -43,14 +49,24 @@ uptime=$(awk '{print $1}' /proc/uptime)
 # Convert to integer by truncating fractional part' and round up by one
 ((uptime=${uptime%\.*}+1))
 
+# EC2 and OpenStack have simiar instace metadata APIs at this IP
+# AWS docs: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
+# Nova docs: https://docs.openstack.org/nova/latest/user/metadata.html
 instance_type=$(curl -s http://169.254.169.254/latest/meta-data/instance-type)
 
 echo "INFO: Retrieving Pricing Info for: $instance_type"
 url="https://pricing.vexxhost.net/v1/pricing/$instance_type/cost?seconds=$uptime"
 json_block=$(curl -s "$url")
 
-cost=$(jq .cost <<< "$json_block")
-resource=$(jq .resource <<< "$json_block" | tr -d '"')
+# check if JSON returned and can be parsed
+if jq <<< "$json_block"; then
+    cost=$(jq .cost <<< "$json_block")
+    resource=$(jq .resource <<< "$json_block" | tr -d '"')
+else
+    echo "ERROR: Pricing API returned invalid json"
+    cost=0
+    resource=0
+fi
 
 # Archive the cost date
 mkdir -p "$WORKSPACE/archives/cost"
@@ -64,4 +80,3 @@ date=$(TZ=GMT date +'%Y-%m-%d %H:%M:%S')
 cat << EOF > "$WORKSPACE/archives/cost.csv"
 $JOB_NAME,$BUILD_NUMBER,$date,$resource,$uptime,$cost,$stack_cost
 EOF
-
