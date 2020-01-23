@@ -33,8 +33,7 @@ tox>=3.7.0 # Tox 3.7 or greater is necessary for parallel mode support
 yq
 EOF
 
-    # Use `python -m pip` to ensure we are using pip from user venv
-    python3 -m venv ~/.local
+    # Use `python -m pip` to upgrade to the latest pip into user site-packages
     python3 -m pip install --user --quiet --upgrade pip
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade setuptools
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade --upgrade-strategy eager -r "$requirements_file"
