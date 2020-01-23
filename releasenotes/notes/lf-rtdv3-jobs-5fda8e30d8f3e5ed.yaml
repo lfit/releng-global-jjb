@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Branch discovery and build polling implemented.
+    If a Branch has not been seen by rtd
+    we trigger a build with rtd and poll till that build
+    is complete.
+    we can then enable the branch and trigger a build
+    against it, again polling all builds untill they are
+    complete.
