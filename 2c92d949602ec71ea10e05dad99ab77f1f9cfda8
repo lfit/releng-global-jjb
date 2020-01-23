@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c87e8636_b285b05d",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-01-23T18:23:36Z",
+      "side": 1,
+      "message": "The rest of this script is specifically using \"python3\" rather than $PYTHON. Why use $PYTHON here?",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 7
+      },
+      "revId": "2c92d949602ec71ea10e05dad99ab77f1f9cfda8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
