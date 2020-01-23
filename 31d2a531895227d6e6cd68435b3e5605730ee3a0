@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "02eaaa87_6199a26e",
+        "filename": "releasenotes/notes/python-tools-install-85c652e7963b3c6d.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-01-23T19:01:50Z",
+      "side": 1,
+      "message": "Great release note. I\u0027d add a small note to say that this reverts part of a change from I4b2d778f3fd81565c5dd009d50c969696faba0d2 just so that folks can trace back the original commit the broke us if they are interested.",
+      "revId": "31d2a531895227d6e6cd68435b3e5605730ee3a0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5630cb8f_b403e96e",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-01-23T19:01:50Z",
+      "side": 1,
+      "message": "I\u0027d prefer if this was contributed as a separate patch so that it can be reviewed and commented on separate. I personally don\u0027t like omnibus patches that package unrelated changes together.",
+      "range": {
+        "startLine": 40,
+        "startChar": 4,
+        "endLine": 41,
+        "endChar": 25
+      },
+      "revId": "31d2a531895227d6e6cd68435b3e5605730ee3a0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
