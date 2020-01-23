@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Extend script python-tools-install.sh to invoke pip freeze.
+    This shows installed package versions in the log and allows
+    detecting changes like the Jan 2020 release of pip v20 that
+    broke various assumptions and behaviors.
