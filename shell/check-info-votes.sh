@@ -36,10 +36,10 @@ if [ -d "/opt/pyenv" ]; then
     export PYENV_VERSION="3.6.4"
 fi
 
-$pip install niet
-$pip install lftools
-$pip install lftools[nexus]
-$pip install jsonschema
+$pip install --user niet
+$pip install --user lftools
+$pip install --user lftools[nexus]
+$pip install --user jsonschema
 
 echo "Checking votes:"
 lftools infofile check-votes INFO.yaml "$GERRIT_URL" "$ref" > gerrit_comment.txt
