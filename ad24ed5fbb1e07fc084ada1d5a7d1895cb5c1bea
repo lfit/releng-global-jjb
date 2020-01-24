@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a866752f_ba7dbab6",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2020-01-24T04:41:52Z",
+      "side": 1,
+      "message": "My interpretation of the script is that `cost` is EC2 cost, and `stack_cost` is OpenStack cost, which is what is recorded in the CSV later.",
+      "parentUuid": "35b797dd_c4f6cc4f",
+      "range": {
+        "startLine": 57,
+        "startChar": 15,
+        "endLine": 57,
+        "endChar": 18
+      },
+      "revId": "ad24ed5fbb1e07fc084ada1d5a7d1895cb5c1bea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9d531879_dc4e2152",
         "filename": "shell/job-cost.sh",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2020-01-24T01:19:27Z",
       "side": 1,
       "message": "could you please indent the block with 4 spaces and if..else format consistant like above?",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 2
+      },
+      "revId": "ad24ed5fbb1e07fc084ada1d5a7d1895cb5c1bea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d85fd0dc_6ab3609f",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2020-01-24T04:41:52Z",
+      "side": 1,
+      "message": "Sure, done in patchset 2.",
+      "parentUuid": "9d531879_dc4e2152",
       "range": {
         "startLine": 52,
         "startChar": 0,
