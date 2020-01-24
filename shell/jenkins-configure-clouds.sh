@@ -46,9 +46,6 @@ silos="${jenkins_silos:-jenkins}"
 
 set -eu -o pipefail
 
-os_plugin_version="$(lftools jenkins plugins list \
-  | grep -i 'OpenStack Cloud Plugin')"
-
 testversion() {
     local current_val="$1" operator="$2" test_value="$3"
     awk -vv1="$current_val" -vv2="$test_value" 'BEGIN {
@@ -318,6 +315,11 @@ for silo in $silos; do
     export JENKINS_URL
     export JENKINS_USER
     export JENKINS_PASSWORD
+
+    # JENKINS_{URL,USER,PASSWORD} env vars are required for the "lftools jenkins
+    # plugins list" call
+    os_plugin_version="$(lftools jenkins plugins list \
+      | grep -i 'OpenStack Cloud Plugin')"
 
     echo "-----> Groovy script $script_file"
     for cloud in "${clouds[@]}"; do
