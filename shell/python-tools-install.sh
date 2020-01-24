@@ -38,6 +38,8 @@ EOF
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade setuptools
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade --upgrade-strategy eager -r "$requirements_file"
     # installs are silent, show version details in log
+    python3 --version
+    python3 -m pip --version
     python3 -m pip freeze
     rm -rf "$requirements_file"
     touch /tmp/pre-build-complete

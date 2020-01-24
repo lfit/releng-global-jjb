@@ -20,5 +20,7 @@ source "/tmp/v/python/bin/activate"
 pip install --quiet --upgrade "pip==9.0.3" setuptools
 pip install --quiet --upgrade nodeenv
 
-echo "----> pip freeze"
+# installs are silent, show version details in log
+python --version
+pip --version
 pip freeze

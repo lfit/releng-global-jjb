@@ -16,12 +16,13 @@ set -eux -o pipefail
 
 # Tox version is pulled in through detox to mitigate version conflict
 
-
 if [[ $PYTHON == "python2" ]]; then
     $PYTHON -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv more-itertools~=5.0.0
 else
     $PYTHON -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv
 fi
 
-
+# installs are silent, show version details in log
+$PYTHON --version
+$PYTHON -m pip --version
 $PYTHON -m pip freeze

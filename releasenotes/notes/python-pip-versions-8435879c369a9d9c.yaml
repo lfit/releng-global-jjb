@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Extend shell scripts that invoke pip freeze to show
+    python and pip versions also

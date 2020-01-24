@@ -24,5 +24,7 @@ echo "JJB_VENV=$JJB_VENV" > "$WORKSPACE/.jjb.properties"
 source "$JJB_VENV/bin/activate"
 python -m pip install --quiet --upgrade "jenkins-job-builder==$JJB_VERSION"
 
-echo "----> pip freeze"
+# installs are silent, show version details in log
+python --version
+pip --version
 pip freeze
