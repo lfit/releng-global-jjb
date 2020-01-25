@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "002afe2c_6493d4a2",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-25T19:43:10Z",
+      "side": 1,
+      "message": "Maybe a comment: JENKINS_[URL USER PASSWORD] required for lftools\nSimilar comment for \u0027lftools groovy $script_file\u0027 below (assuming it requires these variables).",
+      "revId": "d197192cf8c5ee3a6077a74fabec561b8be3721e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
