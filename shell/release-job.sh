@@ -29,10 +29,12 @@ set_variables_common(){
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
     # Verify if using release file or parameters
     if $USE_RELEASE_FILE ; then
-        release_files=$(git diff-tree -m --no-commit-id -r "$GIT_COMMIT" --name-only -- "releases/" ".releases/")
+        release_files=$(git diff-tree -m --no-commit-id -r "$GIT_COMMIT" "$GIT_COMMIT^1" \
+            --name-only -- "releases/" ".releases/")
         if (( $(grep -c . <<<"$release_files") > 1 )); then
           echo "INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
-          echo "ERROR: Committing multiple release files in the same commit OR rename/amend of existing files is not supported."
+          echo "ERROR: Adding multiple release files in the same commit"
+          echo "ERROR: OR rename/amend/delete of existing files is not supported."
           exit 1
         else
           release_file="$release_files"
