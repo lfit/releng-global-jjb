@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix release file detection on commit with multiple parents
