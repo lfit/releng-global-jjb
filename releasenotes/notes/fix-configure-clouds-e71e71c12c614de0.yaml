@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Call "lftools jenkins" after credentials are set to fix failures due to the
+    call being made without credentials being set first. The previous method
+    did not require credentials, so the failure was introduced when we switched
+    to using lftools. The os_plugin_version variable is not needed before the
+    JENKINS_USER and JENKINS_PASSWORD are set, so no other changes
+    are necessary.
