@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "acec2d14_757008d2",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-28T00:35:48Z",
+      "side": 1,
+      "message": "@Zachary That\u0027s an incorrect interpretation. This script currently does cost analysis for OpenStack only, and in particular only against Vexxhost as they built a custom API endpoint for us to get this costing data from.",
+      "parentUuid": "a866752f_ba7dbab6",
+      "range": {
+        "startLine": 57,
+        "startChar": 15,
+        "endLine": 57,
+        "endChar": 18
+      },
+      "revId": "ad24ed5fbb1e07fc084ada1d5a7d1895cb5c1bea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9d531879_dc4e2152",
         "filename": "shell/job-cost.sh",
         "patchSetId": 1
@@ -93,6 +117,30 @@
       "revId": "ad24ed5fbb1e07fc084ada1d5a7d1895cb5c1bea",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "def81a59_f8e002af",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-28T00:35:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d85fd0dc_6ab3609f",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 2
+      },
+      "revId": "ad24ed5fbb1e07fc084ada1d5a7d1895cb5c1bea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
