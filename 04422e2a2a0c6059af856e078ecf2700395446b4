@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76f0e225_435435a9",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-28T20:58:02Z",
+      "side": 1,
+      "message": "I think this code block needs to be \u0027outside\u0027 \u0027if openstack else AWS fi\u0027 and needs to be executed for both situations. The variables set in this section are reverenced when the cost file is generated (line 79) below.",
+      "range": {
+        "startLine": 47,
+        "startChar": 2,
+        "endLine": 56,
+        "endChar": 32
+      },
+      "revId": "04422e2a2a0c6059af856e078ecf2700395446b4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
