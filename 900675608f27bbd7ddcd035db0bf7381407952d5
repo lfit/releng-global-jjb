@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e36effd0_fb456012",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-28T00:33:25Z",
+      "side": 1,
+      "message": "This would be better if just encapsulated in a check to see if we\u0027re on an EC2 instance or not.\n\nThis script is _not_ currently designed to operate in AWS so we should skip even attempting to get the pricing information.\n\nif grep -qvi amazon /sys/devices/virtual/dmi/id/bios_vendor\nthen\n  echo \"Pricing data no currently calculated in AWS\"\n  cost\u003d0\n  resource\u003d0\nelse\n  # do all the pricing work for Vexxhost\nfi",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 2
+      },
+      "revId": "900675608f27bbd7ddcd035db0bf7381407952d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
