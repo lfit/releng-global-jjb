@@ -226,7 +226,7 @@
           submodule-disable: true
           submodule-recursive: false
           submodule-timeout: 10
-          choosing-strategy: default
+          choosing-strategy: gerrit
 
     triggers:
       - gerrit:
@@ -627,7 +627,7 @@
           submodule-disable: true
           submodule-recursive: false
           submodule-timeout: 10
-          choosing-strategy: default
+          choosing-strategy: gerrit
 
     triggers:
       - gerrit:

@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Use choosing strategy Gerrit Trigger in container/jar and
+    package cloud release merge jobs. This retains the current
+    behavior in the simple merge case, and ensures that a job
+    triggered by a "remerge" comment uses the release file at
+    that commit.  The previous choosing strategy, default, uses
+    the tip of the target branch.  That does not allow recovery
+    from merge job failure if the target branch has advanced past
+    the commit with the release file.
