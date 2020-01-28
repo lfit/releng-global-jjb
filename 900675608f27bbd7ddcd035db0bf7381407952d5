@@ -46,6 +46,30 @@
       "revId": "900675608f27bbd7ddcd035db0bf7381407952d5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99af97a7_7f293eb7",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2020-01-28T20:17:54Z",
+      "side": 1,
+      "message": "I updated the script with the if statement Andrew suggested, but wrapping the entire OpenStack or AWS calculation.",
+      "parentUuid": "10a670b9_3a3605cb",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 2
+      },
+      "revId": "900675608f27bbd7ddcd035db0bf7381407952d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
