@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "26ab868b_b897722f",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 15
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-28T20:33:45Z",
+      "side": 1,
+      "message": "perhaps remove the debug code, if this is ready for review \u0026 merge?",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 17
+      },
+      "revId": "48d9cd4bae6fec2f9c9723b482171be1f828f61e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
