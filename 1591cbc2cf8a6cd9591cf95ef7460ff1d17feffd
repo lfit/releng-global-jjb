@@ -46,6 +46,30 @@
       "revId": "1591cbc2cf8a6cd9591cf95ef7460ff1d17feffd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b4a7aeb_7f553e71",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-01-29T20:31:57Z",
+      "side": 1,
+      "message": "I don\u0027t think this will work since the pipe fail exits the script as soon as\nniet \".distribution_type\" \"$release_file\" returns 1\n\nthis could be caught with the schema/release-pypi-schema.yaml\nwhich seems to be missing required distribution type",
+      "parentUuid": "948a0976_97f5c61d",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 76
+      },
+      "revId": "1591cbc2cf8a6cd9591cf95ef7460ff1d17feffd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
