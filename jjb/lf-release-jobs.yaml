@@ -226,6 +226,7 @@
           submodule-disable: true
           submodule-recursive: false
           submodule-timeout: 10
+          # release merge jobs build from commit not tip
           choosing-strategy: gerrit
 
     triggers:
@@ -372,6 +373,7 @@
           submodule-recursive: "{submodule-recursive}"
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
+          # release merge jobs build from commit not tip
           choosing-strategy: gerrit
 
     triggers:
@@ -408,7 +410,8 @@
           submodule-recursive: "{submodule-recursive}"
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
-          choosing-strategy: default
+          # release merge jobs build from commit not tip
+          choosing-strategy: gerrit
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
@@ -479,7 +482,7 @@
           submodule-recursive: "{submodule-recursive}"
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
-          choosing-strategy: default
+          choosing-strategy: gerrit
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
@@ -627,6 +630,7 @@
           submodule-disable: true
           submodule-recursive: false
           submodule-timeout: 10
+          # release merge jobs build from commit not tip
           choosing-strategy: gerrit
 
     triggers:
