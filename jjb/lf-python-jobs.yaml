@@ -605,7 +605,8 @@
           submodule-recursive: "{submodule-recursive}"
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
-          choosing-strategy: gerrit
+          # merge jobs always build from tip
+          choosing-strategy: default
 
     triggers:
       - gerrit:
@@ -850,7 +851,8 @@
           submodule-recursive: "{submodule-recursive}"
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
-          choosing-strategy: gerrit
+          # merge jobs always build from tip
+          choosing-strategy: default
 
     triggers:
       - timed: "{obj:cron}"

@@ -279,6 +279,10 @@ Release Merge
 
 This template supports Maven and Container release jobs.
 
+This template uses a git commit choosing strategy that builds the merged
+commit with the release yaml file, not the tip of the target branch, so
+projects can repeat the release action in case of merge job failure.
+
 :Template Name: {project-name}-release-merge
 
 :Comment Trigger: remerge
@@ -348,6 +352,10 @@ artifacts from the PyPI staging repository, uploads the package
 artifacts to the PyPI release repository, tags the git repository,
 signs the tag and pushes the tag to the git server. The release merge
 template accepts neither a branch nor a stream parameter.
+
+These templates use a git commit choosing strategy that builds the merged
+commit with the release yaml file, not the tip of the target branch, so
+projects can repeat the release action in case of merge job failure.
 
 :Template Names:
 
@@ -431,7 +439,9 @@ verify template accepts neither a branch nor a stream parameter.
 PackageCloud Release Verify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This template supports PackageCloud release jobs.
+This template supports PackageCloud release jobs. Checks that the specified
+packages are present in the staging repository and absent from the release
+repository.
 
 :Template Name: {project-name}-packagecloud-release-verify
 
@@ -465,7 +475,12 @@ This template supports PackageCloud release jobs.
 PackageCloud Release Merge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This template supports PackageCloud release jobs.
+This template supports PackageCloud release jobs.  Promotes the specified
+packages from the staging repository to the release repository.
+
+This template uses a git commit choosing strategy that builds the merged
+commit with the release yaml file, not the tip of the target branch, so
+projects can repeat the release action in case of merge job failure.
 
 :template name: {project-name}-packagecloud-release-merge
 
