@@ -22,6 +22,30 @@
       "revId": "2a60d75d8cf3b772871fd4af3efa907b60622873",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f3f7147_506fe531",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2020-01-29T17:03:49Z",
+      "side": 1,
+      "message": "I left it this way in case at some later time the `lf-echo-error` (see line 27) and similar functions start being used instead of `echo`.",
+      "parentUuid": "6f4f8e8d_695dabaf",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 2
+      },
+      "revId": "2a60d75d8cf3b772871fd4af3efa907b60622873",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
