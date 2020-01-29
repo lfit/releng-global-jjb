@@ -22,6 +22,30 @@
       "revId": "f7437f9f73e5193e95c3444807d2c2514336238e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7f2bc21_d40b0569",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-29T20:04:51Z",
+      "side": 1,
+      "message": "Hmm I see 8 lines later you call watchbuild with argument $branch, so probably I\u0027m all wet here.",
+      "parentUuid": "c5b8f1ec_ccb429eb",
+      "range": {
+        "startLine": 132,
+        "startChar": 17,
+        "endLine": 132,
+        "endChar": 23
+      },
+      "revId": "f7437f9f73e5193e95c3444807d2c2514336238e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
