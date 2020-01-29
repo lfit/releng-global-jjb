@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0345a21d_317a9c69",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-29T17:40:38Z",
+      "side": 1,
+      "message": "This is too hardcoded / specific to how _most_ of our jenkins systems are setup.\n\nUnfortunately not all jenkins systems stick their logs in production or sandbox trees. In fact, our log shipping is designed to allow an arbitrary number of jenkins \"silos\". The defaults happen to be production and sandbox, but if you look at ODL for instance they are actually \u0027releng\u0027 and \u0027sandbox\u0027",
+      "revId": "23243b8bbf7e021e94f6824dc30b386732467f45",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "340d0950_66edf068",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-29T17:40:38Z",
+      "side": 1,
+      "message": "See comment above.\n\nThis really should be more of a test to see if the target silo directory exists. After all, there\u0027s always the potential that a third-party log that is shipped up to us could _also_ contain cost data, though it\u0027s a lot less likely.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 4
+      },
+      "revId": "23243b8bbf7e021e94f6824dc30b386732467f45",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
