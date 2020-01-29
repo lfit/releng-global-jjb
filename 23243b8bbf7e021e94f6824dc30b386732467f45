@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "49cf80ce_92365545",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-29T19:18:20Z",
+      "side": 1,
+      "message": "I will change this to \u0027silo\u0027. I would not have to restrict it to \u0027production|sandbox\u0027. I am really only using \u0027project\u0027 for naming the cost file. The path to the silo data is in the call to this script (by cron).\n\nI will rename variables/comments like proj_dir -\u003e silo_dir.",
+      "parentUuid": "0345a21d_317a9c69",
+      "revId": "23243b8bbf7e021e94f6824dc30b386732467f45",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "340d0950_66edf068",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 11
@@ -30,6 +48,30 @@
       "writtenOn": "2020-01-29T17:40:38Z",
       "side": 1,
       "message": "See comment above.\n\nThis really should be more of a test to see if the target silo directory exists. After all, there\u0027s always the potential that a third-party log that is shipped up to us could _also_ contain cost data, though it\u0027s a lot less likely.",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 4
+      },
+      "revId": "23243b8bbf7e021e94f6824dc30b386732467f45",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5c9d9a1_1c51b1eb",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-29T19:18:20Z",
+      "side": 1,
+      "message": "I will just delete this section, not really needed. I do check for silo directory below (line 86). Note that a missing silo directory is OK (after a sandbox cleanup.. Monthly/Weekly??). I just add a \u0027No Silo Directory, nothing to do\u0027 entry to the log.",
+      "parentUuid": "340d0950_66edf068",
       "range": {
         "startLine": 69,
         "startChar": 0,
