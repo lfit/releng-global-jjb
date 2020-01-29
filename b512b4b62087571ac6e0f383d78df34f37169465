@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "10c2f2cb_77200324",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-29T17:16:31Z",
+      "side": 1,
+      "message": "use \u0027[[]]\u0027 then quotes are not needed. The null is a string constant, generally  I put a string in single quotes, but that is for clarity only.",
+      "parentUuid": "aef0186b_6f078c93",
+      "range": {
+        "startLine": 19,
+        "startChar": 8,
+        "endLine": 19,
+        "endChar": 9
+      },
+      "revId": "b512b4b62087571ac6e0f383d78df34f37169465",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b98fc29c_67ea2bbf",
         "filename": "shell/rtdv3.sh",
         "patchSetId": 7
@@ -110,6 +134,29 @@
         "startChar": 8,
         "endLine": 133,
         "endChar": 13
+      },
+      "revId": "b512b4b62087571ac6e0f383d78df34f37169465",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e260a2af_078984c2",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-29T17:16:31Z",
+      "side": 1,
+      "message": "A one line function, that is only used once ? If you do want this function don\u0027t define a function in middle of the script. Standard practice is to put them at the top of script.",
+      "range": {
+        "startLine": 132,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 5
       },
       "revId": "b512b4b62087571ac6e0f383d78df34f37169465",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
