@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0697a45e_4b20a807",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-01-29T19:42:31Z",
+      "side": 1,
+      "message": "I think this is caught already,\n\n$ niet \".distribution_type\" test-release.yaml\nElement not found: distribution_type\necho $?\n1",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 76
+      },
+      "revId": "1591cbc2cf8a6cd9591cf95ef7460ff1d17feffd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
