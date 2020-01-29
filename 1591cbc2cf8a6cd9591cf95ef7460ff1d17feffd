@@ -22,6 +22,30 @@
       "revId": "1591cbc2cf8a6cd9591cf95ef7460ff1d17feffd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "948a0976_97f5c61d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-29T19:47:36Z",
+      "side": 1,
+      "message": "Yes niet defends against this case and sets a non-zero exit code, but I don\u0027t know where stderr goes in a pipeline like this, certainly nothing appears in the Jenkins console log.  Please see log of failed job that confounded me for quite a while:  https://jenkins.acumos.org/job/python-model-runner-release-verify/2/console",
+      "parentUuid": "0697a45e_4b20a807",
+      "range": {
+        "startLine": 55,
+        "startChar": 12,
+        "endLine": 55,
+        "endChar": 76
+      },
+      "revId": "1591cbc2cf8a6cd9591cf95ef7460ff1d17feffd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
