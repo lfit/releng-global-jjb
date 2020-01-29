@@ -46,6 +46,30 @@
       "revId": "2a60d75d8cf3b772871fd4af3efa907b60622873",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65d12afa_fc6e5efc",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-29T17:28:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5f3f7147_506fe531",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 2
+      },
+      "revId": "2a60d75d8cf3b772871fd4af3efa907b60622873",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
