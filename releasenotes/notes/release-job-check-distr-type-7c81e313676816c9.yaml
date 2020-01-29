@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Extend release-job.sh to detect if distribution_type is missing
+    from the release yaml file and show a meaningful error.  The
+    shell option pipefile causes the script to halt silently if
+    niet fails to find that key, which utterly baffles users.

@@ -17,6 +17,9 @@ PATH=/tmp/venv/bin:$PATH
 pipup="python -m pip install -q --upgrade pip lftools jsonschema niet twine yq"
 echo "INFO: $pipup"
 $pipup
+# show installed versions
+python -m pip --version
+python -m pip freeze
 
 #Functions.
 
@@ -44,9 +47,14 @@ set_variables_common(){
     fi
 
     # Jenkins parameter drop-down defaults DISTRIBUTION_TYPE to None
+    # in the contain/maven release job; get value from release yaml.
+    # Packagecloud and PyPI jobs set the appropriate value.
     DISTRIBUTION_TYPE="${DISTRIBUTION_TYPE:-None}"
     if [[ $DISTRIBUTION_TYPE == "None" ]]; then
-        DISTRIBUTION_TYPE=$(niet ".distribution_type" "$release_file")
+        if ! DISTRIBUTION_TYPE=$(niet ".distribution_type" "$release_file"); then
+            echo "ERROR: Failed to get distribution_type from $release_file"
+            exit 1
+        fi
     fi
 
     PATCH_DIR=$(mktemp -d)
