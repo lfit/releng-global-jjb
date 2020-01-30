@@ -93,6 +93,30 @@
       "revId": "f7437f9f73e5193e95c3444807d2c2514336238e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c9ea34ae_eac55851",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-01-30T17:37:44Z",
+      "side": 1,
+      "message": "Added more verbose output in the logs that I hope better explain the script.",
+      "parentUuid": "42a929c3_5a18fc4c",
+      "range": {
+        "startLine": 132,
+        "startChar": 17,
+        "endLine": 132,
+        "endChar": 23
+      },
+      "revId": "f7437f9f73e5193e95c3444807d2c2514336238e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
