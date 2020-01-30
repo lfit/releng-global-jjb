@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba89ea00_a2d8dc75",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-30T20:28:26Z",
+      "side": 1,
+      "message": "release_files\u003d$(git diff-tree -m --no-commit-id -r \"$GIT_COMMIT\" \"$GIT_COMMIT^1\" \\\n    --name-only -- \"releases/\" \".releases/\")\nLine too long\n\nSo \u0027-r\u0027 supports two arguments? That not impossible, but it is unlikely. The command-line parser for git is a monster.\nEducate me what does the ^1 do ?",
+      "revId": "a5613d601f6e3042c922d504536914041cad3101",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
