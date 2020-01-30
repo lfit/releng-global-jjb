@@ -204,7 +204,7 @@ get_minion_options() {
         instance_cap=$(get_cfg "$cfg_file" INSTANCE_CAP "null")
     fi
 
-    floating_ip_pool=$(get_cfg "$cfg_file" FLOATING_IP_POOL "null")
+    floating_ip_pool=$(get_cfg "$cfg_file" FLOATING_IP_POOL "")
     security_groups=$(get_cfg "$cfg_file" SECURITY_GROUPS "default")
     availability_zone=$(get_cfg "$cfg_file" AVAILABILITY_ZONE "")
     start_timeout=$(get_cfg "$cfg_file" START_TIMEOUT "600000")
