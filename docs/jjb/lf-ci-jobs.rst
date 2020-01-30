@@ -243,11 +243,12 @@ configuration in the format ``KEY=value``.
        In the case of template definitions of a parameter below is not passed
        the one defined in default clouds will be inherited.
 
-    :IMAGE_NAME: The image name to use for this template.
-        (required)
+    :IMAGE_NAME: The image name to use for this template. (required)
     :HARDWARE_ID: OpenStack flavor to use. (required)
 
     :LABELS: Labels to assign to the vm. (default: FILE_NAME)
+    :VOLUME_SIZE: Volume size to assign to vm. (default: "")
+    :HARDWARE_ID: Hardware Id to assign to vm. (default: "")
     :NETWORK_ID: OpenStack network to use. (default: "")
     :USER_DATA_ID: User Data to pass into the instance.
         (default: jenkins-init-script)
@@ -264,16 +265,18 @@ configuration in the format ``KEY=value``.
     :START_TIMEOUT: Number of milliseconds to wait for the agent to be
         provisioned and connected. (default: 600000)
     :KEY_PAIR_NAME: SSH Public Key Pair to use for authentication.
-        (default: jenkins)
+        (default: jenkins-ssh)
     :NUM_EXECUTORS: Number of executors to enable for the instance.
         (default: 1)
-    :JVM_OPTIONS: JVM Options to pass to Java. (default: "")
+    :JVM_OPTIONS: JVM Options to pass to Java. (default: null)
     :FS_ROOT: File system root for the workspace. (default: "/w")
+    :NODE_PROPERTIES: Node properties. (default: null)
     :RETENTION_TIME: Number of minutes to wait for an idle slave to be used
         again before it's removed. If set to -1, the slave will be kept
         forever. (default: 0)
     :CONNECTION_TYPE: The connection type for Jenkins to connect to the build
         minion. Valid options: JNLP, SSH. (default: "SSH")
+    :CONFIG_TYPE: Configuration drive. (default: null)
 
 For a live example see the OpenDaylight project jenkins-config directory.
 https://github.com/opendaylight/releng-builder/tree/master/jenkins-config
