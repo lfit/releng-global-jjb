@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    A recent change has made the "null" string a bad value for FLOATING_IP_POOL.
+    By making it an empty string, we recreate the old functionality of having
+    the default floating IP pool set to "No value".
