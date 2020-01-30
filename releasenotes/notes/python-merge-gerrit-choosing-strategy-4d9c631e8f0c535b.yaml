@@ -1,0 +1,19 @@
+---
+fixes:
+  - |
+    Use git choosing strategy default in tox and pypi merge jobs for
+    gerrit.  This makes those jobs consistent with maven and other
+    merge jobs for gerrit that always build from tip of the target
+    branch to create artifacts from the latest & greatest code.
+    Building from tip (not from Gerrit commit/merge point) avoids
+    confusion about content when changes are merged out of order.
+    For example, a fix is submitted and merged, but the merge job
+    fails. In the mean time, a different change that happened
+    earlier in commit history gets merged (or the merge job is
+    retriggered), causing a new artifact to be pushed.  But that
+    artifact does not have the expected fix.
+
+    Add comments to release merge jobs why their choosing strategy
+    is not default.
+
+    Document the git commit choosing strategy for the release merge jobs.
