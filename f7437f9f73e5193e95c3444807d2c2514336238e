@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "37c0f2d1_72432572",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-01-30T17:02:35Z",
+      "side": 1,
+      "message": "Based on what I\u0027m seeing in an ORAN job, 3 seconds is too short. Think you could safely use 10 sec here.",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 11
+      },
+      "revId": "f7437f9f73e5193e95c3444807d2c2514336238e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c5b8f1ec_ccb429eb",
         "filename": "shell/rtdv3.sh",
         "patchSetId": 10
