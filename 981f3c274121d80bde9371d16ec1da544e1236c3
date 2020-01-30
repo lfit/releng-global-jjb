@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a27409b7_373fd4f6",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-30T17:45:39Z",
+      "side": 1,
+      "message": "I am pretty sure all the variables: buildid \u0026 result should be local. \u0027result\u0027 is generic enought that is could case a name conflict. Plus it lets the reviewer know that the function does not intend to change shell variables. Not a big deal, but if you turn the crank again you should consider this change.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "981f3c274121d80bde9371d16ec1da544e1236c3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
