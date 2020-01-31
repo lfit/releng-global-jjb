@@ -284,6 +284,30 @@
     },
     {
       "key": {
+        "uuid": "f9bd83f3_8bb0945a",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-01-31T23:44:05Z",
+      "side": 1,
+      "message": "When I deleted the \u0027case $jenkins_server in, all the shell variables are declared/initialized together. The variables that are initialized from the command line in one group and the rest are in another group.\nThey are all after the function definitions.",
+      "parentUuid": "bf34b182_12680a7a",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 1
+      },
+      "revId": "c249ae9c00d0d38acf78658d0c4e93233b58d42d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "91a58633_1733c4fb",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 4
