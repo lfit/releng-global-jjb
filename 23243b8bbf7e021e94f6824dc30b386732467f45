@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "d0c3b671_dcd32aaa",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-31T20:24:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49cf80ce_92365545",
+      "revId": "23243b8bbf7e021e94f6824dc30b386732467f45",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "340d0950_66edf068",
         "filename": "shell/scrape-job-cost.sh",
         "patchSetId": 11
@@ -81,6 +99,30 @@
       "revId": "23243b8bbf7e021e94f6824dc30b386732467f45",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84b898fc_44a73001",
+        "filename": "shell/scrape-job-cost.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-31T20:24:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5c9d9a1_1c51b1eb",
+      "range": {
+        "startLine": 69,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 4
+      },
+      "revId": "23243b8bbf7e021e94f6824dc30b386732467f45",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
