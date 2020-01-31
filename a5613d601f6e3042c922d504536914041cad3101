@@ -16,6 +16,24 @@
       "revId": "a5613d601f6e3042c922d504536914041cad3101",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7cf167c0_05a0ebf8",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-31T20:19:19Z",
+      "side": 1,
+      "message": "@Tim\n\n-r doesn\u0027t take any arguments, it just translates to recurse into subtrees (there\u0027s no long option for that)\n\ngit diff-tree takes 1 or more tree-ish parameters which the $GIT_COMMIT and $GIT_COMMIT^1 are. ^1 means one change back from the tree-ish (aka the $GIT_COMMIT parent)\n\nThat being said, I agree with you on the line being too long and that it should be broken",
+      "parentUuid": "ba89ea00_a2d8dc75",
+      "revId": "a5613d601f6e3042c922d504536914041cad3101",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
