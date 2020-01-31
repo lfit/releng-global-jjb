@@ -34,6 +34,24 @@
       "revId": "a5613d601f6e3042c922d504536914041cad3101",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5ca1adb_2301d6cb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-01-31T21:21:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7cf167c0_05a0ebf8",
+      "revId": "a5613d601f6e3042c922d504536914041cad3101",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
