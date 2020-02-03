@@ -14,8 +14,8 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
-    submodule-recursive: true
-    submodule-disable: false
+    submodule-recursive: false
+    submodule-disable: true
     submodule-timeout: 10
     tox-dir: "."
     gerrit-skip-vote: false
