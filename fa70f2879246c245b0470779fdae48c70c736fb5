@@ -103,6 +103,30 @@
       "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e53fb9f7_a1680867",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-03T23:48:13Z",
+      "side": 1,
+      "message": "Andy specifically asked to be able to do both, and not either/or. If I merge with above, then for example, it will not run for zowe, which will not have $LOG_SERVER set. I guess I could say:\n\nif [[ -z ${LOGS_SERVER:-} ]] || [[ -z ${S3_BUCKET:-} ]]; then",
+      "parentUuid": "8eba0096_a218dd50",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 0
+      },
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
