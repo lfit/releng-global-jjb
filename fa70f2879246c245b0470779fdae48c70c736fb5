@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "b014da1d_6d719ec8",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-02-03T23:23:33Z",
+      "side": 1,
+      "message": "Generally strings should not be quoted inside \u0027[[]]\u0027. When you remove them you will notice the extra \u0027$\u0027.",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd03ee74_19540ba2",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-02-03T23:23:33Z",
+      "side": 1,
+      "message": "I know you copied this line from above, but please do not use \u0027{}\u0027 when not necessary.\ns3_key\u003d\"$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER\"\nextra \u0027{}\u0027 \u0026 \u0027\"\" quotes can cause just as many problem as too few.",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d8cd87b8_dce19f4e",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 2
@@ -36,6 +70,30 @@
       "writtenOn": "2020-02-03T23:06:15Z",
       "side": 1,
       "message": "Any reason this cannot be merged with the above section? \n\nlftools should be able take $LOG_SERVER and parse the URL to determine if its s3 bucket or nexus url. we are already doing this to determine if the URL is nexus3/2 in lftools.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 0
+      },
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8eba0096_a218dd50",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-02-03T23:23:33Z",
+      "side": 1,
+      "message": "I am with Anil here.",
+      "parentUuid": "4cd71fef_a7eafc48",
       "range": {
         "startLine": 44,
         "startChar": 0,
