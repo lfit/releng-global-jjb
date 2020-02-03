@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8cd87b8_dce19f4e",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-02-03T23:06:15Z",
+      "side": 1,
+      "message": "Change this to S3_path or something else?",
+      "range": {
+        "startLine": 59,
+        "startChar": 44,
+        "endLine": 59,
+        "endChar": 53
+      },
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4cd71fef_a7eafc48",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-02-03T23:06:15Z",
+      "side": 1,
+      "message": "Any reason this cannot be merged with the above section? \n\nlftools should be able take $LOG_SERVER and parse the URL to determine if its s3 bucket or nexus url. we are already doing this to determine if the URL is nexus3/2 in lftools.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 0
+      },
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
