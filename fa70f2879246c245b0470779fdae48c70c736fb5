@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "6009e61f_17218095",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-04T17:31:49Z",
+      "side": 1,
+      "message": "Move down so it\u0027s part of the footer, not floating around in the message body",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e84bf612_8db53514",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-04T17:31:49Z",
+      "side": 1,
+      "message": "This should change to:\n\nWARNING: Nexus Logging server not set",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b014da1d_6d719ec8",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 2
@@ -13,6 +47,23 @@
       "writtenOn": "2020-02-03T23:23:33Z",
       "side": 1,
       "message": "Generally strings should not be quoted inside \u0027[[]]\u0027. When you remove them you will notice the extra \u0027$\u0027.",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f28bc7d6_b2b0a8fc",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-04T17:31:49Z",
+      "side": 1,
+      "message": "This should be:\n\nWARNING: S3 Logging not set",
       "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
@@ -142,6 +193,30 @@
       "side": 1,
       "message": "Since the LOGS_SERVER \u0026 S3_BUCKET are both referenced you could use a function:\n[[ -n ${LOGS_SERVER:-} ]] \u0026\u0026 doit \"$LOGS_SERVER\"\n[[ -n ${S3_BUCKET:-} ]] \u0026\u0026 doit \"$S3_BUCKET\"\nI assume you can come up with a better name than \u0027doit\u0027\nYou want to keep the issue warning if LOGS_SERVE and S2_BUCKET are not set",
       "parentUuid": "e53fb9f7_a1680867",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 0
+      },
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5121f6cb_e679f260",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-04T17:31:49Z",
+      "side": 1,
+      "message": "You\u0027re correct that I want both the Nexus and S3 log shipping to be able be co-enabled. This allows us to do a graceful transition by enabling S3 shipping on a system already doing Nexus shipping and therefore verify that everything is working correctly without losing logs if it isn\u0027t!",
+      "parentUuid": "03b8b059_9b70b4e9",
       "range": {
         "startLine": 44,
         "startChar": 0,
