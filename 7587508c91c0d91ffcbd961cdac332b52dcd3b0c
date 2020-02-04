@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a169c6fa_c8080e33",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-02-04T23:31:04Z",
+      "side": 1,
+      "message": "tested this here https://jenkins.onap.org/sandbox/job/optf-osdf-master-osdf-merge-java/2/console",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 42
+      },
+      "revId": "7587508c91c0d91ffcbd961cdac332b52dcd3b0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
