@@ -59,7 +59,7 @@ url="https://pricing.vexxhost.net/v1/pricing/$instance_type/cost?seconds=$uptime
 json_block=$(curl -s "$url")
 
 # check if JSON returned and can be parsed
-if jq <<< "$json_block"; then
+if jq <<< "$json_block" > /dev/null 2>&1; then
     cost=$(jq .cost <<< "$json_block")
     resource=$(jq .resource <<< "$json_block" | tr -d '"')
 else
