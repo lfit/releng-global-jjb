@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e7ee7625_5970ea56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-02-04T17:52:51Z",
+      "side": 1,
+      "message": "I you happen to use emacs, I have a couple of macros that make it easier to control line lengths in a paragraph. You can specify line lengths of 50, 72, 80 \u0026 1000. But I am probably the only one at LF using emacs.\n\nOh yea.... REAL men use emacs.",
+      "parentUuid": "6009e61f_17218095",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e84bf612_8db53514",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 2
