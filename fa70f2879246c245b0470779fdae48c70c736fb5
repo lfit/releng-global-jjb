@@ -127,6 +127,30 @@
       "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03b8b059_9b70b4e9",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-02-04T17:22:39Z",
+      "side": 1,
+      "message": "Since the LOGS_SERVER \u0026 S3_BUCKET are both referenced you could use a function:\n[[ -n ${LOGS_SERVER:-} ]] \u0026\u0026 doit \"$LOGS_SERVER\"\n[[ -n ${S3_BUCKET:-} ]] \u0026\u0026 doit \"$S3_BUCKET\"\nI assume you can come up with a better name than \u0027doit\u0027\nYou want to keep the issue warning if LOGS_SERVE and S2_BUCKET are not set",
+      "parentUuid": "e53fb9f7_a1680867",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 0
+      },
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
