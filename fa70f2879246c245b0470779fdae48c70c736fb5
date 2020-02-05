@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "2becd525_831d71de",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-05T18:46:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e84bf612_8db53514",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b014da1d_6d719ec8",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 2
@@ -86,6 +104,24 @@
       "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b067de89_39ab7ab2",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-05T18:46:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b014da1d_6d719ec8",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "394084df_ea1ac603",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-05T18:46:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f28bc7d6_b2b0a8fc",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cd03ee74_19540ba2",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 2
@@ -120,6 +174,24 @@
       "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd781d43_add0193e",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-05T18:46:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cd03ee74_19540ba2",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -143,6 +215,30 @@
       "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d19e1bd_ff1181ef",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-05T18:46:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8cd87b8_dce19f4e",
+      "range": {
+        "startLine": 59,
+        "startChar": 44,
+        "endLine": 59,
+        "endChar": 53
+      },
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -262,6 +358,30 @@
       "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f880e073_a97c3b3c",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-05T18:46:25Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5121f6cb_e679f260",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 0
+      },
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
