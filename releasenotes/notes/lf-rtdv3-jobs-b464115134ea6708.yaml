@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix to disable cloning submodules for rtdv3 verify job
