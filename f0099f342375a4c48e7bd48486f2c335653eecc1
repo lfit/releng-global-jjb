@@ -22,6 +22,30 @@
       "revId": "f0099f342375a4c48e7bd48486f2c335653eecc1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a932025_4c2c951d",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-05T18:57:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6780c2b2_5576ff43",
+      "range": {
+        "startLine": 44,
+        "startChar": 9,
+        "endLine": 44,
+        "endChar": 26
+      },
+      "revId": "f0099f342375a4c48e7bd48486f2c335653eecc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
