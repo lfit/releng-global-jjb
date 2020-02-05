@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "44abaca6_aadaeeed",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-02-05T20:06:02Z",
+      "side": 1,
+      "message": "pattern_opts\u003d()\t\nfor arg in ${ARCHIVE_ARTIFACTS:-}; do\n    pattern_opts+\u003d(-p \"$arg\")\ndone\nlftools deploy logs-s3 \"${pattern_opts[@]}\" \\\n    \"$S3_BUCKET\" \"$s3_path\" \"$BUILD_URL\" \"$WORKSPACE\"\n\nLines 50-62 can be replaced with above. No reason for if/then/else. If ARCHIVE_ARTIFACTS is not set, the for loop is not triggered and \"${pattern_opts[@]}\" is an empty string.",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 6
+      },
+      "revId": "a784f648af85a7bbcbbc50133a140fb8639606d8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
