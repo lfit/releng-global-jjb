@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3d790242_cef393bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-05T18:53:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "05680d04_5c1a0238",
+      "revId": "fa70f2879246c245b0470779fdae48c70c736fb5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e84bf612_8db53514",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 2

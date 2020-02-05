@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6780c2b2_5576ff43",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-05T18:53:36Z",
+      "side": 1,
+      "message": "Is there a reason that this is $\"${S3_BUCKET:-}\" and not just ${S3_BUCKET:-} ?",
+      "range": {
+        "startLine": 44,
+        "startChar": 9,
+        "endLine": 44,
+        "endChar": 26
+      },
+      "revId": "f0099f342375a4c48e7bd48486f2c335653eecc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
