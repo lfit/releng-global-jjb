@@ -39,6 +39,30 @@
       "revId": "c2a864e65e3cf40344de50512a3f371d16304c30",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c75c76d_7c2949fa",
+        "filename": "job-cost/format-csv",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-06T18:43:27Z",
+      "side": 1,
+      "message": "I actually totally missed this\n\nI\u0027m personally more of a fan of having the line read as:\n#!/bin/bash\n\nand the options to be explicitly set as having them set on the shebang is not very common and can easily be overlooked (as I did!)",
+      "parentUuid": "2e87ec8a_267202b1",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "c2a864e65e3cf40344de50512a3f371d16304c30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
