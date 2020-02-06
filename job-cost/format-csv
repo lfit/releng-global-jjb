@@ -1,0 +1,23 @@
+#! /bin/bash
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2019 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+
+set -euf
+
+# This script can be run on a cost file (.csv) to standardize the formats of the
+# uptime, cost & stack_cost fields.
+
+cost_file=$1
+
+while IFS="," read -r job_name build_number date resource uptime cost stack_cost; do
+    [[ $resource == "0" ]] && resource='unknown'
+    printf "%s,%s,%s,%s,%d,%.2f,%.2f\n" "$job_name" "$build_number" "$date" \
+           "$resource" "$uptime" "$cost" "$stack_cost"
+done < "$cost_file"

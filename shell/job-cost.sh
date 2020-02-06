@@ -65,7 +65,7 @@ if jq <<< "$json_block" > /dev/null 2>&1; then
 else
     echo "ERROR: Pricing API returned invalid json"
     cost=0
-    resource=0
+    resource='unknown'
 fi
 
 # Archive the cost date
@@ -77,6 +77,6 @@ echo "INFO: Archiving Costs"
 # This format is readable by spreadsheet and is easily sortable
 date=$(TZ=GMT date +'%Y-%m-%d %H:%M:%S')
 
-cat << EOF > "$WORKSPACE/archives/cost.csv"
-$JOB_NAME,$BUILD_NUMBER,$date,$resource,$uptime,$cost,$stack_cost
-EOF
+# Format the uptime, cost & stack_cost fields
+printf "%s,%s,%s,%s,%d,%.2f,%.2f\n" "$JOB_NAME" "$BUILD_NUMBER" "$date" \
+       "$resource" "$uptime" "$cost" "$stack_cost" > "$WORKSPACE/archives/cost.csv"
