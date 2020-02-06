@@ -18,6 +18,7 @@
     submodule-disable: true
     submodule-timeout: 10
     tox-dir: "."
+    doc-dir: "docs/_build/html"
     gerrit-skip-vote: false
 
     gerrit_trigger_file_paths:
@@ -67,6 +68,7 @@
                 properties-content: |
                   TOX_ENVS=docs,docs-linkcheck
                   TOX_DIR={tox-dir}
+                  DOC_DIR={doc-dir}
             - lf-infra-tox-run:
                 parallel: "true"
             - lf-rtdv3-build:
