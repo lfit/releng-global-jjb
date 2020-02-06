@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ecd83713_592a878e",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-02-06T19:44:43Z",
+      "side": 1,
+      "message": "This text could use a little copy editing for clarity and formatting. I would suggest the following:\n\nAdditionally, you must also modify the doc-dir. For example, from the default\nof `doc-dir: \"docs/_build/html\"` to `doc-dir: \"_build/html\"`, as the relative\npath in the tox run has changed.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 12
+      },
+      "revId": "a7263d2cc90650cc27f99d3290a6375680870dca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e016e372_6e8e85ed",
+        "filename": "releasenotes/notes/readthedocs-58c2c78735c395e0.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-02-06T19:44:43Z",
+      "side": 1,
+      "message": "I don\u0027t see an \"improvements\" section in the default reno file. Is it valid to add a section that isn\u0027t listed?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 15
+      },
+      "revId": "a7263d2cc90650cc27f99d3290a6375680870dca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
