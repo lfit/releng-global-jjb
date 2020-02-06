@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3acec7b9_4d791885",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-06T17:11:07Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c8a8ae46_65294972",
+      "revId": "f80715e1dd3e6e75e8ab25bfd796f9923fc2b31b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "95e8bc61_e8d35f84",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
