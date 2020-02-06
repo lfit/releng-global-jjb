@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "a0f7131f_746d38a0",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-02-06T19:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ecd83713_592a878e",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 12
+      },
+      "revId": "a7263d2cc90650cc27f99d3290a6375680870dca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e016e372_6e8e85ed",
         "filename": "releasenotes/notes/readthedocs-58c2c78735c395e0.yaml",
         "patchSetId": 6
@@ -45,6 +69,30 @@
       "revId": "a7263d2cc90650cc27f99d3290a6375680870dca",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a8eb76c_34b52933",
+        "filename": "releasenotes/notes/readthedocs-58c2c78735c395e0.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-02-06T19:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e016e372_6e8e85ed",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 15
+      },
+      "revId": "a7263d2cc90650cc27f99d3290a6375680870dca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
