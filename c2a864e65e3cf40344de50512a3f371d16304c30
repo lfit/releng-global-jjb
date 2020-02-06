@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0feaddfb_0c1b0b5f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-06T18:30:57Z",
+      "side": 1,
+      "message": "This should be one of the following in order of my preference ;)\n\nIssue: RELENG-2715\nIssue-Id: RELENG-2715\nIssue-ID: RELENG-2715\nJira: RELENG-2715",
+      "revId": "c2a864e65e3cf40344de50512a3f371d16304c30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
