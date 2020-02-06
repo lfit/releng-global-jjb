@@ -1,0 +1,7 @@
+---
+improvements: >
+  Add configurable doc-dir defaults to "docs/_build/html"
+  needed for relative path modifications if you change the tox-dir
+  Modified tox-run.sh with "ARCHIVE_DOC_DIR" variable
+  so that relative paths can be handed for uploading generated
+  docs to the log server
