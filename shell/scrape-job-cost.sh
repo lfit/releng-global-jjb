@@ -20,9 +20,10 @@
 #
 # Each cost file contains one or more CSV records in the following format:
 #
-#   JobName , BuildNumber , Date , InstanceType , Uptime , Cost1 , Cost2
+#   JobName , BuildNumber , Date , InstanceType , Uptime , Cost , StackCost
 #
 #   Date format: '%Y-%m-%d %H:%M:%S'
+#   Cost format: '%.2f' (1.29)
 #
 ##############################################################################
 #
