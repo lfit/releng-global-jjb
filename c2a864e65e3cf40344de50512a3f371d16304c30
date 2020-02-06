@@ -16,6 +16,29 @@
       "revId": "c2a864e65e3cf40344de50512a3f371d16304c30",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e87ec8a_267202b1",
+        "filename": "job-cost/format-csv",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 170
+      },
+      "writtenOn": "2020-02-06T18:40:08Z",
+      "side": 1,
+      "message": "Is there a recommended convention for options in the shebang line vs `set` later on?",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "c2a864e65e3cf40344de50512a3f371d16304c30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
