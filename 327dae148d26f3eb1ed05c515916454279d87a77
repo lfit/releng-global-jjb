@@ -46,6 +46,30 @@
       "revId": "327dae148d26f3eb1ed05c515916454279d87a77",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7bc44bd8_21907022",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 182
+      },
+      "writtenOn": "2020-02-06T18:06:52Z",
+      "side": 1,
+      "message": "In fact you could create a function get_pattern_opts() so when you call lftools it would be:\n    \u0027lftools deploy archives \"$(get_pattern_opts)\" \"$nexus_url\" \"$nexus_path\" \"$WORKSPACE\u0027\nThe same function would be used here and \u0027S3_BUCKET\u0027 below.\n\nShould be part of a separate patch.",
+      "parentUuid": "36c1bc03_d278f68c",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 67
+      },
+      "revId": "327dae148d26f3eb1ed05c515916454279d87a77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
