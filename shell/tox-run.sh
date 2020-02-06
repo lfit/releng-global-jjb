@@ -11,6 +11,7 @@
 echo "---> tox-run.sh"
 
 ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
+ARCHIVE_DOCS_DIR="$WORKSPACE/archives/docs"
 mkdir -p "$ARCHIVE_TOX_DIR"
 cd "$WORKSPACE/$TOX_DIR" || exit 1
 
@@ -56,7 +57,7 @@ echo "Completed tox runs."
 DOC_DIR="${DOC_DIR:-docs/_build/html}"
 if [[ -d "$DOC_DIR" ]]; then
     echo "---> Archiving generated docs"
-    mv "$DOC_DIR" archives/
+    mv "$DOC_DIR" "$ARCHIVE_DOCS_DIR"
 fi
 
 test "$tox_status" -eq 0 || exit "$tox_status"

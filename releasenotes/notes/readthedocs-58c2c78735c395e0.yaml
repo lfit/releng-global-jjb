@@ -1,0 +1,4 @@
+---
+improvements: >
+    Add configurable doc-dir defaults to "docs/_build/html"
+    needed for relative path modifications if you change the tox-dir
