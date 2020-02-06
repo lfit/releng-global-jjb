@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "b4636e1d_b2c525de",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-06T17:10:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "95e8bc61_e8d35f84",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 42
+      },
+      "revId": "f80715e1dd3e6e75e8ab25bfd796f9923fc2b31b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "65ca7acd_37e121b8",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -53,6 +77,30 @@
       "writtenOn": "2019-10-11T04:08:44Z",
       "side": 1,
       "message": "We won\u0027t requires this conditional branch if lftools can determine if its push to Nexus or S3, which can be identified from the URL input provided.",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 2
+      },
+      "revId": "f80715e1dd3e6e75e8ab25bfd796f9923fc2b31b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f7133a9_cb7b2fc1",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-02-06T17:10:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "65ca7acd_37e121b8",
       "range": {
         "startLine": 40,
         "startChar": 0,
