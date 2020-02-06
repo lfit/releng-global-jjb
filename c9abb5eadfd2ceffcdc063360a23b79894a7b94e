@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38e4a515_bfee0361",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-02-06T20:08:44Z",
+      "side": 1,
+      "message": "My mistake, these should be double backticks. Single backticks in rst creates italic, not plaintext. Looks like there\u0027s another case of this on line 57 that could probably be fixed too.",
+      "range": {
+        "startLine": 68,
+        "startChar": 3,
+        "endLine": 68,
+        "endChar": 60
+      },
+      "revId": "c9abb5eadfd2ceffcdc063360a23b79894a7b94e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
