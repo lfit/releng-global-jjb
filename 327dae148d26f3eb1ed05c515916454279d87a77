@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "49708907_a38d2a1c",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-06T16:46:22Z",
+      "side": 1,
+      "message": "Given the request for change in patch 6 I feel that this section of code could use a _separate_ patch to make it simpler along the same lines as well.\n\nIn fact I feel like the pattern_opts creation could be moved to before the Nexus section and just reused by the S3 section, but again I would do all of this as a separate patch.\n\nThis actually gets partially back to the comment that Thanh left on patchset 1 that is still unresolved / acked.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 39,
+        "endChar": 67
+      },
+      "revId": "327dae148d26f3eb1ed05c515916454279d87a77",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
