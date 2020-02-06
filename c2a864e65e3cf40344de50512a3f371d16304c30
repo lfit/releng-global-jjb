@@ -105,6 +105,30 @@
       "revId": "c2a864e65e3cf40344de50512a3f371d16304c30",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5436dd5f_2de501a3",
+        "filename": "job-cost/format-csv",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-02-06T22:46:30Z",
+      "side": 1,
+      "message": "I could totally complain about that if you want, but that doesn\u0027t matter as much to me ;)",
+      "parentUuid": "445c77ab_527bda1b",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 17
+      },
+      "revId": "c2a864e65e3cf40344de50512a3f371d16304c30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
