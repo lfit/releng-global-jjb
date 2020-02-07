@@ -78,7 +78,6 @@
       - change-merged-event
       - comment-added-contains-event:
           comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
-      - ref-updated-event
 
     #####################
     # Job Configuration #
