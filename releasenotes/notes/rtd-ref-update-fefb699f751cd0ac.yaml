@@ -1,0 +1,8 @@
+---
+issues:
+  - |
+    Removes ref-update from rtd-merge jobs which is triggering unnecessary
+    jobs to be queued in Jenkins. This ref-update was originally added to
+    enable Jenkins to trigger builds when a release tag is pushed to update
+    the docs however it's now triggering many unnecessary jobs wasting
+    project CI resources.
