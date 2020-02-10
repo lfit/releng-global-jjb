@@ -88,3 +88,26 @@
       - project-view
 
     project-name: ci-jobs
+
+- builder:
+    name: lf-sonar-prescan
+    builders:
+      - shell: "#!/bin/sh"
+
+- project:
+    name: gerrit-sonar-jobs
+    project-name: gerrit-ciman
+    jobs:
+      - gerrit-sonar
+      - gerrit-sonar-prescan
+      - gerrit-sonar-prescan-script:
+          sonar-prescan-script: "#!/bin/sh"
+
+- project:
+    name: github-sonar-jobs
+    project-name: github-ciman
+    jobs:
+      - github-sonar
+      - github-sonar-prescan
+      - github-sonar-prescan-script:
+          sonar-prescan-script: "#!/bin/sh"
