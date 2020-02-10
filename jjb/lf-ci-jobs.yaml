@@ -2054,6 +2054,18 @@
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
 
+- lf_sonar_builders_prescan_script: &lf_sonar_builders_prescan_script
+    name: lf-sonar-builders-prescan-script
+    builders:
+      - lf-infra-pre-build
+      - shell: "{sonar-prescan-script}"
+      - lf-infra-sonar:
+          sonar-task: "{sonar-task}"
+          sonar-project-file: "{sonar-project-file}"
+          sonar-properties: "{sonar-properties}"
+          sonar-java-opts: "{sonar-java-opts}"
+          sonar-additional-args: "{sonar-additional-args}"
+
 - lf_sonar_gerrit_common: &lf_sonar_gerrit_common
     name: lf-sonar-gerrit-common
     gerrit_sonar_triggers:
@@ -2152,5 +2164,23 @@
     <<: *lf_sonar_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_sonar_builders_prescan
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_github_common
+
+- job-template:
+    name: "{project-name}-sonar-prescan-script"
+    id: gerrit-sonar-prescan-script
+    <<: *lf_sonar_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_builders_prescan_script
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_gerrit_common
+
+- job-template:
+    name: "{project-name}-sonar-prescan-script"
+    id: github-sonar-prescan-script
+    <<: *lf_sonar_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_sonar_builders_prescan_script
     # yamllint disable-line rule:key-duplicates
     <<: *lf_sonar_github_common
