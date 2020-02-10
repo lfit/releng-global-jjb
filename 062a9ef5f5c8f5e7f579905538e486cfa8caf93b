@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98d8ef55_ea9aae20",
+        "filename": ".jjb-test/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-02-10T23:49:35Z",
+      "side": 1,
+      "message": "This appears to be unnecessary. It\u0027s not used anywhere?",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 26
+      },
+      "revId": "062a9ef5f5c8f5e7f579905538e486cfa8caf93b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
