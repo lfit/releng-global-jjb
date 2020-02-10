@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    New templates gerrit-sonar-prescan-script and github-sonar-prescan-script
+    accept an arbitrary shell-script body that can do work like install
+    prerequisites, build and test to generate a code-coverage report for
+    the Sonar Scanner to find and upload.  This adds flexibility that the
+    existing gerrit-sonar-prescan and github-sonar-prescan templates lack.

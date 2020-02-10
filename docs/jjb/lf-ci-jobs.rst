@@ -880,10 +880,15 @@ the base directory is usually the best place to run from.
 Sonar
 -----
 
-Runs Jenkins Sonarqube plug-in to review for bugs, code smells,
-and security vulnerabilities.
+Runs the Jenkins SonarQube Scanner plug-in to analyze code for bugs,
+code smells and security vulnerabilities, and to upload the result
+(possibly including code-coverage statistics) to a SonarQube server
+or to SonarCloud.io.
 
 Requires ``SonarQube Scanner for Jenkins``
+
+One of the optional parameters sonar-project-file and sonar-properties
+must be supplied; they cannot both be empty.
 
 Plug-in configurations
     Manage Jenkins --> Configure System --> SonarQube servers
@@ -942,6 +947,31 @@ to run prior to the Sonar scan.
 :Optional Parameters:
     :sonar-task: Sonar task to run. (default: "")
     :sonar-project-file: The filename for the project's properties
+        (default: "sonar-project.properties")
+    :sonar-properties: Sonar configuration properties. (default: "")
+    :sonar-java-opts: JVM options. (default: "")
+    :sonar-additional-args: Additional command line arguments. (default: "")
+
+
+Sonar with Prescan Script
+-------------------------
+
+The same as the Sonar job above, except the caller must supply a shell script
+to run prior to the Sonar scan. This is commonly used to install prerequisites,
+build the project, execute unit tests and generate a code-coverage report.
+
+:Template Names:
+
+    - {project-name}-sonar-prescan-script
+    - gerrit-sonar-prescan-script
+    - github-sonar-prescan-script
+
+:Required Parameters:
+    :sonar-prescan-script: A shell script that will run prior to the Sonar scan.
+
+:Optional Parameters:
+    :sonar-task: Sonar task to run. (default: "")
+    :sonar-project-file: The filename for the project's properties.
         (default: "sonar-project.properties")
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")

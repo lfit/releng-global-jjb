@@ -88,3 +88,19 @@
       - project-view
 
     project-name: ci-jobs
+
+- project:
+    name: gerrit-sonar-jobs
+    project-name: gerrit-ciman
+    jobs:
+      - "{project-name}-sonar"
+      - "{project-name}-sonar-prescan"
+      - "{project-name}-sonar-prescan-script"
+
+- project:
+    name: github-sonar-jobs
+    project-name: github-ciman
+    jobs:
+      - "{project-name}-sonar"
+      - "{project-name}-sonar-prescan"
+      - "{project-name}-sonar-prescan-script"
