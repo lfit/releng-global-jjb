@@ -22,6 +22,30 @@
       "revId": "062a9ef5f5c8f5e7f579905538e486cfa8caf93b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "680dab6f_6414019d",
+        "filename": ".jjb-test/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-02-10T23:59:41Z",
+      "side": 1,
+      "message": "Thanh, thanks for the careful review but this isn\u0027t leftover cruft, the gerrit-sonar-prescan template requires a builder by the exact name of \"lf-sonar-prescan\". The test fails if this is not defined.  Or at least it **should** fail.",
+      "parentUuid": "98d8ef55_ea9aae20",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 95,
+        "endChar": 26
+      },
+      "revId": "062a9ef5f5c8f5e7f579905538e486cfa8caf93b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
