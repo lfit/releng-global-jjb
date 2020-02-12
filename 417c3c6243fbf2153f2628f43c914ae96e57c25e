@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e4be03d8_a88beecf",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-02-12T19:43:26Z",
+      "side": 1,
+      "message": "This whole change is a bit wordy (though I\u0027ll admit the old one was probably not wordy enough), but I think this parenthetical can be removed entirely.",
+      "range": {
+        "startLine": 885,
+        "startChar": 0,
+        "endLine": 885,
+        "endChar": 45
+      },
+      "revId": "417c3c6243fbf2153f2628f43c914ae96e57c25e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1781bcbf_cf3a228b",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2060,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-02-12T19:43:26Z",
+      "side": 1,
+      "message": "Isn\u0027t the idea of this change to remove the prebuild builder?",
+      "range": {
+        "startLine": 2060,
+        "startChar": 6,
+        "endLine": 2060,
+        "endChar": 26
+      },
+      "revId": "417c3c6243fbf2153f2628f43c914ae96e57c25e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
