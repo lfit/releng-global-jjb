@@ -93,6 +93,30 @@
       "revId": "417c3c6243fbf2153f2628f43c914ae96e57c25e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e359f68_f0659036",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2060,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-02-12T19:54:21Z",
+      "side": 1,
+      "message": "This is not a test case. This is part of your job definition.",
+      "parentUuid": "5e325ca4_ab8e1cf9",
+      "range": {
+        "startLine": 2060,
+        "startChar": 6,
+        "endLine": 2060,
+        "endChar": 26
+      },
+      "revId": "417c3c6243fbf2153f2628f43c914ae96e57c25e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
