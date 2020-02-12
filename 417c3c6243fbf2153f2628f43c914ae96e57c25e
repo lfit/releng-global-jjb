@@ -117,6 +117,30 @@
       "revId": "417c3c6243fbf2153f2628f43c914ae96e57c25e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e03a886_b29f1f6e",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2060,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-02-12T20:00:43Z",
+      "side": 1,
+      "message": "Sorry Eric I botched that response.  Please let me try again.\n\nYes this is absolutely part of my job definition.  The lf-infra-pre-build macro, defined over in lf-macros.yaml, calls script python-tools-install.sh.  That\u0027s a bit of black magic to me, but it seems to appear in every single LF job everywhere, so I didn\u0027t mess with it.  It has nothing to do with sonar.",
+      "parentUuid": "9e359f68_f0659036",
+      "range": {
+        "startLine": 2060,
+        "startChar": 6,
+        "endLine": 2060,
+        "endChar": 26
+      },
+      "revId": "417c3c6243fbf2153f2628f43c914ae96e57c25e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
