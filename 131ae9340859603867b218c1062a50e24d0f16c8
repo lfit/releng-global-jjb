@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1293538d_fd9e3c0c",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-02-19T23:45:10Z",
+      "side": 1,
+      "message": "uppercase required here?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 6
+      },
+      "revId": "131ae9340859603867b218c1062a50e24d0f16c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
