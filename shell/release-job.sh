@@ -14,7 +14,7 @@ set -eu -o pipefail
 echo "INFO: creating virtual environment"
 virtualenv -p python3 /tmp/venv
 PATH=/tmp/venv/bin:$PATH
-pipup="python -m pip install -q --upgrade pip lftools jsonschema niet twine yq"
+pipup="python -m pip install -q --upgrade pip idna==2.8 lftools jsonschema niet twine yq"
 echo "INFO: $pipup"
 $pipup
 # show installed versions
