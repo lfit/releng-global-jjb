@@ -70,6 +70,15 @@
           files:
             - file-id: "jenkins-log-archives-settings"
               variable: "SETTINGS_FILE"
+      - conditional-step:
+          condition-kind: regex-match
+          regex: "^.*logs-s3.*"
+          label: S3_BUCKET
+          steps:
+            - config-file-provider:
+                files:
+                  - file-id: "jenkins-s3-log-ship"
+                    target: $HOME/.aws/credentials
       - lf-infra-create-netrc:
           server-id: logs
       - shell: !include-raw:
