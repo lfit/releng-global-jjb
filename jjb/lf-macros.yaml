@@ -70,6 +70,10 @@
           files:
             - file-id: "jenkins-log-archives-settings"
               variable: "SETTINGS_FILE"
+      - config-file-provider:
+          files:
+            - file-id: "jenkins-s3-log-ship"
+              target: $HOME/.aws/credentials
       - lf-infra-create-netrc:
           server-id: logs
       - shell: !include-raw:
