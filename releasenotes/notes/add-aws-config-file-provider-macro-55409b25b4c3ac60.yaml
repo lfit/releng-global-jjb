@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    Add config file provider with aws credentials to be able to ship logs to s3.
+other:
+  - |
+    This is being done as its own macro and will need to be added to jobs that
+    will ship to s3. This wasn't integrated with lf-infra-ship-logs macro, because
+    every Jenkins instance would require the file and it would cause errors when
+    not present.

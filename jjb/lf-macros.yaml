@@ -88,6 +88,14 @@
           regexp: "^Build logs: .*"
 
 - builder:
+    name: lf-infra-ship-logs-s3
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: "jenkins-s3-log-ship"
+              target: $HOME/.aws/credentials
+
+- builder:
     name: lf-infra-package-listing
     builders:
       - shell: !include-raw:

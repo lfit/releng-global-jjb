@@ -167,6 +167,11 @@ lf-infra-ship-logs
 
 Gather and deploy logs to a log server.
 
+lf-infra-ship-logs-s3
+------------------
+
+Adds credential file to job to allow shipping logs to AWS S3.
+
 lf-infra-sysstat
 ----------------
 
