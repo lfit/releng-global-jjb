@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Reduce volume of output from wget and unzip by adding the -q flag
+    to the invocations in cmake-sonar.sh  There's little need to see
+    wget progress messages or archive contents in the build log.

@@ -21,14 +21,14 @@ make_opts="${MAKE_OPTS:-}"
 set -ex -o pipefail
 
 cd /tmp || exit 1
-wget -O /tmp/sonar-scan.zip \
+wget -q -O /tmp/sonar-scan.zip \
     "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip"
-unzip sonar-scan.zip
+unzip -q sonar-scan.zip
 sudo mv sonar-scanner-* /opt/sonar-scanner
 
-wget -O /tmp/bw.zip \
+wget -q -O /tmp/bw.zip \
     "https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip"
-unzip bw.zip
+unzip -q bw.zip
 sudo mv build-wrapper-* /opt/build-wrapper
 
 mkdir -p "$build_dir"
