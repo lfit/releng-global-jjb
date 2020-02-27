@@ -37,8 +37,10 @@ cd "$build_dir" || exit 1
 # shellcheck disable=SC2086
 eval cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" $cmake_opts ..
 
+# $make_opts may be empty.
+# shellcheck disable=SC2086
 /opt/build-wrapper/build-wrapper-linux-x86-64 --out-dir "$WORKSPACE/bw-output" \
-    make "$make_opts"
+    make $make_opts
 
 /opt/sonar-scanner/bin/sonar-scanner \
     -Dsonar.projectKey="${PROJECT_KEY}" \
