@@ -26,6 +26,7 @@
     sonarcloud-api-token: ""
     sonarcloud-organization: ""
     sonarcloud-project-key: ""
+    stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false

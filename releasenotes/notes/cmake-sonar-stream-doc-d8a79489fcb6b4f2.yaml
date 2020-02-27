@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add missing config property "stream: master" to lf_cmake_sonar macro
+    in lf-c-cpp-jobs.yaml to match existing "branch: master" property.
+    This makes the template consistent with other Sonar templates.
+    Update documentation to reflect correct property names and defaults.
