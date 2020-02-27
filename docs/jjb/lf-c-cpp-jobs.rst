@@ -8,10 +8,14 @@ Job Templates
 CMake Sonar
 -----------
 
-Sonar job which runs cmake && make then publishes to Sonar.
+The Sonar job installs the SonarQube CXX build wrapper and scanner tools,
+uses the build wrapper to invoke cmake && make, runs the scanner to
+analyze code files, and publishes the results to SonarCloud. Does not
+support reporting of code coverage. Optionally runs a shell script before
+the build to install prerequisites.
 
-This job purposely runs on the master branch as there are configuration needed
-to support multi-branch.
+This job purposely runs on the master branch because the basic SonarCloud
+configuration does not support multi-branch.
 
 :Template Names:
 
@@ -26,15 +30,14 @@ to support multi-branch.
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Configure in
         defaults.yaml)
-    :sonar-scanner-version: Version of sonar-scanner to install.
-    :sonarcloud-project-key: SonarCloud project key.
-    :sonarcloud-project-organization: SonarCloud project organization.
     :sonarcloud-api-token: SonarCloud API Token.
+    :sonarcloud-organization: SonarCloud project organization.
+    :sonarcloud-project-key: SonarCloud project key.
 
 :Optional parameters:
 
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-    :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :cmake-opts: Parameters to pass to cmake. (default: '')
     :cron: Cron schedule when to trigger the job. This parameter also
         supports multiline input via YAML pipe | character in cases where
@@ -45,6 +48,8 @@ to support multi-branch.
     :make-opts: Parameters to pass to make. (default: '')
     :pre-build: Shell script to run before performing build. Useful for
         setting up dependencies. (default: '')
+    :sonar-scanner-version: Version of sonar-scanner to install.
+        (see YAML for default value; e.g., 3.3.0.1492)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.

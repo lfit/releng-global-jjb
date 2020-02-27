@@ -1,0 +1,13 @@
+---
+fixes:
+  - |
+    Add missing config property "stream: master" to lf_cmake_sonar macro
+    in lf-c-cpp-jobs.yaml to match existing "branch: master" property.
+    This makes the template consistent with other Sonar templates.
+
+    Remove double-quote chars that were added recently around $make_opts
+    from the invocation of the build wrapper in cmake-sonar.sh.  This
+    makes the invocation consistent with the invocation of cmake in the
+    same file.
+
+    Update documentation to reflect correct property names and defaults.
