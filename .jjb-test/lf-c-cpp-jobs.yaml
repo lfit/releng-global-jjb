@@ -1,0 +1,34 @@
+---
+- project:
+    name: gerrit-cmake-jobs
+    jobs:
+      - gerrit-cmake-sonar
+      - gerrit-cmake-sonarqube
+      - gerrit-cmake-stage
+      - gerrit-cmake-verify
+
+    project-name: gerrit-cmake
+    javadoc-path: org.example.project/$STREAM
+    staging-profile-id: uuddlrlrba
+    mvn-settings: gerrit-cmake-project-settings
+    mvn-snapshot-id: fakeproject-snapshots
+    nexus-group-id: fakeproject-group-id
+    nexus-snapshot-repo: fakeproject-snapshots
+    lftools-version: bogus-lftools-version
+
+- project:
+    name: github-cmake-jobs
+    jobs:
+      - github-cmake-sonar
+      - github-cmake-sonarqube
+      - github-cmake-stage
+      - github-cmake-verify
+
+    project-name: github-cmake
+    javadoc-path: org.example.project/$STREAM
+    staging-profile-id: uuddlrlrba
+    mvn-settings: github-cmake-project-settings
+    mvn-snapshot-id: fakeproject-snapshots
+    nexus-group-id: fakeproject-group-id
+    nexus-snapshot-repo: fakeproject-snapshots
+    lftools-version: bogus-lftools-version
