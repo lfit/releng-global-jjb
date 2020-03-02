@@ -70,8 +70,8 @@ The following parameters must appear in a maven release yaml file.
 :Required Parameters:
 
     :distribution_type: Must be "maven".
-    :log_dir: The suffix of the logs URL reported on completion by the
-        Jenkins stage job that created and pushed the artifact
+    :log_dir: The suffix of the logs URL reported on successful completion
+        by the Jenkins stage job that created and pushed the artifact
         to the staging repository.  For example, use value
         "example-project-maven-stage-master/17" for the logs URL
         https://logs.lf-project.org/production/vex-sjc-lfp-jenkins-prod-1/example-project-maven-stage-master/17
@@ -162,9 +162,9 @@ packages.
 
 :Required Parameters:
 
-    :log_dir: The suffix of the logs URL reported on completion by the
-        Jenkins merge job that created and pushed the distribution files
-        to the staging repository.  For example, use value
+    :log_dir: The suffix of the logs URL reported on successful completion
+        by the Jenkins merge job that created and pushed the distribution
+        files to the staging repository.  For example, use value
         "example-project-pypi-merge-master/17" for the logs URL
         https://logs.lf-project.org/production/vex-sjc-lfp-jenkins-prod-1/example-project-pypi-merge-master/17
     :pypi_project: The PyPI project name at the staging and
@@ -221,9 +221,9 @@ packages.
         "curl https://packagecloud.io/api/v1/repos/test_user/test_repo/search?q=
         | yq -r .[].filename"
     :ref: The git commit reference (SHA-1 code) to tag with the version string.
-    :log_dir: The suffix of the logs URL reported on completion by the
-        Jenkins merge job that created and pushed the distribution files
-        to the staging repository. For example, use value
+    :log_dir: The suffix of the logs URL reported on successful completion
+        by the Jenkins merge job that created and pushed the distribution
+        files to the staging repository. For example, use value
         "example-project-packagecloud-merge-/21" for the logs URL
         https://logs.lf-project.org/production/vex-sjc-lfp-jenkins-prod-1/example-project-packagecloud-merge/21
     :version: The semantic version string used for the package.
@@ -302,11 +302,8 @@ projects can repeat the release action in case of merge job failure.
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
-        file modifications will trigger a build.
-        **default**::
-
-            - compare-type: REG_EXP
-              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+        file modifications will trigger a build. The default pattern is the
+        regular expression ``(releases\/.*\.yaml|\.releases\/.*\.yaml)``
 
 
 Release Verify
@@ -336,11 +333,8 @@ This template supports Maven and Container release jobs.
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
-        file modifications will trigger a build.
-        **default**::
-
-            - compare-type: REG_EXP
-              pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+        file modifications will trigger a build. The default pattern is the
+        regular expression ``(releases\/.*\.yaml|\.releases\/.*\.yaml)``
 
 
 PyPI Release Merge
@@ -385,12 +379,9 @@ projects can repeat the release action in case of merge job failure.
         should be the repository pypy.org. (default: pypi)
     :use-release-file: Whether to use the release file. (default: true)
 
-    :gerrit_trigger_file_paths: Override file paths filter which checks which
-        file modifications will trigger a build.
-        **default**::
-
-            - compare-type: REG_EXP
-              pattern: '(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)'
+    :gerrit_release_trigger_file_paths: Override file paths filter which checks
+        which file modifications will trigger a build. The default pattern is the
+        regular expression ``(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)``
 
 PyPI Release Verify
 ~~~~~~~~~~~~~~~~~~~
@@ -429,19 +420,17 @@ verify template accepts neither a branch nor a stream parameter.
         should be the repository pypy.org (default: pypi)
     :use-release-file: Whether to use the release file. (default: true)
 
-    :gerrit_trigger_file_paths: Override file paths filter which checks which
-        file modifications will trigger a build.
-        **default**::
-
-            - compare-type: REG_EXP
-              pattern: '(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)'
+    :gerrit_release_trigger_file_paths: Override file paths filter which checks
+        which file modifications will trigger a build. The default pattern is the
+        regular expression ``(releases\/pypi.*\.yaml|\.releases\/pypi.*\.yaml)``
 
 PackageCloud Release Verify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This template supports PackageCloud release jobs. Checks that the specified
 packages are present in the staging repository and absent from the release
-repository.
+repository. The file path trigger uses the regular expression
+``(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)``
 
 :Template Name: {project-name}-packagecloud-release-verify
 
@@ -463,30 +452,23 @@ repository.
     :gerrit-skip-vote: Skip voting for this job. (default: false)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
 
-    :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths filter which checks which
-        file modifications will trigger a build.
-        **default**::
-
-            - compare-type: REG_EXP
-              pattern: '(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)'
-
-
 PackageCloud Release Merge
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This template supports PackageCloud release jobs.  Promotes the specified
 packages from the staging repository to the release repository.
+The file path trigger uses the regular expression
+``(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)``
 
 This template uses a git commit choosing strategy that builds the merged
 commit with the release yaml file, not the tip of the target branch, so
 projects can repeat the release action in case of merge job failure.
 
-:template name: {project-name}-packagecloud-release-merge
+:Template Name: {project-name}-packagecloud-release-merge
 
-:comment trigger: remerge
+:Comment Trigger: remerge
 
-:required parameters:
+:Required Parameters:
 
     :build-node: the node to run build on.
     :jenkins-ssh-release-credential: credential to use for ssh. (generally set
@@ -494,19 +476,10 @@ projects can repeat the release action in case of merge job failure.
     :project: git repository name
     :project-name: jenkins job name prefix
 
-:optional parameters:
+:Optional Parameters:
 
     :build-days-to-keep: days to keep build logs in jenkins. (default: 7)
     :build-timeout: timeout in minutes before aborting build. (default: 15)
-
-    :gerrit_merge_triggers: override gerrit triggers.
-    :gerrit_trigger_file_paths: override file paths filter which checks which
-        file modifications will trigger a build.
-        **default**::
-
-            - compare-type: reg_exp
-              pattern: '(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)'
-
 
 Setup for LFID, Nexus, Jenkins and Gerrit
 -----------------------------------------
