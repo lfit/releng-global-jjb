@@ -314,7 +314,6 @@
             - lf-infra-maven-sonarcloud:
                 java-version: "{java-version}"
                 mvn-goals: "{mvn-goals}"
-                mvn-settings: "{mvn-settings}"
                 mvn-version: "{mvn-version}"
                 sonarcloud-project-key: "{sonarcloud-project-key}"
                 # yamllint disable-line rule:line-length
