@@ -23,7 +23,7 @@ if [[ ! -f /tmp/pre-build-complete ]]; then
 
     echo "Generating Requirements File"
     cat << 'EOF' > "$requirements_file"
-lftools[openstack]
+lftools[openstack]==0.30.1
 python-heatclient
 python-openstackclient
 python-magnumclient
