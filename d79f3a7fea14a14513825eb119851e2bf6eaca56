@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cc6ad58a_a04286ec",
+        "filename": ".jjb-test/lf-c-cpp-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-03T14:15:57Z",
+      "side": 1,
+      "message": "Anil, here is a basic test of the new gerrit template.",
+      "range": {
+        "startLine": 8,
+        "startChar": 6,
+        "endLine": 8,
+        "endChar": 31
+      },
+      "revId": "d79f3a7fea14a14513825eb119851e2bf6eaca56",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e01f408_b1d3b75d",
+        "filename": ".jjb-test/lf-c-cpp-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-03T14:15:57Z",
+      "side": 1,
+      "message": "Anil, here is a basic test of the new github template.",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 31
+      },
+      "revId": "d79f3a7fea14a14513825eb119851e2bf6eaca56",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
