@@ -111,6 +111,8 @@ Sonar scans for Python based repos. This job invokes tox to run tests
 and gather coverage statistics from the test results, then invokes
 Maven to publish the results to either a Sonar server or SonarCloud.
 
+**Deprecated**, new projects should use Tox Sonarqube.
+
 To get the Sonar coverage results, file tox.ini must exist and contain
 coverage commands to run.
 
@@ -212,6 +214,132 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
 
 .. comment Stop ignoring
 
+
+Tox SonarQube
+-------------
+
+The SonarQube job invokes tox to run tests and generate code-coverage
+statistics, then runs the SonarQube Scanner Jenkins plug-in to analyze
+code, gather coverage data, and upload the results to a SonarQube server
+such as SonarCloud.io. Optionally runs a shell script before tox.
+
+Requires ``SonarQube Scanner for Jenkins``
+
+This job runs on the master branch because the basic Sonar configuration
+does not support multi-branch.
+
+Plug-in configurations
+    Manage Jenkins --> Configure System --> SonarQube servers
+        - Name: Sonar (fixed)
+        - Server URL: https://sonar.project.org/ or https://sonarcloud.io
+        - Server authentication token: none for local, API token (saved as
+          a "secret text" credential) for Sonarcloud
+
+    Manage Jenkins --> Global Tool Configuration --> SonarQube Scanner
+        - Name: SonarQube Scanner (fixed)
+        - Install automatically
+        - Select latest version
+
+:Template Names:
+
+    - {project-name}-tox-sonarqube
+    - gerrit-tox-sonarqube
+    - github-tox-sonarqube
+
+:Comment Trigger: ``run-sonar``
+
+:Required parameters:
+
+    :build-node: The node to run the build on.
+        (Commonly in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH.
+        (Commonly in defaults.yaml)
+    :project: The git repository name.
+    :project-name: Prefix used to name jobs.
+
+.. comment Start ignoring WriteGoodLintBear
+
+:Optional Parameters:
+
+    :archive-artifacts: Pattern for files to archive to the logs server
+        (default: '**/*.log')
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :cron: Cron schedule when to trigger the job. This parameter also
+        supports multiline input via YAML pipe | character in cases where
+        one may want to provide more than 1 cron timer.  (default: @weekly)
+    :disable-job: Whether to disable the job (default: false)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :github-url: URL for Github. (default: https://github.com)
+    :parallel: Boolean indicator for tox to run tests in parallel or series.
+        (default: false, in series)
+    :pre-build-script: Shell script to run before tox. Useful for setting up
+        dependencies. (default: a string with a shell comment)
+    :python-version: Python version to invoke pip install of tox-pyenv
+        (default: python3)
+    :sonar-additional-args: Command line arguments. (default: '')
+    :sonar-java-opts: JVM options. For example, use option -Xmx
+        to increase the memory size limit.  (default: '')
+    :sonar-project-file: The file name with Sonar configuration properties
+        (default: sonar-project.properties)
+    :sonar-properties: Sonar configuration properties. (default: '')
+    :sonar-task: Sonar task to run. (default: '')
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. The default uses tox.ini at the project root.
+        (default: '.')
+    :tox-envs: Tox environments to run. If blank run everything described
+        in tox.ini. (default: '')
+
+.. comment Stop ignoring
+
+.. note:: A job definition must provide one of the optional parameters
+    ``sonar-project-file`` and ``sonar-properties``; they cannot both be
+    empty.  Set Sonar properties directly in the job definition by setting
+    the ``sonar-project-file`` property to ``""`` and adding all properties
+    under ``sonar-properties``.
+
+:Required Sonar Properties:
+
+    - sonar.login: The API token for authentication at SonarCloud.
+      Commonly defined as key "sonarcloud_api_token" in defaults.yaml.
+    - sonar.organization: The umbrella project name; e.g., "opendaylight".
+      Commonly defined as key "sonarcloud_project_organization" in defaults.yaml.
+    - sonar.projectName: The git repository name without slashes; e.g., "infrautils".
+    - sonar.projectKey: The globally unique key for the report in SonarCloud. Most
+      teams use the catenation of sonar.organization, an underscore, and
+      sonar.projectName; e.g., "opendaylight_infrautils".
+
+:Optional Sonar Properties:
+
+    - sonar.cfamily.gcov.reportsPath: directory with GCOV output files
+    - Documentation of SonarQube properties is here:
+      https://docs.sonarqube.org/latest/analysis/overview/
+
+
+Example job definition
+^^^^^^^^^^^^^^^^^^^^^^
+
+The following example defines a job for a basic Python project. This definition
+uses configuration parameters in the umbrella project's defaults.yaml file.
+
+.. code-block:: yaml
+
+    - project:
+        name: my-package-sonar
+        project: my/package
+        project-name: my-package
+        sonar-project-file: ""
+        sonar-properties: |
+            sonar.login={sonarcloud_api_token}
+            sonar.projectKey={sonarcloud_project_organization}_{project-name}
+            sonar.projectName={project-name}
+            sonar.organization={sonarcloud_project_organization}
+            sonar.sourceEncoding=UTF-8
+            sonar.sources=mypackage
+            sonar.exclusions=tests/*,setup.py
+            sonar.python.coverage.reportPaths=coverage.xml
+        jobs:
+          - gerrit-tox-sonarqube
 
 Tox Verify
 ----------

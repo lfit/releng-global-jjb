@@ -6,8 +6,9 @@
       - gerrit-pypi-merge
       - gerrit-pypi-release-merge
       - gerrit-pypi-release-verify
-      - gerrit-pypi-verify
       - gerrit-tox-sonar
+      - gerrit-tox-sonarqube
+      - gerrit-pypi-verify
 
     project-name: gerrit-python
 
@@ -19,6 +20,7 @@
       - github-pypi-release-merge
       - github-pypi-release-verify
       - github-tox-sonar
+      - github-tox-sonarqube
       - github-pypi-verify
 
     project-name: github-python
