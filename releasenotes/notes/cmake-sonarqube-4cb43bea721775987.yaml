@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    New templates gerrit-tox-sonarqube and github-tox-sonarqube
+    use the SonarQube Jenkins plug-in to analyze Python code and
+    publish the results.  Modeled after the generic gerrit/github-sonar
+    templates. The new templates eliminate the need for mvn-settings in
+    the job configuration and the need for a pom.xml file in the repo.
