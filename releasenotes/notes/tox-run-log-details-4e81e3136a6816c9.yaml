@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Revise tox-run.sh to guard against unbound variable TOX_ENVS;
+    stop on error or unbound variable (options -eu); and to print
+    commands before executing (option -x).  Add echo command at end.
