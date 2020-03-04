@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    New templates gerrit-cmake-sonarqube and github-cmake-sonarqube
+    use the SonarQube Jenkins plug-in to analyze CXX code and publish
+    the results.  Modeled after the generic gerrit/github-sonar templates.
+    The new templates lift the limitations of the existing templates
+    gerrit/github-cmake-sonar which download and install a Sonar scanner,
+    and cannot report unit-test code coverage statistics.

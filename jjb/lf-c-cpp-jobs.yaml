@@ -1,6 +1,6 @@
 ---
 ###############
-# CMAKE Sonar #
+# CMAKE SONAR #
 ###############
 
 - lf_cmake_sonar: &lf_cmake_sonar
@@ -133,6 +133,152 @@
 
     triggers:
       - timed: "{obj:cron}"
+
+###################
+# CMAKE SONARQUBE #
+###################
+
+- lf_cmake_sonarqube: &lf_cmake_sonarqube
+    name: lf-cmake-sonarqube
+
+    ######################
+    # Default parameters #
+    ######################
+
+    archive-artifacts: >
+      **/*.log
+    branch: master # Sonar should always be run on master branch
+    build-days-to-keep: 7
+    build-dir: "$WORKSPACE/build"
+    build-timeout: 15
+    build-wrap-dir: "$WORKSPACE/bw-output"
+    cmake-opts: ""
+    cron: "@weekly"
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install-prefix: "$BUILD_DIR/output"
+    make-opts: ""
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    # Sonar properties
+    sonar-additional-args: ""
+    sonar-java-opts: ""
+    sonar-prescan-script: ""
+    sonar-project-file: "sonar-project.properties"
+    sonar-properties: ""
+    sonar-task: ""
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+    disabled: "{disable-job}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-cmake-parameters:
+          build-dir: "{build-dir}"
+          cmake-opts: "{cmake-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
+      - string:
+          name: BUILD_WRAP_DIR
+          default: "{build-wrap-dir}"
+          description: SonarQube build wrapper output directory.
+
+    builders:
+      - lf-infra-pre-build
+      - shell: "{sonar-prescan-script}"
+      - shell: !include-raw-escape: ../shell/cmake-sonarqube.sh
+      - lf-infra-sonar:
+          sonar-task: "{sonar-task}"
+          sonar-project-file: "{sonar-project-file}"
+          sonar-properties: "{sonar-properties}"
+          sonar-java-opts: "{sonar-java-opts}"
+          sonar-additional-args: "{sonar-additional-args}"
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: "{project-name}-cmake-sonarqube"
+    id: gerrit-cmake-sonarqube
+    concurrent: false
+    <<: *lf_cmake_sonarqube
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: "$GERRIT_BRANCH"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on:
+            - comment-added-contains-event:
+                comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+
+- job-template:
+    name: "{project-name}-cmake-sonarqube"
+    id: github-cmake-sonarqube
+    concurrent: false
+    <<: *lf_cmake_sonarqube
+
+    scm:
+      - lf-infra-github-scm:
+          branch: "$sha1"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^run-sonar$"
+          only-trigger-phrase: false
+          status-context: "CMake Sonarqube"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
 
 ###############
 # CMAKE STAGE #
