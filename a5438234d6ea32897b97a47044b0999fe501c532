@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f0ab54d_e6c2646d",
+        "filename": ".jjb-test/lf-python-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-03-04T17:39:55Z",
+      "side": 1,
+      "message": "I don\u0027t like having both jobs on this list. If someone uses the group definition, they\u0027ll have two jobs that do essentially the same thing.",
+      "range": {
+        "startLine": 10,
+        "startChar": 6,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "a5438234d6ea32897b97a47044b0999fe501c532",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "668dbcb7_92a326ac",
+        "filename": ".jjb-test/lf-python-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-03-04T17:39:55Z",
+      "side": 1,
+      "message": "Why is this line being moved?",
+      "range": {
+        "startLine": 11,
+        "startChar": 6,
+        "endLine": 11,
+        "endChar": 26
+      },
+      "revId": "a5438234d6ea32897b97a47044b0999fe501c532",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
