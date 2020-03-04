@@ -14,13 +14,29 @@ echo "---> tox-install.sh"
 # Use -x to show value of $PYTHON in output
 set -eux -o pipefail
 
-# Tox version is pulled in through detox to mitigate version conflict
 
-if [[ $PYTHON == "python2" ]]; then
-    $PYTHON -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv more-itertools~=5.0.0
-else
-    $PYTHON -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv
+#Python 3.5 and python2 tox in Ubuntu 16.04 workaround
+done="False"
+if [[ -f /etc/lsb-release ]]; then
+   # shellcheck disable=SC1091
+   source /etc/lsb-release
+   if [[ $DISTRIB_RELEASE == "16.04" ]]; then
+       python2 -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv more-itertools~=5.0.0
+       python3 -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv zipp==1.1.0
+       done="True"
+   fi
 fi
+
+
+if [[ $done != "True" ]]; then
+    if [[ $PYTHON == "python2" ]]; then
+        $PYTHON -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv more-itertools~=5.0.0
+    else
+        $PYTHON -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv
+    fi
+fi
+
+# Tox version is pulled in through detox to mitigate version conflict
 
 # installs are silent, show version details in log
 $PYTHON --version
