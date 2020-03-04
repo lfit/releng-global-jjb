@@ -33,6 +33,16 @@ tox>=3.7.0 # Tox 3.7 or greater is necessary for parallel mode support
 yq
 EOF
 
+
+#Python 3.5 in Ubuntu 16.04 workaround
+if [[ -f /etc/lsb-release ]]; then
+   # shellcheck disable=SC1091
+   source /etc/lsb-release
+   if [[ $DISTRIB_RELEASE == "16.04" ]]; then
+     echo "zipp==1.1.0" >> "$requirements_file"
+   fi
+fi
+
     # Use `python -m pip` to upgrade to the latest pip into user site-packages
     python3 -m pip install --user --quiet --upgrade pip
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade setuptools

@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Workarounds for aging python 3.5 on Ubuntu 16.04 builders 
+    Ubuntu 16.04 calls a python2 version of tox we must upgrade
+    it even if we are testing with python3
+    ubuntu 16.04 has runs python 3.5 we must pinn the zipp package
+    more pinns will be needed as packages drop support for python 3.5
+    ideally projects will move away from this distro.
