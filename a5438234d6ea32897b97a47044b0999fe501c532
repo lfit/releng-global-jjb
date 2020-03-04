@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ecf7d70d_845cd88f",
+        "filename": ".jjb-test/lf-python-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-04T18:05:11Z",
+      "side": 1,
+      "message": "Eric, this is the test file that invokes all the templates.  This is *not* the python jobs group definition.",
+      "parentUuid": "9f0ab54d_e6c2646d",
+      "range": {
+        "startLine": 10,
+        "startChar": 6,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "a5438234d6ea32897b97a47044b0999fe501c532",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "668dbcb7_92a326ac",
         "filename": ".jjb-test/lf-python-jobs.yaml",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2020-03-04T17:39:55Z",
       "side": 1,
       "message": "Why is this line being moved?",
+      "range": {
+        "startLine": 11,
+        "startChar": 6,
+        "endLine": 11,
+        "endChar": 26
+      },
+      "revId": "a5438234d6ea32897b97a47044b0999fe501c532",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35552195_cd5792e6",
+        "filename": ".jjb-test/lf-python-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-04T18:05:11Z",
+      "side": 1,
+      "message": "To make the jobs appear in alpha order, which I believe is the LF preference, but I can restore the old random sort order if you prefer.",
+      "parentUuid": "668dbcb7_92a326ac",
       "range": {
         "startLine": 11,
         "startChar": 6,
