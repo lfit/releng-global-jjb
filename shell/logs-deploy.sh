@@ -14,6 +14,17 @@ echo "---> logs-deploy.sh"
 # Disable 'globbing'
 set -euf -o pipefail
 
+function get_pattern_opts()
+{
+    opts=()
+    for arg in ${ARCHIVE_ARTIFACTS:-}; do
+        opts+=("-p" "$arg)")
+    done
+    echo "${opts[@]-}"
+}
+
+pattern_opts="$(get_pattern_opts)"
+
 if [[ -z ${LOGS_SERVER:-} ]]; then
     echo "WARNING: Nexus logging server not set"
 else
@@ -21,20 +32,9 @@ else
     nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
     echo "INFO: Nexus URL $nexus_url path $nexus_path"
 
-    if [[ -n ${ARCHIVE_ARTIFACTS:-} ]] ; then
-        # Handle multiple search extensions as separate values to '-p|--pattern'
-        # "arg1 arg2" -> (-p arg1 -p arg2)
-        pattern_opts=()
-        for arg in $ARCHIVE_ARTIFACTS; do
-            pattern_opts+=("-p" "$arg")
-        done
-        echo "INFO: archiving workspace using pattern(s): $ARCHIVE_ARTIFACTS"
-        lftools deploy archives "${pattern_opts[@]}" \
-                "$nexus_url" "$nexus_path" "$WORKSPACE"
-    else
-        echo "INFO: archiving workspace"
-        lftools deploy archives "$nexus_url" "$nexus_path" "$WORKSPACE"
-    fi
+    echo "INFO: archiving workspace using pattern(s): $ARCHIVE_ARTIFACTS"
+    lftools deploy archives ${pattern_opts:+"$pattern_opts"} "$nexus_url" "$nexus_path" "$WORKSPACE"
+
     echo "INFO: archiving logs"
     lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
@@ -44,14 +44,10 @@ fi
 if [[ -z ${S3_BUCKET:-} ]]; then
     echo "WARNING: S3 logging server not set"
 else
-    s3_path="$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER"
+    s3_path="$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER/"
     echo "INFO: S3 path $s3_path"
 
-    pattern_opts=()
-    for arg in $ARCHIVE_ARTIFACTS; do
-        pattern_opts+=("-p" "$arg")
-    done
-    lftools deploy s3 "${pattern_opts[@]}" "$S3_BUCKET" "$s3_path" \
+    lftools deploy s3 ${pattern_opts:+"$pattern_opts"} "$S3_BUCKET" "$s3_path" \
         "$BUILD_URL" "$WORKSPACE"
 
     echo "Build logs: <a href=\"https://$S3_BUCKET.s3.amazonaws.com/$s3_path\"></a>"
