@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "63d277e7_8e21a818",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T20:35:40Z",
+      "side": 1,
+      "message": "if you have to revise again, would you remove this empty line?",
+      "revId": "17636667284ddfbce8b10c72922269c9bf54c508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10fbd991_ddd0dbbe",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T20:35:40Z",
+      "side": 1,
+      "message": "why are these lines flush left, but other lines are indented 4 sp?",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 2
+      },
+      "revId": "17636667284ddfbce8b10c72922269c9bf54c508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
