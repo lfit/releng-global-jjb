@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bea6a61e_dde8c038",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-03-05T21:11:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63d277e7_8e21a818",
+      "revId": "17636667284ddfbce8b10c72922269c9bf54c508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e4af09d1_b872b8ce",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 6
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "61978fd5_61249b31",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-03-05T21:11:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4af09d1_b872b8ce",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 1
+      },
+      "revId": "17636667284ddfbce8b10c72922269c9bf54c508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "10fbd991_ddd0dbbe",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 6
@@ -62,6 +104,30 @@
       "revId": "17636667284ddfbce8b10c72922269c9bf54c508",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "097f4a3b_ad4b1095",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-03-05T21:11:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10fbd991_ddd0dbbe",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 2
+      },
+      "revId": "17636667284ddfbce8b10c72922269c9bf54c508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
