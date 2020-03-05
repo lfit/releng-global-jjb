@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "e4af09d1_b872b8ce",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T20:45:11Z",
+      "side": 1,
+      "message": "May I please ask you to echo an annoying all-caps flashing-text warning message here?  Nag people into getting away from this old stuff.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 1
+      },
+      "revId": "17636667284ddfbce8b10c72922269c9bf54c508",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "10fbd991_ddd0dbbe",
         "filename": "shell/python-tools-install.sh",
         "patchSetId": 6
