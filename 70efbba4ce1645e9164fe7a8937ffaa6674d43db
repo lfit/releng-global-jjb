@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a0376f3a_4236fe5a",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T21:13:55Z",
+      "side": 1,
+      "message": "umm, maybe you meant to write, UBUNTU ?",
+      "range": {
+        "startLine": 41,
+        "startChar": 55,
+        "endLine": 41,
+        "endChar": 61
+      },
+      "revId": "70efbba4ce1645e9164fe7a8937ffaa6674d43db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55812905_f39daf1b",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T21:13:55Z",
+      "side": 1,
+      "message": "ubuntu",
+      "range": {
+        "startLine": 23,
+        "startChar": 53,
+        "endLine": 23,
+        "endChar": 59
+      },
+      "revId": "70efbba4ce1645e9164fe7a8937ffaa6674d43db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
