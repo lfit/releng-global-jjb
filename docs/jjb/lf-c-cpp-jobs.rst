@@ -202,6 +202,7 @@ project into a tar.xz tarball to produce a release candidate.
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH.
         (Configure in defaults.yaml)
+    :mvn-settings: The name of settings file containing credentials for the project.
     :nexus-group-id: The Maven style Group ID for the namespace of the project
         in Nexus.
     :staging-profile-id: The unique Nexus Staging Profile ID for the project.
@@ -218,6 +219,8 @@ project into a tar.xz tarball to produce a release candidate.
     :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
         (default: $BUILD_DIR/output)
     :make-opts: Parameters to pass to make. (default: '')
+    :mvn-global-settings: The name of the Maven global settings to use for
+        Maven configuration. (default: global-settings)
     :pre-build: Shell script to run before performing build. Useful for
         setting up dependencies. (default: '')
     :stream: Keyword that to represent a release code-name.
@@ -250,7 +253,7 @@ project into a tar.xz tarball to produce a release candidate.
 CMake Verify
 ------------
 
-Verify job which runs cmake && make && make install to test a project build..
+Verify job which runs cmake && make && make install to test a project build.
 
 :Template Names:
 
