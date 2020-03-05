@@ -117,6 +117,29 @@
       "revId": "a5438234d6ea32897b97a47044b0999fe501c532",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e818b9eb_56dd6a12",
+        "filename": "releasenotes/notes/cmake-sonarqube-4cb43bea721775987.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T19:39:20Z",
+      "side": 1,
+      "message": "botched the file name on this release note, ouch.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 1
+      },
+      "revId": "a5438234d6ea32897b97a47044b0999fe501c532",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
