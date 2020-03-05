@@ -1,16 +1,65 @@
 ---
+####################
+# COMMON FUNCTIONS #
+####################
+
+- lf_cmake_common: &lf_cmake_common
+    name: lf-cmake-common
+
+    ######################
+    # Default parameters #
+    ######################
+
+    archive-artifacts: >
+      **/*.log
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-cmake-parameters:
+          build-dir: "{build-dir}"
+          cmake-opts: "{cmake-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    publishers:
+      - lf-infra-publish
+
 ###############
 # CMAKE SONAR #
 ###############
 
 - lf_cmake_sonar: &lf_cmake_sonar
+    # deprecated, see lf_cmake_sonarqube
     name: lf-cmake-sonar
 
     ######################
     # Default parameters #
     ######################
 
-    branch: master
+    branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
     build-dir: "$WORKSPACE/target"
     build-timeout: 15
@@ -26,39 +75,10 @@
     sonarcloud-api-token: ""
     sonarcloud-organization: ""
     sonarcloud-project-key: ""
-    stream: master
+    stream: master # Sonar should always be run on master branch
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-
-    #####################
-    # Job Configuration #
-    #####################
-
-    project-type: freestyle
-    node: "{build-node}"
-    disabled: "{disable-job}"
-
-    properties:
-      - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
-
-    parameters:
-      - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
-          lftools-version: "{lftools-version}"
-      - lf-cmake-parameters:
-          build-dir: "{build-dir}"
-          cmake-opts: "{cmake-opts}"
-          install-prefix: "{install-prefix}"
-          make-opts: "{make-opts}"
-
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     builders:
       - lf-infra-pre-build
@@ -74,13 +94,12 @@
       - shell: !include-raw-escape: ../shell/cmake-sonar.sh
       - lf-provide-maven-settings-cleanup
 
-    publishers:
-      - lf-infra-publish
-
 - job-template:
+    # deprecated, use gerrit-cmake-sonarqube
     name: "{project-name}-cmake-sonar"
     id: gerrit-cmake-sonar
     concurrent: false
+    <<: *lf_cmake_common
     <<: *lf_cmake_sonar
 
     scm:
@@ -109,9 +128,11 @@
                   branch-pattern: "**/{branch}"
 
 - job-template:
+    # deprecated, use github-cmake-sonarqube
     name: "{project-name}-cmake-sonar"
     id: github-cmake-sonar
     concurrent: false
+    <<: *lf_cmake_common
     <<: *lf_cmake_sonar
 
     properties:
@@ -145,11 +166,9 @@
     # Default parameters #
     ######################
 
-    archive-artifacts: >
-      **/*.log
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
-    build-dir: "$WORKSPACE/build"
+    build-dir: "$WORKSPACE/target"
     build-timeout: 15
     build-wrap-dir: "$WORKSPACE/bw-output"
     cmake-opts: ""
@@ -160,34 +179,15 @@
     install-prefix: "$BUILD_DIR/output"
     make-opts: ""
     pre-build: ""
-    stream: master
-    submodule-recursive: true
-    submodule-timeout: 10
-    submodule-disable: false
-
-    # Sonar properties
     sonar-additional-args: ""
     sonar-java-opts: ""
     sonar-project-file: "sonar-project.properties"
     sonar-properties: ""
     sonar-task: ""
-
-    #####################
-    # Job Configuration #
-    #####################
-
-    project-type: freestyle
-    node: "{build-node}"
-    disabled: "{disable-job}"
-
-    properties:
-      - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
-
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+    stream: master # Sonar should always be run on master branch
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
 
     parameters:
       - lf-infra-parameters:
@@ -219,18 +219,12 @@
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
 
-    publishers:
-      - lf-infra-publish
-
 - job-template:
     name: "{project-name}-cmake-sonarqube"
     id: gerrit-cmake-sonarqube
     concurrent: false
+    <<: *lf_cmake_common
     <<: *lf_cmake_sonarqube
-
-    ######################
-    # Default parameters #
-    ######################
 
     gerrit_sonar_triggers:
       - comment-added-contains-event:
@@ -263,6 +257,7 @@
     name: "{project-name}-cmake-sonarqube"
     id: github-cmake-sonarqube
     concurrent: false
+    <<: *lf_cmake_common
     <<: *lf_cmake_sonarqube
 
     scm:
@@ -316,18 +311,6 @@
     submodule-disable: false
     version: ""
 
-    #####################
-    # Job Configuration #
-    #####################
-
-    project-type: freestyle
-    node: "{build-node}"
-    disabled: "{disable-job}"
-
-    properties:
-      - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
-
     parameters:
       - lf-infra-parameters:
           project: "{project}"
@@ -338,6 +321,10 @@
           cmake-opts: "{cmake-opts}"
           install-prefix: "{install-prefix}"
           make-opts: "{make-opts}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
       - string:
           name: NEXUS_GROUP_ID
           default: "{nexus-group-id}"
@@ -371,11 +358,6 @@
                 | awk '{{print $NF}}' | awk -F')' '{{print $1}}')"
             echo "${{MAJOR_VERSION}}.${{MINOR_VERSION}}.${{PATCH_VERSION}}" > /tmp/artifact_version
 
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-
     builders:
       - lf-infra-pre-build
       - lf-provide-maven-settings:
@@ -388,13 +370,11 @@
       - shell: !include-raw-escape: ../shell/cmake-stage.sh
       - lf-provide-maven-settings-cleanup
 
-    publishers:
-      - lf-infra-publish
-
 - job-template:
     name: "{project-name}-cmake-stage-{stream}"
     id: gerrit-cmake-stage
     concurrent: true
+    <<: *lf_cmake_common
     <<: *lf_cmake_stage
 
     scm:
@@ -426,6 +406,7 @@
     name: "{project-name}-cmake-stage-{stream}"
     id: github-cmake-stage
     concurrent: true
+    <<: *lf_cmake_common
     <<: *lf_cmake_stage
 
     properties:
@@ -472,6 +453,7 @@
     build-dir: "$WORKSPACE/target"
     build-timeout: 15
     cmake-opts: ""
+    cron: ""
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
@@ -500,45 +482,15 @@
     github_included_regions:
       - ".*"
 
-    #####################
-    # Job Configuration #
-    #####################
-
-    project-type: freestyle
-    node: "{build-node}"
-    disabled: "{disable-job}"
-
-    properties:
-      - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
-
-    parameters:
-      - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
-      - lf-cmake-parameters:
-          build-dir: "{build-dir}"
-          cmake-opts: "{cmake-opts}"
-          install-prefix: "{install-prefix}"
-          make-opts: "{make-opts}"
-
-    wrappers:
-      - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-
     builders:
       - shell: "{pre-build}"
       - shell: !include-raw-escape: ../shell/cmake-build.sh
-
-    publishers:
-      - lf-infra-publish
 
 - job-template:
     name: "{project-name}-cmake-verify-{stream}"
     id: gerrit-cmake-verify
     concurrent: true
+    <<: *lf_cmake_common
     <<: *lf_cmake_verify
 
     scm:
@@ -568,6 +520,7 @@
     name: "{project-name}-cmake-verify-{stream}"
     id: github-cmake-verify
     concurrent: true
+    <<: *lf_cmake_common
     <<: *lf_cmake_verify
 
     properties:

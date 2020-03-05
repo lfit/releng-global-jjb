@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Refactor templates in lf-c-cpp-jobs.yaml with common anchor/alias
+    lf_cmake_common to reduce redundant configuration.  This includes
+    gerrit-cmake-sonar, github-cmake-sonar, gerrit-cmake-sonarqube,
+    github-cmake-sonarqube, gerrit-cmake-stage, github-cmake-stage,
+    gerrit-cmake-verify and github-cmake-verify. No functional change.
