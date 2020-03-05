@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Revise templates gerrit-cmake-sonarqube and gerrit-tox-sonarqube
+    to move the triggering comment string into a parameter that can be
+    overridden in a job definition.  Github comment remains hardcoded.
+    No functional change, the default is still "run-sonar".
