@@ -159,6 +159,7 @@
     github-url: "https://github.com"
     install-prefix: "$BUILD_DIR/output"
     make-opts: ""
+    pre-build: ""
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -167,7 +168,6 @@
     # Sonar properties
     sonar-additional-args: ""
     sonar-java-opts: ""
-    sonar-prescan-script: ""
     sonar-project-file: "sonar-project.properties"
     sonar-properties: ""
     sonar-task: ""
@@ -210,7 +210,7 @@
 
     builders:
       - lf-infra-pre-build
-      - shell: "{sonar-prescan-script}"
+      - shell: "{pre-build}"
       - shell: !include-raw-escape: ../shell/cmake-sonarqube.sh
       - lf-infra-sonar:
           sonar-task: "{sonar-task}"
@@ -228,6 +228,14 @@
     concurrent: false
     <<: *lf_cmake_sonarqube
 
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_sonar_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
+
     scm:
       - lf-infra-gerrit-scm:
           branch: "$GERRIT_BRANCH"
@@ -243,9 +251,7 @@
       - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on:
-            - comment-added-contains-event:
-                comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
+          trigger-on: "{obj:gerrit_sonar_triggers}"
           projects:
             - project-compare-type: "ANT"
               project-pattern: "{project}"

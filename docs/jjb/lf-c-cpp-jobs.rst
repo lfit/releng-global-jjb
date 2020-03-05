@@ -120,11 +120,11 @@ Plug-in configurations
     :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
         (default: $BUILD_DIR/output)
     :make-opts: Parameters to pass to make. (default: '')
+    :pre-build: Shell script to run before performing build. Useful for
+        setting up dependencies. (default: '')
     :sonar-additional-args: Command line arguments. (default: '')
     :sonar-java-opts: JVM options. For example, use option -Xmx
         to increase the memory size limit.  (default: '')
-    :sonar-prescan-script: A shell script to run before the build and scan.
-         Useful for setting up dependencies. (default: '')
     :sonar-project-file: The file name with Sonar configuration properties
         (default: sonar-project.properties)
     :sonar-properties: Sonar configuration properties. (default: '')
