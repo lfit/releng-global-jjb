@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baaa2263_f0430160",
+        "filename": "releasenotes/notes/fix-python-35-ubuntu1604-d9d6cec207b568d7.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T20:24:55Z",
+      "side": 1,
+      "message": "I think prettier is gonna fail you on this trailing space :/",
+      "range": {
+        "startLine": 4,
+        "startChar": 61,
+        "endLine": 4,
+        "endChar": 62
+      },
+      "revId": "55ab26cef0843e8c7f781a97fa822de6acc93c49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "079f359a_f98f1fa8",
+        "filename": "releasenotes/notes/fix-python-35-ubuntu1604-d9d6cec207b568d7.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T20:24:55Z",
+      "side": 1,
+      "message": "please just one \u0027n\u0027?",
+      "range": {
+        "startLine": 7,
+        "startChar": 45,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "55ab26cef0843e8c7f781a97fa822de6acc93c49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2c56deb_9f8744ba",
+        "filename": "releasenotes/notes/fix-python-35-ubuntu1604-d9d6cec207b568d7.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T20:24:55Z",
+      "side": 1,
+      "message": "has runs?",
+      "range": {
+        "startLine": 7,
+        "startChar": 17,
+        "endLine": 7,
+        "endChar": 25
+      },
+      "revId": "55ab26cef0843e8c7f781a97fa822de6acc93c49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9f5a72fa_c6232ff1",
+        "filename": "releasenotes/notes/fix-python-35-ubuntu1604-d9d6cec207b568d7.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-05T20:24:55Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 8,
+        "startChar": 9,
+        "endLine": 8,
+        "endChar": 14
+      },
+      "revId": "55ab26cef0843e8c7f781a97fa822de6acc93c49",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
