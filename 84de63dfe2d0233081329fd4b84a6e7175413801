@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f7abb672_ea5e5d08",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-03-10T17:29:16Z",
+      "side": 1,
+      "message": "I\u0027m confused by what this is trying to do here.\n\nI would expect that you should just use \"$pattern_opts\" and nothing more",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 60
+      },
+      "revId": "84de63dfe2d0233081329fd4b84a6e7175413801",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2467f79a_642af5f4",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-03-10T17:29:16Z",
+      "side": 1,
+      "message": "See above",
+      "range": {
+        "startLine": 50,
+        "startChar": 22,
+        "endLine": 50,
+        "endChar": 54
+      },
+      "revId": "84de63dfe2d0233081329fd4b84a6e7175413801",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
