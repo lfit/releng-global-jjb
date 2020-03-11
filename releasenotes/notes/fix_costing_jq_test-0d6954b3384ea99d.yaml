@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Update jq validation of returned json blocks to work properly with jq v1.5.
