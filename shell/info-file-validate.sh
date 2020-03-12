@@ -12,10 +12,11 @@ echo '--> info-file-validate.sh'
 set -e -o pipefail
 PROJECT="${PROJECT:-None}"
 
-virtualenv --quiet "/tmp/v/info"
-# shellcheck source=/tmp/v/info/bin/activate disable=SC1091
-source "/tmp/v/info/bin/activate"
-pip install PyYAML jsonschema rfc3987 yamllint yq
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+
+lf-activate-venv zipp==1.1.0 PyYAML jsonschema rfc3987 yamllint yq
 
 # Download info-schema.yaml and yaml-verfy-schema.py
 wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/info-schema.yaml \

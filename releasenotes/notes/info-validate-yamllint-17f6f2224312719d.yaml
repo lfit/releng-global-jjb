@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Switch info-file-validate.sh to use lf-activate-venv
+    moves job from python2 to python3
