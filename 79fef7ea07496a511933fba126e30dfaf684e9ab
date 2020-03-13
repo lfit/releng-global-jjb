@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "15294f19_4dbcf9ca",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-13T01:12:15Z",
+      "side": 1,
+      "message": "I still think you should pin all versions, and it might also be good to do a pip freeze after this to show the versions in the log.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 4
+      },
+      "revId": "79fef7ea07496a511933fba126e30dfaf684e9ab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
