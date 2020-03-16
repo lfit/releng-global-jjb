@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e95659e_38c0409f",
+        "filename": "shell/info-file-validate.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-03-16T18:49:31Z",
+      "side": 1,
+      "message": "Why the pip freeze?",
+      "revId": "04f1770f4aed60b07bba1db7c87920fa03af536c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
