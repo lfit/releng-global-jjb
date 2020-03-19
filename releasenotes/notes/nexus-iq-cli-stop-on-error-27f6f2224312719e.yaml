@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Revise script nexus-iq-cli.sh to stop on error or unbound variable.
+    This should fail the build if the scanner returns a non-zero code,
+    for example if credentials are missing or wrong.

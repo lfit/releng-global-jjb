@@ -9,15 +9,23 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> nexus-iq-cli.sh"
-# This script downloads nexus-iq-cli-1.44.0-01.jar and uses it to perform an
-# XC Evaluation or extended report which provides a scan of python files within
-# the repo
+# This script downloads the specified version of the nexus-iq-cli jar, uses it
+# to perform an XC Evaluation or extended report which provides a scan of python
+# files within the repo starting at the root, then publishes the result to an LF
+# server using the specified credentials.
 
+# stop on error or unbound variable
+set -eu
+# do not print commands, credentials should not be logged
 set +x
 CLI_LOCATION="/tmp/nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar"
+echo "INFO: downloading nexus-iq-cli version $NEXUS_IQ_CLI_VERSION"
 wget -nv "https://download.sonatype.com/clm/scanner/nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar" -O "${CLI_LOCATION}"
 echo "-a" > cli-auth.txt
 echo "${CLM_USER}:${CLM_PASSWORD}" >> cli-auth.txt
+echo "INFO: running nexus-iq-cli scan on project $CLM_PROJECT_NAME"
 java -jar "${CLI_LOCATION}" @cli-auth.txt -xc -i "${CLM_PROJECT_NAME}" -s https://nexus-iq.wl.linuxfoundation.org -t build .
 rm cli-auth.txt
 rm "${CLI_LOCATION}"
+
+echo "---> nexus-iq-cli.sh ends"
