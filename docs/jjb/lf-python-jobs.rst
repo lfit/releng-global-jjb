@@ -16,14 +16,15 @@ Below is a list of Python job groups:
 Macros
 ======
 
-lf-infra-clm-python
--------------------
+lf-infra-nexus-iq-python-cli
+----------------------------
 
-Runs CLM scanning against a Python project.
+Runs Nexus IQ command-line interface CLM scan on Python package requirements.
 
 :Required Parameters:
 
-    :clm-project-name: Project name in Nexus IQ to send results to.
+    :nexus-iq-project-name: Project name in Nexus IQ to send results to.
+    :requirements-file: File name with output of pip freeze.
 
 lf-infra-tox-install
 --------------------
@@ -49,59 +50,82 @@ Creates a Tox virtual environment and invokes tox.
 Job Templates
 =============
 
-Python XC CLM
--------------
+Tox Nexus IQ CLM
+----------------
 
-CLM scans for Python based repos. This job will call the Nexus IQ CLI
-directly to run the scans.
+The Nexus IQ job invokes tox and the Nexus IQ scanner to analyze packages for
+component lifecycle management (CLM).  Runs tox to discover the required packages,
+downloads the command-line interface (CLI) scanner, runs the scanner on the package
+list, then uploads the results to a Nexus IQ server. The project's tox.ini file must
+define a test environment that runs 'pip freeze' and captures the output; that
+environment does not need to execute any tests. For example:
 
-A new credential named "nexus-iq-xc-clm" needs to exist in the Jenkins
-credentials.  The credential should contain the username and password
-to access Nexus IQ Server.
+.. code-block:: bash
+
+    [testenv:clm]
+    # use pip to report dependencies with versions
+    whitelist_externals = sh
+    commands = sh -c 'pip freeze > requirements.txt'
+
+
+This job runs on the master branch because the basic Nexus IQ configuration
+does not support multi-branch.
 
 :Template Names:
 
-    - {project-name}-python-clm-{stream}
-    - gerrit-python-xc-clm
-    - github-python-xc-clm
+    - {project-name}-tox-nexus-iq-clm
+    - gerrit-tox-nexus-iq-clm
+    - github-tox-nexus-iq-clm
 
-:Comment Trigger: **run-clm** post a comment with the trigger to launch
-    this job manually. Do not include any other text or vote in the
-    same comment.
+:Comment Trigger: ``run-clm``
 
 :Required parameters:
 
-    :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        get configured in defaults.yaml)
+    :build-node: The node to run the build on.
+        (Commonly in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH.
+        (Commonly in defaults.yaml)
+    :project: The git repository name.
+    :project-name: Prefix used to name jobs.
 
-:Optional parameters:
+:Optional Parameters:
 
+    :archive-artifacts: Pattern for files to archive to the logs server
+        (default: '\*\*/\*.log')
+    :branch: Git branch, should be master (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :cron: Cron schedule when to trigger the job. This parameter also
+        supports multiline input via the YAML pipe | character to allow
+        more than 1 cron timer.  (default: @weekly)
+    :disable-job: Whether to disable the job (default: false)
+    :gerrit_nexusiq_triggers: Override Gerrit Triggers.
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :github-url: URL for Github. (default: https://github.com)
+    :java-version: Version of Java to use for the scan. (default: openjdk8)
     :nexus-iq-cli-version: Nexus IQ CLI package version to download and use.
-        (default: 1.44.0-01)
+        (default is a string like 1.89.0-02, see file lf-python-jobs.yaml)
     :nexus-iq-namespace: Insert a namespace to project AppID for projects that
         share a Nexus IQ system to avoid project name collision. We recommend
         inserting a trailing - dash if using this parameter.
         For example 'odl-'. (default: '')
-    :build-timeout: Timeout in minutes before aborting build. (default: 60)
-    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
-    :pre-build-script: Shell script to execute before the CLM builder.
-        For example, install prerequisites or move files to the repo root.
-        (default: a string with a shell comment)
-    :stream: Keyword used to represent a release code-name.
-        Often the same as the branch. (default: master)
+    :pre-build-script: Shell script to run before tox. Useful for setting up
+        dependencies. (default: a string with a shell comment)
+    :python-version: Python version to invoke pip install of tox-pyenv
+        (default: python3)
+    :requirements-file: Name of file with output of pip freeze.
+        (default: requirements.txt)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
-    :gerrit_clm_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths used to filter which file
-        modifications trigger a build. Refer to JJB documentation for "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. The default uses tox.ini at the project root.
+        (default: '.')
+    :tox-envs: Tox environment with the appropriate pip freeze invocation.
+        (default: 'clm')
 
 
 Python Sonar with Tox
