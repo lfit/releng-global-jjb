@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Add new templates gerrit-tox-nexus-iq/github-tox-nexus-iq and
+    supporting script nexus-iq-cli-reqs.sh to analyze Python package
+    dependencies.  Replaces the old g*it-python-xc-clm jobs which
+    this change marks as deprecated.
