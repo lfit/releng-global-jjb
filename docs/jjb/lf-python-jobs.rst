@@ -25,6 +25,16 @@ Runs CLM scanning against a Python project.
 
     :clm-project-name: Project name in Nexus IQ to send results to.
 
+lf-infra-nexus-iq-cli-reqs
+--------------------------
+
+Runs Nexus IQ scan on Python package requirements.
+
+:Required Parameters:
+
+    :nexus-iq-project-name: Project name in Nexus IQ to send results to.
+    :requirements-file: File name with output of pip freeze.
+
 lf-infra-tox-install
 --------------------
 
@@ -54,6 +64,8 @@ Python XC CLM
 
 CLM scans for Python based repos. This job will call the Nexus IQ CLI
 directly to run the scans.
+
+**Deprecated**, new projects should use Tox Nexus IQ.
 
 A new credential named "nexus-iq-xc-clm" needs to exist in the Jenkins
 credentials.  The credential should contain the username and password
@@ -102,6 +114,83 @@ to access Nexus IQ Server.
     :gerrit_trigger_file_paths: Override file paths used to filter which file
         modifications trigger a build. Refer to JJB documentation for "file-path" details.
         https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+
+
+Tox Nexus IQ
+------------
+
+The Nexus IQ job invokes tox and the Nexus IQ scanner to analyze packages for
+component lifecycle management (CLM).  Runs tox to discover the required packages,
+downloads the command-line interface (CLI) scanner, runs the scanner on the package
+list, then uploads the results to a Nexus IQ server. The project's tox.ini file must
+define a test environment that runs 'pip freeze' and captures the output; that
+environment does not need to execute any tests. For example:
+
+.. code-block:: bash
+
+    [testenv:clm]
+    # use pip to report dependencies with versions
+    whitelist_externals = sh
+    commands = sh -c 'pip freeze > requirements.txt'
+
+
+This job runs on the master branch because the basic Nexus IQ configuration
+does not support multi-branch.
+
+:Template Names:
+
+    - {project-name}-tox-nexus-iq
+    - gerrit-tox-nexus-iq
+    - github-tox-nexus-iq
+
+:Comment Trigger: ``run-clm``
+
+:Required parameters:
+
+    :build-node: The node to run the build on.
+        (Commonly in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH.
+        (Commonly in defaults.yaml)
+    :project: The git repository name.
+    :project-name: Prefix used to name jobs.
+
+:Optional Parameters:
+
+    :archive-artifacts: Pattern for files to archive to the logs server
+        (default: '\*\*/\*.log')
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :cron: Cron schedule when to trigger the job. This parameter also
+        supports multiline input via the YAML pipe | character to allow
+        more than 1 cron timer.  (default: @weekly)
+    :disable-job: Whether to disable the job (default: false)
+    :gerrit_nexusiq_triggers: Override Gerrit Triggers.
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :github-url: URL for Github. (default: https://github.com)
+    :java-version: Version of Java to use for the scan. (default: openjdk8)
+    :nexus-iq-cli-version: Nexus IQ CLI package version to download and use.
+        (default is a string like 1.87.0-02, see file lf-python-jobs.yaml)
+    :nexus-iq-namespace: Insert a namespace to project AppID for projects that
+        share a Nexus IQ system to avoid project name collision. We recommend
+        inserting a trailing - dash if using this parameter.
+        For example 'odl-'. (default: '')
+    :pre-build-script: Shell script to run before tox. Useful for setting up
+        dependencies. (default: a string with a shell comment)
+    :python-version: Python version to invoke pip install of tox-pyenv
+        (default: python3)
+    :requirements-file: Name of file with output of pip freeze.
+        (default: requirements.txt)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. The default uses tox.ini at the project root.
+        (default: '.')
+    :tox-envs: Tox environment with the appropriate pip freeze invocation.
+        (default: 'clm')
 
 
 Python Sonar with Tox
