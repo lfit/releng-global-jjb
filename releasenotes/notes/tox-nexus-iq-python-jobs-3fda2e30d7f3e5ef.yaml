@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    Add new templates gerrit-tox-nexus-iq/github-tox-nexus-iq to
+    analyze Python package requirements.  Add script
+    nexus-iq-python-cli.sh with correct invocation and arguments
+    for the latest version of the Sonar IQ scanner.
+
+    Drop broken templates g*it-python-xc-clm and unused builder
+    lf-infra-clm-python.
