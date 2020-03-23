@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Add new templates gerrit-tox-nexus-iq/github-tox-nexus-iq to
+    analyze Python package requirements.  Replaces the old
+    g*it-python-xc-clm jobs which this change marks as deprecated.
+    Add script nexus-iq-python-cli.sh with correct invocation
+    and arguments for the latest version of the Sonar IQ scanner.
