@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Add @weekly cron default value to docker_merge_common anchor, no longer
+    empty. The merge job for docker images is like the stage job for java
+    artifacts, every docker image is a release candidate.  Run the merge job
+    regularly to check dependencies like base images and to push updated
+    images to the Nexus3 staging registry.
