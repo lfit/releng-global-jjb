@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ca40de19_305f817b",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-03-24T11:03:46Z",
+      "side": 1,
+      "message": "Should this not be passed from the upstream job instead of setting this in global-jjb, because this will cause all the projects using this job to run the merge job on a weekly basis.",
+      "range": {
+        "startLine": 154,
+        "startChar": 4,
+        "endLine": 154,
+        "endChar": 50
+      },
+      "revId": "0a6de452aa1e82425b99456541f8c42e67bea228",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
