@@ -151,7 +151,7 @@
 
 - docker_merge_common: &docker_merge_common
     name: docker-merge-common
-    cron: ""
+    cron: "@weekly" # check dependencies regularly
 
     scm:
       - lf-infra-gerrit-scm:

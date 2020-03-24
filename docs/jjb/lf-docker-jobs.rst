@@ -73,7 +73,8 @@ Job Templates
 Docker Verify
 -------------
 
-Executes a docker build task.
+Executes a docker build task to verify that an image can be constructed,
+and discards the image upon completion.
 
 :Template Names:
 
@@ -92,7 +93,7 @@ Executes a docker build task.
     :docker-name: Name of the Docker image.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
         be configured in defaults.yaml)
-    :mvn-settings: Maven settings.xml file containing credentials to use.
+    :mvn-settings: Maven settings.xml file containing Docker credentials.
 
 :Optional parameters:
 
@@ -101,13 +102,15 @@ Executes a docker build task.
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :container-tag-method: Specifies the docker tag-choosing method.
         Options are "latest", "git-describe" or "yaml-file".
-        Option git-describe requires a git tag to exist in the repository.
-        Option yaml-file requires a file "container-tag.yaml" to exist in the repository.
-        (default: latest)
+        Option latest simply applies that string.
+        Option git-describe uses the string returned by git-describe,
+        which requires a tag to exist in the repository.
+        Option yaml-file uses the string from file "container-tag.yaml"
+        in the repository. (default: latest)
     :container-tag-yaml-dir: Directory with container-tag.yaml. (default: $DOCKER_ROOT)
     :docker-build-args: Additional arguments for the docker build command.
     :docker-get-container-tag-script: Path to script that chooses docker tag.
-        (default: ../shell/docker-get-container-tag.sh)
+        (default: ../shell/docker-get-container-tag.sh in global-jjb)
     :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre_docker_build_script: Build script to execute before the main verify
@@ -139,7 +142,9 @@ container-tag.yaml example:
 Docker Merge
 ------------
 
-Executes a docker build task and publishes the resulting images to a specified Docker registry.
+Executes a docker build task and pushes the resulting image to the specified
+Docker registry. If every image is a release candidate, this should use a
+staging repository and should also run regularly to check dependencies.
 
 :Template Names:
 
@@ -155,11 +160,11 @@ Executes a docker build task and publishes the resulting images to a specified D
 
     :build-node: The node to run build on.
     :container-public-registry: Docker registry source with base images.
-    :container-push-registry: Docker registry target for the deploy action.
+    :container-push-registry: Docker registry target for the push action.
     :docker-name: Name of the Docker image.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally should
         be configured in defaults.yaml)
-    :mvn-settings: Maven settings.xml file containing credentials to use.
+    :mvn-settings: Maven settings.xml file containing Docker credentials.
 
 :Optional parameters:
 
@@ -168,17 +173,19 @@ Executes a docker build task and publishes the resulting images to a specified D
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :container-tag-method: Specifies the docker tag-choosing method.
         Options are "latest", "git-describe" or "yaml-file".
-        Option git-describe requires a git tag to exist in the repository.
-        Option yaml-file requires a file "container-tag.yaml" to exist in the repository.
-        (default: latest)
+        Option latest simply applies that string.
+        Option git-describe uses the string returned by git-describe,
+        which requires a tag to exist in the repository.
+        Option yaml-file uses the string from file "container-tag.yaml"
+        in the repository. (default: latest)
     :container-tag-yaml-dir: Directory with container-tag.yaml. (default: $DOCKER_ROOT)
     :cron: Cron schedule when to trigger the job. This parameter also
         supports multiline input via YAML pipe | character in cases where
-        one may want to provide more than 1 cron timer. No default. Use
-        '@daily' to run daily or 'H H * * 0' to run weekly.
+        one may want to provide more than 1 cron timer. Use '@daily' to run
+        daily or '@weekly' to run weekly.  (default: @weekly)
     :docker-build-args: Additional arguments for the docker build command.
     :docker-get-container-tag-script: Path to script that chooses docker tag.
-        (default: ../shell/docker-get-container-tag.sh)
+        (default: ../shell/docker-get-container-tag.sh in global-jjb)
     :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre_docker_build_script: Build script to execute before the main merge
