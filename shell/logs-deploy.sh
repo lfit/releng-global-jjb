@@ -18,12 +18,12 @@ function get_pattern_opts()
 {
     opts=()
     for arg in ${ARCHIVE_ARTIFACTS:-}; do
-        opts+=("-p" "$arg)")
+        opts+=("-p" "$arg")
     done
     echo "${opts[@]-}"
 }
 
-pattern_opts="$(get_pattern_opts)"
+pattern_opts=$(get_pattern_opts)
 
 if [[ -z ${LOGS_SERVER:-} ]]; then
     echo "WARNING: Nexus logging server not set"
@@ -32,13 +32,14 @@ else
     nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
     echo "INFO: Nexus URL $nexus_url path $nexus_path"
 
-    echo "INFO: archiving workspace using pattern(s): $ARCHIVE_ARTIFACTS"
-    lftools deploy archives ${pattern_opts:+"$pattern_opts"} "$nexus_url" "$nexus_path" "$WORKSPACE"
+    echo "INFO: archiving workspace using pattern(s): ${pattern_opts:-}"
+    # shellcheck disable=SC2086
+    lftools deploy archives ${pattern_opts:-} "$nexus_url" "$nexus_path" "$WORKSPACE"
 
-    echo "INFO: archiving logs"
+    echo "INFO: archiving logs to Nexus"
     lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
-    echo "Build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
+    echo "Nexus build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
 fi
 
 if [[ -z ${S3_BUCKET:-} ]]; then
@@ -47,9 +48,11 @@ else
     s3_path="$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER/"
     echo "INFO: S3 path $s3_path"
 
-    lftools deploy s3 ${pattern_opts:+"$pattern_opts"} "$S3_BUCKET" "$s3_path" \
+    echo "INFO: archiving logs to S3"
+    # shellcheck disable=SC2086
+    lftools deploy s3 ${pattern_opts:-} "$S3_BUCKET" "$s3_path" \
         "$BUILD_URL" "$WORKSPACE"
 
-    echo "Build logs: <a href=\"https://$CDN_URL/$s3_path\"></a>"
+    echo "S3 build logs: <a href=\"https://$CDN_URL/$s3_path\"></a>"
 fi
 
