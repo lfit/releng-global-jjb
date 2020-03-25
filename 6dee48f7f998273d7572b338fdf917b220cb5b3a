@@ -70,6 +70,30 @@
       "revId": "6dee48f7f998273d7572b338fdf917b220cb5b3a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a178735_5b7d6d45",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T20:23:02Z",
+      "side": 1,
+      "message": "Should be # shellcheck disable\u003dSC2086 not 2046 but I am not sure what you mean by \"perhaps, possibly, instead of writing this expression twice (lines 35 and 36), write it once and use it twice?\"",
+      "parentUuid": "90ffcdd5_5f0cf707",
+      "range": {
+        "startLine": 35,
+        "startChar": 54,
+        "endLine": 35,
+        "endChar": 87
+      },
+      "revId": "6dee48f7f998273d7572b338fdf917b220cb5b3a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
