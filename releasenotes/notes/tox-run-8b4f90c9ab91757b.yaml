@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Dont fail tox runs if no logs are present.
+    Change 76a0761 set -eux
+    if there are no files to archive the job fails
+    cp cannot stat .tox/*/log No such file or directory
+    -e doesn't work with globs. Use a for loop. SC2144

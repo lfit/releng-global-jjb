@@ -48,11 +48,25 @@ fi
 
 echo "---> Completed tox runs"
 
+function archive_tox(){
 # Disable SC2116 as we want to echo a space separated list of TOX_ENVS
 # shellcheck disable=SC2116
 for i in .tox/*/log; do
     tox_env=$(echo "$i" | awk -F'/' '{print $2}')
     cp -r "$i" "$ARCHIVE_TOX_DIR/$tox_env"
+done
+}
+
+for file in .tox/*/log
+do
+  if [ -e "$file" ]
+  then
+    echo "INFO: There are tox logs"
+    archive_tox
+    break
+  else
+    echo "INFO: There are no tox logs"
+  fi
 done
 
 # If docs are generated push them to archives.
