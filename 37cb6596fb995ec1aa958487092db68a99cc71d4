@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "6fd2ba5d_dd0961e5",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T17:00:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "101b86bc_4c588796",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "43e49094_eb69a1de",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -180,6 +204,30 @@
       "side": 1,
       "message": "Ack",
       "parentUuid": "00e4b25e_cc429118",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 34
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d669c2ea_ed1f5ccc",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T17:00:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ded19b9_fe2684d9",
       "range": {
         "startLine": 26,
         "startChar": 13,
@@ -284,6 +332,30 @@
       "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4aa704f8_24a6fe9c",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T17:00:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d59fdb4_d6072040",
+      "range": {
+        "startLine": 35,
+        "startChar": 70,
+        "endLine": 35,
+        "endChar": 85
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
