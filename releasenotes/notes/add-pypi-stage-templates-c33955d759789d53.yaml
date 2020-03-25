@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Add templates gerrit-pypi-stage/github-pypi-stage to allow projects
+    flexibility to control when Jenkins publishes a redistributable
+    Python package, either on merge (with the merge template) or on
+    command (with the stage template).
