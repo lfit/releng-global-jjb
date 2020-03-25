@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fc8c9819_182d63a8",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T16:26:22Z",
+      "side": 1,
+      "message": "This is done in line 34",
+      "parentUuid": "e6d7a55d_85f0473b",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "43e49094_eb69a1de",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -59,6 +83,30 @@
       "writtenOn": "2020-03-25T16:10:56Z",
       "side": 1,
       "message": "Why are double-quote marks needed inside this expression?  What does this do?",
+      "range": {
+        "startLine": 35,
+        "startChar": 70,
+        "endLine": 35,
+        "endChar": 85
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0107e97_98cf6a5d",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T16:26:22Z",
+      "side": 1,
+      "message": "This is saying, when there are no options, I want it to return \"NULL\" value. If I put just \"$pattern_opts\", it will place an empty space in place of it, causing python to think that there is another argument.",
+      "parentUuid": "541b860b_2472b29d",
       "range": {
         "startLine": 35,
         "startChar": 70,
