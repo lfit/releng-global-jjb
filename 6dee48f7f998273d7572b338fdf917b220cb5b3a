@@ -22,6 +22,30 @@
       "revId": "6dee48f7f998273d7572b338fdf917b220cb5b3a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "96aa3560_5a31dea6",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T18:03:57Z",
+      "side": 1,
+      "message": "Sorry space\u003dstring",
+      "parentUuid": "f66c07fb_d1105869",
+      "range": {
+        "startLine": 35,
+        "startChar": 54,
+        "endLine": 35,
+        "endChar": 87
+      },
+      "revId": "6dee48f7f998273d7572b338fdf917b220cb5b3a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
