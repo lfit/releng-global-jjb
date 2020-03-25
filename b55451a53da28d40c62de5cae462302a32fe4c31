@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f8ef8f3_cbda5ec1",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T01:28:25Z",
+      "side": 0,
+      "message": "Why was this shell test of ARCHIVE_ARTIFACTS removed?  Now the variable is required by every job but some don\u0027t set it, for example the ci-management job doesn\u0027t set the variable.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 1
+      },
+      "revId": "b55451a53da28d40c62de5cae462302a32fe4c31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
