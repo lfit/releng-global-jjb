@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "e6d7a55d_85f0473b",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T16:12:50Z",
+      "side": 1,
+      "message": "Perhaps start with an explanation here, like \"INFO: options are: \"",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43e49094_eb69a1de",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T16:12:50Z",
+      "side": 1,
+      "message": "Why quote a shell invocation?  This seems excessive.  Does shellcheck complain about this?\n\nWhere is Tim Johnson when I need him?",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 34
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "541b860b_2472b29d",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
