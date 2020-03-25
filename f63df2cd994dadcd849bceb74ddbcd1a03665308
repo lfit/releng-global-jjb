@@ -22,6 +22,75 @@
       "revId": "f63df2cd994dadcd849bceb74ddbcd1a03665308",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4479cad9_b74cf548",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T20:48:50Z",
+      "side": 1,
+      "message": "maybe call it archive_tox_logs ?",
+      "range": {
+        "startLine": 51,
+        "startChar": 9,
+        "endLine": 51,
+        "endChar": 20
+      },
+      "revId": "f63df2cd994dadcd849bceb74ddbcd1a03665308",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b14899f5_97d64f4a",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T20:48:50Z",
+      "side": 1,
+      "message": "would you please indent this function body?",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 57,
+        "endChar": 4
+      },
+      "revId": "f63df2cd994dadcd849bceb74ddbcd1a03665308",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "945e8351_fe172d08",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T20:48:50Z",
+      "side": 1,
+      "message": "instead of \"There are\" would you please write \"Archiving\" ?",
+      "range": {
+        "startLine": 64,
+        "startChar": 16,
+        "endLine": 64,
+        "endChar": 21
+      },
+      "revId": "f63df2cd994dadcd849bceb74ddbcd1a03665308",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
