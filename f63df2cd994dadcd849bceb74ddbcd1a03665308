@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ac59913a_b1f06ecd",
+        "filename": "releasenotes/notes/tox-run-8b4f90c9ab91757b.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T20:43:56Z",
+      "side": 1,
+      "message": "I guess sphinx/RST is complaining about this asterisk?",
+      "range": {
+        "startLine": 7,
+        "startChar": 23,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "f63df2cd994dadcd849bceb74ddbcd1a03665308",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
