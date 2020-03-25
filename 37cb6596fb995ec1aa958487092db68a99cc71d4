@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "101b86bc_4c588796",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T16:45:12Z",
+      "side": 1,
+      "message": "Ok this is a function, and you need to return a value (not just an exit code).  I was not familiar with this style of invoking functions.  I understand now why use the echo.  Sorry to waste your time here.",
+      "parentUuid": "112cf55a_dfb4248c",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "43e49094_eb69a1de",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
