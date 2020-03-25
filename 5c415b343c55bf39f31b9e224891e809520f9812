@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "554d0dcd_d8cbf4aa",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T03:37:00Z",
+      "side": 1,
+      "message": "Pretty sure this needs to be ${pattern_opts:+\"$pattern_opts\"} instead of $ARCHIVE_ARTIFACTS",
+      "range": {
+        "startLine": 31,
+        "startChar": 58,
+        "endLine": 31,
+        "endChar": 77
+      },
+      "revId": "5c415b343c55bf39f31b9e224891e809520f9812",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
