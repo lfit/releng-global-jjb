@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "141730d7_c18fdd2e",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T17:37:03Z",
+      "side": 1,
+      "message": "I remember why I did ${pattern_opts:+\"$pattern_opts\"}, instead of ${pattern_opts:-}, because shellcheck will ask that ${pattern_opts:-} be in quotes, which then doesn\u0027t return the null value but instead a space.\n\n12:26:24 INFO: S3 path sandbox/vex-sjc-zowe-jenkins-prod-1/ci-management-packer-verify/22/\n12:26:27 Usage: lftools deploy s3 [OPTIONS] S3_BUCKET S3_PATH BUILD_URL WORKSPACE\n12:26:27 Try \u0027lftools deploy s3 --help\u0027 for help.\n12:26:27 \n12:26:27 Error: Got unexpected extra argument (/w/workspace/ci-management-packer-verify)\n\nIt works when there is options, but when there are no options, it will put a literal space in place.",
+      "range": {
+        "startLine": 36,
+        "startChar": 28,
+        "endLine": 36,
+        "endChar": 45
+      },
+      "revId": "a5448400a523e5720eda11d30b103434eff6f465",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
