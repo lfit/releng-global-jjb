@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "112cf55a_dfb4248c",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T16:40:57Z",
+      "side": 1,
+      "message": "the echo is needed otherwise it would not return the options",
+      "parentUuid": "b17aebce_0c68c38f",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "43e49094_eb69a1de",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -117,6 +141,30 @@
       "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8ded19b9_fe2684d9",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T16:40:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "00e4b25e_cc429118",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 34
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -179,6 +227,30 @@
       "side": 1,
       "message": "I\u0027m no Tim Johnson, but this seems rather odd use of the colon-plus operator.  Why not use the simple expression ${pattern_opts:-} ?",
       "parentUuid": "c0107e97_98cf6a5d",
+      "range": {
+        "startLine": 35,
+        "startChar": 70,
+        "endLine": 35,
+        "endChar": 85
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d59fdb4_d6072040",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-25T16:40:57Z",
+      "side": 1,
+      "message": "That should work as well, let me test.",
+      "parentUuid": "c6b87a12_d0fc8bad",
       "range": {
         "startLine": 35,
         "startChar": 70,
