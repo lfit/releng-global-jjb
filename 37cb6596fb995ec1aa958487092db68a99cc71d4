@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "b17aebce_0c68c38f",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T16:32:48Z",
+      "side": 1,
+      "message": "yes I see the INFO at line 35.  I was just trying this echo command on line 23 dumps some detail to the log without any explanation of what it is.  I think this is probably just debug output and could possibly be removed entirely?",
+      "parentUuid": "fc8c9819_182d63a8",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 4
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "43e49094_eb69a1de",
         "filename": "shell/logs-deploy.sh",
         "patchSetId": 1
@@ -60,6 +84,30 @@
       "writtenOn": "2020-03-25T16:12:50Z",
       "side": 1,
       "message": "Why quote a shell invocation?  This seems excessive.  Does shellcheck complain about this?\n\nWhere is Tim Johnson when I need him?",
+      "range": {
+        "startLine": 26,
+        "startChar": 13,
+        "endLine": 26,
+        "endChar": 34
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00e4b25e_cc429118",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T16:32:48Z",
+      "side": 1,
+      "message": "I tested this at shellcheck.net, the extra double quotes are not required, pls drop.",
+      "parentUuid": "43e49094_eb69a1de",
       "range": {
         "startLine": 26,
         "startChar": 13,
@@ -107,6 +155,30 @@
       "side": 1,
       "message": "This is saying, when there are no options, I want it to return \"NULL\" value. If I put just \"$pattern_opts\", it will place an empty space in place of it, causing python to think that there is another argument.",
       "parentUuid": "541b860b_2472b29d",
+      "range": {
+        "startLine": 35,
+        "startChar": 70,
+        "endLine": 35,
+        "endChar": 85
+      },
+      "revId": "37cb6596fb995ec1aa958487092db68a99cc71d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6b87a12_d0fc8bad",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T16:32:48Z",
+      "side": 1,
+      "message": "I\u0027m no Tim Johnson, but this seems rather odd use of the colon-plus operator.  Why not use the simple expression ${pattern_opts:-} ?",
+      "parentUuid": "c0107e97_98cf6a5d",
       "range": {
         "startLine": 35,
         "startChar": 70,
