@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f66c07fb_d1105869",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-25T18:01:33Z",
+      "side": 1,
+      "message": "perhaps, possibly, instead of writing this expression twice (lines 35 and 36), write it once and use it twice?\n\nAre you sure you\u0027re getting a single space?  I sorta think you\u0027re getting the empty string, based on these little experiments:\n\n    % echo \"\u003e${foo:-}\u003c\"\n    \u003e\u003c\n\n    % cmd\u003d${undefined:-} \n    % echo \"the command is \u003e$cmd\u003c\"\n    the command is \u003e\u003c\n\n\nAnyhow I agree if you put double-quotes around an expression that evaluates to the empty string and feed that to a shell command, that command-line argument will be the empty string, and the command will choke on it.\n\nJust trying to keep up here.",
+      "range": {
+        "startLine": 35,
+        "startChar": 54,
+        "endLine": 35,
+        "endChar": 87
+      },
+      "revId": "6dee48f7f998273d7572b338fdf917b220cb5b3a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
