@@ -18,7 +18,7 @@ function get_pattern_opts()
 {
     opts=()
     for arg in ${ARCHIVE_ARTIFACTS:-}; do
-        opts+=("-p" "$arg)")
+        opts+=("-p" "$arg")
     done
     echo "${opts[@]-}"
 }
@@ -32,7 +32,7 @@ else
     nexus_path="${SILO}/${JENKINS_HOSTNAME}/${JOB_NAME}/${BUILD_NUMBER}"
     echo "INFO: Nexus URL $nexus_url path $nexus_path"
 
-    echo "INFO: archiving workspace using pattern(s): $ARCHIVE_ARTIFACTS"
+    echo "INFO: archiving workspace using pattern(s): ${pattern_opts:+"$pattern_opts"}"
     lftools deploy archives ${pattern_opts:+"$pattern_opts"} "$nexus_url" "$nexus_path" "$WORKSPACE"
 
     echo "INFO: archiving logs"

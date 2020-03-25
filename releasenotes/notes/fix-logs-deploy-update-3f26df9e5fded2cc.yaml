@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Fix script to remove outputting $ARCHIVE_ARTIFACTS. Outputting required
+    that $ARCHIVE_ARTIFACTS be set for every job. Instead it will output
+    ${pattern_opts:+"$pattern_opts"}, which if $ARCHIVE_ARTIFACTS is not
+    set, will be blank.
