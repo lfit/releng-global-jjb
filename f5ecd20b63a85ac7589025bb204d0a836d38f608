@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac81f4f_24359b56",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-26T21:35:45Z",
+      "side": 1,
+      "message": "strictly speaking this break is not necessary, if none are found there\u0027s only one value in the \"for\" loop.  I could remove if you prefer.",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 13
+      },
+      "revId": "f5ecd20b63a85ac7589025bb204d0a836d38f608",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
