@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d0d5ae9b_e5891176",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-03-26T21:17:48Z",
+      "side": 0,
+      "message": "This is a complex solution (add a function, add a loop to guard a loop, etc).\n\nPlease consider this simple solution, use if to check the return code:\n\n    if cp -r \"$i\" \"$ARCHIVE_TOX_DIR/$tox_env\"; then\n        it passed - there are logs\n    else\n        it failed - break out of the loop\n    fi",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 4
+      },
+      "revId": "769456c55e5b9f92fe1b8c10088bc4ac2dde79c8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
