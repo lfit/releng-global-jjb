@@ -52,7 +52,11 @@ echo "---> Completed tox runs"
 # shellcheck disable=SC2116
 for i in .tox/*/log; do
     tox_env=$(echo "$i" | awk -F'/' '{print $2}')
-    cp -r "$i" "$ARCHIVE_TOX_DIR/$tox_env"
+    # defend against glob finding no matches
+    if ! cp -r "$i" "$ARCHIVE_TOX_DIR/$tox_env"; then
+        echo "WARN: no logs found to archive"
+        break
+    fi
 done
 
 # If docs are generated push them to archives.

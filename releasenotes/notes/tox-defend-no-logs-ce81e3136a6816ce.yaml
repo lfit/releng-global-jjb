@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Revise tox-run.sh to guard against glob matching no tox log files.
+    In that case the pattern is passed to the cp command, which fails.
+    Detect the cp failure ('cp: cannot stat ..') and exit the loop.
+    This new and undesired behavior was introduced by adding -e in
+    change 76a0761, so the script stops when the cp command fails.
