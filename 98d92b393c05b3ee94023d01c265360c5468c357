@@ -22,6 +22,30 @@
       "revId": "98d92b393c05b3ee94023d01c265360c5468c357",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "576dac36_04620f95",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 325
+      },
+      "writtenOn": "2020-03-27T03:47:07Z",
+      "side": 1,
+      "message": "It\u0027s an env var, if I just do S3_BUCKET, it will try to match the literal string \"S3_BUCKET\".\n\n16:21:23 copy managed file [jenkins-log-archives-settings] to file:/w/workspace/ci-management-packer-verify@tmp/config7330841679809218838tmp\n16:21:23 Regular expression run condition: Expression\u003d[^.*logs-s3.*], Label\u003d[logs-s3-cloudfront-index]\n16:21:23 Run condition [Regular expression match] enabling perform for step [Provide Configuration files]\n16:21:23 provisioning config files...\n16:21:23 copy managed file [jenkins-s3-log-ship] to file:/home/jenkins/.aws/credentials\n\nThe env var S3_BUCKET will be added via global-vars-production.sh for each project.",
+      "parentUuid": "4fcad31f_c3150bda",
+      "range": {
+        "startLine": 76,
+        "startChar": 17,
+        "endLine": 76,
+        "endChar": 19
+      },
+      "revId": "98d92b393c05b3ee94023d01c265360c5468c357",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
