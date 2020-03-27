@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4fcad31f_c3150bda",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-03-27T03:41:33Z",
+      "side": 1,
+      "message": "should be \u0027S3_BUCKET\u0027 and not \u0027$S3_BUCKET\u0027? Have you tested this. also is this env param being add default build param?",
+      "range": {
+        "startLine": 76,
+        "startChar": 17,
+        "endLine": 76,
+        "endChar": 19
+      },
+      "revId": "98d92b393c05b3ee94023d01c265360c5468c357",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
