@@ -822,6 +822,8 @@
     ######################
 
     build-concurrent: true
+    check-build-node-labels: false
+    external-build-node-labels: ''
 
     gerrit_verify_triggers:
       - patchset-created-event:
@@ -843,6 +845,15 @@
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/jjb-verify-job.sh
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: "{check-build-node-labels}"
+          on-evaluation-failure: dont-run
+          steps:
+            - inject:
+                properties-content: EXTERNAL_LABELS={external-build-node-labels}
+            - shell: !include-raw-escape:
+               - ../shell/jjb-verify-build-nodes.sh
       - lf-infra-gpg-verify-git-signature
 
 - job-template:
