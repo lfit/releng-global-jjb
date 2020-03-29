@@ -11,6 +11,12 @@
             - file-id: jjbini
               target: "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
+- builder:
+    name: lf-jjb-verify-build-nodes
+    builders:
+      - shell: !include-raw-escape:
+          - ../shell/jjb-verify-build-nodes.sh
+
 - lf_packer: &lf_packer_common
     name: lf-packer-common
     # Provide configuration common in packer jobs.
@@ -843,6 +849,12 @@
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/jjb-verify-job.sh
+      - conditional-step: # global jjb has no build nodes
+          condition-kind: file-exists
+          condition-filename: jenkins-config/clouds/openstack
+          on-evaluation-failure: dont-run
+          steps:
+            - lf-jjb-verify-build-nodes
       - lf-infra-gpg-verify-git-signature
 
 - job-template:

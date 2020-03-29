@@ -64,6 +64,11 @@ lf-infra-jjbini
 
 Provides jenkins_jobs.ini configuration for Jenkins.
 
+lf-jjb-verify-build-nodes
+-------------------------
+
+Checks build-node labels used in ci-management job definitions.
+
 lf-packer-common
 ----------------
 
