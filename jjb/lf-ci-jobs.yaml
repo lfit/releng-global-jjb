@@ -843,6 +843,13 @@
       - lf-infra-jjbini
       - shell: !include-raw-escape:
           - ../shell/jjb-verify-job.sh
+      - conditional-step: # global jjb has no build nodes
+          condition-kind: file-exists
+          condition-filename: jenkins-config/clouds/openstack
+          on-evaluation-failure: dont-run
+          steps:
+            - shell: !include-raw-escape:
+               - ../shell/jjb-verify-build-nodes.sh
       - lf-infra-gpg-verify-git-signature
 
 - job-template:
