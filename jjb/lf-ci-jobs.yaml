@@ -11,6 +11,15 @@
             - file-id: jjbini
               target: "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
+- builder:
+    name: lf-jjb-verify-build-nodes
+    builders:
+      - inject:
+          properties-content: |
+            JENKINS_CONFIG_DIR={jenkins-config-dir}
+      - shell: !include-raw-escape:
+          - ../shell/jjb-verify-build-nodes.sh
+
 - lf_packer: &lf_packer_common
     name: lf-packer-common
     # Provide configuration common in packer jobs.
