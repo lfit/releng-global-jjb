@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    New builder lf-jjb-verify-build-nodes invokes new script
+    jjb-verify-build-nodes.sh to check if build-node labels
+    referenced in yaml files below jjb/ are defined by a config
+    file in the jenkins configuration directory for minions.
