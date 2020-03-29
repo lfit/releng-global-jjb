@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    Verify build nodes named in YAML files against config files.
+    Extend lf-jjb-verify anchor with script jjb-verify-build-nodes.sh.
+    The script checks build-node labels in YAML files within the jjb
+    subdirectory against labels defined by config files in the jenkins
+    cloud configuration directory.  Use a conditional build step
+    guarded by existence of jenkins-config/clouds/openstack so the
+    verify step only runs on projects, not on global-jjb.
