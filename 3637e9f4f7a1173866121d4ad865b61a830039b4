@@ -22,6 +22,30 @@
       "revId": "3637e9f4f7a1173866121d4ad865b61a830039b4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b1fd7b6_1241b4fd",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-01T16:10:00Z",
+      "side": 1,
+      "message": "Right this gets sent to shell, so double quotes are totally appropriate.  Patch coming shortly.",
+      "parentUuid": "db11f3a8_22afb491",
+      "range": {
+        "startLine": 854,
+        "startChar": 52,
+        "endLine": 854,
+        "endChar": 80
+      },
+      "revId": "3637e9f4f7a1173866121d4ad865b61a830039b4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
