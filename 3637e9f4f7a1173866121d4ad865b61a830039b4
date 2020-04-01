@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "db11f3a8_22afb491",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-04-01T16:07:15Z",
+      "side": 1,
+      "message": "I would have to go look at how we\u0027re doing this elsewhere, but I have this feeling that if this is supposed to be a space separated list that this should have quotes embedded into it. I would almost feel better if it was CSV with no spaces allowed.",
+      "range": {
+        "startLine": 854,
+        "startChar": 52,
+        "endLine": 854,
+        "endChar": 80
+      },
+      "revId": "3637e9f4f7a1173866121d4ad865b61a830039b4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
