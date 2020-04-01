@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8fe903dc_f6147b7b",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-04-01T16:27:49Z",
+      "side": 1,
+      "message": "wrappers:\n        - credentials-binding:\n            - username-password-separated:\n                credential-id: nexus-iq-xc-clm\n                username: CLM_USER\n                password: CLM_PASSWORD",
+      "range": {
+        "startLine": 280,
+        "startChar": 0,
+        "endLine": 284,
+        "endChar": 41
+      },
+      "revId": "7c2587cf70f5535755476419b22b920d8d24a43a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
