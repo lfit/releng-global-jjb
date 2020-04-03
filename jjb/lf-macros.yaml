@@ -74,6 +74,7 @@
           condition-kind: regex-match
           regex: "^.*logs-s3.*"
           label: $S3_BUCKET
+          on-evaluation-failure: dont-run
           steps:
             - config-file-provider:
                 files:
