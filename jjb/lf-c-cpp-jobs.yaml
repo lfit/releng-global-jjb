@@ -292,6 +292,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    install: true
     install-prefix: "$BUILD_DIR/output"
     make-opts: ""
     mvn-global-settings: global-settings
@@ -312,6 +313,10 @@
           cmake-opts: "{cmake-opts}"
           install-prefix: "{install-prefix}"
           make-opts: "{make-opts}"
+      - bool:
+          name: INSTALL
+          default: "{install}"
+          description: "Install build products to /usr/local (true/false)."
       - string:
           name: NEXUS_GROUP_ID
           default: "{nexus-group-id}"
@@ -424,6 +429,148 @@
           white-list-target-branches:
             - "{branch}"
 
+##################
+# CMAKE+PC STAGE #
+##################
+
+- lf_cmake_pc_stage: &lf_cmake_pc_stage
+    name: lf-cmake-pc-stage
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-dir: "$WORKSPACE/build"
+    build-timeout: 15
+    cmake-opts: ""
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install: false
+    install-prefix: "$BUILD_DIR/output"
+    make-opts: ""
+    pre-build: ""
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - ".*"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-cmake-parameters:
+          build-dir: "{build-dir}"
+          cmake-opts: "{cmake-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+      - bool:
+          name: INSTALL
+          default: "{install}"
+          description: "Install build products to /usr/local (true/false)."
+
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: ".packagecloud"
+              target: "$HOME/.packagecloud"
+      - shell: "{pre-build}"
+      - shell: !include-raw-escape: ../shell/cmake-build.sh
+      - lf-packagecloud-push:
+          build-dir: "{build-dir}"
+          packagecloud-account: "{packagecloud-account}"
+          packagecloud-repo: "{packagecloud-repo}"
+          debian-distribution-versions: "{debian-distribution-versions}"
+          rpm-distribution-versions: "{rpm-distribution-versions}"
+
+- job-template:
+    # build with cmake and publish to PackageCloud on command
+    name: "{project-name}-cmake-pc-stage-{stream}"
+    id: gerrit-cmake-pc-stage
+    <<: *lf_cmake_common
+    <<: *lf_cmake_pc_stage
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_stage_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          # stage jobs always build from tip
+          choosing-strategy: default
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_stage_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+
+- job-template:
+    name: "{project-name}-cmake-pc-stage-{stream}"
+    id: github-cmake-pc-stage
+    concurrent: true
+    <<: *lf_cmake_common
+    <<: *lf_cmake_pc_stage
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^(stage-release)$"
+          only-trigger-phrase: true
+          status-context: "CMake PC Stage"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+
 ################
 # CMAKE VERIFY #
 ################
@@ -443,6 +590,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    install: true
     install-prefix: "$BUILD_DIR/output"
     make-opts: ""
     pre-build: ""
@@ -467,6 +615,21 @@
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
       - ".*"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-cmake-parameters:
+          build-dir: "{build-dir}"
+          cmake-opts: "{cmake-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+      - bool:
+          name: INSTALL
+          default: "{install}"
+          description: "Install build products to /usr/local (true/false)."
 
     builders:
       - shell: "{pre-build}"
