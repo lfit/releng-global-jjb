@@ -223,6 +223,30 @@
             - lf-provide-maven-settings-cleanup
 
 - builder:
+    name: lf-packagecloud-file-provider
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: ".packagecloud"
+              target: "$HOME/.packagecloud"
+      - config-file-provider:
+          files:
+            - file-id: "packagecloud_api"
+              target: "$HOME/packagecloud_api"
+
+- builder:
+    name: lf-packagecloud-push
+    builders:
+      - inject:
+          properties-content: |
+            BUILD_DIR={build-dir}
+            PACKAGECLOUD_ACCOUNT={packagecloud-account}
+            PACKAGECLOUD_REPO={packagecloud-repo}
+            DEBIAN_DISTRIBUTION_VERSIONS={debian-distribution-versions}
+            RPM_DISTRIBUTION_VERSIONS={rpm-distribution-versions}
+      - shell: !include-raw-escape: ../shell/lf-packagecloud-push.sh
+
+- builder:
     name: lf-maven-install
     builders:
       # Create a $HOME/.wgetrc to make the Maven download quiet.
