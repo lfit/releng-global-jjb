@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "962da9e8_94c1b403",
+        "filename": "docs/jjb/lf-c-cpp-jobs.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-04-03T18:10:29Z",
+      "side": 1,
+      "message": "where do these come from? the / looks weird.",
+      "range": {
+        "startLine": 286,
+        "startChar": 37,
+        "endLine": 286,
+        "endChar": 48
+      },
+      "revId": "8df9f372cd4e22007a4a2fc2b0ac7a1395b9970e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
