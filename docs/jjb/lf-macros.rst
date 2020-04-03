@@ -222,6 +222,28 @@ that want to use Maven.
 
     :mvn-version: Version of Maven to install.
 
+lf-packagecloud-file-provider
+-----------------------------
+
+Provisions files required by the Ruby gem package_cloud, namely
+".packagecloud" and "packagecloud_api" in the Jenkins home directory.
+
+lf-packagecloud-push
+--------------------
+
+Runs a shell script to push DEB/RPM package files to PackageCloud using
+the Ruby gem package_cloud.
+
+:Required parameters:
+
+    :build-dir: Directory with deb/rpm files to push
+    :debian-distribution-versions: list of DEB package distro/version strings
+        separated by space; example: ubuntu/bionic debian/stretch
+    :packagecloud-account: PackageCloud account ID; example: oran
+    :packagecloud-repo: PackageCloud repository; example: master, staging
+    :rpm-distribution-versions: list of RPM package distro/version strings
+        separated by space; example: el/4 el/5
+
 lf-pip-install
 --------------
 

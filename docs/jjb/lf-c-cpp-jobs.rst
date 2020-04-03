@@ -216,6 +216,7 @@ project into a tar.xz tarball to produce a release candidate.
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :cmake-opts: Parameters to pass to cmake. (default: '')
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :install: Install build products to /usr/local. (default: true)
     :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
         (default: $BUILD_DIR/output)
     :make-opts: Parameters to pass to make. (default: '')
@@ -250,10 +251,69 @@ project into a tar.xz tarball to produce a release candidate.
    PATCH_VERSION="$(grep 'set(OCIO_VERSION_PATCH' CMakeLists.txt | awk '{{print $NF}}' | awk -F')' '{{print $1}}')"
    echo "${{MAJOR_VERSION}}.${{MINOR_VERSION}}.${{PATCH_VERSION}}" > /tmp/artifact_version
 
+CMake PackageCloud Stage
+------------------------
+
+Stage job which runs cmake && make, then uploads all DEB/RPM files in the
+build directory to PackageCloud.io. Triggered by comment.
+
+The Jenkins system must have a configuration file provider that installs
+files ".packagecloud" and "packagecloud_api" to the Jenkins home directory
+with appropriate credentials.
+
+The Jenkins build minion must have the Ruby gem "package_cloud" installed.
+
+:Template Names:
+
+    - {project-name}-cmake-pc-stage-{stream}
+    - gerrit-cmake-pc-stage
+    - github-cmake-pc-stage
+
+:Comment Trigger: stage-release
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :debian-distribution-versions: list of DEB package distro/version strings
+        separated by space; example: "ubuntu/bionic debian/stretch"
+    :jenkins-ssh-credential: Credential to use for SSH.
+        (Configure in defaults.yaml)
+    :mvn-settings: The name of settings file containing credentials for the project.
+    :packagecloud-account: PackageCloud account ID; example: oran
+    :packagecloud-repo: PackageCloud repository; example: master, staging
+    :rpm-distribution-versions: list of RPM package distro/version strings
+        separated by space; example: "el/4 el/5"
+
+:Optional parameters:
+
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-dir: Directory to build the project in. (default: $WORKSPACE/build)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :cmake-opts: Parameters to pass to cmake. (default: '')
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :install: Install build products to /usr/local. (default: false)
+    :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
+        (default: $BUILD_DIR/output)
+    :make-opts: Parameters to pass to make. (default: '')
+    :pre-build: Shell script to run before performing build. Useful for
+        setting up dependencies. (default: '')
+    :stream: Keyword that to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+
 CMake Verify
 ------------
 
-Verify job which runs cmake && make && make install to test a project build.
+Verify job which runs cmake && make to test a project build, then
+runs make install, copies the build products to /usr/local and runs
+ldconfig to make the shared lib(s) available. The install steps run
+by default, see optional parameter "install".
 
 :Template Names:
 
@@ -277,6 +337,7 @@ Verify job which runs cmake && make && make install to test a project build.
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :cmake-opts: Parameters to pass to cmake. (default: '')
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :install: Install build products to /usr/local. (default: true)
     :install-prefix: CMAKE_INSTALL_PREFIX to use for install.
         (default: $BUILD_DIR/output)
     :make-opts: Parameters to pass to make. (default: '')
