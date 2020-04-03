@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66d88419_5ff02074",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-04-03T18:05:54Z",
+      "side": 1,
+      "message": "nexus-iq-xc-clm\n\nas I believe this is the setting that allowed the job to pass.\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/ric-plt-a1-tox-nexus-iq/jobConfigHistory/showDiffFiles?timestamp1\u003d2020-03-30_19-56-40\u0026timestamp2\u003d2020-04-01_15-20-24",
+      "range": {
+        "startLine": 282,
+        "startChar": 29,
+        "endLine": 282,
+        "endChar": 41
+      },
+      "revId": "4264d5abcdc7040e5fe978b5c172a47cbcb88044",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
