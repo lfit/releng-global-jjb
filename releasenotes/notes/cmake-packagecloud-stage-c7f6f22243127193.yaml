@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    New templates gerrit-cmake-packagecloud-stage and
+    github-cmake-packagecloud-stage for building DEB/RPM package
+    files and publishing them to a PackageCloud.io repository on
+    posted comment.  Adds builder macros lf-packagecloud-file-provider
+    and lf-packagecloud-push.  Adds script packagecloud-push.sh to
+    call Ruby gem package_cloud.
+    The new templates are lifted from the ORAN project.

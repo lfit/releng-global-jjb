@@ -2,6 +2,7 @@
 - project:
     name: gerrit-cmake-jobs
     jobs:
+      - gerrit-cmake-packagecloud-stage
       - gerrit-cmake-sonar
       - gerrit-cmake-sonarqube
       - gerrit-cmake-stage
@@ -15,10 +16,15 @@
     nexus-group-id: fakeproject-group-id
     nexus-snapshot-repo: fakeproject-snapshots
     lftools-version: bogus-lftools-version
+    debian-distribution-versions: ubuntu/bionic
+    packagecloud-account: example
+    packagecloud-repo: master
+    rpm-distribution-versions: el/5
 
 - project:
     name: github-cmake-jobs
     jobs:
+      - github-cmake-packagecloud-stage
       - github-cmake-sonar
       - github-cmake-sonarqube
       - github-cmake-stage
@@ -32,3 +38,7 @@
     nexus-group-id: fakeproject-group-id
     nexus-snapshot-repo: fakeproject-snapshots
     lftools-version: bogus-lftools-version
+    debian-distribution-versions: ubuntu/bionic
+    packagecloud-account: example
+    packagecloud-repo: master
+    rpm-distribution-versions: el/5
