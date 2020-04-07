@@ -61,6 +61,15 @@ set_variables_common(){
 
     PATCH_DIR=$(mktemp -d)
 
+    TAG_RELEASE="${TAG_RELEASE:-None}"
+    if [[ $TAG_RELEASE == "None" ]]; then
+        if grep -q "tag_release" $release_file ; then
+            TAG_RELEASE=$(yq -r .tag_release "$release_file")
+        else
+            TAG_RELEASE=true
+        fi
+    fi
+
     # Displaying Release Information (Common variables)
     printf "\t%-30s\n" RELEASE_ENVIRONMENT_INFO:
     printf "\t%-30s %s\n" RELEASE_FILE: "$release_file"
@@ -261,6 +270,11 @@ verify_packagecloud_match_release(){
 # sigul is only available on Centos
 # TODO: write tag-github-repo function
 tag-gerrit-repo(){
+    if [[ $TAG_RELEASE == false ]]; then
+       echo "INFO: Skipping gerrit repo tag"
+       return
+    fi
+
     echo "INFO: tag gerrit with $GIT_TAG"
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
