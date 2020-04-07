@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Optionally tag repo during release process. Set to true by default.
+    Allow projects to skip repo tag in cases where multiple release
+    types happen whithin the same repo.
