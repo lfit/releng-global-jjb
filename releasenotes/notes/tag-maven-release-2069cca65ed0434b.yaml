@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Some ONAP projects make both maven and docker releases for a single repo.
+    Docker releases depend on maven releases. This means that the team needs
+    to make a maven release first, then make a docker release and lastly,
+    tag the repo. This change will allow them to hold the tagging part during
+    maven releases to allow them to tag after the docker release is made.

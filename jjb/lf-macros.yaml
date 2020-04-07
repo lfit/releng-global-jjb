@@ -325,6 +325,8 @@
           files:
             - file-id: lftoolsini
               target: "$HOME/.config/lftools/lftools.ini"
+      - inject:
+          properties-content: "tag_maven_release={tag_maven_release}"
       - shell: !include-raw: ../shell/release-job.sh
 
 - builder:
