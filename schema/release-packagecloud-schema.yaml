@@ -32,5 +32,7 @@ properties:
     type: "string"
   log_dir:
     type: "string"
+  tag_release:
+    type: "bool"
   version:
     type: "string"
