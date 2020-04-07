@@ -61,6 +61,14 @@ set_variables_common(){
 
     PATCH_DIR=$(mktemp -d)
 
+    if [[ -z ${TAG_RELEASE:-} ]]; then
+        if grep -q "tag_release" $release_file ; then
+            TAG_RELEASE=$(niet ".tag_release" "$release_file")
+        else
+            TAG_RELEASE=true
+        fi
+    fi
+
     # Displaying Release Information (Common variables)
     printf "\t%-30s\n" RELEASE_ENVIRONMENT_INFO:
     printf "\t%-30s %s\n" RELEASE_FILE: "$release_file"
@@ -261,35 +269,39 @@ verify_packagecloud_match_release(){
 # sigul is only available on Centos
 # TODO: write tag-github-repo function
 tag-gerrit-repo(){
-    echo "INFO: tag gerrit with $GIT_TAG"
-    # Import public signing key
-    gpg --import "$SIGNING_PUBKEY"
-    if type=$(git cat-file -t "$GIT_TAG"); then
-        if [[ $type == "tag" ]]; then
-            echo "INFO: Repo already has signed tag $GIT_TAG, nothing to do"
+    if [[ $TAG_MAVEN_RELEASE == true ]]; then
+        echo "INFO: tag gerrit with $GIT_TAG"
+        # Import public signing key
+        gpg --import "$SIGNING_PUBKEY"
+        if type=$(git cat-file -t "$GIT_TAG"); then
+            if [[ $type == "tag" ]]; then
+                echo "INFO: Repo already has signed tag $GIT_TAG, nothing to do"
+            else
+                echo "ERROR: Repo has lightweight tag $GIT_TAG, blocks push of signed tag"
+                exit 1
+            fi
         else
-            echo "ERROR: Repo has lightweight tag $GIT_TAG, blocks push of signed tag"
-            exit 1
+            echo "INFO: Repo has not yet been tagged $GIT_TAG"
+            git tag -am "${PROJECT//\//-} $GIT_TAG" "$GIT_TAG"
+            sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"
+            echo "INFO: Showing latest signature for $PROJECT:"
+            echo "INFO: git tag -v $GIT_TAG"
+            git tag -v "$GIT_TAG"
+
+            ########## Merge Part ##############
+            if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
+                echo "INFO: Running merge, pushing tag"
+                gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
+                git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
+                git config user.name "$RELEASE_USERNAME"
+                git config user.email "$RELEASE_EMAIL"
+                echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+                chmod 600 ~/.ssh/config
+                git push origin "$GIT_TAG"
+            fi
         fi
     else
-        echo "INFO: Repo has not yet been tagged $GIT_TAG"
-        git tag -am "${PROJECT//\//-} $GIT_TAG" "$GIT_TAG"
-        sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"
-        echo "INFO: Showing latest signature for $PROJECT:"
-        echo "INFO: git tag -v $GIT_TAG"
-        git tag -v "$GIT_TAG"
-
-        ########## Merge Part ##############
-        if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
-            echo "INFO: Running merge, pushing tag"
-            gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
-            git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
-            git config user.name "$RELEASE_USERNAME"
-            git config user.email "$RELEASE_EMAIL"
-            echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-            chmod 600 ~/.ssh/config
-            git push origin "$GIT_TAG"
-        fi
+        echo "INFO: Skipping gerrit repo tag"
     fi
 }
 

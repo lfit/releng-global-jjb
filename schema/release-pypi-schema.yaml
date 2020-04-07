@@ -26,5 +26,7 @@ properties:
     type: "string"
   python_version:
     type: "string"
+  tag_release:
+    type: "bool"
   version:
     type: "string"

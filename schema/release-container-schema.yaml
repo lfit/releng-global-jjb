@@ -41,3 +41,5 @@ properties:
     type: "string"
   ref:
     type: "string"
+  tag_release:
+    type: "bool"
