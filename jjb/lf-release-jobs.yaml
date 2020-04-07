@@ -153,6 +153,7 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
+    tag_maven_release: true
     use-release-file: true
 
     gerrit_merge_triggers:
@@ -203,7 +204,8 @@
               variable: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
-      - lf-release
+      - lf-release:
+          tag_maven_release: "{tag_maven_release}"
 
 - job-template:
     name: "{project-name}-release-merge"
