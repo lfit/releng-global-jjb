@@ -82,6 +82,8 @@ The following parameters must appear in a maven release yaml file.
 
     :git_tag: The tag string to sign and push to the Git repository.
        (default: the semantic version string)
+    :tag_release: Tag Gerrit Repo during the release process.
+       (default: true)
 
 The JSON schema for a maven release file appears below.
 
@@ -132,6 +134,8 @@ The following parameters must appear in a container release yaml file.
 
     :git_tag: The tag string to sign and push to the Git repository.
        (default: the semantic version string)
+    :tag_release: Tag Gerrit Repo during the release process.
+       (default: true)
 
 The JSON schema for a container release file appears below.
 
@@ -179,6 +183,8 @@ packages.
 
     :git_tag: The tag string to sign and push to the Git repository.
        (default: the semantic version string)
+    :tag_release: Tag Gerrit Repo during the release process.
+       (default: true)
 
 The JSON schema for a PyPI release file appears below.
 
@@ -232,6 +238,8 @@ packages.
 
     :git_tag: The tag string to sign and push to the Git repository.
        (default: the semantic version string)
+    :tag_release: Tag Gerrit Repo during the release process.
+       (default: true)
 
 The JSON schema for a PackageCloud release file appears below.
 
