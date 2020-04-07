@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f1ad760_f0ffd064",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-07T19:40:09Z",
+      "side": 1,
+      "message": "where does this variable come from?  this script sets -u so if the variable is not defined, the interpreter will stop here.",
+      "range": {
+        "startLine": 375,
+        "startChar": 11,
+        "endLine": 375,
+        "endChar": 28
+      },
+      "revId": "994fec1ab0660725a20c3f5d1ba0aa786bafa559",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
