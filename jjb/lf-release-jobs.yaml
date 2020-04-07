@@ -174,6 +174,11 @@
       - lf-build-with-parameters-maven-release:
           use-release-file: "{use-release-file}"
       - bool:
+          name: TAG_RELEASE
+          default: true
+          description: |
+            Tag Gerrit repo after release.
+      - bool:
           name: DRY_RUN
           default: false
           description: |
@@ -330,6 +335,11 @@
           name: USE_RELEASE_FILE
           default: true
           description: "Set to False (unchecked) to build with parameters"
+      - bool:
+          name: TAG_RELEASE
+          default: true
+          description: |
+            Tag Gerrit repo after release.
       - bool:
           name: DRY_RUN
           default: false
@@ -530,6 +540,11 @@
           name: DISTRIBUTION_TYPE
           default: "packagecloud"
           description: "The Jenkins release job distribution type."
+      - bool:
+          name: TAG_RELEASE
+          default: true
+          description: |
+            Tag Gerrit repo after release.
       - bool:
           name: DRY_RUN
           default: false
