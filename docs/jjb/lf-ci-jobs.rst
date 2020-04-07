@@ -443,7 +443,8 @@ Runs `jenkins-jobs update` to update production job configuration
 JJB Verify
 ----------
 
-Runs `jenkins-jobs test` to validate JJB syntax
+Runs `jenkins-jobs test` to validate JJB syntax. Optionally validates
+build-node labels used in templates and job definitions.
 
 :Template Names:
     - {project-name}-jjb-verify
@@ -464,6 +465,10 @@ Runs `jenkins-jobs test` to validate JJB syntax
     :build-concurrent: Whether or not to allow this job to run multiple jobs
         simultaneously. (default: true)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-node-label-check: Whether to check build-node labels in jobs
+        against node names in cloud config files (default: false)
+    :build-node-label-list: Space-separated list of external build-node
+        labels not present in cloud config files (default: "")
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)

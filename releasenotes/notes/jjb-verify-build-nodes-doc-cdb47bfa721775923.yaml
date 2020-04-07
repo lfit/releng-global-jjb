@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Document the jjb-verify feature that checks build-node labels named
+    in JJB YAML files against nodes in cloud config files.
+    Change the feature's JJB configuration variables to share a prefix.
+    Improve the shell script to be robust to errors such as a suffix of
+    ".cfg" or an external label of "" (just two double quotes).
