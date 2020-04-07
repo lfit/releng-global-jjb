@@ -372,7 +372,9 @@ maven_release_file(){
     git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
     git merge --ff-only FETCH_HEAD
     nexus_release
-    tag-gerrit-repo
+    if [[ $TAG_MAVEN_RELEASE == true ]]; then
+        tag-gerrit-repo
+    fi
 }
 
 # calls pip to download binary and source distributions from the specified index,

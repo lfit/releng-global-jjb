@@ -44,6 +44,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     gerrit-skip-vote: false
+    tag-maven-release: true
     use-release-file: true
 
     gerrit_verify_triggers:
@@ -69,6 +70,10 @@
           stream: "$GERRIT_BRANCH"
       - lf-build-with-parameters-maven-release:
           use-release-file: "{use-release-file}"
+      - bool:
+          name: TAG_MAVEN_RELEASE
+          default: '{tag-maven-release}'
+          description: Tag the Gerrit repo after a Maven release.
 
     builders:
       - lf-infra-pre-build
@@ -94,7 +99,8 @@
               variable: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
-      - lf-release
+      - lf-release:
+          tag-maven-release: "{tag-maven-release}"
 
 - job-template:
     name: "{project-name}-release-verify"
@@ -153,6 +159,7 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
+    tag-maven-release: true
     use-release-file: true
 
     gerrit_merge_triggers:
@@ -173,6 +180,10 @@
           stream: "$GERRIT_BRANCH"
       - lf-build-with-parameters-maven-release:
           use-release-file: "{use-release-file}"
+      - bool:
+          name: TAG_MAVEN_RELEASE
+          default: '{tag-maven-release}'
+          description: Tag the Gerrit repo after a Maven release.
       - bool:
           name: DRY_RUN
           default: false
@@ -203,7 +214,8 @@
               variable: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
-      - lf-release
+      - lf-release:
+          tag-maven-release: "{tag-maven-release}"
 
 - job-template:
     name: "{project-name}-release-merge"
