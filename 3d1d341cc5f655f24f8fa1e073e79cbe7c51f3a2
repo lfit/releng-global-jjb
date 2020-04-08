@@ -48,6 +48,29 @@
     },
     {
       "key": {
+        "uuid": "b354b132_8798bd10",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-08T01:05:48Z",
+      "side": 1,
+      "message": "TAG_RELEASE should be a Jenkins job parameter to allow triggering/controlling the job purely from the web UI.  But I don\u0027t see it in the job template.",
+      "range": {
+        "startLine": 64,
+        "startChar": 15,
+        "endLine": 64,
+        "endChar": 26
+      },
+      "revId": "3d1d341cc5f655f24f8fa1e073e79cbe7c51f3a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "08130aaa_e3e1d050",
         "filename": "shell/release-job.sh",
         "patchSetId": 7
