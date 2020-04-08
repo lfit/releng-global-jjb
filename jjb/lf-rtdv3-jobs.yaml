@@ -30,6 +30,7 @@
     #####################
 
     project-type: freestyle
+    concurrent: true
     node: "{build-node}"
 
     properties:

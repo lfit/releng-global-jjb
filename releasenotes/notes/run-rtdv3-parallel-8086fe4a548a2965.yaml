@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Allow rtdv3 jobs to run in parallel.
