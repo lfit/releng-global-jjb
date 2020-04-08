@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6fc06927_6b133e5a",
+        "filename": "releasenotes/notes/tag-release-optional-2069cca65ed0434b.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-08T01:01:24Z",
+      "side": 1,
+      "message": "really more of a feature than a fix, IMHO",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "3d1d341cc5f655f24f8fa1e073e79cbe7c51f3a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bca8bca9_9cf4989f",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-08T01:01:24Z",
+      "side": 1,
+      "message": "maybe do the same as on line 54?\n\n    TAG_RELEASE\u003d\"${TAG_RELEASE:-None}\"\n    if [[ $TAG_RELEASE \u003d\u003d \"None\" ]]; then",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 6
+      },
+      "revId": "3d1d341cc5f655f24f8fa1e073e79cbe7c51f3a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08130aaa_e3e1d050",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-08T01:01:24Z",
+      "side": 1,
+      "message": "if you can possibly find a way, I think we should stop using niet.  If you look, that package seems almost abandoned.  The whole world seems to prefer yq and it\u0027s actively maintained.  I am not asking to rewrite the rest of the script right now, just don\u0027t use an old tool for new features.",
+      "range": {
+        "startLine": 66,
+        "startChar": 26,
+        "endLine": 66,
+        "endChar": 30
+      },
+      "revId": "3d1d341cc5f655f24f8fa1e073e79cbe7c51f3a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1552180_ac1eb879",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-08T01:01:24Z",
+      "side": 1,
+      "message": "Instead of indenting a huge block of code in this outer if, how about starting instead with:\n\n    if [[ $TAG_RELEASE \u003d\u003d false ]]; then\n       echo \"INFO: Skipping gerrit repo tag\"\n       return\n    fi\n\nand continue with the rest of the function.",
+      "range": {
+        "startLine": 272,
+        "startChar": 0,
+        "endLine": 272,
+        "endChar": 1
+      },
+      "revId": "3d1d341cc5f655f24f8fa1e073e79cbe7c51f3a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
