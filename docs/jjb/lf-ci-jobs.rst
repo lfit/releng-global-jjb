@@ -754,6 +754,7 @@ Packer Merge job runs `packer build` to build system images in the cloud.
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 90)
+    :gerrit_verify_triggers: Override Gerrit Triggers.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :openstack: Packer template uses an OpenStack builder (default: true).
     :openstack-cloud: Sets OS_CLOUD variable to the value of this parameter.
@@ -769,8 +770,6 @@ Packer Merge job runs `packer build` to build system images in the cloud.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
-
-    :gerrit_verify_triggers: Override Gerrit Triggers.
     :update-cloud-image: Submit a change request to update new built cloud
         image to Jenkins. (default: false)
 
@@ -788,6 +787,7 @@ Example GitHub:
 .. code-block:: none
 
    GERRIT_REFSPEC: origin/pr/49/merge
+
 
 .. _gjjb-packer-verify:
 
@@ -816,6 +816,9 @@ Packer Verify job runs `packer validate` to verify packer configuration.
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
+    :gerrit_trigger_file_paths: Override file paths which can be used to
+        filter which file modifications will trigger a build.
+    :gerrit_verify_triggers: Override Gerrit Triggers.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :openstack: Packer template uses an OpenStack builder (default: true).
     :openstack-cloud: Sets OS_CLOUD variable to the value of this parameter.
@@ -832,9 +835,61 @@ Packer Verify job runs `packer validate` to verify packer configuration.
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
 
-    :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+
+.. _gjjb-packer-verify-build:
+
+Packer Verify Build
+-------------------
+
+Packer Verify Build job is essentially the same as the
+:ref:`Packer Merge job<gjjb-packer-merge>`. It is triggered only by its keyword,
+and will build a useable image. If the last patch set before a merge has a
+successful verify build, the merge job will not build the same image.
+
+:Template Names:
+   - {project-name}-packer-verify-build-{platforms}-{templates}
+   - gerrit-packer-verify-build
+   - github-packer-verify-build
+
+:Comment Trigger: verify-build
+
+:Required parameters:
+
+   :build-node: The node to run build on.
+   :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+       be configured in defaults.yaml)
+   :mvn-settings: The name of settings file containing credentials for
+       the project.
+   :platforms: Platform or distribution to build. Typically json file
+       found in the packer/vars directory. (Example: centos)
+   :template: System template to build. Typically shell script found in
+       the packer/provision directory. (Example: java-builder)
+
+:Optional parameters:
+
+   :branch: Git branch to fetch for the build. (default: master)
+   :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+   :build-timeout: Timeout in minutes before aborting build. (default: 10)
+   :gerrit_trigger_file_paths: Override file paths which can be used to
+       filter which file modifications will trigger a build.
+   :gerrit_verify_triggers: Override Gerrit Triggers.
+   :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+   :openstack: Packer template uses an OpenStack builder (default: true).
+   :openstack-cloud: Sets OS_CLOUD variable to the value of this parameter.
+       (default: vex).
+   :packer-cloud-settings: Name of settings file containing credentials
+       for the cloud that packer will build on. (default: packer-cloud-env)
+   :packer-version: Version of packer to install / use in build. (default: 1.0.2)
+   :stream: Keyword that can be used to represent a release code-name.
+       Often the same as the branch. (default: master)
+   :submodule-recursive: Whether to checkout submodules recursively.
+       (default: true)
+   :submodule-timeout: Timeout (in minutes) for checkout operation.
+       (default: 10)
+   :submodule-disable: Disable submodule checkout operation.
+       (default: false)
+   :update-cloud-image: Submit a change request to update new built cloud
+       image to Jenkins. (default: false)
 
 
 Puppet Verify
