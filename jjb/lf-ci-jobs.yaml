@@ -1581,6 +1581,112 @@
           white-list-target-branches:
             - "{branch}"
 
+- job-template:
+    name: "{project-name}-packer-verify-build-{platforms}-{templates}"
+    id: gerrit-packer-verify-build
+    <<: *lf_packer_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_packer_merge
+
+    ######################
+    # Default parameters #
+    ######################
+
+    git-url: "$GIT_URL/$GERRIT_PROJECT"
+
+    gerrit_verify_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+(verify-build|packer-build)\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: gerrit
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+              file-paths:
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/.*\.sh'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/.*\.bat'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/.*\.ps1'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/{templates}\.yaml'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/provision\/local-{templates}\.yaml'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/templates\/{templates}\.json'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/vars\/{platforms}\.json'
+
+- job-template:
+    name: "{project-name}-packer-verify-build-{platforms}-{templates}"
+    id: github-packer-verify-build
+    <<: *lf_packer_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_packer_merge
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    properties:
+      - lf-infra-properties:
+          project: "{project}"
+          build-days-to-keep: 7
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^(verify-build|packer-build)$"
+          only-trigger-phrase: true
+          status-context: "Packer {platforms}-{templates} Verify Build"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+          # included-regions MUST match Gerrit Trigger file-paths
+          included-regions:
+            - 'packer\/provision\/.*\.sh'
+            - 'packer\/provision\/.*\.bat'
+            - 'packer\/provision\/.*\.ps1'
+            - 'packer\/provision\/{templates}\.yaml'
+            - 'packer\/provision\/local-{templates}\.yaml'
+            - 'packer\/templates\/{templates}\.json'
+            - 'packer\/vars\/{platforms}\.json'
+
 #################
 # Packer Verify #
 #################
