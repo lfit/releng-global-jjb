@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4fc789a2_a2e9081b",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-09T10:40:51Z",
+      "side": 1,
+      "message": "neither of these parameters are documented in the list below",
+      "range": {
+        "startLine": 852,
+        "startChar": 41,
+        "endLine": 852,
+        "endChar": 62
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c2a2153_f2c9f40a",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-09T10:40:51Z",
+      "side": 1,
+      "message": "is the github job still in progress?",
+      "range": {
+        "startLine": 854,
+        "startChar": 5,
+        "endLine": 854,
+        "endChar": 11
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f9f57131_eb6fbc8f",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-09T10:40:51Z",
+      "side": 1,
+      "message": "why a blank line, and why are the last three parameters out of alpha order?",
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "41278680_e13d7ddd",
+        "filename": "jjb/lf-ci-job-groups.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-09T10:40:51Z",
+      "side": 1,
+      "message": "github",
+      "range": {
+        "startLine": 51,
+        "startChar": 8,
+        "endLine": 51,
+        "endChar": 14
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32156cb2_7c8309b7",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1603,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-09T10:40:51Z",
+      "side": 1,
+      "message": "don\u0027t need/want a file path guard on a job that is only triggered by a comment",
+      "range": {
+        "startLine": 1601,
+        "startChar": 4,
+        "endLine": 1603,
+        "endChar": 29
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ceddcb76_262d1cc2",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1630,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-09T10:40:51Z",
+      "side": 1,
+      "message": "IMHO this should not be used",
+      "range": {
+        "startLine": 1630,
+        "startChar": 14,
+        "endLine": 1630,
+        "endChar": 59
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ed4f7279_d49b7989",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1632,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-09T10:40:51Z",
+      "side": 1,
+      "message": "Where is the github job definition?",
+      "range": {
+        "startLine": 1632,
+        "startChar": 0,
+        "endLine": 1632,
+        "endChar": 17
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c877d0f0_ef9638ff",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-09T10:40:51Z",
+      "side": 1,
+      "message": "would you consider adding x here? this script logs almost none of its steps",
+      "range": {
+        "startLine": 18,
+        "startChar": 5,
+        "endLine": 18,
+        "endChar": 7
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
