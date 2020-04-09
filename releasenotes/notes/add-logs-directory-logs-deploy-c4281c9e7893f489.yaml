@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Add "logs" prefix to s3_path("logs/$SILO/$JENKINS_HOSTNAME/$JOB_NAME/
+    $BUILD_NUMBER/"). We are not allowed to have an index.html file at the root
+    level of the S3 bucket. Adding the additional prefix allows us to mirror the
+    directory structure of Nexus where you are able to see both production and
+    sandbox logs when browsing to https://logs.<project>.org/.
