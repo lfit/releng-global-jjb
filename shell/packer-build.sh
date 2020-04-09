@@ -36,6 +36,15 @@ packer.io validate \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
     "templates/$PACKER_TEMPLATE.json"
+
+if curl -s ${GERRIT_URL}/changes/${GERRIT_CHANGE_NUMBER}/detail \
+  | tail -n +2 | jq .messages[].message? \
+  | grep "Patch Set ${GERRIT_PATCHSET_NUMBER}:.*Build Successful.*verify-build"
+then
+    echo "Build already successful for this patch set. Skipping merge build..."
+    exit
+fi
+
 packer.io build -color=false \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
