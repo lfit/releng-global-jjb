@@ -45,7 +45,7 @@ fi
 if [[ -z ${S3_BUCKET:-} ]]; then
     echo "WARNING: S3 logging server not set"
 else
-    s3_path="$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER/"
+    s3_path="logs/$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER/"
     echo "INFO: S3 path $s3_path"
 
     echo "INFO: archiving logs to S3"
