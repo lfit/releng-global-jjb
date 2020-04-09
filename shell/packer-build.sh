@@ -36,6 +36,32 @@ packer.io validate \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
     "templates/$PACKER_TEMPLATE.json"
+
+set -x +u
+# If this is a Gerrit system, check patch comments for successful verify build.
+if [ ! -z "${GERRIT_URL}" ] && \
+   [ ! -z "${GERRIT_CHANGE_NUMBER}" ] && \
+   [ ! -z "${GERRIT_PATCHSET_NUMBER}" ] && \
+   curl -s "${GERRIT_URL}/changes/${GERRIT_CHANGE_NUMBER}/detail" \
+   | tail -n +2 | jq .messages[].message? \
+   | grep "Patch Set ${GERRIT_PATCHSET_NUMBER}:.*Build Successful.*verify-build"
+then
+    echo "Build already successful for this patch set. Skipping merge build..."
+    exit
+# If this is Github, check the last non-merge commit for a successful Packer
+# Verify Build status.
+elif [[ "${GIT_BASE}" =~ https://github.com ]]; then
+    LAST_CHANGE_SHA=$(git log --no-merges -1 --format=%H)
+    API_BASE=$(echo "$GIT_BASE" | sed -E 's#(www.)?github.com#api.github.com/repos#')
+    STATUS=$(curl "${API_BASE}/statuses/${LAST_CHANGE_SHA}" \
+    | jq '.[] | select(.state == "success" and .context == "Packer Verify Build")')
+    if [ ! -z "${STATUS}" ]; then
+        echo "Build already successful for this patch set. Skipping merge build..."
+        exit
+    fi
+fi
+set +x -u
+
 packer.io build -color=false \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
