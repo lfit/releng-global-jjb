@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bbdc50b0_c2dd9558",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-10T21:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4fc789a2_a2e9081b",
+      "range": {
+        "startLine": 852,
+        "startChar": 41,
+        "endLine": 852,
+        "endChar": 62
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2c2a2153_f2c9f40a",
         "filename": "docs/jjb/lf-ci-jobs.rst",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2020-04-09T10:40:51Z",
       "side": 1,
       "message": "is the github job still in progress?",
+      "range": {
+        "startLine": 854,
+        "startChar": 5,
+        "endLine": 854,
+        "endChar": 11
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1698b14e_772bfb2d",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 854,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-10T21:52:41Z",
+      "side": 1,
+      "message": "Indeed it was. Its progress in patch 1 was \"I forgot\", and its progress now is \"complete\".",
+      "parentUuid": "2c2a2153_f2c9f40a",
       "range": {
         "startLine": 854,
         "startChar": 5,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "75292688_0833e0ad",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-10T21:52:41Z",
+      "side": 1,
+      "message": "This was how the other similar docs were formatted. However, I don\u0027t see any good reason for this, so I\u0027ve changed it.",
+      "parentUuid": "f9f57131_eb6fbc8f",
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "41278680_e13d7ddd",
         "filename": "jjb/lf-ci-job-groups.yaml",
         "patchSetId": 1
@@ -76,6 +142,30 @@
       "writtenOn": "2020-04-09T10:40:51Z",
       "side": 1,
       "message": "github",
+      "range": {
+        "startLine": 51,
+        "startChar": 8,
+        "endLine": 51,
+        "endChar": 14
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4a40750_a8d30b57",
+        "filename": "jjb/lf-ci-job-groups.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-10T21:52:41Z",
+      "side": 1,
+      "message": "Fixed.",
+      "parentUuid": "41278680_e13d7ddd",
       "range": {
         "startLine": 51,
         "startChar": 8,
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "67f89dd8_522b7db9",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1603,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-10T21:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "32156cb2_7c8309b7",
+      "range": {
+        "startLine": 1601,
+        "startChar": 4,
+        "endLine": 1603,
+        "endChar": 29
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ceddcb76_262d1cc2",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 1
@@ -131,6 +245,30 @@
       "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7873383_c664acfc",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1630,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-10T21:52:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ceddcb76_262d1cc2",
+      "range": {
+        "startLine": 1630,
+        "startChar": 14,
+        "endLine": 1630,
+        "endChar": 59
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -168,6 +306,30 @@
       "writtenOn": "2020-04-09T10:40:51Z",
       "side": 1,
       "message": "would you consider adding x here? this script logs almost none of its steps",
+      "range": {
+        "startLine": 18,
+        "startChar": 5,
+        "endLine": 18,
+        "endChar": 7
+      },
+      "revId": "1333929b5bea3ca7d9dd31a98ca62ae986f10da6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6cd4a8f2_3d0daa94",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-10T21:52:41Z",
+      "side": 1,
+      "message": "I\u0027m not going to add -x to the whole script, but I\u0027ve added -x +u to the new section, since 1) the output will be very helpful for debugging, and 2) +u helps the -z conditionals work as intended, without raising errors for undefined vars.",
+      "parentUuid": "c877d0f0_ef9638ff",
       "range": {
         "startLine": 18,
         "startChar": 5,
