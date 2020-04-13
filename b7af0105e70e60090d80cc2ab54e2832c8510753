@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5d93f43f_52d0efe6",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "newly built?  \n\nthis sentence is fairly confusing.  Does this start a Jenkins job or submit a change request to Gerrit?",
+      "range": {
+        "startLine": 773,
+        "startChar": 59,
+        "endLine": 773,
+        "endChar": 68
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2196feb3_2cd8fd5a",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "maybe revise to read  \"... Pull Request, upload this ...\" to avoid the incomplete first sentence.",
+      "range": {
+        "startLine": 780,
+        "startChar": 55,
+        "endLine": 780,
+        "endChar": 58
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ecd81ea_0294e98e",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "Pls add a sentence like:\n\n    The verify job checks superficial syntax of the template and other files.  It does not attempt to build an image, and will not reveal problems such as unknown Ansible roles etc.",
+      "range": {
+        "startLine": 797,
+        "startChar": 0,
+        "endLine": 797,
+        "endChar": 1
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a91ed650_c363f5de",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "Please extend to note the unusual character of this job. Maybe even rename to \"pre-build\" or \"test-merge\" or something,  Those names avoid \"verify\" on purpose bcos no other verify job I\u0027ve used in global-jjb makes persistent changes like this (ignoring the log server).  You could explain that the image build job is so expensive that this is the true verify job, held back to manage cost blah blah.",
+      "range": {
+        "startLine": 844,
+        "startChar": 0,
+        "endLine": 844,
+        "endChar": 1
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb91d591_e3a42d86",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "maybe phrase as: attempt to build an image",
+      "range": {
+        "startLine": 846,
+        "startChar": 9,
+        "endLine": 846,
+        "endChar": 24
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3887648_8d1472b7",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "Please use \"centos-8.json\" as your example, which is what\u0027s in common-packer/vars right now",
+      "range": {
+        "startLine": 864,
+        "startChar": 53,
+        "endLine": 864,
+        "endChar": 59
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6925b73d_c49b223a",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 865,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "template is a shell script?  in ORAN packer/provision only has yaml files. In common-packer/provision there is a mix of everything.",
+      "range": {
+        "startLine": 865,
+        "startChar": 50,
+        "endLine": 865,
+        "endChar": 62
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25a005d1_2b8ef1d7",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "In common-packer provision I see \"local-builder.yaml\" and so on.  I don\u0027t see a java-builder.yaml file.  Please use an existing example.",
+      "range": {
+        "startLine": 866,
+        "startChar": 49,
+        "endLine": 866,
+        "endChar": 61
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c95c8ac_da7107c6",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:47:43Z",
+      "side": 1,
+      "message": "with a modern bash, use [[ and ]] to avoid the need to quote variables\n\n    if [[ -n $GERRIT_URL ]] \u0026\u0026 \\",
+      "range": {
+        "startLine": 42,
+        "startChar": 3,
+        "endLine": 42,
+        "endChar": 5
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
