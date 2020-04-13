@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f3a80ef_fc11d805",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T23:47:36Z",
+      "side": 1,
+      "message": "For the trivial case of get the key-value pair \"tag_release: VALUE\" the syntax of niet and yq is identical, you just need an additional argument for yq.  I understand you wish to avoid further delay, but I would start by doing the right thing.\n\n(venv-py37) clott@mbp-cl778h:~/git/o-ran-sc/portal-ric-dashboard/releases% niet .container_release_tag dashboard-container.yaml\n2.0.0\n(venv-py37) clott@mbp-cl778h:~/git/o-ran-sc/portal-ric-dashboard/releases% yq -r .container_release_tag dashboard-container.yaml    \n2.0.0",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "0aac69c7cf76e2cf9f2b3befc61e8f117e8c6765",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

@@ -119,6 +119,54 @@
     },
     {
       "key": {
+        "uuid": "2332726f_3d9e2bdb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T23:47:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "15bf5a75_ef52b2cd",
+      "range": {
+        "startLine": 64,
+        "startChar": 15,
+        "endLine": 64,
+        "endChar": 26
+      },
+      "revId": "3d1d341cc5f655f24f8fa1e073e79cbe7c51f3a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "250a0edc_356a38af",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T23:47:36Z",
+      "side": 1,
+      "message": "Not do the same; I was trying to say, emulate for variable TAG_RELEASE the steps on lines 54/55 for variable DISTRIBUTION_TYPE. That\u0027s the two lines of code I put in the previous comment.  First assign it using a default value of \"None\u0027 then check against None",
+      "parentUuid": "90945970_e604b3b4",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 6
+      },
+      "revId": "3d1d341cc5f655f24f8fa1e073e79cbe7c51f3a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "08130aaa_e3e1d050",
         "filename": "shell/release-job.sh",
         "patchSetId": 7
