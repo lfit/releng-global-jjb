@@ -206,6 +206,29 @@
       "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe45deb0_5a3ef4db",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-13T11:50:07Z",
+      "side": 1,
+      "message": "Sorry missed the tricks with +u/-u on the first pass.  I suggest you remove those tricks and use this syntax instead, which does not trigger the unset-var problem:\n\n    if [[ -n ${GERRIT_URL:-} ]] \u0026\u0026 \\\n\nand so on",
+      "range": {
+        "startLine": 42,
+        "startChar": 3,
+        "endLine": 42,
+        "endChar": 26
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
