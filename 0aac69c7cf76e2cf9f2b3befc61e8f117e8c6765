@@ -22,6 +22,30 @@
       "revId": "0aac69c7cf76e2cf9f2b3befc61e8f117e8c6765",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9000c368_e16f8abc",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2020-04-14T22:01:45Z",
+      "side": 1,
+      "message": "Agree.. working on it.. thanks so much for the example!",
+      "parentUuid": "7f3a80ef_fc11d805",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 5
+      },
+      "revId": "0aac69c7cf76e2cf9f2b3befc61e8f117e8c6765",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
