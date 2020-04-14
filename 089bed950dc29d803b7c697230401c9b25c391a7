@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0664856b_d1d2f715",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2020-04-14T22:38:29Z",
+      "side": 1,
+      "message": "Chris, let me know if this is what you were picturing..\n\nI will do a final round of testing too before posting this as ready",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 41
+      },
+      "revId": "089bed950dc29d803b7c697230401c9b25c391a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
