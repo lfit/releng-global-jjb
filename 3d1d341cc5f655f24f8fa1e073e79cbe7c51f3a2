@@ -191,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "53f24450_a6054ad6",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-14T22:23:45Z",
+      "side": 1,
+      "message": "The syntax in my comment of April 7 assigns TAG_RELEASE to itself, UNLESS it has no value in which case you get the four-letter sequence None.  So if the job is triggered by parameters, meaning TAG_RELEASE has the four-letter sequence True, then the assignment is a no-op and you wind up with the same value of True afterwards.",
+      "parentUuid": "199c6952_36d14b5b",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 64,
+        "endChar": 6
+      },
+      "revId": "3d1d341cc5f655f24f8fa1e073e79cbe7c51f3a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "08130aaa_e3e1d050",
         "filename": "shell/release-job.sh",
         "patchSetId": 7
