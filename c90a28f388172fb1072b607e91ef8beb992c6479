@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34a9ebb3_72a2a089",
+        "filename": "releasenotes/notes/deprecate-niet-release-jobs-64454a3317b7936f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-15T23:31:35Z",
+      "side": 1,
+      "message": "Perhaps the LF releng team has decided to standardize on one yaml parsing tool, instead of using two and dealing with additional version pins? That might be the right statement here.  I can find no evidence that niet has been abandoned.  It just does not seem to be as active as yq.",
+      "range": {
+        "startLine": 4,
+        "startChar": 32,
+        "endLine": 4,
+        "endChar": 42
+      },
+      "revId": "c90a28f388172fb1072b607e91ef8beb992c6479",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
