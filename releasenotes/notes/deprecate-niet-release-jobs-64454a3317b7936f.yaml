@@ -1,0 +1,5 @@
+---
+deprecations:
+  - |
+    niet package is about to be deprecated. Upgrade to yq in
+    release-job.sh to parse the release file.
