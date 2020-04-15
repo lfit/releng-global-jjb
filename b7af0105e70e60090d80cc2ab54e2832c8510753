@@ -420,6 +420,30 @@
       "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85535eff_d809c254",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-15T02:04:14Z",
+      "side": 1,
+      "message": "Good catch. Yes, this was a local change not meant for the patch.",
+      "parentUuid": "dc06811f_124a559d",
+      "range": {
+        "startLine": 72,
+        "startChar": 18,
+        "endLine": 72,
+        "endChar": 30
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
