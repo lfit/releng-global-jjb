@@ -27,6 +27,6 @@ properties:
   project:
     type: "string"
   tag_release:
-    type: "bool"
+    type: "string"
   version:
     type: "string"
