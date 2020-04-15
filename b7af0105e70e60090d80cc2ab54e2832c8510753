@@ -397,6 +397,29 @@
       "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc06811f_124a559d",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-15T01:51:13Z",
+      "side": 1,
+      "message": "did you really  mean to remove --all-files, or was this a debug/dev change that slipped thru?",
+      "range": {
+        "startLine": 72,
+        "startChar": 18,
+        "endLine": 72,
+        "endChar": 30
+      },
+      "revId": "b7af0105e70e60090d80cc2ab54e2832c8510753",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
