@@ -33,6 +33,6 @@ properties:
   log_dir:
     type: "string"
   tag_release:
-    type: "bool"
+    type: "boolean"
   version:
     type: "string"

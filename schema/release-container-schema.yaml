@@ -42,4 +42,4 @@ properties:
   ref:
     type: "string"
   tag_release:
-    type: "bool"
+    type: "boolean"

@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Schema type "bool" is not valid. Fix to "boolean"
