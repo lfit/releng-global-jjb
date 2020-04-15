@@ -14,7 +14,7 @@ set -eu -o pipefail
 echo "INFO: creating virtual environment"
 virtualenv -p python3 /tmp/venv
 PATH=/tmp/venv/bin:$PATH
-pipup="python -m pip install -q --upgrade pip idna==2.8 lftools jsonschema niet twine yq"
+pipup="python -m pip install -q --upgrade pip idna==2.8 lftools jsonschema twine yq"
 echo "INFO: $pipup"
 $pipup
 # show installed versions
@@ -53,7 +53,7 @@ set_variables_common(){
     # Packagecloud and PyPI jobs set the appropriate value.
     DISTRIBUTION_TYPE="${DISTRIBUTION_TYPE:-None}"
     if [[ $DISTRIBUTION_TYPE == "None" ]]; then
-        if ! DISTRIBUTION_TYPE=$(niet ".distribution_type" "$release_file"); then
+        if ! DISTRIBUTION_TYPE=$(yq -r ".distribution_type" "$release_file"); then
             echo "ERROR: Failed to get distribution_type from $release_file"
             exit 1
         fi
@@ -86,17 +86,17 @@ set_variables_common(){
 set_variables_maven(){
     echo "INFO: Setting maven variables"
     if [[ -z ${VERSION:-} ]]; then
-        VERSION=$(niet ".version" "$release_file")
+        VERSION=$(yq -r ".version" "$release_file")
     fi
     if [[ -z ${GIT_TAG:-} ]]; then
         if grep -q "git_tag" "$release_file" ; then
-            GIT_TAG=$(niet ".git_tag" "$release_file")
+            GIT_TAG=$(yq -r ".git_tag" "$release_file")
         else
             GIT_TAG="$VERSION"
         fi
     fi
     if [[ -z ${LOG_DIR:-} ]]; then
-        LOG_DIR=$(niet ".log_dir" "$release_file")
+        LOG_DIR=$(yq -r ".log_dir" "$release_file")
     fi
     LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
@@ -112,27 +112,27 @@ set_variables_maven(){
 set_variables_container(){
     echo "INFO: Setting container variables"
     if [[ -z ${VERSION:-} ]]; then
-        VERSION=$(niet ".container_release_tag" "$release_file")
+        VERSION=$(yq -r ".container_release_tag" "$release_file")
     fi
     if [[ -z ${GIT_TAG:-} ]]; then
         if grep -q "git_tag" "$release_file" ; then
-            GIT_TAG=$(niet ".git_tag" "$release_file")
+            GIT_TAG=$(yq -r ".git_tag" "$release_file")
         else
             GIT_TAG="$VERSION"
         fi
    fi
     if grep -q "container_pull_registry" "$release_file" ; then
-        CONTAINER_PULL_REGISTRY=$(niet ".container_pull_registry" "$release_file")
+        CONTAINER_PULL_REGISTRY=$(yq -r ".container_pull_registry" "$release_file")
     fi
     if grep -q "container_push_registry" "$release_file" ; then
-        CONTAINER_PUSH_REGISTRY=$(niet ".container_push_registry" "$release_file")
+        CONTAINER_PUSH_REGISTRY=$(yq -r ".container_push_registry" "$release_file")
     fi
     # Make sure both pull and push registries are defined
     if [ -z ${CONTAINER_PULL_REGISTRY+x} ] || [ -z ${CONTAINER_PUSH_REGISTRY+x} ]; then
         echo "ERROR: CONTAINER_PULL_REGISTRY and CONTAINER_PUSH_REGISTRY need to be defined"
         exit 1
     fi
-    ref=$(niet ".ref" "$release_file")
+    ref=$(yq -r ".ref" "$release_file")
 
     # Continuing displaying Release Information (Container)
     printf "\t%-30s\n" RELEASE_CONTAINER_INFO:
@@ -146,22 +146,22 @@ set_variables_container(){
 set_variables_pypi(){
     echo "INFO: Setting pypi variables"
     if [[ -z ${LOG_DIR:-} ]]; then
-        LOG_DIR=$(niet ".log_dir" "$release_file")
+        LOG_DIR=$(yq -r ".log_dir" "$release_file")
     fi
     LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
     if [[ -z ${PYPI_PROJECT:-} ]]; then
-        PYPI_PROJECT=$(niet ".pypi_project" "$release_file")
+        PYPI_PROJECT=$(yq -r ".pypi_project" "$release_file")
     fi
     if [[ -z ${PYTHON_VERSION:-} ]]; then
-        PYTHON_VERSION=$(niet ".python_version" "$release_file")
+        PYTHON_VERSION=$(yq -r ".python_version" "$release_file")
     fi
     if [[ -z ${VERSION:-} ]]; then
-        VERSION=$(niet ".version" "$release_file")
+        VERSION=$(yq -r ".version" "$release_file")
     fi
     if [[ -z ${GIT_TAG:-} ]]; then
         if grep -q "git_tag" "$release_file" ; then
-            GIT_TAG=$(niet ".git_tag" "$release_file")
+            GIT_TAG=$(yq -r ".git_tag" "$release_file")
         else
             GIT_TAG="$VERSION"
         fi
@@ -181,23 +181,23 @@ set_variables_pypi(){
 set_variables_packagecloud(){
      echo "INFO: Setting packagecloud variables"
      if [[ -z ${VERSION:-} ]]; then
-         VERSION=$(niet ".version" "$release_file")
+         VERSION=$(yq -r ".version" "$release_file")
      fi
      if [[ -z ${GIT_TAG:-} ]]; then
          if grep -q "git_tag" $release_file ; then
-             GIT_TAG=$(niet ".git_tag" "$release_file")
+             GIT_TAG=$(yq -r ".git_tag" "$release_file")
          else
              GIT_TAG="$VERSION"
          fi
      fi
      if [[ -z ${LOG_DIR:-} ]]; then
-         LOG_DIR=$(niet ".log_dir" "$release_file")
+         LOG_DIR=$(yq -r ".log_dir" "$release_file")
      fi
      if [[ -z ${REF:-} ]]; then
-         REF=$(niet ".ref" "$release_file")
+         REF=$(yq -r ".ref" "$release_file")
      fi
      if [[ -z ${PACKAGE_NAME:-} ]]; then
-         PACKAGE_NAME=$(niet ".package_name" "$release_file")
+         PACKAGE_NAME=$(yq -r ".package_name" "$release_file")
      fi
      logs_url="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
      logs_url=${logs_url%/}  # strip any trailing '/'
