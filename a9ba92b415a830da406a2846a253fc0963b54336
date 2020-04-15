@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "4f2b2adc_edcd67d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-15T01:51:49Z",
+      "side": 1,
+      "message": "documentation",
+      "range": {
+        "startLine": 17,
+        "startChar": 54,
+        "endLine": 17,
+        "endChar": 66
+      },
+      "revId": "a9ba92b415a830da406a2846a253fc0963b54336",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "713d9e17_48109541",
         "filename": "shell/packer-build.sh",
         "patchSetId": 4
