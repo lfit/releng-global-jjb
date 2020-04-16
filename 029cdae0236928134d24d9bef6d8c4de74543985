@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "2cb7306b_8321cf1a",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-04-16T20:25:38Z",
+      "side": 0,
+      "message": "This works.\n\nif [[ $JOB_NAME \u003d\u003d \"lf-infra-lftools-rtd-verify-any\" ]]; then\n    source ~/lf-env.sh\n    lf-activate-venv pip\n    pip install -e .\nfi",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 2
+      },
+      "revId": "029cdae0236928134d24d9bef6d8c4de74543985",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4bbd5599_2ebed046",
         "filename": "shell/rtd-verify.sh",
         "patchSetId": 2
