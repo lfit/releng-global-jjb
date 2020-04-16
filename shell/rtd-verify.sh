@@ -30,9 +30,14 @@ fi
 git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
 git submodule update
 
+
+# When a new commands are added in lftools, the docs verify job needs to
+# run the new command which requires installing the lftools dev version
 if [[ $JOB_NAME == "lf-infra-lftools-rtd-verify-any" ]]; then
-    # Install patchset lftools
-    python3 -m pip install --user -e .
+    # shellcheck disable=SC1090
+    source ~/lf-env.sh
+    lf-activate-venv pip
+    pip install -e .
 fi
 
 echo "---> Generating docs"
