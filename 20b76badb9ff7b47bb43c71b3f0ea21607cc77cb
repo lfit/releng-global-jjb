@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2b9c534_9c9db42a",
+        "filename": "releasenotes/notes/fix-rtd-verify-7edbef07d90560cf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-16T10:34:12Z",
+      "side": 1,
+      "message": "This error text does not seem to agree with the fix comment.  A \"--user\" install definitely uses $HOME/.local, not /usr/local.  Would you please check?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "20b76badb9ff7b47bb43c71b3f0ea21607cc77cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
