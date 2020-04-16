@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4bbd5599_2ebed046",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-04-16T16:01:55Z",
+      "side": 0,
+      "message": "If you create a new command in lftools, then the docs verify job is going to run that command.\nThat command will not exist if we only have a released version of lftools installed. I don\u0027t see how removing this solves the problem.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 0
+      },
+      "revId": "029cdae0236928134d24d9bef6d8c4de74543985",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
