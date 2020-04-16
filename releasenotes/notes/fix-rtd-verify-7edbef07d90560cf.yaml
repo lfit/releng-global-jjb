@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Remove dead code for rtd verify script. The script attempts to install
+    lftools dev in --user and fails on the error.
+
+    Using `--user` installs the python modules in
+    ~/.local/lib/PYTHON_VERSION/site-packages which is not found.
+
+    Error:
+
+      [Errno 13] Permission denied: '/usr/local/lib/python3.6'
