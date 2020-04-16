@@ -22,6 +22,30 @@
       "revId": "20b76badb9ff7b47bb43c71b3f0ea21607cc77cb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0a40dd4a_c0b4d6d0",
+        "filename": "releasenotes/notes/fix-rtd-verify-7edbef07d90560cf.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-16T12:40:20Z",
+      "side": 1,
+      "message": "This is tested here:\n\nhttps://jenkins.opendaylight.org/releng/job/lf-infra-lftools-rtd-verify-any/339/\n\nUsing `--user` installs python modules into ~/.local/lib/PYTHON_VERSION/site-packages",
+      "parentUuid": "a2b9c534_9c9db42a",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 9
+      },
+      "revId": "20b76badb9ff7b47bb43c71b3f0ea21607cc77cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
