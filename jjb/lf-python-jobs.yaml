@@ -8,7 +8,7 @@
     builders:
       - inject:
           properties-content: "CLM_PROJECT_NAME={clm-project-name}"
-      - shell: !include-raw-escape: ../shell/nexus-iq-cli.sh
+      - shell: !include-raw-escape: ../shell/nexus-iq-python-cli.sh
 
 - builder:
     name: lf-infra-tox-install
