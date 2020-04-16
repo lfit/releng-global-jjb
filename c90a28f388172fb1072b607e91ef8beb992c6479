@@ -22,6 +22,30 @@
       "revId": "c90a28f388172fb1072b607e91ef8beb992c6479",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2f1c7917_25334eca",
+        "filename": "releasenotes/notes/deprecate-niet-release-jobs-64454a3317b7936f.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-16T02:09:45Z",
+      "side": 1,
+      "message": "Agree, unable to find any info about niet being abandonded, it would be good to update release notes.",
+      "parentUuid": "34a9ebb3_72a2a089",
+      "range": {
+        "startLine": 4,
+        "startChar": 32,
+        "endLine": 4,
+        "endChar": 42
+      },
+      "revId": "c90a28f388172fb1072b607e91ef8beb992c6479",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
