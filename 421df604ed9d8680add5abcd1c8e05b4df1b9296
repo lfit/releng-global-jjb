@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "312f63ff_901ab5a7",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-16T19:32:18Z",
+      "side": 1,
+      "message": "Unfortunately this doesn\u0027t do the right thing, it doesn\u0027t sniff out the packages installed by tox.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 1
+      },
+      "revId": "421df604ed9d8680add5abcd1c8e05b4df1b9296",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
