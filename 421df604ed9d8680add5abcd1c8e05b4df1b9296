@@ -22,6 +22,30 @@
       "revId": "421df604ed9d8680add5abcd1c8e05b4df1b9296",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9bc95005_9c0b35ec",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-04-16T19:50:57Z",
+      "side": 1,
+      "message": "Uhh... right... um.. I think we need a clean python venv for this to make sense.\nand then install the package via tox, or perhaps just pip install it..",
+      "parentUuid": "312f63ff_901ab5a7",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 1
+      },
+      "revId": "421df604ed9d8680add5abcd1c8e05b4df1b9296",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
