@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f2e2041a_7964db79",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-17T00:59:23Z",
+      "side": 1,
+      "message": "if you\u0027re not going to use a singular form, you might mention clearly that despite the plural this is not a list of values.",
+      "range": {
+        "startLine": 746,
+        "startChar": 5,
+        "endLine": 746,
+        "endChar": 14
+      },
+      "revId": "d6c118e9e4f56480453687b292937873805a6e9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21d7d6e1_8206ff6f",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-17T00:59:23Z",
+      "side": 1,
+      "message": "ahhh I *wish* it were singular.  But actually the conf parameter ends in \u0027s\u0027.  So as written this doc is not correct.",
+      "range": {
+        "startLine": 748,
+        "startChar": 5,
+        "endLine": 748,
+        "endChar": 13
+      },
+      "revId": "d6c118e9e4f56480453687b292937873805a6e9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bffa0bae_9b7169ae",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 867,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-17T00:59:23Z",
+      "side": 1,
+      "message": "Documented as singular but implemented as plural.",
+      "range": {
+        "startLine": 867,
+        "startChar": 4,
+        "endLine": 867,
+        "endChar": 12
+      },
+      "revId": "d6c118e9e4f56480453687b292937873805a6e9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a0c5a018_d5d03240",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1438,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-17T00:59:23Z",
+      "side": 1,
+      "message": "here you switch back, the plural form is passed along as the singular form.",
+      "range": {
+        "startLine": 1438,
+        "startChar": 0,
+        "endLine": 1438,
+        "endChar": 4
+      },
+      "revId": "d6c118e9e4f56480453687b292937873805a6e9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b6000a98_c45984ed",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1585,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-17T00:59:23Z",
+      "side": 1,
+      "message": "I find this terribly confusing.  Every other job uses a singular form of the word in the name; e.g., \"project-name\", \"stream\" and \"java-version\".  But in this case the plt and tmpl variables are plural even tho each contains just a single value, not a list.  This should truly be:\n\n     name: \"{project-name}-packer-verify-build-{platform}-{template}\"",
+      "range": {
+        "startLine": 1585,
+        "startChar": 47,
+        "endLine": 1585,
+        "endChar": 56
+      },
+      "revId": "d6c118e9e4f56480453687b292937873805a6e9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad753a73_30a8d783",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1636,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-17T00:59:23Z",
+      "side": 1,
+      "message": "Here my confusion continues.  I realize this is deeply entrenched in the packer merge job.  You could recover from the original botch with some effort :/",
+      "range": {
+        "startLine": 1636,
+        "startChar": 54,
+        "endLine": 1636,
+        "endChar": 63
+      },
+      "revId": "d6c118e9e4f56480453687b292937873805a6e9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "956ca958_7eab8ec9",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-17T00:59:23Z",
+      "side": 1,
+      "message": "at least it\u0027s singular here.  whew.",
+      "range": {
+        "startLine": 14,
+        "startChar": 46,
+        "endLine": 14,
+        "endChar": 54
+      },
+      "revId": "d6c118e9e4f56480453687b292937873805a6e9d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
