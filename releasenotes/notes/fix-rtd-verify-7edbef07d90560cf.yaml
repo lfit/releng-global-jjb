@@ -1,0 +1,13 @@
+---
+fixes:
+  - |
+    Fix the rtd verify script failure. The script attempts to install
+    lftools dev with --user and fails on the error.
+
+    Error:
+
+      [Errno 13] Permission denied: '/usr/local/lib/python3.6'
+
+    This code is actually required when a new commands are added to lftools,
+    the docs verify job needs to run the new command and install dev version
+    lftools version.
