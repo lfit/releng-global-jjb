@@ -60,7 +60,7 @@ job=$JOB_NAME/$BUILD_NUMBER
 # If available, add change_id to commit message
 if change_id=$(echo "$query_result" | grep 'Change-Id:' | awk '{print $2}'); then
     echo "NOTE: Found gerrit review: $change_id"
-    message="Job: $job\nChange-Id: $change_id"
+    message="Job: $job"$'\n\n'"Change-Id: $change_id"
 else
     echo "NOTE: No gerrit review found"
     message="Job: $job"
