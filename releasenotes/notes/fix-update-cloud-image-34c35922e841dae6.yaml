@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Fix update cloud image list job to handle newlines correctly and update
+    an existing gerrit change request.
+
+    The change is tested and now new patchset is updated the existing CR rather
+    than pushing a new CR everytime.
+
+    https://git.opendaylight.org/gerrit/c/releng/builder/+/89136
