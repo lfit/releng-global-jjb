@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "95ff13fa_15198b49",
+        "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-20T14:26:58Z",
+      "side": 1,
+      "message": "sorry to pick nits, but would you please check this sentence?  Is it missing a word \"in\" or ?",
+      "range": {
+        "startLine": 7,
+        "startChar": 29,
+        "endLine": 7,
+        "endChar": 57
+      },
+      "revId": "195310670851433ca103e530abad825365e39e82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5eb95de_6a6eb9c1",
+        "filename": "shell/gerrit-push-patch.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-20T14:26:58Z",
+      "side": 1,
+      "message": "It might be worth a comment explaining why two newlines are absolutely required",
+      "range": {
+        "startLine": 63,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 4
+      },
+      "revId": "195310670851433ca103e530abad825365e39e82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
