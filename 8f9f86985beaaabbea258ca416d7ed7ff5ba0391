@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1b2c37a5_f90515e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-21T02:21:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9508a28_ef6a22a3",
+      "revId": "8f9f86985beaaabbea258ca416d7ed7ff5ba0391",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a7a7e47b_af934810",
         "filename": "/COMMIT_MSG",
         "patchSetId": 12
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "e1b88be3_df99801b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-21T02:21:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a7a7e47b_af934810",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "8f9f86985beaaabbea258ca416d7ed7ff5ba0391",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "61ec0509_344af1f9",
         "filename": "releasenotes/notes/tox-nexus-iq-python-jobs-3fda2e30d7f3e5ef.yaml",
         "patchSetId": 12
@@ -62,6 +104,30 @@
       "revId": "8f9f86985beaaabbea258ca416d7ed7ff5ba0391",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18387d8a_d04c446b",
+        "filename": "releasenotes/notes/tox-nexus-iq-python-jobs-3fda2e30d7f3e5ef.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-21T02:21:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "61ec0509_344af1f9",
+      "range": {
+        "startLine": 7,
+        "startChar": 34,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "8f9f86985beaaabbea258ca416d7ed7ff5ba0391",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
