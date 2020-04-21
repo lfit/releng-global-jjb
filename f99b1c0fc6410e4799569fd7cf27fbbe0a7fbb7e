@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "fa523644_1ca1feb4",
+        "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-21T03:24:51Z",
+      "side": 1,
+      "message": "Eric: why do you want have script file names again in CR\u0027s commit header/message, when its already available that the CR in the UI, has the list of file that are modified. Some of the script file names in ODL exceed line limit subject/commit message.\n\nFor instance, if you see this change https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/63487\nThe the change 63487 \u0027nexus-iq-python-cli.sh\u0027 script shows up a link, clicking on it does not redirect to the CR file, since it does not work like change-ids. \n\nAnd on the CLI, you can get this the list of files you are modifying from `git log -p`.\n\nYou commit message you are explaining what and why vs how.\n\nhttps://chris.beams.io/posts/git-commit/",
+      "parentUuid": "a4ed8ec2_d95c4c4f",
+      "range": {
+        "startLine": 4,
+        "startChar": 8,
+        "endLine": 4,
+        "endChar": 35
+      },
+      "revId": "f99b1c0fc6410e4799569fd7cf27fbbe0a7fbb7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88fb930a_536a47fc",
         "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
         "patchSetId": 2
