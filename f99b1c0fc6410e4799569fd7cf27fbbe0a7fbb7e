@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "c4c8ee82_27bed409",
+        "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-21T01:56:17Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be \"Fix gerrit-push-patch.sh\"? It\u0027s good to mention the job you\u0027re fixing in the body of the commit message, but I think the header should mention the specific file you\u0027re changing.",
+      "range": {
+        "startLine": 4,
+        "startChar": 8,
+        "endLine": 4,
+        "endChar": 35
+      },
+      "revId": "f99b1c0fc6410e4799569fd7cf27fbbe0a7fbb7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88fb930a_536a47fc",
         "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
         "patchSetId": 2
