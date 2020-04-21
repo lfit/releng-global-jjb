@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "a4ed8ec2_d95c4c4f",
+        "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-04-21T02:13:09Z",
+      "side": 1,
+      "message": "I don\u0027t agree at all; I think part of the point of having a header is being able to find changes to specific files via the shortlog. But I won\u0027t hold up the merge over this.",
+      "parentUuid": "b2de6426_6916975c",
+      "range": {
+        "startLine": 4,
+        "startChar": 8,
+        "endLine": 4,
+        "endChar": 35
+      },
+      "revId": "f99b1c0fc6410e4799569fd7cf27fbbe0a7fbb7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88fb930a_536a47fc",
         "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
         "patchSetId": 2
