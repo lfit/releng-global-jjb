@@ -4,11 +4,13 @@
 ##########
 
 - builder:
-    name: lf-infra-clm-python
+    name: lf-infra-nexus-iq-python-cli
     builders:
       - inject:
-          properties-content: "CLM_PROJECT_NAME={clm-project-name}"
-      - shell: !include-raw-escape: ../shell/nexus-iq-cli.sh
+          properties-content: |
+            NEXUS_IQ_PROJECT_NAME={nexus-iq-project-name}
+            REQUIREMENTS_FILE={requirements-file}
+      - shell: !include-raw-escape: ../shell/nexus-iq-python-cli.sh
 
 - builder:
     name: lf-infra-tox-install
@@ -63,39 +65,36 @@
     publishers:
       - lf-infra-publish
 
-#################
-# Python XC CLM #
-#################
+####################
+# Tox Nexus IQ CLM #
+####################
 
-- lf_python_clm_xc: &lf_python_xc_clm
-    name: lf-python-xc-clm
+- lf_tox_nexus_iq_clm: &lf_tox_nexus_iq_clm
+    name: lf-tox-nexus-iq-clm
 
     ######################
     # Default parameters #
     ######################
 
     branch: master
-    build-days-to-keep: 30 # 30 days for troubleshooting purposes
-    build-timeout: 60
+    build-days-to-keep: 7
+    build-timeout: 15
+    cron: "@weekly"
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
-    nexus-iq-cli-version: 1.44.0-01
+    java-version: openjdk8 # Scanner is a jar
+    nexus-iq-cli-version: 1.89.0-02
     nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
-    pre-build-script: "  # pre-build script goes here"
+    pre-build-script: "# pre-build script goes here"
+    python-version: python3
+    requirements-file: requirements.txt
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-
-    gerrit_trigger_file_paths:
-      - compare-type: REG_EXP
-        pattern: ".*"
-
-    # github_included_regions MUST match gerrit_trigger_file_paths
-    github_included_regions:
-      - ".*"
+    tox-dir: "."
+    tox-envs: "clm"
 
     #####################
     # Job Configuration #
@@ -108,35 +107,52 @@
           project: "{project}"
           branch: "{branch}"
           stream: "{stream}"
+      - lf-infra-tox-parameters:
+          tox-dir: "{tox-dir}"
+          tox-envs: "{tox-envs}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
       - string:
           name: NEXUS_IQ_CLI_VERSION
           default: "{nexus-iq-cli-version}"
-          description: Nexus IQ CLI package to download and use.
+          description: Nexus IQ CLI jar to download and run.
 
     wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
       - credentials-binding:
           - username-password-separated:
               credential-id: nexus-iq-xc-clm
-              username: CLM_USER
-              password: CLM_PASSWORD
+              username: NEXUS_IQ_USER
+              password: NEXUS_IQ_PASSWORD
+
     builders:
+      - lf-infra-pre-build
       - lf-update-java-alternatives:
           java-version: "{java-version}"
+      - lf-infra-tox-install:
+          python-version: "{python-version}"
       - shell: "{pre-build-script}"
-      - lf-infra-clm-python:
-          clm-project-name: "{nexus-iq-namespace}{project-name}"
+      - lf-infra-tox-run:
+          parallel: false
+      - lf-infra-nexus-iq-python-cli:
+          nexus-iq-project-name: "{nexus-iq-namespace}{project-name}"
+          requirements-file: "{requirements-file}"
 
 - job-template:
-    name: "{project-name}-python-clm-{stream}"
-    id: gerrit-python-xc-clm
+    name: "{project-name}-tox-nexus-iq-clm"
+    id: gerrit-tox-nexus-iq-clm
     <<: *lf_python_common
-    <<: *lf_python_xc_clm
+    <<: *lf_tox_nexus_iq_clm
 
     ######################
     # Default parameters #
     ######################
 
-    gerrit_clm_triggers:
+    gerrit_nexus_iq_triggers:
       - comment-added-contains-event:
           comment-contains-value: '^Patch Set\s+\d+:\s+run-clm\s*$'
 
@@ -156,18 +172,16 @@
           choosing-strategy: default
 
     triggers:
-      # Build weekly on Saturdays
-      - timed: "H H * * 6"
+      - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_clm_triggers}"
+          trigger-on: "{obj:gerrit_nexus_iq_triggers}"
           projects:
             - project-compare-type: ANT
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
           skip-vote:
             successful: true
             failed: true
@@ -175,10 +189,10 @@
             notbuilt: true
 
 - job-template:
-    name: "{project-name}-python-clm-{stream}"
-    id: github-python-xc-clm
+    name: "{project-name}-tox-nexus-iq"
+    id: github-tox-nexus-iq-clm
     <<: *lf_python_common
-    <<: *lf_python_xc_clm
+    <<: *lf_tox_nexus_iq_clm
 
     properties:
       - lf-infra-properties:
@@ -198,8 +212,7 @@
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      # Build weekly on Saturdays
-      - timed: "H H * * 6"
+      - timed: "{obj:cron}"
       - github-pull-request:
           trigger-phrase: "^run-clm$"
           only-trigger-phrase: false
@@ -208,7 +221,6 @@
           github-hooks: true
           white-list-target-branches:
             - "{branch}"
-          included-regions: "{obj:github_included_regions}"
 
 #########################
 # Python Sonar with Tox #
