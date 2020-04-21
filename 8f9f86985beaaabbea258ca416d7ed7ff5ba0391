@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9508a28_ef6a22a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-21T02:14:45Z",
+      "side": 1,
+      "message": "Nexus IQ (CLM) - CLM is just the older name for Nexus IQ.",
+      "revId": "8f9f86985beaaabbea258ca416d7ed7ff5ba0391",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a7a7e47b_af934810",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-21T02:14:45Z",
+      "side": 1,
+      "message": "Nexus IQ?",
+      "range": {
+        "startLine": 12,
+        "startChar": 26,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "8f9f86985beaaabbea258ca416d7ed7ff5ba0391",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61ec0509_344af1f9",
+        "filename": "releasenotes/notes/tox-nexus-iq-python-jobs-3fda2e30d7f3e5ef.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-21T02:14:45Z",
+      "side": 1,
+      "message": "Nexus?",
+      "range": {
+        "startLine": 7,
+        "startChar": 34,
+        "endLine": 7,
+        "endChar": 39
+      },
+      "revId": "8f9f86985beaaabbea258ca416d7ed7ff5ba0391",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
