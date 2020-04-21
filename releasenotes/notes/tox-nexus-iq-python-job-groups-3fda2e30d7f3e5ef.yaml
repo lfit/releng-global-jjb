@@ -1,0 +1,15 @@
+---
+fixes:
+  - |
+    Drop jobs gerrit-python-xc-clm and github-python-xc-clm from
+    the two python job groups. Those templates were replaced by
+    gerrit-tox-nexus-iq-clm and github-tox-nexus-iq-clm. Not adding
+    those templates to the job groups because successful use requires
+    additional project configuration to report the package requirements.
+
+upgrade:
+  - |
+    Before upgrading to this version of global-jjb, must remove any uses
+    of the job templates named above.  These jobs did not yield any results,
+    so it's unlikely they were being used, and dropping them entirely
+    should not cause any loss of information.

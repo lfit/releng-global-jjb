@@ -6,7 +6,6 @@
     # for a Gerrit-based Python project to verify commits using tox.
 
     jobs:
-      - gerrit-python-xc-clm
       - gerrit-tox-verify
       - gerrit-tox-merge
 
@@ -17,7 +16,6 @@
     # for a Github-based Python project to verify commits using tox.
 
     jobs:
-      - github-python-xc-clm
       - github-tox-verify
       - github-tox-merge
 
