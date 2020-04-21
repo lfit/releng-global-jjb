@@ -84,6 +84,29 @@
     },
     {
       "key": {
+        "uuid": "f5419567_9c481c6e",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-04-21T02:22:12Z",
+      "side": 1,
+      "message": "Anil, I kept the CLM here because that\u0027s what people recognize; do you prefer I remove it entirely?",
+      "range": {
+        "startLine": 69,
+        "startChar": 15,
+        "endLine": 69,
+        "endChar": 18
+      },
+      "revId": "8f9f86985beaaabbea258ca416d7ed7ff5ba0391",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "61ec0509_344af1f9",
         "filename": "releasenotes/notes/tox-nexus-iq-python-jobs-3fda2e30d7f3e5ef.yaml",
         "patchSetId": 12
