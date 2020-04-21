@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Add a packer-verify-build job. This job is made to be manually triggered in
+    order to build the packer image, so that the full build process can be
+    validated before merging. If this is done on the final patch that is merged,
+    the merge job will not run another build (thereby avoiding building two
+    identical images).
