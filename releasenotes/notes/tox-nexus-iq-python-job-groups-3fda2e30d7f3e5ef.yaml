@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Drop jobs gerrit-python-xc-clm and github-python-xc-clm from
+    the two python job groups. Those templates were replaced by
+    gerrit-tox-nexus-iq-clm and github-tox-nexus-iq-clm. Not adding
+    those templates to the job groups because successful use requires
+    additional project configuration to report the package requirements.
