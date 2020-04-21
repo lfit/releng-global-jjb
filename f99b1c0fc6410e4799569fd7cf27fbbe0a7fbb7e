@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b2de6426_6916975c",
+        "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-21T02:03:12Z",
+      "side": 1,
+      "message": "We dont need to specify the filenames here since its already there in the CR. You can also find the job info from the change I have attached, the issue/output is seen in the CR and not directly in the job.",
+      "parentUuid": "c4c8ee82_27bed409",
+      "range": {
+        "startLine": 4,
+        "startChar": 8,
+        "endLine": 4,
+        "endChar": 35
+      },
+      "revId": "f99b1c0fc6410e4799569fd7cf27fbbe0a7fbb7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88fb930a_536a47fc",
         "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
         "patchSetId": 2
@@ -45,6 +69,30 @@
       "revId": "f99b1c0fc6410e4799569fd7cf27fbbe0a7fbb7e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf7b50b7_520cc417",
+        "filename": "releasenotes/notes/fix-update-cloud-image-34c35922e841dae6.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-21T02:03:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "88fb930a_536a47fc",
+      "range": {
+        "startLine": 7,
+        "startChar": 60,
+        "endLine": 7,
+        "endChar": 63
+      },
+      "revId": "f99b1c0fc6410e4799569fd7cf27fbbe0a7fbb7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
