@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "250528b2_5fefe57c",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-24T04:33:16Z",
+      "side": 1,
+      "message": "we have hit a regression with this change.\n\nhttps://lists.opendaylight.org/g/integration-dev/message/14104\n\nThis change required a fix in the jjb/lf-macros.yaml",
+      "range": {
+        "startLine": 42,
+        "startChar": 10,
+        "endLine": 42,
+        "endChar": 27
+      },
+      "revId": "3b99cd4d3bec4dcd56297f28317af62f26c078bf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "986e5b0e_800c9c8b",
+        "filename": "shell/logs-deploy.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-04-24T04:33:16Z",
+      "side": 1,
+      "message": "we have hit a regression with this change.\n\nhttps://lists.opendaylight.org/g/integration-dev/message/14104\n\nThis change required a fix in the jjb/lf-macros.yaml",
+      "range": {
+        "startLine": 56,
+        "startChar": 10,
+        "endLine": 56,
+        "endChar": 25
+      },
+      "revId": "3b99cd4d3bec4dcd56297f28317af62f26c078bf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
