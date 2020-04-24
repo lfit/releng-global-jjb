@@ -95,7 +95,7 @@
       - shell: !include-raw:
           - ../shell/logs-clear-credentials.sh
       - description-setter:
-          regexp: "^Build logs: .*"
+          regexp: "^Nexus|S3 build logs: .*"
 
 - builder:
     name: lf-infra-package-listing

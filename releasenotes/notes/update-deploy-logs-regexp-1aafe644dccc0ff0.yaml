@@ -1,0 +1,9 @@
+---
+issues:
+  - |
+    Update regexp in lf-infra-ship-logs macro. This fixes a regression from
+    update to deploy-logs.sh script in v0.53.0 which causes build logs links to
+    disappear on the Jenkins jobs description setter.
+
+    Tests:
+    https://jenkins.opendaylight.org/releng/view/builder/job/builder-packer-verify/274
