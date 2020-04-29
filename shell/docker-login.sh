@@ -8,7 +8,6 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-echo "---> docker-login.sh"
 # Log into a custom hosted docker registry and / or docker.io
 
 # $DOCKER_REGISTRY : Optional
@@ -43,7 +42,7 @@ echo "---> docker-login.sh"
 #2) User logging into docker.io with docker version <17.06.0  email optional
 #3) User logging into docker.io wiht docker version >= 17.06.0 cannot use email flag
 
-
+echo "---> docker-login.sh"
 # Ensure we fail the job if any steps fail
 set -eu -o pipefail
 
@@ -117,3 +116,5 @@ then
         do_login "$DOCKERHUB_REGISTRY" none
     fi
 fi
+
+echo "---> docker-login.sh ends"

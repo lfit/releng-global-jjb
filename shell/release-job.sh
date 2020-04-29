@@ -335,6 +335,7 @@ nexus_release(){
 
 container_release_file(){
     echo "INFO: Processing container release"
+    docker --version
     local lfn_umbrella
     lfn_umbrella="$(echo "$GERRIT_URL" | awk -F"." '{print $2}')"
 

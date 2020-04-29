@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Extend scripts that invoke the docker CLI to report the version
+    by invoking `docker --version`.  Also add echo command to report
+    end of script where it was missing.  Includes docker-build.sh,
+    docker-login.sh, docker-push.sh and release-job.sh.  No functional
+    change to any script behavior, just a line of extra output.
