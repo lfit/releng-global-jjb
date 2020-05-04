@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "177b6553_670e468d",
+        "filename": "releasenotes/notes/upgrade-sphinx-2.7-875edae321636e17.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-05-04T14:00:58Z",
+      "side": 1,
+      "message": "I\u0027m confused, the patch upgrades Sphinx but the link says pygments is the component that needs a specific version to be installed? Why aren\u0027t we upgrading pygments?\n\nAccording to Sphinx\u0027s own codebase it only sets a minimum version of pygments not a maximum version:\n\nhttps://github.com/sphinx-doc/sphinx/blob/3.x/setup.py#L25",
+      "revId": "401d13912ba7dd6c9f0c524a7abea25cae44fd1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
