@@ -1,0 +1,7 @@
+---
+upgrade:
+  - |
+    Upgrade Sphinx version to 3.0. This is the minimum version required to
+    properly render YANG models for OpenDaylight.
+
+    https://pygments.org/docs/lexers/#lexer-for-the-yang-1-1-modeling-language-see-rfc-7950
