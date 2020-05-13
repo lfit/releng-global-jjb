@@ -1,7 +1,435 @@
 ---
 ####################
-# COMMON FUNCTIONS #
+# AUTOTOOLS COMMON #
 ####################
+
+- lf_autotools_common: &lf_autotools_common
+    name: lf-autotools-common
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+    disabled: "{disable-job}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-autotools-parameters:
+          configure-opts: "{configure-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    publishers:
+      - lf-infra-publish
+
+################################
+# AUTOTOOLS PACKAGECLOUD STAGE #
+################################
+
+- lf_autotools_packagecloud_stage: &lf_autotools_packagecloud_stage
+    name: lf-autotools-packagecloud-stage
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    configure-opts: ""
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install: false
+    install-prefix: $WORKSPACE/output
+    make-opts: "" # target that creates deb/rpm files
+    pre-build: | # default script to generate configure file
+      autoreconf --install
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - ".*"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-autotools-parameters:
+          configure-opts: "{configure-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+      - bool:
+          name: INSTALL
+          default: "{install}"
+          description: "Install build products to /usr/local (true/false)."
+
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: ".packagecloud"
+              target: "$HOME/.packagecloud"
+      - shell: "{pre-build}"
+      - shell: !include-raw-escape: ../shell/autotools-build.sh
+      - lf-packagecloud-push:
+          build-dir: "$WORKSPACE"
+          packagecloud-account: "{packagecloud-account}"
+          packagecloud-repo: "{packagecloud-repo}"
+          debian-distribution-versions: "{debian-distribution-versions}"
+          rpm-distribution-versions: "{rpm-distribution-versions}"
+
+- job-template:
+    # build with configure/make and publish to PackageCloud on command
+    name: "{project-name}-autotools-packagecloud-stage-{stream}"
+    id: gerrit-autotools-packagecloud-stage
+    <<: *lf_autotools_common
+    <<: *lf_autotools_packagecloud_stage
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_stage_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+stage-release\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          # stage jobs always build from tip
+          choosing-strategy: default
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_stage_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+
+- job-template:
+    name: "{project-name}-autotools-packagecloud-stage-{stream}"
+    id: github-autotools-packagecloud-stage
+    concurrent: true
+    <<: *lf_autotools_common
+    <<: *lf_autotools_packagecloud_stage
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^(stage-release)$"
+          only-trigger-phrase: true
+          status-context: "Autotools PackageCloud Stage"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+
+#######################
+# AUTOTOOLS SONARQUBE #
+#######################
+
+- lf_autotools_sonarqube: &lf_autotools_sonarqube
+    name: lf-autotools-sonarqube
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master # Sonar should always be run on master branch
+    build-days-to-keep: 7
+    build-timeout: 15
+    build-wrap-dir: $WORKSPACE/bw-output
+    configure-opts: CXXFLAGS="-O0 --coverage" LDFLAGS=--coverage # gcc coverage options
+    cron: "@weekly"
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install-prefix: $WORKSPACE/output
+    make-opts: "" # target that tests and generates gcov files
+    pre-build: | # default script to generate configure file
+      autoreconf --install
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    # Sonar properties
+    sonar-additional-args: ""
+    sonar-java-opts: ""
+    sonar-project-file: sonar-project.properties
+    sonar-properties: ""
+    sonar-task: ""
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-autotools-parameters:
+          configure-opts: "{configure-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+      - string:
+          name: BUILD_WRAP_DIR
+          default: "{build-wrap-dir}"
+          description: SonarQube build wrapper output directory
+
+    builders:
+      - shell: "{pre-build}"
+      - shell: !include-raw-escape: ../shell/autotools-sonarqube.sh
+      - lf-infra-sonar:
+          sonar-task: "{sonar-task}"
+          sonar-project-file: "{sonar-project-file}"
+          sonar-properties: "{sonar-properties}"
+          sonar-java-opts: "{sonar-java-opts}"
+          sonar-additional-args: "{sonar-additional-args}"
+
+- job-template:
+    name: "{project-name}-autotools-sonarqube"
+    id: gerrit-autotools-sonarqube
+    concurrent: false
+    <<: *lf_autotools_common
+    <<: *lf_autotools_sonarqube
+
+    gerrit_sonar_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: "$GERRIT_BRANCH"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_sonar_triggers}"
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+
+- job-template:
+    name: "{project-name}-autotools-sonarqube"
+    id: github-autotools-sonarqube
+    concurrent: false
+    <<: *lf_autotools_common
+    <<: *lf_autotools_sonarqube
+
+    scm:
+      - lf-infra-github-scm:
+          branch: "$sha1"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^run-sonar$"
+          only-trigger-phrase: false
+          status-context: "Autotools Sonarqube"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+
+####################
+# AUTOTOOLS VERIFY #
+####################
+
+- lf_autotools_verify: &lf_autotools_verify
+    name: lf-autotools-verify
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    configure-opts: ""
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    install: false
+    install-prefix: $WORKSPACE/output
+    make-opts: "test" # target that compiles and tests
+    pre-build: | # default script to generate configure file
+      autoreconf --install
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - ".*"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-autotools-parameters:
+          configure-opts: "{configure-opts}"
+          install-prefix: "{install-prefix}"
+          make-opts: "{make-opts}"
+      - bool:
+          name: INSTALL
+          default: "{install}"
+          description: "Install build products to /usr/local (true/false)."
+
+    builders:
+      - shell: "{pre-build}"
+      - shell: !include-raw-escape: ../shell/autotools-build.sh
+
+- job-template:
+    name: "{project-name}-autotools-verify-{stream}"
+    id: gerrit-autotools-verify
+    concurrent: true
+    <<: *lf_autotools_common
+    <<: *lf_autotools_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: "$GERRIT_BRANCH"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+
+- job-template:
+    name: "{project-name}-autotools-verify-{stream}"
+    id: github-autotools-verify
+    concurrent: true
+    <<: *lf_autotools_common
+    <<: *lf_autotools_verify
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^(recheck|reverify)$"
+          only-trigger-phrase: false
+          status-context: "Autotools Verify"
+          permit-all: true
+          github-hooks: true
+          included-regions: "{obj:github_included_regions}"
+          white-list-target-branches:
+            - "{branch}"
+
+################
+# CMAKE COMMON #
+################
 
 - lf_cmake_common: &lf_cmake_common
     name: lf-cmake-common
@@ -429,9 +857,9 @@
           white-list-target-branches:
             - "{branch}"
 
-##################
-# CMAKE+PC STAGE #
-##################
+############################
+# CMAKE PACKAGECLOUD STAGE #
+############################
 
 - lf_cmake_pc_stage: &lf_cmake_pc_stage
     name: lf-cmake-packagecloud-stage

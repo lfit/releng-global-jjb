@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    Add new templates to build CXX projects with GNU autotools.
+    These support the "configure && make && make install"
+    pattern used by many open-source projects. Supports
+    generation of the configure script for projects that do
+    not store generated files in version control. Includes
+    g*-autotools-packagecloud-stage, g*-autotools-sonarqube,
+    *-autotools-verify plus two supporting shell scripts.

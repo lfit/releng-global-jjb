@@ -395,6 +395,29 @@
 ##############
 
 - parameter:
+    name: lf-autotools-parameters
+    # Parameters for configure-make builds.
+    parameters:
+      - string:
+          name: CONFIGURE_OPTS
+          default: "{configure-opts}"
+          description: |
+            Options to pass to configure.
+            Example: --build=i686-pc-linux-gnu
+      - string:
+          name: INSTALL_PREFIX
+          default: "{install-prefix}"
+          description: |
+            Install prefix for configure.
+            Usually a workspace subdirectory.
+      - string:
+          name: MAKE_OPTS
+          default: "{make-opts}"
+          description: |
+            Options to pass to make.
+            Example: -j8 all
+
+- parameter:
     name: lf-clm-parameters
     parameters:
       - string:
