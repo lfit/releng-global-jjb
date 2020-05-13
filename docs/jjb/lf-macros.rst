@@ -372,8 +372,14 @@ Requires ``SonarQube Scanner for Jenkins``
 Parameters
 ==========
 
+lf-autotools-parameters
+-----------------------
+
+Provides parameters needed by configure and make. Should be used by any jobs
+that need to call the ``configure && make`` pattern.
+
 lf-clm-parameters
--------------------
+-----------------
 
 Provides the policy evaluation stage to run against Nexus IQ Server.
 Valid values include: 'build', 'stage-release', 'operate'.
