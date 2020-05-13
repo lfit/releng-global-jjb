@@ -1,5 +1,33 @@
 ---
 - project:
+    name: gerrit-autotools-jobs
+    jobs:
+      - gerrit-autotools-packagecloud-stage
+      - gerrit-autotools-sonarqube
+      - gerrit-autotools-verify
+
+    project-name: gerrit-autotools
+    mvn-settings: gerrit-autotools-project-settings
+    debian-distribution-versions: ubuntu/bionic
+    packagecloud-account: example
+    packagecloud-repo: master
+    rpm-distribution-versions: el/5
+
+- project:
+    name: github-autotools-jobs
+    jobs:
+      - github-autotools-packagecloud-stage
+      - github-autotools-sonarqube
+      - github-autotools-verify
+
+    project-name: github-autotools
+    mvn-settings: github-autotools-project-settings
+    debian-distribution-versions: ubuntu/bionic
+    packagecloud-account: example
+    packagecloud-repo: master
+    rpm-distribution-versions: el/5
+
+- project:
     name: gerrit-cmake-jobs
     jobs:
       - gerrit-cmake-packagecloud-stage
