@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Echo error response from RTD without formatting.  The script
+    rtd-trigger-build.sh starts a build at ReadTheDocs and parses
+    the response, a small JSON like this:
+
+    {"build_triggered":false,"project":"unicorn","versions":[]}
+
+    This change drops the invocation of jq that attempts to pretty-print
+    the JSON to the log when the build is not triggered, because that
+    call was failing for inexplicable reasons.
