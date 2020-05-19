@@ -8,9 +8,9 @@
 # which accompanies this distribution, and is available at
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
-# Call cURL to trigger a build in RTD via the Generic API
+# Calls cURL to trigger a build in RTD via the Generic API
 #
-# Paramters:
+# Parameters:
 #     RTD_BUILD_URL: The unique build URL for the project.
 #                    Check Admin > Integrations > Generic API incoming webhook.
 #
@@ -35,9 +35,10 @@ json=$(curl -X POST -d "branches=${GERRIT_BRANCH}" -d "token=$RTD_TOKEN" "$RTD_B
 build_triggered=$(echo "$json" | jq -r .build_triggered)
 
 if [ "$build_triggered" != "true" ]; then
-    echo "ERROR: Build was not triggered."
-    echo "$json" | jq -r
+    echo "ERROR: Build was not triggered, ReadTheDocs response follows:"
+    echo "$json"
     exit 1
 fi
 
 echo "Build triggered for $GERRIT_PROJECT in ReadTheDocs."
+echo "---> rtd-trigger-build.sh ends"
