@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1e258556_220ab0a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-05-28T19:06:47Z",
+      "side": 1,
+      "message": "valid",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 30
+      },
+      "revId": "f6691a22efc6cf91b280ff073196e238c4e8ddbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "010fa9bd_4a97e55a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-05-28T19:06:47Z",
+      "side": 1,
+      "message": "must match",
+      "range": {
+        "startLine": 12,
+        "startChar": 20,
+        "endLine": 12,
+        "endChar": 33
+      },
+      "revId": "f6691a22efc6cf91b280ff073196e238c4e8ddbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "98fe7296_7a59f1ea",
+        "filename": "schema/info-schema.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-05-28T19:06:47Z",
+      "side": 1,
+      "message": "why is whitespace allowed?",
+      "range": {
+        "startLine": 64,
+        "startChar": 30,
+        "endLine": 64,
+        "endChar": 33
+      },
+      "revId": "f6691a22efc6cf91b280ff073196e238c4e8ddbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa083f00_9c391c0a",
+        "filename": "schema/releasenotes/notes/info-schema-76226f19ef070886.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-05-28T19:06:47Z",
+      "side": 1,
+      "message": "Thanks but this is exceedingly short.  Perhaps, the release note could indicate WHERE email and timezone are optional?  I think these notes appear in a big list somewhere without the associated files.",
+      "range": {
+        "startLine": 4,
+        "startChar": 31,
+        "endLine": 4,
+        "endChar": 39
+      },
+      "revId": "f6691a22efc6cf91b280ff073196e238c4e8ddbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
