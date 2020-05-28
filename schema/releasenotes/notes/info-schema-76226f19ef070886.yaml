@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Due to privacy concerns Email and Timezone in the INFO.yaml schema check
+    are now optional 
