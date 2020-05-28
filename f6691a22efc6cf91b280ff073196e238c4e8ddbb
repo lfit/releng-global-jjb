@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "d9c94794_fc1ce230",
+        "filename": "schema/info-schema.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-05-28T20:31:51Z",
+      "side": 1,
+      "message": "Chris I can\u0027t respond to that specifically, but I do think that the regex needs to be tightened up in a separate change.",
+      "parentUuid": "98fe7296_7a59f1ea",
+      "range": {
+        "startLine": 64,
+        "startChar": 30,
+        "endLine": 64,
+        "endChar": 33
+      },
+      "revId": "f6691a22efc6cf91b280ff073196e238c4e8ddbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aa083f00_9c391c0a",
         "filename": "schema/releasenotes/notes/info-schema-76226f19ef070886.yaml",
         "patchSetId": 2
@@ -82,6 +106,30 @@
       "writtenOn": "2020-05-28T19:06:47Z",
       "side": 1,
       "message": "Thanks but this is exceedingly short.  Perhaps, the release note could indicate WHERE email and timezone are optional?  I think these notes appear in a big list somewhere without the associated files.",
+      "range": {
+        "startLine": 4,
+        "startChar": 31,
+        "endLine": 4,
+        "endChar": 39
+      },
+      "revId": "f6691a22efc6cf91b280ff073196e238c4e8ddbb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8d66893_2f610494",
+        "filename": "schema/releasenotes/notes/info-schema-76226f19ef070886.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-05-28T20:31:51Z",
+      "side": 1,
+      "message": "I have to agree with Chris on this one.",
+      "parentUuid": "aa083f00_9c391c0a",
       "range": {
         "startLine": 4,
         "startChar": 31,
