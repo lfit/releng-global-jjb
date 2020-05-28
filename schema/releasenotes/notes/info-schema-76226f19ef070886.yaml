@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Email and Timezone are now optional, due to privacy concerns.
