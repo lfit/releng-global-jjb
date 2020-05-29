@@ -1715,10 +1715,6 @@
       - compare-type: REG_EXP
         pattern: 'packer\/.*'
 
-    # github_included_regions MUST match gerrit_trigger_file_paths
-    github_included_regions:
-      - 'packer\/.*'
-
     #####################
     # Job Configuration #
     #####################
