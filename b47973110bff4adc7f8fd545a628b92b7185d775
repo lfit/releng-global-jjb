@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab152933_3cc7f0af",
+        "filename": "schema/releasenotes/notes/info-schema-76226f19ef070886.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-05-29T15:43:55Z",
+      "side": 1,
+      "message": "Dangling whitespace, which Jenkins caught and you would too if you installed the pre-commit hooks that we\u0027ve got in the repo ;)",
+      "range": {
+        "startLine": 5,
+        "startChar": 20,
+        "endLine": 5,
+        "endChar": 21
+      },
+      "revId": "b47973110bff4adc7f8fd545a628b92b7185d775",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
