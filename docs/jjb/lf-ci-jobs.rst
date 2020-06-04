@@ -508,6 +508,7 @@ project level jobs.
 :Template Names:
     - {project-name}-jjb-verify-upstream-gjjb
     - gerrit-jjb-verify-upstream-gjjb
+    - github-jjb-verify-upstream-gjjb
 
 :Comment Trigger: recheck|reverify
 
