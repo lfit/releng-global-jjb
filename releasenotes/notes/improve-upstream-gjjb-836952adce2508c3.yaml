@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    verify-upstream-global-jjb jobs have been improved in two ways: the upstream
+    Gerrit name has been changed to lf-releng to match the precedent set by
+    OpenDaylight, and we have added a Github version of the job.
