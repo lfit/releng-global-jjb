@@ -60,12 +60,14 @@ job=$JOB_NAME/$BUILD_NUMBER
 # If available, add change_id to commit message
 if change_id=$(echo "$query_result" | grep 'Change-Id:' | awk '{print $2}'); then
     echo "NOTE: Found gerrit review: $change_id"
-    message="Job: $job"$'\n\n'"Change-Id: $change_id"
+    message="Job: $job"$'\n'"Change-Id: $change_id"
 else
     echo "NOTE: No gerrit review found"
     message="Job: $job"
 fi
-git commit -sm "$GERRIT_COMMIT_MESSAGE" -m "$message"
+git commit -sm "$GERRIT_COMMIT_MESSAGE
+
+$message"
 
 git status
 git remote add gerrit "ssh://$GERRIT_USER@$GERRIT_HOST:29418/$PROJECT.git"

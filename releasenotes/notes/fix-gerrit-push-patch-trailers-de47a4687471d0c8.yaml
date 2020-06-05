@@ -1,0 +1,24 @@
+---
+fixes:
+  - |
+    Fix Job key in commit message body rather than trailers section
+    (AKA footer). The commit message produced by gerrit-push-patch which
+    currently creates a commit message where the Job key appears in the commit
+    message body rather than the trailer.
+
+    For example::
+
+        An example commit message
+
+        Job: builder-job/123
+
+        Change-Id: 1234567
+        Signed-off-by: Jenkins <jenkins@example.org>
+
+    This fixes it to::
+
+        An example commit with proper trailer
+
+        Job: builder-job/123
+        Change-Id: 123457
+        Signed-off-by: Jenkins <jenkins@example.org>
