@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    The packer merge job has a boolean option that sets an UPDATE_CLOUD_IMAGE
+    variable. This variable was always evaluating to true which caused issues
+    with builds always executing the section of the build. This causes problems
+    for builds that do not produce information that is expected by the section
+    of code. In specific AWS / EC2 builds fail as the build engine outputs
+    different name data than expected. The variable is now properly evaluated.
