@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Pin importlib-resources to 2.0.0 to resolve package incompatibility
+    between it and the currnet virtualenv version (20.0.21). Until a
+    compatibile virtualenv is released this dependency needs to be pinned.

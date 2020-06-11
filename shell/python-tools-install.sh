@@ -31,6 +31,14 @@ kubernetes
 niet~=1.4.2
 tox>=3.7.0 # Tox 3.7 or greater is necessary for parallel mode support
 yq
+
+# PINNED INDIRECT DEPENDENCIES
+# ============================
+# The libraries listed below should be considered workarounds and thus need
+# to have a link to a JIRA and any relevant pkg versions and support packages
+# necessary so that future maintainers of this file can make decisions to
+# remove the workarounds in the future.
+importlib-resources<2.0.0  # virtualenv 20.0.21 requires importlib-resources<2.0.0 (RELENG-2993)
 EOF
 
     #Python 3.5 in Ubuntu 16.04 workaround
