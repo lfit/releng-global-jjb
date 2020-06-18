@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Fixed logic for discovering new branches
+    When a new branch exists on gerrit, but has never been seen by RTD
+    we need to trigger a job so that the branch is discovered
+    we can then mark it active in the following step.
+    Logic was wrong in previous iteration.
+    We need to explicitly match the returned string of "null"

@@ -131,7 +131,7 @@ echo "INFO: Performing merge action"
     echo "INFO: Checking if read the docs has seen branch $branch"
 
     #if this is 404. then run discover branch
-    if ! lftools rtd project-version-details "$rtdproject" "$branch" | jq '.active'; then
+    if [[ $(lftools rtd project-version-details "$rtdproject" "$branch" | jq '.active') == "null" ]]; then
       echo "INFO: read the docs has not seen branch $branch for project $rtdproject"
       echo "INFO: triggering $rtdproject latest to instantiate new branch discovery"
       watchbuild latest
