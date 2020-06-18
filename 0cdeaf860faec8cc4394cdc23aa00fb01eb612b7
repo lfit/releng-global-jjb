@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "609859a0_6e4f193d",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-06-18T19:26:06Z",
+      "side": 1,
+      "message": "is matching the string \"null\" the way to detect a 404 not-found result?",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 2
+      },
+      "revId": "0cdeaf860faec8cc4394cdc23aa00fb01eb612b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
