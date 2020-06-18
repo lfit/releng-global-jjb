@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Fixed logic for discovering new branches
+    When a new branch exists on gerrit, but has never been seen by RTD
+    we need to trigger a job so that the branch is discovered
+    we can then mark it active in the following step.
+    API changed under out feet, where a 404 was returned before
+    we now get a 200 with the string null.
+    Change code to explicitly match the returned string of
+    "null"
