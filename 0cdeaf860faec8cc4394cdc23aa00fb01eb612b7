@@ -22,6 +22,29 @@
       "revId": "0cdeaf860faec8cc4394cdc23aa00fb01eb612b7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92f10d08_de0fd975",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-06-19T18:16:07Z",
+      "side": 1,
+      "message": "it would be Really Useful to show in a comment the expected ReadTheDocs responses.",
+      "range": {
+        "startLine": 134,
+        "startChar": 0,
+        "endLine": 134,
+        "endChar": 14
+      },
+      "revId": "0cdeaf860faec8cc4394cdc23aa00fb01eb612b7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
