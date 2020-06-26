@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d797a9b3_f5989bad",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-06-26T17:12:45Z",
+      "side": 1,
+      "message": "Eric Ball and I both requested that this comment show the response from the RTD API. Will you please add that to document what\u0027s going on here, and save the next person the time of doing a curl and also wondering if the current response is the same as the response for which this was developed?",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 133,
+        "endChar": 4
+      },
+      "revId": "dcf5761d0c38f01d4397784870c9031d4d499441",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
