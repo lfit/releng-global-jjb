@@ -44,6 +44,7 @@ masterproject="$umbrella-$MASTER_RTD_PROJECT"
 #Exception needed for onap, due to importing their old docs.
 if [[ $masterproject == "onap-doc" ]]; then
   masterproject="onap"
+  rtdproject="onap"
 fi
 
 
