@@ -41,6 +41,12 @@ fi
 #MASTER_RTD_PROJECT as a global jenkins cnt
 masterproject="$umbrella-$MASTER_RTD_PROJECT"
 
+#Exception needed for onap, due to importing their old docs.
+if [[ $masterproject == "onap-doc" ]]; then
+  masterproject="onap"
+fi
+
+
 echo "INFO:"
 echo "INFO: Project: $PROJECT"
 echo "INFO: Read the Docs Sub Project: https://$rtdproject.readthedocs.io"
