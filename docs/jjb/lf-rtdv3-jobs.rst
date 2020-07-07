@@ -4,9 +4,12 @@
 ReadTheDocs Version:3 Jobs
 ##########################
 
-ReadTheDocs V3 jobs support documentation that is structured as a
-master documentation project plus a sub-project for each software
-component.  The master project files are usually maintained in a
+ReadTheDocs Projects can be configured in a nested manner, by configuring a
+project as a subproject of another project. This allows for documentation
+projects to share a search index and a namespace or custom domain, but still be
+maintained independently.
+
+The master Read The Docs project files are usually maintained in a
 "docs" git repository and should contain an index with links to all
 the sub-projects. Each sub-project must maintain its documentation
 files in a "docs" subdirectory within that software component's git
@@ -14,11 +17,11 @@ repository.
 
 The RTDv3 Jenkins jobs publish documentation by triggering builds at
 ReadTheDocs.io. That build process clones the appropriate repository
-and transforms Real Simple Text (RST) and other files into HTML.
-Master project builds are performed separately from sub-project
+and transforms reStructuredText (RST) and other files into HTML.
+All project's Read the Docs builds are performed separately from sub-project
 builds.
 
-The ReadTheDocs site supports multiple versions of documentation for
+The Read The Docs site supports multiple versions of documentation for
 the master project and every sub-project.  Every project should have a
 development branch that's published at ReadTheDocs under the title
 "latest"; in git this is usually the "master" branch.  Most projects
@@ -33,7 +36,7 @@ discussed below.
 User setup
 ----------
 
-To transform your rst documentation into a read the docs page, this job must be
+To transform your rst documentation into a Read The Docs page, this job must be
 configured and created as described in Admin setup below. Once this is complete
 the following files must be added to your repository:
 
@@ -69,8 +72,8 @@ of ``doc-dir: "docs/_build/html"`` to ``doc-dir: "_build/html"``, as the relativ
 path in the tox run has changed.
 
 
-Once these files are correctly configured in your repository you can test
-locally:
+Once these files are correctly configured in your repository you can build
+the rst files locally to test:
 
 .. code-block:: bash
 
@@ -81,23 +84,15 @@ Stable Branch Instructions
 --------------------------
 
 If your project does not create branches, you can skip this step.
-Once you branch your project modify your conf.yaml and add the following line:
 
-.. code-block:: bash
-
-   version: 'ReleaseBranchName'
-
-This will update the docs and change "master" on the top bar to your branch
-name. This change should be done against your release branch, this change will
-trigger a Read The Docs build which will create a new landing point for your
-documentation.
-
-This landing point is called /stable/ and is selectable as a version in the
-bottom right corner of all Read The Docs pages.  Once all projects have
-branched and modified their conf.py they will have available their /stable/
-documentation. The process to release the documentation (that is to change the
-default landing point of your docs from /latest/ to /stable/) is to change the
-default-version in the jenkins job config as follows:
+For Read The Docs to see your new branch, a build needs to be triggered.
+A trivial change to any file in your project's /docs/ directory
+on your newly minted branch is sufficient to build and activate your project's
+new branch on Read The Docs. This will create a new selectable version
+in the bottom right corner of your project's Read The Docs page.
+Once all projects have branched the process to release the documentation
+(that is to change the default landing point of your docs from /latest/ to /branchname/)
+is to change the default-version in the jenkins job config as follows:
 
 From:
 
@@ -113,10 +108,12 @@ To:
 
 
 Admin setup:
+------------
 
-This is a global job that only needs to be added once to your project's ci-mangement git
-repository. It leverages the read the docs v3 api to create projects on the fly, as well
-as setting up subproject associations with the master doc.
+This part of the documentation explains how to enable this job so that It will trigger
+on docs/* changes for all projects in a gerrit instance. It leverages the Read
+The Docs v3 api to create projects on the fly, as well as setting up
+sub-project associations with the master doc.
 
 Jobs will run but skip any actual verification until a .readthedocs.yaml is placed in the
 root of the repository
@@ -222,7 +219,7 @@ Job requires an lftools config section, this is to provide api access to read th
    endpoint = https://readthedocs.org/api/v3/
    token = [hidden]
 
-Merge Job will create a project on read the docs if none exist.
+Merge Job will create a project on Read The Docs if none exist.
 Merge Job will assign a project as a subproject of the master project.
 Merge job will trigger a build to update docs.
 Merge job will change the default version if needed.
@@ -243,7 +240,7 @@ Job Templates
 ReadTheDocs v3 Merge
 --------------------
 
-Merge job which triggers a build of the docs to readthedocs.
+Merge job which triggers a build of the docs to Read The Docs.
 
 :Template Names:
     - rtdv3-global-merge-{stream}
@@ -273,7 +270,7 @@ Merge job which triggers a build of the docs to readthedocs.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
-    :tox-dir: Directory containing the project's read the docs tox.ini
+    :tox-dir: Directory containing the project's Read The Docs tox.ini
     :doc-dir: Relative directory project's docs generated by tox
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
@@ -318,7 +315,7 @@ Also outputs some info on the build.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
-    :tox-dir: Directory containing the project's read the docs tox.ini
+    :tox-dir: Directory containing the project's Read The Docs tox.ini
     :doc-dir: Relative directory project's docs generated by tox
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
