@@ -81,23 +81,15 @@ Stable Branch Instructions
 --------------------------
 
 If your project does not create branches, you can skip this step.
-Once you branch your project modify your conf.yaml and add the following line:
 
-.. code-block:: bash
-
-   version: 'ReleaseBranchName'
-
-This will update the docs and change "master" on the top bar to your branch
-name. This change should be done against your release branch, this change will
-trigger a Read The Docs build which will create a new landing point for your
-documentation.
-
-This landing point is called /stable/ and is selectable as a version in the
-bottom right corner of all Read The Docs pages.  Once all projects have
-branched and modified their conf.py they will have available their /stable/
-documentation. The process to release the documentation (that is to change the
-default landing point of your docs from /latest/ to /stable/) is to change the
-default-version in the jenkins job config as follows:
+For Read The Docs to see your new branch, a build needs to be triggered.
+A trivial change to any file in your projects /docs/ directory
+on your newly minted branch is sufficient to build and activate your project's
+new branch on Read The Docs. This will create a new selectable version
+in the bottom right corner of your project's Read The Docs page.
+Once all projects have branched the process to release the documentation
+(that is to change the default landing point of your docs from /latest/ to /branchname/)
+is to change the default-version in the jenkins job config as follows:
 
 From:
 
@@ -115,7 +107,7 @@ To:
 Admin setup:
 
 This is a global job that only needs to be added once to your project's ci-mangement git
-repository. It leverages the read the docs v3 api to create projects on the fly, as well
+repository. It leverages the Read The Docs v3 api to create projects on the fly, as well
 as setting up subproject associations with the master doc.
 
 Jobs will run but skip any actual verification until a .readthedocs.yaml is placed in the
