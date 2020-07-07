@@ -81,23 +81,15 @@ Stable Branch Instructions
 --------------------------
 
 If your project does not create branches, you can skip this step.
-Once you branch your project modify your conf.yaml and add the following line:
 
-.. code-block:: bash
-
-   version: 'ReleaseBranchName'
-
-This will update the docs and change "master" on the top bar to your branch
-name. This change should be done against your release branch, this change will
-trigger a Read The Docs build which will create a new landing point for your
-documentation.
-
-This landing point is called /stable/ and is selectable as a version in the
-bottom right corner of all Read The Docs pages.  Once all projects have
-branched and modified their conf.py they will have available their /stable/
-documentation. The process to release the documentation (that is to change the
-default landing point of your docs from /latest/ to /stable/) is to change the
-default-version in the jenkins job config as follows:
+For read the docs to see your new branch, a build needs to be triggered.
+A trivial change to any file in your projects /docs/ directory
+on your newly minted branch is sufficent to build and activate your projects
+new branch on read the docs. This will create a new selectable version 
+in the bottom right corner of your projects Read The Docs page.  
+Once all projects have branched the process to release the documentation
+(that is to change the default landing point of your docs from /latest/ to /branchname/)
+is to change the default-version in the jenkins job config as follows:
 
 From:
 
