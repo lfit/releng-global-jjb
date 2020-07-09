@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4e2dad3_789dd6ea",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-07-09T20:28:51Z",
+      "side": 1,
+      "message": "I believe the whole point of using double brackets (modern bash) is that you can SKIP quoting the first variable in the expression. This seems like belt \u0026 suspenders redundancy, adding both double brackets AND double quotes.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "f18dce1e78860827eff06a5732d3a8b3385ded60",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
