@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Release verify will not allow valid semver versions like "1.3.2-1"
+    which should be accepted. Update semver regex to conform to https://semver.org/
+    This regex was taken from https://github.com/fsaintjacques/semver-tool
+    which follows the semver guidances and works in bash.
