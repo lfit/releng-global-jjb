@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix quoting bug in rtdv3.sh script that caused failures to exit improperly.
