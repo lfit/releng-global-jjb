@@ -2,6 +2,213 @@
   "comments": [
     {
       "key": {
+        "uuid": "2a9c937a_1845cbe9",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "let\u0027s ensure that the reader does not mix up sub-project with submodules ... ;-)",
+      "range": {
+        "startLine": 8,
+        "startChar": 36,
+        "endLine": 8,
+        "endChar": 47
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a6a27b1_5986fe0f",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "double space",
+      "range": {
+        "startLine": 9,
+        "startChar": 11,
+        "endLine": 9,
+        "endChar": 12
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42d092c2_4d720d38",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "reStructuredText (RST)",
+      "range": {
+        "startLine": 17,
+        "startChar": 15,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "07c21e23_5f9ffd61",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "double space",
+      "range": {
+        "startLine": 22,
+        "startChar": 42,
+        "endLine": 22,
+        "endChar": 43
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "33ff12d4_27b2f0c2",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "double space",
+      "range": {
+        "startLine": 24,
+        "startChar": 54,
+        "endLine": 24,
+        "endChar": 55
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1f7d953_eae6181a",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "double space",
+      "range": {
+        "startLine": 25,
+        "startChar": 36,
+        "endLine": 25,
+        "endChar": 37
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e43499ad_d2a11f2f",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "double space - pls check also the rest of this doc",
+      "range": {
+        "startLine": 27,
+        "startChar": 37,
+        "endLine": 27,
+        "endChar": 38
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42abd86b_6e279f8b",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "Read The Docs",
+      "range": {
+        "startLine": 36,
+        "startChar": 43,
+        "endLine": 36,
+        "endChar": 56
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3fda781a_f0796596",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "??? and your documentation files in RST format ???",
+      "range": {
+        "startLine": 72,
+        "startChar": 41,
+        "endLine": 72,
+        "endChar": 42
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f831df88_b88c6793",
         "filename": "docs/jjb/lf-rtdv3-jobs.rst",
         "patchSetId": 3
@@ -18,6 +225,167 @@
         "startChar": 37,
         "endLine": 86,
         "endChar": 45
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c12782b1_8c45206e",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "not sure what is ment here. \"Project\" in terms of overall \"ONAP\"? or project in terms of \"modeling\", \"sdc\", ...? or for the \"doc master project\"?",
+      "range": {
+        "startLine": 109,
+        "startChar": 8,
+        "endLine": 110,
+        "endChar": 10
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bcb2b348_51678357",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "sub-project",
+      "range": {
+        "startLine": 111,
+        "startChar": 14,
+        "endLine": 111,
+        "endChar": 24
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1f91229_5c654b29",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "this is done where and by whom?  currenly i am a little bit lost because for me it is not clear which role we are talking about?",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 118,
+        "endChar": 0
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "371bf994_1e9a49b3",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "different",
+      "range": {
+        "startLine": 207,
+        "startChar": 58,
+        "endLine": 207,
+        "endChar": 67
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "61995b0d_27278c4c",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "not sure what this means",
+      "range": {
+        "startLine": 207,
+        "startChar": 0,
+        "endLine": 207,
+        "endChar": 100
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3cfa52b_38ab1fea",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "Read the Docs",
+      "range": {
+        "startLine": 209,
+        "startChar": 73,
+        "endLine": 209,
+        "endChar": 86
+      },
+      "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc75a1d7_d48a0b26",
+        "filename": "docs/jjb/lf-rtdv3-jobs.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 417
+      },
+      "writtenOn": "2020-07-09T05:45:12Z",
+      "side": 1,
+      "message": "Read the Docs",
+      "range": {
+        "startLine": 238,
+        "startChar": 48,
+        "endLine": 238,
+        "endChar": 59
       },
       "revId": "1f87bb45102d7d393782ecbb7cd10c982a4deba5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
