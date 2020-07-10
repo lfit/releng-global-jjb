@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f51227a_1afed63d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-07-10T10:24:56Z",
+      "side": 1,
+      "message": "FWIW this omits the possibility of a leading v or V.",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 5
+      },
+      "revId": "37ffc64e36b9cf7e2911c4c965f2522b09c2a066",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
