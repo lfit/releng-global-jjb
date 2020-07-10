@@ -22,6 +22,30 @@
       "revId": "f18dce1e78860827eff06a5732d3a8b3385ded60",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "edf0d90d_9c981843",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-07-10T17:38:45Z",
+      "side": 1,
+      "message": "doesn\u0027t hurt",
+      "parentUuid": "f4e2dad3_789dd6ea",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 10
+      },
+      "revId": "f18dce1e78860827eff06a5732d3a8b3385ded60",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
