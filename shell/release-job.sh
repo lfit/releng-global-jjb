@@ -223,7 +223,7 @@ verify_version(){
         echo "INFO: The version $VERSION is valid"
     else
         echo "ERROR: The version $VERSION is not valid"
-        echo "ERROR: Valid versions are \"#.#.#\" (SemVer) or \"v#.#.#\""
+	echo "       allowed-version-regex: $allowed_version_regex"
         echo "ERROR: See https://semver.org/ for more details on SemVer"
         exit 1
     fi
