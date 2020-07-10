@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c8fa843_c6febf13",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 114
+      },
+      "writtenOn": "2020-07-10T01:37:50Z",
+      "side": 1,
+      "message": "Totally bogus error message now",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 4
+      },
+      "revId": "89144786dbd6e556bc251aeff6b397d6e28eddeb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
