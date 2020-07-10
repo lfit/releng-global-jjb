@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Introduce lf-pipelines-verify job to test the LF's global pipeline library.

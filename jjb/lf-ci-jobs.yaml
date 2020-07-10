@@ -2338,3 +2338,70 @@
     <<: *lf_sonar_builders_prescan_script
     # yamllint disable-line rule:key-duplicates
     <<: *lf_sonar_github_common
+
+#############
+# Pipelines #
+#############
+
+- lf_pipelines_common: &lf_pipelines_common
+    name: lf-pipelines-common
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-timeout: 90
+    disable-job: false
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+- lf_global_pipelines_common: &lf_global_pipelines_common
+    name: lf-global-pipelines-common
+
+    # All jobs are triggering from the same source
+    git-url: https://gerrit.linuxfoundation.org/infra/releng/pipelines
+    triggers:
+      - gerrit:
+          server-name: "lf-releng"
+          trigger-on:
+            - patchset-created-event:
+                exclude-drafts: true
+                exclude-trivial-rebase: false
+                exclude-no-code-change: false
+            - draft-published-event
+            - comment-added-contains-event:
+                comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "releng/pipelines"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/master"
+          override-votes: true
+          gerrit-build-failed-codereview-value: -1
+          gerrit-build-failed-verified-value: 0
+          gerrit-build-successful-codereview-value: 1
+          gerrit-build-successful-verified-value: 0
+
+- job-template:
+    name: "lf-pipelines-verify"
+    id: lf-pipelines-verify
+    <<: *lf_pipelines_common
+    <<: *lf_global_pipelines_common
+
+    project-type: pipeline
+    pipeline-scm:
+      scm:
+        - lf-infra-gerrit-scm:
+            git-url: "{git-url}"
+            refspec: "$GERRIT_REFSPEC"
+            branch: "$GERRIT_BRANCH"
+            submodule-recursive: "{submodule-recursive}"
+            submodule-timeout: "{submodule-timeout}"
+            submodule-disable: "{submodule-disable}"
+            choosing-strategy: gerrit
+            jenkins-ssh-credential: "{jenkins-ssh-credential}"
+    sandbox: true
