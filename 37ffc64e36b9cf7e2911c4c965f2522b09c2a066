@@ -22,6 +22,30 @@
       "revId": "37ffc64e36b9cf7e2911c4c965f2522b09c2a066",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "118464e9_59516c1c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-10T14:45:38Z",
+      "side": 1,
+      "message": "Agreed the error here does not match the regex. IMO it\u0027s _really_ hard to keep these 2 in sync. Maybe worth also printing the full regex as extra output just in case so that people can see what they are matching against. Something like:\n\n echo \"        allowed-version-regex: $allowed_version_regex\"\n\nThis way when someone sees this error for a funny edge case, they won\u0027t need ot dig through the code to find what that pattern is.",
+      "parentUuid": "7f51227a_1afed63d",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 5
+      },
+      "revId": "37ffc64e36b9cf7e2911c4c965f2522b09c2a066",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
