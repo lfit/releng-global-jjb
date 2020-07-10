@@ -566,6 +566,22 @@ other file changes. Verifies INFO.yaml files follow the schema defined in
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
+.. _lf_pipelines_verify
+
+LF Pipelines Verify
+-------------------
+
+Verify job for the LF RelEng pipeline library. This can be implemented on any
+Jenkins machine that has the appropriate Pipelines plugins installed. It will
+look for a Gerrit system named "lf-releng" (which should be mapped to
+https://gerrit.linuxfoundation.org/infra/), and pull in the Jenkinsfile in the
+root directory of the repo.
+
+:Template Names:
+    - lf-pipelines-verify
+
+:Comment Trigger: recheck|reverify
+
 .. _license-checker:
 
 License Checker
