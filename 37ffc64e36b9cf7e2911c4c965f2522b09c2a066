@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f0031ad9_d2e897e2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-07-10T16:32:08Z",
+      "side": 1,
+      "message": "This is an abomination.\n\nMaybe..\n\n$ python -c \"import semantic_version; x \u003d semantic_version.validate(\u00270a2\u0027); print(x)\"\nFalse\n(.venv3Nov)  agardner at hyperion-2/tmp/rtdtriggerfoo\n$ python -c \"import semantic_version; x \u003d semantic_version.validate(\u00271.1.1\u0027); print(x)\"\nTrue",
+      "range": {
+        "startLine": 221,
+        "startChar": 2,
+        "endLine": 221,
+        "endChar": 218
+      },
+      "revId": "37ffc64e36b9cf7e2911c4c965f2522b09c2a066",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7f51227a_1afed63d",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
