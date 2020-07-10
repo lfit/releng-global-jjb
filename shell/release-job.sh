@@ -223,7 +223,8 @@ verify_version(){
         echo "INFO: The version $VERSION is valid"
     else
         echo "ERROR: The version $VERSION is not valid"
-        echo "ERROR: Valid versions are \"#.#.#\" (SemVer) or \"v#.#.#\""
+        echo "ERROR: Version must match \"X.Y.Z[-PRERELEASE][+BUILD]\""
+        echo "ERROR: Samples \"0.1.1\", \"1.0.9-2\", \"1.2.3-SNAPSHOT\", or \"31.10.91-rc567+build3\""
         echo "ERROR: See https://semver.org/ for more details on SemVer"
         exit 1
     fi
