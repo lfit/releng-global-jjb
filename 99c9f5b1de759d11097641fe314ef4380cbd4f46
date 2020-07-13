@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "50e5c9ad_179c29c8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-07-13T21:17:55Z",
+      "side": 1,
+      "message": "*caused",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 6
+      },
+      "revId": "99c9f5b1de759d11097641fe314ef4380cbd4f46",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0ea72ddb_ef698191",
         "filename": "releasenotes/notes/lf-rtdv3-jobs-809e51d2bf6794d8.yaml",
         "patchSetId": 2
