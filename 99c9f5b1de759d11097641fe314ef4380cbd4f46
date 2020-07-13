@@ -45,6 +45,30 @@
       "revId": "99c9f5b1de759d11097641fe314ef4380cbd4f46",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "592deab3_e2dc6d7a",
+        "filename": "releasenotes/notes/lf-rtdv3-jobs-809e51d2bf6794d8.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-07-13T21:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ea72ddb_ef698191",
+      "range": {
+        "startLine": 4,
+        "startChar": 44,
+        "endLine": 4,
+        "endChar": 50
+      },
+      "revId": "99c9f5b1de759d11097641fe314ef4380cbd4f46",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
