@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b09ca214_095b842f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-14T13:38:04Z",
+      "side": 1,
+      "message": "I wouldn\u0027t include this in the commit message because this link is not timeless. After 6 months someone looking at this commit will have no way to get this log. If you want the log then put what is relevant from the log in the commit message as an example.",
+      "revId": "c603d4585302454c48fe427b2ea9ee33304e7b17",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
