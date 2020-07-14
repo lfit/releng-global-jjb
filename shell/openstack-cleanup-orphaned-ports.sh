@@ -15,13 +15,27 @@ os_cloud="${OS_CLOUD:-vex}"
 
 set -eux -o pipefail
 
-mapfile -t os_ports < <(openstack --os-cloud "$os_cloud" port list -f value -c ID -c status | grep -E DOWN | awk '{print $1}')
+mapfile -t os_ports_ts < <(openstack --os-cloud "$os_cloud" port list \
+      -f value \
+      -c ID \
+      -c status \
+      -c created_at \
+      | grep -E DOWN \
+      | awk -F' ' '{print $1 " " $3}')
 
-if [ ${#os_ports[@]} -eq 0 ]; then
+if [ ${#os_ports_ts[@]} -eq 0 ]; then
     echo "No orphaned ports found."
 else
-    for port in "${os_ports[@]}"; do
-        echo "Removing orphaned port $port"
-        openstack --os-cloud "$os_cloud" port delete "$port"
+    cutoff=$(date -d "30 minutes ago"  +%s)
+    for port_ts in "${os_ports_ts[@]}"; do
+        created_at_isots="${port_ts#* }"
+        port_uuid="${port_ts% *}"
+        echo "checking port uuid: ${port_uuid} with TS: ${created_at_isots}"
+        created_at_uxts=$(date -d "${created_at_isots}" +"%s")
+        # Clean up ports where created_at > 30 minutes
+        if [[ "$created_at_uxts" -gt "$cutoff" ]]; then
+            echo "Removing orphaned port $port_uuid created_at ts > 30 minutes."
+            openstack --os-cloud "$os_cloud" port delete "$port_uuid"
+        fi
     done
 fi

@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Fix the race condition by checking the created_at timestamp and clean up
+    ports that were created at least 30 minutes before.
+
+    There a race condition in the openstack-cron job that causes the script to
+    delete ports in DOWN state and are still in use by the VM, causing the
+    ODL CSIT jobs to fail.
+
+    JSD ISSUE: `RELENG-3062 <https://jira.linuxfoundation.org/browse/RELENG-3062>`_
