@@ -18,7 +18,7 @@ watchbuild(){
   buildid=$(lftools rtd project-build-trigger "$rtdproject" "$1" | jq '.build.id')
 
   result=null
-  while [ $result == null ]; do
+  while [[ "$result" == null ]]; do
     sleep 10
     result=$(lftools rtd project-build-details "$rtdproject" "$buildid"  | jq '.success')
     echo "INFO Current result of running build $result"
