@@ -63,6 +63,52 @@
       "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3982b93f_53d46a38",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-07-15T20:06:22Z",
+      "side": 1,
+      "message": "This is also a problem. If you subtract 30 minutes from both, you\u0027re pretty much just checking to see if it was created in the future. If not, you\u0027ll always delete it. You only want to subtract 30 from the current time to create the cutoff.",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 47
+      },
+      "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab11b384_c0acd50f",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-07-15T20:06:22Z",
+      "side": 1,
+      "message": "Why do the conditional this way? An if statement would read much more clearly. I know it adds one more line for the \"fi\", but that\u0027s a pretty small price to pay for something that\u0027s much more clear (since I originally looked at this and thought \"Huh, he\u0027s evaluating this backwards\", until I realized you were evaluating the counter-condition for the following code).",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 56
+      },
+      "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
