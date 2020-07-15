@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ba14589_46a06358",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-15T16:56:45Z",
+      "side": 1,
+      "message": "I would like this command to be properly line broken at 80 characters, it\u0027s hard to read this way.",
+      "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "23b2fc1b_896442fc",
         "filename": "shell/openstack-cleanup-orphaned-ports.sh",
         "patchSetId": 4
@@ -13,6 +30,30 @@
       "writtenOn": "2020-07-15T15:50:59Z",
       "side": 1,
       "message": "These variables are backwards. This line should be:\necho \"checking port uuid: ${port_ts% *} with TS: ${port_ts#* }\"\n\nPerhaps even better, you should do the variable assignments first, and then it can be:\necho \"checking port uuid: ${port_uuid} with TS: ${created_at_isots}\"",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 71
+      },
+      "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44fab1c1_57f07adb",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-15T16:56:45Z",
+      "side": 1,
+      "message": "I agree with Eric. The variable assignments should happen before you do any echoes of the values!",
+      "parentUuid": "23b2fc1b_896442fc",
       "range": {
         "startLine": 24,
         "startChar": 8,
