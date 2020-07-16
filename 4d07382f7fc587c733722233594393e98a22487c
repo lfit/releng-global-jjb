@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb098993_88048a87",
+        "filename": "releasenotes/notes/fix-openstack-port-cleanup-race-condition-8746f634fd1709ae.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-16T15:56:27Z",
+      "side": 1,
+      "message": "Instead of giving the issue like this, since this goes into the release notes I would suggest making it a markup to the actual issue.",
+      "revId": "4d07382f7fc587c733722233594393e98a22487c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
