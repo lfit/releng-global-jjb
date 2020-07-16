@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "52672967_9ed3236a",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T07:05:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6b038bf8_80940e99",
+      "revId": "5391ff0614eac113724db1906e3d6c70673a6749",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "102cb779_db8bc2f6",
         "filename": "shell/openstack-cleanup-orphaned-ports.sh",
         "patchSetId": 8
@@ -39,6 +57,30 @@
       "revId": "5391ff0614eac113724db1906e3d6c70673a6749",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e2d0f51_838eb847",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T07:05:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "102cb779_db8bc2f6",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 10
+      },
+      "revId": "5391ff0614eac113724db1906e3d6c70673a6749",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
