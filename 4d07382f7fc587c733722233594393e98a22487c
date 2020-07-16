@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "f261bf72_cfe6bb79",
+        "filename": "releasenotes/notes/fix-openstack-port-cleanup-race-condition-8746f634fd1709ae.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-07-16T16:01:35Z",
+      "side": 1,
+      "message": "As long as we\u0027re pointing out small issues with the release notes, this should be \"at least\".",
+      "range": {
+        "startLine": 5,
+        "startChar": 28,
+        "endLine": 5,
+        "endChar": 35
+      },
+      "revId": "4d07382f7fc587c733722233594393e98a22487c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fb098993_88048a87",
         "filename": "releasenotes/notes/fix-openstack-port-cleanup-race-condition-8746f634fd1709ae.yaml",
         "patchSetId": 9
