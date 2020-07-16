@@ -22,6 +22,30 @@
       "revId": "f608426792fad57ba794be8538944dd9c50f11d0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc269411_e439cc4d",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T03:49:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a184bdbd_f5666d52",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 36,
+        "endChar": 56
+      },
+      "revId": "f608426792fad57ba794be8538944dd9c50f11d0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }

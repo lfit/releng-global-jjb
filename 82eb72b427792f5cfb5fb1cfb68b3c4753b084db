@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fb0b4258_991a82aa",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T03:49:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ba14589_46a06358",
+      "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "23b2fc1b_896442fc",
         "filename": "shell/openstack-cleanup-orphaned-ports.sh",
         "patchSetId": 4
@@ -66,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "6cf40a7d_f497d84b",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T03:49:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44fab1c1_57f07adb",
+      "range": {
+        "startLine": 24,
+        "startChar": 8,
+        "endLine": 24,
+        "endChar": 71
+      },
+      "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3982b93f_53d46a38",
         "filename": "shell/openstack-cleanup-orphaned-ports.sh",
         "patchSetId": 4
@@ -86,6 +128,30 @@
       "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "144bb78e_4d8b9fae",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T03:49:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3982b93f_53d46a38",
+      "range": {
+        "startLine": 27,
+        "startChar": 8,
+        "endLine": 28,
+        "endChar": 47
+      },
+      "revId": "82eb72b427792f5cfb5fb1cfb68b3c4753b084db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
