@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "45c9e0cf_022ae8d2",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T07:08:47Z",
+      "side": 1,
+      "message": "Bit unsure here, since openstack cli takes 10-15 seconds to completed. Assuming we have N ports to clean, the Nth port would have a cutoff time more than \u003e 30 mins (ie N * 10s + 30min), which should not matter, as cutoff time would be a tad longer and not lesser. :)",
+      "parentUuid": "52672967_9ed3236a",
+      "revId": "5391ff0614eac113724db1906e3d6c70673a6749",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "102cb779_db8bc2f6",
         "filename": "shell/openstack-cleanup-orphaned-ports.sh",
         "patchSetId": 8
