@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "6fcaa030_fe4977a2",
+        "filename": "releasenotes/notes/fix-openstack-port-cleanup-race-condition-8746f634fd1709ae.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T23:38:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f261bf72_cfe6bb79",
+      "range": {
+        "startLine": 5,
+        "startChar": 28,
+        "endLine": 5,
+        "endChar": 35
+      },
+      "revId": "4d07382f7fc587c733722233594393e98a22487c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fb098993_88048a87",
         "filename": "releasenotes/notes/fix-openstack-port-cleanup-race-condition-8746f634fd1709ae.yaml",
         "patchSetId": 9
@@ -63,6 +87,24 @@
       "revId": "4d07382f7fc587c733722233594393e98a22487c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b8bb0280_7b172225",
+        "filename": "releasenotes/notes/fix-openstack-port-cleanup-race-condition-8746f634fd1709ae.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-16T23:38:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fb098993_88048a87",
+      "revId": "4d07382f7fc587c733722233594393e98a22487c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
