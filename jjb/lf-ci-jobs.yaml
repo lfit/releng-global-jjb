@@ -623,6 +623,9 @@
           project: "{project}"
           stream: "{stream}"
           branch: "{branch}"
+      - lf-infra-jjb-parameters:
+          jjb-cache: "{jjb-cache}"
+          jjb-version: "{jjb-version}"
 
     wrappers:
       - lf-infra-wrappers:
@@ -639,6 +642,8 @@
 - job-template:
     name: "{project-name}-jjb-deploy-job"
     id: gerrit-jjb-deploy-job
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_deploy_job
 
     scm:
@@ -671,6 +676,8 @@
 - job-template:
     name: "{project-name}-jjb-deploy-job"
     id: github-jjb-deploy-job
+    <<: *lf_jjb_common
+    # yamllint disable-line rule:key-duplicates
     <<: *lf_jjb_deploy_job
 
     properties:

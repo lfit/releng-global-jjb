@@ -1,0 +1,17 @@
+---
+fixes:
+  - |
+    Fix the jjb-deploy job to accept a JJB_VERSION parameter in the parameters
+    field so that projects can select which version of JJB they want for the job.
+
+    The change that ended up breaking jjb-deploy was caused by this Gerrit
+    patch here:
+
+    https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/62788
+
+    The bug was introduced in the lf-env.sh when the lf-pip-install macro was
+    removed. Prior to the removal the jjb-deploy job was installing the latest
+    and greatest JJB version. However now jjb-deploy is now installing the
+    fallback version of JJB_VERSION from the lf-env.sh script which is 2.8.0.
+
+    JSD ISSUE: `RELENG-3073 <https://jira.linuxfoundation.org/browse/RELENG-3073>`_
