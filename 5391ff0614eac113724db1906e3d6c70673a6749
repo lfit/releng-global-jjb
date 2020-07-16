@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6b038bf8_80940e99",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-16T04:31:22Z",
+      "side": 1,
+      "message": "$cutoff is getting recalculated every time this loop iterates. It should be moved to just before the for loop and calculated only once.",
+      "revId": "5391ff0614eac113724db1906e3d6c70673a6749",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "102cb779_db8bc2f6",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-16T04:31:22Z",
+      "side": 1,
+      "message": "wouldn\u0027t this be cleaner as:\n\nif [[ \"$created_at_uxts\" -gt \"$cutoff\" ]]; then\n  # do the removal code\nfi\n\nNo need for the continue statement there at all in this case",
+      "range": {
+        "startLine": 36,
+        "startChar": 8,
+        "endLine": 41,
+        "endChar": 10
+      },
+      "revId": "5391ff0614eac113724db1906e3d6c70673a6749",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
