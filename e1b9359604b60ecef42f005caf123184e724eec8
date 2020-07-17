@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "b133e48d_2fb15cde",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-17T16:16:10Z",
+      "side": 1,
+      "message": "As per my comment on the release notes, this should be RELENG-3073 we should not be referencing IT- issues since they have limited public visibility and require someone to be logged in to view them if they even have the rights!",
+      "revId": "e1b9359604b60ecef42f005caf123184e724eec8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5467a530_b64f52e0",
         "filename": "releasenotes/notes/include-jjb-version-param-deploy-jjb-b2c2f915274405f2.yaml",
         "patchSetId": 3
