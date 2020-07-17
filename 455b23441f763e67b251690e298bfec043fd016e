@@ -22,6 +22,30 @@
       "revId": "455b23441f763e67b251690e298bfec043fd016e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "daa82116_cd7018ec",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-07-17T01:08:08Z",
+      "side": 1,
+      "message": "This goes back with some histroy, where we wanted to have a minimum supported version and still give the option for the project to use the latest version of JJB. :)\n\nThe file in the change is a jjb-test and what ever is put here is only for testing purposes. The actual version that gets used in the jobs gets set from the project defaults or global-jjb default version.  \n\nAndy can add, if I missed anything.",
+      "parentUuid": "52b58911_9948d280",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "455b23441f763e67b251690e298bfec043fd016e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
