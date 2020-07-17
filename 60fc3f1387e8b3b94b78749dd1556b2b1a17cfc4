@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c77fcc5_c4f8b063",
+        "filename": "releasenotes/notes/include-jjb-version-param-deploy-jjb-b2c2f915274405f2.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-17T16:21:43Z",
+      "side": 1,
+      "message": "probably shouldn\u0027t say JSD ISSUE here either.",
+      "range": {
+        "startLine": 17,
+        "startChar": 4,
+        "endLine": 17,
+        "endChar": 13
+      },
+      "revId": "60fc3f1387e8b3b94b78749dd1556b2b1a17cfc4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
