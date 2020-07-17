@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "6a0ac554_d29f452a",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-17T16:07:49Z",
+      "side": 1,
+      "message": "@Eric, yes we try to maintain the minimum version of JJB required for global-jjb itself. That way projects can and should pick specifically what version they want to use rather then allowing the default in global-jjb to take over.\n\nIf we set the latest version in global-jjb then we would have to state that projects must use the latest versions of JJB itself too.",
+      "parentUuid": "25555594_f101c006",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "455b23441f763e67b251690e298bfec043fd016e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4d4a686d_3b908670",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 2
