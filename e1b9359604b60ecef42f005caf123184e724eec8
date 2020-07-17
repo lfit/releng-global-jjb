@@ -33,6 +33,24 @@
       "revId": "e1b9359604b60ecef42f005caf123184e724eec8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec130d95_e0860854",
+        "filename": "releasenotes/notes/include-jjb-version-param-deploy-jjb-b2c2f915274405f2.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-17T16:19:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5467a530_b64f52e0",
+      "revId": "e1b9359604b60ecef42f005caf123184e724eec8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
