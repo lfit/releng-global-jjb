@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52b58911_9948d280",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-07-17T00:25:19Z",
+      "side": 1,
+      "message": "Why not use a newer version? 2.8.0 seems really out of date. JJB is up to 3.4.0! I don\u0027t know if this makes any functional difference during testing, but if so, I don\u0027t think we want a really out of date version here.",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "455b23441f763e67b251690e298bfec043fd016e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
