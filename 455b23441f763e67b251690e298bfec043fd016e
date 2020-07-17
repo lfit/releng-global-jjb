@@ -70,6 +70,29 @@
       "revId": "455b23441f763e67b251690e298bfec043fd016e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d4a686d_3b908670",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-17T14:48:27Z",
+      "side": 1,
+      "message": "If we use lf_jjb_common for the jjb-deploy job, these variables might be troublesome as they might prevent users from deploying jobs on patches that don\u0027t have changes in these areas. We\u0027ll have to override these 2 variables in the gerrit-jjb-deploy job and github-jjb-deploy job by setting a pattern that matches everything in the repo.",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 0
+      },
+      "revId": "455b23441f763e67b251690e298bfec043fd016e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
