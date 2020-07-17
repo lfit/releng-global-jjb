@@ -46,6 +46,30 @@
       "revId": "455b23441f763e67b251690e298bfec043fd016e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25555594_f101c006",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-17T14:44:31Z",
+      "side": 1,
+      "message": "No need for changes in this file. These variables are already defined in the lf_jjb_common anchor but for one reason or another this anchor is not utilized in the jjb-deploy job. I think the better solution is to make use of the lf_jjb_common anchor similar to jjb-verify and jjb-merge and other jjb related jobs..",
+      "parentUuid": "daa82116_cd7018ec",
+      "range": {
+        "startLine": 9,
+        "startChar": 17,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "455b23441f763e67b251690e298bfec043fd016e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
