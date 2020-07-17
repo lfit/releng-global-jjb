@@ -165,6 +165,30 @@
       "revId": "455b23441f763e67b251690e298bfec043fd016e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5fe29d0_c5dc3c65",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-17T17:04:58Z",
+      "side": 1,
+      "message": "Just took another look at the job. Looks like jjb-deploy job does not use these 2 variables and has it\u0027s own separate definition for file paths which already includes everything. I think we\u0027re fine here.",
+      "parentUuid": "e22b1ca1_674d78ee",
+      "range": {
+        "startLine": 114,
+        "startChar": 4,
+        "endLine": 127,
+        "endChar": 0
+      },
+      "revId": "455b23441f763e67b251690e298bfec043fd016e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
