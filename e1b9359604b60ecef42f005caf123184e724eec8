@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5467a530_b64f52e0",
+        "filename": "releasenotes/notes/include-jjb-version-param-deploy-jjb-b2c2f915274405f2.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-17T16:14:06Z",
+      "side": 1,
+      "message": "Release notes should not be referencing JSD issues but RELENG issues since JSD issues have limited public visibility. As such, I\u0027ve created a linked RELENG issue that can be used for the public documentation. The issue is: RELENG-3073 please update the release notes to point to this issue.",
+      "revId": "e1b9359604b60ecef42f005caf123184e724eec8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
