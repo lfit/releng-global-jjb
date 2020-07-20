@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fdca1265_15780a94",
+        "filename": "releasenotes/notes/maven-deploy-87ad380c53d8e2c2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-20T18:51:49Z",
+      "side": 1,
+      "message": "I think wording would be better with something like \"Resolves the lftools_activate failure below.\"",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 31
+      },
+      "revId": "77c940a226866187891d3cb285563993aa843375",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4844fad5_d9640c76",
+        "filename": "releasenotes/notes/maven-deploy-87ad380c53d8e2c2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-20T18:51:49Z",
+      "side": 1,
+      "message": "Maybe a code-block here?\n\n .. code-block:: bash\n \n     ---\u003e maven-deploy.sh\n     ImportError: cannot import name \u0027enquote_executable",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 56
+      },
+      "revId": "77c940a226866187891d3cb285563993aa843375",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2d708bd_9dd1b736",
+        "filename": "releasenotes/notes/maven-deploy-87ad380c53d8e2c2.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-07-20T18:51:49Z",
+      "side": 1,
+      "message": "Commit messages says we\u0027re deprecating the lftools_activate function so we should have a deprecation note here.\n\n deprecates:\n   - |\n     lftools_activate should no longer be used and will be removed in a future release.\n\nAlso in the file that contains lftools_activate should add a comment that says \"Deprecated.\" somewhere in the function docs.",
+      "revId": "77c940a226866187891d3cb285563993aa843375",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
