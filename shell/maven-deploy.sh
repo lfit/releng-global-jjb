@@ -21,8 +21,6 @@ set -eu -o pipefail
 m2repo_dir="$WORKSPACE/m2repo"
 nexus_repo_url="$NEXUS_URL/content/repositories/$NEXUS_REPO"
 
-lftools_activate
-
 echo "-----> Remove metadata files that were not updated"
 set +e  # Temporarily disable to run diff command.
 mapfile -t metadata_files <<< "$(diff -s -r "$m2repo_dir" "$WORKSPACE/m2repo-backup" \
@@ -40,6 +38,11 @@ fi
 set -u  # Re-enable.
 
 find "$m2repo_dir" -type d -empty -delete
+
+echo "-----> Install lftools"
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+lf-activate-venv lftools
 
 echo "-----> Upload files to Nexus"
 lftools deploy nexus -s "$nexus_repo_url" "$m2repo_dir"

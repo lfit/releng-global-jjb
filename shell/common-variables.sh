@@ -23,6 +23,7 @@ echo "$MAVEN_OPTIONS"
 
 # Activates the lftools virtualenv
 lftools_activate() {
+    echo "WARNING: lftools_activate should no longer be used and will be removed in a future release."
     virtualenv --quiet "/tmp/v/lftools"
     set +u  # Ignore unbound variables in activate
     # shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
