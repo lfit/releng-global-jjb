@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    lftools_activate fails with
+    ---> maven-deploy.sh
+    ImportError: cannot import name 'enquote_executable'
+    This fix replaces it with lf-env.sh and lf-activate-venv
+    It is a more error resitant way to make sure a pip
+    package is installed
