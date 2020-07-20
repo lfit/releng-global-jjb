@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ac12b49_722ea38a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-07-20T17:53:40Z",
+      "side": 1,
+      "message": "This should be \"deprecated\", and the subject shouldn\u0027t end with a period.",
+      "range": {
+        "startLine": 7,
+        "startChar": 27,
+        "endLine": 7,
+        "endChar": 12
+      },
+      "revId": "ef212998dff5399b97ff49db49591b54a5c4bbc3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
