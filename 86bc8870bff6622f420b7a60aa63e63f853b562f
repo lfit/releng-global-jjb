@@ -22,6 +22,30 @@
       "revId": "86bc8870bff6622f420b7a60aa63e63f853b562f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a1bc183_ea3663e7",
+        "filename": "releasenotes/notes/maven-deploy-87ad380c53d8e2c2.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-07-20T20:03:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17a783a8_444f6f42",
+      "range": {
+        "startLine": 12,
+        "startChar": 37,
+        "endLine": 12,
+        "endChar": 45
+      },
+      "revId": "86bc8870bff6622f420b7a60aa63e63f853b562f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
