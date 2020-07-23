@@ -227,6 +227,7 @@
               branches:
                 - branch-compare-type: ANT
                   branch-pattern: "**/{branch}"
+          comment-text-parameter-mode: PLAIN
 
     builders:
       - shell: !include-raw-escape: ../shell/gerrit-branch-lock.sh
@@ -672,6 +673,7 @@
             failed: true
             unstable: true
             notbuilt: true
+          comment-text-parameter-mode: PLAIN
 
 - job-template:
     name: "{project-name}-jjb-deploy-job"
