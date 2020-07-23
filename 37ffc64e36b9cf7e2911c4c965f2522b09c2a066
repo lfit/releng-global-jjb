@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "488d091a_3a896010",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-23T14:42:10Z",
+      "side": 1,
+      "message": "Remove this line. Issues should be in the footer, not the commit message body.",
+      "revId": "37ffc64e36b9cf7e2911c4c965f2522b09c2a066",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f0031ad9_d2e897e2",
         "filename": "shell/release-job.sh",
         "patchSetId": 2
@@ -13,6 +30,30 @@
       "writtenOn": "2020-07-10T16:32:08Z",
       "side": 1,
       "message": "This is an abomination.\n\nMaybe..\n\n$ python -c \"import semantic_version; x \u003d semantic_version.validate(\u00270a2\u0027); print(x)\"\nFalse\n(.venv3Nov)  agardner at hyperion-2/tmp/rtdtriggerfoo\n$ python -c \"import semantic_version; x \u003d semantic_version.validate(\u00271.1.1\u0027); print(x)\"\nTrue",
+      "range": {
+        "startLine": 221,
+        "startChar": 2,
+        "endLine": 221,
+        "endChar": 218
+      },
+      "revId": "37ffc64e36b9cf7e2911c4c965f2522b09c2a066",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf460c45_9a295f02",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-23T14:42:10Z",
+      "side": 1,
+      "message": "That requires us to install an extra pip module. We\u0027ve already validated that this particular regex works. It was lifted from a fairly active project that does semver bumping in bash. If it had a validator as part of it we would probably just use it directly!",
+      "parentUuid": "f0031ad9_d2e897e2",
       "range": {
         "startLine": 221,
         "startChar": 2,
@@ -60,6 +101,30 @@
       "side": 1,
       "message": "Agreed the error here does not match the regex. IMO it\u0027s _really_ hard to keep these 2 in sync. Maybe worth also printing the full regex as extra output just in case so that people can see what they are matching against. Something like:\n\n echo \"        allowed-version-regex: $allowed_version_regex\"\n\nThis way when someone sees this error for a funny edge case, they won\u0027t need ot dig through the code to find what that pattern is.",
       "parentUuid": "7f51227a_1afed63d",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 5
+      },
+      "revId": "37ffc64e36b9cf7e2911c4c965f2522b09c2a066",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "239e8e26_2f3127e7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-07-23T14:42:10Z",
+      "side": 1,
+      "message": "I agree with Thanh on this. We should just output the regex that they need to meet. That way if someone complains at us we can tell them to read the logs ;)",
+      "parentUuid": "118464e9_59516c1c",
       "range": {
         "startLine": 226,
         "startChar": 0,
