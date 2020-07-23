@@ -1663,3 +1663,4 @@
                 - branch-compare-type: ANT
                   branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_trigger_file_paths}"
+          comment-text-parameter-mode: PLAIN

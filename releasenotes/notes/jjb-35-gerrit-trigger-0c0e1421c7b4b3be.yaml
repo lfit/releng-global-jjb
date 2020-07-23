@@ -1,0 +1,13 @@
+---
+fixes:
+  - |
+    Retains the expected behaviour of Gerrit Trigger job configuration
+    for the comment-event-parameter-mode when a project upgrades their
+    JJB to 3.5.0 or newer.
+
+    In JJB 3.5.0 support was added to configure the
+    comment-event-parameter-mode however, while it's default mode in JJB
+    matches the documented help text for the configuration in Jenkins the
+    Gerrit Trigger plugin itself appears to default to PLAIN mode when
+    the parameter is excluded. This patch retains what we expect to be the
+    default behaviour.
