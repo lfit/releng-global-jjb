@@ -1,4 +1,5 @@
 # UUID                                                                               	Group Name
 #
+9a2634c0a2fb8215ef9b1b1ae0df4c5651ad888e                                             	saml/lfinfra-gerrit-releng-global-jjb-committers
 d68d00a2419f8ff627fc120cf9dd9055ae422153                                             	GitHub Replication
 ldap:cn=lfinfra-gerrit-releng-global-jjb-committers,ou=Groups,dc=freestandards,dc=org	ldap/lfinfra-gerrit-releng-global-jjb-committers
