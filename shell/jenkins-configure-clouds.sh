@@ -49,7 +49,7 @@ set -eu -o pipefail
 testversion() {
     local current_val="$1" operator="$2" test_value="$3"
     awk -vv1="$current_val" -vv2="$test_value" 'BEGIN {
-      split(v1, a, /\:/);
+      split(v1, a, ":");
       if (a[2] == '"$test_value"') {
         exit (a[2] == '"$test_value"') ? 0 : 1
       }
