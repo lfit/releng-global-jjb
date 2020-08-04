@@ -13,8 +13,11 @@ echo "---> sigul-install.sh"
 # Ensure we fail the job if any steps fail.
 set -e -o pipefail
 
-# Setup sigul RPM repo
-echo "[fedora-infra-sigul]
+if command -v sigul &>/dev/null; then
+    echo "Sigul already installed; skipping installation."
+else
+    # Setup sigul RPM repo
+    echo "[fedora-infra-sigul]
 name=Fedora builder packages for sigul
 baseurl=https://kojipkgs.fedoraproject.org/repos-dist/epel\$releasever-infra/latest/\$basearch/
 enabled=1
@@ -23,12 +26,12 @@ gpgkey=https://infrastructure.fedoraproject.org/repo/infra/RPM-GPG-KEY-INFRA-TAG
 includepkgs=sigul*
 skip_if_unavailable=True" > fedora-infra-sigul.repo
 
-sudo cp fedora-infra-sigul.repo /etc/yum.repos.d
-rm fedora-infra-sigul.repo
+    sudo cp fedora-infra-sigul.repo /etc/yum.repos.d
+    rm fedora-infra-sigul.repo
 
-# install sigul
-sudo yum install -y -q sigul
-
+    # install sigul
+    sudo yum install -y -q sigul
+fi;
 # configure /etc/hosts with the sigul bridge hostname
 # This is needed as build minions can't always get DNS resolution
 # on the bridge
