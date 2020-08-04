@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Update sigul-install.sh to check for sigul. If sigul is already installed,
+    we can skip the installation. This is important due to kojipkgs being
+    unreliable. We now have the sigul binary baked into the base image creation,
+    so newer images should already have sigul on board. If they do and we still
+    try to do this manual installation, we could still run into connection
+    issues with kojipkgs.
