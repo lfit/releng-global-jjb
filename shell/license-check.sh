@@ -56,7 +56,7 @@ fi
 set -f  # Disable globbing for $file_patterns to pass '*'
 # Purposely disable SC2068 for $file_patterns
 # shellcheck disable=SC2068
-lhc --license "$licenses_allowed" ${disable_spdx} \
+lhc --license "$licenses_allowed" "${disable_spdx}" \
     --exclude "$license_exclude_paths" \
     ${file_patterns[@]}
 set +f

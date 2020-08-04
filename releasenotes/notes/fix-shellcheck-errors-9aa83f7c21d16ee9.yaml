@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Minor fixes to correct shellcheck warnings/errors.

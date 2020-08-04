@@ -29,10 +29,10 @@ set +f
 # Directories beginning with {0..9} or {A..Z} are left at the top level.
 (   cd archives/job-configs
     for letter in {a..z}; do
-        if ls -d $letter* > /dev/null 2>&1; then
+        if ls -d "$letter"* > /dev/null 2>&1; then
             mkdir .tmp
-            mv $letter* .tmp
-            mv .tmp $letter
+            mv "$letter"* .tmp
+            mv .tmp "$letter"
         fi
     done
 )

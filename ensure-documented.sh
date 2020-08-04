@@ -35,7 +35,7 @@ for file in "${jjb_files[@]}"; do
     done
 done
 
-if [ $undocumented_count -gt 0 ]; then
+if [ "$undocumented_count" -gt 0 ]; then
     echo "Number of undocumented items: $undocumented_count"
     exit 1
 fi
