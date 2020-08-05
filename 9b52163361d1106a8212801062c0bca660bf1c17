@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08e66889_0142e904",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 127
+      },
+      "writtenOn": "2020-08-05T13:12:24Z",
+      "side": 1,
+      "message": "I don\u0027t think you\u0027ll want to fail if this fails, you\u0027ll otherwise fail the whole job if it fails to do that curl, which seems a little too much..",
+      "revId": "9b52163361d1106a8212801062c0bca660bf1c17",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
