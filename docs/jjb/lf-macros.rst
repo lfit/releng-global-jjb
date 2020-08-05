@@ -453,7 +453,8 @@ lf-infra-publish
 
 Provides basic lf-infra recommended publisher configurations which should be
 used in all job templates. This primary objective of this trigger is to
-gather build logs and copy them to a log server.
+gather package listing, instance metadata, sar reports, build logs and copy
+them to a log server.
 
 lf-infra-publish-windows
 ------------------------

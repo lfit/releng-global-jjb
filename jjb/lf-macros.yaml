@@ -32,6 +32,12 @@
           - ../shell/license-check.sh
 
 - builder:
+    name: lf-infra-capture-instance-metadata
+    builders:
+      - shell: !include-raw:
+          - ../shell/capture-instance-metadata.sh
+
+- builder:
     name: lf-infra-create-netrc
     builders:
       - inject:
@@ -655,6 +661,7 @@
               build-steps:
                 - lf-infra-sysstat
                 - lf-infra-package-listing
+                - lf-infra-capture-instance-metadata
                 - lf-infra-ship-logs
           mark-unstable-if-failed: true
       - workspace-cleanup:

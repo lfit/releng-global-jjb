@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Capture instance metadata for the VM's. This data is useful while working
+    with the cloud provider and debuging VM issues on the infrastructure.
