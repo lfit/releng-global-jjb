@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "db8eed9b_c45f966a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-08-05T16:45:18Z",
+      "side": 1,
+      "message": "Do _not_ use IT- issues in global-jjb changes. Those are not 100% publicly available. Instead, if there is an issue that comes into JSD, create a linked issue / clone it into the RELENG project and use that as the issue key. In addition, I saw that RELENG-3142 was created about doing this work. I would suggest using that as the issue to attach this change to.",
+      "revId": "0fd9d85a5b8e1cd635b341917405a3fbc568897e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d57d597c_4a5228c8",
         "filename": "shell/capture-instance-metadata.sh",
         "patchSetId": 2
