@@ -68,6 +68,9 @@ else
     resource='unknown'
 fi
 
+# Get the build status
+BUILD_STATUS=$(curl -s ${BUILD_URL}api/json | jq -r '.result')
+
 # Archive the cost date
 mkdir -p "$WORKSPACE/archives/cost"
 
@@ -79,4 +82,4 @@ date=$(TZ=GMT date +'%Y-%m-%d %H:%M:%S')
 
 # Format the uptime, cost & stack_cost fields
 printf "%s,%s,%s,%s,%d,%.2f,%.2f\n" "$JOB_NAME" "$BUILD_NUMBER" "$date" \
-       "$resource" "$uptime" "$cost" "$stack_cost" > "$WORKSPACE/archives/cost.csv"
+       "$resource" "$uptime" "$cost" "$stack_cost" "$BUILD_STATUS" > "$WORKSPACE/archives/cost.csv"
