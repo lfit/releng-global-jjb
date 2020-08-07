@@ -46,6 +46,30 @@
       "revId": "31a4b7fc00fe90494b6efb512ad0f1db02481ff3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "afc62e90_a27721f8",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-07T14:52:36Z",
+      "side": 1,
+      "message": "Works for me, thanks for the detailed response. I\u0027ll have to see if I can utilize some of this in my own environments now :)",
+      "parentUuid": "b7e2c7ae_21eb27eb",
+      "range": {
+        "startLine": 29,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 30
+      },
+      "revId": "31a4b7fc00fe90494b6efb512ad0f1db02481ff3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
