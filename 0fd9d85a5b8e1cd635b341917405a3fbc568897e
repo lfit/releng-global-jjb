@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "29b4fd29_f95a3d72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-08-07T06:02:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db8eed9b_c45f966a",
+      "revId": "0fd9d85a5b8e1cd635b341917405a3fbc568897e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d57d597c_4a5228c8",
         "filename": "shell/capture-instance-metadata.sh",
         "patchSetId": 2
@@ -51,6 +69,24 @@
       "revId": "0fd9d85a5b8e1cd635b341917405a3fbc568897e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2bc9a230_0e7fbe9e",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-08-07T06:02:19Z",
+      "side": 1,
+      "message": "Done.\n\nThanks for the suggestion. I just noticed that we are not using this in the job-costs.sh script. I\u0027ll submit a change to the job costs script shortly.",
+      "parentUuid": "412717a9_4992f7d9",
+      "revId": "0fd9d85a5b8e1cd635b341917405a3fbc568897e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
