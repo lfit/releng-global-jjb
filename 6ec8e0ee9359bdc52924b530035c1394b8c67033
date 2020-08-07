@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9e074095_656951d1",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-08-07T14:51:38Z",
+      "side": 1,
+      "message": "You need to add an additional \u0027,%s\u0027 before the \u0027\\n\u0027 or the $BUILD_STATUS will have no place to be added",
+      "range": {
+        "startLine": 84,
+        "startChar": 28,
+        "endLine": 84,
+        "endChar": 32
+      },
+      "revId": "6ec8e0ee9359bdc52924b530035c1394b8c67033",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
