@@ -22,6 +22,30 @@
       "revId": "31a4b7fc00fe90494b6efb512ad0f1db02481ff3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b7e2c7ae_21eb27eb",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-08-07T14:48:18Z",
+      "side": 1,
+      "message": "Yes, it is a magic number. It\u0027s the magic number used by both Amazon and Openstack for the metadata service and it a link-local only address for that specific instance. Which means, the following:\n\n1) Calling it from outside of one of those environments means you probably won\u0027t resolve, or if it resolves, the data you get will be very, very custom to your call\n\n2) I really wish that Amazon had used a private IPv4 address for this service when they first rolled it out over a decade ago because technically that\u0027s a real address\n\n3) No HTTPS is not available on either EC2 or OpenStack, it might be available with other cloud providers (see cloudinit datasources link at the bottom for known cloud metadata services)\n\nDocumentation is available at the following locations:\n\nhttps://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html\nhttps://docs.openstack.org/nova/latest/user/metadata.html\nhttps://cloudinit.readthedocs.io/en/latest/topics/datasources.html\nhttps://cloudinit.readthedocs.io/en/latest/topics/instancedata.html\n\nI\u0027ll note, I\u0027ve never really fully read over the cloudinit bits on metadata, but it looks like we could just start reading out of /run/cloud-init/instance-data.json instead of talking to the metadata service ourselves, though my looking at a Jenkins node in the environment shows me that that file doesn\u0027t exist for some reason, so probably better to play it safe and read the metadata ourselves.\n\nSo, respond specifically to the worry about having to update this if it changes, I don\u0027t see that happening as long as we\u0027re only servicing things in Openstack, EC2, and at present Nomad (because of FDio hardware lab). I would be a lot happier if the json files detailed in cloudinit instancedata link were actually available. That would probably help out a lot.",
+      "parentUuid": "0d143908_ba77f7ec",
+      "range": {
+        "startLine": 29,
+        "startChar": 8,
+        "endLine": 29,
+        "endChar": 30
+      },
+      "revId": "31a4b7fc00fe90494b6efb512ad0f1db02481ff3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
