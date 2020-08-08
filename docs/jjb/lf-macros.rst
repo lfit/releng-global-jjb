@@ -20,9 +20,8 @@ Fetch all patches provided via comment trigger
 
 This macro will fetch all patches provided via comment trigger and will
 create a list of projects from those patches via environment variable
-called DEPENDENCY_BUILD_ORDER which can be used if necessary to build
-projects in the specified order. The order is determined by first patch
-instance for a project in the patch list.
+called ``DEPENDENCY_BUILD_ORDER`` to build projects in the specified order.
+Order calculated by the first patch instance for a project in the patch list.
 
 lf-license-check
 ----------------
@@ -36,10 +35,9 @@ Checks files for
     :spdx-disable: Disable the SPDX-Identifier checker.
     :lhc-version: Version of LHC to use.
     :license-exclude-paths: Comma-separated list of paths to exclude from the
-        license checker. The paths used here will be matched using a contains
-        rule so it is best to be as precise with the path as possible.
-        For example a path of '/src/generated/' will be searched as
-        '**/src/generated/**'.
+        license checker. Matches the paths defined here using a contains rule,
+        we recommend you to configure as precisely as possible. For example
+        a path of '/src/generated/' will search as '**/src/generated/**'.
         Example: org/opendaylight/yang/gen,protobuff/messages
     :licenses-allowed: Comma-separated list of allowed licenses.
         For example: Apache-2.0,EPL-1.0,MIT
@@ -92,15 +90,14 @@ The Jenkins system should have the following global variables defined
     :DOCKER_REGISTRY: The DNS address of the registry (IP or FQDN)
         ex: nexus3.example.com (GLOBAL variable)
 
-    :REGISTRY_PORTS: Required if DOCKER_REGISTRY is set. Space separated list
-        of the registry ports to login to. ex: 10001 10002 10003 10004
+    :REGISTRY_PORTS: Required when setting ``DOCKER_REGISTRY``. Space-separated
+        list of the registry ports to login to. ex: 10001 10002 10003 10004
         (GLOBAL variable)
 
-    :DOCKERHUB_EMAIL: If this variable is set then an attempt to login to
-        DockerHub (docker.io) will be also made. It should be set to the email
-        address for the credentials that will get looked up. Only _one_
-        credential will ever be found in the maven settings file for DockerHub.
-        (GLOBAL variable)
+    :DOCKERHUB_EMAIL: If set, then the job will attempt to login to DockerHub
+        (docker.io). Set to the email address for the credentials that will
+        get looked up. Returns the _first_ credential from the maven settings
+        file for DockerHub. (GLOBAL variable)
 
 lf-infra-gpg-verify-git-signature
 ---------------------------------
@@ -139,7 +136,7 @@ Run `packer build` to build system images.
 lf-infra-packer-validate
 ------------------------
 
-Run `packer validate` to verify packer configuration.
+Run ``packer validate`` to verify packer configuration.
 
 :Required parameters:
 
@@ -204,7 +201,7 @@ repository which is to upload to OSSRH.
 
 :Required parameters:
 
-    :mvn-central: Whether or not to upload to mvn-central. (true|false)
+    :mvn-central: Set to ``true`` to upload to mvn-central. (true|false)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-settings: The name of settings file containing credentials for the
@@ -219,9 +216,9 @@ repository which is to upload to OSSRH.
 lf-maven-install
 ----------------
 
-Call maven-target builder with a goal of --version to force Jenkins to
-install the need provided version of Maven. This is needed for any shell scripts
-that want to use Maven.
+Call maven-target builder with a goal of ``--version`` to force Jenkins to
+install the declared version of Maven. Use this as a preparation step for
+any shell scripts that want to use Maven.
 
 :Required parameters:
 
@@ -254,7 +251,7 @@ lf-pip-install
 Call pip install to install packages into a virtualenv located in
 /tmp/v/VENV
 
-.. note:: The first package listed in PIP_PACKAGES is used as the VENV name.
+.. note:: Uses the first package listed in PIP_PACKAGES as the VENV name.
 
 .. _lf-provide-maven-settings:
 
@@ -266,8 +263,8 @@ Push a global settings and user settings maven files to the build node.
 lf-provide-maven-settings-cleanup
 ---------------------------------
 
-Cleanup maven settings.xml configuration. This should be called at the end of
-any macros that calles the
+Cleanup maven ``settings.xml`` configuration. Set at the end of any macros that
+calls the
 :ref:`lf-provide-maven-settings <lf-provide-maven-settings>` macro.
 
 lf-rtd-trigger-build
@@ -293,14 +290,14 @@ Read the docs scripts that leverage the new Read the Docs v3 api
 Runs tox to verify that the docs are good and then runs the RTDv3 shell script.
 This script handles creating projects as needed, assiging subprojects to the main
 read the docs project and triggering builds to update the documentation.
-Jobs will run but skip verify bits until a .readthedocs.yaml is found in the root
-of their repository.
+Jobs will run but skip verify bits until a ``.readthedocs.yaml`` exists in the
+root of their repository.
 
 
 check-info-votes
 ----------------
 
-Calls shell script to validate votes on a change to an INFO.yaml
+Validates votes on a changes to ``INFO.yaml``.
 
 lf-release
 ----------
@@ -323,14 +320,14 @@ Use Sigul to sign a directory via {sign-dir}.
 Requires ``SIGUL_BRIDGE_IP`` configured as a global envvar.
 
 :Required Parameters:
-    :sign-artifacts: Whether or not to sign artifacts with Sigul.
+    :sign-artifacts: Set ``true`` to sign artifacts with Sigul.
     :sign-dir: Directory to sign.
     :sign-mode: serial|parallel
 
 lf-infra-provide-docker-cleanup
 -------------------------------
 
-Forcibly removes all of the docker images.
+Forcefully removes all docker images.
 
 lf-infra-sonar
 ---------------
@@ -339,9 +336,11 @@ Runs Jenkins SonarQube plug-in.
 
 Requires ``SonarQube Scanner for Jenkins``
 
-.. note:: Sonar properties can be set directly in the job definition by
-   setting the sonar-project-file to ``""`` and adding all properties under
-   ``sonar-properties``.
+.. note::
+
+    Optionally, set Sonar properties directly in the job definition by
+    setting the sonar-project-file to ``""`` and adding all properties under
+    ``sonar-properties``.
 
 :Optional Parameters:
     :sonar-task: Sonar task to run. (default: "")
@@ -354,17 +353,18 @@ Requires ``SonarQube Scanner for Jenkins``
 lf-infra-sonar-with-prescan
 ---------------------------
 
-Runs Jenkins SonarQube plug-in after a pre-scan builder, which is defined by
-the macro's caller.
+Runs Jenkins SonarQube plug-in after a pre-scan builder.
 
 Requires ``SonarQube Scanner for Jenkins``
 
-.. note:: Sonar properties can be set directly in the job definition by
-   setting the sonar-project-file to ``""`` and adding all properties under
-   ``sonar-properties``.
+.. note::
+
+    Optionally, set Sonar properties directly in the job definition by
+    setting the sonar-project-file to ``""`` and adding all properties under
+    ``sonar-properties``.
 
 :Required Parameters:
-    :lf-sonar-prescan: A builder that will run prior to the Sonar scan.
+    :lf-sonar-prescan: A builder that will run before the Sonar scan.
 
 :Optional Parameters:
     :sonar-task: Sonar task to run. (default: "")
@@ -380,8 +380,8 @@ Parameters
 lf-autotools-parameters
 -----------------------
 
-Provides parameters needed by configure and make. Should be used by any jobs
-that need to call the ``configure && make`` pattern.
+Provides parameters needed by configure and make. Use in any jobs that need to
+call the ``configure && make`` pattern.
 
 lf-clm-parameters
 -----------------
@@ -392,14 +392,14 @@ Valid values include: 'build', 'stage-release', 'operate'.
 lf-cmake-parameters
 -------------------
 
-Provides parameters needed by CMake. Should be used by any jobs that need to
-call the ``cmake && make && make install`` pattern.
+Provides parameters required by CMake. Use in any jobs that need to call the
+``cmake && make && make install`` pattern.
 
 lf-infra-maven-parameters
 -------------------------
 
-Provides parameters needed by Maven. Should be used by any jobs that need to
-call the mvn cli.
+Provides parameters required by Maven. Use in any jobs that need to call the
+``mvn`` CLI.
 
 lf-infra-openstack-parameters
 -----------------------------
@@ -414,21 +414,21 @@ call the openstack cli.
 lf-infra-parameters
 -------------------
 
-Standard parameters used in the LF CI environments. Gerrit variables are
-not used by GitHub projects, but defining them is not harmful. Should be used
-in every job template.
+Standard parameters used in the LF CI environments. GitHub projects will ignore
+the Gerrit variables and vice-versa, so defining them is not harmful. Use in
+every job template.
 
 lf-infra-node-parameters
 ------------------------
 
-Provides parameters needed by NodeJS and NPM. Should be used by any jobs that
-need to run NodeJS or NPM.
+Provides parameters needed by NodeJS and NPM. Use in any jobs that need to run
+NodeJS or NPM.
 
 lf-infra-tox-parameters
 -----------------------
 
-Provides parameters needed by python-tox. Should be used by any jobs that need
-to run `tox <https://tox.readthedocs.io>`.
+Provides parameters required by python-tox. Use in any jobs that need to run
+`tox <https://tox.readthedocs.io>`.
 
 
 lf-build-with-parameters-maven-release
@@ -443,7 +443,7 @@ lf-infra-properties
 -------------------
 
 Configures the build-discarder plugin for Jenkins with the recommended lf-infra
-settings. Should be used in all job-templates.
+settings. We recommend to include in all job-templates.
 
 Publishers
 ==========
@@ -456,10 +456,9 @@ Provides basic configuration for the JaCoCo plugin.
 lf-infra-publish
 ----------------
 
-Provides basic lf-infra recommended publisher configurations which should be
-used in all job templates. This primary objective of this trigger is to
-gather package listing, instance metadata, sar reports, build logs and copy
-them to a log server.
+Provides basic lf-infra recommended publisher configurations for use in all job
+templates. The purpose of this trigger is to gather package listing, instance
+metadata, sar reports, build logs and copy them to a log server.
 
 lf-infra-publish-windows
 ------------------------
@@ -487,9 +486,8 @@ lf-infra-github-scm
 
 Basic SCM configuration for GitHub based projects.
 
-On the `branch` variable you can assign `$sha1` or `$ghprbActualCommit`
-as the value.  This will require that the job be triggered via
-the GHPRB plugin and not manually.
+On the `branch` variable you can assign ``$sha1`` or ``$ghprbActualCommit``
+as the value.  This will enable the jobs to trigger via the GHPRB plugin.
 
 :Required parameters:
 
@@ -504,21 +502,22 @@ Wrappers
 lf-infra-wrappers-common
 ------------------------
 
-Provides lf-infra recommended wrappers which should be used in every
-job-template. It's meant to be used by more specific wrappers below.
+Provides lf-infra recommended wrappers for use in every job-template. Include
+this wrapper when creating more specific platform wrappers to ensure they pick
+up the common settings.
 
 lf-infra-wrappers
 -----------------
 
-Provides lf-infra recommended wrappers which should be used in every
-job-template that's run on Linux systems.
+Provides lf-infra recommended wrappers for use in every job-template targetting
+Linux systems.
 
-This wrapper requires that a managed file called `npmrc` exists in the Jenkins.
-The main use case here is to point to a npm proxy, on Nexus for example.
-The type of the file should be "Custom file".  You can set various npmrc
-settings in it. Documentation on npm configuration can be found at
-https://docs.npmjs.com/files/npmrc. If you are not using npm then it is fine
-for the file to be empty.
+This wrapper requires a managed file named ``npmrc`` to exist in Jenkins. The
+main use case here is to point to a npm proxy, on Nexus for example. Set the
+file type to "Custom file".  You can set any npmrc settings in it,
+documentation on npm configuration is available at
+<https://docs.npmjs.com/files/npmrc>. If you are not using npm then create an
+empty file.
 
 Example npmrc:
 
@@ -529,5 +528,5 @@ Example npmrc:
 lf-infra-wrappers-windows
 -------------------------
 
-Provides lf-infra recommended wrappers which should be used in every
-job-template that's run on Windows systems.
+Provides lf-infra recommended wrappers for use in every job-template targetting
+Windows systems.

@@ -125,8 +125,7 @@ Produces a CLM scan of the code into Nexus IQ Server.
 :Required parameters:
 
     :build-node:    The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
 
 :Optional parameters:
@@ -141,15 +140,15 @@ Produces a CLM scan of the code into Nexus IQ Server.
     :mvn-goals: The maven goals to perform for the build.
         (default: clean install)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
-    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :nexus-iq-namespace: Insert a namespace to project AppID for projects that
         share a Nexus IQ system to avoid project name collision. We recommend
         inserting a trailing - dash if using this parameter.
         For example 'odl-'. (default: '')
-    :nexus-iq-stage: Stage the policy evaluation will be run against on
-        the Nexus IQ Server. (default: 'build')
-    :stream: Keyword that can be used to represent a release code-name.
+    :nexus-iq-stage: Sets the **stage** which the policy evaluation will run
+        against on the Nexus IQ Server. (default: 'build')
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -165,9 +164,9 @@ Maven JavaDoc Publish
 
 Produces and publishes javadocs for a Maven project.
 
-Expects javadocs to be available in $WORKSPACE/target/site/apidocs, unless
-the mvn-dir parameter is supplied, in which case expects javadocs to be
-available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
+Expects javadocs to be available in ``$WORKSPACE/target/site/apidocs``, but
+overrideable with the ``mvn-dir`` parameter. If set, will search for javadocs
+in ``$WORKSPACE/{mvn-dir}/target/site/apidocs``.
 
 :Template Names:
 
@@ -181,11 +180,10 @@ available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
 
     :build-node: The node to run build on.
     :javadoc-path: The path in Nexus to deploy javadoc to.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
     :mvn-site-id: Maven Server ID from settings.xml to pull credentials from.
-        (Note: This setting should be configured in defaults.yaml.)
+        (Note: This setting is generally configured in ``defaults.yaml``.)
 
 :Optional parameters:
 
@@ -198,10 +196,10 @@ available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
-    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
         Must not include a "-f" option; see parameter mvn-dir.
     :mvn-version: Version of maven to use. (default: mvn35)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -217,9 +215,9 @@ Maven JavaDoc Verify
 
 Produces javadocs for a Maven project.
 
-Expects javadocs to be available in $WORKSPACE/target/site/apidocs, unless
-the mvn-dir parameter is supplied, in which case expects javadocs to be
-available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
+Expects javadocs to be available in ``$WORKSPACE/target/site/apidocs``, but
+overrideable with the ``mvn-dir`` parameter. If set, will search for javadocs
+in ``$WORKSPACE/{mvn-dir}/target/site/apidocs``.
 
 :Template Names:
 
@@ -231,8 +229,7 @@ available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
 
 :Required parameters:
     :build-node:    The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
 
 :Optional parameters:
@@ -247,10 +244,10 @@ available in $WORKSPACE/{mvn-dir}/target/site/apidocs.
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
-    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
         Must not include a "-f" option; see parameter mvn-dir.
     :mvn-version: Version of maven to use. (default: mvn35)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -269,13 +266,13 @@ Merge job which runs `mvn clean deploy` to build a project.
 This job pushes files to Nexus using cURL instead of allowing the Maven deploy
 goal to push the upload. This is to get around the issue that Maven deploy does
 not properly support uploading files at the end of the build and instead pushes
-as it goes. There exists a `-Ddeploy-at-end` feature however it does not work
+as it goes. There exists a ``-Ddeploy-at-end`` feature but it does not work
 with extensions.
 
 This job uses the following strategy to deploy jobs to Nexus:
 
-1. `wget -r` to fetch maven-metadata.xml from Nexus
-2. `mvn deploy -DaltDeploymentRepository` to prepare files for upload
+1. ``wget -r`` to fetch maven-metadata.xml from Nexus
+2. ``mvn deploy -DaltDeploymentRepository`` to prepare files for upload
 3. Removes untouched maven-metadata.xml files before upload
 4. Use lftools (cURL) upload script to push artifacts to Nexus
 
@@ -290,11 +287,10 @@ This job uses the following strategy to deploy jobs to Nexus:
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
     :mvn-snapshot-id: Maven Server ID from settings.xml to pull credentials from.
-        (Note: This setting should be configured in defaults.yaml.)
+        (Note: This setting is generally configured in ``defaults.yaml``.)
     :nexus-snapshot-repo: The repository id of the Nexus snapshot repo to deploy to.
 
 :Optional parameters:
@@ -311,10 +307,10 @@ This job uses the following strategy to deploy jobs to Nexus:
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
-    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :nexus-cut-dirs: Number of directories to cut from file path for `wget -r`.
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -324,8 +320,8 @@ This job uses the following strategy to deploy jobs to Nexus:
         (default: false)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override file paths to filter which file
+        modifications will trigger a build.
 
 Maven Merge for Docker
 ----------------------
@@ -333,12 +329,12 @@ Maven Merge for Docker
 Produces a snapshot docker image in a Nexus registry. Appropriate for
 Java projects that do not need to deploy any POM or JAR files.
 
-Similar to Maven Merge as described above but logs in to Docker
+Like the Maven Merge job as described above but logs in to Docker
 registries first and skips the lf-maven-deploy builder. The project
-POM file should invoke a plugin to build and push a Docker image. The
-base image should be pulled from the registry in the environment
-variable CONTAINER_PULL_REGISTRY. The new image should be pushed to the
-registry in the environment variable CONTAINER_PUSH_REGISTRY.
+POM file should invoke a plugin to build and push a Docker image.
+This pulls the base image from the registry in the environment
+variable ``CONTAINER_PULL_REGISTRY`` and pushes new image into the
+registry in the environment variable ``CONTAINER_PUSH_REGISTRY``.
 
 :Template Names:
 
@@ -376,11 +372,10 @@ directory is then used later to deploy to Nexus.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
     :mvn-staging-id: Maven Server ID from settings.xml to pull credentials from.
-        (Note: This setting should be configured in defaults.yaml.)
+        (Note: This setting is generally configured in ``defaults.yaml``.)
     :staging-profile-id: Profile ID of the project's Nexus staging profile.
 
 :Optional parameters:
@@ -395,19 +390,19 @@ directory is then used later to deploy to Nexus.
     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk8)
-    :mvn-central: Set to 'true' to also stage to OSSRH. This is for projects
-        that want to release to Maven Central. If set the parameter
-        ``ossrh-profile-id`` also needs to be set. (default: false)
+    :mvn-central: Set to ``true`` to also stage to **OSSRH**. This is for projects
+        that want to release to Maven Central. If set, then also set the parameter
+        ``ossrh-profile-id``. (default: false)
     :maven-versions-plugin: Whether to call Maven versions plugin or not. (default: false)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
-    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :ossrh-profile-id: Profile ID for project as provided by OSSRH.
         (default: '')
     :sign-artifacts: Sign artifacts with Sigul. (default: false)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -419,8 +414,8 @@ directory is then used later to deploy to Nexus.
         (default: version.properties)
 
     :gerrit_release_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override file paths to filter which file
+        modifications will trigger a build.
 
 Maven Stage for Docker
 ----------------------
@@ -429,12 +424,12 @@ Produces a release candidate docker image in a Nexus registry.
 Appropriate for Java projects that do not need to deploy any POM or
 JAR files.
 
-Similar to Maven Stage as described above but logs in to Docker
+Like the Maven Stage job as described above but logs in to Docker
 registries first and skips the lf-maven-deploy builder. The project
-POM file should invoke a plugin to build and push a Docker image. The
-base image should be pulled from the registry in the environment
-variable CONTAINER_PULL_REGISTRY. The new image should be pushed to the
-registry in the environment variable CONTAINER_PUSH_REGISTRY.
+POM file should invoke a plugin to build and push a Docker image.
+This pulls the base image from the registry in the environment
+variable ``CONTAINER_PULL_REGISTRY`` and pushes new image into the
+registry in the environment variable ``CONTAINER_PUSH_REGISTRY``.
 
 :Template Names:
 
@@ -463,9 +458,8 @@ Maven Sonar
 
 Sonar job which runs mvn clean install then publishes to Sonar.
 
-This job purposely only runs on the master branch as there are Additional
-configuration needed to support multiple branches and there's not much
-interest in that kind of support.
+This job purposely runs on the ``master`` branch and does not support
+multi-branch configuration.
 
 :Template Names:
 
@@ -478,8 +472,7 @@ interest in that kind of support.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
 
 :Optional parameters:
@@ -497,17 +490,17 @@ interest in that kind of support.
     :mvn-goals: The maven goals to perform for the build.
         (default: clean install)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
-    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :sonar-mvn-goals: Maven goals to run for sonar analysis.
         (default: sonar:sonar)
-    :sonarcloud: Whether or not to use SonarCloud ``true|false``.
+    :sonarcloud: Set to ``true`` to use SonarCloud ``true|false``.
         (default: false)
     :sonarcloud-project-key: SonarCloud project key. (default: '')
     :sonarcloud-project-organization: SonarCloud project organization.
         (default: '')
     :sonarcloud-api-token: SonarCloud API Token. (default: '')
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -540,8 +533,7 @@ Verify job which runs mvn clean install to test a project build..
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
 
 :Optional parameters:
@@ -554,9 +546,9 @@ Verify job which runs mvn clean install to test a project build..
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
-    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -566,16 +558,16 @@ Verify job which runs mvn clean install to test a project build..
         (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override file paths to filter which file
+        modifications will trigger a build.
 
 Maven Verify for Docker
 -----------------------
 
-Similar to Maven Verify as described above but logs in to Docker
+Like the Maven Verify job as described above but logs in to Docker
 registries first. The project POM file should invoke a plugin to build
-a Docker image. The base image should be pulled from the registry in
-the environment variable CONTAINER_PULL_REGISTRY.
+a Docker image. This pulls the base image from the registry in the environment
+variable ``CONTAINER_PULL_REGISTRY``.
 
 :Template Names:
 
@@ -595,9 +587,9 @@ Maven Verify w/ Dependencies
 
 Verify job which runs mvn clean install to test a project build /w deps
 
-This job can be used to verify a patch in conjunction to all of the
-upstream patches it depends on. The user of this job can provide a list
-via comment trigger.
+This job's purpose is to verify a patch in conjunction to a list of upstream
+patches it depends on. The user of this job can provide a list of patches via
+comment trigger.
 
 :Template Names:
 
@@ -609,8 +601,7 @@ via comment trigger.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
 
 :Optional parameters:
@@ -623,9 +614,9 @@ via comment trigger.
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
-    :mvn-params: Additional mvn parameters to pass to the cli. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -635,5 +626,5 @@ via comment trigger.
         (default: false)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override file paths to filter which file
+        modifications will trigger a build.
