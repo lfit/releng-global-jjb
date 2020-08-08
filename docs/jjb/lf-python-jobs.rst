@@ -144,14 +144,10 @@ The coverage commands define the code that gets executed by the test
 suites.  Checking coverage does not guarantee that the tests execute
 properly, but it identifies code that is not executed by any test.
 
-.. comment Start ignoring WriteGoodLintBear
-
 This job reuses the Sonar builders used for Java/Maven projects which
 run maven twice. The first invocation does nothing for Python
-projects, so the job uses the goal 'validate' by default. The second
-invocation publishes results using the goal 'sonar:sonar' by default.
-
-.. comment Stop ignoring
+projects, so the job uses the goal ``validate`` by default. The second
+invocation publishes results using the goal ``sonar:sonar`` by default.
 
 For example:
 

@@ -107,10 +107,10 @@ Job Templates
 Gerrit Branch Lock
 ------------------
 
-Job submits a patch to lock or unlock a project's branch. This should only be
-loaded once, as "ci-management-gerrit-branch-lock" (or "ci-management"
-equivalent). That job will process lock/unlock requests for all projects and
-all branches.
+Job submits a patch to lock or unlock a project's branch.
+
+This job will process lock/unlock requests for all projects and all branches
+and does not need to have per-project configuration.
 
 :Template Names:
     - {project-name}-gerrit-branch-lock
@@ -124,8 +124,8 @@ all branches.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally
-        should be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
 
 :Optional parameters:
 
@@ -163,7 +163,7 @@ Jenkins job to manage Global Jenkins configuration.
 
 Typically this template is automatically pulled in by the
 "{project-name}-ci-jobs" job-group and does not need to be explicitly called if
-the job group is being used.
+you are already using the job group.
 
 Minimal Example:
 
@@ -180,7 +180,7 @@ Full Example:
 Global Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Global Environment Variables are managed via the
+Manage Global Environment Variables via the
 ``jenkins-config/global-vars-SILO.sh`` file in ci-management. Replace SILO with
 the name of the Jenkins silo the variable configuration is for.
 
@@ -199,25 +199,25 @@ The format for this file is ``KEY=value`` for example::
 Cloud Configuration
 ^^^^^^^^^^^^^^^^^^^
 
-This configuration requires the OpenStack Cloud plugin in Jenkins and is
-currently the only cloud plugin supported.
+This configuration requires the **OpenStack Cloud plugin** in Jenkins.
 
 OpenStack Cloud plugin version supported:
 
 * 2.30 - 2.34
 * 2.35 - 2.37
 
-Cloud configuration are managed via a directory structure in ci-management as
-follows:
+Cloud configuration follows a directory structure in ci-management like this:
 
 - jenkins-config/clouds/openstack/
-- jenkins-config/clouds/openstack/cattle/cloud.cfg
-- jenkins-config/clouds/openstack/cattle/centos7-builder-2c-2g.cfg
-- jenkins-config/clouds/openstack/cattle/centos7-builder-4c-4g.cfg
-- jenkins-config/clouds/openstack/cattle/centos7-docker-4c-4g.cfg
+- jenkins-config/clouds/openstack/**cattle**/cloud.cfg
+- jenkins-config/clouds/openstack/**cattle**/centos7-builder-2c-2g.cfg
+- jenkins-config/clouds/openstack/**cattle**/centos7-builder-4c-4g.cfg
+- jenkins-config/clouds/openstack/**cattle**/centos7-docker-4c-4g.cfg
 
-The directory name inside of the "openstack" directory is used as the name of
-the cloud configuration. In this case "cattle" is being used as the cloud name.
+This job uses the directory name of the directory inside of the "openstack"
+directory as the name of the cloud configuration in Jenkins. This is to support
+systems that want to use more than one cloud provider. In this example "cattle"
+is the cloud name.
 
 The ``cloud.cfg`` file is a special file used to configure the main cloud
 configuration in the format ``KEY=value``.
@@ -240,8 +240,8 @@ configuration in the format ``KEY=value``.
 
     .. note::
 
-       In the case of template definitions of a parameter below is not passed
-       the one defined in default clouds will be inherited.
+        Parameters below that are not defined will inherit the ones defined in
+        the default clouds configuration.
 
     :IMAGE_NAME: The image name to use for this template. (required)
     :HARDWARE_ID: OpenStack flavor to use. (required)
@@ -252,18 +252,18 @@ configuration in the format ``KEY=value``.
     :NETWORK_ID: OpenStack network to use. (default: "")
     :USER_DATA_ID: User Data to pass into the instance.
         (default: jenkins-init-script)
-    :INSTANCE_CAP: Total number of instances of this type that can be launched
-        at one time. When defined in clouds.cfg it defines the total for the
-        entire cloud. (default: null)
-    :SANDBOX_CAP: Total number of instances of this type that can be launched
-        at one time. When defined in clouds.cfg it defines the total for the
-        entire cloud. This applies to "sandbox" systems and overrides the
+    :INSTANCE_CAP: Total number of instances of this type that is available for
+        use at one time. When defined in clouds.cfg it defines the total for
+        the entire cloud. (default: null)
+    :SANDBOX_CAP: Total number of instances of this type that is available for
+        use at one time. When defined in clouds.cfg it defines the total for
+        the entire cloud. This applies to "sandbox" systems and overrides the
         INSTANCE_CAP setting. (default: null)
     :FLOATING_IP_POOL: Floating ip pool to use. (default: "")
     :SECURITY_GROUPS: Security group to use. (default: "default")
     :AVAILABILITY_ZONE: OpenStack availability zone to use. (default: "")
-    :START_TIMEOUT: Number of milliseconds to wait for the agent to be
-        provisioned and connected. (default: 600000)
+    :START_TIMEOUT: Number of milliseconds to wait for agent provisioning.
+        (default: 600000)
     :KEY_PAIR_NAME: SSH Public Key Pair to use for authentication.
         (default: jenkins-ssh)
     :NUM_EXECUTORS: Number of executors to enable for the instance.
@@ -271,8 +271,8 @@ configuration in the format ``KEY=value``.
     :JVM_OPTIONS: JVM Options to pass to Java. (default: null)
     :FS_ROOT: File system root for the workspace. (default: "/w")
     :NODE_PROPERTIES: Node properties. (default: null)
-    :RETENTION_TIME: Number of minutes to wait for an idle slave to be used
-        again before it's removed. If set to -1, the slave will be kept
+    :RETENTION_TIME: Number of minutes to wait for an idle minion before
+        removing it from the system. If set to -1, the minion will stick around
         forever. (default: 0)
     :CONNECTION_TYPE: The connection type for Jenkins to connect to the build
         minion. Valid options: JNLP, SSH. (default: "SSH")
@@ -286,9 +286,10 @@ Troubleshooting
 
 :Cloud Configuration:
 
-    The directory ``groovy-inserts`` contains the groovy script output that is
-    used to push to Jenkins. In the event of a job failure this file can be
-    inspected.
+    The directory ``groovy-inserts`` contains the groovy script output used by
+    Jenkins to push the cloud configuration. In the event of a job failure use
+    this file to debug.
+
 
  .. _lf-global-jjb-jenkins-cfg-verify:
 
@@ -310,8 +311,8 @@ Requires the ``clouds-yaml`` file to be setup on the Jenkins host.
     :branch: Git branch to build against. (default: master)
     :git-url: URL to clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
 
-This job is not part of the "{project-name}-ci-jobs" group. It must be called
-explicitly.
+This job is not part of the "{project-name}-ci-jobs" group and requires
+separate configuration.
 
 Example:
 
@@ -337,8 +338,8 @@ Cleanup Jenkins Sandbox of jobs and views periodically.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally
-        should be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
 
 :Optional parameters:
 
@@ -365,27 +366,27 @@ This job checks out the current code review patch and then runs a
 
     .. note::
 
-       The JJB Deploy Job is configured to trigger only if the Gerrit comment
-       starts with the `jjb-deploy` keyword.
+        The JJB Deploy Job is a manual job and triggers via Gerrit comment
+        which starts with the ``jjb-deploy`` keyword.
 
-       Example of a valid command in Gerrit comment that triggers the job:
+        Example of a valid command in Gerrit comment that triggers the job:
 
-       ``jjb-deploy builder-jjb-*``
+        ``jjb-deploy builder-jjb-*``
 
-       Example of a invalid command in Gerrit comment that would _not_ trigger
-       the job:
+        Example of a invalid command in Gerrit comment that would _not_ trigger
+        the job:
 
-       ``Update the job. jjb-deploy builder-jjb-*``
+        ``Update the job. jjb-deploy builder-jjb-*``
 
-       JOB_NAME can include the * wildcard character to push multiple jobs
-       matching the pattern. For example ``jjb-deploy builder-jjb-*`` will push
-       all builder-jjb-* jobs to the sandbox system.
+        JOB_NAME can include the ``*`` wildcard character to push jobs matching
+        the pattern. For example ``jjb-deploy builder-jjb-*`` will push all
+        builder-jjb-* jobs to the sandbox system.
 
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally
-        should be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
 
 :Optional parameters:
 
@@ -398,7 +399,7 @@ This job checks out the current code review patch and then runs a
 JJB Merge
 ---------
 
-Runs `jenkins-jobs update` to update production job configuration
+Runs ``jenkins-jobs update`` to update production job configuration
 
 :Template Names:
     - {project-name}-jjb-merge
@@ -410,8 +411,8 @@ Runs `jenkins-jobs update` to update production job configuration
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
 
 :Optional parameters:
 
@@ -421,9 +422,9 @@ Runs `jenkins-jobs update` to update production job configuration
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :jjb-workers: Number of threads to run **update** with. Set to 0 by default
-        which is equivalent to the number of available CPU cores. (default: 0)
+        which will use the number of available CPU cores. (default: 0)
     :jjb-version: JJB version to install. (default: see job-template)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -433,8 +434,8 @@ Runs `jenkins-jobs update` to update production job configuration
         (default: false)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override file paths to filter which file
+        modifications will trigger a build.
         (default defined by lf_jjb_common)
 
 
@@ -443,7 +444,7 @@ Runs `jenkins-jobs update` to update production job configuration
 JJB Verify
 ----------
 
-Runs `jenkins-jobs test` to validate JJB syntax. Optionally validates
+Runs ``jenkins-jobs test`` to verify JJB syntax. Optionally verifies
 build-node labels used in templates and job definitions.
 
 :Template Names:
@@ -456,13 +457,13 @@ build-node labels used in templates and job definitions.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
 
 :Optional parameters:
 
     :branch: Git branch to fetch for the build. (default: master)
-    :build-concurrent: Whether or not to allow this job to run multiple jobs
+    :build-concurrent: Set to ``true`` to allow this job to run jobs
         simultaneously. (default: true)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-node-label-check: Whether to check build-node labels in jobs
@@ -473,16 +474,16 @@ build-node labels used in templates and job definitions.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :jjb-version: JJB version to install. (default: see job-template)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
-    :submodule-recursive: Whether to checkout submodules recursively.
+    :submodule-recursive: Set to ``true`` to checkout submodules recursively.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
     :throttle_categories: List of categories to throttle by.
-    :throttle-enabled: Whether or not to enable throttling on the job.
+    :throttle-enabled: Set to ``true`` to enable throttling on the job.
         (default: true)
     :throttle-max-per-node: Max jobs to run on the same node. (default: 1)
     :throttle-max-total: Max jobs to run across the entire project. - 0
@@ -492,8 +493,8 @@ build-node labels used in templates and job definitions.
         'category'; default: project)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override file paths to filter which file
+        modifications will trigger a build.
         (default defined by lf_jjb_common)
 
 .. _jjb-verify-upstream-gjjb:
@@ -501,7 +502,7 @@ build-node labels used in templates and job definitions.
 JJB Verify Upstream Global JJB
 ------------------------------
 
-Runs ``jenkins-jobs test`` to validate JJB syntax for upstream global-jjb
+Runs ``jenkins-jobs test`` to verify JJB syntax for upstream global-jjb
 patches. This job is useful to notify upstream that they may be breaking
 project level jobs.
 
@@ -515,8 +516,8 @@ project level jobs.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
 
 :Optional parameters:
 
@@ -526,7 +527,7 @@ project level jobs.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :jjb-cache: JJB cache location. (default: $HOME/.cache/jenkins_jobs)
     :jjb-version: JJB version to install. (default: see job-template)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
 
 .. _info-yaml-verify:
@@ -534,9 +535,10 @@ project level jobs.
 Info YAML Verify
 ----------------
 
-Info YAML Verify job validates that INFO.yaml file changes are kept isolated from
-other file changes. Verifies INFO.yaml files follow the schema defined in
+This job verifies that ``INFO.yaml`` file changes follow the schema defined in
 `lfit/releng-global-jjb/schema/info-schema.yaml`.
+
+The ``INFO.yaml`` file changes must be independent of any other files changes.
 
 :Template Names:
     - {project-name}-info-yaml-verify
@@ -546,8 +548,8 @@ other file changes. Verifies INFO.yaml files follow the schema defined in
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
 
 :Optional parameters:
 
@@ -555,7 +557,7 @@ other file changes. Verifies INFO.yaml files follow the schema defined in
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -571,11 +573,11 @@ other file changes. Verifies INFO.yaml files follow the schema defined in
 LF Pipelines Verify
 -------------------
 
-Verify job for the LF RelEng pipeline library. This can be implemented on any
-Jenkins machine that has the appropriate Pipelines plugins installed. It will
-look for a Gerrit system named "lf-releng" (which should be mapped to
-https://gerrit.linuxfoundation.org/infra/), and pull in the Jenkinsfile in the
-root directory of the repo.
+Verify job for the LF RelEng pipeline library.
+
+Requires the Pipelines plugins installed. This job will look for a Gerrit
+system named "lf-releng" (mapped to https://gerrit.linuxfoundation.org/infra/),
+and pull in the Jenkinsfile in the root directory of the repo.
 
 :Template Names:
     - lf-pipelines-verify
@@ -602,10 +604,9 @@ Job to scan projects for files missing license headers.
     :spdx-disable: Disable the SPDX-Identifier checker. (default: false)
     :lhc-version: Version of LHC to use. (default: 0.2.0)
     :license-exclude-paths: Comma-separated list of paths to exclude from the
-        license checker. The paths used here will be matched using a contains
-        rule so it is best to be as precise with the path as possible.
-        For example a path of '/src/generated/' will be searched as
-        '**/src/generated/**'.
+        license checker. Matches the paths defined here using a contains rule,
+        we recommend you to configure as precisely as possible. For example
+        a path of '/src/generated/' will search as '**/src/generated/**'.
         Example: org/opendaylight/yang/gen,protobuff/messages
         (default: '')
     :licenses-allowed: Comma-separated list of allowed licenses.
@@ -618,7 +619,7 @@ Job to scan projects for files missing license headers.
 OpenStack Cron
 --------------
 
-Cron job that runs regularly to perform periodic tasks against OpenStack.
+Cron job that runs on a schedule to perform periodic tasks against OpenStack.
 
 This job requires a Config File Provider file named ``clouds-yaml`` available
 containing the credentials for the cloud.
@@ -631,8 +632,8 @@ containing the credentials for the cloud.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
     :jenkins-urls: URLs to Jenkins systems to check for active builds.
 
 :Optional parameters:
@@ -644,19 +645,19 @@ containing the credentials for the cloud.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :openstack-cloud: OS_CLOUD setting to pass to openstack client.
         (default: vex)
-    :openstack-image-cleanup: Whether or not to run the image cleanup script.
+    :openstack-image-cleanup: Set ``true`` to run the image cleanup script.
         (default: true)
     :openstack-image-cleanup-age: Age in days of image before marking it for
         removal. (default: 30)
-    :openstack-image-protect: Whether or not to run the image protect script.
+    :openstack-image-protect: Set ``true`` to run the image protect script.
         (default: true)
-    :openstack-server-cleanup: Whether or not to run the server cleanup script.
+    :openstack-server-cleanup: Set ``true`` to run the server cleanup script.
         (default: true)
-    :openstack-stack-cleanup: Whether or not to run the stack cleanup script.
+    :openstack-stack-cleanup: Set ``true`` to run the stack cleanup script.
         (default: true)
-    :openstack-volume-cleanup: Whether or not to run the volume cleanup script.
+    :openstack-volume-cleanup: Set ``true`` to run the volume cleanup script.
         (default: true)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -681,19 +682,18 @@ OpenStack Update Cloud Image
 This job finds and updates OpenStack cloud images on the ci-management source
 repository.
 
-The job is triggered in two ways:
+This job functions in 2 ways:
 
-1. When packer merge job completes, the new image name created is passed
-   down to the job.
-2. When the job is triggered manually to update all new images.
+1. When triggered via packer-merge job, updates the image created by the job.
+2. When triggered manually or via cron, updates all images.
 
-When the job is triggered through an upstream packer merge job, this only
-generates a change request for the new image built.
+When triggered through an upstream packer merge job, this generates a change
+request for the new image built.
 
-When the job is triggered manually, this job finds the latest images on
-OpenStack cloud and compares them with the images currently used in the source
-ci-management source repository. If the compared images have newer
-time stamps are **all** updated through a change request.
+When triggered manually, this job finds the latest images on OpenStack cloud
+and compares them with the images in use in the source ci-management source
+repository. If the compared images have newer time stamps are **all** updated
+through a change request.
 
 This job requires a Jenkins configuration merge and verify job setup and
 working on Jenkins.
@@ -706,8 +706,8 @@ working on Jenkins.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
     :new-image-name: Name of new image name passed from packer merge job or
         set to 'all' to update all images. (default: all)
 
@@ -719,7 +719,7 @@ working on Jenkins.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :openstack-cloud: OS_CLOUD setting to pass to openstack client.
         (default: vex)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -756,8 +756,8 @@ Packer Merge job runs `packer build` to build system images in the cloud.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for
         the project.
     :platforms: Platform or distribution to build. Typically json file
@@ -779,7 +779,7 @@ Packer Merge job runs `packer build` to build system images in the cloud.
     :packer-cloud-settings: Name of settings file containing credentials
         for the cloud that packer will build on. (default: packer-cloud-env)
     :packer-version: Version of packer to install / use in build. (default: 1.0.2)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -811,7 +811,7 @@ Example GitHub:
 Packer Verify
 -------------
 
-Packer Verify job runs `packer validate` to verify packer configuration. The
+Packer Verify job runs ``packer validate`` to verify packer configuration. The
 verify job checks superficial syntax of the template and other files. It does
 not attempt to build an image, and cannot detect all possible build issues.
 
@@ -825,8 +825,8 @@ not attempt to build an image, and cannot detect all possible build issues.
 :Required parameters:
 
     :build-node: The node to run build on.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for
         the project.
 
@@ -835,8 +835,8 @@ not attempt to build an image, and cannot detect all possible build issues.
     :branch: Git branch to fetch for the build. (default: master)
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 10)
-    :gerrit_trigger_file_paths: Override file paths which can be used to
-        filter which file modifications will trigger a build.
+    :gerrit_trigger_file_paths: Override file paths to filter which file
+        modifications will trigger a build.
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :openstack: Packer template uses an OpenStack builder (default: true).
@@ -845,7 +845,7 @@ not attempt to build an image, and cannot detect all possible build issues.
     :packer-cloud-settings: Name of settings file containing credentials
         for the cloud that packer will build on. (default: packer-cloud-env)
     :packer-version: Version of packer to install / use in build. (default: 1.0.2)
-    :stream: Keyword that can be used to represent a release code-name.
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -861,61 +861,61 @@ Packer Verify Build
 -------------------
 
 Packer Verify Build job is essentially the same as the
-:ref:`Packer Merge job<gjjb-packer-merge>`. It is triggered only by its keyword,
+:ref:`Packer Merge job <gjjb-packer-merge>`. Trigger using its keyword,
 and will build a useable image. If the last patch set before a merge has a
 successful verify build, the merge job will not build the same image.
 
 :Template Names:
-   - {project-name}-packer-verify-build-{platforms}-{templates}
-   - gerrit-packer-verify-build
-   - github-packer-verify-build
+    - {project-name}-packer-verify-build-{platforms}-{templates}
+    - gerrit-packer-verify-build
+    - github-packer-verify-build
 
 :Comment Trigger: verify-build|packer-build
 
 :Required parameters:
 
-   :build-node: The node to run build on.
-   :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-       be configured in defaults.yaml)
-   :mvn-settings: The name of settings file containing credentials for
-       the project.
-   :platforms: Platform or distribution to build. Typically json file
-       found in the packer/vars directory. (Example: centos-7)
-   :templates: System template to build. Typically a yaml file or shell script
-       found in the packer/provision directory. (Example: docker)
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in
+        defaults.yaml)
+    :mvn-settings: The name of settings file containing credentials for
+        the project.
+    :platforms: Platform or distribution to build. Typically json file
+        found in the packer/vars directory. (Example: centos-7)
+    :templates: System template to build. Typically a yaml file or shell script
+        found in the packer/provision directory. (Example: docker)
 
 :Optional parameters:
 
-   :branch: Git branch to fetch for the build. (default: master)
-   :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
-   :build-timeout: Timeout in minutes before aborting build. (default: 10)
-   :gerrit_trigger_file_paths: Override file paths which can be used to
-       filter which file modifications will trigger a build.
-   :gerrit_verify_triggers: Override Gerrit Triggers.
-   :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-   :openstack: Packer template uses an OpenStack builder (default: true).
-   :openstack-cloud: Sets OS_CLOUD variable to the value of this parameter.
-       (default: vex).
-   :packer-cloud-settings: Name of settings file containing credentials
-       for the cloud that packer will build on. (default: packer-cloud-env)
-   :packer-version: Version of packer to install / use in build. (default: 1.0.2)
-   :stream: Keyword that can be used to represent a release code-name.
-       Often the same as the branch. (default: master)
-   :submodule-recursive: Whether to checkout submodules recursively.
-       (default: true)
-   :submodule-timeout: Timeout (in minutes) for checkout operation.
-       (default: 10)
-   :submodule-disable: Disable submodule checkout operation.
-       (default: false)
-   :update-cloud-image: Submit a change request to update new built cloud
-       image to Jenkins. (default: false)
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 10)
+    :gerrit_trigger_file_paths: Override file paths to filter which file
+        modifications will trigger a build.
+    :gerrit_verify_triggers: Override Gerrit Triggers.
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :openstack: Packer template uses an OpenStack builder (default: true).
+    :openstack-cloud: Sets OS_CLOUD variable to the value of this parameter.
+        (default: vex).
+    :packer-cloud-settings: Name of settings file containing credentials
+        for the cloud that packer will build on. (default: packer-cloud-env)
+    :packer-version: Version of packer to install / use in build. (default: 1.0.2)
+    :stream: Keyword that represents a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :update-cloud-image: Submit a change request to update new built cloud
+        image to Jenkins. (default: false)
 
 
 Puppet Verify
 -------------
 
-Runs puppet-lint in the ``puppet-dir`` directory. puppet-lint runs recursively,
-the base directory is usually the best place to run from.
+Runs puppet-lint in the ``puppet-dir`` directory. Since ``puppet-lint`` runs
+recursively, we recommend to run from the base directory.
 
 :Template Names:
 
@@ -966,8 +966,8 @@ or to SonarCloud.io.
 
 Requires ``SonarQube Scanner for Jenkins``
 
-One of the optional parameters sonar-project-file and sonar-properties
-must be supplied; they cannot both be empty.
+Configuration must set one of the parameters ``sonar-project-file`` or
+``sonar-properties``; they cannot both be empty.
 
 Plug-in configurations
     Manage Jenkins --> Configure System --> SonarQube servers
@@ -981,9 +981,11 @@ Plug-in configurations
         - Install automatically
         - Select latest version
 
-.. note:: Sonar properties can be set directly in the job definition by
-   setting the sonar-project-file to ``""`` and adding all properties under
-   ``sonar-properties``.
+.. note::
+
+    Optionally, set Sonar properties directly in the job definition by
+    setting the sonar-project-file to ``""`` and adding all properties under
+    ``sonar-properties``.
 
 :Template Names:
 
@@ -1005,7 +1007,7 @@ Sonar with Prescan
 
 The same as the Sonar job above, except the caller also defines a builder
 called ``lf-sonar-prescan``, in which they can put any builders that they want
-to run prior to the Sonar scan.
+to run before the Sonar scan.
 
 .. code-block:: yaml
 
@@ -1021,7 +1023,7 @@ to run prior to the Sonar scan.
     - github-sonar-prescan
 
 :Required Parameters:
-    :lf-sonar-prescan: A builder that will run prior to the Sonar scan.
+    :lf-sonar-prescan: A builder that will run before the Sonar scan.
 
 :Optional Parameters:
     :sonar-task: Sonar task to run. (default: "")
@@ -1036,7 +1038,7 @@ Sonar with Prescan Script
 -------------------------
 
 The same as the Sonar job above, except the caller must supply a shell script
-to run prior to the Sonar scan. This is commonly used to install prerequisites,
+to run before the Sonar scan. This is commonly used to install prerequisites,
 build the project, execute unit tests and generate a code-coverage report.
 
 :Template Names:
@@ -1046,7 +1048,7 @@ build the project, execute unit tests and generate a code-coverage report.
     - github-sonar-prescan-script
 
 :Required Parameters:
-    :sonar-prescan-script: A shell script that will run prior to the Sonar scan.
+    :sonar-prescan-script: A shell script that will run before the Sonar scan.
 
 :Optional Parameters:
     :sonar-task: Sonar task to run. (default: "")
