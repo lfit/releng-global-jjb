@@ -19,3 +19,27 @@ repos:
     rev: 2.1.1
     hooks:
       - id: shellcheck
+
+  - repo: local
+    hooks:
+      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
+      - id: write-good
+        name: write-good
+        description: Check docs for English prose with write-good
+        entry: write-good
+        language: node
+        files: "\\.(rst|md|markdown|mdown|mkdn)$"
+        additional_dependencies: ["write-good"]
+        exclude: docs/jjb/lf-macros.rst
+      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
+      # Files listed below break the tooWordy rule for a good reason, this allows them the exception
+      # they need to pass the check without disabling all checks for the whole file.
+      # In an ideal world write-good would give us an override for each individual instance of a
+      # violation but until then this gives us a close enough approach.
+      - id: write-good
+        name: write-good
+        description: Check docs for English prose with write-good
+        entry: write-good --no-tooWordy
+        language: node
+        files: docs/jjb/lf-macros.rst
+        additional_dependencies: ["write-good"]
