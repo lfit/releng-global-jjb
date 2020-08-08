@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "eaddbea6_2bc29060",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-08T14:45:15Z",
+      "side": 1,
+      "message": "And this is where write-good makes life complicated for us. The following write-good errors exists in this file:\n\n \"validate\" is wordy or unneeded on line 136 at column 16\n -------------\n Run ``packer validate`` to verify packer configuration.\n              ^^^^^^^^\n \"validate\" is wordy or unneeded on line 139 at column 13\n -------------\n     :sonar-additional-args: Additional command line arguments. (default: \"\")\n            ^^^^^^^^^^\n \"additional\" is wordy or unneeded on line 351 at column 11\n -------------\n  :sonar-additional-args: Additional command line arguments. (default: \"\")\n                          ^^^^^^^^^^\n \"Additional\" is wordy or unneeded on line 351 at column 28\n -------------\n     :sonar-additional-args: Additional command line arguments. (default: \"\")\n            ^^^^^^^^^^\n \"additional\" is wordy or unneeded on line 375 at column 11\n -------------\n  :sonar-additional-args: Additional command line arguments. (default: \"\")\n                          ^^^^^^^^^^\n \"Additional\" is wordy or unneeded on line 375 at column 28\n\nHowever, these are actual command names or parameter configuration. We really need a way to exclude line by line the write-good filter otherwise we end up excluding the entire file which is not ideal either :(",
+      "revId": "7752dc3f17a93549d6792443fee6509a17e33981",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
