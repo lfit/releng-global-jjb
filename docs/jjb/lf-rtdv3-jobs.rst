@@ -4,31 +4,28 @@
 ReadTheDocs Version:3 Jobs
 ##########################
 
-ReadTheDocs Projects can be configured in a nested manner, by configuring a
-project as a subproject of another project. This allows for documentation
-projects to share a search index and a namespace or custom domain, but still be
-maintained independently.
+ReadTheDocs supports the nesting of projects, by configuring a project as a
+subproject of another project. This allows for documentation projects to share
+a search index and a namespace or custom domain, while still maintained
+independently of each other.
 
-The master Read The Docs project files are usually maintained in a
-"docs" git repository and should contain an index with links to all
-the sub-projects. Each sub-project must maintain its documentation
-files in a "docs" subdirectory within that software component's git
-repository.
+The master Read The Docs project files, maintained in a "docs" Git repository
+should contain an index with links to all the sub-projects. Each sub-project
+must maintain its documentation files in a "docs" subdirectory within that
+software component's Git repository.
 
 The RTDv3 Jenkins jobs publish documentation by triggering builds at
 ReadTheDocs.io. That build process clones the appropriate repository
 and transforms reStructuredText (RST) and other files into HTML.
-All project's Read the Docs builds are performed separately from sub-project
-builds.
+All project's Read the Docs builds separately from sub-project builds.
 
-The Read The Docs site supports multiple versions of documentation for
-the master project and every sub-project.  Every project should have a
-development branch that's published at ReadTheDocs under the title
-"latest"; in git this is usually the "master" branch.  Most projects
-also declare releases periodically.  ReadTheDocs automatically detects
-the creation of git branches and git tags, and publishes the most
-recent one under the title "stable."  For more details please see
-`ReadTheDocs Versions
+The Read The Docs site supports versioned documentation for the master project
+and every sub-project.  Every project should have a development branch that's
+published at ReadTheDocs under the title "latest"; in Git this is the "master"
+branch although can be different in some projects.  Most projects also declare
+releases periodically.  ReadTheDocs automatically detects the creation of git
+branches and git tags, and publishes the most recent one under the title
+"stable."  For more details please see `ReadTheDocs Versions
 <https://docs.readthedocs.io/en/stable/versions.html>`_.  Teams can
 control this process using Jenkins job configuration parameters as
 discussed below.
@@ -36,9 +33,9 @@ discussed below.
 User setup
 ----------
 
-To transform your rst documentation into a Read The Docs page, this job must be
-configured and created as described in Admin setup below. Once this is complete
-the following files must be added to your repository:
+To transform your rst documentation into a Read The Docs page, configure as
+described in Admin setup below. Once this is complete, add the following files
+to your repository:
 
 .. code-block:: bash
 
@@ -53,27 +50,27 @@ the following files must be added to your repository:
    docs/requirements-docs.txt
    docs/conf.py
 
-Rather than have you copy and paste these files from a set of docs here, the
+Rather than copying and pasting these files from a set of docs here, the
 following repo contains a script that will do this for you. Please refer to the
-explanation presented in: https://github.com/lfit-sandbox/test. This is all
-currently a beta feature, so feedback is encouraged. The script
-``docs_script.sh`` is not needed, you can copy the files by hand if you prefer.
+explanation presented in: <https://github.com/lfit-sandbox/test>. This is a
+beta feature, so please send feedback on your experiences. Once complete, the
+script ``docs_script.sh`` is not needed. You can copy the files by hand if you
+prefer.
 
 The default location of the tox.ini file is in the git repository root
 directory. Optionally your documentation lead may decide to store all tox files
 within the required "docs" subdirectory by setting configuration option
 "tox-dir" to value "docs/" as discussed below.
 
-If your project's tox dir is "docs/" and not "." the tox.ini must be
-reconfigured with the correct relative paths.
+If your project's tox dir is ``docs/`` and not ``.``, update the tox.ini
+configuration with the correct relative paths.
 
-Additionally, you must also modify the doc-dir. For example, from the default
-of ``doc-dir: "docs/_build/html"`` to ``doc-dir: "_build/html"``, as the relative
+You must also set the doc-dir. For example, from the default of
+``doc-dir: "docs/_build/html"`` to ``doc-dir: "_build/html"``, as the relative
 path in the tox run has changed.
 
-
-Once these files are correctly configured in your repository you can build
-the rst files locally to test:
+Once configured, in your repository you can build the rst files locally to
+test:
 
 .. code-block:: bash
 
@@ -85,11 +82,11 @@ Stable Branch Instructions
 
 If your project does not create branches, you can skip this step.
 
-For Read The Docs to see your new branch, a build needs to be triggered.
-A trivial change to any file in your project's /docs/ directory
-on your newly minted branch is sufficient to build and activate your project's
-new branch on Read The Docs. This will create a new selectable version
-in the bottom right corner of your project's Read The Docs page.
+For Read The Docs to see your new branch, trigger a build to force RTD to run
+an update. Use a trivial change to any file in your project's ``/docs/``
+directory on your newly minted branch to trigger a build and activate your
+project's new branch on Read The Docs. This will create a new selectable
+version in the bottom right corner of your project's Read The Docs page.
 Once all projects have branched the process to release the documentation
 (that is to change the default landing point of your docs from /latest/ to /branchname/)
 is to change the default-version in the jenkins job config as follows:
@@ -115,14 +112,13 @@ on docs/* changes for all projects in a Gerrit instance. It leverages the
 Read The Docs v3 api to create projects on the fly, as well as setting up
 sub-project associations with the master doc.
 
-Jobs will run but skip any actual verification until a .readthedocs.yaml is placed in the
-root of the repository
+A ``.readthedocs.yaml`` must exist in the root of the repository otherwise the
+jobs will run but skip actual verification.
 
-The master doc must be defined in
-jenkins-config/global-vars-{production|sandbox}.sh
+Define the master doc in jenkins-config/global-vars-{production|sandbox}.sh
 
-Normally this project is called doc or docs or documentation and all other docs build will
-be set as a subproject of this job.
+This project named "doc" or "docs" or "documentation" will set all other docs
+builds as a subproject of this job.
 
 examples:
 
@@ -209,7 +205,7 @@ a tox.ini that lived inside your docs/ dir
          - master:
              branch: '*'
 
-Github jobs must be per project, and will be covered by a different set of jobs once these are proven.
+GitHub jobs must be per-project. Once proven, a different set of jobs will be available.
 
 Job requires an lftools config section, this is to provide api access to read the docs.
 
