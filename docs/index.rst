@@ -15,10 +15,10 @@ projects save time from having to define their own job templates.
 Release Notes
 -------------
 
-Global JJB provides regular releases. The release notes for all releases are
-available in the relnotes directory in Git.
+.. toctree::
+   :maxdepth: 2
 
-https://github.com/lfit/releng-global-jjb/tree/master/relnotes
+   release-notes
 
 Guides
 ------
@@ -26,7 +26,6 @@ Guides
 .. toctree::
    :maxdepth: 2
 
-   release-notes
    install
    configuration
 
@@ -37,8 +36,8 @@ Guides
 Global JJB Templates
 --------------------
 
-Job template code is in the `jjb/` directory but documentation is in the
-`docs/jjb/` directory of this project.
+Job template code is in the ``jjb/`` directory but documentation is in the
+``docs/jjb/`` directory of this project.
 
 .. toctree::
    :glob:
