@@ -1,0 +1,8 @@
+---
+issues:
+  - |
+    Fix image update script to handle $image_type correctly.
+
+    This fixes the issue when a specific image type overwites
+    other image types incorrectly in the .cfg and some images names getting
+    excluded.
