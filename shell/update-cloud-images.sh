@@ -28,11 +28,10 @@ source ~/lf-env.sh
 lf-activate-venv python-openstackclient
 
 mkdir -p "$WORKSPACE/archives"
-echo "List of images used on the source repository:"
+echo "INFO: List of images in use on the source repository:"
 grep -Er '(_system_image:|IMAGE_NAME)'                       \
     --exclude-dir="global-jjb" --exclude-dir="common-packer" \
-    | grep  ZZCI | awk -F: -e '{print $3}'                   \
-    | grep '\S' | tr -d \'\" | sort -n | uniq                \
+    | grep -oP 'ZZCI\s+.*\d+-\d+\.\d+' | sort -n | uniq      \
     | tee "$WORKSPACE/archives/used_image_list.txt"
 
 while read -r line ; do
@@ -46,13 +45,17 @@ while read -r line ; do
         new_image=${NEW_IMAGE_NAME}
         new_image_type="${NEW_IMAGE_NAME% -*}"
         # get the $new_image_type to check the image type is being compared
-        [[ ${new_image_type} =~ ${image_type} ]] && continue
+        if [[ ${new_image_type} != ${image_type} ]]; then
+	   echo "INFO: Image type does not match, continue ..."
+	   continue
+	fi
     else
         new_image=$(openstack image list --long -f value -c Name -c Protected \
-            | grep "${image_type}.*False" | tail -n-1 | sed 's/ False//')   \
+            | grep "${image_type}.*False" | tail -n-1 | sed 's/ False//')     \
             || true
     fi
     [[ -z $new_image ]] && continue
+    echo "INFO: Found image type match, compare timestamps."
 
     # strip the timestamp from the image name
     new_image_isotime=${new_image##*- }
@@ -60,14 +63,14 @@ while read -r line ; do
     # Remove '-' & '.' from the timestamp and perform numeric compare
     if [[ ${new_image_isotime//[\-\.]/} -gt ${image_in_use_isotime//[\-\.]/} ]]; then
         # generate a patch to be submited to Gerrit
-        echo "Update old image: $image_in_use with new image: $new_image"
+        echo "INFO: Update old image: $image_in_use with new image: $new_image"
         grep -rlE '(_system_image:|IMAGE_NAME)' \
             | xargs sed -i "s/${image_in_use}/${new_image}/"
         # When the script is triggered by upstream packer-merge job
         # update only the requested image and break the loop
         [[ $NEW_IMAGE_NAME != all ]] && break
     else
-        echo "No new image to update: $new_image"
+        echo "INFO: No new image to update: $new_image"
     fi
 done < "$WORKSPACE/archives/used_image_list.txt"
 
