@@ -23,15 +23,15 @@ Chooses a tag to label the container image based on the
 'container-tag-method' parameter using the global-jjb script
 docker-get-container-tag.sh. Use one of the following methods:
 
-If container-tag-method: latest, the literal string 'latest' is used.
+If ``container-tag-method: latest``, uses the literal string ``latest``.
 
-If container-tag-method: git-describe, the tag is obtained using the
-git describe command on the repository, which requires that the repository
+If ``container-tag-method: git-describe``, reads the tag from the
+``git describe`` command on the repository, which requires that the repository
 has a git tag. For example, if the most recent tag is 'v0.48.1', this
 method yields a string like 'v0.48.1' or 'v0.48.1-25-gaee2dcb'.
 
-If container-tag-method: yaml-file, the tag is obtained from the YAML file
-'container-tag.yaml' in the docker-root directory using the top-level entry
+If ``container-tag-method: yaml-file``, reads the tag from the YAML file
+``container-tag.yaml`` in the docker-root directory using the top-level entry
 'tag'. Alternately specify the directory with the YAML file in parameter
 'container-tag-yaml-dir'. An example file appears next.
 
@@ -73,8 +73,8 @@ Job Templates
 Docker Verify
 -------------
 
-Executes a docker build task to verify that an image can be constructed,
-and discards the image upon completion.
+Executes a docker build task to verify an test image build and discards the
+test image upon completion.
 
 :Template Names:
 
@@ -91,8 +91,8 @@ and discards the image upon completion.
     :build-node: The node to run build on.
     :container-public-registry: Docker registry source with base images.
     :docker-name: Name of the Docker image.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
     :mvn-settings: Maven settings.xml file containing Docker credentials.
 
 :Optional parameters:
@@ -102,22 +102,22 @@ and discards the image upon completion.
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :container-tag-method: Specifies the docker tag-choosing method.
         Options are "latest", "git-describe" or "yaml-file".
-        Option latest simply applies that string.
+        Option latest uses the "latest" tag.
         Option git-describe uses the string returned by git-describe,
         which requires a tag to exist in the repository.
         Option yaml-file uses the string from file "container-tag.yaml"
         in the repository. (default: latest)
     :container-tag-yaml-dir: Directory with container-tag.yaml. (default: $DOCKER_ROOT)
-    :docker-build-args: Additional arguments for the docker build command.
+    :docker-build-args: Arguments for the docker build command.
     :docker-get-container-tag-script: Path to script that chooses docker tag.
         (default: ../shell/docker-get-container-tag.sh in global-jjb)
     :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre_docker_build_script: Build script to execute before the main verify
-        builder steps. (default: a string with only a comment)
+        builder steps. (default: "")
     :post_docker_build_script: Build script to execute after the main verify
-        builder steps. (default: a string with only a comment)
-    :stream: Keyword that can be used to represent a release code-name.
+        builder steps. (default: "")
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -125,11 +125,11 @@ and discards the image upon completion.
         (default: 10)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override Gerrit file paths which can be
-        used to filter which file modifications will trigger a build.
-    :github_included_regions: Override Github file paths which can be
-        used to filter which file modifications will trigger a build;
-        must match parameter gerrit_trigger_file_paths
+    :gerrit_trigger_file_paths: Override Gerrit file paths to filter which file
+        modifications will trigger a build.
+    :github_included_regions: Override Github file paths to filter which file
+        modifications will trigger a build; must match parameter
+        gerrit_trigger_file_paths
 
 
 container-tag.yaml example:
@@ -144,7 +144,7 @@ Docker Merge
 
 Executes a docker build task and pushes the resulting image to the specified
 Docker registry. If every image is a release candidate, this should use a
-staging repository and should also run regularly to check dependencies.
+staging repository and occassionally run to check dependencies.
 
 :Template Names:
 
@@ -162,8 +162,8 @@ staging repository and should also run regularly to check dependencies.
     :container-public-registry: Docker registry source with base images.
     :container-push-registry: Docker registry target for the push action.
     :docker-name: Name of the Docker image.
-    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
-        be configured in defaults.yaml)
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
     :mvn-settings: Maven settings.xml file containing Docker credentials.
 
 :Optional parameters:
@@ -173,7 +173,7 @@ staging repository and should also run regularly to check dependencies.
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :container-tag-method: Specifies the docker tag-choosing method.
         Options are "latest", "git-describe" or "yaml-file".
-        Option latest simply applies that string.
+        Option latest uses the "latest" tag.
         Option git-describe uses the string returned by git-describe,
         which requires a tag to exist in the repository.
         Option yaml-file uses the string from file "container-tag.yaml"
@@ -183,16 +183,16 @@ staging repository and should also run regularly to check dependencies.
         supports multiline input via YAML pipe | character in cases where
         one may want to provide more than 1 cron timer. Use '@daily' to run
         daily or '@weekly' to run weekly.  (default: @weekly)
-    :docker-build-args: Additional arguments for the docker build command.
+    :docker-build-args: Arguments for the docker build command.
     :docker-get-container-tag-script: Path to script that chooses docker tag.
         (default: ../shell/docker-get-container-tag.sh in global-jjb)
     :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :pre_docker_build_script: Build script to execute before the main merge
-        builder steps. (default: a string with only a comment)
+        builder steps. (default: "")
     :post_docker_build_script: Build script to execute after the main merge
-        builder steps. (default: a string with only a comment)
-    :stream: Keyword that can be used to represent a release code-name.
+        builder steps. (default: "")
+    :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
@@ -200,11 +200,11 @@ staging repository and should also run regularly to check dependencies.
         (default: 10)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
-    :gerrit_trigger_file_paths: Override Gerrit file paths which can be
-        used to filter which file modifications will trigger a build.
-    :github_included_regions: Override Github file paths which can be
-        used to filter which file modifications will trigger a build;
-        must match parameter gerrit_trigger_file_paths
+    :gerrit_trigger_file_paths: Override Gerrit file paths to filter which file
+        modifications will trigger a build.
+    :github_included_regions: Override GitHub file paths to filter which file
+        modifications will trigger a build; must match parameter
+        gerrit_trigger_file_paths
 
 Sample container-tag.yaml File
 ------------------------------
