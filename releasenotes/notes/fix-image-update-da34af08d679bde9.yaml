@@ -1,5 +1,5 @@
 ---
-issues:
+fixes:
   - |
     Fix image update script to handle $image_type correctly.
 
