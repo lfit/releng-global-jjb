@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4c341da8_92e1ffb5",
+        "filename": "releasenotes/notes/fix-image-update-da34af08d679bde9.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-11T04:25:39Z",
+      "side": 1,
+      "message": "typo: overwrites",
+      "range": {
+        "startLine": 6,
+        "startChar": 52,
+        "endLine": 6,
+        "endChar": 61
+      },
+      "revId": "7e6859785ac1dd752be7e60d89e0a9ac2b5a187e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
