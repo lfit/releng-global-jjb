@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "230433e3_e636be32",
+        "filename": "releasenotes/notes/fix-image-update-da34af08d679bde9.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-11T04:10:43Z",
+      "side": 1,
+      "message": "\"fixes\" should be used not \"issues\".\n\nIssues should be used in cases where there are known issues that you want to document for the user that is NOT fixed in this release.\n\nIn this case something is being fixed so an issue shouldn\u0027t be documented.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 6
+      },
+      "revId": "762400ee2c77d0cb936ca1757bc2ac1515042436",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "55ca9c75_5233d8ba",
+        "filename": "releasenotes/notes/fix-image-update-da34af08d679bde9.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-11T04:10:43Z",
+      "side": 1,
+      "message": "overwrites",
+      "range": {
+        "startLine": 6,
+        "startChar": 52,
+        "endLine": 6,
+        "endChar": 61
+      },
+      "revId": "762400ee2c77d0cb936ca1757bc2ac1515042436",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf792edb_b1cc8b02",
+        "filename": "shell/update-cloud-images.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-11T04:10:43Z",
+      "side": 1,
+      "message": "Lines 49-51 have tabs instead of spaces.",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 1
+      },
+      "revId": "762400ee2c77d0cb936ca1757bc2ac1515042436",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
