@@ -21,17 +21,18 @@ os_cloud="${OS_CLOUD:-vex}"
 
 set -eu -o pipefail
 
-conf_images=("$(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
-               | awk -F'=' '{print $2}' | sort -u)")
-# If there are no yaml files the 'grep' will fail, which is OK
-yaml_images=("$(grep -r 'ZZCI - ' --include \*.yaml jjb \
-               | awk -F": " '{print $3}' | sed "s:'::;s:'$::;/^$/d" \
-               | sort -u)") || true
-readarray -t images <<< "$(for i in "${conf_images[@]}" "${yaml_images[@]}"; do \
-                           echo "$i"; done | sort)"
+declare -a images
+images+=("$(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
+    | awk -F'=' '{print $2}' | sort -u)")
+set +o pipefail  # Not all projects have images in YAML files and grep returns non-zero on 0 results
+# Ignore SC2179 since we do not want () to result in an empty array item.
+#shellcheck disable=SC2179
+images+="$(grep -r 'ZZCI - ' --include \*.yaml jjb \
+    | awk -F": " '{print $3}' | sed "s:'::;s:'$::;/^$/d" | sort -u)"
+set -o pipefail
+readarray -t images <<< "$(for i in "${images[@]}"; do echo "$i"; done | sort)"
 
 for image in "${images[@]}"; do
-    [[ -z $image ]] && continue
     os_image_protected=$(openstack --os-cloud "$os_cloud" \
         image show "$image" -f value -c protected)
     echo "Protected setting for $image: $os_image_protected"
