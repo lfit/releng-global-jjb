@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7fdd3a5_e1c1a8b6",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-13T01:21:40Z",
+      "side": 0,
+      "message": "Sigh, why was this line removed? this breaks the script on projects that don\u0027t have images defined in YAML files.\n\nThe comment is specifically about the `set +o pipefail` line and is the reason it\u0027s attached to the line.",
+      "revId": "0c66e6ab1d80770ca7060237b436190f9fa274a0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
