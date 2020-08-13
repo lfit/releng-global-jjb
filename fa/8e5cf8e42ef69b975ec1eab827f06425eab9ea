@@ -1,0 +1,7 @@
+Code-Review+2: Bengt Thuree <bthuree@linuxfoundation.org>
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Submitted-by: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Submitted-at: Thu, 13 Aug 2020 01:30:43 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/65033
+Project: releng/global-jjb
+Branch: refs/heads/master
