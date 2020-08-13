@@ -24,7 +24,8 @@ set -eu -o pipefail
 declare -a images
 images+=("$(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
     | awk -F'=' '{print $2}' | sort -u)")
-set +o pipefail  # Not all projects have images in YAML files and grep returns non-zero on 0 results
+
+# Not all projects have images in YAML files and grep returns non-zero on 0 results
 # Ignore SC2179 since we do not want () to result in an empty array item.
 #shellcheck disable=SC2179
 images+=("$(grep -r 'ZZCI - ' --include \*.yaml jjb \
