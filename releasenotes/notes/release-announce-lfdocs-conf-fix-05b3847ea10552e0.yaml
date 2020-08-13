@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Fix email notifications for lfdocs-conf releases. Unfortunatelly
+    the name of the repo does not match the configuration in the code
+    and we need to make sure the email notification announces the
+    corrected name of the project which should be lfdocs-conf.
