@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8f9d5a13_7101e5f6",
+        "filename": "shell/release-announce.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-13T22:07:50Z",
+      "side": 1,
+      "message": "Instead of hardcoding this maybe we can set a RTD_PROJECT_SLUG variable that takes in a rtd-project-slug JJB parameter that is empty by default. Then the code here can be:\n\nif [[ $RTD_PROJECT_SLUG !\u003d \"\" ]]; then\n    PROJECT\u003d\"$RTD_PROJECT_SLUG\"\nfi\n\nmakes it more flexible so that if there\u0027s other projects also have project slugs that don\u0027t match the repo name.",
+      "revId": "de514d37b49164f87f3332b7ece9dffd86ede276",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
