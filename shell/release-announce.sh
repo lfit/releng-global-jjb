@@ -15,6 +15,12 @@ TAG_NAME="${GERRIT_REFNAME#refs/tags/}"
 
 set -eux -o pipefail
 
+# This is a hardcoded fix for docs-conf. The name of the repo does not match
+# the code it it and we need to make sure the right name is displayed.
+if [[ $PROJECT == "docs-conf" ]]; then
+    PROJECT="lfdocs-conf"
+fi
+
 mail_opts=()
 mail_opts+=("-r" "LF Releng <lf-releng@lists.linuxfoundation.org>")
 mail_opts+=("-s" "$PROJECT $TAG_NAME released")
