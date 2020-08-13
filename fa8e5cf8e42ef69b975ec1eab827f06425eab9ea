@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2533fe_025c12c4",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-13T01:24:22Z",
+      "side": 1,
+      "message": "I don\u0027t know why removing a valid line of code was flagged as \"A formatting issue\".",
+      "revId": "fa8e5cf8e42ef69b975ec1eab827f06425eab9ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
