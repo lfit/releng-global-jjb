@@ -28,6 +28,7 @@
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
+    packer-builder: openstack
     packer-cloud-settings: packer-cloud-env
     packer-version: 1.4.2
 
@@ -1479,6 +1480,7 @@
       - lf-infra-packer-build:
           openstack: "{openstack}"
           openstack-cloud: "{openstack-cloud}"
+          packer-builder: "{packer-builder}"
           packer-cloud-settings: "{packer-cloud-settings}"
           packer-version: "{packer-version}"
           platform: "{platforms}"
