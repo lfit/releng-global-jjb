@@ -1,0 +1,12 @@
+---
+features:
+  - |
+    Packer CI jobs now have the ability to specify which "builder" to use in
+    the job. Default configuration is the for the "openstack" builder.
+upgrade:
+  - |
+    Requires common-packer v0.7.0 if using packer CI jobs.
+  - |
+    If your project is in AWS and uses the Packer CI jobs to build AMIs you
+    must set ``packer-builder: aws`` when upgrading to this version of
+    global-jjb or your jobs will default to openstack and fail.
