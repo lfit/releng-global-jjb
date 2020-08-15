@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Parallel mode for tox environments is broken if the user passes a JJB bool
+    value to the job-template. We now lowercase the PARALLEL variable when
+    comparing in the bash script to ensure the user provided value is compared
+    against the lowercase value.

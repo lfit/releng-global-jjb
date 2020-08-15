@@ -28,7 +28,7 @@ if [[ -d /opt/pyenv ]]; then
 fi
 
 PARALLEL="${PARALLEL:-true}"
-if [[ ${PARALLEL} = true ]]; then
+if [[ ${PARALLEL,,} = true ]]; then
     if [[ -n ${TOX_ENVS:-} ]]; then
         tox -e "$TOX_ENVS" --parallel auto --parallel-live | tee -a "$ARCHIVE_TOX_DIR/tox.log"
         tox_status="${PIPESTATUS[0]}"
