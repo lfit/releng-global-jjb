@@ -16,6 +16,24 @@
       "revId": "de514d37b49164f87f3332b7ece9dffd86ede276",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5355866c_2980433e",
+        "filename": "shell/release-announce.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2020-08-17T21:54:39Z",
+      "side": 1,
+      "message": "You are right.. working on it..",
+      "parentUuid": "8f9d5a13_7101e5f6",
+      "revId": "de514d37b49164f87f3332b7ece9dffd86ede276",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
