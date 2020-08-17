@@ -16,7 +16,10 @@ set -euf -o pipefail
 source ~/lf-env.sh
 
 # AWS job cost not supported, exit
-if grep -qi amazon /sys/devices/virtual/dmi/id/bios_vendor ; then
+
+#DataSourceEc2Local
+type="$(jq -r .v1.datasource /run/cloud-init/result.json)"
+if [[ $type == "DataSourceEc2Local" ]]; then
   echo "INFO: Not able to calculate job cost on AWS"
   exit 0
 fi
