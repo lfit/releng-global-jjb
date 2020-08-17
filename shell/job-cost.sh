@@ -16,7 +16,7 @@ set -euf -o pipefail
 source ~/lf-env.sh
 
 # AWS job cost not supported, exit
-if grep -qi amazon /sys/devices/virtual/dmi/id/bios_vendor ; then
+if grep -qi amazon /sys/devices/virtual/dmi/id/product_version ; then
   echo "INFO: Not able to calculate job cost on AWS"
   exit 0
 fi
