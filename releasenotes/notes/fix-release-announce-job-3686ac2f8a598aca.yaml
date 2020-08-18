@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Fix email notifications for lfdocs-conf releases. The name of the repo
+    does not match the configuration in the code. Add a new PROJECT_SLUG
+    variable to use in case the name of the repo is different from its
+    configuration.

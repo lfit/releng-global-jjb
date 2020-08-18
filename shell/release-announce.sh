@@ -10,7 +10,12 @@
 ##############################################################################
 echo "---> release-announce.sh"
 
-PROJECT="${GERRIT_PROJECT#releng/}"  # For releng projects strip the prefix
+if [[ $PROJECT_SLUG != "" ]]; then
+    PROJECT="$PROJECT_SLUG"
+else
+    PROJECT="${GERRIT_PROJECT#releng/}"  # For releng projects strip the prefix
+fi
+
 TAG_NAME="${GERRIT_REFNAME#refs/tags/}"
 
 set -eux -o pipefail
