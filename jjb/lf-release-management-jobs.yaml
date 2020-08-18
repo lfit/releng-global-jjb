@@ -13,6 +13,7 @@
     build-days-to-keep: 7
     build-timeout: 15
     disable-job: false
+    project-slug: ''
 
     #####################
     # Job Configuration #
@@ -27,6 +28,8 @@
           build-days-to-keep: "{build-days-to-keep}"
 
     builders:
+      - inject:
+          properties-content: PROJECT_SLUG={project-slug}
       - shell: !include-raw-escape: ../shell/release-announce.sh
 
     wrappers:
