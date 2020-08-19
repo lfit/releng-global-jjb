@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53c49cca_f27532bc",
+        "filename": "releasenotes/notes/packer-specify-builder-9911c0cf4dfb493d.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-08-19T14:59:36Z",
+      "side": 1,
+      "message": "Not actually released yet so we should confirm the version before merging this patch.",
+      "range": {
+        "startLine": 8,
+        "startChar": 13,
+        "endLine": 8,
+        "endChar": 33
+      },
+      "revId": "7fce5666cfdac486c9d69f5c23601183b2ef4353",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
