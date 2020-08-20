@@ -22,6 +22,30 @@
       "revId": "7fce5666cfdac486c9d69f5c23601183b2ef4353",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eb0f0144_54d0f605",
+        "filename": "releasenotes/notes/packer-specify-builder-9911c0cf4dfb493d.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-08-20T20:23:30Z",
+      "side": 1,
+      "message": "common-packer v0.7.0 is out and has change I8f46d544961e508cdeee28d4e761c2feae5e744e landed in it which changes the builder name from vexxhost to openstack.",
+      "parentUuid": "53c49cca_f27532bc",
+      "range": {
+        "startLine": 8,
+        "startChar": 13,
+        "endLine": 8,
+        "endChar": 33
+      },
+      "revId": "7fce5666cfdac486c9d69f5c23601183b2ef4353",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
