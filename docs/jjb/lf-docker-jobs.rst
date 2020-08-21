@@ -25,6 +25,8 @@ docker-get-container-tag.sh. Use one of the following methods:
 
 If ``container-tag-method: latest``, uses the literal string ``latest``.
 
+If ``container-tag-method: stream``, uses the value of the variable ``stream``.
+
 If ``container-tag-method: git-describe``, reads the tag from the
 ``git describe`` command on the repository, which requires that the repository
 has a git tag. For example, if the most recent tag is 'v0.48.1', this

@@ -21,6 +21,8 @@ set -feu -o pipefail
 tag=""
 if [[ $CONTAINER_TAG_METHOD == "latest" ]]; then
     tag="latest"
+elif [[ $CONTAINER_TAG_METHOD == "stream" ]]; then
+    tag="$STREAM"
 elif [[ $CONTAINER_TAG_METHOD == "git-describe" ]]; then
     tag=$(git describe)
 elif [[ $CONTAINER_TAG_METHOD == "yaml-file" ]]; then

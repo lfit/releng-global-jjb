@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Optionally get docker container tag to be set to the value of *stream*.
