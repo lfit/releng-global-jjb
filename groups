@@ -2,4 +2,3 @@
 #
 d68d00a2419f8ff627fc120cf9dd9055ae422153                                             	GitHub Replication
 d6bd689cc6661d154f111acc25a4d20bb5870ac0                                             	saml/lf-gerrit-releng-global-jjb-committers
-ldap:cn=lfinfra-gerrit-releng-global-jjb-committers,ou=Groups,dc=freestandards,dc=org	ldap/lfinfra-gerrit-releng-global-jjb-committers
