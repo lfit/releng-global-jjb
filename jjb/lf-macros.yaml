@@ -700,6 +700,31 @@
             - "**/*.jenkins-trigger"
           fail-build: false
 
+- publisher:
+    name: global-jjb-email-notification
+    publishers:
+      - email-ext:
+          recipients: "{email-recipients}"
+          reply-to: ""
+          content-type: default
+          subject: "{email-prefix} $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+          body: |
+            $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+            Please refer to the logs server URL for console logs when possible
+            and use the Jenkins Build URL as a last resort.
+
+            Console Logs URL:
+            $LOGS_SERVER/$SILO/$JENKINS_HOSTNAME/$JOB_NAME/$BUILD_NUMBER
+
+            Jenkins Build URL:
+            $BUILD_URL
+          unstable: true
+          fixed: true
+          send-to:
+            - recipients
+
+
 #######
 # SCM #
 #######
