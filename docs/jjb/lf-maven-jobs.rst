@@ -34,12 +34,13 @@ Runs Sonar against a Maven project and pushes results to SonarCloud.
 
 :Required Parameters:
 
-    :java-version: Version of Java to execute Sonar with.
+    :java-version: Version of Java to execute Maven build prior to the Sonar scan.
     :mvn-version: Version of Maven to execute Sonar with.
     :mvn-settings: Maven settings.xml file containing credentials to use.
     :sonarcloud-project-key: SonarCloud project key.
     :sonarcloud-project-organization: SonarCloud project organization.
     :sonarcloud-api-token: SonarCloud API Token.
+    :sonarcloud-java-version: Version of Java to run the Sonar scan.
 
 lf-maven-build
 --------------
@@ -484,7 +485,7 @@ multi-branch configuration.
         one may want to provide more than 1 cron timer.  (default: 'H H * * 6'
         to run weekly)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the Maven build. (default: openjdk8)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-goals: The maven goals to perform for the build.
@@ -500,6 +501,7 @@ multi-branch configuration.
     :sonarcloud-project-organization: SonarCloud project organization.
         (default: '')
     :sonarcloud-api-token: SonarCloud API Token. (default: '')
+    :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.

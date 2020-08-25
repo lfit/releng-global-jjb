@@ -255,6 +255,9 @@
     sonarcloud-project-key: ""
     sonarcloud-project-organization: ""
     sonarcloud-api-token: ""
+    # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
+    # Projects not compatible with jdk11 can set java-version to something else
+    sonarcloud-java-version: openjdk11
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -332,6 +335,7 @@
                 # yamllint disable-line rule:line-length
                 sonarcloud-project-organization: "{sonarcloud-project-organization}"
                 sonarcloud-api-token: "{sonarcloud-api-token}"
+                sonarcloud-java-version: "{sonarcloud-java-version}"
       # With SonarQube
       - conditional-step:
           condition-kind: not

@@ -36,6 +36,12 @@ if [ "$SONAR_HOST_URL" = "https://sonarcloud.io" ]; then
     params+=("-Dsonar.login=$API_TOKEN")
 fi
 
+if [ "$SET_JDK_VERSION" != "$SONARCLOUD_JAVA_VERSION" ]; then
+    export SET_JDK_VERSION="$SONARCLOUD_JAVA_VERSION"
+    bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
+    source /tmp/java.env
+fi
+
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
 "$MVN" $SONAR_MAVEN_GOAL \

@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Run Sonar scans using JDK11.
+    *java-version* will only set java for the maven build part of the job,
+    the sonar scan will use *sonarcloud-java-version* which is set to *openjdk11*.
+    Projects not compatible with JDK11 will be able to run their build with
+    *java-version* set to their JDK preference.
+    https://sonarcloud.io/documentation/user-guide/move-analysis-java-11/
