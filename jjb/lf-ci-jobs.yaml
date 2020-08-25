@@ -1412,6 +1412,9 @@
 
     publishers:
       - lf-infra-publish
+      - global-jjb-email-notification:
+          email-recipients: "{failure-notification}"
+          email-prefix: "{failure-notification-prefix}"
 
 - job-template:
     name: "{project-name}-openstack-cron"
