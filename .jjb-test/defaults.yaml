@@ -27,3 +27,4 @@
     project: releng/ciman
     stream: latest
     build-node: build-vm
+    lfstaff-email: "fake@example.org"
