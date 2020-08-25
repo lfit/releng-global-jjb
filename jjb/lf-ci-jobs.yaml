@@ -1412,6 +1412,9 @@
 
     publishers:
       - lf-infra-publish
+      - global-jjb-email-notification:
+          email-recipients: "{lfstaff-email}"
+          email-prefix: "[releng]"
 
 - job-template:
     name: "{project-name}-openstack-cron"

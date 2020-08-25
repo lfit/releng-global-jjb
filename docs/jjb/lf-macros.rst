@@ -530,3 +530,10 @@ lf-infra-wrappers-windows
 
 Provides lf-infra recommended wrappers for use in every job-template targetting
 Windows systems.
+
+
+global-jjb-email-notification
+-----------------------------
+
+Provides a publisher macro that ties into the lf-openstack-cron job
+so that admins can be alerted via email if this job fails.
