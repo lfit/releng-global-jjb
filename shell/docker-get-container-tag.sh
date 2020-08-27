@@ -22,7 +22,11 @@ tag=""
 if [[ $CONTAINER_TAG_METHOD == "latest" ]]; then
     tag="latest"
 elif [[ $CONTAINER_TAG_METHOD == "stream" ]]; then
-    tag="$STREAM"
+    if [[ $STREAM == "master" ]]; then
+	tag="latest"
+    else
+        tag="$STREAM"
+    fi
 elif [[ $CONTAINER_TAG_METHOD == "git-describe" ]]; then
     tag=$(git describe)
 elif [[ $CONTAINER_TAG_METHOD == "yaml-file" ]]; then
