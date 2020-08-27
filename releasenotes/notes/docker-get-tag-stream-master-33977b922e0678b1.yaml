@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    For cases where *container-tag-method: stream* and *stream: master*,
+    it seems uncommon to tag the images as *master*. Instead, tag images
+    as *latest* when *stream: master*.
