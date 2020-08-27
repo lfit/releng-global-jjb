@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4c35e264_29524900",
+        "filename": ".jjb-test/defaults.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-08-27T18:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bb68c37e_3883b22f",
+      "range": {
+        "startLine": 30,
+        "startChar": 4,
+        "endLine": 30,
+        "endChar": 11
+      },
+      "revId": "12eda5d2f3513a0a1aa102562e1470d6c0b7ae1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "36901317_beb620f6",
         "filename": "jjb/lf-ci-jobs.yaml",
         "patchSetId": 5
@@ -45,6 +69,30 @@
       "revId": "12eda5d2f3513a0a1aa102562e1470d6c0b7ae1d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d83897da_d0dce741",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1416,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-08-27T18:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36901317_beb620f6",
+      "range": {
+        "startLine": 1416,
+        "startChar": 30,
+        "endLine": 1416,
+        "endChar": 37
+      },
+      "revId": "12eda5d2f3513a0a1aa102562e1470d6c0b7ae1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "b4e58d92_3b15e85e",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1417,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-08-27T18:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffb62dfb_4f17f8e2",
+      "range": {
+        "startLine": 1417,
+        "startChar": 25,
+        "endLine": 1417,
+        "endChar": 33
+      },
+      "revId": "12eda5d2f3513a0a1aa102562e1470d6c0b7ae1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0c486d98_b4ee5ad0",
         "filename": "jjb/lf-macros.yaml",
         "patchSetId": 5
@@ -91,6 +163,30 @@
       "revId": "12eda5d2f3513a0a1aa102562e1470d6c0b7ae1d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8dd4fe0c_7b2a3c1d",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 718,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-08-27T18:45:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c486d98_b4ee5ad0",
+      "range": {
+        "startLine": 716,
+        "startChar": 0,
+        "endLine": 718,
+        "endChar": 72
+      },
+      "revId": "12eda5d2f3513a0a1aa102562e1470d6c0b7ae1d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
