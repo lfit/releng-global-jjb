@@ -22,6 +22,30 @@
       "revId": "f4f795bda67897b1b1e527e99e0b5f627ca1a4db",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c64e5cf0_ec25f55a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2020-08-31T21:26:56Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "bff5549e_0d67c9f4",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 84
+      },
+      "revId": "f4f795bda67897b1b1e527e99e0b5f627ca1a4db",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
