@@ -11,12 +11,12 @@
 echo "---> release-job.sh"
 set -eu -o pipefail
 
-echo "INFO: creating virtual environment"
-virtualenv -p python3 /tmp/venv
-PATH=/tmp/venv/bin:$PATH
-pipup="python -m pip install -q --upgrade pip idna==2.8 lftools jsonschema twine yq"
-echo "INFO: $pipup"
-$pipup
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+# Version controlled by JJB_VERSION
+lf-activate-venv lftools pip idna==2.8 lftools jsonschema twine yq
+
 # show installed versions
 python -m pip --version
 python -m pip freeze
