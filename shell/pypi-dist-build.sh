@@ -16,12 +16,11 @@ echo "---> pypi-dist-build.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
-echo "INFO: creating virtual environment"
-virtualenv -p python3 /tmp/pypi
-PATH=/tmp/pypi/bin:$PATH
-pipup="python -m pip install -q --upgrade setuptools twine wheel"
-echo "INFO: $pipup"
-$pipup
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+# Version controlled by JJB_VERSION
+lf-activate-venv setuptools twine wheel readline
 
 bdist=""
 if $BUILD_BDIST_WHEEL; then
