@@ -39,6 +39,7 @@ yq
 # necessary so that future maintainers of this file can make decisions to
 # remove the workarounds in the future.
 importlib-resources<2.0.0  # virtualenv 20.0.21 requires importlib-resources<2.0.0 (RELENG-2993)
+readline # IT-20528 #_distutils does not start with any of these prefixes: ['/usr', '/usr']
 EOF
 
     #Python 3.5 in Ubuntu 16.04 workaround

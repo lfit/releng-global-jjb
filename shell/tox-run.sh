@@ -13,12 +13,6 @@ echo "---> tox-run.sh"
 # do not use -o pipefail
 set -eux
 
-# shellcheck disable=SC1090
-source ~/lf-env.sh
-
-# Version controlled by JJB_VERSION
-lf-activate-venv readline
-
 ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
 ARCHIVE_DOC_DIR="$WORKSPACE/archives/docs"
 mkdir -p "$ARCHIVE_TOX_DIR"
