@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa35d3eb_4fad3ab3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-09-01T03:57:10Z",
+      "side": 1,
+      "message": "Do we need to define this new global-env-var in Jenkins?",
+      "range": {
+        "startLine": 13,
+        "startChar": 30,
+        "endLine": 13,
+        "endChar": 41
+      },
+      "revId": "6eab3e957eedbc9e166023ae0e8bc24ccf5b69ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
