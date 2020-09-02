@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Check condition when ${NOMAD_DC} is undefined or unset
+
+    Check if the environment variable $NOMAD_DC is not defined or unset,
+    this avoids the script from exiting without capturing instance
+    metadata.
