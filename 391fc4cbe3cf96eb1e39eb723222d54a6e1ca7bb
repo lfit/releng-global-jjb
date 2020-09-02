@@ -22,6 +22,30 @@
       "revId": "391fc4cbe3cf96eb1e39eb723222d54a6e1ca7bb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5810297a_bd8797b0",
+        "filename": "releasenotes/notes/fix-capture-instance-metadata-script-e130cc297c189976.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-09-02T23:01:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7ae2ac3_88e5701a",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "391fc4cbe3cf96eb1e39eb723222d54a6e1ca7bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
