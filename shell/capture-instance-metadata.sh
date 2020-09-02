@@ -12,7 +12,7 @@
 echo "---> capture-instance-metadata.sh"
 
 # detect if we're in EC2
-if [ -z "${NOMAD_DC}" ]; then
+if [ -n "${NOMAD_DC}" ]; then
     echo "INFO: Running in Nomad, no metadata"
     exit 0
 fi

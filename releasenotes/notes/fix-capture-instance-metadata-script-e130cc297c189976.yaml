@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Check condition when ${NOMAD_DC} is undefined or unset
+
+    The condition in the commit 31a4b7fc00fe90494b6efb512ad0f1db02481ff3
+    should instead check when the environment variable $NOMAD_DC is not
+    defined or unset, this avoids the script from exiting without capturing
+    instant metadata.
