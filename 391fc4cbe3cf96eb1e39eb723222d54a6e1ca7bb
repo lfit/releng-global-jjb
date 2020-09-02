@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7ae2ac3_88e5701a",
+        "filename": "releasenotes/notes/fix-capture-instance-metadata-script-e130cc297c189976.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-09-02T22:50:35Z",
+      "side": 1,
+      "message": "Should this be \"instance\"?\n\nAlso, I don\u0027t understand what the issue was here. This doesn\u0027t describe what didn\u0027t work before, and how it fixes it. I also don\u0027t think there needs to be a reference to the commit in the release notes. That fine for the commit message, but I don\u0027t recall having ever seen release notes that reference a specific git sha.",
+      "range": {
+        "startLine": 9,
+        "startChar": 4,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "391fc4cbe3cf96eb1e39eb723222d54a6e1ca7bb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
