@@ -56,8 +56,20 @@ EOF
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade --upgrade-strategy eager -r "$requirements_file"
     # installs are silent, show version details in log
     python3 --version
+
     python3 -m pip --version
     python3 -m pip freeze
+    
+
+    #workaround
+    #system tox is py2.7 needs updated pip and setuptools.
+    #this needs to be fixed in packer. tox is py3 on my machine
+    python -m pip install --user --quiet --upgrade pip
+    python -m pip install --user --quiet --no-warn-script-location --upgrade setuptools
+    python --version
+    python -m pip --version
+    python -m pip freeze
+
     rm -rf "$requirements_file"
     touch /tmp/pre-build-complete
 fi
