@@ -15,7 +15,7 @@ set -eufo pipefail
 # This script will typically be called during pre-build & post-build.
 # Create the user venv during pre-build.
 if [[ ! -f /tmp/pre-build-complete ]]; then
-    requirements_file=$(mktemp /tmp/requirements-XXXX.txt)
+    requirements_file=$(mktemp /tmp/requirements-XXXXXX)
 
     # Note: To test lftools master branch change the lftools configuration below in
     #       the requirements file from "lftools[openstack]~=#.##.#" to
