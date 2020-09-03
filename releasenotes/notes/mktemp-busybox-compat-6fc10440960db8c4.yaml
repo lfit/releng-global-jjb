@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Improve alpine compatibility by changing the mktemp call in
+    python-tools-install.sh to be compatible with both GNU mktemp as well as
+    BusyBox mktemp (which is used in alpine).
