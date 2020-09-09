@@ -1,0 +1,15 @@
+---
+prelude: >
+  Provides method to notify administrators if important jobs are failing.
+features:
+  - |
+    Allows customization of email address and email prefix.
+    failure-notification-prefix
+    failure-notification
+upgrade:
+  - |
+    Updating to this version of JJB will _require_ updating
+    jjb/defaults.yaml in the same patchset.
+    The following will need to be defined:
+    failure-notification: "foo@bar.org"
+    failure-notification-prefix: "[Some Prefix]"
