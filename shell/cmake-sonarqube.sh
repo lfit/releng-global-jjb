@@ -25,8 +25,16 @@ wget -q -O bw.zip https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
 unzip -q bw.zip
 sudo mv build-wrapper-* /opt/build-wrapper
 
+
+SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
+echo "$SET_JDK_VERSION"
+bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
+# shellcheck disable=SC1091
+source /tmp/java.env
+
 mkdir -p "$build_dir"
 cd "$build_dir" || exit 1
+
 
 # $cmake_opts needs to wordsplit to pass options.
 # shellcheck disable=SC2086
@@ -35,5 +43,6 @@ eval cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" $cmake_opts ..
 # $make_opts may be empty.
 # shellcheck disable=SC2086
 /opt/build-wrapper/build-wrapper-linux-x86-64 --out-dir "$build_wrap_dir" make $make_opts
+
 
 echo "---> cmake-sonarqube.sh ends"
