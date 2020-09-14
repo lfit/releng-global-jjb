@@ -20,6 +20,12 @@ make_opts="${MAKE_OPTS:-}"
 
 set -ex -o pipefail
 
+SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
+echo "$SET_JDK_VERSION"
+bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
+# shellcheck disable=SC1091
+source /tmp/java.env
+
 cd /tmp || exit 1
 wget -q -O /tmp/sonar-scan.zip \
     "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip"

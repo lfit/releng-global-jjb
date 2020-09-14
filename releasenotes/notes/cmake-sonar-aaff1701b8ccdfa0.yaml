@@ -1,0 +1,5 @@
+---
+deprecations:
+  - |
+    Cmake builds upload to SonarCloud. Fix build env to use openjdk11
+    sonarcloud upload will stop working with java8 on October 1st 2020
