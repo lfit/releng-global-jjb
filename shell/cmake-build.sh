@@ -37,6 +37,12 @@ install="${INSTALL:-true}"
 # shellcheck disable=SC2153
 project="${PROJECT//\//\-}"
 
+SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
+echo "$SET_JDK_VERSION"
+bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
+# shellcheck disable=SC1091
+source /tmp/java.env
+
 mkdir -p "$build_dir"
 cd "$build_dir" || exit
 cmake -version

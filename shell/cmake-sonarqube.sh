@@ -25,6 +25,13 @@ wget -q -O bw.zip https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
 unzip -q bw.zip
 sudo mv build-wrapper-* /opt/build-wrapper
 
+
+SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
+echo "$SET_JDK_VERSION"
+bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
+# shellcheck disable=SC1091
+source /tmp/java.env
+
 mkdir -p "$build_dir"
 cd "$build_dir" || exit 1
 
