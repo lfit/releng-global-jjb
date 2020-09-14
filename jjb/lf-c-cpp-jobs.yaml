@@ -493,6 +493,9 @@
     sonarcloud-api-token: ""
     sonarcloud-organization: ""
     sonarcloud-project-key: ""
+    # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
+    # Projects not compatible with jdk11 can set java-version to something else
+    sonarcloud-java-version: openjdk11
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -509,6 +512,7 @@
             PROJECT_KEY={sonarcloud-project-key}
             PROJECT_ORGANIZATION={sonarcloud-organization}
             API_TOKEN={sonarcloud-api-token}
+            SONARCLOUD_JAVA_VERSION:={sonarcloud-java-version}
       - shell: !include-raw-escape: ../shell/cmake-sonar.sh
       - lf-provide-maven-settings-cleanup
 
