@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f8ec9090_a6a9aaa4",
+        "filename": "releasenotes/notes/cmake-sonar-aaff1701b8ccdfa0.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-09-15T20:43:09Z",
+      "side": 1,
+      "message": "SonarCloud",
+      "range": {
+        "startLine": 4,
+        "startChar": 27,
+        "endLine": 4,
+        "endChar": 37
+      },
+      "revId": "99108776fe09cae1b7f5355b7bd210dd81bb5f86",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f37c545b_204a131a",
+        "filename": "releasenotes/notes/cmake-sonar-aaff1701b8ccdfa0.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-09-15T20:43:09Z",
+      "side": 1,
+      "message": "Capital for October",
+      "range": {
+        "startLine": 5,
+        "startChar": 54,
+        "endLine": 5,
+        "endChar": 55
+      },
+      "revId": "99108776fe09cae1b7f5355b7bd210dd81bb5f86",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
