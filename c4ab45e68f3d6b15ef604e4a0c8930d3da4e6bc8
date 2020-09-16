@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ae20cb71_814bcc7f",
+        "filename": "shell/cmake-sonar.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-09-16T02:14:10Z",
+      "side": 1,
+      "message": "I think we can run this, instead of doing a curl download: \n\nbash ../shell/update-java-alternatives.sh",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 113
+      },
+      "revId": "c4ab45e68f3d6b15ef604e4a0c8930d3da4e6bc8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
