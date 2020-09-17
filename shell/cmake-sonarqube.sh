@@ -26,7 +26,7 @@ unzip -q bw.zip
 sudo mv build-wrapper-* /opt/build-wrapper
 
 
-SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
+export SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
 echo "$SET_JDK_VERSION"
 bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
 # shellcheck disable=SC1091
