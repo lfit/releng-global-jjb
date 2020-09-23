@@ -15,22 +15,44 @@
 # getting purged by the image cleanup script.
 # This script assumes images prefixed with the string "ZZCI - " are ci-managed
 # images.
+set -eu -o pipefail
 echo "---> Protect in-use images"
-
 os_cloud="${OS_CLOUD:-vex}"
 
-set -eu -o pipefail
+images=()
+while read -r -d $'\n' ; do
+    images+=("$REPLY")
+done < <(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
+         | awk -F'=' '{print $2}' \
+         | sort -u)
 
-declare -a images
-images+=("$(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
-    | awk -F'=' '{print $2}' | sort -u)")
-set +o pipefail  # Not all projects have images in YAML files and grep returns non-zero on 0 results
-# Ignore SC2179 since we do not want () to result in an empty array item.
-#shellcheck disable=SC2179
-images+=("$(grep -r 'ZZCI - ' --include \*.yaml jjb \
-    | awk -F": " '{print $3}' | sed -e "s:'::;s:'$::;/^$/d" -e 's/^"//' -e 's/"$//' | sort -u)")
-set -o pipefail
-readarray -t images <<< "$(for i in "${images[@]}"; do echo "$i"; done | sort -u)"
+jjbimages=()
+while read -r -d $'\n' ; do
+    jjbimages+=("$REPLY")
+done < <(grep -r 'ZZCI - ' --include \*.yaml jjb \
+         | awk -F": " '{print $3}' \
+         | sed -e "s:'::;s:'$::;/^$/d" -e 's/^"//' -e 's/"$//' \
+         | sort -u)
+
+if ! [[ ${#images[@]} -eq 0 ]]; then
+    echo "INFO: There are images to protect defined in jenkins-config."
+else
+    echo "ERROR: No images detected in the jenkins-config dir."
+    exit 1
+fi
+
+if ! [[ ${#jjbimages[@]} -eq 0 ]]; then
+    echo "INFO: There are additional images to protect in the jjb dir."
+    images=("${images[@]}" "${jjbimages[@]}")
+    #dedupe
+    readarray -t images < <(printf '%s\n' "${images[@]}" | sort -u)
+fi
+
+
+echo "INFO: Protecting the following images:"
+for image in "${images[@]}"; do
+    echo "$image"
+done
 
 for image in "${images[@]}"; do
     os_image_protected=$(openstack --os-cloud "$os_cloud" \
