@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix the capture-instance-metadata script to cleanly exit on AWS nodes.
