@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    When evaluating jenkins-config management changes, if a system does not have
+    an openstack cloud defined, we should not fail the job. Instead we now
+    just skip that configuration and verification
