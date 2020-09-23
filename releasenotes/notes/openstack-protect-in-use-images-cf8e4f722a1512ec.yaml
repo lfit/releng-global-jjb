@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    openstack-protect-in-use-images.sh
+    Projects that do not have images in jjb were failing this step of the build.
+    code now runs with set -eu -o pipefail for the duration of the script.
+    shellcheck disable comments no longer needed and removed.
+    Code now only merges arrays if non-empty.
+    Simplify dedupe array code.
