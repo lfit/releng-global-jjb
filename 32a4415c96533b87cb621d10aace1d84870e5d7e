@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "683ba270_cfa6f730",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-01T21:05:41Z",
+      "side": 1,
+      "message": "The path to check down should be a parameter to the script",
+      "range": {
+        "startLine": 40,
+        "startChar": 29,
+        "endLine": 40,
+        "endChar": 49
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6e52c6ec_6c7f1597",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-01T21:05:41Z",
+      "side": 1,
+      "message": "This comes from the clouds.cfg file as CLOUD_URL",
+      "range": {
+        "startLine": 100,
+        "startChar": 21,
+        "endLine": 100,
+        "endChar": 24
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a09f18d2_d789200e",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-01T21:05:41Z",
+      "side": 1,
+      "message": "This comes from the clouds.cfg file as CLOUD_IGNORE_SSL",
+      "range": {
+        "startLine": 101,
+        "startChar": 19,
+        "endLine": 101,
+        "endChar": 24
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5cdc3e2c_008b50c6",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-01T21:05:41Z",
+      "side": 1,
+      "message": "This is going to need to be a switch passed to the script.\n\ncloud.cfg/INSTANCE_CAP \u003d\u003d the production instance cap\ncloud.cfg/SANDBOX_CAP \u003d\u003d the sandbox instance cap",
+      "range": {
+        "startLine": 111,
+        "startChar": 26,
+        "endLine": 111,
+        "endChar": 38
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97ef9728_0cbd854f",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-01T21:05:41Z",
+      "side": 1,
+      "message": "this information that is dependent on which Jenkins it\u0027s being applied to.\n\nreleng|production silo gets \u0027prd-\u0027\nsandbox silo gets \u0027snd-\u0027\n\nIIRC our current templating has a way of defining additional aribitrary silo/prefix mappings....",
+      "range": {
+        "startLine": 124,
+        "startChar": 18,
+        "endLine": 124,
+        "endChar": 21
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d5575502_c4abb194",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-01T21:05:41Z",
+      "side": 1,
+      "message": "This giant if, elif, else seems wrong.\n\nShould be more of a pick and choose, if sort of thing.\n\nFor instance:\n\n{%- if retention_time %}\n        retentionTime: {{ retention_time }}{% endif %}\n{%- if .....\n\nIf you look over the ODL JCasC rendering for nodes you\u0027ll see that most of the definitions are fairly sparse, but a few have options that aren\u0027t on all.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 42
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e48455ad_434320a6",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-01T21:05:41Z",
+      "side": 1,
+      "message": "What\u0027s the point of this var???",
+      "range": {
+        "startLine": 162,
+        "startChar": 9,
+        "endLine": 162,
+        "endChar": 12
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea0dd43c_919a81a2",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-01T21:05:41Z",
+      "side": 1,
+      "message": "This variable comes from cloud.cfg/CLOUD_ZONE and it has to be a variable. Check the difference of ORAN to ODL, ONAP, or FDio",
+      "range": {
+        "startLine": 192,
+        "startChar": 21,
+        "endLine": 192,
+        "endChar": 29
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
