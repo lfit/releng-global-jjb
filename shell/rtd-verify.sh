@@ -29,6 +29,9 @@ fi
 
 git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
 git submodule update
+for submod in $(git config -f .gitmodules --get-regexp '^submodule\.(.+)\.url' | awk -e '{print $1}'); do
+    git config --get "$submod"
+done
 
 
 # When a new commands are added in lftools, the docs verify job needs to
