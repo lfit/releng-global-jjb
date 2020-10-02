@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Fix rtd-verify.sh to better validate submodules. rtd-verify.sh was using
+    "git submodule" commands to validate submodules, but Jenkins reads the
+    .gitmodules file and executes a "git config" command for each submodule.
+    Because of this, if a bad submodule was added to .gitmodules, it would pass
+    verify but cause failures on subsequent builds after it was merged.
+
+    This change closes that loophole by reading the .gitmodules file, and
+    then running through the same "git config" command for each submodule
+    that Jenkins runs when pulling in the main branch.
