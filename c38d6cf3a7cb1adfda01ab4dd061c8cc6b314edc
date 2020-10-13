@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a99a5caa_bb0f424a",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-13T20:37:22Z",
+      "side": 1,
+      "message": "Since this is a long param, the \"traditional\" flag would be a -- not a single - that\u0027s usually reserved for single character params",
+      "range": {
+        "startLine": 115,
+        "startChar": 25,
+        "endLine": 115,
+        "endChar": 26
+      },
+      "revId": "c38d6cf3a7cb1adfda01ab4dd061c8cc6b314edc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d30546b_105f4adb",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-13T20:37:22Z",
+      "side": 1,
+      "message": "Since this is a long param, the \"traditional\" flag would be a -- not a single - that\u0027s usually reserved for single character params\n\nI see on line 129 that you\u0027re setting a special variable to flag if this is a sandbox generation or not, instead you could be storing the flag as a global and having the arg parser saving it directly for you",
+      "range": {
+        "startLine": 116,
+        "startChar": 25,
+        "endLine": 116,
+        "endChar": 26
+      },
+      "revId": "c38d6cf3a7cb1adfda01ab4dd061c8cc6b314edc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
