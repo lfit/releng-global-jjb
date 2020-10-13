@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5ff07bec_256f15ad",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-13T20:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "683ba270_cfa6f730",
+      "range": {
+        "startLine": 40,
+        "startChar": 29,
+        "endLine": 40,
+        "endChar": 49
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6e52c6ec_6c7f1597",
         "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
         "patchSetId": 3
@@ -45,6 +69,30 @@
       "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "333ac923_62e52b36",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-13T20:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e52c6ec_6c7f1597",
+      "range": {
+        "startLine": 100,
+        "startChar": 21,
+        "endLine": 100,
+        "endChar": 24
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "c5554506_9e43bcb8",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-13T20:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a09f18d2_d789200e",
+      "range": {
+        "startLine": 101,
+        "startChar": 19,
+        "endLine": 101,
+        "endChar": 24
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5cdc3e2c_008b50c6",
         "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
         "patchSetId": 3
@@ -91,6 +163,30 @@
       "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a1ba0fa_8d76ac5f",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-13T20:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5cdc3e2c_008b50c6",
+      "range": {
+        "startLine": 111,
+        "startChar": 26,
+        "endLine": 111,
+        "endChar": 38
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "819f3e56_df850138",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-13T20:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "97ef9728_0cbd854f",
+      "range": {
+        "startLine": 124,
+        "startChar": 18,
+        "endLine": 124,
+        "endChar": 21
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d5575502_c4abb194",
         "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
         "patchSetId": 3
@@ -137,6 +257,30 @@
       "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11ca384b_8a7b3897",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-13T20:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d5575502_c4abb194",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 42
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     },
     {
       "key": {
@@ -183,6 +327,30 @@
       "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "451055d4_54faa707",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-13T20:25:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea0dd43c_919a81a2",
+      "range": {
+        "startLine": 192,
+        "startChar": 21,
+        "endLine": 192,
+        "endChar": 29
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
