@@ -307,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "94b6c117_1bc3925a",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-14T20:38:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e48455ad_434320a6",
+      "range": {
+        "startLine": 162,
+        "startChar": 9,
+        "endLine": 162,
+        "endChar": 12
+      },
+      "revId": "32a4415c96533b87cb621d10aace1d84870e5d7e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ea0dd43c_919a81a2",
         "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
         "patchSetId": 3
