@@ -45,6 +45,30 @@
       "revId": "c38d6cf3a7cb1adfda01ab4dd061c8cc6b314edc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd76a6af_ee5967fe",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-14T20:45:24Z",
+      "side": 1,
+      "message": "re 129) Not sure I\u0027m following, if I set sandbox to a var I still only want to capture snd, or prd,and a boolean helps me with later if statements. Perhaps you are referring to some feature of argparse I don\u0027t know about.",
+      "parentUuid": "0d30546b_105f4adb",
+      "range": {
+        "startLine": 116,
+        "startChar": 25,
+        "endLine": 116,
+        "endChar": 26
+      },
+      "revId": "c38d6cf3a7cb1adfda01ab4dd061c8cc6b314edc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
