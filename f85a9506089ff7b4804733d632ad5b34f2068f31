@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ab7fdab4_7598182b",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-16T18:50:12Z",
+      "side": 1,
+      "message": "Again I want to know what the point of this variable is? You never use it!",
+      "range": {
+        "startLine": 175,
+        "startChar": 9,
+        "endLine": 175,
+        "endChar": 12
+      },
+      "revId": "f85a9506089ff7b4804733d632ad5b34f2068f31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}

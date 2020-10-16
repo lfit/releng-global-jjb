@@ -93,6 +93,30 @@
       "revId": "c38d6cf3a7cb1adfda01ab4dd061c8cc6b314edc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d7d4f1c_108c89f7",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-16T18:50:12Z",
+      "side": 1,
+      "message": "I\u0027m referring to the \u0027dest\u0027 option to argparse and action\u003d\"store_true\" option.\n\nSee https://gerrit.linuxfoundation.org/infra/gitweb?p\u003dlfcore/tools-misc.git;a\u003dblob;f\u003dgerrit/saml_convert.py;h\u003dbb907bac99db986cb056094b4898a47ccd621b4e;hb\u003dHEAD#l404 for what I\u0027m talking about and the use of the verbose flag that is referred to there is then utilized at line 545.",
+      "parentUuid": "cd76a6af_ee5967fe",
+      "range": {
+        "startLine": 116,
+        "startChar": 25,
+        "endLine": 116,
+        "endChar": 26
+      },
+      "revId": "c38d6cf3a7cb1adfda01ab4dd061c8cc6b314edc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
