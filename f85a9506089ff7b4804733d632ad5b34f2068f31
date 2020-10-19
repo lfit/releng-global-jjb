@@ -22,6 +22,30 @@
       "revId": "f85a9506089ff7b4804733d632ad5b34f2068f31",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ade60b7a_0e9621e0",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-19T17:44:39Z",
+      "side": 1,
+      "message": "Hi, I\u0027m using the enumerate built in to access the index, it requires two vars as I only want the index, not a list with the index and then the values.\n\nhttps://gist.github.com/Aricg/ceb8fe8be700bb6cbe9b1df3999ff52d",
+      "parentUuid": "ab7fdab4_7598182b",
+      "range": {
+        "startLine": 175,
+        "startChar": 9,
+        "endLine": 175,
+        "endChar": 12
+      },
+      "revId": "f85a9506089ff7b4804733d632ad5b34f2068f31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
