@@ -117,6 +117,30 @@
       "revId": "c38d6cf3a7cb1adfda01ab4dd061c8cc6b314edc",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2cd3403_1095fbe2",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-19T19:01:35Z",
+      "side": 1,
+      "message": "The store_true option automatically creates a default value of False.\nLikewise, store_false will default to True when the command-line argument is not present. https://stackoverflow.com/questions/8203622/argparse-store-false-if-unspecified\n\nSo I see what it does, but I\u0027m not sure that it makes the code better or more readable or anything, I really just need to run: section_cloud.update(is_sandbox\u003dTrue) and: name_prefix \u003d snd|prd",
+      "parentUuid": "9d7d4f1c_108c89f7",
+      "range": {
+        "startLine": 116,
+        "startChar": 25,
+        "endLine": 116,
+        "endChar": 26
+      },
+      "revId": "c38d6cf3a7cb1adfda01ab4dd061c8cc6b314edc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
