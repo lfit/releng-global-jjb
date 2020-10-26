@@ -46,6 +46,30 @@
       "revId": "f85a9506089ff7b4804733d632ad5b34f2068f31",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "daf0e074_c5692cc2",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-10-26T21:32:04Z",
+      "side": 1,
+      "message": "Ok, so you\u0027re basically just doing a throw away. I would suggest that you change this to be:\n\nfor index, _ in enumerate(final)\n\n\u0027_\u0027 is the conventional variable used for being a throw away in Python when dealing with tuples. Naming the variable you actually care about as something relevant (index) instead of just \u0027one\u0027 makes the code easier to read.\n\nYou would obviously need to update lines 176 and 177 with the different var name.",
+      "parentUuid": "ade60b7a_0e9621e0",
+      "range": {
+        "startLine": 175,
+        "startChar": 9,
+        "endLine": 175,
+        "endChar": 12
+      },
+      "revId": "f85a9506089ff7b4804733d632ad5b34f2068f31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
