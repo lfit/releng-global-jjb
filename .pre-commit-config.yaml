@@ -20,16 +20,10 @@ repos:
     hooks:
       - id: shellcheck
 
-  - repo: local
+  - repo: https://github.com/btford/write-good
+    rev: master
     hooks:
-      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
       - id: write-good
-        name: write-good
-        description: Check docs for English prose with write-good
-        entry: write-good
-        language: node
-        files: "\\.(rst|md|markdown|mdown|mkdn)$"
-        additional_dependencies: ["write-good"]
         exclude: >
           (?x)^(
             docs/jjb/lf-c-cpp-jobs.rst|
@@ -38,7 +32,6 @@ repos:
             docs/jjb/lf-python-jobs.rst
           )$
 
-      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
       # Files listed below break the following write-good rules:
       #   - adverb weakens meaning
       #   - is wordy or unneeded
@@ -50,12 +43,11 @@ repos:
       - id: write-good
         name: write-good --no-adverb --no-tooWordy
         description: Check docs for English prose with write-good
-        entry: write-good --no-adverb --no-tooWordy
-        language: node
+        args: ["--no-adverb" "--no-tooWordy"]
+        # entry: write-good --no-adverb --no-tooWordy
+        # language: node
         files: docs/jjb/lf-ci-jobs.rst
-        additional_dependencies: ["write-good"]
 
-      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
       # Files listed below break the following write-good rules:
       #   - is wordy or unneeded
       #
@@ -66,12 +58,12 @@ repos:
       - id: write-good
         name: write-good --no-tooWordy
         description: Check docs for English prose with write-good
-        entry: write-good --no-tooWordy
-        language: node
+        args: ["--no-tooWordy"]
+        # entry: write-good --no-tooWordy
+        # language: node
         files: >
           (?x)^(
             docs/jjb/lf-c-cpp-jobs.rst|
             docs/jjb/lf-macros.rst|
             docs/jjb/lf-python-jobs.rst
           )$
-        additional_dependencies: ["write-good"]
