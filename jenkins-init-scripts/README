@@ -2,7 +2,7 @@ The files in this directory are for initializing a Jenkins minion just
 before the cloud plugin hands the minion over to Jenkins.
 
 The Jenkins 'init.sh' script will check for a project specific init
-script: '$ciman_root/jenkins-init-scripts/local-init.sh'.  If the file
+script: '\$ciman_root/jenkins-init-scripts/local-init.sh'. If the file
 exits and is executable, it will be executed. Note the local init
 script will be executed before the 'jenkins' user has been created.
 You can also call a project specific script from the Jenkins Manged
