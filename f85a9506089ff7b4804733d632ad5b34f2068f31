@@ -70,6 +70,30 @@
       "revId": "f85a9506089ff7b4804733d632ad5b34f2068f31",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ceafe5c6_58625c54",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-10-28T17:14:54Z",
+      "side": 1,
+      "message": "Cool, didn\u0027t know that, I have changed it to index and _\nthanks",
+      "parentUuid": "daf0e074_c5692cc2",
+      "range": {
+        "startLine": 175,
+        "startChar": 9,
+        "endLine": 175,
+        "endChar": 12
+      },
+      "revId": "f85a9506089ff7b4804733d632ad5b34f2068f31",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
