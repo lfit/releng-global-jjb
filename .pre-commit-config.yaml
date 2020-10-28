@@ -20,16 +20,10 @@ repos:
     hooks:
       - id: shellcheck
 
-  - repo: local
+  - repo: https://github.com/btford/write-good
+    rev: master
     hooks:
-      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
       - id: write-good
-        name: write-good
-        description: Check docs for English prose with write-good
-        entry: write-good
-        language: node
-        files: "\\.(rst|md|markdown|mdown|mkdn)$"
-        additional_dependencies: ["write-good"]
         exclude: >
           (?x)^(
             docs/jjb/lf-c-cpp-jobs.rst|
@@ -38,7 +32,9 @@ repos:
             docs/jjb/lf-python-jobs.rst
           )$
 
-      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
+  - repo: https://github.com/btford/write-good
+    rev: master
+    hooks:
       # Files listed below break the following write-good rules:
       #   - adverb weakens meaning
       #   - is wordy or unneeded
@@ -48,14 +44,13 @@ repos:
       # In an ideal world write-good would give us an override for each individual instance of a
       # violation but until then this gives us a close enough approach.
       - id: write-good
-        name: write-good --no-adverb --no-tooWordy
-        description: Check docs for English prose with write-good
-        entry: write-good --no-adverb --no-tooWordy
-        language: node
+        name: "write-good --no-adverb --no-tooWordy"
+        args: ["--no-adverb", "--no-tooWordy"]
         files: docs/jjb/lf-ci-jobs.rst
-        additional_dependencies: ["write-good"]
 
-      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
+  - repo: https://github.com/btford/write-good
+    rev: master
+    hooks:
       # Files listed below break the following write-good rules:
       #   - is wordy or unneeded
       #
@@ -64,14 +59,11 @@ repos:
       # In an ideal world write-good would give us an override for each individual instance of a
       # violation but until then this gives us a close enough approach.
       - id: write-good
-        name: write-good --no-tooWordy
-        description: Check docs for English prose with write-good
-        entry: write-good --no-tooWordy
-        language: node
+        name: "write-good --no-tooWordy"
+        args: ["--no-tooWordy"]
         files: >
           (?x)^(
             docs/jjb/lf-c-cpp-jobs.rst|
             docs/jjb/lf-macros.rst|
             docs/jjb/lf-python-jobs.rst
           )$
-        additional_dependencies: ["write-good"]
