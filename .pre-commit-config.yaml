@@ -20,7 +20,8 @@ repos:
     hooks:
       - id: shellcheck
 
-  - repo: local
+  - repo: https://github.com/btford/write-good
+    rev: 1.0.3
     hooks:
       # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
       - id: write-good
@@ -38,7 +39,6 @@ repos:
             docs/jjb/lf-python-jobs.rst
           )$
 
-      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
       # Files listed below break the following write-good rules:
       #   - adverb weakens meaning
       #   - is wordy or unneeded
@@ -55,7 +55,6 @@ repos:
         files: docs/jjb/lf-ci-jobs.rst
         additional_dependencies: ["write-good"]
 
-      # TODO: Switch to upstream hook when https://github.com/btford/write-good/pull/119 is merged.
       # Files listed below break the following write-good rules:
       #   - is wordy or unneeded
       #
