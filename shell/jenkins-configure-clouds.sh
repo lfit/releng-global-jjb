@@ -156,7 +156,6 @@ get_minion_options() {
     flavors["lf-standard-2"]="ef454088-7839-42a0-bf23-5e0ab6386a27"
     flavors["lf-standard-4"]="bd74e1e6-c2ed-475b-ab3f-2ce13936a215"
     flavors["lf-standard-8"]="32d74024-8418-41b6-9675-b77816748148"
-    # shellcheck disable=SC2154
     flavors["odl-highcpu-2"]="def1b86f-b7f8-4943-b430-4a0599170006"
     flavors["odl-highcpu-4"]="0c8ec795-2ff8-4623-98cf-b4c1d92bb37c"
     flavors["odl-highcpu-8"]="458d6499-e2c8-4580-aa88-a4a04a33ee25"
@@ -164,7 +163,6 @@ get_minion_options() {
     flavors["odl-standard-2"]="8ead227a-acfe-4290-be70-fbab92e6dd2f"
     flavors["odl-standard-4"]="f76fb18d-d5fb-4175-95c1-b29d8039d102"
     flavors["odl-standard-8"]="ba38b1af-4f87-4e4e-860e-94e8329d0d78"
-    # shellcheck disable=SC2154
     flavors["v1-standard-1"]="bbcb7eb5-5c8d-498f-9d7e-307c575d3566"
     flavors["v1-standard-2"]="ca2a6e9c-2236-4107-8905-7ae9427132ff"
     flavors["v1-standard-4"]="5cf64088-893b-46b5-9bb1-ee020277635d"
@@ -175,7 +173,6 @@ get_minion_options() {
     flavors["v1-standard-64"]="0c1d9008-f546-4608-9e8f-f8bdaec8dddd"
     flavors["v1-standard-96"]="5741c775-92a4-4488-bd77-dd7b08e2be81"
     flavors["v1-standard-128"]="e82d0a5b-8031-4526-9a5d-a15f7b4d48ff"
-    # shellcheck disable=SC2154
     flavors["v2-highcpu-1"]="c04abb7a-2b61-4ed3-8ce8-6c40ad9df750"
     flavors["v2-highcpu-2"]="03bdf34e-8905-46bc-a4b9-8dbf94b6e06d"
     flavors["v2-highcpu-4"]="3b72e578-7875-4e0e-91b7-71ed292f3ca2"
@@ -187,8 +184,14 @@ get_minion_options() {
     flavors["v2-standard-4"]="d9115351-defe-4fac-986b-1a1187e2c31c"
     flavors["v2-standard-8"]="e6fe2e37-0e38-438c-8fa5-fc2d79d0a7bb"
     flavors["v2-standard-16"]="9e4b01cd-6744-4120-aafe-1b5e17584919"
-    flavors["v2-standard-360"]="f0d27f44-a410-4f0f-9781-d722f5b5489e"
-
+    flavors["v3-standard-2"]="d6906d2a-e83f-42be-b33e-fbaeb5c511cb"
+    flavors["v3-standard-4"]="5f1eb09f-e764-4642-a16f-a7230ec025e7"
+    flavors["v3-standard-8"]="47d3707a-c6c6-46ea-a15b-095e336b1edc"
+    flavors["v3-standard-16"]="8587d458-69de-4fc5-be51-c5e671bc35d5"
+    flavors["v3-standard-32"]="3e01b39f-45a9-4b7b-b6dc-14378433dc36"
+    flavors["v3-standard-48"]="06a0e8b7-949a-439d-a185-208ae9e645b2"
+    flavors["v3-standard-64"]="402a2759-cc01-481d-a8b7-2c7056f153f7"
+    flavors["v3-standard-96"]="883b0564-dec6-4e51-88c7-83d86994fcf0"
 
     image_name=$(get_cfg "$cfg_file" IMAGE_NAME "")
     volume_size=$(get_cfg "$cfg_file" VOLUME_SIZE "")
