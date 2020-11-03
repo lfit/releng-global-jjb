@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Adds a create_jenkins_managed_files_yaml.py administrative script for
+    generating JCasC yaml files from a directory for control of the Managed
+    Configuration Files plugin
