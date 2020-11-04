@@ -594,6 +594,10 @@
           name: LOG_DIR
           default: ""
           description: "Log dir, for example: project-maven-stage-master/17/"
+      - string:
+          name: OVERIDE_SEMVER_REGEX
+          default: ""
+          description: "Override Semantic Version (SemVer) Regular Expression. Ex: '.*'"
       - choice:
           name: DISTRIBUTION_TYPE
           choices:
