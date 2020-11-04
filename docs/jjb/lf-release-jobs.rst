@@ -50,6 +50,12 @@ For example, the parameters for a Maven release are as follows::
     USE_RELEASE_FILE = false
     DRY_RUN = false
 
+It's recommended to use Semantic Versions (SemVer) for releases. Refer to
+https://semver.org for more details on SemVer. For projects that do not
+follow SemVer can use a build parameter (OVERIDE_SEMVER_REGEX) with the
+release job. This build param overrides the default SemVer regex.
+
+
 Maven Release Files
 -------------------
 
