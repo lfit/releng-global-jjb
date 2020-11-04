@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Allow projects to override Semantic Version (SemVer).
+
+    It's recommended to use Semantic Versions (SemVer) for releases. Refer to
+    https://semver.org for more details on SemVer. In case the project does not
+    support SemVer, then release job can use a build parameter to pass a regex
+    that overrides the default SemVer regex in OVERIDE_SEMVER_REGEX.
+
+    The default SemVer regex is taken from
+    https://github.com/fsaintjacques/semver-tool.
