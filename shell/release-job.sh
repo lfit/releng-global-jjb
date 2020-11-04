@@ -81,6 +81,7 @@ set_variables_common(){
     printf "\t%-30s %s\n" PROJECT-DASHED: "${PROJECT//\//-}"
     printf "\t%-30s %s\n" TAG_RELEASE: "$TAG_RELEASE"
     printf "\t%-30s %s\n" DISTRIBUTION_TYPE: "$DISTRIBUTION_TYPE"
+    printf "\t%-30s %s\n" OVERRIDE_SEMVER_REGEX: "$OVERRIDE_SEMVER_REGEX"
 }
 
 set_variables_maven(){
@@ -216,15 +217,25 @@ verify_schema(){
 }
 
 verify_version(){
-    # Verify allowed patterns "#.#.#" (SemVer) or "v#.#.#"
+
+    # Override the regex for projects that do not follow https://semver.org
+    OVERRIDE_SEMVER_REGEX="${OVERRIDE_SEMVER_REGEX:-None}"
+    if [[ $OVERRIDE_SEMVER_REGEX == "None" ]]; then
+        # Use the semver regex taken from https://github.com/fsaintjacques/semver-tool
+        semver_regex="^[vV]?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(\-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$"
+    else
+        semver_regex="${OVERRIDE_SEMVER_REGEX}"
+    fi
+
+    # Verify SemVer "#.#.#" (SemVer) or "v#.#.#"
     echo "INFO: Verifying version $VERSION"
-    allowed_version_regex="^[vV]?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(\-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$"
-    if [[ $VERSION =~ $allowed_version_regex ]]; then
+    if [[ $VERSION =~ $semver_regex ]]; then
         echo "INFO: The version $VERSION is valid"
     else
         echo "ERROR: The version $VERSION is not valid"
         echo "ERROR: Valid versions are \"#.#.#\" (SemVer) or \"v#.#.#\""
-        echo "ERROR: See https://semver.org/ for more details on SemVer"
+        echo "ERROR: Refer to https://semver.org/ for more details on SemVer"
+        echo "ERROR: Refer examples from https://github.com/fsaintjacques/semver-tool/#examples"
         exit 1
     fi
 }
