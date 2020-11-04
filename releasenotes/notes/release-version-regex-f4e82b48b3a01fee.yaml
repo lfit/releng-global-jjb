@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Allow semver versions along with exceptions as required for some of
+    the ODL projects (Netconf).
+
+    This original regex as taken from https://github.com/fsaintjacques/semver-tool
+    is modified to work for certian exception cases.
