@@ -218,7 +218,7 @@ verify_schema(){
 verify_version(){
     # Verify allowed patterns "#.#.#" (SemVer) or "v#.#.#"
     echo "INFO: Verifying version $VERSION"
-    allowed_version_regex="^[vV]?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(\-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$"
+    allowed_version_regex="^[vV]?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)([\-|\.](0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$"
     if [[ $VERSION =~ $allowed_version_regex ]]; then
         echo "INFO: The version $VERSION is valid"
     else
