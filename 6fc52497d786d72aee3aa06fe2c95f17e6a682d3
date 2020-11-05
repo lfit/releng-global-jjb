@@ -46,6 +46,30 @@
       "revId": "6fc52497d786d72aee3aa06fe2c95f17e6a682d3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cc87d71d_69897178",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-11-05T08:54:42Z",
+      "side": 1,
+      "message": "I\u0027m a bit confused if we need to add the \u0027$\u0027 at the end of the regex, since add the \u0027$\u0027 does not work for many cases. \n\nI did some test some of the standard semver + exceptions here:\nhttps://regex101.com/r/6WeqzM/14\n\nHope I\u0027ll get some inputs from Andy/Jordan and team.",
+      "parentUuid": "5a1a9458_7c8a99ab",
+      "range": {
+        "startLine": 221,
+        "startChar": 220,
+        "endLine": 221,
+        "endChar": 222
+      },
+      "revId": "6fc52497d786d72aee3aa06fe2c95f17e6a682d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
