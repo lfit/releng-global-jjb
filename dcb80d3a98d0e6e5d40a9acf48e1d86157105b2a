@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "75a40f5f_a1352a9e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-11-05T00:26:37Z",
+      "side": 1,
+      "message": "Did you test this? It doesn\u0027t look correct to me. I believe that rather than \"\\-|.\", the regex would work as expected if it was \"[\\-\\.]\" to allow this fourth section to start with a \u0027.\u0027 rather than \u0027-\u0027.",
+      "range": {
+        "startLine": 221,
+        "startChar": 85,
+        "endLine": 221,
+        "endChar": 87
+      },
+      "revId": "dcb80d3a98d0e6e5d40a9acf48e1d86157105b2a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
