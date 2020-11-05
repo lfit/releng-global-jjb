@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "99fd23b6_36854463",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-11-05T06:07:21Z",
+      "side": 1,
+      "message": "I did some testing, and this version of the hyphen/dot choice works, but it still needs the \u0027$\u0027 at the end. Otherwise, it would match a string like \"1.1.1: The version that I pushed so that it could be released with this amazing tag\" because it doesn\u0027t care what comes after \"1.1.1\".",
+      "range": {
+        "startLine": 221,
+        "startChar": 220,
+        "endLine": 221,
+        "endChar": 222
+      },
+      "revId": "6fc52497d786d72aee3aa06fe2c95f17e6a682d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
