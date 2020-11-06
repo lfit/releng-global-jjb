@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d9517941_ceed59d0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-11-06T17:09:41Z",
+      "side": 1,
+      "message": "conform",
+      "range": {
+        "startLine": 10,
+        "startChar": 25,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "9f15df019b9983b3033b7d69c303b02f3ed567ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a177c31_948c96a0",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-11-06T17:09:41Z",
+      "side": 1,
+      "message": "I think this should be ${OVERRIDE_SEMVER_REGEX:-None} so that the script doesn\u0027t fail if the value isn\u0027t set!",
+      "range": {
+        "startLine": 84,
+        "startChar": 51,
+        "endLine": 84,
+        "endChar": 72
+      },
+      "revId": "9f15df019b9983b3033b7d69c303b02f3ed567ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afb23cd0_510ef468",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-11-06T17:09:41Z",
+      "side": 1,
+      "message": "A previous change had a comment added after it was merged suggesting that we should be outputting the RegEx that needs to be matched.\n\nI would recommend that after line 236 we then output the following:\n\necho \"ERROR: Valid version will be matched against \\\"${semver_regex}\\\"\"",
+      "revId": "9f15df019b9983b3033b7d69c303b02f3ed567ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
