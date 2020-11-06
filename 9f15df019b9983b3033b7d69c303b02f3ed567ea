@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "6c65859f_faacc20f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-11-06T21:46:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d9517941_ceed59d0",
+      "range": {
+        "startLine": 10,
+        "startChar": 25,
+        "endLine": 10,
+        "endChar": 32
+      },
+      "revId": "9f15df019b9983b3033b7d69c303b02f3ed567ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6a177c31_948c96a0",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
@@ -62,6 +86,42 @@
       "revId": "9f15df019b9983b3033b7d69c303b02f3ed567ea",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6a0abb9_c8d5bfbb",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-11-06T21:46:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afb23cd0_510ef468",
+      "revId": "9f15df019b9983b3033b7d69c303b02f3ed567ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b229a871_9e3dc2d2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-11-06T21:46:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "afb23cd0_510ef468",
+      "revId": "9f15df019b9983b3033b7d69c303b02f3ed567ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
