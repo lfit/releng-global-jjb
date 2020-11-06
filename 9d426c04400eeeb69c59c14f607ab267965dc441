@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c8fd1279_1561038a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2020-11-06T15:33:21Z",
+      "side": 1,
+      "message": "Typo: Override has 2 \u0027R\u0027s",
+      "range": {
+        "startLine": 84,
+        "startChar": 26,
+        "endLine": 84,
+        "endChar": 33
+      },
+      "revId": "9d426c04400eeeb69c59c14f607ab267965dc441",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
