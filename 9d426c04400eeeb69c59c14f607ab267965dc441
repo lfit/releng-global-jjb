@@ -22,6 +22,30 @@
       "revId": "9d426c04400eeeb69c59c14f607ab267965dc441",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e1db3c22_931d5eb2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-11-06T15:42:05Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c8fd1279_1561038a",
+      "range": {
+        "startLine": 84,
+        "startChar": 26,
+        "endLine": 84,
+        "endChar": 33
+      },
+      "revId": "9d426c04400eeeb69c59c14f607ab267965dc441",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
