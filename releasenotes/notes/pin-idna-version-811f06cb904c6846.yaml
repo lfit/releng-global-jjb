@@ -1,0 +1,2 @@
+---
+    Pin idna to 2.9 to resolve package incompatibility with lftools 0.35.1.
