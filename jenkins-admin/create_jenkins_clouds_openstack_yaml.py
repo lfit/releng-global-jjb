@@ -111,15 +111,19 @@ def dir_path(path):
         raise argparse.ArgumentTypeError(f"readable_dir:{path} is not a valid path")
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='Create jcasc yaml from path to jenkins config dir.')
-    parser.add_argument('--path', type=dir_path)
-    parser.add_argument('--sandbox', type=bool, default=False, help="Set to True for sandbox yaml generation")
+    parser = argparse.ArgumentParser(
+        description='Create jcasc yaml from path to jenkins config dir.')
+
+
+    parser.add_argument('--path', type=dir_path,
+                        help="Path to jenkins-admin directory")
+    parser.add_argument('--sandbox', type=bool, default=False,
+                        help="Set to True for sandbox yaml generation")
     return parser.parse_args()
 
 parsed_args = parse_arguments()
 path = (parsed_args.path)
 path = ("{}**/*.cfg".format(path))
-
 
 #sandbox switch section
 section_cloud = {}
@@ -211,7 +215,6 @@ for section in config_parser_merged.sections():
         j2_template = Template(machinetemplate)
         section_all_machines.update(name_prefix=name_prefix)
         print(j2_template.render(section_all_machines))
-
 
 
 #Footer section
