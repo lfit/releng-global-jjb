@@ -5,6 +5,8 @@ import configparser
 import glob
 import os
 import sys
+import ruamel.yaml
+yaml = ruamel.yaml.YAML()
 
 from jinja2 import Environment
 from jinja2 import FileSystemLoader
@@ -102,6 +104,7 @@ machinetemplate = """\
 footertemplate = """\
         zone: {{ cloud_zone}}
 """
+casc_d_dir = "/var/lib/jenkins/casc.d/community.d"
 
 #Command line args section
 def dir_path(path):
@@ -111,22 +114,47 @@ def dir_path(path):
         raise argparse.ArgumentTypeError(f"readable_dir:{path} is not a valid path")
 
 def parse_arguments():
-    parser = argparse.ArgumentParser(description='Create jcasc yaml from path to jenkins config dir.')
+    parser = argparse.ArgumentParser(
+        description='Create jcasc yaml from path to jenkins config dir.')
+    parser.add_argument(
+        "--outputvars",
+        type=argparse.FileType("w"),
+        default="{}/jenkins_global_envvars.yaml".format(casc_d_dir),
+        help="envVars file directory",
+    )
     parser.add_argument('--path', type=dir_path)
-    parser.add_argument('--sandbox', type=bool, default=False, help="Set to True for sandbox yaml generation")
+    parser.add_argument('--sandbox', type=bool, default=False,
+                        help="Set to True for sandbox yaml generation")
     return parser.parse_args()
 
 parsed_args = parse_arguments()
 path = (parsed_args.path)
 path = ("{}**/*.cfg".format(path))
 
-
 #sandbox switch section
 section_cloud = {}
 name_prefix = "prd"
+global_var_file = ("{}/global-vars-production.sh".format(parsed_args.path))
 if parsed_args.sandbox:
     name_prefix = "snd"
+    global_var_file = ("{}/global-vars-sandbox.sh".format(parsed_args.path))
     section_cloud.update(is_sandbox=True)
+
+def global_vars():
+    kvlist = []
+    output = {}
+    envdict = {"env":kvlist}
+    with open(global_var_file) as myfile:
+        for line in myfile:
+            name, var = line.partition("=")[::2]
+            varstripped = var.strip()
+            kvlist.append({"key": name, "value": varstripped})
+    output.update({'jenkins':
+                     {'globalNodeProperties':
+                         [{'envVars':envdict}]
+                     }
+                  })
+    yaml.dump(output, parsed_args.outputvars)
 
 #Config parser from merged files section
 class Iterfiles:
@@ -213,7 +241,8 @@ for section in config_parser_merged.sections():
         print(j2_template.render(section_all_machines))
 
 
-
 #Footer section
 j2_template = Template(footertemplate)
 print(j2_template.render(section_cloud))
+
+global_vars()
