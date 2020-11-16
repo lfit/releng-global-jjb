@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efd7fae7_ece8c004",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-11-16T20:59:12Z",
+      "side": 1,
+      "message": "This is not a standard library. Should it be added to requirements.txt?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 18
+      },
+      "revId": "38b3a290f3be1c726dfa620fd5a33c9714093aea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1ee861d_17fe0bbd",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-11-16T20:59:12Z",
+      "side": 1,
+      "message": "Capitalize.",
+      "range": {
+        "startLine": 122,
+        "startChar": 30,
+        "endLine": 122,
+        "endChar": 31
+      },
+      "revId": "38b3a290f3be1c726dfa620fd5a33c9714093aea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93cc6fec_874d93b4",
+        "filename": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2020-11-16T20:59:12Z",
+      "side": 1,
+      "message": "Capitalize.",
+      "range": {
+        "startLine": 129,
+        "startChar": 14,
+        "endLine": 129,
+        "endChar": 15
+      },
+      "revId": "38b3a290f3be1c726dfa620fd5a33c9714093aea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
