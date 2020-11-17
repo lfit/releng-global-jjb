@@ -23,8 +23,11 @@ def parse_arguments():
         description='Create jcasc yaml from path to jenkins config dir.')
     parser.add_argument('--path', type=dir_path,
                         help="Path to jenkins-admin directory")
-    parser.add_argument('--sandbox', type=bool, default=False,
-                        help="Set to True for sandbox yaml generation")
+    parser.add_argument(
+        "-s", "--sandbox",
+        help="Is configuration being created for a sandbox",
+        dest="sandbox", action = "store_true"
+    )
     parser.add_argument(
         "--outputvars",
         type=argparse.FileType("w"),

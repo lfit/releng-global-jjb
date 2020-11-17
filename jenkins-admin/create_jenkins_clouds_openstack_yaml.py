@@ -117,8 +117,13 @@ def parse_arguments():
 
     parser.add_argument('--path', type=dir_path,
                         help="Path to jenkins-admin directory")
-    parser.add_argument('--sandbox', type=bool, default=False,
-                        help="Set to True for sandbox yaml generation")
+
+    parser.add_argument(
+        "-s", "--sandbox",
+        help = "Is configuration being created for a sandbox",
+        dest = "sandbox", action = "store_true"
+    )
+
     return parser.parse_args()
 
 parsed_args = parse_arguments()
