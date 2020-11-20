@@ -25,9 +25,14 @@ python -m pip freeze
 
 set_variables_common(){
     echo "INFO: Setting common variables"
-    if [[ -z ${LOGS_SERVER:-} ]]; then
-        echo "ERROR: LOGS_SERVER not defined"
+    if [[ -z ${LOGS_SERVER:-} ]] && [[ -z ${CDN_URL:-} ]]; then
+        echo "ERROR: LOGS_SERVER and S3_BUCKET not defined"
         exit 1
+    fi
+
+    # Override LOG_SERVER when CDN_URL has been set
+    if [[ ! -z ${CDN_URL:-} ]]; then
+        LOGS_SERVER="https://${CDN_URL:-}"
     fi
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
     # Verify if using release file or parameters
