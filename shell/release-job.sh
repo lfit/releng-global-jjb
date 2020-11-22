@@ -25,8 +25,8 @@ python -m pip freeze
 
 set_variables_common(){
     echo "INFO: Setting common variables"
-    if [[ -z ${LOGS_SERVER:-} ]]; then
-        echo "ERROR: LOGS_SERVER not defined"
+    if [[ -z ${LOGS_SERVER:-} ]] || [[ -z ${CDN_URL:-} ]]; then
+        echo "ERROR: LOGS_SERVER or S3_BUCKET not defined"
         exit 1
     fi
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
@@ -47,6 +47,13 @@ set_variables_common(){
         echo "INFO: This job is built with parameters, no release file needed."
         release_file="None"
     fi
+
+    if [[ -n ${LOGS_SERVER:-} ]]; then
+        logs_url="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+    elif [[ -n ${CDN_URL:-} ]]; then
+        logs_url="https://${CDN_URL:-}/${NEXUS_PATH}${LOG_DIR}"
+    fi
+    logs_url=${logs_url%/}  # strip any trailing '/'
 
     # Jenkins parameter drop-down defaults DISTRIBUTION_TYPE to None
     # in the contain/maven release job; get value from release yaml.
@@ -74,6 +81,7 @@ set_variables_common(){
     printf "\t%-30s\n" RELEASE_ENVIRONMENT_INFO:
     printf "\t%-30s %s\n" RELEASE_FILE: "$release_file"
     printf "\t%-30s %s\n" LOGS_SERVER: "$LOGS_SERVER"
+    printf "\t%-30s %s\n" CDN_URL: "${CDN_URL:-None}"
     printf "\t%-30s %s\n" NEXUS_PATH: "$NEXUS_PATH"
     printf "\t%-30s %s\n" JENKINS_HOSTNAME: "$JENKINS_HOSTNAME"
     printf "\t%-30s %s\n" SILO: "$SILO"
@@ -99,15 +107,13 @@ set_variables_maven(){
     if [[ -z ${LOG_DIR:-} ]]; then
         LOG_DIR=$(yq -r ".log_dir" "$release_file")
     fi
-    LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
-    LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
 
     # Continuing displaying Release Information (Maven)
     printf "\t%-30s\n" RELEASE_MAVEN_INFO:
     printf "\t%-30s %s\n" VERSION: "$VERSION"
     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
     printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
-    printf "\t%-30s %s\n" LOGS_URL: "$LOGS_URL"
+    printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
 }
 
 set_variables_container(){
@@ -149,8 +155,7 @@ set_variables_pypi(){
     if [[ -z ${LOG_DIR:-} ]]; then
         LOG_DIR=$(yq -r ".log_dir" "$release_file")
     fi
-    LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
-    LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
+
     if [[ -z ${PYPI_PROJECT:-} ]]; then
         PYPI_PROJECT=$(yq -r ".pypi_project" "$release_file")
     fi
@@ -171,7 +176,7 @@ set_variables_pypi(){
     # Continuing displaying Release Information (pypi)
     printf "\t%-30s\n" RELEASE_PYPI_INFO:
     printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
-    printf "\t%-30s %s\n" LOGS_URL: "$LOGS_URL"
+    printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
     printf "\t%-30s %s\n" PYPI_INDEX: "$PYPI_INDEX" # from job configuration
     printf "\t%-30s %s\n" PYPI_PROJECT: "$PYPI_PROJECT"
     printf "\t%-30s %s\n" PYTHON_VERSION: "$PYTHON_VERSION"
@@ -200,8 +205,6 @@ set_variables_packagecloud(){
      if [[ -z ${PACKAGE_NAME:-} ]]; then
          PACKAGE_NAME=$(yq -r ".package_name" "$release_file")
      fi
-     logs_url="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
-     logs_url=${logs_url%/}  # strip any trailing '/'
 
      printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
      printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
@@ -242,8 +245,8 @@ verify_version(){
 }
 
 verify_version_match_release(){
-    echo "INFO: Fetching console log from $LOGS_URL"
-    wget -P /tmp "${LOGS_URL}/"console.log.gz
+    echo "INFO: Fetching console log from $logs_url"
+    wget -P /tmp "${logs_url}/"console.log.gz
     echo "INFO: Searching for uploaded step and version $VERSION in job log"
     if zgrep "Successfully uploaded" /tmp/console.log.gz | grep "$VERSION"; then
         echo "INFO: found expected strings in job log"
@@ -256,8 +259,8 @@ verify_version_match_release(){
 
 # check prerequisites to detect mistakes in the release YAML file
 verify_pypi_match_release(){
-    echo "INFO: Fetching console log from $LOGS_URL"
-    wget -q -P /tmp "${LOGS_URL}/"console.log.gz
+    echo "INFO: Fetching console log from $logs_url"
+    wget -q -P /tmp "${logs_url}/"console.log.gz
     echo "INFO: Searching for uploaded step, project $PYPI_PROJECT and version $VERSION in job log"
     # pypi-upload.sh generates success message with file list
     if zgrep -i "uploaded" /tmp/console.log.gz | grep "$PYPI_PROJECT" | grep "$VERSION" ; then
@@ -388,11 +391,11 @@ container_release_file(){
 
 maven_release_file(){
     echo "INFO: Processing maven release"
-    echo "INFO: wget -P $PATCH_DIR ${LOGS_URL}/staging-repo.txt.gz"
-    wget -P "$PATCH_DIR" "${LOGS_URL}/"staging-repo.txt.gz
+    echo "INFO: wget -P $PATCH_DIR ${logs_url}/staging-repo.txt.gz"
+    wget -P "$PATCH_DIR" "${logs_url}/"staging-repo.txt.gz
     pushd "$PATCH_DIR"
-        echo "INFO: wget ${LOGS_URL}/patches/{${PROJECT//\//-}.bundle,taglist.log.gz}"
-        wget "${LOGS_URL}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}
+        echo "INFO: wget ${logs_url}/patches/{${PROJECT//\//-}.bundle,taglist.log.gz}"
+        wget "${logs_url}"/patches/{"${PROJECT//\//-}".bundle,taglist.log.gz}
         gunzip taglist.log.gz
         cat "$PATCH_DIR"/taglist.log
     popd
