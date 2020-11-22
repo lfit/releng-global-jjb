@@ -25,8 +25,8 @@ python -m pip freeze
 
 set_variables_common(){
     echo "INFO: Setting common variables"
-    if [[ -z ${LOGS_SERVER:-} ]]; then
-        echo "ERROR: LOGS_SERVER not defined"
+    if [[ -z ${LOGS_SERVER:-} ]] || [[ -z ${CDN_URL:-} ]]; then
+        echo "ERROR: LOGS_SERVER or S3_BUCKET not defined"
         exit 1
     fi
     NEXUS_PATH="${SILO}/${JENKINS_HOSTNAME}/"
@@ -74,6 +74,7 @@ set_variables_common(){
     printf "\t%-30s\n" RELEASE_ENVIRONMENT_INFO:
     printf "\t%-30s %s\n" RELEASE_FILE: "$release_file"
     printf "\t%-30s %s\n" LOGS_SERVER: "$LOGS_SERVER"
+    printf "\t%-30s %s\n" CDN_URL: "${CDN_URL:-None}"
     printf "\t%-30s %s\n" NEXUS_PATH: "$NEXUS_PATH"
     printf "\t%-30s %s\n" JENKINS_HOSTNAME: "$JENKINS_HOSTNAME"
     printf "\t%-30s %s\n" SILO: "$SILO"
@@ -99,8 +100,15 @@ set_variables_maven(){
     if [[ -z ${LOG_DIR:-} ]]; then
         LOG_DIR=$(yq -r ".log_dir" "$release_file")
     fi
-    LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+
+
+    if [[ -n ${CDN_URL:-} ]]; then
+        LOGS_URL="https://${CDN_URL:-}/${NEXUS_PATH}${LOG_DIR}"
+    elif [[ -n ${LOGS_SERVER:-} ]]; then
+        LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+    fi
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
+
 
     # Continuing displaying Release Information (Maven)
     printf "\t%-30s\n" RELEASE_MAVEN_INFO:
@@ -149,7 +157,12 @@ set_variables_pypi(){
     if [[ -z ${LOG_DIR:-} ]]; then
         LOG_DIR=$(yq -r ".log_dir" "$release_file")
     fi
-    LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+
+    if [[ -n ${CDN_URL:-} ]]; then
+        LOGS_URL="https://${CDN_URL:-}/${NEXUS_PATH}${LOG_DIR}"
+    elif [[ -n ${LOGS_SERVER:-} ]]; then
+        LOGS_URL="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+    fi
     LOGS_URL=${LOGS_URL%/}  # strip any trailing '/'
     if [[ -z ${PYPI_PROJECT:-} ]]; then
         PYPI_PROJECT=$(yq -r ".pypi_project" "$release_file")
@@ -200,7 +213,12 @@ set_variables_packagecloud(){
      if [[ -z ${PACKAGE_NAME:-} ]]; then
          PACKAGE_NAME=$(yq -r ".package_name" "$release_file")
      fi
-     logs_url="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+
+     if [[ -n ${CDN_URL:-} ]]; then
+         logs_url="https://${CDN_URL:-}/${NEXUS_PATH}${LOG_DIR}"
+     elif [[ -n ${LOGS_SERVER:-} ]]; then
+         logs_url="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
+     fi
      logs_url=${logs_url%/}  # strip any trailing '/'
 
      printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
