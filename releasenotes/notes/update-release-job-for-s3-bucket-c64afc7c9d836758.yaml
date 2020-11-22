@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Fix release merge jobs to work with AWS S3_BUCKET when CDN_URL is set.
+
+    Log shipping is being migrated from Nexus2 Log to AWS S3 Buckets. This
+    requires the release job scripts to handle CDN_URL and set the correct
+    value for LOG_SERVER.
