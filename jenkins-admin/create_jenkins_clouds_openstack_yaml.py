@@ -58,7 +58,7 @@ jenkins:
         credentialsId: {{ cloud_credential_id }}
         endPointUrl: {{ cloud_url }}
         ignoreSsl: {{ cloud_ignore_ssl }}
-        name: "cattle"
+        name: {{ cloud_credential_id }}
         slaveOptions:
           availabilityZone: {{ availability_zone }}
           bootSource:
