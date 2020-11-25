@@ -58,7 +58,7 @@ jenkins:
         credentialsId: {{ cloud_credential_id }}
         endPointUrl: {{ cloud_url }}
         ignoreSsl: {{ cloud_ignore_ssl }}
-        name: "cattle"
+        name: {{ cloud_name }}
         slaveOptions:
           availabilityZone: {{ availability_zone }}
           bootSource:
@@ -117,6 +117,8 @@ def parse_arguments():
 
     parser.add_argument('--path', type=dir_path,
                         help="Path to jenkins-admin directory")
+    parser.add_argument('--name', type=str,
+                        help="cloud name IE: cattle")
 
     parser.add_argument(
         "-s", "--sandbox",
@@ -178,7 +180,9 @@ for filename in glob.iglob(path, recursive=True):
 # Global cloud config section
 for section in config_parser_merged.sections():
     if section == "cloud":
-        final = (config.items(section))
+        afinal = (config.items(section))
+        name = parsed_args.name
+        final = (*afinal, ("cloud_name", name))
 
 
 for index, _ in enumerate(final):
