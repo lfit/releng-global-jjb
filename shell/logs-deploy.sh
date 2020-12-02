@@ -14,6 +14,12 @@ echo "---> logs-deploy.sh"
 # Disable 'globbing'
 set -euf -o pipefail
 
+# The 'lftool deploy archives' command below expects the archives
+# directory to exist.  Normally lf-infra-sysstat or similar would
+# create it and add content, but to make sure this script is
+# self-contained, we ensure it exists here.
+mkdir -p "$WORKSPACE/archives"
+
 function get_pattern_opts()
 {
     opts=()
