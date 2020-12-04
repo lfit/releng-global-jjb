@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a9ef5068_df3ae390",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 12
+      },
+      "writtenOn": "2020-12-04T17:17:55Z",
+      "side": 1,
+      "message": "should be || or?",
+      "range": {
+        "startLine": 28,
+        "startChar": 33,
+        "endLine": 28,
+        "endChar": 35
+      },
+      "revId": "9f0cd4f5c683fd9ba2546473729067cdd92556bd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
