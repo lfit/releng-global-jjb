@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "efac3175_ccc63d33",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-12-08T18:21:51Z",
+      "side": 1,
+      "message": "Nexus should take precedence over S3. It\u0027s local, and therefore faster",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 6
+      },
+      "revId": "267b0e9bc879ad5bc62d2bc2fd980df73cd5e3dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1fc91ec_d8acdd2c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-12-08T18:21:51Z",
+      "side": 1,
+      "message": "Nexus should take precedence over S3. It\u0027s local, and therefore faster",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 165,
+        "endChar": 6
+      },
+      "revId": "267b0e9bc879ad5bc62d2bc2fd980df73cd5e3dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff66e9bb_dbdb80a5",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-12-08T18:21:51Z",
+      "side": 1,
+      "message": "Nexus should take precedence over S3. It\u0027s local, and therefore faster",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 221,
+        "endChar": 7
+      },
+      "revId": "267b0e9bc879ad5bc62d2bc2fd980df73cd5e3dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
