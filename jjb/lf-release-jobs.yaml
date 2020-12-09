@@ -24,6 +24,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: 7
+          build-num-to-keep: 50
 
     publishers:
       - lf-infra-publish
@@ -40,6 +41,7 @@
     ######################
 
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
@@ -150,6 +152,7 @@
     ######################
 
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
@@ -277,6 +280,7 @@
 
     branch: master # for github
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     gerrit-skip-vote: false
@@ -517,6 +521,7 @@
     ######################
 
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"

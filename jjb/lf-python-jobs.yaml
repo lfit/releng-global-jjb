@@ -50,6 +50,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -78,6 +79,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     cron: "@weekly"
     disable-job: false
@@ -197,6 +199,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -235,6 +238,7 @@
 
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 60
     cron: "H H * * *" # run daily
     disable-job: false
@@ -409,6 +413,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -449,6 +454,7 @@
       **/*.log
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     cron: "@weekly"
     disable-job: false
@@ -481,6 +487,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     wrappers:
       - lf-infra-wrappers:
@@ -594,6 +601,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$GERRIT_PROJECT"
@@ -628,6 +636,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -715,6 +724,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -792,6 +802,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -836,6 +847,7 @@
       **/*.log
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     dist-binary: true
@@ -870,6 +882,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     parameters:
       - lf-infra-parameters:

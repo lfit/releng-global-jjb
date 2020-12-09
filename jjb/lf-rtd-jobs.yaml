@@ -37,6 +37,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: 7
+          build-num-to-keep: 50
 
     parameters:
       - lf-infra-parameters:
@@ -66,6 +67,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     git-url: https://github.com
@@ -122,6 +124,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -157,6 +160,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     doc-dir: docs/_build/html
@@ -238,6 +242,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 

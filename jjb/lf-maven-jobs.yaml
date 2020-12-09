@@ -96,6 +96,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -136,6 +137,7 @@
 
     branch: master
     build-days-to-keep: 30 # 30 days for troubleshooting purposes
+    build-num-to-keep: 100
     build-timeout: 60
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
@@ -263,6 +265,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -306,6 +309,7 @@
 
     branch: master
     build-days-to-keep: 30 # 30 days in case a release takes long to get approved.
+    build-num-to-keep: 100
     build-timeout: 60
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
@@ -394,6 +398,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -438,6 +443,7 @@
 
     branch: master
     build-days-to-keep: 30 # 30 days in case a release takes long to get approved.
+    build-num-to-keep: 100
     build-timeout: 60
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
@@ -525,6 +531,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -562,6 +569,7 @@
 
     branch: master
     build-days-to-keep: 30 # 30 days in case we need to troubleshoot
+    build-num-to-keep: 100
     build-timeout: 60
     cron: "@daily"
     disable-job: false
@@ -669,6 +677,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -781,6 +790,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -826,6 +836,7 @@
 
     branch: master
     build-days-to-keep: 30 # 30 days in case a release takes long to get approved.
+    build-num-to-keep: 100
     build-timeout: 60
     cron: "@daily"
     disable-job: false
@@ -965,6 +976,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1082,6 +1094,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1121,6 +1134,7 @@
 
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 60
     cron: "H H * * 6" # run weekly
     disable-job: false
@@ -1309,6 +1323,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1351,6 +1366,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 60
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
@@ -1449,6 +1465,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1549,6 +1566,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1587,6 +1605,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 60
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"

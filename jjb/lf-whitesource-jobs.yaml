@@ -55,6 +55,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -87,6 +88,7 @@
 
     branch: master
     build-days-to-keep: 30
+    build-num-to-keep: 100
     build-timeout: 60
     cron: "H H * * 7"
     disable-job: false
@@ -212,6 +214,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 

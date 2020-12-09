@@ -11,6 +11,7 @@
     default-version: latest
     disabled: "{disable-job}"
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
@@ -36,6 +37,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: 7
+          build-num-to-keep: 50
 
     parameters:
       - lf-infra-parameters:

@@ -17,6 +17,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -49,6 +50,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-dir: "$WORKSPACE" # directory with deb/rpm files
     build-timeout: 15
     configure-opts: ""
@@ -154,6 +156,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -191,6 +194,7 @@
 
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     build-wrap-dir: $WORKSPACE/bw-output
     configure-opts: CXXFLAGS="-O0 --coverage" LDFLAGS=--coverage # gcc coverage options
@@ -313,6 +317,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-timeout: 15
     configure-opts: ""
     disable-job: false
@@ -403,6 +408,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -446,6 +452,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -479,6 +486,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-dir: "$WORKSPACE/target"
     build-timeout: 15
     cmake-opts: ""
@@ -554,6 +562,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -586,6 +595,7 @@
       **/*.log
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-dir: "$WORKSPACE/build"
     build-timeout: 15
     build-wrap-dir: "$WORKSPACE/bw-output"
@@ -714,6 +724,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-dir: "$WORKSPACE/target"
     build-timeout: 15
     cmake-opts: ""
@@ -833,6 +844,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -871,6 +883,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-dir: "$WORKSPACE/build"
     build-timeout: 15
     cmake-opts: ""
@@ -976,6 +989,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1013,6 +1027,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-num-to-keep: 50
     build-dir: "$WORKSPACE/target"
     build-timeout: 15
     cmake-opts: ""
@@ -1104,6 +1119,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
