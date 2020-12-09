@@ -29,3 +29,5 @@
     build-node: build-vm
     failure-notification: "fake@example.org"
     failure-notification-prefix: "[releng]"
+    days-to-keep: 7
+    num-to-keep: 10
