@@ -10,6 +10,9 @@
 ##############################################################################
 echo "---> logs-deploy.sh"
 
+source ~/lf-env.sh
+lf-activate-venv lftools
+
 # Ensure we fail the job if any steps fail
 # Disable 'globbing'
 set -euf -o pipefail

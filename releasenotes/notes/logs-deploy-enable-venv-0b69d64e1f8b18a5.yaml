@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Activate lftools env before processing the logs-deploy script.
+    This will allow us to fetch the latest version of pyOpenSSL and cryptography
+    to resolve the following issue https://github.com/pyca/pyopenssl/issues/973
