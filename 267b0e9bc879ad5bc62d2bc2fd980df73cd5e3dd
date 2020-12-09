@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b535104b_6bbff8d2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-12-09T22:23:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "efac3175_ccc63d33",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 6
+      },
+      "revId": "267b0e9bc879ad5bc62d2bc2fd980df73cd5e3dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f1fc91ec_d8acdd2c",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "62cbd557_743b7282",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-12-09T22:23:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1fc91ec_d8acdd2c",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 165,
+        "endChar": 6
+      },
+      "revId": "267b0e9bc879ad5bc62d2bc2fd980df73cd5e3dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff66e9bb_dbdb80a5",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
@@ -68,6 +116,30 @@
       "revId": "267b0e9bc879ad5bc62d2bc2fd980df73cd5e3dd",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc8fae1c_e691e2e2",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-12-09T22:23:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ff66e9bb_dbdb80a5",
+      "range": {
+        "startLine": 217,
+        "startChar": 0,
+        "endLine": 221,
+        "endChar": 7
+      },
+      "revId": "267b0e9bc879ad5bc62d2bc2fd980df73cd5e3dd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
