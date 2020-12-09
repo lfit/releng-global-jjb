@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add pipeline-verify jobs. This adds a simple pipeline verification job that
+    will lint any pipelines found, and check to make sure that they are not set
+    up to run on master.
