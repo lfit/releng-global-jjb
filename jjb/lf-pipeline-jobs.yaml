@@ -1,0 +1,153 @@
+---
+####################
+# COMMON FUNCTIONS #
+####################
+
+- lf_pipeline_common: &lf_pipeline_common
+    name: lf-pipeline-common
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: 'Jenkinsfile.*'
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - 'Jenkinsfile.*'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    project-type: freestyle
+    node: "{build-node}"
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: 7
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          refspec: "refs/heads/{branch}"
+          stream: "{stream}"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    publishers:
+      - lf-infra-publish
+
+##################
+# PIPELINE VERIFY#
+##################
+
+- lf_pipeline_verify: &lf_pipeline_verify
+    name: lf-pipeline-verify
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    project-pattern: "**"
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_verify_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    builders:
+      - lf-infra-pipeline-verify
+
+- job-template:
+    name: "{project-name}-pipeline-verify-{stream}"
+    id: gerrit-pipeline-verify
+    concurrent: true
+    <<: *lf_pipeline_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_pipeline_verify
+
+    scm:
+      - lf-infra-gerrit-scm:
+          branch: "$GERRIT_BRANCH"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: gerrit
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_verify_triggers}"
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project-pattern}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+
+- job-template:
+    name: "{project-name}-pipeline-verify-{stream}"
+    id: github-pipeline-verify
+    concurrent: true
+    <<: *lf_pipeline_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_pipeline_verify
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^(recheck|reverify)$"
+          only-trigger-phrase: false
+          status-context: "Pipeline Verify"
+          permit-all: true
+          github-hooks: true
+          included-regions: "{obj:github_included_regions}"
+          white-list-target-branches:
+            - "{branch}"
