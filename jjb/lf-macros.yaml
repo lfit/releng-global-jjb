@@ -626,6 +626,7 @@
           # Allow build data to be stored at a length configured by the
           # downstream project.
           days-to-keep: "{build-days-to-keep}"
+          num-to-keep: "{build-num-to-keep}"
           # Do not allow artifacts to be stored in Jenkins.
           artifact-num-to-keep: 0
 

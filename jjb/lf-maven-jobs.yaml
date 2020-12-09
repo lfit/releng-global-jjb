@@ -96,6 +96,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
 
     parameters:
       - lf-infra-parameters:
@@ -263,6 +264,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -394,6 +396,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -525,6 +528,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -669,6 +673,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -781,6 +786,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -965,6 +971,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1082,6 +1089,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1309,6 +1317,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1449,6 +1458,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
@@ -1549,6 +1559,7 @@
     properties:
       - lf-infra-properties:
           build-days-to-keep: "{build-days-to-keep}"
+          build-num-to-keep: "{build-num-to-keep}"
       - github:
           url: "{github-url}/{github-org}/{project}"
 
