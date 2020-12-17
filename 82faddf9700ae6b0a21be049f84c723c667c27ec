@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfd056a0_45841c7a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-12-17T22:20:46Z",
+      "side": 1,
+      "message": "This code block is repeated several times. It would make sense to compute this once and then just have everything use the same variable.",
+      "range": {
+        "startLine": 105,
+        "startChar": 0,
+        "endLine": 109,
+        "endChar": 6
+      },
+      "revId": "82faddf9700ae6b0a21be049f84c723c667c27ec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1456e1be_8ca23c41",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-12-17T22:20:46Z",
+      "side": 1,
+      "message": "Why is this lowercase when it\u0027s uppercase everywhere else?",
+      "range": {
+        "startLine": 218,
+        "startChar": 9,
+        "endLine": 218,
+        "endChar": 17
+      },
+      "revId": "82faddf9700ae6b0a21be049f84c723c667c27ec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
