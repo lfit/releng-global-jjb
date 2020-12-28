@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "20ebf781_baa19b03",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-12-28T20:01:12Z",
+      "side": 1,
+      "message": "This is looking for a CDN_URL variable being set, but then talks about S3_BUCKET... which is it supposed to be? I thought we were using S3_BUCKET as the environment variable in our log shipping jobs, why are we using CDN_URL here?",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 58
+      },
+      "revId": "79db8e5e4f04de6d4633924bd00b12c113b57ac8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
