@@ -397,6 +397,11 @@
           java-opts: "{sonar-java-opts}"
           additional-arguments: "{sonar-additional-args}"
 
+- builder:
+    name: lf-infra-pipeline-verify
+    builders:
+      - shell: !include-raw-escape: ../shell/pipeline-linter.sh
+
 ##############
 # PARAMETERS #
 ##############

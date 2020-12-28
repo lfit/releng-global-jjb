@@ -374,6 +374,12 @@ Requires ``SonarQube Scanner for Jenkins``
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
 
+lf-infra-pipeline-verify
+------------------------
+
+Verify a Jenkins pipeline by linting it and ensuring that it cannot run on the
+Jenkins master.
+
 Parameters
 ==========
 
