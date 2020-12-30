@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "511da775_b011e670",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-12-30T22:27:06Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5774b315_48b926d1",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 58
+      },
+      "revId": "06a3c3c46724f90bf22911b7318d74a498716741",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1b3e6b52_88c3ebea",
         "filename": "shell/release-job.sh",
         "patchSetId": 8
@@ -39,6 +63,24 @@
       "revId": "06a3c3c46724f90bf22911b7318d74a498716741",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "48607671_3c26ad26",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2020-12-30T22:27:06Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1b3e6b52_88c3ebea",
+      "revId": "06a3c3c46724f90bf22911b7318d74a498716741",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
