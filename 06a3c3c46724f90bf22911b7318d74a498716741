@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5774b315_48b926d1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-12-30T18:05:00Z",
+      "side": 1,
+      "message": "After further review I think this isn\u0027t going forward the way I\u0027m sort of expecting. You\u0027re checking for the existence of S3_BUCKET but never using it. My thought that S3_BUCKET was what we\u0027re using is, while accurate, incorrect in this particular case.\n\nCDN_URL is what you\u0027re actually using so you should be checking for that and commenting if it\u0027s missing not S3_BUCKET.\n\nSo, the check you had in Patch 7 was correct, but the error text was wrong.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 58
+      },
+      "revId": "06a3c3c46724f90bf22911b7318d74a498716741",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b3e6b52_88c3ebea",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2020-12-30T18:05:00Z",
+      "side": 1,
+      "message": "our S3 logging apparently always has a /logs/ at the start of the path, you\u0027re missing this here. Refer to line 58 of shell/logs-deploy.sh for what I mean.",
+      "revId": "06a3c3c46724f90bf22911b7318d74a498716741",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
