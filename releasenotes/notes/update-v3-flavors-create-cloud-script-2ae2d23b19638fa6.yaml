@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Update the create script to include V3 flavors. Newer V3 flavors are faster
+    and garuntees the to run on new hardware.

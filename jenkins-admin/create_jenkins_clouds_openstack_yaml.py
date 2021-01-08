@@ -48,7 +48,15 @@ lookuptable = {
     "v2-standard-4": "d9115351-defe-4fac-986b-1a1187e2c31c",
     "v2-standard-8": "e6fe2e37-0e38-438c-8fa5-fc2d79d0a7bb",
     "v2-standard-16": "9e4b01cd-6744-4120-aafe-1b5e17584919",
-    "v2-standard-360": "f0d27f44-a410-4f0f-9781-d722f5b5489e"
+    "v2-standard-360": "f0d27f44-a410-4f0f-9781-d722f5b5489e",
+    "v3-standard-2": "d6906d2a-e83f-42be-b33e-fbaeb5c511cb",
+    "v3-standard-4": "5f1eb09f-e764-4642-a16f-a7230ec025e7",
+    "v3-standard-8": "47d3707a-c6c6-46ea-a15b-095e336b1edc",
+    "v3-standard-16": "8587d458-69de-4fc5-be51-c5e671bc35d5",
+    "v3-standard-32": "3e01b39f-45a9-4b7b-b6dc-14378433dc36",
+    "v3-standard-48": "06a0e8b7-949a-439d-a185-208ae9e645b2",
+    "v3-standard-64": "402a2759-cc01-481d-a8b7-2c7056f153f7",
+    "v3-standard-96": "883b0564-dec6-4e51-88c7-83d86994fcf0"
 }
 maintemplate = """\
 ---
