@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "287cd6d4_5159cb8a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-01-15T19:40:16Z",
+      "side": 1,
+      "message": "I notice that most, but not all, of the jobs in this file are set to 100 rather than 50. Is there a reason to have this as the default? It seems to me that if the default is 50 in most places, it should probably be 50 here too. But I\u0027m also not entirely familiar with these, so if there\u0027s a compelling reason to have their number higher (like they have a frequent cron), then it would make more sense to me.",
+      "range": {
+        "startLine": 140,
+        "startChar": 4,
+        "endLine": 140,
+        "endChar": 26
+      },
+      "revId": "737dc82ebc9aaea2bcb88cbc29e479c2985976d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8a98322_a8ffcd61",
+        "filename": "jjb/lf-whitesource-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-01-15T19:40:16Z",
+      "side": 1,
+      "message": "Same question as in the maven file: why 100 here rather than 50?",
+      "range": {
+        "startLine": 91,
+        "startChar": 4,
+        "endLine": 91,
+        "endChar": 26
+      },
+      "revId": "737dc82ebc9aaea2bcb88cbc29e479c2985976d5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
