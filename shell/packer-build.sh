@@ -63,7 +63,6 @@ fi
 set +x
 
 packer.io build -color=false \
-    -only "${PACKER_BUILDER}" \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
     "templates/$PACKER_TEMPLATE.json"
