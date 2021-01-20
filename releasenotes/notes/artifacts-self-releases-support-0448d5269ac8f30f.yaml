@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Add artifact distribution type for self releases.
+    This support allows customers to specify a particular name
+    and path of an artifact in Nexus which will be downloaded locally,
+    re-tagged and posted into the releases repository of the matching repo.
