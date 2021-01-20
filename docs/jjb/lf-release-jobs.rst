@@ -253,6 +253,15 @@ The JSON schema for a PackageCloud release file appears below.
    :language: yaml
 
 
+Job Groups
+==========
+
+Below is a list of Release job groups:
+
+.. literalinclude:: ../../jjb/lf-release-job-groups.yaml
+   :language: yaml
+
+
 Jenkins Jobs
 ------------
 
