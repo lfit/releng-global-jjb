@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Add self release verify and merge jobs for GitHub based projects.
