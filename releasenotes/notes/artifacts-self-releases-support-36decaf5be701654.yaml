@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add support in self releases for artifacts. Projects can point to
+    a release artifact stored in Nexus in any development repo and push
+    it into the releases Nexus releases repo.
