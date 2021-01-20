@@ -56,6 +56,9 @@
           # yamllint disable-line rule:line-length
           comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
 
+    github_included_regions:
+      - '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+
     #####################
     # Job Configuration #
     #####################
@@ -138,6 +141,46 @@
             unstable: "{gerrit-skip-vote}"
             notbuilt: "{gerrit-skip-vote}"
 
+- job-template:
+    name: "{project-name}-release-verify"
+    id: github-release-verify
+    <<: *lf_release_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_release_verify
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: ^(recheck|reverify)$
+          only-trigger-phrase: false
+          status-context: "Github Release Verify"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
+
 #################
 # RELEASE MERGE #
 #################
@@ -159,6 +202,9 @@
       - change-merged-event
       - comment-added-contains-event:
           comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
+
+    github_included_regions:
+      - '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
     #####################
     # Job Configuration #
@@ -247,6 +293,46 @@
               file-paths:
                 - compare-type: REG_EXP
                   pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
+
+- job-template:
+    name: "{project-name}-release-merge"
+    id: github-release-merge
+    <<: *lf_release_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_release_merge
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+ 
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^remerge$"
+          only-trigger-phrase: true
+          status-context: "Github Release Merge"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
 
 ################
 # PyPI RELEASE #
