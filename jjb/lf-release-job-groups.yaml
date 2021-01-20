@@ -8,3 +8,13 @@
     jobs:
       - gerrit-release-verify
       - gerrit-release-merge
+
+- job-group:
+    name: "{project-name}-github-release-jobs"
+
+    # This job group contains all the recommended jobs that should be deployed
+    # for any project using self releases.
+
+    jobs:
+      - github-release-verify
+      - github-release-merge
