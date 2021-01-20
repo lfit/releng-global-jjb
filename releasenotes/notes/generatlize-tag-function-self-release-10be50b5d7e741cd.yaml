@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Rename "tag-gerrit-repo" function in self releases to "tag-code-repo".
+    This change is in preparation for self releases support for GitHub based
+    projects. Use the name "code-repo" to fit both Gerrit and Github projects.

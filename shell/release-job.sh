@@ -146,7 +146,7 @@ set_variables_container(){
     printf "\t%-30s %s\n" CONTAINER_RELEASE_TAG: "$VERSION"
     printf "\t%-30s %s\n" CONTAINER_PULL_REGISTRY: "$CONTAINER_PULL_REGISTRY"
     printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: "$CONTAINER_PUSH_REGISTRY"
-    printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$ref"
+    printf "\t%-30s %s\n" CODE_REF_TO_TAG: "$ref"
     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
@@ -209,7 +209,7 @@ set_variables_packagecloud(){
      printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
      printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
      printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
-     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
+     printf "\t%-30s %s\n" CODE_REF_TO_TAG: "$REF"
      printf "\t%-30s %s\n" VERSION: "$VERSION"
      printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
@@ -285,13 +285,19 @@ verify_packagecloud_match_release(){
 
 # sigul is only available on Centos
 # TODO: write tag-github-repo function
-tag-gerrit-repo(){
+tag-code-repo(){
     if [[ $TAG_RELEASE == false ]]; then
-       echo "INFO: Skipping gerrit repo tag"
+       echo "INFO: Skipping code repo tag"
        return
     fi
 
-    echo "INFO: tag gerrit with $GIT_TAG"
+    if [[ -z ${GERRIT_URL:-} ]]; then
+        CODE_BASE=github
+    else
+        CODE_BASE=gerrit
+    fi
+
+    echo "INFO: tag repo with $GIT_TAG"
     # Import public signing key
     gpg --import "$SIGNING_PUBKEY"
     if type=$(git cat-file -t "$GIT_TAG"); then
@@ -312,12 +318,16 @@ tag-gerrit-repo(){
         ########## Merge Part ##############
         if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
             echo "INFO: Running merge, pushing tag"
-            gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
-            git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
+            if [[ $CODE_BASE == "gerrit" ]]; then
+                gerrit_ssh=$(echo "$GERRIT_URL" | awk -F"/" '{print $3}')
+                git remote set-url origin ssh://"$RELEASE_USERNAME"@"$gerrit_ssh":29418/"$PROJECT"
+                echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+                chmod 600 ~/.ssh/config
+            else
+                git remote set-url origin "$GIT_CLONE_URL""$RELEASE_USERNAME"/"$PROJECT".git
+            fi
             git config user.name "$RELEASE_USERNAME"
             git config user.email "$RELEASE_EMAIL"
-            echo -e "Host $gerrit_ssh\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-            chmod 600 ~/.ssh/config
             git push origin "$GIT_TAG"
         fi
     fi
@@ -386,7 +396,7 @@ container_release_file(){
 
     echo "INFO: Merge will tag ref: $ref"
     git checkout "$ref"
-    tag-gerrit-repo
+    tag-code-repo
 }
 
 maven_release_file(){
@@ -403,7 +413,7 @@ maven_release_file(){
     git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
     git merge --ff-only FETCH_HEAD
     nexus_release
-    tag-gerrit-repo
+    tag-code-repo
 }
 
 # calls pip to download binary and source distributions from the specified index,
@@ -448,7 +458,7 @@ pypi_release_file(){
         echo "INFO: uploading $filecount distributions to repo $REPOSITORY"
         $cmd
     fi
-    tag-gerrit-repo
+    tag-code-repo
 }
 
 packagecloud_verify(){
@@ -478,7 +488,7 @@ packagecloud_promote(){
         | echo "INFO: Promoted package location: \
         https://packagecloud.io$(yq -r .package_html_url)"
     git checkout "$REF"
-    tag-gerrit-repo
+    tag-code-repo
 }
 
 ##############################  End Function Declarations  ################################
