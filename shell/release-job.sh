@@ -217,6 +217,28 @@ set_variables_packagecloud(){
      printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
+set_variables_artifact(){
+     echo "INFO: Setting artifact variables"
+     if [[ -z ${VERSION:-} ]]; then
+         VERSION=$(yq -r ".version" "$release_file")
+     fi
+     if [[ -z ${GIT_TAG:-} ]]; then
+         if grep -q "git_tag" $release_file ; then
+             GIT_TAG=$(yq -r ".git_tag" "$release_file")
+         else
+             GIT_TAG="$VERSION"
+         fi
+     fi
+     if [[ -z ${REF:-} ]]; then
+         REF=$(yq -r ".ref" "$release_file")
+     fi
+
+     printf "\t%-30s\n" RELEASE_ARTIFACT_INFO:
+     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
+     printf "\t%-30s %s\n" VERSION: "$VERSION"
+     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+}
+
 verify_schema(){
     echo "INFO: Verifying $release_file against schema $release_schema"
     lftools schema verify "$release_file" "$release_schema"
@@ -494,6 +516,38 @@ packagecloud_promote(){
     tag-git-repo
 }
 
+artifact_release_file(){
+    echo "INFO: Processing artifact release"
+    mkdir artifacts
+
+    for namequoted in $(yq '.artifacts[].name' $release_file); do
+        pathquoted=$(yq ".artifacts[] |select(.name==$namequoted) |.path" $release_file)
+
+        #Remove extra yaml quotes
+        name="${namequoted#\"}"
+        name="${name%\"}"
+        path="${pathquoted#\"}"
+        path="${path%\"}"
+
+        echo "$name"
+        echo "$path"
+        echo "INFO: Merge will post artifact: $name"
+        # Attempt to pull from releases to see if the artifact has been released.
+        if "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"$name"; then
+            echo "INFO: $name is already released as version:$VERSION, Continuing..."
+        else
+            echo "INFO: $name not found in releases, release will be prepared. Continuing..."
+            wget "${path}"/"${name}" -o artifacts/"${name}"
+        if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
+            #lftools sign sigul artifacts
+            ORG=$(echo "$NEXUS_URL" | awk -F'.' '{print $2}')
+            curl -v -u <NEXUSUSER>:<NEXUSPASS> --upload-file "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"${name}" \;
+        fi
+	    echo "#########################"
+        fi
+    done
+}
+
 ##############################  End Function Declarations  ################################
 
 # Set common environment variables
@@ -562,6 +616,18 @@ case $DISTRIBUTION_TYPE in
             fi
         done
         ;;
+
+    artifact)
+        if $USE_RELEASE_FILE ; then
+            release_schema="release-artifact-schema.yaml"
+            echo "INFO: Fetching schema $release_schema"
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            verify_schema
+        fi
+        set_variables_artifact
+        verify_version
+        artifact_release_file
+	;;
 
     *)
         echo "ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
