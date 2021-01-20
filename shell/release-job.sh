@@ -217,6 +217,34 @@ set_variables_packagecloud(){
      printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
+set_variables_artifact(){
+     echo "INFO: Setting artifact variables"
+     if [[ -z ${VERSION:-} ]]; then
+         VERSION=$(yq -r ".version" "$release_file")
+     fi
+     if [[ -z ${GIT_TAG:-} ]]; then
+         if grep -q "git_tag" $release_file ; then
+             GIT_TAG=$(yq -r ".git_tag" "$release_file")
+         else
+             GIT_TAG="$VERSION"
+         fi
+     fi
+     if [[ -z ${REF:-} ]]; then
+         REF=$(yq -r ".ref" "$release_file")
+     fi
+     if [[ -z ${ARTIFACT_NAME:-} ]]; then
+         ARTIFACT_NAME=$(yq -r ".artifact_name" "$release_file")
+     fi
+     if [[ -z ${ARTIFACT_PATH:-} ]]; then
+         ARTIFACT_PATH=$(yq -r ".artifact_path" "$release_file")
+     fi
+
+     printf "\t%-30s %s\n" ARTIFACT_NAME: "$ARTIFACT_NAME"
+     printf "\t%-30s %s\n" ARTIFACT_PATH: "$ARTIFACT_PATH"
+     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
+     printf "\t%-30s %s\n" VERSION: "$VERSION"
+     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+}
 verify_schema(){
     echo "INFO: Verifying $release_file against schema $release_schema"
     lftools schema verify "$release_file" "$release_schema"
@@ -494,6 +522,19 @@ packagecloud_promote(){
     tag-git-repo
 }
 
+artifact_release_file(){
+    echo "INFO: Processing artifact release"
+    mkdir artifacts
+    wget ${ARTIFACT_PATH}/${ARTIFACT_NAME} -o artifacts/${ARTIFACT_PATH}/${ARTIFACT_NAME}
+    wget ${ARTIFACT_PATH}/${ARTIFACT_NAME}.md5sum -o artifacts/${ARTIFACT_PATH}/${ARTIFACT_NAME}.md5sum
+
+    if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
+	lftools sign sigul artifacts
+	ORG=$(echo $NEXUS_URL | awk -F'.' '{print $2}')
+        find artifacts -type f -exec curl -v -u <NEXUSUSER>:<NEXUSPASS> --upload-file {} ${NEXUS_URL}/content/repositories/releases/org/${ORG}/${VERSION}/{} \;
+    fi
+}
+
 ##############################  End Function Declarations  ################################
 
 # Set common environment variables
@@ -562,6 +603,18 @@ case $DISTRIBUTION_TYPE in
             fi
         done
         ;;
+
+    artifact)
+        if $USE_RELEASE_FILE ; then
+            release_schema="release-artifact-schema.yaml"
+            echo "INFO: Fetching schema $release_schema"
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            verify_schema
+        fi
+	set_variables_artifact
+	verify_version
+	artifact_release_file
+	;;
 
     *)
         echo "ERROR: distribution_type: $DISTRIBUTION_TYPE not supported"
