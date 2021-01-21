@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66833dfd_78e1f56d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-01-21T18:03:15Z",
+      "side": 1,
+      "message": "Why not use \"git\" in place of \"code\"? I think \"git ref\" is more meaningful than \"code ref\".",
+      "range": {
+        "startLine": 149,
+        "startChar": 26,
+        "endLine": 149,
+        "endChar": 30
+      },
+      "revId": "82e3c173e3506dd15e47cd32ad653f1df869553b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
