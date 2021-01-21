@@ -22,6 +22,30 @@
       "revId": "82e3c173e3506dd15e47cd32ad653f1df869553b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df977101_911f415e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-01-21T21:54:12Z",
+      "side": 1,
+      "message": "I agree... let me make the change",
+      "parentUuid": "66833dfd_78e1f56d",
+      "range": {
+        "startLine": 149,
+        "startChar": 26,
+        "endLine": 149,
+        "endChar": 30
+      },
+      "revId": "82e3c173e3506dd15e47cd32ad653f1df869553b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
     }
   ]
 }
