@@ -127,6 +127,7 @@ Run `packer build` to build system images.
     :packer-version: Version of packer to use.
     :platform: Build platform as found in the vars directory.
     :template: Packer template to build as found in the templates directory.
+    :packer-builder: builder type to use. ex: aws, openstack (openstack)
 
 :Optional parameters:
 
@@ -145,6 +146,7 @@ Run ``packer validate`` to verify packer configuration.
     :packer-cloud-settings: Cloud configuration file. Loaded on the build
         server as CLOUDENV environment variable.
     :packer-version: Version of packer to use.
+    :packer-builder: builder type to use. ex: aws, openstack (openstack)
 
 lf-infra-push-gerrit-patch
 --------------------------

@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Pass the builder type to verify jobs
+
+    The default builder type must be passed to packer verify jobs. For
+    packer jobs to run on aws, set the `packer-builder: aws` in downstream
+    CI-management repositories.

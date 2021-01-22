@@ -158,6 +158,7 @@
               variable: CLOUDENV
       - inject:
           properties-content: |
+            PACKER_BUILDER={packer-builder}
             PACKER_VERSION={packer-version}
       - shell: !include-raw-escape:
           - ../shell/packer-install.sh

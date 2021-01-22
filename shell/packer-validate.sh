@@ -19,6 +19,7 @@ set -eu -o pipefail
 PACKER_LOGS_DIR="$WORKSPACE/archives/packer"
 mkdir -p "$PACKER_LOGS_DIR"
 export PATH="${WORKSPACE}/bin:$PATH"
+export PACKER_BUILDER=${PACKER_BUILDER:-openstack}
 
 cd packer
 varfiles=(vars/*.json common-packer/vars/*.json)
