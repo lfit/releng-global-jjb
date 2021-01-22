@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "28a0b914_02b0a3a1",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-01-22T20:22:15Z",
+      "side": 1,
+      "message": "This fails for Acumos, for example, where they do not have an S3 log server but they do a nexus one. \nDoes this needs to be changed to -n instead of -z? Do we just care about one being defined?",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 57
+      },
+      "revId": "78d517758c8f358d83c6f7af67dd05a79a5b9a15",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b0df7d9_cbb3e10a",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-01-22T20:22:15Z",
+      "side": 1,
+      "message": "LOG_DIR:-\nOtherwise, it will fail as it will be an unbound variable",
+      "range": {
+        "startLine": 52,
+        "startChar": 48,
+        "endLine": 52,
+        "endChar": 55
+      },
+      "revId": "78d517758c8f358d83c6f7af67dd05a79a5b9a15",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28dd8dbe_8aed4711",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-01-22T20:22:15Z",
+      "side": 1,
+      "message": "LOG_DIR:-\nOtherwise, it will fail as it will be an unbound variable",
+      "range": {
+        "startLine": 54,
+        "startChar": 59,
+        "endLine": 54,
+        "endChar": 66
+      },
+      "revId": "78d517758c8f358d83c6f7af67dd05a79a5b9a15",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
