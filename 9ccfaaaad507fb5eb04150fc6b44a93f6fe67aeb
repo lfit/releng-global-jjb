@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65db4422_bf9af34b",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-01-22T02:36:04Z",
+      "side": 1,
+      "message": "If this is indicating the default, it should read \"(default: openstack)\". Same with line 149.",
+      "range": {
+        "startLine": 130,
+        "startChar": 61,
+        "endLine": 130,
+        "endChar": 72
+      },
+      "revId": "9ccfaaaad507fb5eb04150fc6b44a93f6fe67aeb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
