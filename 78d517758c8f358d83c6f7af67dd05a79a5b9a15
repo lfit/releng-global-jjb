@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0cb4b139_f1f990c6",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-01-23T07:38:46Z",
+      "side": 1,
+      "message": "-n \u003d\u003d  string is not null.\n-z \u003d\u003d  string is null, that is, has zero length\n\nI think use should be using `-z` since the variable could be unset on some $project Jenkins env\u0027s.\n\nI\u0027ve fixed the issue below, tested the change on Acumos, please review when you get a chance.\n\nhttps://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/66597\nhttps://jenkins.acumos.org/job/acumos-onnx-client-pypi-release-verify/6/console",
+      "parentUuid": "28a0b914_02b0a3a1",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 28,
+        "endChar": 57
+      },
+      "revId": "78d517758c8f358d83c6f7af67dd05a79a5b9a15",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3b0df7d9_cbb3e10a",
         "filename": "shell/release-job.sh",
         "patchSetId": 9
