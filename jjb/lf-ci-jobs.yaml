@@ -1572,6 +1572,15 @@
                   pattern: 'packer\/templates\/{templates}\.json'
                 - compare-type: REG_EXP
                   pattern: 'packer\/vars\/{platforms}\.json'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/provision\/{templates}\.yaml'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/provision\/local-{templates}\.yaml'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/templates\/{templates}\.json'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/vars\/{platforms}\.json'
+
 
 - job-template:
     name: "{project-name}-packer-merge-{platforms}-{templates}"
@@ -1629,6 +1638,12 @@
             - 'packer\/provision\/local-{templates}\.yaml'
             - 'packer\/templates\/{templates}\.json'
             - 'packer\/vars\/{platforms}\.json'
+            - 'packer\/common-packer\/provision\/{templates}\.yaml'
+            - 'packer\/common-packer\/provision\/local-{templates}\.yaml'
+            - 'packer\/common-packer\/templates\/{templates}\.json'
+            - 'packer\/common-packer\/vars\/{platforms}\.json'
+
+
           white-list-target-branches:
             - "{branch}"
 
@@ -1689,6 +1704,14 @@
                   pattern: 'packer\/templates\/{templates}\.json'
                 - compare-type: REG_EXP
                   pattern: 'packer\/vars\/{platforms}\.json'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/provision\/{templates}\.yaml'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/provision\/local-{templates}\.yaml'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/templates\/{templates}\.json'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/vars\/{platforms}\.json'
 
 - job-template:
     name: "{project-name}-packer-verify-build-{platforms}-{templates}"
@@ -1737,6 +1760,10 @@
             - 'packer\/provision\/local-{templates}\.yaml'
             - 'packer\/templates\/{templates}\.json'
             - 'packer\/vars\/{platforms}\.json'
+            - 'packer\/common-packer\/vars\/{platforms}\.json'
+            - 'packer\/common-packer\/provision\/{templates}\.yaml'
+            - 'packer\/common-packer\/provision\/local-{templates}\.yaml'
+            - 'packer\/common-packer\/templates\/{templates}\.json'
 
 #################
 # Packer Verify #
