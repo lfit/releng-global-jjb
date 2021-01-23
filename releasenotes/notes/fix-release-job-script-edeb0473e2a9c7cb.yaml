@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix the release job script to handle LOG_DIR unbound variable
+    and condition to check if the LOGS_SERVER or CDN_URL is being used.
