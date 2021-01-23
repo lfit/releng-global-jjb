@@ -30,7 +30,7 @@
     submodule-disable: false
     packer-builder: openstack
     packer-cloud-settings: packer-cloud-env
-    packer-version: 1.4.2
+    packer-version: 1.6.6
 
     #####################
     # Job Configuration #
