@@ -21,7 +21,6 @@ PACKER_LOGS_DIR="$WORKSPACE/archives/packer"
 PACKER_BUILD_LOG="$PACKER_LOGS_DIR/packer-build.log"
 mkdir -p "$PACKER_LOGS_DIR"
 export PATH="${WORKSPACE}/bin:$PATH"
-export PACKER_BUILDER=${PACKER_BUILDER:-openstack}
 
 cd packer
 
