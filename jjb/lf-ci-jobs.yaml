@@ -1781,7 +1781,6 @@
           openstack: "{openstack}"
           openstack-cloud: "{openstack-cloud}"
           packer-cloud-settings: "{packer-cloud-settings}"
-          packer-builder: "{packer-builder}"
           packer-version: "{packer-version}"
 
 - job-template:
