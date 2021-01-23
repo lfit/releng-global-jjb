@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Add regex to trigger packer jobs when common-packer templates are updated.
