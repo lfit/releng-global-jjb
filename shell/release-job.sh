@@ -25,7 +25,7 @@ python -m pip freeze
 
 set_variables_common(){
     echo "INFO: Setting common variables"
-    if [[ -z ${LOGS_SERVER:-} ]] || [[ -z ${CDN_URL:-} ]]; then
+    if [[ -z ${LOGS_SERVER:-} ]] && [[ -z ${CDN_URL:-} ]]; then
         echo "ERROR: LOGS_SERVER or CDN_URL not defined"
         exit 1
     fi
@@ -48,6 +48,9 @@ set_variables_common(){
         release_file="None"
     fi
 
+    if [[ -z ${LOG_DIR:-} ]]; then
+        LOG_DIR=$(yq -r ".log_dir" "$release_file")
+    fi
     if [[ -n ${LOGS_SERVER:-} ]]; then
         logs_url="${LOGS_SERVER}/${NEXUS_PATH}${LOG_DIR}"
     elif [[ -n ${CDN_URL:-} ]]; then
