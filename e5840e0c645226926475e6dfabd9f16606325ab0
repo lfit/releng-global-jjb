@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b46cd_9a878a6c",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 234
+      },
+      "writtenOn": "2021-01-25T10:45:53Z",
+      "side": 1,
+      "message": "uhm contrete dependencies.. quite dangerous when the script is not maintained enough.",
+      "revId": "e5840e0c645226926475e6dfabd9f16606325ab0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
