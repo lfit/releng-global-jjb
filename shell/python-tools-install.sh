@@ -50,14 +50,6 @@ EOF
        fi
     fi
 
-    #Project may still want to use system py27
-    #pip and setuptools must be updated for py27 to work.
-    python -m pip install --user --quiet --upgrade pip
-    python -m pip install --user --quiet --no-warn-script-location --upgrade setuptools
-    python --version
-    python -m pip --version
-    python -m pip freeze
-
     python3 -m pip install --user --quiet --upgrade pip
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade setuptools
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade --upgrade-strategy eager -r "$requirements_file"
