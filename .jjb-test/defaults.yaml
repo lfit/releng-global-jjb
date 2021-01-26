@@ -13,6 +13,7 @@
     git-url: https://github.com
     git-clone-url: "git@github.com:"
     github-org: example-org
+    github-url: https://github.com/project
     github_pr_whitelist:
       - jpwku
       - tykeal
