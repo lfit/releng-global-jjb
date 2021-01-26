@@ -8,3 +8,13 @@
     project-name: self-release-project
     branch: master
     mvn-settings: gerrit-maven-project-settings
+
+- project:
+    name: "{project-name}-release"
+    jobs:
+      - "{project-name}-github-release-jobs"
+
+    project: self-release/project-github
+    project-name: self-release-project-github
+    branch: master
+    mvn-settings: github-maven-project-settings
