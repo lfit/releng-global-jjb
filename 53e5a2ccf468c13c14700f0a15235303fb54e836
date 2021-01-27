@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8c17e02f_601b1a87",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-01-27T23:32:22Z",
+      "side": 1,
+      "message": "I actually think this line should be removed entirely. I believe the whole reason there are two similar commands in succession is that this one is intended only for py2. If we are only supporting py3, then we should just remove the command.",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 107
+      },
+      "revId": "53e5a2ccf468c13c14700f0a15235303fb54e836",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
