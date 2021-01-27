@@ -28,7 +28,7 @@ if [[ -f /etc/lsb-release ]]; then
 fi
 
 if [[ $done != "True" ]]; then
-        python -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv zipp more-itertools~=5.0.0
+        python3 -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv zipp more-itertools~=5.0.0
         python3 -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv
 fi
 
