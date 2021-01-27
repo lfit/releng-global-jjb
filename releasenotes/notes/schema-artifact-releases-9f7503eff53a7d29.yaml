@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Enable support for artifact type releases. Add initial schema for
+    artifact release verification.
