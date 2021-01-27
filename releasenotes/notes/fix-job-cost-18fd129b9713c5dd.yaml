@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fixes an bug with 'job-cost.sh' that would cause builds to be marked
+    as unstable if not run on AWS or OpenStack.

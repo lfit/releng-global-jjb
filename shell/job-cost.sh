@@ -15,6 +15,13 @@ set -euf -o pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
+if [[ ! -f /run/cloud-init/result.json && ! -f stack-cost ]]; then
+    # Don't attempt to calculate job cost as build is not running in a
+    # cloud environment
+    echo "INFO: Skipping job cost calculation"
+    exit 0
+fi
+
 # AWS job cost not supported, exit
 cloudtype="$(jq -r .v1.datasource /run/cloud-init/result.json)"
 if [[ $cloudtype == "DataSourceEc2Local" ]]; then
