@@ -31,7 +31,7 @@ function copy_log()
             ;;
     esac
     sudo_log=$(basename "$sudo_log")
-    sudo chown jenkins:jenkins "/tmp/$sudo_log"
+    sudo chown "$(id -nu)": "/tmp/$sudo_log"
     chmod 0644 "/tmp/$sudo_log"
     mkdir -p "$WORKSPACE/archives/sudo"
     mv "/tmp/$sudo_log" "$WORKSPACE/archives/sudo/$sudo_log"
