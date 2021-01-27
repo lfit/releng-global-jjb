@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08f55037_e896885e",
+        "filename": "shell/tox-install.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-01-27T23:44:46Z",
+      "side": 1,
+      "message": "Should we pull the Ubuntu version as well?",
+      "range": {
+        "startLine": 23,
+        "startChar": 7,
+        "endLine": 24,
+        "endChar": 101
+      },
+      "revId": "3dc0473bd6c7472717b05f3b2d58f83c38c86af4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
