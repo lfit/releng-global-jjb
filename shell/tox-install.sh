@@ -21,14 +21,12 @@ if [[ -f /etc/lsb-release ]]; then
    source /etc/lsb-release
    if [[ $DISTRIB_RELEASE == "16.04" ]]; then
        echo "WARNING: Python projects should move to Ubuntu 18.04 to continue receiving support"
-       python2 -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv more-itertools~=5.0.0
        python3 -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv zipp==1.1.0
        done="True"
    fi
 fi
 
 if [[ $done != "True" ]]; then
-        python -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv zipp more-itertools~=5.0.0
         python3 -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv
 fi
 
