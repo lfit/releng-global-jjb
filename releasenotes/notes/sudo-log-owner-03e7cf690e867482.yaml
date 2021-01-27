@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Updates the 'sudo-logs.sh' script to set ownerhsip to current build
+    user and user's login group, instead of the explicit
+    'jenkins:jenkins'. This will allow sudoer log ownership to work on
+    builders not using 'jenkins' as their build username.
