@@ -17,6 +17,11 @@ if [ -n "${NOMAD_DC}" ]; then
     exit 0
 fi
 
+if [[ ! -f /run/cloud-init/result.json ]]; then
+    echo "INFO: Running in unsupported cloud, no metadata"
+    exit 0
+fi
+
 # AWS not supported, exit
 cloudtype="$(jq -r .v1.datasource /run/cloud-init/result.json)"
 if [[ $cloudtype == "DataSourceEc2Local" ]]; then

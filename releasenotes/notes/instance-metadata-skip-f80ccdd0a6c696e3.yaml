@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Updates the 'capture-instance-metadata.sh' script to skip attempting
+    to capture instance metadata needed for job-cost.sh if the build is
+    being run on an unsupported cloud or platform.
