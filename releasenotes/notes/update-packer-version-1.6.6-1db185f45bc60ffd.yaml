@@ -1,0 +1,5 @@
+---
+upgrade:
+  - |
+    Upgrade Packer version to v1.6.6. v1.6.6 gives more debug messages which
+    is not seen with 1.4.2.
