@@ -13,6 +13,9 @@ echo "---> tox-run.sh"
 # do not use -o pipefail
 set -eux
 
+#Ensure that tox from tox-install.sh takes precedence.
+PATH=$HOME/.local/bin:$PATH
+
 ARCHIVE_TOX_DIR="$WORKSPACE/archives/tox"
 ARCHIVE_DOC_DIR="$WORKSPACE/archives/docs"
 mkdir -p "$ARCHIVE_TOX_DIR"
@@ -26,6 +29,9 @@ if [[ -d /opt/pyenv ]]; then
     export PYTHONPATH
     export TOX_TESTENV_PASSENV=PYTHONPATH
 fi
+
+#Useful debug
+tox --version
 
 PARALLEL="${PARALLEL:-true}"
 if [[ ${PARALLEL,,} = true ]]; then
