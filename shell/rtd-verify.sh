@@ -28,7 +28,7 @@ if [ "$GERRIT_PROJECT" != "$PROJECT" ]; then
 fi
 
 git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
-git submodule update
+git submodule update --init --recursive
 for submod in $(git config -f .gitmodules --get-regexp '^submodule\.(.+)\.url' | awk -e '{print $1}'); do
     git config --get "$submod"
 done
