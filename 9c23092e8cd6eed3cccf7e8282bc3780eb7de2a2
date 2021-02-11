@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d7b35867_f72438d2",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-02-11T18:52:32Z",
+      "side": 1,
+      "message": "probably should --recursive as well just to be safe",
+      "revId": "9c23092e8cd6eed3cccf7e8282bc3780eb7de2a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": true
+    }
+  ]
+}
