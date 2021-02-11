@@ -16,6 +16,24 @@
       "revId": "9c23092e8cd6eed3cccf7e8282bc3780eb7de2a2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a298d744_c323dc7a",
+        "filename": "shell/rtd-verify.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-02-11T23:34:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7b35867_f72438d2",
+      "revId": "9c23092e8cd6eed3cccf7e8282bc3780eb7de2a2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09",
+      "unresolved": false
     }
   ]
 }
