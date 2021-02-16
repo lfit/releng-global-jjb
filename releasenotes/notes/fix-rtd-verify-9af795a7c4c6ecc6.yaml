@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    The old version of rtd-verify is missing the "--init" flag, which causes it
+    to not add new submodules. Additionally, the "--recursive" flag has been
+    included to ensure proper loading of recursive submodules.
