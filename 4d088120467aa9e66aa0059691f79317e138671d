@@ -16,6 +16,24 @@
       "message": "\u003e Patch Set 1: Code-Review-1\n\u003e \n\u003e Yup it\u0027s better to move this to 2.1.4 instead of 2.10.\n\nAnil, please look at the code. You\u0027re getting pre-commit versions mixed up with the jumanjihouse hooks versions. This DOES move the hooks to 2.1.4. It also unpins pre-commit, allowing it to pull in 2.10.0 and later versions.",
       "revId": "4d088120467aa9e66aa0059691f79317e138671d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30a76a42_285360d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-02-17T21:43:09Z",
+      "side": 1,
+      "message": "Righto, LGTM :-))",
+      "parentUuid": "a9b6d38f_88a97141",
+      "revId": "4d088120467aa9e66aa0059691f79317e138671d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
