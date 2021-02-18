@@ -16,10 +16,9 @@ repos:
       - id: gitlint
 
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
-    rev: 2.1.4
+    rev: 2.1.5
     hooks:
       - id: shellcheck
-        additional_dependencies: []
 
   - repo: https://github.com/btford/write-good
     rev: v1.0.4
