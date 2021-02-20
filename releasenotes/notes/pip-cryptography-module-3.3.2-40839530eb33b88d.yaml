@@ -1,0 +1,16 @@
+---
+fixes:
+  - |
+    Pin cryptography to 3.3.2
+
+    The latest version of module breaks compatibility
+    with the latest version of pip.
+
+
+    Error:
+
+     Traceback (most recent call last):
+       File "<string>", line 1, in <module>
+       File "/tmp/pip-build-vqk6fya9/cryptography/setup.py", line 14, in <module>
+         from setuptools_rust import RustExtension
+     ModuleNotFoundError: No module named 'setuptools_rust'
