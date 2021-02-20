@@ -29,6 +29,7 @@ python-openstackclient
 python-magnumclient
 kubernetes
 niet~=1.4.2
+cryptography<3.4
 yq
 
 # PINNED INDIRECT DEPENDENCIES
