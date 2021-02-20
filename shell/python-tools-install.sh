@@ -29,6 +29,7 @@ python-openstackclient
 python-magnumclient
 kubernetes
 niet~=1.4.2
+cryptography<3.4
 yq
 
 # PINNED INDIRECT DEPENDENCIES
@@ -52,6 +53,7 @@ EOF
 
     python3 -m pip install --user --quiet --upgrade pip
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade setuptools
+    python3 -m pip install --user --quiet --no-warn-script-location --upgrade setuptools_rust
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade --upgrade-strategy eager -r "$requirements_file"
     # installs are silent, show version details in log
     python3 --version
