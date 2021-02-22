@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03e00031_1317aeaf",
+        "filename": "releasenotes/notes/pip-cryptography-module-3.3.2-40839530eb33b88d.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-02-22T18:45:39Z",
+      "side": 1,
+      "message": "Those aren\u0027t proper URLs! Please update with actual links to the referenced issues.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 51
+      },
+      "revId": "f8773325f7300253b9d32dd35aea2767c1052f1a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
