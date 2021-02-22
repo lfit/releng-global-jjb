@@ -13,7 +13,7 @@ fixes:
     lf-activate-venv is a more error resistant way to make sure a pip
     package is installed
 
-deprecates:
+deprecations:
   - |
     lftools_activate should no longer be used and will be removed
     in a future release.

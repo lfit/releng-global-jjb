@@ -1,6 +1,7 @@
 ---
-feature: >
-  Global job that triggers on any docs changes.
-  Creates docs project if absent
-  Creates subproject association with master doc project
-  Triggers docs build
+features:
+  - |
+    Global job that triggers on any docs changes.
+    Creates docs project if absent
+    Creates subproject association with master doc project
+    Triggers docs build

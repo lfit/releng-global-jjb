@@ -1,5 +1,5 @@
 ---
-fixess:
+fixes:
   - |
     Standardize yaml parsing tools used across global-jjb.
     Switch from using niet package to yq for parsing yaml files

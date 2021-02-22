@@ -1,5 +1,5 @@
 ---
-fix:
+fixes:
   - |
     Builders may have diffrent pyenv versions installed.
     Programically pick the latest pyenv version.
