@@ -22,6 +22,30 @@
       },
       "revId": "f8773325f7300253b9d32dd35aea2767c1052f1a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4a330b5_7d8b82d9",
+        "filename": "releasenotes/notes/pip-cryptography-module-3.3.2-40839530eb33b88d.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-02-23T00:02:04Z",
+      "side": 1,
+      "message": "Done, thanks for catching this. :)",
+      "parentUuid": "03e00031_1317aeaf",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 51
+      },
+      "revId": "f8773325f7300253b9d32dd35aea2767c1052f1a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
