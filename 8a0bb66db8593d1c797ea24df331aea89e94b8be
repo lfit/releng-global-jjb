@@ -16,6 +16,24 @@
       "message": "Question, if we\u0027re pinning to 3.3.2, why are you adding the install of setuptools_rust? Which 3.4 is apparently pulling in from the noted issues.",
       "revId": "8a0bb66db8593d1c797ea24df331aea89e94b8be",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1d86c63_d5d0bc50",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-02-23T20:43:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e82bbb94_3cf6dec4",
+      "revId": "8a0bb66db8593d1c797ea24df331aea89e94b8be",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
