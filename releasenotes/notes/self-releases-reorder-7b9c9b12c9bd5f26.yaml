@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Reorder functions and add function labels to make release-job.sh
+    easier to read.
