@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1918facd_dccf132d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-03-02T18:09:10Z",
+      "side": 1,
+      "message": "Thanks for the review Andy!.. the next patch after this will deal with re-ordering the distribution types",
+      "revId": "20b9a4ea788b71eccde712d3d580e3be6fc9a61a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
