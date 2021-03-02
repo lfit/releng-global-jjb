@@ -21,7 +21,31 @@ lf-activate-venv lftools pip idna==2.9 lftools jsonschema twine yq readline
 python -m pip --version
 python -m pip freeze
 
-#Functions.
+##########################
+# Set Variables Functions.
+##########################
+
+set_variables_artifact(){
+     echo "INFO: Setting artifact variables"
+     if [[ -z ${VERSION:-} ]]; then
+         VERSION=$(yq -r ".version" "$release_file")
+     fi
+     if [[ -z ${GIT_TAG:-} ]]; then
+         if grep -q "git_tag" $release_file ; then
+             GIT_TAG=$(yq -r ".git_tag" "$release_file")
+         else
+             GIT_TAG="$VERSION"
+         fi
+     fi
+     if [[ -z ${REF:-} ]]; then
+         REF=$(yq -r ".ref" "$release_file")
+     fi
+
+     printf "\t%-30s\n" RELEASE_ARTIFACT_INFO:
+     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
+     printf "\t%-30s %s\n" VERSION: "$VERSION"
+     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+}
 
 set_variables_common(){
     echo "INFO: Setting common variables"
@@ -95,30 +119,6 @@ set_variables_common(){
     printf "\t%-30s %s\n" OVERRIDE_SEMVER_REGEX: "${OVERRIDE_SEMVER_REGEX:-None}"
 }
 
-set_variables_maven(){
-    echo "INFO: Setting maven variables"
-    if [[ -z ${VERSION:-} ]]; then
-        VERSION=$(yq -r ".version" "$release_file")
-    fi
-    if [[ -z ${GIT_TAG:-} ]]; then
-        if grep -q "git_tag" "$release_file" ; then
-            GIT_TAG=$(yq -r ".git_tag" "$release_file")
-        else
-            GIT_TAG="$VERSION"
-        fi
-    fi
-    if [[ -z ${LOG_DIR:-} ]]; then
-        LOG_DIR=$(yq -r ".log_dir" "$release_file")
-    fi
-
-    # Continuing displaying Release Information (Maven)
-    printf "\t%-30s\n" RELEASE_MAVEN_INFO:
-    printf "\t%-30s %s\n" VERSION: "$VERSION"
-    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
-    printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
-    printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
-}
-
 set_variables_container(){
     echo "INFO: Setting container variables"
     if [[ -z ${VERSION:-} ]]; then
@@ -151,6 +151,60 @@ set_variables_container(){
     printf "\t%-30s %s\n" CONTAINER_PUSH_REGISTRY: "$CONTAINER_PUSH_REGISTRY"
     printf "\t%-30s %s\n" GIT_REF_TO_TAG: "$ref"
     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+}
+
+set_variables_maven(){
+    echo "INFO: Setting maven variables"
+    if [[ -z ${VERSION:-} ]]; then
+        VERSION=$(yq -r ".version" "$release_file")
+    fi
+    if [[ -z ${GIT_TAG:-} ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG=$(yq -r ".git_tag" "$release_file")
+        else
+            GIT_TAG="$VERSION"
+        fi
+    fi
+    if [[ -z ${LOG_DIR:-} ]]; then
+        LOG_DIR=$(yq -r ".log_dir" "$release_file")
+    fi
+
+    # Continuing displaying Release Information (Maven)
+    printf "\t%-30s\n" RELEASE_MAVEN_INFO:
+    printf "\t%-30s %s\n" VERSION: "$VERSION"
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+    printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+    printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
+}
+
+set_variables_packagecloud(){
+     echo "INFO: Setting packagecloud variables"
+     if [[ -z ${VERSION:-} ]]; then
+         VERSION=$(yq -r ".version" "$release_file")
+     fi
+     if [[ -z ${GIT_TAG:-} ]]; then
+         if grep -q "git_tag" $release_file ; then
+             GIT_TAG=$(yq -r ".git_tag" "$release_file")
+         else
+             GIT_TAG="$VERSION"
+         fi
+     fi
+     if [[ -z ${LOG_DIR:-} ]]; then
+         LOG_DIR=$(yq -r ".log_dir" "$release_file")
+     fi
+     if [[ -z ${REF:-} ]]; then
+         REF=$(yq -r ".ref" "$release_file")
+     fi
+     if [[ -z ${PACKAGE_NAME:-} ]]; then
+         PACKAGE_NAME=$(yq -r ".package_name" "$release_file")
+     fi
+
+     printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
+     printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+     printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
+     printf "\t%-30s %s\n" GIT_REF_TO_TAG: "$REF"
+     printf "\t%-30s %s\n" VERSION: "$VERSION"
+     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
 set_variables_pypi(){
@@ -187,56 +241,33 @@ set_variables_pypi(){
     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
-set_variables_packagecloud(){
-     echo "INFO: Setting packagecloud variables"
-     if [[ -z ${VERSION:-} ]]; then
-         VERSION=$(yq -r ".version" "$release_file")
-     fi
-     if [[ -z ${GIT_TAG:-} ]]; then
-         if grep -q "git_tag" $release_file ; then
-             GIT_TAG=$(yq -r ".git_tag" "$release_file")
-         else
-             GIT_TAG="$VERSION"
-         fi
-     fi
-     if [[ -z ${LOG_DIR:-} ]]; then
-         LOG_DIR=$(yq -r ".log_dir" "$release_file")
-     fi
-     if [[ -z ${REF:-} ]]; then
-         REF=$(yq -r ".ref" "$release_file")
-     fi
-     if [[ -z ${PACKAGE_NAME:-} ]]; then
-         PACKAGE_NAME=$(yq -r ".package_name" "$release_file")
-     fi
+##########################
+# Verify Schema Functions.
+##########################
 
-     printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
-     printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
-     printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
-     printf "\t%-30s %s\n" GIT_REF_TO_TAG: "$REF"
-     printf "\t%-30s %s\n" VERSION: "$VERSION"
-     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+verify_packagecloud_match_release(){
+    echo "INFO: Fetching console log from $logs_url"
+    wget -q -P /tmp "${logs_url}/"console.log.gz
+    echo "INFO: Searching for uploaded step, package name $PACKAGE_NAME and version $VERSION in job log"
+    if  zgrep -E "Pushing.*$PACKAGE_NAME.*$VERSION.*success\!" /tmp/console.log.gz; then
+        echo "INFO: found expected strings in job log"
+    else
+        echo "ERROR: failed to find expected strings in job log"
+        exit 1
+    fi
 }
 
-set_variables_artifact(){
-     echo "INFO: Setting artifact variables"
-     if [[ -z ${VERSION:-} ]]; then
-         VERSION=$(yq -r ".version" "$release_file")
-     fi
-     if [[ -z ${GIT_TAG:-} ]]; then
-         if grep -q "git_tag" $release_file ; then
-             GIT_TAG=$(yq -r ".git_tag" "$release_file")
-         else
-             GIT_TAG="$VERSION"
-         fi
-     fi
-     if [[ -z ${REF:-} ]]; then
-         REF=$(yq -r ".ref" "$release_file")
-     fi
-
-     printf "\t%-30s\n" RELEASE_ARTIFACT_INFO:
-     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
-     printf "\t%-30s %s\n" VERSION: "$VERSION"
-     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+verify_pypi_match_release(){
+    echo "INFO: Fetching console log from $logs_url"
+    wget -q -P /tmp "${logs_url}/"console.log.gz
+    echo "INFO: Searching for uploaded step, project $PYPI_PROJECT and version $VERSION in job log"
+    # pypi-upload.sh generates success message with file list
+    if zgrep -i "uploaded" /tmp/console.log.gz | grep "$PYPI_PROJECT" | grep "$VERSION" ; then
+        echo "INFO: found expected strings in job log"
+    else
+        echo "ERROR: failed to find expected strings in job log"
+        exit 1
+    fi
 }
 
 verify_schema(){
@@ -245,7 +276,6 @@ verify_schema(){
 }
 
 verify_version(){
-
     # Override the regex for projects that do not follow https://semver.org
     OVERRIDE_SEMVER_REGEX="${OVERRIDE_SEMVER_REGEX:-None}"
     if [[ $OVERRIDE_SEMVER_REGEX == "None" ]]; then
@@ -282,31 +312,10 @@ verify_version_match_release(){
     fi
 }
 
-# check prerequisites to detect mistakes in the release YAML file
-verify_pypi_match_release(){
-    echo "INFO: Fetching console log from $logs_url"
-    wget -q -P /tmp "${logs_url}/"console.log.gz
-    echo "INFO: Searching for uploaded step, project $PYPI_PROJECT and version $VERSION in job log"
-    # pypi-upload.sh generates success message with file list
-    if zgrep -i "uploaded" /tmp/console.log.gz | grep "$PYPI_PROJECT" | grep "$VERSION" ; then
-        echo "INFO: found expected strings in job log"
-    else
-        echo "ERROR: failed to find expected strings in job log"
-        exit 1
-    fi
-}
 
-verify_packagecloud_match_release(){
-    echo "INFO: Fetching console log from $logs_url"
-    wget -q -P /tmp "${logs_url}/"console.log.gz
-    echo "INFO: Searching for uploaded step, package name $PACKAGE_NAME and version $VERSION in job log"
-    if  zgrep -E "Pushing.*$PACKAGE_NAME.*$VERSION.*success\!" /tmp/console.log.gz; then
-        echo "INFO: found expected strings in job log"
-    else
-        echo "ERROR: failed to find expected strings in job log"
-        exit 1
-    fi
-}
+#####################
+# Tag Repo Functions.
+#####################
 
 # sigul is only available on Centos
 # TODO: write tag-github-repo function
@@ -358,29 +367,40 @@ tag-git-repo(){
     fi
 }
 
-nexus_release(){
-    echo "INFO: Processing nexus release"
-    for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
-        # extract the domain name from URL
-        NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
-        echo "INFO: NEXUS_URL: $NEXUS_URL"
-        # extract the staging repo from URL
-        STAGING_REPO=${staging_url#*repositories/}
-        echo "INFO: Running Nexus Verify"
-        lftools nexus release -v --server https://"$NEXUS_URL" "$STAGING_REPO"
-        echo "INFO: Merge will run:"
-        echo "lftools nexus release --server https://$NEXUS_URL $STAGING_REPO"
-    done
+###############################
+# Release Processing Functions.
+###############################
 
-    #Run the loop twice, to catch errors on either nexus repo
-    if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
-        for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
-          NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
-          STAGING_REPO=${staging_url#*repositories/}
-          echo "INFO: Promoting $STAGING_REPO on $NEXUS_URL."
-          lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
-        done
-    fi
+artifact_release_file(){
+    echo "INFO: Processing artifact release"
+    mkdir artifacts
+    ORG=$(echo "$NEXUS_URL" | awk -F'.' '{print $2}')
+
+    for namequoted in $(yq '.artifacts[].name' $release_file); do
+        pathquoted=$(yq ".artifacts[] |select(.name==$namequoted) |.path" $release_file)
+
+        #Remove extra yaml quotes
+        name="${namequoted#\"}"
+        name="${name%\"}"
+        path="${pathquoted#\"}"
+        path="${path%\"}"
+
+        echo "$name"
+        echo "$path"
+        echo "INFO: Merge will post artifact: $name"
+        # Attempt to pull from releases to see if the artifact has been released.
+        if "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"$name"; then
+            echo "INFO: $name is already released as version:$VERSION, Continuing..."
+        else
+            echo "INFO: $name not found in releases, release will be prepared. Continuing..."
+            wget "${path}"/"${name}" -o artifacts/"${name}"
+            if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
+                #lftools sign sigul artifacts
+                curl -v -u <NEXUSUSER>:<NEXUSPASS> --upload-file "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"${name}" \;
+            fi
+            echo "#########################"
+        fi
+    done
 }
 
 container_release_file(){
@@ -441,6 +461,61 @@ maven_release_file(){
     tag-git-repo
 }
 
+nexus_release(){
+    echo "INFO: Processing nexus release"
+    for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
+        # extract the domain name from URL
+        NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
+        echo "INFO: NEXUS_URL: $NEXUS_URL"
+        # extract the staging repo from URL
+        STAGING_REPO=${staging_url#*repositories/}
+        echo "INFO: Running Nexus Verify"
+        lftools nexus release -v --server https://"$NEXUS_URL" "$STAGING_REPO"
+        echo "INFO: Merge will run:"
+        echo "lftools nexus release --server https://$NEXUS_URL $STAGING_REPO"
+    done
+
+    #Run the loop twice, to catch errors on either nexus repo
+    if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
+        for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
+          NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
+          STAGING_REPO=${staging_url#*repositories/}
+          echo "INFO: Promoting $STAGING_REPO on $NEXUS_URL."
+          lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
+        done
+    fi
+}
+
+packagecloud_promote(){
+    echo "INFO: Preparing to promote $1..."
+    promote_url="https://packagecloud.io$(curl --netrc-file ~/packagecloud_api \
+        --silent https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
+        | yq -r .[].promote_url)"
+    echo "INFO: Promoting $1 from staging to release"
+    curl --netrc-file ~/packagecloud_api -X POST -F \
+        destination="$2/release" "$promote_url" \
+        | echo "INFO: Promoted package location: \
+        https://packagecloud.io$(yq -r .package_html_url)"
+    git checkout "$REF"
+    tag-git-repo
+}
+
+packagecloud_verify(){
+    echo "INFO: Verifying $1 exists in staging..."
+    if [[ $1 == $(curl --netrc-file ~/packagecloud_api --silent \
+        https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
+        | yq -r .[].filename) ]]; then
+        echo "INFO: $1 exists in staging!"
+        echo "INFO: Existing package location: https://packagecloud.io$(curl \
+            --netrc-file ~/packagecloud_api --silent \
+            https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
+            | yq -r .[].package_html_url)"
+    else
+        echo "ERROR: $1 does not exist in staging"
+        exit 1
+    fi
+}
+
 # calls pip to download binary and source distributions from the specified index,
 # which requires a recent-in-2019 version.  Uploads the files it received.
 pypi_release_file(){
@@ -486,68 +561,6 @@ pypi_release_file(){
     tag-git-repo
 }
 
-packagecloud_verify(){
-    echo "INFO: Verifying $1 exists in staging..."
-    if [[ $1 == $(curl --netrc-file ~/packagecloud_api --silent \
-        https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
-        | yq -r .[].filename) ]]; then
-        echo "INFO: $1 exists in staging!"
-        echo "INFO: Existing package location: https://packagecloud.io$(curl \
-            --netrc-file ~/packagecloud_api --silent \
-            https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
-            | yq -r .[].package_html_url)"
-    else
-        echo "ERROR: $1 does not exist in staging"
-        exit 1
-    fi
-}
-
-packagecloud_promote(){
-    echo "INFO: Preparing to promote $1..."
-    promote_url="https://packagecloud.io$(curl --netrc-file ~/packagecloud_api \
-        --silent https://packagecloud.io/api/v1/repos/"$2"/staging/search?q="$1" \
-        | yq -r .[].promote_url)"
-    echo "INFO: Promoting $1 from staging to release"
-    curl --netrc-file ~/packagecloud_api -X POST -F \
-        destination="$2/release" "$promote_url" \
-        | echo "INFO: Promoted package location: \
-        https://packagecloud.io$(yq -r .package_html_url)"
-    git checkout "$REF"
-    tag-git-repo
-}
-
-artifact_release_file(){
-    echo "INFO: Processing artifact release"
-    mkdir artifacts
-    ORG=$(echo "$NEXUS_URL" | awk -F'.' '{print $2}')
-
-    for namequoted in $(yq '.artifacts[].name' $release_file); do
-        pathquoted=$(yq ".artifacts[] |select(.name==$namequoted) |.path" $release_file)
-
-        #Remove extra yaml quotes
-        name="${namequoted#\"}"
-        name="${name%\"}"
-        path="${pathquoted#\"}"
-        path="${path%\"}"
-
-        echo "$name"
-        echo "$path"
-        echo "INFO: Merge will post artifact: $name"
-        # Attempt to pull from releases to see if the artifact has been released.
-        if "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"$name"; then
-            echo "INFO: $name is already released as version:$VERSION, Continuing..."
-        else
-            echo "INFO: $name not found in releases, release will be prepared. Continuing..."
-            wget "${path}"/"${name}" -o artifacts/"${name}"
-            if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
-                #lftools sign sigul artifacts
-                curl -v -u <NEXUSUSER>:<NEXUSPASS> --upload-file "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"${name}" \;
-            fi
-            echo "#########################"
-        fi
-    done
-}
-
 ##############################  End Function Declarations  ################################
 
 # Set common environment variables
@@ -557,8 +570,8 @@ set_variables_common
 #   - artifact, release-artifact-schema.yaml
 #   - container, release-container-schema.yaml
 #   - maven, release-schema.yaml
-#   - pypi,  release-pypi-schema.yaml
 #   - packagecloud, release-packagecloud-schema.yaml
+#   - pypi,  release-pypi-schema.yaml
 
 case $DISTRIBUTION_TYPE in
 
@@ -574,19 +587,6 @@ case $DISTRIBUTION_TYPE in
         artifact_release_file
         ;;
 
-    maven)
-        if $USE_RELEASE_FILE ; then
-            release_schema="release-schema.yaml"
-            echo "INFO: Fetching schema $release_schema"
-            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/$release_schema
-            verify_schema
-        fi
-        set_variables_maven
-        verify_version
-        verify_version_match_release
-        maven_release_file
-        ;;
-
     container)
         if $USE_RELEASE_FILE ; then
             release_schema="release-container-schema.yaml"
@@ -599,17 +599,17 @@ case $DISTRIBUTION_TYPE in
         container_release_file
         ;;
 
-    pypi)
+    maven)
         if $USE_RELEASE_FILE ; then
-            release_schema="release-pypi-schema.yaml"
+            release_schema="release-schema.yaml"
             echo "INFO: Fetching schema $release_schema"
-            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/$release_schema
             verify_schema
         fi
-        set_variables_pypi
+        set_variables_maven
         verify_version
-        verify_pypi_match_release
-        pypi_release_file
+        verify_version_match_release
+        maven_release_file
         ;;
 
     packagecloud)
@@ -629,6 +629,19 @@ case $DISTRIBUTION_TYPE in
                 packagecloud_promote "$package" "$packagecloud_account"
             fi
         done
+        ;;
+
+    pypi)
+        if $USE_RELEASE_FILE ; then
+            release_schema="release-pypi-schema.yaml"
+            echo "INFO: Fetching schema $release_schema"
+            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            verify_schema
+        fi
+        set_variables_pypi
+        verify_version
+        verify_pypi_match_release
+        pypi_release_file
         ;;
 
     *)
