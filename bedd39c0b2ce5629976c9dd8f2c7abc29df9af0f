@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d848a530_b7f37532",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-03-02T17:39:46Z",
+      "side": 1,
+      "message": "This block needs to be indented one level. It\u0027s non-obvious that it\u0027s in the else clause without really paying attention. I initially thought you weren\u0027t guarding properly against trying to re-release already released artifacts",
+      "range": {
+        "startLine": 542,
+        "startChar": 8,
+        "endLine": 545,
+        "endChar": 10
+      },
+      "revId": "bedd39c0b2ce5629976c9dd8f2c7abc29df9af0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e010e85a_49130379",
         "filename": "shell/release-job.sh",
         "patchSetId": 5
