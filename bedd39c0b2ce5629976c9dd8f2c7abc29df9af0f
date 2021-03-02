@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e010e85a_49130379",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-03-02T17:35:53Z",
+      "side": 1,
+      "message": "Please add your new distribution type here. Also, could you also please update the list with any that are presently missing?",
+      "revId": "bedd39c0b2ce5629976c9dd8f2c7abc29df9af0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19d2545d_c663ae36",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 630,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-03-02T17:35:53Z",
+      "side": 1,
+      "message": "From a cleanliness perspective, this should be at the top of the case for asciibetical sorting. The fact that the container type is after maven isn\u0027t all that great, but it\u0027s not your problem in this patch (please do a follow on patch to reoder that one too ;) )",
+      "range": {
+        "startLine": 620,
+        "startChar": 0,
+        "endLine": 630,
+        "endChar": 10
+      },
+      "revId": "bedd39c0b2ce5629976c9dd8f2c7abc29df9af0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
