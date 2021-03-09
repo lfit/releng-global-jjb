@@ -1,0 +1,25 @@
+---
+fixes:
+  - |
+    Pin git review to 1.78
+
+    The latest version of module trys to look for git hook recursively within
+    the submodules.
+
+
+    Error:
+
+    .. code-block:: bash
+
+        Running: git submodule foreach cp -p .git/hooks/commit-msg "$(git rev-parse --git-dir)/hooks/"
+        Problems encountered installing commit-msg hook
+        The following command failed with exit code 128
+             "git submodule foreach cp -p .git/hooks/commit-msg "$(git rev-parse --git-dir)/hooks/""
+        -----------------------
+        Entering 'global-jjb'
+        cannot stat '.git/hooks/commit-msg': Not a directory
+        fatal: run_command returned non-zero status for global-jjb
+
+
+    Remove workaround that has been resolved in v1.28 and use lf-activate-venv
+    to install git-review
