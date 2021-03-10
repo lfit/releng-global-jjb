@@ -9,6 +9,7 @@ repos:
     rev: v2.1.2
     hooks:
       - id: prettier
+        stages: [commit]
 
   - repo: https://github.com/jorisroovers/gitlint
     rev: v0.13.1
