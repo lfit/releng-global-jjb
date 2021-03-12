@@ -103,7 +103,7 @@
     submodule-timeout: 10
     submodule-disable: false
     wss-unified-agent-opts: ""
-    wss-unified-agent-version: 19.12.2
+    wss-unified-agent-version: 21.2.1
 
     gerrit_trigger_file_paths:
       - compare-type: ANT
