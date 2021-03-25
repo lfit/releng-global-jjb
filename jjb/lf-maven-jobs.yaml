@@ -1199,6 +1199,13 @@
             unstable: true
             notbuilt: true
 
+    publishers:
+      - lf-jacoco-report
+      - findbugs
+      - lf-infra-publish
+
+- mvn_sonar_builders: &mvn_sonar_builders
+    name: mvn-sonar-builders
     builders:
       - lf-infra-pre-build
       # With SonarCloud
@@ -1230,10 +1237,39 @@
                 mvn-settings: "{mvn-settings}"
                 mvn-version: "{mvn-version}"
 
-    publishers:
-      - lf-jacoco-report
-      - findbugs
-      - lf-infra-publish
+- mvn_sonar_builders_prescan_script: &mvn_sonar_builders_prescan_script
+    name: mvn-sonar-builders-prescan-script
+    builders:
+      - shell: "{sonar-prescan-script}"
+      - lf-infra-pre-build
+      # With SonarCloud
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: "{sonarcloud}"
+          steps:
+            - shell: echo 'Using SonarCloud'
+            - lf-infra-maven-sonarcloud:
+                java-version: "{java-version}"
+                mvn-goals: "{mvn-goals}"
+                mvn-settings: "{mvn-settings}"
+                mvn-version: "{mvn-version}"
+                sonarcloud-project-key: "{sonarcloud-project-key}"
+                sonarcloud-project-organization: "{sonarcloud-project-organization}"
+                sonarcloud-api-token: "{sonarcloud-api-token}"
+                sonarcloud-java-version: "{sonarcloud-java-version}"
+      # With SonarQube
+      - conditional-step:
+          condition-kind: not
+          condition-operand:
+            condition-kind: boolean-expression
+            condition-expression: "{sonarcloud}"
+          steps:
+            - shell: echo 'Using SonarQube'
+            - lf-infra-maven-sonar:
+                java-version: "{java-version}"
+                mvn-goals: "{mvn-goals}"
+                mvn-settings: "{mvn-settings}"
+                mvn-version: "{mvn-version}"
 
 - builder:
     name: lf-infra-maven-sonar
@@ -1287,6 +1323,26 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_sonar
+    <<: *mvn_sonar_builders
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: $GERRIT_REFSPEC
+          branch: $GERRIT_BRANCH
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+- job-template:
+    name: "{project-name}-sonar-prescan-script"
+    id: gerrit-maven-sonar-prescan-script
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_sonar
+    <<: *mvn_sonar_builders_prescan_script
 
     scm:
       - lf-infra-gerrit-scm:
@@ -1305,6 +1361,46 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_sonar
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - timed: "{obj:cron}"
+      - github-pull-request:
+          trigger-phrase: "^run-sonar$"
+          only-trigger-phrase: true
+          status-context: "Maven Sonar"
+          permit-all: true
+          github-hooks: true
+          org-list:
+            - "{github-org}"
+          white-list: "{obj:github_pr_whitelist}"
+          admin-list: "{obj:github_pr_admin_list}"
+          white-list-target-branches:
+            - "{branch}"
+
+- job-template:
+    name: "{project-name}-sonar-prescan-script"
+    id: github-maven-sonar-prescan-script
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_sonar
+    <<: *mvn_sonar_builders_prescan_script
 
     properties:
       - lf-infra-properties:

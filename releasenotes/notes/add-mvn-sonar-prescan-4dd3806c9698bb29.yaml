@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add sonar-prescan-script jobs for maven, allowing maven sonar jobs to
+    execute a shell script prior to the scan.

@@ -467,6 +467,9 @@ multi-branch configuration.
     - {project-name}-sonar
     - gerrit-maven-sonar
     - github-maven-sonar
+    - {project-name}-sonar-prescan-script
+    - gerrit-maven-sonar-prescan-script
+    - github-maven-sonar-prescan-script
 
 :Comment Trigger: run-sonar
 
@@ -475,6 +478,8 @@ multi-branch configuration.
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: The name of settings file containing credentials for the project.
+    :sonar-prescan-script: (sonar-prescan-script jobs only) A shell script to be run prior to
+        sonar scans.
 
 :Optional parameters:
 
