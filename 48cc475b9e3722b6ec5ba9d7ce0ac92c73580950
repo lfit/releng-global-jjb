@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d81438e_1d59297a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-03-26T00:55:26Z",
+      "side": 1,
+      "message": "This is already fixed in CR https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/67014, while I was waiting for a review on the CR. Now this fix is available in global-jjb v0.62.0.",
+      "revId": "48cc475b9e3722b6ec5ba9d7ce0ac92c73580950",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
