@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8f6c7d4e_968e6689",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-03-26T00:51:35Z",
+      "side": 1,
+      "message": "Is this still an issue? I just made a global-jjb commit today, and didn\u0027t run into any issue with prettier.",
+      "revId": "33b2f9720c037994da97c4e27b83617b240c8863",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
