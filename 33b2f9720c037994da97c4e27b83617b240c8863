@@ -16,6 +16,41 @@
       "message": "Is this still an issue? I just made a global-jjb commit today, and didn\u0027t run into any issue with prettier.",
       "revId": "33b2f9720c037994da97c4e27b83617b240c8863",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd5c53ff_bc471a33",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-03-27T08:06:47Z",
+      "side": 1,
+      "message": "thanks for the review/merge.",
+      "revId": "33b2f9720c037994da97c4e27b83617b240c8863",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd140be1_a06c8f1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-03-27T08:06:47Z",
+      "side": 1,
+      "message": "Yes, its easily reproducable with the --amend.",
+      "parentUuid": "8f6c7d4e_968e6689",
+      "revId": "33b2f9720c037994da97c4e27b83617b240c8863",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
