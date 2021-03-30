@@ -153,11 +153,11 @@ For example:
 
 .. code-block:: bash
 
-    [testenv:py27]
+    [testenv:py3]
     commands =
             coverage run --module pytest --junitxml xunit-results.xml
-            coverage xml --omit=".tox/py27/*","tests/*"
-            coverage report --omit=".tox/py27/*","tests/*"
+            coverage xml --omit=".tox/py3/*","tests/*"
+            coverage report --omit=".tox/py3/*","tests/*"
 
 For more details refer to coverage and sonar documentation:
 
