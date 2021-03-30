@@ -28,6 +28,8 @@
           files:
             - file-id: wss-unified-agent.config
               target: $WORKSPACE/wss-unified-agent.config
+            - file-id: global-settings
+              target: $WORKSPACE/global-settings.xml
       - shell: !include-raw:
           - ../shell/whitesource-unified-agent-cli.sh
 
