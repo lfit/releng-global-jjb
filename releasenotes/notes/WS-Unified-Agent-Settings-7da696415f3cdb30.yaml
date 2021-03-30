@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Provision global-settings to replace the default
+    used by the Unified Agent.
