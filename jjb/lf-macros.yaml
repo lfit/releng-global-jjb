@@ -582,7 +582,7 @@
           default: "{tox-envs}"
           description: |
             Tox environments to run build against.
-            Example: docs,py2,py3
+            Example: docs,py3
 
 - parameter:
     name: lf-build-with-parameters-maven-release
