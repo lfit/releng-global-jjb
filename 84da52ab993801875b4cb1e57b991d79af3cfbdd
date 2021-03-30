@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e98adbd5_7e60f836",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-03-30T17:36:35Z",
+      "side": 1,
+      "message": "You\u0027ve got a double signed off by here for some reason. Plese remove this one",
+      "revId": "84da52ab993801875b4cb1e57b991d79af3cfbdd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
