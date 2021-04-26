@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "61816774_14e74952",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-04-26T15:25:26Z",
+      "side": 1,
+      "message": "Pinning because of warnings that should be cleaned up is not proper methodology. Better to _not_ pin and have things break if devs don\u0027t cleanup their dependencies...",
+      "revId": "97bfb9d1fb0658d9bd02dfdbf0290673710eb000",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
