@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Pin pip version == 20.0.1, the recent release 20.1 causes log of warnings
+    in the console logs. This fix reduces the noise in the console logs.
+
+    Error:
+
+      WARNING: Value for scheme.platlib does not match.
+        Please report this to <https://github.com/pypa/pip/issues/9617>
+      WARNING: Value for scheme.headers does not match.
+        Please report this to <https://github.com/pypa/pip/issues/9617>

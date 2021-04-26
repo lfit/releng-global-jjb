@@ -51,7 +51,7 @@ EOF
        fi
     fi
 
-    python3 -m pip install --user --quiet --upgrade pip
+    python3 -m pip install --user --quiet --upgrade pip==21.0.1
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade setuptools
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade --upgrade-strategy eager -r "$requirements_file"
     # installs are silent, show version details in log
