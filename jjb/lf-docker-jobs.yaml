@@ -162,7 +162,7 @@
           submodule-disable: "{submodule-disable}"
           submodule-recursive: "{submodule-recursive}"
           submodule-timeout: "{submodule-timeout}"
-          choosing-strategy: gerrit
+          choosing-strategy: default
 
     gerrit_merge_triggers:
       - change-merged-event

@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    The choosing strategy for the docker-merge-{stream} jobs for gerrit was
+    improperly configured to use. This is now corrected.
