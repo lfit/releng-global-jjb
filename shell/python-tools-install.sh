@@ -45,7 +45,7 @@ EOF
     if [[ -f /etc/lsb-release ]]; then
        # shellcheck disable=SC1091
        source /etc/lsb-release
-       if [[ $DISTRIB_RELEASE == "16.04" ]]; then
+       if [[ $DISTRIB_RELEASE == "16.04" && $DISTRIB_ID == "Ubuntu" ]]; then
          echo "WARNING: Python projects should move to Ubuntu 18.04 to continue receiving support"
          echo "zipp==1.1.0" >> "$requirements_file"
        fi
