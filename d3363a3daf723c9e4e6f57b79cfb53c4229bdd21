@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "796e0685_37fd6e65",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-04T19:40:01Z",
+      "side": 1,
+      "message": "You still have comments on patchset 1 that need to be addressed",
+      "revId": "d3363a3daf723c9e4e6f57b79cfb53c4229bdd21",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
