@@ -22,7 +22,10 @@ stack_in_jenkins() {
 
     builds=()
     for jenkins in "${@:2}"; do
-        JENKINS_URL="$jenkins/computer/api/json?tree=computer[executors[currentExecutable[url]],oneOffExecutors[currentExecutable[url]]]&xpath=//url&wrapper=builds"
+        PARAMS="tree=computer[executors[currentExecutable[url]],"
+        PARAMS=$PARAMS"oneOffExecutors[currentExecutable[url]]]"
+        PARAMS=$PARAMS"&xpath=//url&wrapper=builds"
+        JENKINS_URL="$jenkins/computer/api/json?$PARAMS"
         resp=$(curl -s -w "\\n\\n%{http_code}" --globoff -H "Content-Type:application/json" "$JENKINS_URL")
         json_data=$(echo "$resp" | head -n1)
         status=$(echo "$resp" | awk 'END {print $NF}')
