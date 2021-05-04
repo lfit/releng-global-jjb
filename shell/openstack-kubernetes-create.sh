@@ -45,7 +45,8 @@ template_uuid=$(openstack coe cluster template create "$cluster_template_name" \
   --network-driver flannel \
   --master-lb-enabled \
   --volume-driver cinder \
-  --labels boot_volume_type=ssd,boot_volume_size="${boot_volume_size}",kube_version="${k8s_version}",kube_tag="${k8s_version}" \
+  --labels \
+  boot_volume_type=ssd,boot_volume_size="${boot_volume_size}",kube_version="${k8s_version}",kube_tag="${k8s_version}" \
   --coe kubernetes \
   -f value -c uuid | tail -1)
 
@@ -59,12 +60,15 @@ cluster_uuid=$(openstack coe cluster create "$cluster_name" \
 # Sleep for a little, because sometimes OpenStack has to catch up with itself
 sleep 15
 
-while [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_IN_PROGRESS" ]; do
+while \
+[ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_IN_PROGRESS" ]; \
+do
   # echo "sleeping $(date)"
   sleep 2m
 done
 
-if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_FAILED" ]; then
+if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_FAILED" ]; \
+then
   echo "Failed to create cluster: $cluster_uuid $(date)"
   openstack --os-cloud "$os_cloud" coe cluster delete "$cluster_uuid"
   sleep 5m
@@ -72,6 +76,7 @@ if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c sta
   exit 1
 fi
 
-if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_COMPLETE" ]; then
+if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_COMPLETE" ]; \
+then
   echo "Successfully created cluster: $cluster_uuid."
 fi
