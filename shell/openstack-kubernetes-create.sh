@@ -59,8 +59,7 @@ cluster_uuid=$(openstack coe cluster create "$cluster_name" \
 # Sleep for a little, because sometimes OpenStack has to catch up with itself
 sleep 15
 
-while [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_IN_PROGRESS" ]
-do
+while [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_IN_PROGRESS" ]; do
   # echo "sleeping $(date)"
   sleep 2m
 done
