@@ -466,6 +466,13 @@ Provides basic lf-infra recommended publisher configurations for use in all job
 templates. The purpose of this trigger is to gather package listing, instance
 metadata, sar reports, build logs and copy them to a log server.
 
+lf-infra-publish-lite
+---------------------
+
+Provides basic lf-infra recommended publisher configurations for use in all job
+templates. The purpose of this trigger is to gather package listing and build
+logs and copy them to a log server.
+
 lf-infra-publish-windows
 ------------------------
 
