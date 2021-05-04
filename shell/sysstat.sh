@@ -47,8 +47,7 @@ SAR_DIR="$WORKSPACE/archives/sar-reports"
 mkdir -p "$SAR_DIR"
 cp "$SYSSTAT_PATH/"* "$_"
 # convert sar data to ascii format
-while IFS="" read -r sarfilenum
-do
+while IFS="" read -r sarfilenum; do
     [ -f "$sarfilenum" ] && LC_TIME=POSIX sar -A -f "$sarfilenum" > "$SAR_DIR/sar${sarfilenum//[!0-9]/}"
 done < <(find "$SYSSTAT_PATH" -name "sa[0-9]*" || true)
 
