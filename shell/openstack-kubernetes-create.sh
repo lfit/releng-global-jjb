@@ -64,8 +64,7 @@ while [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c 
   sleep 2m
 done
 
-if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_FAILED" ]
-then
+if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_FAILED" ]; then
   echo "Failed to create cluster: $cluster_uuid $(date)"
   openstack --os-cloud "$os_cloud" coe cluster delete "$cluster_uuid"
   sleep 5m
@@ -73,7 +72,6 @@ then
   exit 1
 fi
 
-if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_COMPLETE" ]
-then
+if [ "$(openstack --os-cloud "$os_cloud" coe cluster show "$cluster_uuid" -c status -f value)" == "CREATE_COMPLETE" ]; then
   echo "Successfully created cluster: $cluster_uuid."
 fi

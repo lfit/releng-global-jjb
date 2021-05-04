@@ -61,14 +61,12 @@ set_creds() {
     USER=$(echo "$CREDENTIAL" | cut -f1 -d:)
     PASS=$(echo "$CREDENTIAL" | cut -f2 -d:)
 
-    if [ -z "$USER" ]
-    then
+    if [ -z "$USER" ]; then
         echo "ERROR: No user provided"
         return 1
     fi
 
-    if [ -z "$PASS" ]
-    then
+    if [ -z "$PASS" ]; then
         echo "ERROR: No password provided"
         return 1
     fi
@@ -92,8 +90,7 @@ do_login() {
 ### Main ###
 
 # Loop through Registry and Ports to concatentate and login to nexus
-if [ "${DOCKER_REGISTRY:-none}" != 'none' ]
-then
+if [ "${DOCKER_REGISTRY:-none}" != 'none' ]; then
     for PORT in $REGISTRY_PORTS; do
         REGISTRY="${DOCKER_REGISTRY}:${PORT}"
 
@@ -105,11 +102,9 @@ then
 fi
 
 # Login to docker.io after determining if email is needed.
-if [ "${DOCKERHUB_REGISTRY:-none}" != 'none' ]
-then
+if [ "${DOCKERHUB_REGISTRY:-none}" != 'none' ]; then
     set_creds "$DOCKERHUB_REGISTRY"
-    if [ "${DOCKERHUB_EMAIL:-none}" != 'none' ]
-    then
+    if [ "${DOCKERHUB_EMAIL:-none}" != 'none' ]; then
         do_login "$DOCKERHUB_REGISTRY" "$DOCKERHUB_EMAIL"
     else
         do_login "$DOCKERHUB_REGISTRY" none
