@@ -74,7 +74,7 @@ cost_dir=~/cost
 # The Silo Directory for sandbox will get deleted periodically, so
 # gracefully handle that
 if [[ -d $silo_dir ]]; then
-   cd "$silo_dir"
+    cd "$silo_dir"
 else
     echo  "$(date +'%Y-%m-%d %H:%M') No Silo Directory, nothing to do"
     exit 0
