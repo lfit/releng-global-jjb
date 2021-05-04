@@ -26,25 +26,25 @@ python -m pip freeze
 ##########################
 
 set_variables_artifact(){
-     echo "INFO: Setting artifact variables"
-     if [[ -z ${VERSION:-} ]]; then
-         VERSION=$(yq -r ".version" "$release_file")
-     fi
-     if [[ -z ${GIT_TAG:-} ]]; then
-         if grep -q "git_tag" "$release_file" ; then
-             GIT_TAG=$(yq -r ".git_tag" "$release_file")
-         else
-             GIT_TAG="$VERSION"
-         fi
-     fi
-     if [[ -z ${REF:-} ]]; then
-         REF=$(yq -r ".ref" "$release_file")
-     fi
+    echo "INFO: Setting artifact variables"
+    if [[ -z ${VERSION:-} ]]; then
+        VERSION=$(yq -r ".version" "$release_file")
+    fi
+    if [[ -z ${GIT_TAG:-} ]]; then
+        if grep -q "git_tag" "$release_file" ; then
+            GIT_TAG=$(yq -r ".git_tag" "$release_file")
+        else
+            GIT_TAG="$VERSION"
+        fi
+    fi
+    if [[ -z ${REF:-} ]]; then
+        REF=$(yq -r ".ref" "$release_file")
+    fi
 
-     printf "\t%-30s\n" RELEASE_ARTIFACT_INFO:
-     printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
-     printf "\t%-30s %s\n" VERSION: "$VERSION"
-     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+    printf "\t%-30s\n" RELEASE_ARTIFACT_INFO:
+    printf "\t%-30s %s\n" GERRIT_REF_TO_TAG: "$REF"
+    printf "\t%-30s %s\n" VERSION: "$VERSION"
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
 set_variables_common(){
@@ -59,13 +59,13 @@ set_variables_common(){
         release_files=$(git diff-tree -m --no-commit-id -r "$GIT_COMMIT" "$GIT_COMMIT^1" \
             --name-only -- "releases/" ".releases/")
         if (( $(grep -c . <<<"$release_files") > 1 )); then
-          echo "INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
-          echo "ERROR: Adding multiple release files in the same commit"
-          echo "ERROR: OR rename/amend/delete of existing files is not supported."
-          exit 1
+            echo "INFO: RELEASE FILES ARE AS FOLLOWS: $release_files"
+            echo "ERROR: Adding multiple release files in the same commit"
+            echo "ERROR: OR rename/amend/delete of existing files is not supported."
+            exit 1
         else
-          release_file="$release_files"
-          echo "INFO: RELEASE FILE: $release_files"
+            release_file="$release_files"
+            echo "INFO: RELEASE FILE: $release_files"
         fi
     else
         echo "INFO: This job is built with parameters, no release file needed."
@@ -130,7 +130,7 @@ set_variables_container(){
         else
             GIT_TAG="$VERSION"
         fi
-   fi
+    fi
     if grep -q "container_pull_registry" "$release_file" ; then
         CONTAINER_PULL_REGISTRY=$(yq -r ".container_pull_registry" "$release_file")
     fi
@@ -178,33 +178,33 @@ set_variables_maven(){
 }
 
 set_variables_packagecloud(){
-     echo "INFO: Setting packagecloud variables"
-     if [[ -z ${VERSION:-} ]]; then
-         VERSION=$(yq -r ".version" "$release_file")
-     fi
-     if [[ -z ${GIT_TAG:-} ]]; then
-         if grep -q "git_tag" $release_file ; then
-             GIT_TAG=$(yq -r ".git_tag" "$release_file")
-         else
-             GIT_TAG="$VERSION"
-         fi
-     fi
-     if [[ -z ${LOG_DIR:-} ]]; then
-         LOG_DIR=$(yq -r ".log_dir" "$release_file")
-     fi
-     if [[ -z ${REF:-} ]]; then
-         REF=$(yq -r ".ref" "$release_file")
-     fi
-     if [[ -z ${PACKAGE_NAME:-} ]]; then
-         PACKAGE_NAME=$(yq -r ".package_name" "$release_file")
-     fi
+    echo "INFO: Setting packagecloud variables"
+    if [[ -z ${VERSION:-} ]]; then
+        VERSION=$(yq -r ".version" "$release_file")
+    fi
+    if [[ -z ${GIT_TAG:-} ]]; then
+        if grep -q "git_tag" $release_file ; then
+            GIT_TAG=$(yq -r ".git_tag" "$release_file")
+        else
+            GIT_TAG="$VERSION"
+        fi
+    fi
+    if [[ -z ${LOG_DIR:-} ]]; then
+        LOG_DIR=$(yq -r ".log_dir" "$release_file")
+    fi
+    if [[ -z ${REF:-} ]]; then
+        REF=$(yq -r ".ref" "$release_file")
+    fi
+    if [[ -z ${PACKAGE_NAME:-} ]]; then
+        PACKAGE_NAME=$(yq -r ".package_name" "$release_file")
+    fi
 
-     printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
-     printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
-     printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
-     printf "\t%-30s %s\n" GIT_REF_TO_TAG: "$REF"
-     printf "\t%-30s %s\n" VERSION: "$VERSION"
-     printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
+    printf "\t%-30s %s\n" PACKAGE_NAME: "$PACKAGE_NAME"
+    printf "\t%-30s %s\n" LOG_DIR: "$LOG_DIR"
+    printf "\t%-30s %s\n" LOGS_URL: "$logs_url"
+    printf "\t%-30s %s\n" GIT_REF_TO_TAG: "$REF"
+    printf "\t%-30s %s\n" VERSION: "$VERSION"
+    printf "\t%-30s %s\n" GIT_TAG: "$GIT_TAG"
 }
 
 set_variables_pypi(){
@@ -228,7 +228,7 @@ set_variables_pypi(){
         else
             GIT_TAG="$VERSION"
         fi
-   fi
+    fi
 
     # Continuing displaying Release Information (pypi)
     printf "\t%-30s\n" RELEASE_PYPI_INFO:
@@ -321,8 +321,8 @@ verify_version_match_release(){
 # TODO: write tag-github-repo function
 tag-git-repo(){
     if [[ $TAG_RELEASE == false ]]; then
-       echo "INFO: Skipping code repo tag"
-       return
+        echo "INFO: Skipping code repo tag"
+        return
     fi
 
     if [[ -z ${GERRIT_URL:-} ]]; then
@@ -478,10 +478,10 @@ nexus_release(){
     #Run the loop twice, to catch errors on either nexus repo
     if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
         for staging_url in $(zcat "$PATCH_DIR"/staging-repo.txt.gz | awk -e '{print $2}'); do
-          NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
-          STAGING_REPO=${staging_url#*repositories/}
-          echo "INFO: Promoting $STAGING_REPO on $NEXUS_URL."
-          lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
+            NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
+            STAGING_REPO=${staging_url#*repositories/}
+            echo "INFO: Promoting $STAGING_REPO on $NEXUS_URL."
+            lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
         done
     fi
 }
