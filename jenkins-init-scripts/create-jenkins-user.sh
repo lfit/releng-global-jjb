@@ -13,9 +13,9 @@ OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 
 if [[ "$OS_RELEASE" == "18.04" && "$OS" == 'ubuntu' ]]; then
-  # We do not want var expansion here as profile script expands at runtime.
-  # shellcheck disable=SC2016
-  echo 'export PATH=$HOME/.local/bin:$PATH' >> /etc/profile
+    # We do not want var expansion here as profile script expands at runtime.
+    # shellcheck disable=SC2016
+    echo 'export PATH=$HOME/.local/bin:$PATH' >> /etc/profile
 fi
 
 useradd -m -s /bin/bash jenkins

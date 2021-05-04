@@ -27,7 +27,7 @@ REPOS_DIR="$WORKSPACE/.repos"
 
 IFS=" " read -r -a PATCHES <<< \
         "$(echo "$GERRIT_EVENT_COMMENT_TEXT" | \
-             grep -E '(recheck:|reverify:)' | awk -F: '{print $2}')"
+            grep -E '(recheck:|reverify:)' | awk -F: '{print $2}')"
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
