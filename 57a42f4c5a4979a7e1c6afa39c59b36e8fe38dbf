@@ -22,6 +22,30 @@
       },
       "revId": "57a42f4c5a4979a7e1c6afa39c59b36e8fe38dbf",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88c799fb_072a2167",
+        "filename": "docs/jjb/lf-macros.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-04T19:01:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "650599f5_07d99eac",
+      "range": {
+        "startLine": 473,
+        "startChar": 77,
+        "endLine": 473,
+        "endChar": 78
+      },
+      "revId": "57a42f4c5a4979a7e1c6afa39c59b36e8fe38dbf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
