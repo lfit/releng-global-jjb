@@ -34,20 +34,20 @@ jjbdir="jjb"
 # function to test if the argument is empty,
 # is two double quotes, or has unwanted suffix
 isBadLabel () {
-  local label="$1"
-  [[ -z "$label" ]] || [[ $label = "\"\"" ]] || [[ $label = *"$suffix" ]]
+    local label="$1"
+    [[ -z "$label" ]] || [[ $label = "\"\"" ]] || [[ $label = *"$suffix" ]]
 }
 
 # function to search an array for a value
 # $1 is value
 # $2 is array, passed via ${array[@]}
 isValueInArray () {
-  local e match="$1"
-  shift
-  for e; do
-      [[ "$e" == "$match" ]] && return 0
-  done
-  return 1
+    local e match="$1"
+    shift
+    for e; do
+        [[ "$e" == "$match" ]] && return 0
+    done
+    return 1
 }
 
 # check prereqs

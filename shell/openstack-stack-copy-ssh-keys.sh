@@ -53,9 +53,9 @@ function copy_ssh_keys {
 # IP Addresses are returned as a space separated list so word splitting is ok
 # shellcheck disable=SC2207
 ip_addresses=($(openstack --os-cloud "$os_cloud" stack show -f json -c outputs "$stack_name" |
-       jq -r '.outputs[] |
-              select(.output_key | match("^vm_[0-9]+_ips$")) |
-              .output_value | .[]'))
+        jq -r '.outputs[] |
+                select(.output_key | match("^vm_[0-9]+_ips$")) |
+                .output_value | .[]'))
 pids=""
 for ip in "${ip_addresses[@]}"; do
     ( copy_ssh_keys "$ip" ) &
