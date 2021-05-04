@@ -24,8 +24,7 @@ set -euf -o pipefail
 # self-contained, we ensure it exists here.
 mkdir -p "$WORKSPACE/archives"
 
-function get_pattern_opts()
-{
+get_pattern_opts () {
     opts=()
     for arg in ${ARCHIVE_ARTIFACTS:-}; do
         opts+=("-p" "$arg")
