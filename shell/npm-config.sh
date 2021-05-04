@@ -39,14 +39,12 @@ do_config() {
     USER=$(echo "$CREDENTIAL" | cut -f1 -d:)
     PASS=$(echo "$CREDENTIAL" | cut -f2 -d:)
 
-    if [ -z "$USER" ]
-    then
+    if [ -z "$USER" ]; then
         echo "ERROR: No user provided"
         return 1
     fi
 
-    if [ -z "$PASS" ]
-    then
+    if [ -z "$PASS" ]; then
         echo "ERROR: No password provided"
         return 1
     fi
