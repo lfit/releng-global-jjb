@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    New ``lf-infra-publish-lite`` macro removes the lf-infra-sysstat and
+    lf-infra-capture-instance-metadata macros.
