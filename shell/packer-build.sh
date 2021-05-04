@@ -53,8 +53,9 @@ then
 elif [[ "${GIT_BASE:-}" =~ https://github.com ]]; then
     LAST_CHANGE_SHA=$(git log --no-merges -1 --format=%H)
     API_BASE=$(echo "$GIT_BASE" | sed -E 's#(www.)?github.com#api.github.com/repos#')
-    STATUS=$(curl "${API_BASE}/statuses/${LAST_CHANGE_SHA}" \
-        | jq ".[] | select(.state == \"success\" and .context == \"Packer ${PACKER_PLATFORM}-${PACKER_TEMPLATE} Verify Build\")")
+    CONTEXT_VALUE="\"Packer ${PACKER_PLATFORM}-${PACKER_TEMPLATE} Verify Build\""
+    JQ_QUERY=".[] | select(.state == \"success\" and .context == ${CONTEXT_VALUE})"
+    STATUS=$(curl "${API_BASE}/statuses/${LAST_CHANGE_SHA}" | jq "${JQ_QUERY}")
     if [[ -n ${STATUS} ]]; then
         echo "Build already successful for this patch set. Skipping merge build..."
         exit
