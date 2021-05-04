@@ -79,9 +79,9 @@ lf-boolean () {
         true)  return 0 ;;
         false) return 1 ;;
         '')
-           lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line:{BASH_LINENO[0]} : A boolean cannot be a empty string" >&2
-           return 2
-           ;;
+            lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line:{BASH_LINENO[0]} : A boolean cannot be a empty string" >&2
+            return 2
+            ;;
         *)
             lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} : Invalid value for a boolean: '$bool'"
             return 2
@@ -201,7 +201,7 @@ lf-activate-venv () {
         # $pkg_list is expected to be unquoted
         # shellcheck disable=SC2086
         "$lf_venv/bin/pip" install --upgrade --quiet --upgrade-strategy eager \
-                             $pkg_list || return 1
+                                $pkg_list || return 1
         ;;
     *)
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: No support for: $python"

@@ -28,9 +28,9 @@ set -xeu -o pipefail
 project=$(xmlstarlet sel \
     -N "x=http://maven.apache.org/POM/4.0.0" -t \
     --if "/x:project/x:groupId" \
-      -v "/x:project/x:groupId" \
+        -v "/x:project/x:groupId" \
     --elif "/x:project/x:parent/x:groupId" \
-      -v "/x:project/x:parent/x:groupId" \
+        -v "/x:project/x:parent/x:groupId" \
     --else -o "" "$pom_path")
 project_path="${project//.//}"
 

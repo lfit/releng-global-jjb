@@ -43,12 +43,12 @@ EOF
 
     #Python 3.5 in Ubuntu 16.04 workaround
     if [[ -f /etc/lsb-release ]]; then
-       # shellcheck disable=SC1091
-       source /etc/lsb-release
-       if [[ $DISTRIB_RELEASE == "16.04" && $DISTRIB_ID == "Ubuntu" ]]; then
-         echo "WARNING: Python projects should move to Ubuntu 18.04 to continue receiving support"
-         echo "zipp==1.1.0" >> "$requirements_file"
-       fi
+        # shellcheck disable=SC1091
+        source /etc/lsb-release
+        if [[ $DISTRIB_RELEASE == "16.04" && $DISTRIB_ID == "Ubuntu" ]]; then
+            echo "WARNING: Python projects should move to Ubuntu 18.04 to continue receiving support"
+            echo "zipp==1.1.0" >> "$requirements_file"
+        fi
     fi
 
     python3 -m pip install --user --quiet --upgrade pip
