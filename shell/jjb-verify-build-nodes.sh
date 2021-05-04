@@ -42,12 +42,12 @@ isBadLabel () {
 # $1 is value
 # $2 is array, passed via ${array[@]}
 isValueInArray () {
-  local e match="$1"
-  shift
-  for e; do
-      [[ "$e" == "$match" ]] && return 0
-  done
-  return 1
+    local e match="$1"
+    shift
+    for e; do
+        [[ "$e" == "$match" ]] && return 0
+    done
+    return 1
 }
 
 # check prereqs
