@@ -37,8 +37,7 @@ export MAVEN_PARAMS
 DEPLOY_LOG="$WORKSPACE/archives/deploy-maven-file.log"
 mkdir -p "$WORKSPACE/archives"
 
-while IFS="" read -r file
-do
+while IFS="" read -r file; do
     file_size=$(stat --printf="%s" "${file}")
     echo "Deploy ${file##*/} with ${file_size} bytes."
     lftools deploy maven-file "$MAVEN_REPO_URL" \
