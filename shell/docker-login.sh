@@ -94,8 +94,7 @@ do_login() {
 # Loop through Registry and Ports to concatentate and login to nexus
 if [ "${DOCKER_REGISTRY:-none}" != 'none' ]
 then
-    for PORT in $REGISTRY_PORTS
-    do
+    for PORT in $REGISTRY_PORTS; do
         REGISTRY="${DOCKER_REGISTRY}:${PORT}"
 
         # docker login requests an email address if nothing is passed to it
