@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1f43d1e_6f65cadc",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-04T18:51:45Z",
+      "side": 1,
+      "message": "Lightweight log publishing",
+      "range": {
+        "startLine": 686,
+        "startChar": 6,
+        "endLine": 686,
+        "endChar": 44
+      },
+      "revId": "fe73ad62dd36e3edd6f8efae555169d71ad8de50",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
