@@ -28,7 +28,8 @@ for silo in $silos; do
     if [ ! -f "$WORKSPACE/jenkins-config/global-vars-$silo.sh" ]; then
         echo "WARN: jenkins-config/global-vars-$silo.sh does not exist. Skipping cloud management..."
         echo "We highly recommend setting up global-vars-$silo.sh to manage the Jenkins global variables."
-        echo "Refer to https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-ci-jobs.html#global-environment-variables for details."
+        echo "Refer to https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/jjb/lf-ci-jobs.html"\
+"#global-environment-variables for details."
         continue
     fi
 
