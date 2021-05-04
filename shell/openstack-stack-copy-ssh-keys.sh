@@ -13,7 +13,7 @@ echo "---> Copy SSH public keys to CSIT lab"
 os_cloud="${OS_CLOUD:-vex}"
 stack_name="${OS_STACK_NAME}"
 
-function copy_ssh_keys() {
+copy_ssh_keys () {
     if [ -z "$1" ]; then
         >&2 echo "ERROR: Missing required arguments."
         >&2 echo "Usage: copy_ssh_keys IP_ADDRESS"
