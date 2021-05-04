@@ -1,0 +1,7 @@
+---
+deprecations:
+  - |
+    New ``fdio-infra-publish`` macro removes the lf-infra-sysstat and
+    lf-infra-capture-instance-metadata macros at the request of the FD.io
+    project. The sysstat and capture instance macros fail on the FD.io managed
+    Nomad images.

@@ -730,6 +730,34 @@
           send-to:
             - recipients
 
+- publisher:
+    name: fdio-infra-publish
+    # fdio-infra macro to finish up a build.
+    #
+    # Handles the following:
+    #   - Shipping logs to Nexus logs site repository
+    #   - Cleanup workspace
+    publishers:
+      - postbuildscript:
+          builders:
+            - role: BOTH
+              build-on:
+                - ABORTED
+                - FAILURE
+                - NOT_BUILT
+                - SUCCESS
+                - UNSTABLE
+              build-steps:
+                - lf-infra-package-listing
+                - lf-infra-ship-logs
+          mark-unstable-if-failed: true
+      - workspace-cleanup:
+          exclude:
+            # Do not clean up *.jenkins-trigger files for jobs that use a
+            # properties file as input for triggering another build.
+            - "**/*.jenkins-trigger"
+          fail-build: false
+
 #######
 # SCM #
 #######
