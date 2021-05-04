@@ -25,8 +25,8 @@ fi
 # AWS not supported, exit
 cloudtype="$(jq -r .v1.datasource /run/cloud-init/result.json)"
 if [[ $cloudtype == "DataSourceEc2Local" ]]; then
-   echo "INFO: Running in AWS, not capturing instance metadata"
-   exit 0
+    echo "INFO: Running in AWS, not capturing instance metadata"
+    exit 0
 fi
 
 # Retrive OpenStack instace metadata APIs at this IP.

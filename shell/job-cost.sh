@@ -25,8 +25,8 @@ fi
 # AWS job cost not supported, exit
 cloudtype="$(jq -r .v1.datasource /run/cloud-init/result.json)"
 if [[ $cloudtype == "DataSourceEc2Local" ]]; then
-  echo "INFO: Not able to calculate job cost on AWS"
-  exit 0
+    echo "INFO: Not able to calculate job cost on AWS"
+    exit 0
 fi
 
 lf-activate-venv zipp==1.1.0 python-openstackclient

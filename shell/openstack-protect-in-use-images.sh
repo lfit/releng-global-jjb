@@ -23,16 +23,16 @@ images=()
 while read -r -d $'\n' ; do
     images+=("$REPLY")
 done < <(grep -r IMAGE_NAME --include \*.cfg jenkins-config \
-         | awk -F'=' '{print $2}' \
-         | sort -u)
+            | awk -F'=' '{print $2}' \
+            | sort -u)
 
 jjbimages=()
 while read -r -d $'\n' ; do
     jjbimages+=("$REPLY")
 done < <(grep -r 'ZZCI - ' --include \*.yaml jjb \
-         | awk -F": " '{print $3}' \
-         | sed -e "s:'::;s:'$::;/^$/d" -e 's/^"//' -e 's/"$//' \
-         | sort -u)
+            | awk -F": " '{print $3}' \
+            | sed -e "s:'::;s:'$::;/^$/d" -e 's/^"//' -e 's/"$//' \
+            | sort -u)
 
 if ! [[ ${#images[@]} -eq 0 ]]; then
     echo "INFO: There are images to protect defined in jenkins-config."

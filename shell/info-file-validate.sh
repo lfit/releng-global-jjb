@@ -32,12 +32,12 @@ python yaml-verify-schema.py \
 REPO_LIST="$(yq -r '.repositories[]' INFO.yaml)"
 
 while IFS= read -r project; do
-  if [[ "$project" == "$PROJECT" ]]; then
-    echo "$project is valid"
-  else
-    echo "ERROR: $project is invalid"
-    echo "INFO.yaml file may only list one repository"
-    echo "Repository must match $PROJECT"
-    exit 1
-  fi
+    if [[ "$project" == "$PROJECT" ]]; then
+        echo "$project is valid"
+    else
+        echo "ERROR: $project is invalid"
+        echo "INFO.yaml file may only list one repository"
+        echo "Repository must match $PROJECT"
+        exit 1
+    fi
 done <<< "$REPO_LIST"

@@ -51,9 +51,9 @@ lf-activate-venv "git-review==1.28"
 
 # Query for a pre-existing gerrit review
 query_result=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
-               limit:1 owner:self is:open project:"$PROJECT"         \
-               message: "$GERRIT_COMMIT_MESSAGE"                     \
-               topic: "$GERRIT_TOPIC")
+                limit:1 owner:self is:open project:"$PROJECT"        \
+                message: "$GERRIT_COMMIT_MESSAGE"                    \
+                topic: "$GERRIT_TOPIC")
 
 # Extract the change_id from the query_result
 job=$JOB_NAME/$BUILD_NUMBER
