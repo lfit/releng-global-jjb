@@ -18,8 +18,7 @@ JENKINS_VAL="$JENKINS_URL/pipeline-model-converter/validate"
 mapfile -t JENKINS_FILE_LIST < <(grep -lr "^pipeline\s*{" vars src Jenkinsfile*)
 exit_code=0
 
-for JENKINS_FILE in "${JENKINS_FILE_LIST[@]}"
-do
+for JENKINS_FILE in "${JENKINS_FILE_LIST[@]}"; do
     ret=$(curl --silent -X POST -H "$JENKINS_CRUMB" -F "jenkinsfile=<$JENKINS_FILE" "$JENKINS_VAL")
     if [[ $ret == *"Errors"* ]];then
         echo "ERROR: Linting error for $JENKINS_FILE"
