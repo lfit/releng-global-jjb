@@ -23,7 +23,8 @@
 #
 ################################################################################
 #
-# Name:    lf-echo-stderr
+# NAME
+#       lf-echo-stderr
 #
 # SYNOPSIS
 #   source ~/lf-env.sh
@@ -38,12 +39,14 @@
 #
 ################################################################################
 
-function lf-echo-stderr() { echo "$@" 1>&2; }
+lf-echo-stderr () {
+    echo "$@" 1>&2
+}
 
 ################################################################################
 #
 # NAME
-#       lf-boolean()
+#       lf-boolean
 #
 # SYNOPSIS
 #   # shellcheck disable=SC1090
@@ -65,8 +68,7 @@ function lf-echo-stderr() { echo "$@" 1>&2; }
 #
 ################################################################################
 
-function lf-boolean()
-{
+lf-boolean () {
     if (( $# != 1 )); then
         echo "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} : Missing Required Argument"
         return 1
@@ -141,8 +143,7 @@ function lf-boolean()
 #
 ################################################################################
 
-function lf-activate-venv()
-{
+lf-activate-venv () {
     lf_venv=$(mktemp -d /tmp/venv-XXXX)
     local python=python3
     local options
@@ -215,7 +216,7 @@ function lf-activate-venv()
         echo "${FUNCNAME[0]}(): INFO: Path not set, lf_venv set to: $lf_venv"
     fi
 
-}   # End lf-activate-venv()
+}   # End lf-activate-venv
 
 ################################################################################
 #
@@ -237,8 +238,7 @@ function lf-activate-venv()
 #
 ################################################################################
 
-function lf-git-validate-jira-urls()
-{
+lf-git-validate-jira-urls () {
     echo "Checking for JIRA URLs in commit message..."
     # if JIRA_URL is not defined, nothing to do
     if [[ -v JIRA_URL ]]; then
@@ -258,7 +258,7 @@ function lf-git-validate-jira-urls()
 ################################################################################
 #
 # NAME
-#   lf-jjb-check-ascii()
+#   lf-jjb-check-ascii
 #
 # SYNOPSIS
 #   # shellcheck disable=SC1090
@@ -276,8 +276,7 @@ function lf-git-validate-jira-urls()
 #
 ################################################################################
 
-function lf-jjb-check-ascii()
-{
+lf-jjb-check-ascii () {
     if [[ ! -d "jjb" ]]; then
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: missing jjb directory"
         lf-echo-stderr "This function can only be run from top of global-jjb directory"
@@ -299,8 +298,7 @@ function lf-jjb-check-ascii()
 # Shellcheck knows they are shell variables and will check for
 # 'used-before-set'.
 
-function lf-set-maven-options()
-{
+lf-set-maven-options () {
     # Disable 'unused-variable' check
     # shellcheck disable=SC2034
     maven_options="--show-version --batch-mode -Djenkins \
