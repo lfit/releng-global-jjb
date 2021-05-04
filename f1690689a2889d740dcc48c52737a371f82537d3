@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ec108e4_8967cd6c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-04T17:46:52Z",
+      "side": 1,
+      "message": "Please use Conventional Commit message subject line. See second bullet of our general best practices: https://docs.releng.linuxfoundation.org/en/latest/best-practices.html\n\nThis should be something more like \u0027Feat: Lightweight log publishing\u0027",
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "2fbc34ac_875952ac",
