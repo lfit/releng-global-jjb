@@ -11,9 +11,9 @@
 echo "---> gpg-verify-git-signature.sh"
 
 if git log --show-signature -1 | grep -E -q 'gpg: Signature made.*key ID'; then
-   echo "Git commit is GPG signed."
+    echo "Git commit is GPG signed."
 else
-   echo "WARNING: GPG signature missing for the commit."
+    echo "WARNING: GPG signature missing for the commit."
 fi
 
 # Do NOT fail the job for unsigned commits

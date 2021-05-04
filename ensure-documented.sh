@@ -16,16 +16,16 @@ mapfile -t jjb_files < <(find jjb -name "*.yaml")
 undocumented_count=0
 for file in "${jjb_files[@]}"; do
     mapfile -t docs_interests < <(grep -e '\- builder:' \
-         -e '\- job-template:' \
-         -e '\- parameter:' \
-         -e '\- property:' \
-         -e '\- publisher:' \
-         -e '\- scm:' \
-         -e '\- trigger:' \
-         -e '\- wrapper:' \
-         -A1 "$file" \
-         | grep 'name: ' | awk -F': ' '{print $2}' | sort | uniq \
-         | tr -d "'" | tr -d '"')
+        -e '\- job-template:' \
+        -e '\- parameter:' \
+        -e '\- property:' \
+        -e '\- publisher:' \
+        -e '\- scm:' \
+        -e '\- trigger:' \
+        -e '\- wrapper:' \
+        -A1 "$file" \
+        | grep 'name: ' | awk -F': ' '{print $2}' | sort | uniq \
+        | tr -d "'" | tr -d '"')
 
     for item in "${docs_interests[@]}"; do
         if ! grep -q "$item" "docs/${file//.yaml/.rst}"; then
