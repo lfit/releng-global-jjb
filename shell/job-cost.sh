@@ -53,9 +53,8 @@ else
 fi
 
 # Retrieve the current uptime (in seconds)
-uptime=$(awk '{print $1}' /proc/uptime)
-# Convert to integer by truncating fractional part' and round up by one
-((uptime=${uptime%\.*}+1))
+# And Convert to integer by truncating fractional part' and round up by one
+uptime=$(awk '{print int($1 + 1)}' /proc/uptime)
 
 # EC2 and OpenStack have simiar instace metadata APIs at this IP
 # AWS docs: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
