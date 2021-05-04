@@ -16,6 +16,80 @@
       "message": "Can we update /docs/jjb/lf-macros.rst\nAlso release notes?",
       "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13b9971c_11c01850",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-04T17:43:24Z",
+      "side": 1,
+      "message": "1) Jenkins agrees with me, you need to document this change!\n2) See comments against the change itself",
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4c60c3e6_d15fa24a",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-04T17:43:24Z",
+      "side": 1,
+      "message": "This publisher needs to be moved into asciibetical relation to the other lf-infra-publish marcros",
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3ef31dcf_3736cb0e",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-04T17:43:24Z",
+      "side": 1,
+      "message": "global-jjb namespace is lf, not fdio, this name needs to be more specific, like:\nlf-infra-publish-lite or something",
+      "range": {
+        "startLine": 734,
+        "startChar": 10,
+        "endLine": 734,
+        "endChar": 14
+      },
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63c60f0b_5b828b04",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-04T17:43:24Z",
+      "side": 1,
+      "message": "This is the actual macro that pulls in job-costs, so it\u0027s the one you\u0027re also going to need to modify if that\u0027s a current problem / concern",
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
