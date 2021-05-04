@@ -69,6 +69,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "88750755_73c13029",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-04T18:48:02Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4c60c3e6_d15fa24a",
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3ef31dcf_3736cb0e",
@@ -82,6 +100,30 @@
       "writtenOn": "2021-05-04T17:43:24Z",
       "side": 1,
       "message": "global-jjb namespace is lf, not fdio, this name needs to be more specific, like:\nlf-infra-publish-lite or something",
+      "range": {
+        "startLine": 734,
+        "startChar": 10,
+        "endLine": 734,
+        "endChar": 14
+      },
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8196996c_9e613c40",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-04T18:48:02Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3ef31dcf_3736cb0e",
       "range": {
         "startLine": 734,
         "startChar": 10,
