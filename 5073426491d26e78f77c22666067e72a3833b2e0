@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f56fda1_91ac5de6",
+        "filename": "releasenotes/notes/add-infra-macro-8eb38ee1bf165129.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-04T18:57:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "41e667d7_b251597e",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 12
+      },
+      "revId": "5073426491d26e78f77c22666067e72a3833b2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1d2411dd_a23ee962",
@@ -37,6 +61,30 @@
       "writtenOn": "2021-05-04T18:47:33Z",
       "side": 1,
       "message": "This is too FD.io specific. See my comments on patch 1 related to the macro name.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "5073426491d26e78f77c22666067e72a3833b2e0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "39ee8a43_9af75b11",
+        "filename": "releasenotes/notes/add-infra-macro-8eb38ee1bf165129.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-04T18:57:21Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1d2411dd_a23ee962",
       "range": {
         "startLine": 4,
         "startChar": 0,

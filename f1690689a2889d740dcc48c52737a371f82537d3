@@ -52,6 +52,42 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc0f65b1_f6a1ef46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-04T18:57:21Z",
+      "side": 1,
+      "message": "Added",
+      "parentUuid": "2fbc34ac_875952ac",
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2738bc5f_3b15ab28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-04T18:57:21Z",
+      "side": 1,
+      "message": "Created release notes",
+      "parentUuid": "13b9971c_11c01850",
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4c60c3e6_d15fa24a",
