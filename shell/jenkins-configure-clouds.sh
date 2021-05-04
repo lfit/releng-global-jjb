@@ -49,13 +49,13 @@ set -eu -o pipefail
 testversion() {
     local current_val="$1" operator="$2" test_value="$3"
     awk -vv1="$current_val" -vv2="$test_value" 'BEGIN {
-      split(v1, a, /\:/);
-      if (a[2] == '"$test_value"') {
-        exit (a[2] == '"$test_value"') ? 0 : 1
-      }
-      else {
-        exit (a[2] '"$operator"' '"$test_value"') ? 0 : 1
-      }
+        split(v1, a, /\:/);
+        if (a[2] == '"$test_value"') {
+            exit (a[2] == '"$test_value"') ? 0 : 1
+        }
+        else {
+            exit (a[2] '"$operator"' '"$test_value"') ? 0 : 1
+        }
     }'
 }
 
@@ -237,11 +237,11 @@ get_minion_options() {
     # Handle specifying the minimum instance count across different versions
     if testversion "$os_plugin_version" '>=' '2.47'
     then
-      instance_min=$(get_cfg "$cfg_file" INSTANCE_MIN "null")
-      echo "    $instance_min,"
+        instance_min=$(get_cfg "$cfg_file" INSTANCE_MIN "null")
+        echo "    $instance_min,"
     else
-      instance_min=$(get_cfg "$cfg_file" INSTANCE_MIN_CAPMAX "null")
-      echo "    $instance_min,"
+        instance_min=$(get_cfg "$cfg_file" INSTANCE_MIN_CAPMAX "null")
+        echo "    $instance_min,"
     fi
 
     echo "    \"$floating_ip_pool\","
@@ -256,11 +256,11 @@ get_minion_options() {
 
     if testversion "$os_plugin_version" '>=' '2.47'
     then
-      echo "    $node_properties,"
-      echo "    $retention_time",
-      echo "    $config_drive"
+        echo "    $node_properties,"
+        echo "    $retention_time",
+        echo "    $config_drive"
     else
-      echo "    $retention_time"
+        echo "    $retention_time"
     fi
 
 
@@ -322,7 +322,7 @@ for silo in $silos; do
     # JENKINS_{URL,USER,PASSWORD} env vars are required for the "lftools jenkins
     # plugins list" call
     os_plugin_version="$(lftools jenkins plugins list \
-      | grep -i 'OpenStack Cloud Plugin')"
+        | grep -i 'OpenStack Cloud Plugin')"
 
     echo "-----> Groovy script $script_file"
     for cloud in "${clouds[@]}"; do

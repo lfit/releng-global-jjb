@@ -41,10 +41,10 @@ while IFS="" read -r file; do
     file_size=$(stat --printf="%s" "${file}")
     echo "Deploy ${file##*/} with ${file_size} bytes."
     lftools deploy maven-file "$MAVEN_REPO_URL" \
-                              "$REPO_ID" \
-                              "$file" \
-                              -b "$MVN" \
-                              -g "$GROUP_ID" \
-                              -p "$MAVEN_OPTIONS $MAVEN_PARAMS" \
-                              |& tee "$DEPLOY_LOG"
+                                "$REPO_ID" \
+                                "$file" \
+                                -b "$MVN" \
+                                -g "$GROUP_ID" \
+                                -p "$MAVEN_OPTIONS $MAVEN_PARAMS" \
+                                |& tee "$DEPLOY_LOG"
 done < <(find "$UPLOAD_FILES_PATH" -xtype f -name "*")
