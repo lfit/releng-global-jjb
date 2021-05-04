@@ -44,8 +44,7 @@ $debug && echo "DEBUG Enabled"
 
 set -eufo pipefail
 
-function get-year-list()
-{
+get-year-list () {
     # Grab the years for each cost record use sort | uniq to get the
     # list of unique years found
     local list
