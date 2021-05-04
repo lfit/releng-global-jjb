@@ -280,7 +280,10 @@ verify_version(){
     OVERRIDE_SEMVER_REGEX="${OVERRIDE_SEMVER_REGEX:-None}"
     if [[ $OVERRIDE_SEMVER_REGEX == "None" ]]; then
         # Use the semver regex taken from https://github.com/fsaintjacques/semver-tool
-        semver_regex="^[vV]?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)(\-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$"
+        semver_regex="^[vV]?(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)"
+        semver_regex=$semver_regex"(\-(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)"
+        semver_regex=$semver_regex"(\.(0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))"
+        semver_regex=$semver_regex"*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$"
     else
         semver_regex="${OVERRIDE_SEMVER_REGEX}"
     fi
@@ -396,7 +399,8 @@ artifact_release_file(){
             wget "${path}"/"${name}" -o artifacts/"${name}"
             if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
                 #lftools sign sigul artifacts
-                curl -v -u <NEXUSUSER>:<NEXUSPASS> --upload-file "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"${name}" \;
+                curl -v -u <NEXUSUSER>:<NEXUSPASS> --upload-file \
+                    "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"${name}" \;
             fi
             echo "#########################"
         fi

@@ -45,7 +45,9 @@ if hash lhc 2>/dev/null; then
 else
     echo "License Header Checker is not installed. Installing..."
     mkdir "$WORKSPACE/bin"
-    wget -nv -O "/tmp/lhc.tar.gz" "https://nexus.opendaylight.org/content/repositories/hosted_installers/org/linuxfoundation/lhc/${lhc_version}/lhc-${lhc_version}.tar.gz"
+    NEXUS_URL="https://nexus.opendaylight.org/content/repositories/hosted_installers/org/linuxfoundation/lhc/"
+    NEXUS_URL=$NEXUS_URL"${lhc_version}/lhc-${lhc_version}.tar.gz"
+    wget -nv -O "/tmp/lhc.tar.gz" "$NEXUS_URL"
     tar -zxvf /tmp/lhc.tar.gz -C "$WORKSPACE/bin"
     chmod +x "$WORKSPACE/bin/lhc"
     export PATH="$WORKSPACE/bin:$PATH"

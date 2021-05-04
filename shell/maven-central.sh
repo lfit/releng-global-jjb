@@ -21,4 +21,5 @@ lftools deploy nexus-stage "https://oss.sonatype.org" "$profile_id" "$WORKSPACE/
 mc_staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$MC_TMP_FILE")
 rm -f "$MC_TMP_FILE"
 
-echo "$mc_staging_repo https://oss.sonatype.org/content/repositories/$mc_staging_repo" | tee -a "$WORKSPACE/archives/staging-repo.txt"
+echo "$mc_staging_repo https://oss.sonatype.org/content/repositories/$mc_staging_repo" | \
+    tee -a "$WORKSPACE/archives/staging-repo.txt"
