@@ -29,7 +29,9 @@ echo "-a" > cli-auth.txt
 echo "${NEXUS_IQ_USER}:${NEXUS_IQ_PASSWORD}" >> cli-auth.txt
 echo "INFO: running nexus-iq-cli on project $NEXUS_IQ_PROJECT_NAME and file $REQUIREMENTS_FILE"
 # result.json is a mystery
-java -jar "${CLI_LOCATION}" @cli-auth.txt -s https://nexus-iq.wl.linuxfoundation.org -i "${NEXUS_IQ_PROJECT_NAME}" -t build -r result.json "${REQUIREMENTS_FILE}"
+java -jar "${CLI_LOCATION}" @cli-auth.txt \
+    -s https://nexus-iq.wl.linuxfoundation.org -i "${NEXUS_IQ_PROJECT_NAME}" \
+    -t build -r result.json "${REQUIREMENTS_FILE}"
 rm cli-auth.txt
 rm "${CLI_LOCATION}"
 
