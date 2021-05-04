@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Create a bashate tox profile and enforce it. Bashate is a shell linter
+    inspired from PEP8.
+fixes:
+  - |
+    Fix the issues detected by bashate (E043, E010, E011, E002, E020, E006,
+    E003).
