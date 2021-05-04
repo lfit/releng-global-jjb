@@ -13,8 +13,7 @@ echo "---> sudo-logs.sh"
 set -eu -o pipefail -o noglob
 
 # Copy/Generate 'sudo' log and copy to archive directory
-function copy_log()
-{
+function copy_log {
     case $os in
         fedora|centos|redhat|ubuntu|debian)
             if ! sudo cp "$sudo_log" /tmp; then
