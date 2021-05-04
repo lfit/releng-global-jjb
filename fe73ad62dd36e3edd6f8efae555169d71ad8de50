@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5fd52b38_5185375c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-04T18:54:28Z",
+      "side": 1,
+      "message": "FYI this is also missing a change against docs/jjb/lf-macros.rst documenting the actual usage of the macro (search for lf-infra-publish for where to put it)",
+      "revId": "fe73ad62dd36e3edd6f8efae555169d71ad8de50",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f1f43d1e_6f65cadc",
