@@ -46,9 +46,9 @@ while read -r line ; do
         new_image_type="${NEW_IMAGE_NAME% -*}"
         # get the $new_image_type to check the image type is being compared
         if [[ ${new_image_type} != "${image_type}" ]]; then
-	   echo "INFO: Image type does not match, continue ..."
-	   continue
-	fi
+            echo "INFO: Image type does not match, continue ..."
+            continue
+        fi
     else
         new_image=$(openstack image list --long -f value -c Name -c Protected \
             | grep "${image_type}.*False" | tail -n-1 | sed 's/ False//')     \
