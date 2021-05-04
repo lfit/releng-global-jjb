@@ -83,7 +83,7 @@ echo "INFO: Performing merge action"
         fi
         echo "INFO sleeping for 30 seconds $cnt times"
       sleep 30
-      ((cnt+=1))
+      cnt=$(($cnt+1))
       if (( cnt >= 20 )); then
         echo "INFO: Job has timed out"
         exit 1

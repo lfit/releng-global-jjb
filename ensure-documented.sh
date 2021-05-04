@@ -30,7 +30,7 @@ for file in "${jjb_files[@]}"; do
     for item in "${docs_interests[@]}"; do
         if ! grep -q "$item" "docs/${file//.yaml/.rst}"; then
             echo "$file:$item"
-            (( undocumented_count++ ))
+            undocumented_count=$(($undocumented_count+1))
         fi
     done
 done
