@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fbc34ac_875952ac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-05-04T17:22:47Z",
+      "side": 1,
+      "message": "Can we update /docs/jjb/lf-macros.rst\nAlso release notes?",
+      "revId": "f1690689a2889d740dcc48c52737a371f82537d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
