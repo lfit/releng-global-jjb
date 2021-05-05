@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "790e0907_c1c35ff5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:41:19Z",
+      "side": 1,
+      "message": "Bad subject line, use:\n\nFix: bashate E006 warnings",
+      "revId": "0152d1a44a287d48068474e8872349098018fe87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab82c094_e7b9f88d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:41:19Z",
+      "side": 1,
+      "message": "Unneeded statement",
+      "revId": "0152d1a44a287d48068474e8872349098018fe87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "45cc1b10_1b7ed11e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:41:19Z",
+      "side": 1,
+      "message": "NOTE: Our editorconfig states 80 characters is our defined max line length, please do no override with something longer",
+      "range": {
+        "startLine": 11,
+        "startChar": 18,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "0152d1a44a287d48068474e8872349098018fe87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0130c63d_94a002e6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:41:19Z",
+      "side": 1,
+      "message": "Missing reno changelog",
+      "revId": "0152d1a44a287d48068474e8872349098018fe87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
