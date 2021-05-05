@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8100efd4_ed845bed",
+        "filename": ".gitlint",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-05T17:13:36Z",
+      "side": 1,
+      "message": "command line",
+      "range": {
+        "startLine": 6,
+        "startChar": 51,
+        "endLine": 6,
+        "endChar": 62
+      },
+      "revId": "e4ec97ca8e754263717531ebc4c6207febd30c9c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "86a013c0_81a3947a",
+        "filename": ".gitlint",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-05T17:13:36Z",
+      "side": 1,
+      "message": "remove duplicate that",
+      "range": {
+        "startLine": 79,
+        "startChar": 42,
+        "endLine": 79,
+        "endChar": 46
+      },
+      "revId": "e4ec97ca8e754263717531ebc4c6207febd30c9c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
