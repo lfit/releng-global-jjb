@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e4ca070_8df06054",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:33:47Z",
+      "side": 1,
+      "message": "Better subject line:\n\nFix: bashate E011 warnings",
+      "revId": "81dd57a3d3fd0845a64ac9cc5fe42e9e4b72c500",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f0cbd06f_1a0fa3b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:33:47Z",
+      "side": 1,
+      "message": "This statement is too generic and is basically a reference to the last patch. The commit body should be able to stand alone without having to have the context of another patch recently having been read.",
+      "revId": "81dd57a3d3fd0845a64ac9cc5fe42e9e4b72c500",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b9ac34c_57ce4167",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:33:47Z",
+      "side": 1,
+      "message": "This change is missing a reno changelog",
+      "revId": "81dd57a3d3fd0845a64ac9cc5fe42e9e4b72c500",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
