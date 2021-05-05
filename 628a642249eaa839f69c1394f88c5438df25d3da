@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91385b0c_1a977850",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:32:09Z",
+      "side": 1,
+      "message": "Better subjectline:\n\nFix: bashate E010 warnings",
+      "revId": "628a642249eaa839f69c1394f88c5438df25d3da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98a670fc_d11492c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:32:09Z",
+      "side": 1,
+      "message": "This is missing a reno changelog",
+      "revId": "628a642249eaa839f69c1394f88c5438df25d3da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
