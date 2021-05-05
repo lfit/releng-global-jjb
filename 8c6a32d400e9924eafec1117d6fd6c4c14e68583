@@ -87,6 +87,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "894db575_4c06c932",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-05T16:08:57Z",
+      "side": 1,
+      "message": "OK I am not familair with it but I found the openstack doc and the tox profile.\nI\u0027ve seen you put this comment on every changes but I assume you only need one release note yaml description here. Is that correct ?",
+      "parentUuid": "5bff792c_3b1c9f42",
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "317da5a3_f9f176d8",
