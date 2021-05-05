@@ -1,0 +1,6 @@
+---
+other:
+  - |
+    yamllint is now enforced on commits via pre-commit. This affects both CI as
+    well as developers that have pre-commit properly configured in their
+    environment.
