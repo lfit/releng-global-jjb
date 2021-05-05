@@ -70,6 +70,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "00117164_d45d5e32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:58:33Z",
+      "side": 1,
+      "message": "BTW, you can disregard my statement about missing a reno changelog on all but the very last change in the series that is turning on enforcement.\n\nI would like to see a changelog on that change that is basically of the form:\n\nbashate is now enforced by CI to improve bash code style",
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "317da5a3_f9f176d8",
