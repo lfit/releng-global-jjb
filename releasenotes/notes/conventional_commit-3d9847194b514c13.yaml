@@ -1,0 +1,9 @@
+---
+other:
+  - |
+    Conventional Commit message subject lines are now enforced. This affects
+    CI. Additionally, if developers want to protect themselves from CI failing
+    on this please make sure of the following
+
+    * you have pre-commit installed and that you have run
+    pre-commit install --hook-type commit-msg
