@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1654edf8_d71fda5c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:28:45Z",
+      "side": 1,
+      "message": "Bad subject line. Please see bullet two of our best practices general section of code review. https://docs.releng.linuxfoundation.org/en/latest/best-practices.html\n\nA better subject line:\n\n\u0027CI: Add bashate tox profile\u0027",
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bff792c_3b1c9f42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:28:45Z",
+      "side": 1,
+      "message": "This is missing a reno changelog",
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "317da5a3_f9f176d8",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:28:45Z",
+      "side": 1,
+      "message": "This contravenes our .editorconfig standard of enforcing line length of 80",
+      "range": {
+        "startLine": 67,
+        "startChar": 55,
+        "endLine": 67,
+        "endChar": 76
+      },
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
