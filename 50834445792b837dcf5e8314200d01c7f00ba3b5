@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3afc667b_dc62b0b7",
+        "filename": ".pre-commit-config.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-05T17:42:21Z",
+      "side": 1,
+      "message": "needed",
+      "range": {
+        "startLine": 47,
+        "startChar": 45,
+        "endLine": 47,
+        "endChar": 49
+      },
+      "revId": "50834445792b837dcf5e8314200d01c7f00ba3b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56160d8c_0183199a",
+        "filename": ".pre-commit-config.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-05T17:42:21Z",
+      "side": 1,
+      "message": "needed",
+      "range": {
+        "startLine": 62,
+        "startChar": 45,
+        "endLine": 62,
+        "endChar": 49
+      },
+      "revId": "50834445792b837dcf5e8314200d01c7f00ba3b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
