@@ -105,6 +105,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a49dc90_5527a180",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T16:12:16Z",
+      "side": 1,
+      "message": "As I just mentioned in my last comment, you can do the changelog on the _last_ change in the series (the enforcement change).\n\nTo generate a reno changelog you do it in the following way:\n\ntox -e reno new \u003cslug_name\u003e\n\nslug_name \u003d\u003d the short subject of your change. I would likely do the following:\n\ntox -e reno new enforce_bashate\n\nThis will cause reno to create a new changelog template slug for you (you\u0027ll get an output of the file it generated. Edit that file, it\u0027s pretty self-explanatory. Select the appropriate section and edit the file, remove all other sections and then add the file to the patchset.",
+      "parentUuid": "894db575_4c06c932",
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "317da5a3_f9f176d8",
