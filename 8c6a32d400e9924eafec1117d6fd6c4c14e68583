@@ -56,6 +56,30 @@
       },
       "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6ac5d77_f2b256f1",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-05T15:45:51Z",
+      "side": 1,
+      "message": "OK I took ODL standard of 120 char.\nIf so, I\u0027ll jeep the default value of 80 char.",
+      "parentUuid": "317da5a3_f9f176d8",
+      "range": {
+        "startLine": 67,
+        "startChar": 55,
+        "endLine": 67,
+        "endChar": 76
+      },
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
