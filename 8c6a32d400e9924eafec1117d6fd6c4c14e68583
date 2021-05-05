@@ -35,6 +35,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "60b3f2ad_ae11c6ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:52:07Z",
+      "side": 1,
+      "message": "Changing to a -2 to block the entire patch series until all current (and subsequent issues) are resolved.\n\nPlease note, I\u0027m just trying to be cautious. I\u0027ve not seen bashate before, but I do like the enforcement that it appears to be bringing.",
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "317da5a3_f9f176d8",
