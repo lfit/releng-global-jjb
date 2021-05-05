@@ -1,18 +1,22 @@
 ---
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.1.0
+    rev: v3.4.0
     hooks:
       - id: trailing-whitespace
+      - id: no-commit-to-branch
+        args:
+          - --branch=master
+          - --branch=main
 
-  - repo: https://github.com/prettier/pre-commit
-    rev: v2.1.2
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v2.2.1
     hooks:
       - id: prettier
         stages: [commit]
 
   - repo: https://github.com/jorisroovers/gitlint
-    rev: v0.13.1
+    rev: v0.15.1
     hooks:
       - id: gitlint
 
@@ -40,10 +44,10 @@ repos:
       #   - adverb weakens meaning
       #   - is wordy or unneeded
       #
-      # This allows us to place an exception need to pass the check without disabling all checks for
-      # the whole file.
-      # In an ideal world write-good would give us an override for each individual instance of a
-      # violation but until then this gives us a close enough approach.
+      # This allows us to place an exception needed to pass the check without
+      # disabling all checks for the whole file. In an ideal world write-good
+      # would give us an override for each individual instance of a violation
+      # but until then this gives us a close enough approach.
       - id: write-good
         name: "write-good --no-adverb --no-tooWordy"
         args: ["--no-adverb", "--no-tooWordy"]
@@ -55,10 +59,10 @@ repos:
       # Files listed below break the following write-good rules:
       #   - is wordy or unneeded
       #
-      # This allows us to place an exception need to pass the check without disabling all checks for
-      # the whole file.
-      # In an ideal world write-good would give us an override for each individual instance of a
-      # violation but until then this gives us a close enough approach.
+      # This allows us to place an exception needed to pass the check without
+      # disabling all checks for the whole file. In an ideal world write-good
+      # would give us an override for each individual instance of a violation
+      # but until then this gives us a close enough approach.
       - id: write-good
         name: "write-good --no-tooWordy"
         args: ["--no-tooWordy"]
