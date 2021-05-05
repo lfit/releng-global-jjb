@@ -3,5 +3,7 @@ fixes:
   - |
     Disable the pip install warning that are not useful in the console logs.
 
-    00:25:10   WARNING: The scripts easy_install and easy_install-3.6 are installed in '/home/jenkins/.local/bin' which is not on PATH.
-    00:25:10   Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+    00:25:10   WARNING: The scripts easy_install and easy_install-3.6 are
+      installed in '/home/jenkins/.local/bin' which is not on PATH.
+    00:25:10   Consider adding this directory to PATH or, if you prefer to
+      suppress this warning, use --no-warn-script-location.
