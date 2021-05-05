@@ -45,6 +45,23 @@
       },
       "revId": "50834445792b837dcf5e8314200d01c7f00ba3b5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1e09ac9_ebfef6f0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-05-05T17:47:17Z",
+      "side": 1,
+      "message": "do we need release notes for these kind of changes?",
+      "revId": "50834445792b837dcf5e8314200d01c7f00ba3b5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
