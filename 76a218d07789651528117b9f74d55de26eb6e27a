@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39261dbe_1e11593d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:44:54Z",
+      "side": 1,
+      "message": "Bad subject line, use:\n\nCI: Enforce bashate tox profile",
+      "revId": "76a218d07789651528117b9f74d55de26eb6e27a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0267c0fa_605212bd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:44:54Z",
+      "side": 1,
+      "message": "Missing reno changelog.\n\nI\u0027m giving a -2 as I don\u0027t want to see this get merged until we\u0027ve absolutely made sure all issues are being covered by my previous comments and any additional ones that may come up with _deeper_ review (I only did cursory review at this time)",
+      "revId": "76a218d07789651528117b9f74d55de26eb6e27a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
