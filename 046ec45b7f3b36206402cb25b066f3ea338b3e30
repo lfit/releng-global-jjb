@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ff2ef7c1_58a242da",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:35:22Z",
+      "side": 1,
+      "message": "Better subject line:\n\nFix: bashate E002 warnings about tab indents",
+      "revId": "046ec45b7f3b36206402cb25b066f3ea338b3e30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b32f559_0fd6d7c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:35:22Z",
+      "side": 1,
+      "message": "This is a bad commit message. Please make it more readable as a paragraph on it\u0027s own! The subject line should _not_ blend into the body paragraphs",
+      "revId": "046ec45b7f3b36206402cb25b066f3ea338b3e30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "105dbb31_007880fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:35:22Z",
+      "side": 1,
+      "message": "This is missing a reno changelog",
+      "revId": "046ec45b7f3b36206402cb25b066f3ea338b3e30",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
