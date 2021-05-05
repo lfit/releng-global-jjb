@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e97d2bb_9a7ea908",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:38:19Z",
+      "side": 1,
+      "message": "Bad subject line. Use:\n\nRefactor: Use POSIX shell function declarations",
+      "revId": "f497bd6c85e275d0f66849d017e38ebb63812688",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17f69ccf_17ea8745",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:38:19Z",
+      "side": 1,
+      "message": "Bad commit message paragraph. The paragraph needs to be able to be read separately from the subject line.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "f497bd6c85e275d0f66849d017e38ebb63812688",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "91897be5_623f9b69",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-05T15:38:19Z",
+      "side": 1,
+      "message": "Missing reno changelog",
+      "revId": "f497bd6c85e275d0f66849d017e38ebb63812688",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
