@@ -20,6 +20,11 @@ repos:
     hooks:
       - id: gitlint
 
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.26.1
+    hooks:
+      - id: yamllint
+
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 2.1.5
     hooks:
