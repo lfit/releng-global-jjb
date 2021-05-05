@@ -52,6 +52,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6f78ac3d_ad650dad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-05T15:56:44Z",
+      "side": 1,
+      "message": "OK sure\n\nmay I suggest verified -1 rather in that case ?",
+      "parentUuid": "60b3f2ad_ae11c6ef",
+      "revId": "8c6a32d400e9924eafec1117d6fd6c4c14e68583",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "317da5a3_f9f176d8",
