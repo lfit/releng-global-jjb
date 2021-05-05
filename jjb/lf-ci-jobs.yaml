@@ -1492,16 +1492,6 @@
       - description-setter:
           regexp: '(\s+.*)(ZZCI\s+.*\d+-\d+\.\d+)'
           description: 'Image: \2'
-      # - trigger-builds:
-      #     - project: '{project-name}-openstack-update-cloud-image'
-      #       block: false
-      #       predefined-parameters: |
-      #         GERRIT_BRANCH=$GERRIT_BRANCH
-      #         GERRIT_PROJECT=$GERRIT_PROJECT
-      #         GERRIT_REFSPEC=$GERRIT_REFSPEC
-      #         NEW_IMAGE_NAME=$NEW_IMAGE_NAME
-      #       property-file: variables.jenkins-trigger
-      #       property-file-fail-on-missing: true
 
     publishers:
       - lf-infra-publish
