@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f265fd3_70c15b5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2021-05-06T16:19:46Z",
+      "side": 1,
+      "message": "I\u0027ve been playing around with conventional commits too and I like it so far. I think it\u0027s a good idea.",
+      "revId": "50694603867093888fb581b5e1d2444b915e5bc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
