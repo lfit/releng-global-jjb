@@ -22,6 +22,30 @@
       },
       "revId": "83e9f19680827d80238509c1489765c7fdd145ac",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3500b0a8_e8d42a79",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-07T15:51:33Z",
+      "side": 1,
+      "message": "OK, this is ill documented in best practices that recommends convetional commits defaults currently.\nI was working on commitizen and made some tests on the docs projects.\nI\u0027ll push you this proposal but it would be helpful if someone else adapts that to the type you are using.\nhttps://github.com/commitizen/cz-cli/issues/43",
+      "parentUuid": "e4bffb6d_54d3f775",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "83e9f19680827d80238509c1489765c7fdd145ac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
