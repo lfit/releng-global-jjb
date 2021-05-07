@@ -16,6 +16,23 @@
       "message": "I\u0027ve been playing around with conventional commits too and I like it so far. I think it\u0027s a good idea.",
       "revId": "50694603867093888fb581b5e1d2444b915e5bc1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae24a39e_7d9cba54",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-07T15:26:54Z",
+      "side": 1,
+      "message": "Since I seem to have enough buy-off on this, I\u0027m going to go ahead and merge it. Thanks for the feedback folks!",
+      "revId": "50694603867093888fb581b5e1d2444b915e5bc1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
