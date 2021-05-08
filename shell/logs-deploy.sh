@@ -63,6 +63,6 @@ else
     lftools deploy s3 ${pattern_opts:-} "$S3_BUCKET" "$s3_path" \
         "$BUILD_URL" "$WORKSPACE"
 
-    echo "S3 build logs: <a href=\"https://$CDN_URL/$s3_path\"></a>"
+    echo "S3 build logs: <a href=\"https://$CDN_URL/$s3_path\">https://$CDN_URL/$s3_path</a>"
 fi
 
