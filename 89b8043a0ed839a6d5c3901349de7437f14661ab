@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d0cee49_1bebdae5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-08T15:31:11Z",
+      "side": 1,
+      "message": "Fix\n\nFYI I3990aa9846dc8479cadaad5025e45f863623bf86 fixes up CI to properly capture this errors. I would recommend that you do the following in your local env so you don\u0027t have to rely on CI to catch it:\n\npip install --user pre-commit\n# in your global-jjb root\npre-commit install\npre-commit install --hook-type commit-msg",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "89b8043a0ed839a6d5c3901349de7437f14661ab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0f146eb_f2604b11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-08T15:31:11Z",
+      "side": 1,
+      "message": "CI wasn\u0027t catching that you\u0027re using lowercase on the topic. change I3990aa9846dc8479cadaad5025e45f863623bf86 fixes it so it properly enforces gitlint checks",
+      "revId": "89b8043a0ed839a6d5c3901349de7437f14661ab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
