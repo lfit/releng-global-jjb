@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Set S3 URL in the framename of the target attribute
+
+    The description-setter plugin does not read the
+    URL when the framename is unset.
+
+    Issue: LF JIRA RELENG-3269
