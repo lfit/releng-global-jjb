@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62679687_7c1fb788",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-11T20:35:04Z",
+      "side": 1,
+      "message": "If this wasn\u0027t for a warnings from the linter I would call this a Style: change and not a Fix: ;)",
+      "revId": "5beb45586451cb772982de881cd09fd97360be87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
