@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4cbad424_43ff2f0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-11T20:44:58Z",
+      "side": 1,
+      "message": "This is not a BREAKING CHANGE. It\u0027s an enforcement of already fixed issues and you can\u0027t get to this change without it.\n\nBy definition a breaking change would be something that potentially requires someone to make changes in their environment to take.\n\nAdditionally, adding the ! predicate without a BREAKING CHANGE footer explaining what is breaking shouldn\u0027t happen.",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "cabb36809e293e8e351474477333aedb25b32aa9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
