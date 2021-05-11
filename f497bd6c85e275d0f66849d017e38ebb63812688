@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "43e6fb23_57817ce3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-11T19:27:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8e97d2bb_9a7ea908",
+      "revId": "f497bd6c85e275d0f66849d017e38ebb63812688",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17f69ccf_17ea8745",
@@ -31,6 +49,30 @@
       "writtenOn": "2021-05-05T15:38:19Z",
       "side": 1,
       "message": "Bad commit message paragraph. The paragraph needs to be able to be read separately from the subject line.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 28
+      },
+      "revId": "f497bd6c85e275d0f66849d017e38ebb63812688",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d2148fd_5cece830",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-11T19:27:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "17f69ccf_17ea8745",
       "range": {
         "startLine": 9,
         "startChar": 0,
