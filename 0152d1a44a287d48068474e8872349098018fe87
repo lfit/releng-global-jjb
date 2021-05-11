@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2552480f_3c8ff92c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-11T19:38:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "790e0907_c1c35ff5",
+      "revId": "0152d1a44a287d48068474e8872349098018fe87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ab82c094_e7b9f88d",
@@ -35,6 +53,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "be03733f_38080185",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-11T19:38:17Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ab82c094_e7b9f88d",
+      "revId": "0152d1a44a287d48068474e8872349098018fe87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "45cc1b10_1b7ed11e",
@@ -48,6 +84,30 @@
       "writtenOn": "2021-05-05T15:41:19Z",
       "side": 1,
       "message": "NOTE: Our editorconfig states 80 characters is our defined max line length, please do no override with something longer",
+      "range": {
+        "startLine": 11,
+        "startChar": 18,
+        "endLine": 11,
+        "endChar": 21
+      },
+      "revId": "0152d1a44a287d48068474e8872349098018fe87",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b59da708_733a7dd4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-11T19:38:17Z",
+      "side": 1,
+      "message": "I\u0027ve reworked this change to align to 80 columns a few of the modifications that eeded to.\n\nStrictly spoken, this was not overriding the settings but fixed lines \u003e120 char which are also \u003e80 char.\nAnd it appears this rule to forbid lines\u003e80 char was probably never really enforced.\n\nOnce lines \u003e 120 chars fixed, there are still more than two hundreds warnings to fix... And many of them displays messages or URLs quite long.\nDoes it really worth it to fix them all at this stage ? The question is open.\nWhatever the choice is, this is gonna take time to clean.\n\nE006 is only a warning in bashate and not an error by default.\nSo I\u0027ve modified the tox profile in the next change to forbid lines\u003e120 (\u003derrors) and keep displaying warnings for lines \u003e 80.\nThis way, the worst cases are avoided.",
+      "parentUuid": "45cc1b10_1b7ed11e",
       "range": {
         "startLine": 11,
         "startChar": 18,
