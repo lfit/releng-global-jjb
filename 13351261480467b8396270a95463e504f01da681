@@ -22,6 +22,30 @@
       },
       "revId": "13351261480467b8396270a95463e504f01da681",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ad67e40_e4728fc2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-05-12T08:49:40Z",
+      "side": 1,
+      "message": "I agree that sigil indicates a breaking change and since I have fixed all the issues, noone has to take in an immediate action after this change at this level.\n\nI don\u0027t understand why adding the ! predicate without a BREAKING CHANGE footer explaining what is breaking should not happen.\nAccording to section 13 in \nhttps://www.conventionalcommits.org/en/v1.0.0/#specification\na BREAKING CHANGE footer is not mandatory - I quote: \"If ! is used, BREAKING CHANGE: MAY be omitted from the footer section, and the commit description SHALL be used to describe the breaking change.\"\n\nThat said, it is probably not a bad thing to ask systematically for it.\nBut if so,  I really think the format expected from contributors in RelEng should be explicited in a dedicated public documentation with concrete examples adapted to RelEng.\n\nThere can be several interpretations of the references given in the generic best practices. Many pepole usually consider that what is not explicitly forbidden should be allowed. And that is often what I do.\n\nComing back to the presence of the sigil predicate here, I think we have a different interpretation of how strict the conventional rules must be understood.\n\nI am quoting below https://www.conventionalcommits.org/en/v1.0.0/#summary section 3\n\"a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in Semantic Versioning). A BREAKING CHANGE can be part of commits of any type.\"\n\nThe possibility of having breaking changes in CI is explicitly considered but \nwhat is a breaking change is not really defined anywhere.\nIt is just correlated to semserver https://semver.org/#summary definition of MAJOR that I quote:\n\"1. MAJOR version when you make incompatible API changes,\"\n\nHere I have considered the whole contribution in the relation chain and the fact that contributors will have to abide by new rules starting from now. For example, they should no more used 2-whitespaces indentation and they need to configure their editor or IDE this way.\nIn the context of this CI, I am not very confident on how must be interpreted an API change.\nBut if this is not a CI API change, what is one  ? And how a breaking change can happen in a CI ?\n\nIf I have considered only the scope of one commit and not the whole relation chain, I should have put this change at the bottom of the stack to create a hard breaking change and I would have got a lot of Jenkins verified -1.\nMore generally wit this interpretation, any breaking change in a CI would trigger a verified -1 if it is taken at the commit level.\nI don\u0027t think this is wishable in this context, moreover if we want to encourage the use of atomic commits...",
+      "parentUuid": "05c4da47_a2072c3d",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "13351261480467b8396270a95463e504f01da681",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
