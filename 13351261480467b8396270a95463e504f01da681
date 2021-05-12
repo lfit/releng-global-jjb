@@ -46,6 +46,30 @@
       },
       "revId": "13351261480467b8396270a95463e504f01da681",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37de1bc9_6dd98a00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-12T15:00:45Z",
+      "side": 1,
+      "message": "All valid points.\n\nI believe that there should never be a changing for CI. It should always pass at an atomic level.\n\nAs to my interpretation of using \u0027!\u0027 without a \u0027BREAKING CHANGE\u0027 call out. I\u0027m of the personal opinion that giving people a heads up that there is a breaking change, but not actually pointing out what it is is about as useless as not calling it out in the first place.\n\nNow, if you had tried to introduce all this at the bottom of the chain you wouldn\u0027t have gotten far, we can\u0027t accept changes in that CI doesn\u0027t pass. We\u0027ve revoked the rights of committers on the RE repos from being able to vote Verified. As such, CI _must_ pass for a change to be landed. So, it would have been impossible to start enforcement and then do fixups, they would have had to been included with the enforcement change at the same time which would have made the patch both extremely large but also not very atomic and wouldn\u0027t have passed code review for that.",
+      "parentUuid": "0ad67e40_e4728fc2",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "13351261480467b8396270a95463e504f01da681",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
