@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "226bfba7_728b9ba9",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-13T17:40:28Z",
+      "side": 1,
+      "message": "Why is this matching the 14.04 case? I would more likely expect it to be lumped into the 16.04|18.04 case.\n\nIf the 14.04 case is really needed for 20.04 then please combine it with the 14.04 case.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 18
+      },
+      "revId": "8cf62a5974566e36c7094d0d598a349b52bd2894",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
