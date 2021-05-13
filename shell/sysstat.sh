@@ -11,12 +11,17 @@
 echo "---> sysstat.sh"
 set +e  # DON'T fail build if script fails.
 
+if $(awk -F/ '$2 == "docker"' /proc/self/cgroup | read); then
+    exit 0
+fi
+
+
 OS=$(facter operatingsystem)
 case "$OS" in
     Ubuntu)
         os_release=$(facter operatingsystemrelease)
         case $os_release in
-            16.04|18.04)
+            16.04|18.04|20.04)
                 if ! systemctl status sysstat > /dev/null; then
                     exit 0
                 fi
