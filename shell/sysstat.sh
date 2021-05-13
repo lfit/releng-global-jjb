@@ -21,7 +21,7 @@ case "$OS" in
                     exit 0
                 fi
                 ;;
-            14.04)
+            14.04|20.04)
                 if [[ ! -f /etc/default/sysstat ]] || \
                         ! grep --quiet 'ENABLED="true"' /etc/default/sysstat; then
                     exit 0
