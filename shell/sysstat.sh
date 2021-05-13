@@ -27,6 +27,12 @@ case "$OS" in
                     exit 0
                 fi
                 ;;
+            20.04)
+                if [[ ! -f /etc/default/sysstat ]] || \
+                        ! grep --quiet 'ENABLED="true"' /etc/default/sysstat; then
+                    exit 0
+                fi
+                ;;
             *)
                 echo "ERROR: Unknown Release: Ubuntu $os_release"
                 exit 1

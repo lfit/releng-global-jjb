@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Update to the sysstat script to add support for
+    operating system "Ubuntu 20.04"
