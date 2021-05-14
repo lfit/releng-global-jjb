@@ -22,6 +22,23 @@
       },
       "revId": "17c2fd602f06ec2e999dff7fac75a4cd5e94092a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71f04d9c_379080a2",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-14T13:10:48Z",
+      "side": 1,
+      "message": "After your discussion yesterday. I still believe that this is not the correct solution. It may work because of the test system you\u0027re using being in a container, but I think we should be detecting a container before we try detecting what version.",
+      "revId": "17c2fd602f06ec2e999dff7fac75a4cd5e94092a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
