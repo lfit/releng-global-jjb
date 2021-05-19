@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18c878e7_0dbaf2fd",
+        "filename": "releasenotes/notes/update_sysstat-41a5a72b1fdd1861.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-19T16:57:30Z",
+      "side": 1,
+      "message": "Lose the double quotes. They aren\u0027t adding anything to this.",
+      "range": {
+        "startLine": 5,
+        "startChar": 21,
+        "endLine": 5,
+        "endChar": 54
+      },
+      "revId": "64b98f1bbab8633bbbecfe36bf2a4eedded5b29a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
