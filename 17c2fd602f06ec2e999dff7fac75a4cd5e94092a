@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "effadbe4_4848aaa8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-19T17:10:25Z",
+      "side": 1,
+      "message": "It\u0027s definitely a feature as she\u0027s adding new functionality, not repairing broken functionality (yes, technically she\u0027s fixing broken functionality but by adding new functionality to do so)",
+      "parentUuid": "45a7eae7_6fa1d5e7",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "17c2fd602f06ec2e999dff7fac75a4cd5e94092a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71f04d9c_379080a2",
@@ -37,6 +61,24 @@
       "writtenOn": "2021-05-14T13:10:48Z",
       "side": 1,
       "message": "After your discussion yesterday. I still believe that this is not the correct solution. It may work because of the test system you\u0027re using being in a container, but I think we should be detecting a container before we try detecting what version.",
+      "revId": "17c2fd602f06ec2e999dff7fac75a4cd5e94092a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fb721a0_38501eed",
+        "filename": "shell/sysstat.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-19T17:10:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71f04d9c_379080a2",
       "revId": "17c2fd602f06ec2e999dff7fac75a4cd5e94092a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
