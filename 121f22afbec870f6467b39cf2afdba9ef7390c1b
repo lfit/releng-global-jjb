@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a836822b_76e8c58b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-19T16:50:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "96bd7863_66b05848",
+      "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7870d550_09ac8416",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-05-19T16:47:00Z",
       "side": 1,
       "message": "\u0027and docker\u0027",
+      "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c5f2f26_92685126",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-19T16:50:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7870d550_09ac8416",
       "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
@@ -52,6 +88,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d352796a_1e1489b0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-19T16:50:36Z",
+      "side": 1,
+      "message": "Changes reflected in patch 5",
+      "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e8cbd261_022da192",
@@ -65,6 +118,24 @@
       "writtenOn": "2021-05-19T16:47:00Z",
       "side": 1,
       "message": "as well as docker systems",
+      "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0912c270_1c1f511e",
+        "filename": "releasenotes/notes/update_sysstat-41a5a72b1fdd1861.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 31
+      },
+      "writtenOn": "2021-05-19T16:50:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e8cbd261_022da192",
       "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
