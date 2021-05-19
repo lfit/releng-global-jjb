@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96bd7863_66b05848",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-19T16:47:00Z",
+      "side": 1,
+      "message": "\u0027and docker\u0027",
+      "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7870d550_09ac8416",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-19T16:47:00Z",
+      "side": 1,
+      "message": "\u0027and docker\u0027",
+      "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bb3694a_abda51e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-19T16:47:00Z",
+      "side": 1,
+      "message": "Minor documentation updates. You\u0027re actually adding support for two different things here:\n\n1) docker systems\n2) Ubuntu 20.04",
+      "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8cbd261_022da192",
+        "filename": "releasenotes/notes/update_sysstat-41a5a72b1fdd1861.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-05-19T16:47:00Z",
+      "side": 1,
+      "message": "as well as docker systems",
+      "revId": "121f22afbec870f6467b39cf2afdba9ef7390c1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
