@@ -670,7 +670,7 @@
                 - branch-compare-type: ANT
                   branch-pattern: "**"
           skip-vote:
-            success: true
+            successful: true
             failed: true
             unstable: true
             notbuilt: true
