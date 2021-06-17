@@ -34,23 +34,21 @@ fi
 tox --version
 
 PARALLEL="${PARALLEL:-true}"
+TOX_OPTIONS_LIST=""
+
+if [[ -n ${TOX_ENVS:-} ]]; then
+    TOX_OPTIONS_LIST=$TOX_OPTIONS_LIST" -e $TOX_ENVS"
+fi;
+
 if [[ ${PARALLEL,,} = true ]]; then
-    if [[ -n ${TOX_ENVS:-} ]]; then
-        tox -e "$TOX_ENVS" --parallel auto --parallel-live | tee -a "$ARCHIVE_TOX_DIR/tox.log"
-        tox_status="${PIPESTATUS[0]}"
-    else
-        tox --parallel auto --parallel-live | tee -a "$ARCHIVE_TOX_DIR/tox.log"
-        tox_status="${PIPESTATUS[0]}"
-    fi
-else
-    if [[ -n ${TOX_ENVS:-} ]]; then
-        tox -e "$TOX_ENVS" | tee -a "$ARCHIVE_TOX_DIR/tox.log"
-        tox_status="${PIPESTATUS[0]}"
-    else
-        tox | tee -a "$ARCHIVE_TOX_DIR/tox.log"
-        tox_status="${PIPESTATUS[0]}"
-    fi
-fi
+    TOX_OPTIONS_LIST=$TOX_OPTIONS_LIST" --parallel auto --parallel-live"
+fi;
+
+# $TOX_OPTIONS_LIST are intentionnaly not surrounded by quotes
+# to correcly pass options to tox
+# shellcheck disable=SC2086
+tox $TOX_OPTIONS_LIST | tee -a "$ARCHIVE_TOX_DIR/tox.log"
+tox_status="${PIPESTATUS[0]}"
 
 echo "---> Completed tox runs"
 
