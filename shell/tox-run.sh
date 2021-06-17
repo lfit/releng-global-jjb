@@ -40,9 +40,15 @@ if [[ -n ${TOX_ENVS:-} ]]; then
     TOX_OPTIONS_LIST=$TOX_OPTIONS_LIST" -e $TOX_ENVS"
 fi;
 
-if [[ ${PARALLEL,,} = true ]]; then
-    TOX_OPTIONS_LIST=$TOX_OPTIONS_LIST" --parallel auto --parallel-live"
-fi;
+case ${PARALLEL,,} in
+    true|auto )
+        TOX_OPTIONS_LIST=$TOX_OPTIONS_LIST" --parallel auto --parallel-live";;
+    all )
+        TOX_OPTIONS_LIST=$TOX_OPTIONS_LIST" --parallel all --parallel-live";;
+    [0-9]* )
+        TOX_OPTIONS_LIST=$TOX_OPTIONS_LIST" --parallel ${PARALLEL} --parallel-live";;
+esac
+
 
 tox "$TOX_OPTIONS_LIST" | tee -a "$ARCHIVE_TOX_DIR/tox.log"
 tox_status="${PIPESTATUS[0]}"
