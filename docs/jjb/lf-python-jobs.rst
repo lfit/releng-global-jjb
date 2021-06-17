@@ -43,8 +43,8 @@ Creates a Tox virtual environment and invokes tox.
 
 :Required Parameters:
 
-    :parallel: Boolean. If true use detox (distributed tox);
-        else use regular tox.
+    :parallel: Boolean. If true use tox with the options "--parallel auto"
+        and "--parallel-live" to parallelize jobs in the envlist;
 
 
 Job Templates
