@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Parallel jobs are now natively supported by tox since version 3.7.0
+    thanks to the option "-p" / "--parallel".
+    This new option offers more possibilities than detox and other options
+    have also been introduced to tune tox behavior in parallel mode. This
+    evolution allows more tox parallel mode configurations in yaml templates.
+
