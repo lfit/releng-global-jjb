@@ -43,8 +43,8 @@ Creates a Tox virtual environment and invokes tox.
 
 :Required Parameters:
 
-    :parallel: Boolean. If true use detox (distributed tox);
-        else use regular tox.
+    :parallel: Boolean. If true use tox with the options "--parallel auto"
+        and "--parallel-live" to parallelize jobs in the envlist;
 
 
 Job Templates
@@ -202,6 +202,8 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     :mvn-version: Version of maven to use. (default: mvn35)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
         (default: false, in series)
+        If true use tox with the options "--parallel auto" and "--parallel-live"
+        to parallelize jobs in the envlist.
     :pre-build-script: Shell script to execute before the Sonar builder.
         For example, install prerequisites or move files to the repo root.
         (default: a string with a shell comment)
@@ -293,6 +295,8 @@ Plug-in configurations
     :github-url: URL for Github. (default: https://github.com)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
         (default: false, in series)
+        If true use tox with the options "--parallel auto" and "--parallel-live"
+        to parallelize jobs in the envlist.
     :pre-build-script: Shell script to run before tox. Useful for setting up
         dependencies. (default: a string with a shell comment)
     :python-version: Python version to invoke pip install of tox-pyenv
@@ -403,6 +407,8 @@ variables before running.
         (default: a string with a shell comment)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
        (default: false, in series)
+        If true use tox with the options "--parallel auto" and "--parallel-live"
+        to parallelize jobs in the envlist.
     :python-version: Python version to invoke pip install of tox-pyenv
         (default: python2)
     :stream: Keyword representing a release code-name.
@@ -570,6 +576,8 @@ is optional, it defaults to pypi.org.
     :mvn-version: Version of maven to use. (default: mvn35)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
        (default: false, in series)
+        If true use tox with the options "--parallel auto" and "--parallel-live"
+        to parallelize jobs in the envlist.
     :pre-build-script: Shell script to execute before the tox builder. For
         example, install system prerequisites. (default: a shell comment)
     :pypi-repo: Key for the PyPI target repository in the .pypirc file,
@@ -682,6 +690,8 @@ is optional, it defaults to pypi.org.
     :mvn-version: Version of maven to use. (default: mvn35)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
        (default: false, in series)
+        If true use tox with the options "--parallel auto" and "--parallel-live"
+        to parallelize jobs in the envlist.
     :pre-build-script: Shell script to execute before the tox builder. For
         example, install system prerequisites. (default: a shell comment)
     :pypi-repo: Key for the PyPI target repository in the .pypirc file,
@@ -798,6 +808,8 @@ pyenv variables before running.
     :mvn-version: Version of maven to use. (default: mvn35)
     :parallel: Boolean indicator for tox to run tests in parallel or series.
        (default: false, in series)
+        If true use tox with the options "--parallel auto" and "--parallel-live"
+        to parallelize jobs in the envlist.
     :pre-build-script: Shell script to execute before the tox builder. For
         example, install system prerequisites. (default: a shell comment)
     :python-version: Python version to invoke pip install of tox-pyenv
