@@ -22,6 +22,30 @@
       },
       "revId": "898fe7b3d3f12407d2ec431db5f8aa47f4696882",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4e4e25f_7edcf9d9",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2021-06-17T19:13:49Z",
+      "side": 1,
+      "message": "Thanks a lot ! That\u0027s correct, I misfixed the shellcheck warning in PS1.\nArrays are supported in bash but are not POSIX compliant so I prefer to avoid them when possible.\nSince possibles values are strictly constrained here, I don\u0027t think this is needed.\nLet\u0027s fallback to PS1 and simply disable the warning...\n\n$ cat script.sh \n#!/bin/bash\n\nexport LANG\u003d\"en_US\"\n\nOPTIONS_LIST\u003d\"\"\nOPTIONS_LIST\u003d$OPTIONS_LIST\" -a\"\nOPTIONS_LIST\u003d$OPTIONS_LIST\" -g -G\"\n\nls \"$OPTIONS_LIST\"\necho \u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nls $OPTIONS_LIST\n\n$ ./script.sh \nls: cannot access \u0027 -a -g -G\u0027: No such file or directory\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\ndrwxr-xr-x 14 4096 Jun 17 21:00 .\ndrwxr-xr-x  6 4096 May 31 12:15 ..\n-rw-r--r--  1  282 Jun 16 20:40 .editorconfig\ndrwxr-xr-x  8 4096 Jun 17 20:44 .git\n-rw-r--r--  1  301 May 10 18:55 .gitignore\n-rw-r--r--  1 3403 Jun 16 20:40 .gitlint\n-rw-r--r--  1  103 May 10 18:55 .gitreview\ndrwxr-xr-x  7 4096 Jun 16 20:40 .jjb-test\n-rw-r--r--  1 2380 Jun 16 20:40 .pre-commit-config.yaml\n-rw-r--r--  1   58 Jun 16 20:40 .prettierignore\ndrwxr-xr-x  8 4096 Jun 17 20:43 .tox\n-rw-r--r--  1  178 Jun 16 20:40 .yamllint\n-rw-r--r--  1  450 Jun 16 20:40 README.md\n-rw-r--r--  1 1513 May 10 18:55 check_jjb_version.py\ndrwxr-xr-x  6 4096 Jun 17 11:34 docs\n\n[...]",
+      "parentUuid": "54fb82bd_b953e883",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 23
+      },
+      "revId": "898fe7b3d3f12407d2ec431db5f8aa47f4696882",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
