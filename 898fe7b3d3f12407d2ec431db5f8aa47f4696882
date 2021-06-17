@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54fb82bd_b953e883",
+        "filename": "shell/tox-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8
+      },
+      "writtenOn": "2021-06-17T17:03:59Z",
+      "side": 1,
+      "message": "I think this code won\u0027t achieve what you\u0027re intending. I believe the intent is to have tox read TOX_OPTIONS_LIST and pass everything as a set of parameters to the tox command however what this code here will result in is a single parameter with the entire list as a string. So\n\nexpected: tox --parallel auto --parallel-live \nactual: tox \"--parallel auto --parallel-live\"\n\nInstead I think what we should use is an array. Refer to https://github.com/koalaman/shellcheck/wiki/Sc2086 and jump to the exceptions section where it has an example of how to pass CLI parameters.",
+      "range": {
+        "startLine": 47,
+        "startChar": 4,
+        "endLine": 47,
+        "endChar": 23
+      },
+      "revId": "898fe7b3d3f12407d2ec431db5f8aa47f4696882",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
