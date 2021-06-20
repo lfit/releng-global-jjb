@@ -1,0 +1,9 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+1: Guillaume Lambert <guillaume.lambert@orange.com>
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Code-Review+2: Anil Belur <abelur@linuxfoundation.org>
+Submitted-by: Anil Belur <abelur@linuxfoundation.org>
+Submitted-at: Sun, 20 Jun 2021 13:42:54 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/68043
+Project: releng/global-jjb
+Branch: refs/heads/master
