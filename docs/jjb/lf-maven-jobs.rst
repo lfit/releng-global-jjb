@@ -515,6 +515,8 @@ multi-branch configuration.
         (default: 10)
     :submodule-disable: Disable submodule checkout operation.
         (default: false)
+    :scan-dev-branch: Run the scan on a developer branch.
+        (default: false)
 
     :gerrit_sonar_triggers: Override Gerrit Triggers.
 
