@@ -264,6 +264,7 @@
     submodule-disable: false
     tox-dir: "."
     tox-envs: ""
+    scan-dev-branch: false
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -336,6 +337,7 @@
                 sonarcloud-project-organization: "{sonarcloud-project-organization}"
                 sonarcloud-api-token: "{sonarcloud-api-token}"
                 sonarcloud-java-version: "{sonarcloud-java-version}"
+                scan-dev-branch: "{scan-dev-branch}"
       # With SonarQube
       - conditional-step:
           condition-kind: not

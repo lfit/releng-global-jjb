@@ -34,6 +34,16 @@ if [ "$SONAR_HOST_URL" = "https://sonarcloud.io" ]; then
     params+=("-Dsonar.projectKey=$PROJECT_KEY")
     params+=("-Dsonar.organization=$PROJECT_ORGANIZATION")
     params+=("-Dsonar.login=$API_TOKEN")
+    if $SCAN_DEV_BRANCH; then
+        echo "Will scan short lived branch ..."
+        # shellcheck disable=SC2236
+        if [ ! -z ${GERRIT_CHANGE_NUMBER+x} ]; then
+            GERRIT_SHORT_LIVED_BRANCH=${GERRIT_CHANGE_NUMBER}-${GERRIT_PATCHSET_NUMBER}
+            params+=("-Dsonar.analysis.gerritProjectName=$PROJECT")
+            params+=("-Dsonar.branch.target=$GERRIT_BRANCH")
+            params+=("-Dsonar.branch.name=$GERRIT_SHORT_LIVED_BRANCH")
+        fi
+    fi
 fi
 
 if [ "$SET_JDK_VERSION" != "$SONARCLOUD_JAVA_VERSION" ]; then
