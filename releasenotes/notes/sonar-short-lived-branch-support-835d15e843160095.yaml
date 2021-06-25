@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add support in lf-maven-sonar scan jobs to process short lived branches.
