@@ -13,6 +13,7 @@
     sonarcloud-project-key: KEY
     sonarcloud-project-organization: ORGANIZATION
     sonarcloud-api-token: TOKEN
+    use-short-lived-branch: false
 
 - project:
     name: example-sonarcloud-with-prescan-script
@@ -30,3 +31,4 @@
     sonarcloud-api-token: TOKEN
     sonar-prescan-script: |
       echo "Run script at start of job."
+    use-short-lived-branch: false
