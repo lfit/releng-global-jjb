@@ -1,7 +1,0 @@
----
-- project:
-    name: jenkins-cfg-verify
-    jobs:
-      - "gerrit-jenkins-cfg-verify"
-
-    project-name: ci-management

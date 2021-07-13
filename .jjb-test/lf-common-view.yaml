@@ -1,8 +1,0 @@
----
-- project:
-    name: common-view-test
-    views:
-      - common-view
-
-    view-name: Daily
-    view-regex: ".*-daily-.*"
