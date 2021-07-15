@@ -23,7 +23,6 @@ if [[ ! -f /tmp/pre-build-complete ]]; then
 
     echo "Generating Requirements File"
     cat << 'EOF' > "$requirements_file"
-lftools[openstack]
 python-heatclient
 python-openstackclient
 python-magnumclient
@@ -53,6 +52,7 @@ EOF
 
     python3 -m pip install --user --quiet --upgrade pip
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade setuptools
+    python3 -m pip install --user --quiet --no-warn-script-location --upgrade lftools[openstack]
     python3 -m pip install --user --quiet --no-warn-script-location --upgrade \
         --upgrade-strategy eager -r "$requirements_file"
     # installs are silent, show version details in log
