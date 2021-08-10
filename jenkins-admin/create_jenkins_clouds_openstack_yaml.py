@@ -1,16 +1,23 @@
 #!/usr/bin/env python
+# SPDX-License-Identifier: EPL-1.0
+##############################################################################
+# Copyright (c) 2020 The Linux Foundation and others.
+#
+# All rights reserved. This program and the accompanying materials
+# are made available under the terms of the Eclipse Public License v1.0
+# which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v10.html
+##############################################################################
+"""Create JCasC yaml file for the given Openstack cloud config"""
 
 import argparse
 import configparser
 import glob
 import os
-import sys
 
-from jinja2 import Environment
-from jinja2 import FileSystemLoader
 from jinja2 import Template
 
-#Template section
+# Template section
 lookuptable = {
     "acumos-highcpu-4-avx": "c720c1f8-62e9-4695-823d-f7f54db46c86",
     "lf-highcpu-2": "1051d06a-61ea-45e3-b9b4-93de92880b27",
@@ -111,27 +118,26 @@ footertemplate = """\
         zone: {{ cloud_zone}}
 """
 
-#Command line args section
+# Command line args section
 def dir_path(path):
     if os.path.isdir(path):
         return path
     else:
-        raise argparse.ArgumentTypeError(f"readable_dir:{path} is not a valid path")
+        raise argparse.ArgumentTypeError(f"readable_dir: {path} is not a valid path")
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        description='Create jcasc yaml from path to jenkins config dir.')
+        description="Create JCasC yaml from path to Jenkins config dir.")
 
-
-    parser.add_argument('--path', type=dir_path,
-                        help="Path to jenkins-admin directory")
-    parser.add_argument('--name', type=str,
-                        help="cloud name IE: cattle")
+    parser.add_argument("--path", type=dir_path,
+                        help="Path to jenkins-config directory")
+    parser.add_argument("--name", type=str,
+                        help="Cloud name (e.g \"cattle\")")
 
     parser.add_argument(
         "-s", "--sandbox",
-        help = "Is configuration being created for a sandbox",
-        dest = "sandbox", action = "store_true"
+        help="Configuration is being created for a sandbox",
+        dest="sandbox", action="store_true"
     )
 
     return parser.parse_args()
@@ -140,66 +146,43 @@ parsed_args = parse_arguments()
 path = (parsed_args.path)
 path = ("{}**/*.cfg".format(path))
 
-#sandbox switch section
+# Sandbox switch section
 section_cloud = {}
 name_prefix = "prd"
 if parsed_args.sandbox:
     name_prefix = "snd"
     section_cloud.update(is_sandbox=True)
 
-#Config parser from merged files section
-class Iterfiles:
-    def __init__(self, filename):
-        self.filename = filename
+# Config parser from merged files section
+def read_config(filename):
+    shortname = os.path.basename(filename)
+    header_name = os.path.splitext(shortname)[0]
+    with open(filename, "r", encoding="utf_8") as config_file:
+        config.read_file(add_section_header(config_file, header_name), source=filename)
+    return config
 
-    def iterf(self):
-        shortname = os.path.basename(filename)
-        shortname1 = os.path.splitext(shortname)[0]
-        return (self.filename, shortname1)
-
-class Openfile:
-    def __init__(self, filename, shortname1):
-        self.filename = filename
-        self.shortname1 = shortname1
-    def openf(self):
-        file = open(self.filename, encoding="utf_8")
-        config.read_file(add_section_header(file, self.shortname1), source=self.filename)
-        return config
-
-#cfg files are not real ini files, need to add section headers.
+# Cfg files are not real ini files, need to add section headers.
 def add_section_header(properties_file, header_name):
-    yield '[{}]\n'.format(header_name)
+    yield "[{}]\n".format(header_name)
     for line in properties_file:
         yield line
 
 config = configparser.ConfigParser()
 for filename in glob.iglob(path, recursive=True):
-    #This just returns the filename you sent it and a shortname
-    # dumb but just messing around with classes.
-    r1 = Iterfiles(filename)
-    r3 = r1.iterf()
-    #now i send the file name and the shortname to Openfile class
-    #which builds up a big configparser with sections divided by shortname
-    r5 = Openfile(r3[0], r3[1])
-    #config_parser_merged is the configparser object with all the configs from *.cfg
-    config_parser_merged = r5.openf()
-
+    # config_parser_merged is the configparser object with all the configs from *.cfg
+    config_parser_merged = read_config(filename)
 
 # Global cloud config section
-for section in config_parser_merged.sections():
-    if section == "cloud":
-        afinal = (config.items(section))
-        name = parsed_args.name
-        final = (*afinal, ("cloud_name", name))
+cloud_config = (config.items("cloud"))
+name = parsed_args.name
+cloud_config_final = (*cloud_config, ("cloud_name", name))
 
-
-for index, _ in enumerate(final):
-    a = final[index][0]
-    b = final[index][1]
-    for x, y in lookuptable.items():
-        if b == x:
-            b = y
-    section_cloud[a] = b
+for index, _ in enumerate(cloud_config_final):
+    key = cloud_config_final[index][0]
+    value = cloud_config_final[index][1]
+    if value in lookuptable.keys():
+        value = lookuptable[value]
+    section_cloud[key] = value
 
 j2_template = Template(maintemplate)
 print(j2_template.render(section_cloud))
@@ -211,29 +194,25 @@ for section in config_parser_merged.sections():
         machine = (config.items(section))
         section_all_machines = {}
         for index, _ in enumerate(machine):
-            a = machine[index][0]
-            b = machine[index][1]
-            for x, y in lookuptable.items():
-                if b == x:
-                    b = y
-            #a = format(a)
-            section_all_machines[a] = b
+            key = machine[index][0]
+            value = machine[index][1]
+            if value in lookuptable.keys():
+                value = lookuptable[value]
+            section_all_machines[key] = value
 
-
-        #Default volume size of 10
-        if not "volume_size" in section_all_machines:
+        # Default volume size of 10
+        if "volume_size" not in section_all_machines:
             section_all_machines.update(volume_size="10")
-        if not "labels" in section_all_machines:
+        if "labels" not in section_all_machines:
             print("LABELS not Set in builder config")
             print(section_all_machines)
             exit(1)
-
 
         j2_template = Template(machinetemplate)
         section_all_machines.update(name_prefix=name_prefix)
         print(j2_template.render(section_all_machines))
 
 
-#Footer section
+# Footer section
 j2_template = Template(footertemplate)
 print(j2_template.render(section_cloud))
