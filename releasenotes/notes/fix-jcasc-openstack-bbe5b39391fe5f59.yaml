@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    When running create_jenkins_clouds_openstack_yaml.py, rather than quitting
+    if there are no labels defined, we can instead use the agent name
+    (e.g. "centos7-2c-1g") as the default label. This recreates the
+    functionality of the groovy scripts previously used.

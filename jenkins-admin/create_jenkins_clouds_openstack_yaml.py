@@ -204,9 +204,8 @@ for section in config_parser_merged.sections():
         if "volume_size" not in section_all_machines:
             section_all_machines.update(volume_size="10")
         if "labels" not in section_all_machines:
-            print("LABELS not Set in builder config")
-            print(section_all_machines)
-            exit(1)
+            # "section" is the name of the cloud agent, which is the default label
+            section_all_machines.update(labels=section)
 
         j2_template = Template(machinetemplate)
         section_all_machines.update(name_prefix=name_prefix)
