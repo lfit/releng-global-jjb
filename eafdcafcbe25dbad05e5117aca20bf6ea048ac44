@@ -16,6 +16,23 @@
       "message": "Needs release note.",
       "revId": "eafdcafcbe25dbad05e5117aca20bf6ea048ac44",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e7143df_9de7561c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-08-10T21:57:57Z",
+      "side": 1,
+      "message": "Actually, refactor doesn\u0027t. This doesn\u0027t change functionality. However, next commit in chain does need a release note.",
+      "revId": "eafdcafcbe25dbad05e5117aca20bf6ea048ac44",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
