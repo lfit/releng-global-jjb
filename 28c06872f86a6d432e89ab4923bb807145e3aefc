@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64cae5bf_df42ddaa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-08-11T13:09:29Z",
+      "side": 1,
+      "message": "LGTM. Is that default label available for all projects on vex by default? ",
+      "revId": "28c06872f86a6d432e89ab4923bb807145e3aefc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
