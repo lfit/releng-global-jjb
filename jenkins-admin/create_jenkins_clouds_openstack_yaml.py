@@ -100,9 +100,10 @@ machinetemplate = """\
             name: {{ name_prefix }}-{{ labels }}
             slaveOptions:
               bootSource:
-                volumeFromImage:
+                {{ image_type }}:
                   name: {{ image_name }}
-                  volumeSize: {{ volume_size }}
+{%- if image_type == "volumeFromImage"  %}
+                  volumeSize: {{ volume_size }}{% endif %}
 {%- if hardware_id  %}
               hardwareId: {{ hardware_id }}{% endif %}
 {%- if instance_cap %}
@@ -202,7 +203,9 @@ for section in config_parser_merged.sections():
 
         # Default volume size of 10
         if "volume_size" not in section_all_machines:
-            section_all_machines.update(volume_size="10")
+            section_all_machines.update(image_type="image")
+        else:
+            section_all_machines.update(image_type="volumeFromImage")
         if "labels" not in section_all_machines:
             # "section" is the name of the cloud agent, which is the default label
             section_all_machines.update(labels=section)
