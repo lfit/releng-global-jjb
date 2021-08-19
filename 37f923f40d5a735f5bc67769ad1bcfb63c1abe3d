@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "824faf4d_cb5c858a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-08-19T22:03:42Z",
+      "side": 1,
+      "message": "I tested this on the Acumos sandbox, since their config files were the ones that exposed this issue. With these changes, the naming and labels properly match what we would get from the config-merge jjb jobs.",
+      "revId": "37f923f40d5a735f5bc67769ad1bcfb63c1abe3d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
