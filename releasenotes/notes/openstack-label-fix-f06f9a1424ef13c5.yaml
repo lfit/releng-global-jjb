@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    If no volume_size is defined, the default behavior was to set one to
+    10GB. However, the proper way to handle this is to use an "Image"
+    boot source rather than "Volume From Image".
