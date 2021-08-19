@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de871329_a549654e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-08-19T19:08:00Z",
+      "side": 1,
+      "message": "I tested this on the EdgeX sandbox. EdgeX has one builder that uses a v2 type that was not recreated in v3, so it still has a volume_size set. Tests showed that this properly set the type and size when volume_size is set, and uses the correct settings when it is missing, making a yaml file that was successfully loaded by JCasC and properly recreated the builders in the way config-merge jjb jobs would.",
+      "revId": "18f1cdfacc56c5642a25d9d02472e0aacea0a603",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
