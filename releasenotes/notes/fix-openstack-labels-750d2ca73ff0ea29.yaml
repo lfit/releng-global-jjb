@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Openstack labels need to include the config name, in addition to any
+    labels explicitly defined. This also changes the builder name to
+    match the config name, rather than using the labels (which can be
+    only one label, but is technically a space-separated list).

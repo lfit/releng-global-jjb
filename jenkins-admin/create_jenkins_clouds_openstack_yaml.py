@@ -97,7 +97,7 @@ jenkins:
 """
 machinetemplate = """\
           - labels: {{ labels }}
-            name: {{ name_prefix }}-{{ labels }}
+            name: {{ name_prefix }}-{{ agent_name }}
             slaveOptions:
               bootSource:
                 {{ image_type }}:
@@ -201,14 +201,19 @@ for section in config_parser_merged.sections():
                 value = lookuptable[value]
             section_all_machines[key] = value
 
-        # Default volume size of 10
         if "volume_size" not in section_all_machines:
             section_all_machines.update(image_type="image")
         else:
             section_all_machines.update(image_type="volumeFromImage")
+
+        # Naming and labels
+        section_all_machines.update(agent_name=section)
         if "labels" not in section_all_machines:
             # "section" is the name of the cloud agent, which is the default label
             section_all_machines.update(labels=section)
+        elif section not in section_all_machines["labels"]:
+            labels = section + " " + section_all_machines["labels"]
+            section_all_machines.update(labels=labels)
 
         j2_template = Template(machinetemplate)
         section_all_machines.update(name_prefix=name_prefix)
