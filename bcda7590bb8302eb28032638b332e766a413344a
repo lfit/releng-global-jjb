@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbd391c3_507e1752",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-09-08T20:31:55Z",
+      "side": 1,
+      "message": "My only real problem with this change is that I don\u0027t love the variable name being used. I see two issues with it: I\u0027d prefer \"scan\" rather than \"use\" in order to better document what the variable is affecting, and I think \"short-lived\" is wordier than necessary. It could be replaced by \"feature\" or \"dev\". If I was coming across this while perusing code, I think I\u0027d understand what it was for much more intuitively if it was named \"scan-dev-branch\" rather than \"use-short-lived-branch\".\n\nThis is just a suggestion, but I think it would clarify the code.",
+      "revId": "bcda7590bb8302eb28032638b332e766a413344a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
