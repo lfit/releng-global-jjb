@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ec8d276_498ae53e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-09-09T18:49:26Z",
+      "side": 1,
+      "message": "You need to create a linked RELENG issue and use that issue for the Issue ID",
+      "revId": "e245f181ab63ba9b186ae0e90137f1f9ad024147",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3caae7c_78f9816d",
+        "filename": "releasenotes/notes/sonar-short-lived-branch-support-835d15e843160095.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-09-09T18:49:26Z",
+      "side": 1,
+      "message": "lived dev branches",
+      "range": {
+        "startLine": 4,
+        "startChar": 61,
+        "endLine": 4,
+        "endChar": 75
+      },
+      "revId": "e245f181ab63ba9b186ae0e90137f1f9ad024147",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
