@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Add missing v3-standard Vexxhost flavors to create_jenkins_clouds_openstack_yaml.
