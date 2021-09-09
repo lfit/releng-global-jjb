@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7aec9f4c_cdb1a49f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-09-09T18:55:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ec8d276_498ae53e",
+      "revId": "e245f181ab63ba9b186ae0e90137f1f9ad024147",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d3caae7c_78f9816d",
@@ -31,6 +49,30 @@
       "writtenOn": "2021-09-09T18:49:26Z",
       "side": 1,
       "message": "lived dev branches",
+      "range": {
+        "startLine": 4,
+        "startChar": 61,
+        "endLine": 4,
+        "endChar": 75
+      },
+      "revId": "e245f181ab63ba9b186ae0e90137f1f9ad024147",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dc59a64_70b61288",
+        "filename": "releasenotes/notes/sonar-short-lived-branch-support-835d15e843160095.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-09-09T18:55:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3caae7c_78f9816d",
       "range": {
         "startLine": 4,
         "startChar": 61,
