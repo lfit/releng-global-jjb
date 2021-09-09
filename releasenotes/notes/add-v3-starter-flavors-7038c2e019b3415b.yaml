@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add v3-starter flavors to cloud lookup in create_jenkins_clouds_openstack_yaml
+    script.
