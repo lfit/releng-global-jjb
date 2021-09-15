@@ -43,6 +43,7 @@ properties:
         "Mature",
         "Core",
         "Top Level",
+        "Unmaintained",
         "Archived",
         "Null",
         "Integration",

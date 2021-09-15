@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add "Unmaintained" as a valid lifecycle_state to be used in INFO.yaml files.
