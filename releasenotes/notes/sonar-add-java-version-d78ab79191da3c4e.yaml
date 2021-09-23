@@ -1,0 +1,11 @@
+---
+features:
+  - |
+    The **lf-infra-sonar** and **lf-infra-sonar-with-prescan** macros
+    now supports setting the ``jdk`` version through the
+    ``sonarcloud-java-version`` variable.
+upgrade:
+  - |
+    **lf-infra-sonar** and and **lf-infra-sonar-with-prescan** users
+    need to add a new parameter ``sonarcloud-java-version`` to their
+    job-templates for setting to the version of JDK.

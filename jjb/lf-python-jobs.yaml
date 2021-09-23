@@ -471,6 +471,7 @@
     sonar-project-file: "sonar-project.properties"
     sonar-properties: ""
     sonar-task: ""
+    sonarcloud-java-version: "openjdk11"
 
     #####################
     # Job Configuration #
@@ -515,6 +516,7 @@
           sonar-properties: "{sonar-properties}"
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
+          sonarcloud-java-version: "{sonarcloud-java-version}"
 
     publishers:
       - lf-infra-publish

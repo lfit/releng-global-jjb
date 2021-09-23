@@ -349,6 +349,7 @@ Requires ``SonarQube Scanner for Jenkins``
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
+    :sonarcloud-java-version: The JDK version. (default: "openjdk11")
 
 lf-infra-sonar-with-prescan
 ---------------------------
@@ -373,6 +374,7 @@ Requires ``SonarQube Scanner for Jenkins``
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
+    :sonarcloud-java-version: The JDK version. (default: "openjdk11")
 
 lf-infra-pipeline-verify
 ------------------------

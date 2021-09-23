@@ -2175,6 +2175,7 @@
     sonar-properties: ""
     sonar-java-opts: ""
     sonar-additional-args: ""
+    sonarcloud-java-version: "openjdk11"
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -2225,6 +2226,7 @@
           sonar-properties: "{sonar-properties}"
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
+          sonarcloud-java-version: "{sonarcloud-java-version}"
 
 - lf_sonar_builders_prescan: &lf_sonar_builders_prescan
     name: lf-sonar-builders-prescan
@@ -2236,6 +2238,7 @@
           sonar-properties: "{sonar-properties}"
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
+          sonarcloud-java-version: "{sonarcloud-java-version}"
 
 - lf_sonar_builders_prescan_script: &lf_sonar_builders_prescan_script
     name: lf-sonar-builders-prescan-script
@@ -2248,6 +2251,7 @@
           sonar-properties: "{sonar-properties}"
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
+          sonarcloud-java-version: "{sonarcloud-java-version}"
 
 - lf_sonar_gerrit_common: &lf_sonar_gerrit_common
     name: lf-sonar-gerrit-common

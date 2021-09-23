@@ -213,6 +213,7 @@
     sonar-project-file: sonar-project.properties
     sonar-properties: ""
     sonar-task: ""
+    sonarcloud-java-version: "openjdk11"
 
     parameters:
       - lf-infra-parameters:
@@ -237,6 +238,7 @@
           sonar-properties: "{sonar-properties}"
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
+          sonarcloud-java-version: "{sonarcloud-java-version}"
 
 - job-template:
     name: "{project-name}-autotools-sonarqube"
@@ -608,6 +610,7 @@
     sonar-project-file: "sonar-project.properties"
     sonar-properties: ""
     sonar-task: ""
+    sonarcloud-java-version: "openjdk11"
 
     parameters:
       - lf-infra-parameters:
@@ -638,6 +641,7 @@
           sonar-properties: "{sonar-properties}"
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
+          sonarcloud-java-version: "{sonarcloud-java-version}"
 
 - job-template:
     name: "{project-name}-cmake-sonarqube"
