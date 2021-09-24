@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add ``sonarcloud-java-version`` parameter to LF Sonar builders, which allows
+    setting the JDK version to use with the Sonar scanner (default: openjdk11).

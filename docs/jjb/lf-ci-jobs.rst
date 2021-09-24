@@ -1000,6 +1000,7 @@ Plug-in configurations
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
+    :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: "openjdk11")
 
 
 Sonar with Prescan
@@ -1032,6 +1033,7 @@ to run before the Sonar scan.
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
+    :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: "openjdk11")
 
 
 Sonar with Prescan Script
@@ -1057,3 +1059,4 @@ build the project, execute unit tests and generate a code-coverage report.
     :sonar-properties: Sonar configuration properties. (default: "")
     :sonar-java-opts: JVM options. (default: "")
     :sonar-additional-args: Additional command line arguments. (default: "")
+    :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: "openjdk11")
