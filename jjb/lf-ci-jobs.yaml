@@ -2164,6 +2164,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    java-version: openjdk11
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -2219,6 +2220,8 @@
     name: lf-sonar-builders
     builders:
       - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
       - lf-infra-sonar:
           sonar-task: "{sonar-task}"
           sonar-project-file: "{sonar-project-file}"
@@ -2230,6 +2233,8 @@
     name: lf-sonar-builders-prescan
     builders:
       - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
       - lf-infra-sonar-with-prescan:
           sonar-task: "{sonar-task}"
           sonar-project-file: "{sonar-project-file}"
@@ -2241,6 +2246,8 @@
     name: lf-sonar-builders-prescan-script
     builders:
       - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
       - shell: "{sonar-prescan-script}"
       - lf-infra-sonar:
           sonar-task: "{sonar-task}"
