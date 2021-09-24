@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "f4b26fc4991be83ef40f2e52b9c7c226694c6dab",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a8473056_34ad1c2d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-09-24T00:58:03Z",
+      "side": 1,
+      "message": "I tested this on the ORAN sandbox, and it wasn\u0027t able to find java when running with openjdk11:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-sonar-prescan-script/1/\n\nBuild 2 of that job I reset to the default, and got the same result as we see in prod (the scan begins successfully, but then fails due to using an out-of-date java version).\n\nIt seems that this will need some modification, whether to the job or to the JDK definitions in Jenkins\u0027 Global Tools settings, in order to get it to work.",
+      "revId": "f4b26fc4991be83ef40f2e52b9c7c226694c6dab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
