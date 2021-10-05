@@ -140,7 +140,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean install
     mvn-opts: ""
@@ -310,7 +310,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     mvn-dir: "."
     mvn-global-settings: global-settings
     mvn-opts: ""
@@ -442,7 +442,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     mvn-dir: "."
     mvn-global-settings: global-settings
     mvn-opts: ""
@@ -567,7 +567,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
     mvn-opts: ""
@@ -831,7 +831,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     maven-versions-plugin: false
     version-properties-file: version.properties
     mvn-central: false
@@ -1126,7 +1126,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     java-opts: ""
     mvn-global-settings: global-settings
     mvn-goals: clean install
@@ -1455,7 +1455,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
     mvn-opts: ""
@@ -1691,7 +1691,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
     mvn-opts: ""

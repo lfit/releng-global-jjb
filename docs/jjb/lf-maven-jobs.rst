@@ -23,7 +23,7 @@ Runs Sonar against a Maven project.
 
 :Required Parameters:
 
-    :java-version: Version of Java to execute Sonar with.
+    :java-version: Version of Java to execute Sonar with. (default: openjdk11)
     :mvn-version: Version of Maven to execute Sonar with.
     :mvn-settings: Maven settings.xml file containing credentials to use.
 
@@ -34,13 +34,13 @@ Runs Sonar against a Maven project and pushes results to SonarCloud.
 
 :Required Parameters:
 
-    :java-version: Version of Java to execute Maven build. (default: openjdk8)
+    :java-version: Version of Java to execute Maven build. (default: openjdk11)
     :mvn-version: Version of Maven to execute Sonar with.
     :mvn-settings: Maven settings.xml file containing credentials to use.
     :sonarcloud-project-key: SonarCloud project key.
     :sonarcloud-project-organization: SonarCloud project organization.
     :sonarcloud-api-token: SonarCloud API Token.
-    :sonarcloud-java-version: Version of Java to run the Sonar scan.
+    :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: openjdk11)
 
 lf-maven-build
 --------------
@@ -95,7 +95,7 @@ Setup Java alternatives for the Distro.
 :Required Parameters:
 
     :java-version: Version of Java to set as the default Java.
-        Eg. openjdk8
+        Eg. openjdk11
 
 lf-infra-sonatype-clm
 ---------------------
@@ -135,7 +135,7 @@ Produces a CLM scan of the code into Nexus IQ Server.
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-goals: The maven goals to perform for the build.
@@ -192,7 +192,7 @@ in ``$WORKSPACE/{mvn-dir}/target/site/apidocs``.
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-dir: Directory supplied as argument to -f option (default: '.')
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
@@ -240,7 +240,7 @@ in ``$WORKSPACE/{mvn-dir}/target/site/apidocs``.
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-dir: Directory supplied as argument to -f option (default: '.')
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
@@ -304,7 +304,7 @@ This job uses the following strategy to deploy jobs to Nexus:
         one may want to provide more than 1 cron timer. (default: 'H H * * 0'
         to run weekly)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
@@ -390,7 +390,7 @@ directory is then used later to deploy to Nexus.
         one may want to provide more than 1 cron timer. (default: '')
     :deploy-path:    The path in Nexus to deploy javadoc to. (default: $PROJECT/$STREAM)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-central: Set to ``true`` to also stage to **OSSRH**. This is for projects
         that want to release to Maven Central. If set, then also set the parameter
         ``ossrh-profile-id``. (default: false)
@@ -490,7 +490,7 @@ multi-branch configuration.
         one may want to provide more than 1 cron timer.  (default: 'H H * * 6'
         to run weekly)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the Maven build. (default: openjdk8)
+    :java-version: Version of Java to use for the Maven build. (default: openjdk11)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-goals: The maven goals to perform for the build.
@@ -551,7 +551,7 @@ Verify job which runs mvn clean install to test a project build..
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
@@ -619,7 +619,7 @@ comment trigger.
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')

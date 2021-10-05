@@ -95,7 +95,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-opts: ""
-    java-version: openjdk8
+    java-version: openjdk11
     mvn-clean-install: false
     mvn-global-settings: global-settings
     mvn-pom: ""
