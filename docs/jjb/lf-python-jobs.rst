@@ -105,7 +105,7 @@ does not support multi-branch.
     :gerrit_nexusiq_triggers: Override Gerrit Triggers.
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :github-url: URL for Github. (default: https://github.com)
-    :java-version: Version of Java to use for the scan. (default: openjdk8)
+    :java-version: Version of Java to use for the scan. (default: openjdk11)
     :nexus-iq-cli-version: Nexus IQ CLI package version to download and use.
         (default is a string like 1.89.0-02, see file lf-python-jobs.yaml)
     :nexus-iq-namespace: Insert a namespace to project AppID for projects that
@@ -199,7 +199,7 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     :disable-job: Whether to disable the job (default: false)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :github-url: URL for Github. (default: https://github.com)
-    :java-version: Version of Java to use for the build. (default: openjdk8)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-global-settings: The name of the Maven global settings to use
     :mvn-goals: The Maven goal to run first. (default: validate)
     :mvn-version: Version of maven to use. (default: mvn35)

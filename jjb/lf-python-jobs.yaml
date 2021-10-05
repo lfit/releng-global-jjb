@@ -83,7 +83,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8 # Scanner is a jar
+    java-version: openjdk11 # Scanner is a jar
     nexus-iq-cli-version: 1.89.0-02
     nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
     pre-build-script: "# pre-build script goes here"
@@ -240,7 +240,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk8
+    java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: validate
     mvn-opts: ""
