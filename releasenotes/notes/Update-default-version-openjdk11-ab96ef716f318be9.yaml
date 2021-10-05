@@ -1,0 +1,9 @@
+---
+prelude: >
+  JDK8 is soon going to be EOL by Mar 31, 2022. with most of the LF projects
+  already using JDK11 (LTS), upgrade default version to JDK11 (LTS).
+features:
+  - |
+    Upgrade default version to JDK11 (LTS).
+
+    https://www.oracle.com/java/technologies/java-se-support-roadmap.html
