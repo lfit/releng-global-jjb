@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c3d173a_1e67623d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-10-06T15:36:14Z",
+      "side": 1,
+      "message": "This looks good, but I think we need to do a downstream survey of our projects to see if they\u0027ve all transitioned to jdk11 or not on their own. This could potentially be a breaking change for them if they haven\u0027t!",
+      "revId": "12dc572db501b464c4ed185c604b03ad32a65bf8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
