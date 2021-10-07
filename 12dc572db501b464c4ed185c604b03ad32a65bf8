@@ -16,6 +16,24 @@
       "message": "This looks good, but I think we need to do a downstream survey of our projects to see if they\u0027ve all transitioned to jdk11 or not on their own. This could potentially be a breaking change for them if they haven\u0027t!",
       "revId": "12dc572db501b464c4ed185c604b03ad32a65bf8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fc3701f_fcd243f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-10-07T11:44:05Z",
+      "side": 1,
+      "message": "Thanks for the review. $projects should still be able to set \u0027openjdk8\u0027 thru the downstream jobs in ci-man repo while overriding the default value.",
+      "parentUuid": "0c3d173a_1e67623d",
+      "revId": "12dc572db501b464c4ed185c604b03ad32a65bf8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
