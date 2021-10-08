@@ -57,6 +57,30 @@
       },
       "revId": "12dc572db501b464c4ed185c604b03ad32a65bf8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fddde39_e661794b",
+        "filename": "releasenotes/notes/Update-default-version-openjdk11-ab96ef716f318be9.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-10-08T19:10:06Z",
+      "side": 1,
+      "message": "Good call Eric. I agree with you on this",
+      "parentUuid": "5a327c0d_87561416",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 9
+      },
+      "revId": "12dc572db501b464c4ed185c604b03ad32a65bf8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
