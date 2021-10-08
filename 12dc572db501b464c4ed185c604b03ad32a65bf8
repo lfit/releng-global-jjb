@@ -34,6 +34,29 @@
       "parentUuid": "0c3d173a_1e67623d",
       "revId": "12dc572db501b464c4ed185c604b03ad32a65bf8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5a327c0d_87561416",
+        "filename": "releasenotes/notes/Update-default-version-openjdk11-ab96ef716f318be9.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-10-08T18:42:36Z",
+      "side": 1,
+      "message": "I think this should be an \"upgrade\" note, and should note the possibility of causing issues with jobs that were using the old default.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 9
+      },
+      "revId": "12dc572db501b464c4ed185c604b03ad32a65bf8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
