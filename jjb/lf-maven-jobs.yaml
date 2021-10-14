@@ -1205,6 +1205,102 @@
       - findbugs
       - lf-infra-publish
 
+- lf_maven_sonar_verify: &lf_maven_sonar_verify
+    name: lf-maven-sonar-verify
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 60
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    java-version: openjdk11
+    java-opts: ""
+    mvn-global-settings: global-settings
+    mvn-goals: clean install
+    mvn-opts: ""
+    mvn-params: ""
+    mvn-version: mvn35
+    sonar-mvn-goal: "sonar:sonar"
+    sonarcloud: true
+    sonarcloud-project-key: ""
+    sonarcloud-project-organization: ""
+    sonarcloud-api-token: ""
+    # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
+    # Projects not compatible with jdk11 can set java-version to something else
+    sonarcloud-java-version: openjdk11
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+    scan-dev-branch: true
+
+    gerrit_sonar_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-infra-maven-parameters:
+          mvn-opts: "{mvn-opts}"
+          mvn-params: "{mvn-params}"
+          mvn-version: "{mvn-version}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
+      - string:
+          name: JAVA_OPTS
+          default: "{java-opts}"
+          description: |
+            Java options. Example: -Xmx1024m
+      - string:
+          name: SONAR_MAVEN_GOAL
+          default: "{sonar-mvn-goal}"
+          description: |
+            Maven goals to pass to the Sonar call. Typically sonar:sonar
+            however to use a specific version of the sonar-maven-plugin we
+            can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_sonar_triggers}"
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+
+    publishers:
+      - lf-jacoco-report
+      - findbugs
+      - lf-infra-publish
+
 - mvn_sonar_builders: &mvn_sonar_builders
     name: mvn-sonar-builders
     builders:
@@ -1327,6 +1423,25 @@
     <<: *lf_maven_common
     # yamllint disable-line rule:key-duplicates
     <<: *lf_maven_sonar
+    <<: *mvn_sonar_builders
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: $GERRIT_REFSPEC
+          branch: $GERRIT_BRANCH
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+- job-template:
+    name: "{project-name}-sonar-verify"
+    id: gerrit-maven-sonar-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_sonar_verify
     <<: *mvn_sonar_builders
 
     scm:

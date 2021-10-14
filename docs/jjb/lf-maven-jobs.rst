@@ -526,6 +526,67 @@ SonarCloud Example:
 .. literalinclude:: ../../.jjb-test/lf-maven-jobs/maven-sonarcloud.yaml
    :language: yaml
 
+Maven Sonar Verify
+------------------
+
+Sonar job which runs mvn clean install then publishes to Sonar.
+
+This job runs on dev branches and its triggered on new patchsets.
+
+:Template Names:
+
+    - {project-name}-sonar-verify
+    - gerrit-maven-sonar-verify
+
+:Comment Trigger: recheck|reverify
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
+    :mvn-settings: The name of settings file containing credentials for the project.
+
+:Optional parameters:
+
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :java-version: Version of Java to use for the Maven build. (default: openjdk11)
+    :mvn-global-settings: The name of the Maven global settings to use for
+        Maven configuration. (default: global-settings)
+    :mvn-goals: The maven goals to perform for the build.
+        (default: clean install)
+    :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
+    :mvn-params: Parameters to pass to the mvn CLI. (default: '')
+    :mvn-version: Version of maven to use. (default: mvn35)
+    :sonar-mvn-goal: Maven goals to run for sonar analysis.
+        (default: sonar:sonar)
+    :sonarcloud: Set to ``true`` to use SonarCloud ``true|false``.
+        (default: true)
+    :sonarcloud-project-key: SonarCloud project key. (default: '')
+    :sonarcloud-project-organization: SonarCloud project organization.
+        (default: '')
+    :sonarcloud-api-token: SonarCloud API Token. (default: '')
+    :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
+    :stream: Keyword that represents a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :scan-dev-branch: Run the scan on a developer branch.
+        (default: true)
+
+    :gerrit_sonar_triggers: Override Gerrit Triggers.
+
+
+SonarCloud Example:
+
+.. literalinclude:: ../../.jjb-test/lf-maven-jobs/maven-sonarcloud.yaml
+   :language: yaml
+
 Maven Verify
 ------------
 
