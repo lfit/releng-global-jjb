@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb07b908_306206ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-10-14T23:24:46Z",
+      "side": 1,
+      "message": "You will need to associate this change to a RELENG task. \n\nPlease create a RELENG ticket and add the number as:\n\nIssue: RELENG-####",
+      "range": {
+        "startLine": 6,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 38
+      },
+      "revId": "cacc2ed252239b9bac3f598c249e5e963223fdab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73f5cc3c_5b7ed07e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-10-14T23:24:46Z",
+      "side": 1,
+      "message": "Thanks so much Kevin!\n\nPlease document this change",
+      "revId": "cacc2ed252239b9bac3f598c249e5e963223fdab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
