@@ -32,3 +32,19 @@
     sonar-prescan-script: |
       echo "Run script at start of job."
     scan-dev-branch: false
+
+- project:
+    name: example-sonarcloud-verify
+    jobs:
+      - gerrit-maven-sonar-verify
+
+    project: "sonarcloud"
+    project-name: "sonarcloud"
+    branch: "master"
+    mvn-settings: "sonarcloud-settings"
+    mvn-opts: "-Xmx1024m"
+    sonarcloud: true
+    sonarcloud-project-key: KEY
+    sonarcloud-project-organization: ORGANIZATION
+    sonarcloud-api-token: TOKEN
+    scan-dev-branch: true

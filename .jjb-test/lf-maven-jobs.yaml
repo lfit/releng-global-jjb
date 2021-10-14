@@ -7,6 +7,7 @@
       - gerrit-maven-javadoc-verify
       - gerrit-maven-merge
       - gerrit-maven-sonar
+      - gerrit-maven-sonar-verify
       - gerrit-maven-stage
       - gerrit-maven-verify
       - gerrit-maven-verify-dependencies
