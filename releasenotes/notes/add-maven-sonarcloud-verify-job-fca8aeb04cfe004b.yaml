@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add new maven sonarcloud verify job that will execute SonarCloud scan on every
+    new patchset instead of relying on a cronjob.
