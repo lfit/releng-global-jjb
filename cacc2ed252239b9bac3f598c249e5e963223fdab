@@ -79,6 +79,23 @@
       "message": "This also needs the following:\n\nDocumentation\nChangelog\nAnd tests (I think... probably)",
       "revId": "cacc2ed252239b9bac3f598c249e5e963223fdab",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e999a928_401c5c83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-10-14T23:27:32Z",
+      "side": 1,
+      "message": "Also.. take a look at file \"https://github.com/lfit/releng-global-jjb/blob/master/docs/jjb/lf-maven-jobs.rst\"\n\nThe same way the sonar job is documented, you will need to document yours",
+      "revId": "cacc2ed252239b9bac3f598c249e5e963223fdab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
