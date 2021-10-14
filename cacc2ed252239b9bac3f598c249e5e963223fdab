@@ -24,6 +24,29 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf3e1156_c7373539",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-10-14T23:26:11Z",
+      "side": 1,
+      "message": "This is a \u0027Feat\u0027 not Chore",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "cacc2ed252239b9bac3f598c249e5e963223fdab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "73f5cc3c_5b7ed07e",
@@ -37,6 +60,23 @@
       "writtenOn": "2021-10-14T23:24:46Z",
       "side": 1,
       "message": "Thanks so much Kevin!\n\nPlease document this change",
+      "revId": "cacc2ed252239b9bac3f598c249e5e963223fdab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5af374f6_671d1e0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-10-14T23:26:11Z",
+      "side": 1,
+      "message": "This also needs the following:\n\nDocumentation\nChangelog\nAnd tests (I think... probably)",
       "revId": "cacc2ed252239b9bac3f598c249e5e963223fdab",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
