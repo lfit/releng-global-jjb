@@ -1341,6 +1341,53 @@
           choosing-strategy: default
 
 - job-template:
+    name: "{project-name}-sonar-verify"
+    id: gerrit-maven-sonar-verify
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_sonar
+    <<: *mvn_sonar_builders
+
+    sonarcloud: true
+    scan-dev-branch: true
+
+    gerrit_sonar_triggers:
+      - patchset-created-event:
+          exclude-drafts: true
+          exclude-trivial-rebase: false
+          exclude-no-code-change: false
+      - draft-published-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_sonar_triggers}"
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: $GERRIT_REFSPEC
+          branch: $GERRIT_BRANCH
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+- job-template:
     name: "{project-name}-sonar-prescan-script"
     id: gerrit-maven-sonar-prescan-script
     <<: *lf_maven_common
