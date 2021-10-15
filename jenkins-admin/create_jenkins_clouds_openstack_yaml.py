@@ -125,7 +125,7 @@ machinetemplate = """\
 {%- if instance_cap %}
               instanceCap: {{ instance_cap }}{% endif %}
 {%- if num_executors %}
-              numExectorts: {{ num_executors }}{% endif %}
+              numExecutors: {{ num_executors }}{% endif %}
 {%- if retention_time %}
               retentionTime: {{ retention_time }}
 {%- else %}

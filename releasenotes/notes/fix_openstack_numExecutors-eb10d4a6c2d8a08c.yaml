@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    The JCasC convert for OpenStack was improperly converting executor
+    definitions. The script has learned the proper syntax.
