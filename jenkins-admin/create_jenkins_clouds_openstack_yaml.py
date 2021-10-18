@@ -93,9 +93,10 @@ jenkins:
         slaveOptions:
           availabilityZone: {{ availability_zone }}
           bootSource:
-            volumeFromImage:
+            {{ image_type }}:
               name: {{ image_name }}
-              volumeSize: {{ volume_size }}
+{%- if image_type == "volumeFromImage"  %}
+              volumeSize: {{ volume_size }}{% endif %}
           fsRoot: {{ fs_root }}
           hardwareId: {{ hardware_id }}
 {%- if is_sandbox is defined %}
@@ -200,6 +201,11 @@ for index, _ in enumerate(cloud_config_final):
     if value in lookuptable.keys():
         value = lookuptable[value]
     section_cloud[key] = value
+
+    if "volume_size" not in section_cloud:
+        section_cloud.update(image_type="image")
+    else:
+        section_cloud.update(image_type="volumeFromImage")
 
 j2_template = Template(maintemplate)
 print(j2_template.render(section_cloud))

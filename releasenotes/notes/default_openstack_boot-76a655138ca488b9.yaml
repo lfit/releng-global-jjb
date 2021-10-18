@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    The OpenStack JCasC yaml converter has learned how to properly
+    differentiate between volumeFromImage and image boot sources.
