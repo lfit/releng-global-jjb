@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4239366_e43ca1fe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-10-19T19:21:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "727a968a_ddda08af",
+      "range": {
+        "startLine": 7,
+        "startChar": 10,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "8c27d108f68cb7f6b0a51ede0bec218ca4a22851",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6e5a9a4a_a863f1cb",
@@ -70,6 +94,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2163608b_df64de0e",
+        "filename": "releasenotes/notes/add-maven-sonarcloud-verify-job-fca8aeb04cfe004b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-10-19T19:21:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b3390036_1c95e8b5",
+      "range": {
+        "startLine": 4,
+        "startChar": 12,
+        "endLine": 4,
+        "endChar": 28
+      },
+      "revId": "8c27d108f68cb7f6b0a51ede0bec218ca4a22851",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5d8939b_7ea2af5c",
@@ -83,6 +131,30 @@
       "writtenOn": "2021-10-19T18:13:09Z",
       "side": 1,
       "message": "I think the best explanation would be \"Add new Maven SonarCloud verify job that will execute SonarCloud scans before a change gets merged.\"",
+      "range": {
+        "startLine": 5,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 49
+      },
+      "revId": "8c27d108f68cb7f6b0a51ede0bec218ca4a22851",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8643c84f_bb2fb569",
+        "filename": "releasenotes/notes/add-maven-sonarcloud-verify-job-fca8aeb04cfe004b.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-10-19T19:21:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5d8939b_7ea2af5c",
       "range": {
         "startLine": 5,
         "startChar": 4,
