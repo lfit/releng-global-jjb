@@ -26,6 +26,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6e5a9a4a_a863f1cb",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1293,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-10-19T18:17:14Z",
+      "side": 1,
+      "message": "I think you forgot to define this gerrit_trigger_file_paths",
+      "range": {
+        "startLine": 1293,
+        "startChar": 28,
+        "endLine": 1293,
+        "endChar": 57
+      },
+      "revId": "8c27d108f68cb7f6b0a51ede0bec218ca4a22851",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b3390036_1c95e8b5",
         "filename": "releasenotes/notes/add-maven-sonarcloud-verify-job-fca8aeb04cfe004b.yaml",
         "patchSetId": 4
