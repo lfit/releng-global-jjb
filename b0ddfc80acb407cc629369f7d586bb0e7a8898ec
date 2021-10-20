@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c7bd7c98_09231d1a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 1209,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-10-20T01:26:36Z",
+      "side": 1,
+      "message": "do we need a separate anchor for verify? I\u0027d try to re-use lf_maven_sonar and only add what is specific to verify jobs (triggers section)",
+      "range": {
+        "startLine": 1208,
+        "startChar": 0,
+        "endLine": 1209,
+        "endChar": 31
+      },
+      "revId": "b0ddfc80acb407cc629369f7d586bb0e7a8898ec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
