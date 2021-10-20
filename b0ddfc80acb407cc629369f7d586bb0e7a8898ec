@@ -22,6 +22,30 @@
       },
       "revId": "b0ddfc80acb407cc629369f7d586bb0e7a8898ec",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57c7b32b_d12ff3a9",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 1209,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-10-20T04:33:07Z",
+      "side": 1,
+      "message": "This new feature is specific for ONAP and we decided to clone the original anchor so we don\u0027t impact any other project as this repo is common shared.",
+      "parentUuid": "c7bd7c98_09231d1a",
+      "range": {
+        "startLine": 1208,
+        "startChar": 0,
+        "endLine": 1209,
+        "endChar": 31
+      },
+      "revId": "b0ddfc80acb407cc629369f7d586bb0e7a8898ec",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
