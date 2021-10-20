@@ -47,6 +47,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b515df58_ef98688a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 1444,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-10-20T20:59:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f45c151a_29468c07",
+      "range": {
+        "startLine": 1444,
+        "startChar": 9,
+        "endLine": 1444,
+        "endChar": 30
+      },
+      "revId": "903b3e5273fc2c8841eac1b2399dbb784ff4ab59",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66c4bb05_3dde7949",
@@ -60,6 +84,30 @@
       "writtenOn": "2021-10-20T17:38:45Z",
       "side": 1,
       "message": "before scm, add all this:\n\n    scan-dev-branch: true\n\n    gerrit_sonar_triggers:\n      - patchset-created-event:\n          exclude-drafts: true\n          exclude-trivial-rebase: false\n          exclude-no-code-change: false\n      - draft-published-event\n      - comment-added-contains-event:\n          comment-contains-value: \u0027^Patch Set\\s+\\d+:\\s+(recheck|reverify)\\s*$\u0027\n\n    gerrit_trigger_file_paths:\n      - compare-type: REG_EXP\n        pattern: \".*\"\n\n    triggers:\n      - gerrit:\n          server-name: \"{gerrit-server-name}\"\n          trigger-on: \"{obj:gerrit_sonar_triggers}\"\n          projects:\n            - project-compare-type: \"ANT\"\n              project-pattern: \"{project}\"\n              branches:\n                - branch-compare-type: \"ANT\"\n                  branch-pattern: \"**/{branch}\"\n              file-paths: \"{obj:gerrit_trigger_file_paths}\"\n\n\n\nThis block is basically what makes the Sonar verify different. \nI think this would work without having to define a common anchor",
+      "range": {
+        "startLine": 1447,
+        "startChar": 0,
+        "endLine": 1447,
+        "endChar": 8
+      },
+      "revId": "903b3e5273fc2c8841eac1b2399dbb784ff4ab59",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "06352870_5b7d1f11",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 1447,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-10-20T20:59:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "66c4bb05_3dde7949",
       "range": {
         "startLine": 1447,
         "startChar": 0,
