@@ -16,6 +16,23 @@
       "message": "do NOT merge yet",
       "revId": "67a03561e61b95229587867d0fd8518489dcf9bf",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "78e38f9f_1b843660",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 589
+      },
+      "writtenOn": "2021-10-22T06:55:12Z",
+      "side": 1,
+      "message": "+1 to move forward, need a projet to validate the feature. ",
+      "revId": "67a03561e61b95229587867d0fd8518489dcf9bf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
