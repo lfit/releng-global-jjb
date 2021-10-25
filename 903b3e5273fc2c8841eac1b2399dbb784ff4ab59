@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a301e76f_31bab75e",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-10-25T23:39:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2f280ea6_c8755fcd",
+      "range": {
+        "startLine": 1208,
+        "startChar": 0,
+        "endLine": 1303,
+        "endChar": 0
+      },
+      "revId": "903b3e5273fc2c8841eac1b2399dbb784ff4ab59",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f45c151a_29468c07",
