@@ -38,6 +38,7 @@ yq
 # necessary so that future maintainers of this file can make decisions to
 # remove the workarounds in the future.
 importlib-resources<2.0.0  # virtualenv 20.0.21 requires importlib-resources<2.0.0 (RELENG-2993)
+pyparsing<3.0.0 # httplib2 0.20.1 requires pyparsing<3,>=2.4.2
 EOF
 
     #Python 3.5 in Ubuntu 16.04 workaround

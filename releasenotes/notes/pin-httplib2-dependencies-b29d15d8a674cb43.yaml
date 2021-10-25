@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Pin pyparsing<3.0.0 which is required by httplib2 0.20.1.
+    A new version of pip 21.3.1 is out that has removed
+    the dependency pyparsing<3,>=2.4.2 as required by httplib2.
