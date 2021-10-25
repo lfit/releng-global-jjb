@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add new Maven SonarCloud verify job that will execute SonarCloud
+    scans before a change gets merged.
