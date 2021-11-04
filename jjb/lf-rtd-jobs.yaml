@@ -138,10 +138,10 @@
           github-hooks: true
           org-list:
             - "{github-org}"
-          white-list: "{obj:github_pr_whitelist}"
+          allow-list: "{obj:github_pr_allowlist}"
           admin-list: "{obj:github_pr_admin_list}"
           included-regions: "{obj:github_included_regions}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 #############
@@ -260,5 +260,5 @@
           permit-all: true
           github-hooks: true
           included-regions: "{obj:github_included_regions}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
