@@ -1,0 +1,9 @@
+---
+prelude: >
+  Improve global-jjb code and documentation to minimize non-inclusivity.
+
+  Ref:
+    https://developers.google.com/style/inclusive-documentation
+other:
+  - |
+    Rename 'whitelist' to 'allowlist'

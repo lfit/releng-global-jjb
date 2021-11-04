@@ -175,7 +175,7 @@
           status-context: "Autotools PackageCloud Stage"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 #######################
@@ -297,7 +297,7 @@
           status-context: "Autotools Sonarqube"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 ####################
@@ -425,7 +425,7 @@
           permit-all: true
           github-hooks: true
           included-regions: "{obj:github_included_regions}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 ################
@@ -698,7 +698,7 @@
           status-context: "CMake Sonarqube"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 ###############
@@ -855,7 +855,7 @@
           status-context: "CMake Stage"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 ############################
@@ -997,7 +997,7 @@
           status-context: "CMake PackageCloud Stage"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 ################
@@ -1126,5 +1126,5 @@
           permit-all: true
           github-hooks: true
           included-regions: "{obj:github_included_regions}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
