@@ -288,9 +288,9 @@
           github-hooks: true
           org-list:
             - "{github-org}"
-          white-list: "{obj:github_pr_whitelist}"
+          allow-list: "{obj:github_pr_allowlist}"
           admin-list: "{obj:github_pr_admin_list}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 #########################
@@ -420,9 +420,9 @@
           github-hooks: true
           org-list:
             - "{github-org}"
-          white-list: "{obj:github_pr_whitelist}"
+          allow-list: "{obj:github_pr_allowlist}"
           admin-list: "{obj:github_pr_admin_list}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 ########################
@@ -546,7 +546,7 @@
           status-context: "Maven Javadoc Verify"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 ###############
@@ -696,9 +696,9 @@
           github-hooks: true
           org-list:
             - "{github-org}"
-          white-list: "{obj:github_pr_whitelist}"
+          allow-list: "{obj:github_pr_allowlist}"
           admin-list: "{obj:github_pr_admin_list}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
@@ -807,9 +807,9 @@
           github-hooks: true
           org-list:
             - "{github-org}"
-          white-list: "{obj:github_pr_whitelist}"
+          allow-list: "{obj:github_pr_allowlist}"
           admin-list: "{obj:github_pr_admin_list}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
@@ -987,7 +987,7 @@
           status-context: "Maven Release"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
@@ -1104,7 +1104,7 @@
           status-context: "Maven Release"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
@@ -1440,9 +1440,9 @@
           github-hooks: true
           org-list:
             - "{github-org}"
-          white-list: "{obj:github_pr_whitelist}"
+          allow-list: "{obj:github_pr_allowlist}"
           admin-list: "{obj:github_pr_admin_list}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 - job-template:
@@ -1480,9 +1480,9 @@
           github-hooks: true
           org-list:
             - "{github-org}"
-          white-list: "{obj:github_pr_whitelist}"
+          allow-list: "{obj:github_pr_allowlist}"
           admin-list: "{obj:github_pr_admin_list}"
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
 
 ################
@@ -1617,7 +1617,7 @@
           status-context: "Maven Verify {mvn-version}-{java-version}"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
@@ -1717,7 +1717,7 @@
           status-context: "Maven Docker Verify {mvn-version}-{java-version}"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 

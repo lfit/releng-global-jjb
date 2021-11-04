@@ -17,7 +17,7 @@
     git-clone-url: "git@github.com:"
     github-org: example-org
     github-url: https://github.com/project
-    github_pr_whitelist:
+    github_pr_allowlist:
       - jpwku
       - tykeal
       - zxiiro
