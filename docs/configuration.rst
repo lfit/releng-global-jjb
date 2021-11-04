@@ -51,7 +51,7 @@ values used by global-jjb templates.
 :github_pr_org: The name of the GitHub organization. All members
     of this organization will be able to trigger jobs.
 
-:github_pr_whitelist: List of GitHub members you wish to be able to
+:github_pr_allowlist: List of GitHub members you wish to be able to
     trigger jobs.
 
 :github_pr_admin_list: List of GitHub members that will have admin
@@ -81,7 +81,7 @@ Example GitHub Infra:
        # lf-infra defaults
        jenkins-ssh-credential: jenkins-ssh
        github-org: lfit
-       github_pr_whitelist:
+       github_pr_allowlist:
          - jpwku
          - tykeal
          - zxiiro
