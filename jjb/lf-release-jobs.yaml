@@ -177,7 +177,7 @@
           status-context: "Github Release Verify"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
@@ -330,7 +330,7 @@
           status-context: "Github Release Merge"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
 
@@ -516,7 +516,7 @@
           status-context: "PyPI Release Merge"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_release_included_regions}"
 
@@ -587,7 +587,7 @@
           status-context: "PyPI Release Verify"
           permit-all: true
           github-hooks: true
-          white-list-target-branches:
+          allow-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_release_included_regions}"
 

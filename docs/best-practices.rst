@@ -195,7 +195,7 @@ Example:
 
    .. literalinclude:: _static/github-pr-trigger.example
 
-In the above example note the use of underscores in ``github_pr_whitelist``,
+In the above example note the use of underscores in ``github_pr_allowlist``,
 ``github_pr_admin_list``, and ``github_included_regions``.
 
 Using single quotes around variables
