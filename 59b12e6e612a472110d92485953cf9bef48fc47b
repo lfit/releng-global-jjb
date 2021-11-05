@@ -16,6 +16,24 @@
       "message": "Unfortunately the only instance of \u0027whitelist\u0027 that we can change to \u0027allowlist\u0027 is for the github_pr_whitelist -\u003e github_pr_allowlist transformation. All the other occurrences of \u0027white\u0027 are in reference to a parameter in JJB / the upstream plugin itself. We are unable to change those names until our upstreams have been fixed.",
       "revId": "59b12e6e612a472110d92485953cf9bef48fc47b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f15437cb_52d70f2c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-11-05T03:15:06Z",
+      "side": 1,
+      "message": "@Andy you\u0027re correct, rest need to be changed upstream in jjb code.",
+      "parentUuid": "023ef6a6_81f6fc42",
+      "revId": "59b12e6e612a472110d92485953cf9bef48fc47b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
