@@ -16,6 +16,24 @@
       "message": "You\u0027ve marked this as a breaking change. Reading it over, it does appear that it could be. Have you tested this with a system that doesn\u0027t have an ansible-cfg managed file?\n\nAdditionally, you need to update the docs related to the packer build macro and any job templates that use it about the need for creating this managed file!\n\nFinally, the release notes need an upgrade section that mentions the need for creating this file along with a recommended default file.",
       "revId": "54e1abc5e31c2cd9efc3c503357b7f4d41919764",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d27efda_065cd514",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2021-11-09T22:57:16Z",
+      "side": 1,
+      "message": "Done\n\ntested on sandbox:https://jenkins.opendaylight.org/sandbox/view/All/job/builder-packer-merge-ubuntu-18.04-helm/2/console",
+      "parentUuid": "8323cf9d_af38b368",
+      "revId": "54e1abc5e31c2cd9efc3c503357b7f4d41919764",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
