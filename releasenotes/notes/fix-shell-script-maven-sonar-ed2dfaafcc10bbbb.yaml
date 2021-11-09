@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix shell script maven-sonar.sh to handle parameter $SCAN_DEV_BRANCH
+    as string and not as boolean, so we can achieve the desired IF logic

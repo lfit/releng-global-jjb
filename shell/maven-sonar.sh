@@ -34,7 +34,7 @@ if [ "$SONAR_HOST_URL" = "https://sonarcloud.io" ]; then
     params+=("-Dsonar.projectKey=$PROJECT_KEY")
     params+=("-Dsonar.organization=$PROJECT_ORGANIZATION")
     params+=("-Dsonar.login=$API_TOKEN")
-    if $SCAN_DEV_BRANCH; then
+    if [ "$SCAN_DEV_BRANCH" = "True" ]; then
         echo "Will scan short lived branch ..."
         # shellcheck disable=SC2236
         if [ ! -z ${GERRIT_CHANGE_NUMBER+x} ]; then
