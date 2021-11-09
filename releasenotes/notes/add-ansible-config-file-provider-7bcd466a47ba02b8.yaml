@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    Add packer builder macros to create a 'ansible.cfg' file.
+    This is required by packer build jobs to set ansible host
+    configuration. The job or image specific configuration can be created
+    using JCasC custom files in the ci-man repository.
+
+    Example configuration:
+    https://github.com/ansible/ansible/blob/stable-2.11/examples/ansible.cfg

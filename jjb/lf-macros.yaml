@@ -12,6 +12,14 @@
       - shell: !include-raw: ../shell/comment-to-gerrit.sh
 
 - builder:
+    name: lf-ansible-config-file-provider
+    builders:
+      - config-file-provider:
+          files:
+            - file-id: "ansible-cfg"
+              target: "$HOME/.ansible/ansible.cfg"
+
+- builder:
     name: lf-fetch-dependent-patches
     builders:
       - shell: !include-raw: ../shell/gerrit-fetch-dependencies.sh
@@ -112,6 +120,7 @@
 - builder:
     name: lf-infra-packer-build
     builders:
+      - lf-ansible-config-file-provider
       - conditional-step:
           condition-kind: boolean-expression
           condition-expression: "{openstack}"
