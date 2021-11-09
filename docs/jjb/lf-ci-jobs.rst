@@ -746,6 +746,10 @@ Packer Merge
 
 Packer Merge job runs `packer build` to build system images in the cloud.
 
+This job requires a Config File Provider file named ``ansible-cfg`` created
+on Jenkins. The file can include ansible host configuration required for the
+environment.
+
 :Template Names:
     - {project-name}-packer-merge-{platforms}-{templates}
     - gerrit-packer-merge
@@ -814,6 +818,10 @@ Packer Verify
 Packer Verify job runs ``packer validate`` to verify packer configuration. The
 verify job checks superficial syntax of the template and other files. It does
 not attempt to build an image, and cannot detect all possible build issues.
+
+This job requires a Config File Provider file named ``ansible-cfg`` created
+on Jenkins. The file can include ansible host configuration required for the
+environment.
 
 :Template Names:
     - {project-name}-packer-verify

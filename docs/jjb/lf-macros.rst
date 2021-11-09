@@ -12,6 +12,11 @@ This macro will post a comment to the gerrit patchset if the build
 creates a file named gerrit_comment.txt
 To use this macro add it to the list of builders.
 
+lf-ansible-config-file-provider
+-------------------------------
+
+Provisions files required by the ansible, namely
+"~/.ansible/ansible.cfg" in the Jenkins home directory.
 
 lf-fetch-dependent-patches
 --------------------------
