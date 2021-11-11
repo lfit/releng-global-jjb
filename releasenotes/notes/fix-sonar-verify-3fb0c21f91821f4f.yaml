@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    gerrit-maven-sonar-verify was using the "default" branch choosing strategy,
+    which pulls master, rather than the "gerrit" strategy for pulling feature
+    branches.
