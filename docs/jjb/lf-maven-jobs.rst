@@ -41,6 +41,8 @@ Runs Sonar against a Maven project and pushes results to SonarCloud.
     :sonarcloud-project-organization: SonarCloud project organization.
     :sonarcloud-api-token: SonarCloud API Token.
     :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: openjdk11)
+    :sonarcloud-qualitygate-wait: SonarCloud flag that forces the analysis step to
+        wait for the quality gate result. (default: "false")
 
 lf-maven-build
 --------------
@@ -568,6 +570,8 @@ This job runs on dev branches and its triggered on new patchsets.
         (default: '')
     :sonarcloud-api-token: SonarCloud API Token. (default: '')
     :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
+    :sonarcloud-qualitygate-wait: SonarCloud flag that forces the analysis step to
+        wait for the quality gate result. (default: "false")
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
