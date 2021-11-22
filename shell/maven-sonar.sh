@@ -42,6 +42,7 @@ if [ "$SONAR_HOST_URL" = "https://sonarcloud.io" ]; then
             params+=("-Dsonar.analysis.gerritProjectName=$PROJECT")
             params+=("-Dsonar.branch.target=$GERRIT_BRANCH")
             params+=("-Dsonar.branch.name=$GERRIT_SHORT_LIVED_BRANCH")
+            params+=("-Dsonar.qualitygate.wait=$SONARCLOUD_QUALITYGATE_WAIT")
         fi
     fi
 fi
