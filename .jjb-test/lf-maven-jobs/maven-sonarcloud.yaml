@@ -14,6 +14,7 @@
     sonarcloud-project-organization: ORGANIZATION
     sonarcloud-api-token: TOKEN
     scan-dev-branch: false
+    sonarcloud-qualitygate-wait: "false"
 
 - project:
     name: example-sonarcloud-with-prescan-script
@@ -32,6 +33,7 @@
     sonar-prescan-script: |
       echo "Run script at start of job."
     scan-dev-branch: false
+    sonarcloud-qualitygate-wait: "false"
 
 - project:
     name: example-sonarcloud-verify
@@ -48,3 +50,4 @@
     sonarcloud-project-organization: ORGANIZATION
     sonarcloud-api-token: TOKEN
     scan-dev-branch: true
+    sonarcloud-qualitygate-wait: "true"
