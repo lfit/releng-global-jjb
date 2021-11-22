@@ -255,6 +255,7 @@
     sonarcloud-project-key: ""
     sonarcloud-project-organization: ""
     sonarcloud-api-token: ""
+    sonarcloud-qualitygate-wait: false
     # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
     # Projects not compatible with jdk11 can set java-version to something else
     sonarcloud-java-version: openjdk11
@@ -337,6 +338,7 @@
                 sonarcloud-project-organization: "{sonarcloud-project-organization}"
                 sonarcloud-api-token: "{sonarcloud-api-token}"
                 sonarcloud-java-version: "{sonarcloud-java-version}"
+                sonarcloud-qualitygate-wait: "{sonarcloud-qualitygate-wait}"
                 scan-dev-branch: "{scan-dev-branch}"
       # With SonarQube
       - conditional-step:

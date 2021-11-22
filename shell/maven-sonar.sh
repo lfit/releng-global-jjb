@@ -39,9 +39,11 @@ if [ "$SONAR_HOST_URL" = "https://sonarcloud.io" ]; then
         # shellcheck disable=SC2236
         if [ ! -z ${GERRIT_CHANGE_NUMBER+x} ]; then
             GERRIT_SHORT_LIVED_BRANCH=${GERRIT_CHANGE_NUMBER}-${GERRIT_PATCHSET_NUMBER}
+            lowercase_SONARCLOUD_QUALITYGATE_WAIT=$(echo "$SONARCLOUD_QUALITYGATE_WAIT" | tr '[:upper:]' '[:lower:]')
             params+=("-Dsonar.analysis.gerritProjectName=$PROJECT")
             params+=("-Dsonar.branch.target=$GERRIT_BRANCH")
             params+=("-Dsonar.branch.name=$GERRIT_SHORT_LIVED_BRANCH")
+            params+=("-Dsonar.qualitygate.wait=$lowercase_SONARCLOUD_QUALITYGATE_WAIT")
         fi
     fi
 fi
