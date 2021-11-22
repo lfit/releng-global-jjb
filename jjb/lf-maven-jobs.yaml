@@ -1138,6 +1138,7 @@
     sonarcloud-project-key: ""
     sonarcloud-project-organization: ""
     sonarcloud-api-token: ""
+    sonarcloud-qualitygate-wait: 'false'
     # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
     # Projects not compatible with jdk11 can set java-version to something else
     sonarcloud-java-version: openjdk11
@@ -1224,6 +1225,7 @@
                 sonarcloud-project-organization: "{sonarcloud-project-organization}"
                 sonarcloud-api-token: "{sonarcloud-api-token}"
                 sonarcloud-java-version: "{sonarcloud-java-version}"
+                sonarcloud-qualitygate-wait: "{sonarcloud-qualitygate-wait}"
                 scan-dev-branch: "{scan-dev-branch}"
       # With SonarQube
       - conditional-step:
@@ -1313,6 +1315,7 @@
             API_TOKEN={sonarcloud-api-token}
             SONARCLOUD_JAVA_VERSION={sonarcloud-java-version}
             SCAN_DEV_BRANCH={scan-dev-branch}
+            SONARCLOUD_QUALITYGATE_WAIT={sonarcloud-qualitygate-wait}
       - lf-provide-maven-settings:
           global-settings-file: global-settings
           settings-file: "{mvn-settings}"
@@ -1350,6 +1353,7 @@
 
     sonarcloud: true
     scan-dev-branch: true
+    sonarcloud-qualitygate-wait: 'true'
 
     gerrit_sonar_triggers:
       - patchset-created-event:

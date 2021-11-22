@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add support for wait flag on sonarcloud quality gates, this way jobs
+    won't finish until the quality gate reports back the result during
+    the analysis step, which will fail anytime the quality gate fails.
