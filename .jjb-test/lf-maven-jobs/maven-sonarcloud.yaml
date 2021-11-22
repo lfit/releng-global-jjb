@@ -48,3 +48,4 @@
     sonarcloud-project-organization: ORGANIZATION
     sonarcloud-api-token: TOKEN
     scan-dev-branch: true
+    sonarcloud-qualitygate-wait: "true"
