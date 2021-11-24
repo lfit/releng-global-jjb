@@ -16,6 +16,23 @@
       "message": "Can you please add a comment above all of the quoted settings as to why they\u0027re quoted instead of being a bare truthy like they normally should be in yaml?",
       "revId": "85aad84a42b1023a23d0111fcce75e247288de23",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23327efa_7b8b388e",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-11-24T20:22:07Z",
+      "side": 1,
+      "message": "Please make note in the text stating that the value must be quoted to avoid issues.",
+      "revId": "85aad84a42b1023a23d0111fcce75e247288de23",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
