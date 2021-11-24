@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70ed695a_0a3e0025",
+        "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "I think we should remove the double quotes since this is a bool variable",
+      "range": {
+        "startLine": 17,
+        "startChar": 33,
+        "endLine": 17,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2df9271a_e9ed2ffd",
+        "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "same here, remove quotes",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9b1cb02c_4f9a51c8",
+        "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "same here, remove quotes",
+      "range": {
+        "startLine": 53,
+        "startChar": 2,
+        "endLine": 53,
+        "endChar": 39
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "52babc6d_66629bed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "SonarCloud",
+      "range": {
+        "startLine": 7,
+        "startChar": 24,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "34380470_fad98180",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "Not sure this explains why do we need the wait. Can we add in short words why we want this?",
+      "range": {
+        "startLine": 44,
+        "startChar": 5,
+        "endLine": 44,
+        "endChar": 73
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a0bf140c_27f6d3c8",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1141,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "same here, remove quotes",
+      "range": {
+        "startLine": 1141,
+        "startChar": 3,
+        "endLine": 1141,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33d9d094_23daa41a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1357,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "same here, remove quotes",
+      "range": {
+        "startLine": 1357,
+        "startChar": 4,
+        "endLine": 1357,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dca16c50_bac784d8",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "same here, remove quotes",
+      "range": {
+        "startLine": 258,
+        "startChar": 4,
+        "endLine": 258,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "494b8df0_34440fb3",
+        "filename": "releasenotes/notes/add-sonarcloud-qualitygate-wait-flag-d402b152fb3e16fe.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-11-24T18:13:57Z",
+      "side": 1,
+      "message": "SonarCloud",
+      "range": {
+        "startLine": 4,
+        "startChar": 33,
+        "endLine": 4,
+        "endChar": 43
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
