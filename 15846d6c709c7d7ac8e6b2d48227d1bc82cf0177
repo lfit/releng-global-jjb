@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d4380dbe_d231dbf7",
+        "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-11-24T19:08:59Z",
+      "side": 1,
+      "message": "Hi Jessica, the double quotes are on purpose to avoid the capitalization made by global-jjb code. If we remove the double quotes we will get values as \"True\" or \"False\" which are not valid for sonarcloud properties. A similar situation happened recently with the parameter SCAN_DEV_BRANCH.",
+      "parentUuid": "70ed695a_0a3e0025",
+      "range": {
+        "startLine": 17,
+        "startChar": 33,
+        "endLine": 17,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "2df9271a_e9ed2ffd",
         "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
         "patchSetId": 6
@@ -37,6 +61,30 @@
       "writtenOn": "2021-11-24T18:13:57Z",
       "side": 1,
       "message": "same here, remove quotes",
+      "range": {
+        "startLine": 36,
+        "startChar": 4,
+        "endLine": 36,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "219bbfe7_6bb7fedf",
+        "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-11-24T19:08:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2df9271a_e9ed2ffd",
       "range": {
         "startLine": 36,
         "startChar": 4,
@@ -70,6 +118,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e43dba44_339280e4",
+        "filename": ".jjb-test/lf-maven-jobs/maven-sonarcloud.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-11-24T19:08:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9b1cb02c_4f9a51c8",
+      "range": {
+        "startLine": 53,
+        "startChar": 2,
+        "endLine": 53,
+        "endChar": 39
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "52babc6d_66629bed",
@@ -83,6 +155,30 @@
       "writtenOn": "2021-11-24T18:13:57Z",
       "side": 1,
       "message": "SonarCloud",
+      "range": {
+        "startLine": 7,
+        "startChar": 24,
+        "endLine": 7,
+        "endChar": 34
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "173aaf6a_06eb68b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-11-24T19:08:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "52babc6d_66629bed",
       "range": {
         "startLine": 7,
         "startChar": 24,
@@ -139,6 +235,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3ceebd74_2953a59b",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1141,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-11-24T19:08:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a0bf140c_27f6d3c8",
+      "range": {
+        "startLine": 1141,
+        "startChar": 3,
+        "endLine": 1141,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33d9d094_23daa41a",
@@ -152,6 +272,30 @@
       "writtenOn": "2021-11-24T18:13:57Z",
       "side": 1,
       "message": "same here, remove quotes",
+      "range": {
+        "startLine": 1357,
+        "startChar": 4,
+        "endLine": 1357,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a92b9d3_97bac350",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1357,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-11-24T19:08:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33d9d094_23daa41a",
       "range": {
         "startLine": 1357,
         "startChar": 4,
@@ -185,6 +329,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4371618_9bec1bd0",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-11-24T19:08:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dca16c50_bac784d8",
+      "range": {
+        "startLine": 258,
+        "startChar": 4,
+        "endLine": 258,
+        "endChar": 40
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "494b8df0_34440fb3",
@@ -198,6 +366,30 @@
       "writtenOn": "2021-11-24T18:13:57Z",
       "side": 1,
       "message": "SonarCloud",
+      "range": {
+        "startLine": 4,
+        "startChar": 33,
+        "endLine": 4,
+        "endChar": 43
+      },
+      "revId": "15846d6c709c7d7ac8e6b2d48227d1bc82cf0177",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f45e7a61_36f77b8d",
+        "filename": "releasenotes/notes/add-sonarcloud-qualitygate-wait-flag-d402b152fb3e16fe.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-11-24T19:08:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "494b8df0_34440fb3",
       "range": {
         "startLine": 4,
         "startChar": 33,
