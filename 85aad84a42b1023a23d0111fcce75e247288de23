@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6db02b17_4c904a43",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2021-11-24T20:18:42Z",
+      "side": 1,
+      "message": "Can you please add a comment above all of the quoted settings as to why they\u0027re quoted instead of being a bare truthy like they normally should be in yaml?",
+      "revId": "85aad84a42b1023a23d0111fcce75e247288de23",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
