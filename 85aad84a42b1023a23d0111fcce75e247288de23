@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd4458d1_5bfb984a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-12-01T05:03:16Z",
+      "side": 1,
+      "message": "I modified the maven-sonar.sh script to convert to lowercase any value that is received on parameter sonarcloud-qualitygate-wait, this way we don\u0027t require quoting the value to avoid undesired capitalization.",
+      "parentUuid": "6db02b17_4c904a43",
+      "revId": "85aad84a42b1023a23d0111fcce75e247288de23",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "23327efa_7b8b388e",
