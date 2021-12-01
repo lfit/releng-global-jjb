@@ -51,6 +51,24 @@
       "message": "Please make note in the text stating that the value must be quoted to avoid issues.",
       "revId": "85aad84a42b1023a23d0111fcce75e247288de23",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93519c4b_bf0d432c",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-12-01T21:59:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23327efa_7b8b388e",
+      "revId": "85aad84a42b1023a23d0111fcce75e247288de23",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
