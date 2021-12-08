@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add gerrit-go-verify job that will support running unit test for Go
+    projects. It will run the command 'go test ./...' inside the indicated
+    GO_ROOT path.
