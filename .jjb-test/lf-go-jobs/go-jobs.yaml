@@ -1,0 +1,27 @@
+---
+- project:
+    name: "gerrit-go-jobs"
+    jobs:
+      - "gerrit-go-verify"
+
+    project: go/project
+    project-name: gerrit-go-project
+    go-root: go
+    branch: master
+
+- project:
+    name: "github-go-jobs"
+    jobs:
+      - "github-go-verify"
+
+    project: go/project
+    project-name: github-go-project
+    go-root: go
+    branch: master
+
+- project:
+    name: go-jobs-view
+    views:
+      - project-view
+
+    project-name: go-project
