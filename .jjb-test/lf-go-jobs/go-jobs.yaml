@@ -1,0 +1,10 @@
+---
+- project:
+    name: "{project-name}-go"
+    jobs:
+      - "{project-name}-go-verify-{stream}"
+
+    project: go/project
+    project-name: go-project
+    go-root: go
+    branch: master
