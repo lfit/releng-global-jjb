@@ -1,0 +1,10 @@
+---
+- project:
+    name: "{project-name}-go"
+    jobs:
+      - "gerrit-go-verify"
+
+    project: go/project
+    project-name: go-project
+    go-root: go
+    branch: master
