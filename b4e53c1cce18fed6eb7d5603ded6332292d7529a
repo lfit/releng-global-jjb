@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "189da404_02e55a7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2021-12-14T21:21:34Z",
+      "side": 1,
+      "message": "We probably also want to do this applicable for GitHhub too and add the equivalent GitHub templates?",
+      "revId": "b4e53c1cce18fed6eb7d5603ded6332292d7529a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
