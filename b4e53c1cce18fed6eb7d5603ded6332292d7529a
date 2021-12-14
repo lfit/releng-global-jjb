@@ -16,6 +16,24 @@
       "message": "We probably also want to do this applicable for GitHhub too and add the equivalent GitHub templates?",
       "revId": "b4e53c1cce18fed6eb7d5603ded6332292d7529a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf39be99_1e3d3ae5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-12-14T22:04:10Z",
+      "side": 1,
+      "message": "At this moment only O-RAN is requesting this functionality and it uses only Gerrit, so not sure if adding the github part is worth it.\nIMHO, we can always add it later when we really need it so we don\u0027t have to maintain things we don\u0027t use.",
+      "parentUuid": "189da404_02e55a7b",
+      "revId": "b4e53c1cce18fed6eb7d5603ded6332292d7529a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
