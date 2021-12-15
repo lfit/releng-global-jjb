@@ -34,6 +34,46 @@
       "parentUuid": "189da404_02e55a7b",
       "revId": "b4e53c1cce18fed6eb7d5603ded6332292d7529a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d95e9c57_a3a555d9",
+        "filename": "docs/jjb/lf-go-jobs.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-12-15T16:19:51Z",
+      "side": 1,
+      "message": "Please explain this special path in the docs (I had to look it up to understand it).",
+      "range": {
+        "startLine": 28,
+        "startChar": 23,
+        "endLine": 28,
+        "endChar": 28
+      },
+      "revId": "b4e53c1cce18fed6eb7d5603ded6332292d7529a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0872d3d_c304c399",
+        "filename": "jjb/lf-go-jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2021-12-15T16:19:51Z",
+      "side": 1,
+      "message": "Please add a Github version of go-verify.",
+      "revId": "b4e53c1cce18fed6eb7d5603ded6332292d7529a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
