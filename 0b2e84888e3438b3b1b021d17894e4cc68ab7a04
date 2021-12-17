@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c94807eb_23bfeccd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2021-12-17T13:53:53Z",
+      "side": 1,
+      "message": "Just nitpicking, please move the explanation of ./... to where it is mentioned in the text. row 30",
+      "revId": "0b2e84888e3438b3b1b021d17894e4cc68ab7a04",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c7e1377_3e0f0980",
+        "filename": "docs/jjb/lf-go-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2021-12-17T13:53:53Z",
+      "side": 1,
+      "message": "Move this one to row 30 (below the ./... )",
+      "revId": "0b2e84888e3438b3b1b021d17894e4cc68ab7a04",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
