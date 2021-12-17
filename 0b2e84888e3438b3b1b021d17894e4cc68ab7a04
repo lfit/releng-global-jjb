@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "08317763_d55b1c72",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-12-17T16:25:20Z",
+      "side": 1,
+      "message": "you are right, done",
+      "parentUuid": "c94807eb_23bfeccd",
+      "revId": "0b2e84888e3438b3b1b021d17894e4cc68ab7a04",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c7e1377_3e0f0980",
@@ -31,6 +49,24 @@
       "writtenOn": "2021-12-17T13:53:53Z",
       "side": 1,
       "message": "Move this one to row 30 (below the ./... )",
+      "revId": "0b2e84888e3438b3b1b021d17894e4cc68ab7a04",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5f016a3_52d60032",
+        "filename": "docs/jjb/lf-go-jobs.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2021-12-17T16:25:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c7e1377_3e0f0980",
       "revId": "0b2e84888e3438b3b1b021d17894e4cc68ab7a04",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
