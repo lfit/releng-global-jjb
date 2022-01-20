@@ -1,0 +1,8 @@
+---
+prelude: >
+  Enable support for OpenJDK17.
+features:
+  - |
+    Add support for the latest version of JDK17 to be used with
+    lf-update-java-alternatives. This allows job to switch between the
+    required version of JDK.
