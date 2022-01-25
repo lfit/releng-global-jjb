@@ -1,0 +1,9 @@
+Verified+1: Jenkins CI <releng+lf-jenkins@linuxfoundation.org>
+Code-Review+1: Robert Varga <nite@hq.sk>
+Code-Review+1: Guillaume Lambert <guillaume.lambert@orange.com>
+Code-Review+2: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-by: Jessica Wagantall <jwagantall@linuxfoundation.org>
+Submitted-at: Tue, 25 Jan 2022 18:26:53 +0000
+Reviewed-on: https://gerrit.linuxfoundation.org/infra/c/releng/global-jjb/+/69544
+Project: releng/global-jjb
+Branch: refs/heads/master
