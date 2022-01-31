@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f33837ab_b0adb297",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-01-31T12:44:17Z",
+      "side": 1,
+      "message": "Testing in progress on sandbox env. \n\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/builder-openstack-cron/",
+      "revId": "44464e3e832e4b277a38d60d39818578f4a73e27",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
