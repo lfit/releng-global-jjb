@@ -56,13 +56,45 @@ stack_in_jenkins() {
 
     return 1
 }
-
+set -x
 #########################
 ## FETCH ACTIVE BUILDS ##
 #########################
+# Fetch COE cluster list before fetching active stacks. K8s cluster creates
+# stack that does not match JOB_NAME, therefore ignore them while processing
+# orphaned stacks and handle them separatly.
+# The stack naming scheme is limited in the source code to take only first 20
+# chars from the JOB_NAME, and the rest is randomly generated value for
+# uniqueness:
+# https://github.com/openstack/magnum/blob/master/magnum/drivers/heat/driver.py#L202-L212
+mapfile -t OS_COE_CLUSTERS_ID < <(openstack --os-cloud "${os_cloud}" coe cluster list \
+            -f value -c "uuid" -c "name" \
+            | grep -E '(DELETE_FAILED|UNKNOWN|UNHEALTHY)' | awk '{print $1}')
+
+echo "-----> Active clusters -> stacks"
+# mapfile -t OS_COE_STACKS_ID
+OS_COE_STACKS=()
+for cluster_id in "${OS_COE_CLUSTERS_ID[@]}"; do
+    # find active stacks id associated with the COE cluster
+    stack_id=$(openstack --os-cloud "${os_cloud}" coe cluster show "${cluster_id}" \
+                -f value -c "stack_id")
+    # get the stack name associated with the COE cluster
+    stack_name=$(openstack --os-cloud "${os_cloud}" stack show "${stack_id}" \
+                -f value -c "stack_name")
+    OS_COE_STACKS+=("${stack_id}")
+    echo "clusterid:${cluster_id} -> stackid:${stack_id} stack_name: ${stack_name}"
+done
+
+if [[ ${#OS_COE_STACKS[@]} -gt "0" ]]; then
+    echo "${OS_COE_STACKS[*]}"
+    echo "-----> Active COE cluster stacks"
+    for cstack in "${OS_COE_STACKS[@]}"; do
+        echo "$cstack"
+    done
+fi
+
 # Fetch stack list before fetching active builds to minimize race condition
 # where we might be try to delete stacks while jobs are trying to start
-
 mapfile -t OS_STACKS < <(openstack --os-cloud "$os_cloud" stack list \
             -f value -c "Stack Name" -c "Stack Status" \
             --property "stack_status=CREATE_COMPLETE" \
@@ -83,13 +115,17 @@ echo "-----> Delete orphaned stacks"
 
 # Search for stacks not in use by any active Jenkins systems and remove them.
 for STACK_NAME in "${OS_STACKS[@]}"; do
-    # jenkins_urls intentially needs globbing to be passed a separate params.
+    # Check for COE cluster stack is present
     # shellcheck disable=SC2153,SC2086
-    if stack_in_jenkins "$STACK_NAME" $jenkins_urls; then
+    if [[ ${#OS_COE_STACKS[@]} -gt "0" ]] && [[ ${OS_COE_STACKS[*]} =~ ${STACK_NAME} ]]; then
+        # Do not delete a stack linked to COE cluster, handle them separatly.
+        continue
+    # jenkins_urls intentially needs globbing to be passed a separate params.
+    elif stack_in_jenkins "$STACK_NAME" $jenkins_urls; then
         # No need to delete stacks if there exists an active build for them
         continue
     else
-        echo "Deleting orphaned stack: $STACK_NAME"
-        lftools openstack --os-cloud "$os_cloud" stack delete --force "$STACK_NAME"
+        echo "Deleting orphaned stack: ${STACK_NAME}"
+        lftools openstack --os-cloud "${os_cloud}" stack delete --force "${STACK_NAME}"
     fi
 done

@@ -1372,6 +1372,12 @@
       - lf-infra-pre-build
       - inject:
           properties-content: OS_CLOUD={openstack-cloud}
+      # K8s Clusters
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: "{openstack-stack-cleanup}"
+          steps:
+            - shell: !include-raw-escape: ../shell/openstack-cleanup-orphaned-k8s-clusters.sh
       # Stacks
       - conditional-step:
           condition-kind: boolean-expression

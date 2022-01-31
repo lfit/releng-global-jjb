@@ -1,0 +1,13 @@
+---
+features:
+  - |
+    Process orphaned coe clusters for K8S jobs
+
+    K8s (COE cluster) jobs by default creates stacks names that does not match
+    JOB_NAME, therefore ignore them while processing orphaned stacks and handle
+    them separatly when cleaning up the orphaned clusters.
+
+    The stack naming scheme is limited to take first 20 chars from the JOB_NAME
+    while the rest is randomly generated for uniqueness:
+    https://github.com/openstack/magnum/blob/master/magnum/drivers/heat/driver.py#L202-L212
+    This breaks the openstack cron jobs.
