@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6954c75_66788ffa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-02-02T00:44:34Z",
+      "side": 1,
+      "message": "Can we rename \"releasenotes/notes/cleanup-ceo-k8s-clusters-ac491a6ebc0ba7db.yaml\" to \"releasenotes/notes/cleanup-coe-k8s-clusters-ac491a6ebc0ba7db.yaml\"",
+      "revId": "4e155fe998722a8509888ab0deea161db40b3f8c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
