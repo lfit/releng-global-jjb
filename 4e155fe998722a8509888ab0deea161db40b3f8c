@@ -16,6 +16,46 @@
       "message": "Can we rename \"releasenotes/notes/cleanup-ceo-k8s-clusters-ac491a6ebc0ba7db.yaml\" to \"releasenotes/notes/cleanup-coe-k8s-clusters-ac491a6ebc0ba7db.yaml\"",
       "revId": "4e155fe998722a8509888ab0deea161db40b3f8c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1eadb336_4b357bf0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-02-02T00:46:58Z",
+      "side": 1,
+      "message": "I would assume this has been tested. Overall this feature LGTM except for the 2 typos",
+      "revId": "4e155fe998722a8509888ab0deea161db40b3f8c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ad980cf_438838e0",
+        "filename": "shell/openstack-cleanup-orphaned-k8s-clusters.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-02-02T00:46:58Z",
+      "side": 1,
+      "message": "coe",
+      "range": {
+        "startLine": 11,
+        "startChar": 31,
+        "endLine": 11,
+        "endChar": 34
+      },
+      "revId": "4e155fe998722a8509888ab0deea161db40b3f8c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
