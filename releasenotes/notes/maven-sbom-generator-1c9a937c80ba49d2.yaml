@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add new conditional builder step which calls a specific version
+    of SPDX SBOM generator which runs a scan to generate a software
+    bill of materials report in a specific repo.
