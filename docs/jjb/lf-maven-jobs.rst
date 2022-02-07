@@ -109,6 +109,22 @@ Nexus IQ server.
     :mvn-goals: The maven goals to perform for the build.
         (default: clean install)
 
+lf-maven-sbom
+-------------
+
+Runs a specific version of SPDX SBOM Generator tool on a specific repo.
+
+:Required Parameters:
+    :mvn-version: Version of Maven to execute Sonar with.
+    :mvn-settings: Maven settings.xml file containing credentials to use.
+    :sbom-generator-version: SBOM generator version to download and run.
+
+:Optional parameters:
+    :mvn-goals: The maven goals to perform for the build.
+        (default: clean)
+    :sbom-flags: SBOM generator options. See https://github.com/opensbom-generator/spdx-sbom-generator
+
+
 Job Templates
 =============
 
