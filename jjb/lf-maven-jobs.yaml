@@ -842,6 +842,9 @@
     mvn-version: mvn35
     ossrh-profile-id: ""
     mvn-pom: ""
+    sbom-flags: ""
+    sbom-generator: false
+    sbom-generator-version: "v0.0.10"
     sign-artifacts: false
     sign-mode: serial
     stream: master
@@ -889,6 +892,10 @@
           name: STAGING_PROFILE_ID
           default: "{staging-profile-id}"
           description: Nexus staging profile ID.
+      - string:
+          name: SBOM_GENERATOR_VERSION
+          default: "v0.0.10"
+          description: SBOM generator version to download and run.
 
     builders:
       - lf-infra-pre-build
@@ -909,6 +916,15 @@
       - shell: !include-raw-escape: ../shell/maven-patch-release.sh
       - lf-maven-build:
           mvn-goals: "{mvn-goals}"
+      # With SBOM Generator
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: "{sbom-generator}"
+          steps:
+            - shell: echo 'Running SBOM Generator'
+            - lf-infra-maven-sbom-generator:
+                sbom-flags: "{sbom-flags}"
+                sbom-generator-version: "{sbom-generator-version}"
       - lf-sigul-sign-dir:
           sign-artifacts: "{sign-artifacts}"
           sign-dir: "$WORKSPACE/m2repo"
@@ -1276,6 +1292,17 @@
                 mvn-goals: "{mvn-goals}"
                 mvn-settings: "{mvn-settings}"
                 mvn-version: "{mvn-version}"
+
+- builder:
+    name: lf-infra-maven-sbom-generator
+    # Run Maven goals and trigger SPDX SBOM Generator tool
+    builders:
+      - inject:
+          properties-content: |
+            SBOM_FLAGS={sbom-flags}
+            SBOM_GENERATOR_VERSION={sbom-generator-version}
+      - shell: !include-raw-escape:
+          - ../shell/sbom-generator.sh
 
 - builder:
     name: lf-infra-maven-sonar
