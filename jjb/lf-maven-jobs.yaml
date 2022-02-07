@@ -1821,3 +1821,164 @@
                   branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_trigger_file_paths}"
           comment-text-parameter-mode: PLAIN
+
+##############
+# Maven SBOM #
+##############
+
+- lf_maven_sbom: &lf_maven_sbom
+    name: lf-maven-sbom
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 60
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    java-version: openjdk11
+    java-opts: ""
+    mvn-global-settings: global-settings
+    mvn-goals: clean
+    mvn-opts: ""
+    mvn-params: ""
+    mvn-version: mvn35
+    sbom-flags: ""
+    sbom-generator-version: 'v0.0.10'
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_sbom_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-sbom\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-infra-maven-parameters:
+          mvn-opts: "{mvn-opts}"
+          mvn-params: "{mvn-params}"
+          mvn-version: "{mvn-version}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
+      - string:
+          name: JAVA_OPTS
+          default: "{java-opts}"
+          description: |
+            Java options. Example: -Xmx1024m
+      - string:
+          name: SBOM_GENERATOR_VERSION
+          default: "{sbom-generator-version}"
+          description: SBOM generator version to download and run.
+      - string:
+          name: SBOM_FLAGS
+          default: "{sbom-flags}"
+          description: |
+            SBOM generator options. See https://github.com/opensbom-generator/spdx-sbom-generator
+
+    triggers:
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_sbom_triggers}"
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+
+    publishers:
+      - lf-jacoco-report
+      - findbugs
+      - lf-infra-publish
+
+- mvn_sbom_builders: &mvn_sbom_builders
+    name: mvn-sbom-builders
+    builders:
+      - lf-infra-pre-build
+      - lf-jacoco-nojava-workaround
+      - lf-maven-install:
+          mvn-version: "{mvn-version}"
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
+      - lf-provide-maven-settings:
+          global-settings-file: "{mvn-global-settings}"
+          settings-file: "{mvn-settings}"
+      - lf-maven-build:
+          mvn-goals: "{mvn-goals}"
+      - shell: !include-raw-escape:
+          - ../shell/sbom-generator.sh
+      - lf-provide-maven-settings-cleanup
+
+- job-template:
+    name: "{project-name}-sbom-generator-{stream}"
+    id: gerrit-maven-sbom-generator
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_sbom
+    <<: *mvn_sbom_builders
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: $GERRIT_REFSPEC
+          branch: $GERRIT_BRANCH
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+- job-template:
+    name: "{project-name}-sbom-generator-{stream}"
+    id: github-maven-sbom-generator
+    <<: *lf_maven_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_maven_sbom
+    <<: *mvn_sbom_builders
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^run-sbom$"
+          only-trigger-phrase: true
+          status-context: "Maven SBOM Generator"
+          permit-all: true
+          github-hooks: true
+          org-list:
+            - "{github-org}"
+          white-list: "{obj:github_pr_allowlist}"
+          admin-list: "{obj:github_pr_admin_list}"
+          white-list-target-branches:
+            - "{branch}"

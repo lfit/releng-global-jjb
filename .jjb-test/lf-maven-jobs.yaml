@@ -6,6 +6,7 @@
       - gerrit-maven-javadoc-publish
       - gerrit-maven-javadoc-verify
       - gerrit-maven-merge
+      - gerrit-maven-sbom-generator
       - gerrit-maven-sonar
       - gerrit-maven-sonar-verify
       - gerrit-maven-stage
@@ -26,6 +27,7 @@
       - github-maven-javadoc-publish
       - github-maven-javadoc-verify
       - github-maven-merge
+      - github-maven-sbom-generator
       - github-maven-sonar
       - github-maven-stage
       - github-maven-verify
