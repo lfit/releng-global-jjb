@@ -109,6 +109,15 @@ Nexus IQ server.
     :mvn-goals: The maven goals to perform for the build.
         (default: clean install)
 
+lf-infra-maven-sbom-generator
+-----------------------------
+
+Runs a specific version of SPDX SBOM Generator tool to generate a report.
+The calling job template sets the version to run in the SBOM_GENERATOR_VERSION parameter.
+
+:Optional parameters:
+    :sbom-flags: SBOM generator options. See https://github.com/opensbom-generator/spdx-sbom-generator
+
 Job Templates
 =============
 
@@ -404,6 +413,12 @@ directory is then used later to deploy to Nexus.
     :mvn-version: Version of maven to use. (default: mvn35)
     :ossrh-profile-id: Profile ID for project as provided by OSSRH.
         (default: '')
+    :sbom-flags: SBOM generator options if using sbom-generator.
+        See https://github.com/opensbom-generator/spdx-sbom-generator
+    :sbom-generator: Calls lf-infra-maven-sbom-generator to run the SPDX SBOM generator tool.
+        (default: false)
+    :sbom-generator-version: SBOM generator version to download and run if using sbom-generator.
+        (default: v0.0.10)
     :sign-artifacts: Sign artifacts with Sigul. (default: false)
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
