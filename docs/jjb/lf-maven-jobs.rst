@@ -109,6 +109,17 @@ Nexus IQ server.
     :mvn-goals: The maven goals to perform for the build.
         (default: clean install)
 
+lf-infra-maven-sbom-generator
+-----------------------
+
+Runs a specific version of SPDX SBOM Generator tool to generate a report.
+
+:Required Parameters:
+    :sbom-generator-version: SBOM generator version to download and run.
+
+:Optional parameters:
+    :sbom-flags: SBOM generator options. See https://github.com/opensbom-generator/spdx-sbom-generator
+
 Job Templates
 =============
 
