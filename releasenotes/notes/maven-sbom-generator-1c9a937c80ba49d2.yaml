@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add new Maven SBOM generator job that will run a maven clean and perform
+    a scan using SPDX SBOM generator tool to generate a report of software
+    bill of materials in a specific repo.
