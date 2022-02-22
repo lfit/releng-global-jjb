@@ -16,6 +16,23 @@
       "message": "Do we need standalone jobs for sbom? All we need is a builder step that generates the SBOM files, the builder step can be introduced after the step where the artifacts are produced (and before the are uploaded for signing). ",
       "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "243883b9_65806e18",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-02-22T02:40:51Z",
+      "side": 1,
+      "message": "Add a step to verify and check (200) the download is successful and wget did not throw any errors.",
+      "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
