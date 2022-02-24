@@ -18,6 +18,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dee89eac_54af77a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2022-02-24T08:48:12Z",
+      "side": 1,
+      "message": "I echo Anil\u0027s comment. Furthermore how would the SBOM be published if it\u0027s generated separately from the release process?",
+      "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "243883b9_65806e18",
