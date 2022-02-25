@@ -35,6 +35,42 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fa6854bf_82e3fead",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-02-25T00:45:18Z",
+      "side": 1,
+      "message": "You are right. I think a non standalone job would be better.. let me re-work this change",
+      "parentUuid": "cb143dd4_761527a5",
+      "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "14fa7ab0_da937901",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-02-25T00:45:18Z",
+      "side": 1,
+      "message": "I agree too.. let me modify my change to make it not a standalone job",
+      "parentUuid": "dee89eac_54af77a4",
+      "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "243883b9_65806e18",
