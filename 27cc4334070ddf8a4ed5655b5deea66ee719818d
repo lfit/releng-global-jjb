@@ -89,6 +89,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa35222d_afe03f2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-02-25T04:31:57Z",
+      "side": 1,
+      "message": "Sorry, I think my comment before was not clear.. I meant to agree we do not need a separate job 😊\nI updated my patch now... this only has an optional builder step as discussed earlier with Andy",
+      "parentUuid": "d39c230d_bcdbcfbb",
+      "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "243883b9_65806e18",
@@ -102,6 +120,24 @@
       "writtenOn": "2022-02-22T02:40:51Z",
       "side": 1,
       "message": "Add a step to verify and check (200) the download is successful and wget did not throw any errors.",
+      "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5c33237_fe1368db",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-02-25T04:31:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "243883b9_65806e18",
       "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
