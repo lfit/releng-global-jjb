@@ -71,6 +71,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d39c230d_bcdbcfbb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-02-25T01:11:56Z",
+      "side": 1,
+      "message": "I\u0027m not fully convinced we need a standalone job for sbom generator. Instead we can have a builder step (similar to `- lf-infra-pre-build`) that could be plugged into the required places for release, merge and staging jobs.\n\nRobert has already got this working with odlparent using the CycloneDX generator plugin, but some minor caveats (format not compliant to SPDX).",
+      "parentUuid": "fa6854bf_82e3fead",
+      "revId": "27cc4334070ddf8a4ed5655b5deea66ee719818d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "243883b9_65806e18",
