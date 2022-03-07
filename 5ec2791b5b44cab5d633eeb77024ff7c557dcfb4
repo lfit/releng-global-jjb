@@ -36,6 +36,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2eccbc36_0329881c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2022-03-07T22:15:59Z",
+      "side": 1,
+      "message": "Agreed, but nowadays the speed at which we move global-jjb is rather slow and having an image rebuild in between is not that much of the issue (once a feature is stable).\n\nA further argument is that lf-activate-venv is taking minutes to execute -- and in ODL we have jobs which complete in under 10 minutes -- see https://s3-logs.opendaylight.org/logs/releng/vex-yul-odl-jenkins-1/infrautils-maven-merge-master/679/console-timestamp.log.gz for an example.",
+      "parentUuid": "f7ca2dd2_d36aff5f",
+      "revId": "5ec2791b5b44cab5d633eeb77024ff7c557dcfb4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ada7f109_14a30b40",
