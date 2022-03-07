@@ -16,6 +16,23 @@
       "message": "LGTM, but a discuss item (related to also lftools-install): can we trust the downloaded binary? 😊\n\nIn the long run, I *really* would like to see these tools packed into the baseline image (and validated then) rather than downloading them at job run time...",
       "revId": "5ec2791b5b44cab5d633eeb77024ff7c557dcfb4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ada7f109_14a30b40",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-03-07T22:03:03Z",
+      "side": 1,
+      "message": "This really needs a comment as to why you\u0027re disabling this check. I understand it\u0027s because the wget command is super long, but making note of it would be good.\n\nAlternatively, you could transform the wget thusly and then do it directly in the if like shellcheck wants so you can lose the disablement:\n\nURL\u003d\"https://github.com/spdx/spdx-sbom-generator/releases/download/${SBOM_GENERATOR_VERSION}/\\\nspdx-sbom-generator-${SBOM_GENERATOR_VERSION}-linux-amd64.tar.gz\"\n\nif ! wget -nv \"${URL}\" -O \"${SBOM_LOCATION}\"; then",
+      "revId": "5ec2791b5b44cab5d633eeb77024ff7c557dcfb4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
