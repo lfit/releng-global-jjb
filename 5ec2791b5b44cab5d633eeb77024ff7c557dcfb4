@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ebbf2c2_2baf8e17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2022-03-07T22:03:02Z",
+      "side": 1,
+      "message": "LGTM, but a discuss item (related to also lftools-install): can we trust the downloaded binary? 😊\n\nIn the long run, I *really* would like to see these tools packed into the baseline image (and validated then) rather than downloading them at job run time...",
+      "revId": "5ec2791b5b44cab5d633eeb77024ff7c557dcfb4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
