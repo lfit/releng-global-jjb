@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7ca2dd2_d36aff5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-03-07T22:06:32Z",
+      "side": 1,
+      "message": "I sort of agree that we need to start packing tools more into the images and validating via the ansible in some fashion.\n\nWe haven\u0027t done this historically because of the bloated size of the images, but with all the extra emphasis on more secure builds we may just have to deal with that. The biggest issue with baking it though is that it means having to rebuild the image if a new version is needed. That\u0027s always been the major tradeoff.",
+      "parentUuid": "1ebbf2c2_2baf8e17",
+      "revId": "5ec2791b5b44cab5d633eeb77024ff7c557dcfb4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ada7f109_14a30b40",
