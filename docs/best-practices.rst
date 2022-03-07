@@ -181,7 +181,7 @@ Preserving Objects in Variable References
 
 JJB has an option to preserve a data structure object when you want to pass
 it to a template.
-https://docs.openstack.org/infra/jenkins-job-builder/definition.html#variable-references
+https://jenkins-job-builder.readthedocs.io/en/latest/definition.html#variable-references
 
 One thing that is not explicitly covered is the format of the variable name
 that you pass the object to. When you use the `{obj:key}` notation to preserve

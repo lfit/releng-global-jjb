@@ -67,5 +67,5 @@ https://s3.amazonaws.com/unified-agent/wss-unified-agent.config
     :gerrit_trigger_file_paths: Override file paths which used to filter which
         file modifications will trigger a build. Refer to JJB documentation for
         "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
     :gerrit_wss_triggers: Override Gerrit Triggers.

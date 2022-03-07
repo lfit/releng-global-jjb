@@ -947,7 +947,7 @@ recursively, we recommend to run from the base directory.
     :gerrit_trigger_file_paths: Override file paths which used to filter which
         file modifications will trigger a build. Refer to JJB documentation for
         "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
     :git-url: URL clone project from. (default: $GIT_URL/$GERRIT_PROJECT)
     :puppet-dir: Directory containing the project's puppet module(s) relative
         to the workspace.

@@ -182,7 +182,7 @@ jjbini
 ------
 
 This file contains the Jenkins Job Builder `configuration
-<https://docs.openstack.org/infra/jenkins-job-builder/execution.html#configuration-file>`_
+<https://jenkins-job-builder.readthedocs.io/en/latest/execution.html#configuration-file>`_
 for :doc:`jjb/lf-ci-jobs`.
 
 :Required: This file MUST exist.

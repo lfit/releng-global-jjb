@@ -237,7 +237,7 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     :gerrit_sonar_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths used to filter which file
         modifications trigger a build. Refer to JJB documentation for "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
 
 .. comment Stop ignoring
 
@@ -435,7 +435,7 @@ variables before running.
         in tox.ini. (default: '')
     :gerrit_trigger_file_paths: Override file paths used to filter which file
         modifications trigger a build. Refer to JJB documentation for "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
 
 
 Tox Merge
@@ -494,7 +494,7 @@ variables before running.
         in tox.ini. (default: '')
     :gerrit_trigger_file_paths: Override file paths used to filter which file
         modifications trigger a build. Refer to JJB documentation for "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
 
 
 PyPI Merge
@@ -610,7 +610,7 @@ is optional, it defaults to pypi.org.
         in tox.ini. (default: '')
     :gerrit_trigger_file_paths: Override file paths used to filter which file
         modifications trigger a build. Refer to JJB documentation for "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
 
 
 PyPI Stage
@@ -726,7 +726,7 @@ is optional, it defaults to pypi.org.
         in tox.ini. (default: '')
     :gerrit_trigger_file_paths: Override file paths used to filter which file
         modifications trigger a build. Refer to JJB documentation for "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
 
 PyPI Verify
 -----------
@@ -844,4 +844,4 @@ pyenv variables before running.
         in tox.ini. (default: '')
     :gerrit_trigger_file_paths: Override file paths used to filter which file
         modifications trigger a build. Refer to JJB documentation for "file-path" details.
-        https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit

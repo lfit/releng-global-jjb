@@ -35,7 +35,7 @@ The tox-verify job now has a parameter "gerrit_trigger_file_paths" that can be
 used to configure specific file path patterns that will trigger the job. Refer
 to the Gerrit Trigger JJB "file-path" documentation for config details.
 
-https://docs.openstack.org/infra/jenkins-job-builder/triggers.html#triggers.gerrit
+https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
 
 cc998bc Jeremy Phelps   Add support to log into docker.io
 

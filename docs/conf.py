@@ -276,7 +276,7 @@ htmlhelp_basename = 'LinuxFoundationReleaseEngineeringGJJBdoc'
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {
-    'jjb': ('https://docs.openstack.org/infra/jenkins-job-builder/', None),
+    'jjb': ('https://jenkins-job-builder.readthedocs.io/en/latest/', None),
     'lfdocs': ('http://docs.releng.linuxfoundation.org/en/latest/', None),
     'lftools': ('http://lftools.releng.linuxfoundation.org/en/latest/', None),
     'python': ('https://docs.python.org/', None),
