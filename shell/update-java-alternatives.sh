@@ -15,13 +15,12 @@ echo "---> update-java-alternatives.sh"
 JAVA_ENV_FILE="/tmp/java.env"
 
 update-java-redhat() {
-    if [[ "${SET_JDK_VERSION//[a-zA-Z]/}" = "11" ]]; then
-        export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
-    elif [[ "${SET_JDK_VERSION//[a-zA-Z]/}" = "12" ]]; then
-        export JAVA_HOME="/usr/lib/jvm/java-12-openjdk"
-    elif [[ "${SET_JDK_VERSION//[a-zA-Z]/}" = "17" ]]; then
-        export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
+    JAVA_RELEASE=${SET_JDK_VERSION//[a-zA-Z]/}
+    if [[ ${JAVA_RELEASE} -ge 9 ]]; then
+        # Java 9 or newer: new version format
+        export JAVA_HOME="/usr/lib/jvm/java-${JAVA_RELEASE}-openjdk"
     else
+        # Java 8 or older: old version format
         export JAVA_HOME="/usr/lib/jvm/java-1.${SET_JDK_VERSION//[a-zA-Z:-]/}.0-openjdk"
     fi
     sudo /usr/sbin/alternatives --install /usr/bin/java java "${JAVA_HOME}/bin/java" 1
