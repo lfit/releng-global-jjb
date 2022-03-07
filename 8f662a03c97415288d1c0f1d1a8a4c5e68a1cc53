@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d88714d3_0b2bd2d6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-03-07T07:18:22Z",
+      "side": 1,
+      "message": "LGTM, minor nit! the commit convention need to adher to the best practices guide.\n\n\"\nDoes the Git commit subject line need to follow the Conventional Commit specification? (Refer to: https://www.conventionalcommits.org/ and https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716)\n\"\n",
+      "revId": "8f662a03c97415288d1c0f1d1a8a4c5e68a1cc53",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
