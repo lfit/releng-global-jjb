@@ -35,6 +35,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55740b44_006d83e0",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T18:52:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "648e3c62_655497f2",
+      "revId": "2b3cfa9818b1db14b5abfb61ea1c3407e26d3ec1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "46eb7a4c_dd5f0c35",
@@ -48,6 +66,30 @@
       "writtenOn": "2022-03-08T18:25:56Z",
       "side": 1,
       "message": "This is no longer a parameter to the lf-infra-maven-sbom-generator macro which reminds me, the lf-maven-stage documentation needs to have information about all of the new optional parameters. Truthfully, I just looked at the docs for lf-maven-stage and we\u0027ve got a lot of parameters that aren\u0027t documented. I\u0027m not going to ask for all of them to be, but at least add the ones that you\u0027re adding with this change!",
+      "range": {
+        "startLine": 118,
+        "startChar": 5,
+        "endLine": 118,
+        "endChar": 27
+      },
+      "revId": "2b3cfa9818b1db14b5abfb61ea1c3407e26d3ec1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "829bcb8f_184dffee",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T18:52:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "46eb7a4c_dd5f0c35",
       "range": {
         "startLine": 118,
         "startChar": 5,
