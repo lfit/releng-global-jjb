@@ -41,6 +41,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "37523268_a7a431ad",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T03:00:53Z",
+      "side": 1,
+      "message": "Agree... added now",
+      "parentUuid": "1700c323_9d111e19",
+      "range": {
+        "startLine": 847,
+        "startChar": 29,
+        "endLine": 847,
+        "endChar": 36
+      },
+      "revId": "48050ce98fab7cf32056fa77e3962505908fb8f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a78ec6b7_2d93e9bb",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-03-08T01:51:45Z",
       "side": 1,
       "message": "we dont really need the debugging enabled by default.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 6
+      },
+      "revId": "48050ce98fab7cf32056fa77e3962505908fb8f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3847eed_f7b734ca",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T03:00:53Z",
+      "side": 1,
+      "message": "will remove it.. thank you!",
+      "parentUuid": "a78ec6b7_2d93e9bb",
       "range": {
         "startLine": 16,
         "startChar": 0,
