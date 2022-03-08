@@ -54,6 +54,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7787717c_5ad106bb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-03-08T14:34:45Z",
+      "side": 1,
+      "message": "We would need to come up with a better way of baking the built venv into the image in a way that\u0027s still usable. Might be doable. I\u0027ve created RELENG-4148 as something to track against it.",
+      "parentUuid": "2eccbc36_0329881c",
+      "revId": "5ec2791b5b44cab5d633eeb77024ff7c557dcfb4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ada7f109_14a30b40",
