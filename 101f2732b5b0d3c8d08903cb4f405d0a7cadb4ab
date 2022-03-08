@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7c18696_2b823d09",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-03-08T06:51:41Z",
+      "side": 1,
+      "message": "Is this required to be added to release, pypi, docker jobs?",
+      "range": {
+        "startLine": 920,
+        "startChar": 1,
+        "endLine": 927,
+        "endChar": 66
+      },
+      "revId": "101f2732b5b0d3c8d08903cb4f405d0a7cadb4ab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
