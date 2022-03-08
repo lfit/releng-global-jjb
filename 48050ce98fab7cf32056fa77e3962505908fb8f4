@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7c21292_9f8f93fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-03-08T01:51:45Z",
+      "side": 1,
+      "message": "LGTM, minor nits. ",
+      "revId": "48050ce98fab7cf32056fa77e3962505908fb8f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1700c323_9d111e19",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-03-08T01:51:45Z",
+      "side": 1,
+      "message": "It would be good to have a build param (similar to the packer jobs) that would allow projects to test with diff version of SBOM tool without upgrading global-jjb.",
+      "range": {
+        "startLine": 847,
+        "startChar": 29,
+        "endLine": 847,
+        "endChar": 36
+      },
+      "revId": "48050ce98fab7cf32056fa77e3962505908fb8f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a78ec6b7_2d93e9bb",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 11
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-03-08T01:51:45Z",
+      "side": 1,
+      "message": "we dont really need the debugging enabled by default.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 6
+      },
+      "revId": "48050ce98fab7cf32056fa77e3962505908fb8f4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
