@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01cb6926_3abd9924",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T17:40:37Z",
+      "side": 1,
+      "message": "tested with SBOM version 10 and version 13 in:\nhttps://jenkins.onap.org/sandbox/job/oparent-maven-stage-master/6/\nhttps://jenkins.onap.org/sandbox/job/oparent-maven-stage-master/7/",
+      "revId": "2b3cfa9818b1db14b5abfb61ea1c3407e26d3ec1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
