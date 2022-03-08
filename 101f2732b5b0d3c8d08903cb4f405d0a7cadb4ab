@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "77eee563_2e125e8f",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T17:39:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a9a4b43_27c3d162",
+      "range": {
+        "startLine": 897,
+        "startChar": 20,
+        "endLine": 897,
+        "endChar": 27
+      },
+      "revId": "101f2732b5b0d3c8d08903cb4f405d0a7cadb4ab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b7c18696_2b823d09",
@@ -70,6 +94,54 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "569ab464_8904dd21",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T17:39:30Z",
+      "side": 1,
+      "message": "Ack\nmakes sense",
+      "parentUuid": "103536de_49883cf1",
+      "range": {
+        "startLine": 927,
+        "startChar": 16,
+        "endLine": 927,
+        "endChar": 66
+      },
+      "revId": "101f2732b5b0d3c8d08903cb4f405d0a7cadb4ab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16bd7489_6d870b39",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T17:39:30Z",
+      "side": 1,
+      "message": "Possibly... but i want to do that in separate patches... \n\nI want to make sure it works as expected first and then propagate to other jobs",
+      "parentUuid": "b7c18696_2b823d09",
+      "range": {
+        "startLine": 920,
+        "startChar": 1,
+        "endLine": 927,
+        "endChar": 66
+      },
+      "revId": "101f2732b5b0d3c8d08903cb4f405d0a7cadb4ab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "534b4d26_3659e6dc",
@@ -83,6 +155,30 @@
       "writtenOn": "2022-03-08T14:34:45Z",
       "side": 1,
       "message": "The job is setting SBOM_GENERATOR_VERSION already as a build parameter, you\u0027re overwriting it by doing this so even if a different version is passed to the job trigger it\u0027s ignored in favor of the job defined version.",
+      "range": {
+        "startLine": 1303,
+        "startChar": 0,
+        "endLine": 1303,
+        "endChar": 59
+      },
+      "revId": "101f2732b5b0d3c8d08903cb4f405d0a7cadb4ab",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d0bc363_1d11fcc7",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 12
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-03-08T17:39:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "534b4d26_3659e6dc",
       "range": {
         "startLine": 1303,
         "startChar": 0,
