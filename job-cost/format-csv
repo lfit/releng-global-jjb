@@ -16,8 +16,8 @@ set -euf
 
 cost_file=$1
 
-while IFS="," read -r job_name build_number date resource uptime cost stack_cost; do
+while IFS="," read -r job_name build_number date resource uptime cost stack_cost buil_result; do
     [[ $resource == "0" ]] && resource='unknown'
-    printf "%s,%s,%s,%s,%d,%.2f,%.2f\n" "$job_name" "$build_number" "$date" \
-           "$resource" "$uptime" "$cost" "$stack_cost"
+    printf "%s,%s,%s,%s,%d,%.2f,%.2f,%s\n" "$job_name" "$build_number" "$date" \
+           "$resource" "$uptime" "$cost" "$stack_cost" "$build_result"
 done < "$cost_file"
