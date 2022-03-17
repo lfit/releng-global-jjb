@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Append build result to cost.csv file. This would be useful to capture stats
+    for unattended jobs and potentially send out reports to PTL's on resource
+    usage stats.
