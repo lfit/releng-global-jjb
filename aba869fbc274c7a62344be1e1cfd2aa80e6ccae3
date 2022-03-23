@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4bf4c78d_a01b9178",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-03-23T20:10:09Z",
+      "side": 1,
+      "message": "Two things:\n\n1) A reno change long needs to be made for this\n2) I want to see change(s) into https://gerrit.linuxfoundation.org/infra/admin/repos/tooling/job-costing to update the schema and also the import script to support csv files that have support this new data in a backward compatible way.",
+      "revId": "aba869fbc274c7a62344be1e1cfd2aa80e6ccae3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
