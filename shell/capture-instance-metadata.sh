@@ -11,6 +11,10 @@
 
 echo "---> capture-instance-metadata.sh"
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+lf-activate-venv --python python3.8
+
 # detect if we're in EC2
 if [ -n "${NOMAD_DC}" ]; then
     echo "INFO: Running in Nomad, no metadata"
