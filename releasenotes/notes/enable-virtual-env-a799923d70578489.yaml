@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Activate the virtual environment. Python may not be available by default
+    on all versions.
