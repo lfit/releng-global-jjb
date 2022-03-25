@@ -46,6 +46,30 @@
       },
       "revId": "b2ab10196c8862d40cb099611bea743eed0203fb",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fdc460c_08dbe054",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-03-25T01:10:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c44bdb26_abc5c157",
+      "range": {
+        "startLine": 16,
+        "startChar": 17,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "b2ab10196c8862d40cb099611bea743eed0203fb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
