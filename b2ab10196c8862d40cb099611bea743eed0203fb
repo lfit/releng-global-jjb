@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f4996be_36126d3e",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-03-25T01:04:44Z",
+      "side": 1,
+      "message": "3.6 is EOL. Can we use a newer version for this venv?",
+      "range": {
+        "startLine": 16,
+        "startChar": 17,
+        "endLine": 16,
+        "endChar": 26
+      },
+      "revId": "b2ab10196c8862d40cb099611bea743eed0203fb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
