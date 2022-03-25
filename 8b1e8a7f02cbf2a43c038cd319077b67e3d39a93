@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3926d16_1f6650b3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-03-25T03:53:21Z",
+      "side": 1,
+      "message": "tested here: https://jenkins.opendaylight.org/releng/job/odlparent-maven-verify-master-mvn38-openjdk11/145/\n",
+      "revId": "8b1e8a7f02cbf2a43c038cd319077b67e3d39a93",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
