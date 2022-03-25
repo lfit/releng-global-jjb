@@ -16,6 +16,24 @@
       "message": "Have you tested that this fixes the issue in RELENG-4182?",
       "revId": "920e252da0ffc1b0f2449ce728c9c7c817a4d1ed",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "976cb5bd_e80b9fae",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-03-25T01:51:27Z",
+      "side": 1,
+      "message": "tested this locally:\n\n$ lf-activate-venv --python python3.8\nlf-activate-venv(): INFO: Creating python3.8 venv at /tmp/venv-OWGj\nlf-activate-venv(): WARNING: No packages to install\n$ source /tmp/venv-OWGj/bin/activate\n$ python --version\nPython 3.8.12\n$ which python\n/tmp/venv-OWGj/bin/python",
+      "parentUuid": "2434aa21_68b9e983",
+      "revId": "920e252da0ffc1b0f2449ce728c9c7c817a4d1ed",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
