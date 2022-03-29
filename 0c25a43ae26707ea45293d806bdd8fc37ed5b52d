@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "03b4b67b_0e00164a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-03-29T23:12:29Z",
+      "side": 1,
+      "message": "not ready until change for updating db schema is ready",
+      "revId": "0c25a43ae26707ea45293d806bdd8fc37ed5b52d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
