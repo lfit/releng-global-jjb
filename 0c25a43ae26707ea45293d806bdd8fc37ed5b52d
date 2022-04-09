@@ -16,6 +16,23 @@
       "message": "not ready until change for updating db schema is ready",
       "revId": "0c25a43ae26707ea45293d806bdd8fc37ed5b52d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "37a4a09b_3c81a380",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-04-09T00:58:04Z",
+      "side": 1,
+      "message": "Gerrit change with required database and script changes is done, now this change can get approvals and eventually be merged",
+      "revId": "0c25a43ae26707ea45293d806bdd8fc37ed5b52d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
