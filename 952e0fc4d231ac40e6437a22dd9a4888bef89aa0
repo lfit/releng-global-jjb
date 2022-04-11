@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec6ac62d_acf65cd0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-04-11T08:37:30Z",
+      "side": 1,
+      "message": "PS DO NOT MERGE! \n\nNeed to review the implications of ignoring MDC with newer versions of gpg.",
+      "revId": "952e0fc4d231ac40e6437a22dd9a4888bef89aa0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
