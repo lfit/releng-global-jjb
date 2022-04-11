@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Newer versions of Gnupg (> 2.2.8) has option to decrypt without an MDC
+    is removed. Use the `--ignore-mdc-error` as workaround.
+
+    [1.] https://lists.gnupg.org/pipermail/gnupg-announce/2018q2/000425.html

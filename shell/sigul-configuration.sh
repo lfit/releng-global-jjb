@@ -17,7 +17,7 @@ set -e -o pipefail
 cd "${HOME}"
 
 # decrypt the sigul-pki tarball and extract it
-gpg --batch --passphrase-file "${SIGUL_PASSWORD}" -o sigul.tar.xz \
+gpg --ignore-mdc-error --batch --passphrase-file "${SIGUL_PASSWORD}" -o sigul.tar.xz \
     -d "${SIGUL_PKI}"
 tar Jxf sigul.tar.xz
 
