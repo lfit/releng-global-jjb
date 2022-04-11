@@ -16,6 +16,29 @@
       "message": "PS DO NOT MERGE! \n\nNeed to review the implications of ignoring MDC with newer versions of gpg.",
       "revId": "952e0fc4d231ac40e6437a22dd9a4888bef89aa0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f76b029d_80e3b9f5",
+        "filename": "shell/sigul-configuration.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2022-04-11T11:49:22Z",
+      "side": 1,
+      "message": "yeah, I think it would be preferrable to re-generate the PKI with MDC",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 22
+      },
+      "revId": "952e0fc4d231ac40e6437a22dd9a4888bef89aa0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
