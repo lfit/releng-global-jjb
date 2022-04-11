@@ -18,6 +18,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "496d7e3a_9cbee07e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-04-11T14:52:07Z",
+      "side": 1,
+      "message": "This would not introduce any significant danger. However, I do agree with Robert that the preferable way to fix this issue would be to re-encrypt the pki with some sort of integrity protection.",
+      "revId": "952e0fc4d231ac40e6437a22dd9a4888bef89aa0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f76b029d_80e3b9f5",
