@@ -50,6 +50,23 @@
       "message": "recheck",
       "revId": "1a785a03f49b5eae2fcdab6134caf641ded27820",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6b540d7_24040d83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-04-19T20:38:19Z",
+      "side": 1,
+      "message": "Not sure what\u0027s causing these failures. The error in the logs is coming from npm during pre-commit. I think it may be related to the npm proxy cache; I had already invalidated the pypi cache on Nexus 3, and before this last recheck I invalidated the cache for npm on Nexus 2.",
+      "revId": "1a785a03f49b5eae2fcdab6134caf641ded27820",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
