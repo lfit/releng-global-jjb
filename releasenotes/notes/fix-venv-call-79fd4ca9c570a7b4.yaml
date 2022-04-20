@@ -1,6 +1,0 @@
----
-fixes:
-  - |
-    Remove "--python" flag from lf-activate-venv call in capture-instance-metadata.
-    This forces the system to use Python 2, which is not available on newer
-    systems, and is causing failures.
