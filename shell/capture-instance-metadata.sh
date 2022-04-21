@@ -14,7 +14,13 @@ echo "---> capture-instance-metadata.sh"
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3.8 lftools
+if [[ "${PYTHON:-}" -ne "" ]]; then
+	lf-activate-venv --python $PYTHON lftools
+elif python3; then
+	lf-activate-venv --python python3 lftools
+else
+    lf-activate-venv lftools
+fi
 
 # detect if we're in EC2
 if [ -n "${NOMAD_DC}" ]; then
