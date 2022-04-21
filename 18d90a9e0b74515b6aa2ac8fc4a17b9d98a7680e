@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a45a154d_8a9b613a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-04-21T12:28:37Z",
+      "side": 1,
+      "message": "Removing a flag is not the right fix for Ubuntu or CentOS. I think this busted the CI cron/builder/ci-man jobs, across projects. \n\nhttps://jenkins.onap.org/view/ci-management/job/ci-management-openstack-cron/26935/\n\npython3.8 is available on this node. However it returns the following error .... since python3.8-venv is missing, the issue is seen. Note: Going thru the def of `lf-activate-env` the `–python` arg is required for both platforms.\n\nThe sol to this is to install the python3.8-venv, either through the python-install.sh (quick fix in common-packer) or through lfit,python-install ansible role. \n\nHope this helps! 🙏",
+      "revId": "18d90a9e0b74515b6aa2ac8fc4a17b9d98a7680e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
