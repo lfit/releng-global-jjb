@@ -1,0 +1,8 @@
+---
+features:
+  - |
+    Post-build script capture-instance-metadata.sh will attempt to choose the
+    best possible version of Python to use. If the ``$PYTHON`` variable is set,
+    this will be used. If not, we check to see if ``python3`` is available,
+    as this should point to the latest version. If this is also not available,
+    we run with the basic ``python`` command.
