@@ -22,6 +22,30 @@
       },
       "revId": "a405251903ffbf60c2080a30b136dd8d47c12d19",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21b8d71e_c1652255",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-04-22T01:23:36Z",
+      "side": 1,
+      "message": "This will still fail, if the version passed does not have the deps installed! (for instance if you are passing python3.8 but the package python3.8-venv is not available on Ubuntu), maybe this can be added to lfit.pyhton-install roles.",
+      "parentUuid": "3f000938_60278057",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 2
+      },
+      "revId": "a405251903ffbf60c2080a30b136dd8d47c12d19",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
