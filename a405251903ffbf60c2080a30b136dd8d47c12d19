@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f000938_60278057",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-04-22T00:54:53Z",
+      "side": 1,
+      "message": "As mush as I don\u0027t like to hard code the version here! \n\nbut where does the $PYTHON env get passed from, build param? for regular maven jobs do no pass the PYTHON env param, then these jobs picks up the 3.6 version or a older version that is EOL!",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 23,
+        "endChar": 2
+      },
+      "revId": "a405251903ffbf60c2080a30b136dd8d47c12d19",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
