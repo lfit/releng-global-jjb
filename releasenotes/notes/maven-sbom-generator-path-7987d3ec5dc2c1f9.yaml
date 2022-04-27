@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    SBOM's path flag does not work as expected. We need to introduce a new
+    flag called SBOM_PATH to isolate the path where SBOM is going to be
+    extracted to and executed from. By default this is set to $WORKSPACE but
+    some projects need to execute the sbom from a different location in their
+    code. See https://github.com/opensbom-generator/spdx-sbom-generator/issues/227
