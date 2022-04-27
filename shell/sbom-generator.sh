@@ -25,8 +25,12 @@ if ! wget -nv "${URL}" -O "${SBOM_LOCATION}"; then
     echo "wget ${SBOM_GENERATOR_VERSION} failed"
     exit 1;
 fi
-tar -xvf "${SBOM_LOCATION}"
+# Extract SBOM bin in SBOM_PATH
+# This is a workaround until the --path flag works
+# https://github.com/opensbom-generator/spdx-sbom-generator/issues/227
+tar -xzf "${SBOM_LOCATION}" -C ${SBOM_PATH}
 echo "INFO: running spdx-sbom-generator"
+cd ${SBOM_PATH}
 ./spdx-sbom-generator "${SBOM_FLAGS:-}" -o "${WORKSPACE}"/m2repo
 mv spdx-sbom-generator /tmp/
 rm /tmp/spdx*

@@ -843,6 +843,7 @@
     ossrh-profile-id: ""
     mvn-pom: ""
     sbom-flags: ""
+    sbom-path: "$WORKSPACE"
     sbom-generator: false
     sbom-generator-version: "v0.0.10"
     sign-artifacts: false
@@ -896,6 +897,10 @@
           name: SBOM_GENERATOR_VERSION
           default: "{sbom-generator-version}"
           description: SBOM generator version to download and run.
+      - string:
+          name: SBOM_PATH
+          default: "{sbom-path}"
+          description: path where SBOM needs to be executed.
 
     builders:
       - lf-infra-pre-build
