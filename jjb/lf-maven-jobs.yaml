@@ -574,6 +574,8 @@
     mvn-params: "-Dmerge"
     mvn-version: mvn35
     nexus-cut-dirs: 6 # Number of dirs in the Nexus path to remove for wget -r.
+    pre-build-script: "# pre-build script goes here"
+    post-build-script: "# post-build script goes here"
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -617,8 +619,10 @@
             NEXUS_CUT_DIRS={nexus-cut-dirs}
             NEXUS_REPO={nexus-snapshot-repo}
       - shell: !include-raw-escape: ../shell/maven-fetch-metadata.sh
+      - shell: "{pre-build-script}"
       - lf-maven-build:
           mvn-goals: "{mvn-goals}"
+      - shell: "{post-build-script}"
       - lf-maven-deploy
       - lf-provide-maven-settings-cleanup
 
@@ -1543,6 +1547,8 @@
     mvn-opts: ""
     mvn-params: "-Dstream=$STREAM -Dmaven.source.skip=true"
     mvn-version: mvn35
+    pre-build-script: "# pre-build script goes here"
+    post-build-script: "# post-build script goes here"
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -1582,8 +1588,10 @@
       - lf-provide-maven-settings:
           global-settings-file: "{mvn-global-settings}"
           settings-file: "{mvn-settings}"
+      - shell: "{pre-build-script}"
       - lf-maven-build:
           mvn-goals: "{mvn-goals}"
+      - shell: "{post-build-script}"
       - lf-provide-maven-settings-cleanup
 
     publishers:

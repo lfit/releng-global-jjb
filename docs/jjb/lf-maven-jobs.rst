@@ -322,6 +322,8 @@ This job uses the following strategy to deploy jobs to Nexus:
     :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
     :nexus-cut-dirs: Number of directories to cut from file path for `wget -r`.
+    :pre-build-script: Shell script to run before maven build. (default: a string with a shell comment)
+    :post-build-script: Shell script to run after maven build. (default: a string with a shell comment)
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -578,6 +580,8 @@ This job runs on dev branches and its triggered on new patchsets.
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
+    :pre-build-script: Shell script to run before maven build. (default: a string with a shell comment)
+    :post-build-script: Shell script to run after maven build. (default: a string with a shell comment)
     :sonar-mvn-goal: Maven goals to run for sonar analysis.
         (default: sonar:sonar)
     :sonarcloud: Set to ``true`` to use SonarCloud ``true|false``.

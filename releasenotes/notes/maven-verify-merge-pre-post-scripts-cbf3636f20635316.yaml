@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Optionally run a script before and/or after maven goals.
+    This will help add dependencies and post process builds with more
+    flexibility to the project's needs.
