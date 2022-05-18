@@ -1,0 +1,11 @@
+---
+upgrade:
+  - |
+    Jenkins Job Builder 4.1.0 is now the default version. global-jjb has been
+    pegged to version 2.8.0 since v0.55.3 released on 2020-07-21. Since this
+    release JJB has dropped support for Python 2.7 and version 4.1.0 of JJB has
+    required fixes needed for dealing with versions of plugins that are now
+    shipping for Jenkins that cause issues.
+
+    Projects that set override their JJB version should either remove the pin
+    and take what global-jjb defaults to, or reset their pin to 4.1.0
