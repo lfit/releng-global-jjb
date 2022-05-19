@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fc60b15_d6dc588a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-05-19T11:36:52Z",
+      "side": 1,
+      "message": "I guess its required to bump JJB version in the ci-man/builder repositories aswell?",
+      "revId": "937dfc122804552b5d942f51ad69c89e5d651d10",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
