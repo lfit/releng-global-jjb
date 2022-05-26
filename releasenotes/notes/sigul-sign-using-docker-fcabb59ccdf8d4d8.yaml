@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Update the sigul-sign-dir.sh to sign artifacts using docker. The docker
+    image is built on CentOS Streams 8/9. The newer version of sigul 1.1.1
+    available for CentOS 8 is not backwords compatible with the version of
+    sigul on CentOS 7.
+
+    As a temporary workaround build a CentOS7 docker image with sigul
+    installed and use it for signing artificats on platforms where sigul is
+    not readly available.
