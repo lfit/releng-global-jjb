@@ -70,7 +70,8 @@ lf-echo-stderr () {
 
 lf-boolean () {
     if (( $# != 1 )); then
-        echo "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} : Missing Required Argument"
+        echo "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} :"\
+        " Missing Required Argument"
         return 1
     fi
     local bool
@@ -79,11 +80,13 @@ lf-boolean () {
         true)  return 0 ;;
         false) return 1 ;;
         '')
-            lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line:{BASH_LINENO[0]} : A boolean cannot be a empty string" >&2
+            lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line:{BASH_LINENO[0]} :"\
+            " A boolean cannot be a empty string" >&2
             return 2
             ;;
         *)
-            lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} : Invalid value for a boolean: '$bool'"
+            lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} :"\
+            " Invalid value for a boolean: '$bool'"
             return 2
             ;;
     esac
@@ -149,15 +152,19 @@ lf-activate-venv () {
     local options
     local set_path=true
     local install_args=""
-    options=$(getopt -o 'n:p:' -l 'no-path,python:,system-site-packages' -n "${FUNCNAME[0]}" -- "$@" )
+    options=$(getopt -o 'n:p:' -l 'no-path,python:,system-site-packages' \
+                -n "${FUNCNAME[0]}" -- "$@" )
     eval set -- "$options"
     while true; do
         case $1 in
             -n|--no-path) set_path=false ; shift   ;;
             -p|--python)  python=$2      ; shift 2 ;;
-            --system-site-packages) install_args="--system-site-packages" ; shift ;;
+            --system-site-packages) install_args="--system-site-packages" ;
+                                    shift ;;
             --) shift; break ;;
-            *)  lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown switch '$1'." ; return 1 ;;
+            *)  lf-echo-stderr \
+                "${FUNCNAME[0]}(): ERROR: Unknown switch '$1'." ;
+                return 1 ;;
         esac
     done
     if ! type "$python" > /dev/null; then
@@ -187,7 +194,8 @@ lf-activate-venv () {
         # Add version specifier for some packages
         for arg in "$@"; do
             case $arg in
-                jenkins-job-builder) pkg_list+="jenkins-job-builder==${JJB_VERSION:-2.8.0} " ;;
+                jenkins-job-builder)
+                    pkg_list+="jenkins-job-builder==${JJB_VERSION:-2.8.0} " ;;
                 *)                   pkg_list+="$arg " ;;
             esac
         done
@@ -243,10 +251,14 @@ lf-git-validate-jira-urls () {
     # if JIRA_URL is not defined, nothing to do
     if [[ -v JIRA_URL ]]; then
         base_url=$(echo "$JIRA_URL" | awk -F'/' '{print $3}')
-        jira_link=$(git rev-list --format=%B --max-count=1 HEAD | grep -io "http[s]*://$base_url/" || true)
+        jira_link=$(git rev-list --format=%B --max-count=1 HEAD | \
+                    grep -io "http[s]*://$base_url/" || true)
         if [[ -n $jira_link ]]; then
-            lf-echo-stderr "${FUNCNAME[0]}(): ERROR: JIRA URL found in commit message"
-            lf-echo-stderr 'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>, instead of URLs'
+            lf-echo-stderr \
+            "${FUNCNAME[0]}(): ERROR: JIRA URL found in commit message"
+            lf-echo-stderr \
+            'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>,'\
+            ' instead of URLs'
             return 1
         fi
     else
@@ -279,14 +291,18 @@ lf-git-validate-jira-urls () {
 lf-jjb-check-ascii () {
     if [[ ! -d "jjb" ]]; then
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: missing jjb directory"
-        lf-echo-stderr "This function can only be run from top of global-jjb directory"
+        lf-echo-stderr \
+        "This function can only be run from top of global-jjb directory"
         return 1
     fi
     if LC_ALL=C grep -I -r '[^[:print:][:space:]]' jjb/; then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Found YAML files containing non-printable characters."
+        lf-echo-stderr \
+        "${FUNCNAME[0]}(): ERROR: Found YAML files containing"\
+        " non-printable characters."
         return 1
     fi
-    echo "${FUNCNAME[0]}(): INFO: All JJB YAML files contain only printable ASCII characters"
+    echo "${FUNCNAME[0]}(): INFO: All JJB YAML files contain only printable"\
+    " ASCII characters"
     return 0
 }
 
@@ -302,6 +318,8 @@ lf-set-maven-options () {
     # Disable 'unused-variable' check
     # shellcheck disable=SC2034
     maven_options="--show-version --batch-mode -Djenkins \
-        -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn \
-        -Dmaven.repo.local=/tmp/r -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r"
+        -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.\
+        transfer.Slf4jMavenTransferListener=warn \
+        -Dmaven.repo.local=/tmp/r \
+        -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r"
 }
