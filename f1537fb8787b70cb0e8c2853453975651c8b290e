@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "94926e35_4f81857c",
+        "filename": "releasenotes/notes/sigul-sign-using-docker-fcabb59ccdf8d4d8.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-05-28T00:03:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90c8c920_22f265f9",
+      "revId": "f1537fb8787b70cb0e8c2853453975651c8b290e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "591cc9e6_d660caa2",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-05-27T15:05:55Z",
       "side": 1,
       "message": "Both of these need to live in the global-jjb repository",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 93
+      },
+      "revId": "f1537fb8787b70cb0e8c2853453975651c8b290e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "756a23eb_7a42a9c9",
+        "filename": "shell/sigul-sign-dir.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-05-28T00:03:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "591cc9e6_d660caa2",
       "range": {
         "startLine": 17,
         "startChar": 0,
