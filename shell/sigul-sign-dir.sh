@@ -18,9 +18,9 @@ OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 if [[ "$OS_RELEASE" == "8" && "$OS" == 'centos' ]]; then
     # Get Dockerfile and the enterpoint to build the docker image.
     wget -O "${WORKSPACE}/sigul-sign.sh" "https://raw.githubusercontent.com/"\
-    "lfit/releng-global-jjb/master/shell/sigul-sign.sh"
+"lfit/releng-global-jjb/master/shell/sigul-sign.sh"
     wget -O "${WORKSPACE}/Dockerfile" "https://raw.githubusercontent.com/"\
-    "lfit/releng-global-jjb/master/docker/Dockerfile"
+"lfit/releng-global-jjb/master/docker/Dockerfile"
 
     # Setup the docker environment for jenkins user
     docker build -f ${WORKSPACE}/Dockerfile \
