@@ -1,6 +1,8 @@
 FROM centos:7
 SHELL ["/bin/bash", "-c"]
 
+ARG SIGN_DIR="${WORKSPACE}/m2repo"
+
 RUN echo $'[fedora-infra-sigul] \n\
 name=Fedora builder packages for sigul \n\
 baseurl=https://kojipkgs.fedoraproject.org/repos-dist/epel\$releasever-infra/latest/\$basearch/ \n\

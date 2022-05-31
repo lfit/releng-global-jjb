@@ -18,9 +18,9 @@ OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 if [[ "$OS_RELEASE" == "8" && "$OS" == 'centos' ]]; then
     # Get Dockerfile and the enterpoint to build the docker image.
     wget -O "${WORKSPACE}/sigul-sign.sh" "https://raw.githubusercontent.com/"\
-    "lfit/releng-global-jjb/master/shell/sigul-sign.sh"
+"lfit/releng-global-jjb/master/shell/sigul-sign.sh"
     wget -O "${WORKSPACE}/Dockerfile" "https://raw.githubusercontent.com/"\
-    "lfit/releng-global-jjb/master/docker/Dockerfile"
+"lfit/releng-global-jjb/master/docker/Dockerfile"
 
     # Setup the docker environment for jenkins user
     docker build -f ${WORKSPACE}/Dockerfile \
@@ -45,6 +45,9 @@ if [[ "$OS_RELEASE" == "8" && "$OS" == 'centos' ]]; then
         --mount type=bind,source="/w/workspace",target="/w/workspace" \
         --mount type=bind,source="/home/jenkins",target="/home/jenkins" \
         -u root:root -w $(pwd) sigul-sign
+
+    # change the .asc files owner permissions back to jenkins
+    sudo chown -R jenkins:jenkins ${SIGN_DIR}
 else
     lftools sign sigul -m "${SIGN_MODE}" "${SIGN_DIR}"
 fi

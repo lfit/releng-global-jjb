@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fix URL path indent, add a default ARG to the Dockerfile to remove WARNING.
+    Set the .asc files permissions to jenkins after the sigul has signed the
+    files.
