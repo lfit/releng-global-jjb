@@ -1,0 +1,7 @@
+---
+deprecations:
+  - |
+    Our Sigul bridges now have publicly accessible DNS names, so it is no longer
+    necessary to create an entry in the hosts file. Since this process relies
+    on up-to-date IP addresses being configured in each project's global env
+    vars, it can cause avoidable errors. It is therefore being removed.

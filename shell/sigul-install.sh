@@ -32,13 +32,3 @@ skip_if_unavailable=True" > fedora-infra-sigul.repo
     # install sigul
     sudo yum install -y -q sigul
 fi;
-# configure /etc/hosts with the sigul bridge hostname
-# This is needed as build minions can't always get DNS resolution
-# on the bridge
-BRIDGE_HOST=$(grep bridge-hostname "$SIGUL_CONFIG" | awk '{print $2}')
-
-# SIGUL_BRIDGE_IP must be defined as a Jenkins env variable
-cp /etc/hosts hosts
-echo -e "$SIGUL_BRIDGE_IP\t$BRIDGE_HOST" >> hosts
-sudo cp hosts /etc/hosts
-rm hosts
