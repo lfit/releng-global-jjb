@@ -15,7 +15,7 @@ echo "---> sbom-generator.sh"
 set -eu
 
 # Add mvn executable into PATH
-export PATH=$PATH:${MVN::-4}
+export PATH=${MVN::-4}:$PATH
 SBOM_LOCATION="/tmp/spdx-sbom-generator-${SBOM_GENERATOR_VERSION}-linux-amd64.tar.gz"
 echo "INFO: downloading spdx-sbom-generator version ${SBOM_GENERATOR_VERSION}"
 URL="https://github.com/spdx/spdx-sbom-generator/releases/download/${SBOM_GENERATOR_VERSION}/\
@@ -31,7 +31,8 @@ fi
 tar -xzf "${SBOM_LOCATION}" -C ${SBOM_PATH}
 echo "INFO: running spdx-sbom-generator"
 cd ${SBOM_PATH}
-./spdx-sbom-generator "${SBOM_FLAGS:-}" -o "${WORKSPACE}"/m2repo
+./spdx-sbom-generator "${SBOM_FLAGS:-}" -g "$GLOBAL_SETTINGS_FILE" -o "${WORKSPACE}"/archives
+mv "${WORKSPACE}"/archives/bom-Java-Maven.spdx "${WORKSPACE}"/archives/sbom-"${JOB_BASE_NAME}"
 mv spdx-sbom-generator /tmp/
 rm /tmp/spdx*
 echo "---> sbom-generator.sh ends"

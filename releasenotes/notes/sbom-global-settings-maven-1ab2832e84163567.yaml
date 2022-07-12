@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Update to the latest version of SBOM (v0.0.15) that allows the usage of
+    a custom maven settings file to resolve transitive dependencies.
+    Update thebom-generator script to pass the project's global settings file
+    and update the sbom file name so is better identifiable.

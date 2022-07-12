@@ -849,7 +849,7 @@
     sbom-flags: ""
     sbom-path: "$WORKSPACE"
     sbom-generator: false
-    sbom-generator-version: "v0.0.10"
+    sbom-generator-version: "v0.0.15"
     sign-artifacts: false
     sign-mode: serial
     stream: master
