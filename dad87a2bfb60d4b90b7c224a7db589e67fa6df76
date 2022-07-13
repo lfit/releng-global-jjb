@@ -16,6 +16,24 @@
       "message": "The change itself LGTM!\n\nDoes this change mandate any changes to the pom files to get this working?\nAre there any implications with the existing setup for projects already configured with CycloneDX? ",
       "revId": "dad87a2bfb60d4b90b7c224a7db589e67fa6df76",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59902c0c_0457308f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-07-13T16:28:51Z",
+      "side": 1,
+      "message": "thanks for your question, there are no changes needed in the tech repos pom files. this does not impact what they already have but instead it replicates what the maven build goals do which is using an optional maven settings files. Maven uses this parameter as  \"--settings\"",
+      "parentUuid": "bc43dee6_ff745d55",
+      "revId": "dad87a2bfb60d4b90b7c224a7db589e67fa6df76",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
