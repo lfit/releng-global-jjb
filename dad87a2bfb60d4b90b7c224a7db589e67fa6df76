@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bc43dee6_ff745d55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-07-13T05:51:47Z",
+      "side": 1,
+      "message": "The change itself LGTM!\n\nDoes this change mandate any changes to the pom files to get this working?\nAre there any implications with the existing setup for projects already configured with CycloneDX? ",
+      "revId": "dad87a2bfb60d4b90b7c224a7db589e67fa6df76",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
