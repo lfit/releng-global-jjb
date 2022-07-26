@@ -106,6 +106,24 @@
       "parentUuid": "4a0de877_f2988bef",
       "revId": "90a6bfee3eae6c3f48af9fa869cd32f3a1f85da7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08e38bf5_470ddf96",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-07-26T22:22:29Z",
+      "side": 1,
+      "message": "scope creep ;)",
+      "parentUuid": "0369fc20_55465738",
+      "revId": "90a6bfee3eae6c3f48af9fa869cd32f3a1f85da7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
