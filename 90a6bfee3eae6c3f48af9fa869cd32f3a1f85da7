@@ -34,6 +34,24 @@
       "parentUuid": "78f0f957_36ff14a9",
       "revId": "90a6bfee3eae6c3f48af9fa869cd32f3a1f85da7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c82e750_6c24748a",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-07-26T22:14:48Z",
+      "side": 1,
+      "message": "Can you add it to line 79 as well?",
+      "parentUuid": "227c16eb_75dec529",
+      "revId": "90a6bfee3eae6c3f48af9fa869cd32f3a1f85da7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
