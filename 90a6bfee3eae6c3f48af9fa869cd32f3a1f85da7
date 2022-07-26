@@ -88,6 +88,24 @@
       "parentUuid": "7c145286_00efeb6e",
       "revId": "90a6bfee3eae6c3f48af9fa869cd32f3a1f85da7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0369fc20_55465738",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-07-26T22:19:31Z",
+      "side": 1,
+      "message": "If we really wanted to be pedantic about it all of the vars on lines 88 \u0026 89 should have curly braces, even the \"local\" lowercase ones.\n\nBut that\u0027s going a bit far right now ;)",
+      "parentUuid": "4a0de877_f2988bef",
+      "revId": "90a6bfee3eae6c3f48af9fa869cd32f3a1f85da7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
