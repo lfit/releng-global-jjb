@@ -22,6 +22,30 @@
       },
       "revId": "7331f4fba9ad5207002a4f74b093a07f1a9a637e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8ce57b0_931f1973",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-07-26T21:37:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d468abba_c8502a0b",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 43
+      },
+      "revId": "7331f4fba9ad5207002a4f74b093a07f1a9a637e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
