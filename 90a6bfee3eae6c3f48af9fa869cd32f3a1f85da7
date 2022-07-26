@@ -16,6 +16,24 @@
       "message": "Do you still need the curly brackets for WORKSPACE env var? if you are adding it just for consistency then you will have to edit line 79 as well",
       "revId": "90a6bfee3eae6c3f48af9fa869cd32f3a1f85da7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "227c16eb_75dec529",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-07-26T22:11:14Z",
+      "side": 1,
+      "message": "AFAIK, that\u0027s required and a good practice to follow.",
+      "parentUuid": "78f0f957_36ff14a9",
+      "revId": "90a6bfee3eae6c3f48af9fa869cd32f3a1f85da7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
