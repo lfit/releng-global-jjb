@@ -85,5 +85,5 @@ echo "INFO: Archiving Costs"
 date=$(TZ=GMT date +'%Y-%m-%d %H:%M:%S')
 
 # Format the uptime, cost & stack_cost fields
-printf "%s,%s,%s,%s,%d,%.2f,%.2f,%s\n" "$JOB_NAME" "$BUILD_NUMBER" "$date" \
-       "$resource" "$uptime" "$cost" "$stack_cost" "$BUILD_RESULT" > "$WORKSPACE/archives/cost.csv"
+printf "%s,%s,%s,%s,%d,%.2f,%.2f,%s\n" "${JOB_NAME:-}" "${BUILD_NUMBER:-}" "$date" \
+       "$resource" "$uptime" "$cost" "$stack_cost" "${BUILD_RESULT:-}" > "${WORKSPACE}/archives/cost.csv"
