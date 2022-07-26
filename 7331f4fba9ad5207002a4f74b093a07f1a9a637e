@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d468abba_c8502a0b",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-07-26T21:33:21Z",
+      "side": 1,
+      "message": "It seems like it\u0027s redundant to both set +u and have ${VAR:-} setup, since the latter change makes the variables -u safe.",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 43
+      },
+      "revId": "7331f4fba9ad5207002a4f74b093a07f1a9a637e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
