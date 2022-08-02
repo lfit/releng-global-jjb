@@ -1,0 +1,14 @@
+---
+fixes:
+  - |
+    Set lf-activate-env to use Python 3.8 while running lftools deploy logs.
+    This fixes the below warnings which when jobs try to use default
+    version of python 3.6 which is EOL.
+
+    CryptographyDeprecationWarning: Python 3.6 is no longer supported
+    by the Python core team. Therefore, support for it is deprecated in
+    cryptography and will be removed in a future release.
+
+    PythonDeprecationWarning: Boto3 will no longer support Python 3.6 starting
+    May 30, 2022. To continue receiving service updates, bug fixes, and
+    security updates please upgrade to Python 3.7 or later.

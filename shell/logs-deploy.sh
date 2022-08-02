@@ -12,7 +12,7 @@ echo "---> logs-deploy.sh"
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
-lf-activate-venv lftools
+lf-activate-venv --python 3.8 lftools
 
 # Ensure we fail the job if any steps fail
 # Disable 'globbing'
@@ -64,4 +64,3 @@ else
 
     echo "S3 build logs: <a href=\"https://$CDN_URL/$s3_path\">https://$CDN_URL/$s3_path</a>"
 fi
-
