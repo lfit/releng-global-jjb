@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9c38d431_77fb2bd9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-02T01:50:57Z",
+      "side": 1,
+      "message": "tested on both CentOS and Ubuntu flavors. \n\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/builder-jjb-verify/1/console\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/builder-jjb-verify/2/console",
+      "revId": "9915b0bb42077428478e277ed78d1d2016223028",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
