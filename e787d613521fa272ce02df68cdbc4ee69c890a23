@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd4de510_3f74c696",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-08-08T19:57:58Z",
+      "side": 1,
+      "message": "seems like using curly brackets is the standard way to reference env vars, Can you please put curly brackets to the 2nd WORKSPACE reference in this line #36?",
+      "revId": "e787d613521fa272ce02df68cdbc4ee69c890a23",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
