@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fix lf-activate-env code comment. The comment suggests using
+    just the version number ``--python <x.y>``, however as per the
+    code the correct format as per the code is ``--python python<x.y>``
