@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Copy SBOM report to the project's m2repo so that is signed by
+    SIGUL and pushed in the same staging package as the maven
+    artifacts.
