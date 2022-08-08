@@ -33,6 +33,7 @@ echo "INFO: running spdx-sbom-generator"
 cd ${SBOM_PATH}
 ./spdx-sbom-generator "${SBOM_FLAGS:-}" -g "$GLOBAL_SETTINGS_FILE" -o "${WORKSPACE}"/archives
 mv "${WORKSPACE}"/archives/bom-Java-Maven.spdx "${WORKSPACE}"/archives/sbom-"${JOB_BASE_NAME}"
+cp "${WORKSPACE}"/archives/sbom-"${JOB_BASE_NAME}" "$WORKSPACE"/m2repo/sbom-"${JOB_BASE_NAME}"
 mv spdx-sbom-generator /tmp/
 rm /tmp/spdx*
 echo "---> sbom-generator.sh ends"
