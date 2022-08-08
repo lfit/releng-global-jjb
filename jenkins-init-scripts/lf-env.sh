@@ -108,7 +108,7 @@ lf-boolean () {
 #   or
 #   lf-activate-venv lftools
 #   or
-#   lf-activate-venv --python 3.6 git-review
+#   lf-activate-venv --python python3.8 git-review
 #
 # DESCRIPTION
 #   This function will create a new Python Virtual Environment (venv) and
