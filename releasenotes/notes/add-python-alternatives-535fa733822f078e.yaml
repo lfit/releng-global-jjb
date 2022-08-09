@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Set python3 version using alternatives on the builder node. The builder
+    checks and sets the version of Python 3.x on the executor which allows jobs
+    to switch between supported or required version when multiple versions
+    of python3 are installed on the node.

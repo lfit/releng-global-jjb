@@ -180,6 +180,14 @@
       - shell: !include-raw: ../shell/update-cloud-images.sh
 
 - builder:
+    name: lf-update-python-alternatives
+    builders:
+      - inject:
+          properties-content: |
+            SET_PYTHON_VERSION={set-python-version}
+      - shell: !include-raw-escape: ../shell/update-python-alternatives.sh
+
+- builder:
     name: lf-infra-push-gerrit-patch
     builders:
       - inject:
@@ -623,6 +631,14 @@
           name: USE_RELEASE_FILE
           default: "{use-release-file}"
           description: "Set to False for job built with parameters"
+
+- parameter:
+    name: lf-infra-set-python-version-parameters
+    parameters:
+      - string:
+          name: SET_PYTHON_VERSION
+          default: "{set-python-version}"
+          description: "Set the default python version on the executor (ex: python3.8)"
 
 ##############
 # PROPERTIES #
