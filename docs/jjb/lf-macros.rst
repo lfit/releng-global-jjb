@@ -441,6 +441,11 @@ lf-infra-tox-parameters
 Provides parameters required by python-tox. Use in any jobs that need to run
 `tox <https://tox.readthedocs.io>`.
 
+lf-infra-set-python-version-parameters
+--------------------------------------
+
+Provides parameter required by lf-update-python-alternatives for the jobs to
+set a specific version of python3.x on the executor.
 
 lf-build-with-parameters-maven-release
 --------------------------------------

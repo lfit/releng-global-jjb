@@ -49,6 +49,17 @@ Creates a Tox virtual environment and invokes tox.
         Possible values are "auto" (equivalent to "true" for legacy),
         "all" or any integer. Any other value is equivalent to "false".
 
+lf-update-python-alternatives
+-----------------------------
+
+Setup Python alternatives for the distribution.
+
+:Required Parameters:
+
+    :set-python-version: Version of Python3.x to set as the default Python.
+        Eg. python3.8
+
+
 
 Job Templates
 =============
