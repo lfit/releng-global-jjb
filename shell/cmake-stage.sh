@@ -39,7 +39,8 @@ if [ -z "${version}" ]; then
     fi
 fi
 
-repo_id=$(lftools deploy nexus-stage-repo-create "$NEXUS_URL" "$staging_profile_id")
+repo_id=$(lftools deploy nexus-stage-repo-create "$NEXUS_URL" \
+    "$staging_profile_id")
 
 mapfile -t artifacts < <(ls "$WORKSPACE"/dist)
 for artifact in "${artifacts[@]}"; do
@@ -61,9 +62,11 @@ for artifact in "${artifacts[@]}"; do
         src.tar.xz
 done
 
-lftools deploy nexus-stage-repo-close "$NEXUS_URL" "$staging_profile_id" "$repo_id"
+lftools deploy nexus-stage-repo-close "$NEXUS_URL" "$staging_profile_id" \
+    "$repo_id"
 
 PATCH_DIR="$WORKSPACE/archives/patches"
 mkdir -p "$PATCH_DIR"
-echo "$PROJECT" "$(git rev-parse --verify HEAD)" | tee -a "$PATCH_DIR/taglist.log"
+echo "$PROJECT" "$(git rev-parse --verify HEAD)" | \
+    tee -a "$PATCH_DIR/taglist.log"
 echo "$repo_id" > "$WORKSPACE/archives/staging-repo.txt"

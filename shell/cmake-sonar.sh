@@ -22,13 +22,18 @@ set -ex -o pipefail
 
 export SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
 echo "$SET_JDK_VERSION"
-bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
+GITHUB_RAW_BASE_URL="https://raw.githubusercontent.com"
+GITHUB_FILE="lfit/releng-global-jjb/master/shell/update-java-alternatives.sh"
+bash <(curl -s "${GITHUB_RAW_BASE_URL}/${GITHUB_FILE}")
 # shellcheck disable=SC1091
 source /tmp/java.env
 
 cd /tmp || exit 1
+SONAR_BASE_URL="https://binaries.sonarsource.com"
+SONAR_SCANER_PATH="Distribution/sonar-scanner-cli"
+SONAR_SCANER_CLI="sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip"
 wget -q -O /tmp/sonar-scan.zip \
-    "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip"
+    "${SONAR_BASE_URL}/${SONAR_SCANER_PATH}/${SONAR_SCANER_CLI}"
 unzip -q sonar-scan.zip
 sudo mv sonar-scanner-* /opt/sonar-scanner
 
@@ -45,8 +50,8 @@ eval cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" $cmake_opts ..
 
 # $make_opts may be empty.
 # shellcheck disable=SC2086
-/opt/build-wrapper/build-wrapper-linux-x86-64 --out-dir "$WORKSPACE/bw-output" \
-    make $make_opts
+/opt/build-wrapper/build-wrapper-linux-x86-64 --out-dir \
+    "$WORKSPACE/bw-output" make $make_opts
 
 /opt/sonar-scanner/bin/sonar-scanner \
     -Dsonar.projectKey="${PROJECT_KEY}" \
