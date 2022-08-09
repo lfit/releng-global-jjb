@@ -46,8 +46,10 @@ echo "---> docker-login.sh"
 # Ensure we fail the job if any steps fail
 set -eu -o pipefail
 
-#Check if current version less than desired version
-version_lt() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" != "$1"; }
+# Check if current version less than desired version
+version_lt() {
+    test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" != "$1";
+}
 
 # Execute the credential lookup and set
 set_creds() {

@@ -46,14 +46,19 @@ mode=$(echo "$GERRIT_EVENT_COMMENT_TEXT" | grep branch | awk '{print $1}')
 case $mode in
     lock)
         echo "Locking branch: $GERRIT_BRANCH"
-        git config -f project.config "access.refs/heads/${GERRIT_BRANCH}.exclusiveGroupPermissions" "submit"
-        git config -f project.config "access.refs/heads/${GERRIT_BRANCH}.submit" "block group Registered Users"
+        git config -f project.config \
+            "access.refs/heads/${GERRIT_BRANCH}.exclusiveGroupPermissions" \
+            "submit"
+        git config -f project.config \
+            "access.refs/heads/${GERRIT_BRANCH}.submit" \
+            "block group Registered Users"
         git commit -asm "Lock branch $GERRIT_BRANCH"
         ;;
 
     unlock)
         echo "Unlocking branch: $GERRIT_BRANCH"
-        git config -f project.config --remove-section "access.refs/heads/${GERRIT_BRANCH}" || true
+        git config -f project.config --remove-section \
+            "access.refs/heads/${GERRIT_BRANCH}" || true
         git commit -asm "Unlock branch $GERRIT_BRANCH"
         ;;
 
