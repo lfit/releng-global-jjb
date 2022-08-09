@@ -25,7 +25,8 @@ gittmp="$(mktemp -d)"
 git worktree add --detach "$gittmp" origin/master
 pushd "$gittmp" || exit
 echo "Generating expected XML."
-jenkins-jobs test --recursive -o "$expected_xml_dir" "$gittmp":.jjb-test > /dev/null 2>&1
+jenkins-jobs test --recursive -o "$expected_xml_dir" \
+    "$gittmp":.jjb-test > /dev/null 2>&1
 popd || exit
 rm -r "$gittmp"
 
@@ -56,6 +57,7 @@ echo "No double curly braces found."
 rm -rf "$test_dir" "$expected_xml_dir"
 
 if $fail; then
-    echo "WARN: Differences detected. Check above for jobs that have been changed."
+    echo "WARN: Differences detected."\
+        "Check above for jobs that have been changed."
     exit 0
 fi
