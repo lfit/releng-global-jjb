@@ -56,6 +56,7 @@ eval $c --prefix="$INSTALL_PREFIX" $configure_opts
 # $make_opts may be empty
 # make needs to wordsplit to pass options
 # shellcheck disable=SC2086
-eval /opt/build-wrapper/build-wrapper-linux-x86-64 --out-dir "$build_wrap_dir" make $make_opts
+eval /opt/build-wrapper/build-wrapper-linux-x86-64 --out-dir \
+    "$build_wrap_dir" make $make_opts
 
 echo "---> autotools-sonarqube.sh ends"

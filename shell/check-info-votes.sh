@@ -42,7 +42,8 @@ $pip install --user lftools[nexus]
 $pip install --user jsonschema
 
 echo "Checking votes:"
-lftools infofile check-votes INFO.yaml "$GERRIT_URL" "$ref" > gerrit_comment.txt
+lftools infofile check-votes INFO.yaml "$GERRIT_URL" \
+    "$ref" > gerrit_comment.txt
 exit_status="$?"
 
 if [[ "$exit_status" -ne 0 ]]; then
@@ -51,7 +52,9 @@ if [[ "$exit_status" -ne 0 ]]; then
     exit "$exit_status"
 else
     echo "Vote completed submitting review"
-    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --verified 1
+    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review \
+        "$GERRIT_PATCHSET_REVISION" --verified 1
     sleep 5
-    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review "$GERRIT_PATCHSET_REVISION" --submit
+    ssh -p "$GERRIT_PORT" "$USER"@"$GERRIT_HOST" gerrit review \
+        "$GERRIT_PATCHSET_REVISION" --submit
 fi
