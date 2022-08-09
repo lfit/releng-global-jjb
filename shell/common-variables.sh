@@ -16,14 +16,16 @@ echo "---> common-variables.sh"
 MAVEN_OPTIONS="$(echo --show-version \
     --batch-mode \
     -Djenkins \
-    -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn \
+    "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer"\
+".Slf4jMavenTransferListener=warn" \
     -Dmaven.repo.local=/tmp/r \
     -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r)"
 echo "$MAVEN_OPTIONS"
 
 # Activates the lftools virtualenv
 lftools_activate() {
-    echo "WARNING: lftools_activate should no longer be used and will be removed in a future release."
+    echo "WARNING: lftools_activate should no longer be used"\
+        "and will be removed in a future release."
     virtualenv --quiet "/tmp/v/lftools"
     set +u  # Ignore unbound variables in activate
     # shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
