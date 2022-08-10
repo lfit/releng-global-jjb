@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae7bad88_70fb892a",
+        "filename": "releasenotes/notes/fix-docs-lf-activate-env-a1e6fb274186f86d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2022-08-10T09:27:11Z",
+      "side": 1,
+      "message": "trailing blank",
+      "revId": "6d4ba0f677e474ec28651a8006d109d4c81d4052",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
