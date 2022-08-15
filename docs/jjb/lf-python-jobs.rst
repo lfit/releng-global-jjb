@@ -130,6 +130,25 @@ does not support multi-branch.
     :tox-envs: Tox environment with the appropriate pip freeze invocation.
         (default: 'clm')
 
+Python Sonar with CLI
+---------------------
+
+*** Placeholder documentation awaiting conversation with Jessica ***
+
+Sonar scans for Python based repos. This job invokes tox to run tests
+and gather coverage statistics from the test results, then invokes
+the Sonar CLI to publish the results to SonarCloud.
+
+:Template Names:
+
+    - {project-name}-cli-sonar
+
+:Comment Trigger:
+
+:Required parameters:
+
+:Optional parameters:
+
 
 Python Sonar with Tox
 ---------------------
