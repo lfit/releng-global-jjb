@@ -16,6 +16,75 @@
       "message": "-2 for now... this is just a skeleton to help Matt develop this new template\n",
       "revId": "0682c102f06f1d4c8a656adaf3ddb0aaa0c59bf9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0e203cdb_c363b425",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-08-15T19:45:10Z",
+      "side": 1,
+      "message": "Notice that this is a copy of the tox sonar job but is being modified to be named \"cli\" instead of \"tox\", including the anchors",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 25
+      },
+      "revId": "0682c102f06f1d4c8a656adaf3ddb0aaa0c59bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33ce9fe1_a79b49da",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-08-15T19:45:10Z",
+      "side": 1,
+      "message": "Since we are purely using the CLI, we might not need these",
+      "range": {
+        "startLine": 244,
+        "startChar": 1,
+        "endLine": 249,
+        "endChar": 22
+      },
+      "revId": "0682c102f06f1d4c8a656adaf3ddb0aaa0c59bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "117971e3_91742030",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-08-15T19:45:10Z",
+      "side": 1,
+      "message": "Same here, we might not need these since we are not going to call maven",
+      "range": {
+        "startLine": 287,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 38
+      },
+      "revId": "0682c102f06f1d4c8a656adaf3ddb0aaa0c59bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
