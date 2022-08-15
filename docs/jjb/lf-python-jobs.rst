@@ -130,6 +130,93 @@ does not support multi-branch.
     :tox-envs: Tox environment with the appropriate pip freeze invocation.
         (default: 'clm')
 
+Python Sonar with CLI
+---------------------
+
+Sonar scans for non Maven based repos. This job downloads the CLI
+and runs a scan to publish the report to  SonarCloud.
+
+As suggested in SonarCoud's UI instructions, the job downloads and unzips
+the Sonar SLI and executes a sonar-scanner command to process the
+report.
+
+For more details refer to sonar documentation:
+
+https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/
+
+:Template Names:
+
+    - {project-name}-cli-sonar
+    - gerrit-cli-sonar
+    - github-cli-sonar
+
+:Comment Trigger: **run-sonar** post a comment with the trigger to launch
+    this job manually. Do not include any other text or vote in the
+    same comment.
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally should
+        get configured in defaults.yaml)
+    :mvn-settings: The name of the settings file with credentials for the project.
+
+.. comment Start ignoring WriteGoodLintBear
+
+:Optional parameters:
+
+    :branch: Git branch, should be master (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :cron: Cron schedule when to trigger the job. This parameter also
+        supports multiline input via YAML pipe | character in cases where
+        one may want to provide more than 1 cron timer.  (default: H 11 * * *
+        to run once a day)
+    :disable-job: Whether to disable the job (default: false)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :github-url: URL for Github. (default: https://github.com)
+    :java-version: Version of Java to use for the build. (default: openjdk11)
+    :mvn-global-settings: The name of the Maven global settings to use
+    :mvn-goals: The Maven goal to run first. (default: validate)
+    :mvn-version: Version of maven to use. (default: mvn35)
+    :parallel: If different from false, try pass this parameter to tox option
+        "--parallel" to parallelize jobs in the envlist (and then activate the
+        option "--parallel-live" to display output in logs).
+        Possible values are "auto" (equivalent to "true" for legacy),
+        "all" or any integer. Any other value is equivalent to "false".
+        (default: false, in series)
+    :pre-build-script: Shell script to execute before the Sonar builder.
+        For example, install prerequisites or move files to the repo root.
+        (default: a string with a shell comment)
+    :python-version: Python version to invoke pip install of tox-pyenv
+        (default: python2)
+    :sonarcloud-project-key: SonarCloud project key. (default: '')
+    :sonarcloud-project-organization: SonarCloud project organization.
+        (default: '')
+    :sonarcloud-api-token: SonarCloud API Token. (default: '')
+    :sonar-scanner-home: Sonar scanner home directory.
+        (default: $WORKSPACE/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux)
+    :sonar-scanner-opts: Sonar scanner Java options. (default: '-server')
+    :sonar-scanner-version: Version of sonar scanner to use. (default: 4.7.0.2747)
+    :stream: Keyword used to represent a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. The default uses tox.ini at the project root.
+        (default: '.')
+    :tox-envs: Tox environments to run. If blank run everything described
+        in tox.ini. (default: '')
+    :gerrit_sonar_triggers: Override Gerrit Triggers.
+    :gerrit_trigger_file_paths: Override file paths used to filter which file
+        modifications trigger a build. Refer to JJB documentation for "file-path" details.
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
+
+.. comment Stop ignoring
 
 Python Sonar with Tox
 ---------------------
