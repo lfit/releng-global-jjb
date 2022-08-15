@@ -20,6 +20,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "592fdac5_da76ee5e",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-08-15T20:09:57Z",
+      "side": 1,
+      "message": "We will also need to add a wrapper for a secret. \nThe secret is going to call the credential that will have the value of SONAR_TOKEN\nFor more information on how to.. look into \nhttps://docs.openstack.org/infra/jenkins-job-builder/attic/wrappers.html?highlight\u003dcredentials-binding",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 277,
+        "endChar": 25
+      },
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "852e6eff_f97ad82b",
         "filename": "jjb/lf-python-jobs.yaml",
         "patchSetId": 2
