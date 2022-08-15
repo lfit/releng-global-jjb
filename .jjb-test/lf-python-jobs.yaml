@@ -3,6 +3,7 @@
     name: gerrit-python-jobs
     jobs:
       - "{project-name}-python-jobs"
+      - gerrit-cli-sonar
       - gerrit-pypi-merge
       - gerrit-pypi-release-merge
       - gerrit-pypi-release-verify
@@ -18,6 +19,7 @@
     name: github-python-jobs
     jobs:
       - "{project-name}-github-python-jobs"
+      - github-cli-sonar
       - github-pypi-merge
       - github-pypi-release-merge
       - github-pypi-release-verify
