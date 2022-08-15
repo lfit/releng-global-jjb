@@ -435,6 +435,11 @@ lf-infra-node-parameters
 Provides parameters needed by NodeJS and NPM. Use in any jobs that need to run
 NodeJS or NPM.
 
+lf-infra-sonar-cli-parameters
+-----------------------------
+
+Provides parameters needed by Python jobs to run the SonarCloud CLI.
+
 lf-infra-tox-parameters
 -----------------------
 

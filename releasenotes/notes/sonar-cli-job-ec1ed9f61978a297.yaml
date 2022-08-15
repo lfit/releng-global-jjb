@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Add gerrit-cli-sonar and github-cli-sonar scanner job for
+    non maven based repos. This job downloads a specific Sonar
+    CLI version and runs sonnar-scanner on the code to produce
+    a report which is pushed in SonarCloud.
