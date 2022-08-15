@@ -223,6 +223,170 @@
             - "{branch}"
 
 #########################
+# Python Sonar with CLI #
+#########################
+
+- lf_cli_sonar: &lf_cli_sonar
+    name: lf-cli-sonar
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master # Sonar should always be run on master branch
+    build-days-to-keep: 7
+    build-timeout: 60
+    cron: "H H * * *" # run daily
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    java-version: openjdk11
+    parallel: true
+    pre-build-script: "# pre-build script goes here"
+    python-version: python3
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+    tox-dir: "."
+    tox-envs: ""
+    sonar-scanner-version: "4.7.0.2747"
+    sonar-scanner-home: "$WORKSPACE/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux"
+    sonar-scanner-opts: "-server"
+
+    gerrit_trigger_file_paths:
+      - compare-type: REG_EXP
+        pattern: ".*"
+
+    # github_included_regions MUST match gerrit_trigger_file_paths
+    github_included_regions:
+      - ".*"
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - lf-infra-cli-parameters:
+          tox-dir: "{tox-dir}"
+          tox-envs: "{tox-envs}"
+          sonar-scanner-version: "{sonar-scanner-version}"
+          sonar-scanner-home: "{sonar-scanner-home}"
+          sonar-scanner-opts: "{sonar-scanner-opts}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
+    wrappers:
+      - credentials-binding:
+          - text:
+              credential-id: sonar-token-smo-ves
+              variable: SONAR_TOKEN
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-tox-install:
+          python-version: "{python-version}"
+      - shell: "{pre-build-script}"
+      - lf-infra-tox-run:
+          parallel: "{parallel}"
+      # With Sonar CLI
+      - inject:
+          properties-content: |
+            SONARCLOUD_PROJECT_ORGANIZATION={sonarcloud-project-organization}
+            SONARCLOUD_PROJECT_KEY={sonarcloud-project-key}
+      - shell: !include-raw-escape: ../shell/sonar-cli.sh
+
+    publishers:
+      - lf-infra-publish
+
+- job-template:
+    name: "{project-name}-cli-sonar"
+    id: gerrit-cli-sonar
+    <<: *lf_python_common
+    <<: *lf_cli_sonar
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_sonar_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-sonar\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: $GERRIT_REFSPEC
+          branch: $GERRIT_BRANCH
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_sonar_triggers}"
+          projects:
+            - project-compare-type: "ANT"
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: "ANT"
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
+- job-template:
+    name: "{project-name}-cli-sonar"
+    id: github-cli-sonar
+    <<: *lf_python_common
+    <<: *lf_cli_sonar
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
+          branch: "$sha1"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^run-sonar$"
+          only-trigger-phrase: false
+          status-context: "Python Sonar"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "{branch}"
+          included-regions: "{obj:github_included_regions}"
+
+#########################
 # Python Sonar with Tox #
 #########################
 
