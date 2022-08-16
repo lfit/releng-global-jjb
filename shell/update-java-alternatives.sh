@@ -52,8 +52,8 @@ case "${OS}" in
         echo "---> RedHat type system detected"
         update-java-redhat
     ;;
-    ubuntu)
-        echo "---> Ubuntu system detected"
+    ubuntu|debian)
+        echo "---> Ubuntu/Debian system detected"
         update-java-ubuntu
     ;;
 esac

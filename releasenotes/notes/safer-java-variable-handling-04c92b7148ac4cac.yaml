@@ -1,0 +1,8 @@
+---
+issues:
+  - |
+    Addresses problems found while troubleshooting IT-24352
+fixes:
+  - |
+    Added support for debian in update-java-alternatives.sh (addresses potential Ubuntu detection bug)
+    Safer handling of unset/null SONARCLOUD_JAVA_VERSION variable preventing java runtime issues
