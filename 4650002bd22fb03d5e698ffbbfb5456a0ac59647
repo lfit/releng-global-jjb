@@ -16,6 +16,24 @@
       "message": "As Eric already pointed out \"! -z\" can be converted to just \"-n\", that includes removing the negation symbol \"!\", so it will be like [ -n \"$SONARCLOUD_JAVA_VERSION\" ]",
       "revId": "4650002bd22fb03d5e698ffbbfb5456a0ac59647",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36042bd5_16c3265e",
+        "filename": "shell/maven-sonar.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-08-16T18:06:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14737790_6aca7182",
+      "revId": "4650002bd22fb03d5e698ffbbfb5456a0ac59647",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
