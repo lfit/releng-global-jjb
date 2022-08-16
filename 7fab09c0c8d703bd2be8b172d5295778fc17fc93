@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5f0058a7_b0551f5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-16T17:37:41Z",
+      "side": 1,
+      "message": "You\u0027ve got multiple SOB lines. You should remove the top one.",
+      "revId": "7fab09c0c8d703bd2be8b172d5295778fc17fc93",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ba87803_56a5e305",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-16T17:37:41Z",
+      "side": 1,
+      "message": "Minor issue with the commit message.\n\nAlso, there\u0027s not changelog with this. To create one you need to do the following:\n\ntox -e reno new \u003cchangelog_name\u003e\n\nThen edit the file that is created and add that to the commit",
+      "revId": "7fab09c0c8d703bd2be8b172d5295778fc17fc93",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
