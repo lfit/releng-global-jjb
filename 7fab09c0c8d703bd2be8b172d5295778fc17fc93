@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "6272daf1_9170757a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-08-16T18:09:23Z",
+      "side": 1,
+      "message": "Matthew in order to avoid duplicates SOB lines make sure you use the -s option only once, as per every call will add it no matter what. This doesn\u0027t apply for the -S (uppercase) option which has a different purpose (signing the commit).",
+      "parentUuid": "5f0058a7_b0551f5e",
+      "revId": "7fab09c0c8d703bd2be8b172d5295778fc17fc93",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "0ba87803_56a5e305",
