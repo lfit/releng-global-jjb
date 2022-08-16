@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57eea760_ba9fff7b",
+        "filename": "shell/maven-sonar.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-08-16T16:13:10Z",
+      "side": 1,
+      "message": "\"! -z\" should generally just be \"-n\". Unless there\u0027s some specific reason -n wouldn\u0027t work here.",
+      "range": {
+        "startLine": 51,
+        "startChar": 59,
+        "endLine": 51,
+        "endChar": 94
+      },
+      "revId": "8bc2ad41e00c7f66af8ba7a92e7eb46f4481f55c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
