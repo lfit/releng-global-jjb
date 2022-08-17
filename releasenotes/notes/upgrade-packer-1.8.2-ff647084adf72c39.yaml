@@ -1,0 +1,7 @@
+---
+upgrade:
+  - |
+    Upgrade Packer version to v1.8.2. The version is more recent v1.8.2
+    and has security updates.
+
+    Ref: https://github.com/hashicorp/packer/releases/tag/v1.8.2
