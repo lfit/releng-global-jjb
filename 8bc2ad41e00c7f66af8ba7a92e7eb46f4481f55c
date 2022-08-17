@@ -22,6 +22,30 @@
       },
       "revId": "8bc2ad41e00c7f66af8ba7a92e7eb46f4481f55c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "445207a4_b1fedd75",
+        "filename": "shell/maven-sonar.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-08-17T10:07:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57eea760_ba9fff7b",
+      "range": {
+        "startLine": 51,
+        "startChar": 59,
+        "endLine": 51,
+        "endChar": 94
+      },
+      "revId": "8bc2ad41e00c7f66af8ba7a92e7eb46f4481f55c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
