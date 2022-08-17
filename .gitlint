@@ -94,3 +94,7 @@ contrib=contrib-title-conventional-commits,contrib-body-requires-signed-off-by
 # to the following (fairly standard) topics and require them to be Mixed Case
 [contrib-title-conventional-commits]
 types=Fix,Feat,Chore,Docs,Style,Refactor,Perf,Test,Revert,CI,Build
+
+# Require RELENG issues in commit messages
+[body-match-regex]
+regex=(.*)Issue:\s+(?<!IT)RELENG-\d+(.*)
