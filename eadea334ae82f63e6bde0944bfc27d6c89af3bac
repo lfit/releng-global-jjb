@@ -22,6 +22,30 @@
       },
       "revId": "eadea334ae82f63e6bde0944bfc27d6c89af3bac",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a323eb9_31c31ebf",
+        "filename": "jjb-compare-xml.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-18T14:18:39Z",
+      "side": 1,
+      "message": "Adding a space between the two sentences, add an extra space in the stdout.\n$     echo \"WARN: Differences detected. \"\\\n\u003e         \"Check above for jobs that have been changed.\"\nWARN: Differences detected.  Check above for jobs that have been changed.\n\nThat\u0027s only required when the contunation line starts from column 0:\n$ echo \"WARN: Differences detected.\"\\\n\u003e \"Check above for jobs that have been changed.\"\nWARN: Differences detected.Check above for jobs that have been changed.",
+      "parentUuid": "c009ed0d_551a5403",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 54
+      },
+      "revId": "eadea334ae82f63e6bde0944bfc27d6c89af3bac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
