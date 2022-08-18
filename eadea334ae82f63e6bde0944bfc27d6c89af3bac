@@ -46,6 +46,30 @@
       },
       "revId": "eadea334ae82f63e6bde0944bfc27d6c89af3bac",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a3549825_c06ebc44",
+        "filename": "jjb-compare-xml.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-18T15:50:46Z",
+      "side": 1,
+      "message": "Ok, so don\u0027t add a space after the period in the quoted string add it _outside_ the quoted string before the \u0027\\\u0027 that will resolve the no space in output string issue I\u0027m seeing in my local terminal when replicating this",
+      "parentUuid": "7a323eb9_31c31ebf",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 54
+      },
+      "revId": "eadea334ae82f63e6bde0944bfc27d6c89af3bac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
