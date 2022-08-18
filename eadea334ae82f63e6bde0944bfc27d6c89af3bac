@@ -70,6 +70,30 @@
       },
       "revId": "eadea334ae82f63e6bde0944bfc27d6c89af3bac",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a013edc1_dd529839",
+        "filename": "jjb-compare-xml.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-18T22:22:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a3549825_c06ebc44",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 54
+      },
+      "revId": "eadea334ae82f63e6bde0944bfc27d6c89af3bac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
