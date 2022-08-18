@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63d1f9ea_55698044",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-18T13:49:53Z",
+      "side": 1,
+      "message": "What\u0027s the point of the random \u0027\\\u0027 in the tr?",
+      "range": {
+        "startLine": 51,
+        "startChar": 36,
+        "endLine": 51,
+        "endChar": 38
+      },
+      "revId": "13670ea1675c8e7ec2f9b6ab9f56c297312fcc6d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d107ab67_4052b4a2",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-18T13:49:53Z",
+      "side": 1,
+      "message": "Should have a space in front of the continuation for cleanliness",
+      "range": {
+        "startLine": 18,
+        "startChar": 33,
+        "endLine": 18,
+        "endChar": 34
+      },
+      "revId": "13670ea1675c8e7ec2f9b6ab9f56c297312fcc6d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
