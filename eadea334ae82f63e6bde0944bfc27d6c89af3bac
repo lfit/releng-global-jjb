@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c009ed0d_551a5403",
+        "filename": "jjb-compare-xml.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-18T13:46:30Z",
+      "side": 1,
+      "message": "Which this string break you\u0027ve dropped the space between the two sentences. Aslo, the line continuation should have a space before it for cleanliness",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 54
+      },
+      "revId": "eadea334ae82f63e6bde0944bfc27d6c89af3bac",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
