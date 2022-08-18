@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "765debdd_8622defe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-18T13:40:11Z",
+      "side": 1,
+      "message": "Reflow this as it\u0027s one giant string.\n\nYou only got though CI because we\u0027ve had to disable the tox job around running pre-commit currently :-/\n\nI strongly recommend you setup pre-commit on your local repository",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 346
+      },
+      "revId": "e59df08b2b63b29e7c3eb453d7e405f17562246e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "6d6f756b_16b7a609",
@@ -14,6 +37,29 @@
       "writtenOn": "2022-08-17T10:07:07Z",
       "side": 1,
       "message": "Okay, hopefully have fixed the (multiple) initial problems with this set of changes.",
+      "revId": "e59df08b2b63b29e7c3eb453d7e405f17562246e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3e3acd7e_0c79616d",
+        "filename": "shell/maven-sonar.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-18T13:40:11Z",
+      "side": 1,
+      "message": "non-zero length test should be performed before comparison test. This allows short-circuit boolean logic to fire more efficiently",
+      "range": {
+        "startLine": 51,
+        "startChar": 56,
+        "endLine": 51,
+        "endChar": 92
+      },
       "revId": "e59df08b2b63b29e7c3eb453d7e405f17562246e",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
