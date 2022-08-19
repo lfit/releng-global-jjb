@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "a0410bf8_5e81e666",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-08-19T16:41:52Z",
+      "side": 1,
+      "message": "I guess I should have already got around to reading...\nhttps://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/\nAnyway, done.",
+      "parentUuid": "da5d0c7d_7aff75c4",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 78
+      },
+      "revId": "c6e2a0a676aec9f39f69c5f2d7ba83039fbb2787",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "1ecbf1c3_8e4817dd",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
