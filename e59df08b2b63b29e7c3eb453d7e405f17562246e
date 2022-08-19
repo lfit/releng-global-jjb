@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "06245fc3_31f16188",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-08-19T14:23:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "765debdd_8622defe",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 346
+      },
+      "revId": "e59df08b2b63b29e7c3eb453d7e405f17562246e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "6d6f756b_16b7a609",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 5
@@ -54,6 +78,30 @@
       "writtenOn": "2022-08-18T13:40:11Z",
       "side": 1,
       "message": "non-zero length test should be performed before comparison test. This allows short-circuit boolean logic to fire more efficiently",
+      "range": {
+        "startLine": 51,
+        "startChar": 56,
+        "endLine": 51,
+        "endChar": 92
+      },
+      "revId": "e59df08b2b63b29e7c3eb453d7e405f17562246e",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "573c2350_620a9471",
+        "filename": "shell/maven-sonar.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-08-19T14:23:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e3acd7e_0c79616d",
       "range": {
         "startLine": 51,
         "startChar": 56,

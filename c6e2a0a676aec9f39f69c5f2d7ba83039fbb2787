@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1ecbf1c3_8e4817dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-08-19T14:23:59Z",
+      "side": 1,
+      "message": "\u003e I strongly recommend you setup pre-commit on your local repository\n\nOkay, I think any pre-submission validation I can do will be worthwhile, as I\u0027d rather not be \"that guy\" having to repeatedly resubmit the same change ;-)",
+      "revId": "c6e2a0a676aec9f39f69c5f2d7ba83039fbb2787",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
