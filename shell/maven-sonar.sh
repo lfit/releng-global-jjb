@@ -48,7 +48,7 @@ if [ "$SONAR_HOST_URL" = "https://sonarcloud.io" ]; then
     fi
 fi
 
-if [ "$SET_JDK_VERSION" != "$SONARCLOUD_JAVA_VERSION" ]; then
+if [ -n "$SONARCLOUD_JAVA_VERSION" ] && [ "$SET_JDK_VERSION" != "$SONARCLOUD_JAVA_VERSION" ]; then
     export SET_JDK_VERSION="$SONARCLOUD_JAVA_VERSION"
     bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
     source /tmp/java.env
