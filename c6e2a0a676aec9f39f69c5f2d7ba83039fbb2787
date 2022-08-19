@@ -1,6 +1,29 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "da5d0c7d_7aff75c4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-19T15:16:13Z",
+      "side": 1,
+      "message": "This needs a better reflow. Max 72 characters is general recommendation for commit message body\n\nYou can see in the gerrit change itself that the commit message is flowing weird because the widget that show the commit message flows it with an expectation of 72 characters.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 78
+      },
+      "revId": "c6e2a0a676aec9f39f69c5f2d7ba83039fbb2787",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "1ecbf1c3_8e4817dd",
