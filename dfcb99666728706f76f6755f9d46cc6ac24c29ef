@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be2e6293_b817edc1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-20T14:22:28Z",
+      "side": 1,
+      "message": "Please respond to / fix the requested changes from patchset 1",
+      "revId": "dfcb99666728706f76f6755f9d46cc6ac24c29ef",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
