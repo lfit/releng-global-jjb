@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "466f1f47_8454724e",
+        "filename": "shell/docker-login.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-21T04:16:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63d1f9ea_55698044",
+      "range": {
+        "startLine": 51,
+        "startChar": 36,
+        "endLine": 51,
+        "endChar": 38
+      },
+      "revId": "13670ea1675c8e7ec2f9b6ab9f56c297312fcc6d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d107ab67_4052b4a2",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-08-18T13:49:53Z",
       "side": 1,
       "message": "Should have a space in front of the continuation for cleanliness",
+      "range": {
+        "startLine": 18,
+        "startChar": 33,
+        "endLine": 18,
+        "endChar": 34
+      },
+      "revId": "13670ea1675c8e7ec2f9b6ab9f56c297312fcc6d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfe0ba30_fb735361",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-21T04:16:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d107ab67_4052b4a2",
       "range": {
         "startLine": 18,
         "startChar": 33,

@@ -16,6 +16,23 @@
       "message": "Please respond to / fix the requested changes from patchset 1",
       "revId": "dfcb99666728706f76f6755f9d46cc6ac24c29ef",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e18711a4_02650aac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-21T04:16:21Z",
+      "side": 1,
+      "message": "thx for the review! good catch :-))",
+      "revId": "dfcb99666728706f76f6755f9d46cc6ac24c29ef",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
