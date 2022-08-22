@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c4b7326_3fa96a30",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-22T16:59:49Z",
+      "side": 1,
+      "message": "@Bengt, this issue is way old and is showing a merge conflict. Is this actually still any sort of problem? I\u0027m thinking it should just be abandoned since the last update (before this comment) was December 2020.",
+      "revId": "a9449f817519aeb3952ecfb416a49b11a23bc4a9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
