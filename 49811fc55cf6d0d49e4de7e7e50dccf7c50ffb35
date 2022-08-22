@@ -16,6 +16,24 @@
       "message": "This needs a rebase before it\u0027s able to be merged.",
       "revId": "49811fc55cf6d0d49e4de7e7e50dccf7c50ffb35",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "601b361a_e786a190",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-08-22T16:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5803414b_d04c44ef",
+      "revId": "49811fc55cf6d0d49e4de7e7e50dccf7c50ffb35",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
