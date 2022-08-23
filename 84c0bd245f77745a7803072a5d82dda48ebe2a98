@@ -16,6 +16,23 @@
       "message": "tested these changes with some of the jobs:\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/builder-packer-verify/22/console",
       "revId": "84c0bd245f77745a7803072a5d82dda48ebe2a98",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9cf785e_a5225f48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2022-08-23T07:58:45Z",
+      "side": 1,
+      "message": "LGTM AFAIK\n\n+ Cédric",
+      "revId": "84c0bd245f77745a7803072a5d82dda48ebe2a98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
