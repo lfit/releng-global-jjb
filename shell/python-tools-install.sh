@@ -12,6 +12,19 @@ echo "---> python-tools-install.sh"
 
 set -eufo pipefail
 
+# Override the python version from pyenv installs to be used as default
+python="python3"
+if [[ -d /opt/pyenv ]]; then
+    echo "---> Setting up pyenv"
+    export PYENV_ROOT="/opt/pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    pyenv versions
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init - --no-rehash)"
+        pyenv local $(lf-pyver "$python")
+    fi
+fi
+
 # This script will typically be called during pre-build & post-build.
 # Create the user venv during pre-build.
 if [[ ! -f /tmp/pre-build-complete ]]; then

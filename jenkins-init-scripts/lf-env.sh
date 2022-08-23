@@ -167,10 +167,6 @@ lf-activate-venv () {
                 return 1 ;;
         esac
     done
-    if ! type "$python" > /dev/null; then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
-        return 1
-    fi
 
     echo "${FUNCNAME[0]}(): INFO: Creating $python venv at $lf_venv"
 
@@ -191,6 +187,18 @@ lf-activate-venv () {
         ;;
     python3*)
         local pkg_list=""
+        # Use pyenv for selecting the python version
+        if [[ -d "/opt/pyenv" ]]; then
+            # set_python_version = pyver "${python//[a-zA-Z]/}"
+            echo "---> Setting up pyenv"
+            export PYENV_ROOT="/opt/pyenv"
+            export PATH="$PYENV_ROOT/bin:$PATH"
+            pyenv versions
+            if command -v pyenv 1>/dev/null 2>&1; then
+                eval "$(pyenv init - --no-rehash)"
+                pyenv local $(lf-pyver "${python}")
+            fi
+        fi
         # Add version specifier for some packages
         for arg in "$@"; do
             case $arg in
@@ -216,6 +224,12 @@ lf-activate-venv () {
         return 1
         ;;
     esac
+
+    if ! type "$python" > /dev/null; then
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
+        return 1
+    fi
+
     if $set_path; then
         echo "${FUNCNAME[0]}(): INFO: Adding $lf_venv/bin to PATH"
         PATH=$lf_venv/bin:$PATH
@@ -322,4 +336,52 @@ lf-set-maven-options () {
         transfer.Slf4jMavenTransferListener=warn \
         -Dmaven.repo.local=/tmp/r \
         -Dorg.ops4j.pax.url.mvn.localRepository=/tmp/r"
+}
+
+################################################################################
+#
+# NAME
+#   lf-pyver [python-version X.Y]
+#
+# SYNOPSIS
+#   pyver 3.8 (outputs 3.8.13)
+#   or
+#   pyver 3.10 (outputs 3.10.6)
+#   or
+#   pyver 3 (outputs the most recent version 3.10.6)
+#
+# DESCRIPTION
+#   The function takes short python version  in the format and X.Y and prints
+#   the semver format (X.Y.Z) of the version that has been installed on the system
+#   with pyenv.
+#
+#   When the expected version is not installed, nothing is returned.
+#
+# RETURN VALUES
+#   OK: 0
+#   Fail: 1
+#
+################################################################################
+
+lf-pyver() {
+    local py_version_xy="${1:-python3}"
+    local py_version_xyz=""
+
+    pyenv versions | sed 's/[[:alpha:]|(|)|/||*|[:space:]]//g'| tr -d ' ' \
+        > "/tmp/.pyenv_versions"
+    if [[ ! -s "/tmp/.pyenv_versions" ]]; then
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: pyenv not available"
+        return 1
+    fi
+
+    # strip out any prefix for (ex: 'python3.8' or 'v3.8') and match regex
+    # to the output return by pyenv
+    py_version_xyz=$(grep "^${py_version_xy//[a-zA-Z]/}\(\..*\)\?\.[0-9]\+$" \
+        "/tmp/.pyenv_versions" | sort -V | tail -n 1;)
+    if [[ ! -n ${py_version_xyz} ]]; then
+        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Not installed on host: ${py_version_xy}"
+        return 1
+    fi
+    echo "${py_version_xyz}"
+    return 0
 }

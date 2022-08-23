@@ -1,0 +1,13 @@
+---
+upgrade:
+  - |
+    Use pyenv whih is the standard way to manage, set and use a python3
+    installation on the system.
+
+    The required version of python3 for all jobs should be > 3.8.x, to
+    avoid PyPI dependencies conflicts with outdated versions. However, the
+    lf-activate-env() uses the system default version python installed through
+    packages. This can cause warning and build failures that source lf-env.sh.
+
+    Update lf-activate-env to use pyenv versions of python3 installed through
+    the lfit.python-install galaxy ansible role.
