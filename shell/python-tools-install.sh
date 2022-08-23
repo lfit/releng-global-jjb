@@ -12,6 +12,22 @@ echo "---> python-tools-install.sh"
 
 set -eufo pipefail
 
+# Souce the python version from lf-env.sh if available.
+python="python3.8.13"
+if [[ -f ~/lf-env.sh ]]; then
+    source ~/lf-env.sh
+    lf-activate-venv --python "$python" lftools
+elif [[ -d /opt/pyenv ]]; then
+    echo "---> Setting up pyenv"
+    export PYENV_ROOT="/opt/pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    pyenv versions
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init - --no-rehash)"
+        pyenv local "$python"
+    fi
+fi
+
 # This script will typically be called during pre-build & post-build.
 # Create the user venv during pre-build.
 if [[ ! -f /tmp/pre-build-complete ]]; then
