@@ -1,0 +1,14 @@
+---
+issues:
+  - |
+    ERROR: Not installed on host: python3.8.13
+    ERROR: Can not perform a '--user' install. User site-packages are not
+    visible in this virtualenv.
+fixes:
+  - |
+    Set the default version to 'python3' instead of '3.8.x' since some of the
+    older images may not have the specifc version installed. The default
+    version is only used when lf-env.sh is not available.
+
+    CR I821a86ac3b54f2 sets and uses python 3.x version made available by pyenv
+    therefore remove the --user option which is no longer required.
