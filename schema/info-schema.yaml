@@ -63,6 +63,9 @@ properties:
       timezone:
         required: false
         pattern: '([A-Z][a-z]*\s*)+\/([A-Za-z_-])+'
+      Juniper id:
+        type: "string"
+        required: false
     additionalProperties: false
   primary_contact: *user_object
   issue_tracking:
