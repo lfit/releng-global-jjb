@@ -100,6 +100,15 @@ if [[ -n ${EXTERNAL_LABELS:-} ]]; then
     done
 fi
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv yq
+
+# show installed versions
+python -m pip --version
+python -m pip freeze
+
 echo "INFO: label list has ${#labels[@]} entries:"
 echo "INFO:" "${labels[@]}"
 

@@ -1,0 +1,8 @@
+---
+issues:
+  - |
+    yq: command not found
+fixes:
+  - |
+    Install yq through lf-activate-venv rather than using the python
+    tools install script.
