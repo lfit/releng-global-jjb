@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4505a457_34979d3e",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-31T08:37:40Z",
+      "side": 0,
+      "message": "For a case, where we need to preserve this regex with grep. ex: if the user expects 3.8.10, then pyenv only have the 3.8.13 (latest minor release updates), pyenv would give an error so we let lf-pyver() choose the version of python that is available on the system by excluding the .z from semver (x.y.z). Let pyver pick up the best version installed on the system.",
+      "range": {
+        "startLine": 379,
+        "startChar": 27,
+        "endLine": 379,
+        "endChar": 77
+      },
+      "revId": "53a8bdfd0f05f7d29ac34a44496efb2ed081250f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
