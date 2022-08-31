@@ -367,7 +367,7 @@ lf-pyver() {
     local py_version_xy="${1:-python3}"
     local py_version_xyz=""
 
-    pyenv versions | sed 's/[[:alpha:]|(|)|/||*|[:space:]]//g'| tr -d ' ' \
+    pyenv versions | sed 's/^[ *]* //' | awk '{ print $1 }' | grep -E '^[0-9.]*[0-9]$' \
         > "/tmp/.pyenv_versions"
     if [[ ! -s "/tmp/.pyenv_versions" ]]; then
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: pyenv not available"
@@ -376,9 +376,9 @@ lf-pyver() {
 
     # strip out any prefix for (ex: 'python3.8' or 'v3.8') and match regex
     # to the output return by pyenv
-    py_version_xyz=$(grep "^${py_version_xy//[a-zA-Z]/}\(\..*\)\?\.[0-9]\+$" \
-        "/tmp/.pyenv_versions" | sort -V | tail -n 1;)
-    if [[ ! -n ${py_version_xyz} ]]; then
+    py_version_xyz=$(grep "^${py_version_xy//[a-zA-Z]/}" "/tmp/.pyenv_versions" |
+        sort -V | tail -n 1;)
+    if [[ -z ${py_version_xyz} ]]; then
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Not installed on host: ${py_version_xy}"
         return 1
     fi
