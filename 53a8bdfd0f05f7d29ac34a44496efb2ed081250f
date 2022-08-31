@@ -22,6 +22,30 @@
       },
       "revId": "53a8bdfd0f05f7d29ac34a44496efb2ed081250f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56e8ec75_0d443c89",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-08-31T10:55:36Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "4505a457_34979d3e",
+      "range": {
+        "startLine": 379,
+        "startChar": 27,
+        "endLine": 379,
+        "endChar": 77
+      },
+      "revId": "53a8bdfd0f05f7d29ac34a44496efb2ed081250f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
