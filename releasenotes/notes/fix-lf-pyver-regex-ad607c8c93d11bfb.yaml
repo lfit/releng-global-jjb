@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    lf-pyver() fails to include the currently selected version in the output
+    of 'pyenv versions', which makes the version change every time the local
+    version is set by pyenv with the version from lf-pyver().
+
+    Fix the command to extract the list of Python versions to include all
+    the numeric versions in the list.
