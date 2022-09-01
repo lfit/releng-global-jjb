@@ -17,8 +17,10 @@ python="python3"
 if [[ -f ~/lf-env.sh ]]; then
     source ~/lf-env.sh
     lf-activate-venv --python "$python" lftools
+    # Save the virtualenv path
+    echo "$lf_venv" > "/tmp/.os_lf_venv"
 elif [[ -d /opt/pyenv ]]; then
-    echo "---> Setting up pyenv"
+    echo "Setup up pyenv"
     export PYENV_ROOT="/opt/pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
     pyenv versions

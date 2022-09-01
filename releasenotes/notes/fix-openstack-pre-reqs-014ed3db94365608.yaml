@@ -1,0 +1,15 @@
+---
+issues:
+  - |
+    Error: openstack: command not found
+fixes:
+  - |
+    Use lf-activate-venv to install openstack deps
+
+    Using python-tools-install.sh for the pre/post build is not recommended
+    approach for installing python dependencies since this installs the
+    dependencies with `--user` option (removed in I821a86ac3b54f284e8).
+
+    Instead use lf-activate-venv to setup an venv and pull in the required
+    dependencies and save the path of the virtualenv in a temp file that
+    can be checked before attempting to create a venv.
