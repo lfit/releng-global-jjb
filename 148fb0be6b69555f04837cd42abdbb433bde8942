@@ -71,6 +71,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "df9f8059_a7b7a932",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-01T22:15:47Z",
+      "side": 1,
+      "message": "You are right. It was centos7-builder-4c-4g. I created \u0027transportpce-maven-verify-chlorine-mvn38-openjdk17\u0027 in the sandbox with this patch with minor changes, and I got centos7-builder.",
+      "parentUuid": "15e2c725_74abddbf",
+      "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31336e1e_60dc9a21",
