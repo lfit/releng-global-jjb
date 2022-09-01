@@ -18,6 +18,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "081d1921_ea4cd43b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-01T22:01:57Z",
+      "side": 1,
+      "message": "Is Java 17 not installed? `alternatives --list` shows Java 1.8.0, 11 \u0026 18 but not 17.\n```\n+ sudo /usr/sbin/alternatives --list\nlibnssckbi.so.x86_64\tauto\t/usr/lib64/pkcs11/p11-kit-trust.so\nld\tauto\t/usr/bin/ld.bfd\nmta\tauto\t/usr/sbin/sendmail.postfix\ncifs-idmap-plugin\tauto\t/usr/lib64/cifs-utils/cifs_idmap_sss.so\njava\tmanual\t/usr/lib/jvm/java-1.8.0-openjdk/bin/java\njre_openjdk\tauto\t/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64/jre\njre_1.8.0\tauto\t/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64/jre\njre_1.8.0_openjdk\tauto\t/usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64\njaxp_transform_impl\tauto\t/usr/share/java/xalan-j2.jar\njaxp_parser_impl\tauto\t/usr/share/java/xerces-j2.jar\njavac\tmanual\t/usr/lib/jvm/java-1.8.0-openjdk/bin/javac\njava_sdk_openjdk\tmanual\t/usr/lib/jvm/java-1.8.0-openjdk/bin/java\njava_sdk_1.8.0\tauto\t/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64\njava_sdk_1.8.0_openjdk\tauto\t/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.342.b07-1.el7_9.x86_64\nnmap\tauto\t/usr/bin/ncat\njre_11\tauto\t/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.el7_9.x86_64\njre_11_openjdk\tauto\t/usr/lib/jvm/jre-11-openjdk-11.0.16.0.8-1.el7_9.x86_64\njava_sdk_11\tauto\t/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.el7_9.x86_64\njava_sdk_11_openjdk\tauto\t/usr/lib/jvm/java-11-openjdk-11.0.16.0.8-1.el7_9.x86_64\njre_18\tauto\t/usr/lib/jvm/java-18-openjdk-18.0.1.0.10-2.rolling.el7.x86_64\njre_18_openjdk\tauto\t/usr/lib/jvm/jre-18-openjdk-18.0.1.0.10-2.rolling.el7.x86_64\njava_sdk_18\tauto\t/usr/lib/jvm/java-18-openjdk-18.0.1.0.10-2.rolling.el7.x86_64\njava_sdk_18_openjdk\tauto\t/usr/lib/jvm/java-18-openjdk-18.0.1.0.10-2.rolling.el7.x86_64\njar\tmanual\t/usr/lib/jvm/java-1.8.0-openjdk/bin/jar\njarsigner\tmanual\t/usr/lib/jvm/java-1.8.0-openjdk/bin/jarsigner\njavadoc\tmanual\t/usr/lib/jvm/java-1.8.0-openjdk/bin/javadoc\njavap\tmanual\t/usr/lib/jvm/java-1.8.0-openjdk/bin/javap\njavah\tmanual\t/usr/lib/jvm/java-1.8.0-openjdk/bin/javah\n```",
+      "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31336e1e_60dc9a21",
