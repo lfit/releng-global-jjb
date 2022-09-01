@@ -11,6 +11,20 @@
 # Removes openstack images older than X days in the cloud
 echo "---> Cleanup old images"
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 "cryptography<3.4" \
+    "lftools[openstack]" \
+    kubernetes \
+    "niet~=1.4.2" \
+    python-heatclient \
+    python-openstackclient \
+    python-magnumclient \
+    setuptools \
+    "openstacksdk<0.99" \
+    yq
+
 os_cloud="${OS_CLOUD:-vex}"
 os_image_cleanup_age="${OS_IMAGE_CLEANUP_AGE:-30}"
 

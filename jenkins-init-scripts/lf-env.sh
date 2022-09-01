@@ -190,7 +190,7 @@ lf-activate-venv () {
         # Use pyenv for selecting the python version
         if [[ -d "/opt/pyenv" ]]; then
             # set_python_version = pyver "${python//[a-zA-Z]/}"
-            echo "---> Setting up pyenv"
+            echo "Setup pyenv:"
             export PYENV_ROOT="/opt/pyenv"
             export PATH="$PYENV_ROOT/bin:$PATH"
             pyenv versions

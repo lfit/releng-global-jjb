@@ -14,6 +14,11 @@ echo "---> jenkins-verify-images.sh"
 
 set -eux -o pipefail
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 python-openstackclient
+
 error=false
 
 verify_images()

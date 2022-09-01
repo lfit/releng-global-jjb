@@ -18,6 +18,20 @@ stack_parameters="$WORKSPACE/stack-parameters.yaml"
 
 set -eux -o pipefail
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 "cryptography<3.4" \
+    "lftools[openstack]" \
+    kubernetes \
+    "niet~=1.4.2" \
+    python-heatclient \
+    python-openstackclient \
+    python-magnumclient \
+    setuptools \
+    "openstacksdk<0.99" \
+    yq
+
 openstack --os-cloud "$os_cloud" limits show --absolute
 
 pushd "$stack_template_dir" || exit 1

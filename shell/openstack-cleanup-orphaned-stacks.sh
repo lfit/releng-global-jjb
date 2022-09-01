@@ -56,6 +56,21 @@ stack_in_jenkins() {
 
     return 1
 }
+
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 "cryptography<3.4" \
+    "lftools[openstack]" \
+    kubernetes \
+    "niet~=1.4.2" \
+    python-heatclient \
+    python-openstackclient \
+    python-magnumclient \
+    setuptools \
+    "openstacksdk<0.99" \
+    yq
+
 set -x
 #########################
 ## FETCH ACTIVE BUILDS ##

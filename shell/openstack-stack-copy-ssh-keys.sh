@@ -50,6 +50,11 @@ copy_ssh_keys () {
     done
 }
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 python-openstackclient
+
 # IP Addresses are returned as a space separated list so word splitting is ok
 # shellcheck disable=SC2207
 ip_addresses=($(openstack --os-cloud "$os_cloud" stack show -f json -c outputs "$stack_name" |

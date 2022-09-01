@@ -11,6 +11,11 @@
 # Scans OpenStack for orphaned ports
 echo "---> Orphaned ports"
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 python-openstackclient
+
 os_cloud="${OS_CLOUD:-vex}"
 
 set -eux -o pipefail

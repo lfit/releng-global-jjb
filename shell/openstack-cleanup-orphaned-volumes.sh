@@ -15,6 +15,20 @@ os_cloud="${OS_CLOUD:-vex}"
 
 set -eux -o pipefail
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 "cryptography<3.4" \
+    "lftools[openstack]" \
+    kubernetes \
+    "niet~=1.4.2" \
+    python-heatclient \
+    python-openstackclient \
+    python-magnumclient \
+    setuptools \
+    "openstacksdk<0.99" \
+    yq
+
 mapfile -t os_volumes < <(openstack --os-cloud "$os_cloud" volume list -f value -c ID --status Available)
 
 if [ ${#os_volumes[@]} -eq 0 ]; then

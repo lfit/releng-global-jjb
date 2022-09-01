@@ -19,6 +19,11 @@ set -eu -o pipefail
 echo "---> Protect in-use images"
 os_cloud="${OS_CLOUD:-vex}"
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 python-openstackclient
+
 images=()
 while read -r -d $'\n' ; do
     images+=("$REPLY")

@@ -58,6 +58,15 @@ cluster_in_jenkins() {
     return 1
 }
 
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3 \
+    kubernetes \
+    python-heatclient \
+    python-openstackclient \
+    python-magnumclient
+
 #########################
 ## FETCH ACTIVE BUILDS ##
 #########################
