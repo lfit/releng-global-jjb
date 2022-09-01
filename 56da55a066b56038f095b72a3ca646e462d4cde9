@@ -16,6 +16,24 @@
       "message": "Instead of doing this which is going to add significant time to builds that have several call so lf-activate-venv where they used to only have the python-tools-install call, this should be fixed in python-tools-install instead",
       "revId": "56da55a066b56038f095b72a3ca646e462d4cde9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c82f40df_ef2b51ee",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-01T22:19:27Z",
+      "side": 1,
+      "message": "I\u0027ve tried this approach calling lf-activate-venv in the python-tools-install.sh script, however there are a few challenges with lf-activate-venv(). \n\nhttps://github.com/lfit/releng-global-jjb/blob/master/shell/python-tools-install.sh#L15-L29\n\n1. calling lf-activate-venv() multiple times overwrites the venv that was created the first time. \n2. the docs suggest $lf-env checking and setting a var, wondering if we can set a global var (for all macros to check and use) in a way it does not overwritten with another subsequent call. checking only for this $var does not id what\u0027s in that venv, and need more advance checks.",
+      "parentUuid": "ce83d97d_0c082017",
+      "revId": "56da55a066b56038f095b72a3ca646e462d4cde9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
