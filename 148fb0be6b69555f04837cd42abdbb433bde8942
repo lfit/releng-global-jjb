@@ -89,6 +89,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4943cbb_6e8e01f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-01T22:29:43Z",
+      "side": 1,
+      "message": "Looks like \u0027transportpce-chlorine\u0027 should include \u0027build-node: centos8-builder-4c-4g\u0027.",
+      "parentUuid": "df9f8059_a7b7a932",
+      "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31336e1e_60dc9a21",
