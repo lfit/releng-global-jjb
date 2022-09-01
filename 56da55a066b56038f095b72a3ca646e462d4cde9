@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce83d97d_0c082017",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-01T21:47:22Z",
+      "side": 1,
+      "message": "Instead of doing this which is going to add significant time to builds that have several call so lf-activate-venv where they used to only have the python-tools-install call, this should be fixed in python-tools-install instead",
+      "revId": "56da55a066b56038f095b72a3ca646e462d4cde9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
