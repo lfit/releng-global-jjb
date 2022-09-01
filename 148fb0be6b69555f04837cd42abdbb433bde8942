@@ -39,6 +39,30 @@
       },
       "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13be20ca_a9a16759",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2022-09-01T12:30:31Z",
+      "side": 1,
+      "message": "I actually wrote it in the purpose to be distribution and openjdk installer agnostic",
+      "parentUuid": "31336e1e_60dc9a21",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 6
+      },
+      "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
