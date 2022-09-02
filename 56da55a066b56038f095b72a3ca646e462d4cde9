@@ -34,6 +34,23 @@
       "parentUuid": "ce83d97d_0c082017",
       "revId": "56da55a066b56038f095b72a3ca646e462d4cde9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3cfaca60_11566385",
+        "filename": "shell/openstack-stack-copy-ssh-keys.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-02T03:13:49Z",
+      "side": 1,
+      "message": "\u0027openstack stack\u0027 command also requires python-heatclient.",
+      "revId": "56da55a066b56038f095b72a3ca646e462d4cde9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
