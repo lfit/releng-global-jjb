@@ -125,6 +125,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "61647b4e_55ad1927",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-02T08:51:42Z",
+      "side": 1,
+      "message": "`centos8-builder-4c-4g` label does exists on both Jenkins prod/sandbox and either can be used for the jobs. You can confirm the label configs under \"builder/jenkins-config/cloud/openstack/centos8*\".",
+      "parentUuid": "c8affe60_5b45c7f7",
+      "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31336e1e_60dc9a21",
