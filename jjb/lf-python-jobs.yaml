@@ -250,13 +250,11 @@
     parallel: true
     pre-build-script: "# pre-build script goes here"
     python-version: python3
-    sonar-mvn-goal: "sonar:sonar"
     sonarcloud: false
     sonarcloud-project-key: ""
     sonarcloud-project-organization: ""
     sonarcloud-api-token: ""
     sonarcloud-qualitygate-wait: false
-    sonarcloud-java-version: openjdk11
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -316,9 +314,6 @@
       - shell: "{pre-build-script}"
       - lf-infra-tox-run:
           parallel: "{parallel}"
-      - lf-provide-maven-settings:
-          global-settings-file: "{mvn-global-settings}"
-          settings-file: "{mvn-settings}"
       # With SonarCloud
       - conditional-step:
           condition-kind: boolean-expression
