@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "baf4ba6f_02278eff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-02T06:13:33Z",
+      "side": 1,
+      "message": "On the prod env the last successful build was taking around: 6.44 mins\n\nhttps://jenkins.opendaylight.org/releng/view/builder/job/builder-openstack-cron/lastSuccessfulBuild/\n\nNow with these changes tested on sandbox, it\u0027s taking a little more than half the time (3.50 mins).\n\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/builder-openstack-cron/39/",
+      "parentUuid": "c82f40df_ef2b51ee",
+      "revId": "56da55a066b56038f095b72a3ca646e462d4cde9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3cfaca60_11566385",
         "filename": "shell/openstack-stack-copy-ssh-keys.sh",
         "patchSetId": 1
@@ -49,6 +67,24 @@
       "writtenOn": "2022-09-02T03:13:49Z",
       "side": 1,
       "message": "\u0027openstack stack\u0027 command also requires python-heatclient.",
+      "revId": "56da55a066b56038f095b72a3ca646e462d4cde9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bd7f9371_5c2e862c",
+        "filename": "shell/openstack-stack-copy-ssh-keys.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-02T06:13:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3cfaca60_11566385",
       "revId": "56da55a066b56038f095b72a3ca646e462d4cde9",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
