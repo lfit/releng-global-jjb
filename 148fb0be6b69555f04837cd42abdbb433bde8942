@@ -107,6 +107,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8affe60_5b45c7f7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2022-09-02T08:07:23Z",
+      "side": 1,
+      "message": "Correct I didn\u0027t notice the runner was still using CentOS7.\nThough, we did push the CentOS8 configuration together with openjdk17 on ODL releng/builder\nCf https://git.opendaylight.org/gerrit/c/releng/builder/+/102224\n\nBut is is 2c-2g instead of 4c-4g, we checked with Anil this morning and it does exist in jenking config.",
+      "parentUuid": "c4943cbb_6e8e01f7",
+      "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "31336e1e_60dc9a21",
@@ -168,6 +186,30 @@
       "side": 1,
       "message": "sorry I meant \"on purpose\"",
       "parentUuid": "13be20ca_a9a16759",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 6
+      },
+      "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23ad784c_169e3379",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2022-09-02T08:07:23Z",
+      "side": 1,
+      "message": "Following our talk this morning, I guess the error message is a bit confusing and comes a little late during maven build install.\nI propose to rework this and to display an error with an exit status code directly here if the folder does not exist.",
+      "parentUuid": "a53c87ca_d7ac99d8",
       "range": {
         "startLine": 26,
         "startChar": 1,
