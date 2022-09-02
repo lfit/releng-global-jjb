@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8ab5a7aa_f6471f42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-02T22:50:21Z",
+      "side": 1,
+      "message": "rest of it LGTM",
+      "revId": "f8af0b8839a736007c97a37783dd4302dd8829a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e9e8e47_c7ee5f2e",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-02T22:50:21Z",
+      "side": 1,
+      "message": "minor nit, inline bash substitution is much faster using subcommand, pipe and sed for a simple regex. :-))",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 65
+      },
+      "revId": "f8af0b8839a736007c97a37783dd4302dd8829a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
