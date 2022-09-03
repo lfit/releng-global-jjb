@@ -39,6 +39,30 @@
       },
       "revId": "f8af0b8839a736007c97a37783dd4302dd8829a7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1af916f9_b64d2588",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2022-09-03T11:57:54Z",
+      "side": 1,
+      "message": "yes but I updated the shebang to #!/bin/sh that usually points to a different shell than bash.\nthese subsitutions are not POSIX compliant and only supported in bash which is quite slower than dash :)\nBy removing them, the script is compatible with distributions default shells that are overall much faster.\n\nhttps://wiki.ubuntu.com/DashAsBinSh\nhttps://askubuntu.com/questions/1059474/are-there-concrete-figures-on-the-speed-of-bash-vs-dash",
+      "parentUuid": "8e9e8e47_c7ee5f2e",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 65
+      },
+      "revId": "f8af0b8839a736007c97a37783dd4302dd8829a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
