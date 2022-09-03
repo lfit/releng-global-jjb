@@ -18,6 +18,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5088e3d0_0f374db5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-03T14:24:33Z",
+      "side": 1,
+      "message": "This change requires a release note be added. In case you don\u0027t know how to do so here\u0027s how:\n\ntox -e reno new \u003cslug_name\u003e\n\nEdit the resultant file and add it to the change",
+      "revId": "f8af0b8839a736007c97a37783dd4302dd8829a7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e9e8e47_c7ee5f2e",
