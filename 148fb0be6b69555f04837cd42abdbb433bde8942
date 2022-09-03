@@ -236,6 +236,30 @@
       },
       "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01470e0e_32490092",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2022-09-03T12:10:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23ad784c_169e3379",
+      "range": {
+        "startLine": 26,
+        "startChar": 1,
+        "endLine": 31,
+        "endChar": 6
+      },
+      "revId": "148fb0be6b69555f04837cd42abdbb433bde8942",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
