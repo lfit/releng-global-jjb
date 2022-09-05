@@ -16,6 +16,23 @@
       "message": "Addressed Kevin\u0027s valid comments about residual/unnecessary Maven settings",
       "revId": "333598eb67eb4c60c568a63ff792456f2def7a16",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db43ec82_097b4488",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T10:40:42Z",
+      "side": 1,
+      "message": "I guess we need to document the new files that have been added?\n\nglobal-jjb (🌴 70504) % ./ensure-documented.sh \njjb/lf-python-jobs.yaml:{project-name}-cli-sonar\njjb/lf-macros.yaml:lf-infra-cli-parameters\nNumber of undocumented items: 2\n",
+      "revId": "333598eb67eb4c60c568a63ff792456f2def7a16",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
