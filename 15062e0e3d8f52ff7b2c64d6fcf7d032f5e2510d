@@ -35,6 +35,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a45e01bf_2c5bee15",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T09:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c24bdade_ba1aa253",
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2180aa50_ee1f4204",
@@ -48,6 +66,24 @@
       "writtenOn": "2022-08-24T00:22:49Z",
       "side": 1,
       "message": "this may not be required for a python project",
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e642ea3_eb7df77f",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T09:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2180aa50_ee1f4204",
       "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
@@ -158,6 +194,24 @@
       "writtenOn": "2022-08-24T00:22:49Z",
       "side": 1,
       "message": "this may not be required for a python project",
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "99881d59_635aab70",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T09:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6233d4da_b29a274a",
       "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },

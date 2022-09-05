@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9519e8c_08794047",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T09:38:44Z",
+      "side": 1,
+      "message": "Addressed Kevin\u0027s valid comments about residual/unnecessary Maven settings",
+      "revId": "333598eb67eb4c60c568a63ff792456f2def7a16",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
