@@ -181,6 +181,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "55c0b162_77133497",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T13:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c69ba1ed_c1bdacc6",
+      "range": {
+        "startLine": 298,
+        "startChar": 0,
+        "endLine": 311,
+        "endChar": 76
+      },
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6233d4da_b29a274a",
@@ -252,6 +276,30 @@
       "writtenOn": "2022-08-15T19:45:10Z",
       "side": 1,
       "message": "I don\u0027t think we need this.. since we mean to be only using SonarCloud",
+      "range": {
+        "startLine": 340,
+        "startChar": 0,
+        "endLine": 352,
+        "endChar": 44
+      },
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "994dd56e_815324bc",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T13:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36d2fa4c_adedc350",
       "range": {
         "startLine": 340,
         "startChar": 0,

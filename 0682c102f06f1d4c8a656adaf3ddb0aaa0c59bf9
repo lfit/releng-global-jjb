@@ -41,6 +41,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2b24178b_eb4b1580",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T13:42:15Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0e203cdb_c363b425",
+      "range": {
+        "startLine": 226,
+        "startChar": 0,
+        "endLine": 226,
+        "endChar": 25
+      },
+      "revId": "0682c102f06f1d4c8a656adaf3ddb0aaa0c59bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33ce9fe1_a79b49da",
@@ -64,6 +88,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3912f36a_0dbabc5b",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T13:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33ce9fe1_a79b49da",
+      "range": {
+        "startLine": 244,
+        "startChar": 1,
+        "endLine": 249,
+        "endChar": 22
+      },
+      "revId": "0682c102f06f1d4c8a656adaf3ddb0aaa0c59bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "117971e3_91742030",
@@ -77,6 +125,30 @@
       "writtenOn": "2022-08-15T19:45:10Z",
       "side": 1,
       "message": "Same here, we might not need these since we are not going to call maven",
+      "range": {
+        "startLine": 287,
+        "startChar": 0,
+        "endLine": 290,
+        "endChar": 38
+      },
+      "revId": "0682c102f06f1d4c8a656adaf3ddb0aaa0c59bf9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8227715a_642096f4",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-05T13:42:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "117971e3_91742030",
       "range": {
         "startLine": 287,
         "startChar": 0,
