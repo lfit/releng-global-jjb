@@ -30,29 +30,36 @@ else
         python-openstackclient
 fi
 
-set -eux -o pipefail
+set -eu -o pipefail
 
 mapfile -t os_ports_ts < <(openstack --os-cloud "$os_cloud" port list \
         -f value \
         -c ID \
         -c status \
-        -c created_at \
-        | grep -E DOWN \
-        | awk -F' ' '{print $1 " " $3}')
+        | grep -E DOWN )
 
 if [ ${#os_ports_ts[@]} -eq 0 ]; then
     echo "No orphaned ports found."
 else
-    cutoff=$(date -d "30 minutes ago"  +%s)
+    age="30 minutes ago"
+    cutoff=$(date -d "$age"  +%s)
     for port_ts in "${os_ports_ts[@]}"; do
-        created_at_isots="${port_ts#* }"
         port_uuid="${port_ts% *}"
-        echo "checking port uuid: ${port_uuid} with TS: ${created_at_isots}"
-        created_at_uxts=$(date -d "${created_at_isots}" +"%s")
-        # Clean up ports where created_at > 30 minutes
-        if [[ "$created_at_uxts" -gt "$cutoff" ]]; then
-            echo "Removing orphaned port $port_uuid created_at ts > 30 minutes."
-            openstack --os-cloud "$os_cloud" port delete "$port_uuid"
+        echo "Retrieving timestamp for port uuid: ${port_uuid}"
+        created_at=$(openstack port show "${port_uuid}" -f value -c created_at)
+        created_at_uxts=$(date -d "${created_at}" +"%s")
+        # Validate timestamp is numeric value
+        if [[ "$created_at_uxts" -eq "$created_at_uxts" ]]; then
+                # Clean up ports where created_at > age
+                if [[ "$created_at_uxts" -gt "$cutoff" ]]; then
+                        echo "Removing orphaned port; TS ${created_at_uxts} > ${age}"
+                        openstack --os-cloud "$os_cloud" port delete "$port_uuid"
+                else
+			echo "Port age ${created_at_uxts} is NOT > ${cutoff}; removal unnecessary"
+                fi
+        else
+                echo "Date variable failed numeric test; deletion not possible"
+		echo "Error indicative of breakage caused by changes to Openstack CLI output, etc."
         fi
     done
 fi
