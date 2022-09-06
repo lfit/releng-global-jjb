@@ -14,35 +14,55 @@ echo "---> Orphaned ports"
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
+lf-activate-venv --python python3 "lftools[openstack]" \
+        python-openstackclient
+
 os_cloud="${OS_CLOUD:-vex}"
 
-lf-activate-venv --python python3 \
-    python-heatclient \
-    python-openstackclient
+set -eu -o pipefail
 
-set -eux -o pipefail
+tmpfile=$(mktemp --suffix -openstack-ports.txt)
+threads=6
 
-mapfile -t os_ports_ts < <(openstack --os-cloud "$os_cloud" port list \
-        -f value \
-        -c ID \
-        -c status \
-        -c created_at \
-        | grep -E DOWN \
-        | awk -F' ' '{print $1 " " $3}')
+# Set age for deletion/removal
+age="30 minutes ago"
+cutoff=$(date -d "$age" +%s)
 
-if [ ${#os_ports_ts[@]} -eq 0 ]; then
-    echo "No orphaned ports found."
-else
-    cutoff=$(date -d "30 minutes ago"  +%s)
-    for port_ts in "${os_ports_ts[@]}"; do
-        created_at_isots="${port_ts#* }"
-        port_uuid="${port_ts% *}"
-        echo "checking port uuid: ${port_uuid} with TS: ${created_at_isots}"
-        created_at_uxts=$(date -d "${created_at_isots}" +"%s")
-        # Clean up ports where created_at > 30 minutes
-        if [[ "$created_at_uxts" -gt "$cutoff" ]]; then
-            echo "Removing orphaned port $port_uuid created_at ts > 30 minutes."
-            openstack --os-cloud "$os_cloud" port delete "$port_uuid"
+_cleanup()
+{
+    uuid=$1
+    created_at=$(openstack --os-cloud "$os_cloud" port show -f value -c created_at "$uuid")
+    if [ "$created_at" == "None" ]; then
+        echo "No value for port creation time; skipping: $uuid"
+    else
+        created_at_uxts=$(date -d "$created_at" +"%s")
+
+        # For debugging only; this outout usually disabled
+        # echo "Port: ${uuid} created at ${created_at} / ${created_at_uxts}"
+
+        # Validate timing values are numeric
+        if [[ "$created_at_uxts" -eq "$created_at_uxts" ]]; then
+            # Clean up ports where created_at > 30 minutes
+            if [[ "$created_at_uxts" -lt "$cutoff" ]]; then
+                echo "Removing orphaned port $uuid created > $age"
+                openstack --os-cloud "$os_cloud" port delete "$uuid"
+            fi
+        else
+            echo "Date variable failed numeric test; deletion not possible"
         fi
-    done
-fi
+    fi
+}
+
+# Output the initial list of port UUIDs to a temporary file
+openstack --os-cloud "$os_cloud" port list -f value -c ID -c status | grep -e DOWN | awk '{print $1}'> "$tmpfile"
+
+# Count the number to process
+total=$(wc -l "$tmpfile" | awk '{print $1}')
+echo "Ports to process: $total; age limit: $cutoff"
+
+# Export variables and send to parallel for processing
+export -f _cleanup
+export os_cloud cutoff age
+parallel --progress --retries 3 -j "$threads" _cleanup < "$tmpfile"
+
+rm "$tmpfile"
