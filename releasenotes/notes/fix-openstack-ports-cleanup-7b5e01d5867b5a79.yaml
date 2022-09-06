@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Addresses failures when cleaning up orphaned openstack ports.
