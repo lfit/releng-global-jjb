@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Addresses failures when cleaning up orphaned openstack ports.
+    The main "openstack <object> list" command no longer accepts
+    the "-c created_at" option, which has been moved to a property
+    of the object and must now be queried with "openstack show object
+    UUID". Also, the created_at parameter sometimes returns "None"
+    instead of a timestamp, and the existing version of the script
+    does not catch this condition.
