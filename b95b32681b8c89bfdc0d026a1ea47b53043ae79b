@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e1b14dad_9f9f7eaa",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-07T19:56:00Z",
+      "side": 1,
+      "message": "This tightly couples lf-activate-venve with a single virtual environment. If this function is not meant strictly for the lftools \u0026 openstack commands, it would be better for the function to take a file path option with \u0027/tmp/.os_lf_venv\u0027 as the default.\n\nFor example,\n```\nlf-activate-venv --venv-path-file /tmp/.robot_venv\n```\nwould activate the virtual environment saved in \u0027/tmp/.robot_venv\u0027, instead of \u0027/tmp/.os_lf_venve\u0027, if it exists.",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9496d67d_fcc72916",
         "filename": "shell/openstack-cleanup-old-images.sh",
         "patchSetId": 2
