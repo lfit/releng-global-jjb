@@ -16,6 +16,11 @@ echo "---> maven-javadoc-publish.sh"
 set -e -o pipefail
 set +u
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
+
 JAVADOC_DIR="$WORKSPACE/archives/javadoc"
 
 pushd "$JAVADOC_DIR"

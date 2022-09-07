@@ -1,0 +1,29 @@
+---
+features:
+  - |
+    Modify lf-activate-venv() to allow creation of a venv file and re-use the venv
+    file to improve job performance. When a dependency is already installed pip will
+    skip installing the same package in the venv which reduces the time it
+    takes to create venv in every script.
+
+    Add support for a new option to set venv file
+
+    Ex: lf-activate-venv --venv-file /tmp/.robot_venv robotframework
+
+    Precedence while creating a venv:
+    a. Re-use an existing venv file if one exists:
+      1. Use evnv file path from --venv-file
+      2. Use default venv file path "/tmp/.os_lf_venv"
+    b. Create new venv when 1. and 2. is absent
+
+    Note: The default file "/tmp/.os_lf_venv" is created by a pre-build
+    script (python-tools-install.sh).
+
+    In situation where a fresh venv is required remove "/tmp/.os_lf_venv"
+    before calling lf-activate-venv()
+
+    Update all the required scripts to call lf-activate-venv()
+fixes:
+  - |
+    Clean up conditions introduce in the shell scripts, while these checks
+    are performed within lf-activate-venv()

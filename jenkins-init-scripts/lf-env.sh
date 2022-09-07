@@ -95,7 +95,7 @@ lf-boolean () {
 ################################################################################
 #
 # NAME
-#   lf-activate-venv [-p|--python python] [--no-path]
+#   lf-activate-venv [-p|--python python] [-v|--venv-file] [--no-path]
 #                    [--system-site-packages] [package]...
 #
 # SYNOPSIS
@@ -110,6 +110,8 @@ lf-boolean () {
 #   or
 #   lf-activate-venv --python python3.8 git-review
 #
+#   lf-activate-venv --python python3.8 --venv-file /tmp/.myvenv git-review
+#
 # DESCRIPTION
 #   This function will create a new Python Virtual Environment (venv) and
 #   install the specified packages in the new venv.  The venv will be installed
@@ -117,8 +119,19 @@ lf-boolean () {
 #   to the PATH.
 #
 #   The 'lf_venv' variable will be set so you can directly execute commands
-#   in the venv with: $lf_venv/bin/command. Beware that subsequent calls to
-#   lf-activate-venv() will overwrite 'lf_venv'.
+#   in the venv with: $lf_venv/bin/command. lf-activate-venv() will check for
+#   existing file '/tmp/.os_lf_venv' and set 'lf_venv' if the file exists.
+#
+#   The function provides a --venv-file path for saving the value of the 'lf_env'
+#   that can re-used later. By default '/tmp/.os_lf_venv' venv file is created
+#   when the --venv-file option is not specified.
+#
+#   Subsequent calls to lf-activate-venv() will re-use existing venv throught
+#   and will NOT overwrite 'lf_venv', if the '/tmp/.os_lf_venv' already
+#   exists.
+#
+#   If a new venv is required delete the file '/tmp/.os_lf_venv' before
+#   calling lf-activate-venv() will create a fresh venv.
 #
 #   By default all packages are installed with '--upgrade-strategy eager'.
 #   The venv will always contain pip & virtualenv.
@@ -148,17 +161,20 @@ lf-boolean () {
 
 lf-activate-venv () {
     lf_venv=$(mktemp -d /tmp/venv-XXXX)
+    local venv_file="/tmp/.os_lf_venv"
     local python=python3
     local options
     local set_path=true
     local install_args=""
-    options=$(getopt -o 'n:p:' -l 'no-path,python:,system-site-packages' \
+    # set -x
+    options=$(getopt -o 'np:v:' -l 'no-path,system-site-packages,python:,venv-file:' \
                 -n "${FUNCNAME[0]}" -- "$@" )
     eval set -- "$options"
     while true; do
         case $1 in
             -n|--no-path) set_path=false ; shift   ;;
-            -p|--python)  python=$2      ; shift 2 ;;
+            -p|--python)  python="$2"      ; shift 2 ;;
+            -v|--venv-file) venv_file="$2" ; shift 2 ;;
             --system-site-packages) install_args="--system-site-packages" ;
                                     shift ;;
             --) shift; break ;;
@@ -167,8 +183,6 @@ lf-activate-venv () {
                 return 1 ;;
         esac
     done
-
-    echo "${FUNCNAME[0]}(): INFO: Creating $python venv at $lf_venv"
 
     case $python in
     python2*)
@@ -189,7 +203,6 @@ lf-activate-venv () {
         local pkg_list=""
         # Use pyenv for selecting the python version
         if [[ -d "/opt/pyenv" ]]; then
-            # set_python_version = pyver "${python//[a-zA-Z]/}"
             echo "Setup pyenv:"
             export PYENV_ROOT="/opt/pyenv"
             export PATH="$PYENV_ROOT/bin:$PATH"
@@ -199,6 +212,7 @@ lf-activate-venv () {
                 pyenv local $(lf-pyver "${python}")
             fi
         fi
+
         # Add version specifier for some packages
         for arg in "$@"; do
             case $arg in
@@ -207,7 +221,23 @@ lf-activate-venv () {
                 *)                   pkg_list+="$arg " ;;
             esac
         done
-        $python -m venv "$install_args" "$lf_venv" || return 1
+
+        # Precedence:
+        # - Re-use venv:
+        #     1. --venv-file <path/to/file> as lf_venv
+        #     2. default: "/tmp/.os_lf_venv"
+        # - Create new venv when 1. and 2. is absent
+        if [ -f "$venv_file" ]; then
+            lf_venv=$(cat "$venv_file")
+            echo "${FUNCNAME[0]}(): INFO: Reuse venv:$lf_venv from" \
+                "file:$venv_file"
+        elif [ ! -f "$venv_file" ]; then
+            $python -m venv "$install_args" "$lf_venv" || return 1
+            echo "${FUNCNAME[0]}(): INFO: Creating $python venv at $lf_venv"
+            echo "$lf_venv" > "$venv_file"
+            echo "${FUNCNAME[0]}(): INFO: Save venv in file: $venv_file"
+        fi
+
         "$lf_venv/bin/pip" install --upgrade --quiet pip virtualenv || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"

@@ -24,6 +24,11 @@ silos="${jenkins_silos:-jenkins}"
 
 set -eu -o pipefail
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
+
 for silo in $silos; do
     if [ ! -f "$WORKSPACE/jenkins-config/global-vars-$silo.sh" ]; then
         echo "WARN: jenkins-config/global-vars-$silo.sh does not exist. Skipping cloud management..."

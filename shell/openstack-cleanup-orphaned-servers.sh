@@ -50,26 +50,14 @@ minion_in_jenkins() {
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-# Check if openstack venv was previously created
-if [ -f "/tmp/.os_lf_venv" ]; then
-    os_lf_venv=$(cat "/tmp/.os_lf_venv")
-fi
+lf-activate-venv --python python3 "lftools[openstack]" \
+    kubernetes \
+    niet \
+    python-heatclient \
+    python-openstackclient \
+    python-magnumclient \
+    yq
 
-if [ -d "${os_lf_venv}" ] && [ -f "${os_lf_venv}/bin/openstack" ]; then
-    echo "Re-use existing venv: ${os_lf_venv}"
-    PATH=$os_lf_venv/bin:$PATH
-else
-    lf-activate-venv --python python3 "cryptography<3.4" \
-        "lftools[openstack]" \
-        kubernetes \
-        "niet~=1.4.2" \
-        python-heatclient \
-        python-openstackclient \
-        python-magnumclient \
-        setuptools \
-        "openstacksdk<0.99" \
-        yq
-fi
 ##########################
 ## FETCH ACTIVE MINIONS ##
 ##########################

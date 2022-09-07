@@ -18,6 +18,11 @@ echo "---> maven-deploy.sh"
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
+
 m2repo_dir="$WORKSPACE/m2repo"
 nexus_repo_url="$NEXUS_URL/content/repositories/$NEXUS_REPO"
 
