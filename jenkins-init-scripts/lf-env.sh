@@ -189,7 +189,6 @@ lf-activate-venv () {
         local pkg_list=""
         # Use pyenv for selecting the python version
         if [[ -d "/opt/pyenv" ]]; then
-            # set_python_version = pyver "${python//[a-zA-Z]/}"
             echo "Setup pyenv:"
             export PYENV_ROOT="/opt/pyenv"
             export PATH="$PYENV_ROOT/bin:$PATH"
@@ -199,6 +198,7 @@ lf-activate-venv () {
                 pyenv local $(lf-pyver "${python}")
             fi
         fi
+
         # Add version specifier for some packages
         for arg in "$@"; do
             case $arg in
@@ -207,7 +207,16 @@ lf-activate-venv () {
                 *)                   pkg_list+="$arg " ;;
             esac
         done
-        $python -m venv "$install_args" "$lf_venv" || return 1
+        # Re-use existing venv if previously created
+        if [ -f "/tmp/.os_lf_venv" ]; then
+            lf_venv=$(cat "/tmp/.os_lf_venv")
+            echo "${FUNCNAME[0]}(): INFO: Re-use existing venv: $lf_venv"
+        else
+            $python -m venv "$install_args" "$lf_venv" || return 1
+            echo "${FUNCNAME[0]}(): INFO: Create new venv: $lf_venv"
+            # Save the virtualenv path
+            echo "$lf_venv" > "/tmp/.os_lf_venv"
+        fi
         "$lf_venv/bin/pip" install --upgrade --quiet pip virtualenv || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"

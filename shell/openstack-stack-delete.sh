@@ -15,19 +15,11 @@ set -eufo pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-# Check if openstack venv was previously created
-if [ -f "/tmp/.os_lf_venv" ]; then
-    os_lf_venv=$(cat "/tmp/.os_lf_venv")
-fi
-
-if [ -d "${os_lf_venv}" ] && [ -f "${os_lf_venv}/bin/openstack" ]; then
-    echo "Re-use existing venv: ${os_lf_venv}"
-    PATH=$os_lf_venv/bin:$PATH
-else
-    lf-activate-venv --python python3 lftools[openstack] \
-        python-heatclient \
-        python-openstackclient
-fi
+lf-activate-venv --python python3 "lftools[openstack]" \
+    kubernetes \
+    python-heatclient \
+    python-openstackclient \
+    python-magnumclient
 
 echo "INFO: Retrieving stack cost for: $OS_STACK_NAME"
 if ! lftools openstack --os-cloud "$OS_CLOUD" stack cost "$OS_STACK_NAME" > stack-cost; then

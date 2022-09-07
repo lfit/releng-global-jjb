@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Check for the presense of an existing venv ("/tmp/.os_lf_venv")
+    into the lf-activate-venv() for the openstack dependencies which
+    makes the code look cleaner to maintain.
+
+    The file "/tmp/.os_lf_venv" is only created by python-tools-install.sh
+    which is called during pre-build.
+
+    If the dependency is already installed pip will skip installing the
+    package.
