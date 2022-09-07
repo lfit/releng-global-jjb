@@ -31,6 +31,11 @@ echo "---> deploy-maven-file.sh"
 set -e -o pipefail
 set +u
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
+
 export MAVEN_OPTIONS
 export MAVEN_PARAMS
 

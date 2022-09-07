@@ -20,7 +20,7 @@ set -uef -o pipefail
 source ~/lf-env.sh
 
 # Version controlled by JJB_VERSION
-lf-activate-venv jenkins-job-builder
+lf-activate-venv --python python3 --venv-file /tmp/.jjb_venv jenkins-job-builder
 
 # Fetch patch if gerrit project matches the jjb-deploy project
 if [ "${GERRIT_PROJECT}" == "${PROJECT}" ]; then
