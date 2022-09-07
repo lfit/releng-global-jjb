@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e59796e_bd8bb2e5",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-07T20:51:59Z",
+      "side": 1,
+      "message": "@Matt, \n\nthis line was flagged as being too long... we can crop it into multiple lines",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 177
+      },
+      "revId": "9460d1e3545d8f516e0ca29321fc78ca13286190",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
