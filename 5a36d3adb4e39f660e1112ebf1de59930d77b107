@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1e6f489_bd4e0d32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-07T02:37:32Z",
+      "side": 1,
+      "message": "Needs a release note to be included",
+      "revId": "5a36d3adb4e39f660e1112ebf1de59930d77b107",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a06365a_cc962e6a",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-07T02:37:32Z",
+      "side": 1,
+      "message": "why are we hard-coding this uuid?",
+      "range": {
+        "startLine": 48,
+        "startChar": 40,
+        "endLine": 48,
+        "endChar": 76
+      },
+      "revId": "5a36d3adb4e39f660e1112ebf1de59930d77b107",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
