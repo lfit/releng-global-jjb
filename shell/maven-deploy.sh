@@ -41,8 +41,9 @@ find "$m2repo_dir" -type d -empty -delete
 
 echo "-----> Install lftools"
 # shellcheck disable=SC1090
-source ~/lf-env.sh
-lf-activate-venv lftools
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
 
 echo "-----> Upload files to Nexus"
 lftools deploy nexus -s "$nexus_repo_url" "$m2repo_dir"

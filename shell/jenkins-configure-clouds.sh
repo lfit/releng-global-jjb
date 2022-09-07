@@ -292,6 +292,10 @@ get_template_cfg() {
     echo ")"
 }
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
 
 mapfile -t clouds < <(ls -d1 "$OS_CLOUD_DIR"/*/)
 
