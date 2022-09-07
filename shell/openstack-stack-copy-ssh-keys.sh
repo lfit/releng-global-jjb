@@ -53,19 +53,11 @@ copy_ssh_keys () {
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-# Check if openstack venv was previously created
-if [ -f "/tmp/.os_lf_venv" ]; then
-    os_lf_venv=$(cat "/tmp/.os_lf_venv")
-fi
-
-if [ -d "${os_lf_venv}" ] && [ -f "${os_lf_venv}/bin/openstack" ]; then
-    echo "Re-use existing venv: ${os_lf_venv}"
-    PATH=$os_lf_venv/bin:$PATH
-else
-    lf-activate-venv --python python3 \
-        python-heatclient \
-        python-openstackclient
-fi
+lf-activate-venv --python python3 "lftools[openstack]" \
+    kubernetes \
+    python-heatclient \
+    python-openstackclient \
+    python-magnumclient
 
 # IP Addresses are returned as a space separated list so word splitting is ok
 # shellcheck disable=SC2207

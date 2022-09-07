@@ -117,8 +117,15 @@ lf-boolean () {
 #   to the PATH.
 #
 #   The 'lf_venv' variable will be set so you can directly execute commands
-#   in the venv with: $lf_venv/bin/command. Beware that subsequent calls to
-#   lf-activate-venv() will overwrite 'lf_venv'.
+#   in the venv with: $lf_venv/bin/command. lf-activate-venv() will check for
+#   existing file '/tmp/.os_lf_venv' and set 'lf_venv' if the file exists.
+#
+#   Subsequent calls to lf-activate-venv() will re-use existing venv throught
+#   and will NOT overwrite 'lf_venv', if the '/tmp/.os_lf_venv' already
+#   exists.
+#
+#   If a new venv is required delete the file '/tmp/.os_lf_venv' before
+#   calling lf-activate-venv() will create a fresh venv.
 #
 #   By default all packages are installed with '--upgrade-strategy eager'.
 #   The venv will always contain pip & virtualenv.
@@ -189,7 +196,6 @@ lf-activate-venv () {
         local pkg_list=""
         # Use pyenv for selecting the python version
         if [[ -d "/opt/pyenv" ]]; then
-            # set_python_version = pyver "${python//[a-zA-Z]/}"
             echo "Setup pyenv:"
             export PYENV_ROOT="/opt/pyenv"
             export PATH="$PYENV_ROOT/bin:$PATH"
@@ -199,6 +205,7 @@ lf-activate-venv () {
                 pyenv local $(lf-pyver "${python}")
             fi
         fi
+
         # Add version specifier for some packages
         for arg in "$@"; do
             case $arg in
@@ -207,7 +214,16 @@ lf-activate-venv () {
                 *)                   pkg_list+="$arg " ;;
             esac
         done
-        $python -m venv "$install_args" "$lf_venv" || return 1
+        # Re-use existing venv if previously created
+        if [ -f "/tmp/.os_lf_venv" ]; then
+            lf_venv=$(cat "/tmp/.os_lf_venv")
+            echo "${FUNCNAME[0]}(): INFO: Re-use existing venv: $lf_venv"
+        else
+            $python -m venv "$install_args" "$lf_venv" || return 1
+            echo "${FUNCNAME[0]}(): INFO: Create new venv: $lf_venv"
+            # Save the virtualenv path
+            echo "$lf_venv" > "/tmp/.os_lf_venv"
+        fi
         "$lf_venv/bin/pip" install --upgrade --quiet pip virtualenv || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"
