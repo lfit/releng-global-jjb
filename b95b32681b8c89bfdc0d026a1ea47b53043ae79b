@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ba9993b0_22f4622f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-07T19:38:43Z",
+      "side": 1,
+      "message": "We also need lftools in maven-stage.sh \u0026 sigul-sign-dir.sh to address autorelease build failure issue unless it is addressed in a separate change.",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9496d67d_fcc72916",
         "filename": "shell/openstack-cleanup-old-images.sh",
         "patchSetId": 2
