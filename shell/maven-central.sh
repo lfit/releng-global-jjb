@@ -15,6 +15,11 @@ profile_id="${OSSRH_PROFILE_ID:-}"
 # Ensure we fail the job if any steps fail.
 set -eux -o pipefail
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
+
 MC_TMP_FILE="$(mktemp)"
 echo "Staging in OSSRH for Maven Central"
 lftools deploy nexus-stage "https://oss.sonatype.org" "$profile_id" "$WORKSPACE/m2repo" | tee "$MC_TMP_FILE"

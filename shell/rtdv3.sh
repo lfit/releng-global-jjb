@@ -11,6 +11,11 @@
 echo "---> rtdv3.sh"
 set -euo pipefail
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
+
 watchbuild(){
     echo "INFO: Running build against branch $1"
     local buildid
