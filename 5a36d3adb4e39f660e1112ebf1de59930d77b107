@@ -37,6 +37,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8da5bc98_45bf03f4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-07T10:22:18Z",
+      "side": 1,
+      "message": "This patch needs more work; will probably add another fix on this for a similar failure related to cleanup of old images.",
+      "revId": "5a36d3adb4e39f660e1112ebf1de59930d77b107",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "4a06365a_cc962e6a",
         "filename": "shell/openstack-cleanup-orphaned-ports.sh",
         "patchSetId": 1
