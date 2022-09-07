@@ -13,6 +13,11 @@ echo "---> sigul-sign-dir.sh"
 # Ensure we fail the job if any steps fail.
 set -e -o pipefail
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 lftools
+
 OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 if [[ "$OS_RELEASE" == "8" && "$OS" == 'centos' ]]; then
