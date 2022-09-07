@@ -135,6 +135,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "888943b3_9a551a6c",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-07T20:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15f2c57b_0ce25197",
+      "range": {
+        "startLine": 277,
+        "startChar": 0,
+        "endLine": 277,
+        "endChar": 25
+      },
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "852e6eff_f97ad82b",
@@ -148,6 +172,30 @@
       "writtenOn": "2022-08-15T19:45:10Z",
       "side": 1,
       "message": "You can find the skeleton for lf-infra-cli-parameters in the macros file. \nI think in this case we will need scanner_version, scanner_home, scanner_opts as described in https://sonarcloud.io/project/configuration?id\u003do-ran-sc_ric-app-admin\u0026analysisMode\u003dGitHubOtherCI",
+      "range": {
+        "startLine": 291,
+        "startChar": 0,
+        "endLine": 293,
+        "endChar": 32
+      },
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "842ec580_4a28762f",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-07T20:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "852e6eff_f97ad82b",
       "range": {
         "startLine": 291,
         "startChar": 0,
@@ -263,6 +311,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6482086c_e3b13b4d",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-07T20:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bec34160_e1f6a944",
+      "range": {
+        "startLine": 328,
+        "startChar": 0,
+        "endLine": 338,
+        "endChar": 76
+      },
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36d2fa4c_adedc350",
@@ -323,6 +395,30 @@
       "writtenOn": "2022-08-15T19:45:10Z",
       "side": 1,
       "message": "I believe the gerrit and github templates will not need much change.. but we can see if that\u0027s the case.",
+      "range": {
+        "startLine": 357,
+        "startChar": 0,
+        "endLine": 357,
+        "endChar": 15
+      },
+      "revId": "15062e0e3d8f52ff7b2c64d6fcf7d032f5e2510d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72a927b5_c1998348",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-07T20:41:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d3edb003_16be856c",
       "range": {
         "startLine": 357,
         "startChar": 0,
