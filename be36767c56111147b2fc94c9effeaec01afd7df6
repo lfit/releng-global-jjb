@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e8620c2_c50e5ff3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-08T14:01:36Z",
+      "side": 1,
+      "message": "The rest looks good to me.",
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f01b8845_449fd427",
+        "filename": "shell/maven-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-08T14:01:36Z",
+      "side": 1,
+      "message": "This can be removed.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
