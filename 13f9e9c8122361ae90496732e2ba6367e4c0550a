@@ -22,6 +22,30 @@
       },
       "revId": "13f9e9c8122361ae90496732e2ba6367e4c0550a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6007a1e2_e9d82d13",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-08T15:48:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "10b553b4_8a8a8183",
+      "range": {
+        "startLine": 279,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 32
+      },
+      "revId": "13f9e9c8122361ae90496732e2ba6367e4c0550a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
