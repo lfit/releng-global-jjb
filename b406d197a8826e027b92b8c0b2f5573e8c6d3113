@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6322de4b_caee7dd2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T13:15:57Z",
+      "side": 1,
+      "message": "Tested the change on sandbox:\n\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/builder-openstack-cron/3/console\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/bgpcep-csit-1node-bgp-ingest-all-sulfur/5/console\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/builder-update-image-list/13/console\n",
+      "revId": "b406d197a8826e027b92b8c0b2f5573e8c6d3113",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
