@@ -39,6 +39,30 @@
       },
       "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d93b47b_290d3dd9",
+        "filename": "shell/maven-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T22:49:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f01b8845_449fd427",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
