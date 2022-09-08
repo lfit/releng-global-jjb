@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b72c878_2504bc84",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-08T15:28:18Z",
+      "side": 1,
+      "message": "Submitted another revision addressing line lengths and bashate errors",
+      "revId": "18f96d130bfa30ca9ed00f91181088b622f1e872",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
