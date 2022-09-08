@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "10b553b4_8a8a8183",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-08T01:08:18Z",
+      "side": 1,
+      "message": "@Matt\n\nAlmost there!.. in this macro, you added 3 more parameters that need to be passed on here the same way we are doing for tox-dir and tox-envs. \n\nSo it would look something like this:\n          sonar-scanner-version: \"{sonar-scanner-version}\"\n          sonar-scanner-home: \"{sonar-scanner-home}\"\n          sonar-scanner-opts: \"{sonar-scanner-opts}\"\n          \nOtherwise, the macro will fail to find them. \n\nAdditionally, you will need to define the default values above under the \"Default\nParameters\" section. \nI believe we will define the scanner version as \"4.7.0.2747\" and the other 2 variables according to what Sonar recommends. \n\nAfter this is fixed, I was able to push a job into the sandbox. \nTry it out and let me know 😊\nThanks so much for your work!",
+      "range": {
+        "startLine": 279,
+        "startChar": 0,
+        "endLine": 281,
+        "endChar": 32
+      },
+      "revId": "13f9e9c8122361ae90496732e2ba6367e4c0550a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
