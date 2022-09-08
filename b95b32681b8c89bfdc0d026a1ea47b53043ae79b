@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3800186e_7bdb65db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba9993b0_22f4622f",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e1b14dad_9f9f7eaa",
@@ -52,6 +70,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4be862a_fb22ab63",
+        "filename": "shell/openstack-cleanup-old-images.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9496d67d_fcc72916",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "711f008c_61db4178",
@@ -65,6 +101,24 @@
       "writtenOn": "2022-09-07T16:51:20Z",
       "side": 1,
       "message": "niet, setuptools, and yq are all being dropped as additional installs. Not certain about the cryptography and openstacksdk version clamps (I would suspect those shouldn\u0027t be there) but the other artifacts probably do matter (at least niet and yq!)",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "315fde1a_d53c04f1",
+        "filename": "shell/openstack-cleanup-orphaned-servers.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "711f008c_61db4178",
       "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
@@ -86,6 +140,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2ca77c65_48088d76",
+        "filename": "shell/openstack-cleanup-orphaned-stacks.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7768aed7_1642433a",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e4b425ed_c48ae84c",
@@ -99,6 +171,24 @@
       "writtenOn": "2022-09-07T16:51:20Z",
       "side": 1,
       "message": "niet, setuptools, and yq are all being dropped as additional installs. Not certain about the cryptography and openstacksdk version clamps (I would suspect those shouldn\u0027t be there) but the other artifacts probably do matter (at least niet and yq!)",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2ae4865_eed62002",
+        "filename": "shell/openstack-cleanup-orphaned-volumes.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4b425ed_c48ae84c",
       "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
@@ -120,6 +210,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dce9666e_49057959",
+        "filename": "shell/openstack-kubernetes-create.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a083a253_39f31faf",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "33d8d208_a04a00e8",
@@ -133,6 +241,24 @@
       "writtenOn": "2022-09-07T16:51:20Z",
       "side": 1,
       "message": "You\u0027re adding the magnumclient which likely isn\u0027t needed here",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2fd4f30_0fff4869",
+        "filename": "shell/openstack-protect-in-use-images.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "33d8d208_a04a00e8",
       "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
@@ -154,6 +280,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "36a50073_1e8174d8",
+        "filename": "shell/openstack-stack-copy-ssh-keys.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "740c4cb3_fd0a1f08",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71b8ab8a_82eb3f5e",
@@ -171,6 +315,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e145f09_d64ed07b",
+        "filename": "shell/openstack-stack-create.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "71b8ab8a_82eb3f5e",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49ecd08c_cccf70eb",
@@ -184,6 +346,24 @@
       "writtenOn": "2022-09-07T16:51:20Z",
       "side": 1,
       "message": "You\u0027re adding the magnumclient which likely isn\u0027t needed here",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec55e43e_b4b94951",
+        "filename": "shell/openstack-stack-delete.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:47:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "49ecd08c_cccf70eb",
       "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
