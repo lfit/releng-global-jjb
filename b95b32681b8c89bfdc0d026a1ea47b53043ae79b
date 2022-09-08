@@ -55,6 +55,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "be4f26d3_a08fdcf3",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-08T11:52:27Z",
+      "side": 1,
+      "message": "It\u0027s good idea to use the venv file path, I\u0027ve added a new option and refactored the code with `--venv-path-file`, done testing various scenarios the entire day. \n\nHave added more details in the Jira issue. \n\nPresently testing some of the _imp_ jobs to make ensure things working as expected.",
+      "parentUuid": "e1b14dad_9f9f7eaa",
+      "revId": "b95b32681b8c89bfdc0d026a1ea47b53043ae79b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9496d67d_fcc72916",
         "filename": "shell/openstack-cleanup-old-images.sh",
         "patchSetId": 2
