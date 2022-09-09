@@ -110,6 +110,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "494aa2a2_afb913d7",
+        "filename": "shell/deploy-maven-file.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "0e54a9b5_c0a4236c",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1dd3d3d2_14d09819",
@@ -123,6 +147,30 @@
       "writtenOn": "2022-09-09T16:30:54Z",
       "side": 1,
       "message": "This should be \u0027source\u0027 not execute. The difference is that using \u0027.\u0027 executes the script but does not change or modify the environment.",
+      "range": {
+        "startLine": 296,
+        "startChar": 0,
+        "endLine": 296,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e03e6c1_041bb3b4",
+        "filename": "shell/jenkins-configure-clouds.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "1dd3d3d2_14d09819",
       "range": {
         "startLine": 296,
         "startChar": 0,
@@ -156,6 +204,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8cc65951_e3f2d944",
+        "filename": "shell/jenkins-configure-global-vars.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "1ce202bb_208337a0",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4ac5bc90_d86e0823",
@@ -169,6 +241,30 @@
       "writtenOn": "2022-09-09T16:30:54Z",
       "side": 1,
       "message": "This should be \u0027source\u0027 not execute. The difference is that using \u0027.\u0027 executes the script but does not change or modify the environment.",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9885394_b826d94f",
+        "filename": "shell/jenkins-sandbox-cleanup.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "4ac5bc90_d86e0823",
       "range": {
         "startLine": 17,
         "startChar": 0,
@@ -202,6 +298,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "724f098b_73a6e03f",
+        "filename": "shell/maven-central.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "3d374468_36cfdeff",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "262f8528_795aa94b",
@@ -215,6 +335,30 @@
       "writtenOn": "2022-09-09T16:30:54Z",
       "side": 1,
       "message": "This should be \u0027source\u0027 not execute. The difference is that using \u0027.\u0027 executes the script but does not change or modify the environment.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51ea3d7e_9a48c05e",
+        "filename": "shell/maven-deploy.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "262f8528_795aa94b",
       "range": {
         "startLine": 22,
         "startChar": 0,
@@ -295,6 +439,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5a43dab_c94af88a",
+        "filename": "shell/maven-javadoc-publish.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "149a5fde_3ded222c",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f7ce2b16_0453fcd3",
@@ -318,6 +486,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fb0ce0b_8bcb7c5f",
+        "filename": "shell/maven-stage.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "f7ce2b16_0453fcd3",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e60ff80d_0b5be312",
@@ -331,6 +523,30 @@
       "writtenOn": "2022-09-09T16:30:54Z",
       "side": 1,
       "message": "This should be \u0027source\u0027 not execute. The difference is that using \u0027.\u0027 executes the script but does not change or modify the environment.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 1
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dd2d16e2_a39199f8",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "e60ff80d_0b5be312",
       "range": {
         "startLine": 15,
         "startChar": 0,

@@ -22,6 +22,30 @@
       },
       "revId": "c53f3da28e6d25ca3cf285c34ebd1135f2fc387a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41602626_71a61ebb",
+        "filename": "shell/maven-deploy.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:46:01Z",
+      "side": 1,
+      "message": "Sorry, further research is telling me my comprehension on this was incorrect. \u0027.\u0027 should be used in preference to source as they are synonyms in bash and \u0027.\u0027 is POSIX whereas \u0027source\u0027 is not.",
+      "parentUuid": "87450b01_e39b75f7",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 1
+      },
+      "revId": "c53f3da28e6d25ca3cf285c34ebd1135f2fc387a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
