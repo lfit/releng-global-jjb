@@ -1,0 +1,16 @@
+---
+prelude: >
+    Update openstack images with the auto update image requires more recent
+    version of git-review > 2.2.
+upgrade:
+  - |
+    The previous version of git-review is incompatible with the latest version of
+    git due to renaming flags. This is fixed in git-review 2.2.0.
+issues:
+  - |
+    Error:
+
+      Errors running git rebase -p -i remotes/gerrit/master
+      fatal: --preserve-merges was replaced by --rebase-merges
+
+    Ref: https://review.opendev.org/c/opendev/git-review/+/818219
