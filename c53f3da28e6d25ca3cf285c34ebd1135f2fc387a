@@ -46,6 +46,30 @@
       },
       "revId": "c53f3da28e6d25ca3cf285c34ebd1135f2fc387a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "366e79ce_959680ee",
+        "filename": "shell/maven-deploy.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-09-09T16:54:06Z",
+      "side": 1,
+      "message": "They should be the same in bash.\n\nsource: http://git.savannah.gnu.org/cgit/bash.git/tree/builtins/source.def#n23\n\n```\n$BUILTIN source\n$FUNCTION source_builtin\n$SHORT_DOC source filename [arguments]\nExecute commands from a file in the current shell.\n```\n\ndot: http://git.savannah.gnu.org/cgit/bash.git/tree/builtins/source.def#n38\n\n```\n$BUILTIN .\n$DOCNAME dot\n$FUNCTION source_builtin\n$SHORT_DOC . filename [arguments]\nExecute commands from a file in the current shell.\n```\n\nThey use the exact same function \u0027source_builtin\u0027: \nhttp://git.savannah.gnu.org/cgit/bash.git/tree/builtins/source.def#n111",
+      "parentUuid": "87450b01_e39b75f7",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 1
+      },
+      "revId": "c53f3da28e6d25ca3cf285c34ebd1135f2fc387a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
