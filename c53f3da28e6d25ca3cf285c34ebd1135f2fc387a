@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "87450b01_e39b75f7",
+        "filename": "shell/maven-deploy.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-09-09T16:38:51Z",
+      "side": 1,
+      "message": "This should be \u0027source\u0027 not execute. The difference is that using \u0027.\u0027 executes the script but does not change or modify the environment.",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 1
+      },
+      "revId": "c53f3da28e6d25ca3cf285c34ebd1135f2fc387a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
