@@ -47,7 +47,7 @@ echo -e "INFO: Staged for commit:\n$staged_commits\n"
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv "git-review==1.28"
+lf-activate-venv --python python3 "git-review==2.3.1"
 
 # Query for a pre-existing gerrit review
 query_result=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
