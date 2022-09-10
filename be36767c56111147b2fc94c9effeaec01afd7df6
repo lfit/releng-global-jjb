@@ -26,6 +26,30 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "3e2d45eb_56d35e1f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-10T00:28:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "007ac026_8cc22e08",
+      "range": {
+        "startLine": 23,
+        "startChar": 14,
+        "endLine": 23,
+        "endChar": 18
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "4e8620c2_c50e5ff3",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 6
@@ -64,6 +88,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4a89ef6_76cd046d",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-10T00:28:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a62c9ddd_efee5352",
+      "range": {
+        "startLine": 129,
+        "startChar": 55,
+        "endLine": 129,
+        "endChar": 77
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c9b994c_dd6be5c6",
@@ -77,6 +125,30 @@
       "writtenOn": "2022-09-09T16:30:54Z",
       "side": 1,
       "message": "venv",
+      "range": {
+        "startLine": 15,
+        "startChar": 18,
+        "endLine": 15,
+        "endChar": 22
+      },
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "09876e4a_c2d217d4",
+        "filename": "releasenotes/notes/refactor-lf-activate-venv-0bf51b617553ab93.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-10T00:28:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9c9b994c_dd6be5c6",
       "range": {
         "startLine": 15,
         "startChar": 18,
@@ -570,6 +642,24 @@
       "writtenOn": "2022-09-09T16:30:54Z",
       "side": 1,
       "message": "There\u0027s no sourcing of lf-env.sh before this call to lf-activate-venv, as such, the call may fail for not having the function defined.",
+      "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cf59608_2551774f",
+        "filename": "shell/sigul-sign-dir.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-10T00:28:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a7b0236_f0a6dc4a",
       "revId": "be36767c56111147b2fc94c9effeaec01afd7df6",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
