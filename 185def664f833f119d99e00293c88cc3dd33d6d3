@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3192cb93_42bac322",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-13T21:49:26Z",
+      "side": 1,
+      "message": "This should be \"$WORKSPACE\"",
+      "range": {
+        "startLine": 260,
+        "startChar": 26,
+        "endLine": 260,
+        "endChar": 30
+      },
+      "revId": "185def664f833f119d99e00293c88cc3dd33d6d3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
