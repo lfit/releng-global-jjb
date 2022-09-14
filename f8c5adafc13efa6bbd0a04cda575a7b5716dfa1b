@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0981f676_96e7ea1c",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-14T20:07:37Z",
+      "side": 1,
+      "message": "We can copy the docs from the Python Sonar with Tox below and modify it to make it easier",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 21
+      },
+      "revId": "f8c5adafc13efa6bbd0a04cda575a7b5716dfa1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dee688b9_d55f12b7",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-14T20:07:37Z",
+      "side": 1,
+      "message": "$WORKSPACE",
+      "range": {
+        "startLine": 605,
+        "startChar": 21,
+        "endLine": 605,
+        "endChar": 26
+      },
+      "revId": "f8c5adafc13efa6bbd0a04cda575a7b5716dfa1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "385c6fd6_117cff44",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-14T20:07:37Z",
+      "side": 1,
+      "message": "We don\u0027t need this",
+      "range": {
+        "startLine": 247,
+        "startChar": 1,
+        "endLine": 247,
+        "endChar": 21
+      },
+      "revId": "f8c5adafc13efa6bbd0a04cda575a7b5716dfa1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e94562ce_5a96392b",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-14T20:07:37Z",
+      "side": 1,
+      "message": "We don\u0027t need this",
+      "range": {
+        "startLine": 251,
+        "startChar": 1,
+        "endLine": 251,
+        "endChar": 38
+      },
+      "revId": "f8c5adafc13efa6bbd0a04cda575a7b5716dfa1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db9e66d4_61bb8d2c",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-14T20:07:37Z",
+      "side": 1,
+      "message": "We don\u0027t need this",
+      "range": {
+        "startLine": 258,
+        "startChar": 2,
+        "endLine": 258,
+        "endChar": 26
+      },
+      "revId": "f8c5adafc13efa6bbd0a04cda575a7b5716dfa1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dffb265c_a5c47b79",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-14T20:07:37Z",
+      "side": 1,
+      "message": "This needs to be $WORKSPACE",
+      "range": {
+        "startLine": 260,
+        "startChar": 24,
+        "endLine": 260,
+        "endChar": 30
+      },
+      "revId": "f8c5adafc13efa6bbd0a04cda575a7b5716dfa1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
