@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a3fd89c_4b3c68aa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 22
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-14T23:15:37Z",
+      "side": 1,
+      "message": "Test in\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/smo-ves-jess-cli-sonar/9/console",
+      "revId": "21c4919d805c5825824ba80e93fa4dbb1ba6f117",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
