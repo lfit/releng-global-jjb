@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8779c26e_bf831b7a",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-14T13:54:14Z",
+      "side": 1,
+      "message": "It would to need to go into the docs aswell. Even better if you can do a check of the jdk version print out a warning in the logs.",
+      "range": {
+        "startLine": 429,
+        "startChar": 0,
+        "endLine": 430,
+        "endChar": 79
+      },
+      "revId": "b644c5aaf17e86a0ea013bf1ecdb86b6b8e30408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c44df79_63ad8115",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-14T13:54:14Z",
+      "side": 1,
+      "message": "these var are local and does not have to be upper case unless these are global/env vars.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 9
+      },
+      "revId": "b644c5aaf17e86a0ea013bf1ecdb86b6b8e30408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d51a0ed5_07c867d7",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-14T13:54:14Z",
+      "side": 1,
+      "message": "Are these exports requried?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 0
+      },
+      "revId": "b644c5aaf17e86a0ea013bf1ecdb86b6b8e30408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
