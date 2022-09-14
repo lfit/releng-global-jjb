@@ -47,6 +47,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cef46361_06eefcf5",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-14T21:22:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c44df79_63ad8115",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 9
+      },
+      "revId": "b644c5aaf17e86a0ea013bf1ecdb86b6b8e30408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d51a0ed5_07c867d7",
@@ -60,6 +84,30 @@
       "writtenOn": "2022-09-14T13:54:14Z",
       "side": 1,
       "message": "Are these exports requried?",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 0
+      },
+      "revId": "b644c5aaf17e86a0ea013bf1ecdb86b6b8e30408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f778d897_0d1605d7",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 16
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-14T21:22:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d51a0ed5_07c867d7",
       "range": {
         "startLine": 23,
         "startChar": 0,
