@@ -24,12 +24,12 @@
 ################################################################################
 #
 # NAME
-#       lf-echo-stderr
+#       lf_echo_stderr
 #
 # SYNOPSIS
 #   source ~/lf-env.sh
 #
-#   lf-echo-stderr "this entire" "string will be sent to stderr"
+#   lf_echo_stderr "this entire" "string will be sent to stderr"
 #
 # DESCRIPTION
 #   This function will echo all command line aruments to 'stderr'
@@ -39,20 +39,20 @@
 #
 ################################################################################
 
-lf-echo-stderr () {
+lf_echo_stderr () {
     echo "$@" 1>&2
 }
 
 ################################################################################
 #
 # NAME
-#       lf-boolean
+#       lf_boolean
 #
 # SYNOPSIS
 #   # shellcheck disable=SC1090
 #   source ~/lf-env.sh
 #
-#   if lf-boolean $VAR; then
+#   if lf_boolean $VAR; then
 #       echo "VAR is true"
 #   fi
 #
@@ -68,7 +68,7 @@ lf-echo-stderr () {
 #
 ################################################################################
 
-lf-boolean () {
+lf_boolean () {
     if (( $# != 1 )); then
         echo "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} :"\
         " Missing Required Argument"
@@ -80,12 +80,12 @@ lf-boolean () {
         true)  return 0 ;;
         false) return 1 ;;
         '')
-            lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line:{BASH_LINENO[0]} :"\
+            lf_echo_stderr "ERROR: ${FUNCNAME[0]}() line:{BASH_LINENO[0]} :"\
             " A boolean cannot be a empty string" >&2
             return 2
             ;;
         *)
-            lf-echo-stderr "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} :"\
+            lf_echo_stderr "ERROR: ${FUNCNAME[0]}() line: ${BASH_LINENO[0]} :"\
             " Invalid value for a boolean: '$bool'"
             return 2
             ;;
@@ -95,22 +95,22 @@ lf-boolean () {
 ################################################################################
 #
 # NAME
-#   lf-activate-venv [-p|--python python] [-v|--venv-file] [--no-path]
+#   lf_activate_venv [-p|--python python] [-v|--venv-file] [--no-path]
 #                    [--system-site-packages] [package]...
 #
 # SYNOPSIS
 #   # shellcheck disable=SC1090
 #   source ~/lf-env.sh
 #
-#   lf-activate-venv tox tox-pyenv
+#   lf_activate_venv tox tox-pyenv
 #   or
-#   lf-activate-venv jenkins-job-builder
+#   lf_activate_venv jenkins-job-builder
 #   or
-#   lf-activate-venv lftools
+#   lf_activate_venv lftools
 #   or
-#   lf-activate-venv --python python3.8 git-review
+#   lf_activate_venv --python python3.8 git-review
 #
-#   lf-activate-venv --python python3.8 --venv-file /tmp/.myvenv git-review
+#   lf_activate_venv --python python3.8 --venv-file /tmp/.myvenv git-review
 #
 # DESCRIPTION
 #   This function will create a new Python Virtual Environment (venv) and
@@ -119,19 +119,19 @@ lf-boolean () {
 #   to the PATH.
 #
 #   The 'lf_venv' variable will be set so you can directly execute commands
-#   in the venv with: $lf_venv/bin/command. lf-activate-venv() will check for
+#   in the venv with: $lf_venv/bin/command. lf_activate_venv() will check for
 #   existing file '/tmp/.os_lf_venv' and set 'lf_venv' if the file exists.
 #
 #   The function provides a --venv-file path for saving the value of the 'lf_env'
 #   that can re-used later. By default '/tmp/.os_lf_venv' venv file is created
 #   when the --venv-file option is not specified.
 #
-#   Subsequent calls to lf-activate-venv() will re-use the existing venv
+#   Subsequent calls to lf_activate_venv() will re-use the existing venv
 #   throught and will NOT overwrite 'lf_venv', if the '/tmp/.os_lf_venv'
 #   already exists.
 #
 #   If a new venv is required delete the file '/tmp/.os_lf_venv' before
-#   calling lf-activate-venv() will create a fresh venv.
+#   calling lf_activate_venv() will create a fresh venv.
 #
 #   By default all packages are installed with '--upgrade-strategy eager'.
 #   The venv will always contain pip & virtualenv.
@@ -159,7 +159,7 @@ lf-boolean () {
 #
 ################################################################################
 
-lf-activate-venv () {
+lf_activate_venv () {
     lf_venv=$(mktemp -d /tmp/venv-XXXX)
     local venv_file="/tmp/.os_lf_venv"
     local python=python3
@@ -178,7 +178,7 @@ lf-activate-venv () {
             --system-site-packages) install_args="--system-site-packages" ;
                                     shift ;;
             --) shift; break ;;
-            *)  lf-echo-stderr \
+            *)  lf_echo_stderr \
                 "${FUNCNAME[0]}(): ERROR: Unknown switch '$1'." ;
                 return 1 ;;
         esac
@@ -250,13 +250,13 @@ lf-activate-venv () {
                                 $pkg_list || return 1
         ;;
     *)
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: No support for: $python"
+        lf_echo_stderr "${FUNCNAME[0]}(): ERROR: No support for: $python"
         return 1
         ;;
     esac
 
     if ! type "$python" > /dev/null; then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
+        lf_echo_stderr "${FUNCNAME[0]}(): ERROR: Unknown Python: $python"
         return 1
     fi
 
@@ -268,18 +268,18 @@ lf-activate-venv () {
         echo "${FUNCNAME[0]}(): INFO: Path not set, lf_venv set to: $lf_venv"
     fi
 
-}   # End lf-activate-venv
+}   # End lf_activate_venv
 
 ################################################################################
 #
 # NAME
-#   lf-git-validate-jira-urls
+#   lf_git_validate_jira_urls
 #
 # SYNOPSIS
 #   # shellcheck disable=SC1090
 #   source ~/lf-env.sh
 #
-#   lf-git-validate-jira-urls
+#   lf_git_validate_jira_urls
 #
 # DESCRIPTION
 #   Check for JIRA URLS in the commit message
@@ -290,7 +290,7 @@ lf-activate-venv () {
 #
 ################################################################################
 
-lf-git-validate-jira-urls () {
+lf_git_validate_jira_urls () {
     echo "Checking for JIRA URLs in commit message..."
     # if JIRA_URL is not defined, nothing to do
     if [[ -v JIRA_URL ]]; then
@@ -298,9 +298,9 @@ lf-git-validate-jira-urls () {
         jira_link=$(git rev-list --format=%B --max-count=1 HEAD | \
                     grep -io "http[s]*://$base_url/" || true)
         if [[ -n $jira_link ]]; then
-            lf-echo-stderr \
+            lf_echo_stderr \
             "${FUNCNAME[0]}(): ERROR: JIRA URL found in commit message"
-            lf-echo-stderr \
+            lf_echo_stderr \
             'Add jira references as: Issue: <JIRAKEY>-<ISSUE#>,'\
             ' instead of URLs'
             return 1
@@ -314,13 +314,13 @@ lf-git-validate-jira-urls () {
 ################################################################################
 #
 # NAME
-#   lf-jjb-check-ascii
+#   lf_jjb_check_ascii
 #
 # SYNOPSIS
 #   # shellcheck disable=SC1090
 #   source ~/lf-env.sh
 #
-#   lf-jjb-check-ascii
+#   lf_jjb_check_ascii
 #
 # DESCRIPTION
 #   Check for JJB YAML files containing non-printable ascii characters. This
@@ -332,15 +332,15 @@ lf-git-validate-jira-urls () {
 #
 ################################################################################
 
-lf-jjb-check-ascii () {
+lf_jjb_check_ascii () {
     if [[ ! -d "jjb" ]]; then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: missing jjb directory"
-        lf-echo-stderr \
+        lf_echo_stderr "${FUNCNAME[0]}(): ERROR: missing jjb directory"
+        lf_echo_stderr \
         "This function can only be run from top of global-jjb directory"
         return 1
     fi
     if LC_ALL=C grep -I -r '[^[:print:][:space:]]' jjb/; then
-        lf-echo-stderr \
+        lf_echo_stderr \
         "${FUNCNAME[0]}(): ERROR: Found YAML files containing"\
         " non-printable characters."
         return 1
@@ -358,7 +358,7 @@ lf-jjb-check-ascii () {
 # Shellcheck knows they are shell variables and will check for
 # 'used-before-set'.
 
-lf-set-maven-options () {
+lf_set_maven_options () {
     # Disable 'unused-variable' check
     # shellcheck disable=SC2034
     maven_options="--show-version --batch-mode -Djenkins \
@@ -393,14 +393,14 @@ lf-set-maven-options () {
 #
 ################################################################################
 
-lf-pyver() {
+lf_pyver() {
     local py_version_xy="${1:-python3}"
     local py_version_xyz=""
 
     pyenv versions | sed 's/^[ *]* //' | awk '{ print $1 }' | grep -E '^[0-9.]*[0-9]$' \
         > "/tmp/.pyenv_versions"
     if [[ ! -s "/tmp/.pyenv_versions" ]]; then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: pyenv not available"
+        lf_echo_stderr "${FUNCNAME[0]}(): ERROR: pyenv not available"
         return 1
     fi
 
@@ -409,7 +409,7 @@ lf-pyver() {
     py_version_xyz=$(grep "^${py_version_xy//[a-zA-Z]/}" "/tmp/.pyenv_versions" |
         sort -V | tail -n 1;)
     if [[ -z ${py_version_xyz} ]]; then
-        lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Not installed on host: ${py_version_xy}"
+        lf_echo_stderr "${FUNCNAME[0]}(): ERROR: Not installed on host: ${py_version_xy}"
         return 1
     fi
     echo "${py_version_xyz}"

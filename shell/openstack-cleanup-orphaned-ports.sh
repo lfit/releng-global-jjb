@@ -16,7 +16,7 @@ source ~/lf-env.sh
 
 os_cloud="${OS_CLOUD:-vex}"
 
-lf-activate-venv --python python3 \
+lf_activate_venv --python python3 \
     python-heatclient \
     python-openstackclient
 

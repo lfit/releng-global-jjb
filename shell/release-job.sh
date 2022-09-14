@@ -15,7 +15,7 @@ set -eu -o pipefail
 source ~/lf-env.sh
 
 # Version controlled by JJB_VERSION
-lf-activate-venv lftools pip idna==2.9 lftools jsonschema twine yq readline
+lf_activate_venv lftools pip idna==2.9 lftools jsonschema twine yq readline
 
 # show installed versions
 python -m pip --version

@@ -21,7 +21,7 @@ set -eu -o pipefail
 source ~/lf-env.sh
 
 # Version controlled by JJB_VERSION
-lf-activate-venv setuptools twine wheel readline
+lf_activate_venv setuptools twine wheel readline
 
 
 echo "INFO: cd to tox-dir $TOX_DIR"

@@ -25,7 +25,7 @@ set -euf -o pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv python-openstackclient
+lf_activate_venv python-openstackclient
 
 mkdir -p "$WORKSPACE/archives"
 echo "INFO: List of images in use on the source repository:"

@@ -43,7 +43,7 @@ echo "-----> Install lftools"
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
+lf_activate_venv --python python3 lftools
 
 echo "-----> Upload files to Nexus"
 lftools deploy nexus -s "$nexus_repo_url" "$m2repo_dir"

@@ -12,7 +12,7 @@ echo "---> logs-deploy.sh"
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
-lf-activate-venv --python python3 lftools
+lf_activate_venv --python python3 lftools
 
 # Ensure we fail the job if any steps fail
 # Disable 'globbing'

@@ -16,7 +16,7 @@ source ~/lf-env.sh
 
 # TODO: "openstacksdk<0.99" AttributeError: 'Image' object has no
 # attribute 'protected'
-lf-activate-venv --python python3 "lftools[openstack]" \
+lf_activate_venv --python python3 "lftools[openstack]" \
     kubernetes \
     niet \
     "openstacksdk<0.99" \

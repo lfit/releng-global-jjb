@@ -25,7 +25,7 @@ if [ -d "${os_lf_venv}" ] && [ -f "${os_lf_venv}/bin/openstack" ]; then
     echo "Re-use existing venv: ${os_lf_venv}"
     PATH=$os_lf_venv/bin:$PATH
 else
-    lf-activate-venv --python python3 python-openstackclient
+    lf_activate_venv --python python3 python-openstackclient
 fi
 error=false
 

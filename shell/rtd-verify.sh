@@ -39,7 +39,7 @@ done
 if [[ $JOB_NAME == "lf-infra-lftools-rtd-verify-any" ]]; then
     # shellcheck disable=SC1090
     source ~/lf-env.sh
-    lf-activate-venv pip
+    lf_activate_venv pip
     pip install -e .
 fi
 

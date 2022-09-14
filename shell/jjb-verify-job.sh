@@ -15,10 +15,10 @@ set -eufo pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-git-validate-jira-urls
-lf-jjb-check-ascii
+lf_git_validate_jira_urls
+lf_jjb_check_ascii
 
-lf-activate-venv --python python3 --venv-file /tmp/.jjb_venv jenkins-job-builder
+lf_activate_venv --python python3 --venv-file /tmp/.jjb_venv jenkins-job-builder
 
 jenkins-jobs test --recursive -o archives/job-configs --config-xml jjb/
 

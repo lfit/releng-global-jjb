@@ -27,7 +27,7 @@ set -eu -o pipefail
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
+lf_activate_venv --python python3 lftools
 
 for silo in $silos; do
     if [ ! -f "$WORKSPACE/jenkins-config/global-vars-$silo.sh" ]; then

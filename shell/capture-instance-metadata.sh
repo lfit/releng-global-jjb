@@ -15,11 +15,11 @@ echo "---> capture-instance-metadata.sh"
 source ~/lf-env.sh
 
 if [[ "${PYTHON:-}" -ne "" ]]; then
-    lf-activate-venv --python $PYTHON lftools
+    lf_activate_venv --python $PYTHON lftools
 elif python3; then
-    lf-activate-venv --python python3 lftools
+    lf_activate_venv --python python3 lftools
 else
-    lf-activate-venv lftools
+    lf_activate_venv lftools
 fi
 
 # detect if we're in EC2

@@ -32,7 +32,7 @@ IFS=" " read -r -a PATCHES <<< \
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv "git-review==1.28"
+lf_activate_venv "git-review==1.28"
 
 
 projects=()

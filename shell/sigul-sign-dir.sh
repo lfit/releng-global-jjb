@@ -16,7 +16,7 @@ set -e -o pipefail
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
+lf_activate_venv --python python3 lftools
 
 OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')

@@ -103,7 +103,7 @@ fi
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv yq
+lf_activate_venv yq
 
 # show installed versions
 python -m pip --version

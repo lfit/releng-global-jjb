@@ -34,7 +34,7 @@ set +u
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
+lf_activate_venv --python python3 lftools
 
 export MAVEN_OPTIONS
 export MAVEN_PARAMS

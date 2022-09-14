@@ -14,7 +14,7 @@ PROJECT="${PROJECT:-None}"
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
-lf-activate-venv zipp==1.1.0 PyYAML jsonschema rfc3987 yamllint yq
+lf_activate_venv zipp==1.1.0 PyYAML jsonschema rfc3987 yamllint yq
 pip freeze
 
 # Download info-schema.yaml and yaml-verfy-schema.py

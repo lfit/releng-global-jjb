@@ -61,7 +61,7 @@ cluster_in_jenkins() {
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 \
+lf_activate_venv --python python3 \
     kubernetes \
     python-heatclient \
     python-openstackclient \

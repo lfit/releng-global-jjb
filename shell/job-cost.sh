@@ -29,7 +29,7 @@ if [[ $cloudtype == "DataSourceEc2Local" ]]; then
     exit 0
 fi
 
-lf-activate-venv zipp==1.1.0 python-openstackclient
+lf_activate_venv zipp==1.1.0 python-openstackclient
 
 if [[ -z ${JOB_NAME:-} ]]; then
     lf-echo-error "Required Env Variable Unset/Empty: JOB_NAME"

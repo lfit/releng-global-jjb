@@ -19,7 +19,7 @@ set +u
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
+lf_activate_venv --python python3 lftools
 
 JAVADOC_DIR="$WORKSPACE/archives/javadoc"
 

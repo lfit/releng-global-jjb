@@ -16,7 +16,7 @@ set -euf -o pipefail
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 --venv-file /tmp/.jjb_venv jenkins-job-builder
+lf_activate_venv --python python3 --venv-file /tmp/.jjb_venv jenkins-job-builder
 
 # jenkins-jobs does not always open 'stdin' which may cause 'yes' to fail
 (yes || true) | jenkins-jobs -s sandbox delete-all

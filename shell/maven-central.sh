@@ -18,7 +18,7 @@ set -eux -o pipefail
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
+lf_activate_venv --python python3 lftools
 
 MC_TMP_FILE="$(mktemp)"
 echo "Staging in OSSRH for Maven Central"

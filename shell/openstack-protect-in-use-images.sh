@@ -22,7 +22,7 @@ os_cloud="${OS_CLOUD:-vex}"
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 "lftools[openstack]" \
+lf_activate_venv --python python3 "lftools[openstack]" \
     kubernetes \
     python-heatclient \
     python-openstackclient
