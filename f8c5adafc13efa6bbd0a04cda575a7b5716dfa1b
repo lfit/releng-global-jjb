@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "985550cc_d267eb8c",
+        "filename": "docs/jjb/lf-python-jobs.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-14T21:50:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0981f676_96e7ea1c",
+      "range": {
+        "startLine": 133,
+        "startChar": 0,
+        "endLine": 150,
+        "endChar": 21
+      },
+      "revId": "f8c5adafc13efa6bbd0a04cda575a7b5716dfa1b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dee688b9_d55f12b7",
