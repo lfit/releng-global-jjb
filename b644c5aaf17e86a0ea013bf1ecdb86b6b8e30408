@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "233048ce_5c1a2859",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 16
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-14T21:28:53Z",
+      "side": 1,
+      "message": "Added comments in file under \"lf-cli-sonar\" definition with warning regarding use of java-version \u003c JDK11.",
+      "parentUuid": "8779c26e_bf831b7a",
+      "range": {
+        "startLine": 429,
+        "startChar": 0,
+        "endLine": 430,
+        "endChar": 79
+      },
+      "revId": "b644c5aaf17e86a0ea013bf1ecdb86b6b8e30408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1c44df79_63ad8115",
