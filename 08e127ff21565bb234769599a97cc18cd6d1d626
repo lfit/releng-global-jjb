@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13b56362_d0cb242f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 20
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-14T22:23:26Z",
+      "side": 1,
+      "message": "1. Missing release notes \n2. Add test job in .jjb-test/ ",
+      "revId": "08e127ff21565bb234769599a97cc18cd6d1d626",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
