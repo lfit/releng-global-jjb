@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7ad6b937_86bd6d7b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-15T00:53:59Z",
+      "side": 1,
+      "message": "Has been tested before merging? better to check rather than avoids revert in global-jjb that might impact multiple projects.",
+      "revId": "60d27ecb53e9fe7d91dcaa0e0fd37a725f0fc285",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
