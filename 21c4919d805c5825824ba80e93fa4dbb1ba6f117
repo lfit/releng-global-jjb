@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "63b23214_96c5dc08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-15T14:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "23708b66_33f990c3",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 3
+      },
+      "revId": "21c4919d805c5825824ba80e93fa4dbb1ba6f117",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f0d494bd_a1d5eab3",
@@ -47,6 +71,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "36130e14_025e6093",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-15T14:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f0d494bd_a1d5eab3",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 21
+      },
+      "revId": "21c4919d805c5825824ba80e93fa4dbb1ba6f117",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d46f4bb8_3dea638f",
@@ -60,6 +108,30 @@
       "writtenOn": "2022-09-15T00:43:20Z",
       "side": 1,
       "message": "\"Co-Authored-By:\" ??",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "21c4919d805c5825824ba80e93fa4dbb1ba6f117",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23f6a437_4ffd5e58",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-15T14:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d46f4bb8_3dea638f",
       "range": {
         "startLine": 15,
         "startChar": 0,
@@ -100,6 +172,30 @@
       "writtenOn": "2022-09-15T01:00:43Z",
       "side": 1,
       "message": "move all the exports and declarations to the top of the file, makes it readable.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 45
+      },
+      "revId": "21c4919d805c5825824ba80e93fa4dbb1ba6f117",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b53246f1_955b17ea",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-09-15T14:03:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f88c9ba9_0ee3b6de",
       "range": {
         "startLine": 14,
         "startChar": 0,
