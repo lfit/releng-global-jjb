@@ -16,6 +16,24 @@
       "message": "LGTM, but this adds an additional file .python-version while processing updating git submodules. That file should be ignored. ",
       "revId": "74a4defcfba1d8d39bf1db6889909afcc1ab1a83",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bae97db_5557f358",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-15T06:58:36Z",
+      "side": 1,
+      "message": "This is more an issue with cmds called from the AR templates / submodule update job.\nTo ignore the new file you can use `git add -u` instead of `git add .` in the autorelease-templates.yaml\n\n       -u, --update\n           Update the index just where it already has an entry matching \u003cpathspec\u003e. This removes as well as modifies index entries to match the working tree, but adds no new files.\n\ntested here:\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/autorelease-update-submodules-sulfur/4/console",
+      "parentUuid": "4e84c7fe_b343ae3b",
+      "revId": "74a4defcfba1d8d39bf1db6889909afcc1ab1a83",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
