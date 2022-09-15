@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e84c7fe_b343ae3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-15T02:04:20Z",
+      "side": 1,
+      "message": "LGTM, but this adds an additional file .python-version while processing updating git submodules. That file should be ignored. ",
+      "revId": "74a4defcfba1d8d39bf1db6889909afcc1ab1a83",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
