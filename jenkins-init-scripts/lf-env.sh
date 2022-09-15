@@ -227,12 +227,16 @@ lf-activate-venv () {
         #     1. --venv-file <path/to/file> as lf_venv
         #     2. default: "/tmp/.os_lf_venv"
         # - Create new venv when 1. and 2. is absent
-        if [ -f "$venv_file" ]; then
+        if [[ -f "$venv_file" ]]; then
             lf_venv=$(cat "$venv_file")
             echo "${FUNCNAME[0]}(): INFO: Reuse venv:$lf_venv from" \
                 "file:$venv_file"
-        elif [ ! -f "$venv_file" ]; then
-            $python -m venv "$install_args" "$lf_venv" || return 1
+        elif [[ ! -f "$venv_file" ]]; then
+            if [[ -n "$install_args" ]]; then
+                $python -m venv "$install_args" "$lf_venv" || return 1
+            else
+                $python -m venv "$lf_venv" || return 1
+            fi
             echo "${FUNCNAME[0]}(): INFO: Creating $python venv at $lf_venv"
             echo "$lf_venv" > "$venv_file"
             echo "${FUNCNAME[0]}(): INFO: Save venv in file: $venv_file"

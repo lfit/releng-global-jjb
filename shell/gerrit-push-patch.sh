@@ -75,4 +75,7 @@ git remote add gerrit "ssh://$GERRIT_USER@$GERRIT_HOST:29418/$PROJECT.git"
 # If the reviewers email is unset/empty then use a default
 reviewers_email=${REVIEWERS_EMAIL:-"$GERRIT_USER@$GERRIT_HOST"}
 
+# Workaround for git-review failing to copy the commit-msg hook to submodules
+git config core.hooksPath "$(git rev-parse --show-toplevel)/.git/hooks"
+
 git review --yes -t "$GERRIT_TOPIC" --reviewers "$reviewers_email"

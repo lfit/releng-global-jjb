@@ -1,0 +1,19 @@
+---
+issues:
+  - |
+    git-review tries to copy commit-msg hook to submodules with incorrect
+    source file path (.git/hooks/commit-msg) and fails - the path should
+    be ../.git/hooks/commit-msg if a relative path is used since the copy
+    command is run in the submodule directory
+  - |
+    lf-activate-venv creates a virtual environment in the current working
+    directory where lf-activate-venv is run. This clutters the repository
+    and all the files for the virtual environment are added for update.
+
+fixes:
+  - |
+    Set 'core.hooksPath' with the absolute path of the top-level hooks directory
+    so that the correct source path can be used regardless of the working directory.
+  - |
+    Use the correct command depending on the $install_args value to avoid
+    creating an additional virtual environment in the current working directory.
