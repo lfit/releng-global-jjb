@@ -85,6 +85,29 @@
       "message": "Test in\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/smo-ves-jess-cli-sonar/9/console",
       "revId": "21c4919d805c5825824ba80e93fa4dbb1ba6f117",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f88c9ba9_0ee3b6de",
+        "filename": "shell/sonar-cli.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-15T01:00:43Z",
+      "side": 1,
+      "message": "move all the exports and declarations to the top of the file, makes it readable.",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 45
+      },
+      "revId": "21c4919d805c5825824ba80e93fa4dbb1ba6f117",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
