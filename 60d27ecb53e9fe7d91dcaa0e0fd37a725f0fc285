@@ -16,6 +16,23 @@
       "message": "Has been tested before merging? better to check rather than avoids revert in global-jjb that might impact multiple projects.",
       "revId": "60d27ecb53e9fe7d91dcaa0e0fd37a725f0fc285",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00de5b10_cc9d8319",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-16T12:19:43Z",
+      "side": 1,
+      "message": "Tested this on the sandbox:\n\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/aaa-maven-verify-0.15.x-mvn38-openjdk17/1/consoleFull\nhttps://jenkins.opendaylight.org/sandbox/view/All/job/aaa-maven-verify-0.15.x-mvn38-openjdk11/1/consoleFull\n\n@Guillaume, @Cedric, Steps to test this change on sandbox:\n1. cd builder/global-jjb\n2. git review -d 70579\n3. push the relevant job on sandbox. \n\n",
+      "revId": "60d27ecb53e9fe7d91dcaa0e0fd37a725f0fc285",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
