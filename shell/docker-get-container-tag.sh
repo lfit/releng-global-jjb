@@ -18,6 +18,11 @@ echo "---> docker-get-container-tag.sh"
 
 set -feu -o pipefail
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3 yq
+
 tag=""
 if [[ $CONTAINER_TAG_METHOD == "latest" ]]; then
     tag="latest"
