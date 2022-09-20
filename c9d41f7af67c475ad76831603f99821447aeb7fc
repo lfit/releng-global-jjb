@@ -41,6 +41,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "663f7fdf_f70252e2",
+        "filename": "jjb/lf-macros.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-20T21:26:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae4ba936_c5e383b7",
+      "range": {
+        "startLine": 582,
+        "startChar": 10,
+        "endLine": 582,
+        "endChar": 33
+      },
+      "revId": "c9d41f7af67c475ad76831603f99821447aeb7fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1846bd1c_2de6b4bf",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-09-20T21:21:47Z",
       "side": 1,
       "message": "lf-infra-sonar-cli-parameters (see comment in macros as to why)",
+      "range": {
+        "startLine": 278,
+        "startChar": 8,
+        "endLine": 278,
+        "endChar": 31
+      },
+      "revId": "c9d41f7af67c475ad76831603f99821447aeb7fc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b16b4c5a_de0edb99",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 23
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-20T21:26:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1846bd1c_2de6b4bf",
       "range": {
         "startLine": 278,
         "startChar": 8,
