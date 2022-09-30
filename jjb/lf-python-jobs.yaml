@@ -288,7 +288,7 @@
     wrappers:
       - credentials-binding:
           - text:
-              credential-id: sonar-token-smo-ves
+              credential-id: sonar-token-{sonarcloud-project-key}
               variable: SONAR_TOKEN
     builders:
       - lf-infra-pre-build
