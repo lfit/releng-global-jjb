@@ -16,6 +16,23 @@
       "message": "Please can you check this for me?\nI might be barking up the wrong tree with this patch...",
       "revId": "6df99d7b6b5da664ff27ccb469581de5aea7f0e2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8b142226_2c5359af",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-09-30T02:46:23Z",
+      "side": 1,
+      "message": "IIRc, this is not required, unless you need its required to pin to specific version of py3.x. lf-activate-env() is designed to pick up the latest version of python3 installed on the system through pyenv. \n\nIt\u0027s likely that the image has not been built to use the pyenv, maybe refreshing the packer images and updating the config should possibly fix the issue in question,",
+      "revId": "6df99d7b6b5da664ff27ccb469581de5aea7f0e2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
