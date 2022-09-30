@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acb66306_a0f476ce",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-09-30T21:00:24Z",
+      "side": 1,
+      "message": "tested in the sandbox https://jenkins.onap.org/sandbox/job/so-libs-cli-sonar/configure",
+      "revId": "1d572dc0110bdd1d9881fa6b4f2d60d43b6138da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
