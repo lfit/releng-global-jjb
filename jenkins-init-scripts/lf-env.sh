@@ -245,13 +245,13 @@ lf-activate-venv () {
         "$lf_venv/bin/pip" install --upgrade --quiet pip virtualenv || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"
-            return 0
+        else
+            echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
+            # $pkg_list is expected to be unquoted
+            # shellcheck disable=SC2086
+            "$lf_venv/bin/pip" install --upgrade --quiet --upgrade-strategy eager \
+                                    $pkg_list || return 1
         fi
-        echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
-        # $pkg_list is expected to be unquoted
-        # shellcheck disable=SC2086
-        "$lf_venv/bin/pip" install --upgrade --quiet --upgrade-strategy eager \
-                                $pkg_list || return 1
         ;;
     *)
         lf-echo-stderr "${FUNCNAME[0]}(): ERROR: No support for: $python"

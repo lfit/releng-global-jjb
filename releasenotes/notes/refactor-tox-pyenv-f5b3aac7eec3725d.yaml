@@ -1,0 +1,11 @@
+---
+prelude: >
+    PyPI verify jobs requires Python 3.x. The tox run picks up default version
+    of python instead of the version made available through pyenv.
+issues:
+  - |
+    Re-factor lf-activate-venv() to skip a return, while the venv is
+    re-used, so that the PATH can be set.
+fixes:
+  - |
+    Update the tox install and run script to Call lf-avtivate-venv().

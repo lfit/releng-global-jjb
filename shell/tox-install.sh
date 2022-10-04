@@ -14,7 +14,10 @@ echo "---> tox-install.sh"
 # Use -x to show value of $PYTHON in output
 set -eux -o pipefail
 
-python3 -m pip install --user --quiet --upgrade tox tox-pyenv virtualenv
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+
+lf-activate-venv --python python3.8 --venv-file /tmp/.toxenv tox tox-pyenv virtualenv
 
 # installs are silent, show version details in log
 $PYTHON --version
