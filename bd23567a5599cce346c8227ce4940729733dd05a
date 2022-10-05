@@ -68,6 +68,109 @@
       "parentUuid": "b77af695_4355d7fb",
       "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f62dc231_c1f41c3a",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-10-05T16:08:11Z",
+      "side": 1,
+      "message": "Double check the lf-activate-venv call itself, I believe it by default re-uses the already created venv if it exists so you shouldn\u0027t have do this extra work to reuse it.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 2
+      },
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02113e03_6ea2c9ae",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-10-05T16:08:11Z",
+      "side": 1,
+      "message": "use mktemp to get a proper temporary file",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 32
+      },
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78d18c3e_c2cd338d",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-10-05T16:08:11Z",
+      "side": 1,
+      "message": "use mktemp to get a proper temporary file",
+      "range": {
+        "startLine": 36,
+        "startChar": 11,
+        "endLine": 36,
+        "endChar": 43
+      },
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce4f5e1e_f029897e",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-10-05T16:08:11Z",
+      "side": 1,
+      "message": "Check to see if gnu parallel is available on a build agent and use that for doing parallel calls",
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78b1e90f_978681a3",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-10-05T16:08:11Z",
+      "side": 1,
+      "message": "No cleanup of the temp files happening",
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
