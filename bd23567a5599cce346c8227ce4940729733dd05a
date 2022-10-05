@@ -33,6 +33,41 @@
       "message": "This version still needs more work",
       "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d58f7eba_de64bbb4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-05T14:16:24Z",
+      "side": 1,
+      "message": "No, tested and verified as okay, should be fit to merge",
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb5e3399_259aa788",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-05T14:16:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b77af695_4355d7fb",
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
