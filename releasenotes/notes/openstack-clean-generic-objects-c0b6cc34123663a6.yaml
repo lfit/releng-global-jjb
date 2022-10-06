@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Added a script to cleanup generic openstack objects.
