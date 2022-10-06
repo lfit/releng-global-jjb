@@ -72,6 +72,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5c32d6ca_e78ff6d3",
+        "filename": "releasenotes/notes/fix-openstack-ports-cleanup-7b5e01d5867b5a79.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-06T02:35:48Z",
+      "side": 1,
+      "message": "Please add more info on what was the \"issue\" and how this is fixed.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 65
+      },
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f62dc231_c1f41c3a",
         "filename": "shell/openstack-cleanup-orphaned-ports.sh",
         "patchSetId": 4
