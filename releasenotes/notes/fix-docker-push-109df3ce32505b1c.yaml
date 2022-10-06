@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix the docker-push script which is broken due to a synxtax error causing
+    the docker_push_command variable to not be set.
