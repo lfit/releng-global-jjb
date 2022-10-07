@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ad36868_3e30b03d",
+        "filename": "shell/docker-push.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2022-10-07T17:34:43Z",
+      "side": 1,
+      "message": "Need to remove the inside quotes here.",
+      "range": {
+        "startLine": 18,
+        "startChar": 33,
+        "endLine": 18,
+        "endChar": 90
+      },
+      "revId": "724dc7b24ed8b92c9843a981fa7b645224b5c0b1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
