@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Remove line break in the docker_push_command variable
+    causing the varible to not be set properly
