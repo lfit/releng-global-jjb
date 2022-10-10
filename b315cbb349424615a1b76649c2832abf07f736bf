@@ -41,6 +41,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a83a8828_433606dd",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6214bcaf_5300e173",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 4
+      },
+      "revId": "b315cbb349424615a1b76649c2832abf07f736bf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ea2b7bce_9144abe3",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-10-06T02:35:48Z",
       "side": 1,
       "message": "I think we have dealt with this in the past while deleting stacks. Since sleeping for \u00271s\u0027 or \u0027N\u0027 does not ensure that running an asynchronous cmd in a loop gives the command enough time to process before the next process is spwaned. \n\nThat said it might be better to implement this lftools using shade API, similar to what is done for stacks: \n\nhttps://github.com/lfit/releng-global-jjb/blob/master/shell/openstack-stack-delete.sh#L32",
+      "range": {
+        "startLine": 100,
+        "startChar": 4,
+        "endLine": 100,
+        "endChar": 11
+      },
+      "revId": "b315cbb349424615a1b76649c2832abf07f736bf",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e5f85a0_91c58a5e",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "The Openstack CLI commands take between three to four seconds to run, so there will usually be somewhere between two and four running at a given time with the above code. Andrew has agreed we should get a fix out for the current failing ports cleanup script, which is currently broken. More than likely, we will try and move all the Openstack cleanup tooling into lftools.",
+      "parentUuid": "ea2b7bce_9144abe3",
       "range": {
         "startLine": 100,
         "startChar": 4,

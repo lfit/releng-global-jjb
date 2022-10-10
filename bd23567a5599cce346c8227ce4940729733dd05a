@@ -70,6 +70,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6bda995_fb18ce36",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d58f7eba_de64bbb4",
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5c32d6ca_e78ff6d3",
@@ -83,6 +101,30 @@
       "writtenOn": "2022-10-06T02:35:48Z",
       "side": 1,
       "message": "Please add more info on what was the \"issue\" and how this is fixed.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 4,
+        "endChar": 65
+      },
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1236c1e_a697294c",
+        "filename": "releasenotes/notes/fix-openstack-ports-cleanup-7b5e01d5867b5a79.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c32d6ca_e78ff6d3",
       "range": {
         "startLine": 4,
         "startChar": 4,
@@ -116,6 +158,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "64fcfeaa_71f699e3",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f62dc231_c1f41c3a",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 2
+      },
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "02113e03_6ea2c9ae",
@@ -129,6 +195,30 @@
       "writtenOn": "2022-10-05T16:08:11Z",
       "side": 1,
       "message": "use mktemp to get a proper temporary file",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 32
+      },
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c89d3712_91ef54a0",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "02113e03_6ea2c9ae",
       "range": {
         "startLine": 35,
         "startChar": 8,
@@ -162,6 +252,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "afc196f3_8fd17924",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78d18c3e_c2cd338d",
+      "range": {
+        "startLine": 36,
+        "startChar": 11,
+        "endLine": 36,
+        "endChar": 43
+      },
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce4f5e1e_f029897e",
@@ -179,6 +293,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af8b4822_b14e1659",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ce4f5e1e_f029897e",
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "78b1e90f_978681a3",
@@ -192,6 +324,24 @@
       "writtenOn": "2022-10-05T16:08:11Z",
       "side": 1,
       "message": "No cleanup of the temp files happening",
+      "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7252e3f3_9816df53",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T10:48:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78b1e90f_978681a3",
       "revId": "bd23567a5599cce346c8227ce4940729733dd05a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
