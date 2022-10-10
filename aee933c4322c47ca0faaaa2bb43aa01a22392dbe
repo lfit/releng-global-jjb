@@ -22,6 +22,30 @@
       },
       "revId": "aee933c4322c47ca0faaaa2bb43aa01a22392dbe",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "70d55e4e_f897d2e2",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-10T17:39:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cf48c1e0_23117d89",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 9
+      },
+      "revId": "aee933c4322c47ca0faaaa2bb43aa01a22392dbe",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
