@@ -22,6 +22,30 @@
       },
       "revId": "c446d52394098953942838e14c085f71264ae1aa",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f30c95f6_cc169f70",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-10-11T19:10:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa33d172_640cce82",
+      "range": {
+        "startLine": 44,
+        "startChar": 8,
+        "endLine": 44,
+        "endChar": 9
+      },
+      "revId": "c446d52394098953942838e14c085f71264ae1aa",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
