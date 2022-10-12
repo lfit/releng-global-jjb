@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "88848e2a_431ff43c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-12T00:40:35Z",
+      "side": 1,
+      "message": "There are no macros that invoke this script, those macro updates to new ones have gone with this change.",
+      "revId": "705b334b7333fcc0cb8e6847718d1223ddbe1564",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e2628f1_bb360f33",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-12T00:40:35Z",
+      "side": 1,
+      "message": "this line was not required in the change, rather a comment would have been more apt.",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 92,
+        "endChar": 69
+      },
+      "revId": "705b334b7333fcc0cb8e6847718d1223ddbe1564",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
