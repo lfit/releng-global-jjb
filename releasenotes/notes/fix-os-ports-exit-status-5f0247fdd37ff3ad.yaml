@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Addresses a bug whereby the openstack-cleanup-orphaned-ports.sh script
+    exits early with an error when grep/awk do not match any orphaned port
+    objects. The fix allows jobs using the script to continue when no
+    cleanups operations are required.

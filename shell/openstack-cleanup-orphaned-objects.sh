@@ -74,11 +74,11 @@ _cleanup()
 if [[ -n ${filters} ]]; then
     # If a filter/match condition is requested/set
     openstack --os-cloud "$os_cloud" "${object}" list -f value -c ID $attributes \
-     | $filters | awk '{print $1}'> "$tmpfile"
+     | { $filters || true; } | { awk '{print $1}' || true; } > "$tmpfile"
 else
     # Otherwise don't pipe through an additional command
     openstack --os-cloud "$os_cloud" "${object}" list -f value -c ID $attributes \
-     | awk '{print $1}'> "$tmpfile"
+     | { awk '{print $1}' || true; } > "$tmpfile"
 fi
 
 # Count the number of objects to process
@@ -89,7 +89,7 @@ echo "Using $threads parallel processes..."
 # Export variables and send to parallel for processing
 export -f _cleanup
 export os_cloud cutoff age object
-# parallel --progress --retries 3 -j "$threads" _cleanup < "$tmpfile"
+# Add --progress flag to the command below for additional debug output
 parallel --retries 3 -j "$threads" _cleanup < "$tmpfile"
 
 rm "$tmpfile"
