@@ -55,7 +55,8 @@ _cleanup()
 }
 
 # Output the initial list of port UUIDs to a temporary file
-openstack --os-cloud "$os_cloud" port list -f value -c ID -c status | grep -e DOWN | awk '{print $1}'> "$tmpfile"
+openstack --os-cloud "$os_cloud" port list -f value -c ID -c status \
+    | { grep -e DOWN || true; } | { awk '{print $1}' || true; } > "$tmpfile"
 
 # Count the number to process
 total=$(wc -l "$tmpfile" | awk '{print $1}')

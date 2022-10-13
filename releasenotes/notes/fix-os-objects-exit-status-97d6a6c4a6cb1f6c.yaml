@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Addresses a bug whereby the openstack orphaned objects/ports scripts
+    exit early with an error when grep/awk do not match any orphaned
+    objects. The fix allows jobs using the scripts to continue when no
+    cleanups operations are required.
