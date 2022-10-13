@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "35a94fc9_010e53a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-13T14:43:35Z",
+      "side": 1,
+      "message": "Here: https://jenkins.opendaylight.org/sandbox/view/All/job/builder-openstack-cron/9/console\n\n15:41:21 + openstack --os-cloud vex port list -f value -c ID -c status\n15:41:21 + grep -e DOWN\n15:41:21 + awk \u0027{print $1}\u0027\n15:41:23 + true\n15:41:23 ++ wc -l /tmp/tmp.TsSvVsRpNS-openstack-ports.txt\n15:41:23 ++ awk \u0027{print $1}\u0027\n15:41:23 + total\u003d0\n15:41:23 + echo \u0027Ports to process: 0; age limit: 1665670281\u0027\n15:41:23 Ports to process: 0; age limit: 1665670281",
+      "parentUuid": "dca7b4ae_f426bf1a",
+      "revId": "ce1354cc83932ef7ff52b401137aada7a7a8de75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "244da12b_e7d77659",
