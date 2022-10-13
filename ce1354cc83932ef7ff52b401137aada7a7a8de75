@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dca7b4ae_f426bf1a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-13T14:27:02Z",
+      "side": 1,
+      "message": "have these changes been tested on sandbox?",
+      "revId": "ce1354cc83932ef7ff52b401137aada7a7a8de75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "244da12b_e7d77659",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-13T14:27:02Z",
+      "side": 1,
+      "message": "which JJB macro is calling this script?",
+      "revId": "ce1354cc83932ef7ff52b401137aada7a7a8de75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
