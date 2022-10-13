@@ -33,6 +33,24 @@
       "message": "which JJB macro is calling this script?",
       "revId": "ce1354cc83932ef7ff52b401137aada7a7a8de75",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c19ac7b1_bd29fb29",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-13T14:32:12Z",
+      "side": 1,
+      "message": "It\u0027s not used yet, but could potentially replace the ports and images scripts, and potentially others. Or it could be used as the basis for a new generic cleanup process that is developed subsequently in lftools. Andy has said that is probably his preferred way forward.",
+      "parentUuid": "244da12b_e7d77659",
+      "revId": "ce1354cc83932ef7ff52b401137aada7a7a8de75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
