@@ -70,6 +70,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c10a597f_ffdc2a16",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2022-10-14T16:25:21Z",
+      "side": 1,
+      "message": "This looks fine to me. Jenkins is failing to verify it though because it can\u0027t find tox for some reason.\n\n@Anil what\u0027s changed on the build nodes for ODL that would be causing tox to not be found?",
+      "revId": "ce1354cc83932ef7ff52b401137aada7a7a8de75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "244da12b_e7d77659",
