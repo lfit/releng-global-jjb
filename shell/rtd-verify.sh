@@ -34,12 +34,14 @@ for submod in $(git config -f .gitmodules --get-regexp '^submodule\.(.+)\.url' |
 done
 
 
+# shellcheck disable=SC1090
+. ~/lf-env.sh
+
+lf-activate-venv --python python3.8 --venv-file /tmp/.toxenv tox tox-pyenv virtualenv
+
 # When a new commands are added in lftools, the docs verify job needs to
 # run the new command which requires installing the lftools dev version
 if [[ $JOB_NAME == "lf-infra-lftools-rtd-verify-any" ]]; then
-    # shellcheck disable=SC1090
-    source ~/lf-env.sh
-    lf-activate-venv pip
     pip install -e .
 fi
 

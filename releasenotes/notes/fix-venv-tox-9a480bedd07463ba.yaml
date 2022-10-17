@@ -1,0 +1,9 @@
+---
+issues:
+  - |
+    line 48: tox: command not found
+fixes:
+  - |
+    The venv created for tox is unavailable when the semantics of the
+    script are split across files, therefore ensure venv is created with
+    --venv-file option and set.
