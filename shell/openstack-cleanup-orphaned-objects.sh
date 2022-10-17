@@ -83,6 +83,11 @@ fi
 
 # Count the number of objects to process
 total=$(wc -l "$tmpfile" | awk '{print $1}')
+
+if [ "$total" -eq 0 ]; then
+    echo "No orphaned ports to process, exiting"; exit 0
+fi
+
 echo "Processing $total ${object} object(s); current time: $current age limit: $cutoff"
 echo "Using $threads parallel processes..."
 

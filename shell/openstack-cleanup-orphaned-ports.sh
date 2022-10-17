@@ -60,6 +60,11 @@ openstack --os-cloud "$os_cloud" port list -f value -c ID -c status \
 
 # Count the number to process
 total=$(wc -l "$tmpfile" | awk '{print $1}')
+
+if [ "$total" -eq 0 ]; then
+    echo "No orphaned ports to process, exiting"; exit 0
+fi
+
 echo "Ports to process: $total; age limit: $cutoff"
 echo "Using $threads parallel processes..."
 
