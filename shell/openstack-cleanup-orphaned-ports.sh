@@ -34,25 +34,29 @@ _cleanup()
     uuid=$1
     created_at=$(openstack --os-cloud "$os_cloud" port show -f value -c created_at "$uuid")
     if [ "$created_at" == "None" ]; then
+        # This is a valid result for some objects; do not stop processing
         echo "No value for port creation time; skipping: $uuid"
     else
         created_at_uxts=$(date -d "$created_at" +"%s")
 
-        # For debugging only; this outout usually disabled
-        # echo "Port: ${uuid} created at ${created_at} / ${created_at_uxts}"
-
-        # Validate timing values are numeric
-        if [[ "$created_at_uxts" -eq "$created_at_uxts" ]]; then
-            # Clean up ports where created_at > 30 minutes
-            if [[ "$created_at_uxts" -lt "$cutoff" ]]; then
-                echo "Removing orphaned port $uuid created > $age"
-                openstack --os-cloud "$os_cloud" port delete "$uuid"
-            fi
-        else
-            echo "Date variable failed numeric test; deletion not possible"
+        # Cleanup objects where created_at is older than specified cutoff time
+        # created_at_uxts is measured against UNIX epoch; lower values are older
+        if [[ "$created_at_uxts" -lt "$cutoff" ]]; then
+            echo "Removing orphaned port $uuid created $created_at_uxts > $age"
+            openstack --os-cloud "$os_cloud" port delete "$uuid"
         fi
     fi
 }
+
+_rmtemp()
+{
+    if [ -f "$tmpfile" ]; then
+        # Removes temporary file on script exit
+        rm -f "$tmpfile"
+    fi
+}
+
+trap _rmtemp EXIT
 
 # Output the initial list of port UUIDs to a temporary file
 openstack --os-cloud "$os_cloud" port list -f value -c ID -c status \
@@ -60,6 +64,12 @@ openstack --os-cloud "$os_cloud" port list -f value -c ID -c status \
 
 # Count the number to process
 total=$(wc -l "$tmpfile" | awk '{print $1}')
+
+if [ "$total" -eq 0 ]; then
+    echo "No orphaned ports to process."
+    exit 0
+fi
+
 echo "Ports to process: $total; age limit: $cutoff"
 echo "Using $threads parallel processes..."
 
@@ -67,5 +77,3 @@ echo "Using $threads parallel processes..."
 export -f _cleanup
 export os_cloud cutoff age
 parallel --progress --retries 3 -j "$threads" _cleanup < "$tmpfile"
-
-rm "$tmpfile"
