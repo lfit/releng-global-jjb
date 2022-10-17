@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Minor changes to improve openstack cleanup scripts.
