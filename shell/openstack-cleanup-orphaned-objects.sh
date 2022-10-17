@@ -70,6 +70,16 @@ _cleanup()
     fi
 }
 
+_rmtemp()
+{
+    if [ -f "$tmpfile" ]; then
+        # Removes temporary file on script exit
+        rm -f "$tmpfile"
+    fi
+}
+
+trap _rmtemp EXIT
+
 # Output the initial list of object UUIDs to a temporary file
 if [[ -n ${filters} ]]; then
     # If a filter/match condition is requested/set
@@ -83,6 +93,12 @@ fi
 
 # Count the number of objects to process
 total=$(wc -l "$tmpfile" | awk '{print $1}')
+
+if [ "$total" -eq 0 ]; then
+    echo "No orphaned objects to process."
+    exit 0
+fi
+
 echo "Processing $total ${object} object(s); current time: $current age limit: $cutoff"
 echo "Using $threads parallel processes..."
 
@@ -91,5 +107,3 @@ export -f _cleanup
 export os_cloud cutoff age object
 # Add --progress flag to the command below for additional debug output
 parallel --retries 3 -j "$threads" _cleanup < "$tmpfile"
-
-rm "$tmpfile"
