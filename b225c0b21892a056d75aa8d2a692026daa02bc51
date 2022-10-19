@@ -18,6 +18,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4d5a66f_fe7dc96e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T11:20:25Z",
+      "side": 1,
+      "message": "Taken your previous comments on board, Bengt.",
+      "revId": "b225c0b21892a056d75aa8d2a692026daa02bc51",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6752c6f4_50c30966",
@@ -35,6 +52,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fb980ec_5c236746",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T11:20:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6752c6f4_50c30966",
+      "revId": "b225c0b21892a056d75aa8d2a692026daa02bc51",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e519bd49_bdcc8944",
@@ -48,6 +83,24 @@
       "writtenOn": "2022-10-19T11:07:06Z",
       "side": 1,
       "message": "please put exit on its own row\nDo you want to remove the tmpfile?",
+      "revId": "b225c0b21892a056d75aa8d2a692026daa02bc51",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71d29f74_dfbc3aa1",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T11:20:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e519bd49_bdcc8944",
       "revId": "b225c0b21892a056d75aa8d2a692026daa02bc51",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
