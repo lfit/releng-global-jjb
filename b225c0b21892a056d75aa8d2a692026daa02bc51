@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9445e398_d303e7db",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T10:52:35Z",
+      "side": 1,
+      "message": "Please can I get a review on this minor tweak? Thanks!",
+      "revId": "b225c0b21892a056d75aa8d2a692026daa02bc51",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
