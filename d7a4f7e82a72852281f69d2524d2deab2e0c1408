@@ -41,6 +41,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c808b0e_a0189e90",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T13:29:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "14c278a8_0a0722c7",
+      "range": {
+        "startLine": 57,
+        "startChar": 35,
+        "endLine": 57,
+        "endChar": 41
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d50ea24a_31d86970",
@@ -54,6 +78,30 @@
       "writtenOn": "2022-10-19T11:48:51Z",
       "side": 1,
       "message": "What are you comparing here?",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 64
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fea0f6b9_ceeab32d",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T13:29:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d50ea24a_31d86970",
       "range": {
         "startLine": 61,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e6e4234_272829ec",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T13:29:02Z",
+      "side": 1,
+      "message": "This piece is iterating over multiple objects. The previous version of the script was not catching a condition when the date is returned as \"None\". There is one object type that sometimes returns \"None\" and that is causing the current version of the script to abort and not process other objects where the created_at attribute has a real value. It seems that the object in question where created_at \u003d \"None\" is some kind of Openstack internal infra that now appears occasionally in the \"openstack ports list\" output. It\u0027s a weird corner case, but the script needs to continue.",
+      "parentUuid": "3f9f8eb9_4ed8fe7e",
+      "range": {
+        "startLine": 68,
+        "startChar": 12,
+        "endLine": 68,
+        "endChar": 75
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "abdc5684_0d802d0b",
@@ -100,6 +172,30 @@
       "writtenOn": "2022-10-19T12:05:02Z",
       "side": 1,
       "message": "output?",
+      "range": {
+        "startLine": 41,
+        "startChar": 35,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "427f4f19_383d23cd",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T13:29:02Z",
+      "side": 1,
+      "message": "You made this same comment twice???",
+      "parentUuid": "abdc5684_0d802d0b",
       "range": {
         "startLine": 41,
         "startChar": 35,
@@ -133,6 +229,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "747ef0c6_f687ce2e",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T13:29:02Z",
+      "side": 1,
+      "message": "Will simply remove",
+      "parentUuid": "9bb47da7_a5623237",
+      "range": {
+        "startLine": 42,
+        "startChar": 8,
+        "endLine": 42,
+        "endChar": 76
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "79e9b093_fdcbd968",
@@ -146,6 +266,30 @@
       "writtenOn": "2022-10-19T11:52:31Z",
       "side": 1,
       "message": "What is being compared here? This will always be true.",
+      "range": {
+        "startLine": 45,
+        "startChar": 7,
+        "endLine": 45,
+        "endChar": 64
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7e1125e_8658450d",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T13:29:02Z",
+      "side": 1,
+      "message": "No, you\u0027re wrong about this, that would be true if it was \u0027\u003d\u003d\u0027. This is strictly a numerical comparison. If the value is not numerical it will fail.",
+      "parentUuid": "79e9b093_fdcbd968",
       "range": {
         "startLine": 45,
         "startChar": 7,
