@@ -16,6 +16,52 @@
       "message": "Please add a release notes.",
       "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d50ea24a_31d86970",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-19T11:48:51Z",
+      "side": 1,
+      "message": "What are you comparing here?",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 61,
+        "endChar": 64
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f9f8eb9_4ed8fe7e",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-19T11:48:51Z",
+      "side": 1,
+      "message": "when there is a failed output, you should either return error code or exit 1 here?",
+      "range": {
+        "startLine": 68,
+        "startChar": 12,
+        "endLine": 68,
+        "endChar": 75
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
