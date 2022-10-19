@@ -16,6 +16,40 @@
       "message": "Please can I get a review on this minor tweak? Thanks!",
       "revId": "b225c0b21892a056d75aa8d2a692026daa02bc51",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6752c6f4_50c30966",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2022-10-19T11:07:06Z",
+      "side": 1,
+      "message": "Please put exit on its own row\nDo you want to remove the tmpfile?",
+      "revId": "b225c0b21892a056d75aa8d2a692026daa02bc51",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e519bd49_bdcc8944",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2022-10-19T11:07:06Z",
+      "side": 1,
+      "message": "please put exit on its own row\nDo you want to remove the tmpfile?",
+      "revId": "b225c0b21892a056d75aa8d2a692026daa02bc51",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
