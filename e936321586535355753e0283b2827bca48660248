@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fe4c5e3_c163e45b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-19T14:58:53Z",
+      "side": 1,
+      "message": "Looks like the verify job is failing to find tox again, otherwise I think this is good to go...",
+      "revId": "e936321586535355753e0283b2827bca48660248",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
