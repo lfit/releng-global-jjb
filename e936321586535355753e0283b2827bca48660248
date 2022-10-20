@@ -16,6 +16,29 @@
       "message": "Looks like the verify job is failing to find tox again, otherwise I think this is good to go...",
       "revId": "e936321586535355753e0283b2827bca48660248",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9aca17dd_9caec313",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-20T01:05:30Z",
+      "side": 1,
+      "message": "Has bashisms! Probably works ATM, but from I read this behavior is undefined in bash (to check for numeric $var), perhaps could change in the future without warning, and cause a potential issue!\n\nA more readable version is to use a simple regex:\n\nregex\u003d\u0027^[+-]?[0-9]+$\u0027\n! [[ \"$created_at_uxts\" \u003d~ $regex ]] \u0026\u0026 echo \"ERROR: Value of $created_at_uxts is undefined\"\n\nHowever, this check itself is redundant. Why? The date cmd validates the input for \"$created_at\"\n\n// expected behavior for a valid input\n$ date -d \"$created_at\" +%s\n1666188000\n\n// throws an error invalid input\n$ date -d \"None\" +%s\ndate: invalid date ‘None’\n\n// throws an error invalid input\n$ date -d \"2022-09-22T:23:34Z\" +%s\ndate: invalid date ‘2022-09-22T:23:34Z’\n\nNext, the correct place to validate the input (if you still want to do it) is to check if the value of $created_at is valid, in the first condition, meets the format \"YYYY-MM-DDTHH:MM:SSZ\"\n\nTo make it easier you can use the regex: \u0027^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2})Z$\u0027",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 64
+      },
+      "revId": "e936321586535355753e0283b2827bca48660248",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }

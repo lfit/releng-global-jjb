@@ -206,6 +206,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79a97b3c_3fdb186f",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-20T01:05:30Z",
+      "side": 1,
+      "message": "Nope! typo was in twice in separate files. :)",
+      "parentUuid": "427f4f19_383d23cd",
+      "range": {
+        "startLine": 41,
+        "startChar": 35,
+        "endLine": 41,
+        "endChar": 41
+      },
+      "revId": "d7a4f7e82a72852281f69d2524d2deab2e0c1408",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9bb47da7_a5623237",
