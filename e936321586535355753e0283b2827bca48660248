@@ -39,6 +39,30 @@
       },
       "revId": "e936321586535355753e0283b2827bca48660248",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "211e1790_740536df",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-20T09:37:06Z",
+      "side": 1,
+      "message": "That\u0027s a good find with respect to the undefined behaviour. As long as the flow continues on \"None\" but fails on other non-numeric values, I think this will be fine. Let me look at the script flow and refactor this; the check may be redundant.",
+      "parentUuid": "9aca17dd_9caec313",
+      "range": {
+        "startLine": 58,
+        "startChar": 8,
+        "endLine": 58,
+        "endChar": 64
+      },
+      "revId": "e936321586535355753e0283b2827bca48660248",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
