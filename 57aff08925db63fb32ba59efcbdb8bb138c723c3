@@ -16,6 +16,29 @@
       "message": "Removed redundant numerical check",
       "revId": "57aff08925db63fb32ba59efcbdb8bb138c723c3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94a2b863_d372c617",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-20T23:34:58Z",
+      "side": 1,
+      "message": "I think you missed adding verify check for the $created_at input format.\n\n\"\nregex_created_at\u003d\u0027^(\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2})Z$\u0027\n...\nelif echo \"$created_at\" | grep -qP \"$regex_created_at\"; then\n   created_at_uxts\u003d$(date -d \"$created_at\" +%s)\n   ...\nfi\n...\n\"\n\nrest looks fine.",
+      "range": {
+        "startLine": 55,
+        "startChar": 4,
+        "endLine": 55,
+        "endChar": 8
+      },
+      "revId": "57aff08925db63fb32ba59efcbdb8bb138c723c3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
