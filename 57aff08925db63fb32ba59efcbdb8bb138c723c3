@@ -39,6 +39,30 @@
       },
       "revId": "57aff08925db63fb32ba59efcbdb8bb138c723c3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4be930f5_a93d68b7",
+        "filename": "shell/openstack-cleanup-orphaned-objects.sh",
+        "patchSetId": 8
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-10-21T11:25:02Z",
+      "side": 1,
+      "message": "Okay, I\u0027ll trust this RegEx will do the business. I implemented this and just tested in the sandbox here:\n\nhttps://jenkins.onap.org/sandbox/job/ci-management-openstack-cron/7/console\n\nThere were no ports to delete, but no errors produced in this job.",
+      "parentUuid": "94a2b863_d372c617",
+      "range": {
+        "startLine": 55,
+        "startChar": 4,
+        "endLine": 55,
+        "endChar": 8
+      },
+      "revId": "57aff08925db63fb32ba59efcbdb8bb138c723c3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
