@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d45de96_8b4842e2",
+        "filename": "shell/openstack-cleanup-orphaned-ports.sh",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-21T15:03:58Z",
+      "side": 1,
+      "message": "rm ws/tabs",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 4
+      },
+      "revId": "4d66452bd5354d3047362b67ca6c9cef175aa322",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
