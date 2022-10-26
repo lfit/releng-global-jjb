@@ -1,0 +1,8 @@
+---
+prelude: >
+    The SBOM generator script creates an spdx file in the root level.
+    When the artifacts are staged the file gets overwritten.
+fixes:
+  - |
+    Create the spdx filename as: ${PROJECT_NAME}-sbom-${release_version}.spdx
+    and then copy the spdx file into the root of the $PROJECT dir.
