@@ -32,8 +32,29 @@ tar -xzf "${SBOM_LOCATION}" -C ${SBOM_PATH}
 echo "INFO: running spdx-sbom-generator"
 cd ${SBOM_PATH}
 ./spdx-sbom-generator "${SBOM_FLAGS:-}" -g "$GLOBAL_SETTINGS_FILE" -o "${WORKSPACE}"/archives
-mv "${WORKSPACE}"/archives/bom-Java-Maven.spdx "${WORKSPACE}"/archives/sbom-"${JOB_BASE_NAME}"
-cp "${WORKSPACE}"/archives/sbom-"${JOB_BASE_NAME}" "${WORKSPACE}"/m2repo/sbom-"${JOB_BASE_NAME}"
+mv "${WORKSPACE}/archives/bom-Java-Maven.spdx" \
+    "${WORKSPACE}/archives/${PROJECT}-sbom-${release_version}.spdx"
+
+# Maven artifacts
+if [[ "$JOB_NAME" =~ "maven" ]]; then
+    mvn_group_id=$(xmlstarlet sel \
+        -N "x=http://maven.apache.org/POM/4.0.0" \
+        -t \
+        --if "/x:project/x:groupId" \
+        -v "/x:project/x:groupId" \
+        --elif "/x:project/x:parent/x:groupId" \
+        -v "/x:project/x:parent/x:groupId" \
+        --else -o "" \
+        pom.xml 2>/dev/null)
+
+    group_id_path="${mvn_group_id//.//}"
+    artifactID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
+    release_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+
+    cp "${WORKSPACE}/archives/${PROJECT}-sbom-${release_version}.spdx" \
+        "${WORKSPACE}/m2repo/${group_id_path}/${PROJECT}-sbom-${release_version}.spdx"
+fi
+
 mv spdx-sbom-generator /tmp/
 rm /tmp/spdx*
 echo "---> sbom-generator.sh ends"
