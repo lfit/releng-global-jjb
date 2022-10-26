@@ -1,0 +1,9 @@
+---
+prelude: >
+    The SBOM generator script creates an spdx file in the root level of m2repo
+    of the $project. When the artifacts are pushed the files gets overwritten.
+fixes:
+  - |
+    Find all the artifact version directories that match the release version
+    within the namespace and copy the spdx file into each of the version
+    directories.
