@@ -22,6 +22,29 @@
       },
       "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "236bc63b_aca9ce9e",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-10-27T16:55:47Z",
+      "side": 1,
+      "message": "So, taking for example this job:\nhttps://jenkins.onap.org/view/dcaegen2/job/dcaegen2-collectors-hv-ves-maven-stage-master/1220/console\n\nThe versioned folder exists for several sub components of the artifacts. \nI don\u0027t think there is a root one. \nWill it pick the 1st one found?\n\nThanks for this solution!",
+      "range": {
+        "startLine": 40,
+        "startChar": 7,
+        "endLine": 40,
+        "endChar": 96
+      },
+      "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
