@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e0eb6400_96eb5642",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-27T21:04:33Z",
+      "side": 1,
+      "message": "putting a -2 so that it does not get merged.",
+      "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5b9f496b_576f46ef",
@@ -26,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "3c105625_cac83129",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-27T21:04:33Z",
+      "side": 1,
+      "message": "yes, `version.properties` file is something that needs to be created by the $project, since there should be some way to verify and locate where you\u0027ll want to place the spdx file in the namespace, unless we want to keep it in the root level in a diff name.",
+      "parentUuid": "5b9f496b_576f46ef",
+      "range": {
+        "startLine": 36,
+        "startChar": 13,
+        "endLine": 36,
+        "endChar": 28
+      },
+      "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "236bc63b_aca9ce9e",
         "filename": "shell/sbom-generator.sh",
         "patchSetId": 1
@@ -37,6 +78,30 @@
       "writtenOn": "2022-10-27T16:55:47Z",
       "side": 1,
       "message": "So, taking for example this job:\nhttps://jenkins.onap.org/view/dcaegen2/job/dcaegen2-collectors-hv-ves-maven-stage-master/1220/console\n\nThe versioned folder exists for several sub components of the artifacts. \nI don\u0027t think there is a root one. \nWill it pick the 1st one found?\n\nThanks for this solution!",
+      "range": {
+        "startLine": 40,
+        "startChar": 7,
+        "endLine": 40,
+        "endChar": 96
+      },
+      "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1c4d536_7fcc5567",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-27T21:04:33Z",
+      "side": 1,
+      "message": "The spdx file should be created in every version folder, unless you want to keep at the root level and gets overwritten.",
+      "parentUuid": "236bc63b_aca9ce9e",
       "range": {
         "startLine": 40,
         "startChar": 7,
