@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b4518938_78928f21",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T22:46:26Z",
+      "side": 1,
+      "message": "Using xmlstarlet is better since you get to check \u0027project.groupId\u0027 or \u0027project.parent.groupId\u0027 conditionally if that is inherited.",
+      "parentUuid": "3bef784e_ca1053ca",
+      "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "063652bc_7455ca26",
         "filename": "shell/sbom-generator.sh",
         "patchSetId": 12
@@ -31,6 +49,24 @@
       "writtenOn": "2022-10-28T17:04:16Z",
       "side": 1,
       "message": "artifactID is not used.",
+      "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b74eeb94_aa6ac5df",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T22:46:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "063652bc_7455ca26",
       "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
