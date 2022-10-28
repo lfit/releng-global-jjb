@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f7dddb2_a2a0006e",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T12:32:33Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "75bdf0ad_7e472577",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 16
+      },
+      "revId": "12b5fb262c6474153e3672dca9ca340cfb5e01d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f9ff089e_f5cc7f89",
@@ -37,6 +61,30 @@
       "writtenOn": "2022-10-28T09:22:07Z",
       "side": 1,
       "message": "??",
+      "range": {
+        "startLine": 58,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 2
+      },
+      "revId": "12b5fb262c6474153e3672dca9ca340cfb5e01d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64a6e425_acd7497e",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T12:32:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9ff089e_f5cc7f89",
       "range": {
         "startLine": 58,
         "startChar": 0,
