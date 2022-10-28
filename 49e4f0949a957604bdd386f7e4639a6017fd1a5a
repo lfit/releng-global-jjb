@@ -67,6 +67,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d810e738_1ade8839",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2022-10-28T05:37:52Z",
+      "side": 1,
+      "message": "What happens if ${release_version} do not exist?\nI presume it should exit with failure then?",
+      "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "236bc63b_aca9ce9e",
         "filename": "shell/sbom-generator.sh",
         "patchSetId": 1
