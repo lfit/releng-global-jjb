@@ -36,6 +36,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e31bace_9763523a",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T22:46:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "b4518938_78928f21",
+      "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "063652bc_7455ca26",
