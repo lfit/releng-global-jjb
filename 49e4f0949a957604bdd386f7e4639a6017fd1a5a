@@ -100,6 +100,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1113d5f0_05a286be",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T23:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c105625_cac83129",
+      "range": {
+        "startLine": 36,
+        "startChar": 13,
+        "endLine": 36,
+        "endChar": 28
+      },
+      "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "087bfa86_afc81e7e",
@@ -137,6 +161,30 @@
       "side": 1,
       "message": "not using this anymore",
       "parentUuid": "087bfa86_afc81e7e",
+      "range": {
+        "startLine": 37,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 1
+      },
+      "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d93ebc36_81ce34ad",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T23:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60cdb377_f2442eeb",
       "range": {
         "startLine": 37,
         "startChar": 0,
@@ -291,6 +339,30 @@
       "side": 1,
       "message": "Are you saying you would only do a partial version bump for a project release and release it?",
       "parentUuid": "67a48b7c_caa9f7f4",
+      "range": {
+        "startLine": 40,
+        "startChar": 7,
+        "endLine": 40,
+        "endChar": 96
+      },
+      "revId": "49e4f0949a957604bdd386f7e4639a6017fd1a5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c19c965e_94f732ac",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T23:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c5124817_96283f06",
       "range": {
         "startLine": 40,
         "startChar": 7,

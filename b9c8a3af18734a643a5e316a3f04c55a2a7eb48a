@@ -104,6 +104,24 @@
       "message": "Shouldn\u0027t this include global-settings \u0026 settings options, too?",
       "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "19885e3e_2bb36080",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-10-28T23:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c174a422_ae02a098",
+      "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
