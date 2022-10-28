@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "75bdf0ad_7e472577",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2022-10-28T09:30:00Z",
+      "side": 1,
+      "message": "isn\u0027t the sbom file called ${PROJECT_NAME}-sbom-${release_version}.spdx",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 16
+      },
+      "revId": "12b5fb262c6474153e3672dca9ca340cfb5e01d6",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f9ff089e_f5cc7f89",
         "filename": "shell/sbom-generator.sh",
         "patchSetId": 5
