@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bef784e_ca1053ca",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-10-28T17:04:16Z",
+      "side": 1,
+      "message": "Using \u0027mvn help:evaluate\u0027 for \u0027project.groupId\u0027 would be more consistent.",
+      "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "063652bc_7455ca26",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-10-28T17:04:16Z",
+      "side": 1,
+      "message": "artifactID is not used.",
+      "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c174a422_ae02a098",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2022-10-28T17:04:16Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this include global-settings \u0026 settings options, too?",
+      "revId": "b9c8a3af18734a643a5e316a3f04c55a2a7eb48a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
