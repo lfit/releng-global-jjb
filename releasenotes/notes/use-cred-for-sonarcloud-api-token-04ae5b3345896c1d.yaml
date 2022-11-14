@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Replace the usage of plaintext sonarcloud api token with a Jenkins credential.
+    The Jenkins credential ID can be passed through 'sonarcloud-api-token-cred-id'
+    variable.
