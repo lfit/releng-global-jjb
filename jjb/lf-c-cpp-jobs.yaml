@@ -490,7 +490,7 @@
     make-opts: ""
     pre-build: ""
     sonar-scanner-version: 3.3.0.1492
-    sonarcloud-api-token: ""
+    sonarcloud-api-token-cred-id: sonarcloud-api-token
     sonarcloud-organization: ""
     sonarcloud-project-key: ""
     stream: master
@@ -508,9 +508,14 @@
             SONAR_SCANNER_VERSION={sonar-scanner-version}
             PROJECT_KEY={sonarcloud-project-key}
             PROJECT_ORGANIZATION={sonarcloud-organization}
-            API_TOKEN={sonarcloud-api-token}
       - shell: !include-raw-escape: ../shell/cmake-sonar.sh
       - lf-provide-maven-settings-cleanup
+
+    wrappers:
+      - credentials-binding:
+          - text:
+              credential-id: '{sonarcloud-api-token-cred-id}'
+              variable: API_TOKEN
 
 - job-template:
     name: "{project-name}-cmake-sonar"
