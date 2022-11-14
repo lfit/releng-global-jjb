@@ -39,7 +39,7 @@ Runs Sonar against a Maven project and pushes results to SonarCloud.
     :mvn-settings: Maven settings.xml file containing credentials to use.
     :sonarcloud-project-key: SonarCloud project key.
     :sonarcloud-project-organization: SonarCloud project organization.
-    :sonarcloud-api-token: SonarCloud API Token.
+    :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
     :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: openjdk11)
     :sonarcloud-qualitygate-wait: SonarCloud flag that forces the analysis step to
         wait for the quality gate result. (default: false)
@@ -526,7 +526,8 @@ multi-branch configuration.
     :sonarcloud-project-key: SonarCloud project key. (default: '')
     :sonarcloud-project-organization: SonarCloud project organization.
         (default: '')
-    :sonarcloud-api-token: SonarCloud API Token. (default: '')
+    :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
+        (default: '')
     :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
@@ -589,7 +590,8 @@ This job runs on dev branches and its triggered on new patchsets.
     :sonarcloud-project-key: SonarCloud project key. (default: '')
     :sonarcloud-project-organization: SonarCloud project organization.
         (default: '')
-    :sonarcloud-api-token: SonarCloud API Token. (default: '')
+    :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
+        (default: '')
     :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
     :sonarcloud-qualitygate-wait: SonarCloud flag that forces the analysis step to
         wait for the quality gate result. (default: false)
