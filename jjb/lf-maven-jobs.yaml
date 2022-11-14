@@ -1340,6 +1340,10 @@
           mvn-version: "{mvn-version}"
       - lf-update-java-alternatives:
           java-version: "{java-version}"
+      - credentials-binding:
+          - text:
+              credential-id: sonarcloud-api-token
+              variable: API_TOKEN
       - inject:
           # Switch this to the sonar wrapper when JJB 2.0 is available
           properties-content: |
@@ -1347,7 +1351,6 @@
             PROJECT_KEY={sonarcloud-project-key}
             PROJECT_ORGANIZATION={sonarcloud-project-organization}
             MAVEN_GOALS={mvn-goals}
-            API_TOKEN={sonarcloud-api-token}
             SONARCLOUD_JAVA_VERSION={sonarcloud-java-version}
             SCAN_DEV_BRANCH={scan-dev-branch}
             SONARCLOUD_QUALITYGATE_WAIT={sonarcloud-qualitygate-wait}
