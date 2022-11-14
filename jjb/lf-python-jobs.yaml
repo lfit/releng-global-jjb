@@ -420,7 +420,7 @@
     sonarcloud: false
     sonarcloud-project-key: ""
     sonarcloud-project-organization: ""
-    sonarcloud-api-token: ""
+    sonarcloud-api-token-cred-id: sonarcloud-api-token
     sonarcloud-qualitygate-wait: false
     # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
     # Projects not compatible with jdk11 can set java-version to something else
@@ -478,6 +478,12 @@
             however to use a specific version of the sonar-maven-plugin we
             can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
 
+    wrappers:
+      - credentials-binding:
+          - text:
+              credential-id: '{sonarcloud-api-token-cred-id}'
+              variable: API_TOKEN
+
     builders:
       - lf-infra-pre-build
       - lf-infra-tox-install:
@@ -502,7 +508,6 @@
                 sonarcloud-project-key: "{sonarcloud-project-key}"
                 # yamllint disable-line rule:line-length
                 sonarcloud-project-organization: "{sonarcloud-project-organization}"
-                sonarcloud-api-token: "{sonarcloud-api-token}"
                 sonarcloud-java-version: "{sonarcloud-java-version}"
                 sonarcloud-qualitygate-wait: "{sonarcloud-qualitygate-wait}"
                 scan-dev-branch: "{scan-dev-branch}"
