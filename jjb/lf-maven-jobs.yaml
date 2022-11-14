@@ -1207,6 +1207,17 @@
             Maven goals to pass to the Sonar call. Typically sonar:sonar
             however to use a specific version of the sonar-maven-plugin we
             can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
+      - credentials:
+          name: API_TOKEN
+          type: secrettext
+          default: "sonarcloud-api-token"
+          description: "Sonar API Token"
+
+    wrappers:
+      - credentials-binding:
+          - text:
+              credential-id: sonarcloud-api-token
+              variable: API_TOKEN_TWO
 
     triggers:
       - timed: "{obj:cron}"
@@ -1347,7 +1358,6 @@
             PROJECT_KEY={sonarcloud-project-key}
             PROJECT_ORGANIZATION={sonarcloud-project-organization}
             MAVEN_GOALS={mvn-goals}
-            API_TOKEN={sonarcloud-api-token}
             SONARCLOUD_JAVA_VERSION={sonarcloud-java-version}
             SCAN_DEV_BRANCH={scan-dev-branch}
             SONARCLOUD_QUALITYGATE_WAIT={sonarcloud-qualitygate-wait}
