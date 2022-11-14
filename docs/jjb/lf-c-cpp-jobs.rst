@@ -285,7 +285,7 @@ configuration does not support multi-branch.
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Configure in
         defaults.yaml)
-    :sonarcloud-api-token: SonarCloud API Token.
+    :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
     :sonarcloud-organization: SonarCloud project organization.
     :sonarcloud-project-key: SonarCloud project key.
 
