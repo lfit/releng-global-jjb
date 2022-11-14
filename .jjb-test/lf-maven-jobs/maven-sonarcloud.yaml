@@ -12,7 +12,7 @@
     sonarcloud: true
     sonarcloud-project-key: KEY
     sonarcloud-project-organization: ORGANIZATION
-    sonarcloud-api-token: TOKEN
+    sonarcloud-api-token-cred-id: TOKEN
     scan-dev-branch: false
     sonarcloud-qualitygate-wait: false
 
@@ -29,7 +29,7 @@
     sonarcloud: true
     sonarcloud-project-key: KEY
     sonarcloud-project-organization: ORGANIZATION
-    sonarcloud-api-token: TOKEN
+    sonarcloud-api-token-cred-id: TOKEN
     sonar-prescan-script: |
       echo "Run script at start of job."
     scan-dev-branch: false
@@ -48,6 +48,6 @@
     sonarcloud: true
     sonarcloud-project-key: KEY
     sonarcloud-project-organization: ORGANIZATION
-    sonarcloud-api-token: TOKEN
+    sonarcloud-api-token-cred-id: TOKEN
     scan-dev-branch: true
     sonarcloud-qualitygate-wait: true

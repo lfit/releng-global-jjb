@@ -1161,7 +1161,7 @@
     sonarcloud: false
     sonarcloud-project-key: ""
     sonarcloud-project-organization: ""
-    sonarcloud-api-token: ""
+    sonarcloud-api-token-cred-id: ""
     sonarcloud-qualitygate-wait: false
     # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
     # Projects not compatible with jdk11 can set java-version to something else
@@ -1208,6 +1208,12 @@
             however to use a specific version of the sonar-maven-plugin we
             can call "org.codehaus.mojo:sonar-maven-plugin:3.3.0.603:sonar".
 
+    wrappers:
+      - credentials-binding:
+          - text:
+              credential-id: '{sonarcloud-api-token-cred-id}'
+              variable: API_TOKEN
+
     triggers:
       - timed: "{obj:cron}"
       - gerrit:
@@ -1247,7 +1253,7 @@
                 mvn-version: "{mvn-version}"
                 sonarcloud-project-key: "{sonarcloud-project-key}"
                 sonarcloud-project-organization: "{sonarcloud-project-organization}"
-                sonarcloud-api-token: "{sonarcloud-api-token}"
+                sonarcloud-api-token-cred-id: "{sonarcloud-api-token-cred-id}"
                 sonarcloud-java-version: "{sonarcloud-java-version}"
                 sonarcloud-qualitygate-wait: "{sonarcloud-qualitygate-wait}"
                 scan-dev-branch: "{scan-dev-branch}"
@@ -1283,7 +1289,7 @@
                 mvn-version: "{mvn-version}"
                 sonarcloud-project-key: "{sonarcloud-project-key}"
                 sonarcloud-project-organization: "{sonarcloud-project-organization}"
-                sonarcloud-api-token: "{sonarcloud-api-token}"
+                sonarcloud-api-token-cred-id: "{sonarcloud-api-token-cred-id}"
                 sonarcloud-java-version: "{sonarcloud-java-version}"
                 sonarcloud-qualitygate-wait: "{sonarcloud-qualitygate-wait}"
                 scan-dev-branch: "{scan-dev-branch}"
@@ -1347,7 +1353,6 @@
             PROJECT_KEY={sonarcloud-project-key}
             PROJECT_ORGANIZATION={sonarcloud-project-organization}
             MAVEN_GOALS={mvn-goals}
-            API_TOKEN={sonarcloud-api-token}
             SONARCLOUD_JAVA_VERSION={sonarcloud-java-version}
             SCAN_DEV_BRANCH={scan-dev-branch}
             SONARCLOUD_QUALITYGATE_WAIT={sonarcloud-qualitygate-wait}
