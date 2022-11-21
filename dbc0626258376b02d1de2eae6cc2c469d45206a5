@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "25c4be94_20e68ab9",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 1213,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-11-21T19:36:30Z",
+      "side": 1,
+      "message": "This needs to be defined above in line 1164 as empty \nsonarcloud-api-token-cred-id: \"\"",
+      "range": {
+        "startLine": 1213,
+        "startChar": 31,
+        "endLine": 1213,
+        "endChar": 59
+      },
+      "revId": "dbc0626258376b02d1de2eae6cc2c469d45206a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
