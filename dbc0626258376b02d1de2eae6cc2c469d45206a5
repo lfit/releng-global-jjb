@@ -22,6 +22,30 @@
       },
       "revId": "dbc0626258376b02d1de2eae6cc2c469d45206a5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "debaa109_be5869ca",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 1213,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-11-22T23:42:29Z",
+      "side": 1,
+      "message": "Hi Jessica,\nThanks for your feedback, actually setting that variable as empty generates an undesired behavior that\u0027s why I\u0027m skipping it. I will share more details through Slack so we can figure out something else. Thanks.",
+      "parentUuid": "25c4be94_20e68ab9",
+      "range": {
+        "startLine": 1213,
+        "startChar": 31,
+        "endLine": 1213,
+        "endChar": 59
+      },
+      "revId": "dbc0626258376b02d1de2eae6cc2c469d45206a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
