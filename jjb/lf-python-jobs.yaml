@@ -86,6 +86,7 @@
     java-version: openjdk11 # Scanner is a jar
     nexus-iq-cli-version: 1.140.0-01
     nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
+    nexus-target-build: "**/*"
     pre-build-script: "# pre-build script goes here"
     python-version: python3
     requirements-file: requirements.txt
@@ -118,6 +119,10 @@
           name: NEXUS_IQ_CLI_VERSION
           default: "{nexus-iq-cli-version}"
           description: Nexus IQ CLI jar to download and run.
+      - string:
+          name: NEXUS_TARGET_BUILD
+          default: "{nexus-target-build}"
+          description: File or dir to scan by Nexus CLI.
 
     wrappers:
       - lf-infra-wrappers:

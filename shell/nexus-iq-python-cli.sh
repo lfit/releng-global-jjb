@@ -17,11 +17,6 @@ echo "---> nexus-iq-python-cli.sh"
 set -eu
 # do not print commands, credentials should not be logged
 set +x
-# check if tox established the prereqs for this analysis
-if [[ ! -f $REQUIREMENTS_FILE ]]; then
-    echo "ERROR: failed to find file $REQUIREMENTS_FILE"
-    exit 1
-fi
 CLI_LOCATION="/tmp/nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar"
 echo "INFO: downloading nexus-iq-cli version $NEXUS_IQ_CLI_VERSION"
 wget -nv "https://download.sonatype.com/clm/scanner/nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar" -O "${CLI_LOCATION}"
@@ -31,7 +26,7 @@ echo "INFO: running nexus-iq-cli on project $NEXUS_IQ_PROJECT_NAME and file $REQ
 # result.json is a mystery
 java -jar "${CLI_LOCATION}" @cli-auth.txt \
     -s https://nexus-iq.wl.linuxfoundation.org -i "${NEXUS_IQ_PROJECT_NAME}" \
-    -t build -r result.json "${REQUIREMENTS_FILE}"
+    -t build -r result.json "${NEXUS_TARGET_BUILD}"
 rm cli-auth.txt
 rm "${CLI_LOCATION}"
 

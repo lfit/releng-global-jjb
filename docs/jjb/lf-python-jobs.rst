@@ -112,6 +112,8 @@ does not support multi-branch.
         share a Nexus IQ system to avoid project name collision. We recommend
         inserting a trailing - dash if using this parameter.
         For example 'odl-'. (default: '')
+    :nexus-target-build: Target directory or file to be scanned by Nexus IQ CLI
+        (default: "\*\*/\*")
     :pre-build-script: Shell script to run before tox. Useful for setting up
         dependencies. (default: a string with a shell comment)
     :python-version: Python version to invoke pip install of tox-pyenv
