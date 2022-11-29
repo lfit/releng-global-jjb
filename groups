@@ -1,4 +1,5 @@
-# UUID                                                                               	Group Name
+# UUID                                  	Group Name
 #
-d68d00a2419f8ff627fc120cf9dd9055ae422153                                             	GitHub Replication
-d6bd689cc6661d154f111acc25a4d20bb5870ac0                                             	saml/lf-gerrit-releng-global-jjb-committers
+824623e509ec71c6574dad386e59e709eaedd178	Gitlab Replication
+d68d00a2419f8ff627fc120cf9dd9055ae422153	GitHub Replication
+d6bd689cc6661d154f111acc25a4d20bb5870ac0	saml/lf-gerrit-releng-global-jjb-committers
