@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Replace Nexus IQ build Target from "${REQUIREMENTS_FILE}" to "${NEXUS_TARGET_BUILD}".
+    The scanner is only including the requirements.txt file in its scan which
+    should not contain other information than python package requirements.
+    Instead, use a "${NEXUS_TARGET_BUILD}" parameter which the user can optionally provide to
+    the scanner to indicate a file or directory to include in the scan. By default, this
+    variable is configured to scan all files in the repo.
