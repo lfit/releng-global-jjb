@@ -26,7 +26,7 @@ echo "INFO: running nexus-iq-cli on project $NEXUS_IQ_PROJECT_NAME and file $REQ
 # result.json is a mystery
 java -jar "${CLI_LOCATION}" @cli-auth.txt \
     -s https://nexus-iq.wl.linuxfoundation.org -i "${NEXUS_IQ_PROJECT_NAME}" \
-    -t build -r result.json "${NEXUS_TARGET_BUILD}"
+    -t build -r result.json ${NEXUS_TARGET_BUILD}
 rm cli-auth.txt
 rm "${CLI_LOCATION}"
 

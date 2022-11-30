@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Remove unnecessary quotes around the variable that processes
+    glob patterns.
