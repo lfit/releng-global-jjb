@@ -87,6 +87,24 @@
       "parentUuid": "b8b95651_74bda10b",
       "revId": "631a7f22a7e383d2ed5886e721cd370ff85613d4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a87cfbbf_57ef93fc",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2022-11-30T22:54:44Z",
+      "side": 1,
+      "message": "IMU using \"\" or {} around a $var is required (not both). If you look at how we are handling archive artifacts glob patterns its the same, so pre-commit/shellcheck should not be a problem. :)",
+      "parentUuid": "69d8aa68_ff224751",
+      "revId": "631a7f22a7e383d2ed5886e721cd370ff85613d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
