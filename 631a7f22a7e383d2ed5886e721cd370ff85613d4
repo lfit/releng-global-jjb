@@ -33,6 +33,24 @@
       "message": "I\u0027m surprised shellcheck isn\u0027t flagging this. Can you please make sure to run pre-commit locally (if you don\u0027t have it setup) to verify, I suspect we don\u0027t have pre-commit properly running in CI due to issues with C7 nodes :-/",
       "revId": "631a7f22a7e383d2ed5886e721cd370ff85613d4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dcb79739_02de0c77",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-11-30T18:34:23Z",
+      "side": 1,
+      "message": "Working on updating this patch... pre commit does not flag this line for me. I only get flagged on documentation. Is this regarding the fact that we need to have the quotes?",
+      "parentUuid": "d9aad896_04189a85",
+      "revId": "631a7f22a7e383d2ed5886e721cd370ff85613d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
