@@ -51,6 +51,24 @@
       "parentUuid": "d9aad896_04189a85",
       "revId": "631a7f22a7e383d2ed5886e721cd370ff85613d4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8b95651_74bda10b",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2022-11-30T18:48:35Z",
+      "side": 1,
+      "message": "Is there a better way to pass this variable? I am making few sandbox tests but only removing the quotes seems to work to recursively include all the files in the scanner. Basically, we want this lined to be passed like:\n -t build -r result.json **/*",
+      "parentUuid": "dcb79739_02de0c77",
+      "revId": "631a7f22a7e383d2ed5886e721cd370ff85613d4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
