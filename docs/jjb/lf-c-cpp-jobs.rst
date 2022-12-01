@@ -285,7 +285,6 @@ configuration does not support multi-branch.
     :build-node: The node to run build on.
     :jenkins-ssh-credential: Credential to use for SSH. (Configure in
         defaults.yaml)
-    :sonarcloud-api-token: SonarCloud API Token.
     :sonarcloud-organization: SonarCloud project organization.
     :sonarcloud-project-key: SonarCloud project key.
 
@@ -305,6 +304,9 @@ configuration does not support multi-branch.
         setting up dependencies. (default: '')
     :sonar-scanner-version: Version of sonar-scanner to install.
         (see YAML for default value; e.g., 3.3.0.1492)
+    :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
+        This one SHOULDN'T be overwritten as per we are standarizing the credential ID for all
+        projects (default: 'sonarcloud-api-token')
     :submodule-recursive: Whether to checkout submodules recursively.
         (default: true)
     :submodule-timeout: Timeout (in minutes) for checkout operation.

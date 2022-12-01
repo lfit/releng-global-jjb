@@ -195,7 +195,9 @@ https://docs.sonarcloud.io/advanced-setup/ci-based-analysis/sonarscanner-cli/
     :sonarcloud-project-key: SonarCloud project key. (default: '')
     :sonarcloud-project-organization: SonarCloud project organization.
         (default: '')
-    :sonarcloud-api-token: SonarCloud API Token. (default: '')
+    :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
+        This one SHOULDN'T be overwritten as per we are standarizing the credential ID for all
+        projects (default: 'sonarcloud-api-token')
     :sonar-scanner-home: Sonar scanner home directory.
         (default: $WORKSPACE/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux)
     :sonar-scanner-opts: Sonar scanner Java options. (default: '-server')
@@ -308,7 +310,9 @@ https://docs.sonarqube.org/display/PLUG/Python+Coverage+Results+Import
     :sonarcloud-project-key: SonarCloud project key. (default: '')
     :sonarcloud-project-organization: SonarCloud project organization.
         (default: '')
-    :sonarcloud-api-token: SonarCloud API Token. (default: '')
+    :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
+        This one SHOULDN'T be overwritten as per we are standarizing the credential ID for all
+        projects (default: 'sonarcloud-api-token')
     :sonar-mvn-goal: The Maven goal to run the Sonar plugin. (default: sonar:sonar)
     :stream: Keyword used to represent a release code-name.
         Often the same as the branch. (default: master)
