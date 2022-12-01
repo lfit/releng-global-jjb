@@ -46,6 +46,30 @@
       },
       "revId": "dbc0626258376b02d1de2eae6cc2c469d45206a5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26bf98c0_74eae67c",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 1213,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-12-01T09:16:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "debaa109_be5869ca",
+      "range": {
+        "startLine": 1213,
+        "startChar": 31,
+        "endLine": 1213,
+        "endChar": 59
+      },
+      "revId": "dbc0626258376b02d1de2eae6cc2c469d45206a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
