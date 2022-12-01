@@ -3,4 +3,8 @@ features:
   - |
     Replace the usage of plaintext sonarcloud api token with a Jenkins credential.
     The default value for the credential ID is 'sonarcloud-api-token' and we are
-    standarizing it for all projects so this parameter does not require an override
+    standarizing it for all projects so this parameter does not require an override.
+upgrade:
+  - |
+    Parameter sonarcloud-api-token is NOT required anymore after upgrading to this
+    GlobalJJB version, please remove it from all JJB projects.
