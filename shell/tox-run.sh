@@ -24,7 +24,7 @@ cd "$WORKSPACE/$TOX_DIR" || exit 1
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3.8 --venv-file /tmp/.toxenv tox tox-pyenv virtualenv
+lf-activate-venv --python python3.8 --venv-file /tmp/.toxenv tox==3.27.1 tox-pyenv virtualenv
 
 if [[ -d /opt/pyenv ]]; then
     echo "---> Setting up pyenv"
