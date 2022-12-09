@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98b270f0_22505e8b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2022-12-09T03:02:22Z",
+      "side": 1,
+      "message": "jjb-deploy lf-infra-global-jjb-tox-verify-any",
+      "revId": "07c62baeee27086343152a9c89093ca99a9f99d9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
