@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Pin tox version on rtd-verify.sh script until tox>=4.0.2 and
+    tox-pyenv>=1.1.0 compatibility issues and bugs are resolved.
