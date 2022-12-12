@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "055d3e62_e82d6f9f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-12-12T20:03:24Z",
+      "side": 1,
+      "message": "Do we still have a problem with circular dependencies and the verify jobs?",
+      "revId": "02860f86d24223854948d1d13a91a77496e7bd0f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
