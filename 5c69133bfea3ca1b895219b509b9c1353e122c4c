@@ -16,6 +16,23 @@
       "message": "Need a review on this change...",
       "revId": "5c69133bfea3ca1b895219b509b9c1353e122c4c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36677548_d6d898ad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2022-12-22T16:19:52Z",
+      "side": 1,
+      "message": "Need this merged first:\nhttps://git.opendaylight.org/gerrit/c/releng/builder/+/103731",
+      "revId": "5c69133bfea3ca1b895219b509b9c1353e122c4c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
