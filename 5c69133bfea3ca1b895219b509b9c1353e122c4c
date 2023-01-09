@@ -50,6 +50,29 @@
       "message": "recheck",
       "revId": "5c69133bfea3ca1b895219b509b9c1353e122c4c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e532a6d_e26edd4d",
+        "filename": "shell/cmake-sonarqube.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-09T08:10:22Z",
+      "side": 1,
+      "message": "Not sure why this got merged in urgency. I dislike the idea of installing dependencies from global-jjb scripts run time, while we can do these through the ansible roles which would potentially avoid making minor releases. Please move these changes into one of the relevent ansible-roles repo.",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 2
+      },
+      "revId": "5c69133bfea3ca1b895219b509b9c1353e122c4c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
