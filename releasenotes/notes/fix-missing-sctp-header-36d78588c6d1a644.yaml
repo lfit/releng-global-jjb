@@ -1,4 +1,0 @@
----
-fixes:
-  - |
-    Address missing sctp.h header file during sonarqube cmake/build

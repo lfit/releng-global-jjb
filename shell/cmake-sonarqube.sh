@@ -15,20 +15,6 @@ echo "---> cmake-sonarqube.sh"
 
 set -eux -o pipefail
 
-# Add missing sctp.h header file to prevent cmake/build failure
-if (grep Ubuntu /etc/os-release > /dev/null 2>&1); then
-    echo "Installing libsctp-dev dependency for Ubuntu"
-    sudo apt-get update
-    sudo apt-get install -y libsctp-dev
-elif (grep RedHat /etc/os-release > /dev/null 2>&1) || \
-     (grep CentOS /etc/os-release > /dev/null 2>&1); then
-    echo "Installing lksctp-tools-devel dependency for CentOS/RedHat"
-    sudo yum install -y lksctp-tools-devel
-else
-    echo "Unmatched OS/Distribution"
-    echo "Missing sctp library not installed"
-fi
-
 build_dir="${BUILD_DIR:-$WORKSPACE/build}"
 build_wrap_dir="${BUILD_WRAP_DIR:-$WORKSPACE/bw-output}"
 cmake_opts="${CMAKE_OPTS:-}"
