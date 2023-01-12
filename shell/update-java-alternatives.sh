@@ -39,12 +39,18 @@ case "${OS}" in
     fedora|centos|redhat)
         echo "---> RedHat type system detected"
         update_java_redhat
-        alternatives="/usr/sbin/alternatives"
+        source /etc/os-release
+        # Binary has a different name across CentOS7/8
+        if [ "$VERSION_ID" -eq 7 ]; then
+	    alternatives="/usr/sbin/update-alternatives"
+        else
+            alternatives="/usr/sbin/alternatives"
+        fi
     ;;
     ubuntu|debian)
         echo "---> Ubuntu/Debian system detected"
         update_java_ubuntu
-        alternatives="/usr/sbin/update-alternatives"
+        alternatives="/usr/bin/update-alternatives"
     ;;
 esac
 
