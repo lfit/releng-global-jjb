@@ -22,11 +22,15 @@ echo "INFO: downloading nexus-iq-cli version $NEXUS_IQ_CLI_VERSION"
 wget -nv "https://download.sonatype.com/clm/scanner/nexus-iq-cli-${NEXUS_IQ_CLI_VERSION}.jar" -O "${CLI_LOCATION}"
 echo "-a" > cli-auth.txt
 echo "${NEXUS_IQ_USER}:${NEXUS_IQ_PASSWORD}" >> cli-auth.txt
-echo "INFO: running nexus-iq-cli on project $NEXUS_IQ_PROJECT_NAME and file $REQUIREMENTS_FILE"
+if [ -z "${NEXUS_TARGET_BUILD}" ]; then
+    echo "Warning: ${NEXUS_TARGET_BUILD} has not been set"
+fi
+echo "INFO: running nexus-iq-cli on project $NEXUS_IQ_PROJECT_NAME and file ${NEXUS_IQ_PROJECT_NAME}"
 # result.json is a mystery
+# Do NOT double-quote ${NEXUS_TARGET_BUILD} below; causes breakage
 java -jar "${CLI_LOCATION}" @cli-auth.txt \
     -s https://nexus-iq.wl.linuxfoundation.org -i "${NEXUS_IQ_PROJECT_NAME}" \
-    -t build -r result.json ${NEXUS_TARGET_BUILD}
+    -t build -r result.json "${NEXUS_TARGET_BUILD}"
 rm cli-auth.txt
 rm "${CLI_LOCATION}"
 

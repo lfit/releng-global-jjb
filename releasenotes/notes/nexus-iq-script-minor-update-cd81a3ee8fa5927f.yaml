@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    The Nexus IQ script was outputting the wrong variable during
+    execution, which could be misleading in the job console logs. Also
+    added a warning message if the NEXUS_TARGET_BUILD variable has not
+    been set/populated.
+
