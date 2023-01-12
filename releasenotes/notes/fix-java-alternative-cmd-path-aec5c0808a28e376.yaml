@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    The path and command for update-alternatives/alternatives was
+    not being set correctly between CentOS7/8 and was incorrect under all
+    tested ubuntu versions. It did not seem to cause jobs to break, so was
+    perhaps not being detected in all cases.
