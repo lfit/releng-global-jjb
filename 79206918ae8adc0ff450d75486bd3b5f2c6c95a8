@@ -16,6 +16,29 @@
       "message": "Minor bug fixes here; please can you take a gander?",
       "revId": "79206918ae8adc0ff450d75486bd3b5f2c6c95a8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2b7646b_8851b5e4",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-01-12T17:52:18Z",
+      "side": 1,
+      "message": "When i added this line, I purposely removed the double quotes because the build was not working and it was failing. I believe maven was not translating this right\n\nCan you please test this in the sandbox?",
+      "range": {
+        "startLine": 32,
+        "startChar": 27,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "79206918ae8adc0ff450d75486bd3b5f2c6c95a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
