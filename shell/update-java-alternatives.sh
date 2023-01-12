@@ -14,11 +14,11 @@ echo "---> update-java-alternatives.sh"
 
 JAVA_ENV_FILE="/tmp/java.env"
 
-JAVA_RELEASE=$(echo $SET_JDK_VERSION | sed 's/[a-zA-Z]//g')
-JAVA_RELEASE_NBR=$(echo $SET_JDK_VERSION | sed 's/[a-zA-Z:-]//g')
+JAVA_RELEASE=$(echo "$SET_JDK_VERSION" | sed 's/[a-zA-Z]//g')
+JAVA_RELEASE_NBR=$(echo "$SET_JDK_VERSION" | sed 's/[a-zA-Z:-]//g')
 #TODO check whether is it worth keeping there 2 distinct variables
 update_java_redhat() {
-    if [ ${JAVA_RELEASE} -ge 9 ]; then
+    if [ "${JAVA_RELEASE}" -ge 9 ]; then
         # Java 9 or newer: new version format
         export JAVA_HOME="/usr/lib/jvm/java-${JAVA_RELEASE}-openjdk"
     else
@@ -39,31 +39,32 @@ case "${OS}" in
     fedora|centos|redhat)
         echo "---> RedHat type system detected"
         update_java_redhat
-        alternatives="/usr/sbin/alternatives"
     ;;
     ubuntu|debian)
         echo "---> Ubuntu/Debian system detected"
         update_java_ubuntu
-        alternatives="/usr/sbin/update-alternatives"
     ;;
 esac
+
+alternatives=$(which update-alternatives)
 
 if ! [ -d "$JAVA_HOME" ]; then
     echo "$JAVA_HOME directory not found - trying to find an approaching one"
     if ls -d "$JAVA_HOME"*; then
-        export JAVA_HOME=$(ls -d "$JAVA_HOME"* | head -1)
+	JAVA_HOME=$(ls -d "$JAVA_HOME"* | head -1)
+        export JAVA_HOME
     else
         echo "no $JAVA_HOME directory nor candidate found -exiting " >&2
         exit 17
     fi
 fi
 
-sudo $alternatives --install /usr/bin/java java "${JAVA_HOME}/bin/java" 1
-sudo $alternatives --install /usr/bin/javac javac "${JAVA_HOME}/bin/javac" 1
-sudo $alternatives --install /usr/lib/jvm/java-openjdk java_sdk_openjdk "${JAVA_HOME}" 1
-sudo $alternatives --set java "${JAVA_HOME}/bin/java"
-sudo $alternatives --set javac "${JAVA_HOME}/bin/javac"
-sudo $alternatives --set java_sdk_openjdk "${JAVA_HOME}"
+sudo "$alternatives" --install /usr/bin/java java "${JAVA_HOME}/bin/java" 1
+sudo "$alternatives" --install /usr/bin/javac javac "${JAVA_HOME}/bin/javac" 1
+sudo "$alternatives" --install /usr/lib/jvm/java-openjdk java_sdk_openjdk "${JAVA_HOME}" 1
+sudo "$alternatives" --set java "${JAVA_HOME}/bin/java"
+sudo "$alternatives" --set javac "${JAVA_HOME}/bin/javac"
+sudo "$alternatives" --set java_sdk_openjdk "${JAVA_HOME}"
 echo JAVA_HOME="$JAVA_HOME" > "$JAVA_ENV_FILE"
 
 java -version
