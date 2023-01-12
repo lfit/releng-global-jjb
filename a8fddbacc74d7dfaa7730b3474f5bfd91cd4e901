@@ -16,6 +16,40 @@
       "message": "Please can I get a review on this?",
       "revId": "a8fddbacc74d7dfaa7730b3474f5bfd91cd4e901",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7c83fa2_9a9aa03e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-12T00:52:54Z",
+      "side": 1,
+      "message": "Is this tested with ODL and ONAP jobs? could break a lot of jobs.",
+      "revId": "a8fddbacc74d7dfaa7730b3474f5bfd91cd4e901",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ee64775_0e787449",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-12T00:52:54Z",
+      "side": 1,
+      "message": "rm tabs",
+      "revId": "a8fddbacc74d7dfaa7730b3474f5bfd91cd4e901",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
