@@ -35,6 +35,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f625fcea_c4faad6c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2023-01-12T10:46:49Z",
+      "side": 1,
+      "message": "So this is clearly broken in this (broken for other reasons) job here:\n\nhttps://jenkins.onap.org/job/dcaegen2-master-csit-testsuites/2335/console\n\nBengt and I spotted this while looking at another issue. The failure is not causing the job to exit; perhaps it should? You can see this in the console output:\n\n14:30:54 ---\u003e update-java-alternatives.sh\n14:30:54 ---\u003e Updating Java version\n14:30:54 ---\u003e Ubuntu/Debian system detected\n14:30:54 sudo: /usr/sbin/update-alternatives: command not found\n14:30:54 sudo: /usr/sbin/update-alternatives: command not found\n14:30:54 sudo: /usr/sbin/update-alternatives: command not found\n14:30:54 sudo: /usr/sbin/update-alternatives: command not found\n14:30:54 sudo: /usr/sbin/update-alternatives: command not found\n14:30:54 sudo: /usr/sbin/update-alternatives: command not found\n\nThat\u0027s because the correct path in Ubuntu is actually: /usr/bin/update-alternatives\n\nI\u0027ve patched that job here in production:\n\nhttps://jenkins.onap.org/job/dcaegen2-master-csit-testsuites/2347/console\n\nNow we have:\n\n10:37:36 ---\u003e update-java-alternatives.sh\n10:37:36 ---\u003e Updating Java version\n10:37:36 ---\u003e Ubuntu/Debian system detected\n10:37:36 update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/java to provide /usr/bin/java (java) in manual mode\n10:37:36 update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/javac to provide /usr/bin/javac (javac) in manual mode\n10:37:36 update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64 to provide /usr/lib/jvm/java-openjdk (java_sdk_openjdk) in manual mode\n10:37:36 openjdk version \"11.0.16\" 2022-07-19",
+      "parentUuid": "b7c83fa2_9a9aa03e",
+      "revId": "a8fddbacc74d7dfaa7730b3474f5bfd91cd4e901",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8ee64775_0e787449",
@@ -48,6 +66,24 @@
       "writtenOn": "2023-01-12T00:52:54Z",
       "side": 1,
       "message": "rm tabs",
+      "revId": "a8fddbacc74d7dfaa7730b3474f5bfd91cd4e901",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c242adb8_bbea586c",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2023-01-12T10:46:49Z",
+      "side": 1,
+      "message": "Ah, I was wondering what the little chevron in the diff output meant; that\u0027s helpful, I\u0027ve sorted it.",
+      "parentUuid": "8ee64775_0e787449",
       "revId": "a8fddbacc74d7dfaa7730b3474f5bfd91cd4e901",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
