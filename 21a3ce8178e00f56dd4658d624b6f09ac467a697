@@ -16,6 +16,75 @@
       "message": "This seems to be working alright without this change for ODL, I\u0027ll need to do some digging and get back. ",
       "revId": "21a3ce8178e00f56dd4658d624b6f09ac467a697",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "70bd55e9_be8df3cb",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-12T23:26:43Z",
+      "side": 1,
+      "message": "This is not required tested this on CentOS7 and 8 streams nodes. \n\nCentOS7: \n\n[centos@abelur-cs7-107-1 ~]$ which update-alternatives\n/usr/sbin/update-alternatives\n[centos@abelur-cs7-107-1 ~]$ sudo -i\n[root@abelur-cs7-107-1 ~]# which update-alternatives\n/sbin/update-alternatives\n[root@abelur-cs7-107-1 ~]# ls /usr/sbin/update-alternatives\n/usr/sbin/update-alternatives\n\nCentOS8 Streams:\n\n[centos@abelur-cs8-035-1 ~]$ sudo echo $(which update-alternatives) \n/usr/sbin/update-alternatives\n[root@abelur-cs8-035-1 ~]# which update-alternatives \n/sbin/update-alternatives",
+      "range": {
+        "startLine": 42,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 10
+      },
+      "revId": "21a3ce8178e00f56dd4658d624b6f09ac467a697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e2911993_803ec2f8",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-12T23:26:43Z",
+      "side": 1,
+      "message": "This is the only change required here.",
+      "range": {
+        "startLine": 53,
+        "startChar": 8,
+        "endLine": 53,
+        "endChar": 51
+      },
+      "revId": "21a3ce8178e00f56dd4658d624b6f09ac467a697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ade1635_e0899fdf",
+        "filename": "shell/update-java-alternatives.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-12T23:26:43Z",
+      "side": 1,
+      "message": "Rather than hard coding this value, how about letting the system pick up the right one?\n\nalternatives\u003d$(which update-alternatives)",
+      "range": {
+        "startLine": 53,
+        "startChar": 8,
+        "endLine": 53,
+        "endChar": 51
+      },
+      "revId": "21a3ce8178e00f56dd4658d624b6f09ac467a697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
