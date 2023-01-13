@@ -39,6 +39,30 @@
       },
       "revId": "79206918ae8adc0ff450d75486bd3b5f2c6c95a8",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fe41091_79314f31",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2023-01-13T12:20:01Z",
+      "side": 1,
+      "message": "Yep, this does break the reporting, so let\u0027s add a comment :-)\nSandbox testing here:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/smo-ves-tox-nexus-iq-clm/",
+      "parentUuid": "a2b7646b_8851b5e4",
+      "range": {
+        "startLine": 32,
+        "startChar": 27,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "79206918ae8adc0ff450d75486bd3b5f2c6c95a8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
