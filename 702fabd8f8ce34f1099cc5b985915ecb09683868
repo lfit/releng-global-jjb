@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0aca2953_372d4a40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2023-01-13T13:10:44Z",
+      "side": 1,
+      "message": "...and added to the release notes to explain that module dependencies are now downloaded into the target directory!",
+      "revId": "702fabd8f8ce34f1099cc5b985915ecb09683868",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
