@@ -18,6 +18,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7ec2c8c_8e80d647",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2023-01-13T10:43:33Z",
+      "side": 1,
+      "message": "still, the suggested changes in this patch have been verified and are definitely an improvement to previous not working code.\nmight not be worth it to spend more time on this one at this time or?",
+      "revId": "21a3ce8178e00f56dd4658d624b6f09ac467a697",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "70bd55e9_be8df3cb",
