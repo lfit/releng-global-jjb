@@ -66,6 +66,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ac7d3d07_80aecdab",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-14T04:14:55Z",
+      "side": 1,
+      "message": "Change to \"WARN:\" to make it consistent.",
+      "range": {
+        "startLine": 41,
+        "startChar": 10,
+        "endLine": 41,
+        "endChar": 17
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cb5f4498_b4ad66ec",
         "filename": "shell/nexus-iq-python-cli.sh",
         "patchSetId": 10
