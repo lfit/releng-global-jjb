@@ -16,6 +16,98 @@
       "message": "Sorted the warning message.",
       "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ff3b5ff_4781f061",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-14T01:13:37Z",
+      "side": 1,
+      "message": "This is not required (noticed this in ci-man repo in onap), pyenv picks up the latest version X if you specific python3.X or python3. This is also applicable to --python option in lf-activate-env()",
+      "range": {
+        "startLine": 30,
+        "startChar": 8,
+        "endLine": 30,
+        "endChar": 81
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "454dbc6d_85cdeb88",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-14T01:13:37Z",
+      "side": 1,
+      "message": "Source the code from lf-env.sh instead of copying everywhere, would be lesser code to maintain.\n\nlf-activate-venv --python python3.8 --venv-file /tmp/.myvenv lftools",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 2
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb5f4498_b4ad66ec",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-14T01:13:37Z",
+      "side": 1,
+      "message": "python3 -m pip install --quiet --no-warn-script-location --upgrade \\\n        --upgrade-strategy eager -r requirements.txt",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 60
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "46c91919_6f0ff8a8",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-14T01:13:37Z",
+      "side": 1,
+      "message": "Why is this being added? Nothing has changed below in this change that would require this.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 27
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
