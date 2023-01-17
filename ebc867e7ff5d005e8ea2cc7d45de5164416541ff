@@ -112,6 +112,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d70000dd_9e19e2a0",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2023-01-17T22:09:00Z",
+      "side": 1,
+      "message": "This is not an install, so I don\u0027t think that command is entirely applicable here. But I agree that in general, using \"python[3] -m pip\" is safer than calling pip directly. We\u0027ve seen issues with the pip executable not being present.",
+      "parentUuid": "cb5f4498_b4ad66ec",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 60
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "46c91919_6f0ff8a8",
         "filename": "shell/nexus-iq-python-cli.sh",
         "patchSetId": 10
@@ -123,6 +147,30 @@
       "writtenOn": "2023-01-14T01:13:37Z",
       "side": 1,
       "message": "Why is this being added? Nothing has changed below in this change that would require this.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 27
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b5f83a_fa4f614a",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2023-01-17T22:09:00Z",
+      "side": 1,
+      "message": "This seems like a good addition to me. Most likely, the below code was added without being shellchecked. Adding the rule disable and a note on why it\u0027s being disabled improves the code quality.",
+      "parentUuid": "46c91919_6f0ff8a8",
       "range": {
         "startLine": 47,
         "startChar": 0,
