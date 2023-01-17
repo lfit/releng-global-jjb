@@ -136,6 +136,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "240855d1_fbe978a5",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-17T22:29:44Z",
+      "side": 1,
+      "message": "right, this can be ignored.",
+      "parentUuid": "d70000dd_9e19e2a0",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 60
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "46c91919_6f0ff8a8",
         "filename": "shell/nexus-iq-python-cli.sh",
         "patchSetId": 10
@@ -171,6 +195,30 @@
       "side": 1,
       "message": "This seems like a good addition to me. Most likely, the below code was added without being shellchecked. Adding the rule disable and a note on why it\u0027s being disabled improves the code quality.",
       "parentUuid": "46c91919_6f0ff8a8",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 48,
+        "endChar": 27
+      },
+      "revId": "ebc867e7ff5d005e8ea2cc7d45de5164416541ff",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16e1ecc3_932eaf74",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-17T22:29:44Z",
+      "side": 1,
+      "message": "The comment line 47 is valid and makes the code readable, but the disable shellcheck might be not required here since this was not giving out any error when the previous verify job has passed.",
+      "parentUuid": "58b5f83a_fa4f614a",
       "range": {
         "startLine": 47,
         "startChar": 0,
