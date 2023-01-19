@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Merge bundle after checking detached head.
+
+    Address the problem where the tag is not merged into master
+    i.e. the release is not part of the master history.
+
+    Check commit count between the HEAD and origin/${GERRIT_BRANCH}
+    before the fetch and merge operation. This is done to ensure the
+    git bundle along get pushed on the correct branch to avoid
+    repushing the commit the master.
