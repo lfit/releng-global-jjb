@@ -458,7 +458,17 @@ maven_release_file(){
         gunzip taglist.log.gz
         cat "$PATCH_DIR"/taglist.log
     popd
-    git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
+
+    set -x
+    # compare if the commit sha1 from taglist is the same origin/HEAD
+    # and checkout origin/HEAD if its moved ahead.
+    taghash="$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
+    if [ "${taghash}" = $(git rev-parse origin/HEAD) ]; then
+        git checkout "origin/HEAD"
+    else
+        git checkout "${taghash}"
+    fi
+
     git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
     git merge --ff-only FETCH_HEAD
     nexus_release
