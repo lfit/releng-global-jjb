@@ -458,7 +458,18 @@ maven_release_file(){
         gunzip taglist.log.gz
         cat "$PATCH_DIR"/taglist.log
     popd
-    git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
+
+    set -x
+    # Check commit count between the HEAD and origin/${GERRIT_BRANCH} before
+    # a checkout the commit-id from the taglist.log. This is done to ensure the
+    # git bundle along with the tag object is pushed on the correct branch.
+    count=$(git rev-list --count --ancestry-path "origin/${GERRIT_BRANCH}..HEAD")
+    if ${count} -gt 1; then
+        git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
+    else
+        git checkout "origin/${GERRIT_BRANCH}"
+    fi
+
     git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
     git merge --ff-only FETCH_HEAD
     nexus_release
