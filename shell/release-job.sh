@@ -365,7 +365,12 @@ tag-git-repo(){
             fi
             git config user.name "$RELEASE_USERNAME"
             git config user.email "$RELEASE_EMAIL"
-            git push origin "$GIT_TAG"
+            # Check if sentinal file exists
+            if [[ ! -f .testhash ]]; then
+                git push origin "${GERRIT_BRANCH}" "$GIT_TAG"
+            else
+                git push origin "$GIT_TAG"
+            fi
         fi
     fi
 }
@@ -458,7 +463,18 @@ maven_release_file(){
         gunzip taglist.log.gz
         cat "$PATCH_DIR"/taglist.log
     popd
-    git checkout "$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
+
+    # compare if the commit sha1 from taglist is the same origin/HEAD
+    # and checkout origin/HEAD if its moved ahead.
+    taghash="$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
+    if [ "${taghash}" = $(git rev-parse origin/${GERRIT_BRANCH}) ]; then
+        git checkout "origin/${GERRIT_BRANCH}"
+        # sentinal file
+        touch .testhash
+    else
+        git checkout "${taghash}"
+    fi
+
     git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
     git merge --ff-only FETCH_HEAD
     nexus_release
