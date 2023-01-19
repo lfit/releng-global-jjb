@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Address the problem where the tag is not pushed to the mainline
+    branch therefore causing the tag missing in the git history.
+
+    To fix this check commit count between the HEAD and
+    origin/${GERRIT_BRANCH} before the fetch and merge operation.
+    This is done to ensure that the tag lands on the target branch.
+    If the branch has already moved forward from the tagging point,
+    then a spur commit is created for the tag.
