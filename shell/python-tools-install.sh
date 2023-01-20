@@ -71,7 +71,7 @@ EOF
     fi
 
     python3 -m pip install --quiet --upgrade pip
-    python3 -m pip install --quiet --no-warn-script-location --upgrade setuptools
+    python3 -m pip install --quiet --no-warn-script-location --upgrade setuptools<66.0.0
     python3 -m pip install --quiet --no-warn-script-location --upgrade lftools[openstack]
     python3 -m pip install --quiet --no-warn-script-location --upgrade \
         --upgrade-strategy eager -r "$requirements_file"
