@@ -20,7 +20,7 @@ set -eu -o pipefail
 source ~/lf-env.sh
 
 # Version controlled by JJB_VERSION
-lf-activate-venv setuptools twine wheel readline
+lf-activate-venv setuptools==65.7.0 twine wheel readline
 
 bdist=""
 if $BUILD_BDIST_WHEEL; then
