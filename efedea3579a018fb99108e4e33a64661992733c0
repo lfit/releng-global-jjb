@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8bbd09b5_e138e5db",
+        "filename": "releasenotes/notes/PinSetupToolsB466-4dbfff94864882c3.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2023-01-20T11:31:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2afd1c52_8d837b15",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "efedea3579a018fb99108e4e33a64661992733c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75fd8e34_e8d68fd6",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-20T10:35:29Z",
       "side": 1,
       "message": "this goes into the commit message.",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 17
+      },
+      "revId": "efedea3579a018fb99108e4e33a64661992733c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fea54b4_50776d23",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2023-01-20T11:31:36Z",
+      "side": 1,
+      "message": "Its in commint message as well.\nI think better to be here for easy reference later in the future when we want to remove the pinning,\nBut feel free to remove it if needed",
+      "parentUuid": "75fd8e34_e8d68fd6",
       "range": {
         "startLine": 76,
         "startChar": 0,
