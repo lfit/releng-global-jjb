@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2afd1c52_8d837b15",
+        "filename": "releasenotes/notes/PinSetupToolsB466-4dbfff94864882c3.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-20T10:35:29Z",
+      "side": 1,
+      "message": "rm tabs pls",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "efedea3579a018fb99108e4e33a64661992733c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75fd8e34_e8d68fd6",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-01-20T10:35:29Z",
+      "side": 1,
+      "message": "this goes into the commit message.",
+      "range": {
+        "startLine": 76,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 17
+      },
+      "revId": "efedea3579a018fb99108e4e33a64661992733c0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
