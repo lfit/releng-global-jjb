@@ -71,7 +71,11 @@ EOF
     fi
 
     python3 -m pip install --quiet --upgrade pip
-    python3 -m pip install --quiet --no-warn-script-location --upgrade setuptools
+
+    #TODO: Temporarily pinning setuptools to avoid plugin version issues
+    # https://github.com/pypa/setuptools/issues/3772#issuecomment-1384342813
+    python3 -m pip install --quiet --no-warn-script-location --upgrade setuptools<66.0.0
+
     python3 -m pip install --quiet --no-warn-script-location --upgrade lftools[openstack]
     python3 -m pip install --quiet --no-warn-script-location --upgrade \
         --upgrade-strategy eager -r "$requirements_file"

@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    setuptools 66.0.0 enforces specific version number check. A lot of plugins
+    will fails on this, and generates the following error
+    pkg_resources.extern.packaging.version.InvalidVersion: Invalid version: '1223.v7f1a_98a_8863e'
+    
+    To temporarily fix this, we pin setuptools to an earlier release
+
+    Further information
+    https://github.com/pypa/setuptools/issues/3772#issuecomment-1384342813
+    https://setuptools.pypa.io/en/latest/history.html#v66-0-0
