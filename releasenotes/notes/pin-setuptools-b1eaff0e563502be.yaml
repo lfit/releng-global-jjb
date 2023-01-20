@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Pin setuptools to the latest version before v66.0.0 to avoid PEP-440
+    non conforming versions errors while packages we use fix their version
+    string formats to be compatible. To maintain congruency we are pinning
+    setuptools to 65.7.0 in all places under global-jjb.
