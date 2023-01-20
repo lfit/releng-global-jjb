@@ -22,6 +22,30 @@
       },
       "revId": "8f0fc9c72fb244b1f0b8b5b3f6c064200bb7a762",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ceb8a9fd_0d38daf2",
+        "filename": "releasenotes/notes/PinSetupToolsB466-4dbfff94864882c3.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 214
+      },
+      "writtenOn": "2023-01-20T06:12:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aab0702a_36c88352",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 68
+      },
+      "revId": "8f0fc9c72fb244b1f0b8b5b3f6c064200bb7a762",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
