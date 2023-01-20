@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c6c6db1_c61bbe46",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-01-20T16:22:27Z",
+      "side": 1,
+      "message": "can we un capitalize the release notes filename?",
+      "revId": "9f7b42d0f53625df27365d1b126cb264d1fbc208",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
