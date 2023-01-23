@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad6add52_1c64fb81",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2023-01-23T11:49:59Z",
+      "side": 1,
+      "message": "Latest script code tested in sandbox here:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/smo-ves-tox-nexus-iq-clm/2/console",
+      "revId": "42fbb1b57b7f344ef6193fb5391d787c5ade86ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
