@@ -16,6 +16,29 @@
       "message": "Latest script code tested in sandbox here:\nhttps://jenkins.o-ran-sc.org/sandbox/view/All/job/smo-ves-tox-nexus-iq-clm/2/console",
       "revId": "42fbb1b57b7f344ef6193fb5391d787c5ade86ca",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11e58a67_e1d2277d",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-01-23T21:55:13Z",
+      "side": 1,
+      "message": "I don\u0027t think this is a good idea\nCan we rather use ${WORKSPACE} to refer to the work root directory?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "42fbb1b57b7f344ef6193fb5391d787c5ade86ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
