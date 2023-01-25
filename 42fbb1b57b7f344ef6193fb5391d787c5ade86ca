@@ -56,6 +56,30 @@
       },
       "revId": "42fbb1b57b7f344ef6193fb5391d787c5ade86ca",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "23161ef8_4313c482",
+        "filename": "shell/nexus-iq-python-cli.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-01-25T22:00:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11e58a67_e1d2277d",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 13
+      },
+      "revId": "42fbb1b57b7f344ef6193fb5391d787c5ade86ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
