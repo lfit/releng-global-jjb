@@ -18,6 +18,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "509aaf09_46a2a2c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-01-25T22:00:12Z",
+      "side": 1,
+      "message": "removing my -1 since it seems to be ok to use \"~\"",
+      "revId": "42fbb1b57b7f344ef6193fb5391d787c5ade86ca",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "11e58a67_e1d2277d",
