@@ -81,5 +81,32 @@
       "revId": "42fbb1b57b7f344ef6193fb5391d787c5ade86ca",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
+  ],
+  "submitRequirementResults": [
+    {
+      "submitRequirement": {
+        "name": "Non-Author-Code-Review",
+        "description": {
+          "value": "A maximum \u0027Code-Review\u0027 vote from a non-uploader is \t\t\trequired for the \u0027Non-Author-Code-Review\u0027 label. A \t\t\tminimum vote is blocking."
+        },
+        "applicabilityExpression": {},
+        "submittabilityExpression": {
+          "expressionString": "label:Code-Review\u003dMAX,user\u003dnon_uploader AND -label:Code-Review\u003dMIN"
+        },
+        "overrideExpression": {},
+        "allowOverrideInChildProjects": false
+      },
+      "applicabilityExpressionResult": {},
+      "submittabilityExpressionResult": {
+        "value": {"expression":{"expressionString":"label:Code-Review=MAX,user=non_uploader AND -label:Code-Review=MIN"},"status":"PASS","errorMessage":{"value":null},"passingAtoms":["label:Code-Review=MAX,user=non_uploader"],"failingAtoms":["label:Code-Review=MIN"]}
+      },
+      "overrideExpressionResult": {},
+      "patchSetCommitId": "42fbb1b57b7f344ef6193fb5391d787c5ade86ca",
+      "legacy": {
+        "value": false
+      },
+      "forced": {},
+      "hidden": {}
+    }
   ]
 }
