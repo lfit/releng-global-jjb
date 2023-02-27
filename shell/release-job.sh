@@ -347,7 +347,13 @@ tag-git-repo(){
     else
         echo "INFO: Repo has not yet been tagged $GIT_TAG"
         git tag -am "${PROJECT//\//-} $GIT_TAG" "$GIT_TAG"
-        sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"
+        # sigul signing works only on CentOS7
+        # so use a CentOS7 docker container signing on other platforms
+        if [[ "$OS_RELEASE" == "7" && "$OS" == 'centos' ]]; then
+            sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"
+        else
+            /bin/sh ${WORKSPACE}/global-jjb/shell/sigul-sign-dir.sh
+        fi
         echo "INFO: Showing latest signature for $PROJECT:"
         echo "INFO: git tag -v $GIT_TAG"
         git tag -v "$GIT_TAG"

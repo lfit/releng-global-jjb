@@ -43,6 +43,7 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
+    git-tag: ""
     gerrit-skip-vote: false
     use-release-file: true
 
@@ -97,7 +98,13 @@
               variable: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - inject:
+          properties-content: |
+            GIT_TAG={git-tag}
+      - shell: !include-raw-escape:
+          - ../shell/sigul-sign-dir.sh
       - lf-release
+      - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
 
 - job-template:
     name: "{project-name}-release-verify"
@@ -196,6 +203,7 @@
     build-timeout: 15
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
+    git-tag: ""
     use-release-file: true
 
     gerrit_merge_triggers:
@@ -254,7 +262,13 @@
               variable: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - inject:
+          properties-content: |
+            GIT_TAG={git-tag}
+      - shell: !include-raw-escape:
+          - ../shell/sigul-sign-dir.sh
       - lf-release
+      - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
 
 - job-template:
     name: "{project-name}-release-merge"

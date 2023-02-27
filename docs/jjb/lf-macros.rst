@@ -329,6 +329,18 @@ Requires ``SIGUL_BRIDGE_IP`` configured as a global envvar.
     :sign-dir: Directory to sign.
     :sign-mode: serial|parallel
 
+
+lf-sigul-sign-tag
+-----------------
+
+Use Sigul to sign a ``GIT_TAG`` via {git-tag}.
+
+Requires ``SIGUL_BRIDGE_IP`` configured as a global envvar.
+
+:Required Parameters:
+    :git-tag: Git tag to sign. (default: "")
+
+
 lf-infra-provide-docker-cleanup
 -------------------------------
 
