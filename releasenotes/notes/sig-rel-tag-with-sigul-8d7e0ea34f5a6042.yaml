@@ -1,0 +1,10 @@
+---
+issues:
+  - |
+    Sigul signing is presently supported on CentOS7.
+fixes:
+  - |
+    Enable sigul git tag signing
+
+    As a workaround for unsupported platforms or versions
+    sign artifacts and tags using CentOS7 containers.

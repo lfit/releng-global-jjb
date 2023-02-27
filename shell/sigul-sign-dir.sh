@@ -30,6 +30,7 @@ if [[ "$OS_RELEASE" == "8" && "$OS" == 'centos' ]]; then
     # Setup the docker environment for jenkins user
     docker build -f ${WORKSPACE}/Dockerfile \
         --build-arg SIGN_DIR=${SIGN_DIR} \
+        --build-arg GIT_TAG=${GIT_TAG} \
         -t sigul-sign .
 
     docker volume create --driver local \
@@ -45,6 +46,7 @@ if [[ "$OS_RELEASE" == "8" && "$OS" == 'centos' ]]; then
         -e SIGUL_CONFIG=${SIGUL_CONFIG} \
         -e SIGN_DIR=${SIGN_DIR} \
         -e WORKSPACE=${WORKSPACE} \
+        -e GIT_TAG=${GIT_TAG} \
         --name sigul-sign \
         --security-opt label:disable \
         --mount type=bind,source="/w/workspace",target="/w/workspace" \

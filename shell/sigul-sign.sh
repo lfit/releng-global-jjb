@@ -10,29 +10,33 @@
 ##############################################################################
 # Script to run the sigul signing from within a CentOS7 docker container
 
-echo "Sign files in: $SIGN_DIR"
+if [ ! -z "${GIT_TAG}" ]; then
+    echo "Sign git tag: $GIT_TAG"
+    sigul --batch -c "${SIGUL_CONFIG}" sign-git-tag "${SIGUL_KEY}" "${GIT_TAG}" < "${SIGUL_PASSWORD}"
+elif [ ! -z "${SIGN_DIR}" ]; then
+    echo "Sign files in: $SIGN_DIR"
+    set -e  # Fail immediately if any if signing fails
+    find "${SIGN_DIR}" -type f ! -name "*.asc" \
+            ! -name "*.md5" \
+            ! -name "*.sha1" \
+            ! -name "_maven.repositories" \
+            ! -name "_remote.repositories" \
+            ! -name "*.lastUpdated" \
+            ! -name "maven-metadata-local.xml" \
+            ! -name "maven-metadata.xml" > ${WORKSPACE}/sign.lst
 
-set -e  # Fail immediately if any if signing fails
-find "${SIGN_DIR}" -type f ! -name "*.asc" \
-        ! -name "*.md5" \
-        ! -name "*.sha1" \
-        ! -name "_maven.repositories" \
-        ! -name "_remote.repositories" \
-        ! -name "*.lastUpdated" \
-        ! -name "maven-metadata-local.xml" \
-        ! -name "maven-metadata.xml" > ${WORKSPACE}/sign.lst
+    if [ -s ${WORKSPACE}/sign.lst ]; then
+        echo "Sign list is not empty"
+    fi
 
-if [ -s ${WORKSPACE}/sign.lst ]; then
-    echo "Sign list is not empty"
-fi
+    files_to_sign=()
+    while IFS= read -rd $'\n' line; do
+        files_to_sign+=("$line")
+        sigul --batch -c "${SIGUL_CONFIG}" sign-data -a -o "${line}.asc" "${SIGUL_KEY}" "${line}" < "${SIGUL_PASSWORD}"
+    done < ${WORKSPACE}/sign.lst
 
-files_to_sign=()
-while IFS= read -rd $'\n' line; do
-    files_to_sign+=("$line")
-    sigul --batch -c "${SIGUL_CONFIG}" sign-data -a -o "${line}.asc" "${SIGUL_KEY}" "${line}" < "${SIGUL_PASSWORD}"
-done < ${WORKSPACE}/sign.lst
-
-if [ "${#files_to_sign[@]}" -eq 0 ]; then
-    echo "ERROR: No files to sign. Quitting..."
-    exit 1
+    if [ "${#files_to_sign[@]}" -eq 0 ]; then
+        echo "ERROR: No files to sign. Quitting..."
+        exit 1
+    fi
 fi
