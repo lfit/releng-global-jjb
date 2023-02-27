@@ -97,7 +97,15 @@
               variable: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - inject:
+          properties-content: |
+            SIGN_DIR="{sign-dir}"
+            SIGN_MODE={sign-mode}
+            GIT_TAG={git-tag}
+      - shell: !include-raw-escape:
+          - ../shell/sigul-sign-dir.sh
       - lf-release
+      - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
 
 - job-template:
     name: "{project-name}-release-verify"
@@ -254,7 +262,15 @@
               variable: SIGNING_PUBKEY
       - shell: !include-raw-escape: ../shell/sigul-configuration.sh
       - shell: !include-raw-escape: ../shell/sigul-install.sh
+      - inject:
+          properties-content: |
+            SIGN_DIR={sign-dir}
+            SIGN_MODE={sign-mode}
+            GIT_TAG={git-tag}
+      - shell: !include-raw-escape:
+          - ../shell/sigul-sign-dir.sh
       - lf-release
+      - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
 
 - job-template:
     name: "{project-name}-release-merge"

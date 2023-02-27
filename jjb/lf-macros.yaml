@@ -366,6 +366,33 @@
                 properties-content: |
                   SIGN_DIR={sign-dir}
                   SIGN_MODE={sign-mode}
+                  GIT_TAG={git-tag}
+            - shell: !include-raw-escape:
+                - ../shell/sigul-sign-dir.sh
+            - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh
+
+- builder:
+    name: lf-sigul-sign-tag
+    # Requires that Jenkins be configured with SIGUL_BRIDGE_IP as a global
+    # Environment variable
+    builders:
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: "{sign-artifacts}"
+          steps:
+            - config-file-provider:
+                files:
+                  - file-id: sigul-config
+                    variable: SIGUL_CONFIG
+                  - file-id: sigul-password
+                    variable: SIGUL_PASSWORD
+                  - file-id: sigul-pki
+                    variable: SIGUL_PKI
+            - shell: !include-raw-escape: ../shell/sigul-configuration.sh
+            - shell: !include-raw-escape: ../shell/sigul-install.sh
+            - inject:
+                properties-content: |
+                  GIT_TAG={git-tag}
             - shell: !include-raw-escape:
                 - ../shell/sigul-sign-dir.sh
             - shell: !include-raw-escape: ../shell/sigul-configuration-cleanup.sh

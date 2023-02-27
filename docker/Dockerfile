@@ -2,6 +2,7 @@ FROM centos:7
 SHELL ["/bin/bash", "-c"]
 
 ARG SIGN_DIR="${WORKSPACE}/m2repo"
+ARG GIT_TAG=""
 
 RUN echo $'[fedora-infra-sigul] \n\
 name=Fedora builder packages for sigul \n\
@@ -20,4 +21,4 @@ COPY ./sigul-sign.sh /
 USER root
 
 ENTRYPOINT ["/bin/bash", "/sigul-sign.sh"]
-CMD ["${SIGN_DIR}"]
+CMD ["${SIGN_DIR}"] ["${GIT_TAG}"]
