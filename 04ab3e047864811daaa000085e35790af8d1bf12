@@ -16,6 +16,24 @@
       "message": "Will not GIT_TAG always be blank ? (\"\")",
       "revId": "04ab3e047864811daaa000085e35790af8d1bf12",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c06bd292_d10ebd26",
+        "filename": "docker/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-03-01T09:12:01Z",
+      "side": 1,
+      "message": "default can be an empty string, when you are not signing a tag and signing artifacts! The reason why it\u0027s been set as blank is its not being passsed from the job build params, and this is determined run time by the release-job.sh script.",
+      "parentUuid": "1b67e295_46fbb34d",
+      "revId": "04ab3e047864811daaa000085e35790af8d1bf12",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
