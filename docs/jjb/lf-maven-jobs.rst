@@ -420,7 +420,7 @@ directory is then used later to deploy to Nexus.
         (default: false)
     :sbom-generator-version: SBOM generator version to download and run if using sbom-generator.
         (default: v0.0.10)
-    :sbom-path: Path where SBOM is going to be executed from.
+    :sbom-path: Path where SBOM is executed from.
         (default: $WORKSPACE)
     :sign-artifacts: Sign artifacts with Sigul. (default: false)
     :stream: Keyword that represents a release code-name.
