@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ad4a7e1_2f8e25ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-03-02T02:43:33Z",
+      "side": 1,
+      "message": "tested in https://jenkins.o-ran-sc.org/sandbox/view/All/job/nonrtric-plt-dmaapadapter-maven-clm-master/\n\nThis is not currently being needed, but is a good to have in preparation for the LFX Security on boarding for some orgs.",
+      "revId": "fe50150cb801115888ac25ffaf60c5da9c2826c1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
