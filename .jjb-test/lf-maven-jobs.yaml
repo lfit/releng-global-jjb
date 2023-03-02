@@ -3,6 +3,7 @@
     name: gerrit-maven-jobs
     jobs:
       - gerrit-maven-clm
+      - gerrit-maven-snyk-cli
       - gerrit-maven-javadoc-publish
       - gerrit-maven-javadoc-verify
       - gerrit-maven-merge
@@ -23,6 +24,7 @@
     name: github-maven-jobs
     jobs:
       - github-maven-clm
+      - github-maven-snyk-cli
       - github-maven-javadoc-publish
       - github-maven-javadoc-verify
       - github-maven-merge
