@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fcbe3105_2a8f6343",
+        "filename": ".jjb-test/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-03-03T17:47:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "077a562d_a32ce869",
+      "range": {
+        "startLine": 6,
+        "startChar": 8,
+        "endLine": 6,
+        "endChar": 29
+      },
+      "revId": "8701d85342ddfd3b00fffc9bb456c7ec22517f1c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fd30b668_48bb5a60",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-03-03T17:42:05Z",
       "side": 1,
       "message": "asciibetically order",
+      "range": {
+        "startLine": 27,
+        "startChar": 7,
+        "endLine": 27,
+        "endChar": 29
+      },
+      "revId": "8701d85342ddfd3b00fffc9bb456c7ec22517f1c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c64fd8e4_36aa0291",
+        "filename": ".jjb-test/lf-maven-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-03-03T17:47:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd30b668_48bb5a60",
       "range": {
         "startLine": 27,
         "startChar": 7,
