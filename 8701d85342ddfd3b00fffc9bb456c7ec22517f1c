@@ -93,6 +93,23 @@
       },
       "revId": "8701d85342ddfd3b00fffc9bb456c7ec22517f1c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33b601b6_59ced0a4",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2023-03-03T17:47:31Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be \"gerrit_snyk_triggers\" instead?",
+      "revId": "8701d85342ddfd3b00fffc9bb456c7ec22517f1c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
