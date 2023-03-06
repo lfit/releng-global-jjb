@@ -215,6 +215,7 @@ Builds the code, downloads and runs a Snyk CLI scan of the code into the Snyk da
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
+    :snyk-cli-options: Additional Snyk CLI options. (default: '')
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.

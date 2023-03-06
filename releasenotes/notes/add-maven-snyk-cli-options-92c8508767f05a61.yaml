@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add SNYK_CLI_OPTIONS parameter which can be used to pass additional Snyk
+    CLI options as per https://docs.snyk.io/snyk-cli/cli-reference.

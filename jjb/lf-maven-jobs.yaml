@@ -316,6 +316,7 @@
     mvn-opts: ""
     mvn-params: ""
     mvn-version: mvn35
+    snyk-cli-options: ""
     snyk-token-credential-id: snyk-token
     snyk-org-credential-id: snyk-org
     stream: master
@@ -336,6 +337,10 @@
           mvn-opts: "{mvn-opts}"
           mvn-params: "{mvn-params}"
           mvn-version: "{mvn-version}"
+      - string:
+          name: SNYK_CLI_OPTIONS
+          default: "{snyk-cli-options}"
+          description: Additional Snyk CLI commands and options
       - string:
           name: ARCHIVE_ARTIFACTS
           default: "{archive-artifacts}"

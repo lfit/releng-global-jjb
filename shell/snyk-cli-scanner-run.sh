@@ -22,5 +22,5 @@ snyk --version
 echo "Authenticate with SNYK_TOKEN..."
 snyk auth "$SNYK_CLI"
 echo "Running Snyk CLI..."
-snyk test --json --severity-threshold=low --org="$SNYK_ORG"
-snyk monitor --severity-threshold=low --org="$SNYK_ORG"
+snyk test --json --severity-threshold=low "$SNYK_CLI_OPTIONS" --org="$SNYK_ORG"
+snyk monitor --severity-threshold=low "$SNYK_CLI_OPTIONS" --org="$SNYK_ORG"
