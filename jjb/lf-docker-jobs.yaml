@@ -344,3 +344,162 @@
           white-list-target-branches:
             - "{branch}"
           included-regions: "{obj:github_included_regions}"
+
+##################
+# Docker Snyk CLI #
+##################
+
+- lf_docker_snyk_cli: &lf_docker_snyk_cli
+    name: lf-docker-snyk_cli
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30 # 30 days for troubleshooting purposes
+    build-timeout: 60
+    container-tag-method: "latest"
+    container-tag-yaml-dir: ""
+    disable-job: false
+    docker-get-container-tag-script: "../shell/docker-get-container-tag.sh"
+    docker-root: "$WORKSPACE"
+    docker-build-args: ""
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    pre_docker_build_script: "# pre docker build script goes here"
+    post_docker_build_script: "# post docker build script goes here"
+    snyk-cli-options: ""
+    snyk-token-credential-id: snyk-token
+    snyk-org-credential-id: snyk-org
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_snyk_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-snyk\s*$'
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - string:
+          name: SNYK_CLI_OPTIONS
+          default: "{snyk-cli-options}"
+          description: Additional Snyk CLI commands and options
+
+    wrappers:
+      - credentials-binding:
+          - text:
+              credential-id: "{snyk-token-credential-id}"
+              variable: SNYK_TOKEN
+          - text:
+              credential-id: "{snyk-org-credential-id}"
+              variable: SNYK_ORG
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-docker-login:
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
+      - shell: "{pre_docker_build_script}"
+      - lf-docker-get-container-tag:
+          container-tag-method: "{container-tag-method}"
+          container-tag-yaml-dir: "{container-tag-yaml-dir}"
+          docker-root: "{docker-root}"
+          docker-get-container-tag-script: "{docker-get-container-tag-script}"
+      - lf-docker-build:
+          docker-build-args: "{docker-build-args}"
+          docker-name: "{docker-name}"
+          docker-root: "{docker-root}"
+          container-public-registry: "{container-public-registry}"
+          container-push-registry: "{container-push-registry}"
+      - shell: "{post_docker_build_script}"
+      - lf-infra-snyk-cli-scanner
+      - lf-provide-maven-settings-cleanup
+      - shell: 'find . -regex ".*karaf/target" | xargs rm -rf'
+
+- job-template:
+    name: "{project-name}-docker-snyk-cli-{stream}"
+    id: gerrit-docker-snyk-cli
+    <<: *lf_docker_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_docker_snyk_cli
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: "H H * * 6"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_snyk_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
+- job-template:
+    name: "{project-name}-docker-snyk-cli-{stream}"
+    id: github-docker-snyk-cli
+    <<: *lf_docker_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_docker_snyk_cli
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: "H H * * 6"
+      - github-pull-request:
+          trigger-phrase: "^run-snyk$"
+          only-trigger-phrase: true
+          status-context: "SNYK scan"
+          permit-all: true
+          github-hooks: true
+          org-list:
+            - "{github-org}"
+          white-list: "{obj:github_pr_allowlist}"
+          admin-list: "{obj:github_pr_admin_list}"
+          white-list-target-branches:
+            - "{branch}"
