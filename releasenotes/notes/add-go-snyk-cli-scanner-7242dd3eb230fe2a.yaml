@@ -1,5 +1,6 @@
 ---
 features:
+  - |
     Introduce Go Snyk CLI scanner jobs. These jobs can be triggered to download the
     latest version of Snyk's CLI scanner and trigger a scan for Go based repos. These
     jobs produce a report which is published into Snyk's dashboard. These reports are
