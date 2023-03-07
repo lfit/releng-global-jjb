@@ -10,6 +10,11 @@
 ##############################################################################
 echo "---> snyk-cli-scanner-run.sh"
 
+# Install Snyk CLI dependencies for Python
+if [[ "$JOB_NAME" =~ "python" ]]; then
+    # Install Snyk CLI dependencies for Python
+    pip install --quiet boto3 botocore flask flask-api flask-cors pg8000 requests pandas kubernetes
+fi
 # Add mvn to PATH so that the Snyk CLI can use it
 export PATH=$PATH:"$M2_HOME"/bin
 # Download and install the latest Snyk scanner

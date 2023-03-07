@@ -132,6 +132,61 @@ does not support multi-branch.
     :tox-envs: Tox environment with the appropriate pip freeze invocation.
         (default: 'clm')
 
+Python Snyk CLI
+---------------
+
+Builds the code, downloads and runs a Snyk CLI scan of the code into the Snyk dashboard.
+
+:Template Names:
+
+    - {project-name}-python-snyk-cli-{stream}
+    - gerrit-python-snyk-cli
+    - github-python-snyk-cli
+
+:Comment Trigger: run-snyk
+
+:Required parameters:
+
+    :build-node:    The node to run build on.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
+    :snyk-token-credential-id: Snyk API token to communicate with Jenkins.
+    :snyk-org-credential-id: Snyk organization ID.
+
+:Optional parameters:
+
+    :branch: The branch to build against. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :pre-build-script: Shell script to execute before the Tox builder.
+        For example, install prerequisites or move files to the repo root.
+        (default: a string with a shell comment)
+    :parallel: If different from false, try pass this parameter to tox option
+        "--parallel" to parallelize jobs in the envlist (and then activate the
+        option "--parallel-live" to display output in logs).
+        Possible values are "auto" (equivalent to "true" for legacy),
+        "all" or any integer. Any other value is equivalent to "false".
+        (default: false, in series)
+    :python-version: Python version to invoke pip install of tox-pyenv
+        (default: python3)
+    :snyk-cli-options: Additional Snyk CLI options. (default: '')
+    :stream: Keyword representing a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
+    :tox-dir: Directory containing the project's tox.ini relative to
+        the workspace. The default uses tox.ini at the project root.
+        (default: '.')
+    :tox-envs: Tox environments to run. If blank run everything described
+        in tox.ini. (default: '')
+    :gerrit_trigger_file_paths: Override file paths used to filter which file
+        modifications trigger a build. Refer to JJB documentation for "file-path" details.
+        https://jenkins-job-builder.readthedocs.io/en/latest/triggers.html#triggers.gerrit
+
 Python Sonar with CLI
 ---------------------
 
