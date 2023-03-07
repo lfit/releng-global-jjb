@@ -2,6 +2,7 @@
 - project:
     name: "gerrit-go-jobs"
     jobs:
+      - "gerrit-go-snyk-cli"
       - "gerrit-go-verify"
 
     project: go/project
@@ -12,6 +13,7 @@
 - project:
     name: "github-go-jobs"
     jobs:
+      - "gerrit-go-snyk-cli"
       - "github-go-verify"
 
     project: go/project
