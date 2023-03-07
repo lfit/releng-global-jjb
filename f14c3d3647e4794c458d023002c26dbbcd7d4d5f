@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "644f99d6_b39bd38f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-03-07T03:26:52Z",
+      "side": 1,
+      "message": "tested in https://jenkins.o-ran-sc.org/sandbox/view/All/job/aiml-fw-awmf-tm-python-snyk-cli-all/",
+      "revId": "f14c3d3647e4794c458d023002c26dbbcd7d4d5f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
