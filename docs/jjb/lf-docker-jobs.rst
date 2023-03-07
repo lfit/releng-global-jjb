@@ -215,3 +215,59 @@ Sample container-tag.yaml File
 
    ---
    tag: 1.0.0
+
+Docker Snyk CLI
+---------------
+
+Builds the code, downloads and runs a Snyk CLI scan of the code into the Snyk dashboard.
+
+:Template Names:
+
+    - {project-name}-docker-snyk-cli-{stream}
+    - gerrit-docker-snyk-cli
+    - github-docker-snyk-cli
+
+:Comment Trigger: run-snyk
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :container-public-registry: Docker registry source with base images.
+    :docker-name: Name of the Docker image.
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured
+        in defaults.yaml)
+    :mvn-settings: Maven settings.xml file containing Docker credentials.
+    :snyk-token-credential-id: Snyk API token to communicate with Jenkins.
+    :snyk-org-credential-id: Snyk organization ID.
+
+:Optional parameters:
+
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 60)
+    :container-tag-method: Specifies the docker tag-choosing method.
+        Options are "latest", "git-describe" or "yaml-file".
+        Option latest uses the "latest" tag.
+        Option git-describe uses the string returned by git-describe,
+        which requires a tag to exist in the repository.
+        Option yaml-file uses the string from file "container-tag.yaml"
+        in the repository. (default: latest)
+    :container-tag-yaml-dir: Directory with container-tag.yaml. (default: $DOCKER_ROOT)
+    :docker-build-args: Arguments for the docker build command.
+    :docker-get-container-tag-script: Path to script that chooses docker tag.
+        (default: ../shell/docker-get-container-tag.sh in global-jjb)
+    :docker-root: Build directory within the repo. (default: $WORKSPACE, the repo root)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :pre_docker_build_script: Build script to execute before the main verify
+        builder steps. (default: "")
+    :post_docker_build_script: Build script to execute after the main verify
+        builder steps. (default: "")
+    :snyk-cli-options: Additional Snyk CLI options. (default: '')
+    :stream: Keyword that represents a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+
+    :gerrit_snyk_triggers: Override Gerrit Triggers.
