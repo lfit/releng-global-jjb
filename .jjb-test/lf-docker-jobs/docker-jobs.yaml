@@ -3,6 +3,7 @@
     name: "{project-name}-docker"
     jobs:
       - "{project-name}-gerrit-docker-jobs"
+      - gerrit-docker-snyk-cli
 
     project: docker/project
     project-name: docker-project

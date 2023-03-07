@@ -31,5 +31,10 @@ snyk --version
 echo "Authenticate with SNYK_TOKEN..."
 snyk auth "$SNYK_CLI"
 echo "Running Snyk CLI..."
-snyk test --json --severity-threshold=low "$SNYK_CLI_OPTIONS" --org="$SNYK_ORG"
-snyk monitor --severity-threshold=low "$SNYK_CLI_OPTIONS" --org="$SNYK_ORG"
+if [[ "$JOB_NAME" =~ "docker" ]]; then
+    snyk container test opennetworklinux/builder10:1.2 "$SNYK_CLI_OPTIONS" --org="$SNYK_ORG"
+    snyk container monitor opennetworklinux/builder10:1.2 "$SNYK_CLI_OPTIONS" --org="$SNYK_ORG"
+else
+    snyk test --json --severity-threshold=low "$SNYK_CLI_OPTIONS" --org="$SNYK_ORG"
+    snyk monitor --severity-threshold=low "$SNYK_CLI_OPTIONS" --org="$SNYK_ORG"
+fi
