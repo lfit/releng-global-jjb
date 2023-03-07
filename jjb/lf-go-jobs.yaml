@@ -23,6 +23,12 @@
     # Default parameters #
     ######################
 
+    archive-artifacts: >
+      **/*.log
+      **/hs_err_*.log
+      **/target/**/feature.xml
+      **/target/failsafe-reports/failsafe-summary.xml
+      **/target/surefire-reports/*-output.txt
     branch: master
     build-days-to-keep: 7
     build-timeout: 60
@@ -57,6 +63,150 @@
 
     publishers:
       - lf-infra-publish
+
+###############
+# Go Snyk CLI #
+###############
+
+- lf_go_snyk_cli: &lf_go_snyk_cli
+    name: lf-go-snyk_cli
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30 # 30 days for troubleshooting purposes
+    build-timeout: 60
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    java-version: openjdk11
+    mvn-version: mvn35
+    snyk-cli-options: ""
+    snyk-token-credential-id: snyk-token
+    snyk-org-credential-id: snyk-org
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+
+    gerrit_snyk_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-snyk\s*$'
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - string:
+          name: SNYK_CLI_OPTIONS
+          default: "{snyk-cli-options}"
+          description: Additional Snyk CLI commands and options
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
+
+    wrappers:
+      - credentials-binding:
+          - text:
+              credential-id: "{snyk-token-credential-id}"
+              variable: SNYK_TOKEN
+          - text:
+              credential-id: "{snyk-org-credential-id}"
+              variable: SNYK_ORG
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    builders:
+      - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
+      - lf-go-test:
+          go-root: "{go-root}"
+      - lf-infra-snyk-cli-scanner
+
+- job-template:
+    name: "{project-name}-go-snyk-cli-{stream}"
+    id: gerrit-go-snyk-cli
+    <<: *lf_go_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_go_snyk_cli
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: "H H * * 6"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_snyk_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
+- job-template:
+    name: "{project-name}-go-snyk-cli-{stream}"
+    id: github-go-snyk-cli
+    <<: *lf_go_common
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_go_snyk_cli
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: "H H * * 6"
+      - github-pull-request:
+          trigger-phrase: "^run-snyk$"
+          only-trigger-phrase: true
+          status-context: "SNYK scan"
+          permit-all: true
+          github-hooks: true
+          org-list:
+            - "{github-org}"
+          white-list: "{obj:github_pr_allowlist}"
+          admin-list: "{obj:github_pr_admin_list}"
+          white-list-target-branches:
+            - "{branch}"
 
 #############
 # Go Verify #
