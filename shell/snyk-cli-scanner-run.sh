@@ -9,7 +9,16 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> snyk-cli-scanner-run.sh"
+# shellcheck disable=SC1090
+source ~/lf-env.sh
 
+# Install Snyk CLI dependencies for Python
+if [[ "$JOB_NAME" =~ "python" ]]; then
+    # Install Snyk CLI dependencies for Python based projects
+    lf-activate-venv flask flask-api flask-cors pg8000 pandas
+else
+    lf-activate-venv
+fi
 # Add mvn to PATH so that the Snyk CLI can use it
 export PATH=$PATH:"$M2_HOME"/bin
 # Download and install the latest Snyk scanner

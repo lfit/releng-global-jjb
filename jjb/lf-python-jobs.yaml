@@ -227,6 +227,152 @@
           white-list-target-branches:
             - "{branch}"
 
+###################
+# Python Snyk CLI #
+###################
+
+- lf_python_snyk_cli: &lf_python_snyk_cli
+    name: lf-python-snyk_cli
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 30 # 30 days for troubleshooting purposes
+    build-timeout: 60
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    java-version: openjdk11
+    parallel: false
+    pre-build-script: "# pre-build script goes here"
+    python-version: python3
+    snyk-cli-options: ""
+    snyk-token-credential-id: snyk-token
+    snyk-org-credential-id: snyk-org
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+    tox-dir: "."
+    tox-envs: ""
+
+    gerrit_snyk_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-snyk\s*$'
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - string:
+          name: SNYK_CLI_OPTIONS
+          default: "{snyk-cli-options}"
+          description: Additional Snyk CLI commands and options
+      - lf-infra-tox-parameters:
+          tox-dir: "{tox-dir}"
+          tox-envs: "{tox-envs}"
+
+    wrappers:
+      - credentials-binding:
+          - text:
+              credential-id: "{snyk-token-credential-id}"
+              variable: SNYK_TOKEN
+          - text:
+              credential-id: "{snyk-org-credential-id}"
+              variable: SNYK_ORG
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    builders:
+      - lf-infra-pre-build
+      - lf-infra-tox-install:
+          python-version: "{python-version}"
+      - shell: "{pre-build-script}"
+      - lf-infra-tox-run:
+          parallel: "{parallel}"
+      - lf-infra-snyk-cli-scanner
+
+- job-template:
+    name: "{project-name}-python-snyk-cli-{stream}"
+    id: gerrit-python-snyk-cli
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_python_snyk_cli
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: "H H * * 6"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_snyk_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
+
+- job-template:
+    name: "{project-name}-python-snyk-cli-{stream}"
+    id: github-python-snyk-cli
+    # yamllint disable-line rule:key-duplicates
+    <<: *lf_python_snyk_cli
+
+    properties:
+      - lf-infra-properties:
+          build-days-to-keep: "{build-days-to-keep}"
+      - github:
+          url: "{github-url}/{github-org}/{project}"
+
+    scm:
+      - lf-infra-github-scm:
+          url: "{git-clone-url}{github-org}/{project}"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
+    triggers:
+      # Build weekly on Saturdays
+      - timed: "H H * * 6"
+      - github-pull-request:
+          trigger-phrase: "^run-snyk$"
+          only-trigger-phrase: true
+          status-context: "SNYK scan"
+          permit-all: true
+          github-hooks: true
+          org-list:
+            - "{github-org}"
+          white-list: "{obj:github_pr_allowlist}"
+          admin-list: "{obj:github_pr_admin_list}"
+          white-list-target-branches:
+            - "{branch}"
+
 #########################
 # Python Sonar with CLI #
 #########################
