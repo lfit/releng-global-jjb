@@ -17,7 +17,7 @@ set -eux -o pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3.8 --venv-file /tmp/.toxenv tox==3.27.1 tox-pyenv virtualenv
+lf-activate-venv --venv-file /tmp/.toxenv tox virtualenv
 
 # installs are silent, show version details in log
 $PYTHON --version
