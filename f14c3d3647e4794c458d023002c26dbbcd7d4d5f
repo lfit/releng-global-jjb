@@ -33,6 +33,24 @@
       "message": "Is this supposed to be a global or local (user) install for pip? If it\u0027s global, it needs to be done via sudo, if it\u0027s local to the user it should be with --user. If it\u0027s supposed to be in a venv, I would expect it to be done with an lf-activate call....",
       "revId": "f14c3d3647e4794c458d023002c26dbbcd7d4d5f",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0f83bfa_320d980a",
+        "filename": "shell/snyk-cli-scanner-run.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-03-07T17:58:58Z",
+      "side": 1,
+      "message": "Thanks!.. I noticed some dependencies are added already in the venv during the python tools install step. \n\nI will activate the venv with the missing deps.",
+      "parentUuid": "f4adffd8_5b3bd15d",
+      "revId": "f14c3d3647e4794c458d023002c26dbbcd7d4d5f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
