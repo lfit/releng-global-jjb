@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b408bd6_7a12b040",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-03-08T17:29:59Z",
+      "side": 1,
+      "message": "tested in https://jenkins.o-ran-sc.org/sandbox/view/All/job/it-otf-camunda-docker-snyk-cli-master/",
+      "revId": "507863633bc75fed7bf95881f6b57829134c1cd2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
