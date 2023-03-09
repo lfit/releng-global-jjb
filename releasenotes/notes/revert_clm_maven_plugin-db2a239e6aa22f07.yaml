@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    The latest (2.42.0.01) clm-maven-plugin introduced an error in our 
+    environment.
+
+    Failed to execute goal com.sonatype.clm:clm-maven-plugin:2.42.0-01:index
+    (default-cli) on project babel: Failed to invoke Maven build.
+    Maven execution failed, exit code: 1 -> [Help 1]
+
+    This fix will pin the clm-maven-plugin to the previous version (2.41.0-02)
