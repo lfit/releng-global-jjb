@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27014f2a_a6f72a6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-03-09T16:30:36Z",
+      "side": 1,
+      "message": "Bengt: Although this is merged, it should be a \u0027revert\u0027 rather a \u0027fix\u0027. Use the git-revert cmd is easier than write an entire commit for this. :)",
+      "revId": "fd801fd5832b6f8538960e0ddb5fd98d71255b8d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
