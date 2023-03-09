@@ -37,7 +37,7 @@ done
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3.8 --venv-file /tmp/.toxenv tox==3.27.1 tox-pyenv virtualenv
+lf-activate-venv --venv-file /tmp/.toxenv tox virtualenv
 
 # When a new commands are added in lftools, the docs verify job needs to
 # run the new command which requires installing the lftools dev version

@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Un-pin tox version from 3.27.1 and remove tox-pyenv. Testing has
+    demonstrated that tox-pyenv is no longer required to obtain correct
+    Python runtime versions when running tests. Also, removed Python 3.8
+    from the VENV setup where it was being specifically requested.
+
+    Due to unpinning of the tox version, tox.ini configuration files may
+    need modifying to reflect a change in configuration syntax; where
+    whitelist_externals needs to be replaced with allowlist_externals.
