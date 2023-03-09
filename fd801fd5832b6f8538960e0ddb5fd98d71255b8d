@@ -16,6 +16,29 @@
       "message": "Bengt: Although this is merged, it should be a \u0027revert\u0027 rather a \u0027fix\u0027. Use the git-revert cmd is easier than write an entire commit for this. :)",
       "revId": "fd801fd5832b6f8538960e0ddb5fd98d71255b8d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f7234d4_d1b336b7",
+        "filename": "releasenotes/notes/revert_clm_maven_plugin-db2a239e6aa22f07.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-03-09T17:35:09Z",
+      "side": 1,
+      "message": "trailing space 😞",
+      "range": {
+        "startLine": 4,
+        "startChar": 70,
+        "endLine": 4,
+        "endChar": 71
+      },
+      "revId": "fd801fd5832b6f8538960e0ddb5fd98d71255b8d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ],
   "submitRequirementResults": [
