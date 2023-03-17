@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    The 'openstack' command of lftools is not compatible with Python 3.10+.
+    Pin the Python version for the default virtual environment created for
+    lftools at 3.9 until lftools is updated to support Python 3.10+.

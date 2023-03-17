@@ -13,7 +13,7 @@ echo "---> python-tools-install.sh"
 set -eufo pipefail
 
 # Souce the python version from lf-env.sh if available.
-python="python3"
+python="python3.9"
 if [[ -f ~/lf-env.sh ]]; then
     source ~/lf-env.sh
     lf-activate-venv --python "$python" lftools
