@@ -22,6 +22,30 @@
       },
       "revId": "2b6f3c81e28a39742aefe650542be729e010d1b4",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc52cf42_904d8a66",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2023-03-17T17:48:06Z",
+      "side": 1,
+      "message": "Okay, I didn\u0027t see the fix to replace \u0027shade\u0027. Let me abandon this change.",
+      "parentUuid": "57f21a83_369f3f27",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 17
+      },
+      "revId": "2b6f3c81e28a39742aefe650542be729e010d1b4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
