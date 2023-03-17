@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57f21a83_369f3f27",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-03-17T17:17:44Z",
+      "side": 1,
+      "message": "We would not want to pin this here, since this script gets installed in a lot more places which could potentially impact other jobs. The actual issue is shade libs are deprecated and requires moving to openstacklib api rather than using a shim.",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 17
+      },
+      "revId": "2b6f3c81e28a39742aefe650542be729e010d1b4",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
