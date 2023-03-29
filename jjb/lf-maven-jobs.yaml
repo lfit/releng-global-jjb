@@ -997,7 +997,7 @@
     branch: master
     build-days-to-keep: 30 # 30 days in case a release takes long to get approved.
     build-timeout: 60
-    cron: "@daily"
+    cron: ""
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
