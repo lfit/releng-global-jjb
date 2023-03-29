@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ea281a3_ebb66fc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-03-29T21:18:26Z",
+      "side": 1,
+      "message": "Blocking it until ODL confirms this is ok",
+      "revId": "5adfec3867f5eaf2fc4b02deda1e15aaac5444f0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
