@@ -16,6 +16,24 @@
       "message": "This doesn\u0027t seem correct to me. We should be checking to see if the commit in the taglist \u003d\u003d HEAD of origin/${GERRIT_BRANCH}, not if our current HEAD has differences against the branch.\n\nWe only care about differences between those two places because if the commit in taglist \u003d\u003d HEAD of origin/${GERRIT_BRANCH} that\u0027s when we need to checkout the branch, else we checkout the commit in taglist.",
       "revId": "9f7b53fa9a80b62a339cd2edefc0641e850a8ac3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98b6bdc4_1c692fe9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-03-30T16:35:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4da3131_8ae6f08c",
+      "revId": "9f7b53fa9a80b62a339cd2edefc0641e850a8ac3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }

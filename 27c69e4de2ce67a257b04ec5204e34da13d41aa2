@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "09b66c19_1adf0ef4",
+        "filename": "releasenotes/notes/fix-missing-tag-221e3263494b952a.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-03-30T16:35:37Z",
+      "side": 1,
+      "message": "This is done to ensure that the tag lands on the target branch. If the branch has already moved forward from the tagging point, then a spur commit is created for the tag.",
+      "range": {
+        "startLine": 10,
+        "startChar": 42,
+        "endLine": 12,
+        "endChar": 36
+      },
+      "revId": "27c69e4de2ce67a257b04ec5204e34da13d41aa2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ad2dd86a_8adb24e6",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-03-30T16:35:37Z",
+      "side": 1,
+      "message": "This comment needs to be cleaned up to match what\u0027s actually happening now",
+      "range": {
+        "startLine": 467,
+        "startChar": 0,
+        "endLine": 468,
+        "endChar": 50
+      },
+      "revId": "27c69e4de2ce67a257b04ec5204e34da13d41aa2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
