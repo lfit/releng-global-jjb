@@ -1,5 +1,23 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a29a68cc_52b49ec7",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 530
+      },
+      "writtenOn": "2023-03-31T06:50:21Z",
+      "side": 1,
+      "message": "What about simply this ?\n\nif [ -f .testhash]; then\n    git push origin \"$GIT_TAG\"\nelse\n     git push origin \"${GERRIT_BRANCH}\" \"$GIT_TAG\"\nfi\n\n\nIMO double quotes should be avoided for portability issues and style cohenrecy with line 472\nAnd also since we have a else-clause, there is no point to use a ! to negate the condition.",
+      "revId": "365d0c0fe65fdb539a552c04570b24ef053659b8",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
