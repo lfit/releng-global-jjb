@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix condition before pushing the object.
