@@ -1,0 +1,5 @@
+---
+deprecations:
+  - |
+    Remove daily cron on maven-stage and maven-docker-stage jobs. Cron triggers
+    stay configurable.
