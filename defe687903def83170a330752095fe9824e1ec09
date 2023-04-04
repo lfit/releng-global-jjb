@@ -97,6 +97,29 @@
       },
       "revId": "defe687903def83170a330752095fe9824e1ec09",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91812cb9_3ed94064",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-04-04T17:58:54Z",
+      "side": 1,
+      "message": "Anil, I found out the issue. \nWhen a repo triggers their release verify and release merge jobs, these jobs only clone the project\u0027s repo, not the ci-man repo where they can access this file. \nWe will need to call this script via a github link where it can be fetched from. Or clone the global-jjb repo to have access to these scripts.",
+      "range": {
+        "startLine": 355,
+        "startChar": 11,
+        "endLine": 355,
+        "endChar": 67
+      },
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
