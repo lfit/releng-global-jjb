@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "34b6a01a_3da37b1f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-04-04T17:18:05Z",
+      "side": 1,
+      "message": "@abelur@linuxfoundation.org, after testing with the missing variables, I hit an issue with the limitations of the sandbox:\n /bin/sh: /w/workspace/aai-schema-service-release-verify/global-jjb/shell/sigul-sign-dir.sh: No such file or directory\n \nWhen using the sandbox, there is no easy way to pass shell scripts. \nI\u0027m gonna continue the testing by adding the whole chunk of script in the builder step.",
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae27317d_86e0bc4e",
