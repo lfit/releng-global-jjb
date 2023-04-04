@@ -18,6 +18,23 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "10d03c41_d66f8e25",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-04-04T17:19:37Z",
+      "side": 1,
+      "message": "Oh, actually, ONAP needs a new global-jjb version that contains that script :)",
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ae27317d_86e0bc4e",
