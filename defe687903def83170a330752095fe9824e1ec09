@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae27317d_86e0bc4e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-04-04T17:09:19Z",
+      "side": 1,
+      "message": "I get an issue:\n10:06:01 /tmp/jenkins16945175322217769378.sh: line 353: OS_RELEASE: unbound variable\n\nI don\u0027t think this is part of the env variables. Where is it supposed to be set?",
+      "range": {
+        "startLine": 352,
+        "startChar": 15,
+        "endLine": 352,
+        "endChar": 26
+      },
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
