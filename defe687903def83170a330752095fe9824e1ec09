@@ -22,6 +22,30 @@
       },
       "revId": "defe687903def83170a330752095fe9824e1ec09",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce992293_01c37be3",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-04-04T17:12:11Z",
+      "side": 1,
+      "message": "We need to add \n        OS_RELEASE\u003d$(facter operatingsystemrelease)\n        OS\u003d$(facter operatingsystem)",
+      "parentUuid": "ae27317d_86e0bc4e",
+      "range": {
+        "startLine": 352,
+        "startChar": 15,
+        "endLine": 352,
+        "endChar": 26
+      },
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
