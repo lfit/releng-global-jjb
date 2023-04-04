@@ -124,6 +124,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e503968c_0836112e",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-04-04T19:38:48Z",
+      "side": 1,
+      "message": "We need to pass \"${SIGN_MODE}\" \"${SIGN_DIR}\", where are those being set?",
+      "range": {
+        "startLine": 355,
+        "startChar": 10,
+        "endLine": 355,
+        "endChar": 67
+      },
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "633160de_739c2e75",
         "filename": "shell/sigul-sign-dir.sh",
         "patchSetId": 3
