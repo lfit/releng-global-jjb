@@ -242,14 +242,14 @@ lf-activate-venv () {
             echo "${FUNCNAME[0]}(): INFO: Save venv in file: $venv_file"
         fi
 
-        "$lf_venv/bin/pip" install --upgrade --quiet pip virtualenv || return 1
+        "$lf_venv/bin/python3" -m pip install --upgrade --quiet pip virtualenv || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"
         else
             echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
             # $pkg_list is expected to be unquoted
             # shellcheck disable=SC2086
-            "$lf_venv/bin/pip" install --upgrade --quiet --upgrade-strategy eager \
+            "$lf_venv/bin/python3" -m pip install --upgrade --quiet --upgrade-strategy eager \
                                     $pkg_list || return 1
         fi
         ;;
