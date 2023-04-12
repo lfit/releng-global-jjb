@@ -147,6 +147,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "21e52681_c14822b9",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-12T02:47:24Z",
+      "side": 1,
+      "message": "Until this change gets merged, the file in question would not be available so while testing this change replace the line to something like: \n\nwget -O \"${WORKSPACE}/sigul-sign.sh\"  \"https://gerrit.linuxfoundation.org/infra/gitweb?p\u003dreleng/global-jjb.git;a\u003dblob_plain;f\u003dshell/sigul-sign-dir.sh;hb\u003drefs/changes/75/71275/3\"",
+      "parentUuid": "91812cb9_3ed94064",
+      "range": {
+        "startLine": 355,
+        "startChar": 11,
+        "endLine": 355,
+        "endChar": 67
+      },
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "633160de_739c2e75",
         "filename": "shell/sigul-sign-dir.sh",
         "patchSetId": 3
@@ -158,6 +182,54 @@
       "writtenOn": "2023-04-04T19:28:46Z",
       "side": 1,
       "message": "When I do the testing, I get SIGN_MODE: unbound variable",
+      "range": {
+        "startLine": 59,
+        "startChar": 28,
+        "endLine": 59,
+        "endChar": 39
+      },
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7ed3708_25b5a78b",
+        "filename": "shell/sigul-sign-dir.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-12T02:47:24Z",
+      "side": 1,
+      "message": "Need to check, please point me to the job along with the staging repo, i\u0027ll have a look.",
+      "parentUuid": "633160de_739c2e75",
+      "range": {
+        "startLine": 59,
+        "startChar": 28,
+        "endLine": 59,
+        "endChar": 39
+      },
+      "revId": "defe687903def83170a330752095fe9824e1ec09",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eac075f1_c60136ca",
+        "filename": "shell/sigul-sign-dir.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-12T02:47:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "633160de_739c2e75",
       "range": {
         "startLine": 59,
         "startChar": 28,
