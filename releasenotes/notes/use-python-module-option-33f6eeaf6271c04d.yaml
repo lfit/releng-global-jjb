@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Use the python3 module option instead of calling pip directly.
+    This fixes the issue when pip is not available the PATH.
