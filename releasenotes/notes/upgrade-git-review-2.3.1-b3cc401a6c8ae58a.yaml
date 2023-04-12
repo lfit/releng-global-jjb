@@ -1,7 +1,7 @@
 ---
 prelude: >
-    Update openstack images with the auto update image requires more recent
-    version of git-review > 2.2.
+  Update openstack images with the auto update image requires more recent
+  version of git-review > 2.2.
 upgrade:
   - |
     The previous version of git-review is incompatible with the latest version of

@@ -79,7 +79,7 @@ set_creds() {
 do_login() {
     docker_version=$( docker -v | awk '{print $3}')
     if version_lt "$docker_version" "17.06.0" && \
-       "$DOCKERHUB_REGISTRY" == "docker.io" && \
+       [ "$DOCKERHUB_REGISTRY" == "docker.io" ] && \
        "$DOCKERHUB_EMAIL:-none" != 'none'
     then
         docker login -u "$USER" -p "$PASS" -e "$2" "$1"

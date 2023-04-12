@@ -1,12 +1,12 @@
 ---
 prelude: >
-    OpenDaylight jenkins maven jobs with jdk17 and CentOS7 currently fails
-    with a confusing message stating that the JAVA_HOME variable is not
-    correctly set.
-    This can happen in various cases, usually when there is a mismatch
-    between the jdk used by maven and the folder pointed by JAVA_HOME.
-    It appears that openjdk17 is not available with CentOS7 and that
-    the folder indeed does not exist
+  OpenDaylight jenkins maven jobs with jdk17 and CentOS7 currently fails
+  with a confusing message stating that the JAVA_HOME variable is not
+  correctly set.
+  This can happen in various cases, usually when there is a mismatch
+  between the jdk used by maven and the folder pointed by JAVA_HOME.
+  It appears that openjdk17 is not available with CentOS7 and that
+  the folder indeed does not exist
 issues:
   - |
     Current message (JAVA_HOME variable is not set) is confusing and can lead
@@ -21,4 +21,3 @@ other:
   - |
     Adapt and refactor code consequently to be more agnostic to  distribution
     and jdk installation specificities
-

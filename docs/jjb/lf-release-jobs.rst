@@ -9,16 +9,15 @@ staging area to a release area. A release yaml file controls the
 process, and Jenkins promotes the artifact when a project committer
 merges the release yaml file in Gerrit.
 
-To use the self-release process, create a releases/ or .releases/
-directory at the root of the project repository, add one release yaml
-file to it, and submit a change set with that release yaml file.  The
-required contents of the release yaml file are different for each type
-of release, see the schemas and examples shown below.  The version
-string in the release yaml file should be a valid Semantic Versioning
-(SemVer) string, matching the pattern "#.#.#" where "#" is one or more
-digits. A version string matching the pattern "v#.#.#" is also
-accepted. Upon merge of the change, a Jenkins job promotes the
-artifact and pushes a gpg-signed tag to the repository.
+To use the self-release process, create a releases/ or .releases/ directory at
+the root of the project repository, add one release yaml file to it, and submit
+a change set with that release yaml file.  The required contents of the release
+yaml file are different for each release, see the schemas and examples shown
+below.  The version string in the release yaml file should be a valid Semantic
+Versioning (SemVer) string, matching the pattern "#.#.#" where "#" is one or
+more digits. A version string matching the pattern "v#.#.#" is also accepted.
+Upon merge of the change, a Jenkins job promotes the artifact and pushes a
+gpg-signed tag to the repository.
 
 .. note::
 

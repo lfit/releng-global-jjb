@@ -28,8 +28,10 @@ fi
 # Extract SBOM bin in SBOM_PATH
 # This is a workaround until the --path flag works
 # https://github.com/opensbom-generator/spdx-sbom-generator/issues/227
+# shellcheck disable=SC2086
 tar -xzf "${SBOM_LOCATION}" -C ${SBOM_PATH}
 echo "INFO: running spdx-sbom-generator"
+# shellcheck disable=SC2086
 cd ${SBOM_PATH}
 ./spdx-sbom-generator "${SBOM_FLAGS:-}" -g "$GLOBAL_SETTINGS_FILE" -o "${WORKSPACE}"/archives
 

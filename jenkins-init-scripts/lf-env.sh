@@ -209,6 +209,7 @@ lf-activate-venv () {
             pyenv versions
             if command -v pyenv 1>/dev/null 2>&1; then
                 eval "$(pyenv init - --no-rehash)"
+                # shellcheck disable=SC2046
                 pyenv local $(lf-pyver "${python}")
             fi
         fi

@@ -13,6 +13,7 @@ echo "---> common-variables.sh"
 # scripts. It is meant to be sourced in other scripts so that the variables can
 # be called.
 
+# shellcheck disable=SC2140
 MAVEN_OPTIONS="$(echo --show-version \
     --batch-mode \
     -Djenkins \

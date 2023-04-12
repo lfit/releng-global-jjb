@@ -51,6 +51,7 @@ esac
 if ! [ -d "$JAVA_HOME" ]; then
     echo "$JAVA_HOME directory not found - trying to find an approaching one"
     if ls -d "$JAVA_HOME"*; then
+    # shellcheck disable=SC2012
 	JAVA_HOME=$(ls -d "$JAVA_HOME"* | head -1)
         export JAVA_HOME
     else

@@ -404,6 +404,7 @@ artifact_release_file(){
             wget "${path}"/"${name}" -o artifacts/"${name}"
             if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
                 #lftools sign sigul artifacts
+                # shellcheck disable=SC2261
                 curl -v -u <NEXUSUSER>:<NEXUSPASS> --upload-file \
                     "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"${name}" \;
             fi
@@ -469,7 +470,8 @@ maven_release_file(){
     # forward from the tagging point, then a spur commit is created
     # for the tag
     taghash="$(awk '{print $NF}' "$PATCH_DIR/taglist.log")"
-    if [ "${taghash}" = $(git rev-parse origin/${GERRIT_BRANCH}) ]; then
+    # shellcheck disable=SC2046
+    if [ "${taghash}" = $(git rev-parse "origin/${GERRIT_BRANCH}") ]; then
         git checkout "origin/${GERRIT_BRANCH}"
         # sentinal file
         touch .testhash

@@ -16,7 +16,7 @@ case "$OS" in
         systemctl stop firewalld
     ;;
     CentOS|RedHat)
-        os_release_ver = "$(facter operatingsystemrelease | cut -d '.' -f1)"
+        os_release_ver="$(facter operatingsystemrelease | cut -d '.' -f1)"
         if [ "${os_release_ver}" -lt "7" ]; then
             service iptables stop
         else

@@ -632,7 +632,7 @@
     wrappers:
       - credentials-binding:
           - text:
-              credential-id: '{sonarcloud-api-token-cred-id}'
+              credential-id: "{sonarcloud-api-token-cred-id}"
               variable: API_TOKEN
 
     builders:

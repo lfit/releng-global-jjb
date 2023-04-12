@@ -262,7 +262,7 @@ Builds the code, downloads and runs a Snyk CLI scan of the code into the Snyk da
         builder steps. (default: "")
     :post_docker_build_script: Build script to execute after the main verify
         builder steps. (default: "")
-    :snyk-cli-options: Additional Snyk CLI options. (default: '')
+    :snyk-cli-options: Snyk CLI options. (default: '')
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.

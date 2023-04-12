@@ -25,6 +25,7 @@ params+=("--settings $SETTINGS_FILE")
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
+# shellcheck disable=SC2048
 _JAVA_OPTIONS="$JAVA_OPTS" $MVN $MAVEN_GOALS \
     -e -Dsonar \
     ${params[*]} \
@@ -51,11 +52,13 @@ fi
 if [ -n "$SONARCLOUD_JAVA_VERSION" ] && [ "$SET_JDK_VERSION" != "$SONARCLOUD_JAVA_VERSION" ]; then
     export SET_JDK_VERSION="$SONARCLOUD_JAVA_VERSION"
     bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
+    # shellcheck source=/dev/null
     source /tmp/java.env
 fi
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
+# shellcheck disable=SC2048
 "$MVN" $SONAR_MAVEN_GOAL \
     -e -Dsonar -Dsonar.host.url="$SONAR_HOST_URL" \
     ${params[*]} \
