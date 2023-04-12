@@ -1,7 +1,7 @@
 ---
 fixes:
   - |
-    The latest (2.42.0.01) clm-maven-plugin introduced an error in our 
+    The latest (2.42.0.01) clm-maven-plugin introduced an error in our
     environment.
 
     Failed to execute goal com.sonatype.clm:clm-maven-plugin:2.42.0-01:index

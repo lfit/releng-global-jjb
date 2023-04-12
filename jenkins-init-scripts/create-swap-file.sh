@@ -19,7 +19,7 @@ blockCount=${SWAP_SIZE-''}
 # Else:    No Swap
 case $blockCount in
     '')      blockCount=1 ;;
-    [0-9]*)  blockCount=$blockCount ;;
+    [0-9]*)  ;;
     *)       exit ;;
 esac
 [[ $blockCount == 0 ]] && exit

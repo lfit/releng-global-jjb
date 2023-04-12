@@ -215,7 +215,7 @@ Builds the code, downloads and runs a Snyk CLI scan of the code into the Snyk da
     :mvn-opts: Sets MAVEN_OPTS to start up the JVM running Maven. (default: '')
     :mvn-params: Parameters to pass to the mvn CLI. (default: '')
     :mvn-version: Version of maven to use. (default: mvn35)
-    :snyk-cli-options: Additional Snyk CLI options. (default: '')
+    :snyk-cli-options: Snyk CLI options. (default: '')
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -477,7 +477,7 @@ directory is then used later to deploy to Nexus.
         (default: false)
     :sbom-generator-version: SBOM generator version to download and run if using sbom-generator.
         (default: v0.0.10)
-    :sbom-path: Path where SBOM is going to be executed from.
+    :sbom-path: SBOM execution path.
         (default: $WORKSPACE)
     :sign-artifacts: Sign artifacts with Sigul. (default: false)
     :stream: Keyword that represents a release code-name.
@@ -583,7 +583,7 @@ multi-branch configuration.
     :sonarcloud-project-organization: SonarCloud project organization.
         (default: '')
     :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
-        This one SHOULDN'T be overwritten as per we are standarizing the credential ID for all
+        This one SHOULDN'T be overwritten as we are standarizing the credential ID for all
         projects (default: 'sonarcloud-api-token')
     :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
     :stream: Keyword that represents a release code-name.
@@ -648,7 +648,7 @@ This job runs on dev branches and its triggered on new patchsets.
     :sonarcloud-project-organization: SonarCloud project organization.
         (default: '')
     :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
-        This one SHOULDN'T be overwritten as per we are standarizing the credential ID for all
+        This one SHOULDN'T be overwritten as we are standarizing the credential ID for all
         projects (default: 'sonarcloud-api-token')
     :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
     :sonarcloud-qualitygate-wait: SonarCloud flag that forces the analysis step to

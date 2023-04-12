@@ -49,7 +49,7 @@ Builds the code, downloads and runs a Snyk CLI scan of the code into the Snyk da
     :build-timeout: Timeout in minutes before aborting build. (default: 60)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :java-version: Version of Java to use for the build. (default: openjdk11)
-    :snyk-cli-options: Additional Snyk CLI options. (default: '')
+    :snyk-cli-options: Snyk CLI options. (default: '')
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.

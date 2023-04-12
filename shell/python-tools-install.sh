@@ -15,9 +15,11 @@ set -eufo pipefail
 # Souce the python version from lf-env.sh if available.
 python="python3"
 if [[ -f ~/lf-env.sh ]]; then
+    # shellcheck source=/dev/null
     source ~/lf-env.sh
     lf-activate-venv --python "$python" lftools
     # Save the virtualenv path
+    # shellcheck disable=SC2154
     echo "$lf_venv" > "/tmp/.os_lf_venv"
 elif [[ -d /opt/pyenv ]]; then
     echo "Setup up pyenv"

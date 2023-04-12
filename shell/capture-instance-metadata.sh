@@ -15,7 +15,7 @@ echo "---> capture-instance-metadata.sh"
 source ~/lf-env.sh
 
 if [[ "${PYTHON:-}" -ne "" ]]; then
-    lf-activate-venv --python $PYTHON lftools
+    lf-activate-venv --python "$PYTHON" lftools
 elif python3; then
     lf-activate-venv --python python3 lftools
 else
