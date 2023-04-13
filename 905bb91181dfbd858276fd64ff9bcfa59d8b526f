@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e762ec0_fd36a8fd",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-04-13T13:04:04Z",
+      "side": 1,
+      "message": "Are we positive that raw-escape is needed? We\u0027ve had issues with using that when straight raw was required...",
+      "revId": "905bb91181dfbd858276fd64ff9bcfa59d8b526f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8a9dbcee_429e678f",
+        "filename": "releasenotes/notes/upgrade-jjb-to-5x-908aaa15a97d8c2b.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-04-13T13:04:04Z",
+      "side": 1,
+      "message": "CI is failing because prettier is flagging these two lines as needing to be left 2 spaces",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 66
+      },
+      "revId": "905bb91181dfbd858276fd64ff9bcfa59d8b526f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
