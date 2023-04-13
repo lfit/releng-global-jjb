@@ -17,6 +17,7 @@
       - "github-go-verify"
 
     project: go/project
+    github-org: fake-org
     project-name: github-go-project
     go-root: go
     branch: master

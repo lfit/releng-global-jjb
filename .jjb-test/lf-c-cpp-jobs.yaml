@@ -23,6 +23,7 @@
     project-name: github-autotools
     mvn-settings: github-autotools-project-settings
     debian-distribution-versions: ubuntu/bionic
+    github-org: fake-org
     packagecloud-account: example
     packagecloud-repo: master
     rpm-distribution-versions: el/5
@@ -59,6 +60,7 @@
       - github-cmake-verify
 
     project-name: github-cmake
+    github-org: fake-org
     javadoc-path: org.example.project/$STREAM
     staging-profile-id: uuddlrlrba
     mvn-settings: github-cmake-project-settings

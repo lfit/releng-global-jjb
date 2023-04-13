@@ -12,6 +12,7 @@
       - "{project-name}-github-ci-jobs"
 
     project-name: github-ciman
+    github-org: fake-org
 
 - project:
     name: gerrit-openstack-jobs
@@ -30,6 +31,7 @@
       - github-openstack-cron
 
     project-name: github-ciman
+    github-org: fake-org
 
     jenkins-urls: >
       https://jenkins.example.org
@@ -57,6 +59,7 @@
 
     packer-cloud-settings: ci-packer-cloud-env
     project-name: github-ciman
+    github-org: fake-org
     platforms:
       - centos
       - ubuntu1604
@@ -112,3 +115,5 @@
       - github-sonar-prescan
       - github-sonar-prescan-script:
           sonar-prescan-script: "#!/bin/sh"
+
+    github-org: fake-org
