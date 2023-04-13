@@ -3,7 +3,7 @@
 # Node Verify #
 ###############
 
-- lf_node_verify: &lf_node_verify
+- _lf_node_verify: &lf_node_verify
     name: lf-node-verify
 
     ######################

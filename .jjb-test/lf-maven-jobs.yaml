@@ -33,6 +33,7 @@
       - github-maven-verify
 
     project-name: github-maven
+    github-org: fake-org
     javadoc-path: org.example.project/$STREAM
     staging-profile-id: uuddlrlrba
     mvn-settings: aproject-settings

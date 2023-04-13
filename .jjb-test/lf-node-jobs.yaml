@@ -11,6 +11,7 @@
     jobs:
       - "{project-name}-github-node-jobs"
 
+    github-org: fake-org
     project-name: github-node
 
 - project:
