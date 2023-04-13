@@ -32,6 +32,8 @@
       - github-tox-sonarqube
 
     project-name: github-python
+    github-org: fake-org
+    mvn-settings: fake-mvn-settings
 
 - project:
     name: python-jobs-view
