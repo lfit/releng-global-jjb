@@ -30,7 +30,7 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_python_common: &lf_python_common
+- _lf_python_common: &lf_python_common
     name: lf-python-common
 
     ######################
@@ -69,7 +69,7 @@
 # Tox Nexus IQ CLM #
 ####################
 
-- lf_tox_nexus_iq_clm: &lf_tox_nexus_iq_clm
+- _lf_tox_nexus_iq_clm: &lf_tox_nexus_iq_clm
     name: lf-tox-nexus-iq-clm
 
     ######################
@@ -231,7 +231,7 @@
 # Python Snyk CLI #
 ###################
 
-- lf_python_snyk_cli: &lf_python_snyk_cli
+- _lf_python_snyk_cli: &lf_python_snyk_cli
     name: lf-python-snyk_cli
 
     ######################
@@ -377,7 +377,7 @@
 # Python Sonar with CLI #
 #########################
 
-- lf_cli_sonar: &lf_cli_sonar
+- _lf_cli_sonar: &lf_cli_sonar
     name: lf-cli-sonar
 
     ######################
@@ -543,7 +543,7 @@
 # Python Sonar with Tox #
 #########################
 
-- lf_tox_sonar: &lf_tox_sonar
+- _lf_tox_sonar: &lf_tox_sonar
     name: lf-tox-sonar
 
     ######################
@@ -562,7 +562,7 @@
     mvn-goals: validate
     mvn-opts: ""
     mvn-params: ""
-    mvn-settings: "{mvn-settings}"
+    mvn-settings: ""
     mvn-version: mvn35
     parallel: true
     pre-build-script: "# pre-build script goes here"
@@ -764,7 +764,7 @@
 # Tox SonarQube #
 #################
 
-- lf_tox_sonarqube: &lf_tox_sonarqube
+- _lf_tox_sonarqube: &lf_tox_sonarqube
     name: lf-tox-sonarqube
 
     ######################
@@ -911,7 +911,7 @@
 # Tox Common #
 ##############
 
-- lf_tox_common: &lf_tox_common
+- _lf_tox_common: &lf_tox_common
     name: lf-tox-common
 
     ######################
@@ -1151,7 +1151,7 @@
 # PyPI #
 ########
 
-- lf_pypi_common: &lf_pypi_common
+- _lf_pypi_common: &lf_pypi_common
     name: lf-pypi-common
 
     ######################
@@ -1222,7 +1222,7 @@
     publishers:
       - lf-infra-publish
 
-- lf_pypi_verify_builders: &lf_pypi_verify_builders
+- _lf_pypi_verify_builders: &lf_pypi_verify_builders
     name: lf-pypi-verify-builders
 
     builders:
@@ -1234,7 +1234,7 @@
           parallel: "{parallel}"
       - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
 
-- lf_pypi_publish_builders: &lf_pypi_publish_builders
+- _lf_pypi_publish_builders: &lf_pypi_publish_builders
     name: lf-pypi-publish-builders
 
     builders:

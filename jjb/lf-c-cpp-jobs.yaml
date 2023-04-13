@@ -3,7 +3,7 @@
 # AUTOTOOLS COMMON #
 ####################
 
-- lf_autotools_common: &lf_autotools_common
+- _lf_autotools_common: &lf_autotools_common
     name: lf-autotools-common
 
     #####################
@@ -40,7 +40,7 @@
 # AUTOTOOLS PACKAGECLOUD STAGE #
 ################################
 
-- lf_autotools_packagecloud_stage: &lf_autotools_packagecloud_stage
+- _lf_autotools_packagecloud_stage: &lf_autotools_packagecloud_stage
     name: lf-autotools-packagecloud-stage
 
     ######################
@@ -182,7 +182,7 @@
 # AUTOTOOLS SONARQUBE #
 #######################
 
-- lf_autotools_sonarqube: &lf_autotools_sonarqube
+- _lf_autotools_sonarqube: &lf_autotools_sonarqube
     name: lf-autotools-sonarqube
 
     ######################
@@ -304,7 +304,7 @@
 # AUTOTOOLS VERIFY #
 ####################
 
-- lf_autotools_verify: &lf_autotools_verify
+- _lf_autotools_verify: &lf_autotools_verify
     name: lf-autotools-verify
 
     ######################
@@ -432,7 +432,7 @@
 # CMAKE COMMON #
 ################
 
-- lf_cmake_common: &lf_cmake_common
+- _lf_cmake_common: &lf_cmake_common
     name: lf-cmake-common
 
     #####################
@@ -470,7 +470,7 @@
 # CMAKE SONAR #
 ###############
 
-- lf_cmake_sonar: &lf_cmake_sonar
+- _lf_cmake_sonar: &lf_cmake_sonar
     name: lf-cmake-sonar
 
     ######################
@@ -580,7 +580,7 @@
 # CMAKE SONARQUBE #
 ###################
 
-- lf_cmake_sonarqube: &lf_cmake_sonarqube
+- _lf_cmake_sonarqube: &lf_cmake_sonarqube
     name: lf-cmake-sonarqube
 
     ######################
@@ -710,7 +710,7 @@
 # CMAKE STAGE #
 ###############
 
-- lf_cmake_stage: &lf_cmake_stage
+- _lf_cmake_stage: &lf_cmake_stage
     name: lf-cmake-stage
 
     ######################
@@ -867,7 +867,7 @@
 # CMAKE PACKAGECLOUD STAGE #
 ############################
 
-- lf_cmake_pc_stage: &lf_cmake_pc_stage
+- _lf_cmake_pc_stage: &lf_cmake_pc_stage
     name: lf-cmake-packagecloud-stage
 
     ######################
@@ -1009,7 +1009,7 @@
 # CMAKE VERIFY #
 ################
 
-- lf_cmake_verify: &lf_cmake_verify
+- _lf_cmake_verify: &lf_cmake_verify
     name: lf-cmake-verify
 
     ######################

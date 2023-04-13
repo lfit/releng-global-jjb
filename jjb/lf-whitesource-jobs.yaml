@@ -37,7 +37,7 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_whitesource_common: &lf_whitesource_common
+- _lf_whitesource_common: &lf_whitesource_common
     name: lf-whitesource-common
 
     ######################
@@ -80,7 +80,7 @@
 # WHITESOURCE UNIFIED AGENT SCAN #
 ##################################
 
-- lf_wss_unified_agent_scan: &lf_wss_unified_agent_scan
+- _lf_wss_unified_agent_scan: &lf_wss_unified_agent_scan
     name: lf-wss-unified-agent-scan
 
     ######################

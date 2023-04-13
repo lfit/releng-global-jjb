@@ -11,8 +11,8 @@
             - file-id: jjbini
               target: "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
-- lf_packer: &lf_packer_common
-    name: lf-packer-common
+- _lf_packer_common: &lf_packer_common
+    name: lf_packer_common
     # Provide configuration common in packer jobs.
 
     ######################
@@ -89,7 +89,7 @@
           default: "{puppet-lint-version}"
           description: Puppet-lint version to download and install.
 
-- lf_jjb_common: &lf_jjb_common
+- _lf_jjb_common: &lf_jjb_common
     name: lf-jjb-common
 
     ######################
@@ -258,7 +258,7 @@
       - shell: !include-raw-escape: ../shell/jenkins-configure-global-vars.sh
       - shell: rm -f "$HOME/.config/jenkins_jobs/jenkins_jobs.ini"
 
-- lf_jenkins_configuration: &lf_jenkins_cfg_merge
+- _lf_jenkins_configuration: &lf_jenkins_cfg_merge
     name: lf-jenkins-cfg-merge
 
     ######################
@@ -397,7 +397,7 @@
 # Jenkins Configuration Management Verify #
 ###########################################
 
-- lf_jenkins_configuration: &lf_jenkins_cfg_verify
+- _lf_jenkins_configuration: &lf_jenkins_cfg_verify
     name: lf-jenkins-cfg-verify
 
     ######################
@@ -534,7 +534,7 @@
 # JENKINS SANDBOX CLEANUP #
 ###########################
 
-- lf_jenkins_sandbox_cleanup: &lf_jenkins_sandbox_cleanup
+- _lf_jenkins_sandbox_cleanup: &lf_jenkins_sandbox_cleanup
     name: lf-jenkins-sandbox-cleanup
 
     ######################
@@ -586,7 +586,7 @@
 # JJB DEPLOY JOB #
 ##################
 
-- lf_jjb_deploy_job: &lf_jjb_deploy_job
+- _lf_jjb_deploy_job: &lf_jjb_deploy_job
     name: lf-jjb-deploy-job
 
     ######################
@@ -715,7 +715,7 @@
 # JJB Merge #
 #############
 
-- lf_jjb_merge: &lf_jjb_merge
+- _lf_jjb_merge: &lf_jjb_merge
     name: lf-jjb-merge
 
     ######################
@@ -824,7 +824,7 @@
 # JJB Verify #
 ##############
 
-- lf_jjb_verify: &lf_jjb_verify
+- _lf_jjb_verify: &lf_jjb_verify
     name: lf-jjb-verify
 
     ######################
@@ -950,7 +950,7 @@
 # JJB Verify Upstream GJJB #
 ############################
 
-- lf_jjb_verify: &lf_jjb_verify_upstream_gjjb
+- _lf_jjb_verify: &lf_jjb_verify_upstream_gjjb
     name: lf-jjb-verify-upstream-gjjb
 
     #####################
@@ -1063,7 +1063,7 @@
 # License Check #
 #################
 
-- lf_license_check: &lf_license_check
+- _lf_license_check: &lf_license_check
     name: lf-license-check
 
     ######################
@@ -1201,7 +1201,7 @@
 # Info YAML Verify #
 ####################
 
-- lf_info_yaml_verify: &lf_info_yaml_verify
+- _lf_info_yaml_verify: &lf_info_yaml_verify
     name: lf-info-yaml-verify
 
     ######################
@@ -1301,7 +1301,7 @@
 # OPENSTACK CRON #
 ##################
 
-- lf_openstack_cron: &lf_openstack_cron
+- _lf_openstack_cron: &lf_openstack_cron
     name: lf-openstack-cron
 
     ######################
@@ -1458,7 +1458,7 @@
 # Packer Merge #
 ################
 
-- lf_packer_merge: &lf_packer_merge
+- _lf_packer_merge: &lf_packer_merge
     name: lf-packer-merge
 
     ######################
@@ -1763,7 +1763,7 @@
 # Packer Verify #
 #################
 
-- lf_packer_verify: &lf_packer_verify
+- _lf_packer_verify: &lf_packer_verify
     name: lf-packer-verify
 
     ######################
@@ -1888,7 +1888,7 @@
 # Openstack Update Cloud Image #
 ################################
 
-- lf_openstack_cron: &lf_openstack_update_cloud_image
+- _lf_openstack_cron: &lf_openstack_update_cloud_image
     name: lf-openstack-update-cloud-image
 
     ######################
@@ -2005,7 +2005,7 @@
 # Puppet Verify #
 #################
 
-- lf_puppet_verify: &lf_puppet_verify
+- _lf_puppet_verify: &lf_puppet_verify
     name: lf-puppet-verify
 
     ######################
@@ -2153,7 +2153,7 @@
 # Sonar #
 #########
 
-- lf_sonar_common: &lf_sonar_common
+- _lf_sonar_common: &lf_sonar_common
     name: lf-sonar-common
 
     ######################
@@ -2222,7 +2222,7 @@
     publishers:
       - lf-infra-publish
 
-- lf_sonar_builders: &lf_sonar_builders
+- _lf_sonar_builders: &lf_sonar_builders
     name: lf-sonar-builders
     builders:
       - lf-infra-pre-build
@@ -2235,7 +2235,7 @@
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
 
-- lf_sonar_builders_prescan: &lf_sonar_builders_prescan
+- _lf_sonar_builders_prescan: &lf_sonar_builders_prescan
     name: lf-sonar-builders-prescan
     builders:
       - lf-infra-pre-build
@@ -2248,7 +2248,7 @@
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
 
-- lf_sonar_builders_prescan_script: &lf_sonar_builders_prescan_script
+- _lf_sonar_builders_prescan_script: &lf_sonar_builders_prescan_script
     name: lf-sonar-builders-prescan-script
     builders:
       - lf-infra-pre-build
@@ -2262,7 +2262,7 @@
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
 
-- lf_sonar_gerrit_common: &lf_sonar_gerrit_common
+- _lf_sonar_gerrit_common: &lf_sonar_gerrit_common
     name: lf-sonar-gerrit-common
     gerrit_sonar_triggers:
       - comment-added-contains-event:
@@ -2297,7 +2297,7 @@
             unstable: true
             notbuilt: true
 
-- lf_sonar_github_common: &lf_sonar_github_common
+- _lf_sonar_github_common: &lf_sonar_github_common
     name: lf-sonar-github-common
     properties:
       - lf-infra-properties:
@@ -2385,7 +2385,7 @@
 # Pipelines #
 #############
 
-- lf_pipelines_common: &lf_pipelines_common
+- _lf_pipelines_common: &lf_pipelines_common
     name: lf-pipelines-common
 
     ######################
@@ -2400,7 +2400,7 @@
     submodule-timeout: 10
     submodule-disable: false
 
-- lf_global_pipelines_common: &lf_global_pipelines_common
+- _lf_global_pipelines_common: &lf_global_pipelines_common
     name: lf-global-pipelines-common
 
     # All jobs are triggering from the same source
