@@ -16,6 +16,24 @@
       "message": "I\u0027ll give a +2 when you come back with some validation on the question about the include-raw change being absolutely correct",
       "revId": "20762ac6f51ffe83e0c4ba53f7542e0e56619084",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd29e3f9_9954fd10",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-13T22:29:43Z",
+      "side": 1,
+      "message": "Alright, I\u0027m unable to test this directly until the ci-man for onap is migrated to JJB 5x, needs lots of updates with the way they have written the code. In the meantime, you can go through this example that explain the {var} expansion is being replace with !include-raw-escape: \n\nhttps://review.opendev.org/c/jjb/jenkins-job-builder/+/871965/5/tests/yamlparser/job_fixtures/lazy-load-jobs-multi001.yaml",
+      "parentUuid": "4d1be7ce_3fa01629",
+      "revId": "20762ac6f51ffe83e0c4ba53f7542e0e56619084",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
