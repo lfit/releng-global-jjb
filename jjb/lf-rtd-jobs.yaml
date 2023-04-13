@@ -3,13 +3,12 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_rtd_common: &lf_rtd_common
+- _lf_rtd_common: &lf_rtd_common
     name: lf-rtd-common
 
     ######################
     # Default parameters #
     ######################
-
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
         pattern: '.*\.css'
@@ -57,7 +56,7 @@
 # RTD MERGE #
 #############
 
-- lf_rtd_merge: &lf_rtd_merge
+- _lf_rtd_merge: &lf_rtd_merge
     name: lf-rtd-merge
 
     ######################
@@ -148,7 +147,7 @@
 # RTD VERIFY#
 #############
 
-- lf_rtd_verify: &lf_rtd_verify
+- _lf_rtd_verify: &lf_rtd_verify
     name: lf-rtd-verify
 
     ######################

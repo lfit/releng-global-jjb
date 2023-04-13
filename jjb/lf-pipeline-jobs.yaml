@@ -3,7 +3,7 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_pipeline_common: &lf_pipeline_common
+- _lf_pipeline_common: &lf_pipeline_common
     name: lf-pipeline-common
 
     ######################
@@ -48,7 +48,7 @@
 # PIPELINE VERIFY#
 ##################
 
-- lf_pipeline_verify: &lf_pipeline_verify
+- _lf_pipeline_verify: &lf_pipeline_verify
     name: lf-pipeline-verify
 
     ######################
