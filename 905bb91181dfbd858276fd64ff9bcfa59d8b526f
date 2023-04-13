@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f8196aca_a686c81d",
+        "filename": "jjb/lf-docker-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-13T13:15:43Z",
+      "side": 1,
+      "message": "that\u0027s because we are processing the {var} and no a filename and returns an error:\n\n/home/abelur/git/global-jjb/jjb/lf-docker-jobs.yaml:16:16: In included file \u0027/home/abelur/git/global-jjb/jjb/../shell/docker-get-container-tag.sh\u0027\n          - shell: !include-raw: \"{docker-get-container-tag-script}\"\n                   ^\nWhile formatting string \u0027#!/bin/bash -l\\n# SPDX-License-Identifier: EPL-1.0\\n##############################...\u0027: Missing parameter: \u0027CONTAINER_TAG_YAML_DIR\u0027\nDEBUG:jenkins_jobs.cache:Cache written out to \u0027/home/abelur/.cache/jenkins_jobs/cache-host-jobs-https___jenkins_opendaylight_org_sandbox.yml\u0027\nERROR: InvocationError for command /home/abelur/git/global-jjb/.tox/jjb/bin/jenkins-jobs -l DEBUG test --recursive -o archives/job-configs /home/abelur/git/global-jjb/jjb:/home/abelur/git/gl\n\nI\u0027ll do some more testing to confirm this and get back!",
+      "parentUuid": "8e762ec0_fd36a8fd",
+      "revId": "905bb91181dfbd858276fd64ff9bcfa59d8b526f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8a9dbcee_429e678f",
         "filename": "releasenotes/notes/upgrade-jjb-to-5x-908aaa15a97d8c2b.yaml",
         "patchSetId": 3
@@ -31,6 +49,54 @@
       "writtenOn": "2023-04-13T13:04:04Z",
       "side": 1,
       "message": "CI is failing because prettier is flagging these two lines as needing to be left 2 spaces",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 66
+      },
+      "revId": "905bb91181dfbd858276fd64ff9bcfa59d8b526f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "782be0b8_b9bfd5dd",
+        "filename": "releasenotes/notes/upgrade-jjb-to-5x-908aaa15a97d8c2b.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-13T13:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a9dbcee_429e678f",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 66
+      },
+      "revId": "905bb91181dfbd858276fd64ff9bcfa59d8b526f",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de92021d_60d4b59b",
+        "filename": "releasenotes/notes/upgrade-jjb-to-5x-908aaa15a97d8c2b.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-13T13:15:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8a9dbcee_429e678f",
       "range": {
         "startLine": 3,
         "startChar": 0,
