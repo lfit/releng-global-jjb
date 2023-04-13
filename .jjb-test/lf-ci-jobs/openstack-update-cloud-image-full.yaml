@@ -9,7 +9,7 @@
     build-timeout: 10
     branch: master
     archive-artifacts: "**/*.log"
-    jenkins-ssh-credential: "{jenkins-ssh-credential}"
+    jenkins-ssh-credential: "jenkins-ssh-credential"
     gerrit-user: "jenkins-user"
     gerrit-host: "git.example.org"
     gerrit-topic: "update-cloud-image"

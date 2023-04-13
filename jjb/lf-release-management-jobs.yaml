@@ -3,7 +3,7 @@
 # Release Announce #
 ####################
 
-- lf_release_announce: &lf_release_announce
+- _lf_release_announce: &lf_release_announce
     name: lf-release-announce
 
     ######################

@@ -13,7 +13,7 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_go_common: &lf_go_common
+- _lf_go_common: &lf_go_common
     name: lf-go-common
 
     project-type: freestyle
@@ -68,7 +68,7 @@
 # Go Snyk CLI #
 ###############
 
-- lf_go_snyk_cli: &lf_go_snyk_cli
+- _lf_go_snyk_cli: &lf_go_snyk_cli
     name: lf-go-snyk_cli
 
     ######################
@@ -212,7 +212,7 @@
 # Go Verify #
 #############
 
-- lf_go_verify: &lf_go_verify
+- _lf_go_verify: &lf_go_verify
     name: lf-go-verify
 
     concurrent: true

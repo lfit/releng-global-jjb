@@ -17,4 +17,5 @@
     project: self-release/project-github
     project-name: self-release-project-github
     branch: master
+    github-org: fake-org
     mvn-settings: github-maven-project-settings

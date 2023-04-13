@@ -72,7 +72,7 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_maven_common: &lf_maven_common
+- _lf_maven_common: &lf_maven_common
     name: lf-maven-common
 
     ######################
@@ -127,7 +127,7 @@
 # Maven CLM #
 #############
 
-- lf_maven_clm: &lf_maven_clm
+- _lf_maven_clm: &lf_maven_clm
     name: lf-maven-clm
 
     ######################
@@ -297,7 +297,7 @@
 # Maven Snyk CLI #
 ##################
 
-- lf_maven_snyk_cli: &lf_maven_snyk_cli
+- _lf_maven_snyk_cli: &lf_maven_snyk_cli
     name: lf-maven-snyk_cli
 
     ######################
@@ -463,7 +463,7 @@
 # Maven Javadoc Publish #
 #########################
 
-- lf_maven_javadoc_publish: &lf_maven_javadoc_publish
+- _lf_maven_javadoc_publish: &lf_maven_javadoc_publish
     name: lf-maven-javadoc-publish
 
     ######################
@@ -595,7 +595,7 @@
 # Maven Javadoc Verify #
 ########################
 
-- lf_maven_javadoc_verify: &lf_maven_javadoc_verify
+- _lf_maven_javadoc_verify: &lf_maven_javadoc_verify
     name: lf-maven-javadoc-verify
 
     ######################
@@ -719,7 +719,7 @@
 # Maven Merge #
 ###############
 
-- lf_maven_merge: &lf_maven_merge
+- _lf_maven_merge: &lf_maven_merge
     name: lf-maven-merge
 
     ######################
@@ -876,7 +876,7 @@
 # Maven Merge for Docker #
 ##########################
 
-- lf_maven_docker_merge: &lf_maven_docker_merge
+- _lf_maven_docker_merge: &lf_maven_docker_merge
     name: lf-maven-docker-merge
 
     builders:
@@ -987,7 +987,7 @@
 # Maven Stage #
 ###############
 
-- lf_maven_stage: &lf_maven_stage
+- _lf_maven_stage: &lf_maven_stage
     name: lf-maven-stage
 
     ######################
@@ -1185,7 +1185,7 @@
 # Maven Stage for Docker #
 ##########################
 
-- lf_maven_docker_stage: &lf_maven_docker_stage
+- _lf_maven_docker_stage: &lf_maven_docker_stage
     name: lf-maven-docker-stage
 
     builders:
@@ -1302,7 +1302,7 @@
 # Maven Sonar #
 ###############
 
-- lf_maven_sonar: &lf_maven_sonar
+- _lf_maven_sonar: &lf_maven_sonar
     name: lf-maven-sonar
 
     ######################
@@ -1402,7 +1402,7 @@
       - findbugs
       - lf-infra-publish
 
-- mvn_sonar_builders: &mvn_sonar_builders
+- _mvn_sonar_builders: &mvn_sonar_builders
     name: mvn-sonar-builders
     builders:
       - lf-infra-pre-build
@@ -1436,7 +1436,7 @@
                 mvn-settings: "{mvn-settings}"
                 mvn-version: "{mvn-version}"
 
-- mvn_sonar_builders_prescan_script: &mvn_sonar_builders_prescan_script
+- _mvn_sonar_builders_prescan_script: &mvn_sonar_builders_prescan_script
     name: mvn-sonar-builders-prescan-script
     builders:
       - shell: "{sonar-prescan-script}"
@@ -1697,7 +1697,7 @@
 # Maven Verify #
 ################
 
-- lf_maven_verify: &lf_maven_verify
+- _lf_maven_verify: &lf_maven_verify
     name: lf-maven-verify
 
     ######################
@@ -1837,7 +1837,7 @@
 # Maven Verify for Docker #
 ###########################
 
-- lf_maven_docker_verify: &lf_maven_docker_verify
+- _lf_maven_docker_verify: &lf_maven_docker_verify
     name: lf-maven-docker-verify
 
     # image push not allowed during verification
@@ -1937,7 +1937,7 @@
 # Maven Verify Dependencies #
 #############################
 
-- lf_maven_verify_dependencies: &lf_maven_verify_dependencies
+- _lf_maven_verify_dependencies: &lf_maven_verify_dependencies
     name: lf-maven-verify-dependencies
 
     ######################

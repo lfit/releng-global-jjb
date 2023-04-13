@@ -1,0 +1,13 @@
+---
+prelude: >
+  JJB's YAML parser is re-written in JJB 5.x release for a fine-tuned control
+  over YAML parsing, YAML objects and parameter expansion logic.
+issues:
+  - |
+    This breaks backward compatibility with older version of JJB
+    therefore care must be taken during upgrade.
+upgrade:
+  - |
+    Upgrade Jenkins-job-builder to 5.0.1 as the default version.
+
+    Ref: https://review.opendev.org/c/jjb/jenkins-job-builder/+/871965
