@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44ec64cb_56167658",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-04-13T13:21:13Z",
+      "side": 1,
+      "message": "Upgrade is not a valid prefix. Please make sure you have pre-commit installed on your local repo, this would have been caught by that...\n\nGiven what I\u0027ve read over this really should be a \u0027Refactor!\u0027 since it\u0027s a potentially breaking refactor but still a refactor.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 8
+      },
+      "revId": "49237fffbe27cba79fda107a881f301d99543616",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
