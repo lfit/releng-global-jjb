@@ -13,7 +13,7 @@
             CONTAINER_TAG_METHOD={container-tag-method}
             CONTAINER_TAG_YAML_DIR={container-tag-yaml-dir}
             DOCKER_ROOT={docker-root}
-      - shell: !include-raw: "{docker-get-container-tag-script}"
+      - shell: !include-raw-escape: "{docker-get-container-tag-script}"
       - inject:
           # Import the container tag set by this build step
           properties-file: "env_docker_inject.txt"
@@ -44,7 +44,7 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_docker_common: &lf_docker_common
+- _lf_docker_common: &lf_docker_common
     name: lf-docker-common
 
     project-type: freestyle
@@ -96,7 +96,7 @@
     publishers:
       - lf-infra-publish
 
-- docker_verify_common: &docker_verify_common
+- _docker_verify_common: &docker_verify_common
     name: docker-verify-common
 
     concurrent: true
@@ -149,7 +149,7 @@
       - shell: "{post_docker_build_script}"
       - lf-provide-maven-settings-cleanup
 
-- docker_merge_common: &docker_merge_common
+- _docker_merge_common: &docker_merge_common
     name: docker-merge-common
     cron: "@weekly" # check dependencies regularly
 
@@ -349,7 +349,7 @@
 # Docker Snyk CLI #
 ##################
 
-- lf_docker_snyk_cli: &lf_docker_snyk_cli
+- _lf_docker_snyk_cli: &lf_docker_snyk_cli
     name: lf-docker-snyk_cli
 
     ######################

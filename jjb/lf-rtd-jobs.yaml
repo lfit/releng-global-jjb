@@ -3,12 +3,13 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_rtd_common: &lf_rtd_common
+- _lf_rtd_common: &lf_rtd_common
     name: lf-rtd-common
 
     ######################
     # Default parameters #
     ######################
+    github-org: ""
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -57,7 +58,7 @@
 # RTD MERGE #
 #############
 
-- lf_rtd_merge: &lf_rtd_merge
+- _lf_rtd_merge: &lf_rtd_merge
     name: lf-rtd-merge
 
     ######################
@@ -70,6 +71,7 @@
     disable-job: false
     git-url: https://github.com
     github-url: "https://github.com"
+    github-org: ""
     project-pattern: "**"
     stream: master
     submodule-recursive: true
@@ -148,7 +150,7 @@
 # RTD VERIFY#
 #############
 
-- lf_rtd_verify: &lf_rtd_verify
+- _lf_rtd_verify: &lf_rtd_verify
     name: lf-rtd-verify
 
     ######################
@@ -161,6 +163,7 @@
     disable-job: false
     doc-dir: docs/_build/html
     git-url: "$GIT_URL/$PROJECT"
+    github-org: ""
     github-url: "https://github.com"
     project-pattern: "**"
     python-version: python3
