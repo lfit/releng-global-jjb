@@ -3,7 +3,7 @@
 # common view template #
 ########################
 
-- lf_view_common_columns: &lf_view_common_columns
+- _lf_view_common_columns: &lf_view_common_columns
     name: lf-view-common-columns
 
     columns:
