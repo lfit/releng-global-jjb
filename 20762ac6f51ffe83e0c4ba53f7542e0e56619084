@@ -34,6 +34,24 @@
       "parentUuid": "4d1be7ce_3fa01629",
       "revId": "20762ac6f51ffe83e0c4ba53f7542e0e56619084",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dff36a11_5af92402",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-16T11:52:37Z",
+      "side": 1,
+      "message": "Fixed all the issues with the ci-man repo, was able to push the job to sandbox and compare the builders and xml job config, which is the same as the one produced with JJB 4x:\n\nhttps://jenkins.onap.org/sandbox/job/dcaegen2-services-ml-prediction-ms-docker-verify-master/configure\n\nhttps://gerrit.onap.org/r/c/ci-management/+/134158",
+      "parentUuid": "fd29e3f9_9954fd10",
+      "revId": "20762ac6f51ffe83e0c4ba53f7542e0e56619084",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
