@@ -3,7 +3,7 @@
 # COMMON FUNCTIONS #
 ####################
 
-- lf_info_vote_common: &lf_info_vote_common
+- _lf_info_vote_common: &lf_info_vote_common
     name: lf-info-vote-common
 
     gerrit_trigger_file_paths:
@@ -36,7 +36,7 @@
     publishers:
       - lf-infra-publish
 
-- lf_info_vote_verify: &lf_info_vote_verify
+- _lf_info_vote_verify: &lf_info_vote_verify
     name: lf-info-vote-verify
 
     branch: master

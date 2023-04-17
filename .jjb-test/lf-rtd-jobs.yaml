@@ -16,6 +16,7 @@
       - github-rtd-verify
 
     project-name: github-rtd
+    github-org: fake-org
     rtd-build-url: fake-rtd-build-url
     rtd-token: fake-rtd-token
 
