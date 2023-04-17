@@ -608,8 +608,8 @@
     git-url: "$GIT_URL/$PROJECT"
     gerrit-skip-vote: false
     use-release-file: true
-    account-name: "{account-name}"
-    source-repo: "{source-repo}"
+    account-name: ""
+    source-repo: ""
 
     #####################
     # Job Configuration #

@@ -1,0 +1,7 @@
+---
+prelude: >
+  JJB 5x treats recursive parameters as an error.
+fixes:
+  - |
+    Remove recursive parameters set as defaults for
+    packagecloud jobs
