@@ -101,7 +101,7 @@
     disable-job: false
     github-url: "https://github.com"
     jjb-cache: "$HOME/.cache/jenkins_jobs"
-    jjb-version: 5.0.1
+    jjb-version: 5.0.2
     stream: master
     submodule-recursive: true
     submodule-timeout: 10

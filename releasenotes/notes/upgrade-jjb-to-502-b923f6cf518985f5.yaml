@@ -1,0 +1,12 @@
+prelude: >
+  JJB's 5.0.1 has a bug that return an error.
+  TypeError: 'NoneType' object is not a mapping
+issues:
+  - |
+    This breaks the JJB test on the existing ci-man repositores when the
+    macro is null value.
+upgrade:
+  - |
+    Upgrade Jenkins-job-builder to 5.0.2 which has the fix for the issue.
+
+    Ref: https://review.opendev.org/c/jjb/jenkins-job-builder/+/880589
