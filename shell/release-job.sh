@@ -365,11 +365,12 @@ tag-git-repo(){
             fi
             git config user.name "$RELEASE_USERNAME"
             git config user.email "$RELEASE_EMAIL"
+            echo "INFO: push tag: $GIT_TAG"
+            git push origin "$GIT_TAG"
             # Check if sentinal file exists
             if [[ -f .testhash ]]; then
-                git push origin "${GERRIT_BRANCH}" "$GIT_TAG"
-            else
-                git push origin "$GIT_TAG"
+                echo "INFO: push code bundle"
+                git push origin "${GERRIT_REFSPEC}"
             fi
         fi
     fi
