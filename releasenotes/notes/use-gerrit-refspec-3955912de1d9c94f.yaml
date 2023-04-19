@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Use the GERRIT_REFSPEC while pushing code and tags
+    separately.
