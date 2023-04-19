@@ -365,11 +365,12 @@ tag-git-repo(){
             fi
             git config user.name "$RELEASE_USERNAME"
             git config user.email "$RELEASE_EMAIL"
+            echo "INFO: push tag: $GIT_TAG"
+            git push origin "$GIT_TAG"
             # Check if sentinal file exists
             if [[ -f .testhash ]]; then
-                git push origin "${GERRIT_BRANCH}" "$GIT_TAG"
-            else
-                git push origin "$GIT_TAG"
+                echo "INFO: push code bundle"
+                git push origin "HEAD:${GERRIT_REFSPEC}"
             fi
         fi
     fi
@@ -481,6 +482,8 @@ maven_release_file(){
 
     git fetch "$PATCH_DIR/${PROJECT//\//-}.bundle"
     git merge --ff-only FETCH_HEAD
+    # print last few changes to see how the bundle is applied
+    git log --graph --all --decorate --pretty=oneline -n10
     nexus_release
     tag-git-repo
 }
