@@ -46,6 +46,30 @@
       },
       "revId": "2c0ca786393663da6cafbaf61a53df6e843e9da1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bcae4fd_b741d084",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2023-04-20T16:55:10Z",
+      "side": 1,
+      "message": "Ah, so --atomic looks nice, and it sounds like what we want to do, EXCEPT 😊\n\nAt this point we have already published artifacts, so we definitely want to at least push the tag, as that prevents the situation we have with currently-failing jobs, where committers need to manually create/sign/push the tag.\n\nAnother option would be to use --follow-tags, it seems, in which case we would not have to specify the tag.\n\nThe question is mostly: how do we recover if some(body|thing) messes up and the branch moves? The fact we have release the artifacts is kinda forcing our hand here.\n\nGiven that, I would say we push the two separately for now, but if we decide to reorder the steps and push before we release the artifacts, then an atomic push is a-okay. I mean deleting a tag/reverting HEAD state is something we can do anytime...",
+      "parentUuid": "b5e8fdbe_fef8ed99",
+      "range": {
+        "startLine": 375,
+        "startChar": 16,
+        "endLine": 375,
+        "endChar": 42
+      },
+      "revId": "2c0ca786393663da6cafbaf61a53df6e843e9da1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
