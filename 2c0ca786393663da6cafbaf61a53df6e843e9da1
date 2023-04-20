@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13f8ceb4_3a0ccc1d",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2023-04-20T05:37:57Z",
+      "side": 1,
+      "message": "move this above the check, and push only to REFSPEC after the tag was pushed",
+      "range": {
+        "startLine": 375,
+        "startChar": 16,
+        "endLine": 375,
+        "endChar": 42
+      },
+      "revId": "2c0ca786393663da6cafbaf61a53df6e843e9da1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
