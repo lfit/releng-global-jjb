@@ -22,6 +22,30 @@
       },
       "revId": "2c0ca786393663da6cafbaf61a53df6e843e9da1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5e8fdbe_fef8ed99",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-20T07:06:45Z",
+      "side": 1,
+      "message": "Done, we can test if this works.\n\nThe other alternative I was considering was to use `git push --atomic refspec tag`.",
+      "parentUuid": "13f8ceb4_3a0ccc1d",
+      "range": {
+        "startLine": 375,
+        "startChar": 16,
+        "endLine": 375,
+        "endChar": 42
+      },
+      "revId": "2c0ca786393663da6cafbaf61a53df6e843e9da1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
