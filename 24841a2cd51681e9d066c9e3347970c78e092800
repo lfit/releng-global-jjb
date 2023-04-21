@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "51d749ea_49a88435",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-21T08:35:20Z",
+      "side": 1,
+      "message": "The job is going through now, tested on aaa:\n\nhttps://jenkins.opendaylight.org/releng/view/aaa/job/aaa-release-merge/62/console",
+      "revId": "24841a2cd51681e9d066c9e3347970c78e092800",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
