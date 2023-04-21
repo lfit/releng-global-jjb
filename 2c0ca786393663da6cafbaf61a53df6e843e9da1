@@ -94,6 +94,30 @@
       },
       "revId": "2c0ca786393663da6cafbaf61a53df6e843e9da1",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3490c22e_94529383",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-04-21T02:00:28Z",
+      "side": 1,
+      "message": "https://jenkins.opendaylight.org/releng/view/infrautils/job/infrautils-release-merge/60/console\n\n11:34:37 INFO: push code bundle\n11:34:37 + git push origin refs/heads/master\n11:34:37 error: src refspec refs/heads/master does not match any\n11:34:37 error: failed to push some refs to \u0027ssh://git.opendaylight.org:29418/infrautils\u0027\n11:34:37 Build step \u0027Execute shell\u0027 marked build as failure\n\nAlthough, now using GERRIT_REFSPEC instead of GERRIT_BRANCH in the code. The taging has gone thru, but the bundle has not been pushed to the repo.",
+      "parentUuid": "270e8f49_385ac016",
+      "range": {
+        "startLine": 375,
+        "startChar": 16,
+        "endLine": 375,
+        "endChar": 42
+      },
+      "revId": "2c0ca786393663da6cafbaf61a53df6e843e9da1",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
