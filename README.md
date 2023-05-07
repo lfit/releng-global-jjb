@@ -7,7 +7,7 @@ to projects that use the same build technology. The intention is to help
 projects save time from having to define their own job templates.
 
 ## Guides
-### [Install](link.com)
+### [Install](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/install.html#install)
 * [Jenkins configuration](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/install.html#jenkins-configuration)
 
 * [ci-management](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/install.html#ci-management)
@@ -16,7 +16,7 @@ projects save time from having to define their own job templates.
 
 * [Deploy packer-jobs](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/install.html#deploy-packer-jobs)
 
-### [Configuration]()
+### [Configuration](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/configuration.html#)
 
 * [defaults.yaml](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/configuration.html#defaults-yaml)
 
