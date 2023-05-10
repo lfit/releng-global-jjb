@@ -17,7 +17,7 @@ set -eux -o pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --venv-file /tmp/.toxenv tox virtualenv
+lf-activate-venv --venv-file /tmp/.toxenv tox virtualenv urllib3~=1.26.15
 
 # installs are silent, show version details in log
 $PYTHON --version

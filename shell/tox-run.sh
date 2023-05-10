@@ -24,7 +24,7 @@ cd "$WORKSPACE/$TOX_DIR" || exit 1
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --venv-file /tmp/.toxenv tox virtualenv
+lf-activate-venv --venv-file /tmp/.toxenv tox virtualenv urllib3~=1.26.15
 
 if [[ -d /opt/pyenv ]]; then
     echo "---> Setting up pyenv"
