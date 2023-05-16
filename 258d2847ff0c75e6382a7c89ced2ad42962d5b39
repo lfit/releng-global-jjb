@@ -16,6 +16,23 @@
       "message": "That is still failing, pls make sure pre-commit is passing on your system locally.\n\nTo install pre-commit:\n\npip install --user pre-commit\n# in the root of hiera clone\npre-commit uninstall -t commit-msg\npre-commit uninstall\npre-commit install\npre-commit install -t commit-msg\n\nTo test:\n pre-commit run --all-files --show-diff-on-failure",
       "revId": "258d2847ff0c75e6382a7c89ced2ad42962d5b39",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "10fd0a9a_10cc90a9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-05-16T13:11:14Z",
+      "side": 1,
+      "message": "recheck",
+      "revId": "258d2847ff0c75e6382a7c89ced2ad42962d5b39",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
