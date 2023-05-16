@@ -8,7 +8,7 @@ projects save time from having to define their own job templates .
 
 ## Guides
 
-### [Install](link.com)
+### [Install](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/install.html)
 
 -   [Jenkins configuration](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/install.html#jenkins-configuration)
 
@@ -18,7 +18,7 @@ projects save time from having to define their own job templates .
 
 -   [Deploy packer-jobs](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/install.html#deploy-packer-jobs)
 
-### [Configuration]()
+### [Configuration](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/configuration.html)
 
 -   [defaults.yaml](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/configuration.html#defaults-yaml)
 
