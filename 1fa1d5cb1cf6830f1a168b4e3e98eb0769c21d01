@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e1fccfc0_43ae4329",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-05-17T21:54:38Z",
+      "side": 1,
+      "message": "Aysuh: There is no need to abandon a CR so many change request. \n\nNote: In case you messed up a change and don\u0027t know how to work through it, you can reuse the \"commit-id: \u003csha1\u003e\" in the CR\u0027s commit footer and use the commit-id hash/sha1 with a new CR you are working on. Now when you push the new CR with the same commit-id the new change overwrites the original CR.",
+      "revId": "1fa1d5cb1cf6830f1a168b4e3e98eb0769c21d01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e043f8e6_560e80ab",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-05-17T21:54:38Z",
+      "side": 1,
+      "message": "Why is this line modified?",
+      "range": {
+        "startLine": 7,
+        "startChar": 64,
+        "endLine": 7,
+        "endChar": 65
+      },
+      "revId": "1fa1d5cb1cf6830f1a168b4e3e98eb0769c21d01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
