@@ -39,6 +39,30 @@
       },
       "revId": "1fa1d5cb1cf6830f1a168b4e3e98eb0769c21d01",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "286adc07_731593ef",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 649
+      },
+      "writtenOn": "2023-05-19T02:23:38Z",
+      "side": 1,
+      "message": "The line no.-7 was modified by mistake, and a space was included by accident.",
+      "parentUuid": "e043f8e6_560e80ab",
+      "range": {
+        "startLine": 7,
+        "startChar": 64,
+        "endLine": 7,
+        "endChar": 65
+      },
+      "revId": "1fa1d5cb1cf6830f1a168b4e3e98eb0769c21d01",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
