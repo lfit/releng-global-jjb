@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f5f7eeda_0a99933b",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-06-12T11:53:47Z",
+      "side": 1,
+      "message": "-v VAR is perfectly valid.\n\nex:\n$ VAR\u003d\"not-empty\"\n$ if [ -v VAR ]; then echo \"set\"; else echo \"unset\" ; fi\nset\n\nIf you want to make it POSIX compliant, just remove the double brackets.",
+      "range": {
+        "startLine": 302,
+        "startChar": 4,
+        "endLine": 302,
+        "endChar": 33
+      },
+      "revId": "d16a791b38782d76f866a87acbf0f9184fe9995a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
