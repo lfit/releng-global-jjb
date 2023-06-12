@@ -299,7 +299,7 @@ lf-activate-venv () {
 lf-git-validate-jira-urls () {
     echo "Checking for JIRA URLs in commit message..."
     # if JIRA_URL is not defined, nothing to do
-    if [[ -v JIRA_URL ]]; then
+    if [[ -v $JIRA_URL ]]; then
         base_url=$(echo "$JIRA_URL" | awk -F'/' '{print $3}')
         jira_link=$(git rev-list --format=%B --max-count=1 HEAD | \
                     grep -io "http[s]*://$base_url/" || true)
