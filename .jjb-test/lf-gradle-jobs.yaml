@@ -1,0 +1,22 @@
+---
+- project:
+    name: gerrit-gradle-jobs
+    jobs:
+      - gerrit-gradle-build
+
+    project-name: gerrit-gradle
+
+- project:
+    name: github-gradle-jobs
+    jobs:
+      - github-gradle-build
+
+    github-org: fake-org
+    project-name: github-gradle
+
+- project:
+    name: gradle-jobs-view
+    views:
+      - project-view
+
+    project-name: gradle
