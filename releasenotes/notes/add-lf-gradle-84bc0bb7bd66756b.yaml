@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Add initial lf-gradle file for gradle based builds.
