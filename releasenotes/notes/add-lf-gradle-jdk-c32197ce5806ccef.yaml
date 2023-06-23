@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Add a JDK configuration step in the Gradle based jobs.
