@@ -11,31 +11,57 @@
 echo "---> packer-build.sh"
 # The script builds an image using packer
 # $CLOUDENV            :  Provides the cloud credential file.
+# $PACKER_BUILDER      :  Provides the packer cloud type.
 # $PACKER_PLATFORM     :  Provides the packer platform.
-# $PACKER_TEMPLATE     :  Provides the packer temnplate.
+# $PACKER_TEMPLATE     :  Provides the packer template.
 
 # Ensure we fail the job if any steps fail.
 set -eu -o pipefail
+
+# Functions to compare semantic versions x.y.z
+version_ge() { test "$(echo "$@" | tr " " "\n" | sort -rV | head -n 1)" == "$1"; }
 
 PACKER_LOGS_DIR="$WORKSPACE/archives/packer"
 PACKER_BUILD_LOG="$PACKER_LOGS_DIR/packer-build.log"
 mkdir -p "$PACKER_LOGS_DIR"
 export PATH="${WORKSPACE}/bin:$PATH"
+template_file="${template_file:-}"
 
 cd packer
 
+# Pick the correct format (hcl or json) based on packer version
 # Prioritize the project's own version of vars if available
-platform_file="common-packer/vars/$PACKER_PLATFORM.json"
-if [[ -f "vars/$PACKER_PLATFORM.json" ]]; then
-    platform_file="vars/$PACKER_PLATFORM.json"
+if version_ge "$PACKER_VERSION" "1.9.0"; then
+    platform_file="common-packer/vars/$PACKER_PLATFORM.pkrvars.hcl"
+    template_file="templates/$PACKER_TEMPLATE.pkr.hcl"
+    only="${PACKER_BUILDER}.${PACKER_TEMPLATE}"
+
+    if [[ -f "vars/$PACKER_PLATFORM.pkrvars.hcl" ]]; then
+        platform_file="vars/$PACKER_PLATFORM.pkrvars.hcl"
+    fi
+else
+    platform_file="common-packer/vars/$PACKER_PLATFORM.json"
+    template_file="templates/$PACKER_TEMPLATE.json"
+    only="${PACKER_BUILDER}"
+
+    if [[ -f "vars/$PACKER_PLATFORM.json" ]]; then
+        platform_file="vars/$PACKER_PLATFORM.json"
+    fi
 fi
 
 export PACKER_LOG="yes"
 export PACKER_LOG_PATH="$PACKER_BUILD_LOG"
+
+# download plugins only for HCL format
+if [[ "${template_file#*.}" == "pkr.hcl" ]]; then
+    echo "packer init ${template_file} ..."
+    packer.io init "${template_file}"
+fi
+
 packer.io validate \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
-    "templates/$PACKER_TEMPLATE.json"
+    "$template_file"
 
 set -x
 # If this is a Gerrit system, check patch comments for successful verify build.
@@ -64,10 +90,10 @@ fi
 set +x
 
 packer.io build -color=false \
-    -only "${PACKER_BUILDER}" \
+    -only "$only" \
     -var-file="$CLOUDENV" \
     -var-file="$platform_file" \
-    "templates/$PACKER_TEMPLATE.json"
+    "$template_file"
 
 # Extract image name from log and store value in the downstream job
 if [[ ${UPDATE_CLOUD_IMAGE} == 'true' ]]; then

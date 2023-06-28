@@ -1,0 +1,19 @@
+---
+prelude: >
+  As of packer version 1.7.0 HCL2 is the preferred way to write Packer
+  templates. HCL2 preserves existing workflows while leveraging HCL2’s
+  advanced features like variable interpolation and configuration
+  composability.
+upgrade:
+  - |
+    Upgrade packer version to v1.9.1. JSON format templates are deprecated
+    and no longer work with packer version > 1.9.x. Project specific templates
+    require to be upgraded to HCL2 format.
+deprecations:
+  - |
+    Support for '.json' templates will be removed from common-packer in
+    subsequent releases. Therefore, the jobs are expected to work with
+    older templates.
+fixes:
+  - |
+    Rewrite packer jobs to work with HCL2 format.
