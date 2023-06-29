@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Gradle build job needs to run docker login step to allow
+    docker operations and access to Nexus3.
