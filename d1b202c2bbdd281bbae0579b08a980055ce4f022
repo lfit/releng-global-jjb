@@ -16,6 +16,24 @@
       "message": "missing a release notes.",
       "revId": "d1b202c2bbdd281bbae0579b08a980055ce4f022",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8475d1f0_8ff144e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-06-30T21:53:49Z",
+      "side": 1,
+      "message": "Thanks!",
+      "parentUuid": "2d5ba5ef_070da6a7",
+      "revId": "d1b202c2bbdd281bbae0579b08a980055ce4f022",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
