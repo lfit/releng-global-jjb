@@ -100,7 +100,7 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-release-verify"
+    name: "{project-name}-release-verify-{stream}"
     id: gerrit-release-verify
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
@@ -142,7 +142,7 @@
             notbuilt: "{gerrit-skip-vote}"
 
 - job-template:
-    name: "{project-name}-release-verify"
+    name: "{project-name}-release-verify-{stream}"
     id: github-release-verify
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
@@ -257,7 +257,7 @@
       - lf-release
 
 - job-template:
-    name: "{project-name}-release-merge"
+    name: "{project-name}-release-merge-{stream}"
     id: gerrit-release-merge
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates
@@ -295,7 +295,7 @@
                   pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
 
 - job-template:
-    name: "{project-name}-release-merge"
+    name: "{project-name}-release-merge-{stream}"
     id: github-release-merge
     <<: *lf_release_common
     # yamllint disable-line rule:key-duplicates

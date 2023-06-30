@@ -305,7 +305,7 @@ This template uses a git commit choosing strategy that builds the merged
 commit with the release yaml file, not the tip of the target branch, so
 projects can repeat the release action in case of merge job failure.
 
-:Template Name: {project-name}-release-merge
+:Template Name: {project-name}-release-merge-{stream}
 
 :Comment Trigger: remerge
 
@@ -321,6 +321,8 @@ projects can repeat the release action in case of merge job failure.
 
     :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :stream: Keyword that represents a release code-name.
+        Often the same as the branch. (default: master)
 
     :gerrit_merge_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
@@ -333,7 +335,7 @@ Release Verify
 
 This template supports Maven and Container release jobs.
 
-:Template Name: {project-name}-release-verify
+:Template Name: {project-name}-release-verify-{stream}
 
 :Comment Trigger: recheck|reverify
 
@@ -352,6 +354,8 @@ This template supports Maven and Container release jobs.
     :build-timeout: Timeout in minutes before aborting build. (default: 15)
     :gerrit-skip-vote: Skip voting for this job. (default: false)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :stream: Keyword that represents a release code-name.
+        Often the same as the branch. (default: master)
 
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths filter which checks which
