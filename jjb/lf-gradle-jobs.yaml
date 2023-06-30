@@ -80,6 +80,9 @@
       - lf-infra-pre-build
       - lf-update-java-alternatives:
           java-version: "{java-version}"
+      - lf-infra-docker-login:
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
       - shell: |
           ./gradlew build
 
@@ -113,6 +116,12 @@
     <<: *lf_gradle_common
 
     builders:
+      - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
+      - lf-infra-docker-login:
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
       - shell: |
           ./gradlew build
 
