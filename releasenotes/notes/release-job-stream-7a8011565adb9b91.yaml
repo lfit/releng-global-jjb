@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Gerrit release verify and merge jobs need to have a {stream} variable in
+    their name to allow the creation of the same job under different branches
+    without conflicting.
