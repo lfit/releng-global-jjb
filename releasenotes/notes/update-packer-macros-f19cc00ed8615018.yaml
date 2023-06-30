@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Pass target file where the config file should be created.
+    New version of packer accepts only .json or .hcl extension filenames.

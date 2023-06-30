@@ -134,6 +134,7 @@
       - config-file-provider:
           files:
             - file-id: "{packer-cloud-settings}"
+              target: "$HOME/.config/jenkins_jobs/cloud-env.pkrvars.hcl"
               variable: CLOUDENV
       - inject:
           properties-content: |
@@ -164,6 +165,7 @@
       - config-file-provider:
           files:
             - file-id: "{packer-cloud-settings}"
+              target: "$HOME/.config/jenkins_jobs/cloud-env.pkrvars.hcl"
               variable: CLOUDENV
       - inject:
           properties-content: |
