@@ -21,6 +21,7 @@ Runs a gradle build command to perform the verification.
     :java-version: Version of Java to execute Maven build. (default: openjdk17)
     :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: Maven settings.xml file containing credentials to use.
+    :wrapper: Use the gradle wrapper (default: false)
 
 :Optional parameters:
 
