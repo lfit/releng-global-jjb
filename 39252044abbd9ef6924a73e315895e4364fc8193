@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4436dbb_f4755496",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 652
+      },
+      "writtenOn": "2023-07-03T12:28:55Z",
+      "side": 1,
+      "message": "I don\u0027t have permissions to create tickets in Jira and couldn\u0027t find documentation (in the README and in the linked [docs](https://docs.releng.linuxfoundation.org/projects/global-jjb/en/latest/) on how to generate release notes. That\u0027s why release notes are missing and an old Issue-ID was reused",
+      "revId": "39252044abbd9ef6924a73e315895e4364fc8193",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
