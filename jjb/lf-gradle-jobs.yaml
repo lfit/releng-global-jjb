@@ -83,8 +83,11 @@
       - lf-infra-docker-login:
           global-settings-file: "global-settings"
           settings-file: "{mvn-settings}"
-      - shell: |
-          ./gradlew build
+      - gradle:
+          wrapper: "{wrapper}"
+          executable: true
+          tasks:
+            - build
 
     scm:
       - lf-infra-gerrit-scm:
