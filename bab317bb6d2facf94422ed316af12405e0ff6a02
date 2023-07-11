@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "04c184b0_1ba2538f",
+        "filename": "jjb/lf-gradle-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-07-11T18:16:12Z",
+      "side": 1,
+      "message": "You need to define the variable \"wrapper\", similarly to how we define java-version and others \n\nMissing parameter: \u0027wrapper\u0027",
+      "revId": "bab317bb6d2facf94422ed316af12405e0ff6a02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
