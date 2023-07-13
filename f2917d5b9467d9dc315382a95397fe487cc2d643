@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "59c24d6d_19fb4854",
+        "filename": "jjb/lf-gradle-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-07-13T19:13:41Z",
+      "side": 1,
+      "message": "I think this is not defined properly, \n\ntake a look at this example:\nhttps://jenkins-job-builder.readthedocs.io/en/latest/builders.html#builders.gradle",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 91,
+        "endChar": 19
+      },
+      "revId": "f2917d5b9467d9dc315382a95397fe487cc2d643",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
