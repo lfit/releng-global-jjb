@@ -16,6 +16,24 @@
       "message": "You need to define the variable \"wrapper\", similarly to how we define java-version and others \n\nMissing parameter: \u0027wrapper\u0027",
       "revId": "bab317bb6d2facf94422ed316af12405e0ff6a02",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5da0c5d3_19963085",
+        "filename": "jjb/lf-gradle-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 652
+      },
+      "writtenOn": "2023-07-14T06:29:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "04c184b0_1ba2538f",
+      "revId": "bab317bb6d2facf94422ed316af12405e0ff6a02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
