@@ -22,6 +22,30 @@
       },
       "revId": "f2917d5b9467d9dc315382a95397fe487cc2d643",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "18c83c18_b88ad901",
+        "filename": "jjb/lf-gradle-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 652
+      },
+      "writtenOn": "2023-07-14T09:32:01Z",
+      "side": 1,
+      "message": "The doc was requiring a list. So I think both would have worked, but I changed it now",
+      "parentUuid": "59c24d6d_19fb4854",
+      "range": {
+        "startLine": 90,
+        "startChar": 1,
+        "endLine": 91,
+        "endChar": 19
+      },
+      "revId": "f2917d5b9467d9dc315382a95397fe487cc2d643",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
