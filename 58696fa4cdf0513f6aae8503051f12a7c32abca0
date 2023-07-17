@@ -16,6 +16,24 @@
       "message": "Please move the Issue line into the footer where it belongs. That is, remove the blank line between Issue:... and Change-Id",
       "revId": "58696fa4cdf0513f6aae8503051f12a7c32abca0",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3aab58b9_85ca5e8b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 652
+      },
+      "writtenOn": "2023-07-17T13:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "543755fd_6cc43128",
+      "revId": "58696fa4cdf0513f6aae8503051f12a7c32abca0",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
