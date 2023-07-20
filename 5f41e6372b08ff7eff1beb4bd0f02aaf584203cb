@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cdb28a94_da548039",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 652
+      },
+      "writtenOn": "2023-07-20T13:22:48Z",
+      "side": 1,
+      "message": "@jwagantall@linuxfoundation.org Can this be merged?",
+      "revId": "5f41e6372b08ff7eff1beb4bd0f02aaf584203cb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
