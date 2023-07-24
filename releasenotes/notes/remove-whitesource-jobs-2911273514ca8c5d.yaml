@@ -1,0 +1,5 @@
+---
+deprecations:
+  - |
+    Remove WhiteSource job templates. WhiteSource tool for code scanning is no
+    longer in use for LF projects.
