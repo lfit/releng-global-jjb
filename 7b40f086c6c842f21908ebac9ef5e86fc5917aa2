@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf97d362_9b0735c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-07-24T16:08:36Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2a705a2e_6f7acc6b",
+      "revId": "7b40f086c6c842f21908ebac9ef5e86fc5917aa2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "06815ade_a4c4d700",
@@ -31,6 +49,30 @@
       "writtenOn": "2023-07-24T15:58:29Z",
       "side": 1,
       "message": "Was there a different note topic that could have been used? Deprecation generally means that it\u0027s going out of support, not that it\u0027s being removed.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 12
+      },
+      "revId": "7b40f086c6c842f21908ebac9ef5e86fc5917aa2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "209b60c4_0bf1cd06",
+        "filename": "releasenotes/notes/remove-whitesource-jobs-2911273514ca8c5d.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-07-24T16:08:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06815ade_a4c4d700",
       "range": {
         "startLine": 2,
         "startChar": 0,
