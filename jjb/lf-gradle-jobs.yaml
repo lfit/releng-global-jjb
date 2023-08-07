@@ -126,8 +126,11 @@
       - lf-infra-docker-login:
           global-settings-file: "global-settings"
           settings-file: "{mvn-settings}"
-      - shell: |
-          ./gradlew build
+      - gradle:
+          wrapper: "{wrapper}"
+          executable: true
+          tasks: |
+            build
 
     scm:
       - lf-infra-github-scm:
@@ -149,3 +152,46 @@
           github-hooks: true
           white-list-target-branches:
             - "{branch}"
+
+- job-template:
+    name: "{project-name}-gradle-publish-jar-{stream}"
+    id: gerrit-gradle-publish-jar
+    <<: *lf_gradle_common
+
+    builders:
+      - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
+      - lf-infra-docker-login:
+          global-settings-file: "global-settings"
+          settings-file: "{mvn-settings}"
+      - gradle:
+          wrapper: "{wrapper}"
+          executable: true
+          tasks: |
+            shadowJar
+            publish
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_gradle_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
