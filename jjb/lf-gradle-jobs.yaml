@@ -115,8 +115,8 @@
               file-paths: "{obj:gerrit_trigger_file_paths}"
 
 - job-template:
-    name: "{project-name}-gradle-build-{stream}"
-    id: github-gradle-build
+    name: "{project-name}-gradle-publish-jar-{stream}"
+    id: gerrit-gradle-publish-jar
     <<: *lf_gradle_common
 
     builders:
@@ -126,26 +126,33 @@
       - lf-infra-docker-login:
           global-settings-file: "global-settings"
           settings-file: "{mvn-settings}"
-      - shell: |
-          ./gradlew build
+      - gradle:
+          wrapper: "{wrapper}"
+          executable: true
+          tasks: |
+            shadowJar
+            publish
 
     scm:
-      - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
-          branch: "$sha1"
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
           submodule-recursive: "{submodule-recursive}"
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
-      - github-pull-request:
-          trigger-phrase: ^(recheck|reverify)$
-          only-trigger-phrase: false
-          status-context: "Gradle Verify"
-          permit-all: true
-          github-hooks: true
-          white-list-target-branches:
-            - "{branch}"
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_gradle_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+              file-paths: "{obj:gerrit_trigger_file_paths}"
