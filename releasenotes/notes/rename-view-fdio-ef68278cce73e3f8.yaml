@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Rename view type to lower case.
+
+    Jenkins version 2.387.1 or earlier can return
+    'all' as view name when requested is 'All'.
+    Add workaround for that.
