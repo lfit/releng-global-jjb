@@ -1,0 +1,11 @@
+---
+issues:
+  - |
+    Supports urllib3 to newer DEFAULT_TIMEOUT, therefore unpin urllib3<2.0.0
+    Ref: https://review.opendev.org/c/jjb/python-jenkins/+/882757
+
+    Fixes Jenkins version 2.387.1 or earlier can return 'all' as view name when
+    requested is 'All'.
+upgrade:
+  - |
+    Upgrade Jenkins-job-builder to 5.0.4

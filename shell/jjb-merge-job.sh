@@ -18,6 +18,6 @@ set -eu -o pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv jenkins-job-builder setuptools==65.7.0 urllib3~=1.26.15
+lf-activate-venv jenkins-job-builder setuptools==65.7.0
 
 jenkins-jobs update --recursive --delete-old --workers "$workers" jjb/
