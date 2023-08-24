@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Fix Gradle job template where verify is not working/triggering correctly
