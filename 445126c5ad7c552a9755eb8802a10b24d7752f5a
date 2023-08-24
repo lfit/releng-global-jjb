@@ -46,6 +46,30 @@
       },
       "revId": "445126c5ad7c552a9755eb8802a10b24d7752f5a",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a2cad773_55ef5b95",
+        "filename": "jjb/lf-gradle-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-08-24T19:49:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8c25e2db_0d64f5f6",
+      "range": {
+        "startLine": 103,
+        "startChar": 17,
+        "endLine": 103,
+        "endChar": 25
+      },
+      "revId": "445126c5ad7c552a9755eb8802a10b24d7752f5a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
