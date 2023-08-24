@@ -59,7 +59,7 @@
     publishers:
       - lf-infra-publish
 
-    gerrit_gradle_triggers:
+    gerrit_gradle_verify_triggers:
       - patchset-created-event:
           exclude-drafts: true
           exclude-trivial-rebase: false
@@ -67,6 +67,11 @@
       - draft-published-event
       - comment-added-contains-event:
           comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
+
+    gerrit_gradle_merge_triggers:
+      - change-merged-event
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
@@ -95,7 +100,7 @@
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
           git-url: "{git-url}"
           refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
+          branch: "$sha1"
           submodule-recursive: "{submodule-recursive}"
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
@@ -105,7 +110,7 @@
       - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_gradle_triggers}"
+          trigger-on: "{obj:gerrit_gradle_verify_triggers}"
           projects:
             - project-compare-type: ANT
               project-pattern: "{project}"
@@ -187,7 +192,7 @@
       - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_gradle_triggers}"
+          trigger-on: "{obj:gerrit_gradle_merge_triggers}"
           projects:
             - project-compare-type: ANT
               project-pattern: "{project}"
