@@ -1,0 +1,11 @@
+---
+upgrade:
+  - |
+    ``lf-jacoco-report`` publisher now uses the ``exclude-pattern`` variable to set
+    the exclusion pattern. Any job implementing this publisher needs to define
+    this variable.
+
+    Additionally, all ``lf-maven`` job templates that utilize the ``lf-jacoco-report``
+    publisher define the exclusion pattern with the variable ``jacoco-exclude-pattern``.
+    This can be overwritten by the calling project definition/template in order
+    to set a custom exclusion pattern.
