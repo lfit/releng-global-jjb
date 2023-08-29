@@ -17,7 +17,7 @@ set -euf -o pipefail
 . ~/lf-env.sh
 
 lf-activate-venv --python python3 --venv-file /tmp/.jjb_venv \
-    jenkins-job-builder urllib3~=1.26.15
+    jenkins-job-builder
 
 # jenkins-jobs does not always open 'stdin' which may cause 'yes' to fail
 (yes || true) | jenkins-jobs -s sandbox delete-all

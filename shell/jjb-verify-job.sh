@@ -19,7 +19,7 @@ lf-git-validate-jira-urls
 lf-jjb-check-ascii
 
 lf-activate-venv --python python3 --venv-file /tmp/.jjb_venv \
-    jenkins-job-builder setuptools==65.7.0 urllib3~=1.26.15
+    jenkins-job-builder setuptools==65.7.0
 
 jenkins-jobs test --recursive -o archives/job-configs --config-xml jjb/
 
