@@ -684,7 +684,7 @@
           class-pattern: "**/classes"
           source-pattern: "**/src/main/java"
           # yamllint disable-line rule:line-length
-          exclusion-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
+          exclusion-pattern: "{exclude-pattern}"
           status-update: true
           targets:
             - branch:

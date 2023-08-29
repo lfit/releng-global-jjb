@@ -371,6 +371,8 @@ This job uses the following strategy to deploy jobs to Nexus:
         one may want to provide more than 1 cron timer. (default: 'H H * * 0'
         to run weekly)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :jacoco-exclude-pattern: Ant-style patterns to exclude from Jacoco coverage
+        report. (default: ``"**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"``)
     :java-version: Version of Java to use for the build. (default: openjdk11)
     :mvn-global-settings: The name of the Maven global settings to use for
         Maven configuration. (default: global-settings)

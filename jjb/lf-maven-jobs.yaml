@@ -733,6 +733,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    jacoco-exclude-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
     java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -794,7 +795,8 @@
 
     publishers:
       - findbugs
-      - lf-jacoco-report
+      - lf-jacoco-report:
+          exclude-pattern: "{jacoco-exclude-pattern}"
       - lf-infra-publish
       - trigger-parameterized-builds: "{obj:post_build_trigger}"
 
@@ -1316,6 +1318,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    jacoco-exclude-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
     java-version: openjdk11
     java-opts: ""
     mvn-global-settings: global-settings
@@ -1398,7 +1401,8 @@
             notbuilt: true
 
     publishers:
-      - lf-jacoco-report
+      - lf-jacoco-report:
+          exclude-pattern: "{jacoco-exclude-pattern}"
       - findbugs
       - lf-infra-publish
 
@@ -1710,6 +1714,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    jacoco-exclude-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
     java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -1765,7 +1770,8 @@
 
     publishers:
       - findbugs
-      - lf-jacoco-report
+      - lf-jacoco-report:
+          exclude-pattern: "{jacoco-exclude-pattern}"
       - lf-infra-publish
 
 - job-template:
@@ -1950,6 +1956,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    jacoco-exclude-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
     java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -1995,7 +2002,8 @@
 
     publishers:
       - findbugs
-      - lf-jacoco-report
+      - lf-jacoco-report:
+          exclude-pattern: "{jacoco-exclude-pattern}"
       - lf-infra-publish
 
 - job-template:
