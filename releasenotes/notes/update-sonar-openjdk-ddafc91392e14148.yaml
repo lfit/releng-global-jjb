@@ -1,0 +1,4 @@
+---
+deprecations:
+  - |
+    sonarcloud upload will stop working with java11 on November 15th 2023

@@ -575,7 +575,7 @@
     sonarcloud-qualitygate-wait: false
     # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
     # Projects not compatible with jdk11 can set java-version to something else
-    sonarcloud-java-version: openjdk11
+    sonarcloud-java-version: openjdk17
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
