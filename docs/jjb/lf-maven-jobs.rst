@@ -23,7 +23,7 @@ Runs Sonar against a Maven project.
 
 :Required Parameters:
 
-    :java-version: Version of Java to execute Sonar with. (default: openjdk11)
+    :java-version: Version of Java to execute Sonar with. (default: openjdk13)
     :mvn-version: Version of Maven to execute Sonar with.
     :mvn-settings: Maven settings.xml file containing credentials to use.
 
@@ -39,7 +39,7 @@ Runs Sonar against a Maven project and pushes results to SonarCloud.
     :mvn-settings: Maven settings.xml file containing credentials to use.
     :sonarcloud-project-key: SonarCloud project key.
     :sonarcloud-project-organization: SonarCloud project organization.
-    :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: openjdk11)
+    :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: openjdk13)
     :sonarcloud-qualitygate-wait: SonarCloud flag that forces the analysis step to
         wait for the quality gate result. (default: false)
 
