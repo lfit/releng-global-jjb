@@ -1,6 +1,46 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "19aa7e75_60fe84da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-10-26T12:10:00Z",
+      "side": 1,
+      "message": "The docs needs to be updated to the default version of jdk that being passed is still jdk11.",
+      "revId": "2163040b832fb3981d1e5b6828976f01a707449d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7590cb01_6daea279",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2173,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-10-26T12:10:00Z",
+      "side": 1,
+      "message": "same",
+      "range": {
+        "startLine": 2173,
+        "startChar": 29,
+        "endLine": 2173,
+        "endChar": 38
+      },
+      "revId": "2163040b832fb3981d1e5b6828976f01a707449d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7a16e017_a21b3180",
