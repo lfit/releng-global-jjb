@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a16e017_a21b3180",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1337,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-10-26T12:08:30Z",
+      "side": 1,
+      "message": "You should set this openjdk13, since onap and other projects are still on jdk13?",
+      "range": {
+        "startLine": 1337,
+        "startChar": 29,
+        "endLine": 1337,
+        "endChar": 38
+      },
+      "revId": "2163040b832fb3981d1e5b6828976f01a707449d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
