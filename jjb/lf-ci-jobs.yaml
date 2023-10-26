@@ -2170,7 +2170,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    sonarcloud-java-version: openjdk11
+    sonarcloud-java-version: openjdk13
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
