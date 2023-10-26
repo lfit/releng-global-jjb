@@ -391,9 +391,8 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
-    # Projects not compatible with jdk11 can set java-version to something else
-    java-version: openjdk11
+    # Projects not compatible with jdk13 can set java-version to something else
+    java-version: openjdk13
     parallel: true
     pre-build-script: "# pre-build script goes here"
     python-version: python3
@@ -557,7 +556,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk11
+    java-version: openjdk13
     mvn-global-settings: global-settings
     mvn-goals: validate
     mvn-opts: ""
@@ -573,9 +572,8 @@
     sonarcloud-project-organization: ""
     sonarcloud-api-token-cred-id: sonarcloud-api-token
     sonarcloud-qualitygate-wait: false
-    # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
-    # Projects not compatible with jdk11 can set java-version to something else
-    sonarcloud-java-version: openjdk11
+    # Projects not compatible with jdk13 can set java-version to something else
+    sonarcloud-java-version: openjdk13
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
