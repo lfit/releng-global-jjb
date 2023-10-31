@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a4d8613_a34d1723",
+        "filename": "docs/jjb/lf-maven-jobs.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2023-10-31T16:21:03Z",
+      "side": 1,
+      "message": "default should be v11, right?",
+      "revId": "b8e637b248c6ba7b348b97ce76ba1628f38ed051",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
