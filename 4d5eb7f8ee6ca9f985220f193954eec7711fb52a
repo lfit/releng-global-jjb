@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11a9bcf3_14bb7617",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2023-10-31T15:12:32Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be v17 as well?",
+      "revId": "4d5eb7f8ee6ca9f985220f193954eec7711fb52a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "02dedebe_780432ca",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2023-10-31T15:12:32Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be v17 as well?",
+      "revId": "4d5eb7f8ee6ca9f985220f193954eec7711fb52a",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
