@@ -23,7 +23,7 @@ Runs Sonar against a Maven project.
 
 :Required Parameters:
 
-    :java-version: Version of Java to execute Sonar with. (default: openjdk13)
+    :java-version: Version of Java to execute Sonar with. (default: openjdk11)
     :mvn-version: Version of Maven to execute Sonar with.
     :mvn-settings: Maven settings.xml file containing credentials to use.
 
@@ -39,7 +39,7 @@ Runs Sonar against a Maven project and pushes results to SonarCloud.
     :mvn-settings: Maven settings.xml file containing credentials to use.
     :sonarcloud-project-key: SonarCloud project key.
     :sonarcloud-project-organization: SonarCloud project organization.
-    :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: openjdk13)
+    :sonarcloud-java-version: Version of Java to run the Sonar scan. (default: openjdk17)
     :sonarcloud-qualitygate-wait: SonarCloud flag that forces the analysis step to
         wait for the quality gate result. (default: false)
 
@@ -587,7 +587,7 @@ multi-branch configuration.
     :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
         This one SHOULDN'T be overwritten as we are standarizing the credential ID for all
         projects (default: 'sonarcloud-api-token')
-    :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
+    :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk17)
     :stream: Keyword that represents a release code-name.
         Often the same as the branch. (default: master)
     :submodule-recursive: Whether to checkout submodules recursively.
@@ -652,7 +652,7 @@ This job runs on dev branches and its triggered on new patchsets.
     :sonarcloud-api-token-cred-id: Jenkins credential ID which has the SonarCloud API Token.
         This one SHOULDN'T be overwritten as we are standarizing the credential ID for all
         projects (default: 'sonarcloud-api-token')
-    :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk11)
+    :sonarcloud-java-version: Version of Java to use for the Sonar scan. (default: openjdk17)
     :sonarcloud-qualitygate-wait: SonarCloud flag that forces the analysis step to
         wait for the quality gate result. (default: false)
     :stream: Keyword that represents a release code-name.

@@ -16,14 +16,14 @@
     name: lf-infra-tox-install
     builders:
       - inject:
-          properties-content: "PYTHON={python-version}"
+          properties-content: 'PYTHON={python-version}'
       - shell: !include-raw-escape: ../shell/tox-install.sh
 
 - builder:
     name: lf-infra-tox-run
     builders:
       - inject:
-          properties-content: "PARALLEL={parallel}"
+          properties-content: 'PARALLEL={parallel}'
       - shell: !include-raw-escape: ../shell/tox-run.sh
 
 ####################
@@ -45,22 +45,22 @@
     #####################
 
     project-type: freestyle
-    node: "{build-node}"
+    node: '{build-node}'
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
 
     parameters:
       - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     publishers:
       - lf-infra-publish
@@ -79,55 +79,55 @@
     branch: master
     build-days-to-keep: 7
     build-timeout: 15
-    cron: "@weekly"
+    cron: '@weekly'
     disable-job: false
-    git-url: "$GIT_URL/$PROJECT"
-    github-url: "https://github.com"
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk11 # Scanner is a jar
     nexus-iq-cli-version: 1.140.0-01
-    nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
-    nexus-target-build: "**/*"
-    pre-build-script: "# pre-build script goes here"
+    nexus-iq-namespace: '' # Recommend a trailing dash when set. Example: odl-
+    nexus-target-build: '**/*'
+    pre-build-script: '# pre-build script goes here'
     python-version: python3
     requirements-file: requirements.txt
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-    tox-dir: "."
-    tox-envs: "clm"
+    tox-dir: '.'
+    tox-envs: 'clm'
 
     #####################
     # Job Configuration #
     #####################
 
-    disabled: "{disable-job}"
+    disabled: '{disable-job}'
 
     parameters:
       - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
       - lf-infra-tox-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
+          tox-dir: '{tox-dir}'
+          tox-envs: '{tox-envs}'
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: "{archive-artifacts}"
+          default: '{archive-artifacts}'
           description: Artifacts to archive to the logs server.
       - string:
           name: NEXUS_IQ_CLI_VERSION
-          default: "{nexus-iq-cli-version}"
+          default: '{nexus-iq-cli-version}'
           description: Nexus IQ CLI jar to download and run.
       - string:
           name: NEXUS_TARGET_BUILD
-          default: "{nexus-target-build}"
+          default: '{nexus-target-build}'
           description: File or dir to scan by Nexus CLI.
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
       - credentials-binding:
           - username-password-separated:
               credential-id: nexus-iq-xc-clm
@@ -137,18 +137,18 @@
     builders:
       - lf-infra-pre-build
       - lf-update-java-alternatives:
-          java-version: "{java-version}"
+          java-version: '{java-version}'
       - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
+          python-version: '{python-version}'
+      - shell: '{pre-build-script}'
       - lf-infra-tox-run:
           parallel: false
       - lf-infra-nexus-iq-python-cli:
-          nexus-iq-project-name: "{nexus-iq-namespace}{project-name}"
-          requirements-file: "{requirements-file}"
+          nexus-iq-project-name: '{nexus-iq-namespace}{project-name}'
+          requirements-file: '{requirements-file}'
 
 - job-template:
-    name: "{project-name}-tox-nexus-iq-clm"
+    name: '{project-name}-tox-nexus-iq-clm'
     id: gerrit-tox-nexus-iq-clm
     <<: *lf_python_common
     <<: *lf_tox_nexus_iq_clm
@@ -167,26 +167,26 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_nexus_iq_triggers}"
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_nexus_iq_triggers}'
           projects:
             - project-compare-type: ANT
-              project-pattern: "{project}"
+              project-pattern: '{project}'
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
+                  branch-pattern: '**/{branch}'
           skip-vote:
             successful: true
             failed: true
@@ -194,38 +194,38 @@
             notbuilt: true
 
 - job-template:
-    name: "{project-name}-tox-nexus-iq"
+    name: '{project-name}-tox-nexus-iq'
     id: github-tox-nexus-iq-clm
     <<: *lf_python_common
     <<: *lf_tox_nexus_iq_clm
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: ""
-          branch: "refs/heads/{branch}"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - github-pull-request:
-          trigger-phrase: "^run-clm$"
+          trigger-phrase: '^run-clm$'
           only-trigger-phrase: false
-          status-context: "CLM"
+          status-context: 'CLM'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - "{branch}"
+            - '{branch}'
 
 ###################
 # Python Snyk CLI #
@@ -242,21 +242,21 @@
     build-days-to-keep: 30 # 30 days for troubleshooting purposes
     build-timeout: 60
     disable-job: false
-    git-url: "$GIT_URL/$PROJECT"
-    github-url: "https://github.com"
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     java-version: openjdk11
     parallel: false
-    pre-build-script: "# pre-build script goes here"
+    pre-build-script: '# pre-build script goes here'
     python-version: python3
-    snyk-cli-options: ""
+    snyk-cli-options: ''
     snyk-token-credential-id: snyk-token
     snyk-org-credential-id: snyk-org
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-    tox-dir: "."
-    tox-envs: ""
+    tox-dir: '.'
+    tox-envs: ''
 
     gerrit_snyk_triggers:
       - comment-added-contains-event:
@@ -264,70 +264,70 @@
 
     parameters:
       - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
       - string:
           name: SNYK_CLI_OPTIONS
-          default: "{snyk-cli-options}"
+          default: '{snyk-cli-options}'
           description: Additional Snyk CLI commands and options
       - lf-infra-tox-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
+          tox-dir: '{tox-dir}'
+          tox-envs: '{tox-envs}'
 
     wrappers:
       - credentials-binding:
           - text:
-              credential-id: "{snyk-token-credential-id}"
+              credential-id: '{snyk-token-credential-id}'
               variable: SNYK_TOKEN
           - text:
-              credential-id: "{snyk-org-credential-id}"
+              credential-id: '{snyk-org-credential-id}'
               variable: SNYK_ORG
 
     #####################
     # Job Configuration #
     #####################
 
-    disabled: "{disable-job}"
+    disabled: '{disable-job}'
 
     builders:
       - lf-infra-pre-build
       - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
+          python-version: '{python-version}'
+      - shell: '{pre-build-script}'
       - lf-infra-tox-run:
-          parallel: "{parallel}"
+          parallel: '{parallel}'
       - lf-infra-snyk-cli-scanner
 
 - job-template:
-    name: "{project-name}-python-snyk-cli-{stream}"
+    name: '{project-name}-python-snyk-cli-{stream}'
     id: gerrit-python-snyk-cli
     # yamllint disable-line rule:key-duplicates
     <<: *lf_python_snyk_cli
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
       # Build weekly on Saturdays
-      - timed: "H H * * 6"
+      - timed: 'H H * * 6'
       - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_snyk_triggers}"
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_snyk_triggers}'
           projects:
             - project-compare-type: ANT
-              project-pattern: "{project}"
+              project-pattern: '{project}'
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
+                  branch-pattern: '**/{branch}'
           skip-vote:
             successful: true
             failed: true
@@ -335,43 +335,43 @@
             notbuilt: true
 
 - job-template:
-    name: "{project-name}-python-snyk-cli-{stream}"
+    name: '{project-name}-python-snyk-cli-{stream}'
     id: github-python-snyk-cli
     # yamllint disable-line rule:key-duplicates
     <<: *lf_python_snyk_cli
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: ""
-          branch: "refs/heads/{branch}"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       # Build weekly on Saturdays
-      - timed: "H H * * 6"
+      - timed: 'H H * * 6'
       - github-pull-request:
-          trigger-phrase: "^run-snyk$"
+          trigger-phrase: '^run-snyk$'
           only-trigger-phrase: true
-          status-context: "SNYK scan"
+          status-context: 'SNYK scan'
           permit-all: true
           github-hooks: true
           org-list:
-            - "{github-org}"
-          white-list: "{obj:github_pr_allowlist}"
-          admin-list: "{obj:github_pr_admin_list}"
+            - '{github-org}'
+          white-list: '{obj:github_pr_allowlist}'
+          admin-list: '{obj:github_pr_admin_list}'
           white-list-target-branches:
-            - "{branch}"
+            - '{branch}'
 
 #########################
 # Python Sonar with CLI #
@@ -387,53 +387,54 @@
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
     build-timeout: 60
-    cron: "H H * * *" # run daily
+    cron: 'H H * * *' # run daily
     disable-job: false
-    git-url: "$GIT_URL/$PROJECT"
-    github-url: "https://github.com"
-    # Projects not compatible with jdk13 can set java-version to something else
-    java-version: openjdk13
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
+    # SonarCloud scan using jdk8 will become deprecated by Oct, 2020
+    # Projects not compatible with jdk11 can set java-version to something else
+    java-version: openjdk11
     parallel: true
-    pre-build-script: "# pre-build script goes here"
+    pre-build-script: '# pre-build script goes here'
     python-version: python3
     stream: master
-    sonar-scanner-version: "4.7.0.2747"
-    sonar-scanner-home: "$WORKSPACE/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux"
-    sonar-scanner-opts: "-server"
+    sonar-scanner-version: '4.7.0.2747'
+    sonar-scanner-home: '$WORKSPACE/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux'
+    sonar-scanner-opts: '-server'
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-    tox-dir: "."
-    tox-envs: ""
+    tox-dir: '.'
+    tox-envs: ''
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: ".*"
+        pattern: '.*'
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - ".*"
+      - '.*'
 
     #####################
     # Job Configuration #
     #####################
 
-    disabled: "{disable-job}"
+    disabled: '{disable-job}'
 
     parameters:
       - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
       - lf-infra-sonar-cli-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
-          sonar-scanner-version: "{sonar-scanner-version}"
-          sonar-scanner-home: "{sonar-scanner-home}"
-          sonar-scanner-opts: "{sonar-scanner-opts}"
+          tox-dir: '{tox-dir}'
+          tox-envs: '{tox-envs}'
+          sonar-scanner-version: '{sonar-scanner-version}'
+          sonar-scanner-home: '{sonar-scanner-home}'
+          sonar-scanner-opts: '{sonar-scanner-opts}'
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: "{archive-artifacts}"
+          default: '{archive-artifacts}'
           description: Artifacts to archive to the logs server.
     wrappers:
       - credentials-binding:
@@ -443,10 +444,10 @@
     builders:
       - lf-infra-pre-build
       - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
+          python-version: '{python-version}'
+      - shell: '{pre-build-script}'
       - lf-infra-tox-run:
-          parallel: "{parallel}"
+          parallel: '{parallel}'
       # With Sonar CLI
       - inject:
           properties-content: |
@@ -458,7 +459,7 @@
       - lf-infra-publish
 
 - job-template:
-    name: "{project-name}-cli-sonar"
+    name: '{project-name}-cli-sonar'
     id: gerrit-cli-sonar
     <<: *lf_python_common
     <<: *lf_cli_sonar
@@ -477,27 +478,27 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
           refspec: $GERRIT_REFSPEC
           branch: $GERRIT_BRANCH
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_sonar_triggers}"
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_sonar_triggers}'
           projects:
-            - project-compare-type: "ANT"
-              project-pattern: "{project}"
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
               branches:
-                - branch-compare-type: "ANT"
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
           skip-vote:
             successful: true
             failed: true
@@ -505,38 +506,38 @@
             notbuilt: true
 
 - job-template:
-    name: "{project-name}-cli-sonar"
+    name: '{project-name}-cli-sonar'
     id: github-cli-sonar
     <<: *lf_python_common
     <<: *lf_cli_sonar
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
-          branch: "$sha1"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       - github-pull-request:
-          trigger-phrase: "^run-sonar$"
+          trigger-phrase: '^run-sonar$'
           only-trigger-phrase: false
-          status-context: "Python Sonar"
+          status-context: 'Python Sonar'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
 
 #########################
 # Python Sonar with Tox #
@@ -552,76 +553,76 @@
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
     build-timeout: 60
-    cron: "H H * * *" # run daily
+    cron: 'H H * * *' # run daily
     disable-job: false
-    git-url: "$GIT_URL/$PROJECT"
-    github-url: "https://github.com"
-    java-version: openjdk13
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
+    java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: validate
-    mvn-opts: ""
-    mvn-params: ""
-    mvn-settings: ""
+    mvn-opts: ''
+    mvn-params: ''
+    mvn-settings: ''
     mvn-version: mvn35
     parallel: true
-    pre-build-script: "# pre-build script goes here"
+    pre-build-script: '# pre-build script goes here'
     python-version: python3
-    sonar-mvn-goal: "sonar:sonar"
+    sonar-mvn-goal: 'sonar:sonar'
     sonarcloud: false
-    sonarcloud-project-key: ""
-    sonarcloud-project-organization: ""
+    sonarcloud-project-key: ''
+    sonarcloud-project-organization: ''
     sonarcloud-api-token-cred-id: sonarcloud-api-token
     sonarcloud-qualitygate-wait: false
-    # Projects not compatible with jdk13 can set java-version to something else
-    sonarcloud-java-version: openjdk13
+    # Projects not compatible with jdk17 can set java-version to something else
+    sonarcloud-java-version: openjdk17
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-    tox-dir: "."
-    tox-envs: ""
+    tox-dir: '.'
+    tox-envs: ''
     scan-dev-branch: false
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: ".*"
+        pattern: '.*'
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - ".*"
+      - '.*'
 
     #####################
     # Job Configuration #
     #####################
 
-    disabled: "{disable-job}"
+    disabled: '{disable-job}'
 
     parameters:
       - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
       - lf-infra-maven-parameters:
-          mvn-opts: "{mvn-opts}"
-          mvn-params: "{mvn-params}"
-          mvn-version: "{mvn-version}"
+          mvn-opts: '{mvn-opts}'
+          mvn-params: '{mvn-params}'
+          mvn-version: '{mvn-version}'
       - lf-infra-tox-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
+          tox-dir: '{tox-dir}'
+          tox-envs: '{tox-envs}'
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: "{archive-artifacts}"
+          default: '{archive-artifacts}'
           description: Artifacts to archive to the logs server.
       - string:
           name: MVN
           # Sets an env var for shell scripts to be able to call the dynamically
           # installed maven without having to calculate the path themselves.
           # yamllint disable-line rule:line-length
-          default: "/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn"
-          description: "Maven selector to be used by shell scripts"
+          default: '/w/tools/hudson.tasks.Maven_MavenInstallation/{mvn-version}/bin/mvn'
+          description: 'Maven selector to be used by shell scripts'
       - string:
           name: SONAR_MAVEN_GOAL
-          default: "{sonar-mvn-goal}"
+          default: '{sonar-mvn-goal}'
           description: |
             Maven goals to pass to the Sonar call. Typically sonar:sonar
             however to use a specific version of the sonar-maven-plugin we
@@ -630,55 +631,55 @@
     wrappers:
       - credentials-binding:
           - text:
-              credential-id: "{sonarcloud-api-token-cred-id}"
+              credential-id: '{sonarcloud-api-token-cred-id}'
               variable: API_TOKEN
 
     builders:
       - lf-infra-pre-build
       - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
+          python-version: '{python-version}'
+      - shell: '{pre-build-script}'
       - lf-infra-tox-run:
-          parallel: "{parallel}"
+          parallel: '{parallel}'
       - lf-provide-maven-settings:
-          global-settings-file: "{mvn-global-settings}"
-          settings-file: "{mvn-settings}"
+          global-settings-file: '{mvn-global-settings}'
+          settings-file: '{mvn-settings}'
       # With SonarCloud
       - conditional-step:
           condition-kind: boolean-expression
-          condition-expression: "{sonarcloud}"
+          condition-expression: '{sonarcloud}'
           steps:
             - shell: echo 'Using SonarCloud'
             - lf-infra-maven-sonarcloud:
-                java-version: "{java-version}"
-                mvn-goals: "{mvn-goals}"
-                mvn-settings: "{mvn-settings}"
-                mvn-version: "{mvn-version}"
-                sonarcloud-project-key: "{sonarcloud-project-key}"
+                java-version: '{java-version}'
+                mvn-goals: '{mvn-goals}'
+                mvn-settings: '{mvn-settings}'
+                mvn-version: '{mvn-version}'
+                sonarcloud-project-key: '{sonarcloud-project-key}'
                 # yamllint disable-line rule:line-length
-                sonarcloud-project-organization: "{sonarcloud-project-organization}"
-                sonarcloud-java-version: "{sonarcloud-java-version}"
-                sonarcloud-qualitygate-wait: "{sonarcloud-qualitygate-wait}"
-                scan-dev-branch: "{scan-dev-branch}"
+                sonarcloud-project-organization: '{sonarcloud-project-organization}'
+                sonarcloud-java-version: '{sonarcloud-java-version}'
+                sonarcloud-qualitygate-wait: '{sonarcloud-qualitygate-wait}'
+                scan-dev-branch: '{scan-dev-branch}'
       # With SonarQube
       - conditional-step:
           condition-kind: not
           condition-operand:
             condition-kind: boolean-expression
-            condition-expression: "{sonarcloud}"
+            condition-expression: '{sonarcloud}'
           steps:
             - shell: echo 'Using SonarQube'
             - lf-infra-maven-sonar:
-                java-version: "{java-version}"
-                mvn-goals: "{mvn-goals}"
-                mvn-settings: "{mvn-settings}"
-                mvn-version: "{mvn-version}"
+                java-version: '{java-version}'
+                mvn-goals: '{mvn-goals}'
+                mvn-settings: '{mvn-settings}'
+                mvn-version: '{mvn-version}'
 
     publishers:
       - lf-infra-publish
 
 - job-template:
-    name: "{project-name}-tox-sonar"
+    name: '{project-name}-tox-sonar'
     id: gerrit-tox-sonar
     <<: *lf_python_common
     <<: *lf_tox_sonar
@@ -697,27 +698,27 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
           refspec: $GERRIT_REFSPEC
           branch: $GERRIT_BRANCH
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_sonar_triggers}"
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_sonar_triggers}'
           projects:
-            - project-compare-type: "ANT"
-              project-pattern: "{project}"
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
               branches:
-                - branch-compare-type: "ANT"
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
           skip-vote:
             successful: true
             failed: true
@@ -725,38 +726,38 @@
             notbuilt: true
 
 - job-template:
-    name: "{project-name}-tox-sonar"
+    name: '{project-name}-tox-sonar'
     id: github-tox-sonar
     <<: *lf_python_common
     <<: *lf_tox_sonar
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
-          branch: "$sha1"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       - github-pull-request:
-          trigger-phrase: "^run-sonar$"
+          trigger-phrase: '^run-sonar$'
           only-trigger-phrase: false
-          status-context: "Python Sonar"
+          status-context: 'Python Sonar'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
 
 #################
 # Tox SonarQube #
@@ -774,75 +775,75 @@
     branch: master # Sonar should always be run on master branch
     build-days-to-keep: 7
     build-timeout: 15
-    cron: "@weekly"
+    cron: '@weekly'
     disable-job: false
-    git-url: "$GIT_URL/$PROJECT"
-    github-url: "https://github.com"
+    git-url: '$GIT_URL/$PROJECT'
+    github-url: 'https://github.com'
     parallel: false
-    pre-build-script: "# pre-build script goes here"
+    pre-build-script: '# pre-build script goes here'
     python-version: python3
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-    tox-dir: "."
-    tox-envs: ""
+    tox-dir: '.'
+    tox-envs: ''
     # Sonar properties
-    sonar-additional-args: ""
-    sonar-java-opts: ""
-    sonar-project-file: "sonar-project.properties"
-    sonar-properties: ""
-    sonar-task: ""
+    sonar-additional-args: ''
+    sonar-java-opts: ''
+    sonar-project-file: 'sonar-project.properties'
+    sonar-properties: ''
+    sonar-task: ''
 
     #####################
     # Job Configuration #
     #####################
 
     project-type: freestyle
-    node: "{build-node}"
-    disabled: "{disable-job}"
+    node: '{build-node}'
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     parameters:
       - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
       - lf-infra-tox-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
+          tox-dir: '{tox-dir}'
+          tox-envs: '{tox-envs}'
       - string:
           name: ARCHIVE_ARTIFACTS
-          default: "{archive-artifacts}"
+          default: '{archive-artifacts}'
           description: Artifacts to archive to the logs server.
 
     builders:
       - lf-infra-pre-build
       - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
+          python-version: '{python-version}'
+      - shell: '{pre-build-script}'
       - lf-infra-tox-run:
-          parallel: "{parallel}"
+          parallel: '{parallel}'
       - lf-infra-sonar:
-          sonar-task: "{sonar-task}"
-          sonar-project-file: "{sonar-project-file}"
-          sonar-properties: "{sonar-properties}"
-          sonar-java-opts: "{sonar-java-opts}"
-          sonar-additional-args: "{sonar-additional-args}"
+          sonar-task: '{sonar-task}'
+          sonar-project-file: '{sonar-project-file}'
+          sonar-properties: '{sonar-properties}'
+          sonar-java-opts: '{sonar-java-opts}'
+          sonar-additional-args: '{sonar-additional-args}'
 
     publishers:
       - lf-infra-publish
 
 - job-template:
-    name: "{project-name}-tox-sonarqube"
+    name: '{project-name}-tox-sonarqube'
     id: gerrit-tox-sonarqube
     concurrent: false
     <<: *lf_tox_sonarqube
@@ -857,53 +858,53 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          branch: "$GERRIT_BRANCH"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          branch: '$GERRIT_BRANCH'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_sonar_triggers}"
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_sonar_triggers}'
           projects:
-            - project-compare-type: "ANT"
-              project-pattern: "{project}"
+            - project-compare-type: 'ANT'
+              project-pattern: '{project}'
               branches:
-                - branch-compare-type: "ANT"
-                  branch-pattern: "**/{branch}"
+                - branch-compare-type: 'ANT'
+                  branch-pattern: '**/{branch}'
 
 - job-template:
-    name: "{project-name}-tox-sonarqube"
+    name: '{project-name}-tox-sonarqube'
     id: github-tox-sonarqube
     concurrent: false
     <<: *lf_tox_sonarqube
 
     scm:
       - lf-infra-github-scm:
-          branch: "$sha1"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          branch: '$sha1'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
 
     triggers:
       - github-pull-request:
-          trigger-phrase: "^run-sonar$"
+          trigger-phrase: '^run-sonar$'
           only-trigger-phrase: false
-          status-context: "Tox Sonarqube"
+          status-context: 'Tox Sonarqube'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - "{branch}"
+            - '{branch}'
 
 ##############
 # Tox Common #
@@ -920,67 +921,67 @@
     build-days-to-keep: 7
     build-timeout: 15
     disable-job: false
-    git-url: "$GIT_URL/$GERRIT_PROJECT"
-    github-url: "https://github.com"
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    github-url: 'https://github.com'
     parallel: false
-    pre-build-script: "# pre-build script goes here"
+    pre-build-script: '# pre-build script goes here'
     python-version: python3
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
     submodule-disable: false
-    tox-dir: "."
-    tox-envs: ""
+    tox-dir: '.'
+    tox-envs: ''
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: ".*"
+        pattern: '.*'
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - ".*"
+      - '.*'
 
     #####################
     # Job Configuration #
     #####################
 
     project-type: freestyle
-    node: "{build-node}"
+    node: '{build-node}'
     concurrent: true
-    disabled: "{disable-job}"
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
 
     parameters:
       - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
       - lf-infra-tox-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
+          tox-dir: '{tox-dir}'
+          tox-envs: '{tox-envs}'
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     builders:
       - lf-infra-pre-build
       - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
+          python-version: '{python-version}'
+      - shell: '{pre-build-script}'
       - lf-infra-tox-run:
-          parallel: "{parallel}"
+          parallel: '{parallel}'
 
     publishers:
       - lf-infra-publish
 
 - job-template:
     # Python projects typically use tox to run testing.
-    name: "{project-name}-tox-verify-{stream}"
+    name: '{project-name}-tox-verify-{stream}'
     id: gerrit-tox-verify
     <<: *lf_tox_common
 
@@ -1004,69 +1005,69 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: gerrit
 
     triggers:
       - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_verify_triggers}"
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_verify_triggers}'
           projects:
             - project-compare-type: ANT
-              project-pattern: "{project}"
+              project-pattern: '{project}'
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
           skip-vote:
-            successful: "{gerrit-skip-vote}"
-            failed: "{gerrit-skip-vote}"
-            unstable: "{gerrit-skip-vote}"
-            notbuilt: "{gerrit-skip-vote}"
+            successful: '{gerrit-skip-vote}'
+            failed: '{gerrit-skip-vote}'
+            unstable: '{gerrit-skip-vote}'
+            notbuilt: '{gerrit-skip-vote}'
 
 - job-template:
     # Python projects typically use tox to run testing.
-    name: "{project-name}-tox-verify-{stream}"
+    name: '{project-name}-tox-verify-{stream}'
     id: github-tox-verify
     <<: *lf_tox_common
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
-          branch: "$sha1"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       - github-pull-request:
-          trigger-phrase: "^(recheck|reverify)$"
+          trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
-          status-context: "Tox Verify"
+          status-context: 'Tox Verify'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
 
 - job-template:
     # Run tox after merge of gerrit change set
-    name: "{project-name}-tox-merge-{stream}"
+    name: '{project-name}-tox-merge-{stream}'
     id: gerrit-tox-merge
     <<: *lf_tox_common
 
@@ -1085,65 +1086,65 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           # merge jobs always build from tip
           choosing-strategy: default
 
     triggers:
       - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_merge_triggers}"
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_merge_triggers}'
           projects:
             - project-compare-type: ANT
-              project-pattern: "{project}"
+              project-pattern: '{project}'
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
     # Run tox after merge of github pull request
-    name: "{project-name}-tox-merge-{stream}"
+    name: '{project-name}-tox-merge-{stream}'
     id: github-tox-merge
     <<: *lf_tox_common
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: ""
-          branch: "refs/heads/{branch}"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       - github-pull-request:
-          trigger-phrase: "^remerge$"
+          trigger-phrase: '^remerge$'
           only-trigger-phrase: true
-          status-context: "Tox Merge"
+          status-context: 'Tox Merge'
           permit-all: true
           github-hooks: true
           org-list:
-            - "{github-org}"
-          white-list: "{obj:github_pr_allowlist}"
-          admin-list: "{obj:github_pr_admin_list}"
+            - '{github-org}'
+          white-list: '{obj:github_pr_allowlist}'
+          admin-list: '{obj:github_pr_admin_list}'
           white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
 
 ########
 # PyPI #
@@ -1163,59 +1164,59 @@
     build-timeout: 15
     disable-job: false
     dist-binary: true
-    git-url: "$GIT_URL/$GERRIT_PROJECT"
-    github-url: "https://github.com"
+    git-url: '$GIT_URL/$GERRIT_PROJECT'
+    github-url: 'https://github.com'
     parallel: false
-    pre-build-script: "# pre-build script goes here"
+    pre-build-script: '# pre-build script goes here'
     python-version: python3
     stream: master
     submodule-disable: false
     submodule-recursive: true
     submodule-timeout: 10
-    tox-dir: "."
-    tox-envs: ""
+    tox-dir: '.'
+    tox-envs: ''
 
     gerrit_trigger_file_paths:
       - compare-type: REG_EXP
-        pattern: ".*"
+        pattern: '.*'
 
     # github_included_regions MUST match gerrit_trigger_file_paths
     github_included_regions:
-      - ".*"
+      - '.*'
 
     #####################
     # Job Configuration #
     #####################
 
     project-type: freestyle
-    node: "{build-node}"
-    disabled: "{disable-job}"
+    node: '{build-node}'
+    disabled: '{disable-job}'
 
     properties:
       - lf-infra-properties:
-          build-days-to-keep: "{build-days-to-keep}"
+          build-days-to-keep: '{build-days-to-keep}'
 
     parameters:
       - lf-infra-parameters:
-          project: "{project}"
-          branch: "{branch}"
-          stream: "{stream}"
+          project: '{project}'
+          branch: '{branch}'
+          stream: '{stream}'
       - lf-infra-tox-parameters:
-          tox-dir: "{tox-dir}"
-          tox-envs: "{tox-envs}"
+          tox-dir: '{tox-dir}'
+          tox-envs: '{tox-envs}'
       - bool:
           name: BUILD_BDIST_WHEEL
-          default: "{dist-binary}"
-          description: "Set to True (checked) to build a binary distribution"
+          default: '{dist-binary}'
+          description: 'Set to True (checked) to build a binary distribution'
       - bool:
           name: DRY_RUN
           default: false
-          description: "Set to True (checked) to skip uploading artifacts"
+          description: 'Set to True (checked) to skip uploading artifacts'
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: "{build-timeout}"
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          build-timeout: '{build-timeout}'
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     publishers:
       - lf-infra-publish
@@ -1226,10 +1227,10 @@
     builders:
       - lf-infra-pre-build
       - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
+          python-version: '{python-version}'
+      - shell: '{pre-build-script}'
       - lf-infra-tox-run:
-          parallel: "{parallel}"
+          parallel: '{parallel}'
       - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
 
 - _lf_pypi_publish_builders: &lf_pypi_publish_builders
@@ -1238,39 +1239,39 @@
     builders:
       - lf-infra-pre-build
       - lf-infra-tox-install:
-          python-version: "{python-version}"
-      - shell: "{pre-build-script}"
+          python-version: '{python-version}'
+      - shell: '{pre-build-script}'
       - lf-infra-tox-run:
-          parallel: "{parallel}"
+          parallel: '{parallel}'
       - shell: !include-raw-escape: ../shell/pypi-dist-build.sh
       - config-file-provider:
           files:
             - file-id: pypirc
-              target: "$HOME/.pypirc"
+              target: '$HOME/.pypirc'
       - inject:
-          properties-content: "REPOSITORY={pypi-repo}"
+          properties-content: 'REPOSITORY={pypi-repo}'
       - shell: !include-raw-escape: ../shell/pypi-upload.sh
 
 - job-template:
-    name: "{project-name}-pypi-verify-{stream}"
+    name: '{project-name}-pypi-verify-{stream}'
     id: gerrit-pypi-verify
     <<: *lf_pypi_common
     <<: *lf_pypi_verify_builders
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: gerrit
 
     triggers:
       - gerrit:
-          server-name: "{gerrit-server-name}"
+          server-name: '{gerrit-server-name}'
           trigger-on:
             - patchset-created-event:
                 exclude-drafts: true
@@ -1282,128 +1283,128 @@
                 comment-contains-value: '^Patch Set\s+\d+:\s+(recheck|reverify)\s*$'
           projects:
             - project-compare-type: ANT
-              project-pattern: "{project}"
+              project-pattern: '{project}'
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
-    name: "{project-name}-pypi-verify-{stream}"
+    name: '{project-name}-pypi-verify-{stream}'
     id: github-pypi-verify
     <<: *lf_pypi_common
     <<: *lf_pypi_verify_builders
 
     properties:
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: "+refs/pull/*:refs/remotes/origin/pr/*"
-          branch: "$sha1"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: '+refs/pull/*:refs/remotes/origin/pr/*'
+          branch: '$sha1'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
       - github-pull-request:
-          trigger-phrase: "^(recheck|reverify)$"
+          trigger-phrase: '^(recheck|reverify)$'
           only-trigger-phrase: false
-          status-context: "PyPI Verify"
+          status-context: 'PyPI Verify'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
 
 - job-template:
-    name: "{project-name}-pypi-merge-{stream}"
+    name: '{project-name}-pypi-merge-{stream}'
     id: gerrit-pypi-merge
     <<: *lf_pypi_common
     <<: *lf_pypi_publish_builders
 
-    cron: "" # avoid for pypi which rejects duplicates
+    cron: '' # avoid for pypi which rejects duplicates
     pypi-repo: pypi-test
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           # merge jobs always build from tip
           choosing-strategy: default
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - gerrit:
-          server-name: "{gerrit-server-name}"
+          server-name: '{gerrit-server-name}'
           trigger-on:
             - change-merged-event
             - comment-added-contains-event:
                 comment-contains-value: '^Patch Set\s+\d+:\s+remerge\s*$'
           projects:
             - project-compare-type: ANT
-              project-pattern: "{project}"
+              project-pattern: '{project}'
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
-    name: "{project-name}-pypi-merge-{stream}"
+    name: '{project-name}-pypi-merge-{stream}'
     id: github-pypi-merge
     <<: *lf_pypi_common
     <<: *lf_pypi_publish_builders
 
-    cron: ""
+    cron: ''
     pypi-repo: pypi-test
 
     properties:
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: ""
-          branch: "refs/heads/{branch}"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - github-pull-request:
-          trigger-phrase: "^remerge$"
+          trigger-phrase: '^remerge$'
           only-trigger-phrase: false
-          status-context: "Merge"
+          status-context: 'Merge'
           permit-all: true
           github-hooks: true
           org-list:
-            - "{github-org}"
-          white-list: "{obj:github_pr_allowlist}"
-          admin-list: "{obj:github_pr_admin_list}"
+            - '{github-org}'
+          white-list: '{obj:github_pr_allowlist}'
+          admin-list: '{obj:github_pr_admin_list}'
           white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
 
 - job-template:
-    name: "{project-name}-pypi-stage-{stream}"
+    name: '{project-name}-pypi-stage-{stream}'
     id: gerrit-pypi-stage
     <<: *lf_pypi_common
     <<: *lf_pypi_publish_builders
 
-    cron: ""
+    cron: ''
     pypi-repo: pypi-test
 
     gerrit_stage_triggers:
@@ -1412,61 +1413,61 @@
 
     scm:
       - lf-infra-gerrit-scm:
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
-          git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
+          git-url: '{git-url}'
+          refspec: '$GERRIT_REFSPEC'
+          branch: '$GERRIT_BRANCH'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           # stage jobs always build from tip
           choosing-strategy: default
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - gerrit:
-          server-name: "{gerrit-server-name}"
-          trigger-on: "{obj:gerrit_stage_triggers}"
+          server-name: '{gerrit-server-name}'
+          trigger-on: '{obj:gerrit_stage_triggers}'
           projects:
             - project-compare-type: ANT
-              project-pattern: "{project}"
+              project-pattern: '{project}'
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**/{branch}"
-              file-paths: "{obj:gerrit_trigger_file_paths}"
+                  branch-pattern: '**/{branch}'
+              file-paths: '{obj:gerrit_trigger_file_paths}'
 
 - job-template:
-    name: "{project-name}-pypi-stage-{stream}"
+    name: '{project-name}-pypi-stage-{stream}'
     id: github-pypi-stage
     <<: *lf_pypi_common
     <<: *lf_pypi_publish_builders
 
-    cron: ""
+    cron: ''
     pypi-repo: pypi-test
 
     properties:
       - github:
-          url: "{github-url}/{github-org}/{project}"
+          url: '{github-url}/{github-org}/{project}'
 
     scm:
       - lf-infra-github-scm:
-          url: "{git-clone-url}{github-org}/{project}"
-          refspec: ""
-          branch: "refs/heads/{branch}"
-          submodule-recursive: "{submodule-recursive}"
-          submodule-timeout: "{submodule-timeout}"
-          submodule-disable: "{submodule-disable}"
+          url: '{git-clone-url}{github-org}/{project}'
+          refspec: ''
+          branch: 'refs/heads/{branch}'
+          submodule-recursive: '{submodule-recursive}'
+          submodule-timeout: '{submodule-timeout}'
+          submodule-disable: '{submodule-disable}'
           choosing-strategy: default
-          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          jenkins-ssh-credential: '{jenkins-ssh-credential}'
 
     triggers:
-      - timed: "{obj:cron}"
+      - timed: '{obj:cron}'
       - github-pull-request:
-          trigger-phrase: "^stage-release$"
+          trigger-phrase: '^stage-release$'
           only-trigger-phrase: true
-          status-context: "Release"
+          status-context: 'Release'
           permit-all: true
           github-hooks: true
           white-list-target-branches:
-            - "{branch}"
-          included-regions: "{obj:github_included_regions}"
+            - '{branch}'
+          included-regions: '{obj:github_included_regions}'
