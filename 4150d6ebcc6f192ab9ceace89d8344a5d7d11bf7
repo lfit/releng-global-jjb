@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "63fadfdb_f769e4d4",
+        "filename": "shell/openstack-cleanup-orphaned-k8s-clusters.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-10-31T12:15:59Z",
+      "side": 1,
+      "message": "AFAIK, this will skip deleting clusters altogether creating a bunch of stale clusters on the COE env! Cluster names are derived from job names on creation, therefore if the job is active and matches the regex for cluster list the cluster should be skipped.",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 16
+      },
+      "revId": "4150d6ebcc6f192ab9ceace89d8344a5d7d11bf7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
