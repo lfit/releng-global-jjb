@@ -22,6 +22,30 @@
       },
       "revId": "4150d6ebcc6f192ab9ceace89d8344a5d7d11bf7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "59bd0018_ffc31468",
+        "filename": "shell/openstack-cleanup-orphaned-k8s-clusters.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-10-31T12:47:58Z",
+      "side": 1,
+      "message": "Wish we could have just job based clusters, but ONAP is going to have to have some long lived clusters that live beyond just a single job 😞 On the flip side, if this works well, we may be able to start offering up container based jobs to our Jenkins customers....",
+      "parentUuid": "63fadfdb_f769e4d4",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 16
+      },
+      "revId": "4150d6ebcc6f192ab9ceace89d8344a5d7d11bf7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
