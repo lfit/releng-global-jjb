@@ -46,6 +46,30 @@
       },
       "revId": "4150d6ebcc6f192ab9ceace89d8344a5d7d11bf7",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "949e4570_f2e2135a",
+        "filename": "shell/openstack-cleanup-orphaned-k8s-clusters.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-10-31T13:21:36Z",
+      "side": 1,
+      "message": "Ah agreed, the commit message or the release notes did not explain much!",
+      "parentUuid": "59bd0018_ffc31468",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 16
+      },
+      "revId": "4150d6ebcc6f192ab9ceace89d8344a5d7d11bf7",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
