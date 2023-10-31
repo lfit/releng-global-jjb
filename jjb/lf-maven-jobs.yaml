@@ -140,7 +140,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    java-version: openjdk13
+    java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean install
     mvn-opts: ""
@@ -1332,8 +1332,8 @@
     sonarcloud-project-organization: ""
     sonarcloud-api-token-cred-id: sonarcloud-api-token
     sonarcloud-qualitygate-wait: false
-    # Projects not compatible with jdk13 can set java-version to something else
-    sonarcloud-java-version: openjdk13
+    # Projects not compatible with jdk17 can set java-version to something else
+    sonarcloud-java-version: openjdk17
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
