@@ -1,0 +1,7 @@
+---
+deprecations:
+  - |
+    Sonarcloud upload will stop working with java11 on November 15th 2023
+    Update OpenJDK to release 17 for sonar jobs
+    Also revert from JDK13 -> JDK11 in a couple of places where the
+    previous release/update had unintended scope
