@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6013db4b_49cbcf12",
+        "filename": "jjb/lf-python-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2023-10-31T16:59:45Z",
+      "side": 1,
+      "message": "should this be v11 or v17?",
+      "revId": "c823250902d6b32505984b363898bf5c9cae3a0c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
