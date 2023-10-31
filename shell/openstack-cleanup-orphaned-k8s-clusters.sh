@@ -87,6 +87,10 @@ for CLUSTER_NAME in "${OS_COE_CLUSTERS[@]}"; do
     if cluster_in_jenkins "$CLUSTER_NAME" $jenkins_urls; then
         # No need to delete stacks if there exists an active build for them
         continue
+    elif [[ "$CLUSTER_NAME" == *-prod-k8s-* ]] || \
+         [[ "$CLUSTER_NAME" == *-test-k8s-* ]]; then
+        echo "Valid cluster name; not deleting"
+        continue
     else
         echo "Deleting orphaned k8s cluster: $CLUSTER_NAME"
         openstack --os-cloud "$os_cloud" coe cluster delete "$CLUSTER_NAME"
