@@ -59,7 +59,14 @@ uptime=$(awk '{print int($1 + 1)}' /proc/uptime)
 # EC2 and OpenStack have simiar instace metadata APIs at this IP
 # AWS docs: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-data-retrieval.html
 # Nova docs: https://docs.openstack.org/nova/latest/user/metadata.html
+set +e
 instance_type=$(curl -s http://169.254.169.254/latest/meta-data/instance-type)
+result=$?
+if [[ "$result" -ne 0 ]]; then
+    echo "INFO: Unable to retrieve instance type. Skipping job cost..."
+    exit 0
+fi
+set -e
 
 echo "INFO: Retrieving Pricing Info for: $instance_type"
 url="https://pricing.vexxhost.net/v1/pricing/$instance_type/cost?seconds=$uptime"

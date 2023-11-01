@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    A network error while getting the instance type in job-cost.sh will no
+    longer mark a build as failed/unstable.
