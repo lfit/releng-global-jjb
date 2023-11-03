@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Pin openstacksdk<0.99 for cron cleanup jobs

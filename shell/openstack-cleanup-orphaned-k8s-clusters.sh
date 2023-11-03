@@ -61,7 +61,10 @@ cluster_in_jenkins() {
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
+# TODO: lftools 0.37.7 requires openstacksdk<1.5.0
+# but you have openstacksdk 2.0.0 which is incompatible.
 lf-activate-venv --python python3 \
+    "openstacksdk<0.99" \
     kubernetes \
     python-heatclient \
     python-openstackclient \

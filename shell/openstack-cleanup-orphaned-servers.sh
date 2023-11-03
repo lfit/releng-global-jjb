@@ -50,7 +50,10 @@ minion_in_jenkins() {
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
+# TODO: "openstacksdk<0.99" AttributeError: 'Server' object has no attribute
+# 'created'. Did you mean: 'create'?
 lf-activate-venv --python python3 "lftools[openstack]" \
+    "openstacksdk<0.99" \
     kubernetes \
     niet \
     python-heatclient \

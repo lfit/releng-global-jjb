@@ -29,7 +29,12 @@ if [[ $cloudtype == "DataSourceEc2Local" ]]; then
     exit 0
 fi
 
-lf-activate-venv zipp==1.1.0 python-openstackclient urllib3~=1.26.15
+# TODO: openstacksdk<0.99 lftools 0.37.7 requires openstacksdk<1.5.0, but
+# you have openstacksdk 2.0.0 which is incompatible.
+lf-activate-venv zipp==1.1.0 \
+    "openstacksdk<0.99" \
+    python-openstackclient \
+    urllib3~=1.26.15
 
 if [[ -z ${JOB_NAME:-} ]]; then
     lf-echo-error "Required Env Variable Unset/Empty: JOB_NAME"
