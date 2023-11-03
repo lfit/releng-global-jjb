@@ -74,6 +74,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1ecafc3e_e9076de4",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2023-11-03T14:03:07Z",
+      "side": 1,
+      "message": "lftools pulls \"openstacksdk \u003d\u003d 1.4.0\" correctly! That is correct since its pulling the more recent version of the package from pypi resolving dependencies. \n\nHowever run time the API\u0027s called returns an \"AttributeError:...\", since some of the attributes are either removed or deprecated in more recent versions and the openstack SDK.\n\nEx: \"AttributeError: \u0027Server\u0027 object has no attribute \u0027created\u0027. Did you mean: \u0027create\u0027?\"\n\nMost recent run with \"\u003c1.5.0\"\nhttps://jenkins.opendaylight.org/releng/view/builder/job/builder-openstack-cron/57440/",
+      "parentUuid": "a0fb8dfd_3febe954",
+      "range": {
+        "startLine": 35,
+        "startChar": 18,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "147771d1b89b8f2eed651f90c8f08a9075fb6c75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1cd4ce1a_cc768f0c",
         "filename": "shell/openstack-cleanup-orphaned-k8s-clusters.sh",
         "patchSetId": 1
