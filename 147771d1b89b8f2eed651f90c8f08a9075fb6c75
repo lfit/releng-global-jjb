@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a0fb8dfd_3febe954",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-11-03T13:46:45Z",
+      "side": 1,
+      "message": "That seems like a separate bug / issue than this one. My specific question is why are you pinning at \u003c0.99 when your comment _and_ the failure from the cron job, which instigated this, are talking about \u003c1.5.0?\n\nAdditionally, I\u0027m a bit confused as to why we are doing this pin. My testing of lftools shows that it properly pulls in openstacksdk \u003d\u003d 1.4.0 which matches \u003c1.5.0 which is what lftools declares is required!",
+      "parentUuid": "8b0e2ca0_8ad9a604",
+      "range": {
+        "startLine": 35,
+        "startChar": 18,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "147771d1b89b8f2eed651f90c8f08a9075fb6c75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1cd4ce1a_cc768f0c",
         "filename": "shell/openstack-cleanup-orphaned-k8s-clusters.sh",
         "patchSetId": 1
