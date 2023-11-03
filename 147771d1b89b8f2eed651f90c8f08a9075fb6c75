@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1a779626_db910b3a",
+        "filename": "shell/job-cost.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-11-03T13:05:58Z",
+      "side": 1,
+      "message": "Why are you pinning at a lower version than what lftools using for it\u0027s requirement? This should be matching at \u003c1.5.0 which is even in your comment!",
+      "range": {
+        "startLine": 35,
+        "startChar": 18,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "147771d1b89b8f2eed651f90c8f08a9075fb6c75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cd4ce1a_cc768f0c",
+        "filename": "shell/openstack-cleanup-orphaned-k8s-clusters.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-11-03T13:05:58Z",
+      "side": 1,
+      "message": "Why are you pinning at a lower version than what lftools using for it\u0027s requirement? This should be matching at \u003c1.5.0 which is even in your comment!",
+      "range": {
+        "startLine": 67,
+        "startChar": 18,
+        "endLine": 67,
+        "endChar": 22
+      },
+      "revId": "147771d1b89b8f2eed651f90c8f08a9075fb6c75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ab61d93_4bf202b2",
+        "filename": "shell/openstack-cleanup-orphaned-servers.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2023-11-03T13:05:58Z",
+      "side": 1,
+      "message": "Why are you pinning at a lower version than what lftools using for it\u0027s requirement? This should be matching at \u003c1.5.0 which is even in your comment!",
+      "range": {
+        "startLine": 56,
+        "startChar": 18,
+        "endLine": 56,
+        "endChar": 22
+      },
+      "revId": "147771d1b89b8f2eed651f90c8f08a9075fb6c75",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
