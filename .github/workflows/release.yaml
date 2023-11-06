@@ -11,9 +11,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 30
-          fetch-tags: true
       - name: Get tag
         id: tag
         uses: devops-actions/action-get-tag@v1.0.2
@@ -47,7 +44,7 @@ jobs:
         with:
           python-version: "3.8"
       - name: Generate reno report
-        run: >-
+        run: |
           pipx run tox -e reno -- report \
             --version "${{ steps.tag.outputs.tag }}" \
             2>/dev/null > reno-notes.md || true
@@ -63,7 +60,7 @@ jobs:
             sed '1d' > modified-reno-notes.md
           fi
       - name: Create Release Notes
-        run: >-
+        run: |
           gh release create ${{ steps.tag.outputs.tag }} --generate-notes \
             -F modified-reno-notes.md
         env:
