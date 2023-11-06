@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 30
+          fetch-tags: true
       - name: Get tag
         id: tag
         uses: devops-actions/action-get-tag@v1.0.2
@@ -39,3 +42,29 @@ jobs:
 
             Cheers,
             LF Releng
+      - name: Configure Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+      - name: Generate reno report
+        run: >-
+          pipx run tox -e reno -- report \
+            --version "${{ steps.tag.outputs.tag }}" \
+            2>/dev/null > reno-notes.md || true
+          if grep -q 'reno: FAIL' reno-notes.md
+          then
+            touch modified-reno-notes.md
+          else
+            sed '/^\.pkg.*$/d' reno-notes.md |
+            sed '/^reno:.*$/d' |
+            sed '/^\.\. .*$/d' |
+            sed '$d' |
+            sed '$d' |
+            sed '1d' > modified-reno-notes.md
+          fi
+      - name: Create Release Notes
+        run: >-
+          gh release create ${{ steps.tag.outputs.tag }} --generate-notes \
+            -F modified-reno-notes.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
