@@ -45,6 +45,8 @@ jobs:
           python-version: "3.8"
       - name: Generate reno report
         run: |
+          # fetch last 30 changes
+          git fetch --depth=30
           pipx run tox -e reno -- report \
             --version "${{ steps.tag.outputs.tag }}" \
             2>/dev/null > reno-notes.md || true
