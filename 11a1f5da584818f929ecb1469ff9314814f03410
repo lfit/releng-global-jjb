@@ -16,6 +16,24 @@
       "message": "there is a typo in the commit message title",
       "revId": "11a1f5da584818f929ecb1469ff9314814f03410",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16bf186d_13a8867e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2023-11-09T20:06:49Z",
+      "side": 1,
+      "message": "Thank you!",
+      "parentUuid": "e5cb29b6_03e9b491",
+      "revId": "11a1f5da584818f929ecb1469ff9314814f03410",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
