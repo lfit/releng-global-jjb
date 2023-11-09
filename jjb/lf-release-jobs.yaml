@@ -132,7 +132,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**"
+                  branch-pattern: "**/{branch}"
               file-paths:
                 - compare-type: REG_EXP
                   pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
@@ -291,7 +291,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**"
+                  branch-pattern: "**/{branch}"
               file-paths:
                 - compare-type: REG_EXP
                   pattern: '(releases\/.*\.yaml|\.releases\/.*\.yaml)'
@@ -486,7 +486,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**"
+                  branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_release_trigger_file_paths}"
 
 - job-template:
@@ -557,7 +557,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: ANT
-                  branch-pattern: "**"
+                  branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_release_trigger_file_paths}"
 
 - job-template:
@@ -702,7 +702,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**"
+                  branch-pattern: "**/{branch}"
               file-paths:
                 - compare-type: REG_EXP
                   pattern: '(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)'
@@ -747,7 +747,7 @@
               project-pattern: "{project}"
               branches:
                 - branch-compare-type: "ANT"
-                  branch-pattern: "**"
+                  branch-pattern: "**/{branch}"
               file-paths:
                 - compare-type: REG_EXP
                   pattern: '(releases\/packagecloud.*\.yaml|\.releases\/packagecloud.*\.yaml)'

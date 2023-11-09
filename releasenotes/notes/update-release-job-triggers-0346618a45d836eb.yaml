@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Verify and merge release jobs need to be trigger for only the branch in question.
+    Currently, all active branches verify jobs are triggering causing verify conflicts
+    when projects are releasing more than one branch simultaniously.
