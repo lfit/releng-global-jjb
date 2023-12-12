@@ -1,0 +1,7 @@
+---
+features:
+  - |
+    Use Sigstore Cosign to sign docker images and push signature.
+    In order to enable, the project needs to create their keypair and
+    credentials in Jenkins for cosign-password (keypair password) and
+    cosign-private-key.
