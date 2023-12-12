@@ -313,6 +313,13 @@
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
+      - credentials-binding:
+          - file:
+              credential-id: "{cosign-private-key}"
+              variable: COSIGN_PRIVATE_KEY
+          - text:
+              credential-id: "{cosign-password}"
+              variable: COSIGN_PASSWORD
 
     scm:
       - lf-infra-github-scm:
