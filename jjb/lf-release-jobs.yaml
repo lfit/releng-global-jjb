@@ -195,6 +195,8 @@
 
     build-days-to-keep: 7
     build-timeout: 15
+    cosign-password-id: cosign-password
+    cosign-private-key-id: cosign-private-key
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     stream: master
@@ -269,6 +271,13 @@
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
           jenkins-ssh-credential: "{jenkins-ssh-release-credential}"
+      - credentials-binding:
+          - file:
+              credential-id: "{cosign-private-key-id}"
+              variable: COSIGN_PRIVATE_KEY
+          - text:
+              credential-id: "{cosign-password-id}"
+              variable: COSIGN_PASSWORD
 
     scm:
       - lf-infra-gerrit-scm:
@@ -313,6 +322,13 @@
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
+      - credentials-binding:
+          - file:
+              credential-id: "{cosign-private-key-id}"
+              variable: COSIGN_PRIVATE_KEY
+          - text:
+              credential-id: "{cosign-password-id}"
+              variable: COSIGN_PASSWORD
 
     scm:
       - lf-infra-github-scm:

@@ -443,8 +443,16 @@ container_release_file(){
             echo "docker tag $container_image_id $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
             echo "docker push $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
             if [[ "$JOB_NAME" =~ "merge" ]]; then
+                curl -O -L "https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64"
+                sudo mv cosign-linux-amd64 /usr/local/bin/cosign
+                sudo chmod +x /usr/local/bin/cosign
+                export COSIGN_PASSWORD
                 docker tag "$container_image_id" "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
                 docker push "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
+                image_sha=$(docker images --no-trunc --quiet \
+                        "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION")
+                image_digest="$CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name@$image_sha"
+                cosign sign -y --key "$COSIGN_PRIVATE_KEY" "$image_digest"
             fi
             echo "#########################"
         fi
