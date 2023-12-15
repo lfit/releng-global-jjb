@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add regex with HCL file extensions to trigger merge jobs when
+    HCL file format is found.

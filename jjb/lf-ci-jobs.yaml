@@ -1576,6 +1576,10 @@
                   pattern: 'packer\/common-packer\/templates\/{templates}\.json'
                 - compare-type: REG_EXP
                   pattern: 'packer\/common-packer\/vars\/{platforms}\.json'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/templates\/{templates}\.hcl'
+                - compare-type: REG_EXP
+                  pattern: 'packer\/common-packer\/vars\/{platforms}\.pkrvars.hcl'
 
 - job-template:
     name: "{project-name}-packer-merge-{platforms}-{templates}"
