@@ -1,0 +1,4 @@
+---
+features:
+  - |
+    Allow SBOM reports to be generated for docker-maven stage jobs.

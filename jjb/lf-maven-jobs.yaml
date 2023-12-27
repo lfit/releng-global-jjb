@@ -1217,6 +1217,14 @@
             CONTAINER_PUSH_REGISTRY={container-staging-registry}
       - lf-maven-build:
           mvn-goals: "{mvn-goals}"
+      # With SBOM Generator
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: "{sbom-generator}"
+          steps:
+            - shell: echo 'Running SBOM Generator'
+            - lf-infra-maven-sbom-generator:
+                sbom-flags: "{sbom-flags}"
       - lf-sigul-sign-dir:
           sign-artifacts: "{sign-artifacts}"
           sign-dir: "$WORKSPACE/m2repo"
