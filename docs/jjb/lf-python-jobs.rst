@@ -459,6 +459,7 @@ Plug-in configurations
     :sonar-additional-args: Command line arguments. (default: '')
     :sonar-java-opts: JVM options. For example, use option -Xmx
         to increase the memory size limit.  (default: '')
+    :sonar-jdk: JDK version to use. (default: openjdk17)
     :sonar-project-file: The file name with Sonar configuration properties
         (default: sonar-project.properties)
     :sonar-properties: Sonar configuration properties. (default: '')

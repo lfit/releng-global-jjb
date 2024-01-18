@@ -794,6 +794,7 @@
     sonar-project-file: "sonar-project.properties"
     sonar-properties: ""
     sonar-task: ""
+    sonar-jdk: openjdk17
 
     #####################
     # Job Configuration #
@@ -838,6 +839,7 @@
           sonar-properties: "{sonar-properties}"
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
+          sonar-jdk: "{sonar-jdk}"
 
     publishers:
       - lf-infra-publish
