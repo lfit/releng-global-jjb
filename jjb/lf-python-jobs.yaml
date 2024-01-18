@@ -779,6 +779,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    java-version: openjdk17
     parallel: false
     pre-build-script: "# pre-build script goes here"
     python-version: python3
@@ -838,6 +839,7 @@
           sonar-properties: "{sonar-properties}"
           sonar-java-opts: "{sonar-java-opts}"
           sonar-additional-args: "{sonar-additional-args}"
+          sonar-jdk: "{java-version}"
 
     publishers:
       - lf-infra-publish

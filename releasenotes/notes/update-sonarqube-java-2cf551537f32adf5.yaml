@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Update lf-infra-sonar macro to allow the sonar builder to take a specific
+    JDK version.

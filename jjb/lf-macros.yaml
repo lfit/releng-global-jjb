@@ -393,6 +393,7 @@
           properties: "{sonar-properties}"
           java-opts: "{sonar-java-opts}"
           additional-arguments: "{sonar-additional-args}"
+          jdk: "{sonar-jdk}"
 
 - builder:
     name: lf-infra-sonar-with-prescan
