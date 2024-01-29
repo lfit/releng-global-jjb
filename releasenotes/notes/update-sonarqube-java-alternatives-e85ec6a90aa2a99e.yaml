@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Add Java update alternatives step to allow users to use a different Java
+    version for their Sonarqube builds.

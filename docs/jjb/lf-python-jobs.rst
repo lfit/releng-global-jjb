@@ -446,6 +446,7 @@ Plug-in configurations
     :disable-job: Whether to disable the job (default: false)
     :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
     :github-url: URL for Github. (default: https://github.com)
+    :java-version: JDK version to use. (default: openjdk17)
     :parallel: If different from false, try pass this parameter to tox option
         "--parallel" to parallelize jobs in the envlist (and then activate the
         option "--parallel-live" to display output in logs).
