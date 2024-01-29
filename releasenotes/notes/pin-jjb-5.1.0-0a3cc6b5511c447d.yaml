@@ -1,0 +1,8 @@
+---
+prelude: >
+  A new version of JJB 6.x is released which breaks backword compatibility.
+fixes:
+  - |
+    Pin global-jjb to 5.1.0 until the codebase is moved to JJB 6x.
+
+    https://groups.google.com/g/jenkins-job-builder/c/miYGnWgYZYM
