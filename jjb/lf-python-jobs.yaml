@@ -779,6 +779,7 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
+    java-version: openjdk17
     parallel: false
     pre-build-script: "# pre-build script goes here"
     python-version: python3
@@ -828,6 +829,8 @@
 
     builders:
       - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
       - lf-infra-tox-install:
           python-version: "{python-version}"
       - shell: "{pre-build-script}"
