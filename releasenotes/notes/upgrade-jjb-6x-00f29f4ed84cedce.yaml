@@ -1,0 +1,24 @@
+---
+prelude: >
+  Jenkins Job Builder 6.0.0 is released and breaks backward compatibility
+  with 5.1.0.
+
+  The breaking changes with previous 5.1.0 release:
+
+    - Jobs are now expanded the same way as job templates.
+    - Macros without parameters are now expanded the same way as macros with
+      parameters.
+    - Tags !include-raw: and !include-raw-escape: should now be used the same
+      way in jobs and macros without parameters as they are used in job
+      templates and macros with parameters.
+issues:
+  - |
+    This breaks backward compatibility with older version of JJB
+    therefore care must be taken during upgrade on the ci-man repositories.
+upgrade:
+  - |
+    Upgrade Jenkins-job-builder to 6.0.0 as the default version.
+
+    Ref:
+      https://storyboard.openstack.org/#!/story/2010963
+      https://storyboard.openstack.org/#!/story/2010588

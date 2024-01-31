@@ -17,7 +17,7 @@
 - builder:
     name: lf-maven-deploy
     builders:
-      - shell: !include-raw:
+      - shell: !include-raw-escape:
           - ../shell/common-variables.sh
           - ../shell/maven-deploy.sh
 
