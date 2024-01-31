@@ -22,7 +22,7 @@
 - builder:
     name: lf-fetch-dependent-patches
     builders:
-      - shell: !include-raw: ../shell/gerrit-fetch-dependencies.sh
+      - shell: !include-raw-escape: ../shell/gerrit-fetch-dependencies.sh
       - inject:
           properties-file: $WORKSPACE/.dependency.properties
 
@@ -42,7 +42,7 @@
 - builder:
     name: lf-infra-capture-instance-metadata
     builders:
-      - shell: !include-raw:
+      - shell: !include-raw-escape:
           - ../shell/capture-instance-metadata.sh
 
 - builder:
@@ -100,11 +100,11 @@
           # Ensure python-tools are installed in case job template does not
           # call the lf-infra-pre-build macro.
           - ../shell/python-tools-install.sh
-      - shell: !include-raw:
+      - shell: !include-raw-escape:
           - ../shell/sudo-logs.sh
-      - shell: !include-raw:
+      - shell: !include-raw-escape:
           - ../shell/job-cost.sh
-      - shell: !include-raw:
+      - shell: !include-raw-escape:
           - ../shell/logs-deploy.sh
       - shell: !include-raw:
           - ../shell/logs-clear-credentials.sh
@@ -114,7 +114,7 @@
 - builder:
     name: lf-infra-package-listing
     builders:
-      - shell: !include-raw:
+      - shell: !include-raw-escape:
           - ../shell/package-listing.sh
 
 - builder:
@@ -179,7 +179,7 @@
 - builder:
     name: lf-infra-update-packer-images
     builders:
-      - shell: !include-raw: ../shell/update-cloud-images.sh
+      - shell: !include-raw-escape: ../shell/update-cloud-images.sh
 
 - builder:
     name: lf-infra-push-gerrit-patch
@@ -197,7 +197,7 @@
 - builder:
     name: lf-infra-sysstat
     builders:
-      - shell: !include-raw:
+      - shell: !include-raw-escape:
           - ../shell/sysstat.sh
 
 - builder:
@@ -343,7 +343,7 @@
           files:
             - file-id: lftoolsini
               target: "$HOME/.config/lftools/lftools.ini"
-      - shell: !include-raw: ../shell/release-job.sh
+      - shell: !include-raw-escape: ../shell/release-job.sh
 
 - builder:
     name: lf-sigul-sign-dir
