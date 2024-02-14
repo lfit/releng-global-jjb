@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "725bc44b_4f0cfc35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2024-02-14T00:58:48Z",
+      "side": 1,
+      "message": "Failed build can be found here: https://readthedocs.org/projects/lf-releng-global-jjb/builds/23420279/",
+      "revId": "04853ec1c27444d494afae28e8c181b711280f4b",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
