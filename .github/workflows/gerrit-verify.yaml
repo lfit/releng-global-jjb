@@ -63,36 +63,22 @@ jobs:
       - name: Allow replication
         run: sleep 10s
 
-  # run pre-commit tox env separately to get use of more parallel processing
-  pre-commit:
+  tox-verify:
     needs: prepare
-    runs-on: ubuntu-latest
-    steps:
-      - uses: lfit/checkout-gerrit-change-action@v0.2
-        with:
-          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
-          delay: "0s"
-      - uses: actions/setup-python@v4
-        with:
-          python-version: "3.11"
-      - name: Run static analysis and format checkers
-        run: pipx run tox -e pre-commit
-
-  tox:
-    needs: prepare
-    runs-on: ubuntu-latest
-    steps:
-      - uses: lfit/checkout-gerrit-change-action@v0.2
-        with:
-          gerrit-refspec: ${{ inputs.GERRIT_REFSPEC }}
-          delay: "0s"
-      - uses: actions/setup-python@v4
-        id: setup-python
-        with:
-          python-version: "3.11"
-      - name: Run tests
-        run: >-
-          TOX_SKIP_ENV=pre-commit pipx run tox
+    # yamllint disable-line rule:line-length
+    uses: lfit/releng-reusable-workflows/.github/workflows/gerrit-compose-required-tox-verify.yaml@fbf2b4bcca9a6306765f39552d8cfcd962ab6945 # v0.2.1
+    with:
+      GERRIT_BRANCH: ${{ inputs.GERRIT_BRANCH }}
+      GERRIT_CHANGE_ID: ${{ inputs.GERRIT_CHANGE_ID }}
+      GERRIT_CHANGE_NUMBER: ${{ inputs.GERRIT_CHANGE_NUMBER }}
+      GERRIT_CHANGE_URL: ${{ inputs.GERRIT_CHANGE_URL }}
+      GERRIT_EVENT_TYPE: ${{ inputs.GERRIT_EVENT_TYPE }}
+      GERRIT_PATCHSET_NUMBER: ${{ inputs.GERRIT_PATCHSET_NUMBER }}
+      GERRIT_PATCHSET_REVISION: ${{ inputs.GERRIT_PATCHSET_REVISION }}
+      GERRIT_PROJECT: ${{ inputs.GERRIT_PROJECT }}
+      GERRIT_REFSPEC: ${{ inputs.GERRIT_REFSPEC }}
+      # yamllint disable-line rule:line-length
+      TOX_ENVS: '["ensure-documented", "jjb", "jjb-compare-xml", "license", "bashate", "pre-commit", "docs"]'
 
   vote:
     if: ${{ always() }}
