@@ -42,7 +42,7 @@ Runs a gradle build command to perform the verification.
     :gerrit_verify_triggers: Override Gerrit Triggers.
 
 Gradle Publish Jar
-------------
+------------------
 
 Runs a gradle publish command to publish the jar.
 

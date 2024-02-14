@@ -1,5 +1,5 @@
 reno~=2.11.2
-Sphinx~=4.2.0
+Sphinx~=7.2.6
 sphinx_bootstrap_theme
 sphinxcontrib-programoutput
 urllib3
