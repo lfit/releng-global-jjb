@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Rename view name 'All'. JJB 6x has introduced a regression with
+    view name that causing view updates to fail.
