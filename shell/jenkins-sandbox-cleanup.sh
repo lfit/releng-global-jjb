@@ -25,7 +25,7 @@ lf-activate-venv --python python3 --venv-file /tmp/.jjb_venv \
 # Recreate the All default view.
 cat << 'EOF' > all-view.yaml
 - view:
-    name: all
+    name: All
     view-type: all
 EOF
 jenkins-jobs -s sandbox update -v all-view.yaml
