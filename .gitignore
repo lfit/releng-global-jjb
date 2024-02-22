@@ -1,3 +1,6 @@
+# Ignore nodejs dir created by linting tools
+node_modules/
+
 # Ignore Vim temporary files
 .*.sw?
 
