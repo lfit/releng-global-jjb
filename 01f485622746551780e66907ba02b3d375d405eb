@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf9ec822_f1e50f98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-02-22T14:10:55Z",
+      "side": 1,
+      "message": "Updates to pre-commit should always be done as a separate change.",
+      "revId": "01f485622746551780e66907ba02b3d375d405eb",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
