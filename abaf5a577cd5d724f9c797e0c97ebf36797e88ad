@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cd4ce5d2_dae4b117",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2024-02-22T15:03:50Z",
+      "side": 1,
+      "message": "Pre-commit config file changes will be done on a separate change",
+      "revId": "abaf5a577cd5d724f9c797e0c97ebf36797e88ad",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
