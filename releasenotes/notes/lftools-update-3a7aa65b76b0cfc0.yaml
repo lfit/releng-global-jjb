@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Remove Openstack SDK version pinning from shell scripts.
+    This will now be handled by the other modules as a declared
+    dependency. The previous version pin was extremely old.
