@@ -14,12 +14,9 @@ echo "---> Cleanup old images"
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-# TODO: "openstacksdk<0.99" AttributeError: 'Image' object has no
-# attribute 'protected'
 lf-activate-venv --python python3 "lftools[openstack]" \
     kubernetes \
     niet \
-    "openstacksdk<0.99" \
     python-heatclient \
     python-openstackclient \
     python-magnumclient \
