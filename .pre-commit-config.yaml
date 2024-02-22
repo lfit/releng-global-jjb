@@ -54,8 +54,8 @@ repos:
       # would give us an override for each individual instance of a violation
       # but until then this gives us a close enough approach.
       - id: write-good
-        name: "write-good --no-adverb --no-tooWordy"
-        args: ["--no-adverb", "--no-tooWordy"]
+        name: 'write-good --no-adverb --no-tooWordy'
+        args: ['--no-adverb', '--no-tooWordy']
         files: docs/jjb/lf-ci-jobs.rst
 
   - repo: https://github.com/btford/write-good
@@ -69,8 +69,8 @@ repos:
       # would give us an override for each individual instance of a violation
       # but until then this gives us a close enough approach.
       - id: write-good
-        name: "write-good --no-tooWordy"
-        args: ["--no-tooWordy"]
+        name: 'write-good --no-tooWordy'
+        args: ['--no-tooWordy']
         files: >
           (?x)^(
             docs/jjb/lf-c-cpp-jobs.rst|
