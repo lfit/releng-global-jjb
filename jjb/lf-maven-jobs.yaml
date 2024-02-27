@@ -733,7 +733,11 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    jacoco-exclude-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
+    jacoco-exclude-pattern: >-
+      **/gen/**,
+      **/generated-sources/**,
+      **/yang-gen**,
+      **/pax/**,
     java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -1326,7 +1330,11 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    jacoco-exclude-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
+    jacoco-exclude-pattern: >-
+      **/gen/**,
+      **/generated-sources/**,
+      **/yang-gen**,
+      **/pax/**,
     java-version: openjdk11
     java-opts: ""
     mvn-global-settings: global-settings
@@ -1721,7 +1729,11 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    jacoco-exclude-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
+    jacoco-exclude-pattern: >-
+      **/gen/**,
+      **/generated-sources/**,
+      **/yang-gen**,
+      **/pax/**
     java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
@@ -1963,7 +1975,11 @@
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
-    jacoco-exclude-pattern: "**/gen/**,**/generated-sources/**,**/yang-gen**,**/pax/**"
+    jacoco-exclude-pattern: >-
+      **/gen/**,
+      **/generated-sources/**,
+      **/yang-gen**,
+      **/pax/**
     java-version: openjdk11
     mvn-global-settings: global-settings
     mvn-goals: clean deploy
