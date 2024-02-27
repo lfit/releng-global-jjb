@@ -1,5 +1,40 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c8d23ed_53143eec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-02-27T18:08:58Z",
+      "side": 1,
+      "message": "You need to comment why you added the git unshallow in tox.ini in the commit message",
+      "revId": "a5fa8a32ab2f856fecc7505fdfd7a8e12df2c402",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0bcd5af5_9eab39a5",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-02-27T18:08:58Z",
+      "side": 1,
+      "message": "Add a comment as to why you are adding the unshallow",
+      "revId": "a5fa8a32ab2f856fecc7505fdfd7a8e12df2c402",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
