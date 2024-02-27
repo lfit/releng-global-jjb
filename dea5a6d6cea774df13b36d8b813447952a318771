@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "47d7d07e_c518e047",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-02-27T14:14:21Z",
+      "side": 1,
+      "message": "The original pattern is comma separated, as such you should make this \u0027\u003e-\u0027 and add a comma at the end of each line with the patterns.",
+      "range": {
+        "startLine": 736,
+        "startChar": 28,
+        "endLine": 740,
+        "endChar": 15
+      },
+      "revId": "dea5a6d6cea774df13b36d8b813447952a318771",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6940a00_73636485",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1337,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-02-27T14:14:21Z",
+      "side": 1,
+      "message": "The original pattern is comma separated, as such you should make this \u0027\u003e-\u0027 and add a comma at the end of each line with the patterns.",
+      "range": {
+        "startLine": 1333,
+        "startChar": 28,
+        "endLine": 1337,
+        "endChar": 15
+      },
+      "revId": "dea5a6d6cea774df13b36d8b813447952a318771",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e634ccd_b32b46a2",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1736,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-02-27T14:14:21Z",
+      "side": 1,
+      "message": "The original pattern is comma separated, as such you should make this \u0027\u003e-\u0027 and add a comma at the end of each line with the patterns.",
+      "range": {
+        "startLine": 1732,
+        "startChar": 28,
+        "endLine": 1736,
+        "endChar": 15
+      },
+      "revId": "dea5a6d6cea774df13b36d8b813447952a318771",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7592035d_207fa99a",
+        "filename": "jjb/lf-maven-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1982,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-02-27T14:14:21Z",
+      "side": 1,
+      "message": "The original pattern is comma separated, as such you should make this \u0027\u003e-\u0027 and add a comma at the end of each line with the patterns.",
+      "range": {
+        "startLine": 1978,
+        "startChar": 28,
+        "endLine": 1982,
+        "endChar": 15
+      },
+      "revId": "dea5a6d6cea774df13b36d8b813447952a318771",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
