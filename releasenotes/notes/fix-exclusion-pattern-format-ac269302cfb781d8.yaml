@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Fix JaCoCo exclude patterns format to single quote. JJB 6.x does
+    not process the job config when double quotes are used and returns
+    the following error.
+
+    Error:
+    requests.exceptions.HTTPError: 500 Server Error: Server Error for url:
+    https://jenkins.opendaylight.org/releng/job/distribution-merge-managed-argon/config.xml
