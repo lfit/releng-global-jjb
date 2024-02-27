@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Update tox.ini to workaround an undeclared setuptools dependency.
