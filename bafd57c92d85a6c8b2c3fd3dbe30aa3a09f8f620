@@ -1,5 +1,29 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6647fe1_576c2e24",
+        "filename": "shell/python-tools-install.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-02-28T22:42:07Z",
+      "side": 1,
+      "message": "Why aren\u0027t these being unpinned?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 61
+      },
+      "revId": "bafd57c92d85a6c8b2c3fd3dbe30aa3a09f8f620",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ],
   "submitRequirementResults": [
     {
       "submitRequirement": {
