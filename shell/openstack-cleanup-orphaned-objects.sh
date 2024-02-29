@@ -83,11 +83,11 @@ trap _rmtemp EXIT
 # Output the initial list of object UUIDs to a temporary file
 if [[ -n ${filters} ]]; then
     # If a filter/match condition is requested/set
-    openstack --os-cloud "$os_cloud" "${object}" list -f value -c ID $attributes \
+    openstack --os-cloud "$os_cloud" "${object}" list -f value -c ID "$attributes" \
      | { $filters || true; } | { awk '{print $1}' || true; } > "$tmpfile"
 else
     # Otherwise don't pipe through an additional command
-    openstack --os-cloud "$os_cloud" "${object}" list -f value -c ID $attributes \
+    openstack --os-cloud "$os_cloud" "${object}" list -f value -c ID "$attributes" \
      | { awk '{print $1}' || true; } > "$tmpfile"
 fi
 
