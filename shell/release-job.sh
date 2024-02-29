@@ -97,7 +97,7 @@ set_variables_common(){
 
     TAG_RELEASE="${TAG_RELEASE:-None}"
     if [[ $TAG_RELEASE == "None" ]]; then
-        if grep -q "tag_release" $release_file ; then
+        if grep -q "tag_release" "$release_file"; then
             TAG_RELEASE=$(yq -r .tag_release "$release_file")
         else
             TAG_RELEASE=true
@@ -183,7 +183,7 @@ set_variables_packagecloud(){
         VERSION=$(yq -r ".version" "$release_file")
     fi
     if [[ -z ${GIT_TAG:-} ]]; then
-        if grep -q "git_tag" $release_file ; then
+        if grep -q "git_tag" "$release_file"; then
             GIT_TAG=$(yq -r ".git_tag" "$release_file")
         else
             GIT_TAG="$VERSION"
@@ -385,8 +385,8 @@ artifact_release_file(){
     mkdir artifacts
     ORG=$(echo "$NEXUS_URL" | awk -F'.' '{print $2}')
 
-    for namequoted in $(yq '.artifacts[].name' $release_file); do
-        pathquoted=$(yq ".artifacts[] |select(.name==$namequoted) |.path" $release_file)
+    for namequoted in $(yq '.artifacts[].name' "$release_file"); do
+        pathquoted=$(yq ".artifacts[] |select(.name==$namequoted) |.path" "$release_file")
 
         #Remove extra yaml quotes
         name="${namequoted#\"}"
@@ -420,8 +420,8 @@ container_release_file(){
     local lfn_umbrella
     lfn_umbrella="$(echo "$GERRIT_URL" | awk -F"." '{print $2}')"
 
-    for namequoted in $(yq '.containers[].name' $release_file); do
-        versionquoted=$(yq ".containers[] |select(.name==$namequoted) |.version" $release_file)
+    for namequoted in $(yq '.containers[].name' "$release_file"); do
+        versionquoted=$(yq ".containers[] |select(.name==$namequoted) |.version" "$release_file")
 
         #Remove extra yaml quotes
         name="${namequoted#\"}"
@@ -657,7 +657,7 @@ case $DISTRIBUTION_TYPE in
         fi
         set_variables_packagecloud
         verify_packagecloud_match_release
-        for name in $(yq -r '.packages[].name' $release_file); do
+        for name in $(yq -r '.packages[].name' "$release_file"); do
             package=$name
             packagecloud_verify "$package" "$packagecloud_account"
             if [[ "$JOB_NAME" =~ "merge" ]] && ! $DRY_RUN; then

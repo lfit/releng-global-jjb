@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Address several linting errors in scripts, mostly unquoted variables
