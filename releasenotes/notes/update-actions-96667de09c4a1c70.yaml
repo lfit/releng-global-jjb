@@ -1,0 +1,4 @@
+---
+other:
+  - |
+    Bump GitHub actions/setup-python from v4 to v5
