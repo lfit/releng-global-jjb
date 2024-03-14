@@ -1,0 +1,15 @@
+---
+fixes:
+  - |
+    Fix JaCoCo exclude patterns format. JJB 6.x does not process
+    the job config when double quotes are used and returns the
+    following error.
+
+    Error:
+    requests.exceptions.HTTPError: 500 Server Error: Server Error for url:
+    https://jenkins.opendaylight.org/releng/job/distribution-\
+    merge-managed-argon/config.xml
+
+    Using YAML multiline introduces spaces between lines that causes JJB
+    updates to fail when the job exists on Jenkins. Therefore, as workaround
+    use double-quoted string with newline escape.
