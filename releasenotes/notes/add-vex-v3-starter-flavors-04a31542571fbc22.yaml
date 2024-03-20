@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Update the create script to include V3 starter flavors on the cloud
+    provider. Newer V3 starter flavors run on newer hardware and could
+    potentially reduce costs by half and ideal for running jobs or tests
+    as compared to standard flavors.

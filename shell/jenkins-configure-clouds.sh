@@ -192,6 +192,14 @@ get_minion_options() {
     flavors["v3-standard-48"]="06a0e8b7-949a-439d-a185-208ae9e645b2"
     flavors["v3-standard-64"]="402a2759-cc01-481d-a8b7-2c7056f153f7"
     flavors["v3-standard-96"]="883b0564-dec6-4e51-88c7-83d86994fcf0"
+    flavors["v3-starter-2"]="b542cedb-d3b4-4446-a43f-5416711440ee"
+    flavors["v3-starter-4"]="5f93acce-e8dc-482b-9118-134728a77aa8"
+    flavors["v3-starter-8"]="35c0ddb3-4dd8-478c-887c-34620851a66a"
+    flavors["v3-starter-16"]="595dd716-6c7a-4365-9020-2ff10796e29c"
+    flavors["v3-starter-32"]="15949005-7952-4e93-be69-ca89dab5b884"
+    flavors["v3-starter-48"]="94eb4cec-3840-4171-ad50-a8bce2757d11"
+    flavors["v3-starter-64"]="4a6e52a2-8f64-4632-adde-72f81616d4f9"
+    flavors["v3-starter-96"]="8e7205fc-3ec7-456c-bff0-e38609e415c1"
 
     image_name=$(get_cfg "$cfg_file" IMAGE_NAME "")
     volume_size=$(get_cfg "$cfg_file" VOLUME_SIZE "")
