@@ -16,6 +16,23 @@
       "message": "jenkins-admin/create_jenkins_clouds_openstack_yaml.py also needs to be updated IIRC",
       "revId": "9268e4ab2c79a5605c59865ac5dd96231de75518",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24a399a5_59678fa5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-03-21T13:26:40Z",
+      "side": 1,
+      "message": "I just checked and the JCasC file is already up to date. So, we\u0027re good",
+      "revId": "9268e4ab2c79a5605c59865ac5dd96231de75518",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
