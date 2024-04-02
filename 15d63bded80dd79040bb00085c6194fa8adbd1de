@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0b9c221_2bcd3627",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2024-04-02T13:28:42Z",
+      "side": 1,
+      "message": "https://s3-logs.fd.io/logs/production/vex-yul-rot-jenkins-1/ci-management-jjb-deploy-job/78/console.log.gz\n\nExample how it works works today (without this change applied).\n\n-----\u003e Fetching ci-management patch\nFrom git://10.30.48.3/mirror/ci-management\n * branch            refs/changes/31/40631/1 -\u003e FETCH_HEAD\nPrevious HEAD position was ce0b1ce disable csit-verify-device voting until failure is resolved\nHEAD is now at 9df51f0 Feat!: Upgrade Jenkins-job-builder to 6x\nM\tglobal-jjb",
+      "revId": "15d63bded80dd79040bb00085c6194fa8adbd1de",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
