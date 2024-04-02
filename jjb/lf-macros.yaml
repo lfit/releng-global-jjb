@@ -474,6 +474,18 @@
           description: "Options to pass to make. Example: -j8"
 
 - parameter:
+    name: lf-gerrit-event-comment-text-parameter
+    parameters:
+      - string:
+          name: GERRIT_EVENT_COMMENT_TEXT
+          default: "{comment-text}"
+          description: |
+            GERRIT_EVENT_COMMENT_TEXT parameter usually provided by trigger.
+            Having it as parameter is useful for "Build with parameters",
+            for example when testing (otherwise gerrit comment triggered)
+            jobs on Sandbox.
+
+- parameter:
     name: lf-infra-maven-parameters
     parameters:
       - string:
