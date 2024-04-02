@@ -628,6 +628,8 @@
       - lf-infra-jjb-parameters:
           jjb-cache: "{jjb-cache}"
           jjb-version: "{jjb-version}"
+      - lf-gerrit-event-comment-text-parameter:
+          comment-text: "$GERRIT_EVENT_COMMENT_TEXT"
 
     wrappers:
       - lf-infra-wrappers:
