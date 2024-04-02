@@ -26,6 +26,7 @@ lf-activate-venv --python python3 --venv-file /tmp/.jjb_venv jenkins-job-builder
 if [ "${GERRIT_PROJECT}" == "${PROJECT}" ]; then
     echo "-----> Fetching ${PROJECT} patch"
     git fetch origin "$GERRIT_REFSPEC" && git checkout FETCH_HEAD
+    git submodule update --init --recursive
 fi
 
 # If not Gerrit Trigger than assume GitHub
