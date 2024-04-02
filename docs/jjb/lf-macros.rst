@@ -407,6 +407,14 @@ lf-cmake-parameters
 Provides parameters required by CMake. Use in any jobs that need to call the
 ``cmake && make && make install`` pattern.
 
+lf-gerrit-event-comment-text-parameter
+--------------------------------------
+
+Provides the value for GERRIT_EVENT_COMMENT_TEXT,
+needed for jobs usually triggered via a gerrit comment
+when started via "Build with parameters" instead,
+for example when testing jobs on Sandbox.
+
 lf-infra-maven-parameters
 -------------------------
 
