@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1cd449e_4b365d5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2024-04-03T17:21:02Z",
+      "side": 1,
+      "message": "There are some pypi jobs that may get broken by this.",
+      "revId": "f336068b18bd1921ef53278200e7e2fb9cdfb1fd",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
