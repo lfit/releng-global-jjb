@@ -18,27 +18,6 @@ jobs:
         run: >-
           VER=$(echo "${{ steps.tag.outputs.tag }}" | tr . -)
           echo "ANCHOR=${VER}" >> $GITHUB_ENV
-      - name: Notify mailing list
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: ${{ vars.MAIL_SERVER }}
-          server_port: ${{ vars.MAIL_SERVER_PORT }}
-          secure: true
-          username: ${{ secrets.MAIL_USER }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: global-jjb ${{ steps.tag.outputs.tag }} released
-          to: lf-releng@lists.linuxfoundation.org
-          from: ${{ vars.MAIL_FROM }}
-          body: |
-            Hi Everyone,
-
-            global-jjb ${{ steps.tag.outputs.tag }} is released. Thanks to everyone who contributed
-            to this release. Release notes are avaiable online at:
-
-            https://docs.releng.linuxfoundation.org/projects/global-jjb/en/stable/release-notes.html#${{ env.ANCHOR }}
-
-            Cheers,
-            LF Releng
       - name: Configure Python
         uses: actions/setup-python@v5
         with:
