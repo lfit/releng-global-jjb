@@ -658,7 +658,7 @@
           submodule-recursive: true
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
-          choosing-strategy: default
+          choosing-strategy: gerrit
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
