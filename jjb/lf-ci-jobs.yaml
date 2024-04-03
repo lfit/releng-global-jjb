@@ -6,6 +6,10 @@
 - builder:
     name: lf-infra-jjbini
     builders:
+      - shell: !include-raw-escape:
+          - ../shell/resolve-jjb-version.sh
+      - inject:
+          properties-file: "$WORKSPACE/__jjb_version.txt"
       - config-file-provider:
           files:
             - file-id: jjbini
