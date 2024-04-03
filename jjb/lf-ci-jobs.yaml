@@ -6,6 +6,10 @@
 - builder:
     name: lf-infra-jjbini
     builders:
+      - shell: !include-raw-escape:
+          - ../shell/resolve-jjb-version.sh
+      - inject:
+          properties-file: "$WORKSPACE/__jjb_version.txt"
       - config-file-provider:
           files:
             - file-id: jjbini
@@ -65,7 +69,7 @@
     name: lf-infra-jjb-parameters
     parameters:
       - string:
-          name: JJB_VERSION
+          name: OPTIONAL_JJB_VERSION
           default: "{jjb-version}"
           description: Jenkins Job Builder version to download and install.
       - string:
