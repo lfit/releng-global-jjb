@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a8c87e7_89b8f9d1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2024-04-03T17:17:11Z",
+      "side": 1,
+      "message": "See [0] runs 31-34 to see how this (patchset #4) works. But perhaps this is not backward compatible.\n\n[0] https://jenkins.fd.io/sandbox/job/ci-management-jjb-deploy-job/",
+      "revId": "4eb849f5697a9cab1a7152d7a7039f1fb2526a9c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
