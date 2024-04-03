@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b02a98b_0ec10937",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2024-04-03T17:24:30Z",
+      "side": 1,
+      "message": "It seems the parameter value is \"stronger\" than injecting properties, so one variable has to change name. And as lf-env.sh is pre-installed, I cannot change the final variable name, so I have to change this one instead, leading to an unwelcome surprise for users.",
+      "range": {
+        "startLine": 72,
+        "startChar": 16,
+        "endLine": 72,
+        "endChar": 25
+      },
+      "revId": "ebbe5f94dc4b6b8ebd09c717830cd2c4cc816e14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
