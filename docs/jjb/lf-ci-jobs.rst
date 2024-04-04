@@ -63,6 +63,7 @@ lf-infra-jjbini
 ---------------
 
 Provides jenkins_jobs.ini configuration for Jenkins.
+It also prepares RESOLVED_JJB_VERSION for jobs that use that.
 
 lf-packer-common
 ----------------
