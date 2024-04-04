@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a20b5179_267cb8e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2024-04-04T13:29:27Z",
+      "side": 1,
+      "message": "\u003e See [0] runs 31-34 to see how this (patchset #4) works. But perhaps this is not backward compatible.\n\nThe same job [0] runs 46-51 show how patchset #9 works, that should be fully backward compatible. I just added one more echo to make the output even more readable in patches #10.\n\nNow I need to check why verify (github actions) fails and fix that.",
+      "revId": "2fa4b3f3728e181d92b87f543cb9c955d8b96c11",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}

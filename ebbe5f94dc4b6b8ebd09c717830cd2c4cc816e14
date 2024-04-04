@@ -22,6 +22,30 @@
       },
       "revId": "ebbe5f94dc4b6b8ebd09c717830cd2c4cc816e14",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e37a40a_62990ae9",
+        "filename": "jjb/lf-ci-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2024-04-04T13:29:27Z",
+      "side": 1,
+      "message": "Done.\nLater patchsets copy functions from lf-env.sh to other caller scripts so they can be edited there.",
+      "parentUuid": "2b02a98b_0ec10937",
+      "range": {
+        "startLine": 72,
+        "startChar": 16,
+        "endLine": 72,
+        "endChar": 25
+      },
+      "revId": "ebbe5f94dc4b6b8ebd09c717830cd2c4cc816e14",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
