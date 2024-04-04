@@ -16,6 +16,23 @@
       "message": "And run 54 shows patch set #12.\n72786 is not strictly needed to be the parent, but it was useful in testing.\nReady for review.",
       "revId": "51ced1b76190ca340bd49ddb06fe97b13a8c73a5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65a25597_2366d8c2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2024-04-04T16:38:45Z",
+      "side": 1,
+      "message": "That\u0027s a lot of copy-pasta of code out of lf-env.sh. Instead of doing that, either extend the current functions in lf-env.sh to do what is needed _or_ create alternate functions in lf-env.sh that can reuse as much of the code in there as possible.",
+      "revId": "51ced1b76190ca340bd49ddb06fe97b13a8c73a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
