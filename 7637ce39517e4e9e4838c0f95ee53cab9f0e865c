@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "708a9935_1a812be9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2024-04-04T14:04:42Z",
+      "side": 1,
+      "message": "Documentation already says \"This job checks out the current code review patch\".",
+      "range": {
+        "startLine": 7,
+        "startChar": 26,
+        "endLine": 7,
+        "endChar": 42
+      },
+      "revId": "7637ce39517e4e9e4838c0f95ee53cab9f0e865c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
