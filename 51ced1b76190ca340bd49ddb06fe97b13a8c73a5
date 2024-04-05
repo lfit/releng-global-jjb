@@ -68,6 +68,24 @@
       "parentUuid": "4d109e7f_62098953",
       "revId": "51ced1b76190ca340bd49ddb06fe97b13a8c73a5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57543b45_1332c9b4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 13
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 99
+      },
+      "writtenOn": "2024-04-05T11:11:23Z",
+      "side": 1,
+      "message": "\u003e That\u0027s a lot of copy-pasta of code out of lf-env.sh.\n\nYeah. I think the ci-jobs do not need long bash sequences included in job configuration, when they have global-jjb checked out as a submodule. The only bash part needed in job configuration is to set something like GLOBAL_JJB_HOME and start sourcing files from the checked-out repo.\n\nAnyway, I have heard that no future JJB upgrades are planned, so this is no longer a priority for me.\nI would still like to have the parent (72786) merged though.",
+      "parentUuid": "65a25597_2366d8c2",
+      "revId": "51ced1b76190ca340bd49ddb06fe97b13a8c73a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
