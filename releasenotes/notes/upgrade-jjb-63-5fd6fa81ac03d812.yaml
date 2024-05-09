@@ -1,0 +1,8 @@
+upgrade:
+  - |
+    Upgrade Jenkins-job-builder to 6.3.0.
+
+    JJB 6.3.0 is released includes bug fixes and improvements on job views.
+
+    Ref:
+    https://groups.google.com/g/jenkins-job-builder/c/d4PPKsGGab0

@@ -218,7 +218,7 @@ lf-activate-venv () {
         for arg in "$@"; do
             case $arg in
                 jenkins-job-builder)
-                    pkg_list+="jenkins-job-builder==${JJB_VERSION:-6.2.0} " ;;
+                    pkg_list+="jenkins-job-builder==${JJB_VERSION:-6.3.0} " ;;
                 *)                   pkg_list+="$arg " ;;
             esac
         done
