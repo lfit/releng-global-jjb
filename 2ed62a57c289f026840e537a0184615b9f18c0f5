@@ -16,6 +16,23 @@
       "message": "verify dint go thru!",
       "revId": "2ed62a57c289f026840e537a0184615b9f18c0f5",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4402b7c_0395e858",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-06-04T21:28:39Z",
+      "side": 1,
+      "message": "lftools: \"ModuleNotFoundError: No module named \u0027distutils\u0027\"",
+      "revId": "2ed62a57c289f026840e537a0184615b9f18c0f5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
