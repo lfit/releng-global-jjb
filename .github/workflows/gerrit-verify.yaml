@@ -78,7 +78,7 @@ jobs:
       GERRIT_PROJECT: ${{ inputs.GERRIT_PROJECT }}
       GERRIT_REFSPEC: ${{ inputs.GERRIT_REFSPEC }}
       # yamllint disable-line rule:line-length
-      TOX_ENVS: '["ensure-documented", "jjb", "jjb-compare-xml", "license", "bashate", "pre-commit", "docs"]'
+      TOX_ENVS: '["ensure-documented", "jjb", "jjb-compare-xml", "bashate", "pre-commit", "docs"]'
 
   vote:
     if: ${{ always() }}

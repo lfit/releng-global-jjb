@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: EPL-1.0
+# SPDX-FileCopyrightText: 2017 The Linux Foundation
 FROM centos:7
 SHELL ["/bin/bash", "-c"]
 
