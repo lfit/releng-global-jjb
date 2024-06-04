@@ -1,0 +1,45 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: .github/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: node_modules/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: tests/.mypy*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: tests/__pycache__/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: relnotes/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: releasenotes/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: jjb/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: .jjb-test/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: docs/*
+Copyright: 2017 The Linux Foundation
+License: CC-BY-4.0
+
+Files: jenkins-admin/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0
+
+Files: schema/*
+Copyright: 2017 The Linux Foundation
+License: EPL-1.0

@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: EPL-1.0
+# SPDX-FileCopyrightText: 2017 The Linux Foundation
 # All these sections are optional, edit this file as you like.
 [general]
 # Ignore certain rules, you can reference them by their id or by their full

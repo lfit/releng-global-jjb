@@ -1,3 +1,6 @@
+<!--- SPDX-License-Identifier: CC-BY-4.0 -->
+<!--- SPDX-FileCopyrightText: 2017 The Linux Foundation -->
+
 # Global JJB
 
 Global-JJB is a library project containing reusable Jenkins Job Builder

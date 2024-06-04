@@ -1,4 +1,6 @@
 ---
+# SPDX-FileCopyrightText: 2017 The Linux Foundation
+# SPDX-License-Identifier: EPL-1.0
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
@@ -77,3 +79,8 @@ repos:
             docs/jjb/lf-macros.rst|
             docs/jjb/lf-python-jobs.rst
           )$
+
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: bafd6d7683dec1189d7a477489f6b8770bffc0dd # frozen: v3.0.2
+    hooks:
+      - id: reuse
