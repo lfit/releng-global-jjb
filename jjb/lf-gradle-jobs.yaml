@@ -16,6 +16,10 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: https://github.com
     java-version: openjdk17
+    publish-credential: ""
+    publish-directory: ""
+    publish-file-extension: jar
+    publish-url: ""
     stream: master
     submodule-recursive: true
     submodule-timeout: 10
@@ -55,7 +59,11 @@
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
-
+      - credentials-binding:
+          - username-password-separated:
+              credential-id: "{publish-credential}"
+              username: NEXUS_USERNAME
+              password: NEXUS_PASSWORD
     publishers:
       - lf-infra-publish
 
@@ -175,8 +183,13 @@
           executable: true
           tasks: |
             shadowJar
-            publish
-
+      - inject:
+          properties-content: |
+            NEXUS_URL={publish-url}
+            DIRECTORY={publish-directory}
+            FILE_EXTENSION={publish-file-extension}
+      - shell: !include-raw-escape:
+          - ../shell/nexus-upload.sh
     scm:
       - lf-infra-gerrit-scm:
           jenkins-ssh-credential: "{jenkins-ssh-credential}"

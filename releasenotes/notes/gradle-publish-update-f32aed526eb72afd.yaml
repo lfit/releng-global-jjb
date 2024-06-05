@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Update Gradle publish job to add flexibility of releasing Nexus artifacts from
+    a specific directory location.
