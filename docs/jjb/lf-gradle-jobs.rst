@@ -57,6 +57,11 @@ Runs a gradle publish command to publish the jar.
     :java-version: Version of Java to execute Maven build. (default: openjdk17)
     :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
     :mvn-settings: Maven settings.xml file containing credentials to use.
+    :publish-credential: Project credential used for accessing Nexus
+    :publish-directory: Dir where the build artifacts are located
+    :publish-file-extension: File extension of the artifacts to be released
+    :publish-url: Nexus location where the artifacts will be published
+
     :wrapper: Use the gradle wrapper (default: true)
 
 :Optional parameters:
