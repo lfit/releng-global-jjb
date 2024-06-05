@@ -52,6 +52,24 @@
       "parentUuid": "c3600566_d3f733a9",
       "revId": "3b63df8005fce1094538a0c4847150fc51bf2ab3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "42d57690_9be3825a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-06-05T14:04:16Z",
+      "side": 1,
+      "message": "after that an lftools version bump is also required! ¯\\\\_(ツ)_/¯",
+      "parentUuid": "e9c8764e_81e0a17a",
+      "revId": "3b63df8005fce1094538a0c4847150fc51bf2ab3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
