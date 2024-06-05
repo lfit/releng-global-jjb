@@ -16,6 +16,42 @@
       "message": "rerun-gha",
       "revId": "3b63df8005fce1094538a0c4847150fc51bf2ab3",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9c8764e_81e0a17a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-06-05T13:59:44Z",
+      "side": 1,
+      "message": "the",
+      "parentUuid": "c3600566_d3f733a9",
+      "revId": "3b63df8005fce1094538a0c4847150fc51bf2ab3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4385a7d_069a4ca9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-06-05T13:59:44Z",
+      "side": 1,
+      "message": "Looks like tox itself is recreating another venv with the available version of python312 and its unable to find the setuptools there. So the another fix required here: https://gerrit.linuxfoundation.org/infra/c/releng/lftools/+/72933",
+      "parentUuid": "c3600566_d3f733a9",
+      "revId": "3b63df8005fce1094538a0c4847150fc51bf2ab3",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
