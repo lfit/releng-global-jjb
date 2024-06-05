@@ -115,7 +115,6 @@
           choosing-strategy: gerrit
 
     triggers:
-      - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
           trigger-on: "{obj:gerrit_gradle_verify_triggers}"
@@ -202,7 +201,6 @@
           choosing-strategy: default
 
     triggers:
-      - timed: "{obj:cron}"
       - gerrit:
           server-name: "{gerrit-server-name}"
           trigger-on: "{obj:gerrit_gradle_merge_triggers}"

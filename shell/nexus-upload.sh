@@ -3,9 +3,6 @@
 # Copyright 2024 The LMinux Foundation <matthew.watkins@linuxfoundation.org>
 # Uncomment to enable debugging
 # set -vx
-# Initialise variables
-DIRECTORY="."
-FILE_EXTENSION=""
 # Count file upload successes/failures
 SUCCESSES="0"; FAILURES="0"
 # Shared functions

@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Remove daily triggers for gradle build and publish jobs.
+    Remove env variables from script which are passed by the job caller.
