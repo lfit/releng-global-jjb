@@ -1,0 +1,4 @@
+---
+fixes:
+  - |
+    Remove harcoded version pin of clm_maven_plugin to avoid using old version
