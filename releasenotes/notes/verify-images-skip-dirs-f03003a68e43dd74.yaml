@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Verify images script needs to skip any directories that exist in the
+    configuration file directory. Process only configuration files.

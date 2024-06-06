@@ -33,21 +33,23 @@ verify_images()
 {
     echo "Verifying images on $1"
     for file in "$1"/*; do
-        # Set the $IMAGE_NAME variable to the the file's IMAGE_NAME value
-        export "$(grep ^IMAGE_NAME= "$file")"
-        # The image should be listed as active
+        if [ -f "$file" ]; then
+            # Set the $IMAGE_NAME variable to the the file's IMAGE_NAME value
+            export "$(grep ^IMAGE_NAME= "$file")"
+            # The image should be listed as active
 
-        if ! openstack image list --property name="$IMAGE_NAME" | grep "active"; then
-            echo "ERROR: No matching image found for $IMAGE_NAME"
-            error=true
-        fi
-        # Set the $HARDWARE_ID variable to the the file's HARDWARE_ID value
-        export "$(grep ^HARDWARE_ID= "$file")"
-        # The flavor should be listed. Spaces in grep string ensure complete match.
+            if ! openstack image list --property name="$IMAGE_NAME" | grep "active"; then
+                echo "ERROR: No matching image found for $IMAGE_NAME"
+                error=true
+            fi
+            # Set the $HARDWARE_ID variable to the the file's HARDWARE_ID value
+            export "$(grep ^HARDWARE_ID= "$file")"
+            # The flavor should be listed. Spaces in grep string ensure complete match.
 
-        if ! openstack flavor list | grep " $HARDWARE_ID "; then
-            echo "ERROR: No matching flavor found for $HARDWARE_ID"
-            error=true
+            if ! openstack flavor list | grep " $HARDWARE_ID "; then
+                echo "ERROR: No matching flavor found for $HARDWARE_ID"
+                error=true
+            fi
         fi
     done
 }
