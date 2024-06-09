@@ -19,8 +19,10 @@ set -e -o pipefail
 lf-activate-venv --python python3 lftools
 
 OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
-OS_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
-if [[ "$OS_RELEASE" == "8" && "$OS" == 'centos' ]]; then
+OS_DIST_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
+OS_RELEASE=$(facter operatingsystemrelease | tr '[:upper:]' '[:lower:]')
+if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
+   [[ "$OS_RELEASE" =~ ^(20.04|22.04)$ && "${OS}" =~ ^(ubuntu|debian)$ ]]; then
     # Get Dockerfile and the enterpoint to build the docker image.
     # shellcheck disable=SC2140
     wget -O "${WORKSPACE}/sigul-sign.sh" "https://raw.githubusercontent.com/"\

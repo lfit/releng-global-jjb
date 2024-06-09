@@ -1,0 +1,8 @@
+---
+issues:
+  - |
+    Sigul install is available only on CentOS based patforms.
+fixes:
+  - |
+    Skip sigul installation on Ubuntu, since the CentOS docker container handles
+    the installation during container creation.

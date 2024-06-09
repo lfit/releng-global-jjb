@@ -13,6 +13,12 @@ echo "---> sigul-install.sh"
 # Ensure we fail the job if any steps fail.
 set -e -o pipefail
 
+OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+if ! [[ "${OS}" =~ ^(fedora|centos|redhat) ]]; then
+    echo "INFO: Skip step, sigul install not available on platform ${OS}"
+    exit 0
+fi
+
 if command -v sigul &>/dev/null; then
     echo "Sigul already installed; skipping installation."
 else
