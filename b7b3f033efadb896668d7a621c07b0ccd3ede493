@@ -16,6 +16,23 @@
       "message": "Addresses feedback here:\nhttps://jira.linuxfoundation.org/browse/IT-26872",
       "revId": "b7b3f033efadb896668d7a621c07b0ccd3ede493",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae6311bf_dd610f7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2024-06-25T11:27:07Z",
+      "side": 1,
+      "message": "Just realised - this is the global-jjb repository...\nI\u0027m going to have to add a revision to this change with a release note.",
+      "revId": "b7b3f033efadb896668d7a621c07b0ccd3ede493",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
