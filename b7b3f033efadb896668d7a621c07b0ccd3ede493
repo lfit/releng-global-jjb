@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a59123c2_2bce7cd9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2024-06-25T07:46:27Z",
+      "side": 1,
+      "message": "Addresses feedback here:\nhttps://jira.linuxfoundation.org/browse/IT-26872",
+      "revId": "b7b3f033efadb896668d7a621c07b0ccd3ede493",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
