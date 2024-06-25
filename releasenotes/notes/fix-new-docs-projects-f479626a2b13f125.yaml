@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    RTD shell script needs to catch when the project doesn't already exist
+    and create a new project. The message appears to have changed from what
+    was returned previously, and new docs project creation had ceased
+    working.

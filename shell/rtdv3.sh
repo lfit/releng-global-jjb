@@ -62,7 +62,8 @@ echo "INFO: Read the Docs Master Project: https://$masterproject.readthedocs.io"
 
 
 if [[ "$JOB_NAME" =~ "verify" ]]; then
-    if [[ "$(lftools rtd project-details "$rtdproject" | yq -r '.detail')" == "Not found." ]]; then
+    if [[ "$(lftools rtd project-details "$rtdproject" | yq -r '.detail')" == \
+        "No Project matches the given query." ]]; then
         echo "INFO: Project not found, merge will create project https://$rtdproject.readthedocs.io"
     fi
     echo "INFO: Verify job completed"
@@ -77,7 +78,8 @@ if [[ "$JOB_NAME" =~ "merge" ]]; then
 
     declare -i cnt=0
     while [[ $project_exists == "false" ]]; do
-        if [[ "$(lftools rtd project-details "$rtdproject" | yq -r '.detail')" == "Not found." ]]; then
+        if [[ "$(lftools rtd project-details "$rtdproject" | yq -r '.detail')" == \
+            "No Project matches the given query." ]]; then
             echo "INFO: Project not found"
             if [[ $project_created == "false" ]]; then
                 echo "INFO: Creating project https://$rtdproject.readthedocs.io"
