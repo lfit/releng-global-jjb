@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "be746358_b7f85ec1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2024-06-25T11:36:06Z",
+      "side": 1,
+      "message": "Added release note - hopefully this is good to go",
+      "revId": "88c8cd5b7fa3c8d0b2c2147b2d0e398eb4a6641d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
