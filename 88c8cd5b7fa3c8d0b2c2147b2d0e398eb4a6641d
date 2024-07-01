@@ -16,6 +16,23 @@
       "message": "Added release note - hopefully this is good to go",
       "revId": "88c8cd5b7fa3c8d0b2c2147b2d0e398eb4a6641d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7118e571_1e2372d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2024-07-01T12:52:52Z",
+      "side": 1,
+      "message": "See: https://jira.linuxfoundation.org/browse/IT-26872",
+      "revId": "88c8cd5b7fa3c8d0b2c2147b2d0e398eb4a6641d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
