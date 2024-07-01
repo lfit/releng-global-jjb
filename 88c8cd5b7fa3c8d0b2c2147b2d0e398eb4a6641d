@@ -33,6 +33,23 @@
       "message": "See: https://jira.linuxfoundation.org/browse/IT-26872",
       "revId": "88c8cd5b7fa3c8d0b2c2147b2d0e398eb4a6641d",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9e047cb_b1af9fba",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 65
+      },
+      "writtenOn": "2024-07-01T15:32:41Z",
+      "side": 1,
+      "message": "Looks good to me but we do not need to add the releasenotes here. Can we please remove that file?\nRelease notes are only needed internally in global-jjb, global-packer and other lf-releng repos",
+      "revId": "88c8cd5b7fa3c8d0b2c2147b2d0e398eb4a6641d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
