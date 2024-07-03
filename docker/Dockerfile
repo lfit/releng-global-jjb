@@ -14,6 +14,9 @@ gpgkey=https://infrastructure.fedoraproject.org/repo/infra/RPM-GPG-KEY-INFRA-TAG
 includepkgs=sigul* \n\
 skip_if_unavailable=True' > /etc/yum.repos.d/fedora-infra-sigul.repo
 
+RUN sed -i_ 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || exit 1
+RUN sed -i_ 's@#baseurl=http://mirror.centos.org@baseurl=http://vault.centos.org@g' /etc/yum.repos.d/CentOS-* || exit 1
+
 RUN yum install -y -q sigul
 
 RUN mkdir -p /w/workspace && mkdir -p /home/jenkins

@@ -1,0 +1,17 @@
+---
+fixes:
+  - |
+    Fix: Update CentOS 7 mirrorlist to vault
+
+    With CentOS 7 being EOL the mirrorlist URLs are archived
+    and moved to CentOS vault.
+
+    This impacts Jenkins minions configuration required for
+    Sigul signing.
+
+    As a workaround force vault use in yum repos config
+    till this is resolved and new version of sigul client/server
+    is available to use on the infrastructure.
+
+    https://forums.centos.org/viewtopic.php?t=78708&start=30
+    https://forums.centos.org/viewtopic.php?t=80698
