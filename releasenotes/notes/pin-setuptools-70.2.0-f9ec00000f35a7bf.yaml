@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    A new version of setuptools==72.2.0 is not compatible with
+    the python 3.12.4 and JJB 6.3.0 which results in errors.
+    This requires adding pkg_resources.extern to the
+    hidden imports for setuptools >= 70.0.
+
+    ERROR:stevedore.extension:Could not load 'delete': No module
+    named 'pkg_resources.extern'
