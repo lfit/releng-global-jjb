@@ -53,7 +53,7 @@ export PACKER_LOG="yes"
 export PACKER_LOG_PATH="$PACKER_BUILD_LOG"
 
 # download plugins only for HCL format
-if [[ "${template_file#*.}" == "pkr.hcl" ]]; then
+if [[ "${template_file#*.}" =~ .*pkr.hcl ]]; then
     echo "packer init ${template_file} ..."
     packer.io init "${template_file}"
 fi
