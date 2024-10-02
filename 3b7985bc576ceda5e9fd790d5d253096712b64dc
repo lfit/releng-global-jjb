@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7d88552_4f23ad56",
+        "filename": "shell/packer-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 592
+      },
+      "writtenOn": "2024-10-02T17:06:10Z",
+      "side": 1,
+      "message": "This would also match `temp.pkr.hcl.json`.\nSo probably better to match file names that end with `pkr.hcl` like this:\n```\nif [[ \"${template_file}\" \u003d\u003d *pkr.hcl ]]; then\n```",
+      "revId": "3b7985bc576ceda5e9fd790d5d253096712b64dc",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
