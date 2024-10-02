@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Fix condition that check the file extension with packer build script.
+    The condition is skipped when long names ex: mininet-ovs-2.8.pkr.hcl
