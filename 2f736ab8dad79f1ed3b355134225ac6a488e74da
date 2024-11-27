@@ -33,6 +33,23 @@
       "message": "@jwagantall@linuxfoundation.org I made the README changes because linting fails, those were not planned for my change but otherwise my change won\u0027t pass the checks",
       "revId": "2f736ab8dad79f1ed3b355134225ac6a488e74da",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5e9a0e6b_d28b0487",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-11-27T23:30:11Z",
+      "side": 1,
+      "message": "please include a release notes",
+      "revId": "2f736ab8dad79f1ed3b355134225ac6a488e74da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
