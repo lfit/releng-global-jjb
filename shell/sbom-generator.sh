@@ -45,8 +45,11 @@ if [[ "$JOB_NAME" =~ "maven" ]]; then
 
     mv "${WORKSPACE}/archives/bom-Java-Maven.spdx" \
         "${WORKSPACE}/archives/${PROJECT##*/}-sbom-${release_version}.spdx"
+    M2REPO_PATH="${WORKSPACE}/m2repo/${group_id_path}"
+    mkdir -p "${M2REPO_PATH}"
+    sudo chown -R jenkins:jenkins "${M2REPO_PATH}"
     cp "${WORKSPACE}/archives/${PROJECT##*/}-sbom-${release_version}.spdx" \
-        "${WORKSPACE}/m2repo/${group_id_path}/${PROJECT##*/}-sbom-${release_version}.spdx"
+        "${M2REPO_PATH}/${PROJECT##*/}-sbom-${release_version}.spdx"
 fi
 
 mv spdx-sbom-generator /tmp/
