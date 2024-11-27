@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Explicitly create m2repo path for copy command before moving files to it
+    as per sbom generator script was assuming the filesystem path exists and
+    it could not be the case.
