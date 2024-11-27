@@ -50,6 +50,23 @@
       "message": "please include a release notes",
       "revId": "2f736ab8dad79f1ed3b355134225ac6a488e74da",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c90eb97a_e92c4b4d",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2024-11-27T23:31:44Z",
+      "side": 1,
+      "message": "is this step required? sbom generator should be run as non-root",
+      "revId": "2f736ab8dad79f1ed3b355134225ac6a488e74da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
