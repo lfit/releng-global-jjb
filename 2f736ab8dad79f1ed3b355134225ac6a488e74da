@@ -52,6 +52,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "393d7e29_1efac579",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2024-11-28T16:21:59Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "5e9a0e6b_d28b0487",
+      "revId": "2f736ab8dad79f1ed3b355134225ac6a488e74da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c90eb97a_e92c4b4d",
@@ -65,6 +83,24 @@
       "writtenOn": "2024-11-27T23:31:44Z",
       "side": 1,
       "message": "is this step required? sbom generator should be run as non-root",
+      "revId": "2f736ab8dad79f1ed3b355134225ac6a488e74da",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6359863_2a0ba0fd",
+        "filename": "shell/sbom-generator.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2024-11-28T16:21:59Z",
+      "side": 1,
+      "message": "removed",
+      "parentUuid": "c90eb97a_e92c4b4d",
       "revId": "2f736ab8dad79f1ed3b355134225ac6a488e74da",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
