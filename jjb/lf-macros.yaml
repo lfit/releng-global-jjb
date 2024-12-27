@@ -197,7 +197,7 @@
 - builder:
     name: lf-infra-sysstat
     builders:
-      - shell: !include-raw-escape:
+      - shell: !include-raw:
           - ../shell/sysstat.sh
 
 - builder:
