@@ -862,3 +862,12 @@
     wrappers:
       - lf-infra-wrappers-common:
           build-timeout: "{build-timeout}"
+
+- wrapper:
+    name: golang123
+    wrappers:
+      - raw:
+          xml: |
+            <org.jenkinsci.plugins.golang.GolangBuildWrapper plugin="golang@1.2">
+            <goVersion>Golang 1.23</goVersion>
+            </org.jenkinsci.plugins.golang.GolangBuildWrapper>
