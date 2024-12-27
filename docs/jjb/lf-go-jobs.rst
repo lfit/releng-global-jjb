@@ -14,6 +14,24 @@ Calls go-test.sh script against a Go project.
 
     :go-root: Path to the Go project root directory.
 
+lf-infra-nexus-iq-go-cli
+------------------------
+
+Calls nexus-iq-go-cli.sh to CLM scan a Go project.
+
+:Required Parameters:
+
+    :NEXUS_IQ_PROJECT_NAME: Nexus IQ project name that will receive the CLM scan results.
+
+install-golang
+--------------
+
+Installs the specified Golang version throuhg a plug-in.
+
+:Required Parameters:
+
+    :version: Golang version number to install.
+
 lf-go-common
 ------------
 
@@ -97,3 +115,45 @@ Job which runs go test ./... to verify a Go project.
     :gerrit_verify_triggers: Override Gerrit Triggers.
     :gerrit_trigger_file_paths: Override file paths to filter which file
         modifications will trigger a build.
+
+Go CLM
+------
+
+Job which runs a CLM scan over a Golang project.
+
+:Template Names:
+
+    - {project-name}-nexus-iq-go-clm
+    - gerrit-nexus-iq-go-clm
+
+:Comment Trigger: run-clm
+
+:Required parameters:
+
+    :build-node: The node to run build on.
+    :nexus-iq-namespace: prefix to construct the Nexus IQ project name.
+    :golang-version: Golang version you want to use for the CLM scan. (default: 1.14)
+
+:Optional parameters:
+
+    :jenkins-ssh-credential: Credential to use for SSH. (Generally configured in defaults.yaml)
+    :branch: Git branch to fetch for the build. (default: master)
+    :build-days-to-keep: Days to keep build logs in Jenkins. (default: 7)
+    :build-timeout: Timeout in minutes before aborting build. (default: 15)
+    :cron: cronjob frequency to run the job. (default: @weekly)
+    :disable-job: boolean flag to enable/disable the job (default: false)
+    :git-url: URL clone project from. (default: $GIT_URL/$PROJECT)
+    :java-version: Java version to run the Nexus scanner (default: openjdk11)
+    :nexus-iq-cli-version: version of the Nexus CLI scanner (default: 1.140.0-01)
+    :nexus-iq-namespace: prefix to append to the Nexus project name.
+        Recommend a trailing dash when set. Example: "onap-". (default: "")
+    :nexus-target-build: file to use for the Nexus CLM scan (default: go.sum)
+    :pre-build-script: optional pre-build script.
+    :stream: Keyword that represents a release code-name.
+        Often the same as the branch. (default: master)
+    :submodule-recursive: Whether to checkout submodules recursively.
+        (default: true)
+    :submodule-timeout: Timeout (in minutes) for checkout operation.
+        (default: 10)
+    :submodule-disable: Disable submodule checkout operation.
+        (default: false)
