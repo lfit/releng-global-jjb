@@ -11,6 +11,8 @@
 
 echo "---> package-listing.sh"
 
+echo "WORKSPACE = $WORKSPACE"
+
 # Ensure we fail the job if any steps fail
 set -eu -o pipefail
 
