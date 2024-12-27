@@ -9,11 +9,14 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> sudo-logs.sh"
+echo "sudo_log = $sudo_log"
+echo "os = $os"
+echo "WORKSPACE = $WORKSPACE"
 
 set -eu -o pipefail -o noglob
 
 # Copy/Generate 'sudo' log and copy to archive directory
-copy_log () {
+copy_log () {{
     case $os in
         fedora|centos|redhat|ubuntu|debian)
             if ! sudo cp "$sudo_log" /tmp; then
@@ -35,7 +38,7 @@ copy_log () {
     mkdir -p "$WORKSPACE/archives/sudo"
     mv "/tmp/$sudo_log" "$WORKSPACE/archives/sudo/$sudo_log"
 
-}    # End copy_log()
+}}    # End copy_log()
 
 echo "Archiving 'sudo' log.."
 os=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
