@@ -42,7 +42,7 @@
 - builder:
     name: lf-infra-capture-instance-metadata
     builders:
-      - shell: !include-raw-escape:
+      - shell: !include-raw:
           - ../shell/capture-instance-metadata.sh
 
 - builder:
@@ -102,9 +102,9 @@
           - ../shell/python-tools-install.sh
       - shell: !include-raw-escape:
           - ../shell/sudo-logs.sh
-      - shell: !include-raw-escape:
+      - shell: !include-raw:
           - ../shell/job-cost.sh
-      - shell: !include-raw-escape:
+      - shell: !include-raw:
           - ../shell/logs-deploy.sh
       - shell: !include-raw:
           - ../shell/logs-clear-credentials.sh
@@ -114,7 +114,7 @@
 - builder:
     name: lf-infra-package-listing
     builders:
-      - shell: !include-raw-escape:
+      - shell: !include-raw:
           - ../shell/package-listing.sh
 
 - builder:
@@ -197,7 +197,7 @@
 - builder:
     name: lf-infra-sysstat
     builders:
-      - shell: !include-raw-escape:
+      - shell: !include-raw:
           - ../shell/sysstat.sh
 
 - builder:
