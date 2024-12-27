@@ -10,6 +10,22 @@
 ##############################################################################
 echo "---> logs-deploy.sh"
 
+echo "WORKSPACE = $WORKSPACE"
+echo "ARCHIVE_ARTIFACTS = $ARCHIVE_ARTIFACTS"
+echo "LOGS_SERVER = $LOGS_SERVER"
+echo "NEXUSPROXY = $NEXUSPROXY"
+echo "NEXUS_URL = $NEXUS_URL"
+echo "SILO = $SILO"
+echo "JENKINS_HOSTNAME = $JENKINS_HOSTNAME"
+echo "JOB_NAME = $JOB_NAME"
+echo "BUILD_NUMBER = $BUILD_NUMBER"
+echo "nexus_url = $nexus_url"
+echo "nexus_path = $nexus_path"
+echo "pattern_opts = $pattern_opts"
+echo "BUILD_URL = $BUILD_URL"
+echo "S3_BUCKET = $S3_BUCKET"
+echo "CDN_URL = $CDN_URL"
+
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 lf-activate-venv --python python3.8 lftools

@@ -9,6 +9,9 @@
 # http://www.eclipse.org/legal/epl-v10.html
 ##############################################################################
 echo "---> sudo-logs.sh"
+echo "sudo_log = $sudo_log"
+echo "os = $os"
+echo "WORKSPACE = $WORKSPACE"
 
 set -eu -o pipefail -o noglob
 

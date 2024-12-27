@@ -10,6 +10,8 @@
 ##############################################################################
 echo "---> job-cost.sh"
 
+echo "JOB_NAME = $JOB_NAME"
+
 set -euf -o pipefail
 
 # shellcheck disable=SC1090
