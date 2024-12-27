@@ -1,0 +1,5 @@
+---
+features:
+  - |
+    Add CLM job that scans Golang projects. This includes a new builder,
+    new macros and new template.

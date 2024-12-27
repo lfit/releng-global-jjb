@@ -11,6 +11,9 @@
 
 echo "---> capture-instance-metadata.sh"
 
+echo "PYTHON = $PYTHON"
+echo "NOMAD_DC = $NOMAD_DC"
+
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
