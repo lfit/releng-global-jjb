@@ -9,6 +9,27 @@
           properties-content: "GO_ROOT={go-root}"
       - shell: !include-raw-escape: ../shell/go-test.sh
 
+- builder:
+    name: lf-infra-nexus-iq-go-cli
+    builders:
+      - inject:
+          properties-content: |
+            NEXUS_IQ_PROJECT_NAME={nexus-iq-project-name}
+      - shell: !include-raw-escape: ../shell/nexus-iq-go-cli.sh
+
+############
+# WRAPPERS #
+############
+
+- wrapper:
+    name: install-golang
+    wrappers:
+      - raw:
+          xml: |
+            <org.jenkinsci.plugins.golang.GolangBuildWrapper plugin="golang@1.2">
+            <goVersion>Golang 1.14</goVersion>
+            </org.jenkinsci.plugins.golang.GolangBuildWrapper>
+
 ####################
 # COMMON FUNCTIONS #
 ####################
@@ -303,3 +324,121 @@
           admin-list: "{obj:github_pr_admin_list}"
           white-list-target-branches:
             - "{branch}"
+
+#######################
+# Nexus IQ Golang CLM #
+#######################
+
+- _lf_nexus_iq_go_clm: &lf_nexus_iq_go_clm
+    name: lf-nexus-iq-go-clm
+
+    ######################
+    # Default parameters #
+    ######################
+
+    branch: master
+    build-days-to-keep: 7
+    build-timeout: 15
+    cron: "@weekly"
+    disable-job: false
+    git-url: "$GIT_URL/$PROJECT"
+    github-url: "https://github.com"
+    java-version: openjdk11 # Scanner is a jar
+    nexus-iq-cli-version: 1.140.0-01
+    nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
+    nexus-target-build: "go.list"
+    pre-build-script: "# pre-build script goes here"
+    stream: master
+    submodule-recursive: true
+    submodule-timeout: 10
+    submodule-disable: false
+    golang-version: "golang123"
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    disabled: "{disable-job}"
+
+    parameters:
+      - lf-infra-parameters:
+          project: "{project}"
+          branch: "{branch}"
+          stream: "{stream}"
+      - string:
+          name: ARCHIVE_ARTIFACTS
+          default: "{archive-artifacts}"
+          description: Artifacts to archive to the logs server.
+      - string:
+          name: NEXUS_IQ_CLI_VERSION
+          default: "{nexus-iq-cli-version}"
+          description: Nexus IQ CLI jar to download and run.
+      - string:
+          name: NEXUS_TARGET_BUILD
+          default: "{nexus-target-build}"
+          description: File or dir to scan by Nexus CLI.
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+      - credentials-binding:
+          - username-password-separated:
+              credential-id: onap-nexus-clm
+              username: NEXUS_IQ_USER
+              password: NEXUS_IQ_PASSWORD
+      - install-golang
+
+    builders:
+      - lf-infra-pre-build
+      - lf-update-java-alternatives:
+          java-version: "{java-version}"
+      - shell: "{pre-build-script}"
+      - lf-infra-nexus-iq-go-cli:
+          nexus-iq-project-name: "{nexus-iq-namespace}{project-name}"
+
+- job-template:
+    name: "{project-name}-nexus-iq-go-clm"
+    id: gerrit-nexus-iq-go-clm
+    <<: *lf_go_common
+    <<: *lf_nexus_iq_go_clm
+
+    ######################
+    # Default parameters #
+    ######################
+
+    gerrit_nexus_iq_triggers:
+      - comment-added-contains-event:
+          comment-contains-value: '^Patch Set\s+\d+:\s+run-clm\s*$'
+
+    #####################
+    # Job Configuration #
+    #####################
+
+    scm:
+      - lf-infra-gerrit-scm:
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+          git-url: "{git-url}"
+          refspec: "$GERRIT_REFSPEC"
+          branch: "$GERRIT_BRANCH"
+          submodule-recursive: "{submodule-recursive}"
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: "{submodule-disable}"
+          choosing-strategy: default
+
+    triggers:
+      - timed: "{obj:cron}"
+      - gerrit:
+          server-name: "{gerrit-server-name}"
+          trigger-on: "{obj:gerrit_nexus_iq_triggers}"
+          projects:
+            - project-compare-type: ANT
+              project-pattern: "{project}"
+              branches:
+                - branch-compare-type: ANT
+                  branch-pattern: "**/{branch}"
+          skip-vote:
+            successful: true
+            failed: true
+            unstable: true
+            notbuilt: true
