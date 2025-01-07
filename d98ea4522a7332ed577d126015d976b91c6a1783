@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30f4804e_369ccd11",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2025-01-07T23:59:09Z",
+      "side": 1,
+      "message": "As I stated on Slack, I think this should be abandoned, and the changes made via JJB/GHA.",
+      "revId": "d98ea4522a7332ed577d126015d976b91c6a1783",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
