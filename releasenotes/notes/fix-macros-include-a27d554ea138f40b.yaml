@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Use include-raw instead of include-raw-escape when no parameters are passed
+    when a script is called, otherwise we will hit a bug that inserts duplicated
+    curly braces.
