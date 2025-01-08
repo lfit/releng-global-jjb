@@ -1,0 +1,15 @@
+---
+issues:
+  - |
+    "$_" does not expand as expected on Ubuntu
+
+    While using Ubuntu as default builder nodes.
+    The .bashrc file does not process '$_' expanding
+    the output correctly as provided in previous line.
+    Therefore explicitly use the dirname or use /bin/bash.
+
+    This results in an copy error.
+
+    This happens is because by default Ubuntu "/bin/sh"
+    points to "/bin/dash" while on CentOS / RedHat points to
+    "/bin/bash".
