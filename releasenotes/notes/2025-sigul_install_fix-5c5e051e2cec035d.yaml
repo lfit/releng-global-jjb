@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    The Koji repositories have stopped properly responding for EL7 based
+    systems and this causes issues with the installation of Sigul. This update
+    fixes the issue by directly referencing the package for EL7 based systems.
