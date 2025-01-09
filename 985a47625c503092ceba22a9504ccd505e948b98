@@ -22,6 +22,30 @@
       },
       "revId": "985a47625c503092ceba22a9504ccd505e948b98",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41f95189_01a17dc6",
+        "filename": "jjb/lf-go-jobs.yaml",
+        "patchSetId": 34
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2025-01-09T19:29:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "98f5d3d8_d2d17923",
+      "range": {
+        "startLine": 29,
+        "startChar": 75,
+        "endLine": 29,
+        "endChar": 79
+      },
+      "revId": "985a47625c503092ceba22a9504ccd505e948b98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13acda60_3dc240b7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 36
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2025-01-09T19:29:18Z",
+      "side": 1,
+      "message": "@agrimberg@linuxfoundation.org plugin hardcoded version was removed",
+      "revId": "8f94bfd1c89094166919ae87928a8453fd4981a9",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
