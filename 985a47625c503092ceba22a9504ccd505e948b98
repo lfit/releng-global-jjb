@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "98f5d3d8_d2d17923",
+        "filename": "jjb/lf-go-jobs.yaml",
+        "patchSetId": 34
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2025-01-09T17:36:50Z",
+      "side": 1,
+      "message": "Can we do this call without explicitly setting the version?",
+      "range": {
+        "startLine": 29,
+        "startChar": 75,
+        "endLine": 29,
+        "endChar": 79
+      },
+      "revId": "985a47625c503092ceba22a9504ccd505e948b98",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
