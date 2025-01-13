@@ -123,7 +123,7 @@ Job which runs a CLM scan over a Golang project.
 
 :Template Names:
 
-    - {project-name}-nexus-iq-go-clm
+    - {project-name}-nexus-iq-go-clm-{stream}
     - gerrit-nexus-iq-go-clm
 
 :Comment Trigger: run-clm

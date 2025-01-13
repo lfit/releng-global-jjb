@@ -399,7 +399,7 @@
           nexus-iq-project-name: "{nexus-iq-namespace}{project-name}"
 
 - job-template:
-    name: "{project-name}-nexus-iq-go-clm"
+    name: "{project-name}-nexus-iq-go-clm-{stream}"
     id: gerrit-nexus-iq-go-clm
     <<: *lf_go_common
     <<: *lf_nexus_iq_go_clm
