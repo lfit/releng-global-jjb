@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Move credentials-binding for nexus login out of common scope. It is not
+    needed for all jobs and results in pipeline failure if no credentials are set.
