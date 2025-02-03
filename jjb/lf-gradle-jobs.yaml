@@ -59,11 +59,6 @@
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
-      - credentials-binding:
-          - username-password-separated:
-              credential-id: "{publish-credential}"
-              username: NEXUS_USERNAME
-              password: NEXUS_PASSWORD
     publishers:
       - lf-infra-publish
 
@@ -169,6 +164,16 @@
     name: "{project-name}-gradle-publish-jar-{stream}"
     id: gerrit-gradle-publish-jar
     <<: *lf_gradle_common
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+      - credentials-binding:
+          - username-password-separated:
+              credential-id: "{publish-credential}"
+              username: NEXUS_USERNAME
+              password: NEXUS_PASSWORD
 
     builders:
       - lf-infra-pre-build
