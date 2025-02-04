@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a96fcece_baa56194",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2025-02-04T23:41:24Z",
+      "side": 1,
+      "message": "Additionally please make following changes:\n- add release notes to this change. We recommend tox for generating the release notes file, e.g. tox -e reno -- new fix-gradle-jobs , then you will have to prune it and just leave the relevant content. You can check existing GlobalJJB changes (the ones updating the code, as per CI related changes don\u0027t need release notes) to get examples on how the release notes file should look like.\n- just to follow the standard in our commit messages please remove the string \"(gradle-jobs)\" from the commit message and use imperative verb form in the action after the change type, so it should look like this \"Fix: Move nexus login out of common scope\"",
+      "revId": "8e41af22b3f4f602aaa81daf41973aa0cb83cf05",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d73533ba_e365d6f6",
+        "filename": "jjb/lf-gradle-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2025-02-04T23:41:24Z",
+      "side": 1,
+      "message": "This lf-infra-wrappers section is duplicated as per it is already present at lf_grafle_common and we are referencing it couple of lines above.",
+      "revId": "8e41af22b3f4f602aaa81daf41973aa0cb83cf05",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
