@@ -33,6 +33,24 @@
       "message": "This lf-infra-wrappers section is duplicated as per it is already present at lf_grafle_common and we are referencing it couple of lines above.",
       "revId": "8e41af22b3f4f602aaa81daf41973aa0cb83cf05",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "637e6a12_7de9af30",
+        "filename": "jjb/lf-gradle-jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 698
+      },
+      "writtenOn": "2025-02-05T07:23:24Z",
+      "side": 1,
+      "message": "The wrappers object gets completely overridden, therefore it needs the lf-infra-wrappers entry again. Merging arrays is also not in the yaml spec (https://github.com/yaml/yaml/issues/35).\nI introduced a new anchor point for the lf-infra-wrappers to not write its body again.",
+      "parentUuid": "d73533ba_e365d6f6",
+      "revId": "8e41af22b3f4f602aaa81daf41973aa0cb83cf05",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
