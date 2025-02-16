@@ -21,14 +21,8 @@ case "$OS" in
     Ubuntu)
         os_release=$(facter operatingsystemrelease)
         case $os_release in
-            16.04|18.04|20.04)
+            18.04|20.04|22.04|24.04)
                 if ! systemctl status sysstat > /dev/null; then
-                    exit 0
-                fi
-                ;;
-            14.04)
-                if [[ ! -f /etc/default/sysstat ]] || \
-                        ! grep --quiet 'ENABLED="true"' /etc/default/sysstat; then
                     exit 0
                 fi
                 ;;
