@@ -353,6 +353,8 @@ JJB Deploy Job
 
 Deploy jobs to jenkins-sandbox system via code review comment.
 
+Note: this macros is only valid on changes to the ci-management repository
+
 This job checks out the current code review patch and then runs a
 ``jenkins-jobs update`` to push a patch defined by the comment.
 
