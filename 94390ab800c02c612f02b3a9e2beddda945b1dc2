@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "54873484_e58dfd26",
+        "filename": "docs/jjb/lf-ci-jobs.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2025-02-17T13:14:13Z",
+      "side": 1,
+      "message": "pls change this proper rtd/sphinx format as below.\n\n   .. note::",
+      "range": {
+        "startLine": 355,
+        "startChar": 0,
+        "endLine": 357,
+        "endChar": 0
+      },
+      "revId": "94390ab800c02c612f02b3a9e2beddda945b1dc2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
