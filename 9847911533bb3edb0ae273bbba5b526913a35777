@@ -24,6 +24,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cc0bfbc6_2c327443",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 698
+      },
+      "writtenOn": "2025-02-17T12:25:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ce5793d_fbbc1d82",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "9847911533bb3edb0ae273bbba5b526913a35777",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "190ade39_4d18b101",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-02-17T11:52:09Z",
       "side": 1,
       "message": "This might work. however trying to keep the code consistent and readable with rest of the repo, pls change this to the previous format of using yaml anchors and references.\n\n      - lf-infra-wrappers:\n          build-timeout: \"{build-timeout}\"\n          jenkins-ssh-credential: \"{jenkins-ssh-credential}\"",
+      "range": {
+        "startLine": 169,
+        "startChar": 6,
+        "endLine": 169,
+        "endChar": 45
+      },
+      "revId": "9847911533bb3edb0ae273bbba5b526913a35777",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3eb5b32d_a882b9cc",
+        "filename": "jjb/lf-gradle-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 698
+      },
+      "writtenOn": "2025-02-17T12:25:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "190ade39_4d18b101",
       "range": {
         "startLine": 169,
         "startChar": 6,
