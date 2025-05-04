@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Pin setuptools<66 version on lf-env.sh script until this is fixed upstream. The lf-activate-venv
+    function installs packages like lftools, which in turn installs pygerrit2, and that fails due
+    to a broken pbr + setuptools >= 66 compatibility issues and bugs are resolved.
