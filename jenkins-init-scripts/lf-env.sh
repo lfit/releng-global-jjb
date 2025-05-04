@@ -243,8 +243,9 @@ lf-activate-venv () {
             echo "${FUNCNAME[0]}(): INFO: Save venv in file: $venv_file"
         fi
 
-        "$lf_venv/bin/python3" -m pip install --upgrade --quiet pip \
-                        virtualenv || return 1
+        # Pin setuptools<66 until the issue with pbr + setuptools >=66 is fixed
+        "$lf_venv/bin/python3" -m pip install --upgrade --quiet \
+                        pip 'setuptools<66' virtualenv || return 1
         if [[ -z $pkg_list ]]; then
             echo "${FUNCNAME[0]}(): WARNING: No packages to install"
         else
