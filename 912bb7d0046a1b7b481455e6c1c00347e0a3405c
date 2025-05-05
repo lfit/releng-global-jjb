@@ -16,6 +16,24 @@
       "message": "Can you add a comment that explains why we need to pin to this version here?\nWhile the commit message explains it. Someone in the future looking at this line might not see it.",
       "revId": "912bb7d0046a1b7b481455e6c1c00347e0a3405c",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "803e0cf6_b9552683",
+        "filename": "jenkins-init-scripts/lf-env.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2025-05-05T00:49:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8718c8b3_abb43fda",
+      "revId": "912bb7d0046a1b7b481455e6c1c00347e0a3405c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
