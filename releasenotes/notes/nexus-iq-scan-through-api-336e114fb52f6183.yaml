@@ -1,0 +1,6 @@
+---
+features:
+  - |
+    Add support for running Nexus IQ scan through REST API when CLI option
+    is not enough, like when scanning a Golang project which requires
+    scanning the bom.xml file and CLI doesn't support it properly.

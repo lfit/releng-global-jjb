@@ -17,6 +17,14 @@
             NEXUS_IQ_PROJECT_NAME={nexus-iq-project-name}
       - shell: !include-raw-escape: ../shell/nexus-iq-go-cli.sh
 
+- builder:
+    name: lf-infra-nexus-iq-go-api
+    builders:
+      - inject:
+          properties-content: |
+            NEXUS_IQ_PROJECT_NAME={nexus-iq-project-name}
+      - shell: !include-raw-escape: ../shell/nexus-iq-go-api.sh
+
 ############
 # WRAPPERS #
 ############
@@ -344,6 +352,7 @@
     git-url: "$GIT_URL/$PROJECT"
     github-url: "https://github.com"
     java-version: openjdk17 # Scanner is a jar
+    nexus-iq-use-cli: true
     nexus-iq-cli-version: 1.185.0-01
     nexus-iq-namespace: "" # Recommend a trailing dash when set. Example: odl-
     nexus-target-build: "go.sum"
@@ -395,8 +404,24 @@
       - lf-update-java-alternatives:
           java-version: "{java-version}"
       - shell: "{pre-build-script}"
-      - lf-infra-nexus-iq-go-cli:
-          nexus-iq-project-name: "{nexus-iq-namespace}{project-name}"
+      # With CLI
+      - conditional-step:
+          condition-kind: boolean-expression
+          condition-expression: "{nexus-iq-use-cli}"
+          steps:
+            - shell: echo 'Using Nexus IQ CLI'
+            - lf-infra-nexus-iq-go-cli:
+                nexus-iq-project-name: "{nexus-iq-namespace}{project-name}"
+      # With REST API
+      - conditional-step:
+          condition-kind: not
+          condition-operand:
+            condition-kind: boolean-expression
+            condition-expression: "{nexus-iq-use-cli}"
+          steps:
+            - shell: echo 'Using Nexus IQ REST API'
+            - lf-infra-nexus-iq-go-api:
+                nexus-iq-project-name: "{nexus-iq-namespace}{project-name}"
 
 - job-template:
     name: "{project-name}-nexus-iq-go-clm-{stream}"
