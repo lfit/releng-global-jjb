@@ -17,7 +17,16 @@ Calls go-test.sh script against a Go project.
 lf-infra-nexus-iq-go-cli
 ------------------------
 
-Calls nexus-iq-go-cli.sh to CLM scan a Go project.
+Calls nexus-iq-go-cli.sh to CLM scan a Go project through CLI.
+
+:Required Parameters:
+
+    :NEXUS_IQ_PROJECT_NAME: Nexus IQ project name that will receive the CLM scan results.
+
+lf-infra-nexus-iq-go-api
+------------------------
+
+Calls nexus-iq-go-api.sh to CLM scan a Go project through REST API.
 
 :Required Parameters:
 
