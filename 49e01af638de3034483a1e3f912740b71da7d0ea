@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdc35a9a_41c86419",
+        "filename": "shell/nexus-iq-go-api.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2025-06-06T19:10:34Z",
+      "side": 1,
+      "message": "Little thing, but to keep with our standards throughout global-jjb, please replace tabs with 4 spaces (here and at line 40).",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 1
+      },
+      "revId": "49e01af638de3034483a1e3f912740b71da7d0ea",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
