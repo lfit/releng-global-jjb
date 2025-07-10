@@ -80,6 +80,14 @@ lookuptable = {
     "v3-starter-48": "94eb4cec-3840-4171-ad50-a8bce2757d11",
     "v3-starter-64": "4a6e52a2-8f64-4632-adde-72f81616d4f9",
     "v3-starter-96": "8e7205fc-3ec7-456c-bff0-e38609e415c1",
+    "v3-standard-1-sjc": "71576fbe-bae4-41b3-9791-c07d5231cbca",
+    "v3-standard-2-sjc": "cde80797-4908-433c-a786-2dc56e5a1595",
+    "v3-standard-4-sjc": "2aff8c4a-fb90-41e1-a1df-e010e325b88d",
+    "v3-standard-8-sjc": "43d47979-dd08-4154-acbf-8138199e5254",
+    "v3-starter-1-sjc": "3d81ac84-efc2-4034-82a0-f8e0fb900801",
+    "v3-starter-2-sjc": "ef38fcc7-cbd7-40db-bffc-4b0407f18ece",
+    "v3-starter-4-sjc": "d2d36c73-d23f-4482-8756-36517214ea01",
+    "v3-starter-8-sjc": "bbe58243-9894-46a5-a3ca-4c84d517701a",
 }
 maintemplate = """\
 ---
