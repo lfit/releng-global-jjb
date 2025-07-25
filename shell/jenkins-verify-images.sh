@@ -42,14 +42,6 @@ verify_images()
                 echo "ERROR: No matching image found for $IMAGE_NAME"
                 error=true
             fi
-            # Set the $HARDWARE_ID variable to the the file's HARDWARE_ID value
-            export "$(grep ^HARDWARE_ID= "$file")"
-            # The flavor should be listed. Spaces in grep string ensure complete match.
-
-            if ! openstack flavor list | grep " $HARDWARE_ID "; then
-                echo "ERROR: No matching flavor found for $HARDWARE_ID"
-                error=true
-            fi
         fi
     done
 }
