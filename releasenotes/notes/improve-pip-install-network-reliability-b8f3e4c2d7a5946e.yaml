@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Improve pip installation reliability in lf-activate-venv function by adding
+    enhanced network error handling, trusted host configuration, proxy detection,
+    and fallback installation strategies. This addresses common "Could not find
+    a version" errors caused by SSL certificate issues, firewall restrictions,
+    and network connectivity problems in CI/CD environments.
