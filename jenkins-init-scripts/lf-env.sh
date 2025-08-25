@@ -243,17 +243,83 @@ lf-activate-venv () {
             echo "${FUNCNAME[0]}(): INFO: Save venv in file: $venv_file"
         fi
 
-        # Pin setuptools<66 until the issue with pbr + setuptools >=66 is fixed
-        "$lf_venv/bin/python3" -m pip install --upgrade --quiet \
-                        pip 'setuptools<66' virtualenv || return 1
-        if [[ -z $pkg_list ]]; then
-            echo "${FUNCNAME[0]}(): WARNING: No packages to install"
+        echo "${FUNCNAME[0]}(): INFO: Installing base packages (pip, setuptools, virtualenv)"
+
+        # Define pip install options for network issues
+        local pip_opts="--upgrade --quiet"
+
+        # Add trusted hosts to bypass SSL certificate issues
+        # This is the most common cause of the "Could not find a version" error
+        pip_opts="$pip_opts --trusted-host pypi.org"
+        pip_opts="$pip_opts --trusted-host files.pythonhosted.org"
+        pip_opts="$pip_opts --trusted-host pypi.python.org"
+
+        # If behind a corporate proxy, try to detect and handle it
+        if [[ -n "${HTTP_PROXY:-}" || -n "${HTTPS_PROXY:-}" ]]; then
+            echo "${FUNCNAME[0]}(): INFO: Proxy detected, using proxy settings"
+            if [[ -n "${HTTP_PROXY:-}" ]]; then
+                pip_opts="$pip_opts --proxy $HTTP_PROXY"
+            elif [[ -n "${HTTPS_PROXY:-}" ]]; then
+                pip_opts="$pip_opts --proxy $HTTPS_PROXY"
+            fi
+        fi
+
+        # First, try to install with enhanced options
+        echo "${FUNCNAME[0]}(): INFO: Attempting to install with network-safe options..."
+        if ! "$lf_venv/bin/python3" -m pip install "$pip_opts" \
+                        pip 'setuptools<66' virtualenv; then
+
+            echo "${FUNCNAME[0]}(): WARNING: Initial install failed, trying fallback options..."
+
+            # Fallback 1: Try with verbose output for debugging
+            echo "${FUNCNAME[0]}(): INFO: Trying with verbose output for debugging..."
+            if ! "$lf_venv/bin/python3" -m pip install --verbose --trusted-host pypi.org \
+                            --trusted-host files.pythonhosted.org \
+                            pip 'setuptools<66' virtualenv; then
+
+                # Fallback 2: Try installing packages one by one
+                echo "${FUNCNAME[0]}(): WARNING: Batch install failed, trying individual packages..."
+
+                if ! "$lf_venv/bin/python3" -m pip install --trusted-host pypi.org \
+                                --trusted-host files.pythonhosted.org pip; then
+                    lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Cannot install pip - network connectivity issue"
+                    lf-echo-stderr "This suggests a firewall, proxy, or DNS resolution problem"
+                    lf-echo-stderr "Contact your network administrator or check proxy settings"
+                    return 1
+                fi
+
+                if ! "$lf_venv/bin/python3" -m pip install --trusted-host pypi.org \
+                                --trusted-host files.pythonhosted.org 'setuptools<66'; then
+                    lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Cannot install setuptools"
+                    return 1
+                fi
+
+                if ! "$lf_venv/bin/python3" -m pip install --trusted-host pypi.org \
+                                --trusted-host files.pythonhosted.org virtualenv; then
+                    lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Cannot install virtualenv"
+                    return 1
+                fi
+
+                echo "${FUNCNAME[0]}(): INFO: Individual package installation succeeded"
+            else
+                echo "${FUNCNAME[0]}(): INFO: Fallback install succeeded"
+            fi
         else
-            echo "${FUNCNAME[0]}(): INFO: Installing: $pkg_list"
+            echo "${FUNCNAME[0]}(): INFO: Base packages installed successfully"
+        fi
+
+        # Continue with the rest of the package installation
+        if [[ -z $pkg_list ]]; then
+            echo "${FUNCNAME[0]}(): WARNING: No additional packages to install"
+        else
+            echo "${FUNCNAME[0]}(): INFO: Installing additional packages: $pkg_list"
             # $pkg_list is expected to be unquoted
             # shellcheck disable=SC2086
-            "$lf_venv/bin/python3" -m pip install --upgrade --quiet \
-                        --upgrade-strategy eager $pkg_list || return 1
+            if ! "$lf_venv/bin/python3" -m pip install "$pip_opts" \
+                        --upgrade-strategy eager $pkg_list; then
+                lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Failed to install packages: $pkg_list"
+                return 1
+            fi
         fi
         ;;
     *)
