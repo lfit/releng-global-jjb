@@ -266,7 +266,8 @@ lf-activate-venv () {
 
         # First, try to install with enhanced options
         echo "${FUNCNAME[0]}(): INFO: Attempting to install with network-safe options..."
-        if ! "$lf_venv/bin/python3" -m pip install "$pip_opts" \
+        # shellcheck disable=SC2086
+        if ! "$lf_venv/bin/python3" -m pip install $pip_opts \
                         pip 'setuptools<66' virtualenv; then
 
             echo "${FUNCNAME[0]}(): WARNING: Initial install failed, trying fallback options..."
@@ -315,7 +316,8 @@ lf-activate-venv () {
             echo "${FUNCNAME[0]}(): INFO: Installing additional packages: $pkg_list"
             # $pkg_list is expected to be unquoted
             # shellcheck disable=SC2086
-            if ! "$lf_venv/bin/python3" -m pip install "$pip_opts" \
+            # shellcheck disable=SC2086
+            if ! "$lf_venv/bin/python3" -m pip install $pip_opts \
                         --upgrade-strategy eager $pkg_list; then
                 lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Failed to install packages: $pkg_list"
                 return 1
