@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Pin urllib3~=1.26.15 in OpenStack-related scripts. This fixes connection issues
+    with OpenStack API where the connection was being aborted with
+    RemoteDisconnected errors. The version pinning ensures compatibility with
+    the OpenStack client libraries.

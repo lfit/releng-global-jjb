@@ -66,6 +66,7 @@ lf-activate-venv --python python3 "lftools[openstack]" \
     python-heatclient \
     python-openstackclient \
     python-magnumclient \
+    urllib3~=1.26.15 \
     yq
 
 set -x

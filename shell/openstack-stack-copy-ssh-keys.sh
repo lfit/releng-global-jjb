@@ -56,7 +56,8 @@ source ~/lf-env.sh
 lf-activate-venv --python python3 "lftools[openstack]" \
     kubernetes \
     python-heatclient \
-    python-openstackclient
+    python-openstackclient \
+    urllib3~=1.26.15
 
 # IP Addresses are returned as a space separated list so word splitting is ok
 # shellcheck disable=SC2207
