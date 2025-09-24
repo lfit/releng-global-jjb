@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "acbf79e4_36199041",
+        "filename": "releasenotes/notes/pin-urllib3-logs-deploy-script-0a21b684fc35d28e.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2025-09-24T12:33:56Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "range": {
+        "startLine": 5,
+        "startChar": 86,
+        "endLine": 5,
+        "endChar": 87
+      },
+      "revId": "a092127d89b9ab82ebfaa9457f0c2c3ea33f4994",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
