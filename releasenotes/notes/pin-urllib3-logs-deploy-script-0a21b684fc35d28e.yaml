@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Pin urllib3~=1.26.15 in logs-deploy.sh script. This fixes S3 upload timeout errors
+    where the connection was timing out with "urllib3.exceptions.ReadTimeoutError" and 
+    "botocore.exceptions.ReadTimeoutError" when uploading large log files to S3.
+    
+    The error occurs because newer urllib3 versions have incompatible timeout handling
+    with boto3/botocore used for S3 uploads. This change makes logs-deploy.sh
+    consistent with other scripts in global-jjb that already pin urllib3 to version 1.26.15.
