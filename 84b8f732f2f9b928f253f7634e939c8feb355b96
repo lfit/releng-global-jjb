@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5639d3c6_831338a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 112
+      },
+      "writtenOn": "2025-10-07T23:46:42Z",
+      "side": 1,
+      "message": "I disagree: this really is a \"Stopgap\" in that it disables cost collection, i.e. we are losing info we want to collect in order to make jobs more reliable.\n\nIn particular, while this fixes IT-28614, it causes a regression which could be characterized as \"GLOBALJJB-XYZ: stack costs are always 0\" (or a GH equivalent).\n\nExplanation of the stop-gap being proposed should link to that issue and explain the problem in lftools: at the end of the day, if we arm timers around openstack invocations, we report accurate results if they are available, say, in under a minute.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "84b8f732f2f9b928f253f7634e939c8feb355b96",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
