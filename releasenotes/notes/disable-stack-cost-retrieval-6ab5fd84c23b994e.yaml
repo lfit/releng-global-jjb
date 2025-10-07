@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    Disable stack cost retrieval in openstack-stack-delete.sh to prevent
+    jobs from hanging indefinitely. The lftools openstack stack cost command
+    was causing timeouts without proper error handling, leading to stuck jobs
+    and Jenkins capacity issues. Stack cost is now set to 0 while the underlying
+    lftools timeout issue is being addressed.

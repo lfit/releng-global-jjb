@@ -21,13 +21,17 @@ lf-activate-venv --python python3 "lftools[openstack]" \
     python-openstackclient \
     urllib3~=1.26.15
 
-echo "INFO: Retrieving stack cost for: $OS_STACK_NAME"
-if ! lftools openstack --os-cloud "$OS_CLOUD" stack cost "$OS_STACK_NAME" > stack-cost; then
-    echo "WARNING: Unable to get stack costs, continuing anyway"
-    echo "total: 0" > stack-cost
-else
-    echo "DEBUG: Successfully retrieved stack cost: $(cat stack-cost)"
-fi
+# Disabled stack cost retrieval due to lftools hanging without timeout
+# See: OpenDaylight Jenkins issue with stuck jobs
+# echo "INFO: Retrieving stack cost for: $OS_STACK_NAME"
+# if ! lftools openstack --os-cloud "$OS_CLOUD" stack cost "$OS_STACK_NAME" > stack-cost; then
+#     echo "WARNING: Unable to get stack costs, continuing anyway"
+#     echo "total: 0" > stack-cost
+# else
+#     echo "DEBUG: Successfully retrieved stack cost: $(cat stack-cost)"
+# fi
+echo "INFO: Stack cost retrieval disabled, setting cost to 0"
+echo "total: 0" > stack-cost
 
 # Delete the stack even if the stack-cost script fails
 lftools openstack --os-cloud "$OS_CLOUD" stack delete "$OS_STACK_NAME" \
