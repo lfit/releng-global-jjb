@@ -22,6 +22,30 @@
       },
       "revId": "84b8f732f2f9b928f253f7634e939c8feb355b96",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92a93287_527cd784",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2025-10-08T00:18:13Z",
+      "side": 1,
+      "message": "As the commit message suggests ...\n\"This change disables the problematic stack cost retrieval and sets the cost to 0 while the underlying lftools timeout issue is being addressed upstream.\" \n\nThe reason this is being disabled is that the cost data has not been generated or used for more than a year now. The issue has been discussed internally with Andrew and it\u0027s was decided cost changes need to be disabled or removed.",
+      "parentUuid": "5639d3c6_831338a3",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 4
+      },
+      "revId": "84b8f732f2f9b928f253f7634e939c8feb355b96",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
