@@ -1,0 +1,32 @@
+---
+fixes:
+  - |
+    **STOPGAP FIX:** Temporarily disable stack cost retrieval in
+    openstack-stack-delete.sh to prevent jobs from hanging indefinitely.
+
+    **Problem:** The lftools openstack stack cost command hangs without
+    timeout handling when querying the pricing API or OpenStack resources,
+    causing:
+
+    - Jobs stuck at "Retrieving stack cost" phase
+    - Subsequent jobs waiting on checkpoints
+    - Jenkins queue buildup and capacity issues
+
+    **Solution:** Stack cost is now hardcoded to 0 until lftools implements
+    proper timeout handling for network operations.
+
+    **Known Regression:** Stack costs will be reported as 0 in cost.csv
+    files, losing cost tracking data for OpenStack resources. Instance-level
+    costs from the pricing API are still collected via job-cost.sh.
+
+    **Root Cause:** lftools lacks timeout parameters for urllib.request.urlopen()
+    and OpenStack SDK operations in the stack cost calculation.
+
+    **Tracking:**
+
+    - Fixes: IT-28614 (Jobs hanging on stack cost retrieval)
+    - Regression: Stack costs always reported as 0 (needs lftools fix)
+    - Upstream: lftools needs timeout implementation for openstack stack cost command
+
+    **Next Steps:** Once lftools implements timeouts, this workaround should
+    be reverted to restore cost collection functionality.
