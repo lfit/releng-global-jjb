@@ -1,0 +1,18 @@
+---
+fixes:
+  - |
+    Replace deprecated ``sonar.login`` property with ``sonar.token`` in
+    SonarCloud integration scripts. The ``sonar.login`` property has been
+    deprecated by SonarCloud and will be removed in future versions.
+
+    This change eliminates the following warning that appeared in job logs
+    and SonarCloud analysis status pages:
+
+    "The property 'sonar.login' is deprecated and will be removed in the
+    future. Please use the 'sonar.token' property instead when passing a
+    token."
+
+    Affected scripts:
+
+    * ``shell/maven-sonar.sh`` - Maven-based SonarCloud jobs
+    * ``shell/cmake-sonar.sh`` - CMake-based SonarCloud jobs

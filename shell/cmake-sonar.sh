@@ -59,4 +59,4 @@ eval cmake -DCMAKE_INSTALL_PREFIX="$INSTALL_PREFIX" $cmake_opts ..
     -Dsonar.sources=. \
     -Dsonar.cfamily.build-wrapper-output="$WORKSPACE/bw-output" \
     -Dsonar.host.url="${SONAR_HOST_URL}" \
-    -Dsonar.login="${API_TOKEN}"
+    -Dsonar.token="${API_TOKEN}"
