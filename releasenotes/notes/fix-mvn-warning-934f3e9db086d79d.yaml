@@ -1,0 +1,5 @@
+---
+fixes:
+  - |
+    Change syntax for mvn altDeploymentRepository from "staging::default::file"
+    to "staging::file" to remove warning about legacy syntax.

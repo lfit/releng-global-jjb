@@ -24,5 +24,5 @@ export MAVEN_OPTS
 $MVN $MAVEN_GOALS dependency:tree com.sonatype.clm:clm-maven-plugin:index \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
-    -DaltDeploymentRepository=staging::default::file:"$WORKSPACE"/m2repo \
+    -DaltDeploymentRepository=staging::file:"$WORKSPACE"/m2repo \
     $MAVEN_OPTIONS $MAVEN_PARAMS
