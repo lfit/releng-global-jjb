@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8907fc2d_965f4b93",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2025-12-03T14:13:21Z",
+      "side": 1,
+      "message": "Addresses this error:\n\nError: Can\u0027t find \u0027action.yml\u0027, \u0027action.yaml\u0027 or \u0027Dockerfile\u0027 under \u0027/home/runner/work/releng-global-jjb/releng-global-jjb/reusable-tox-run-action/.github/actions/tox-run-action\u0027. Did you forget to run actions/checkout before running your local action?\n\nThis was the root cause:\n\ngerrit-compose-required-tox-verify.yaml\n\nContained a call to the local action without a pin:\n\n      - name: Run tox\n        uses: ./reusable-tox-run-action/.github/actions/tox-run-action\n        \nWhen this action was moved to lfreleng-actions from lfit, this broke the job.",
+      "revId": "b73d85fed9f1f0aa1cf1a201877a6750acdc22a5",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
