@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fa0e1c6a_5ea2f267",
+        "filename": ".github/workflows/gerrit-verify.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2025-12-03T14:08:32Z",
+      "side": 1,
+      "message": "Updated location and SHA for v0.10.0",
+      "parentUuid": "3eb2ba18_d1a92d39",
+      "range": {
+        "startLine": 54,
+        "startChar": 14,
+        "endLine": 54,
+        "endChar": 18
+      },
+      "revId": "0924d669a9a4d516d7f7ce48152f3d809f649b5c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "57aa5e05_5c6c2a7f",
         "filename": ".github/workflows/gerrit-verify.yaml",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2025-12-03T12:09:02Z",
       "side": 1,
       "message": "You\u0027ll need to update this to lfreleng-actions org",
+      "range": {
+        "startLine": 92,
+        "startChar": 14,
+        "endLine": 92,
+        "endChar": 18
+      },
+      "revId": "0924d669a9a4d516d7f7ce48152f3d809f649b5c",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7f0d5b3_9e6f9be9",
+        "filename": ".github/workflows/gerrit-verify.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2025-12-03T14:08:32Z",
+      "side": 1,
+      "message": "Updated location and SHA for v0.10.0",
+      "parentUuid": "57aa5e05_5c6c2a7f",
       "range": {
         "startLine": 92,
         "startChar": 14,
