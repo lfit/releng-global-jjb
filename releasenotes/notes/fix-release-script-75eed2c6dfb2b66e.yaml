@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Updates the command to retrieve the correct digest sha256 of a docker image
+    after it has been pushed to a container registry in the release script.
+    Previously, the script was incorrectly attempting to get the sha256 from
+    the local docker images, which does not provide the correct digest needed
+    for signing the image with cosign. The fix uses `docker inspect` to get
+    the digest from the pushed image in the registry.
