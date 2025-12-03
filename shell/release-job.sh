@@ -449,9 +449,8 @@ container_release_file(){
                 export COSIGN_PASSWORD
                 docker tag "$container_image_id" "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
                 docker push "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
-                image_sha=$(docker images --no-trunc --quiet \
+                image_digest=$(docker inspect --format='{{index .RepoDigests 0}}' \
                         "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION")
-                image_digest="$CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name@$image_sha"
                 cosign sign -y --key "$COSIGN_PRIVATE_KEY" "$image_digest"
             fi
             echo "#########################"
