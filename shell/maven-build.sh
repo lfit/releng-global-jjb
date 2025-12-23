@@ -17,6 +17,18 @@ echo "---> maven-build.sh"
 set -xe -o pipefail
 set +u
 
+# Determine deployment repository format based on maven-deploy-plugin version
+# Version 3+ uses simplified format without ::default::
+plugin_version=$($MVN help:describe -Dplugin=org.apache.maven.plugins:maven-deploy-plugin -Ddetail \
+    --global-settings "$GLOBAL_SETTINGS_FILE" 2>/dev/null \
+    | grep "^Version:" | awk '{print $2}' || echo "2.8.5")
+
+if [[ "$plugin_version" < "3" ]]; then
+  alt_repo='-DaltDeploymentRepository=staging::default::file:"$WORKSPACE"/m2repo'
+else
+  alt_repo='-DaltDeploymentRepository=staging::file:"$WORKSPACE"/m2repo'
+fi
+
 export MAVEN_OPTS
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
@@ -25,5 +37,5 @@ $MVN $MAVEN_GOALS \
     -e \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
-    -DaltDeploymentRepository=staging::file:"$WORKSPACE"/m2repo \
+    $alt_repo \
     $MAVEN_OPTIONS $MAVEN_PARAMS
