@@ -1,0 +1,7 @@
+---
+fixes:
+  - |
+    Add backward compatibility for older versions of maven-deploy-plugin
+    that do not support the new syntax for altDeploymentRepository.
+    If the plugin version is older than 3.X use the legacy syntax
+    "staging::default::file" to avoid build failures.
