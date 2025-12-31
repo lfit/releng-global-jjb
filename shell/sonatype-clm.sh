@@ -19,9 +19,18 @@ set +u
 
 export MAVEN_OPTS
 
+# Determine CLM plugin version based on Java version
+JAVA_VERSION=$(java -version 2>&1 | grep -i version | head -n 1 | sed 's/.*version "\(.*\)".*/\1/' | cut -d'.' -f1 | sed 's/^1\.//')
+
+CLM_PLUGIN_VERSION='' # Leave empty to use latest version by default
+
+if [[ "$JAVA_VERSION" -lt 17 ]]; then
+    CLM_PLUGIN_VERSION="2.54.1-02"
+fi
+
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
-$MVN $MAVEN_GOALS dependency:tree com.sonatype.clm:clm-maven-plugin:index \
+$MVN $MAVEN_GOALS dependency:tree com.sonatype.clm:clm-maven-plugin:${CLM_PLUGIN_VERSION}:index \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
     -DaltDeploymentRepository=staging::file:"$WORKSPACE"/m2repo \
