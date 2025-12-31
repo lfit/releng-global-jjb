@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Pin CLM Maven Plugin to version 2.54.1-02 to address compatibility
+    issues with Java 17 minimum requirement. Multiple ONAP projects do
+    not support Java 17 yet.
