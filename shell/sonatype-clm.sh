@@ -21,7 +21,7 @@ export MAVEN_OPTS
 
 # Disable SC2086 because we want to allow word splitting for $MAVEN_* parameters.
 # shellcheck disable=SC2086
-$MVN $MAVEN_GOALS dependency:tree com.sonatype.clm:clm-maven-plugin:index \
+$MVN $MAVEN_GOALS dependency:tree com.sonatype.clm:clm-maven-plugin:2.54.1-02:index \
     --global-settings "$GLOBAL_SETTINGS_FILE" \
     --settings "$SETTINGS_FILE" \
     -DaltDeploymentRepository=staging::file:"$WORKSPACE"/m2repo \
