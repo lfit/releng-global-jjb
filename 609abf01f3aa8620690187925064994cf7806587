@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07dcc52a_1e8c4931",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-01-01T02:46:57Z",
+      "side": 1,
+      "message": "This isn;t a recommended approach, as it would break other projects which are on recent versions of JDK! ODL is on JDK21 and will soon be upgraded to JDK25. \n\n1. This can be designed as an optional value, when unset must pick up the default/recent version.\n2. The TOC/community should be encouraged to upgrade projects to more recent version of JDK.",
+      "revId": "609abf01f3aa8620690187925064994cf7806587",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
