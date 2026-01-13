@@ -64,6 +64,54 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "53276c51_04f42c1b",
+        "filename": "shell/maven-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2026-01-13T04:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e816d9fb_c958501b",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 29
+      },
+      "revId": "d502ae26bd3d5424bdf2dff0e4f7616115995e02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "811aaf4a_81314ede",
+        "filename": "shell/maven-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2026-01-13T04:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "73cf1105_3cf6c369",
+      "range": {
+        "startLine": 27,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 29
+      },
+      "revId": "d502ae26bd3d5424bdf2dff0e4f7616115995e02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e46b7c11_c55c9f5d",
@@ -77,6 +125,30 @@
       "writtenOn": "2026-01-13T02:35:19Z",
       "side": 1,
       "message": "Remove or update shellcheck disable SC2016 comments (they\u0027re now incorrect) ?",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 29
+      },
+      "revId": "d502ae26bd3d5424bdf2dff0e4f7616115995e02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bae993c_75b506dc",
+        "filename": "shell/maven-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2026-01-13T04:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e46b7c11_c55c9f5d",
       "range": {
         "startLine": 31,
         "startChar": 0,
@@ -110,6 +182,30 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46c19256_3714ce9f",
+        "filename": "shell/maven-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2026-01-13T04:38:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9bd42e13_a0ca55a5",
+      "range": {
+        "startLine": 34,
+        "startChar": 2,
+        "endLine": 34,
+        "endChar": 29
+      },
+      "revId": "d502ae26bd3d5424bdf2dff0e4f7616115995e02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6504ff63_915c9124",
@@ -123,6 +219,30 @@
       "writtenOn": "2026-01-13T02:35:19Z",
       "side": 1,
       "message": "same",
+      "range": {
+        "startLine": 40,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 27
+      },
+      "revId": "d502ae26bd3d5424bdf2dff0e4f7616115995e02",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ca00f1e_d79f0cb1",
+        "filename": "shell/maven-build.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2026-01-13T04:38:57Z",
+      "side": 1,
+      "message": "I\u0027m not making any changes here, so I don\u0027t want to change these comments.",
+      "parentUuid": "6504ff63_915c9124",
       "range": {
         "startLine": 40,
         "startChar": 0,
