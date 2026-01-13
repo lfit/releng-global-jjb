@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    The previous fix had an environment variable contained in single quotes,
+    causing it to not to expand when run. Putting the entire string into double
+    quotes solves the issue while maintaining the validity of the string.

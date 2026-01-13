@@ -24,15 +24,9 @@ plugin_version=$($MVN help:describe -Dplugin=org.apache.maven.plugins:maven-depl
     | grep "^Version:" | awk '{print $2}' || echo "2.8.2")
 
 if [[ "${plugin_version%%.*}" -lt 3 ]]; then  # Compare only major version number
-  # Disable SC2016 because we don't want $WORKSPACE to be expanded here.
-  # shellcheck disable=SC2016
-  alt_repo='-DaltDeploymentRepository=staging::default::file:"$WORKSPACE"/m2repo'
+  alt_repo="-DaltDeploymentRepository=staging::default::file:$WORKSPACE/m2repo"
 else
-  # Disable SC2016 because we don't want $WORKSPACE to be expanded here.
-  # shellcheck disable=SC2016
-  # Disable SC2089 because the embedded quotes are intentional.
-  # shellcheck disable=SC2089
-  alt_repo='-DaltDeploymentRepository=staging::file:"$WORKSPACE"/m2repo'
+  alt_repo="-DaltDeploymentRepository=staging::file:$WORKSPACE/m2repo"
 fi
 
 export MAVEN_OPTS
