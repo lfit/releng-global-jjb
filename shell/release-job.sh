@@ -432,9 +432,22 @@ container_release_file(){
         echo "$name"
         echo "$version"
         echo "INFO: Merge will release $name $version as $VERSION"
+        curl -O -L "https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64"
+        sudo mv cosign-linux-amd64 /usr/local/bin/cosign
+        sudo chmod +x /usr/local/bin/cosign
+        export COSIGN_PASSWORD
         # Attempt to pull from releases registry to see if the image has been released.
         if docker pull "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"; then
-            echo "INFO: $VERSION is already released for image $name, Continuing..."
+            echo "INFO: $VERSION is already released for image $name, checking signature..."
+            image_digest=$(docker inspect --format='{{index .RepoDigests 0}}' \
+                    "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION")
+            if cosign verify --key "$COSIGN_PUBLIC_KEY" "$image_digest"; then
+                echo "INFO: $name:$VERSION is already signed, continuing..."
+            elif [[ "$JOB_NAME" =~ "merge" ]]; then
+                echo "INFO: Merge will run the following commands:"
+                echo "cosign sign -y $image_digest"
+                cosign sign -y --key "$COSIGN_PRIVATE_KEY" "$image_digest"
+            fi
         else
             echo "INFO: $VERSION not found in releases, release will be prepared. Continuing..."
             docker pull "$CONTAINER_PULL_REGISTRY"/"$lfn_umbrella"/"$name":"$version"
@@ -442,11 +455,8 @@ container_release_file(){
             echo "INFO: Merge will run the following commands:"
             echo "docker tag $container_image_id $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
             echo "docker push $CONTAINER_PUSH_REGISTRY/$lfn_umbrella/$name:$VERSION"
+            echo "cosign sign -y $image_digest"
             if [[ "$JOB_NAME" =~ "merge" ]]; then
-                curl -O -L "https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64"
-                sudo mv cosign-linux-amd64 /usr/local/bin/cosign
-                sudo chmod +x /usr/local/bin/cosign
-                export COSIGN_PASSWORD
                 docker tag "$container_image_id" "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
                 docker push "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"
                 image_digest=$(docker inspect --format='{{index .RepoDigests 0}}' \

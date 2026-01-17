@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    When a container release is checked, the job will also check for a cosign
+    signature. This fixes an issue where a docker image could be successfully
+    pushed, but cosign would fail. This would lead to a failed job, and upon
+    re-running the job, it would pass when the container was found on the server,
+    without ever checking the status of the signature.

@@ -197,6 +197,7 @@
     build-timeout: 15
     cosign-password-id: cosign-password
     cosign-private-key-id: cosign-private-key
+    cosign-public-key-id: cosign-public-key
     disable-job: false
     git-url: "$GIT_URL/$PROJECT"
     stream: master
@@ -278,6 +279,9 @@
           - text:
               credential-id: "{cosign-password-id}"
               variable: COSIGN_PASSWORD
+          - file:
+              credential-id: "{cosign-public-key-id}"
+              variable: COSIGN_PUBLIC_KEY
 
     scm:
       - lf-infra-gerrit-scm:
@@ -329,6 +333,9 @@
           - text:
               credential-id: "{cosign-password-id}"
               variable: COSIGN_PASSWORD
+          - file:
+              credential-id: "{cosign-public-key-id}"
+              variable: COSIGN_PUBLIC_KEY
 
     scm:
       - lf-infra-github-scm:
