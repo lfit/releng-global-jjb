@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c81e8f43_7c35318c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-01-19T02:29:01Z",
+      "side": 1,
+      "message": "Downloading and installing binary without verification ... The cosign binary is downloaded without checksum verification or signature validation. This is a security risk!",
+      "range": {
+        "startLine": 435,
+        "startChar": 8,
+        "endLine": 435,
+        "endChar": 99
+      },
+      "revId": "3d5cf3e28ca62c939f43d965dcd25fc3ba772f82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "decc8c54_a339b805",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-01-19T02:29:01Z",
+      "side": 1,
+      "message": "cosign verify exit code not handled properly - If cosign verify fails for reasons other than missing signature (network issues, invalid key, etc.), the code will proceed to attempt signing. \n\nShould add error handling to distinguish between \"signature not found\" vs \"verification failed\".",
+      "range": {
+        "startLine": 444,
+        "startChar": 15,
+        "endLine": 444,
+        "endChar": 28
+      },
+      "revId": "3d5cf3e28ca62c939f43d965dcd25fc3ba772f82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e9df0b4_903d8b33",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-01-19T02:29:01Z",
+      "side": 1,
+      "message": "the var $image_digest is undefined? - The echo statement references $image_digest before it\u0027s set ... \nThis variable is only defined inside the if [[ \"$JOB_NAME\" \u003d~ \"merge\" ]] block at line 462. The echo should be moved inside that block or the variable should be set earlier.",
+      "range": {
+        "startLine": 458,
+        "startChar": 12,
+        "endLine": 458,
+        "endChar": 47
+      },
+      "revId": "3d5cf3e28ca62c939f43d965dcd25fc3ba772f82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
