@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "6e264cbb_558a0a12",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2026-01-20T22:44:49Z",
+      "side": 1,
+      "message": "They only release these files with cosign-based verification information. So we would have to use the cosign binary we just downloaded to verify the cosign binary we just downloaded.\n\nI\u0027m not totally discounting it, but do you think it\u0027s worth the effort? I\u0027ve resolved the other issues, but will wait for feedback on this. Here are some relevant links:\nhttps://github.com/sigstore/cosign/releases\nhttps://docs.sigstore.dev/cosign/system_config/installation/#verifying-cosign-releases",
+      "parentUuid": "c81e8f43_7c35318c",
+      "range": {
+        "startLine": 435,
+        "startChar": 8,
+        "endLine": 435,
+        "endChar": 99
+      },
+      "revId": "3d5cf3e28ca62c939f43d965dcd25fc3ba772f82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "decc8c54_a339b805",
         "filename": "shell/release-job.sh",
         "patchSetId": 1
@@ -37,6 +61,30 @@
       "writtenOn": "2026-01-19T02:29:01Z",
       "side": 1,
       "message": "cosign verify exit code not handled properly - If cosign verify fails for reasons other than missing signature (network issues, invalid key, etc.), the code will proceed to attempt signing. \n\nShould add error handling to distinguish between \"signature not found\" vs \"verification failed\".",
+      "range": {
+        "startLine": 444,
+        "startChar": 15,
+        "endLine": 444,
+        "endChar": 28
+      },
+      "revId": "3d5cf3e28ca62c939f43d965dcd25fc3ba772f82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9a78980_da41c054",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2026-01-20T22:44:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "decc8c54_a339b805",
       "range": {
         "startLine": 444,
         "startChar": 15,
@@ -60,6 +108,30 @@
       "writtenOn": "2026-01-19T02:29:01Z",
       "side": 1,
       "message": "the var $image_digest is undefined? - The echo statement references $image_digest before it\u0027s set ... \nThis variable is only defined inside the if [[ \"$JOB_NAME\" \u003d~ \"merge\" ]] block at line 462. The echo should be moved inside that block or the variable should be set earlier.",
+      "range": {
+        "startLine": 458,
+        "startChar": 12,
+        "endLine": 458,
+        "endChar": 47
+      },
+      "revId": "3d5cf3e28ca62c939f43d965dcd25fc3ba772f82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eadb3fab_d1b68cd5",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 192
+      },
+      "writtenOn": "2026-01-20T22:44:49Z",
+      "side": 1,
+      "message": "The echo wasn\u0027t there before, and it does seem unnecessary to have it only when the command runs. I\u0027m just going to yank it.",
+      "parentUuid": "9e9df0b4_903d8b33",
       "range": {
         "startLine": 458,
         "startChar": 12,
