@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "025abbc8_5ec6e29c",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-01-20T23:05:41Z",
+      "side": 1,
+      "message": "This can be done in a separate change if the effort required outweighs scope of the fix.",
+      "parentUuid": "6e264cbb_558a0a12",
+      "range": {
+        "startLine": 435,
+        "startChar": 8,
+        "endLine": 435,
+        "endChar": 99
+      },
+      "revId": "3d5cf3e28ca62c939f43d965dcd25fc3ba772f82",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "decc8c54_a339b805",
         "filename": "shell/release-job.sh",
         "patchSetId": 1
