@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Pin CLM Maven Plugin to version 2.54.1-02 to address compatibility
+    issues when using Java versions lower than 17. Use latest plugin
+    version when using Java 17 or higher.
