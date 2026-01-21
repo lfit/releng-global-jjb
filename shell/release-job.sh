@@ -440,17 +440,17 @@ container_release_file(){
             echo "INFO: $VERSION is already released for image $name, checking signature..."
             image_digest=$(docker inspect --format='{{index .RepoDigests 0}}' \
                     "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION")
-            cosign verify --key "$COSIGN_PUBLIC_KEY" "$image_digest"
-            cosign_verified=$?
-            if [ "$cosign_verified" -eq 0 ]; then
+            exit_code=0
+            cosign verify --key "$COSIGN_PUBLIC_KEY" "$image_digest" || exit_code=$?
+            if [ "$exit_code" -eq 0 ]; then
                 echo "INFO: $name:$VERSION is already signed, continuing..."
-            elif [ "$cosign_verified" -eq 10 ] && [[ "$JOB_NAME" =~ "merge" ]]; then
+            elif [ "$exit_code" -eq 10 ] && [[ "$JOB_NAME" =~ "merge" ]]; then
                 # Exit code 10 indicates the package was found without signature
                 echo "INFO: No signature found for $name:$VERSION. Attempting to sign..."
                 export COSIGN_PASSWORD
                 cosign sign -y --key "$COSIGN_PRIVATE_KEY" "$image_digest"
             else
-                echo "INFO: Could not verify signature, cosign exited with code $cosign_verified."
+                echo "INFO: Could not verify signature, cosign exited with code $exit_code."
             fi
         else
             echo "INFO: $VERSION not found in releases, release will be prepared. Continuing..."
