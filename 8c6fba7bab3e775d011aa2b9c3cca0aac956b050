@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef426e1e_ddbdcc3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2026-02-12T13:47:08Z",
+      "side": 1,
+      "message": "Tested here:\n\nhttps://logs.onap.org/sandbox/vex-yul-ecomp-jenkins-2/cps-master-verify-java/1/console.log.gz\n\nSpecifically:\n\n---\u003e job-cost.sh\nINFO: Activating Python virtual environment...\nSetup pyenv:\n  system\n  3.8.13\n  3.9.13\n* 3.10.6 (set by /w/workspace/cps-master-verify-java/.python-version)\nlf-activate-venv(): INFO: Reuse venv:/tmp/venv-8HNh from file:/tmp/.os_lf_venv\nlf-activate-venv(): INFO: Installing base packages (pip, setuptools, virtualenv)\nlf-activate-venv(): INFO: Attempting to install with network-safe options...\nlf-activate-venv(): INFO: Base packages installed successfully\nlf-activate-venv(): INFO: Installing additional packages: zipp\u003d\u003d1.1.0 python-openstackclient urllib3~\u003d1.26.15 \nlf-activate-venv(): INFO: Adding /tmp/venv-8HNh/bin to PATH\nINFO: No stack-cost file found\nINFO: Instance uptime: 130s\nINFO: Fetching instance metadata (attempt 1 of 3)...\nDEBUG: URL: http://169.254.169.254/latest/meta-data/instance-type\nINFO: Successfully fetched instance metadata\nINFO: Instance type: v3-standard-8\nINFO: Retrieving pricing info for: v3-standard-8\nINFO: Fetching Vexxhost pricing API (attempt 1 of 3)...\nDEBUG: URL: https://pricing.vexxhost.net/v1/pricing/v3-standard-8/cost?seconds\u003d130\nINFO: Successfully fetched Vexxhost pricing API\nINFO: Retrieved cost: 0.22\nINFO: Retrieved resource: v3-standard-8\nINFO: Creating archive directory: /w/workspace/cps-master-verify-java/archives/cost\nINFO: Archiving costs to: /w/workspace/cps-master-verify-java/archives/cost.csv\nINFO: Successfully archived job cost data\nDEBUG: Cost data: cps-master-verify-java,1,2026-02-12 13:43:49,v3-standard-8,130,0.22,0.00,FAILURE",
+      "revId": "8c6fba7bab3e775d011aa2b9c3cca0aac956b050",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
