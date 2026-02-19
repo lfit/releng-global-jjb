@@ -347,7 +347,20 @@ tag-git-repo(){
     else
         echo "INFO: Repo has not yet been tagged $GIT_TAG"
         git tag -am "${PROJECT//\//-} $GIT_TAG" "$GIT_TAG"
-        sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"
+        sigul_max_retries=3
+        sigul_retry_delay=15
+        for attempt in $(seq 1 $sigul_max_retries); do
+            if sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"; then
+                break
+            fi
+            if [[ $attempt -lt $sigul_max_retries ]]; then
+                echo "WARN: sigul failed (attempt $attempt/$sigul_max_retries), retrying in ${sigul_retry_delay}s..."
+                sleep $sigul_retry_delay
+            else
+                echo "ERROR: sigul sign-git-tag failed after $sigul_max_retries attempts"
+                exit 1
+            fi
+        done
         echo "INFO: Showing latest signature for $PROJECT:"
         echo "INFO: git tag -v $GIT_TAG"
         git tag -v "$GIT_TAG"
