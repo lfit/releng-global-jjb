@@ -406,6 +406,7 @@
 
     branch: master
     build-days-to-keep: 7
+    build-timeout: 10
     disable-job: false
     git-url: "$GIT_URL/$GERRIT_PROJECT"
     github-url: "https://github.com"
@@ -451,7 +452,7 @@
 
     wrappers:
       - lf-infra-wrappers:
-          build-timeout: 10
+          build-timeout: "{build-timeout}"
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
       - config-file-provider:
           # Listed after to override openstack-infra-wrappers clouds.yaml

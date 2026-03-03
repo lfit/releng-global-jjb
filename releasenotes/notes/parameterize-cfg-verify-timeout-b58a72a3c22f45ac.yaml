@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    The jenkins-cfg-verify job template had the build-timeout hardcoded to
+    10 minutes, ignoring any project-level build-timeout override. Projects
+    with many cloud image configurations (70+ config files) would consistently
+    time out as each OpenStack API query takes several seconds. The
+    build-timeout is now parameterized via {build-timeout} with a default of
+    10 minutes, allowing projects to override it in their JJB configuration.
