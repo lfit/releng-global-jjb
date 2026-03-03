@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Fix gerrit push patch script to work with projects like ONAP that require
+    an Issue-ID in order to push to Gerrit. ONAP's default Issue-ID for patch
+    submissions is CIMAN-33.
