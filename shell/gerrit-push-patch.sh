@@ -57,17 +57,43 @@ query_result=$(ssh -p 29418 "$GERRIT_USER@$GERRIT_HOST" gerrit query \
 
 # Extract the change_id from the query_result
 job=$JOB_NAME/$BUILD_NUMBER
+
+# Detect account name from JENKINS_URL (e.g., jenkins.onap.org or build.automotivelinux.org)
+jenkins_url=${JENKINS_URL-}
+# Removes the URL scheme (e.g., "http://" or "https://") from jenkins_url and stores the remainder (host/path) in jenkins_host.
+jenkins_host=${jenkins_url#*://}
+# Trim any path component from the jenkins_host variable by removing everything after the first slash.
+# This leaves only the hostname (and optional port) portion for subsequent use.
+jenkins_host=${jenkins_host%%/*}
+account=""
+if [[ $jenkins_host == jenkins.* ]]; then
+    account=${jenkins_host#jenkins.}
+elif [[ $jenkins_host == build.* ]]; then
+    account=${jenkins_host#build.}
+fi
+account=${account%%.*}
+
+# If running for ONAP, insert Issue-ID between subject and Job line
+issue_line=""
+if [[ $account == "onap" ]]; then
+    issue_line="Issue-ID: CIMAN-33"
+fi
+
+message_body="Job: $job"
+if [[ -n $issue_line ]]; then
+    message_body="$issue_line"$'\n'"$message_body"
+fi
+
 # If available, add change_id to commit message
 if change_id=$(echo "$query_result" | grep 'Change-Id:' | awk '{print $2}'); then
     echo "NOTE: Found gerrit review: $change_id"
-    message="Job: $job"$'\n'"Change-Id: $change_id"
+    message_body="$message_body"$'\n'"Change-Id: $change_id"
 else
     echo "NOTE: No gerrit review found"
-    message="Job: $job"
 fi
 git commit -sm "$GERRIT_COMMIT_MESSAGE
 
-$message"
+$message_body"
 
 git status
 git remote add gerrit "ssh://$GERRIT_USER@$GERRIT_HOST:29418/$PROJECT.git"
