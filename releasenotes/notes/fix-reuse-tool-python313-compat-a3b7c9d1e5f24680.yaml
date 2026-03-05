@@ -1,0 +1,6 @@
+---
+fixes:
+  - |
+    Update reuse-tool pre-commit hook from v5.0.2 to v6.2.0 to fix
+    ``NameError: name 'unicode' is not defined`` errors when parsing
+    binary files (PNG, ICO) on Python 3.13.
