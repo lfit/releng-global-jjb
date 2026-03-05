@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e0a1b0b_20dabed0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-03-05T07:25:19Z",
+      "side": 1,
+      "message": "For changes to get accepted, you\u0027ll need to include a \"release note\" for the change.",
+      "revId": "905fb26da27d69d8e79079d9d7917b360064b140",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
