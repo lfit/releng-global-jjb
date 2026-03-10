@@ -1,0 +1,26 @@
+---
+features:
+  - |
+    Add Docker-based sigul sign-git-tag support for release-merge jobs.
+    On build nodes where sigul is not available natively (Ubuntu 22.04,
+    CentOS Stream 8+), the release-job.sh ``tag-git-repo()`` function
+    now automatically builds a CentOS 7 Docker container with sigul
+    0.207 and runs ``sign-git-tag`` inside it. This follows the same
+    pattern used by ``sigul-sign-dir.sh`` for artifact signing.
+  - |
+    Add retry logic (5 attempts, 15s delay) for sigul sign-git-tag
+    in both native and Docker code paths. Retry parameters are
+    configurable via ``SIGUL_MAX_RETRIES`` and ``SIGUL_RETRY_DELAY``
+    environment variables.
+  - |
+    Add new ``shell/sigul-sign-git-tag.sh`` container entrypoint
+    script for Docker-based git tag signing with retry support.
+  - |
+    Add ``git`` package to the sigul Docker image (``docker/Dockerfile``)
+    to support ``sign-git-tag`` which modifies git tag objects.
+fixes:
+  - |
+    Fix release-merge jobs failing on Ubuntu 22.04 build nodes due to
+    sigul RPM not being available on non-CentOS 7 platforms. The sigul
+    command is now executed inside a CentOS 7 Docker container when
+    running on modern build nodes.
