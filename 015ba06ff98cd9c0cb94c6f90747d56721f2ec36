@@ -69,6 +69,24 @@
       "parentUuid": "e19eed7d_52e9adf6",
       "revId": "015ba06ff98cd9c0cb94c6f90747d56721f2ec36",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da4c98e0_2656d154",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-03-10T09:26:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d214b01e_6cfac8ef",
+      "revId": "015ba06ff98cd9c0cb94c6f90747d56721f2ec36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
   ]
 }
