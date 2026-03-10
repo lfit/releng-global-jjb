@@ -320,7 +320,7 @@ verify_version_match_release(){
 # Tag Repo Functions.
 #####################
 
-# sigul is only available on Centos
+# sigul is only available on CentOS; on other platforms use Docker container
 # TODO: write tag-github-repo function
 tag-git-repo(){
     if [[ $TAG_RELEASE == false ]]; then
@@ -347,7 +347,65 @@ tag-git-repo(){
     else
         echo "INFO: Repo has not yet been tagged $GIT_TAG"
         git tag -am "${PROJECT//\//-} $GIT_TAG" "$GIT_TAG"
-        sigul --batch -c "$SIGUL_CONFIG" sign-git-tag "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"
+
+        SIGUL_MAX_RETRIES="${SIGUL_MAX_RETRIES:-5}"
+        SIGUL_RETRY_DELAY="${SIGUL_RETRY_DELAY:-15}"
+
+        if command -v sigul &>/dev/null; then
+            # Native sigul available (CentOS 7)
+            echo "INFO: Using native sigul for git tag signing"
+            for attempt in $(seq 1 "$SIGUL_MAX_RETRIES"); do
+                if sigul --batch -c "$SIGUL_CONFIG" sign-git-tag \
+                        "$SIGUL_KEY" "$GIT_TAG" < "$SIGUL_PASSWORD"; then
+                    echo "INFO: Successfully signed git tag (attempt $attempt/$SIGUL_MAX_RETRIES)"
+                    break
+                fi
+                if [[ $attempt -lt $SIGUL_MAX_RETRIES ]]; then
+                    echo "WARN: sigul sign-git-tag failed (attempt $attempt/$SIGUL_MAX_RETRIES), retrying in ${SIGUL_RETRY_DELAY}s..."
+                    sleep "$SIGUL_RETRY_DELAY"
+                else
+                    echo "ERROR: sigul sign-git-tag failed after $SIGUL_MAX_RETRIES attempts"
+                    exit 1
+                fi
+            done
+        elif command -v docker &>/dev/null; then
+            # Use Docker container for signing (Ubuntu/CentOS 8+)
+            echo "INFO: sigul not available natively, using Docker container for git tag signing"
+
+            # Download Dockerfile and entrypoint from upstream
+            # shellcheck disable=SC2140
+            wget -q -O "${WORKSPACE}/sigul-sign-git-tag.sh" "https://raw.githubusercontent.com/"\
+"lfit/releng-global-jjb/master/shell/sigul-sign-git-tag.sh"
+            # shellcheck disable=SC2140
+            wget -q -O "${WORKSPACE}/Dockerfile" "https://raw.githubusercontent.com/"\
+"lfit/releng-global-jjb/master/docker/Dockerfile"
+
+            docker build -f "${WORKSPACE}/Dockerfile" \
+                -t sigul-sign "${WORKSPACE}"
+
+            # shellcheck disable=SC2140
+            docker run --rm \
+                --entrypoint /bin/bash \
+                -e SIGUL_KEY="${SIGUL_KEY}" \
+                -e SIGUL_PASSWORD="${SIGUL_PASSWORD}" \
+                -e SIGUL_CONFIG="${SIGUL_CONFIG}" \
+                -e GIT_TAG="${GIT_TAG}" \
+                -e WORKSPACE="${WORKSPACE}" \
+                -e SIGUL_MAX_RETRIES="${SIGUL_MAX_RETRIES}" \
+                -e SIGUL_RETRY_DELAY="${SIGUL_RETRY_DELAY}" \
+                --security-opt label:disable \
+                --mount type=bind,source="/w/workspace",target="/w/workspace" \
+                --mount type=bind,source="/home/jenkins",target="/home/jenkins" \
+                -u root:root \
+                -w "$(pwd)" \
+                sigul-sign /sigul-sign-git-tag.sh
+
+            # Restore ownership after container run
+            sudo chown -R jenkins:jenkins "$(pwd)" || true
+        else
+            echo "ERROR: Neither sigul nor docker available. Cannot sign git tag."
+            exit 1
+        fi
         echo "INFO: Showing latest signature for $PROJECT:"
         echo "INFO: git tag -v $GIT_TAG"
         git tag -v "$GIT_TAG"
