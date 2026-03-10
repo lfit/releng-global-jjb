@@ -17,12 +17,14 @@ skip_if_unavailable=True' > /etc/yum.repos.d/fedora-infra-sigul.repo
 RUN sed -i_ 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || exit 1
 RUN sed -i_ 's@#baseurl=http://mirror.centos.org@baseurl=http://vault.centos.org@g' /etc/yum.repos.d/CentOS-* || exit 1
 
-# install the sigul package directly from the fedora infra repo
-RUN yum install -y -q https://kojipkgs.fedoraproject.org//packages/sigul/0.207/1.el7/x86_64/sigul-0.207-1.el7.x86_64.rpm
+# install sigul and git (git needed for sign-git-tag to modify tag objects)
+RUN yum install -y -q git \
+    https://kojipkgs.fedoraproject.org//packages/sigul/0.207/1.el7/x86_64/sigul-0.207-1.el7.x86_64.rpm
 
 RUN mkdir -p /w/workspace && mkdir -p /home/jenkins
 
 COPY ./sigul-sign.sh /
+COPY ./sigul-sign-git-tag.sh /
 USER root
 
 ENTRYPOINT ["/bin/bash", "/sigul-sign.sh"]
