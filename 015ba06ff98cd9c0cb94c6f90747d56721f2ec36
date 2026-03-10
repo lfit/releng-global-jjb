@@ -18,6 +18,24 @@
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f66ef28f_641e33e4",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-03-10T09:14:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d4474aad_d3a1f4be",
+      "revId": "015ba06ff98cd9c0cb94c6f90747d56721f2ec36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e19eed7d_52e9adf6",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-03-10T08:56:45Z",
       "side": 1,
       "message": "Shouldn\u0027t sigul-sign-git-tag.sh and Dockerfile files be already present when the builder node checks out any repo?",
+      "revId": "015ba06ff98cd9c0cb94c6f90747d56721f2ec36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d214b01e_6cfac8ef",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-03-10T09:14:28Z",
+      "side": 1,
+      "message": "If you are doing a shallow clone that would not be available.",
+      "parentUuid": "e19eed7d_52e9adf6",
       "revId": "015ba06ff98cd9c0cb94c6f90747d56721f2ec36",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
