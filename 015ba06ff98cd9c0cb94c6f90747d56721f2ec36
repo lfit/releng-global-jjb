@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4474aad_d3a1f4be",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2026-03-10T08:56:45Z",
+      "side": 1,
+      "message": "Were tests done to verify if this logic catches valid sigul command errors? otherwise it will just keep attempting the same faulty command until the max retries, unless this is your intention.",
+      "revId": "015ba06ff98cd9c0cb94c6f90747d56721f2ec36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e19eed7d_52e9adf6",
+        "filename": "shell/release-job.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 577
+      },
+      "writtenOn": "2026-03-10T08:56:45Z",
+      "side": 1,
+      "message": "Shouldn\u0027t sigul-sign-git-tag.sh and Dockerfile files be already present when the builder node checks out any repo?",
+      "revId": "015ba06ff98cd9c0cb94c6f90747d56721f2ec36",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
