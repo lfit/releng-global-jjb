@@ -36,6 +36,19 @@ Installs Tox into a virtualenv.
     :python-version: Version of Python to invoke the pip install of the tox-pyenv
         package that creates a virtual environment, either "python2" or "python3".
 
+lf-infra-uv-install
+--------------------
+
+Installs uv/uvx using the official Astral shell installer. Skips installation
+if uv is already present and at the correct version. Supports optional version
+pinning via the UV_VERSION environment variable; when unset, installs the latest
+version.
+
+:Optional Parameters:
+
+    :uv-version: Version of uv to install (e.g. "0.5.0"). Defaults to
+        empty string which installs the latest version.
+
 lf-infra-tox-run
 ----------------
 
