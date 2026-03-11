@@ -374,7 +374,10 @@ tag-git-repo(){
             # Use Docker container for signing (Ubuntu/CentOS 8+)
             echo "INFO: sigul not available natively, using Docker container for git tag signing"
 
-            # Download Dockerfile and entrypoint from upstream
+            # Download Dockerfile and entrypoint scripts from upstream
+            # shellcheck disable=SC2140
+            wget -q -O "${WORKSPACE}/sigul-sign.sh" "https://raw.githubusercontent.com/"\
+"lfit/releng-global-jjb/master/shell/sigul-sign.sh"
             # shellcheck disable=SC2140
             wget -q -O "${WORKSPACE}/sigul-sign-git-tag.sh" "https://raw.githubusercontent.com/"\
 "lfit/releng-global-jjb/master/shell/sigul-sign-git-tag.sh"
@@ -383,7 +386,8 @@ tag-git-repo(){
 "lfit/releng-global-jjb/master/docker/Dockerfile"
 
             # Validate downloaded files are non-empty
-            for f in "${WORKSPACE}/sigul-sign-git-tag.sh" \
+            for f in "${WORKSPACE}/sigul-sign.sh" \
+                     "${WORKSPACE}/sigul-sign-git-tag.sh" \
                      "${WORKSPACE}/Dockerfile"; do
                 if [[ ! -s "$f" ]]; then
                     echo "ERROR: Downloaded file is empty: $f"

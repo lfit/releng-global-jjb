@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Fix Docker-based sigul sign-git-tag failing with missing sigul-sign.sh.
+    The release-job.sh tag-git-repo function downloads the Dockerfile and
+    sigul-sign-git-tag.sh into the Docker build context but was missing the
+    download for sigul-sign.sh which the Dockerfile copies into the image.
+    This caused all Docker-based git tag signing to fail with
+    ``COPY ./sigul-sign.sh /: not found``.
