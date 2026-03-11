@@ -1,0 +1,11 @@
+---
+fixes:
+  - |
+    Harden sigul-sign-dir.sh Docker signing path. Add Ubuntu
+    24.04 to the OS detection so Docker-based signing works on
+    ubuntu2404 builder nodes. Validate that downloaded files
+    are non-empty before running docker build. Use explicit
+    build context path instead of current working directory.
+    Use ``--rm`` on docker run and clean up the wrkspc_vol
+    docker volume after use to prevent container name conflicts
+    and resource leaks on repeated runs.
