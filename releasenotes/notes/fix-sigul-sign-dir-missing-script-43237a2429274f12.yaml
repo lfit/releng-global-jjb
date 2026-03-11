@@ -1,0 +1,9 @@
+---
+fixes:
+  - |
+    Fix Docker-based sigul dir signing failing with missing
+    sigul-sign-git-tag.sh. The Dockerfile COPYs both sigul-sign.sh
+    and sigul-sign-git-tag.sh but sigul-sign-dir.sh (used by
+    maven-stage jobs) only downloaded sigul-sign.sh and the
+    Dockerfile. This caused Docker build failures with
+    ``COPY ./sigul-sign-git-tag.sh /: not found``.
