@@ -22,7 +22,7 @@ OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
 OS_DIST_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 OS_RELEASE=$(facter operatingsystemrelease | tr '[:upper:]' '[:lower:]')
 if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
-   [[ "$OS_RELEASE" =~ ^(20.04|22.04)$ && "${OS}" =~ ^(ubuntu|debian)$ ]]; then
+   [[ "$OS_RELEASE" =~ ^(20.04|22.04|24.04)$ && "${OS}" =~ ^(ubuntu|debian)$ ]]; then
     # Get Dockerfile and entrypoint scripts to build the docker image.
     # shellcheck disable=SC2140
     wget -O "${WORKSPACE}/sigul-sign.sh" "https://raw.githubusercontent.com/"\
@@ -34,10 +34,20 @@ if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
     wget -O "${WORKSPACE}/Dockerfile" "https://raw.githubusercontent.com/"\
 "lfit/releng-global-jjb/master/docker/Dockerfile"
 
+    # Validate downloaded files are non-empty
+    for f in "${WORKSPACE}/sigul-sign.sh" \
+             "${WORKSPACE}/sigul-sign-git-tag.sh" \
+             "${WORKSPACE}/Dockerfile"; do
+        if [[ ! -s "$f" ]]; then
+            echo "ERROR: Downloaded file is empty or missing: $f"
+            exit 1
+        fi
+    done
+
     # Setup the docker environment for jenkins user
     docker build -f "${WORKSPACE}/Dockerfile" \
         --build-arg SIGN_DIR="${SIGN_DIR}" \
-        -t sigul-sign .
+        -t sigul-sign "${WORKSPACE}"
 
     docker volume create --driver local \
         --opt type=none \
@@ -48,16 +58,19 @@ if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
     docker volume inspect wrkspc_vol
 
     # shellcheck disable=SC2140
-    docker run -e SIGUL_KEY="${SIGUL_KEY}" \
+    docker run --rm \
+        -e SIGUL_KEY="${SIGUL_KEY}" \
         -e SIGUL_PASSWORD="${SIGUL_PASSWORD}" \
         -e SIGUL_CONFIG="${SIGUL_CONFIG}" \
         -e SIGN_DIR="${SIGN_DIR}" \
         -e WORKSPACE="${WORKSPACE}" \
-        --name sigul-sign \
         --security-opt label:disable \
         --mount type=bind,source="/w/workspace",target="/w/workspace" \
         --mount type=bind,source="/home/jenkins",target="/home/jenkins" \
         -u root:root -w "$(pwd)" sigul-sign
+
+    # Cleanup docker volume
+    docker volume rm wrkspc_vol 2>/dev/null || true
 
     # change the .asc files owner permissions back to jenkins
     sudo chown -R jenkins:jenkins "${SIGN_DIR}"
