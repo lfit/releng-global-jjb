@@ -1,0 +1,11 @@
+---
+features:
+  - |
+    Add uv-install.sh script to install uv/uvx using the official Astral
+    shell installer. The script supports optional version pinning via the
+    UV_VERSION environment variable, skips installation when the requested
+    version is already present, and validates the install before completing.
+    A new lf-infra-uv-install JJB builder macro is provided for jobs that
+    need to specify a particular uv version. The uv install step is also
+    added to the lf-infra-pre-build macro so that uv/uvx is available
+    alongside lftools in all existing job templates.
