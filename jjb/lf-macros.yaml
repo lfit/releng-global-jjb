@@ -74,6 +74,7 @@
     name: lf-infra-pre-build
     builders:
       - shell: !include-raw-escape: ../shell/python-tools-install.sh
+      - shell: !include-raw-escape: ../shell/uv-install.sh
 
 - builder:
     name: lf-infra-ship-logs
@@ -100,6 +101,7 @@
           # Ensure python-tools are installed in case job template does not
           # call the lf-infra-pre-build macro.
           - ../shell/python-tools-install.sh
+          - ../shell/uv-install.sh
       - shell: !include-raw-escape:
           - ../shell/sudo-logs.sh
       - shell: !include-raw-escape:
