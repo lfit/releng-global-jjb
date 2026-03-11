@@ -23,10 +23,13 @@ OS_DIST_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
 OS_RELEASE=$(facter operatingsystemrelease | tr '[:upper:]' '[:lower:]')
 if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
    [[ "$OS_RELEASE" =~ ^(20.04|22.04)$ && "${OS}" =~ ^(ubuntu|debian)$ ]]; then
-    # Get Dockerfile and the enterpoint to build the docker image.
+    # Get Dockerfile and entrypoint scripts to build the docker image.
     # shellcheck disable=SC2140
     wget -O "${WORKSPACE}/sigul-sign.sh" "https://raw.githubusercontent.com/"\
 "lfit/releng-global-jjb/master/shell/sigul-sign.sh"
+    # shellcheck disable=SC2140
+    wget -O "${WORKSPACE}/sigul-sign-git-tag.sh" "https://raw.githubusercontent.com/"\
+"lfit/releng-global-jjb/master/shell/sigul-sign-git-tag.sh"
     # shellcheck disable=SC2140
     wget -O "${WORKSPACE}/Dockerfile" "https://raw.githubusercontent.com/"\
 "lfit/releng-global-jjb/master/docker/Dockerfile"
