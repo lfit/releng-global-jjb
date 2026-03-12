@@ -395,8 +395,18 @@ tag-git-repo(){
                 fi
             done
 
-            docker build -f "${WORKSPACE}/Dockerfile" \
+            docker build --no-cache \
+                -f "${WORKSPACE}/Dockerfile" \
                 -t sigul-sign "${WORKSPACE}"
+
+            # Verify sigul is available in the built image
+            echo "INFO: Verifying sigul installation in Docker image..."
+            docker run --rm --entrypoint /bin/bash \
+                sigul-sign -c "sigul --version" || {
+                echo "ERROR: sigul not found in Docker image." \
+                    "Check yum install logs above."
+                exit 1
+            }
 
             # shellcheck disable=SC2140
             docker run --rm \

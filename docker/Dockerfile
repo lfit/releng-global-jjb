@@ -17,9 +17,18 @@ skip_if_unavailable=True' > /etc/yum.repos.d/fedora-infra-sigul.repo
 RUN sed -i_ 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* || exit 1
 RUN sed -i_ 's@#baseurl=http://mirror.centos.org@baseurl=http://vault.centos.org@g' /etc/yum.repos.d/CentOS-* || exit 1
 
-# install sigul and git (git needed for sign-git-tag to modify tag objects)
-RUN yum install -y -q git \
-    https://kojipkgs.fedoraproject.org//packages/sigul/0.207/1.el7/x86_64/sigul-0.207-1.el7.x86_64.rpm
+# install git (needed for sign-git-tag to modify tag objects)
+RUN yum install -y git && yum clean all
+
+# install sigul separately to ensure failures are not masked by git's success
+# NOTE: combining with git in a single yum install causes silent failures
+# when the RPM URL is unreachable — yum returns 0 if git installs successfully
+RUN yum install -y \
+    https://kojipkgs.fedoraproject.org//packages/sigul/0.207/1.el7/x86_64/sigul-0.207-1.el7.x86_64.rpm \
+    && yum clean all
+
+# fail-fast: verify sigul is actually installed and functional
+RUN sigul --version
 
 RUN mkdir -p /w/workspace && mkdir -p /home/jenkins
 

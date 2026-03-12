@@ -45,9 +45,18 @@ if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
     done
 
     # Setup the docker environment for jenkins user
-    docker build -f "${WORKSPACE}/Dockerfile" \
+    docker build --no-cache -f "${WORKSPACE}/Dockerfile" \
         --build-arg SIGN_DIR="${SIGN_DIR}" \
         -t sigul-sign "${WORKSPACE}"
+
+    # Verify sigul is available in the built image
+    echo "INFO: Verifying sigul installation in Docker image..."
+    docker run --rm --entrypoint /bin/bash \
+        sigul-sign -c "sigul --version" || {
+        echo "ERROR: sigul not found in Docker image." \
+            "Check yum install logs above."
+        exit 1
+    }
 
     docker volume create --driver local \
         --opt type=none \

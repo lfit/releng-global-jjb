@@ -1,0 +1,19 @@
+---
+fixes:
+  - |
+    Fix Docker-based sigul signing failing with ``sigul: command not found``.
+    Root cause: ``yum install -y -q git URL.rpm`` returns exit 0 when the
+    sigul RPM URL is unreachable or its dependencies cannot be resolved,
+    because git installs successfully and yum considers that a partial
+    success. The ``-q`` flag suppresses error output, and Docker caches the
+    broken layer so all subsequent builds silently reuse it.
+
+    The fix separates yum installs for git and sigul into individual RUN
+    steps so each fails independently. Adds ``RUN sigul --version``
+    verification in the Dockerfile and a pre-run sigul check before the
+    actual signing container launch. Both ``release-job.sh`` and
+    ``sigul-sign-dir.sh`` now use ``docker build --no-cache`` to prevent
+    stale cached layers from masking install failures.
+
+    Affected jobs: all release-merge jobs using Docker-based sigul signing
+    (observed on mdsal-release-merge-master, ietf-release-merge-master).
