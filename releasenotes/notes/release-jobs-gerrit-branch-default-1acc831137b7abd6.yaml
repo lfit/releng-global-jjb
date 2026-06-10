@@ -1,0 +1,19 @@
+---
+fixes:
+  - |
+    Set the ``GERRIT_BRANCH`` and ``STREAM`` build parameter defaults on the
+    Gerrit and GitHub ``release-verify`` and ``release-merge`` jobs to the
+    job's configured ``{branch}`` and ``{stream}`` instead of the literal
+    string ``$GERRIT_BRANCH``.
+
+    Previously these jobs rendered ``GERRIT_BRANCH`` as the unresolved literal
+    ``$GERRIT_BRANCH`` on the "Build with Parameters" page, so a manually
+    triggered release-merge (for example ``ietf-release-merge-master``) did not
+    default to its branch and had to be edited by hand -- a recurring source of
+    aborted releases. The ``maven-stage`` jobs already used ``{branch}`` /
+    ``{stream}``; the release jobs now match that behaviour so the two halves of
+    the release workflow are consistent. Gerrit-triggered builds are unaffected
+    because the Gerrit trigger still supplies ``GERRIT_BRANCH`` at run time.
+
+    The PyPI and PackageCloud release jobs are intentionally left unchanged:
+    their templates are not stream-scoped and do not define ``{stream}``.
