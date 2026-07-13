@@ -667,6 +667,12 @@ This job runs on dev branches and its triggered on new patchsets.
         (default: true)
 
     :gerrit_sonar_triggers: Override Gerrit Triggers.
+    :gerrit_trigger_file_paths: Override file paths which are used to
+        determine if a project will be built. (default: all files)
+    :gerrit_forbidden_file_paths: File paths excluded from triggering the
+        scan even when they match ``gerrit_trigger_file_paths``. Useful to
+        skip the scan for patchsets that only touch non-source files such as
+        ``.github/``. (default: empty list, nothing excluded)
 
 
 SonarCloud Example:

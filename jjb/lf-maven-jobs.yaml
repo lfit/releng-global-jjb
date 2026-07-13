@@ -1589,6 +1589,11 @@
       - compare-type: REG_EXP
         pattern: ".*"
 
+    # Files matching these paths are excluded from triggering the scan even
+    # when they match gerrit_trigger_file_paths. Defaults to an empty list so
+    # every patchset is scanned unless a project opts in to exclusions.
+    gerrit_forbidden_file_paths: []
+
     triggers:
       - gerrit:
           server-name: "{gerrit-server-name}"
@@ -1600,6 +1605,7 @@
                 - branch-compare-type: "ANT"
                   branch-pattern: "**/{branch}"
               file-paths: "{obj:gerrit_trigger_file_paths}"
+              forbidden-file-paths: "{obj:gerrit_forbidden_file_paths}"
 
     scm:
       - lf-infra-gerrit-scm:
