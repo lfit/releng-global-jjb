@@ -51,3 +51,23 @@
     sonarcloud-api-token-cred-id: TOKEN
     scan-dev-branch: true
     sonarcloud-qualitygate-wait: true
+
+- project:
+    name: example-sonarcloud-verify-forbidden-paths
+    jobs:
+      - gerrit-maven-sonar-verify
+
+    project: "sonarcloud"
+    project-name: "sonarcloud-forbidden"
+    branch: "master"
+    mvn-settings: "sonarcloud-settings"
+    mvn-opts: "-Xmx1024m"
+    sonarcloud: true
+    sonarcloud-project-key: KEY
+    sonarcloud-project-organization: ORGANIZATION
+    sonarcloud-api-token-cred-id: TOKEN
+    scan-dev-branch: true
+    sonarcloud-qualitygate-wait: true
+    gerrit_forbidden_file_paths:
+      - compare-type: REG_EXP
+        pattern: "^\\.github/.*"

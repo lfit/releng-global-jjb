@@ -1,0 +1,10 @@
+---
+features:
+  - |
+    Added a ``gerrit_forbidden_file_paths`` parameter to the
+    ``gerrit-maven-sonar-verify`` job template. Patchsets whose changed files
+    all match one of these paths do not trigger the Sonar scan, even when they
+    match ``gerrit_trigger_file_paths``. This lets projects skip the per-patchset
+    Sonar scan for changes that never affect code quality, such as automated
+    dependency bumps under ``.github/``. The parameter defaults to an empty list,
+    so existing behaviour is unchanged unless a project opts in.
