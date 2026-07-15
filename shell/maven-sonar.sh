@@ -51,7 +51,9 @@ fi
 
 if [ -n "$SONARCLOUD_JAVA_VERSION" ] && [ "$SET_JDK_VERSION" != "$SONARCLOUD_JAVA_VERSION" ]; then
     export SET_JDK_VERSION="$SONARCLOUD_JAVA_VERSION"
-    bash <(curl -s https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh)
+    # Pipe (not process substitution) so a failed download fails the job via
+    # 'set -o pipefail'; a bare 'bash <(curl ...)' masks curl's exit code.
+    curl -sSf https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh | bash
     # shellcheck source=/dev/null
     source /tmp/java.env
 fi

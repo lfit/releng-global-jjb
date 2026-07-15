@@ -24,7 +24,9 @@ export SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
 echo "$SET_JDK_VERSION"
 GITHUB_RAW_BASE_URL="https://raw.githubusercontent.com"
 GITHUB_FILE="lfit/releng-global-jjb/master/shell/update-java-alternatives.sh"
-bash <(curl -s "${GITHUB_RAW_BASE_URL}/${GITHUB_FILE}")
+# Pipe (not process substitution) so a failed download fails the job via
+# 'set -o pipefail'; a bare 'bash <(curl ...)' masks curl's exit code.
+curl -sSf "${GITHUB_RAW_BASE_URL}/${GITHUB_FILE}" | bash
 # shellcheck disable=SC1091
 source /tmp/java.env
 

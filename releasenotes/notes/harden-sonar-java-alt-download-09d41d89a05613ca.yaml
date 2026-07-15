@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Hardened the SonarQube/SonarCloud helper scripts (``maven-sonar.sh``,
+    ``cmake-sonar.sh`` and ``cmake-sonarqube.sh``) so a failed download of
+    ``update-java-alternatives.sh`` now fails the job. The scripts previously
+    ran ``bash <(curl -s ...)``; process substitution hides curl's exit code,
+    so an HTTP error or network failure left the JDK unchanged and the build
+    silently continued. The download now uses ``curl -sSf ... | bash`` which
+    propagates the failure via ``set -o pipefail``.
