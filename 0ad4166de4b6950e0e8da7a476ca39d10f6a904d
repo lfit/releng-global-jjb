@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95243b20_edb00082",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2026-07-15T12:21:51Z",
+      "side": 1,
+      "message": "There\u0027s a merge conflict that needs to be resolved.",
+      "revId": "0ad4166de4b6950e0e8da7a476ca39d10f6a904d",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
