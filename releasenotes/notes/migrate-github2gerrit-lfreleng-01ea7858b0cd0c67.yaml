@@ -1,0 +1,8 @@
+---
+upgrade:
+  - |
+    ``call-composed-github2gerrit.yaml`` now calls the maintained
+    ``lfreleng-actions/github2gerrit-action`` reusable workflow, pinned to
+    ``v1.4.1``, instead of the retired ``lfit/github2gerrit`` repository. The
+    ``workflow_call`` input and secret interface is unchanged, so consumers
+    need no updates.
