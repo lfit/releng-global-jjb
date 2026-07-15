@@ -1,0 +1,10 @@
+---
+security:
+  - |
+    Pinned all GitHub Actions used by the repository workflows to full-length
+    commit SHAs instead of floating tags or ``@main``. ``release.yaml`` now
+    pins ``actions/checkout`` (v4.2.2), ``actions/setup-python`` (v5.4.0) and
+    ``devops-actions/action-get-tag`` (v1.0.2), and
+    ``call-composed-github2gerrit.yaml`` pins the reused
+    ``lfit/github2gerrit`` workflow to a specific commit. This removes the
+    supply-chain risk of a mutable tag being repointed to malicious code.

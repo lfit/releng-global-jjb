@@ -23,7 +23,7 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-    uses: lfit/github2gerrit/.github/workflows/github2gerrit.yaml@main
+    uses: lfit/github2gerrit/.github/workflows/github2gerrit.yaml@6e309e168b9aa5b44cf109a8953c6b1b40a76d13 # main
     with:
       GERRIT_KNOWN_HOSTS: ${{ vars.GERRIT_KNOWN_HOSTS }}
       GERRIT_SSH_USER_G2G: ${{ vars.GERRIT_SSH_USER_G2G }}
