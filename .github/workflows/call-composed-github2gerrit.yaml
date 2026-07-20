@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2024 The Linux Foundation <abelur@linux.com>
 
-name: call-github2gerrit-reusable-workflow
+name: GitHub2Gerrit
 
 # Thin caller for the github2gerrit reusable workflow.
 #
@@ -89,7 +89,7 @@ jobs:
       pull-requests: write
       issues: write
     # yamllint disable-line rule:line-length
-    uses: lfreleng-actions/github2gerrit-action/.github/workflows/github2gerrit.yaml@9f32f3c5c93c53176d0fedf23622c897f1d739f5 # v1.4.2
+    uses: lfreleng-actions/github2gerrit-action/.github/workflows/github2gerrit.yaml@dac8641c5f3b82636157340c1915999a4c4d7ff7 # v1.4.3
     with:
       GERRIT_KNOWN_HOSTS: ${{ vars.GERRIT_KNOWN_HOSTS }}
       GERRIT_SSH_USER_G2G: ${{ vars.GERRIT_SSH_USER_G2G }}
