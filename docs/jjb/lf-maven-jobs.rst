@@ -98,6 +98,19 @@ Setup Java alternatives for the Distro.
     :java-version: Version of Java to set as the default Java.
         Eg. openjdk11
 
+:Environment Variables:
+
+    :JDK_PROVIDER: Selects where the JDK comes from. Defaults to ``distro``,
+        which resolves the distribution JDK layout. Set to ``sdkman`` to
+        resolve ``java-version`` under ``$SDKMAN_DIR/candidates/java``
+        (default ``/opt/sdkman/candidates/java``) instead, which requires a
+        build node provisioned with the SDKMAN! JVM toolchain. The highest
+        installed version matching the requested major release wins, so
+        ``openjdk27`` can select an EA build. Falls back to the
+        distribution JDK, with a warning, when no matching version exists.
+        Downstream repositories opt in per job by adding a ``JDK_PROVIDER``
+        string parameter with a default of ``sdkman``.
+
 lf-infra-sonatype-clm
 ---------------------
 
