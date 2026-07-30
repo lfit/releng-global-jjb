@@ -1,0 +1,29 @@
+---
+features:
+  - |
+    ``update-java-alternatives.sh`` can now select a SDKMAN!-managed JDK
+    instead of a distribution one. This is opt-in per job: set the
+    ``JDK_PROVIDER`` environment variable to ``sdkman``, which downstream
+    repositories such as ``releng/builder`` pass in as a job parameter, for
+    example::
+
+        parameters:
+          - string:
+              name: JDK_PROVIDER
+              default: sdkman
+              description: "Set to sdkman to use SDKMAN!-managed JDKs"
+
+    When enabled, the requested ``java-version`` major release is looked up
+    under ``$SDKMAN_DIR/candidates/java`` (default
+    ``/opt/sdkman/candidates/java``) and the highest matching version wins, so
+    ``java-version: openjdk27`` resolves to an EA build such as
+    ``27.ea.31-open`` without an OS upgrade. This decouples the usable Java
+    versions from what the distribution packages, and requires a build node
+    provisioned with the SDKMAN! JVM toolchain.
+upgrade:
+  - |
+    No action is required and no job changes behaviour. ``JDK_PROVIDER``
+    defaults to ``distro``, so every job keeps resolving the distribution JDK
+    layout exactly as before. Jobs that opt in with ``JDK_PROVIDER=sdkman``
+    still fall back to the distribution JDK, with a warning, when the node has
+    no SDKMAN! installation or carries no matching major release.

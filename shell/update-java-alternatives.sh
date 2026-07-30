@@ -48,6 +48,31 @@ case "${OS}" in
     ;;
 esac
 
+# Optional SDKMAN!-managed JDKs, opt-in only. Jobs keep using the distribution
+# JDK resolved above unless they explicitly set JDK_PROVIDER=sdkman, which
+# downstream repositories pass in as a job parameter or injected env var. This
+# decouples the usable Java versions from what the distro packages, so a node
+# can offer newer LTS/GA/EA releases without an OS upgrade, while leaving every
+# existing job on the distribution JDK.
+if [ "${JDK_PROVIDER:-distro}" = "sdkman" ]; then
+    SDKMAN_JAVA="${SDKMAN_DIR:-/opt/sdkman}/candidates/java"
+    SDKMAN_CANDIDATE=$(
+        for candidate_dir in "$SDKMAN_JAVA/${JAVA_RELEASE_NBR}".* \
+            "$SDKMAN_JAVA/${JAVA_RELEASE_NBR}"-*; do
+            [ -d "$candidate_dir" ] && basename "$candidate_dir"
+        done | sort -V | tail -1
+    )
+    if [ -n "$SDKMAN_CANDIDATE" ]; then
+        echo "---> Using SDKMAN! JDK: $SDKMAN_CANDIDATE"
+        JAVA_HOME="$SDKMAN_JAVA/$SDKMAN_CANDIDATE"
+        export JAVA_HOME
+    else
+        echo "JDK_PROVIDER=sdkman requested but no SDKMAN! JDK matching" \
+            "${JAVA_RELEASE_NBR} found under $SDKMAN_JAVA" >&2
+        echo "---> Falling back to the distribution JDK"
+    fi
+fi
+
 if ! [ -d "$JAVA_HOME" ]; then
     echo "$JAVA_HOME directory not found - trying to find an approaching one"
     if ls -d "$JAVA_HOME"*; then
