@@ -48,6 +48,25 @@ case "${OS}" in
     ;;
 esac
 
+# Prefer SDKMAN!-managed JDKs when the image provides them. This decouples the
+# set of usable Java versions from what the distro packages, so a build node
+# can offer newer LTS/GA/EA releases without an OS upgrade. Falls back to the
+# distro layout resolved above when SDKMAN! is absent or lacks the release.
+SDKMAN_JAVA="${SDKMAN_DIR:-/opt/sdkman}/candidates/java"
+if [ -d "$SDKMAN_JAVA" ]; then
+    SDKMAN_CANDIDATE=$(
+        for candidate_dir in "$SDKMAN_JAVA/${JAVA_RELEASE_NBR}".* \
+            "$SDKMAN_JAVA/${JAVA_RELEASE_NBR}"-*; do
+            [ -d "$candidate_dir" ] && basename "$candidate_dir"
+        done | sort -V | tail -1
+    )
+    if [ -n "$SDKMAN_CANDIDATE" ]; then
+        echo "---> Using SDKMAN! JDK: $SDKMAN_CANDIDATE"
+        JAVA_HOME="$SDKMAN_JAVA/$SDKMAN_CANDIDATE"
+        export JAVA_HOME
+    fi
+fi
+
 if ! [ -d "$JAVA_HOME" ]; then
     echo "$JAVA_HOME directory not found - trying to find an approaching one"
     if ls -d "$JAVA_HOME"*; then

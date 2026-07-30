@@ -1,0 +1,16 @@
+---
+features:
+  - |
+    ``update-java-alternatives.sh`` now prefers SDKMAN!-managed JDKs when the
+    build node provides them. When ``$SDKMAN_DIR/candidates/java`` (default
+    ``/opt/sdkman/candidates/java``) contains a directory matching the
+    requested ``java-version`` major release, the highest matching version is
+    selected, so ``java-version: openjdk27`` resolves to an EA build such as
+    ``27.ea.31-open`` without an OS upgrade. This decouples the set of usable
+    Java versions from what the distribution packages.
+upgrade:
+  - |
+    No action is required. Build nodes without SDKMAN! installed keep using
+    the distribution JDK layout exactly as before; the SDKMAN! lookup is
+    skipped when the directory is absent, and falls back to the distribution
+    path when SDKMAN! does not carry the requested major release.
