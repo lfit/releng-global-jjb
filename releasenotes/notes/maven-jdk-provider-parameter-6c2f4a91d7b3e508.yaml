@@ -1,0 +1,9 @@
+---
+features:
+  - |
+    Maven job templates now provide a ``JDK_PROVIDER`` build parameter. It
+    defaults to ``distro``, which keeps jobs on the distribution JDK, so
+    existing behaviour is unchanged. Setting it to ``sdkman`` resolves the
+    requested Java version from a SDKMAN!-managed toolchain instead, which
+    lets a build node offer newer LTS, GA and EA releases without an
+    operating system upgrade.

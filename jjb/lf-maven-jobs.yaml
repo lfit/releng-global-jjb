@@ -110,6 +110,14 @@
           name: ARCHIVE_ARTIFACTS
           default: "{archive-artifacts}"
           description: Artifacts to archive to the logs server.
+      - string:
+          name: JDK_PROVIDER
+          default: "distro"
+          description: |
+            Where to source the JDK from. "distro" uses the JDK packaged by
+            the operating system. "sdkman" picks the matching SDKMAN! JDK
+            when the build node provides one and otherwise falls back to the
+            distribution JDK.
 
     wrappers:
       - lf-infra-wrappers:

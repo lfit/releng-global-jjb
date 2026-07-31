@@ -108,8 +108,9 @@ Setup Java alternatives for the Distro.
         installed version matching the requested major release wins, so
         ``openjdk27`` can select an EA build. Falls back to the
         distribution JDK, with a warning, when no matching version exists.
-        Downstream repositories opt in per job by adding a ``JDK_PROVIDER``
-        string parameter with a default of ``sdkman``.
+        Maven job templates expose this as a build parameter that defaults
+        to ``distro``. Other job types opt in by adding a ``JDK_PROVIDER``
+        string parameter or injecting the variable.
 
 lf-infra-sonatype-clm
 ---------------------
