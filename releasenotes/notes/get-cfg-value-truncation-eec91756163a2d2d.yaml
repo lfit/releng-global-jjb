@@ -1,0 +1,15 @@
+---
+fixes:
+  - |
+    Fixed ``get_cfg`` in ``jenkins-configure-clouds.sh`` truncating any
+    cloud configuration value containing an ``=``. The setting was parsed
+    with ``awk -F'=' '{print $2}'``, which returns only the second field,
+    so ``JVM_OPTIONS=--add-opens java.base/java.util=ALL-UNNAMED`` became
+    ``--add-opens java.base/java.util``. That value is not merely
+    ineffective: the JVM refuses to start on it, reporting ``Unable to
+    parse --add-opens <module>=<value>``. Because ``jvm_options`` reaches
+    the OpenStack cloud plugin's ``SlaveOptions`` and is applied to the
+    agent remoting launch, a silo carrying such a setting risked its
+    agents failing to provision. Parsing now uses ``cut -d'=' -f2-``,
+    which keeps the whole value after the first separator, and is
+    unchanged for every other setting.

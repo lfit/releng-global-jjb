@@ -74,7 +74,15 @@ get_cfg() {
         exit 1
     fi
 
-    cfg=$(grep "^${setting^^}=" "$cfg_file" | tail -1 | awk -F'=' '{print $2}')
+    # cut, not awk -F'=' '{print $2}': awk returns only the SECOND field,
+    # so a value containing '=' is silently truncated at the first one.
+    # JVM_OPTIONS is the case that matters --
+    # '--add-opens java.base/java.util=ALL-UNNAMED' became
+    # '--add-opens java.base/java.util', which is not merely ineffective:
+    # the JVM refuses to start on it, and this value is applied to the
+    # agent remoting launch. 'cut -d= -f2-' keeps everything after the
+    # first '=', which is the whole value.
+    cfg=$(grep "^${setting^^}=" "$cfg_file" | tail -1 | cut -d'=' -f2-)
     cfg=${cfg:-"$default"}
     echo "$cfg"
 }
