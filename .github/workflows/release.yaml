@@ -4,45 +4,62 @@ name: Release announcement
 # yamllint disable-line rule:truthy
 on: push
 
+permissions:
+  contents: read # least privilege; the publish job raises what it needs
+
+# A release must not be cancelled part way through publishing, so queue
+# runs per tag rather than cancelling one that is already in flight.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   publish:
+    name: Publish release notes
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # gh release create publishes the GitHub release
     steps:
       - name: Checkout repository
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          # reno maps notes to versions by walking the entire branch
+          # history. A shallow clone truncates that walk, so fetch
+          # everything rather than deepening to a fixed commit count.
+          fetch-depth: 0
+          persist-credentials: false
       - name: Get tag
         id: tag
         uses: devops-actions/action-get-tag@7121a0d02be4cc926d0866b83de2a62688199687 # v1.0.4
-      - name: Convert tag
-        run: >-
-          VER=$(echo "${{ steps.tag.outputs.tag }}" | tr . -)
-          echo "ANCHOR=${VER}" >> $GITHUB_ENV
       - name: Configure Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.8"
       - name: Generate reno report
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
         run: |
-          # fetch last 30 changes
-          git fetch --depth=30
-          pipx run tox -e reno -- report \
-            --version "${{ steps.tag.outputs.tag }}" \
-            2>/dev/null > reno-notes.md || true
-          if grep -q 'reno: FAIL' reno-notes.md
-          then
-            touch modified-reno-notes.md
-          else
-            sed '/^\.pkg.*$/d' reno-notes.md |
+          set -euo pipefail
+          # No '|| true' and no discarded stderr: a reno failure has to
+          # fail the job. Masking it publishes an empty release body,
+          # which is how releases shipped carrying no notes at all.
+          pipx run tox -e reno -- report --version "$TAG" > reno-notes.md
+          sed '/^\.pkg.*$/d' reno-notes.md |
             sed '/^reno:.*$/d' |
             sed '/^\.\. .*$/d' |
             sed '$d' |
             sed '$d' |
             sed '1d' > modified-reno-notes.md
+          # An empty report is legitimate for a release carrying no notes,
+          # so warn rather than fail, but make it visible in the log.
+          if [ ! -s modified-reno-notes.md ]; then
+            echo "::warning::reno produced no release notes for ${TAG}"
           fi
       - name: Create Release Notes
-        run: |
-          gh release create ${{ steps.tag.outputs.tag }} --generate-notes \
-            -F modified-reno-notes.md
         env:
+          TAG: ${{ steps.tag.outputs.tag }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          gh release create "$TAG" --generate-notes -F modified-reno-notes.md

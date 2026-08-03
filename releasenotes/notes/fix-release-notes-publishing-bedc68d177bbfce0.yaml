@@ -1,0 +1,17 @@
+---
+fixes:
+  - |
+    Fixed the release announcement workflow publishing empty GitHub
+    release note bodies. ``actions/checkout`` produced a shallow clone,
+    which reno cannot work from because it maps notes to versions by
+    walking the whole branch history. The resulting failure was hidden
+    by a ``|| true`` guard and a discarded stderr stream, so the job
+    reported success and published a release with no notes.
+
+    The checkout now fetches the full history, and a reno failure fails
+    the job rather than silently yielding an empty file. An empty report
+    remains valid for a release that carries no notes, and warns instead.
+
+    Releases v0.94.0 and v0.95.0 shipped with empty GitHub release
+    bodies for this reason. Their notes are correct on the
+    documentation site, which builds reno separately.
