@@ -1996,12 +1996,12 @@
     scm:
       - lf-infra-gerrit-scm:
           git-url: "{git-url}"
-          refspec: "$GERRIT_REFSPEC"
-          branch: "$GERRIT_BRANCH"
+          refspec: "refs/heads/{branch}"
+          branch: "{branch}"
           submodule-recursive: false
           submodule-timeout: "{submodule-timeout}"
           submodule-disable: "{submodule-disable}"
-          choosing-strategy: gerrit
+          choosing-strategy: default
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
 
     triggers:
