@@ -125,6 +125,16 @@ Global JJB as follows:
       environment we can use
       https://gerrit.linuxfoundation.org/infra/releng/global-jjb if desired.
 
+   .. note::
+
+      The sigul signing scripts, the release schemas and the Java version
+      helper get fetched from lfit/releng-global-jjb over https while a job
+      runs. Those fetches default to the ``master`` branch, which drifts from
+      the submodule revision above. Export
+      ``GLOBAL_JJB_VERSION`` as a Jenkins global environment variable, set to
+      the same tag, so that every job fetches helpers from the same global-jjb
+      revision that produced it.
+
 #. Setup ``jjb/defaults.yaml``
 
    Create and configure the following parameters in the
