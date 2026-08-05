@@ -20,10 +20,16 @@ make_opts="${MAKE_OPTS:-}"
 
 set -ex -o pipefail
 
+# Git ref of lfit/releng-global-jjb used for helper files fetched at
+# runtime. Defaults to master to preserve existing behaviour; set this to
+# the tag the submodule is pinned to so a job cannot pick up a helper
+# newer than the global-jjb it was generated from.
+GLOBAL_JJB_VERSION="${GLOBAL_JJB_VERSION:-master}"
+
 export SET_JDK_VERSION="${SET_JDK_VERSION:-openjdk11}"
 echo "$SET_JDK_VERSION"
 GITHUB_RAW_BASE_URL="https://raw.githubusercontent.com"
-GITHUB_FILE="lfit/releng-global-jjb/master/shell/update-java-alternatives.sh"
+GITHUB_FILE="lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/shell/update-java-alternatives.sh"
 # Pipe (not process substitution) so a failed download fails the job via
 # 'set -o pipefail'; a bare 'bash <(curl ...)' masks curl's exit code.
 curl -sSf "${GITHUB_RAW_BASE_URL}/${GITHUB_FILE}" | bash

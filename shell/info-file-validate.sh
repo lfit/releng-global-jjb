@@ -10,6 +10,12 @@
 ##############################################################################
 echo '--> info-file-validate.sh'
 set -e -o pipefail
+
+# Git ref of lfit/releng-global-jjb used for helper files fetched at
+# runtime. Defaults to master to preserve existing behaviour; set this to
+# the tag the submodule is pinned to so a job cannot pick up a helper
+# newer than the global-jjb it was generated from.
+GLOBAL_JJB_VERSION="${GLOBAL_JJB_VERSION:-master}"
 PROJECT="${PROJECT:-None}"
 
 # shellcheck disable=SC1090
@@ -18,8 +24,8 @@ lf-activate-venv zipp==1.1.0 PyYAML jsonschema rfc3987 yamllint yq
 pip freeze
 
 # Download info-schema.yaml and yaml-verfy-schema.py
-wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/info-schema.yaml \
-https://raw.githubusercontent.com/lfit/releng-global-jjb/master/yaml-verify-schema.py
+wget -q "https://raw.githubusercontent.com/lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/schema/info-schema.yaml" \
+"https://raw.githubusercontent.com/lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/yaml-verify-schema.py"
 
 yamllint INFO.yaml
 

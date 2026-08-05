@@ -17,6 +17,12 @@ echo "---> maven-sonar.sh"
 set -xe -o pipefail
 set +u
 
+# Git ref of lfit/releng-global-jjb used for helper files fetched at
+# runtime. Defaults to master to preserve existing behaviour; set this to
+# the tag the submodule is pinned to so a job cannot pick up a helper
+# newer than the global-jjb it was generated from.
+GLOBAL_JJB_VERSION="${GLOBAL_JJB_VERSION:-master}"
+
 export MAVEN_OPTS
 
 declare -a params
@@ -53,7 +59,7 @@ if [ -n "$SONARCLOUD_JAVA_VERSION" ] && [ "$SET_JDK_VERSION" != "$SONARCLOUD_JAV
     export SET_JDK_VERSION="$SONARCLOUD_JAVA_VERSION"
     # Pipe (not process substitution) so a failed download fails the job via
     # 'set -o pipefail'; a bare 'bash <(curl ...)' masks curl's exit code.
-    curl -sSf https://raw.githubusercontent.com/lfit/releng-global-jjb/master/shell/update-java-alternatives.sh | bash
+    curl -sSf "https://raw.githubusercontent.com/lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/shell/update-java-alternatives.sh" | bash
     # shellcheck source=/dev/null
     source /tmp/java.env
 fi

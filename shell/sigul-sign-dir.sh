@@ -13,6 +13,12 @@ echo "---> sigul-sign-dir.sh"
 # Ensure we fail the job if any steps fail.
 set -e -o pipefail
 
+# Git ref of lfit/releng-global-jjb used for helper files fetched at
+# runtime. Defaults to master to preserve existing behaviour; set this to
+# the tag the submodule is pinned to so a job cannot pick up a helper
+# newer than the global-jjb it was generated from.
+GLOBAL_JJB_VERSION="${GLOBAL_JJB_VERSION:-master}"
+
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
@@ -26,13 +32,13 @@ if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
     # Get Dockerfile and entrypoint scripts to build the docker image.
     # shellcheck disable=SC2140
     wget -O "${WORKSPACE}/sigul-sign.sh" "https://raw.githubusercontent.com/"\
-"lfit/releng-global-jjb/master/shell/sigul-sign.sh"
+"lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/shell/sigul-sign.sh"
     # shellcheck disable=SC2140
     wget -O "${WORKSPACE}/sigul-sign-git-tag.sh" "https://raw.githubusercontent.com/"\
-"lfit/releng-global-jjb/master/shell/sigul-sign-git-tag.sh"
+"lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/shell/sigul-sign-git-tag.sh"
     # shellcheck disable=SC2140
     wget -O "${WORKSPACE}/Dockerfile" "https://raw.githubusercontent.com/"\
-"lfit/releng-global-jjb/master/docker/Dockerfile"
+"lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/docker/Dockerfile"
 
     # Validate downloaded files are non-empty
     for f in "${WORKSPACE}/sigul-sign.sh" \
