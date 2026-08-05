@@ -50,12 +50,34 @@ while read -r line ; do
             continue
         fi
     else
-        new_image=$(openstack image list --long -f value -c Name -c Protected \
-            | grep "${image_type}.*False" | tail -n-1 | sed 's/ False//')     \
+        # Sort by name so the newest timestamp wins regardless of the order
+        # the image API happens to return rows in.
+        #
+        # ponytail: name order is the only signal available here. Every ZZCI
+        # image carries the same ci_managed=yes metadata and the same tenant
+        # owner, so this sweep cannot tell an image built by this project's
+        # packer job from one published by anyone else sharing the tenant.
+        # Filter on the build_url image property once enough images carry the
+        # stamp that common-packer writes.
+        new_image=$(openstack image list --long --sort name:desc \
+            -f value -c Name -c Protected \
+            | grep "${image_type}.*False" | head -n1 | sed 's/ False//')      \
             || true
     fi
-    [[ -z $new_image ]] && continue
+    if [[ -z $new_image ]]; then
+        echo "INFO: No candidate image found for: $image_type"
+        continue
+    fi
     echo "INFO: Found image type match, compare timestamps."
+
+    # Report which build produced the candidate so the Gerrit reviewer can
+    # check its provenance before approving the bump. Images published before
+    # common-packer started stamping build_url report 'unknown'.
+    image_props=$(openstack image show -f value -c properties "$new_image" || true)
+    build_url=$(printf '%s' "$image_props" \
+        | grep -o "'build_url': '[^']*'" | cut -d"'" -f4 || true)
+    echo "INFO: Candidate image: $new_image"
+    echo "INFO: Built by: ${build_url:-unknown}"
 
     # strip the timestamp from the image name
     new_image_isotime=${new_image##*- }
