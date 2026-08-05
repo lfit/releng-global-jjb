@@ -11,6 +11,13 @@
 echo "---> release-job.sh"
 set -eu -o pipefail
 
+# Git ref of lfit/releng-global-jjb used for helper files fetched at
+# runtime. Defaults to master to preserve existing behaviour; set this to
+# the tag the submodule is pinned to so a job cannot pick up a helper
+# newer than the global-jjb it was generated from.
+GLOBAL_JJB_VERSION="${GLOBAL_JJB_VERSION:-master}"
+GLOBAL_JJB_URL="https://raw.githubusercontent.com/lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}"
+
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
@@ -377,13 +384,13 @@ tag-git-repo(){
             # Download Dockerfile and entrypoint scripts from upstream
             # shellcheck disable=SC2140
             wget -q -O "${WORKSPACE}/sigul-sign.sh" "https://raw.githubusercontent.com/"\
-"lfit/releng-global-jjb/master/shell/sigul-sign.sh"
+"lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/shell/sigul-sign.sh"
             # shellcheck disable=SC2140
             wget -q -O "${WORKSPACE}/sigul-sign-git-tag.sh" "https://raw.githubusercontent.com/"\
-"lfit/releng-global-jjb/master/shell/sigul-sign-git-tag.sh"
+"lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/shell/sigul-sign-git-tag.sh"
             # shellcheck disable=SC2140
             wget -q -O "${WORKSPACE}/Dockerfile" "https://raw.githubusercontent.com/"\
-"lfit/releng-global-jjb/master/docker/Dockerfile"
+"lfit/releng-global-jjb/${GLOBAL_JJB_VERSION}/docker/Dockerfile"
 
             # Validate downloaded files are non-empty
             for f in "${WORKSPACE}/sigul-sign.sh" \
@@ -719,7 +726,7 @@ case $DISTRIBUTION_TYPE in
         if $USE_RELEASE_FILE ; then
             release_schema="release-artifact-schema.yaml"
             echo "INFO: Fetching schema $release_schema"
-            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            wget -q "${GLOBAL_JJB_URL}/schema/${release_schema}"
             verify_schema
         fi
         set_variables_artifact
@@ -731,7 +738,7 @@ case $DISTRIBUTION_TYPE in
         if $USE_RELEASE_FILE ; then
             release_schema="release-container-schema.yaml"
             echo "INFO: Fetching schema $release_schema"
-            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            wget -q "${GLOBAL_JJB_URL}/schema/${release_schema}"
             verify_schema
         fi
         set_variables_container
@@ -743,7 +750,7 @@ case $DISTRIBUTION_TYPE in
         if $USE_RELEASE_FILE ; then
             release_schema="release-schema.yaml"
             echo "INFO: Fetching schema $release_schema"
-            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/$release_schema
+            wget -q "${GLOBAL_JJB_URL}/schema/$release_schema"
             verify_schema
         fi
         set_variables_maven
@@ -757,7 +764,7 @@ case $DISTRIBUTION_TYPE in
             release_schema="release-packagecloud-schema.yaml"
             packagecloud_account=$(cat "$ACCOUNT_NAME_FILE")
             echo "INFO: Fetching schema $release_schema"
-            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            wget -q "${GLOBAL_JJB_URL}/schema/${release_schema}"
             verify_schema
         fi
         set_variables_packagecloud
@@ -775,7 +782,7 @@ case $DISTRIBUTION_TYPE in
         if $USE_RELEASE_FILE ; then
             release_schema="release-pypi-schema.yaml"
             echo "INFO: Fetching schema $release_schema"
-            wget -q https://raw.githubusercontent.com/lfit/releng-global-jjb/master/schema/${release_schema}
+            wget -q "${GLOBAL_JJB_URL}/schema/${release_schema}"
             verify_schema
         fi
         set_variables_pypi
