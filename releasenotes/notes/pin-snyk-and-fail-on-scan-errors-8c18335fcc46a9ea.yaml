@@ -1,0 +1,22 @@
+---
+security:
+  - |
+    Pinned the Snyk CLI install to ``v1.1306.3`` and verified the download
+    against its published ``.sha256`` before installing it.
+    ``snyk-cli-scanner-run.sh`` previously fetched ``snyk-linux`` from the
+    ``cli/latest`` URL without ``curl -f``, so an HTTP error page could be
+    installed as the scanner binary and executed. Set ``SNYK_VERSION`` to
+    override the pin.
+fixes:
+  - |
+    Fixed the Snyk CLI scanner reporting success when the scan never ran.
+    The script runs under ``#!/bin/bash -l``, which suppresses the Jenkins
+    ``sh -xe`` default, and it set no shell options of its own, so a failed
+    download or a failed ``snyk auth`` did not stop it. The step status came
+    from ``snyk monitor``, which exits ``0`` regardless, leaving the build
+    green. The script now enables ``set -eo pipefail`` from the install
+    onwards and inspects the Snyk exit code explicitly: ``0`` and ``1``
+    (vulnerabilities found) stay advisory and still run ``snyk monitor``,
+    while ``2`` and ``3`` fail the build because the scan did not complete.
+    Whether findings themselves should fail a build is unchanged by this
+    release.
