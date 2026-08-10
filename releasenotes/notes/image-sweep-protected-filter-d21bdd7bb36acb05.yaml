@@ -1,0 +1,12 @@
+---
+fixes:
+  - |
+    Fixed ``update-cloud-images.sh`` discarding every candidate image when
+    run with ``NEW_IMAGE_NAME=all``. Selecting an image required
+    ``Protected=False``, but ``openstack-protect-in-use-images.sh`` protects
+    the images this job selects from, so no candidate ever qualified. The
+    sweep logged ``No candidate image found`` for every image type and
+    updated nothing, which is why image pins went stale and had to be raised
+    by hand. The query no longer filters on ``Protected`` and matches the
+    image type anchored at the start of the name, so the newest image by
+    name wins as the surrounding code already intended.
