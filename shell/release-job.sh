@@ -531,9 +531,11 @@ container_release_file(){
         echo "$name"
         echo "$version"
         echo "INFO: Merge will release $name $version as $VERSION"
-        curl -O -L "https://github.com/sigstore/cosign/releases/latest/download/cosign-linux-amd64"
-        sudo mv cosign-linux-amd64 /usr/local/bin/cosign
-        sudo chmod +x /usr/local/bin/cosign
+        COSIGN_VERSION="${COSIGN_VERSION:-v3.1.3}"
+        curl -fsSLO "https://github.com/sigstore/cosign/releases/download/${COSIGN_VERSION}/cosign-linux-amd64"
+        curl -fsSLO "https://github.com/sigstore/cosign/releases/download/${COSIGN_VERSION}/cosign_checksums.txt"
+        grep " cosign-linux-amd64$" cosign_checksums.txt | sha256sum -c -
+        sudo install -m 0755 cosign-linux-amd64 /usr/local/bin/cosign
         # Attempt to pull from releases registry to see if the image has been released.
         if docker pull "$CONTAINER_PUSH_REGISTRY"/"$lfn_umbrella"/"$name":"$VERSION"; then
             echo "INFO: $VERSION is already released for image $name, checking signature..."
