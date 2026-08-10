@@ -1,0 +1,14 @@
+---
+security:
+  - |
+    Pinned the ``cosign`` install used by the container release path to
+    ``v3.1.3`` and verified the download against the published
+    ``cosign_checksums.txt`` before installing it. ``release-job.sh``
+    previously fetched ``cosign-linux-amd64`` from the ``releases/latest``
+    URL with no integrity check and installed it to ``/usr/local/bin`` as
+    root, on jobs that hold artifact signing keys. An upstream retag or a
+    corrupted transfer could therefore change the binary that signs
+    released artifacts. Set ``COSIGN_VERSION`` to override the pin. The
+    script already runs under ``set -eu -o pipefail``, so a checksum
+    mismatch now aborts the release instead of signing with an unverified
+    binary.
