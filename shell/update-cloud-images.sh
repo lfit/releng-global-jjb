@@ -53,15 +53,22 @@ while read -r line ; do
         # Sort by name so the newest timestamp wins regardless of the order
         # the image API happens to return rows in.
         #
+        # This used to also require Protected=False, which silently disabled
+        # the whole sweep: openstack-protect-in-use-images.sh protects the
+        # images this job selects from, so every candidate is Protected=True
+        # and the filter matched nothing. That is why image pins went stale
+        # and had to be bumped by hand.
+        #
         # ponytail: name order is the only signal available here. Every ZZCI
         # image carries the same ci_managed=yes metadata and the same tenant
         # owner, so this sweep cannot tell an image built by this project's
         # packer job from one published by anyone else sharing the tenant.
         # Filter on the build_url image property once enough images carry the
-        # stamp that common-packer writes.
+        # stamp that common-packer writes. Until then the build_url reported
+        # below is what a reviewer checks before approving the patch.
         new_image=$(openstack image list --long --sort name:desc \
-            -f value -c Name -c Protected \
-            | grep "${image_type}.*False" | head -n1 | sed 's/ False//')      \
+            -f value -c Name \
+            | grep "^${image_type} - " | head -n1)                            \
             || true
     fi
     if [[ -z $new_image ]]; then
