@@ -11,6 +11,8 @@
 # Scans OpenStack for orphaned servers
 echo "---> Orphaned servers"
 
+set -eu -o pipefail
+
 os_cloud="${OS_CLOUD:-vex}"
 jenkins_urls="${JENKINS_URLS:-}"
 
