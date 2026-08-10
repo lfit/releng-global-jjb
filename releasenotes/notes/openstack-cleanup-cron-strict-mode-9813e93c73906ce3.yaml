@@ -1,0 +1,13 @@
+---
+fixes:
+  - |
+    Added ``set -eu -o pipefail`` to ``openstack-cleanup-orphaned-servers.sh``,
+    ``openstack-cleanup-orphaned-stacks.sh`` and
+    ``openstack-cleanup-orphaned-k8s-clusters.sh``. These three ran with no
+    error handling while their siblings in the same job,
+    ``openstack-cleanup-orphaned-ports.sh`` and
+    ``openstack-cleanup-orphaned-volumes.sh``, already set it. Each script is
+    a separate shell step carrying its own ``#!/bin/bash -l`` shebang, which
+    suppresses the Jenkins ``sh -xe`` default, so nothing else supplied it.
+    The jobs therefore continued past failed OpenStack calls and reported
+    success, hiding cleanup that never happened.
