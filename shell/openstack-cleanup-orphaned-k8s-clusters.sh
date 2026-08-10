@@ -11,6 +11,8 @@
 # Scans OpenStack for orphaned COE clusters
 echo "---> Orphaned k8s clusters"
 
+set -eu -o pipefail
+
 os_cloud="${OS_CLOUD:-vex}"
 jenkins_urls="${JENKINS_URLS:-}"
 
