@@ -1,0 +1,30 @@
+---
+fixes:
+  - |
+    ``jenkins-configure-clouds.sh`` now falls back to ``cloud.cfg`` for
+    ``NUM_EXECUTORS``, ``RETENTION_TIME`` and ``START_TIMEOUT`` when a minion
+    template does not set them. The template documentation states that
+    parameters left undefined inherit the ones defined in the default clouds
+    configuration, but these three were read only from the template file with
+    a hardcoded fallback of ``1``, ``0`` and ``600000``, so a value set in
+    ``cloud.cfg`` was silently discarded and every template emitted the
+    hardcoded value instead. ``USER_DATA_ID`` and ``KEY_PAIR_NAME`` already
+    read ``cloud.cfg`` this way and are unchanged.
+
+    The values are emitted into the generated ``SlaveOptions``, where the
+    OpenStack Cloud plugin only inherits an entry that is ``null``
+    (``SlaveOptions.override`` keeps the base value only when the override is
+    ``null``), so a hardcoded number always won over the cloud default and no
+    plugin level inheritance could correct it.
+
+    Deployments that do not set these keys in ``cloud.cfg`` are unaffected:
+    the fallbacks are unchanged, so the resolved values stay ``1``, ``0`` and
+    ``600000``. A template that sets a key continues to win over ``cloud.cfg``.
+
+    Also documents what ``RETENTION_TIME=0`` means. It is not an idle timeout
+    of zero minutes: the plugin treats it as single use, marking the minion
+    for deletion once its first task completes and refusing further work after
+    the second. Paired with ``INSTANCE_CAP=1`` that can stall a label, since a
+    minion pending deletion is removed only once all of its executors are idle
+    and it counts against the cap until then, so no replacement is provisioned
+    in the meantime.

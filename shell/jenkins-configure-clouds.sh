@@ -226,16 +226,19 @@ get_minion_options() {
     floating_ip_pool=$(get_cfg "$cfg_file" FLOATING_IP_POOL "")
     security_groups=$(get_cfg "$cfg_file" SECURITY_GROUPS "default")
     availability_zone=$(get_cfg "$cfg_file" AVAILABILITY_ZONE "")
-    start_timeout=$(get_cfg "$cfg_file" START_TIMEOUT "600000")
+    st_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" START_TIMEOUT "600000")"
+    start_timeout=$(get_cfg "$cfg_file" START_TIMEOUT "$st_default")
     kpn_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" KEY_PAIR_NAME "jenkins-ssh")"
     key_pair_name=$(get_cfg "$cfg_file" KEY_PAIR_NAME "$kpn_default")
-    num_executors=$(get_cfg "$cfg_file" NUM_EXECUTORS "1")
+    ne_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" NUM_EXECUTORS "1")"
+    num_executors=$(get_cfg "$cfg_file" NUM_EXECUTORS "$ne_default")
     jvm_options=$(get_cfg "$cfg_file" JVM_OPTIONS "")
     fs_root=$(get_cfg "$cfg_file" FS_ROOT "/w")
     connection_type=$(get_cfg "$cfg_file" CONNECTION_TYPE "SSH")
     launcher_factory=$(get_launcher_factory "$connection_type")
     node_properties=$(get_cfg "$cfg_file" NODE_PROPERTIES, "null")
-    retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "0")
+    rt_default="$(get_cfg "$(dirname "$cfg_file")/cloud.cfg" RETENTION_TIME "0")"
+    retention_time=$(get_cfg "$cfg_file" RETENTION_TIME "$rt_default")
     config_drive=$(get_cfg "$cfg_file" CONFIG_DRIVE, "null")
 
 

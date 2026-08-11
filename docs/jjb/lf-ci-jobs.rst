@@ -273,7 +273,13 @@ configuration in the format ``KEY=value``.
     :NODE_PROPERTIES: Node properties. (default: null)
     :RETENTION_TIME: Number of minutes to wait for an idle minion before
         removing it from the system. If set to -1, the minion will stick around
-        forever. (default: 0)
+        forever. If set to 0, the minion is single use: the OpenStack Cloud
+        plugin marks it for deletion as soon as its first task finishes and
+        stops accepting work after the second, rather than applying any idle
+        timer. Combined with an INSTANCE_CAP of 1 that can stall a label. The
+        plugin drops such a minion only once every executor on it falls idle,
+        and counts it against the cap until then, leaving no capacity for a
+        replacement. (default: 0)
     :CONNECTION_TYPE: The connection type for Jenkins to connect to the build
         minion. Valid options: JNLP, SSH. (default: "SSH")
     :CONFIG_TYPE: Configuration drive. (default: null)
