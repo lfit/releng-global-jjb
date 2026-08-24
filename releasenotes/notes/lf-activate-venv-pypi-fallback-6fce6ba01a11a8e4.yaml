@@ -1,0 +1,24 @@
+---
+fixes:
+  - |
+    ``lf-activate-venv()`` now retries against upstream PyPI when the PyPI
+    index configured on the build agent is unavailable. Agents ship an
+    ``index-url`` in ``~/.config/pip/pip.conf`` that points at an internal
+    mirror, and while that mirror is unreachable every package resolves to
+    ``No matching distribution found``, so ``python-tools-install.sh`` fails
+    in the pre-build step and the job never reaches its real build.
+
+    The existing recovery path retried up to five times, but each retry used
+    the same index, so none of them could resolve the failure. The
+    ``--trusted-host pypi.org`` options it passed had no effect either, since
+    ``pip`` contacts only the configured mirror and never reaches
+    ``pypi.org``. Those attempts are replaced by a single retry against
+    ``https://pypi.org/simple``, which is the only fallback that changes the
+    outcome.
+
+    The retry is shared by the base package install and the caller supplied
+    package list through a new ``lf-venv-pip-install()`` helper, so a mirror
+    outage no longer stops either one. Proxy settings and trusted hosts are
+    still applied on the retry. When both the mirror and upstream PyPI fail
+    the error now says so, instead of reporting a network, firewall or DNS
+    problem that may not exist.

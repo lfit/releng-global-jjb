@@ -46,6 +46,48 @@ lf-echo-stderr () {
 ################################################################################
 #
 # NAME
+#       lf-venv-pip-install
+#
+# SYNOPSIS
+#   source ~/lf-env.sh
+#
+#   lf-venv-pip-install "$lf_venv/bin/python3" $pip_opts virtualenv
+#
+# DESCRIPTION
+#   Install packages with 'pip' into the venv belonging to the python
+#   interpreter passed as the first argument. All remaining arguments are
+#   handed to 'pip install' unmodified.
+#
+#   Build agents set an 'index-url' in ~/.config/pip/pip.conf that points at
+#   an internal PyPI mirror. While that mirror is unreachable every package
+#   resolves to "No matching distribution found", and retrying against the
+#   same index cannot succeed. This function therefore retries once against
+#   upstream PyPI before giving up.
+#
+# RETURN VALUE
+#   OK: 0
+#   Fail: 1
+#
+################################################################################
+
+lf-venv-pip-install () {
+    local venv_python="$1"; shift
+    local upstream="https://pypi.org/simple"
+
+    if "$venv_python" -m pip install "$@"; then
+        return 0
+    fi
+
+    # The only fallback worth attempting is a different index: a mirror that
+    # is down fails identically no matter how many times it is retried.
+    lf-echo-stderr "${FUNCNAME[0]}(): WARNING: install failed from the" \
+        "configured index, retrying against $upstream"
+    "$venv_python" -m pip install --index-url "$upstream" "$@"
+}
+
+################################################################################
+#
+# NAME
 #       lf-boolean
 #
 # SYNOPSIS
@@ -264,49 +306,13 @@ lf-activate-venv () {
             fi
         fi
 
-        # First, try to install with enhanced options
-        echo "${FUNCNAME[0]}(): INFO: Attempting to install with network-safe options..."
         # shellcheck disable=SC2086
-        if ! "$lf_venv/bin/python3" -m pip install $pip_opts \
+        if ! lf-venv-pip-install "$lf_venv/bin/python3" $pip_opts \
                         pip 'setuptools<66' virtualenv; then
-
-            echo "${FUNCNAME[0]}(): WARNING: Initial install failed, trying fallback options..."
-
-            # Fallback 1: Try with verbose output for debugging
-            echo "${FUNCNAME[0]}(): INFO: Trying with verbose output for debugging..."
-            if ! "$lf_venv/bin/python3" -m pip install --verbose --trusted-host pypi.org \
-                            --trusted-host files.pythonhosted.org \
-                            pip 'setuptools<66' virtualenv; then
-
-                # Fallback 2: Try installing packages one by one
-                echo "${FUNCNAME[0]}(): WARNING: Batch install failed, trying individual packages..."
-
-                if ! "$lf_venv/bin/python3" -m pip install --trusted-host pypi.org \
-                                --trusted-host files.pythonhosted.org pip; then
-                    lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Cannot install pip - network connectivity issue"
-                    lf-echo-stderr "This suggests a firewall, proxy, or DNS resolution problem"
-                    lf-echo-stderr "Contact your network administrator or check proxy settings"
-                    return 1
-                fi
-
-                if ! "$lf_venv/bin/python3" -m pip install --trusted-host pypi.org \
-                                --trusted-host files.pythonhosted.org 'setuptools<66'; then
-                    lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Cannot install setuptools"
-                    return 1
-                fi
-
-                if ! "$lf_venv/bin/python3" -m pip install --trusted-host pypi.org \
-                                --trusted-host files.pythonhosted.org virtualenv; then
-                    lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Cannot install virtualenv"
-                    return 1
-                fi
-
-                echo "${FUNCNAME[0]}(): INFO: Individual package installation succeeded"
-            else
-                echo "${FUNCNAME[0]}(): INFO: Fallback install succeeded"
-            fi
-        else
-            echo "${FUNCNAME[0]}(): INFO: Base packages installed successfully"
+            lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Cannot install base packages"
+            lf-echo-stderr "The configured PyPI index and upstream PyPI both failed;" \
+                "check the PyPI mirror, firewall, proxy and DNS settings"
+            return 1
         fi
 
         # Continue with the rest of the package installation
@@ -316,8 +322,7 @@ lf-activate-venv () {
             echo "${FUNCNAME[0]}(): INFO: Installing additional packages: $pkg_list"
             # $pkg_list is expected to be unquoted
             # shellcheck disable=SC2086
-            # shellcheck disable=SC2086
-            if ! "$lf_venv/bin/python3" -m pip install $pip_opts \
+            if ! lf-venv-pip-install "$lf_venv/bin/python3" $pip_opts \
                         --upgrade-strategy eager $pkg_list; then
                 lf-echo-stderr "${FUNCNAME[0]}(): ERROR: Failed to install packages: $pkg_list"
                 return 1
