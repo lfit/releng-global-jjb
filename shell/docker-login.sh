@@ -52,13 +52,26 @@ version_lt() {
 }
 
 # Execute the credential lookup and set
+#   0 : credentials found, USER and PASS are set
+#   1 : registry is in the settings file but lacks a username or password
+#   2 : registry is absent from the settings file, caller should skip it
 set_creds() {
     set +x  # Ensure that no other scripts add `set -x` and print passwords
     echo "$1"
+    # An XPath that matches nothing exits non-zero and prints nothing. This
+    # step is enabled purely by a `-docker-` build node label, so jobs that
+    # never publish containers reach here with a settings file that has no
+    # entry for this registry. Without `|| true`, `set -e` aborts the script
+    # here and the job fails with no diagnostic at all.
     CREDENTIAL=$(xmlstarlet sel -N "x=http://maven.apache.org/SETTINGS/1.0.0" \
         -t -m "/x:settings/x:servers/x:server[starts-with(x:id, '${1}')]" \
         -v x:username -o ":" -v x:password \
-        "$SETTINGS_FILE")
+        "$SETTINGS_FILE" || true)
+
+    if [ -z "$CREDENTIAL" ]; then
+        echo "INFO: No credentials for $1 in the settings file, skipping login"
+        return 2
+    fi
 
     USER=$(echo "$CREDENTIAL" | cut -f1 -d:)
     PASS=$(echo "$CREDENTIAL" | cut -f2 -d:)
@@ -98,19 +111,31 @@ if [ "${DOCKER_REGISTRY:-none}" != 'none' ]; then
 
         # docker login requests an email address if nothing is passed to it
         # Nexus, however, does not need this and ignores the value
-        set_creds "$REGISTRY"
-        do_login "$REGISTRY" none
+        rc=0
+        set_creds "$REGISTRY" || rc="$?"
+        case "$rc" in
+            0) do_login "$REGISTRY" none ;;
+            2) continue ;;
+            *) exit "$rc" ;;
+        esac
     done
 fi
 
 # Login to docker.io after determining if email is needed.
 if [ "${DOCKERHUB_REGISTRY:-none}" != 'none' ]; then
-    set_creds "$DOCKERHUB_REGISTRY"
-    if [ "${DOCKERHUB_EMAIL:-none}" != 'none' ]; then
-        do_login "$DOCKERHUB_REGISTRY" "$DOCKERHUB_EMAIL"
-    else
-        do_login "$DOCKERHUB_REGISTRY" none
-    fi
+    rc=0
+    set_creds "$DOCKERHUB_REGISTRY" || rc="$?"
+    case "$rc" in
+        0)
+            if [ "${DOCKERHUB_EMAIL:-none}" != 'none' ]; then
+                do_login "$DOCKERHUB_REGISTRY" "$DOCKERHUB_EMAIL"
+            else
+                do_login "$DOCKERHUB_REGISTRY" none
+            fi
+            ;;
+        2) ;;
+        *) exit "$rc" ;;
+    esac
 fi
 
 echo "---> docker-login.sh ends"
