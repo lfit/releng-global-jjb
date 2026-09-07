@@ -27,6 +27,19 @@ source ~/lf-env.sh
 
 lf-activate-venv python-openstackclient
 
+# Number of newest images per type to inspect for provenance. Every check
+# costs an API call, and the image this job wants is the newest one this
+# Jenkins built, which sorts to the top.
+IMAGE_CANDIDATE_LIMIT="${IMAGE_CANDIDATE_LIMIT:-10}"
+
+# Report which CI build produced an image. common-packer stamps this from the
+# Jenkins BUILD_URL. Images published before that stamping return an empty
+# string, as do images built outside Jenkins.
+image_build_url() {
+    openstack image show -f value -c properties "$1" 2>/dev/null \
+        | grep -o "'build_url': '[^']*'" | cut -d"'" -f4 || true
+}
+
 mkdir -p "$WORKSPACE/archives"
 echo "INFO: List of images in use on the source repository:"
 grep -Er '(_system_image:|IMAGE_NAME)'                       \
@@ -59,17 +72,45 @@ while read -r line ; do
         # and the filter matched nothing. That is why image pins went stale
         # and had to be bumped by hand.
         #
-        # ponytail: name order is the only signal available here. Every ZZCI
-        # image carries the same ci_managed=yes metadata and the same tenant
-        # owner, so this sweep cannot tell an image built by this project's
-        # packer job from one published by anyone else sharing the tenant.
-        # Filter on the build_url image property once enough images carry the
-        # stamp that common-packer writes. Until then the build_url reported
-        # below is what a reviewer checks before approving the patch.
-        new_image=$(openstack image list --long --sort name:desc \
+        # Name order alone cannot tell an image built by this project's packer
+        # job from one published by anyone else sharing the tenant: every ZZCI
+        # image carries the same ci_managed=yes metadata and the same owner.
+        # Adopting a foreign image that merely sorts newer has repeatedly
+        # reverted image pins that were corrected by hand. common-packer
+        # stamps build_url from the Jenkins BUILD_URL, so a candidate whose
+        # build_url starts with $JENKINS_URL provably came from this instance.
+        #
+        # Images published before that stamping carry no build_url at all.
+        # While no candidate for this image type is stamped the sweep keeps
+        # its previous name-only behaviour, so projects that have not rebuilt
+        # yet keep updating. Once any candidate is stamped the stamp becomes
+        # mandatory and a foreign image can no longer win.
+        candidates=$(openstack image list --long --sort name:desc \
             -f value -c Name \
-            | grep "^${image_type} - " | head -n1)                            \
+            | grep "^${image_type} - " | head -n "$IMAGE_CANDIDATE_LIMIT")     \
             || true
+
+        new_image=""
+        stamped_seen="false"
+        while read -r candidate; do
+            [[ -z $candidate ]] && continue
+            candidate_url=$(image_build_url "$candidate")
+            [[ -z $candidate_url ]] && continue
+            stamped_seen="true"
+            if [[ -n ${JENKINS_URL:-} && $candidate_url == "${JENKINS_URL}"* ]]
+            then
+                new_image="$candidate"
+                break
+            fi
+            echo "INFO: Skipping $candidate, built elsewhere: $candidate_url"
+        done <<< "$candidates"
+
+        if [[ -z $new_image ]] && [[ $stamped_seen == "false" ]]; then
+            new_image=$(printf '%s\n' "$candidates" | head -n1)
+            echo "WARNING: No candidate for $image_type carries a build_url" \
+                "stamp, falling back to name order. Provenance stays" \
+                "unverified until this image type is rebuilt."
+        fi
     fi
     if [[ -z $new_image ]]; then
         echo "INFO: No candidate image found for: $image_type"
@@ -80,9 +121,7 @@ while read -r line ; do
     # Report which build produced the candidate so the Gerrit reviewer can
     # check its provenance before approving the bump. Images published before
     # common-packer started stamping build_url report 'unknown'.
-    image_props=$(openstack image show -f value -c properties "$new_image" || true)
-    build_url=$(printf '%s' "$image_props" \
-        | grep -o "'build_url': '[^']*'" | cut -d"'" -f4 || true)
+    build_url=$(image_build_url "$new_image")
     echo "INFO: Candidate image: $new_image"
     echo "INFO: Built by: ${build_url:-unknown}"
 

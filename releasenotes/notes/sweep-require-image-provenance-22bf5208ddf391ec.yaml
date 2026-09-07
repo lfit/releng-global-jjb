@@ -1,0 +1,32 @@
+---
+fixes:
+  - |
+    ``update-cloud-images.sh`` now prefers an image this Jenkins instance
+    built when the bulk sweep updates every image type at once. The sweep
+    matched candidates on name and took the most recent timestamp. Images
+    published by different projects into a shared tenant follow the same
+    naming scheme and carry the same ``ci_managed`` metadata and owner, so
+    name order alone could not tell them apart, and the sweep adopted images
+    another project had built. Where a pin had been corrected by hand, the
+    next sweep reverted it.
+
+    ``common-packer`` records the Jenkins ``BUILD_URL`` in the ``build_url``
+    image property, so an image whose ``build_url`` begins with
+    ``JENKINS_URL`` can be attributed to this instance. The sweep now walks
+    candidates newest first and takes the first one carrying that stamp.
+
+    Images built before that property was recorded have no ``build_url`` at
+    all, so requiring it outright would stop the sweep updating any image
+    type until it had been rebuilt. While no candidate for a type carries a
+    stamp the previous name ordered behaviour applies and a warning records
+    that provenance was not verified. Once any candidate for that type is
+    stamped the check becomes binding for it, and an image built elsewhere
+    is passed over rather than adopted, leaving the current pin in place.
+
+    Reading the property costs one API call per candidate, so only the
+    newest ``IMAGE_CANDIDATE_LIMIT`` images per type are examined, ten by
+    default.
+
+    Updates driven by an upstream packer merge job, which name the image
+    through ``NEW_IMAGE_NAME``, do not go through candidate selection and
+    behave as before.
