@@ -1,0 +1,29 @@
+---
+fixes:
+  - |
+    ``docker-login.sh`` now skips a registry that the project settings file
+    does not define, instead of aborting the build. The registry list comes
+    from the ``DOCKER_REGISTRY`` and ``REGISTRY_PORTS`` global variables, so
+    every port is attempted for every job, but a settings file only carries
+    a ``server`` entry for a registry the project actually publishes to.
+
+    For an undefined registry the ``xmlstarlet sel`` lookup matched no node,
+    which prints nothing and exits non-zero. Under ``set -eu -o pipefail``
+    that exit status propagated out of the command substitution and ended
+    the script at the assignment, before the checks that report
+    ``No user provided`` or ``No password provided`` could run, so those
+    branches were unreachable and the job failed with no diagnostic beyond
+    the registry name.
+
+    The lookup now distinguishes three outcomes: credentials found, an entry
+    present but missing a username or password, and no entry at all. Only
+    the middle case is an error, and it now reports which registry and which
+    field is missing. A registry with no entry is skipped with a message.
+
+    This surfaces on release jobs, where the ``docker-login`` step is
+    conditional on the build node label matching ``-docker-`` rather than on
+    whether the job publishes a container. A job placed on a docker capable
+    node for an unrelated reason, such as running a signing container, would
+    run ``docker-login.sh`` against registries it never uses and fail.
+    Projects that do publish containers are unaffected, since their settings
+    files define the registries they push to.
