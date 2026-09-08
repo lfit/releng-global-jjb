@@ -1,0 +1,45 @@
+---
+fixes:
+  - |
+    ``maven-fetch-metadata.sh`` now requests each ``maven-metadata.xml``
+    directly instead of crawling the remote repository with ``wget
+    --recursive``, so seeding no longer depends on directory listings being
+    served.
+
+    The recursive crawl walked the HTML index pages Nexus renders for a
+    repository. A repository with ``browseable`` set to false answers those
+    paths with 404 while continuing to serve artifacts, so the crawl
+    returned nothing. The failure was silent by design, since a 404 is
+    expected for a project that has never published, and the job stayed
+    green.
+
+    Nothing seeded means Maven has no prior metadata to merge. Builds deploy
+    to a fresh directory through ``-DaltDeploymentRepository``, so each build
+    restarted the snapshot ``buildNumber`` at 1 and published a
+    ``<versions>`` list holding only the version just built. Timestamped
+    filenames stay unique, so snapshot resolution keeps working, but version
+    history and any consumer relying on the ``<versions>`` list degrade.
+
+    Coordinates now come from the reactor poms. For every module the script
+    fetches the artifact level ``maven-metadata.xml``, which carries the
+    ``<versions>`` list, and the version level ``maven-metadata.xml``, which
+    carries the snapshot ``buildNumber`` and timestamp. Both are plain GETs
+    against paths built from the coordinates, which Nexus serves whether or
+    not browsing is enabled. A module whose version comes from an unresolved
+    property is skipped, since such a version cannot be mapped to a path.
+
+    Fetching only the reactor coordinates also drops the historical version
+    directories the crawl collected. Maven rewrites metadata only for the
+    artifacts a build deploys, so that metadata was copied to
+    ``m2repo-backup``, diffed as unchanged by ``maven-deploy.sh`` and
+    discarded. On a 43 module project the script now retrieves 68 files in
+    90 seconds where the crawl retrieved 339 in 361 seconds, and the 68
+    files common to both are byte identical.
+
+    The script now reports how many files it seeded, and warns when it seeds
+    none for a project that has modules to seed. That case is normal for a
+    project publishing for the first time and otherwise means the repository
+    was unreachable, which is the condition that previously passed unnoticed.
+
+    ``NEXUS_CUT_DIRS`` is no longer read. The jobs that export it are
+    unchanged, so no job definition needs updating.
