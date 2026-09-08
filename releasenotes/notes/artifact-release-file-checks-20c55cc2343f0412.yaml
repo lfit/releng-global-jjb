@@ -1,0 +1,20 @@
+---
+fixes:
+  - |
+    ``release-job.sh`` now tests for an already released artifact with an
+    HTTP request. The ``artifact`` distribution type built a release URL and
+    placed it directly in an ``if`` condition, so the shell ran the URL as a
+    command. That always failed, the check always took the branch for an
+    unreleased artifact, and an artifact already present in the releases
+    repository was fetched and prepared again.
+
+  - |
+    ``release-job.sh`` now saves a downloaded artifact with ``wget -O``
+    rather than ``-o``. The lowercase option names a log file, so
+    ``artifacts/`` received wget's own output while the artifact was written
+    to the working directory under its remote name.
+
+  - |
+    ``release-job.sh`` now creates the ``artifacts`` directory with ``mkdir
+    -p``. The script runs under ``set -eu -o pipefail``, so a directory left
+    behind by an earlier run in the same workspace ended the job.

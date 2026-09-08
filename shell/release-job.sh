@@ -481,7 +481,7 @@ tag-git-repo(){
 
 artifact_release_file(){
     echo "INFO: Processing artifact release"
-    mkdir artifacts
+    mkdir -p artifacts
     ORG=$(echo "$NEXUS_URL" | awk -F'.' '{print $2}')
 
     for namequoted in $(yq '.artifacts[].name' "$release_file"); do
@@ -497,11 +497,12 @@ artifact_release_file(){
         echo "$path"
         echo "INFO: Merge will post artifact: $name"
         # Attempt to pull from releases to see if the artifact has been released.
-        if "${NEXUS_URL}"/content/repositories/releases/org/"${ORG}"/"${VERSION}"/"$name"; then
+        release_url="${NEXUS_URL}/content/repositories/releases/org/${ORG}/${VERSION}/${name}"
+        if wget -q --spider "$release_url"; then
             echo "INFO: $name is already released as version:$VERSION, Continuing..."
         else
             echo "INFO: $name not found in releases, release will be prepared. Continuing..."
-            wget "${path}"/"${name}" -o artifacts/"${name}"
+            wget "${path}"/"${name}" -O artifacts/"${name}"
             if [[ "$JOB_NAME" =~ "merge" ]] && [[ "$DRY_RUN" = false ]]; then
                 #lftools sign sigul artifacts
                 # shellcheck disable=SC2261
