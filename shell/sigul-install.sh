@@ -13,7 +13,23 @@ echo "---> sigul-install.sh"
 # Ensure we fail the job if any steps fail.
 set -e -o pipefail
 
-OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+# Detect the OS using /etc/os-release (works on all modern distros)
+# Falls back to facter for legacy images that still have it installed
+if [ -f /etc/os-release ]; then
+    # shellcheck disable=SC1091
+    . /etc/os-release
+    OS="${ID:-}"
+    # facter spelled RHEL "redhat", keep that spelling for the check below
+    if [ "$OS" = "rhel" ]; then
+        OS="redhat"
+    fi
+elif command -v facter > /dev/null 2>&1; then
+    OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+else
+    echo "ERROR: Unable to detect OS: /etc/os-release not found and facter not installed"
+    exit 1
+fi
+
 if ! [[ "${OS}" =~ ^(fedora|centos|redhat) ]]; then
     echo "INFO: Skip step, sigul install not available on platform ${OS}"
     exit 0

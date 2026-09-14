@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    Detect the OS from /etc/os-release in sigul-install.sh,
+    sigul-sign-dir.sh and disable-firewall.sh, the last three scripts
+    reading facter directly, with facter kept as the fallback for legacy
+    images. These run on CentOS where facter is still installed, so they
+    were not failing, but they would break the same way as the post build
+    scripts once signing or an init script lands on Ubuntu 24.04 or newer.
+    The platform gates in all three are unchanged.

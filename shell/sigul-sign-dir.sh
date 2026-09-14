@@ -24,9 +24,28 @@ GLOBAL_JJB_VERSION="${GLOBAL_JJB_VERSION:-master}"
 
 lf-activate-venv --python python3 lftools
 
-OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
-OS_DIST_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
-OS_RELEASE=$(facter operatingsystemrelease | tr '[:upper:]' '[:lower:]')
+# Detect the OS using /etc/os-release (works on all modern distros)
+# Falls back to facter for legacy images that still have it installed.
+# VERSION_ID carries what both facter facts reported on the platforms
+# below: "8" on CentOS 8 and "22.04" on Ubuntu.
+if [ -f /etc/os-release ]; then
+    # shellcheck disable=SC1091
+    . /etc/os-release
+    OS="${ID:-}"
+    # facter spelled RHEL "redhat", keep that spelling for the checks below
+    if [ "$OS" = "rhel" ]; then
+        OS="redhat"
+    fi
+    OS_DIST_RELEASE="${VERSION_ID:-}"
+    OS_RELEASE="${VERSION_ID:-}"
+elif command -v facter > /dev/null 2>&1; then
+    OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+    OS_DIST_RELEASE=$(facter lsbdistrelease | tr '[:upper:]' '[:lower:]')
+    OS_RELEASE=$(facter operatingsystemrelease | tr '[:upper:]' '[:lower:]')
+else
+    echo "ERROR: Unable to detect OS: /etc/os-release not found and facter not installed"
+    exit 1
+fi
 if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
    [[ "$OS_RELEASE" =~ ^(20.04|22.04|24.04)$ && "${OS}" =~ ^(ubuntu|debian)$ ]]; then
     # Get Dockerfile and entrypoint scripts to build the docker image.
