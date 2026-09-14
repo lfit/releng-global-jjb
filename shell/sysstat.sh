@@ -16,10 +16,28 @@ if awk -F/ '$2 == "docker"' /proc/self/cgroup | read -r; then
 fi
 
 
-OS=$(facter operatingsystem)
+# Detect the OS using /etc/os-release (works on all modern distros)
+# Falls back to facter for legacy images that still have it installed
+if [ -f /etc/os-release ]; then
+    # shellcheck disable=SC1091
+    . /etc/os-release
+    OS="${ID:-}"
+    os_release="${VERSION_ID:-}"
+    # facter spelled RHEL "redhat", keep that spelling for the cases below
+    if [ "$OS" = "rhel" ]; then
+        OS="redhat"
+    fi
+elif command -v facter > /dev/null 2>&1; then
+    OS=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+    os_release=$(facter operatingsystemrelease)
+else
+    # DON'T fail build if the OS cannot be determined.
+    echo "WARN: Unable to detect OS, skipping sar report collection"
+    exit 0
+fi
+
 case "$OS" in
-    Ubuntu)
-        os_release=$(facter operatingsystemrelease)
+    ubuntu)
         case $os_release in
             18.04|20.04|22.04|24.04)
                 if ! systemctl status sysstat > /dev/null; then
@@ -33,7 +51,7 @@ case "$OS" in
         esac
         SYSSTAT_PATH="/var/log/sysstat"
     ;;
-    CentOS|RedHat)
+    centos|redhat)
         SYSSTAT_PATH="/var/log/sa"
     ;;
     *)

@@ -25,7 +25,13 @@ copy_ssh_keys () {
 
     for i in $(seq 1 $RETRIES); do
         if ssh-copy-id -i /home/jenkins/.ssh/id_rsa.pub "jenkins@${ip_address}" > /dev/null 2>&1; then
-            ssh "jenkins@${ip_address}" 'echo "$(facter ipaddress_eth0) $(/bin/hostname)" | sudo tee -a /etc/hosts'
+            # The IP is already known here, no need to ask the remote host
+            # for it (facter is absent on Ubuntu 24.04 and newer images,
+            # which silently wrote an /etc/hosts entry with no address).
+            # Expanding ip_address client side is deliberate, only the
+            # hostname is resolved on the remote end.
+            # shellcheck disable=SC2029
+            ssh "jenkins@${ip_address}" "echo \"${ip_address} \$(/bin/hostname)\" | sudo tee -a /etc/hosts"
             echo "Successfully copied public keys to slave ${ip_address}"
             break
         elif [ "$i" -eq $RETRIES ]; then

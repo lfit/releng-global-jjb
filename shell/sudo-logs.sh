@@ -38,7 +38,22 @@ copy_log () {
 }    # End copy_log()
 
 echo "Archiving 'sudo' log.."
-os=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+# Detect the OS using /etc/os-release (works on all modern distros)
+# Falls back to facter for legacy images that still have it installed
+if [ -f /etc/os-release ]; then
+    # shellcheck disable=SC1091
+    . /etc/os-release
+    os="${ID:-}"
+    # facter spelled RHEL "redhat", keep that spelling for the cases below
+    if [ "$os" = "rhel" ]; then
+        os="redhat"
+    fi
+elif command -v facter > /dev/null 2>&1; then
+    os=$(facter operatingsystem | tr '[:upper:]' '[:lower:]')
+else
+    echo "ERROR: Unable to detect OS: /etc/os-release not found and facter not installed"
+    exit 1
+fi
 case $os in
     fedora|centos|redhat) sudo_log=/var/log/secure   ;;
     ubuntu|debian)        sudo_log=/var/log/auth.log ;;

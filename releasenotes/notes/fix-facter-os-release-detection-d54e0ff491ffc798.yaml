@@ -1,0 +1,17 @@
+---
+fixes:
+  - |
+    Replace the remaining facter dependencies with /etc/os-release for OS
+    detection in package-listing.sh, sudo-logs.sh, sysstat.sh and
+    update-java-alternatives.sh. facter is absent on Ubuntu 24.04 and newer
+    images, because the generic puppet apt component ships no puppet-agent
+    for those releases, which leaves /usr/bin/facter a dangling symlink.
+    Under "set -e" the failed lookup aborted package-listing.sh and
+    sudo-logs.sh with exit 127, and the PostBuildScript plugin turned that
+    into UNSTABLE, so jobs reported unstable even when every test passed.
+    Falls back to facter on legacy images that still have it.
+  - |
+    Stop calling facter in openstack-stack-copy-ssh-keys.sh. The address is
+    already known at that point, so the remote lookup was redundant. With
+    facter missing it appended an /etc/hosts entry that held a hostname and
+    no address.

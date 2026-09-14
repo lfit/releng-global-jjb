@@ -16,7 +16,23 @@ set -eu -o pipefail
 
 set -x # Trace commands for this script to make debugging easier
 
-OS_FAMILY=$(facter osfamily | tr '[:upper:]' '[:lower:]')
+# Detect the OS family using /etc/os-release (works on all modern distros)
+# Falls back to facter for legacy images that still have it installed
+if [ -f /etc/os-release ]; then
+    # shellcheck disable=SC1091
+    . /etc/os-release
+    case " ${ID:-} ${ID_LIKE:-} " in
+        *" debian "*) OS_FAMILY="debian" ;;
+        *" rhel "* | *" fedora "*) OS_FAMILY="redhat" ;;
+        *" suse "*) OS_FAMILY="suse" ;;
+        *) OS_FAMILY="${ID:-}" ;;
+    esac
+elif command -v facter > /dev/null 2>&1; then
+    OS_FAMILY=$(facter osfamily | tr '[:upper:]' '[:lower:]')
+else
+    echo "ERROR: Unable to detect OS: /etc/os-release not found and facter not installed"
+    exit 1
+fi
 
 # Capture the CI WORKSPACE safely in the case that it doesn't exist
 workspace="${WORKSPACE:-}"
