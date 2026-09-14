@@ -10,7 +10,11 @@
 ##############################################################################
 echo "---> sudo-logs.sh"
 
+# Stop at the first error, but never change the build result. This script
+# only collects sudo logs for the archive, so a failure here says nothing
+# about the job under test.
 set -eu -o pipefail -o noglob
+trap 'exit 0' EXIT
 
 # Copy/Generate 'sudo' log and copy to archive directory
 copy_log () {

@@ -11,8 +11,11 @@
 
 echo "---> package-listing.sh"
 
-# Ensure we fail the job if any steps fail
+# Stop at the first error, but never change the build result. This script
+# only collects a package listing for the archive, so a failure here says
+# nothing about the job under test.
 set -eu -o pipefail
+trap 'exit 0' EXIT
 
 set -x # Trace commands for this script to make debugging easier
 

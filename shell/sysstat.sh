@@ -39,14 +39,14 @@ fi
 case "$OS" in
     ubuntu)
         case $os_release in
-            18.04|20.04|22.04|24.04)
+            18.04|20.04|22.04|24.04|25.04)
                 if ! systemctl status sysstat > /dev/null; then
                     exit 0
                 fi
                 ;;
             *)
-                echo "ERROR: Unknown Release: Ubuntu $os_release"
-                exit 1
+                echo "WARN: Unknown Release: Ubuntu $os_release"
+                exit 0
                 ;;
         esac
         SYSSTAT_PATH="/var/log/sysstat"

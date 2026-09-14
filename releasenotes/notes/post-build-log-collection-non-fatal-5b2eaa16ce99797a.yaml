@@ -1,0 +1,14 @@
+---
+fixes:
+  - |
+    Stop post build log collection from marking jobs unstable.
+    package-listing.sh and sudo-logs.sh run under "set -e", so any failure
+    inside them ended the script with a non-zero status, and the
+    PostBuildScript plugin turns a failed post build step into UNSTABLE.
+    These scripts only gather diagnostics for the archive, so they now trap
+    EXIT and always report success. They still stop at the first error and
+    still log it, so the console trace stays intact.
+  - |
+    sysstat.sh exited 1 on an unrecognised Ubuntu release, which contradicts
+    its own contract of never failing a build. It now warns and exits 0, and
+    recognises 25.04.
