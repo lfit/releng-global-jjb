@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       - name: Get tag
         id: tag
-        uses: devops-actions/action-get-tag@7121a0d02be4cc926d0866b83de2a62688199687 # v1.0.4
+        uses: devops-actions/action-get-tag@72a6a37ed663481e5b8f89c6ad4820cd572def8e # v1.0.5
       - name: Convert tag
         run: >-
           VER=$(echo "${{ steps.tag.outputs.tag }}" | tr . -)
