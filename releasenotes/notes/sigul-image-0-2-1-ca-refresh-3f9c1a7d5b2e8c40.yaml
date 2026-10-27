@@ -1,0 +1,6 @@
+---
+security:
+  - |
+    Bump the sigul signing image base to ``lfreleng/sigul:0.2.1``. The
+    previous image inherited a stale root CA bundle from its frozen
+    CentOS 7 base. Version 0.2.1 installs the current Mozilla CA bundle.
