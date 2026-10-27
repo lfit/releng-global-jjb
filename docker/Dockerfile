@@ -9,7 +9,7 @@
 #
 # Pin to the published image by digest; bump when a new sigul image is
 # released (tag kept in the comment for readability).
-FROM lfreleng/sigul:0.1.0@sha256:e8b958a6e5ba3ee6334c0244e9fbe0881248133e97bc77236a176baa5d219cbd
+FROM lfreleng/sigul:0.2.1@sha256:52773d955ce179b5091b2fb495d95fa584e39380083d7c8449b111627fd02753
 SHELL ["/bin/bash", "-c"]
 
 ARG SIGN_DIR="${WORKSPACE}/m2repo"
