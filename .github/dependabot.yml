@@ -16,3 +16,15 @@ updates:
     cooldown:
       default-days: 7
     open-pull-requests-limit: 15
+  - package-ecosystem: "docker"
+    directory: "/docker"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "Chore(docker)"
+    cooldown:
+      default-days: 7
+    groups:
+      docker-deps:
+        patterns:
+          - "*"
