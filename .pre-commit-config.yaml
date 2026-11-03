@@ -96,3 +96,13 @@ repos:
         language: pygrep
         entry: "releng-global-jjb/master/"
         files: '^shell/.*\.sh$'
+
+      - id: shell-tests
+        name: "Shell tests (tests/shell)"
+        description: >
+          Run the shell tests, which check failure paths of lf-env.sh and the
+          job scripts against stub commands, needing no network.
+        language: script
+        entry: tests/shell/run-tests.sh
+        pass_filenames: false
+        files: '^(jenkins-init-scripts/lf-env\.sh|shell/.*\.sh|tests/shell/.*)$'
