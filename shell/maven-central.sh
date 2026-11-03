@@ -17,12 +17,23 @@ set -eux -o pipefail
 
 # shellcheck disable=SC1090
 . ~/lf-env.sh
-
-lf-activate-venv --python python3 lftools
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck disable=SC1090
+    source "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
+fi
 
 MC_TMP_FILE="$(mktemp)"
 echo "Staging in OSSRH for Maven Central"
-lftools deploy nexus-stage "https://oss.sonatype.org" "$profile_id" "$WORKSPACE/m2repo" | tee "$MC_TMP_FILE"
+lftools-uv deploy nexus-stage "https://oss.sonatype.org" "$profile_id" "$WORKSPACE/m2repo" | tee "$MC_TMP_FILE"
 mc_staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$MC_TMP_FILE")
 rm -f "$MC_TMP_FILE"
 

@@ -33,8 +33,19 @@ set +u
 
 # shellcheck disable=SC1090
 . ~/lf-env.sh
-
-lf-activate-venv --python python3 lftools
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck disable=SC1090
+    source "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
+fi
 
 export MAVEN_OPTIONS
 export MAVEN_PARAMS
@@ -45,7 +56,7 @@ mkdir -p "$WORKSPACE/archives"
 while IFS="" read -r file; do
     file_size=$(stat --printf="%s" "${file}")
     echo "Deploy ${file##*/} with ${file_size} bytes."
-    lftools deploy maven-file "$MAVEN_REPO_URL" \
+    lftools-uv deploy maven-file "$MAVEN_REPO_URL" \
                                 "$REPO_ID" \
                                 "$file" \
                                 -b "$MVN" \

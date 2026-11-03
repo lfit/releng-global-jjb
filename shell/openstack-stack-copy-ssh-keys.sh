@@ -59,8 +59,7 @@ copy_ssh_keys () {
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
+lf-activate-venv --python python3 kubernetes \
     python-heatclient \
     python-openstackclient \
     urllib3~=1.26.15

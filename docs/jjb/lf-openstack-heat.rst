@@ -69,7 +69,8 @@ Creates an OpenStack stack as configured by the job. Name pattern of stack is
 ``$SILO-$JOB_NAME-$BUILD_NUMBER``.
 
 Requires ``lf-infra-pre-build`` macro to run first to install the
-``openstack`` and ``lftools`` packages.
+``openstack`` package. The macro runs lftools-uv through the ``lftools-uv``
+function in ``lf-env.sh``.
 
 Requires a Config File Provider configuration for clouds.yaml named
 ``clouds-yaml``.
@@ -95,8 +96,8 @@ lf-stack-delete
 Deletes the stack associated with this job. Name pattern of stack is
 ``$SILO-$JOB_NAME-$BUILD_NUMBER``.
 
-Requires ``lf-infra-pre-build`` macro to run first to install the
-``openstack`` and ``lftools`` packages.
+Runs lftools-uv through the ``lftools-uv`` function in ``lf-env.sh``, which
+installs uv itself when ``lf-infra-pre-build`` has not.
 
 Requires a Config File Provider configuration for clouds.yaml named
 ``clouds-yaml``.
