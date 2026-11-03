@@ -37,9 +37,10 @@ fi
 if [[ ! -f /tmp/pre-build-complete ]]; then
     requirements_file=$(mktemp /tmp/requirements-XXXXXX)
 
-    # Note: To test lftools master branch change the lftools configuration below in
-    #       the requirements file from "lftools[openstack]~=#.##.#" to
-    #       git+https://github.com/lfit/releng-lftools.git#egg=lftools[openstack]
+    # global-jjb's own scripts run lftools-uv, through the lftools-uv function
+    # in lf-env.sh. Legacy lftools is still installed here because scripts in
+    # downstream ci-management repositories call it; remove it once they have
+    # moved to lftools-uv too.
 
     echo "Generating Requirements File"
     cat << 'EOF' > "$requirements_file"
