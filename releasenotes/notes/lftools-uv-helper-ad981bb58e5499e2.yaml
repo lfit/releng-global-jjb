@@ -1,0 +1,23 @@
+---
+features:
+  - |
+    ``lf-env.sh`` provides an ``lftools-uv`` function, which runs a pinned
+    lftools-uv through ``uvx`` in an environment of its own. Nothing is
+    installed into the job's Python or its virtualenvs, so the tool and its
+    dependencies cannot clash with those a project's own build uses.
+
+    ``LFTOOLS_UV_VERSION`` overrides the pinned version, and
+    ``LFTOOLS_UV_PYTHON`` the Python version uvx runs it with, 3.12 by
+    default. uvx downloads that Python when the build agent does not have it,
+    so the agent's own Python version does not matter.
+
+    The function finds ``uvx`` on ``PATH`` or in ``~/.local/bin``, where
+    ``uv-install.sh`` installs it, and installs uv itself if neither has it.
+    Packages come from the ``index-url`` in the build agent's ``pip.conf``,
+    or ``PIP_INDEX_URL``, as they do for pip. While that mirror is
+    unreachable, the function fetches lftools-uv from PyPI instead, as
+    ``lf-venv-pip-install`` does. Only that fetch is retried: the command
+    itself runs once.
+
+    Commands lftools-uv has only in its Click front-end run as
+    ``LEGACY_CLI=1 lftools-uv ...``.

@@ -495,3 +495,100 @@ lf-pyver() {
     echo "${py_version_xyz}"
     return 0
 }
+
+################################################################################
+#
+# NAME
+#   lftools-uv [lftools-uv arguments]...
+#
+# SYNOPSIS
+#   # shellcheck disable=SC1090
+#   source ~/lf-env.sh
+#
+#   lftools-uv deploy nexus-zip "$NEXUS_URL" javadoc "$DEPLOY_PATH" javadoc.zip
+#   or
+#   LEGACY_CLI=1 lftools-uv nexus release --server "$NEXUS_URL" "$REPO"
+#
+# DESCRIPTION
+#   Run lftools-uv through 'uvx', in an environment of its own: nothing is
+#   installed into the job's Python or its virtualenvs, so the tool and its
+#   dependencies cannot clash with a project's own.
+#
+#   The version is pinned: LFTOOLS_UV_VERSION overrides it, and
+#   LFTOOLS_UV_PYTHON the Python version uvx runs it with. uvx downloads that
+#   Python when the build agent does not have it.
+#
+#   uvx is found on PATH or in ~/.local/bin, where uv-install.sh puts it, and
+#   installed with uv-install.sh if neither has it.
+#
+#   Packages come from the 'index-url' a build agent's pip.conf sets, or
+#   PIP_INDEX_URL, else PyPI. While the mirror is unreachable, lftools-uv is
+#   fetched from PyPI instead, as lf-venv-pip-install does for pip. Only that
+#   fetch is retried: once it succeeds the command itself runs exactly once,
+#   offline, from uv's cache. The fetch happens once per shell, which keeps
+#   what it found in _lf_uvx_spec and _lf_uvx_index.
+#
+# RETURN VALUES
+#   The exit status of lftools-uv, or 1 when it cannot be fetched.
+#
+################################################################################
+
+lftools-uv () {
+    local version="${LFTOOLS_UV_VERSION:-0.7.10}"
+    local python="${LFTOOLS_UV_PYTHON:-3.12}"
+    local spec="lftools-uv[openstack]==${version}"
+    local upstream="https://pypi.org/simple"
+    local uvx index
+
+    uvx="$(command -v uvx || true)"
+    if [[ -z $uvx && -x ~/.local/bin/uvx ]]; then
+        uvx=~/.local/bin/uvx
+    fi
+    if [[ -z $uvx ]]; then
+        # As uv-install.sh does, honouring UV_VERSION.
+        local installer
+        installer="$(mktemp /tmp/uv-install-XXXXXX.sh)"
+        lf-echo-stderr "${FUNCNAME[0]}(): uvx not found; installing uv"
+        if wget -nv -O "$installer" \
+                "https://astral.sh/uv/${UV_VERSION:+$UV_VERSION/}install.sh"; then
+            sh "$installer" >&2
+        fi
+        rm -f "$installer"
+        uvx=~/.local/bin/uvx
+        if [[ ! -x $uvx ]]; then
+            lf-echo-stderr "${FUNCNAME[0]}(): ERROR: uvx could not be installed"
+            return 1
+        fi
+    fi
+
+    # Fetch the pinned version once per shell, from the build agent's mirror
+    # or, while that is unreachable, from PyPI; remember which one worked.
+    if [[ ${_lf_uvx_spec:-} != "$spec $python" ]]; then
+        index="${PIP_INDEX_URL:-}"
+        if [[ -z $index && -f ~/.config/pip/pip.conf ]]; then
+            index="$(sed -n 's/^[[:space:]]*index-url[[:space:]]*=[[:space:]]*//p' \
+                ~/.config/pip/pip.conf | head -n 1)"
+        fi
+        index="${index:-$upstream}"
+        if ! "$uvx" --quiet --default-index "$index" --python "$python" \
+                --from "$spec" lftools-uv --version > /dev/null; then
+            if [[ $index == "$upstream" ]]; then
+                lf-echo-stderr "${FUNCNAME[0]}(): ERROR: could not fetch $spec"
+                return 1
+            fi
+            lf-echo-stderr "${FUNCNAME[0]}(): WARNING: could not fetch $spec" \
+                "from $index; retrying against $upstream"
+            index="$upstream"
+            if ! "$uvx" --quiet --default-index "$index" --python "$python" \
+                    --from "$spec" lftools-uv --version > /dev/null; then
+                lf-echo-stderr "${FUNCNAME[0]}(): ERROR: could not fetch $spec"
+                return 1
+            fi
+        fi
+        _lf_uvx_spec="$spec $python"
+        _lf_uvx_index="$index"
+    fi
+
+    "$uvx" --quiet --offline --default-index "$_lf_uvx_index" --python "$python" \
+        --from "$spec" lftools-uv "$@"
+}
