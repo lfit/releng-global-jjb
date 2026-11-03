@@ -10,7 +10,7 @@
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 export REPO_ROOT
-TOOLS="awk bash basename cat chmod cp dirname env grep head jq ln mkdir mktemp rm sed sh tr"
+TOOLS="awk bash basename cat chmod cp diff dirname env find grep head jq ln mkdir mktemp rm sed sh touch tr"
 tests_run=0
 tests_failed=0
 

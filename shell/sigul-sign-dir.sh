@@ -21,8 +21,19 @@ GLOBAL_JJB_VERSION="${GLOBAL_JJB_VERSION:-master}"
 
 # shellcheck disable=SC1090
 . ~/lf-env.sh
-
-lf-activate-venv --python python3 lftools
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck disable=SC1090
+    source "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
+fi
 
 # Detect the OS using /etc/os-release (works on all modern distros)
 # Falls back to facter for legacy images that still have it installed.
@@ -109,5 +120,5 @@ if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
     # change the .asc files owner permissions back to jenkins
     sudo chown -R jenkins:jenkins "${SIGN_DIR}"
 else
-    lftools sign sigul -m "${SIGN_MODE}" "${SIGN_DIR}"
+    LEGACY_CLI=1 lftools-uv sign sigul -m "${SIGN_MODE}" "${SIGN_DIR}"
 fi

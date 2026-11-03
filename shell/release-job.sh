@@ -20,9 +20,22 @@ GLOBAL_JJB_URL="https://raw.githubusercontent.com/lfit/releng-global-jjb/${GLOBA
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck disable=SC1090
+    source "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
+fi
 
 # Version controlled by JJB_VERSION
-lf-activate-venv lftools pip idna==2.9 lftools jsonschema twine yq readline
+lf-activate-venv pip idna==2.9 jsonschema twine yq readline
 
 # show installed versions
 python -m pip --version
@@ -279,7 +292,7 @@ verify_pypi_match_release(){
 
 verify_schema(){
     echo "INFO: Verifying $release_file against schema $release_schema"
-    lftools schema verify "$release_file" "$release_schema"
+    lftools-uv schema verify "$release_file" "$release_schema"
 }
 
 verify_version(){
@@ -620,9 +633,9 @@ nexus_release(){
         # extract the staging repo from URL
         STAGING_REPO=${staging_url#*repositories/}
         echo "INFO: Running Nexus Verify"
-        lftools nexus release -v --server https://"$NEXUS_URL" "$STAGING_REPO"
+        LEGACY_CLI=1 lftools-uv nexus release -v --server https://"$NEXUS_URL" "$STAGING_REPO"
         echo "INFO: Merge will run:"
-        echo "lftools nexus release --server https://$NEXUS_URL $STAGING_REPO"
+        echo "LEGACY_CLI=1 lftools-uv nexus release --server https://$NEXUS_URL $STAGING_REPO"
     done
 
     #Run the loop twice, to catch errors on either nexus repo
@@ -631,7 +644,7 @@ nexus_release(){
             NEXUS_URL=$(echo "$staging_url" | sed -e 's|^[^/]*//||' -e 's|/.*$||')
             STAGING_REPO=${staging_url#*repositories/}
             echo "INFO: Promoting $STAGING_REPO on $NEXUS_URL."
-            lftools nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
+            LEGACY_CLI=1 lftools-uv nexus release --server https://"$NEXUS_URL" "$STAGING_REPO"
         done
     fi
 }
