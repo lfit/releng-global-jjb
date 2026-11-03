@@ -1,0 +1,70 @@
+---
+upgrade:
+  - |
+    global-jjb's scripts run lftools-uv, through the ``lftools-uv`` function
+    in ``lf-env.sh``, instead of legacy lftools, which is being retired. Each
+    run uses a pinned lftools-uv in an environment of its own, so the scripts
+    no longer install lftools into the job's Python or its virtualenvs. That
+    covers deploys, staging, log shipping, Jenkins configuration, OpenStack
+    stacks and clean-up, release, Read the Docs and signing.
+
+    Rollout: jobs take their scripts from the global-jjb a ci-management
+    repository pins, but ``~/lf-env.sh`` from the global-jjb a build agent
+    booted with, which ``init.sh`` copies once, at boot. The two can differ:
+    an agent booted before the pin moved, or an image or static agent with
+    an older ``lf-env.sh`` built in. A script whose ``~/lf-env.sh`` lacks
+    the ``lftools-uv`` function therefore fetches ``lf-env.sh`` from
+    global-jjb at ``GLOBAL_JJB_VERSION``, ``master`` by default, and stops
+    with an error if that fetch fails. Agents booted after the pin moves
+    need no fetch. Merge this change before bumping the global-jjb
+    submodule, so that ONAP's agents, which clone global-jjb's ``master`` at
+    boot, already have the function when their jobs start to use it.
+
+    ``rtdv3.sh`` reads lftools-uv's ``--json`` output, with ``jq``, and no
+    longer installs ``yq``. It takes a project or version as missing only
+    when lftools-uv reports exactly that one not found. Any other failure
+    of a Read the Docs query, such as a rejected token or an outage, now
+    fails the job, verify jobs included, where before it could read as
+    "not found" and create the project or subproject again. A failed build
+    fails the job, where before it passed; the job stops waiting for a build
+    after an hour. Read the Docs addresses a branch by its version slug, the
+    lowercased name with each run of other characters replaced by a hyphen,
+    so branch ``stable/scandium`` is version ``stable-scandium``. The script
+    passes the branch with ``--from-branch``, which lftools-uv converts; before,
+    a branch with a ``/`` named a version Read the Docs could not find.
+
+    ``maven-deploy.sh`` passes ``--allow-empty`` to ``deploy nexus``: a
+    snapshot deploy with nothing to upload succeeds, as it did with legacy
+    lftools.
+
+    ``cmake-stage.sh`` activated a ``/tmp/v/lftools`` virtualenv that nothing
+    creates, so it could not run; it uses the ``lftools-uv`` function now.
+    ``capture-instance-metadata.sh`` no longer activates a virtualenv
+    providing ``python``. It formats the metadata with ``jq`` where the agent
+    has it, and otherwise keeps the metadata as fetched, so a missing ``jq``
+    does not fail the step.
+    ``openstack-stack-delete.sh`` and ``openstack-cleanup-old-images.sh`` no
+    longer install the OpenStack clients, which only lftools needed.
+
+    The pre-build step still installs legacy lftools, because scripts in
+    downstream ci-management repositories call it: OpenDaylight's
+    ``version-bump.sh``, ``opendaylight-infra-deploy-maven-site.sh``,
+    ``releng-maven-mri-stage.sh`` and ``run_releasedockerhub.sh``, and
+    ONAP's ``run_releasedockerhub.sh``. It will be removed once they move to
+    lftools-uv.
+
+    This needs lftools-uv 0.8.0 or later. It prints the staging repository
+    ``deploy nexus-stage`` creates on stdout, where ``maven-stage.sh`` and
+    ``maven-central.sh`` read it; it has ``deploy nexus --allow-empty``; and
+    its default front-end has the ``nexus release``, ``sign sigul``,
+    ``infofile check-votes`` and ``license check-dir`` commands
+    ``release-job.sh``, ``sigul-sign-dir.sh``, ``check-info-votes.sh`` and
+    the ``license`` tox environment run, so none of them needs
+    ``LEGACY_CLI=1``.
+
+    The ``lftools`` and ``license`` tox environments install the same
+    lftools-uv version that ``lf-env.sh`` pins. ``LFTOOLS_UV_VERSION`` and
+    ``LFTOOLS_UV_VERSION_OP`` override it there, replacing
+    ``LFTOOLS_VERSION`` and ``LFTOOLS_VERSION_OP``, which configured legacy
+    lftools and could otherwise ask for an lftools-uv version that does not
+    exist.

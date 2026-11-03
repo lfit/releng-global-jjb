@@ -14,12 +14,19 @@ set -eufo pipefail
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
-
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
-    python-heatclient \
-    python-openstackclient \
-    urllib3~=1.26.15
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck disable=SC1090
+    source "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
+fi
 
 # Disabled stack cost retrieval due to lftools hanging without timeout
 # See: OpenDaylight Jenkins issue with stuck jobs
@@ -34,5 +41,5 @@ echo "INFO: Stack cost retrieval disabled, setting cost to 0"
 echo "total: 0" > stack-cost
 
 # Delete the stack even if the stack-cost script fails
-lftools openstack --os-cloud "$OS_CLOUD" stack delete "$OS_STACK_NAME" \
+lftools-uv openstack --os-cloud "$OS_CLOUD" stack delete "$OS_STACK_NAME" \
     | echo "INFO: $(cat)"

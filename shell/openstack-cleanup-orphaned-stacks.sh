@@ -61,9 +61,21 @@ stack_in_jenkins() {
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck disable=SC1090
+    source "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
+fi
 
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
+lf-activate-venv --python python3 kubernetes \
     niet \
     python-heatclient \
     python-openstackclient \
@@ -141,6 +153,6 @@ for STACK_NAME in "${OS_STACKS[@]}"; do
         continue
     else
         echo "Deleting orphaned stack: ${STACK_NAME}"
-        lftools openstack --os-cloud "${os_cloud}" stack delete --force "${STACK_NAME}"
+        lftools-uv openstack --os-cloud "${os_cloud}" stack delete --force "${STACK_NAME}"
     fi
 done

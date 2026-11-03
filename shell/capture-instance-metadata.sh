@@ -14,14 +14,6 @@ echo "---> capture-instance-metadata.sh"
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-if [[ "${PYTHON:-}" -ne "" ]]; then
-    lf-activate-venv --python "$PYTHON" lftools
-elif python3; then
-    lf-activate-venv --python python3 lftools
-else
-    lf-activate-venv lftools
-fi
-
 # detect if we're in EC2
 if [ -n "${NOMAD_DC}" ]; then
     echo "INFO: Running in Nomad, no metadata"
@@ -43,5 +35,12 @@ fi
 # Retrive OpenStack instace metadata APIs at this IP.
 # The instance id and other metadata is useful for debugging VM.
 echo "INFO: Running in OpenStack, capturing instance metadata"
-curl -s http://169.254.169.254/openstack/latest/meta_data.json \
-    | python -mjson.tool > "$WORKSPACE/archives/instance_meta_data.json"
+metadata="$WORKSPACE/archives/instance_meta_data.json"
+curl -s http://169.254.169.254/openstack/latest/meta_data.json > "$metadata"
+# Pretty-print with jq where the agent has it. Without jq, keep the metadata as
+# fetched: this step runs before the logs ship, on nearly every job.
+if command -v jq > /dev/null && jq . "$metadata" > "$metadata.tmp"; then
+    mv "$metadata.tmp" "$metadata"
+else
+    rm -f "$metadata.tmp"
+fi

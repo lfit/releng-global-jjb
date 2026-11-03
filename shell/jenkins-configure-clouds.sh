@@ -313,8 +313,19 @@ get_template_cfg() {
 
 # shellcheck disable=SC1090
 . ~/lf-env.sh
-
-lf-activate-venv --python python3 lftools
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck disable=SC1090
+    source "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
+fi
 
 mapfile -t clouds < <(ls -d1 "$OS_CLOUD_DIR"/*/)
 
@@ -342,9 +353,9 @@ for silo in $silos; do
     export JENKINS_USER
     export JENKINS_PASSWORD
 
-    # JENKINS_{URL,USER,PASSWORD} env vars are required for the "lftools jenkins
+    # JENKINS_{URL,USER,PASSWORD} env vars are required for the "lftools-uv jenkins
     # plugins list" call
-    os_plugin_version="$(lftools jenkins plugins list \
+    os_plugin_version="$(lftools-uv jenkins plugins list \
         | grep -i 'OpenStack Cloud Plugin')"
 
     echo "-----> Groovy script $script_file"
@@ -377,5 +388,5 @@ for silo in $silos; do
         cat "$insert_file" >> "$script_file"
     done
 
-    lftools jenkins groovy "$script_file"
+    lftools-uv jenkins groovy "$script_file"
 done

@@ -12,37 +12,25 @@ echo "---> check-info-votes.sh"
 set -u unset
 
 ref=$(echo "$GERRIT_REFSPEC" | awk -F"/" '{ print $4 }')
-pip="pip3"
 
-# For OPNFV
-if [[ $NODE_NAME =~ "lf-build" ]]; then
-    pip=pip
+# shellcheck disable=SC1090
+source ~/lf-env.sh
+# An agent's ~/lf-env.sh is copied when it boots, so may predate lftools-uv.
+if ! declare -F lftools-uv > /dev/null; then
+    lf_env="$(mktemp)"
+    lf_env_url="https://raw.githubusercontent.com/lfit/releng-global-jjb"
+    wget -nv -O "$lf_env" "$lf_env_url/${GLOBAL_JJB_VERSION:-master}/jenkins-init-scripts/lf-env.sh" || true
+    # shellcheck disable=SC1090
+    source "$lf_env"
+    rm -f "$lf_env"
+    if ! declare -F lftools-uv > /dev/null; then
+        echo "ERROR: lf-env.sh has no lftools-uv function" >&2
+        exit 1
+    fi
 fi
-
-if [ -d "/opt/pyenv" ]; then
-    echo "---> Setting up pyenv"
-    export PYENV_ROOT="/opt/pyenv"
-    export PATH="$PYENV_ROOT/bin:$PATH"
-    PYTHONPATH=$(pwd)
-    export PYTHONPATH
-
-    latest_version=$(pyenv versions \
-        | sed s,*,,g \
-        | awk '/[0-9]+/{ print $1 }' \
-        | sort --version-sort \
-        | awk '/./{line=$0} END{print line}')
-
-    pyenv local "$latest_version"
-    export PYENV_VERSION="3.6.4"
-fi
-
-$pip install --user niet
-$pip install --user lftools
-$pip install --user lftools[nexus]
-$pip install --user jsonschema
 
 echo "Checking votes:"
-lftools infofile check-votes INFO.yaml "$GERRIT_URL" \
+lftools-uv infofile check-votes INFO.yaml "$GERRIT_URL" \
     "$ref" > gerrit_comment.txt
 exit_status="$?"
 
