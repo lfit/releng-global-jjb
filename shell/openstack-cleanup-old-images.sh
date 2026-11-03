@@ -14,8 +14,7 @@ echo "---> Cleanup old images"
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
+lf-activate-venv --python python3 kubernetes \
     niet \
     python-heatclient \
     python-openstackclient \
@@ -27,4 +26,4 @@ os_image_cleanup_age="${OS_IMAGE_CLEANUP_AGE:-30}"
 
 set -eux -o pipefail
 
-lftools openstack --os-cloud "${os_cloud}" image cleanup --days="${os_image_cleanup_age}"
+lftools-uv openstack --os-cloud "${os_cloud}" image cleanup --days="${os_image_cleanup_age}"

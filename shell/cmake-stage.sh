@@ -15,8 +15,8 @@ nexus_group_id="${NEXUS_GROUP_ID:-io.aswf.opencolorio}"
 staging_profile_id="${STAGING_PROFILE_ID:-126694cb53ec54}"
 version="${VERSION:-}"
 
-# shellcheck source=/tmp/v/lftools/bin/activate disable=SC1091
-source "/tmp/v/lftools/bin/activate"
+# shellcheck disable=SC1090
+source ~/lf-env.sh
 
 set -eux -o pipefail
 
@@ -39,12 +39,12 @@ if [ -z "${version}" ]; then
     fi
 fi
 
-repo_id=$(lftools deploy nexus-stage-repo-create "$NEXUS_URL" \
+repo_id=$(lftools-uv deploy nexus-stage-repo-create "$NEXUS_URL" \
     "$staging_profile_id")
 
 mapfile -t artifacts < <(ls "$WORKSPACE"/dist)
 for artifact in "${artifacts[@]}"; do
-    lftools deploy file -c "$classifier" "$NEXUS_URL" "$repo_id" \
+    lftools-uv deploy file -c "$classifier" "$NEXUS_URL" "$repo_id" \
         "$nexus_group_id" \
         "${artifact%.tar.xz}" \
         "$version" \
@@ -54,7 +54,7 @@ for artifact in "${artifacts[@]}"; do
     # Create src tar
     git config tar.tar.xz.command "xz -c"
     git archive --format=tar.xz HEAD > src.tar.xz
-    lftools deploy file -c "sources" "$NEXUS_URL" "$repo_id" \
+    lftools-uv deploy file -c "sources" "$NEXUS_URL" "$repo_id" \
         "$nexus_group_id" \
         "${artifact%.tar.xz}" \
         "$version" \
@@ -62,7 +62,7 @@ for artifact in "${artifacts[@]}"; do
         src.tar.xz
 done
 
-lftools deploy nexus-stage-repo-close "$NEXUS_URL" "$staging_profile_id" \
+lftools-uv deploy nexus-stage-repo-close "$NEXUS_URL" "$staging_profile_id" \
     "$repo_id"
 
 PATCH_DIR="$WORKSPACE/archives/patches"

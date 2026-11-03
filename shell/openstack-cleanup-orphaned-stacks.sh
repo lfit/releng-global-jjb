@@ -62,8 +62,7 @@ stack_in_jenkins() {
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
+lf-activate-venv --python python3 kubernetes \
     niet \
     python-heatclient \
     python-openstackclient \
@@ -141,6 +140,6 @@ for STACK_NAME in "${OS_STACKS[@]}"; do
         continue
     else
         echo "Deleting orphaned stack: ${STACK_NAME}"
-        lftools openstack --os-cloud "${os_cloud}" stack delete --force "${STACK_NAME}"
+        lftools-uv openstack --os-cloud "${os_cloud}" stack delete --force "${STACK_NAME}"
     fi
 done

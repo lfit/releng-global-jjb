@@ -18,11 +18,9 @@ set -eux -o pipefail
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
-
 MC_TMP_FILE="$(mktemp)"
 echo "Staging in OSSRH for Maven Central"
-lftools deploy nexus-stage "https://oss.sonatype.org" "$profile_id" "$WORKSPACE/m2repo" | tee "$MC_TMP_FILE"
+lftools-uv deploy nexus-stage "https://oss.sonatype.org" "$profile_id" "$WORKSPACE/m2repo" | tee "$MC_TMP_FILE"
 mc_staging_repo=$(sed -n -e 's/Staging repository \(.*\) created\./\1/p' "$MC_TMP_FILE")
 rm -f "$MC_TMP_FILE"
 

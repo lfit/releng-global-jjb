@@ -22,8 +22,6 @@ GLOBAL_JJB_VERSION="${GLOBAL_JJB_VERSION:-master}"
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
-
 # Detect the OS using /etc/os-release (works on all modern distros)
 # Falls back to facter for legacy images that still have it installed.
 # VERSION_ID carries what both facter facts reported on the platforms
@@ -109,5 +107,5 @@ if [[ "$OS_DIST_RELEASE" == "8" && "${OS}" =~ ^(fedora|centos|redhat)$ ]] || \
     # change the .asc files owner permissions back to jenkins
     sudo chown -R jenkins:jenkins "${SIGN_DIR}"
 else
-    lftools sign sigul -m "${SIGN_MODE}" "${SIGN_DIR}"
+    LEGACY_CLI=1 lftools-uv sign sigul -m "${SIGN_MODE}" "${SIGN_DIR}"
 fi

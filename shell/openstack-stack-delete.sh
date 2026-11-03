@@ -15,8 +15,7 @@ set -eufo pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
+lf-activate-venv --python python3 kubernetes \
     python-heatclient \
     python-openstackclient \
     urllib3~=1.26.15
@@ -34,5 +33,5 @@ echo "INFO: Stack cost retrieval disabled, setting cost to 0"
 echo "total: 0" > stack-cost
 
 # Delete the stack even if the stack-cost script fails
-lftools openstack --os-cloud "$OS_CLOUD" stack delete "$OS_STACK_NAME" \
+lftools-uv openstack --os-cloud "$OS_CLOUD" stack delete "$OS_STACK_NAME" \
     | echo "INFO: $(cat)"

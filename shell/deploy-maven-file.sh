@@ -34,8 +34,6 @@ set +u
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
-
 export MAVEN_OPTIONS
 export MAVEN_PARAMS
 
@@ -45,7 +43,7 @@ mkdir -p "$WORKSPACE/archives"
 while IFS="" read -r file; do
     file_size=$(stat --printf="%s" "${file}")
     echo "Deploy ${file##*/} with ${file_size} bytes."
-    lftools deploy maven-file "$MAVEN_REPO_URL" \
+    lftools-uv deploy maven-file "$MAVEN_REPO_URL" \
                                 "$REPO_ID" \
                                 "$file" \
                                 -b "$MVN" \

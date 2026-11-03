@@ -1,0 +1,32 @@
+---
+upgrade:
+  - |
+    global-jjb's scripts run lftools-uv, through the ``lftools-uv`` function
+    in ``lf-env.sh``, instead of legacy lftools, which is being retired. Each
+    run uses a pinned lftools-uv in an environment of its own, so the scripts
+    no longer install lftools into the job's Python or its virtualenvs. That
+    covers deploys, staging, log shipping, Jenkins configuration, OpenStack
+    stacks and clean-up, release, Read the Docs and signing.
+
+    Commands lftools-uv has only in its Click front-end run with
+    ``LEGACY_CLI=1``: ``nexus release`` in ``release-job.sh``, ``sign
+    sigul`` in ``sigul-sign-dir.sh``, ``infofile check-votes`` in
+    ``check-info-votes.sh`` and ``license check-dir`` in ``tox.ini``.
+
+    ``rtdv3.sh`` reads lftools-uv's ``--json`` output. lftools-uv reports a
+    project or version Read the Docs does not have as an error, and the
+    script treats that as "not found", as before.
+
+    ``cmake-stage.sh`` activated a ``/tmp/v/lftools`` virtualenv that nothing
+    creates, so it could not run; it uses the ``lftools-uv`` function now.
+
+    The pre-build step still installs legacy lftools, because scripts in
+    downstream ci-management repositories call it: OpenDaylight's
+    ``version-bump.sh``, ``opendaylight-infra-deploy-maven-site.sh``,
+    ``releng-maven-mri-stage.sh`` and ``run_releasedockerhub.sh``, and
+    ONAP's ``run_releasedockerhub.sh``. It will be removed once they move to
+    lftools-uv.
+
+    This needs lftools-uv 0.7.10 or later, which prints the staging
+    repository ``deploy nexus-stage`` creates on stdout, where
+    ``maven-stage.sh`` and ``maven-central.sh`` read it.

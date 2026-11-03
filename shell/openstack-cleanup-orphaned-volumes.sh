@@ -18,8 +18,7 @@ set -eux -o pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
+lf-activate-venv --python python3 kubernetes \
     niet \
     python-heatclient \
     python-openstackclient \
@@ -33,6 +32,6 @@ if [ ${#os_volumes[@]} -eq 0 ]; then
 else
     for volume in "${os_volumes[@]}"; do
         echo "Removing volume $volume"
-        lftools openstack --os-cloud "$os_cloud" volume remove --minutes 15 "$volume"
+        lftools-uv openstack --os-cloud "$os_cloud" volume remove --minutes 15 "$volume"
     done
 fi

@@ -21,8 +21,7 @@ set -eux -o pipefail
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
+lf-activate-venv --python python3 kubernetes \
     niet \
     python-heatclient \
     python-openstackclient \
@@ -33,6 +32,6 @@ lf-activate-venv --python python3 "lftools[openstack]" \
 openstack --os-cloud "$os_cloud" limits show --absolute
 
 pushd "$stack_template_dir" || exit 1
-lftools openstack --os-cloud "$os_cloud" stack create \
+lftools-uv openstack --os-cloud "$os_cloud" stack create \
     "$stack_name" "$stack_template" "$stack_parameters"
 popd

@@ -14,18 +14,55 @@ set -euo pipefail
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools yq
+lf-activate-venv --python python3 yq
+
+# Print a Read the Docs project's details as JSON, or {"detail": ...} naming
+# it as missing, the shape the checks below read. lftools-uv exits 1 for a
+# missing project; any other failure still stops the job.
+rtd_project_details(){
+    local out err
+    err=$(mktemp)
+    if out=$(lftools-uv rtd project-details "$1" --json 2> "$err"); then
+        rm -f "$err"
+        echo "$out"
+    elif grep -q "not found:" "$err"; then
+        rm -f "$err"
+        echo '{"detail": "No Project matches the given query."}'
+    else
+        cat "$err" >&2
+        rm -f "$err"
+        return 1
+    fi
+}
+
+# Print a project version's details as JSON, or {} when Read the Docs has
+# not seen the version yet, so that '.active' reads null.
+rtd_version_details(){
+    local out err
+    err=$(mktemp)
+    if out=$(lftools-uv rtd project-version-details "$1" "$2" --json 2> "$err"); then
+        rm -f "$err"
+        echo "$out"
+    elif grep -q "not found:" "$err"; then
+        rm -f "$err"
+        echo '{}'
+    else
+        cat "$err" >&2
+        rm -f "$err"
+        return 1
+    fi
+}
 
 watchbuild(){
     echo "INFO: Running build against branch $1"
     local buildid
     local result
-    buildid=$(lftools rtd project-build-trigger "$rtdproject" "$1" | jq '.build.id')
+    buildid=$(lftools-uv rtd project-build-trigger "$rtdproject" "$1" --json | jq '.build.id')
 
     result=null
     while [[ "$result" == null ]]; do
         sleep 10
-        result=$(lftools rtd project-build-details "$rtdproject" "$buildid"  | jq '.success')
+        result=$(lftools-uv rtd project-build-details "$rtdproject" "$buildid" --json | jq '.success')
         echo "INFO Current result of running build $result"
         if [[ $result == failed ]]; then
             echo "INFO: read the docs build completed with status: $result"
@@ -62,7 +99,7 @@ echo "INFO: Read the Docs Master Project: https://$masterproject.readthedocs.io"
 
 
 if [[ "$JOB_NAME" =~ "verify" ]]; then
-    if [[ "$(lftools rtd project-details "$rtdproject" | yq -r '.detail')" == \
+    if [[ "$(rtd_project_details "$rtdproject" | yq -r '.detail')" == \
         "No Project matches the given query." ]]; then
         echo "INFO: Project not found, merge will create project https://$rtdproject.readthedocs.io"
     fi
@@ -78,12 +115,12 @@ if [[ "$JOB_NAME" =~ "merge" ]]; then
 
     declare -i cnt=0
     while [[ $project_exists == "false" ]]; do
-        if [[ "$(lftools rtd project-details "$rtdproject" | yq -r '.detail')" == \
+        if [[ "$(rtd_project_details "$rtdproject" | yq -r '.detail')" == \
             "No Project matches the given query." ]]; then
             echo "INFO: Project not found"
             if [[ $project_created == "false" ]]; then
                 echo "INFO: Creating project https://$rtdproject.readthedocs.io"
-                lftools rtd project-create "$rtdproject" "$GERRIT_URL/$PROJECT" \
+                lftools-uv rtd project-create "$rtdproject" "$GERRIT_URL/$PROJECT" \
                     git "https://$rtdproject.readthedocs.io" py en
                 project_created="true"
             fi
@@ -107,13 +144,13 @@ if [[ "$JOB_NAME" =~ "merge" ]]; then
                 subproject_exists=true
                 break
             fi
-        done < <(lftools rtd subproject-list "$masterproject")
+        done < <(lftools-uv rtd subproject-list "$masterproject" --json | jq -r '.subprojects[]')
 
         if $subproject_exists; then
             echo "INFO: subproject $rtdproject relationship already created"
         else
             echo "INFO: Creating subproject relationship"
-            lftools rtd subproject-create "$masterproject" "$rtdproject"
+            lftools-uv rtd subproject-create "$masterproject" "$rtdproject"
             echo "INFO sleeping for 10 seconds"
             sleep 10
         fi
@@ -123,7 +160,7 @@ if [[ "$JOB_NAME" =~ "merge" ]]; then
     # Also, when we build anything other than master we want to trigger /stable/ as well.
     # allow projects to change their landing page from latest to branch_name
 
-    current_version="$(lftools rtd project-details "$rtdproject" | yq -r .default_version)"
+    current_version="$(rtd_project_details "$rtdproject" | yq -r .default_version)"
     if [[ -z ${DEFAULT_VERSION:-} ]]; then
         echo "DEFAULT_VERSION (default-version) value cannot be empty"
         exit 1
@@ -133,7 +170,7 @@ if [[ "$JOB_NAME" =~ "merge" ]]; then
     echo "INFO: current default version $current_version"
     if [[ $current_version != "$default_version" ]]; then
         echo "INFO: Setting rtd landing page to $default_version"
-        lftools rtd project-update "$rtdproject" default_version="$default_version"
+        lftools-uv rtd project-update "$rtdproject" default_version="$default_version"
     fi
 
     if [[ $GERRIT_BRANCH == "master" ]]; then
@@ -146,7 +183,7 @@ if [[ "$JOB_NAME" =~ "merge" ]]; then
         echo "INFO: Checking if read the docs has seen branch $branch"
 
         #if this is 200 "null" Then run discover branch
-        if [[ $(lftools rtd project-version-details "$rtdproject" "$branch" | jq '.active') == "null" ]]; then
+        if [[ $(rtd_version_details "$rtdproject" "$branch" | jq '.active') == "null" ]]; then
             echo "INFO: read the docs has not seen branch $branch for project $rtdproject"
             echo "INFO: triggering $rtdproject latest to instantiate new branch discovery"
             watchbuild latest
@@ -156,10 +193,10 @@ if [[ "$JOB_NAME" =~ "merge" ]]; then
         watchbuild "$branch"
 
         #Make newly discovered branches visible in the u/i
-        isactive=$(lftools rtd project-version-details "$rtdproject" "$branch" | jq '.active')
+        isactive=$(rtd_version_details "$rtdproject" "$branch" | jq '.active')
         if [[ "$isactive" == false ]]; then
             echo "INFO: Marking $branch as active for project $rtdproject"
-            lftools rtd project-version-update "$rtdproject" "$branch" true
+            lftools-uv rtd project-version-update "$rtdproject" "$branch" true
         fi
 
     fi

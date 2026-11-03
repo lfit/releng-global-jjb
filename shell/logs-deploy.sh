@@ -12,13 +12,12 @@ echo "---> logs-deploy.sh"
 
 # shellcheck disable=SC1090
 source ~/lf-env.sh
-lf-activate-venv --python python3.8 lftools urllib3~=1.26.15
 
 # Ensure we fail the job if any steps fail
 # Disable 'globbing'
 set -euf -o pipefail
 
-# The 'lftool deploy archives' command below expects the archives
+# The 'lftools-uv deploy archives' command below expects the archives
 # directory to exist.  Normally lf-infra-sysstat or similar would
 # create it and add content, but to make sure this script is
 # self-contained, we ensure it exists here.
@@ -43,10 +42,10 @@ else
 
     echo "INFO: archiving workspace using pattern(s): ${pattern_opts:-}"
     # shellcheck disable=SC2086
-    lftools deploy archives ${pattern_opts:-} "$nexus_url" "$nexus_path" "$WORKSPACE"
+    lftools-uv deploy archives ${pattern_opts:-} "$nexus_url" "$nexus_path" "$WORKSPACE"
 
     echo "INFO: archiving logs to Nexus"
-    lftools deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
+    lftools-uv deploy logs "$nexus_url" "$nexus_path" "${BUILD_URL:-}"
 
     echo "Nexus build logs: <a href=\"$LOGS_SERVER/$nexus_path\">$LOGS_SERVER/$nexus_path</a>"
 fi
@@ -59,7 +58,7 @@ else
 
     echo "INFO: archiving logs to S3"
     # shellcheck disable=SC2086
-    lftools deploy s3 ${pattern_opts:-} "$S3_BUCKET" "$s3_path" \
+    lftools-uv deploy s3 ${pattern_opts:-} "$S3_BUCKET" "$s3_path" \
         "$BUILD_URL" "$WORKSPACE"
 
     echo "S3 build logs: <a href=\"https://$CDN_URL/$s3_path\">https://$CDN_URL/$s3_path</a>"

@@ -314,8 +314,6 @@ get_template_cfg() {
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
-
 mapfile -t clouds < <(ls -d1 "$OS_CLOUD_DIR"/*/)
 
 for silo in $silos; do
@@ -342,9 +340,9 @@ for silo in $silos; do
     export JENKINS_USER
     export JENKINS_PASSWORD
 
-    # JENKINS_{URL,USER,PASSWORD} env vars are required for the "lftools jenkins
+    # JENKINS_{URL,USER,PASSWORD} env vars are required for the "lftools-uv jenkins
     # plugins list" call
-    os_plugin_version="$(lftools jenkins plugins list \
+    os_plugin_version="$(lftools-uv jenkins plugins list \
         | grep -i 'OpenStack Cloud Plugin')"
 
     echo "-----> Groovy script $script_file"
@@ -377,5 +375,5 @@ for silo in $silos; do
         cat "$insert_file" >> "$script_file"
     done
 
-    lftools jenkins groovy "$script_file"
+    lftools-uv jenkins groovy "$script_file"
 done

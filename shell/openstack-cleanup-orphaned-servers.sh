@@ -52,8 +52,7 @@ minion_in_jenkins() {
 # shellcheck disable=SC1090
 source ~/lf-env.sh
 
-lf-activate-venv --python python3 "lftools[openstack]" \
-    kubernetes \
+lf-activate-venv --python python3 kubernetes \
     niet \
     python-heatclient \
     python-openstackclient \
@@ -89,7 +88,7 @@ for server in "${OS_SERVERS[@]}"; do
         continue
     else
         echo "Deleting orphaned server: $server"
-        lftools openstack --os-cloud "$os_cloud" \
+        lftools-uv openstack --os-cloud "$os_cloud" \
             server remove --minutes 15 "$server"
     fi
 done

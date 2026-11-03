@@ -19,15 +19,13 @@ set +u
 # shellcheck disable=SC1090
 . ~/lf-env.sh
 
-lf-activate-venv --python python3 lftools
-
 JAVADOC_DIR="$WORKSPACE/archives/javadoc"
 
 pushd "$JAVADOC_DIR"
 zip -r "$WORKSPACE/javadoc.zip" .
 popd
 
-lftools deploy nexus-zip "$NEXUS_URL" "javadoc" "$DEPLOY_PATH" "$WORKSPACE/javadoc.zip"
+lftools-uv deploy nexus-zip "$NEXUS_URL" "javadoc" "$DEPLOY_PATH" "$WORKSPACE/javadoc.zip"
 
 # Tarball the javadoc dir and rm the directory to avoid re-upload into logs
 pushd "$JAVADOC_DIR"
