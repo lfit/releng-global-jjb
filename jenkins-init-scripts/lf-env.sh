@@ -495,3 +495,143 @@ lf-pyver() {
     echo "${py_version_xyz}"
     return 0
 }
+
+################################################################################
+#
+# NAME
+#   lftools-uv [lftools-uv arguments]...
+#
+# SYNOPSIS
+#   # shellcheck disable=SC1090
+#   source ~/lf-env.sh
+#
+#   lftools-uv deploy nexus-zip "$NEXUS_URL" javadoc "$DEPLOY_PATH" javadoc.zip
+#   or
+#   lftools-uv nexus release --server "$NEXUS_URL" "$REPO"
+#
+# DESCRIPTION
+#   Run lftools-uv through 'uvx', in an environment of its own: nothing is
+#   installed into the job's Python or its virtualenvs, so the tool and its
+#   dependencies cannot clash with a project's own. PYTHONPATH and PYTHONHOME
+#   are cleared for uvx, so that modules a job puts on its own path cannot
+#   shadow lftools-uv's; every other variable, credentials included, passes
+#   through.
+#
+#   The version is pinned: LFTOOLS_UV_VERSION overrides it, and
+#   LFTOOLS_UV_PYTHON the Python version uvx runs it with. uvx downloads that
+#   Python when the build agent does not have it.
+#
+#   uvx is found on PATH or in ~/.local/bin, where uv-install.sh puts it, and
+#   installed with the uv installer, honouring UV_VERSION, if neither has it.
+#   A failed download or install, or a uvx that then does not run, is an
+#   error.
+#
+#   Packages come from the 'index-url' a build agent's pip.conf sets, or
+#   PIP_INDEX_URL, else PyPI. While the mirror is unreachable, lftools-uv is
+#   fetched from PyPI instead, as lf-venv-pip-install does for pip. Only that
+#   fetch is retried: once it succeeds the command itself runs exactly once,
+#   offline, from uv's cache. The fetch happens once per shell, which keeps
+#   what it found in _lf_uvx_spec and _lf_uvx_index; a subshell, such as a
+#   command substitution, inherits them but cannot keep them, so call
+#   lftools-uv once in the main shell before calling it from many subshells.
+#
+#   An index URL may carry credentials. Messages show it without them, and
+#   the function turns off 'set -x' while it runs, restoring the caller's
+#   setting on return, so that its trace cannot show them either.
+#
+# RETURN VALUES
+#   The exit status of lftools-uv, or 1 when uv or lftools-uv cannot be
+#   installed or fetched.
+#
+################################################################################
+
+lftools-uv () {
+    local xtrace="" rc=0
+    if [[ $- == *x* ]]; then
+        xtrace=1
+        set +x
+    fi
+    _lf-lftools-uv "$@" || rc=$?
+    if [[ -n $xtrace ]]; then
+        set -x
+    fi
+    return "$rc"
+}
+
+# Print URL $1 without the user:password it may carry.
+_lf-redact-url () {
+    sed -E 's#^([[:alpha:]][[:alnum:]+.-]*://)[^/]*@#\1***@#' <<< "$1"
+}
+
+# Install uv into ~/.local/bin, as uv-install.sh does. Fail unless the
+# installer downloads and runs cleanly, and the uvx it leaves runs.
+_lf-install-uv () {
+    local installer rc=0
+    lf-echo-stderr "lftools-uv: uvx not found; installing uv"
+    if ! installer="$(mktemp /tmp/uv-install-XXXXXX.sh)"; then
+        lf-echo-stderr "lftools-uv: ERROR: cannot create a file for the uv installer"
+        return 1
+    fi
+    if ! wget -nv -O "$installer" \
+            "https://astral.sh/uv/${UV_VERSION:+$UV_VERSION/}install.sh" >&2; then
+        lf-echo-stderr "lftools-uv: ERROR: cannot download the uv installer"
+        rc=1
+    elif ! sh "$installer" >&2; then
+        lf-echo-stderr "lftools-uv: ERROR: the uv installer failed"
+        rc=1
+    fi
+    rm -f "$installer"
+    if (( rc == 0 )) && ! ~/.local/bin/uvx --version > /dev/null; then
+        lf-echo-stderr "lftools-uv: ERROR: uvx does not run after installing uv"
+        rc=1
+    fi
+    return "$rc"
+}
+
+_lf-lftools-uv () {
+    local version="${LFTOOLS_UV_VERSION:-0.8.2}"
+    local python="${LFTOOLS_UV_PYTHON:-3.12}"
+    local spec="lftools-uv[openstack]==${version}"
+    local upstream="https://pypi.org/simple"
+    local uvx index
+    local -a run
+
+    uvx="$(command -v uvx || true)"
+    if [[ -z $uvx && -x ~/.local/bin/uvx ]]; then
+        uvx=~/.local/bin/uvx
+    fi
+    if [[ -z $uvx ]]; then
+        _lf-install-uv || return 1
+        uvx=~/.local/bin/uvx
+    fi
+    run=(env -u PYTHONPATH -u PYTHONHOME "$uvx" --quiet --python "$python"
+        --from "$spec")
+
+    # Fetch the pinned version once per shell, from the build agent's mirror
+    # or, while that is unreachable, from PyPI; remember which one worked.
+    if [[ ${_lf_uvx_spec:-} != "$spec $python" ]]; then
+        index="${PIP_INDEX_URL:-}"
+        if [[ -z $index && -f ~/.config/pip/pip.conf ]]; then
+            index="$(sed -n 's/^[[:space:]]*index-url[[:space:]]*=[[:space:]]*\([^[:space:]]*\).*/\1/p' \
+                ~/.config/pip/pip.conf | head -n 1)"
+        fi
+        index="${index:-$upstream}"
+        if ! "${run[@]}" --default-index "$index" lftools-uv --version > /dev/null; then
+            if [[ $index == "$upstream" ]]; then
+                lf-echo-stderr "lftools-uv: ERROR: could not fetch $spec"
+                return 1
+            fi
+            lf-echo-stderr "lftools-uv: WARNING: could not fetch $spec from" \
+                "$(_lf-redact-url "$index"); retrying against $upstream"
+            index="$upstream"
+            if ! "${run[@]}" --default-index "$index" lftools-uv --version > /dev/null; then
+                lf-echo-stderr "lftools-uv: ERROR: could not fetch $spec"
+                return 1
+            fi
+        fi
+        _lf_uvx_spec="$spec $python"
+        _lf_uvx_index="$index"
+    fi
+
+    "${run[@]}" --offline --default-index "$_lf_uvx_index" lftools-uv "$@"
+}
