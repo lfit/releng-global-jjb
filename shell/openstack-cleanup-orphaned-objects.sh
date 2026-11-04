@@ -40,7 +40,7 @@ filters="${FILTERS:=""}"
 echo "Object attributes: ${attributes}"
 echo "Filters: ${filters}"
 
-tmpfile=$(mktemp --suffix -openstack-"${object}"s.txt)
+tmpfile=$(mktemp --suffix=-openstack-"${object}"s.txt)
 cores=$(nproc --all)
 threads=$((3*cores))
 regex_created_at='^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})Z$'

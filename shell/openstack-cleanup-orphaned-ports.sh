@@ -21,7 +21,7 @@ os_cloud="${OS_CLOUD:-vex}"
 
 set -eu -o pipefail
 
-tmpfile=$(mktemp --suffix -openstack-ports.txt)
+tmpfile=$(mktemp --suffix=-openstack-ports.txt)
 cores=$(nproc --all)
 threads=$((3*cores))
 regex_created_at='^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})Z$'

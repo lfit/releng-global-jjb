@@ -1,0 +1,10 @@
+---
+fixes:
+  - |
+    ``openstack-cleanup-orphaned-ports.sh`` and
+    ``openstack-cleanup-orphaned-objects.sh`` pass ``mktemp`` its suffix as
+    ``--suffix=-openstack-...``. Given as a separate argument, a suffix that
+    starts with ``-`` is read as further options by the Rust ``uutils``
+    coreutils, which Ubuntu 26.04 ships, so ``mktemp`` failed and the
+    clean-up stopped before doing anything. GNU coreutils accepts both
+    forms.
