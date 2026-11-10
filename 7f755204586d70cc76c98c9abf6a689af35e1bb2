@@ -21,6 +21,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "ae780233_b365363a",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2026-11-10T13:03:23Z",
+      "side": 1,
+      "message": "Agreed in substance, fixed in patch set 5. Master already ran jq on this path (line 29), but the script has no set -e, so a missing jq there was harmless; the final jq in PS4 would have set the step\u0027s exit status. Patch set 5 fetches the metadata to the file first, then pretty-prints it only when jq is present and succeeds, and otherwise keeps it as fetched. Tested in a container: with jq it is formatted, without jq the step exits 0 and keeps the raw JSON, and AWS is skipped as before. I could not confirm the packer baseline from here (common-packer does not list jq, and Jenkins refused anonymous API access), so this no longer depends on it.",
+      "parentUuid": "054920af_e1eca977",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "9bc6b8ae_60e4bff6",
         "filename": "shell/check-info-votes.sh",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "side": 1,
       "message": "This script runs on the OPNFV lf-build static nodes, where the previous code deliberately special-cased pyenv 3.6.4 and `pip install --user`. Removing that is correct -- lftools-uv needs \u003e\u003d3.11 and 3.6.4 was never going to work -- but it does mean this path now depends on those nodes having a usable ~/lf-env.sh, and in the fallback branch on wget plus outbound access to raw.githubusercontent.com.\n\nWorth confirming before merge. The script runs with `set -u unset` and no `-e`, so a failure here will not abort cleanly; it will surface later as a confusing downstream error.",
       "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2cf0c1c_e64b1f97",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2026-11-10T13:03:23Z",
+      "side": 1,
+      "message": "Thanks. One correction: the fallback does not rely on -e. If ~/lf-env.sh is missing or predates the helper, the guard fetches lf-env.sh, and if the function still is not defined it prints \"ERROR: lf-env.sh has no lftools-uv function\" and runs an explicit exit 1, so it aborts cleanly. You\u0027re right that a static node now needs outbound access: to raw.githubusercontent.com only when its lf-env.sh is stale, plus astral.sh/PyPI (or its pip.conf mirror) for uv and lftools-uv, where the old code needed PyPI for pip. Whether OPNFV/Anuket lf-build static nodes still run this job is the open question; I\u0027ve flagged it for confirmation. No code change in patch set 5.",
+      "parentUuid": "9bc6b8ae_60e4bff6",
       "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
@@ -57,6 +93,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "d8f93f42_0a599a12",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2026-11-10T13:03:23Z",
+      "side": 1,
+      "message": "Agreed on all points, thanks for checking it against the source. I\u0027ve raised https://github.com/lfreleng-actions/lftools-uv/issues/1043 for a distinct not-found exit status or rtd project-exists / project-version-exists commands, so callers can stop matching the message. Patch set 5 also makes tox pin the same exact version as lf-env.sh (see the tox.ini replies), so every caller runs the wording this matches.",
+      "parentUuid": "189acfd3_3ec6b623",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "aae7f362_9a3e734e",
         "filename": "shell/rtdv3.sh",
         "patchSetId": 4
@@ -69,6 +123,24 @@
       "side": 1,
       "message": "This gives you a raw git branch name, but Read the Docs addresses versions by *slug*, and every downstream use of $branch passes it through unslugified.\n\nlftools-uv 0.8.2 added `--from-branch` to project-version-details, project-version-update and project-build-trigger for exactly this case. version_slug() (lftools_uv/api/endpoints/readthedocs.py:115) lowercases and replaces every character outside [a-z0-9._-] with a hyphen, so `stable/scandium` becomes `stable-scandium`. Without the flag the argument is used verbatim -- see typer_apps/rtd.py:322, 364 and 465, each of which is `target \u003d version_slug(x) if from_branch else x` -- and the request path becomes `projects/X/versions/stable/scandium/`, which 404s. lftools-uv\u0027s own docstring uses `maintenance/3.7.10` as the example, so this is a case the library explicitly expects callers to hit.\n\nTo be clear this is not a regression: legacy lftools never checked HTTP status at all, so today this hangs in watchbuild until the Jenkins job timeout instead of failing. The new code failing fast is strictly better. But the fix is one flag and it is already in the version you pin, so it seems a shame to carry the bug forward.\n\nAffects rtd_version_state on L250 and L261, watchbuild on L258, and project-version-update on L264.\n\nRelated: tests/shell/test-rtdv3.sh only exercises GERRIT_BRANCH values `master`, `London` and `london` (L50, L225, L238). A branch containing a slash would be a worthwhile case to add, since that is the one this change alters the failure mode for.",
       "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d460773d_0173e5f3",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2026-11-10T13:03:23Z",
+      "side": 1,
+      "message": "Good catch, fixed in patch set 5. One subtlety: with --from-branch, lftools-uv\u0027s not-found message names the slug (\"Version \u0027stable-scandium\u0027 of project ...\"), so the flag alone would have left a new branch with a slash unrecognised as missing. Patch set 5 passes the raw branch with --from-branch to project-version-details, project-build-trigger and project-version-update, so lftools-uv\u0027s version_slug() builds every request path. A shell copy of the rule (rtd_version_slug) names the version in the log and in the not-found match. I compared it with version_slug() from lftools-uv 0.8.2 over 14 branch names, including slashes, case, punctuation runs, edge hyphens and non-ASCII, and all matched. If the two ever diverge, the match fails and the job stops rather than treating the branch as missing. Tests added, as you suggested: Stable/Scandium discovers version stable-scandium, builds latest once, then the branch, then activates it; and a not-found naming the unslugified branch fails the job. Checked live against 0.8.2: all three commands accept --from-branch with --json and name \u0027stable-scandium\u0027. (Small correction for the record: --from-branch predates 0.8.2; it is in 0.7.6 too.)",
+      "parentUuid": "aae7f362_9a3e734e",
       "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     },
@@ -93,6 +165,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "f4f29643_69f7fd60",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2026-11-10T13:03:23Z",
+      "side": 1,
+      "message": "Fixed together with L247: project-version-update now takes the raw branch with --from-branch.",
+      "parentUuid": "92bb2fcf_baa6afc0",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "8a1bc4b5_6be23239",
         "filename": "tox.ini",
         "patchSetId": 4
@@ -111,6 +201,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "f80d72cd_6e6e5417",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2026-11-10T13:03:23Z",
+      "side": 1,
+      "message": "Agreed, fixed in patch set 5. Both tox envs now use lftools-uv{env:LFTOOLS_UV_VERSION_OP:\u003d\u003d}{env:LFTOOLS_UV_VERSION:0.8.2}, the same exact pin as lf-env.sh. A new test in tests/shell/test-call-sites.sh reads the default from lf-env.sh and fails if either tox env differs, so the pins cannot drift apart.",
+      "parentUuid": "8a1bc4b5_6be23239",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "f37f4488_cb5c8075",
         "filename": "tox.ini",
         "patchSetId": 4
@@ -123,6 +231,24 @@
       "side": 1,
       "message": "The package name changed here but the environment variable name did not.\n\nDownstream repos still set LFTOOLS_VERSION for *legacy* lftools -- builder/global-jjb/tox.ini:118, onap/ci-management/global-jjb/tox.ini:118 and oran/ci-management/global-jjb/tox.ini:118 all currently carry `lftools{env:LFTOOLS_VERSION_OP:~\u003d}{env:LFTOOLS_VERSION:0.13.0}`. Any job that exports LFTOOLS_VERSION\u003d0.37.x now resolves `lftools-uv~\u003d0.37.x`, which does not exist and fails as a hard resolution error rather than anything diagnosable.\n\nSuggest renaming to LFTOOLS_UV_VERSION / LFTOOLS_UV_VERSION_OP. That also matches what lf-env.sh already uses for the pin, so the two stay in step.",
       "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a115381_ca6b0475",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 605
+      },
+      "writtenOn": "2026-11-10T13:03:23Z",
+      "side": 1,
+      "message": "Renamed to LFTOOLS_UV_VERSION / LFTOOLS_UV_VERSION_OP in patch set 5, matching lf-env.sh; the release note records the rename. For the record, I found nothing that sets LFTOOLS_VERSION today: global-jjb\u0027s macros no longer read the lftools-version JJB parameter that ODL\u0027s and ONAP\u0027s defaults set, and the tox.ini lines you cite are their submodules\u0027 copies of global-jjb. So the risk was latent rather than live, but the rename removes it.",
+      "parentUuid": "f37f4488_cb5c8075",
       "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
       "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
     }
