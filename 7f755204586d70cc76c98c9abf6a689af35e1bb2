@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "054920af_e1eca977",
+        "filename": "shell/capture-instance-metadata.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-11-10T12:07:26Z",
+      "side": 1,
+      "message": "This makes jq a hard dependency of a script that runs in post-build on essentially every job.\n\nPrecedent is decent -- 11 existing shell/*.sh already call jq on master -- but those are all opt-in paths and this one is universal, so an agent image missing jq degrades from \"one job type breaks\" to \"everything breaks\". Worth one explicit confirmation against the packer baseline before this lands.\n\nSeparately: dropping lf-activate-venv from this script is a good catch. It never called lftools at all, so the venv activation was pure overhead.",
+      "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9bc6b8ae_60e4bff6",
+        "filename": "shell/check-info-votes.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-11-10T12:07:26Z",
+      "side": 1,
+      "message": "This script runs on the OPNFV lf-build static nodes, where the previous code deliberately special-cased pyenv 3.6.4 and `pip install --user`. Removing that is correct -- lftools-uv needs \u003e\u003d3.11 and 3.6.4 was never going to work -- but it does mean this path now depends on those nodes having a usable ~/lf-env.sh, and in the fallback branch on wget plus outbound access to raw.githubusercontent.com.\n\nWorth confirming before merge. The script runs with `set -u unset` and no `-e`, so a failure here will not abort cleanly; it will surface later as a confusing downstream error.",
+      "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "189acfd3_3ec6b623",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-11-10T12:07:26Z",
+      "side": 1,
+      "message": "Noting rather than objecting: this couples the shell to prose composed inside the dependency. _check() builds `f\"{context} not found{suffix}\"` (api/endpoints/readthedocs.py:233) and emit_error() prints `f\"Error: {message}\"` (typer_apps/rtd.py:46), with the context strings coming from project_details and project_version_details. I verified the match is exact at v0.8.2, including that Python\u0027s !r gives the single quotes you match on.\n\nIt is also fail-safe in the right direction -- a wording change in 0.8.3 makes the job fail loudly rather than silently concluding a project is missing and re-creating it -- and the \u003d\u003d0.8.2 pin in lf-env.sh contains the blast radius. So I am happy with it as merged.\n\nLonger term it would be worth asking lftools-uv for a distinct exit code for not-found, so shell callers do not have to match English. ReadTheDocs.project_exists() already exists in the library but is not exposed as a CLI subcommand, which is why string matching is currently the only option from a shell script.",
+      "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aae7f362_9a3e734e",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-11-10T12:07:26Z",
+      "side": 1,
+      "message": "This gives you a raw git branch name, but Read the Docs addresses versions by *slug*, and every downstream use of $branch passes it through unslugified.\n\nlftools-uv 0.8.2 added `--from-branch` to project-version-details, project-version-update and project-build-trigger for exactly this case. version_slug() (lftools_uv/api/endpoints/readthedocs.py:115) lowercases and replaces every character outside [a-z0-9._-] with a hyphen, so `stable/scandium` becomes `stable-scandium`. Without the flag the argument is used verbatim -- see typer_apps/rtd.py:322, 364 and 465, each of which is `target \u003d version_slug(x) if from_branch else x` -- and the request path becomes `projects/X/versions/stable/scandium/`, which 404s. lftools-uv\u0027s own docstring uses `maintenance/3.7.10` as the example, so this is a case the library explicitly expects callers to hit.\n\nTo be clear this is not a regression: legacy lftools never checked HTTP status at all, so today this hangs in watchbuild until the Jenkins job timeout instead of failing. The new code failing fast is strictly better. But the fix is one flag and it is already in the version you pin, so it seems a shame to carry the bug forward.\n\nAffects rtd_version_state on L250 and L261, watchbuild on L258, and project-version-update on L264.\n\nRelated: tests/shell/test-rtdv3.sh only exercises GERRIT_BRANCH values `master`, `London` and `london` (L50, L225, L238). A branch containing a slash would be a worthwhile case to add, since that is the one this change alters the failure mode for.",
+      "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92bb2fcf_baa6afc0",
+        "filename": "shell/rtdv3.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-11-10T12:07:26Z",
+      "side": 1,
+      "message": "Same `--from-branch` point as my comment on L247 -- `$branch` reaches the API unslugified here too.",
+      "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a1bc4b5_6be23239",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-11-10T12:07:26Z",
+      "side": 1,
+      "message": "Minor, but there are now three different specs for the same tool in this change: lf-env.sh pins \u003d\u003d0.8.2, this is \u003e\u003d0.8.0, and L118 is ~\u003d0.8.2.\n\nWorth collapsing to one source of truth, particularly because rtdv3.sh\u0027s error-string matching (see my comment there) is only safe against a known version -- an unbounded \u003e\u003d here means `tox -e license` can pick up a release the shell was never tested against.",
+      "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f37f4488_cb5c8075",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 29
+      },
+      "writtenOn": "2026-11-10T12:07:26Z",
+      "side": 1,
+      "message": "The package name changed here but the environment variable name did not.\n\nDownstream repos still set LFTOOLS_VERSION for *legacy* lftools -- builder/global-jjb/tox.ini:118, onap/ci-management/global-jjb/tox.ini:118 and oran/ci-management/global-jjb/tox.ini:118 all currently carry `lftools{env:LFTOOLS_VERSION_OP:~\u003d}{env:LFTOOLS_VERSION:0.13.0}`. Any job that exports LFTOOLS_VERSION\u003d0.37.x now resolves `lftools-uv~\u003d0.37.x`, which does not exist and fails as a hard resolution error rather than anything diagnosable.\n\nSuggest renaming to LFTOOLS_UV_VERSION / LFTOOLS_UV_VERSION_OP. That also matches what lf-env.sh already uses for the pin, so the two stay in step.",
+      "tag": "code-review",
+      "revId": "7f755204586d70cc76c98c9abf6a689af35e1bb2",
+      "serverId": "f2a2391d-0403-4fa5-b183-4056999a8a09"
+    }
+  ]
+}
