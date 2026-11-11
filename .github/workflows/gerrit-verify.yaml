@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clear votes
-        uses: lfreleng-actions/gerrit-review-action@d56b0b5c81402f8cb435aaca513bebdea3be951e # v1.2.0
+        uses: lfreleng-actions/gerrit-review-action@264fe205361cbb2ee8f26280998a75680ee33b53 # v1.3.0
         with:
           host: ${{ vars.LFIT_GERRIT_SERVER }}
           username: ${{ vars.LFIT_GERRIT_SSH_USER }}
@@ -89,7 +89,7 @@ jobs:
         # yamllint disable-line rule:line-length
         uses: im-open/workflow-conclusion@8eac7f17381a6917bc04fec3e2c92e70ebc37526 # v3.0.0
       - name: Set vote
-        uses: lfreleng-actions/gerrit-review-action@d56b0b5c81402f8cb435aaca513bebdea3be951e # v1.2.0
+        uses: lfreleng-actions/gerrit-review-action@264fe205361cbb2ee8f26280998a75680ee33b53 # v1.3.0
         with:
           host: ${{ vars.LFIT_GERRIT_SERVER }}
           username: ${{ vars.LFIT_GERRIT_SSH_USER }}
