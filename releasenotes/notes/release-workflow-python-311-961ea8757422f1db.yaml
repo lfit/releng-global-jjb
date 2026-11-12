@@ -1,0 +1,8 @@
+---
+fixes:
+  - |
+    The release announcement workflow requested Python 3.8, which
+    ``actions/setup-python`` does not provide for Ubuntu 26.04. Once
+    ``ubuntu-latest`` moved to 26.04 the job failed before generating any
+    notes, so v0.97.0 published no GitHub release. The workflow now uses
+    Python 3.11, the oldest version still receiving security fixes.
