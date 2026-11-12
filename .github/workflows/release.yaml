@@ -31,7 +31,7 @@ jobs:
           persist-credentials: false
       - name: Get tag
         id: tag
-        uses: devops-actions/action-get-tag@7121a0d02be4cc926d0866b83de2a62688199687 # v1.0.4
+        uses: devops-actions/action-get-tag@72a6a37ed663481e5b8f89c6ad4820cd572def8e # v1.0.5
       - name: Configure Python
         uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
