@@ -521,6 +521,11 @@ lf-pyver() {
 #   LFTOOLS_UV_PYTHON the Python version uvx runs it with. uvx downloads that
 #   Python when the build agent does not have it.
 #
+#   Only lftools-uv itself is pinned: uvx resolves its dependencies afresh on
+#   each build agent, to the newest its requirements allow. openstacksdk is
+#   the exception, held below 4.23, as 4.23.0 ships without its data files
+#   and no lftools-uv openstack command can connect to a cloud with it.
+#
 #   uvx is found on PATH or in ~/.local/bin, where uv-install.sh puts it, and
 #   installed with the uv installer, honouring UV_VERSION, if neither has it.
 #   A failed download or install, or a uvx that then does not run, is an
@@ -604,8 +609,10 @@ _lf-lftools-uv () {
         _lf-install-uv || return 1
         uvx=~/.local/bin/uvx
     fi
+    # openstacksdk 4.23.0 ships without its data files, defaults.json among
+    # them, so the SDK cannot build a connection: keep the environment off it.
     run=(env -u PYTHONPATH -u PYTHONHOME "$uvx" --quiet --python "$python"
-        --from "$spec")
+        --from "$spec" --with "openstacksdk<4.23")
 
     # Fetch the pinned version once per shell, from the build agent's mirror
     # or, while that is unreachable, from PyPI; remember which one worked.

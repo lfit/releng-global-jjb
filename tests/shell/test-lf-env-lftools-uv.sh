@@ -9,7 +9,8 @@ source "$(dirname "${BASH_SOURCE[0]}")/lib.sh"
 # shellcheck source=jenkins-init-scripts/lf-env.sh
 source "$REPO_ROOT/jenkins-init-scripts/lf-env.sh"
 
-PIN="--quiet --python 3.12 --from lftools-uv[openstack]==0.8.2"
+BOUND="--with openstacksdk<4.23"
+PIN="--quiet --python 3.12 --from lftools-uv[openstack]==0.8.2 $BOUND"
 PYPI="https://pypi.org/simple"
 MIRROR="https://mirror.example/simple"
 
@@ -93,7 +94,14 @@ test_fetches_once_per_shell () {
 test_honours_version_and_python_overrides () {
     fake_uvx "$SCRATCH/stubs/uvx"
     LFTOOLS_UV_VERSION=0.8.0 LFTOOLS_UV_PYTHON=3.13 lftools-uv x > /dev/null
-    assert_contains "$(uvx_calls)" "--python 3.13 --from lftools-uv[openstack]==0.8.0 --offline"
+    assert_contains "$(uvx_calls)" \
+        "--python 3.13 --from lftools-uv[openstack]==0.8.0 $BOUND --offline"
+}
+
+test_keeps_openstacksdk_below_4_23 () {
+    fake_uvx "$SCRATCH/stubs/uvx"
+    lftools-uv openstack --os-cloud vex image cleanup > /dev/null
+    assert_eq "$(uvx_calls | grep -c -F -- "$BOUND ")" 2 "fetch and run"
 }
 
 test_reads_index_from_pip_conf () {

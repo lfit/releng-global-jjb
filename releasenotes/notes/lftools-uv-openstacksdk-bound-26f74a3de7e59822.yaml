@@ -1,0 +1,17 @@
+---
+fixes:
+  - |
+    The ``lftools-uv`` function in ``lf-env.sh`` keeps openstacksdk below
+    4.23 in the environment it runs lftools-uv in. openstacksdk 4.23.0,
+    released on 2026-11-19, ships without its data files, so the SDK cannot
+    read ``openstack/config/defaults.json`` and every ``lftools-uv openstack``
+    command that connects to a cloud fails with ``FileNotFoundError``. On
+    each build agent that resolved the release, the **openstack-cron** job
+    stopped removing orphaned servers, stacks and volumes and old images, and
+    the ``lf-stack-create`` and ``lf-stack-delete`` macros fail the same way.
+
+    The function pins lftools-uv, but ``uvx`` resolves its dependencies
+    afresh on each build agent, and lftools-uv accepts any openstacksdk 4.x,
+    so agents took the release up as soon as their package index listed it.
+    The bound applies to both the fetch and the run. It guards against this
+    one release: the other dependencies of lftools-uv still float.
